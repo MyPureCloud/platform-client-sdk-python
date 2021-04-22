@@ -51,6 +51,7 @@ class DialerDnclistConfigChangeDncList(object):
             'login_id': 'str',
             'dnc_codes': 'list[str]',
             'license_id': 'str',
+            'contact_method': 'str',
             'division': 'DialerDnclistConfigChangeUriReference',
             'additional_properties': 'object'
         }
@@ -67,6 +68,7 @@ class DialerDnclistConfigChangeDncList(object):
             'login_id': 'loginId',
             'dnc_codes': 'dncCodes',
             'license_id': 'licenseId',
+            'contact_method': 'contactMethod',
             'division': 'division',
             'additional_properties': 'additionalProperties'
         }
@@ -82,6 +84,7 @@ class DialerDnclistConfigChangeDncList(object):
         self._login_id = None
         self._dnc_codes = None
         self._license_id = None
+        self._contact_method = None
         self._division = None
         self._additional_properties = None
 
@@ -341,6 +344,33 @@ class DialerDnclistConfigChangeDncList(object):
         """
         
         self._license_id = license_id
+
+    @property
+    def contact_method(self):
+        """
+        Gets the contact_method of this DialerDnclistConfigChangeDncList.
+
+
+        :return: The contact_method of this DialerDnclistConfigChangeDncList.
+        :rtype: str
+        """
+        return self._contact_method
+
+    @contact_method.setter
+    def contact_method(self, contact_method):
+        """
+        Sets the contact_method of this DialerDnclistConfigChangeDncList.
+
+
+        :param contact_method: The contact_method of this DialerDnclistConfigChangeDncList.
+        :type: str
+        """
+        allowed_values = ["EMAIL", "PHONE"]
+        if contact_method.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for contact_method -> " + contact_method)
+            self._contact_method = "outdated_sdk_version"
+        else:
+            self._contact_method = contact_method
 
     @property
     def division(self):

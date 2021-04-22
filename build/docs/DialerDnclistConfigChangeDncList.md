@@ -18,6 +18,7 @@ title: DialerDnclistConfigChangeDncList
 | **login_id** | **str** |  | [optional] |
 | **dnc_codes** | **list[str]** |  | [optional] |
 | **license_id** | **str** |  | [optional] |
+| **contact_method** | **str** |  | [optional] |
 | **division** | [**DialerDnclistConfigChangeUriReference**](DialerDnclistConfigChangeUriReference.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}

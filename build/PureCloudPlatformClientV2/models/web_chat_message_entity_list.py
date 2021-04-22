@@ -43,23 +43,23 @@ class WebChatMessageEntityList(object):
             'page_size': 'int',
             'entities': 'list[WebChatMessage]',
             'previous_page': 'str',
-            'self_uri': 'str',
-            'next': 'str'
+            'next': 'str',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'page_size': 'pageSize',
             'entities': 'entities',
             'previous_page': 'previousPage',
-            'self_uri': 'selfUri',
-            'next': 'next'
+            'next': 'next',
+            'self_uri': 'selfUri'
         }
 
         self._page_size = None
         self._entities = None
         self._previous_page = None
-        self._self_uri = None
         self._next = None
+        self._self_uri = None
 
     @property
     def page_size(self):
@@ -131,29 +131,6 @@ class WebChatMessageEntityList(object):
         self._previous_page = previous_page
 
     @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this WebChatMessageEntityList.
-
-
-        :return: The self_uri of this WebChatMessageEntityList.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this WebChatMessageEntityList.
-
-
-        :param self_uri: The self_uri of this WebChatMessageEntityList.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
-
-    @property
     def next(self):
         """
         Gets the next of this WebChatMessageEntityList.
@@ -175,6 +152,29 @@ class WebChatMessageEntityList(object):
         """
         
         self._next = next
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this WebChatMessageEntityList.
+
+
+        :return: The self_uri of this WebChatMessageEntityList.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this WebChatMessageEntityList.
+
+
+        :param self_uri: The self_uri of this WebChatMessageEntityList.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

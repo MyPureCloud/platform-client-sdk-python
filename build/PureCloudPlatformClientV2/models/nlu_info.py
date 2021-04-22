@@ -40,14 +40,40 @@ class NluInfo(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'domain': 'AddressableEntityRef',
             'intents': 'list[Intent]'
         }
 
         self.attribute_map = {
+            'domain': 'domain',
             'intents': 'intents'
         }
 
+        self._domain = None
         self._intents = None
+
+    @property
+    def domain(self):
+        """
+        Gets the domain of this NluInfo.
+
+
+        :return: The domain of this NluInfo.
+        :rtype: AddressableEntityRef
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """
+        Sets the domain of this NluInfo.
+
+
+        :param domain: The domain of this NluInfo.
+        :type: AddressableEntityRef
+        """
+        
+        self._domain = domain
 
     @property
     def intents(self):

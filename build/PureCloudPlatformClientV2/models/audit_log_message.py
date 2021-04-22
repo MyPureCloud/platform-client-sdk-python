@@ -220,7 +220,7 @@ class AuditLogMessage(object):
         :param service_name: The service_name of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Architect", "ContactCenter", "ContentManagement", "Integrations", "PeoplePermissions", "Presence", "Quality", "LanguageUnderstanding", "TopicsDefinitions", "PredictiveEngagement", "WorkforceManagement", "Triggers", "ResponseManagement", "Groups", "Telephony", "Outbound", "SpeechAndTextAnalytics", "Routing"]
+        allowed_values = ["Architect", "ContactCenter", "ContentManagement", "Groups", "Integrations", "LanguageUnderstanding", "Limits", "Outbound", "PeoplePermissions", "PredictiveEngagement", "Presence", "Quality", "ResponseManagement", "Routing", "SpeechAndTextAnalytics", "Telephony", "TopicsDefinitions", "Triggers", "WorkforceManagement"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"
@@ -293,7 +293,7 @@ class AuditLogMessage(object):
         :param action: The action of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Create", "View", "Update", "Delete", "DeleteAll", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "Read", "ApplyProtection", "RevokeProtection", "UpdateRetention", "ReadAll", "Execute", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword", "Revoke", "Export", "Append", "Recycle"]
+        allowed_values = ["Create", "View", "Update", "Delete", "DeleteAll", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "Read", "ApplyProtection", "RevokeProtection", "UpdateRetention", "ReadAll", "Execute", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword", "Revoke", "Export", "Append", "Recycle", "Open", "Approved", "Rejected", "Rollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
@@ -343,7 +343,7 @@ class AuditLogMessage(object):
         :param entity_type: The entity_type of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailPolicy", "VoicemailUserPolicy", "UserPresence", "WrapupCode", "MaxOrgRoutingUtilizationCapacity", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "OrganizationAuthorizationTrust", "OrganizationAuthorizationUserTrust", "BulkActions", "Feedback", "Topic", "Program", "Segment", "Outcome", "SessionType", "EventType", "ClickstreamSettings", "Schedule", "ScheduleGroup", "EmergencyGroup", "IVR", "Trigger", "Response", "DependencyTrackingBuild", "Flow", "Prompt", "PromptResource", "FlowOutcome", "FlowMilestone", "Team", "Edge", "EdgeGroup", "Trunk", "TrunkBase", "DID", "DIDPool", "Extension", "ExtensionPool", "Phone", "PhoneBase", "Line", "LineBase", "OutboundRoute", "NumberPlan", "Site", "AttemptLimits", "CallableTimeSet", "Campaign", "CampaignRule", "Sequence", "ContactList", "ContactListFilter", "DNCList", "CallAnalysisResponseSet", "RuleSet", "CampaignSchedule", "SequenceSchedule", "OrganizationSettings", "WrapUpCodeMapping", "MessagingCampaign", "TranscriptionSettings", "RoutingTranscriptionSettings", "SpeechTextAnalyticsSettings", "Predictor", "WorkPlan", "SentimentFeedback", "Integration"]
+        allowed_values = ["AccessToken", "AttemptLimits", "AuthOrganization", "AuthUser", "BulkActions", "CallableTimeSet", "CallAnalysisResponseSet", "Campaign", "CampaignRule", "CampaignSchedule", "ChangeRequest", "ClickstreamSettings", "ContactList", "ContactListFilter", "DependencyTrackingBuild", "DID", "DIDPool", "DNCList", "Document", "Edge", "EdgeGroup", "EmergencyGroup", "EventType", "Extension", "ExtensionPool", "Feedback", "Flow", "FlowMilestone", "FlowOutcome", "Integration", "IVR", "Line", "LineBase", "MaxOrgRoutingUtilizationCapacity", "MessagingCampaign", "NumberPlan", "OAuthClient", "OAuthClientAuthorization", "OrganizationAuthorizationTrust", "OrganizationAuthorizationUserTrust", "OrganizationSettings", "OutboundRoute", "Outcome", "Phone", "PhoneBase", "Predictor", "Program", "Prompt", "PromptResource", "Queue", "Recording", "Response", "Role", "RoutingTranscriptionSettings", "RuleSet", "Schedule", "ScheduleGroup", "Segment", "SentimentFeedback", "Sequence", "SequenceSchedule", "SessionType", "Site", "SpeechTextAnalyticsSettings", "Team", "Topic", "TranscriptionSettings", "Trigger", "Trunk", "TrunkBase", "UserPresence", "VoicemailPolicy", "VoicemailUserPolicy", "WorkPlan", "WrapupCode", "WrapUpCodeMapping"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entity_type -> " + entity_type)
             self._entity_type = "outdated_sdk_version"

@@ -41,7 +41,8 @@ class Note(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
+            'entity_id': 'str',
+            'entity_type': 'str',
             'note_text': 'str',
             'modify_date': 'datetime',
             'create_date': 'datetime',
@@ -52,7 +53,8 @@ class Note(object):
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
+            'entity_id': 'entityId',
+            'entity_type': 'entityType',
             'note_text': 'noteText',
             'modify_date': 'modifyDate',
             'create_date': 'createDate',
@@ -62,7 +64,8 @@ class Note(object):
         }
 
         self._id = None
-        self._name = None
+        self._entity_id = None
+        self._entity_type = None
         self._note_text = None
         self._modify_date = None
         self._create_date = None
@@ -94,27 +97,54 @@ class Note(object):
         self._id = id
 
     @property
-    def name(self):
+    def entity_id(self):
         """
-        Gets the name of this Note.
+        Gets the entity_id of this Note.
+        The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs.
 
-
-        :return: The name of this Note.
+        :return: The entity_id of this Note.
         :rtype: str
         """
-        return self._name
+        return self._entity_id
 
-    @name.setter
-    def name(self, name):
+    @entity_id.setter
+    def entity_id(self, entity_id):
         """
-        Sets the name of this Note.
+        Sets the entity_id of this Note.
+        The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs.
 
-
-        :param name: The name of this Note.
+        :param entity_id: The entity_id of this Note.
         :type: str
         """
         
-        self._name = name
+        self._entity_id = entity_id
+
+    @property
+    def entity_type(self):
+        """
+        Gets the entity_type of this Note.
+        This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.
+
+        :return: The entity_type of this Note.
+        :rtype: str
+        """
+        return self._entity_type
+
+    @entity_type.setter
+    def entity_type(self, entity_type):
+        """
+        Sets the entity_type of this Note.
+        This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.
+
+        :param entity_type: The entity_type of this Note.
+        :type: str
+        """
+        allowed_values = ["contact", "organization"]
+        if entity_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for entity_type -> " + entity_type)
+            self._entity_type = "outdated_sdk_version"
+        else:
+            self._entity_type = entity_type
 
     @property
     def note_text(self):
@@ -189,7 +219,7 @@ class Note(object):
     def created_by(self):
         """
         Gets the created_by of this Note.
-        The author of this note
+        When creating or updating a note, only User.id is required. User object is fully populated when expanding a note.
 
         :return: The created_by of this Note.
         :rtype: User
@@ -200,7 +230,7 @@ class Note(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this Note.
-        The author of this note
+        When creating or updating a note, only User.id is required. User object is fully populated when expanding a note.
 
         :param created_by: The created_by of this Note.
         :type: User

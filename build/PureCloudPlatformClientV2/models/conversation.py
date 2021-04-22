@@ -42,6 +42,7 @@ class Conversation(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'external_tag': 'str',
             'start_time': 'datetime',
             'end_time': 'datetime',
             'address': 'str',
@@ -57,6 +58,7 @@ class Conversation(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'external_tag': 'externalTag',
             'start_time': 'startTime',
             'end_time': 'endTime',
             'address': 'address',
@@ -71,6 +73,7 @@ class Conversation(object):
 
         self._id = None
         self._name = None
+        self._external_tag = None
         self._start_time = None
         self._end_time = None
         self._address = None
@@ -127,6 +130,29 @@ class Conversation(object):
         """
         
         self._name = name
+
+    @property
+    def external_tag(self):
+        """
+        Gets the external_tag of this Conversation.
+        The external tag associated with the conversation.
+
+        :return: The external_tag of this Conversation.
+        :rtype: str
+        """
+        return self._external_tag
+
+    @external_tag.setter
+    def external_tag(self, external_tag):
+        """
+        Sets the external_tag of this Conversation.
+        The external tag associated with the conversation.
+
+        :param external_tag: The external_tag of this Conversation.
+        :type: str
+        """
+        
+        self._external_tag = external_tag
 
     @property
     def start_time(self):

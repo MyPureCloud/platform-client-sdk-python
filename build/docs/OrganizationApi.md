@@ -11,6 +11,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_fieldconfig**](OrganizationApi.html#get_fieldconfig) | Fetch field config for an entity type|
 |[**get_organizations_embeddedintegration**](OrganizationApi.html#get_organizations_embeddedintegration) | Get the list of domains that will be allowed to embed PureCloud applications|
 |[**get_organizations_ipaddressauthentication**](OrganizationApi.html#get_organizations_ipaddressauthentication) | Get organization IP address whitelist settings|
+|[**get_organizations_limits_changerequest**](OrganizationApi.html#get_organizations_limits_changerequest) | Get a limit change request|
+|[**get_organizations_limits_changerequests**](OrganizationApi.html#get_organizations_limits_changerequests) | Get the available limit change requests|
+|[**get_organizations_limits_docs**](OrganizationApi.html#get_organizations_limits_docs) | Get a link to the limit documentation|
+|[**get_organizations_limits_namespace**](OrganizationApi.html#get_organizations_limits_namespace) | Get the effective limits in a namespace for an organization|
+|[**get_organizations_limits_namespaces**](OrganizationApi.html#get_organizations_limits_namespaces) | Get the available limit namespaces|
 |[**get_organizations_me**](OrganizationApi.html#get_organizations_me) | Get organization.|
 |[**get_organizations_whitelist**](OrganizationApi.html#get_organizations_whitelist) | Use PUT /api/v2/organizations/embeddedintegration instead|
 |[**patch_organizations_feature**](OrganizationApi.html#patch_organizations_feature) | Update organization|
@@ -162,6 +167,266 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**IpAddressAuthentication**](IpAddressAuthentication.html)
+
+<a name="get_organizations_limits_changerequest"></a>
+
+## [**LimitChangeRequestDetails**](LimitChangeRequestDetails.html) get_organizations_limits_changerequest(request_id)
+
+
+
+Get a limit change request
+
+
+
+Wraps GET /api/v2/organizations/limits/changerequests/{requestId} 
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+request_id = 'request_id_example' # str | Unique id for the limit change request
+
+try:
+    # Get a limit change request
+    api_response = api_instance.get_organizations_limits_changerequest(request_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationApi->get_organizations_limits_changerequest: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **request_id** | **str**| Unique id for the limit change request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LimitChangeRequestDetails**](LimitChangeRequestDetails.html)
+
+<a name="get_organizations_limits_changerequests"></a>
+
+## [**LimitChangeRequestsEntityListing**](LimitChangeRequestsEntityListing.html) get_organizations_limits_changerequests(after=after, before=before, status=status, page_size=page_size, expand=expand)
+
+
+
+Get the available limit change requests
+
+Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
+
+Wraps GET /api/v2/organizations/limits/changerequests 
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+after = 789 # int | Timestamp indicating the date to begin after when searching for requests. (optional)
+before = 789 # int | Timestamp indicating the date to end before when searching for requests. (optional)
+status = 'status_example' # str | Status of the request to be filtered by (optional)
+page_size = 25 # int | Page Size (optional) (default to 25)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+
+try:
+    # Get the available limit change requests
+    api_response = api_instance.get_organizations_limits_changerequests(after=after, before=before, status=status, page_size=page_size, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationApi->get_organizations_limits_changerequests: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **after** | **int**| Timestamp indicating the date to begin after when searching for requests. | [optional]  |
+| **before** | **int**| Timestamp indicating the date to end before when searching for requests. | [optional]  |
+| **status** | **str**| Status of the request to be filtered by | [optional] <br />**Values**: Open, Approved, ImplementingChange, ChangeImplemented, Rejected, Rollback, ImplementingRollback, RollbackImplemented |
+| **page_size** | **int**| Page Size | [optional] [default to 25] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: statusHistory |
+{: class="table table-striped"}
+
+### Return type
+
+[**LimitChangeRequestsEntityListing**](LimitChangeRequestsEntityListing.html)
+
+<a name="get_organizations_limits_docs"></a>
+
+## [**UrlResponse**](UrlResponse.html) get_organizations_limits_docs()
+
+
+
+Get a link to the limit documentation
+
+
+
+Wraps GET /api/v2/organizations/limits/docs 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+
+try:
+    # Get a link to the limit documentation
+    api_response = api_instance.get_organizations_limits_docs()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationApi->get_organizations_limits_docs: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**UrlResponse**](UrlResponse.html)
+
+<a name="get_organizations_limits_namespace"></a>
+
+## [**LimitsEntityListing**](LimitsEntityListing.html) get_organizations_limits_namespace(namespace_name)
+
+
+
+Get the effective limits in a namespace for an organization
+
+
+
+Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName} 
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+namespace_name = 'namespace_name_example' # str | The namespace to fetch limits for
+
+try:
+    # Get the effective limits in a namespace for an organization
+    api_response = api_instance.get_organizations_limits_namespace(namespace_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationApi->get_organizations_limits_namespace: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **namespace_name** | **str**| The namespace to fetch limits for |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LimitsEntityListing**](LimitsEntityListing.html)
+
+<a name="get_organizations_limits_namespaces"></a>
+
+## [**LimitsEntityListing**](LimitsEntityListing.html) get_organizations_limits_namespaces(page_size=page_size, page_number=page_number)
+
+
+
+Get the available limit namespaces
+
+
+
+Wraps GET /api/v2/organizations/limits/namespaces 
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+page_size = 100 # int | Page size (optional) (default to 100)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get the available limit namespaces
+    api_response = api_instance.get_organizations_limits_namespaces(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationApi->get_organizations_limits_namespaces: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 100] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**LimitsEntityListing**](LimitsEntityListing.html)
 
 <a name="get_organizations_me"></a>
 

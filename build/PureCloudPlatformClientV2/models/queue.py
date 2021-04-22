@@ -49,6 +49,7 @@ class Queue(object):
             'modified_by': 'str',
             'created_by': 'str',
             'member_count': 'int',
+            'joined_member_count': 'int',
             'media_settings': 'dict(str, MediaSetting)',
             'routing_rules': 'list[RoutingRule]',
             'bullseye': 'Bullseye',
@@ -77,6 +78,7 @@ class Queue(object):
             'modified_by': 'modifiedBy',
             'created_by': 'createdBy',
             'member_count': 'memberCount',
+            'joined_member_count': 'joinedMemberCount',
             'media_settings': 'mediaSettings',
             'routing_rules': 'routingRules',
             'bullseye': 'bullseye',
@@ -104,6 +106,7 @@ class Queue(object):
         self._modified_by = None
         self._created_by = None
         self._member_count = None
+        self._joined_member_count = None
         self._media_settings = None
         self._routing_rules = None
         self._bullseye = None
@@ -309,7 +312,7 @@ class Queue(object):
     def member_count(self):
         """
         Gets the member_count of this Queue.
-        The number of users in the queue.
+        The total number of members (joined or unjoined) in the queue.
 
         :return: The member_count of this Queue.
         :rtype: int
@@ -320,13 +323,36 @@ class Queue(object):
     def member_count(self, member_count):
         """
         Sets the member_count of this Queue.
-        The number of users in the queue.
+        The total number of members (joined or unjoined) in the queue.
 
         :param member_count: The member_count of this Queue.
         :type: int
         """
         
         self._member_count = member_count
+
+    @property
+    def joined_member_count(self):
+        """
+        Gets the joined_member_count of this Queue.
+        The number of joined members in the queue.
+
+        :return: The joined_member_count of this Queue.
+        :rtype: int
+        """
+        return self._joined_member_count
+
+    @joined_member_count.setter
+    def joined_member_count(self, joined_member_count):
+        """
+        Sets the joined_member_count of this Queue.
+        The number of joined members in the queue.
+
+        :param joined_member_count: The joined_member_count of this Queue.
+        :type: int
+        """
+        
+        self._joined_member_count = joined_member_count
 
     @property
     def media_settings(self):

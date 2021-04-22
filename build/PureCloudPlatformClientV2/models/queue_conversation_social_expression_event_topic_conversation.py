@@ -44,7 +44,8 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'max_participants': 'int',
             'participants': 'list[QueueConversationSocialExpressionEventTopicParticipant]',
             'recording_state': 'str',
-            'address': 'str'
+            'address': 'str',
+            'external_tag': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'max_participants': 'maxParticipants',
             'participants': 'participants',
             'recording_state': 'recordingState',
-            'address': 'address'
+            'address': 'address',
+            'external_tag': 'externalTag'
         }
 
         self._id = None
@@ -60,6 +62,7 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         self._participants = None
         self._recording_state = None
         self._address = None
+        self._external_tag = None
 
     @property
     def id(self):
@@ -175,6 +178,29 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         """
         
         self._address = address
+
+    @property
+    def external_tag(self):
+        """
+        Gets the external_tag of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :return: The external_tag of this QueueConversationSocialExpressionEventTopicConversation.
+        :rtype: str
+        """
+        return self._external_tag
+
+    @external_tag.setter
+    def external_tag(self, external_tag):
+        """
+        Sets the external_tag of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :param external_tag: The external_tag of this QueueConversationSocialExpressionEventTopicConversation.
+        :type: str
+        """
+        
+        self._external_tag = external_tag
 
     def to_dict(self):
         """
