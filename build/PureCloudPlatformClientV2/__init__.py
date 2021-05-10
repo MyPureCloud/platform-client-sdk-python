@@ -55,6 +55,8 @@ from .models.agent_activity_changed_topic_routing_status import AgentActivityCha
 from .models.agent_activity_entity_listing import AgentActivityEntityListing
 from .models.agent_evaluator_activity import AgentEvaluatorActivity
 from .models.agent_max_utilization import AgentMaxUtilization
+from .models.agent_owned_mapping_preview import AgentOwnedMappingPreview
+from .models.agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
 from .models.agent_time_off_request_patch import AgentTimeOffRequestPatch
 from .models.aggregate_metric_data import AggregateMetricData
 from .models.aggregate_view_data import AggregateViewData
@@ -124,6 +126,12 @@ from .models.architect_prompt_resource_notification_prompt_resource_notification
 from .models.architect_system_prompt_resource_notification_system_prompt_resource_notification import ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification
 from .models.archive_retention import ArchiveRetention
 from .models.array_node import ArrayNode
+from .models.assessment_form import AssessmentForm
+from .models.assessment_form_question import AssessmentFormQuestion
+from .models.assessment_form_question_group import AssessmentFormQuestionGroup
+from .models.assessment_question_group_score import AssessmentQuestionGroupScore
+from .models.assessment_question_score import AssessmentQuestionScore
+from .models.assessment_scoring_set import AssessmentScoringSet
 from .models.assigned_wrapup_code import AssignedWrapupCode
 from .models.assignment_group import AssignmentGroup
 from .models.async_conversation_query import AsyncConversationQuery
@@ -175,6 +183,7 @@ from .models.authz_grant_role import AuthzGrantRole
 from .models.authz_subject import AuthzSubject
 from .models.automatic_time_zone_mapping_settings import AutomaticTimeZoneMappingSettings
 from .models.available_language_list import AvailableLanguageList
+from .models.available_time import AvailableTime
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
 from .models.available_translations import AvailableTranslations
@@ -381,6 +390,9 @@ from .models.coaching_appointment_status_response import CoachingAppointmentStat
 from .models.coaching_appointment_status_response_list import CoachingAppointmentStatusResponseList
 from .models.coaching_notification import CoachingNotification
 from .models.coaching_notification_list import CoachingNotificationList
+from .models.coaching_slot import CoachingSlot
+from .models.coaching_slots_request import CoachingSlotsRequest
+from .models.coaching_slots_response import CoachingSlotsResponse
 from .models.cobrowse_conversation import CobrowseConversation
 from .models.cobrowse_conversation_entity_listing import CobrowseConversationEntityListing
 from .models.cobrowse_media_participant import CobrowseMediaParticipant
@@ -808,6 +820,7 @@ from .models.dialogflow_project import DialogflowProject
 from .models.digit_length import DigitLength
 from .models.digits import Digits
 from .models.directory_user_devices_listing import DirectoryUserDevicesListing
+from .models.disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
 from .models.disconnect_reason import DisconnectReason
 from .models.division import Division
 from .models.division_reference import DivisionReference
@@ -1172,9 +1185,6 @@ from .models.json_schema_document import JsonSchemaDocument
 from .models.json_search_response import JsonSearchResponse
 from .models.key_rotation_schedule import KeyRotationSchedule
 from .models.key_value import KeyValue
-from .models.keyword import Keyword
-from .models.keyword_set import KeywordSet
-from .models.keyword_set_entity_listing import KeywordSetEntityListing
 from .models.klaxon_heart_beat_alerts_topic_heart_beat_alert import KlaxonHeartBeatAlertsTopicHeartBeatAlert
 from .models.klaxon_heart_beat_alerts_topic_notification_user import KlaxonHeartBeatAlertsTopicNotificationUser
 from .models.klaxon_heart_beat_rules_topic_heart_beat_rule import KlaxonHeartBeatRulesTopicHeartBeatRule
@@ -1201,6 +1211,25 @@ from .models.language_override import LanguageOverride
 from .models.language_reference import LanguageReference
 from .models.leaderboard import Leaderboard
 from .models.leaderboard_item import LeaderboardItem
+from .models.learning_assessment import LearningAssessment
+from .models.learning_assignment import LearningAssignment
+from .models.learning_assignment_bulk_add_response import LearningAssignmentBulkAddResponse
+from .models.learning_assignment_create import LearningAssignmentCreate
+from .models.learning_assignment_item import LearningAssignmentItem
+from .models.learning_assignment_update import LearningAssignmentUpdate
+from .models.learning_assignment_user import LearningAssignmentUser
+from .models.learning_assignment_user_listing import LearningAssignmentUserListing
+from .models.learning_assignment_user_query import LearningAssignmentUserQuery
+from .models.learning_assignments_domain_entity import LearningAssignmentsDomainEntity
+from .models.learning_module import LearningModule
+from .models.learning_module_inform_step import LearningModuleInformStep
+from .models.learning_module_inform_step_request import LearningModuleInformStepRequest
+from .models.learning_module_publish_response import LearningModulePublishResponse
+from .models.learning_module_request import LearningModuleRequest
+from .models.learning_module_rule import LearningModuleRule
+from .models.learning_module_rule_parts import LearningModuleRuleParts
+from .models.learning_module_summary import LearningModuleSummary
+from .models.learning_modules_domain_entity_listing import LearningModulesDomainEntityListing
 from .models.lex_bot import LexBot
 from .models.lex_bot_alias import LexBotAlias
 from .models.lex_bot_alias_entity_listing import LexBotAliasEntityListing
@@ -1318,6 +1347,7 @@ from .models.mu_reschedule_result_wrapper import MuRescheduleResultWrapper
 from .models.ntp_settings import NTPSettings
 from .models.named_entity import NamedEntity
 from .models.named_entity_annotation import NamedEntityAnnotation
+from .models.named_entity_definition import NamedEntityDefinition
 from .models.named_entity_type_binding import NamedEntityTypeBinding
 from .models.named_entity_type_definition import NamedEntityTypeDefinition
 from .models.named_entity_type_item import NamedEntityTypeItem
@@ -2153,6 +2183,7 @@ from .models.user_app import UserApp
 from .models.user_app_configuration_info import UserAppConfigurationInfo
 from .models.user_app_entity_listing import UserAppEntityListing
 from .models.user_authorization import UserAuthorization
+from .models.user_available_times import UserAvailableTimes
 from .models.user_best_points import UserBestPoints
 from .models.user_best_points_item import UserBestPointsItem
 from .models.user_conversation_summary import UserConversationSummary
@@ -2474,6 +2505,7 @@ from .apis.journey_api import JourneyApi
 from .apis.knowledge_api import KnowledgeApi
 from .apis.language_understanding_api import LanguageUnderstandingApi
 from .apis.languages_api import LanguagesApi
+from .apis.learning_api import LearningApi
 from .apis.license_api import LicenseApi
 from .apis.locations_api import LocationsApi
 from .apis.mobile_devices_api import MobileDevicesApi

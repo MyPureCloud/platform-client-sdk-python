@@ -41,25 +41,16 @@ class PatchUser(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'acd_auto_answer': 'bool',
-            'certifications': 'list[str]',
-            'biography': 'Biography',
-            'employer_info': 'EmployerInfo'
+            'acd_auto_answer': 'bool'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'acd_auto_answer': 'acdAutoAnswer',
-            'certifications': 'certifications',
-            'biography': 'biography',
-            'employer_info': 'employerInfo'
+            'acd_auto_answer': 'acdAutoAnswer'
         }
 
         self._id = None
         self._acd_auto_answer = None
-        self._certifications = None
-        self._biography = None
-        self._employer_info = None
 
     @property
     def id(self):
@@ -106,75 +97,6 @@ class PatchUser(object):
         """
         
         self._acd_auto_answer = acd_auto_answer
-
-    @property
-    def certifications(self):
-        """
-        Gets the certifications of this PatchUser.
-
-
-        :return: The certifications of this PatchUser.
-        :rtype: list[str]
-        """
-        return self._certifications
-
-    @certifications.setter
-    def certifications(self, certifications):
-        """
-        Sets the certifications of this PatchUser.
-
-
-        :param certifications: The certifications of this PatchUser.
-        :type: list[str]
-        """
-        
-        self._certifications = certifications
-
-    @property
-    def biography(self):
-        """
-        Gets the biography of this PatchUser.
-
-
-        :return: The biography of this PatchUser.
-        :rtype: Biography
-        """
-        return self._biography
-
-    @biography.setter
-    def biography(self, biography):
-        """
-        Sets the biography of this PatchUser.
-
-
-        :param biography: The biography of this PatchUser.
-        :type: Biography
-        """
-        
-        self._biography = biography
-
-    @property
-    def employer_info(self):
-        """
-        Gets the employer_info of this PatchUser.
-
-
-        :return: The employer_info of this PatchUser.
-        :rtype: EmployerInfo
-        """
-        return self._employer_info
-
-    @employer_info.setter
-    def employer_info(self, employer_info):
-        """
-        Sets the employer_info of this PatchUser.
-
-
-        :param employer_info: The employer_info of this PatchUser.
-        :type: EmployerInfo
-        """
-        
-        self._employer_info = employer_info
 
     def to_dict(self):
         """

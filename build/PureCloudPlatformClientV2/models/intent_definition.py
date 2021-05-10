@@ -42,17 +42,20 @@ class IntentDefinition(object):
         self.swagger_types = {
             'name': 'str',
             'entity_type_bindings': 'list[NamedEntityTypeBinding]',
+            'entity_name_references': 'list[str]',
             'utterances': 'list[NluUtterance]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'entity_type_bindings': 'entityTypeBindings',
+            'entity_name_references': 'entityNameReferences',
             'utterances': 'utterances'
         }
 
         self._name = None
         self._entity_type_bindings = None
+        self._entity_name_references = None
         self._utterances = None
 
     @property
@@ -82,7 +85,7 @@ class IntentDefinition(object):
     def entity_type_bindings(self):
         """
         Gets the entity_type_bindings of this IntentDefinition.
-        The bindings for the named entity types used in this intent.
+        The bindings for the named entity types used in this intent.This field is mutually exclusive with entityNameReferences and entities
 
         :return: The entity_type_bindings of this IntentDefinition.
         :rtype: list[NamedEntityTypeBinding]
@@ -93,13 +96,36 @@ class IntentDefinition(object):
     def entity_type_bindings(self, entity_type_bindings):
         """
         Sets the entity_type_bindings of this IntentDefinition.
-        The bindings for the named entity types used in this intent.
+        The bindings for the named entity types used in this intent.This field is mutually exclusive with entityNameReferences and entities
 
         :param entity_type_bindings: The entity_type_bindings of this IntentDefinition.
         :type: list[NamedEntityTypeBinding]
         """
         
         self._entity_type_bindings = entity_type_bindings
+
+    @property
+    def entity_name_references(self):
+        """
+        Gets the entity_name_references of this IntentDefinition.
+        The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings
+
+        :return: The entity_name_references of this IntentDefinition.
+        :rtype: list[str]
+        """
+        return self._entity_name_references
+
+    @entity_name_references.setter
+    def entity_name_references(self, entity_name_references):
+        """
+        Sets the entity_name_references of this IntentDefinition.
+        The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings
+
+        :param entity_name_references: The entity_name_references of this IntentDefinition.
+        :type: list[str]
+        """
+        
+        self._entity_name_references = entity_name_references
 
     @property
     def utterances(self):

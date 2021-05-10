@@ -97,7 +97,6 @@ class AnalyticsSession(object):
             'session_id': 'str',
             'sharing_screen': 'bool',
             'skip_enabled': 'bool',
-            'timeout_seconds': 'int',
             'used_routing': 'str',
             'video_address_self': 'str',
             'video_room_id': 'str',
@@ -105,7 +104,8 @@ class AnalyticsSession(object):
             'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
             'flow': 'AnalyticsFlow',
             'metrics': 'list[AnalyticsSessionMetric]',
-            'segments': 'list[AnalyticsConversationSegment]'
+            'segments': 'list[AnalyticsConversationSegment]',
+            'timeout_seconds': 'int'
         }
 
         self.attribute_map = {
@@ -166,7 +166,6 @@ class AnalyticsSession(object):
             'session_id': 'sessionId',
             'sharing_screen': 'sharingScreen',
             'skip_enabled': 'skipEnabled',
-            'timeout_seconds': 'timeoutSeconds',
             'used_routing': 'usedRouting',
             'video_address_self': 'videoAddressSelf',
             'video_room_id': 'videoRoomId',
@@ -174,7 +173,8 @@ class AnalyticsSession(object):
             'media_endpoint_stats': 'mediaEndpointStats',
             'flow': 'flow',
             'metrics': 'metrics',
-            'segments': 'segments'
+            'segments': 'segments',
+            'timeout_seconds': 'timeoutSeconds'
         }
 
         self._active_skill_ids = None
@@ -234,7 +234,6 @@ class AnalyticsSession(object):
         self._session_id = None
         self._sharing_screen = None
         self._skip_enabled = None
-        self._timeout_seconds = None
         self._used_routing = None
         self._video_address_self = None
         self._video_room_id = None
@@ -243,6 +242,7 @@ class AnalyticsSession(object):
         self._flow = None
         self._metrics = None
         self._segments = None
+        self._timeout_seconds = None
 
     @property
     def active_skill_ids(self):
@@ -1564,29 +1564,6 @@ class AnalyticsSession(object):
         self._skip_enabled = skip_enabled
 
     @property
-    def timeout_seconds(self):
-        """
-        Gets the timeout_seconds of this AnalyticsSession.
-        The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
-
-        :return: The timeout_seconds of this AnalyticsSession.
-        :rtype: int
-        """
-        return self._timeout_seconds
-
-    @timeout_seconds.setter
-    def timeout_seconds(self, timeout_seconds):
-        """
-        Sets the timeout_seconds of this AnalyticsSession.
-        The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
-
-        :param timeout_seconds: The timeout_seconds of this AnalyticsSession.
-        :type: int
-        """
-        
-        self._timeout_seconds = timeout_seconds
-
-    @property
     def used_routing(self):
         """
         Gets the used_routing of this AnalyticsSession.
@@ -1773,6 +1750,29 @@ class AnalyticsSession(object):
         """
         
         self._segments = segments
+
+    @property
+    def timeout_seconds(self):
+        """
+        Gets the timeout_seconds of this AnalyticsSession.
+        The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
+
+        :return: The timeout_seconds of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._timeout_seconds
+
+    @timeout_seconds.setter
+    def timeout_seconds(self, timeout_seconds):
+        """
+        Sets the timeout_seconds of this AnalyticsSession.
+        The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
+
+        :param timeout_seconds: The timeout_seconds of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._timeout_seconds = timeout_seconds
 
     def to_dict(self):
         """

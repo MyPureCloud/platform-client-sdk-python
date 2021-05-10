@@ -25,7 +25,6 @@ import io
 import json
 import ssl
 import certifi
-import logging
 
 # python 2 and python 3 compatibility library
 from six import iteritems
@@ -43,9 +42,6 @@ try:
 except ImportError:
     # for python2
     from urllib import urlencode
-
-
-logger = logging.getLogger(__name__)
 
 
 class RESTResponse(io.IOBase):
@@ -196,9 +192,6 @@ class RESTClientObject(object):
         # we need to decode it to string.
         if sys.version_info > (3,):
             r.data = r.data.decode('utf8')
-
-        # log response body
-        logger.debug("response body: %s" % r.data)
 
         if r.status not in range(200, 206):
             raise ApiException(http_resp=r)

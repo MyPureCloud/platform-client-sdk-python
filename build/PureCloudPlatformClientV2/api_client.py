@@ -295,7 +295,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '116.0.0'
+        header_params['purecloud-sdk'] = '117.0.0'
 
         # path parameters
         if path_params:
@@ -332,6 +332,8 @@ class ApiClient(object):
             # perform request and return response
             response_data = self.request(method, url, query_params=query_params,
                                         headers=header_params, post_params=post_params, body=body)
+            Configuration().logger.trace(method, url, body, response_data.status, header_params, response_data.getheaders())
+            Configuration().logger.debug(method, url, body, response_data.status, header_params)
         except ApiException as e:
             if Configuration().should_refresh_access_token and e.status == 401 and self.refresh_token != "":
                 self.handle_expired_access_token()
@@ -339,6 +341,7 @@ class ApiClient(object):
                             query_params, header_params, body, post_params,
                             files, response_type, auth_settings, callback)
             else:
+                Configuration().logger.error(method, url, body, e.status, header_params, e.body, e.headers)
                 raise
 
         self.last_response = response_data

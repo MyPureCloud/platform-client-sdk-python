@@ -53,6 +53,7 @@ class NluDomainVersion(object):
             'evaluation_status': 'str',
             'intents': 'list[IntentDefinition]',
             'entity_types': 'list[NamedEntityTypeDefinition]',
+            'entities': 'list[NamedEntityDefinition]',
             'self_uri': 'str'
         }
 
@@ -70,6 +71,7 @@ class NluDomainVersion(object):
             'evaluation_status': 'evaluationStatus',
             'intents': 'intents',
             'entity_types': 'entityTypes',
+            'entities': 'entities',
             'self_uri': 'selfUri'
         }
 
@@ -86,6 +88,7 @@ class NluDomainVersion(object):
         self._evaluation_status = None
         self._intents = None
         self._entity_types = None
+        self._entities = None
         self._self_uri = None
 
     @property
@@ -394,6 +397,29 @@ class NluDomainVersion(object):
         """
         
         self._entity_types = entity_types
+
+    @property
+    def entities(self):
+        """
+        Gets the entities of this NluDomainVersion.
+        The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings
+
+        :return: The entities of this NluDomainVersion.
+        :rtype: list[NamedEntityDefinition]
+        """
+        return self._entities
+
+    @entities.setter
+    def entities(self, entities):
+        """
+        Sets the entities of this NluDomainVersion.
+        The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings
+
+        :param entities: The entities of this NluDomainVersion.
+        :type: list[NamedEntityDefinition]
+        """
+        
+        self._entities = entities
 
     @property
     def self_uri(self):

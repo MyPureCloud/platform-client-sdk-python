@@ -78,7 +78,7 @@ class BotAggregationView(object):
         :param target: The target of this BotAggregationView.
         :type: str
         """
-        allowed_values = ["nBotSessions", "oBotIntent", "oBotSessionTurn", "oBotSlot", "tBotSession"]
+        allowed_values = ["nBotSessions", "oBotIntent", "oBotSessionTurn", "oBotSlot", "tBotDisconnect", "tBotExit", "tBotRecognitionFailure", "tBotSession"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

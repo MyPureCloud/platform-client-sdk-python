@@ -43,20 +43,20 @@ class AnalyticsResolution(object):
             'event_time': 'datetime',
             'queue_id': 'str',
             'user_id': 'str',
-            'n_next_contact_avoided': 'int'
+            'getn_next_contact_avoided': 'int'
         }
 
         self.attribute_map = {
             'event_time': 'eventTime',
             'queue_id': 'queueId',
             'user_id': 'userId',
-            'n_next_contact_avoided': 'nNextContactAvoided'
+            'getn_next_contact_avoided': 'getnNextContactAvoided'
         }
 
         self._event_time = None
         self._queue_id = None
         self._user_id = None
-        self._n_next_contact_avoided = None
+        self._getn_next_contact_avoided = None
 
     @property
     def event_time(self):
@@ -128,27 +128,27 @@ class AnalyticsResolution(object):
         self._user_id = user_id
 
     @property
-    def n_next_contact_avoided(self):
+    def getn_next_contact_avoided(self):
         """
-        Gets the n_next_contact_avoided of this AnalyticsResolution.
+        Gets the getn_next_contact_avoided of this AnalyticsResolution.
+        The number of interactions for which next contact was avoided.
 
-
-        :return: The n_next_contact_avoided of this AnalyticsResolution.
+        :return: The getn_next_contact_avoided of this AnalyticsResolution.
         :rtype: int
         """
-        return self._n_next_contact_avoided
+        return self._getn_next_contact_avoided
 
-    @n_next_contact_avoided.setter
-    def n_next_contact_avoided(self, n_next_contact_avoided):
+    @getn_next_contact_avoided.setter
+    def getn_next_contact_avoided(self, getn_next_contact_avoided):
         """
-        Sets the n_next_contact_avoided of this AnalyticsResolution.
+        Sets the getn_next_contact_avoided of this AnalyticsResolution.
+        The number of interactions for which next contact was avoided.
 
-
-        :param n_next_contact_avoided: The n_next_contact_avoided of this AnalyticsResolution.
+        :param getn_next_contact_avoided: The getn_next_contact_avoided of this AnalyticsResolution.
         :type: int
         """
         
-        self._n_next_contact_avoided = n_next_contact_avoided
+        self._getn_next_contact_avoided = getn_next_contact_avoided
 
     def to_dict(self):
         """

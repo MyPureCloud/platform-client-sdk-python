@@ -26,6 +26,7 @@ from .journey_api import JourneyApi
 from .knowledge_api import KnowledgeApi
 from .language_understanding_api import LanguageUnderstandingApi
 from .languages_api import LanguagesApi
+from .learning_api import LearningApi
 from .license_api import LicenseApi
 from .locations_api import LocationsApi
 from .mobile_devices_api import MobileDevicesApi

@@ -26,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_coaching_appointment_conversations**](CoachingApi.html#post_coaching_appointment_conversations) | Add a conversation to an appointment|
 |[**post_coaching_appointments**](CoachingApi.html#post_coaching_appointments) | Create a new appointment|
 |[**post_coaching_appointments_aggregates_query**](CoachingApi.html#post_coaching_appointments_aggregates_query) | Retrieve aggregated appointment data|
+|[**post_coaching_scheduleslots_query**](CoachingApi.html#post_coaching_scheduleslots_query) | Get list of possible slots where a coaching appointment can be scheduled.|
 {: class="table table-striped"}
 
 <a name="delete_coaching_appointment"></a>
@@ -1013,4 +1014,55 @@ except ApiException as e:
 ### Return type
 
 [**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse.html)
+
+<a name="post_coaching_scheduleslots_query"></a>
+
+## [**CoachingSlotsResponse**](CoachingSlotsResponse.html) post_coaching_scheduleslots_query(body)
+
+
+
+Get list of possible slots where a coaching appointment can be scheduled.
+
+
+
+Wraps POST /api/v2/coaching/scheduleslots/query 
+
+Requires ANY permissions: 
+
+* coaching:scheduleSlot:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CoachingApi()
+body = PureCloudPlatformClientV2.CoachingSlotsRequest() # CoachingSlotsRequest | The slot search request
+
+try:
+    # Get list of possible slots where a coaching appointment can be scheduled.
+    api_response = api_instance.post_coaching_scheduleslots_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CoachingApi->post_coaching_scheduleslots_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CoachingSlotsRequest**](CoachingSlotsRequest.html)| The slot search request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CoachingSlotsResponse**](CoachingSlotsResponse.html)
 

@@ -68,7 +68,7 @@ apiclient, auth_token_info = apiclient.get_code_authorization_token("565c3091-41
 usersApi = PureCloudPlatformClientV2.UsersApi(apiclient)
 ```
 
-By default the SDK will use the refresh token to request a new access token transparently when it expires. If multiple threads are running 1 thread will request a new token, other threads will wait a maximum of 10 seconds for the token refresh to complete, this time can be overriden with the _refresh_token_wait_time_ field of the _Configuration_ object.  
+By default, the SDK will use the refresh token to request a new access token transparently when it expires. If multiple threads are running, 1 thread will request a new token. Other threads will wait a maximum of 10 seconds for the token refresh to complete This time can be overridden with the _refresh_token_wait_time_ field of the _Configuration_ object.  
 If you wish to implement the refresh logic, set _should_refresh_access_token_ to false and store the refresh token from the auth response. The expires_in value can be used to proactively request a new one before it expires:
 
 ```{"language":"python"}
@@ -77,7 +77,7 @@ expires_in = auth_token_info["expires_in"]
 PureCloudPlatformClientV2.configuration.should_refresh_access_token = False
 ```
 
-When the access token expires refresh it using the refresh_code_authorization_token method using the same clientId and clientSecret as used to request it.
+When the access token expires, refresh it using the refresh_code_authorization_token method using the same clientId and clientSecret as used to request it.
 
 ```{"language":"python"}
 apiclient, auth_token_info = apiclient.refresh_code_authorization_token("565c3091-4107-4675-b606-b1fead2d15a4",
@@ -109,7 +109,83 @@ PureCloudPlatformClientV2.configuration.proxy_username = 'YOUR_PROXY_USERNAME'
 PureCloudPlatformClientV2.configuration.proxy_password = 'YOUR_PROXY_PASSWORD'
 ```
 
-The Python SDK uses `urllib3.ProxyManager` to make requests when `proxy` is given.
+The Python SDK uses `urllib3.ProxyManager` to make requests when `proxy` is provided.
+
+#### SDK Logging
+
+Logging of API requests and responses can be controlled by several parameters on the `configuration`'s `logging` instance.
+
+`PureCloudPlatformClientV2.logger.LogLevel` values:
+1. LTrace (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers, Response Headers)
+2. LDebug (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers)
+3. LError (HTTP Method, URL, Request Body, Response Body, HTTP Status Code, Request Headers, Response Headers)
+4. LNone - default
+
+`PureCloudPlatformClientV2.logger.LogFormat` values:
+1. JSON
+2. TEXT - default
+
+By default, the request and response bodies are not logged because these can contain PII. Be mindful of this data if choosing to log it.  
+To log to a file, provide a file path to the the `PureCloudPlatformClientV2.configuration.logger.log_file_path` property. SDK users are responsible for the rotation of the log file.
+
+Example logging configuration:
+```python
+PureCloudPlatformClientV2.configuration.logger.log_level = PureCloudPlatformClientV2.logger.LogLevel.LError
+PureCloudPlatformClientV2.configuration.logger.log_request_body = True
+PureCloudPlatformClientV2.configuration.logger.log_response_body = True
+PureCloudPlatformClientV2.configuration.logger.log_format = PureCloudPlatformClientV2.logger.LogFormat.TEXT
+PureCloudPlatformClientV2.configuration.logger.log_to_console = False
+PureCloudPlatformClientV2.configuration.logger.log_file_path = "/var/log/pythonsdk.log"
+```
+
+#### Configuration file
+
+Several configuration parameters can be applied using a configuration file. There are two sources for this file:
+
+1. The SDK will look for `%HOME%\.genesyscloudpython\config` or `%USERPROFILE%\.genesyscloudpython\config` if `%HOME%` is not set on Windows, or `$HOME/.genesyscloudpython/config` on Unix.
+2. Set the `PureCloudPlatformClientV2.configuration.config_file_path` property to the path of your configuration file.
+
+The SDK will take an event-driven approach to monitor for config file changes and will apply changes in near real-time, regardless of whether a config file was present at start-up. To disable this behavior, set `PureCloudPlatformClientV2.configuration.live_reload_config` to false.  
+INI and JSON formats are supported. See below for examples of configuration values in both formats:
+
+INI:
+```ini
+[logging]
+log_level = trace
+log_format = text
+log_to_console = false
+log_file_path = /var/log/pythonsdk.log
+log_response_body = false
+log_request_body = false
+[reauthentication]
+refresh_access_token = true
+refresh_token_wait_max = 10
+[general]
+live_reload_config = true
+host = https://api.mypurecloud.com
+```
+
+JSON:
+```json
+{
+    "logging": {
+        "log_level": "trace",
+        "log_format": "text",
+        "log_to_console": false,
+        "log_file_path": "/var/log/pythonsdk.log",
+        "log_response_body": false,
+        "log_request_body": false
+    },
+    "reauthentication": {
+        "refresh_access_token": true,
+        "refresh_token_wait_max": 10
+    },
+    "general": {
+        "live_reload_config": true,
+        "host": "https://api.mypurecloud.com"
+    }
+}
+```
 
 ### Making Requests
 

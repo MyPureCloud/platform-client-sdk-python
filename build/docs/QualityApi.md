@@ -13,8 +13,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_quality_form**](QualityApi.html#delete_quality_form) | Delete an evaluation form.|
 |[**delete_quality_forms_evaluation**](QualityApi.html#delete_quality_forms_evaluation) | Delete an evaluation form.|
 |[**delete_quality_forms_survey**](QualityApi.html#delete_quality_forms_survey) | Delete a survey form.|
-|[**delete_quality_keywordset**](QualityApi.html#delete_quality_keywordset) | Delete a keywordSet by id.|
-|[**delete_quality_keywordsets**](QualityApi.html#delete_quality_keywordsets) | Delete keyword sets|
 |[**get_quality_agents_activity**](QualityApi.html#get_quality_agents_activity) | Gets a list of Agent Activities|
 |[**get_quality_calibration**](QualityApi.html#get_quality_calibration) | Get a calibration by id.  Requires either calibrator id or conversation id|
 |[**get_quality_calibrations**](QualityApi.html#get_quality_calibrations) | Get the list of calibrations|
@@ -34,8 +32,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_forms_surveys**](QualityApi.html#get_quality_forms_surveys) | Get the list of survey forms|
 |[**get_quality_forms_surveys_bulk**](QualityApi.html#get_quality_forms_surveys_bulk) | Retrieve a list of survey forms by their ids|
 |[**get_quality_forms_surveys_bulk_contexts**](QualityApi.html#get_quality_forms_surveys_bulk_contexts) | Retrieve a list of the latest form versions by context ids|
-|[**get_quality_keywordset**](QualityApi.html#get_quality_keywordset) | Get a keywordSet by id.|
-|[**get_quality_keywordsets**](QualityApi.html#get_quality_keywordsets) | Get the list of keyword sets|
 |[**get_quality_publishedform**](QualityApi.html#get_quality_publishedform) | Get the published evaluation forms.|
 |[**get_quality_publishedforms**](QualityApi.html#get_quality_publishedforms) | Get the published evaluation forms.|
 |[**get_quality_publishedforms_evaluation**](QualityApi.html#get_quality_publishedforms_evaluation) | Get the most recent published version of an evaluation form.|
@@ -53,18 +49,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_quality_forms**](QualityApi.html#post_quality_forms) | Create an evaluation form.|
 |[**post_quality_forms_evaluations**](QualityApi.html#post_quality_forms_evaluations) | Create an evaluation form.|
 |[**post_quality_forms_surveys**](QualityApi.html#post_quality_forms_surveys) | Create a survey form.|
-|[**post_quality_keywordsets**](QualityApi.html#post_quality_keywordsets) | Create a Keyword Set|
 |[**post_quality_publishedforms**](QualityApi.html#post_quality_publishedforms) | Publish an evaluation form.|
 |[**post_quality_publishedforms_evaluations**](QualityApi.html#post_quality_publishedforms_evaluations) | Publish an evaluation form.|
 |[**post_quality_publishedforms_surveys**](QualityApi.html#post_quality_publishedforms_surveys) | Publish a survey form.|
-|[**post_quality_spotability**](QualityApi.html#post_quality_spotability) | Retrieve the spotability statistic|
 |[**post_quality_surveys_scoring**](QualityApi.html#post_quality_surveys_scoring) | Score survey|
 |[**put_quality_calibration**](QualityApi.html#put_quality_calibration) | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex|
 |[**put_quality_conversation_evaluation**](QualityApi.html#put_quality_conversation_evaluation) | Update an evaluation|
 |[**put_quality_form**](QualityApi.html#put_quality_form) | Update an evaluation form.|
 |[**put_quality_forms_evaluation**](QualityApi.html#put_quality_forms_evaluation) | Update an evaluation form.|
 |[**put_quality_forms_survey**](QualityApi.html#put_quality_forms_survey) | Update a survey form.|
-|[**put_quality_keywordset**](QualityApi.html#put_quality_keywordset) | Update a keywordSet to the specified keywordSet via PUT.|
 |[**put_quality_surveys_scorable**](QualityApi.html#put_quality_surveys_scorable) | Update a survey as an end-customer, for the purposes of scoring it.|
 {: class="table table-striped"}
 
@@ -320,106 +313,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
-
-<a name="delete_quality_keywordset"></a>
-
-##  delete_quality_keywordset(keyword_set_id)
-
-
-
-Delete a keywordSet by id.
-
-
-
-Wraps DELETE /api/v2/quality/keywordsets/{keywordSetId} 
-
-Requires ANY permissions: 
-
-* quality:keywordset:delete
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.QualityApi()
-keyword_set_id = 'keyword_set_id_example' # str | KeywordSet ID
-
-try:
-    # Delete a keywordSet by id.
-    api_instance.delete_quality_keywordset(keyword_set_id)
-except ApiException as e:
-    print("Exception when calling QualityApi->delete_quality_keywordset: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **keyword_set_id** | **str**| KeywordSet ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
-
-<a name="delete_quality_keywordsets"></a>
-
-##  delete_quality_keywordsets(ids)
-
-
-
-Delete keyword sets
-
-Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-
-Wraps DELETE /api/v2/quality/keywordsets 
-
-Requires ANY permissions: 
-
-* quality:keywordset:delete
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.QualityApi()
-ids = 'ids_example' # str | A comma-delimited list of valid KeywordSet ids
-
-try:
-    # Delete keyword sets
-    api_instance.delete_quality_keywordsets(ids)
-except ApiException as e:
-    print("Exception when calling QualityApi->delete_quality_keywordsets: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **ids** | **str**| A comma-delimited list of valid KeywordSet ids |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1576,126 +1469,6 @@ except ApiException as e:
 
 [**SurveyFormEntityListing**](SurveyFormEntityListing.html)
 
-<a name="get_quality_keywordset"></a>
-
-## [**KeywordSet**](KeywordSet.html) get_quality_keywordset(keyword_set_id)
-
-
-
-Get a keywordSet by id.
-
-
-
-Wraps GET /api/v2/quality/keywordsets/{keywordSetId} 
-
-Requires ANY permissions: 
-
-* quality:keywordset:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.QualityApi()
-keyword_set_id = 'keyword_set_id_example' # str | KeywordSet ID
-
-try:
-    # Get a keywordSet by id.
-    api_response = api_instance.get_quality_keywordset(keyword_set_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling QualityApi->get_quality_keywordset: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **keyword_set_id** | **str**| KeywordSet ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**KeywordSet**](KeywordSet.html)
-
-<a name="get_quality_keywordsets"></a>
-
-## [**KeywordSetEntityListing**](KeywordSetEntityListing.html) get_quality_keywordsets(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, queue_id=queue_id, agent_id=agent_id, operator=operator)
-
-
-
-Get the list of keyword sets
-
-
-
-Wraps GET /api/v2/quality/keywordsets 
-
-Requires ANY permissions: 
-
-* quality:keywordset:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.QualityApi()
-page_size = 25 # int | The total page size requested (optional) (default to 25)
-page_number = 1 # int | The page number requested (optional) (default to 1)
-sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
-next_page = 'next_page_example' # str | next page token (optional)
-previous_page = 'previous_page_example' # str | Previous page token (optional)
-name = 'name_example' # str | the keyword set name - used for filtering results in searches. (optional)
-queue_id = 'queue_id_example' # str | the queue id - used for filtering results in searches. (optional)
-agent_id = 'agent_id_example' # str | the agent id - used for filtering results in searches. (optional)
-operator = 'operator_example' # str | If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. (optional)
-
-try:
-    # Get the list of keyword sets
-    api_response = api_instance.get_quality_keywordsets(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, queue_id=queue_id, agent_id=agent_id, operator=operator)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling QualityApi->get_quality_keywordsets: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
-| **page_number** | **int**| The page number requested | [optional] [default to 1] |
-| **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
-| **next_page** | **str**| next page token | [optional]  |
-| **previous_page** | **str**| Previous page token | [optional]  |
-| **name** | **str**| the keyword set name - used for filtering results in searches. | [optional]  |
-| **queue_id** | **str**| the queue id - used for filtering results in searches. | [optional]  |
-| **agent_id** | **str**| the agent id - used for filtering results in searches. | [optional]  |
-| **operator** | **str**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional] <br />**Values**: AND, OR |
-{: class="table table-striped"}
-
-### Return type
-
-[**KeywordSetEntityListing**](KeywordSetEntityListing.html)
-
 <a name="get_quality_publishedform"></a>
 
 ## [**EvaluationForm**](EvaluationForm.html) get_quality_publishedform(form_id)
@@ -2584,59 +2357,6 @@ except ApiException as e:
 
 [**SurveyForm**](SurveyForm.html)
 
-<a name="post_quality_keywordsets"></a>
-
-## [**KeywordSet**](KeywordSet.html) post_quality_keywordsets(body, expand=expand)
-
-
-
-Create a Keyword Set
-
-
-
-Wraps POST /api/v2/quality/keywordsets 
-
-Requires ANY permissions: 
-
-* quality:keywordset:add
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.QualityApi()
-body = PureCloudPlatformClientV2.KeywordSet() # KeywordSet | keywordSet
-expand = 'expand_example' # str | queueId (optional)
-
-try:
-    # Create a Keyword Set
-    api_response = api_instance.post_quality_keywordsets(body, expand=expand)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling QualityApi->post_quality_keywordsets: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet |  |
-| **expand** | **str**| queueId | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-[**KeywordSet**](KeywordSet.html)
-
 <a name="post_quality_publishedforms"></a>
 
 ## [**EvaluationForm**](EvaluationForm.html) post_quality_publishedforms(body)
@@ -2789,56 +2509,6 @@ except ApiException as e:
 ### Return type
 
 [**SurveyForm**](SurveyForm.html)
-
-<a name="post_quality_spotability"></a>
-
-## [**KeywordSet**](KeywordSet.html) post_quality_spotability(body=body)
-
-
-
-Retrieve the spotability statistic
-
-
-
-Wraps POST /api/v2/quality/spotability 
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.QualityApi()
-body = PureCloudPlatformClientV2.KeywordSet() # KeywordSet | Keyword Set (optional)
-
-try:
-    # Retrieve the spotability statistic
-    api_response = api_instance.post_quality_spotability(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling QualityApi->post_quality_spotability: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**KeywordSet**](KeywordSet.html)| Keyword Set | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-[**KeywordSet**](KeywordSet.html)
 
 <a name="post_quality_surveys_scoring"></a>
 
@@ -3160,59 +2830,6 @@ except ApiException as e:
 ### Return type
 
 [**SurveyForm**](SurveyForm.html)
-
-<a name="put_quality_keywordset"></a>
-
-## [**KeywordSet**](KeywordSet.html) put_quality_keywordset(keyword_set_id, body)
-
-
-
-Update a keywordSet to the specified keywordSet via PUT.
-
-
-
-Wraps PUT /api/v2/quality/keywordsets/{keywordSetId} 
-
-Requires ANY permissions: 
-
-* quality:keywordset:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.QualityApi()
-keyword_set_id = 'keyword_set_id_example' # str | KeywordSet ID
-body = PureCloudPlatformClientV2.KeywordSet() # KeywordSet | keywordSet
-
-try:
-    # Update a keywordSet to the specified keywordSet via PUT.
-    api_response = api_instance.put_quality_keywordset(keyword_set_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling QualityApi->put_quality_keywordset: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **keyword_set_id** | **str**| KeywordSet ID |  |
-| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**KeywordSet**](KeywordSet.html)
 
 <a name="put_quality_surveys_scorable"></a>
 

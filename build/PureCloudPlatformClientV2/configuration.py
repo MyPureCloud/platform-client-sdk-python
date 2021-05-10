@@ -29,9 +29,18 @@ except ImportError:
     import http.client as httplib
 
 import sys
-import logging
-
 from six import iteritems
+from os.path import expanduser
+import configparser
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler, FileModifiedEvent
+import os
+import time
+import threading
+import hashlib
+import json
+
+from .logger import Logger, LogFormat, LogLevel
 
 def singleton(cls, *args, **kw):
     instances = {}
@@ -80,21 +89,6 @@ class Configuration(object):
         self.refresh_token_wait_time = 10
 
 
-        # Logging Settings
-        self.logger = {}
-        self.logger["package_logger"] = logging.getLogger("PureCloudPlatformClientV2")
-        self.logger["urllib3_logger"] = logging.getLogger("urllib3")
-        # Log format
-        self.logger_format = '%(asctime)s %(levelname)s %(message)s'
-        # Log stream handler
-        self.logger_stream_handler = None
-        # Log file handler
-        self.logger_file_handler = None
-        # Debug file location
-        self.logger_file = None
-        # Debug switch
-        self.debug = False
-
         # SSL/TLS verification
         # Set this to false to skip verifying SSL certificate when calling API from https server.
         self.verify_ssl = True
@@ -114,93 +108,42 @@ class Configuration(object):
         # proxy password
         self.proxy_password = None
 
-    @property
-    def logger_file(self):
-        """
-        Gets the logger_file.
-        """
-        return self.__logger_file
+        # Logging Settings
+        self.logger = Logger()
 
-    @logger_file.setter
-    def logger_file(self, value):
-        """
-        Sets the logger_file.
+        # Private config file variables
+        # path to the config file
+        # default to ~/.genesyscloudpython/config
+        self.config_file_path = os.path.join(expanduser("~"), ".genesyscloudpython", "config")
+        # private directory observer instance
+        self._observer = None
 
-        If the logger_file is None, then add stream handler and remove file handler.
-        Otherwise, add file handler and remove stream handler.
+        # flag to control running of _config_updater thread
+        self.live_reload_config = True
+ 
+        # update config from config file if possible
+        self._update_config_from_file()
 
-        :param value: The logger_file path.
-        :type: str
-        """
-        self.__logger_file = value
-        if self.__logger_file:
-            # If set logging file,
-            # then add file handler and remove stream handler.
-            self.logger_file_handler = logging.FileHandler(self.__logger_file)
-            self.logger_file_handler.setFormatter(self.logger_formatter)
-            for _, logger in iteritems(self.logger):
-                logger.addHandler(self.logger_file_handler)
-                if self.logger_stream_handler:
-                    logger.removeHandler(self.logger_stream_handler)
-        else:
-            # If not set logging file,
-            # then add stream handler and remove file handler.
-            self.logger_stream_handler = logging.StreamHandler()
-            self.logger_stream_handler.setFormatter(self.logger_formatter)
-            for _, logger in iteritems(self.logger):
-                logger.addHandler(self.logger_stream_handler)
-                if self.logger_file_handler:
-                    logger.removeHandler(self.logger_file_handler)
+        # if live_reload_config set, start the config_updater thread
+        if self.live_reload_config:
+            run_observer = threading.Thread(target=self._run_observer)
+            run_observer.setDaemon(True)
+            run_observer.start()
+
+            self._config_updater()
 
     @property
-    def debug(self):
-        """
-        Gets the debug status.
-        """
-        return self.__debug
+    def config_file_path(self):
+        return self.__config_file_path
 
-    @debug.setter
-    def debug(self, value):
-        """
-        Sets the debug status.
-
-        :param value: The debug status, True or False.
-        :type: bool
-        """
-        self.__debug = value
-        if self.__debug:
-            # if debug status is True, turn on debug logging
-            for _, logger in iteritems(self.logger):
-                logger.setLevel(logging.DEBUG)
-            # turn on httplib debug
-            httplib.HTTPConnection.debuglevel = 1
-        else:
-            # if debug status is False, turn off debug logging,
-            # setting log level to default `logging.WARNING`
-            for _, logger in iteritems(self.logger):
-                logger.setLevel(logging.WARNING)
-            # turn off httplib debug
-            httplib.HTTPConnection.debuglevel = 0
-
-    @property
-    def logger_format(self):
-        """
-        Gets the logger_format.
-        """
-        return self.__logger_format
-
-    @logger_format.setter
-    def logger_format(self, value):
-        """
-        Sets the logger_format.
-
-        The logger_formatter will be updated when sets logger_format.
-
-        :param value: The format string.
-        :type: str
-        """
-        self.__logger_format = value
-        self.logger_formatter = logging.Formatter(self.__logger_format)
+    @config_file_path.setter
+    def config_file_path(self, value):
+        self.__config_file_path = value
+        self._update_config_from_file()
+        if not hasattr(self, "_observer"):
+            return
+        if self.live_reload_config:
+            self._config_updater()
 
     def get_api_key_with_prefix(self, identifier):
         """
@@ -259,5 +202,135 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 116.0.0".\
+               "SDK Package Version: 117.0.0".\
                format(env=sys.platform, pyversion=sys.version)
+
+    def _update_config_from_file(self):
+        try:
+            config = configparser.ConfigParser()
+            # try to parse as INI format
+            try:
+                # if it doesn't exist, this function will return []
+                if config.read(self.config_file_path) == []:
+                    return
+            except configparser.MissingSectionHeaderError as e:
+                # this exception means it's possibly JSON
+                try:
+                    with open(self.config_file_path, "r") as read_file:
+                        config = json.load(read_file)
+                except Exception:
+                    return
+            # logging
+            log_level = _get_config_string(config, "logging", "log_level")
+            if log_level is not None:
+                self.logger.log_level = LogLevel.from_string(log_level)
+
+            log_format = _get_config_string(config, "logging", "log_format")
+            if log_format is not None:
+                self.logger.log_format = LogFormat.from_string(log_format)
+            
+            log_to_console = _get_config_bool(config, "logging", "log_to_console")
+            if log_to_console is not None:
+                self.logger.log_to_console = log_to_console
+
+            log_file_path = _get_config_string(config, "logging", "log_file_path")
+            if log_file_path is not None:
+                self.logger.log_file_path = log_file_path
+
+            log_response_body = _get_config_bool(config, "logging", "log_response_body")
+            if log_response_body is not None:
+                self.logger.log_response_body = log_response_body
+
+            log_request_body = _get_config_bool(config, "logging", "log_request_body")
+            if log_request_body is not None:
+                self.logger.log_request_body = log_request_body
+            
+            # general
+            host = _get_config_string(config, "general", "host")
+            if host is not None:
+                self.host = host
+
+            live_reload_config = _get_config_bool(config, "general", "live_reload_config")
+            if live_reload_config is not None:
+                self.live_reload_config = live_reload_config
+
+            # reauthentication
+            refresh_access_token = _get_config_bool(config, "reauthentication", "refresh_access_token")
+            if refresh_access_token is not None:
+                self.should_refresh_access_token = refresh_access_token
+            
+            refresh_token_wait_max = _get_config_int(config, "reauthentication", "refresh_token_wait_max")
+            if refresh_token_wait_max is not None:
+                self.refresh_token_wait_time = refresh_token_wait_max
+        except Exception:
+            return
+
+    def _run_observer(self):
+        self._observer = Observer()
+        self._observer.start()
+        try:
+            while True:
+                time.sleep(1)
+        finally:
+            self._observer.stop()
+            self._observer.join()
+
+    def _config_updater(self):
+        if self._observer is not None:
+            self._observer.unschedule_all()
+        event_handler = ConfigFileEventHandler(self)
+
+        # watch the parent directory of the config file
+        watched_directory = os.path.dirname(self.config_file_path)
+        # go up the directory tree if the parent directory doesn't yet exist
+        while not os.path.exists(watched_directory):
+            watched_directory = os.path.dirname(watched_directory)
+            if watched_directory == "":
+                return
+
+        while True:
+            try:
+                self._observer.schedule(event_handler, watched_directory, recursive=True)
+                break
+            except FileNotFoundError:
+                watched_directory = os.path.dirname(watched_directory)
+                if watched_directory == "":
+                    return
+            except Exception as e:
+                return
+
+def _get_config_string(config, section, key):
+        try:
+            return str(config[section][key]).strip()
+        except:
+            return None
+
+def _get_config_bool(config, section, key):
+        try:
+            if type(config) == configparser.ConfigParser:
+                return config.getboolean(section, key)
+            else:
+                return config[section][key]
+        except:
+            return None
+
+def _get_config_int(config, section, key):
+        try:
+            if type(config) == configparser.ConfigParser:
+                return config.getint(section, key)
+            else:
+                return config[section][key]
+        except:
+            return None
+
+class ConfigFileEventHandler(FileSystemEventHandler):
+    def __init__(self, configuration):
+        super()
+        self.configuration = configuration
+        self.config_file_path = self.configuration.config_file_path
+
+    def on_modified(self, event):
+        # only respond if the config file has been modified
+        if type(event) == FileModifiedEvent and event.src_path == self.config_file_path:
+            if self.configuration.live_reload_config:
+                self.configuration._update_config_from_file()
