@@ -141,7 +141,11 @@ class ViewFilter(object):
             'customer_sentiment_score': 'NumericRange',
             'customer_sentiment_trend': 'NumericRange',
             'flow_transfer_targets': 'list[str]',
-            'development_name': 'str'
+            'development_name': 'str',
+            'topic_ids': 'list[str]',
+            'external_tags': 'list[str]',
+            'is_not_responding': 'bool',
+            'is_authenticated': 'bool'
         }
 
         self.attribute_map = {
@@ -246,7 +250,11 @@ class ViewFilter(object):
             'customer_sentiment_score': 'customerSentimentScore',
             'customer_sentiment_trend': 'customerSentimentTrend',
             'flow_transfer_targets': 'flowTransferTargets',
-            'development_name': 'developmentName'
+            'development_name': 'developmentName',
+            'topic_ids': 'topicIds',
+            'external_tags': 'externalTags',
+            'is_not_responding': 'isNotResponding',
+            'is_authenticated': 'isAuthenticated'
         }
 
         self._media_types = None
@@ -351,6 +359,10 @@ class ViewFilter(object):
         self._customer_sentiment_trend = None
         self._flow_transfer_targets = None
         self._development_name = None
+        self._topic_ids = None
+        self._external_tags = None
+        self._is_not_responding = None
+        self._is_authenticated = None
 
     @property
     def media_types(self):
@@ -2697,6 +2709,98 @@ class ViewFilter(object):
         """
         
         self._development_name = development_name
+
+    @property
+    def topic_ids(self):
+        """
+        Gets the topic_ids of this ViewFilter.
+        Represents the topics detected in the transcript
+
+        :return: The topic_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._topic_ids
+
+    @topic_ids.setter
+    def topic_ids(self, topic_ids):
+        """
+        Sets the topic_ids of this ViewFilter.
+        Represents the topics detected in the transcript
+
+        :param topic_ids: The topic_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._topic_ids = topic_ids
+
+    @property
+    def external_tags(self):
+        """
+        Gets the external_tags of this ViewFilter.
+        The list of external Tags used to filter conversation data
+
+        :return: The external_tags of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._external_tags
+
+    @external_tags.setter
+    def external_tags(self, external_tags):
+        """
+        Sets the external_tags of this ViewFilter.
+        The list of external Tags used to filter conversation data
+
+        :param external_tags: The external_tags of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._external_tags = external_tags
+
+    @property
+    def is_not_responding(self):
+        """
+        Gets the is_not_responding of this ViewFilter.
+        Indicates filtering for not responding users
+
+        :return: The is_not_responding of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_not_responding
+
+    @is_not_responding.setter
+    def is_not_responding(self, is_not_responding):
+        """
+        Sets the is_not_responding of this ViewFilter.
+        Indicates filtering for not responding users
+
+        :param is_not_responding: The is_not_responding of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_not_responding = is_not_responding
+
+    @property
+    def is_authenticated(self):
+        """
+        Gets the is_authenticated of this ViewFilter.
+        Indicates filtering for the authenticated chat
+
+        :return: The is_authenticated of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_authenticated
+
+    @is_authenticated.setter
+    def is_authenticated(self, is_authenticated):
+        """
+        Sets the is_authenticated of this ViewFilter.
+        Indicates filtering for the authenticated chat
+
+        :param is_authenticated: The is_authenticated of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_authenticated = is_authenticated
 
     def to_dict(self):
         """

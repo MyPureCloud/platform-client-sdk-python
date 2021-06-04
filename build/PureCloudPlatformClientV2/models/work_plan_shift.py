@@ -61,7 +61,8 @@ class WorkPlanShift(object):
             'maximum_contiguous_work_time_minutes': 'int',
             'activities': 'list[WorkPlanActivity]',
             'id': 'str',
-            'delete': 'bool'
+            'delete': 'bool',
+            'validation_id': 'str'
         }
 
         self.attribute_map = {
@@ -86,7 +87,8 @@ class WorkPlanShift(object):
             'maximum_contiguous_work_time_minutes': 'maximumContiguousWorkTimeMinutes',
             'activities': 'activities',
             'id': 'id',
-            'delete': 'delete'
+            'delete': 'delete',
+            'validation_id': 'validationId'
         }
 
         self._name = None
@@ -111,6 +113,7 @@ class WorkPlanShift(object):
         self._activities = None
         self._id = None
         self._delete = None
+        self._validation_id = None
 
     @property
     def name(self):
@@ -617,6 +620,29 @@ class WorkPlanShift(object):
         """
         
         self._delete = delete
+
+    @property
+    def validation_id(self):
+        """
+        Gets the validation_id of this WorkPlanShift.
+        ID of shift in the context of work plan validation
+
+        :return: The validation_id of this WorkPlanShift.
+        :rtype: str
+        """
+        return self._validation_id
+
+    @validation_id.setter
+    def validation_id(self, validation_id):
+        """
+        Sets the validation_id of this WorkPlanShift.
+        ID of shift in the context of work plan validation
+
+        :param validation_id: The validation_id of this WorkPlanShift.
+        :type: str
+        """
+        
+        self._validation_id = validation_id
 
     def to_dict(self):
         """

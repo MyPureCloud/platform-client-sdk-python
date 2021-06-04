@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_learning_modules**](LearningApi.html#get_learning_modules) | Get all learning modules of an organization|
 |[**patch_learning_assignment**](LearningApi.html#patch_learning_assignment) | Update Learning Assignment|
 |[**post_learning_assignments**](LearningApi.html#post_learning_assignments) | Create Learning Assignment|
+|[**post_learning_assignments_aggregates_query**](LearningApi.html#post_learning_assignments_aggregates_query) | Retrieve aggregated assignment data|
 |[**post_learning_assignments_bulkadd**](LearningApi.html#post_learning_assignments_bulkadd) | Add multiple learning assignments|
 |[**post_learning_assignments_bulkremove**](LearningApi.html#post_learning_assignments_bulkremove) | Remove multiple Learning Assignments|
 |[**post_learning_module_publish**](LearningApi.html#post_learning_module_publish) | Publish a Learning module|
@@ -651,6 +652,57 @@ except ApiException as e:
 
 [**LearningAssignment**](LearningAssignment.html)
 
+<a name="post_learning_assignments_aggregates_query"></a>
+
+## [**LearningAssignmentAggregateResponse**](LearningAssignmentAggregateResponse.html) post_learning_assignments_aggregates_query(body)
+
+
+
+Retrieve aggregated assignment data
+
+
+
+Wraps POST /api/v2/learning/assignments/aggregates/query 
+
+Requires ANY permissions: 
+
+* learning:assignment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+body = PureCloudPlatformClientV2.LearningAssignmentAggregateParam() # LearningAssignmentAggregateParam | Aggregate Request
+
+try:
+    # Retrieve aggregated assignment data
+    api_response = api_instance.post_learning_assignments_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_assignments_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**LearningAssignmentAggregateParam**](LearningAssignmentAggregateParam.html)| Aggregate Request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningAssignmentAggregateResponse**](LearningAssignmentAggregateResponse.html)
+
 <a name="post_learning_assignments_bulkadd"></a>
 
 ## [**LearningAssignmentBulkAddResponse**](LearningAssignmentBulkAddResponse.html) post_learning_assignments_bulkadd(body=body)
@@ -704,7 +756,7 @@ except ApiException as e:
 
 <a name="post_learning_assignments_bulkremove"></a>
 
-##  post_learning_assignments_bulkremove(body=body)
+## [**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse.html) post_learning_assignments_bulkremove(body=body)
 
 
 
@@ -735,7 +787,8 @@ body = [PureCloudPlatformClientV2.list[str]()] # list[str] | The IDs of the lear
 
 try:
     # Remove multiple Learning Assignments
-    api_instance.post_learning_assignments_bulkremove(body=body)
+    api_response = api_instance.post_learning_assignments_bulkremove(body=body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->post_learning_assignments_bulkremove: %s\n" % e)
 ```
@@ -750,7 +803,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse.html)
 
 <a name="post_learning_module_publish"></a>
 

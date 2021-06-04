@@ -7,13 +7,13 @@ title: MessagingRecipient
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **nickname** | **str** | Nickname/user name | [optional] |
-| **id** | **str** | The recipient identifier specific for particular channel/integration. This is required when sending a message. | |
-| **id_type** | **str** | The recipient identifier type. This is used to indicate the format used by the recipient identifier. | [optional] |
-| **image** | **str** | Path or URI to an image file containing an avatar | [optional] |
-| **first_name** | **str** | Sender&#39;s first name | [optional] |
-| **last_name** | **str** | Sender&#39;s last name | [optional] |
-| **email** | **str** | Sender&#39;s email address | [optional] |
+| **nickname** | **str** | Nickname or display name of the recipient. | [optional] |
+| **id** | **str** | The recipient ID specific to the provider. | |
+| **id_type** | **str** | The recipient ID type. This is used to indicate the format used for the ID. | [optional] |
+| **image** | **str** | URL of an image that represents the recipient. | [optional] |
+| **first_name** | **str** | First name of the recipient. | [optional] |
+| **last_name** | **str** | Last name of the recipient. | [optional] |
+| **email** | **str** | E-mail address of the recipient. | [optional] |
 {: class="table table-striped"}
 
 

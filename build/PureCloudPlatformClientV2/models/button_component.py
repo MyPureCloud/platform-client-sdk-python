@@ -62,7 +62,7 @@ class ButtonComponent(object):
     def id(self):
         """
         Gets the id of this ButtonComponent.
-        An ID assigned to this component
+        The ID of this component.
 
         :return: The id of this ButtonComponent.
         :rtype: str
@@ -73,7 +73,7 @@ class ButtonComponent(object):
     def id(self, id):
         """
         Sets the id of this ButtonComponent.
-        An ID assigned to this component
+        The ID of this component.
 
         :param id: The id of this ButtonComponent.
         :type: str
@@ -85,7 +85,7 @@ class ButtonComponent(object):
     def text(self):
         """
         Gets the text of this ButtonComponent.
-        Deprecated - Use title instead
+        Deprecated - Use title instead.
 
         :return: The text of this ButtonComponent.
         :rtype: str
@@ -96,7 +96,7 @@ class ButtonComponent(object):
     def text(self, text):
         """
         Sets the text of this ButtonComponent.
-        Deprecated - Use title instead
+        Deprecated - Use title instead.
 
         :param text: The text of this ButtonComponent.
         :type: str
@@ -108,7 +108,7 @@ class ButtonComponent(object):
     def title(self):
         """
         Gets the title of this ButtonComponent.
-        Text to show inside the button
+        Text to show inside the button.
 
         :return: The title of this ButtonComponent.
         :rtype: str
@@ -119,7 +119,7 @@ class ButtonComponent(object):
     def title(self, title):
         """
         Sets the title of this ButtonComponent.
-        Text to show inside the button
+        Text to show inside the button.
 
         :param title: The title of this ButtonComponent.
         :type: str
@@ -131,7 +131,7 @@ class ButtonComponent(object):
     def actions(self):
         """
         Gets the actions of this ButtonComponent.
-        User actions available on the content. All actions are optional and all actions are executed simultaneously.
+        The button actions.
 
         :return: The actions of this ButtonComponent.
         :rtype: ContentActions
@@ -142,7 +142,7 @@ class ButtonComponent(object):
     def actions(self, actions):
         """
         Sets the actions of this ButtonComponent.
-        User actions available on the content. All actions are optional and all actions are executed simultaneously.
+        The button actions.
 
         :param actions: The actions of this ButtonComponent.
         :type: ContentActions

@@ -31,7 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_adjacents**](UsersApi.html#get_user_adjacents) | Get adjacents|
 |[**get_user_callforwarding**](UsersApi.html#get_user_callforwarding) | Get a user&#39;s CallForwarding|
 |[**get_user_directreports**](UsersApi.html#get_user_directreports) | Get direct reports|
-|[**get_user_favorites**](UsersApi.html#get_user_favorites) | Get favorites|
+|[**get_user_favorites**](UsersApi.html#get_user_favorites) | Deprecated; will be revived with new contract|
 |[**get_user_geolocation**](UsersApi.html#get_user_geolocation) | Get a user&#39;s Geolocation|
 |[**get_user_outofoffice**](UsersApi.html#get_user_outofoffice) | Get a OutOfOffice|
 |[**get_user_profile**](UsersApi.html#get_user_profile) | Get user profile|
@@ -1287,9 +1287,9 @@ except ApiException as e:
 
 ## [**UserEntityListing**](UserEntityListing.html) get_user_favorites(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-
-Get favorites
+Deprecated; will be revived with new contract
 
 
 
@@ -1318,7 +1318,7 @@ sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
-    # Get favorites
+    # Deprecated; will be revived with new contract
     api_response = api_instance.get_user_favorites(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
@@ -2301,8 +2301,9 @@ Search users using the q64 value returned from a previous search
 
 Wraps GET /api/v2/users/search 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 ### Example
 
@@ -3626,8 +3627,9 @@ Search users
 
 Wraps POST /api/v2/users/search 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 ### Example
 

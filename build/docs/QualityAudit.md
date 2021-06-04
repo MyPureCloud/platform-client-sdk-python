@@ -13,8 +13,8 @@ title: QualityAudit
 | **job_id** | **str** |  | [optional] |
 | **level** | **str** |  | [optional] |
 | **entity** | [**AuditEntity**](AuditEntity.html) |  | [optional] |
-| **timestamp** | **str** |  | [optional] |
 | **action** | **str** |  | [optional] |
+| **timestamp** | **str** |  | [optional] |
 | **status** | **str** |  | [optional] |
 | **changes** | [**list[Change]**](Change.html) |  | [optional] |
 | **entity_type** | **str** |  | [optional] |

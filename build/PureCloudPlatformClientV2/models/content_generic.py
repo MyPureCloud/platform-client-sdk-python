@@ -71,7 +71,7 @@ class ContentGeneric(object):
     def id(self):
         """
         Gets the id of this ContentGeneric.
-        An ID assigned to this rich message content. Each instance inside the content array has a unique ID.
+        A unique ID assigned to this rich message content.
 
         :return: The id of this ContentGeneric.
         :rtype: str
@@ -82,7 +82,7 @@ class ContentGeneric(object):
     def id(self, id):
         """
         Sets the id of this ContentGeneric.
-        An ID assigned to this rich message content. Each instance inside the content array has a unique ID.
+        A unique ID assigned to this rich message content.
 
         :param id: The id of this ContentGeneric.
         :type: str
@@ -94,7 +94,7 @@ class ContentGeneric(object):
     def title(self):
         """
         Gets the title of this ContentGeneric.
-        Text to show in the title row
+        Text to show in the title.
 
         :return: The title of this ContentGeneric.
         :rtype: str
@@ -105,7 +105,7 @@ class ContentGeneric(object):
     def title(self, title):
         """
         Sets the title of this ContentGeneric.
-        Text to show in the title row
+        Text to show in the title.
 
         :param title: The title of this ContentGeneric.
         :type: str
@@ -117,7 +117,7 @@ class ContentGeneric(object):
     def description(self):
         """
         Gets the description of this ContentGeneric.
-        Text to show in the description row. This is immediately below the title
+        Text to show in the description.
 
         :return: The description of this ContentGeneric.
         :rtype: str
@@ -128,7 +128,7 @@ class ContentGeneric(object):
     def description(self, description):
         """
         Sets the description of this ContentGeneric.
-        Text to show in the description row. This is immediately below the title
+        Text to show in the description.
 
         :param description: The description of this ContentGeneric.
         :type: str
@@ -140,7 +140,7 @@ class ContentGeneric(object):
     def image(self):
         """
         Gets the image of this ContentGeneric.
-        Path or URI to an image file
+        URL of an image.
 
         :return: The image of this ContentGeneric.
         :rtype: str
@@ -151,7 +151,7 @@ class ContentGeneric(object):
     def image(self, image):
         """
         Sets the image of this ContentGeneric.
-        Path or URI to an image file
+        URL of an image.
 
         :param image: The image of this ContentGeneric.
         :type: str
@@ -163,7 +163,7 @@ class ContentGeneric(object):
     def video(self):
         """
         Gets the video of this ContentGeneric.
-        Path or URI to a video file
+        URL of a video.
 
         :return: The video of this ContentGeneric.
         :rtype: str
@@ -174,7 +174,7 @@ class ContentGeneric(object):
     def video(self, video):
         """
         Sets the video of this ContentGeneric.
-        Path or URI to a video file
+        URL of a video.
 
         :param video: The video of this ContentGeneric.
         :type: str
@@ -186,7 +186,7 @@ class ContentGeneric(object):
     def actions(self):
         """
         Gets the actions of this ContentGeneric.
-        User actions available on the content. All actions are optional and all actions are executed simultaneously.
+        Actions to be taken.
 
         :return: The actions of this ContentGeneric.
         :rtype: ContentActions
@@ -197,7 +197,7 @@ class ContentGeneric(object):
     def actions(self, actions):
         """
         Sets the actions of this ContentGeneric.
-        User actions available on the content. All actions are optional and all actions are executed simultaneously.
+        Actions to be taken.
 
         :param actions: The actions of this ContentGeneric.
         :type: ContentActions
@@ -209,7 +209,7 @@ class ContentGeneric(object):
     def components(self):
         """
         Gets the components of this ContentGeneric.
-        An array of component objects
+        An array of component objects.
 
         :return: The components of this ContentGeneric.
         :rtype: list[ButtonComponent]
@@ -220,7 +220,7 @@ class ContentGeneric(object):
     def components(self, components):
         """
         Sets the components of this ContentGeneric.
-        An array of component objects
+        An array of component objects.
 
         :param components: The components of this ContentGeneric.
         :type: list[ButtonComponent]

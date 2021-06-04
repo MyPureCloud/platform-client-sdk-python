@@ -56,7 +56,7 @@ class ContentReaction(object):
     def reaction_type(self):
         """
         Gets the reaction_type of this ContentReaction.
-        Type of reaction
+        Type of reaction.
 
         :return: The reaction_type of this ContentReaction.
         :rtype: str
@@ -67,12 +67,12 @@ class ContentReaction(object):
     def reaction_type(self, reaction_type):
         """
         Sets the reaction_type of this ContentReaction.
-        Type of reaction
+        Type of reaction.
 
         :param reaction_type: The reaction_type of this ContentReaction.
         :type: str
         """
-        allowed_values = ["None", "Like", "Love", "Wow", "Haha", "Sad", "Angry", "Thankful", "Pride", "Care"]
+        allowed_values = ["Like", "Love", "Wow", "Haha", "Sad", "Angry", "Thankful", "Pride", "Care"]
         if reaction_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reaction_type -> " + reaction_type)
             self._reaction_type = "outdated_sdk_version"
@@ -83,7 +83,7 @@ class ContentReaction(object):
     def count(self):
         """
         Gets the count of this ContentReaction.
-        Number of users that reacted this way to this public message
+        Number of users that reacted this way to the message.
 
         :return: The count of this ContentReaction.
         :rtype: int
@@ -94,7 +94,7 @@ class ContentReaction(object):
     def count(self, count):
         """
         Sets the count of this ContentReaction.
-        Number of users that reacted this way to this public message
+        Number of users that reacted this way to the message.
 
         :param count: The count of this ContentReaction.
         :type: int

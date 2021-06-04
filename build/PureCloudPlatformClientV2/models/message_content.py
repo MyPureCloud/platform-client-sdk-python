@@ -99,7 +99,7 @@ class MessageContent(object):
         :param content_type: The content_type of this MessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "QuickReply", "ButtonResponse", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention"]
+        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -110,7 +110,7 @@ class MessageContent(object):
     def location(self):
         """
         Gets the location of this MessageContent.
-        Location object
+        Location content.
 
         :return: The location of this MessageContent.
         :rtype: ContentLocation
@@ -121,7 +121,7 @@ class MessageContent(object):
     def location(self, location):
         """
         Sets the location of this MessageContent.
-        Location object
+        Location content.
 
         :param location: The location of this MessageContent.
         :type: ContentLocation
@@ -133,7 +133,7 @@ class MessageContent(object):
     def attachment(self):
         """
         Gets the attachment of this MessageContent.
-        Attachment object
+        Attachment content.
 
         :return: The attachment of this MessageContent.
         :rtype: ContentAttachment
@@ -144,7 +144,7 @@ class MessageContent(object):
     def attachment(self, attachment):
         """
         Sets the attachment of this MessageContent.
-        Attachment object
+        Attachment content.
 
         :param attachment: The attachment of this MessageContent.
         :type: ContentAttachment
@@ -156,7 +156,7 @@ class MessageContent(object):
     def quick_reply(self):
         """
         Gets the quick_reply of this MessageContent.
-        Quick reply object
+        Quick reply content.
 
         :return: The quick_reply of this MessageContent.
         :rtype: ContentQuickReply
@@ -167,7 +167,7 @@ class MessageContent(object):
     def quick_reply(self, quick_reply):
         """
         Sets the quick_reply of this MessageContent.
-        Quick reply object
+        Quick reply content.
 
         :param quick_reply: The quick_reply of this MessageContent.
         :type: ContentQuickReply
@@ -179,7 +179,7 @@ class MessageContent(object):
     def button_response(self):
         """
         Gets the button_response of this MessageContent.
-        Button response object
+        Button response content.
 
         :return: The button_response of this MessageContent.
         :rtype: ContentButtonResponse
@@ -190,7 +190,7 @@ class MessageContent(object):
     def button_response(self, button_response):
         """
         Sets the button_response of this MessageContent.
-        Button response object
+        Button response content.
 
         :param button_response: The button_response of this MessageContent.
         :type: ContentButtonResponse
@@ -202,7 +202,7 @@ class MessageContent(object):
     def generic(self):
         """
         Gets the generic of this MessageContent.
-        Generic content object
+        Generic content.
 
         :return: The generic of this MessageContent.
         :rtype: ContentGeneric
@@ -213,7 +213,7 @@ class MessageContent(object):
     def generic(self, generic):
         """
         Sets the generic of this MessageContent.
-        Generic content object
+        Generic content.
 
         :param generic: The generic of this MessageContent.
         :type: ContentGeneric
@@ -225,7 +225,7 @@ class MessageContent(object):
     def list(self):
         """
         Gets the list of this MessageContent.
-        List content object
+        List content.
 
         :return: The list of this MessageContent.
         :rtype: ContentList
@@ -236,7 +236,7 @@ class MessageContent(object):
     def list(self, list):
         """
         Sets the list of this MessageContent.
-        List content object
+        List content.
 
         :param list: The list of this MessageContent.
         :type: ContentList
@@ -248,7 +248,7 @@ class MessageContent(object):
     def template(self):
         """
         Gets the template of this MessageContent.
-        Template notification object
+        Template notification content.
 
         :return: The template of this MessageContent.
         :rtype: ContentNotificationTemplate
@@ -259,7 +259,7 @@ class MessageContent(object):
     def template(self, template):
         """
         Sets the template of this MessageContent.
-        Template notification object
+        Template notification content.
 
         :param template: The template of this MessageContent.
         :type: ContentNotificationTemplate
@@ -271,7 +271,7 @@ class MessageContent(object):
     def reactions(self):
         """
         Gets the reactions of this MessageContent.
-        A list of reactions
+        A set of reactions to a message.
 
         :return: The reactions of this MessageContent.
         :rtype: list[ContentReaction]
@@ -282,7 +282,7 @@ class MessageContent(object):
     def reactions(self, reactions):
         """
         Sets the reactions of this MessageContent.
-        A list of reactions
+        A set of reactions to a message.
 
         :param reactions: The reactions of this MessageContent.
         :type: list[ContentReaction]
@@ -294,7 +294,7 @@ class MessageContent(object):
     def mention(self):
         """
         Gets the mention of this MessageContent.
-        This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform
+        Mention content.
 
         :return: The mention of this MessageContent.
         :rtype: MessagingRecipient
@@ -305,7 +305,7 @@ class MessageContent(object):
     def mention(self, mention):
         """
         Sets the mention of this MessageContent.
-        This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform
+        Mention content.
 
         :param mention: The mention of this MessageContent.
         :type: MessagingRecipient
@@ -317,7 +317,7 @@ class MessageContent(object):
     def postback(self):
         """
         Gets the postback of this MessageContent.
-        The postback object result of a user clicking in a button
+        Structured message postback (Deprecated).
 
         :return: The postback of this MessageContent.
         :rtype: ContentPostback
@@ -328,7 +328,7 @@ class MessageContent(object):
     def postback(self, postback):
         """
         Sets the postback of this MessageContent.
-        The postback object result of a user clicking in a button
+        Structured message postback (Deprecated).
 
         :param postback: The postback of this MessageContent.
         :type: ContentPostback

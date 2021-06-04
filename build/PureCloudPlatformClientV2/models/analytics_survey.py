@@ -50,7 +50,7 @@ class AnalyticsSurvey(object):
             'survey_promoter_score': 'int',
             'survey_status': 'str',
             'user_id': 'str',
-            'geto_survey_total_score': 'int'
+            'o_survey_total_score': 'int'
         }
 
         self.attribute_map = {
@@ -64,7 +64,7 @@ class AnalyticsSurvey(object):
             'survey_promoter_score': 'surveyPromoterScore',
             'survey_status': 'surveyStatus',
             'user_id': 'userId',
-            'geto_survey_total_score': 'getoSurveyTotalScore'
+            'o_survey_total_score': 'oSurveyTotalScore'
         }
 
         self._event_time = None
@@ -77,7 +77,7 @@ class AnalyticsSurvey(object):
         self._survey_promoter_score = None
         self._survey_status = None
         self._user_id = None
-        self._geto_survey_total_score = None
+        self._o_survey_total_score = None
 
     @property
     def event_time(self):
@@ -310,27 +310,27 @@ class AnalyticsSurvey(object):
         self._user_id = user_id
 
     @property
-    def geto_survey_total_score(self):
+    def o_survey_total_score(self):
         """
-        Gets the geto_survey_total_score of this AnalyticsSurvey.
-        Total score of the survey
+        Gets the o_survey_total_score of this AnalyticsSurvey.
 
-        :return: The geto_survey_total_score of this AnalyticsSurvey.
+
+        :return: The o_survey_total_score of this AnalyticsSurvey.
         :rtype: int
         """
-        return self._geto_survey_total_score
+        return self._o_survey_total_score
 
-    @geto_survey_total_score.setter
-    def geto_survey_total_score(self, geto_survey_total_score):
+    @o_survey_total_score.setter
+    def o_survey_total_score(self, o_survey_total_score):
         """
-        Sets the geto_survey_total_score of this AnalyticsSurvey.
-        Total score of the survey
+        Sets the o_survey_total_score of this AnalyticsSurvey.
 
-        :param geto_survey_total_score: The geto_survey_total_score of this AnalyticsSurvey.
+
+        :param o_survey_total_score: The o_survey_total_score of this AnalyticsSurvey.
         :type: int
         """
         
-        self._geto_survey_total_score = geto_survey_total_score
+        self._o_survey_total_score = o_survey_total_score
 
     def to_dict(self):
         """

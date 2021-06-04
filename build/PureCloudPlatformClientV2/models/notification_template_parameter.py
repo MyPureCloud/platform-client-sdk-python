@@ -56,7 +56,7 @@ class NotificationTemplateParameter(object):
     def name(self):
         """
         Gets the name of this NotificationTemplateParameter.
-        Parameter name
+        Parameter name.
 
         :return: The name of this NotificationTemplateParameter.
         :rtype: str
@@ -67,7 +67,7 @@ class NotificationTemplateParameter(object):
     def name(self, name):
         """
         Sets the name of this NotificationTemplateParameter.
-        Parameter name
+        Parameter name.
 
         :param name: The name of this NotificationTemplateParameter.
         :type: str
@@ -79,7 +79,7 @@ class NotificationTemplateParameter(object):
     def text(self):
         """
         Gets the text of this NotificationTemplateParameter.
-        Parameter text value
+        Parameter text value.
 
         :return: The text of this NotificationTemplateParameter.
         :rtype: str
@@ -90,7 +90,7 @@ class NotificationTemplateParameter(object):
     def text(self, text):
         """
         Sets the text of this NotificationTemplateParameter.
-        Parameter text value
+        Parameter text value.
 
         :param text: The text of this NotificationTemplateParameter.
         :type: str

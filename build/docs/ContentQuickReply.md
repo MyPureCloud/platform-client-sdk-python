@@ -7,11 +7,11 @@ title: ContentQuickReply
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | An ID assigned to the quick reply. Each object inside the content array has a unique ID. | [optional] |
+| **id** | **str** | A unique ID assigned to the quick reply (Deprecated). | [optional] |
 | **text** | **str** | Text to show inside the quick reply. This is also used as the response text after clicking on the quick reply. | |
-| **payload** | **str** | Content of the textback payload after clicking a quick reply | [optional] |
-| **image** | **str** | Path or URI to an image file associated with quick reply | [optional] |
-| **action** | **str** | Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \&quot;Message\&quot; which sends a message using the quick reply text. | [optional] |
+| **payload** | **str** | Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response. | [optional] |
+| **image** | **str** | URL of an image associated with the quick reply. | [optional] |
+| **action** | **str** | Specifies the type of action that is triggered upon clicking the quick reply. | [optional] |
 {: class="table table-striped"}
 
 

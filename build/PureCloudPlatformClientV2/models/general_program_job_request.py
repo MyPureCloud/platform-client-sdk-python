@@ -72,7 +72,7 @@ class GeneralProgramJobRequest(object):
         :param dialect: The dialect of this GeneralProgramJobRequest.
         :type: str
         """
-        allowed_values = ["en-US", "es-US", "en-AU", "en-GB"]
+        allowed_values = ["en-US", "es-US", "en-AU", "en-GB", "en-ZA", "es-ES", "en-IN"]
         if dialect.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dialect -> " + dialect)
             self._dialect = "outdated_sdk_version"

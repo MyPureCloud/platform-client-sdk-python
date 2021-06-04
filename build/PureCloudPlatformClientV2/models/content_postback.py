@@ -59,7 +59,7 @@ class ContentPostback(object):
     def id(self):
         """
         Gets the id of this ContentPostback.
-        An ID assigned to the postback reply. Each object inside the content array has a unique ID.
+        An ID assigned to the button response.
 
         :return: The id of this ContentPostback.
         :rtype: str
@@ -70,7 +70,7 @@ class ContentPostback(object):
     def id(self, id):
         """
         Sets the id of this ContentPostback.
-        An ID assigned to the postback reply. Each object inside the content array has a unique ID.
+        An ID assigned to the button response.
 
         :param id: The id of this ContentPostback.
         :type: str
@@ -82,7 +82,7 @@ class ContentPostback(object):
     def text(self):
         """
         Gets the text of this ContentPostback.
-        The text inside the button clicked (in the structured message template)
+        The response text from the button click.
 
         :return: The text of this ContentPostback.
         :rtype: str
@@ -93,7 +93,7 @@ class ContentPostback(object):
     def text(self, text):
         """
         Sets the text of this ContentPostback.
-        The text inside the button clicked (in the structured message template)
+        The response text from the button click.
 
         :param text: The text of this ContentPostback.
         :type: str
@@ -105,7 +105,7 @@ class ContentPostback(object):
     def payload(self):
         """
         Gets the payload of this ContentPostback.
-        Content of the textback payload after clicking a quick reply
+        The response payload associated with the clicked button.
 
         :return: The payload of this ContentPostback.
         :rtype: str
@@ -116,7 +116,7 @@ class ContentPostback(object):
     def payload(self, payload):
         """
         Sets the payload of this ContentPostback.
-        Content of the textback payload after clicking a quick reply
+        The response payload associated with the clicked button.
 
         :param payload: The payload of this ContentPostback.
         :type: str

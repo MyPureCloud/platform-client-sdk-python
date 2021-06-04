@@ -12,6 +12,7 @@ title: Leaderboard
 | **date_start_workday** | **date** | Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] |
 | **date_end_workday** | **date** | End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] |
 | **leaders** | [**list[LeaderboardItem]**](LeaderboardItem.html) | The list of leaders generated. | [optional] |
+| **user_rank** | [**LeaderboardItem**](LeaderboardItem.html) | The requesting user&#39;s rank | [optional] |
 {: class="table table-striped"}
 
 

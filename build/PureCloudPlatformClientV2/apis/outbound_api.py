@@ -4324,6 +4324,7 @@ class OutboundApi(object):
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
+        :param str dnc_source_type: DncSourceType
         :param list[str] id: id
         :param str sort_by: Sort by
         :param str sort_order: Sort order
@@ -4332,7 +4333,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'filter_type', 'name', 'id', 'sort_by', 'sort_order']
+        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'filter_type', 'name', 'dnc_source_type', 'id', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -4363,6 +4364,8 @@ class OutboundApi(object):
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'dnc_source_type' in params:
+            query_params['dncSourceType'] = params['dnc_source_type']
         if 'id' in params:
             query_params['id'] = params['id']
         if 'sort_by' in params:

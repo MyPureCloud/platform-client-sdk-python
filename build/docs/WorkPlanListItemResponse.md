@@ -10,6 +10,7 @@ title: WorkPlanListItemResponse
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
 | **enabled** | **bool** | Whether the work plan is enabled for scheduling | [optional] |
+| **valid** | **bool** | Whether the work plan is valid or not | [optional] |
 | **constrain_weekly_paid_time** | **bool** | Whether the weekly paid time constraint is enabled for this work plan | [optional] |
 | **flexible_weekly_paid_time** | **bool** | Whether the weekly paid time constraint is flexible for this work plan | [optional] |
 | **weekly_exact_paid_minutes** | **int** | Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == false | [optional] |

@@ -43,6 +43,7 @@ class WorkPlanValidationRequest(object):
             'id': 'str',
             'name': 'str',
             'enabled': 'bool',
+            'valid': 'bool',
             'constrain_weekly_paid_time': 'bool',
             'flexible_weekly_paid_time': 'bool',
             'weekly_exact_paid_minutes': 'int',
@@ -76,6 +77,7 @@ class WorkPlanValidationRequest(object):
             'id': 'id',
             'name': 'name',
             'enabled': 'enabled',
+            'valid': 'valid',
             'constrain_weekly_paid_time': 'constrainWeeklyPaidTime',
             'flexible_weekly_paid_time': 'flexibleWeeklyPaidTime',
             'weekly_exact_paid_minutes': 'weeklyExactPaidMinutes',
@@ -108,6 +110,7 @@ class WorkPlanValidationRequest(object):
         self._id = None
         self._name = None
         self._enabled = None
+        self._valid = None
         self._constrain_weekly_paid_time = None
         self._flexible_weekly_paid_time = None
         self._weekly_exact_paid_minutes = None
@@ -204,6 +207,29 @@ class WorkPlanValidationRequest(object):
         """
         
         self._enabled = enabled
+
+    @property
+    def valid(self):
+        """
+        Gets the valid of this WorkPlanValidationRequest.
+        Whether the work plan is valid or not
+
+        :return: The valid of this WorkPlanValidationRequest.
+        :rtype: bool
+        """
+        return self._valid
+
+    @valid.setter
+    def valid(self, valid):
+        """
+        Sets the valid of this WorkPlanValidationRequest.
+        Whether the work plan is valid or not
+
+        :param valid: The valid of this WorkPlanValidationRequest.
+        :type: bool
+        """
+        
+        self._valid = valid
 
     @property
     def constrain_weekly_paid_time(self):

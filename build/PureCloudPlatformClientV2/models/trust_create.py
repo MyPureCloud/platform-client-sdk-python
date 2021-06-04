@@ -43,20 +43,23 @@ class TrustCreate(object):
             'pairing_id': 'str',
             'enabled': 'bool',
             'users': 'list[TrustMemberCreate]',
-            'groups': 'list[TrustMemberCreate]'
+            'groups': 'list[TrustMemberCreate]',
+            'date_expired': 'datetime'
         }
 
         self.attribute_map = {
             'pairing_id': 'pairingId',
             'enabled': 'enabled',
             'users': 'users',
-            'groups': 'groups'
+            'groups': 'groups',
+            'date_expired': 'dateExpired'
         }
 
         self._pairing_id = None
         self._enabled = None
         self._users = None
         self._groups = None
+        self._date_expired = None
 
     @property
     def pairing_id(self):
@@ -149,6 +152,29 @@ class TrustCreate(object):
         """
         
         self._groups = groups
+
+    @property
+    def date_expired(self):
+        """
+        Gets the date_expired of this TrustCreate.
+        The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_expired of this TrustCreate.
+        :rtype: datetime
+        """
+        return self._date_expired
+
+    @date_expired.setter
+    def date_expired(self, date_expired):
+        """
+        Sets the date_expired of this TrustCreate.
+        The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_expired: The date_expired of this TrustCreate.
+        :type: datetime
+        """
+        
+        self._date_expired = date_expired
 
     def to_dict(self):
         """

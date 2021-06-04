@@ -49,6 +49,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_recording_mediaretentionpolicies**](RecordingApi.html#post_recording_mediaretentionpolicies) | Create media retention policy|
 |[**post_recording_recordingkeys**](RecordingApi.html#post_recording_recordingkeys) | Create encryption key|
 |[**post_recordings_deletionprotection**](RecordingApi.html#post_recordings_deletionprotection) | Get a list of conversations with protected recordings|
+|[**post_recordings_screensessions_acknowledge**](RecordingApi.html#post_recordings_screensessions_acknowledge) | Acknowledge a screen recording.|
+|[**post_recordings_screensessions_metadata**](RecordingApi.html#post_recordings_screensessions_metadata) | Provide meta-data a screen recording.|
 |[**put_conversation_recording**](RecordingApi.html#put_conversation_recording) | Updates the retention records on a recording.|
 |[**put_conversation_recording_annotation**](RecordingApi.html#put_conversation_recording_annotation) | Update annotation|
 |[**put_orphanrecording**](RecordingApi.html#put_orphanrecording) | Updates an orphan recording to a regular recording with retention values|
@@ -2249,6 +2251,104 @@ except ApiException as e:
 ### Return type
 
 [**list[AddressableEntityRef]**](AddressableEntityRef.html)
+
+<a name="post_recordings_screensessions_acknowledge"></a>
+
+##  post_recordings_screensessions_acknowledge(body)
+
+
+
+Acknowledge a screen recording.
+
+
+
+Wraps POST /api/v2/recordings/screensessions/acknowledge 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+body = PureCloudPlatformClientV2.AcknowledgeScreenRecordingRequest() # AcknowledgeScreenRecordingRequest | AcknowledgeScreenRecordingRequest
+
+try:
+    # Acknowledge a screen recording.
+    api_instance.post_recordings_screensessions_acknowledge(body)
+except ApiException as e:
+    print("Exception when calling RecordingApi->post_recordings_screensessions_acknowledge: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AcknowledgeScreenRecordingRequest**](AcknowledgeScreenRecordingRequest.html)| AcknowledgeScreenRecordingRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_recordings_screensessions_metadata"></a>
+
+##  post_recordings_screensessions_metadata(body)
+
+
+
+Provide meta-data a screen recording.
+
+
+
+Wraps POST /api/v2/recordings/screensessions/metadata 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+body = PureCloudPlatformClientV2.ScreenRecordingMetaDataRequest() # ScreenRecordingMetaDataRequest | ScreenRecordingMetaDataRequest
+
+try:
+    # Provide meta-data a screen recording.
+    api_instance.post_recordings_screensessions_metadata(body)
+except ApiException as e:
+    print("Exception when calling RecordingApi->post_recordings_screensessions_metadata: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ScreenRecordingMetaDataRequest**](ScreenRecordingMetaDataRequest.html)| ScreenRecordingMetaDataRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="put_conversation_recording"></a>
 

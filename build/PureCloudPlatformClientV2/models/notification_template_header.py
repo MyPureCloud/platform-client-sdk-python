@@ -62,7 +62,7 @@ class NotificationTemplateHeader(object):
     def type(self):
         """
         Gets the type of this NotificationTemplateHeader.
-        Template header type
+        Template header type.
 
         :return: The type of this NotificationTemplateHeader.
         :rtype: str
@@ -73,7 +73,7 @@ class NotificationTemplateHeader(object):
     def type(self, type):
         """
         Sets the type of this NotificationTemplateHeader.
-        Template header type
+        Template header type.
 
         :param type: The type of this NotificationTemplateHeader.
         :type: str
@@ -89,7 +89,7 @@ class NotificationTemplateHeader(object):
     def text(self):
         """
         Gets the text of this NotificationTemplateHeader.
-        Header text. For WhatsApp, ignored
+        Header text. For WhatsApp, ignored.
 
         :return: The text of this NotificationTemplateHeader.
         :rtype: str
@@ -100,7 +100,7 @@ class NotificationTemplateHeader(object):
     def text(self, text):
         """
         Sets the text of this NotificationTemplateHeader.
-        Header text. For WhatsApp, ignored
+        Header text. For WhatsApp, ignored.
 
         :param text: The text of this NotificationTemplateHeader.
         :type: str
@@ -112,7 +112,7 @@ class NotificationTemplateHeader(object):
     def media(self):
         """
         Gets the media of this NotificationTemplateHeader.
-        Attachment object
+        Media template header image.
 
         :return: The media of this NotificationTemplateHeader.
         :rtype: ContentAttachment
@@ -123,7 +123,7 @@ class NotificationTemplateHeader(object):
     def media(self, media):
         """
         Sets the media of this NotificationTemplateHeader.
-        Attachment object
+        Media template header image.
 
         :param media: The media of this NotificationTemplateHeader.
         :type: ContentAttachment
@@ -135,7 +135,7 @@ class NotificationTemplateHeader(object):
     def parameters(self):
         """
         Gets the parameters of this NotificationTemplateHeader.
-        Template parameters for placeholders in template
+        Template parameters for placeholders in template.
 
         :return: The parameters of this NotificationTemplateHeader.
         :rtype: list[NotificationTemplateParameter]
@@ -146,7 +146,7 @@ class NotificationTemplateHeader(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this NotificationTemplateHeader.
-        Template parameters for placeholders in template
+        Template parameters for placeholders in template.
 
         :param parameters: The parameters of this NotificationTemplateHeader.
         :type: list[NotificationTemplateParameter]

@@ -48,6 +48,7 @@ class KnowledgeBase(object):
             'date_modified': 'datetime',
             'faq_count': 'int',
             'date_document_last_modified': 'datetime',
+            'article_count': 'int',
             'self_uri': 'str'
         }
 
@@ -60,6 +61,7 @@ class KnowledgeBase(object):
             'date_modified': 'dateModified',
             'faq_count': 'faqCount',
             'date_document_last_modified': 'dateDocumentLastModified',
+            'article_count': 'articleCount',
             'self_uri': 'selfUri'
         }
 
@@ -71,6 +73,7 @@ class KnowledgeBase(object):
         self._date_modified = None
         self._faq_count = None
         self._date_document_last_modified = None
+        self._article_count = None
         self._self_uri = None
 
     @property
@@ -219,7 +222,7 @@ class KnowledgeBase(object):
     def faq_count(self):
         """
         Gets the faq_count of this KnowledgeBase.
-        The count representing the number of documents of type FAQ per KnowledgeBase
+        The count representing the number of documents of type FAQ in the KnowledgeBase
 
         :return: The faq_count of this KnowledgeBase.
         :rtype: int
@@ -230,7 +233,7 @@ class KnowledgeBase(object):
     def faq_count(self, faq_count):
         """
         Sets the faq_count of this KnowledgeBase.
-        The count representing the number of documents of type FAQ per KnowledgeBase
+        The count representing the number of documents of type FAQ in the KnowledgeBase
 
         :param faq_count: The faq_count of this KnowledgeBase.
         :type: int
@@ -260,6 +263,29 @@ class KnowledgeBase(object):
         """
         
         self._date_document_last_modified = date_document_last_modified
+
+    @property
+    def article_count(self):
+        """
+        Gets the article_count of this KnowledgeBase.
+        The count representing the number of documents of type Article in the KnowledgeBase
+
+        :return: The article_count of this KnowledgeBase.
+        :rtype: int
+        """
+        return self._article_count
+
+    @article_count.setter
+    def article_count(self, article_count):
+        """
+        Sets the article_count of this KnowledgeBase.
+        The count representing the number of documents of type Article in the KnowledgeBase
+
+        :param article_count: The article_count of this KnowledgeBase.
+        :type: int
+        """
+        
+        self._article_count = article_count
 
     @property
     def self_uri(self):

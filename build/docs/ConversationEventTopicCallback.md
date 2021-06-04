@@ -30,6 +30,8 @@ title: ConversationEventTopicCallback
 | **wrapup** | [**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html) |  | [optional] |
 | **after_call_work** | [**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html) |  | [optional] |
 | **after_call_work_required** | **bool** |  | [optional] |
+| **caller_id** | **str** |  | [optional] |
+| **caller_id_name** | **str** |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

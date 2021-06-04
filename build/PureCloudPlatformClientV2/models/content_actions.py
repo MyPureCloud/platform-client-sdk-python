@@ -65,7 +65,7 @@ class ContentActions(object):
     def url(self):
         """
         Gets the url of this ContentActions.
-        A URL for a web page to redirect the user to
+        A URL of a web page to direct the user to.
 
         :return: The url of this ContentActions.
         :rtype: str
@@ -76,7 +76,7 @@ class ContentActions(object):
     def url(self, url):
         """
         Sets the url of this ContentActions.
-        A URL for a web page to redirect the user to
+        A URL of a web page to direct the user to.
 
         :param url: The url of this ContentActions.
         :type: str
@@ -88,7 +88,7 @@ class ContentActions(object):
     def url_target(self):
         """
         Gets the url_target of this ContentActions.
-        The target window or tab within the URL's web page. If empty will open a blank page or tab.
+        The target window in which to open the URL. If empty will open a blank page or tab.
 
         :return: The url_target of this ContentActions.
         :rtype: str
@@ -99,7 +99,7 @@ class ContentActions(object):
     def url_target(self, url_target):
         """
         Sets the url_target of this ContentActions.
-        The target window or tab within the URL's web page. If empty will open a blank page or tab.
+        The target window in which to open the URL. If empty will open a blank page or tab.
 
         :param url_target: The url_target of this ContentActions.
         :type: str
@@ -111,7 +111,7 @@ class ContentActions(object):
     def textback(self):
         """
         Gets the textback of this ContentActions.
-        Text to be sent back in reply when a list item is selected
+        Text to be sent back in reply when the item is selected.
 
         :return: The textback of this ContentActions.
         :rtype: str
@@ -122,7 +122,7 @@ class ContentActions(object):
     def textback(self, textback):
         """
         Sets the textback of this ContentActions.
-        Text to be sent back in reply when a list item is selected
+        Text to be sent back in reply when the item is selected.
 
         :param textback: The textback of this ContentActions.
         :type: str
@@ -134,7 +134,7 @@ class ContentActions(object):
     def command_name(self):
         """
         Gets the command_name of this ContentActions.
-        Execute an organization's specific command
+        Execute an organization's specific command.
 
         :return: The command_name of this ContentActions.
         :rtype: str
@@ -145,7 +145,7 @@ class ContentActions(object):
     def command_name(self, command_name):
         """
         Sets the command_name of this ContentActions.
-        Execute an organization's specific command
+        Execute an organization's specific command.
 
         :param command_name: The command_name of this ContentActions.
         :type: str
@@ -157,7 +157,7 @@ class ContentActions(object):
     def context(self):
         """
         Gets the context of this ContentActions.
-        Additional context for the command
+        Additional context for the command.
 
         :return: The context of this ContentActions.
         :rtype: dict(str, object)
@@ -168,7 +168,7 @@ class ContentActions(object):
     def context(self, context):
         """
         Sets the context of this ContentActions.
-        Additional context for the command
+        Additional context for the command.
 
         :param context: The context of this ContentActions.
         :type: dict(str, object)

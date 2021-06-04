@@ -48,7 +48,7 @@ class GamificationApi(object):
 
     def get_gamification_leaderboard(self, start_workday, end_workday, **kwargs):
         """
-        Leaderboard of the requesting user's division
+        Leaderboard of the requesting user's division or performance profile
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -135,7 +135,7 @@ class GamificationApi(object):
 
     def get_gamification_leaderboard_all(self, filter_type, filter_id, start_workday, end_workday, **kwargs):
         """
-        Leaderboard by division
+        Leaderboard by filter type
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -404,12 +404,13 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str metric_id: metric Id (required)
+        :param str performance_profile_id: The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
         :return: Metric
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['metric_id']
+        all_params = ['metric_id', 'performance_profile_id']
         all_params.append('callback')
 
         params = locals()
@@ -433,6 +434,8 @@ class GamificationApi(object):
             path_params['metricId'] = params['metric_id']
 
         query_params = {}
+        if 'performance_profile_id' in params:
+            query_params['performance profile id'] = params['performance_profile_id']
 
         header_params = {}
 
@@ -856,7 +859,7 @@ class GamificationApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param date workday: Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date workday: Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param list[str] expand: Which fields, if any, to expand.
         :return: WorkdayMetricListing
                  If the method is called asynchronously,
@@ -937,8 +940,8 @@ class GamificationApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param date start_workday: Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param date end_workday: End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :return: AttendanceStatusListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1093,7 +1096,7 @@ class GamificationApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param date end_workday: End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :return: AllTimePoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1249,8 +1252,8 @@ class GamificationApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param date start_workday: Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param date end_workday: End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str day_of_week: Optional filter to specify which day of weeks to be included in the response
         :return: WorkdayPointsTrend
                  If the method is called asynchronously,
@@ -1337,7 +1340,7 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id:  (required)
-        :param date workday: Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date workday: Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param list[str] expand: Which fields, if any, to expand.
         :return: WorkdayMetricListing
                  If the method is called asynchronously,
@@ -1424,8 +1427,8 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id:  (required)
-        :param date start_workday: Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param date end_workday: End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :return: AttendanceStatusListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1592,7 +1595,7 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id:  (required)
-        :param date end_workday: End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :return: AllTimePoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1676,8 +1679,8 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id:  (required)
-        :param date start_workday: Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param date end_workday: End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str day_of_week: Optional filter to specify which day of weeks to be included in the response
         :return: WorkdayPointsTrend
                  If the method is called asynchronously,
@@ -1769,8 +1772,8 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id:  (required)
-        :param date start_workday: Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param date end_workday: End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str time_zone: Timezone for the workday. Defaults to UTC
         :return: WorkdayValuesTrend
                  If the method is called asynchronously,
@@ -2046,8 +2049,8 @@ class GamificationApi(object):
             for asynchronous request. (optional)
         :param str filter_type: Filter type for the query request. (required)
         :param str filter_id: ID for the filter type. (required)
-        :param date start_workday: Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param date end_workday: End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str time_zone: Timezone for the workday. Defaults to UTC
         :return: WorkdayValuesTrend
                  If the method is called asynchronously,
@@ -2224,8 +2227,8 @@ class GamificationApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param date start_workday: Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param date end_workday: End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str filter_type: Filter type for the query request. If not set, then the request is for the requesting user.
         :param str time_zone: Timezone for the workday. Defaults to UTC
         :return: WorkdayValuesTrend
@@ -2616,12 +2619,13 @@ class GamificationApi(object):
             for asynchronous request. (optional)
         :param str metric_id: metric Id (required)
         :param Metric body: Metric (required)
+        :param str performance_profile_id: The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
         :return: Metric
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['metric_id', 'body']
+        all_params = ['metric_id', 'body', 'performance_profile_id']
         all_params.append('callback')
 
         params = locals()
@@ -2648,6 +2652,8 @@ class GamificationApi(object):
             path_params['metricId'] = params['metric_id']
 
         query_params = {}
+        if 'performance_profile_id' in params:
+            query_params['performance profile id'] = params['performance_profile_id']
 
         header_params = {}
 

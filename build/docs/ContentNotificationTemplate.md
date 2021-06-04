@@ -7,11 +7,11 @@ title: ContentNotificationTemplate
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The messaging channel template id. For WhatsApp, &#39;namespace@name&#39; | [optional] |
-| **language** | **str** | Template language | [optional] |
-| **header** | [**NotificationTemplateHeader**](NotificationTemplateHeader.html) | Template header object | [optional] |
-| **body** | [**NotificationTemplateBody**](NotificationTemplateBody.html) | Template body object | |
-| **footer** | [**NotificationTemplateFooter**](NotificationTemplateFooter.html) | Template footer object | [optional] |
+| **id** | **str** | The messaging provider template ID. For WhatsApp, &#39;namespace@name&#39;. | [optional] |
+| **language** | **str** | Template language. | [optional] |
+| **header** | [**NotificationTemplateHeader**](NotificationTemplateHeader.html) | The template header. | [optional] |
+| **body** | [**NotificationTemplateBody**](NotificationTemplateBody.html) | The template body. | |
+| **footer** | [**NotificationTemplateFooter**](NotificationTemplateFooter.html) | The template footer. | [optional] |
 {: class="table table-striped"}
 
 

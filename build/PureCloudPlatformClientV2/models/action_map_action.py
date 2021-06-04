@@ -42,18 +42,21 @@ class ActionMapAction(object):
         self.swagger_types = {
             'action_template': 'ActionMapActionTemplate',
             'media_type': 'str',
-            'architect_flow_fields': 'ArchitectFlowFields'
+            'architect_flow_fields': 'ArchitectFlowFields',
+            'web_messaging_offer_fields': 'WebMessagingOfferFields'
         }
 
         self.attribute_map = {
             'action_template': 'actionTemplate',
             'media_type': 'mediaType',
-            'architect_flow_fields': 'architectFlowFields'
+            'architect_flow_fields': 'architectFlowFields',
+            'web_messaging_offer_fields': 'webMessagingOfferFields'
         }
 
         self._action_template = None
         self._media_type = None
         self._architect_flow_fields = None
+        self._web_messaging_offer_fields = None
 
     @property
     def action_template(self):
@@ -127,6 +130,29 @@ class ActionMapAction(object):
         """
         
         self._architect_flow_fields = architect_flow_fields
+
+    @property
+    def web_messaging_offer_fields(self):
+        """
+        Gets the web_messaging_offer_fields of this ActionMapAction.
+        Admin-configurable fields of a web messaging offer action.
+
+        :return: The web_messaging_offer_fields of this ActionMapAction.
+        :rtype: WebMessagingOfferFields
+        """
+        return self._web_messaging_offer_fields
+
+    @web_messaging_offer_fields.setter
+    def web_messaging_offer_fields(self, web_messaging_offer_fields):
+        """
+        Sets the web_messaging_offer_fields of this ActionMapAction.
+        Admin-configurable fields of a web messaging offer action.
+
+        :param web_messaging_offer_fields: The web_messaging_offer_fields of this ActionMapAction.
+        :type: WebMessagingOfferFields
+        """
+        
+        self._web_messaging_offer_fields = web_messaging_offer_fields
 
     def to_dict(self):
         """

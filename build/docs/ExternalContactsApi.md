@@ -43,10 +43,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_bulk_contacts_add**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_add) | Bulk add contacts|
 |[**post_externalcontacts_bulk_contacts_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_remove) | Bulk remove contacts|
 |[**post_externalcontacts_bulk_contacts_update**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_update) | Bulk update contacts|
+|[**post_externalcontacts_bulk_notes**](ExternalContactsApi.html#post_externalcontacts_bulk_notes) | Bulk fetch notes|
+|[**post_externalcontacts_bulk_notes_add**](ExternalContactsApi.html#post_externalcontacts_bulk_notes_add) | Bulk add notes|
+|[**post_externalcontacts_bulk_notes_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_notes_remove) | Bulk remove notes|
+|[**post_externalcontacts_bulk_notes_update**](ExternalContactsApi.html#post_externalcontacts_bulk_notes_update) | Bulk update notes|
 |[**post_externalcontacts_bulk_organizations**](ExternalContactsApi.html#post_externalcontacts_bulk_organizations) | Bulk fetch organizations|
 |[**post_externalcontacts_bulk_organizations_add**](ExternalContactsApi.html#post_externalcontacts_bulk_organizations_add) | Bulk add organizations|
 |[**post_externalcontacts_bulk_organizations_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_organizations_remove) | Bulk remove organizations|
 |[**post_externalcontacts_bulk_organizations_update**](ExternalContactsApi.html#post_externalcontacts_bulk_organizations_update) | Bulk update organizations|
+|[**post_externalcontacts_bulk_relationships**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships) | Bulk fetch relationships|
+|[**post_externalcontacts_bulk_relationships_add**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships_add) | Bulk add relationships|
+|[**post_externalcontacts_bulk_relationships_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships_remove) | Bulk remove relationships|
+|[**post_externalcontacts_bulk_relationships_update**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships_update) | Bulk update relationships|
 |[**post_externalcontacts_contact_notes**](ExternalContactsApi.html#post_externalcontacts_contact_notes) | Create a note for an external contact|
 |[**post_externalcontacts_contacts**](ExternalContactsApi.html#post_externalcontacts_contacts) | Create an external contact|
 |[**post_externalcontacts_contacts_schemas**](ExternalContactsApi.html#post_externalcontacts_contacts_schemas) | Create a schema|
@@ -1933,6 +1941,214 @@ except ApiException as e:
 
 [**BulkContactsResponse**](BulkContactsResponse.html)
 
+<a name="post_externalcontacts_bulk_notes"></a>
+
+## [**BulkFetchNotesResponse**](BulkFetchNotesResponse.html) post_externalcontacts_bulk_notes(body)
+
+
+
+Bulk fetch notes
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/notes 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkIdsRequest() # BulkIdsRequest | Note ids
+
+try:
+    # Bulk fetch notes
+    api_response = api_instance.post_externalcontacts_bulk_notes(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_notes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Note ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkFetchNotesResponse**](BulkFetchNotesResponse.html)
+
+<a name="post_externalcontacts_bulk_notes_add"></a>
+
+## [**BulkNotesResponse**](BulkNotesResponse.html) post_externalcontacts_bulk_notes_add(body)
+
+
+
+Bulk add notes
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/notes/add 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:add
+* externalContacts:externalOrganization:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkNotesRequest() # BulkNotesRequest | Notes
+
+try:
+    # Bulk add notes
+    api_response = api_instance.post_externalcontacts_bulk_notes_add(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_notes_add: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkNotesRequest**](BulkNotesRequest.html)| Notes |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkNotesResponse**](BulkNotesResponse.html)
+
+<a name="post_externalcontacts_bulk_notes_remove"></a>
+
+## [**BulkDeleteResponse**](BulkDeleteResponse.html) post_externalcontacts_bulk_notes_remove(body)
+
+
+
+Bulk remove notes
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/notes/remove 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:delete
+* externalContacts:externalOrganization:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkIdsRequest() # BulkIdsRequest | Note ids
+
+try:
+    # Bulk remove notes
+    api_response = api_instance.post_externalcontacts_bulk_notes_remove(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_notes_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Note ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkDeleteResponse**](BulkDeleteResponse.html)
+
+<a name="post_externalcontacts_bulk_notes_update"></a>
+
+## [**BulkNotesResponse**](BulkNotesResponse.html) post_externalcontacts_bulk_notes_update(body)
+
+
+
+Bulk update notes
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/notes/update 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:edit
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkNotesRequest() # BulkNotesRequest | Notes
+
+try:
+    # Bulk update notes
+    api_response = api_instance.post_externalcontacts_bulk_notes_update(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_notes_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkNotesRequest**](BulkNotesRequest.html)| Notes |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkNotesResponse**](BulkNotesResponse.html)
+
 <a name="post_externalcontacts_bulk_organizations"></a>
 
 ## [**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse.html) post_externalcontacts_bulk_organizations(body)
@@ -2136,6 +2352,214 @@ except ApiException as e:
 ### Return type
 
 [**BulkOrganizationsResponse**](BulkOrganizationsResponse.html)
+
+<a name="post_externalcontacts_bulk_relationships"></a>
+
+## [**BulkFetchRelationshipsResponse**](BulkFetchRelationshipsResponse.html) post_externalcontacts_bulk_relationships(body)
+
+
+
+Bulk fetch relationships
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/relationships 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkIdsRequest() # BulkIdsRequest | Relationships ids
+
+try:
+    # Bulk fetch relationships
+    api_response = api_instance.post_externalcontacts_bulk_relationships(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_relationships: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Relationships ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkFetchRelationshipsResponse**](BulkFetchRelationshipsResponse.html)
+
+<a name="post_externalcontacts_bulk_relationships_add"></a>
+
+## [**BulkRelationshipsResponse**](BulkRelationshipsResponse.html) post_externalcontacts_bulk_relationships_add(body)
+
+
+
+Bulk add relationships
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/relationships/add 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:add
+* externalContacts:externalOrganization:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkRelationshipsRequest() # BulkRelationshipsRequest | Relationships
+
+try:
+    # Bulk add relationships
+    api_response = api_instance.post_externalcontacts_bulk_relationships_add(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_relationships_add: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkRelationshipsRequest**](BulkRelationshipsRequest.html)| Relationships |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkRelationshipsResponse**](BulkRelationshipsResponse.html)
+
+<a name="post_externalcontacts_bulk_relationships_remove"></a>
+
+## [**BulkDeleteResponse**](BulkDeleteResponse.html) post_externalcontacts_bulk_relationships_remove(body)
+
+
+
+Bulk remove relationships
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/relationships/remove 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:delete
+* externalContacts:externalOrganization:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkIdsRequest() # BulkIdsRequest | Relationships ids
+
+try:
+    # Bulk remove relationships
+    api_response = api_instance.post_externalcontacts_bulk_relationships_remove(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_relationships_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Relationships ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkDeleteResponse**](BulkDeleteResponse.html)
+
+<a name="post_externalcontacts_bulk_relationships_update"></a>
+
+## [**BulkRelationshipsResponse**](BulkRelationshipsResponse.html) post_externalcontacts_bulk_relationships_update(body)
+
+
+
+Bulk update relationships
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/relationships/update 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:edit
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkRelationshipsRequest() # BulkRelationshipsRequest | Relationships
+
+try:
+    # Bulk update relationships
+    api_response = api_instance.post_externalcontacts_bulk_relationships_update(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_relationships_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkRelationshipsRequest**](BulkRelationshipsRequest.html)| Relationships |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkRelationshipsResponse**](BulkRelationshipsResponse.html)
 
 <a name="post_externalcontacts_contact_notes"></a>
 

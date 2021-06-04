@@ -44,7 +44,8 @@ class Leaderboard(object):
             'metric': 'Metric',
             'date_start_workday': 'date',
             'date_end_workday': 'date',
-            'leaders': 'list[LeaderboardItem]'
+            'leaders': 'list[LeaderboardItem]',
+            'user_rank': 'LeaderboardItem'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class Leaderboard(object):
             'metric': 'metric',
             'date_start_workday': 'dateStartWorkday',
             'date_end_workday': 'dateEndWorkday',
-            'leaders': 'leaders'
+            'leaders': 'leaders',
+            'user_rank': 'userRank'
         }
 
         self._division = None
@@ -60,6 +62,7 @@ class Leaderboard(object):
         self._date_start_workday = None
         self._date_end_workday = None
         self._leaders = None
+        self._user_rank = None
 
     @property
     def division(self):
@@ -175,6 +178,29 @@ class Leaderboard(object):
         """
         
         self._leaders = leaders
+
+    @property
+    def user_rank(self):
+        """
+        Gets the user_rank of this Leaderboard.
+        The requesting user's rank
+
+        :return: The user_rank of this Leaderboard.
+        :rtype: LeaderboardItem
+        """
+        return self._user_rank
+
+    @user_rank.setter
+    def user_rank(self, user_rank):
+        """
+        Sets the user_rank of this Leaderboard.
+        The requesting user's rank
+
+        :param user_rank: The user_rank of this Leaderboard.
+        :type: LeaderboardItem
+        """
+        
+        self._user_rank = user_rank
 
     def to_dict(self):
         """

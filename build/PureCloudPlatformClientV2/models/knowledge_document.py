@@ -50,6 +50,7 @@ class KnowledgeDocument(object):
             'categories': 'list[KnowledgeCategory]',
             'knowledge_base': 'KnowledgeBase',
             'external_url': 'str',
+            'article': 'DocumentArticle',
             'self_uri': 'str'
         }
 
@@ -64,6 +65,7 @@ class KnowledgeDocument(object):
             'categories': 'categories',
             'knowledge_base': 'knowledgeBase',
             'external_url': 'externalUrl',
+            'article': 'article',
             'self_uri': 'selfUri'
         }
 
@@ -77,6 +79,7 @@ class KnowledgeDocument(object):
         self._categories = None
         self._knowledge_base = None
         self._external_url = None
+        self._article = None
         self._self_uri = None
 
     @property
@@ -172,7 +175,7 @@ class KnowledgeDocument(object):
         :param type: The type of this KnowledgeDocument.
         :type: str
         """
-        allowed_values = ["Faq"]
+        allowed_values = ["Faq", "Article"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -316,6 +319,29 @@ class KnowledgeDocument(object):
         """
         
         self._external_url = external_url
+
+    @property
+    def article(self):
+        """
+        Gets the article of this KnowledgeDocument.
+        Article
+
+        :return: The article of this KnowledgeDocument.
+        :rtype: DocumentArticle
+        """
+        return self._article
+
+    @article.setter
+    def article(self, article):
+        """
+        Sets the article of this KnowledgeDocument.
+        Article
+
+        :param article: The article of this KnowledgeDocument.
+        :type: DocumentArticle
+        """
+        
+        self._article = article
 
     @property
     def self_uri(self):

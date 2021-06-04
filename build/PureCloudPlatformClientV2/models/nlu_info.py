@@ -41,15 +41,18 @@ class NluInfo(object):
         """
         self.swagger_types = {
             'domain': 'AddressableEntityRef',
+            'version': 'NluDomainVersion',
             'intents': 'list[Intent]'
         }
 
         self.attribute_map = {
             'domain': 'domain',
+            'version': 'version',
             'intents': 'intents'
         }
 
         self._domain = None
+        self._version = None
         self._intents = None
 
     @property
@@ -74,6 +77,29 @@ class NluInfo(object):
         """
         
         self._domain = domain
+
+    @property
+    def version(self):
+        """
+        Gets the version of this NluInfo.
+
+
+        :return: The version of this NluInfo.
+        :rtype: NluDomainVersion
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this NluInfo.
+
+
+        :param version: The version of this NluInfo.
+        :type: NluDomainVersion
+        """
+        
+        self._version = version
 
     @property
     def intents(self):

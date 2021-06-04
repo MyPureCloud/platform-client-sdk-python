@@ -160,7 +160,7 @@ class DncListDivisionView(object):
     def size(self):
         """
         Gets the size of this DncListDivisionView.
-        The number of contacts in the ContactList.
+        The number of contacts in the DncList.
 
         :return: The size of this DncListDivisionView.
         :rtype: int
@@ -171,7 +171,7 @@ class DncListDivisionView(object):
     def size(self, size):
         """
         Sets the size of this DncListDivisionView.
-        The number of contacts in the ContactList.
+        The number of contacts in the DncList.
 
         :param size: The size of this DncListDivisionView.
         :type: int

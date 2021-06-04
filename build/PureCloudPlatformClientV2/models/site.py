@@ -64,6 +64,7 @@ class Site(object):
             'ntp_settings': 'NTPSettings',
             'media_model': 'str',
             'core_site': 'bool',
+            'site_connections': 'list[SiteConnection]',
             'self_uri': 'str'
         }
 
@@ -92,6 +93,7 @@ class Site(object):
             'ntp_settings': 'ntpSettings',
             'media_model': 'mediaModel',
             'core_site': 'coreSite',
+            'site_connections': 'siteConnections',
             'self_uri': 'selfUri'
         }
 
@@ -119,6 +121,7 @@ class Site(object):
         self._ntp_settings = None
         self._media_model = None
         self._core_site = None
+        self._site_connections = None
         self._self_uri = None
 
     @property
@@ -662,7 +665,7 @@ class Site(object):
     def core_site(self):
         """
         Gets the core_site of this Site.
-        The core site
+        Is this site a core site
 
         :return: The core_site of this Site.
         :rtype: bool
@@ -673,13 +676,36 @@ class Site(object):
     def core_site(self, core_site):
         """
         Sets the core_site of this Site.
-        The core site
+        Is this site a core site
 
         :param core_site: The core_site of this Site.
         :type: bool
         """
         
         self._core_site = core_site
+
+    @property
+    def site_connections(self):
+        """
+        Gets the site_connections of this Site.
+        The site connections
+
+        :return: The site_connections of this Site.
+        :rtype: list[SiteConnection]
+        """
+        return self._site_connections
+
+    @site_connections.setter
+    def site_connections(self, site_connections):
+        """
+        Sets the site_connections of this Site.
+        The site connections
+
+        :param site_connections: The site_connections of this Site.
+        :type: list[SiteConnection]
+        """
+        
+        self._site_connections = site_connections
 
     @property
     def self_uri(self):

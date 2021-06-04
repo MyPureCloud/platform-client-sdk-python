@@ -137,7 +137,7 @@ class ManagementUnitSettingsResponse(object):
     def scheduling(self):
         """
         Gets the scheduling of this ManagementUnitSettingsResponse.
-        Scheduling settings for this management unit
+        Scheduling settings for this management unit. These settings are only available if you have the permission wfm:managementUnit:view
 
         :return: The scheduling of this ManagementUnitSettingsResponse.
         :rtype: SchedulingSettingsResponse
@@ -148,7 +148,7 @@ class ManagementUnitSettingsResponse(object):
     def scheduling(self, scheduling):
         """
         Sets the scheduling of this ManagementUnitSettingsResponse.
-        Scheduling settings for this management unit
+        Scheduling settings for this management unit. These settings are only available if you have the permission wfm:managementUnit:view
 
         :param scheduling: The scheduling of this ManagementUnitSettingsResponse.
         :type: SchedulingSettingsResponse

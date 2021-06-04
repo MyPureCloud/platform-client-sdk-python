@@ -106,7 +106,7 @@ class AssessmentFormQuestionGroup(object):
     def name(self):
         """
         Gets the name of this AssessmentFormQuestionGroup.
-
+        The question group name
 
         :return: The name of this AssessmentFormQuestionGroup.
         :rtype: str
@@ -117,7 +117,7 @@ class AssessmentFormQuestionGroup(object):
     def name(self, name):
         """
         Sets the name of this AssessmentFormQuestionGroup.
-
+        The question group name
 
         :param name: The name of this AssessmentFormQuestionGroup.
         :type: str
@@ -129,7 +129,7 @@ class AssessmentFormQuestionGroup(object):
     def type(self):
         """
         Gets the type of this AssessmentFormQuestionGroup.
-
+        The question group type
 
         :return: The type of this AssessmentFormQuestionGroup.
         :rtype: str
@@ -140,7 +140,7 @@ class AssessmentFormQuestionGroup(object):
     def type(self, type):
         """
         Sets the type of this AssessmentFormQuestionGroup.
-
+        The question group type
 
         :param type: The type of this AssessmentFormQuestionGroup.
         :type: str
@@ -267,7 +267,7 @@ class AssessmentFormQuestionGroup(object):
     def questions(self):
         """
         Gets the questions of this AssessmentFormQuestionGroup.
-
+        The list of questions for this question group
 
         :return: The questions of this AssessmentFormQuestionGroup.
         :rtype: list[AssessmentFormQuestion]
@@ -278,7 +278,7 @@ class AssessmentFormQuestionGroup(object):
     def questions(self, questions):
         """
         Sets the questions of this AssessmentFormQuestionGroup.
-
+        The list of questions for this question group
 
         :param questions: The questions of this AssessmentFormQuestionGroup.
         :type: list[AssessmentFormQuestion]

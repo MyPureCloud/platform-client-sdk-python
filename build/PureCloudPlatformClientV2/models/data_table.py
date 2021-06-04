@@ -42,7 +42,7 @@ class DataTable(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'Division',
+            'division': 'WritableDivision',
             'description': 'str',
             'schema': 'JsonSchemaDocument',
             'self_uri': 'str'
@@ -117,7 +117,7 @@ class DataTable(object):
         The division to which this entity belongs.
 
         :return: The division of this DataTable.
-        :rtype: Division
+        :rtype: WritableDivision
         """
         return self._division
 
@@ -128,7 +128,7 @@ class DataTable(object):
         The division to which this entity belongs.
 
         :param division: The division of this DataTable.
-        :type: Division
+        :type: WritableDivision
         """
         
         self._division = division

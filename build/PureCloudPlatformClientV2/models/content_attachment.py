@@ -71,7 +71,7 @@ class ContentAttachment(object):
     def id(self):
         """
         Gets the id of this ContentAttachment.
-        Vendor specific ID for media. For example, a LINE sticker ID
+        Provider specific ID for attachment. For example, a LINE sticker ID.
 
         :return: The id of this ContentAttachment.
         :rtype: str
@@ -82,7 +82,7 @@ class ContentAttachment(object):
     def id(self, id):
         """
         Sets the id of this ContentAttachment.
-        Vendor specific ID for media. For example, a LINE sticker ID
+        Provider specific ID for attachment. For example, a LINE sticker ID.
 
         :param id: The id of this ContentAttachment.
         :type: str
@@ -94,7 +94,7 @@ class ContentAttachment(object):
     def media_type(self):
         """
         Gets the media_type of this ContentAttachment.
-        The type of media this instance represents
+        The type of attachment this instance represents.
 
         :return: The media_type of this ContentAttachment.
         :rtype: str
@@ -105,7 +105,7 @@ class ContentAttachment(object):
     def media_type(self, media_type):
         """
         Sets the media_type of this ContentAttachment.
-        The type of media this instance represents
+        The type of attachment this instance represents.
 
         :param media_type: The media_type of this ContentAttachment.
         :type: str
@@ -121,7 +121,7 @@ class ContentAttachment(object):
     def url(self):
         """
         Gets the url of this ContentAttachment.
-        Content element url
+        URL of the attachment.
 
         :return: The url of this ContentAttachment.
         :rtype: str
@@ -132,7 +132,7 @@ class ContentAttachment(object):
     def url(self, url):
         """
         Sets the url of this ContentAttachment.
-        Content element url
+        URL of the attachment.
 
         :param url: The url of this ContentAttachment.
         :type: str
@@ -144,7 +144,7 @@ class ContentAttachment(object):
     def mime(self):
         """
         Gets the mime of this ContentAttachment.
-        Content mime type from https://www.iana.org/assignments/media-types/media-types.xhtml
+        Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).
 
         :return: The mime of this ContentAttachment.
         :rtype: str
@@ -155,7 +155,7 @@ class ContentAttachment(object):
     def mime(self, mime):
         """
         Sets the mime of this ContentAttachment.
-        Content mime type from https://www.iana.org/assignments/media-types/media-types.xhtml
+        Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).
 
         :param mime: The mime of this ContentAttachment.
         :type: str
@@ -167,7 +167,7 @@ class ContentAttachment(object):
     def text(self):
         """
         Gets the text of this ContentAttachment.
-        Text message associated with media element: e.g. caption in case of image.
+        Text associated with attachment such as an image caption.
 
         :return: The text of this ContentAttachment.
         :rtype: str
@@ -178,7 +178,7 @@ class ContentAttachment(object):
     def text(self, text):
         """
         Sets the text of this ContentAttachment.
-        Text message associated with media element: e.g. caption in case of image.
+        Text associated with attachment such as an image caption.
 
         :param text: The text of this ContentAttachment.
         :type: str
@@ -190,7 +190,7 @@ class ContentAttachment(object):
     def sha256(self):
         """
         Gets the sha256 of this ContentAttachment.
-        Secure hash of the media content
+        Secure hash of the attachment content.
 
         :return: The sha256 of this ContentAttachment.
         :rtype: str
@@ -201,7 +201,7 @@ class ContentAttachment(object):
     def sha256(self, sha256):
         """
         Sets the sha256 of this ContentAttachment.
-        Secure hash of the media content
+        Secure hash of the attachment content.
 
         :param sha256: The sha256 of this ContentAttachment.
         :type: str
@@ -213,7 +213,7 @@ class ContentAttachment(object):
     def filename(self):
         """
         Gets the filename of this ContentAttachment.
-        Suggested file name for media file
+        Suggested file name for attachment.
 
         :return: The filename of this ContentAttachment.
         :rtype: str
@@ -224,7 +224,7 @@ class ContentAttachment(object):
     def filename(self, filename):
         """
         Sets the filename of this ContentAttachment.
-        Suggested file name for media file
+        Suggested file name for attachment.
 
         :param filename: The filename of this ContentAttachment.
         :type: str

@@ -54,7 +54,8 @@ class WorkPlanActivity(object):
             'minimum_length_from_shift_start_minutes': 'int',
             'minimum_length_from_shift_end_minutes': 'int',
             'id': 'str',
-            'delete': 'bool'
+            'delete': 'bool',
+            'validation_id': 'str'
         }
 
         self.attribute_map = {
@@ -72,7 +73,8 @@ class WorkPlanActivity(object):
             'minimum_length_from_shift_start_minutes': 'minimumLengthFromShiftStartMinutes',
             'minimum_length_from_shift_end_minutes': 'minimumLengthFromShiftEndMinutes',
             'id': 'id',
-            'delete': 'delete'
+            'delete': 'delete',
+            'validation_id': 'validationId'
         }
 
         self._activity_code_id = None
@@ -90,6 +92,7 @@ class WorkPlanActivity(object):
         self._minimum_length_from_shift_end_minutes = None
         self._id = None
         self._delete = None
+        self._validation_id = None
 
     @property
     def activity_code_id(self):
@@ -435,6 +438,29 @@ class WorkPlanActivity(object):
         """
         
         self._delete = delete
+
+    @property
+    def validation_id(self):
+        """
+        Gets the validation_id of this WorkPlanActivity.
+        ID of the activity in the context of work plan validation
+
+        :return: The validation_id of this WorkPlanActivity.
+        :rtype: str
+        """
+        return self._validation_id
+
+    @validation_id.setter
+    def validation_id(self, validation_id):
+        """
+        Sets the validation_id of this WorkPlanActivity.
+        ID of the activity in the context of work plan validation
+
+        :param validation_id: The validation_id of this WorkPlanActivity.
+        :type: str
+        """
+        
+        self._validation_id = validation_id
 
     def to_dict(self):
         """

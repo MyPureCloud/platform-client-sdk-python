@@ -4,7 +4,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "PureCloudPlatformClientV2"
-VERSION = "117.0.0"
+VERSION = "118.0.0"
 
 
 
@@ -15,11 +15,11 @@ VERSION = "117.0.0"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil", "watchdog >= 2.1.2"]
 
 setup(
     name="PureCloudPlatformClientV2",
-    version="117.0.0",
+    version="118.0.0",
     description="PureCloud Platform API SDK",
     author="Genesys Developer Evangelists",
     author_email="DeveloperEvangelists@Genesys.com",

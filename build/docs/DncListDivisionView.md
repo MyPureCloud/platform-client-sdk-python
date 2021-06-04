@@ -11,7 +11,7 @@ title: DncListDivisionView
 | **name** | **str** |  | [optional] |
 | **division** | [**Division**](Division.html) | The division to which this entity belongs. | [optional] |
 | **import_status** | [**ImportStatus**](ImportStatus.html) | The status of the import process. | [optional] |
-| **size** | **int** | The number of contacts in the ContactList. | [optional] |
+| **size** | **int** | The number of contacts in the DncList. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

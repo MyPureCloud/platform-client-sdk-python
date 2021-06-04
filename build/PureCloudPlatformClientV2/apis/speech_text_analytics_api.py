@@ -517,6 +517,84 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_speechandtextanalytics_program_mappings(self, program_id, **kwargs):
+        """
+        Get Speech & Text Analytics program mappings to queues and flows by id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_program_mappings(program_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: The id of the program (required)
+        :return: ProgramMappings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_program_mappings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `get_speechandtextanalytics_program_mappings`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/{programId}/mappings'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProgramMappings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_speechandtextanalytics_programs(self, **kwargs):
         """
         Get the list of Speech & Text Analytics programs
@@ -669,6 +747,84 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='GeneralProgramJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_programs_mappings(self, **kwargs):
+        """
+        Get the list of Speech & Text Analytics programs mappings to queues and flows
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_programs_mappings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str next_page: The key for listing the next page
+        :param int page_size: The page size for the listing
+        :return: ProgramsMappingsEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['next_page', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_programs_mappings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/mappings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProgramsMappingsEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1836,6 +1992,168 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Program',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_speechandtextanalytics_program_mappings(self, program_id, body, **kwargs):
+        """
+        Set Speech & Text Analytics program mappings to queues and flows
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_speechandtextanalytics_program_mappings(program_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: The id of the program (required)
+        :param ProgramMappingsRequest body: The program to set mappings for (required)
+        :return: ProgramMappings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_speechandtextanalytics_program_mappings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `put_speechandtextanalytics_program_mappings`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_speechandtextanalytics_program_mappings`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/{programId}/mappings'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProgramMappings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_speechandtextanalytics_settings(self, body, **kwargs):
+        """
+        Update Speech And Text Analytics Settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_speechandtextanalytics_settings(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SpeechTextAnalyticsSettingsRequest body: Speech And Text Analytics Settings (required)
+        :return: SpeechTextAnalyticsSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_speechandtextanalytics_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_speechandtextanalytics_settings`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SpeechTextAnalyticsSettingsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

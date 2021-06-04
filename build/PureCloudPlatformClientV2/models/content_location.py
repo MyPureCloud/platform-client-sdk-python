@@ -65,7 +65,7 @@ class ContentLocation(object):
     def url(self):
         """
         Gets the url of this ContentLocation.
-        Location map url
+        URL of the Location.
 
         :return: The url of this ContentLocation.
         :rtype: str
@@ -76,7 +76,7 @@ class ContentLocation(object):
     def url(self, url):
         """
         Sets the url of this ContentLocation.
-        Location map url
+        URL of the Location.
 
         :param url: The url of this ContentLocation.
         :type: str
@@ -88,7 +88,7 @@ class ContentLocation(object):
     def address(self):
         """
         Gets the address of this ContentLocation.
-        Location postal address
+        Location postal address.
 
         :return: The address of this ContentLocation.
         :rtype: str
@@ -99,7 +99,7 @@ class ContentLocation(object):
     def address(self, address):
         """
         Sets the address of this ContentLocation.
-        Location postal address
+        Location postal address.
 
         :param address: The address of this ContentLocation.
         :type: str
@@ -111,7 +111,7 @@ class ContentLocation(object):
     def text(self):
         """
         Gets the text of this ContentLocation.
-        Location name
+        Location name.
 
         :return: The text of this ContentLocation.
         :rtype: str
@@ -122,7 +122,7 @@ class ContentLocation(object):
     def text(self, text):
         """
         Sets the text of this ContentLocation.
-        Location name
+        Location name.
 
         :param text: The text of this ContentLocation.
         :type: str
@@ -134,7 +134,7 @@ class ContentLocation(object):
     def latitude(self):
         """
         Gets the latitude of this ContentLocation.
-        Latitude of the location
+        Latitude of the location.
 
         :return: The latitude of this ContentLocation.
         :rtype: float
@@ -145,7 +145,7 @@ class ContentLocation(object):
     def latitude(self, latitude):
         """
         Sets the latitude of this ContentLocation.
-        Latitude of the location
+        Latitude of the location.
 
         :param latitude: The latitude of this ContentLocation.
         :type: float
@@ -157,7 +157,7 @@ class ContentLocation(object):
     def longitude(self):
         """
         Gets the longitude of this ContentLocation.
-        Longitude of the location
+        Longitude of the location.
 
         :return: The longitude of this ContentLocation.
         :rtype: float
@@ -168,7 +168,7 @@ class ContentLocation(object):
     def longitude(self, longitude):
         """
         Sets the longitude of this ContentLocation.
-        Longitude of the location
+        Longitude of the location.
 
         :param longitude: The longitude of this ContentLocation.
         :type: float

@@ -2918,7 +2918,7 @@ except ApiException as e:
 
 <a name="get_outbound_dnclists_divisionviews"></a>
 
-## [**DncListDivisionViewListing**](DncListDivisionViewListing.html) get_outbound_dnclists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
+## [**DncListDivisionViewListing**](DncListDivisionViewListing.html) get_outbound_dnclists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, id=id, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -2951,13 +2951,14 @@ page_size = 25 # int | Page size. The max that will be returned is 100. (optiona
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
+dnc_source_type = 'dnc_source_type_example' # str | DncSourceType (optional)
 id = ['id_example'] # list[str] | id (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
 sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query a list of simplified dnc list objects.
-    api_response = api_instance.get_outbound_dnclists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_dnclists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, id=id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->get_outbound_dnclists_divisionviews: %s\n" % e)
@@ -2974,6 +2975,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
+| **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
@@ -3259,7 +3261,7 @@ except ApiException as e:
 | **name** | **str**| Name | [optional]  |
 | **contact_list_id** | **str**| Contact List ID | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
-| **type** | **str**| Campaign Type | [optional] <br />**Values**: SMS |
+| **type** | **str**| Campaign Type | [optional] <br />**Values**: EMAIL, SMS |
 | **sender_sms_phone_number** | **str**| Sender SMS Phone Number | [optional]  |
 | **id** | [**list[str]**](str.html)| A list of messaging campaign ids to bulk fetch | [optional]  |
 {: class="table table-striped"}

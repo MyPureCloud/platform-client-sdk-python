@@ -18,8 +18,8 @@ title: AnalyticsEvaluation
 | **queue_id** | **str** | The ID of the associated queue | [optional] |
 | **rescored** | **bool** | Whether the evaluation has been rescored at least once | [optional] |
 | **user_id** | **str** | ID of the agent the evaluation was performed against | [optional] |
-| **geto_total_critical_score** | **int** | Total critical score of the evaluation | [optional] |
-| **geto_total_score** | **int** | Total score of the evaluation | [optional] |
+| **o_total_critical_score** | **int** |  | [optional] |
+| **o_total_score** | **int** |  | [optional] |
 {: class="table table-striped"}
 
 

@@ -71,7 +71,7 @@ class MessagingRecipient(object):
     def nickname(self):
         """
         Gets the nickname of this MessagingRecipient.
-        Nickname/user name
+        Nickname or display name of the recipient.
 
         :return: The nickname of this MessagingRecipient.
         :rtype: str
@@ -82,7 +82,7 @@ class MessagingRecipient(object):
     def nickname(self, nickname):
         """
         Sets the nickname of this MessagingRecipient.
-        Nickname/user name
+        Nickname or display name of the recipient.
 
         :param nickname: The nickname of this MessagingRecipient.
         :type: str
@@ -94,7 +94,7 @@ class MessagingRecipient(object):
     def id(self):
         """
         Gets the id of this MessagingRecipient.
-        The recipient identifier specific for particular channel/integration. This is required when sending a message.
+        The recipient ID specific to the provider.
 
         :return: The id of this MessagingRecipient.
         :rtype: str
@@ -105,7 +105,7 @@ class MessagingRecipient(object):
     def id(self, id):
         """
         Sets the id of this MessagingRecipient.
-        The recipient identifier specific for particular channel/integration. This is required when sending a message.
+        The recipient ID specific to the provider.
 
         :param id: The id of this MessagingRecipient.
         :type: str
@@ -117,7 +117,7 @@ class MessagingRecipient(object):
     def id_type(self):
         """
         Gets the id_type of this MessagingRecipient.
-        The recipient identifier type. This is used to indicate the format used by the recipient identifier.
+        The recipient ID type. This is used to indicate the format used for the ID.
 
         :return: The id_type of this MessagingRecipient.
         :rtype: str
@@ -128,7 +128,7 @@ class MessagingRecipient(object):
     def id_type(self, id_type):
         """
         Sets the id_type of this MessagingRecipient.
-        The recipient identifier type. This is used to indicate the format used by the recipient identifier.
+        The recipient ID type. This is used to indicate the format used for the ID.
 
         :param id_type: The id_type of this MessagingRecipient.
         :type: str
@@ -144,7 +144,7 @@ class MessagingRecipient(object):
     def image(self):
         """
         Gets the image of this MessagingRecipient.
-        Path or URI to an image file containing an avatar
+        URL of an image that represents the recipient.
 
         :return: The image of this MessagingRecipient.
         :rtype: str
@@ -155,7 +155,7 @@ class MessagingRecipient(object):
     def image(self, image):
         """
         Sets the image of this MessagingRecipient.
-        Path or URI to an image file containing an avatar
+        URL of an image that represents the recipient.
 
         :param image: The image of this MessagingRecipient.
         :type: str
@@ -167,7 +167,7 @@ class MessagingRecipient(object):
     def first_name(self):
         """
         Gets the first_name of this MessagingRecipient.
-        Sender's first name
+        First name of the recipient.
 
         :return: The first_name of this MessagingRecipient.
         :rtype: str
@@ -178,7 +178,7 @@ class MessagingRecipient(object):
     def first_name(self, first_name):
         """
         Sets the first_name of this MessagingRecipient.
-        Sender's first name
+        First name of the recipient.
 
         :param first_name: The first_name of this MessagingRecipient.
         :type: str
@@ -190,7 +190,7 @@ class MessagingRecipient(object):
     def last_name(self):
         """
         Gets the last_name of this MessagingRecipient.
-        Sender's last name
+        Last name of the recipient.
 
         :return: The last_name of this MessagingRecipient.
         :rtype: str
@@ -201,7 +201,7 @@ class MessagingRecipient(object):
     def last_name(self, last_name):
         """
         Sets the last_name of this MessagingRecipient.
-        Sender's last name
+        Last name of the recipient.
 
         :param last_name: The last_name of this MessagingRecipient.
         :type: str
@@ -213,7 +213,7 @@ class MessagingRecipient(object):
     def email(self):
         """
         Gets the email of this MessagingRecipient.
-        Sender's email address
+        E-mail address of the recipient.
 
         :return: The email of this MessagingRecipient.
         :rtype: str
@@ -224,7 +224,7 @@ class MessagingRecipient(object):
     def email(self, email):
         """
         Sets the email of this MessagingRecipient.
-        Sender's email address
+        E-mail address of the recipient.
 
         :param email: The email of this MessagingRecipient.
         :type: str

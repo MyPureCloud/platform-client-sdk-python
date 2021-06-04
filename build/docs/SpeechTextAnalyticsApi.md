@@ -14,8 +14,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_conversation_communication_transcripturl**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation_communication_transcripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation|
 |[**get_speechandtextanalytics_dialects**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_dialects) | Get list of supported Speech &amp; Text Analytics dialects|
 |[**get_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program) | Get a Speech &amp; Text Analytics program by id|
+|[**get_speechandtextanalytics_program_mappings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program_mappings) | Get Speech &amp; Text Analytics program mappings to queues and flows by id|
 |[**get_speechandtextanalytics_programs**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs) | Get the list of Speech &amp; Text Analytics programs|
 |[**get_speechandtextanalytics_programs_general_job**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_general_job) | Get a Speech &amp; Text Analytics general program job by id|
+|[**get_speechandtextanalytics_programs_mappings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_mappings) | Get the list of Speech &amp; Text Analytics programs mappings to queues and flows|
 |[**get_speechandtextanalytics_programs_publishjob**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_publishjob) | Get a Speech &amp; Text Analytics publish programs job by id|
 |[**get_speechandtextanalytics_programs_unpublished**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_unpublished) | Get the list of Speech &amp; Text Analytics unpublished programs|
 |[**get_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_settings) | Get Speech And Text Analytics Settings|
@@ -31,6 +33,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_speechandtextanalytics_topics_publishjobs**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_topics_publishjobs) | Create new Speech &amp; Text Analytics publish topics job|
 |[**post_speechandtextanalytics_transcripts_search**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_transcripts_search) | Search resources.|
 |[**put_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program) | Update existing Speech &amp; Text Analytics program|
+|[**put_speechandtextanalytics_program_mappings**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program_mappings) | Set Speech &amp; Text Analytics program mappings to queues and flows|
+|[**put_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_settings) | Update Speech And Text Analytics Settings|
 |[**put_speechandtextanalytics_topic**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_topic) | Update existing Speech &amp; Text Analytics topic|
 {: class="table table-striped"}
 
@@ -337,6 +341,57 @@ except ApiException as e:
 
 [**Program**](Program.html)
 
+<a name="get_speechandtextanalytics_program_mappings"></a>
+
+## [**ProgramMappings**](ProgramMappings.html) get_speechandtextanalytics_program_mappings(program_id)
+
+
+
+Get Speech & Text Analytics program mappings to queues and flows by id
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/programs/{programId}/mappings 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+program_id = 'program_id_example' # str | The id of the program
+
+try:
+    # Get Speech & Text Analytics program mappings to queues and flows by id
+    api_response = api_instance.get_speechandtextanalytics_program_mappings(program_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_program_mappings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| The id of the program |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ProgramMappings**](ProgramMappings.html)
+
 <a name="get_speechandtextanalytics_programs"></a>
 
 ## [**ProgramsEntityListing**](ProgramsEntityListing.html) get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size)
@@ -443,6 +498,59 @@ except ApiException as e:
 ### Return type
 
 [**GeneralProgramJob**](GeneralProgramJob.html)
+
+<a name="get_speechandtextanalytics_programs_mappings"></a>
+
+## [**ProgramsMappingsEntityListing**](ProgramsMappingsEntityListing.html) get_speechandtextanalytics_programs_mappings(next_page=next_page, page_size=page_size)
+
+
+
+Get the list of Speech & Text Analytics programs mappings to queues and flows
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/programs/mappings 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+next_page = 'next_page_example' # str | The key for listing the next page (optional)
+page_size = 20 # int | The page size for the listing (optional) (default to 20)
+
+try:
+    # Get the list of Speech & Text Analytics programs mappings to queues and flows
+    api_response = api_instance.get_speechandtextanalytics_programs_mappings(next_page=next_page, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_programs_mappings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **next_page** | **str**| The key for listing the next page | [optional]  |
+| **page_size** | **int**| The page size for the listing | [optional] [default to 20] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ProgramsMappingsEntityListing**](ProgramsMappingsEntityListing.html)
 
 <a name="get_speechandtextanalytics_programs_publishjob"></a>
 
@@ -743,7 +851,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **dialect** | **str**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: en-US, es-US |
+| **dialect** | **str**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN |
 {: class="table table-striped"}
 
 ### Return type
@@ -1214,6 +1322,110 @@ except ApiException as e:
 ### Return type
 
 [**Program**](Program.html)
+
+<a name="put_speechandtextanalytics_program_mappings"></a>
+
+## [**ProgramMappings**](ProgramMappings.html) put_speechandtextanalytics_program_mappings(program_id, body)
+
+
+
+Set Speech & Text Analytics program mappings to queues and flows
+
+
+
+Wraps PUT /api/v2/speechandtextanalytics/programs/{programId}/mappings 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+program_id = 'program_id_example' # str | The id of the program
+body = PureCloudPlatformClientV2.ProgramMappingsRequest() # ProgramMappingsRequest | The program to set mappings for
+
+try:
+    # Set Speech & Text Analytics program mappings to queues and flows
+    api_response = api_instance.put_speechandtextanalytics_program_mappings(program_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->put_speechandtextanalytics_program_mappings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| The id of the program |  |
+| **body** | [**ProgramMappingsRequest**](ProgramMappingsRequest.html)| The program to set mappings for |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ProgramMappings**](ProgramMappings.html)
+
+<a name="put_speechandtextanalytics_settings"></a>
+
+## [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html) put_speechandtextanalytics_settings(body)
+
+
+
+Update Speech And Text Analytics Settings
+
+
+
+Wraps PUT /api/v2/speechandtextanalytics/settings 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+body = PureCloudPlatformClientV2.SpeechTextAnalyticsSettingsRequest() # SpeechTextAnalyticsSettingsRequest | Speech And Text Analytics Settings
+
+try:
+    # Update Speech And Text Analytics Settings
+    api_response = api_instance.put_speechandtextanalytics_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->put_speechandtextanalytics_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SpeechTextAnalyticsSettingsRequest**](SpeechTextAnalyticsSettingsRequest.html)| Speech And Text Analytics Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
 
 <a name="put_speechandtextanalytics_topic"></a>
 

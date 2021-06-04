@@ -2,6 +2,7 @@ from __future__ import absolute_import
 
 # import models into model package
 from .adfs import ADFS
+from .acknowledge_screen_recording_request import AcknowledgeScreenRecordingRequest
 from .action import Action
 from .action_config import ActionConfig
 from .action_contract import ActionContract
@@ -126,6 +127,8 @@ from .architect_prompt_resource_notification_prompt_resource_notification import
 from .architect_system_prompt_resource_notification_system_prompt_resource_notification import ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification
 from .archive_retention import ArchiveRetention
 from .array_node import ArrayNode
+from .article_content import ArticleContent
+from .article_content_body import ArticleContentBody
 from .assessment_form import AssessmentForm
 from .assessment_form_question import AssessmentFormQuestion
 from .assessment_form_question_group import AssessmentFormQuestionGroup
@@ -270,15 +273,27 @@ from .bulk_error_detail import BulkErrorDetail
 from .bulk_error_entity import BulkErrorEntity
 from .bulk_error_external_contact import BulkErrorExternalContact
 from .bulk_error_external_organization import BulkErrorExternalOrganization
+from .bulk_error_note import BulkErrorNote
+from .bulk_error_relationship import BulkErrorRelationship
 from .bulk_fetch_contacts_response import BulkFetchContactsResponse
+from .bulk_fetch_notes_response import BulkFetchNotesResponse
 from .bulk_fetch_organizations_response import BulkFetchOrganizationsResponse
+from .bulk_fetch_relationships_response import BulkFetchRelationshipsResponse
 from .bulk_ids_request import BulkIdsRequest
+from .bulk_notes_request import BulkNotesRequest
+from .bulk_notes_response import BulkNotesResponse
 from .bulk_organizations_request import BulkOrganizationsRequest
 from .bulk_organizations_response import BulkOrganizationsResponse
+from .bulk_relationships_request import BulkRelationshipsRequest
+from .bulk_relationships_response import BulkRelationshipsResponse
 from .bulk_response_result_external_contact_entity import BulkResponseResultExternalContactEntity
 from .bulk_response_result_external_contact_external_contact import BulkResponseResultExternalContactExternalContact
 from .bulk_response_result_external_organization_entity import BulkResponseResultExternalOrganizationEntity
 from .bulk_response_result_external_organization_external_organization import BulkResponseResultExternalOrganizationExternalOrganization
+from .bulk_response_result_note_entity import BulkResponseResultNoteEntity
+from .bulk_response_result_note_note import BulkResponseResultNoteNote
+from .bulk_response_result_relationship_entity import BulkResponseResultRelationshipEntity
+from .bulk_response_result_relationship_relationship import BulkResponseResultRelationshipRelationship
 from .bulk_response_result_void_entity import BulkResponseResultVoidEntity
 from .bulk_shift_trade_state_update_request import BulkShiftTradeStateUpdateRequest
 from .bulk_update_shift_trade_state_request_item import BulkUpdateShiftTradeStateRequestItem
@@ -294,6 +309,7 @@ from .business_unit_listing import BusinessUnitListing
 from .business_unit_reference import BusinessUnitReference
 from .business_unit_settings import BusinessUnitSettings
 from .button_component import ButtonComponent
+from .button_response import ButtonResponse
 from .calibration import Calibration
 from .calibration_assignment import CalibrationAssignment
 from .calibration_create import CalibrationCreate
@@ -406,6 +422,7 @@ from .common_campaign_entity_listing import CommonCampaignEntityListing
 from .condition import Condition
 from .configuration_overrides import ConfigurationOverrides
 from .connect_rate import ConnectRate
+from .connected_edge import ConnectedEdge
 from .constraint_conflict_message import ConstraintConflictMessage
 from .consult_transfer import ConsultTransfer
 from .consult_transfer_response import ConsultTransferResponse
@@ -530,6 +547,10 @@ from .conversation_cobrowse_event_topic_journey_customer_session import Conversa
 from .conversation_cobrowse_event_topic_scored_agent import ConversationCobrowseEventTopicScoredAgent
 from .conversation_cobrowse_event_topic_uri_reference import ConversationCobrowseEventTopicUriReference
 from .conversation_cobrowse_event_topic_wrapup import ConversationCobrowseEventTopicWrapup
+from .conversation_content_attachment import ConversationContentAttachment
+from .conversation_content_button_response import ConversationContentButtonResponse
+from .conversation_content_notification_template import ConversationContentNotificationTemplate
+from .conversation_content_quick_reply import ConversationContentQuickReply
 from .conversation_deletion_protection_query import ConversationDeletionProtectionQuery
 from .conversation_detail_query_clause import ConversationDetailQueryClause
 from .conversation_detail_query_filter import ConversationDetailQueryFilter
@@ -583,6 +604,7 @@ from .conversation_event_topic_uri_reference import ConversationEventTopicUriRef
 from .conversation_event_topic_video import ConversationEventTopicVideo
 from .conversation_event_topic_voicemail import ConversationEventTopicVoicemail
 from .conversation_event_topic_wrapup import ConversationEventTopicWrapup
+from .conversation_message_content import ConversationMessageContent
 from .conversation_message_event_topic_conversation_routing_data import ConversationMessageEventTopicConversationRoutingData
 from .conversation_message_event_topic_detail import ConversationMessageEventTopicDetail
 from .conversation_message_event_topic_error_body import ConversationMessageEventTopicErrorBody
@@ -599,9 +621,18 @@ from .conversation_message_event_topic_message_sticker import ConversationMessag
 from .conversation_message_event_topic_scored_agent import ConversationMessageEventTopicScoredAgent
 from .conversation_message_event_topic_uri_reference import ConversationMessageEventTopicUriReference
 from .conversation_message_event_topic_wrapup import ConversationMessageEventTopicWrapup
+from .conversation_messaging_channel import ConversationMessagingChannel
+from .conversation_messaging_from_recipient import ConversationMessagingFromRecipient
+from .conversation_messaging_to_recipient import ConversationMessagingToRecipient
 from .conversation_metrics import ConversationMetrics
+from .conversation_normalized_message import ConversationNormalizedMessage
+from .conversation_notification_template_body import ConversationNotificationTemplateBody
+from .conversation_notification_template_footer import ConversationNotificationTemplateFooter
+from .conversation_notification_template_header import ConversationNotificationTemplateHeader
+from .conversation_notification_template_parameter import ConversationNotificationTemplateParameter
 from .conversation_properties import ConversationProperties
 from .conversation_query import ConversationQuery
+from .conversation_reason import ConversationReason
 from .conversation_reference import ConversationReference
 from .conversation_routing_data import ConversationRoutingData
 from .conversation_screen_share_event_topic_conversation_routing_data import ConversationScreenShareEventTopicConversationRoutingData
@@ -630,6 +661,8 @@ from .conversation_social_expression_event_topic_social_conversation import Conv
 from .conversation_social_expression_event_topic_social_media_participant import ConversationSocialExpressionEventTopicSocialMediaParticipant
 from .conversation_social_expression_event_topic_uri_reference import ConversationSocialExpressionEventTopicUriReference
 from .conversation_social_expression_event_topic_wrapup import ConversationSocialExpressionEventTopicWrapup
+from .conversation_threading_window import ConversationThreadingWindow
+from .conversation_threading_window_setting import ConversationThreadingWindowSetting
 from .conversation_user import ConversationUser
 from .conversation_video_event_topic_conversation_routing_data import ConversationVideoEventTopicConversationRoutingData
 from .conversation_video_event_topic_detail import ConversationVideoEventTopicDetail
@@ -821,6 +854,7 @@ from .digit_length import DigitLength
 from .digits import Digits
 from .directory_user_devices_listing import DirectoryUserDevicesListing
 from .disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
+from .disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
 from .disconnect_reason import DisconnectReason
 from .division import Division
 from .division_reference import DivisionReference
@@ -833,6 +867,7 @@ from .dnc_list_entity_listing import DncListEntityListing
 from .dnclist_download_ready_export_uri import DnclistDownloadReadyExportUri
 from .dnclist_import_status_import_status import DnclistImportStatusImportStatus
 from .document import Document
+from .document_article import DocumentArticle
 from .document_attribute import DocumentAttribute
 from .document_audit import DocumentAudit
 from .document_audit_entity_listing import DocumentAuditEntityListing
@@ -883,6 +918,7 @@ from .duration_condition import DurationCondition
 from .edge import Edge
 from .edge_auto_update_config import EdgeAutoUpdateConfig
 from .edge_change_topic_edge import EdgeChangeTopicEdge
+from .edge_connection_info import EdgeConnectionInfo
 from .edge_entity_listing import EdgeEntityListing
 from .edge_group import EdgeGroup
 from .edge_group_entity_listing import EdgeGroupEntityListing
@@ -1213,9 +1249,21 @@ from .leaderboard import Leaderboard
 from .leaderboard_item import LeaderboardItem
 from .learning_assessment import LearningAssessment
 from .learning_assignment import LearningAssignment
+from .learning_assignment_aggregate_param import LearningAssignmentAggregateParam
+from .learning_assignment_aggregate_query_request_clause import LearningAssignmentAggregateQueryRequestClause
+from .learning_assignment_aggregate_query_request_filter import LearningAssignmentAggregateQueryRequestFilter
+from .learning_assignment_aggregate_query_request_predicate import LearningAssignmentAggregateQueryRequestPredicate
+from .learning_assignment_aggregate_query_response_data import LearningAssignmentAggregateQueryResponseData
+from .learning_assignment_aggregate_query_response_grouped_data import LearningAssignmentAggregateQueryResponseGroupedData
+from .learning_assignment_aggregate_query_response_metric import LearningAssignmentAggregateQueryResponseMetric
+from .learning_assignment_aggregate_query_response_stats import LearningAssignmentAggregateQueryResponseStats
+from .learning_assignment_aggregate_response import LearningAssignmentAggregateResponse
 from .learning_assignment_bulk_add_response import LearningAssignmentBulkAddResponse
+from .learning_assignment_bulk_remove_response import LearningAssignmentBulkRemoveResponse
 from .learning_assignment_create import LearningAssignmentCreate
+from .learning_assignment_entity import LearningAssignmentEntity
 from .learning_assignment_item import LearningAssignmentItem
+from .learning_assignment_reference import LearningAssignmentReference
 from .learning_assignment_update import LearningAssignmentUpdate
 from .learning_assignment_user import LearningAssignmentUser
 from .learning_assignment_user_listing import LearningAssignmentUserListing
@@ -1285,6 +1333,7 @@ from .mail_from_result import MailFromResult
 from .management_unit import ManagementUnit
 from .management_unit_listing import ManagementUnitListing
 from .management_unit_reference import ManagementUnitReference
+from .management_unit_settings_request import ManagementUnitSettingsRequest
 from .management_unit_settings_response import ManagementUnitSettingsResponse
 from .manager import Manager
 from .match_shift_trade_request import MatchShiftTradeRequest
@@ -1401,6 +1450,15 @@ from .observation_metric_data import ObservationMetricData
 from .observation_value import ObservationValue
 from .okta import Okta
 from .one_login import OneLogin
+from .open_integration import OpenIntegration
+from .open_integration_entity_listing import OpenIntegrationEntityListing
+from .open_integration_request import OpenIntegrationRequest
+from .open_integration_update_request import OpenIntegrationUpdateRequest
+from .open_message_content import OpenMessageContent
+from .open_messaging_channel import OpenMessagingChannel
+from .open_messaging_from_recipient import OpenMessagingFromRecipient
+from .open_messaging_to_recipient import OpenMessagingToRecipient
+from .open_normalized_message import OpenNormalizedMessage
 from .operation import Operation
 from .org_o_auth_client import OrgOAuthClient
 from .org_user import OrgUser
@@ -1524,8 +1582,11 @@ from .presence_expand import PresenceExpand
 from .program import Program
 from .program_job import ProgramJob
 from .program_job_request import ProgramJobRequest
+from .program_mappings import ProgramMappings
+from .program_mappings_request import ProgramMappingsRequest
 from .program_request import ProgramRequest
 from .programs_entity_listing import ProgramsEntityListing
+from .programs_mappings_entity_listing import ProgramsMappingsEntityListing
 from .prompt import Prompt
 from .prompt_asset import PromptAsset
 from .prompt_asset_create import PromptAssetCreate
@@ -1542,8 +1603,13 @@ from .published_survey_form_reference import PublishedSurveyFormReference
 from .punctuality_event import PunctualityEvent
 from .pure_cloud import PureCloud
 from .pure_engage import PureEngage
+from .qm_audit_query_request import QMAuditQueryRequest
 from .quality_audit import QualityAudit
+from .quality_audit_log_message import QualityAuditLogMessage
 from .quality_audit_page import QualityAuditPage
+from .quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
+from .quality_audit_query_execution_status_response import QualityAuditQueryExecutionStatusResponse
+from .quality_audit_query_filter import QualityAuditQueryFilter
 from .query_division import QueryDivision
 from .query_facet_info import QueryFacetInfo
 from .query_request import QueryRequest
@@ -1768,6 +1834,7 @@ from .queue_request import QueueRequest
 from .queue_user_event_topic_queue_member import QueueUserEventTopicQueueMember
 from .queue_user_event_topic_user_reference import QueueUserEventTopicUserReference
 from .queue_utilization_diagnostic import QueueUtilizationDiagnostic
+from .quick_reply import QuickReply
 from .reaction import Reaction
 from .recall_entry import RecallEntry
 from .recipient import Recipient
@@ -1805,6 +1872,7 @@ from .reporting_export_job_request import ReportingExportJobRequest
 from .reporting_export_job_response import ReportingExportJobResponse
 from .reporting_export_metadata_job_listing import ReportingExportMetadataJobListing
 from .reporting_export_metadata_job_response import ReportingExportMetadataJobResponse
+from .reporting_interval import ReportingInterval
 from .request_config import RequestConfig
 from .request_mapping import RequestMapping
 from .rescheduling_management_unit_response import ReschedulingManagementUnitResponse
@@ -1904,6 +1972,8 @@ from .scim_v2_schema_list_response import ScimV2SchemaListResponse
 from .scim_v2_user import ScimV2User
 from .scorable_survey import ScorableSurvey
 from .scored_agent import ScoredAgent
+from .screen_recording_meta_data import ScreenRecordingMetaData
+from .screen_recording_meta_data_request import ScreenRecordingMetaDataRequest
 from .screen_recording_session import ScreenRecordingSession
 from .screen_recording_session_listing import ScreenRecordingSessionListing
 from .screen_recording_session_request import ScreenRecordingSessionRequest
@@ -1966,6 +2036,7 @@ from .single_workday_average_values import SingleWorkdayAverageValues
 from .sip_download_response import SipDownloadResponse
 from .sip_search_result import SipSearchResult
 from .site import Site
+from .site_connection import SiteConnection
 from .site_entity_listing import SiteEntityListing
 from .skill_entity_listing import SkillEntityListing
 from .skills_to_remove import SkillsToRemove
@@ -2090,6 +2161,10 @@ from .transcript_search_criteria import TranscriptSearchCriteria
 from .transcript_search_request import TranscriptSearchRequest
 from .transcript_url import TranscriptUrl
 from .transcription_settings import TranscriptionSettings
+from .transcriptions_topic_transcript_alternative import TranscriptionsTopicTranscriptAlternative
+from .transcriptions_topic_transcript_result import TranscriptionsTopicTranscriptResult
+from .transcriptions_topic_transcript_word import TranscriptionsTopicTranscriptWord
+from .transcriptions_topic_transcription_message import TranscriptionsTopicTranscriptionMessage
 from .transcripts import Transcripts
 from .transfer_request import TransferRequest
 from .trunk import Trunk
@@ -2153,6 +2228,7 @@ from .update_business_unit_request import UpdateBusinessUnitRequest
 from .update_business_unit_settings import UpdateBusinessUnitSettings
 from .update_coaching_appointment_request import UpdateCoachingAppointmentRequest
 from .update_draft_input import UpdateDraftInput
+from .update_management_unit_request import UpdateManagementUnitRequest
 from .update_notification_response import UpdateNotificationResponse
 from .update_notifications_request import UpdateNotificationsRequest
 from .update_notifications_response import UpdateNotificationsResponse
@@ -2296,6 +2372,7 @@ from .web_chat_typing import WebChatTyping
 from .web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 from .web_deployments_deployment_topic_web_messaging_config_change_event_body import WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody
 from .web_deployments_deployment_topic_web_messaging_deployment_change_event_body import WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody
+from .web_messaging_offer_fields import WebMessagingOfferFields
 from .week_schedule import WeekSchedule
 from .week_schedule_generation_result import WeekScheduleGenerationResult
 from .week_schedule_list_item_response import WeekScheduleListItemResponse

@@ -8,8 +8,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_gamification_leaderboard**](GamificationApi.html#get_gamification_leaderboard) | Leaderboard of the requesting user&#39;s division|
-|[**get_gamification_leaderboard_all**](GamificationApi.html#get_gamification_leaderboard_all) | Leaderboard by division|
+|[**get_gamification_leaderboard**](GamificationApi.html#get_gamification_leaderboard) | Leaderboard of the requesting user&#39;s division or performance profile|
+|[**get_gamification_leaderboard_all**](GamificationApi.html#get_gamification_leaderboard_all) | Leaderboard by filter type|
 |[**get_gamification_leaderboard_all_bestpoints**](GamificationApi.html#get_gamification_leaderboard_all_bestpoints) | Best Points by division|
 |[**get_gamification_leaderboard_bestpoints**](GamificationApi.html#get_gamification_leaderboard_bestpoints) | Best Points of the requesting user&#39;s division|
 |[**get_gamification_metric**](GamificationApi.html#get_gamification_metric) | Gamified metric by id|
@@ -50,7 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-Leaderboard of the requesting user's division
+Leaderboard of the requesting user's division or performance profile
 
 
 
@@ -78,7 +78,7 @@ end_workday = '2013-10-20' # date | End workday to retrieve for the leaderboard.
 metric_id = 'metric_id_example' # str | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)
 
 try:
-    # Leaderboard of the requesting user's division
+    # Leaderboard of the requesting user's division or performance profile
     api_response = api_instance.get_gamification_leaderboard(start_workday, end_workday, metric_id=metric_id)
     pprint(api_response)
 except ApiException as e:
@@ -105,7 +105,7 @@ except ApiException as e:
 
 
 
-Leaderboard by division
+Leaderboard by filter type
 
 
 
@@ -135,7 +135,7 @@ end_workday = '2013-10-20' # date | End workday to retrieve for the leaderboard.
 metric_id = 'metric_id_example' # str | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)
 
 try:
-    # Leaderboard by division
+    # Leaderboard by filter type
     api_response = api_instance.get_gamification_leaderboard_all(filter_type, filter_id, start_workday, end_workday, metric_id=metric_id)
     pprint(api_response)
 except ApiException as e:
@@ -147,7 +147,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: Division |
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
 | **filter_id** | **str**| ID for the filter type. For example, division Id |  |
 | **start_workday** | **date**| Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **end_workday** | **date**| End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
@@ -203,7 +203,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: Division |
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
 | **filter_id** | **str**| ID for the filter type. For example, division Id |  |
 {: class="table table-striped"}
 
@@ -260,7 +260,7 @@ This endpoint does not need any parameter.
 
 <a name="get_gamification_metric"></a>
 
-## [**Metric**](Metric.html) get_gamification_metric(metric_id)
+## [**Metric**](Metric.html) get_gamification_metric(metric_id, performance_profile_id=performance_profile_id)
 
 
 
@@ -290,10 +290,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 metric_id = 'metric_id_example' # str | metric Id
+performance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
 
 try:
     # Gamified metric by id
-    api_response = api_instance.get_gamification_metric(metric_id)
+    api_response = api_instance.get_gamification_metric(metric_id, performance_profile_id=performance_profile_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_metric: %s\n" % e)
@@ -305,6 +306,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **metric_id** | **str**| metric Id |  |
+| **performance_profile_id** | **str**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -589,7 +591,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-workday = '2013-10-20' # date | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+workday = '2013-10-20' # date | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 
 try:
@@ -605,7 +607,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **workday** | **date**| Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **workday** | **date**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
 {: class="table table-striped"}
 
@@ -642,8 +644,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-start_workday = '2013-10-20' # date | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-end_workday = '2013-10-20' # date | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 try:
     # Attendance status metrics of the requesting user
@@ -658,8 +660,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **start_workday** | **date**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **end_workday** | **date**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -742,7 +744,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-end_workday = '2013-10-20' # date | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 try:
     # All-time points of the requesting user
@@ -757,7 +759,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **end_workday** | **date**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -844,8 +846,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-start_workday = '2013-10-20' # date | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-end_workday = '2013-10-20' # date | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 day_of_week = 'day_of_week_example' # str | Optional filter to specify which day of weeks to be included in the response (optional)
 
 try:
@@ -861,8 +863,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **start_workday** | **date**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **end_workday** | **date**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **day_of_week** | **str**| Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
 {: class="table table-striped"}
 
@@ -900,7 +902,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 user_id = 'user_id_example' # str | 
-workday = '2013-10-20' # date | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+workday = '2013-10-20' # date | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 
 try:
@@ -917,7 +919,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**|  |  |
-| **workday** | **date**| Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **workday** | **date**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
 {: class="table table-striped"}
 
@@ -955,8 +957,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 user_id = 'user_id_example' # str | 
-start_workday = '2013-10-20' # date | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-end_workday = '2013-10-20' # date | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 try:
     # Attendance status metrics for a user
@@ -972,8 +974,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**|  |  |
-| **start_workday** | **date**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **end_workday** | **date**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1061,7 +1063,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 user_id = 'user_id_example' # str | 
-end_workday = '2013-10-20' # date | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 try:
     # All-time points for a user
@@ -1077,7 +1079,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**|  |  |
-| **end_workday** | **date**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1114,8 +1116,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 user_id = 'user_id_example' # str | 
-start_workday = '2013-10-20' # date | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-end_workday = '2013-10-20' # date | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 day_of_week = 'day_of_week_example' # str | Optional filter to specify which day of weeks to be included in the response (optional)
 
 try:
@@ -1132,8 +1134,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**|  |  |
-| **start_workday** | **date**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **end_workday** | **date**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **day_of_week** | **str**| Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
 {: class="table table-striped"}
 
@@ -1171,8 +1173,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 user_id = 'user_id_example' # str | 
-start_workday = '2013-10-20' # date | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-end_workday = '2013-10-20' # date | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
 
 try:
@@ -1189,8 +1191,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**|  |  |
-| **start_workday** | **date**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **end_workday** | **date**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
 {: class="table table-striped"}
 
@@ -1244,7 +1246,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: Division |
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
 | **filter_id** | **str**| ID for the filter type. |  |
 | **workday** | **date**| The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
@@ -1300,7 +1302,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: Division |
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
 | **filter_id** | **str**| ID for the filter type. For example, division Id |  |
 | **workday** | **date**| The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
@@ -1341,8 +1343,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 filter_type = 'filter_type_example' # str | Filter type for the query request.
 filter_id = 'filter_id_example' # str | ID for the filter type.
-start_workday = '2013-10-20' # date | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-end_workday = '2013-10-20' # date | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
 
 try:
@@ -1358,10 +1360,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: Division |
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
 | **filter_id** | **str**| ID for the filter type. |  |
-| **start_workday** | **date**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **end_workday** | **date**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
 {: class="table table-striped"}
 
@@ -1451,8 +1453,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-start_workday = '2013-10-20' # date | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-end_workday = '2013-10-20' # date | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 filter_type = 'filter_type_example' # str | Filter type for the query request. If not set, then the request is for the requesting user. (optional)
 time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
 
@@ -1469,9 +1471,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **start_workday** | **date**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **end_workday** | **date**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **filter_type** | **str**| Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: Division |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **filter_type** | **str**| Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: PerformanceProfile, Division |
 | **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
 {: class="table table-striped"}
 
@@ -1679,7 +1681,7 @@ except ApiException as e:
 
 <a name="put_gamification_metric"></a>
 
-## [**Metric**](Metric.html) put_gamification_metric(metric_id, body)
+## [**Metric**](Metric.html) put_gamification_metric(metric_id, body, performance_profile_id=performance_profile_id)
 
 
 
@@ -1708,10 +1710,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 metric_id = 'metric_id_example' # str | metric Id
 body = PureCloudPlatformClientV2.Metric() # Metric | Metric
+performance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
 
 try:
     # Updates a metric
-    api_response = api_instance.put_gamification_metric(metric_id, body)
+    api_response = api_instance.put_gamification_metric(metric_id, body, performance_profile_id=performance_profile_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->put_gamification_metric: %s\n" % e)
@@ -1724,6 +1727,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **metric_id** | **str**| metric Id |  |
 | **body** | [**Metric**](Metric.html)| Metric |  |
+| **performance_profile_id** | **str**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

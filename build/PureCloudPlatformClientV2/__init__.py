@@ -2,6 +2,7 @@ from __future__ import absolute_import
 
 # import models into sdk package
 from .models.adfs import ADFS
+from .models.acknowledge_screen_recording_request import AcknowledgeScreenRecordingRequest
 from .models.action import Action
 from .models.action_config import ActionConfig
 from .models.action_contract import ActionContract
@@ -126,6 +127,8 @@ from .models.architect_prompt_resource_notification_prompt_resource_notification
 from .models.architect_system_prompt_resource_notification_system_prompt_resource_notification import ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification
 from .models.archive_retention import ArchiveRetention
 from .models.array_node import ArrayNode
+from .models.article_content import ArticleContent
+from .models.article_content_body import ArticleContentBody
 from .models.assessment_form import AssessmentForm
 from .models.assessment_form_question import AssessmentFormQuestion
 from .models.assessment_form_question_group import AssessmentFormQuestionGroup
@@ -270,15 +273,27 @@ from .models.bulk_error_detail import BulkErrorDetail
 from .models.bulk_error_entity import BulkErrorEntity
 from .models.bulk_error_external_contact import BulkErrorExternalContact
 from .models.bulk_error_external_organization import BulkErrorExternalOrganization
+from .models.bulk_error_note import BulkErrorNote
+from .models.bulk_error_relationship import BulkErrorRelationship
 from .models.bulk_fetch_contacts_response import BulkFetchContactsResponse
+from .models.bulk_fetch_notes_response import BulkFetchNotesResponse
 from .models.bulk_fetch_organizations_response import BulkFetchOrganizationsResponse
+from .models.bulk_fetch_relationships_response import BulkFetchRelationshipsResponse
 from .models.bulk_ids_request import BulkIdsRequest
+from .models.bulk_notes_request import BulkNotesRequest
+from .models.bulk_notes_response import BulkNotesResponse
 from .models.bulk_organizations_request import BulkOrganizationsRequest
 from .models.bulk_organizations_response import BulkOrganizationsResponse
+from .models.bulk_relationships_request import BulkRelationshipsRequest
+from .models.bulk_relationships_response import BulkRelationshipsResponse
 from .models.bulk_response_result_external_contact_entity import BulkResponseResultExternalContactEntity
 from .models.bulk_response_result_external_contact_external_contact import BulkResponseResultExternalContactExternalContact
 from .models.bulk_response_result_external_organization_entity import BulkResponseResultExternalOrganizationEntity
 from .models.bulk_response_result_external_organization_external_organization import BulkResponseResultExternalOrganizationExternalOrganization
+from .models.bulk_response_result_note_entity import BulkResponseResultNoteEntity
+from .models.bulk_response_result_note_note import BulkResponseResultNoteNote
+from .models.bulk_response_result_relationship_entity import BulkResponseResultRelationshipEntity
+from .models.bulk_response_result_relationship_relationship import BulkResponseResultRelationshipRelationship
 from .models.bulk_response_result_void_entity import BulkResponseResultVoidEntity
 from .models.bulk_shift_trade_state_update_request import BulkShiftTradeStateUpdateRequest
 from .models.bulk_update_shift_trade_state_request_item import BulkUpdateShiftTradeStateRequestItem
@@ -294,6 +309,7 @@ from .models.business_unit_listing import BusinessUnitListing
 from .models.business_unit_reference import BusinessUnitReference
 from .models.business_unit_settings import BusinessUnitSettings
 from .models.button_component import ButtonComponent
+from .models.button_response import ButtonResponse
 from .models.calibration import Calibration
 from .models.calibration_assignment import CalibrationAssignment
 from .models.calibration_create import CalibrationCreate
@@ -406,6 +422,7 @@ from .models.common_campaign_entity_listing import CommonCampaignEntityListing
 from .models.condition import Condition
 from .models.configuration_overrides import ConfigurationOverrides
 from .models.connect_rate import ConnectRate
+from .models.connected_edge import ConnectedEdge
 from .models.constraint_conflict_message import ConstraintConflictMessage
 from .models.consult_transfer import ConsultTransfer
 from .models.consult_transfer_response import ConsultTransferResponse
@@ -530,6 +547,10 @@ from .models.conversation_cobrowse_event_topic_journey_customer_session import C
 from .models.conversation_cobrowse_event_topic_scored_agent import ConversationCobrowseEventTopicScoredAgent
 from .models.conversation_cobrowse_event_topic_uri_reference import ConversationCobrowseEventTopicUriReference
 from .models.conversation_cobrowse_event_topic_wrapup import ConversationCobrowseEventTopicWrapup
+from .models.conversation_content_attachment import ConversationContentAttachment
+from .models.conversation_content_button_response import ConversationContentButtonResponse
+from .models.conversation_content_notification_template import ConversationContentNotificationTemplate
+from .models.conversation_content_quick_reply import ConversationContentQuickReply
 from .models.conversation_deletion_protection_query import ConversationDeletionProtectionQuery
 from .models.conversation_detail_query_clause import ConversationDetailQueryClause
 from .models.conversation_detail_query_filter import ConversationDetailQueryFilter
@@ -583,6 +604,7 @@ from .models.conversation_event_topic_uri_reference import ConversationEventTopi
 from .models.conversation_event_topic_video import ConversationEventTopicVideo
 from .models.conversation_event_topic_voicemail import ConversationEventTopicVoicemail
 from .models.conversation_event_topic_wrapup import ConversationEventTopicWrapup
+from .models.conversation_message_content import ConversationMessageContent
 from .models.conversation_message_event_topic_conversation_routing_data import ConversationMessageEventTopicConversationRoutingData
 from .models.conversation_message_event_topic_detail import ConversationMessageEventTopicDetail
 from .models.conversation_message_event_topic_error_body import ConversationMessageEventTopicErrorBody
@@ -599,9 +621,18 @@ from .models.conversation_message_event_topic_message_sticker import Conversatio
 from .models.conversation_message_event_topic_scored_agent import ConversationMessageEventTopicScoredAgent
 from .models.conversation_message_event_topic_uri_reference import ConversationMessageEventTopicUriReference
 from .models.conversation_message_event_topic_wrapup import ConversationMessageEventTopicWrapup
+from .models.conversation_messaging_channel import ConversationMessagingChannel
+from .models.conversation_messaging_from_recipient import ConversationMessagingFromRecipient
+from .models.conversation_messaging_to_recipient import ConversationMessagingToRecipient
 from .models.conversation_metrics import ConversationMetrics
+from .models.conversation_normalized_message import ConversationNormalizedMessage
+from .models.conversation_notification_template_body import ConversationNotificationTemplateBody
+from .models.conversation_notification_template_footer import ConversationNotificationTemplateFooter
+from .models.conversation_notification_template_header import ConversationNotificationTemplateHeader
+from .models.conversation_notification_template_parameter import ConversationNotificationTemplateParameter
 from .models.conversation_properties import ConversationProperties
 from .models.conversation_query import ConversationQuery
+from .models.conversation_reason import ConversationReason
 from .models.conversation_reference import ConversationReference
 from .models.conversation_routing_data import ConversationRoutingData
 from .models.conversation_screen_share_event_topic_conversation_routing_data import ConversationScreenShareEventTopicConversationRoutingData
@@ -630,6 +661,8 @@ from .models.conversation_social_expression_event_topic_social_conversation impo
 from .models.conversation_social_expression_event_topic_social_media_participant import ConversationSocialExpressionEventTopicSocialMediaParticipant
 from .models.conversation_social_expression_event_topic_uri_reference import ConversationSocialExpressionEventTopicUriReference
 from .models.conversation_social_expression_event_topic_wrapup import ConversationSocialExpressionEventTopicWrapup
+from .models.conversation_threading_window import ConversationThreadingWindow
+from .models.conversation_threading_window_setting import ConversationThreadingWindowSetting
 from .models.conversation_user import ConversationUser
 from .models.conversation_video_event_topic_conversation_routing_data import ConversationVideoEventTopicConversationRoutingData
 from .models.conversation_video_event_topic_detail import ConversationVideoEventTopicDetail
@@ -821,6 +854,7 @@ from .models.digit_length import DigitLength
 from .models.digits import Digits
 from .models.directory_user_devices_listing import DirectoryUserDevicesListing
 from .models.disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
+from .models.disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
 from .models.disconnect_reason import DisconnectReason
 from .models.division import Division
 from .models.division_reference import DivisionReference
@@ -833,6 +867,7 @@ from .models.dnc_list_entity_listing import DncListEntityListing
 from .models.dnclist_download_ready_export_uri import DnclistDownloadReadyExportUri
 from .models.dnclist_import_status_import_status import DnclistImportStatusImportStatus
 from .models.document import Document
+from .models.document_article import DocumentArticle
 from .models.document_attribute import DocumentAttribute
 from .models.document_audit import DocumentAudit
 from .models.document_audit_entity_listing import DocumentAuditEntityListing
@@ -883,6 +918,7 @@ from .models.duration_condition import DurationCondition
 from .models.edge import Edge
 from .models.edge_auto_update_config import EdgeAutoUpdateConfig
 from .models.edge_change_topic_edge import EdgeChangeTopicEdge
+from .models.edge_connection_info import EdgeConnectionInfo
 from .models.edge_entity_listing import EdgeEntityListing
 from .models.edge_group import EdgeGroup
 from .models.edge_group_entity_listing import EdgeGroupEntityListing
@@ -1213,9 +1249,21 @@ from .models.leaderboard import Leaderboard
 from .models.leaderboard_item import LeaderboardItem
 from .models.learning_assessment import LearningAssessment
 from .models.learning_assignment import LearningAssignment
+from .models.learning_assignment_aggregate_param import LearningAssignmentAggregateParam
+from .models.learning_assignment_aggregate_query_request_clause import LearningAssignmentAggregateQueryRequestClause
+from .models.learning_assignment_aggregate_query_request_filter import LearningAssignmentAggregateQueryRequestFilter
+from .models.learning_assignment_aggregate_query_request_predicate import LearningAssignmentAggregateQueryRequestPredicate
+from .models.learning_assignment_aggregate_query_response_data import LearningAssignmentAggregateQueryResponseData
+from .models.learning_assignment_aggregate_query_response_grouped_data import LearningAssignmentAggregateQueryResponseGroupedData
+from .models.learning_assignment_aggregate_query_response_metric import LearningAssignmentAggregateQueryResponseMetric
+from .models.learning_assignment_aggregate_query_response_stats import LearningAssignmentAggregateQueryResponseStats
+from .models.learning_assignment_aggregate_response import LearningAssignmentAggregateResponse
 from .models.learning_assignment_bulk_add_response import LearningAssignmentBulkAddResponse
+from .models.learning_assignment_bulk_remove_response import LearningAssignmentBulkRemoveResponse
 from .models.learning_assignment_create import LearningAssignmentCreate
+from .models.learning_assignment_entity import LearningAssignmentEntity
 from .models.learning_assignment_item import LearningAssignmentItem
+from .models.learning_assignment_reference import LearningAssignmentReference
 from .models.learning_assignment_update import LearningAssignmentUpdate
 from .models.learning_assignment_user import LearningAssignmentUser
 from .models.learning_assignment_user_listing import LearningAssignmentUserListing
@@ -1285,6 +1333,7 @@ from .models.mail_from_result import MailFromResult
 from .models.management_unit import ManagementUnit
 from .models.management_unit_listing import ManagementUnitListing
 from .models.management_unit_reference import ManagementUnitReference
+from .models.management_unit_settings_request import ManagementUnitSettingsRequest
 from .models.management_unit_settings_response import ManagementUnitSettingsResponse
 from .models.manager import Manager
 from .models.match_shift_trade_request import MatchShiftTradeRequest
@@ -1401,6 +1450,15 @@ from .models.observation_metric_data import ObservationMetricData
 from .models.observation_value import ObservationValue
 from .models.okta import Okta
 from .models.one_login import OneLogin
+from .models.open_integration import OpenIntegration
+from .models.open_integration_entity_listing import OpenIntegrationEntityListing
+from .models.open_integration_request import OpenIntegrationRequest
+from .models.open_integration_update_request import OpenIntegrationUpdateRequest
+from .models.open_message_content import OpenMessageContent
+from .models.open_messaging_channel import OpenMessagingChannel
+from .models.open_messaging_from_recipient import OpenMessagingFromRecipient
+from .models.open_messaging_to_recipient import OpenMessagingToRecipient
+from .models.open_normalized_message import OpenNormalizedMessage
 from .models.operation import Operation
 from .models.org_o_auth_client import OrgOAuthClient
 from .models.org_user import OrgUser
@@ -1524,8 +1582,11 @@ from .models.presence_expand import PresenceExpand
 from .models.program import Program
 from .models.program_job import ProgramJob
 from .models.program_job_request import ProgramJobRequest
+from .models.program_mappings import ProgramMappings
+from .models.program_mappings_request import ProgramMappingsRequest
 from .models.program_request import ProgramRequest
 from .models.programs_entity_listing import ProgramsEntityListing
+from .models.programs_mappings_entity_listing import ProgramsMappingsEntityListing
 from .models.prompt import Prompt
 from .models.prompt_asset import PromptAsset
 from .models.prompt_asset_create import PromptAssetCreate
@@ -1542,8 +1603,13 @@ from .models.published_survey_form_reference import PublishedSurveyFormReference
 from .models.punctuality_event import PunctualityEvent
 from .models.pure_cloud import PureCloud
 from .models.pure_engage import PureEngage
+from .models.qm_audit_query_request import QMAuditQueryRequest
 from .models.quality_audit import QualityAudit
+from .models.quality_audit_log_message import QualityAuditLogMessage
 from .models.quality_audit_page import QualityAuditPage
+from .models.quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
+from .models.quality_audit_query_execution_status_response import QualityAuditQueryExecutionStatusResponse
+from .models.quality_audit_query_filter import QualityAuditQueryFilter
 from .models.query_division import QueryDivision
 from .models.query_facet_info import QueryFacetInfo
 from .models.query_request import QueryRequest
@@ -1768,6 +1834,7 @@ from .models.queue_request import QueueRequest
 from .models.queue_user_event_topic_queue_member import QueueUserEventTopicQueueMember
 from .models.queue_user_event_topic_user_reference import QueueUserEventTopicUserReference
 from .models.queue_utilization_diagnostic import QueueUtilizationDiagnostic
+from .models.quick_reply import QuickReply
 from .models.reaction import Reaction
 from .models.recall_entry import RecallEntry
 from .models.recipient import Recipient
@@ -1805,6 +1872,7 @@ from .models.reporting_export_job_request import ReportingExportJobRequest
 from .models.reporting_export_job_response import ReportingExportJobResponse
 from .models.reporting_export_metadata_job_listing import ReportingExportMetadataJobListing
 from .models.reporting_export_metadata_job_response import ReportingExportMetadataJobResponse
+from .models.reporting_interval import ReportingInterval
 from .models.request_config import RequestConfig
 from .models.request_mapping import RequestMapping
 from .models.rescheduling_management_unit_response import ReschedulingManagementUnitResponse
@@ -1904,6 +1972,8 @@ from .models.scim_v2_schema_list_response import ScimV2SchemaListResponse
 from .models.scim_v2_user import ScimV2User
 from .models.scorable_survey import ScorableSurvey
 from .models.scored_agent import ScoredAgent
+from .models.screen_recording_meta_data import ScreenRecordingMetaData
+from .models.screen_recording_meta_data_request import ScreenRecordingMetaDataRequest
 from .models.screen_recording_session import ScreenRecordingSession
 from .models.screen_recording_session_listing import ScreenRecordingSessionListing
 from .models.screen_recording_session_request import ScreenRecordingSessionRequest
@@ -1966,6 +2036,7 @@ from .models.single_workday_average_values import SingleWorkdayAverageValues
 from .models.sip_download_response import SipDownloadResponse
 from .models.sip_search_result import SipSearchResult
 from .models.site import Site
+from .models.site_connection import SiteConnection
 from .models.site_entity_listing import SiteEntityListing
 from .models.skill_entity_listing import SkillEntityListing
 from .models.skills_to_remove import SkillsToRemove
@@ -2090,6 +2161,10 @@ from .models.transcript_search_criteria import TranscriptSearchCriteria
 from .models.transcript_search_request import TranscriptSearchRequest
 from .models.transcript_url import TranscriptUrl
 from .models.transcription_settings import TranscriptionSettings
+from .models.transcriptions_topic_transcript_alternative import TranscriptionsTopicTranscriptAlternative
+from .models.transcriptions_topic_transcript_result import TranscriptionsTopicTranscriptResult
+from .models.transcriptions_topic_transcript_word import TranscriptionsTopicTranscriptWord
+from .models.transcriptions_topic_transcription_message import TranscriptionsTopicTranscriptionMessage
 from .models.transcripts import Transcripts
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk
@@ -2153,6 +2228,7 @@ from .models.update_business_unit_request import UpdateBusinessUnitRequest
 from .models.update_business_unit_settings import UpdateBusinessUnitSettings
 from .models.update_coaching_appointment_request import UpdateCoachingAppointmentRequest
 from .models.update_draft_input import UpdateDraftInput
+from .models.update_management_unit_request import UpdateManagementUnitRequest
 from .models.update_notification_response import UpdateNotificationResponse
 from .models.update_notifications_request import UpdateNotificationsRequest
 from .models.update_notifications_response import UpdateNotificationsResponse
@@ -2296,6 +2372,7 @@ from .models.web_chat_typing import WebChatTyping
 from .models.web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 from .models.web_deployments_deployment_topic_web_messaging_config_change_event_body import WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody
 from .models.web_deployments_deployment_topic_web_messaging_deployment_change_event_body import WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody
+from .models.web_messaging_offer_fields import WebMessagingOfferFields
 from .models.week_schedule import WeekSchedule
 from .models.week_schedule_generation_result import WeekScheduleGenerationResult
 from .models.week_schedule_list_item_response import WeekScheduleListItemResponse

@@ -6280,6 +6280,84 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_flow_history(self, flow_id, **kwargs):
+        """
+        Generate flow history
+        Asynchronous.  Notification topic: v2.flows.{flowId}
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flow_history(flow_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str flow_id: Flow ID (required)
+        :return: Operation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['flow_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flow_history" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'flow_id' is set
+        if ('flow_id' not in params) or (params['flow_id'] is None):
+            raise ValueError("Missing the required parameter `flow_id` when calling `post_flow_history`")
+
+
+        resource_path = '/api/v2/flows/{flowId}/history'.replace('{format}', 'json')
+        path_params = {}
+        if 'flow_id' in params:
+            path_params['flowId'] = params['flow_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Operation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_flow_versions(self, flow_id, body, **kwargs):
         """
         Create flow version
@@ -6380,12 +6458,13 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Flow body:  (required)
+        :param str language: Language
         :return: Flow
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']
+        all_params = ['body', 'language']
         all_params.append('callback')
 
         params = locals()
@@ -6407,6 +6486,8 @@ class ArchitectApi(object):
         path_params = {}
 
         query_params = {}
+        if 'language' in params:
+            query_params['language'] = params['language']
 
         header_params = {}
 

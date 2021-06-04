@@ -53,7 +53,7 @@ class NotificationTemplateFooter(object):
     def text(self):
         """
         Gets the text of this NotificationTemplateFooter.
-        Footer text. For WhatsApp, ignored
+        Footer text. For WhatsApp, ignored.
 
         :return: The text of this NotificationTemplateFooter.
         :rtype: str
@@ -64,7 +64,7 @@ class NotificationTemplateFooter(object):
     def text(self, text):
         """
         Sets the text of this NotificationTemplateFooter.
-        Footer text. For WhatsApp, ignored
+        Footer text. For WhatsApp, ignored.
 
         :param text: The text of this NotificationTemplateFooter.
         :type: str

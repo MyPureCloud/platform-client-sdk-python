@@ -109,6 +109,10 @@ title: ViewFilter
 | **customer_sentiment_trend** | [**NumericRange**](NumericRange.html) | The customer sentiment trend used to filter the view | [optional] |
 | **flow_transfer_targets** | **list[str]** | The list of transfer targets used to filter flow data | [optional] |
 | **development_name** | **str** | Filter for development name | [optional] |
+| **topic_ids** | **list[str]** | Represents the topics detected in the transcript | [optional] |
+| **external_tags** | **list[str]** | The list of external Tags used to filter conversation data | [optional] |
+| **is_not_responding** | **bool** | Indicates filtering for not responding users | [optional] |
+| **is_authenticated** | **bool** | Indicates filtering for the authenticated chat | [optional] |
 {: class="table table-striped"}
 
 

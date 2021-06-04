@@ -42,23 +42,38 @@ class PerformanceProfile(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'description': 'str',
             'metric_orders': 'list[str]',
+            'date_created': 'datetime',
+            'reporting_intervals': 'list[ReportingInterval]',
+            'active': 'bool',
+            'max_leaderboard_rank_size': 'int',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'description': 'description',
             'metric_orders': 'metricOrders',
+            'date_created': 'dateCreated',
+            'reporting_intervals': 'reportingIntervals',
+            'active': 'active',
+            'max_leaderboard_rank_size': 'maxLeaderboardRankSize',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._division = None
         self._description = None
         self._metric_orders = None
+        self._date_created = None
+        self._reporting_intervals = None
+        self._active = None
+        self._max_leaderboard_rank_size = None
         self._self_uri = None
 
     @property
@@ -108,6 +123,29 @@ class PerformanceProfile(object):
         self._name = name
 
     @property
+    def division(self):
+        """
+        Gets the division of this PerformanceProfile.
+        The division for this performance profile associate to
+
+        :return: The division of this PerformanceProfile.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this PerformanceProfile.
+        The division for this performance profile associate to
+
+        :param division: The division of this PerformanceProfile.
+        :type: Division
+        """
+        
+        self._division = division
+
+    @property
     def description(self):
         """
         Gets the description of this PerformanceProfile.
@@ -152,6 +190,98 @@ class PerformanceProfile(object):
         """
         
         self._metric_orders = metric_orders
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this PerformanceProfile.
+        Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this PerformanceProfile.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this PerformanceProfile.
+        Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this PerformanceProfile.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def reporting_intervals(self):
+        """
+        Gets the reporting_intervals of this PerformanceProfile.
+        The reporting interval periods for this performance profile
+
+        :return: The reporting_intervals of this PerformanceProfile.
+        :rtype: list[ReportingInterval]
+        """
+        return self._reporting_intervals
+
+    @reporting_intervals.setter
+    def reporting_intervals(self, reporting_intervals):
+        """
+        Sets the reporting_intervals of this PerformanceProfile.
+        The reporting interval periods for this performance profile
+
+        :param reporting_intervals: The reporting_intervals of this PerformanceProfile.
+        :type: list[ReportingInterval]
+        """
+        
+        self._reporting_intervals = reporting_intervals
+
+    @property
+    def active(self):
+        """
+        Gets the active of this PerformanceProfile.
+        The flag for active profiles
+
+        :return: The active of this PerformanceProfile.
+        :rtype: bool
+        """
+        return self._active
+
+    @active.setter
+    def active(self, active):
+        """
+        Sets the active of this PerformanceProfile.
+        The flag for active profiles
+
+        :param active: The active of this PerformanceProfile.
+        :type: bool
+        """
+        
+        self._active = active
+
+    @property
+    def max_leaderboard_rank_size(self):
+        """
+        Gets the max_leaderboard_rank_size of this PerformanceProfile.
+        The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries
+
+        :return: The max_leaderboard_rank_size of this PerformanceProfile.
+        :rtype: int
+        """
+        return self._max_leaderboard_rank_size
+
+    @max_leaderboard_rank_size.setter
+    def max_leaderboard_rank_size(self, max_leaderboard_rank_size):
+        """
+        Sets the max_leaderboard_rank_size of this PerformanceProfile.
+        The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries
+
+        :param max_leaderboard_rank_size: The max_leaderboard_rank_size of this PerformanceProfile.
+        :type: int
+        """
+        
+        self._max_leaderboard_rank_size = max_leaderboard_rank_size
 
     @property
     def self_uri(self):

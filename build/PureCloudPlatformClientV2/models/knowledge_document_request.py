@@ -43,20 +43,23 @@ class KnowledgeDocumentRequest(object):
             'type': 'str',
             'external_url': 'str',
             'faq': 'DocumentFaq',
-            'categories': 'list[DocumentCategoryInput]'
+            'categories': 'list[DocumentCategoryInput]',
+            'article': 'DocumentArticle'
         }
 
         self.attribute_map = {
             'type': 'type',
             'external_url': 'externalUrl',
             'faq': 'faq',
-            'categories': 'categories'
+            'categories': 'categories',
+            'article': 'article'
         }
 
         self._type = None
         self._external_url = None
         self._faq = None
         self._categories = None
+        self._article = None
 
     @property
     def type(self):
@@ -78,7 +81,7 @@ class KnowledgeDocumentRequest(object):
         :param type: The type of this KnowledgeDocumentRequest.
         :type: str
         """
-        allowed_values = ["Faq"]
+        allowed_values = ["Faq", "Article"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -153,6 +156,29 @@ class KnowledgeDocumentRequest(object):
         """
         
         self._categories = categories
+
+    @property
+    def article(self):
+        """
+        Gets the article of this KnowledgeDocumentRequest.
+        Article details
+
+        :return: The article of this KnowledgeDocumentRequest.
+        :rtype: DocumentArticle
+        """
+        return self._article
+
+    @article.setter
+    def article(self, article):
+        """
+        Sets the article of this KnowledgeDocumentRequest.
+        Article details
+
+        :param article: The article of this KnowledgeDocumentRequest.
+        :type: DocumentArticle
+        """
+        
+        self._article = article
 
     def to_dict(self):
         """

@@ -30,6 +30,8 @@ title: QueueConversationEventTopicCallback
 | **wrapup** | [**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html) |  | [optional] |
 | **after_call_work** | [**QueueConversationEventTopicAfterCallWork**](QueueConversationEventTopicAfterCallWork.html) |  | [optional] |
 | **after_call_work_required** | **bool** |  | [optional] |
+| **caller_id** | **str** |  | [optional] |
+| **caller_id_name** | **str** |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

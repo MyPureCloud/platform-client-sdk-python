@@ -50,6 +50,7 @@ class KnowledgeSearchDocument(object):
             'categories': 'list[KnowledgeCategory]',
             'knowledge_base': 'KnowledgeBase',
             'external_url': 'str',
+            'article': 'DocumentArticle',
             'confidence': 'float',
             'self_uri': 'str'
         }
@@ -65,6 +66,7 @@ class KnowledgeSearchDocument(object):
             'categories': 'categories',
             'knowledge_base': 'knowledgeBase',
             'external_url': 'externalUrl',
+            'article': 'article',
             'confidence': 'confidence',
             'self_uri': 'selfUri'
         }
@@ -79,6 +81,7 @@ class KnowledgeSearchDocument(object):
         self._categories = None
         self._knowledge_base = None
         self._external_url = None
+        self._article = None
         self._confidence = None
         self._self_uri = None
 
@@ -175,7 +178,7 @@ class KnowledgeSearchDocument(object):
         :param type: The type of this KnowledgeSearchDocument.
         :type: str
         """
-        allowed_values = ["Faq"]
+        allowed_values = ["Faq", "Article"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -319,6 +322,29 @@ class KnowledgeSearchDocument(object):
         """
         
         self._external_url = external_url
+
+    @property
+    def article(self):
+        """
+        Gets the article of this KnowledgeSearchDocument.
+        Article
+
+        :return: The article of this KnowledgeSearchDocument.
+        :rtype: DocumentArticle
+        """
+        return self._article
+
+    @article.setter
+    def article(self, article):
+        """
+        Sets the article of this KnowledgeSearchDocument.
+        Article
+
+        :param article: The article of this KnowledgeSearchDocument.
+        :type: DocumentArticle
+        """
+        
+        self._article = article
 
     @property
     def confidence(self):

@@ -44,6 +44,7 @@ class Trustee(object):
             'enabled': 'bool',
             'uses_default_role': 'bool',
             'date_created': 'datetime',
+            'date_expired': 'datetime',
             'created_by': 'OrgUser',
             'organization': 'Organization',
             'self_uri': 'str'
@@ -54,6 +55,7 @@ class Trustee(object):
             'enabled': 'enabled',
             'uses_default_role': 'usesDefaultRole',
             'date_created': 'dateCreated',
+            'date_expired': 'dateExpired',
             'created_by': 'createdBy',
             'organization': 'organization',
             'self_uri': 'selfUri'
@@ -63,6 +65,7 @@ class Trustee(object):
         self._enabled = None
         self._uses_default_role = None
         self._date_created = None
+        self._date_expired = None
         self._created_by = None
         self._organization = None
         self._self_uri = None
@@ -158,6 +161,29 @@ class Trustee(object):
         """
         
         self._date_created = date_created
+
+    @property
+    def date_expired(self):
+        """
+        Gets the date_expired of this Trustee.
+        The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_expired of this Trustee.
+        :rtype: datetime
+        """
+        return self._date_expired
+
+    @date_expired.setter
+    def date_expired(self, date_expired):
+        """
+        Sets the date_expired of this Trustee.
+        The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_expired: The date_expired of this Trustee.
+        :type: datetime
+        """
+        
+        self._date_expired = date_expired
 
     @property
     def created_by(self):

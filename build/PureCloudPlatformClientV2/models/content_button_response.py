@@ -62,7 +62,7 @@ class ContentButtonResponse(object):
     def id(self):
         """
         Gets the id of this ContentButtonResponse.
-        An ID assigned to the button response. Each object inside the content array has a unique ID.
+        An ID assigned to the button response (Deprecated).
 
         :return: The id of this ContentButtonResponse.
         :rtype: str
@@ -73,7 +73,7 @@ class ContentButtonResponse(object):
     def id(self, id):
         """
         Sets the id of this ContentButtonResponse.
-        An ID assigned to the button response. Each object inside the content array has a unique ID.
+        An ID assigned to the button response (Deprecated).
 
         :param id: The id of this ContentButtonResponse.
         :type: str
@@ -85,7 +85,7 @@ class ContentButtonResponse(object):
     def type(self):
         """
         Gets the type of this ContentButtonResponse.
-        Button response type that captures Button and QuickReply type responses
+        Describes the button that resulted in the Button Response.
 
         :return: The type of this ContentButtonResponse.
         :rtype: str
@@ -96,7 +96,7 @@ class ContentButtonResponse(object):
     def type(self, type):
         """
         Sets the type of this ContentButtonResponse.
-        Button response type that captures Button and QuickReply type responses
+        Describes the button that resulted in the Button Response.
 
         :param type: The type of this ContentButtonResponse.
         :type: str
@@ -112,7 +112,7 @@ class ContentButtonResponse(object):
     def text(self):
         """
         Gets the text of this ContentButtonResponse.
-        Text to show inside the Button reply. This is also used as the response text after clicking on the Button.
+        The response text from the button click.
 
         :return: The text of this ContentButtonResponse.
         :rtype: str
@@ -123,7 +123,7 @@ class ContentButtonResponse(object):
     def text(self, text):
         """
         Sets the text of this ContentButtonResponse.
-        Text to show inside the Button reply. This is also used as the response text after clicking on the Button.
+        The response text from the button click.
 
         :param text: The text of this ContentButtonResponse.
         :type: str
@@ -135,7 +135,7 @@ class ContentButtonResponse(object):
     def payload(self):
         """
         Gets the payload of this ContentButtonResponse.
-        Content of the textback payload after clicking a button
+        The response payload associated with the clicked button.
 
         :return: The payload of this ContentButtonResponse.
         :rtype: str
@@ -146,7 +146,7 @@ class ContentButtonResponse(object):
     def payload(self, payload):
         """
         Sets the payload of this ContentButtonResponse.
-        Content of the textback payload after clicking a button
+        The response payload associated with the clicked button.
 
         :param payload: The payload of this ContentButtonResponse.
         :type: str

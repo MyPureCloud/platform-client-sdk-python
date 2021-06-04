@@ -133,7 +133,7 @@ class AssessmentFormQuestion(object):
     def text(self):
         """
         Gets the text of this AssessmentFormQuestion.
-
+        The question text
 
         :return: The text of this AssessmentFormQuestion.
         :rtype: str
@@ -144,7 +144,7 @@ class AssessmentFormQuestion(object):
     def text(self, text):
         """
         Sets the text of this AssessmentFormQuestion.
-
+        The question text
 
         :param text: The text of this AssessmentFormQuestion.
         :type: str

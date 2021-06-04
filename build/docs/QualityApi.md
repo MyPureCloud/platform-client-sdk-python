@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_conversation_audits**](QualityApi.html#get_quality_conversation_audits) | Get audits for conversation or recording|
 |[**get_quality_conversation_evaluation**](QualityApi.html#get_quality_conversation_evaluation) | Get an evaluation|
 |[**get_quality_conversation_surveys**](QualityApi.html#get_quality_conversation_surveys) | Get the surveys for a conversation|
+|[**get_quality_conversations_audits_query_transaction_id**](QualityApi.html#get_quality_conversations_audits_query_transaction_id) | Get status of audit query execution|
+|[**get_quality_conversations_audits_query_transaction_id_results**](QualityApi.html#get_quality_conversations_audits_query_transaction_id_results) | Get results of audit query|
 |[**get_quality_evaluations_query**](QualityApi.html#get_quality_evaluations_query) | Queries Evaluations and returns a paged list|
 |[**get_quality_evaluators_activity**](QualityApi.html#get_quality_evaluators_activity) | Get an evaluator activity|
 |[**get_quality_form**](QualityApi.html#get_quality_form) | Get an evaluation form|
@@ -45,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_surveys_aggregates_query**](QualityApi.html#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
 |[**post_quality_calibrations**](QualityApi.html#post_quality_calibrations) | Create a calibration|
 |[**post_quality_conversation_evaluations**](QualityApi.html#post_quality_conversation_evaluations) | Create an evaluation|
+|[**post_quality_conversations_audits_query**](QualityApi.html#post_quality_conversations_audits_query) | Create audit query execution|
 |[**post_quality_evaluations_scoring**](QualityApi.html#post_quality_evaluations_scoring) | Score evaluation|
 |[**post_quality_forms**](QualityApi.html#post_quality_forms) | Create an evaluation form.|
 |[**post_quality_forms_evaluations**](QualityApi.html#post_quality_forms_evaluations) | Create an evaluation form.|
@@ -520,11 +523,11 @@ except ApiException as e:
 
 ## [**QualityAuditPage**](QualityAuditPage.html) get_quality_conversation_audits(conversation_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, recording_id=recording_id, entity_type=entity_type)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get audits for conversation or recording
 
-Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
 
 Wraps GET /api/v2/quality/conversations/{conversationId}/audits 
 
@@ -693,6 +696,114 @@ except ApiException as e:
 ### Return type
 
 [**list[Survey]**](Survey.html)
+
+<a name="get_quality_conversations_audits_query_transaction_id"></a>
+
+## [**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html) get_quality_conversations_audits_query_transaction_id(transaction_id)
+
+
+
+Get status of audit query execution
+
+
+
+Wraps GET /api/v2/quality/conversations/audits/query/{transactionId} 
+
+Requires ALL permissions: 
+
+* audits:interactionDetails:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+transaction_id = 'transaction_id_example' # str | Transaction ID
+
+try:
+    # Get status of audit query execution
+    api_response = api_instance.get_quality_conversations_audits_query_transaction_id(transaction_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_conversations_audits_query_transaction_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **transaction_id** | **str**| Transaction ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html)
+
+<a name="get_quality_conversations_audits_query_transaction_id_results"></a>
+
+## [**QualityAuditQueryExecutionResultsResponse**](QualityAuditQueryExecutionResultsResponse.html) get_quality_conversations_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)
+
+
+
+Get results of audit query
+
+
+
+Wraps GET /api/v2/quality/conversations/audits/query/{transactionId}/results 
+
+Requires ALL permissions: 
+
+* audits:interactionDetails:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+transaction_id = 'transaction_id_example' # str | Transaction ID
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
+page_size = 25 # int | Page size (optional) (default to 25)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+
+try:
+    # Get results of audit query
+    api_response = api_instance.get_quality_conversations_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_conversations_audits_query_transaction_id_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **transaction_id** | **str**| Transaction ID |  |
+| **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
+{: class="table table-striped"}
+
+### Return type
+
+[**QualityAuditQueryExecutionResultsResponse**](QualityAuditQueryExecutionResultsResponse.html)
 
 <a name="get_quality_evaluations_query"></a>
 
@@ -2154,6 +2265,57 @@ except ApiException as e:
 
 [**Evaluation**](Evaluation.html)
 
+<a name="post_quality_conversations_audits_query"></a>
+
+## [**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html) post_quality_conversations_audits_query(body)
+
+
+
+Create audit query execution
+
+
+
+Wraps POST /api/v2/quality/conversations/audits/query 
+
+Requires ALL permissions: 
+
+* audits:interactionDetails:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.QMAuditQueryRequest() # QMAuditQueryRequest | query
+
+try:
+    # Create audit query execution
+    api_response = api_instance.post_quality_conversations_audits_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->post_quality_conversations_audits_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**QMAuditQueryRequest**](QMAuditQueryRequest.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html)
+
 <a name="post_quality_evaluations_scoring"></a>
 
 ## [**EvaluationScoringSet**](EvaluationScoringSet.html) post_quality_evaluations_scoring(body)
@@ -2833,7 +2995,7 @@ except ApiException as e:
 
 <a name="put_quality_surveys_scorable"></a>
 
-## [**ScorableSurvey**](ScorableSurvey.html) put_quality_surveys_scorable(body, customer_survey_url=customer_survey_url)
+## [**ScorableSurvey**](ScorableSurvey.html) put_quality_surveys_scorable(body, customer_survey_url)
 
 
 
@@ -2857,11 +3019,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
 body = PureCloudPlatformClientV2.ScorableSurvey() # ScorableSurvey | survey
-customer_survey_url = 'customer_survey_url_example' # str | customerSurveyUrl (optional)
+customer_survey_url = 'customer_survey_url_example' # str | customerSurveyUrl
 
 try:
     # Update a survey as an end-customer, for the purposes of scoring it.
-    api_response = api_instance.put_quality_surveys_scorable(body, customer_survey_url=customer_survey_url)
+    api_response = api_instance.put_quality_surveys_scorable(body, customer_survey_url)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->put_quality_surveys_scorable: %s\n" % e)
@@ -2873,7 +3035,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**ScorableSurvey**](ScorableSurvey.html)| survey |  |
-| **customer_survey_url** | **str**| customerSurveyUrl | [optional]  |
+| **customer_survey_url** | **str**| customerSurveyUrl |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -65,7 +65,7 @@ class ContentNotificationTemplate(object):
     def id(self):
         """
         Gets the id of this ContentNotificationTemplate.
-        The messaging channel template id. For WhatsApp, 'namespace@name'
+        The messaging provider template ID. For WhatsApp, 'namespace@name'.
 
         :return: The id of this ContentNotificationTemplate.
         :rtype: str
@@ -76,7 +76,7 @@ class ContentNotificationTemplate(object):
     def id(self, id):
         """
         Sets the id of this ContentNotificationTemplate.
-        The messaging channel template id. For WhatsApp, 'namespace@name'
+        The messaging provider template ID. For WhatsApp, 'namespace@name'.
 
         :param id: The id of this ContentNotificationTemplate.
         :type: str
@@ -88,7 +88,7 @@ class ContentNotificationTemplate(object):
     def language(self):
         """
         Gets the language of this ContentNotificationTemplate.
-        Template language
+        Template language.
 
         :return: The language of this ContentNotificationTemplate.
         :rtype: str
@@ -99,7 +99,7 @@ class ContentNotificationTemplate(object):
     def language(self, language):
         """
         Sets the language of this ContentNotificationTemplate.
-        Template language
+        Template language.
 
         :param language: The language of this ContentNotificationTemplate.
         :type: str
@@ -111,7 +111,7 @@ class ContentNotificationTemplate(object):
     def header(self):
         """
         Gets the header of this ContentNotificationTemplate.
-        Template header object
+        The template header.
 
         :return: The header of this ContentNotificationTemplate.
         :rtype: NotificationTemplateHeader
@@ -122,7 +122,7 @@ class ContentNotificationTemplate(object):
     def header(self, header):
         """
         Sets the header of this ContentNotificationTemplate.
-        Template header object
+        The template header.
 
         :param header: The header of this ContentNotificationTemplate.
         :type: NotificationTemplateHeader
@@ -134,7 +134,7 @@ class ContentNotificationTemplate(object):
     def body(self):
         """
         Gets the body of this ContentNotificationTemplate.
-        Template body object
+        The template body.
 
         :return: The body of this ContentNotificationTemplate.
         :rtype: NotificationTemplateBody
@@ -145,7 +145,7 @@ class ContentNotificationTemplate(object):
     def body(self, body):
         """
         Sets the body of this ContentNotificationTemplate.
-        Template body object
+        The template body.
 
         :param body: The body of this ContentNotificationTemplate.
         :type: NotificationTemplateBody
@@ -157,7 +157,7 @@ class ContentNotificationTemplate(object):
     def footer(self):
         """
         Gets the footer of this ContentNotificationTemplate.
-        Template footer object
+        The template footer.
 
         :return: The footer of this ContentNotificationTemplate.
         :rtype: NotificationTemplateFooter
@@ -168,7 +168,7 @@ class ContentNotificationTemplate(object):
     def footer(self, footer):
         """
         Sets the footer of this ContentNotificationTemplate.
-        Template footer object
+        The template footer.
 
         :param footer: The footer of this ContentNotificationTemplate.
         :type: NotificationTemplateFooter

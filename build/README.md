@@ -3,7 +3,7 @@ title: Platform API Client SDK - Python
 ---
 
 [![PyPI version](https://badge.fury.io/py/PureCloudPlatformClientV2.svg)](https://badge.fury.io/py/PureCloudPlatformClientV2)
-[![Release Notes Badge](https://developer.mypurecloud.com/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-python/blob/master/releaseNotes.md)
+[![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-python/blob/master/releaseNotes.md)
 
 Documentation can be found at [https://developer.mypurecloud.com/api/rest/client-libraries/python/](https://developer.mypurecloud.com/api/rest/client-libraries/python/)
 
@@ -36,7 +36,8 @@ import PureCloudPlatformClientV2
 For headless and non-user applications, the [Client Credentials Grant](http://developer.mypurecloud.com/api/rest/authorization/use-client-credentials.html) 
 
 ```{"language":"python"}
-apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_client_credentials_token("7de3af06-c0b3-4f9b-af45-72f4a14037cc", "qLh-825gtjPrIY2kcWKAkmlaSgi6Z1Ws2BAyixWbTrs")
+apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_client_credentials_token(os.environ['GENESYS_CLOUD_CLIENT_ID'],
+                                                                                          os.environ['GENESYS_CLOUD_CLIENT_SECRET'])
 authApi = PureCloudPlatformClientV2.AuthorizationApi(apiclient)
 print(authApi.get_authorization_permissions())
 ```
@@ -48,7 +49,10 @@ print(authApi.get_authorization_permissions())
 * The app is authenticating as a human user, the [OAuth2 SAML2 Bearer](https://developer.mypurecloud.com/api/rest/authorization/use-saml2-bearer.html)
 
 ```{"language":"python"}
-apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_saml2bearer_token("565c3091-4107-4675-b606-b1fead2d15a4", "9pal483eSr_vCZf0qQomFK298I8htjBZo49FI_lLZQ8", orgName ,encodedsamlassertion)
+apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_saml2bearer_token(os.environ['GENESYS_CLOUD_SAML2BEARER_CLIENT_ID'],
+                                                                                   os.environ['GENESYS_CLOUD_SAML2BEARER_CLIENT_SECRET'],
+                                                                                   orgName,
+                                                                                   encodedsamlassertion)
 usersApi = PureCloudPlatformClientV2.UsersApi(apiclient)
 print(usersApi.get_users_me())
 
@@ -61,9 +65,9 @@ print(usersApi.get_users_me())
 * There is server-side code that will be making API requests
 
 ```{"language":"python"}
-apiclient, auth_token_info = apiclient.get_code_authorization_token("565c3091-4107-4675-b606-b1fead2d15a4",
-                                                                    "9pal483eSr_vCZf0qQomFK298I8htjBZo49FI_lLZQ8",
-                                                                    "fjaXJaIG7Y-gFhgwvxvNZLj-dcqhWS_pm_n-_1MziN8",
+apiclient, auth_token_info = apiclient.get_code_authorization_token(os.environ['GENESYS_CLOUD_CODEAUTH_CLIENT_ID'],
+                                                                    os.environ['GENESYS_CLOUD_CODEAUTH_CLIENT_SECRET'],
+                                                                    auth_code,
                                                                     "https://redirect-uri.com/oauth/callback")
 usersApi = PureCloudPlatformClientV2.UsersApi(apiclient)
 ```
@@ -80,8 +84,8 @@ PureCloudPlatformClientV2.configuration.should_refresh_access_token = False
 When the access token expires, refresh it using the refresh_code_authorization_token method using the same clientId and clientSecret as used to request it.
 
 ```{"language":"python"}
-apiclient, auth_token_info = apiclient.refresh_code_authorization_token("565c3091-4107-4675-b606-b1fead2d15a4",
-                                                                        "9pal483eSr_vCZf0qQomFK298I8htjBZo49FI_lLZQ8",
+apiclient, auth_token_info = apiclient.refresh_code_authorization_token(os.environ['GENESYS_CLOUD_CODEAUTH_CLIENT_ID'],
+                                                                        os.environ['GENESYS_CLOUD_CODEAUTH_CLIENT_SECRET'],
                                                                         refresh_token)
 ```
 

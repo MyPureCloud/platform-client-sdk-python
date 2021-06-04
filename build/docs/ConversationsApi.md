@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_email_messages_draft_attachment**](ConversationsApi.html#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
 |[**delete_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
 |[**delete_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_line_integration_id) | Delete a LINE messenger integration|
+|[**delete_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
 |[**delete_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_twitter_integration_id) | Delete a Twitter messaging integration|
 |[**delete_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_whatsapp_integration_id) | Delete a WhatsApp messaging integration|
 |[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
@@ -67,11 +68,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
 |[**get_conversations_messaging_integrations_line**](ConversationsApi.html#get_conversations_messaging_integrations_line) | Get a list of LINE messenger Integrations|
 |[**get_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_line_integration_id) | Get a LINE messenger integration|
+|[**get_conversations_messaging_integrations_open**](ConversationsApi.html#get_conversations_messaging_integrations_open) | Get a list of Open messaging integrations|
+|[**get_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_open_integration_id) | Get an Open messaging integration|
 |[**get_conversations_messaging_integrations_twitter**](ConversationsApi.html#get_conversations_messaging_integrations_twitter) | Get a list of Twitter Integrations|
 |[**get_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_twitter_integration_id) | Get a Twitter messaging integration|
 |[**get_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#get_conversations_messaging_integrations_whatsapp) | Get a list of WhatsApp Integrations|
 |[**get_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_whatsapp_integration_id) | Get a WhatsApp messaging integration|
 |[**get_conversations_messaging_sticker**](ConversationsApi.html#get_conversations_messaging_sticker) | Get a list of Messaging Stickers|
+|[**get_conversations_messaging_threadingtimeline**](ConversationsApi.html#get_conversations_messaging_threadingtimeline) | Get conversation threading window timeline for each messaging type|
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_call**](ConversationsApi.html#patch_conversations_call) | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
@@ -100,6 +104,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_message_participant_attributes**](ConversationsApi.html#patch_conversations_message_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_message_participant_communication**](ConversationsApi.html#patch_conversations_message_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
 |[**patch_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
+|[**patch_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
 |[**patch_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_twitter_integration_id) | Update Twitter messaging integration|
 |[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update or activate a WhatsApp messaging integration.|
 |[**post_analytics_conversation_details_properties**](ConversationsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
@@ -138,14 +143,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_participant_replace**](ConversationsApi.html#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_messages**](ConversationsApi.html#post_conversations_messages) | Create an outbound messaging conversation.|
 |[**post_conversations_messages_agentless**](ConversationsApi.html#post_conversations_messages_agentless) | Send an agentless outbound message|
+|[**post_conversations_messages_inbound_open**](ConversationsApi.html#post_conversations_messages_inbound_open) | Send an inbound Open Message|
 |[**post_conversations_messaging_integrations_facebook**](ConversationsApi.html#post_conversations_messaging_integrations_facebook) | Create a Facebook Integration|
 |[**post_conversations_messaging_integrations_line**](ConversationsApi.html#post_conversations_messaging_integrations_line) | Create a LINE messenger Integration|
+|[**post_conversations_messaging_integrations_open**](ConversationsApi.html#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
 |[**post_conversations_messaging_integrations_twitter**](ConversationsApi.html#post_conversations_messaging_integrations_twitter) | Create a Twitter Integration|
 |[**post_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp) | Create a WhatsApp Integration|
 |[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
 |[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
 |[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
 |[**put_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#put_conversations_messaging_integrations_line_integration_id) | Update a LINE messenger integration|
+|[**put_conversations_messaging_threadingtimeline**](ConversationsApi.html#put_conversations_messaging_threadingtimeline) | Update conversation threading window timeline for each messaging type|
 {: class="table table-striped"}
 
 <a name="delete_analytics_conversations_details_job"></a>
@@ -490,6 +498,56 @@ try:
     api_instance.delete_conversations_messaging_integrations_line_integration_id(integration_id)
 except ApiException as e:
     print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_line_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_conversations_messaging_integrations_open_integration_id"></a>
+
+##  delete_conversations_messaging_integrations_open_integration_id(integration_id)
+
+
+
+Delete an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/open/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Delete an Open messaging integration
+    api_instance.delete_conversations_messaging_integrations_open_integration_id(integration_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_open_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -2612,6 +2670,7 @@ Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{commun
 Requires ANY permissions: 
 
 * conversation:message:view
+* conversation:webmessaging:view
 
 ### Example
 
@@ -2667,6 +2726,7 @@ Wraps GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}
 Requires ANY permissions: 
 
 * conversation:message:view
+* conversation:webmessaging:view
 
 ### Example
 
@@ -3181,6 +3241,116 @@ except ApiException as e:
 
 [**LineIntegration**](LineIntegration.html)
 
+<a name="get_conversations_messaging_integrations_open"></a>
+
+## [**OpenIntegrationEntityListing**](OpenIntegrationEntityListing.html) get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+
+
+
+Get a list of Open messaging integrations
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps GET /api/v2/conversations/messaging/integrations/open 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+
+try:
+    # Get a list of Open messaging integrations
+    api_response = api_instance.get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_open: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OpenIntegrationEntityListing**](OpenIntegrationEntityListing.html)
+
+<a name="get_conversations_messaging_integrations_open_integration_id"></a>
+
+## [**OpenIntegration**](OpenIntegration.html) get_conversations_messaging_integrations_open_integration_id(integration_id, expand=expand)
+
+
+
+Get an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+
+try:
+    # Get an Open messaging integration
+    api_response = api_instance.get_conversations_messaging_integrations_open_integration_id(integration_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_open_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+{: class="table table-striped"}
+
+### Return type
+
+[**OpenIntegration**](OpenIntegration.html)
+
 <a name="get_conversations_messaging_integrations_twitter"></a>
 
 ## [**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing.html) get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
@@ -3455,6 +3625,53 @@ except ApiException as e:
 ### Return type
 
 [**MessagingStickerEntityListing**](MessagingStickerEntityListing.html)
+
+<a name="get_conversations_messaging_threadingtimeline"></a>
+
+## [**ConversationThreadingWindow**](ConversationThreadingWindow.html) get_conversations_messaging_threadingtimeline()
+
+
+
+Get conversation threading window timeline for each messaging type
+
+Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
+
+Wraps GET /api/v2/conversations/messaging/threadingtimeline 
+
+Requires ALL permissions: 
+
+* conversation:threadingTimeline:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get conversation threading window timeline for each messaging type
+    api_response = api_instance.get_conversations_messaging_threadingtimeline()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_threadingtimeline: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationThreadingWindow**](ConversationThreadingWindow.html)
 
 <a name="patch_conversation_participant"></a>
 
@@ -4958,6 +5175,59 @@ except ApiException as e:
 ### Return type
 
 [**FacebookIntegration**](FacebookIntegration.html)
+
+<a name="patch_conversations_messaging_integrations_open_integration_id"></a>
+
+## [**OpenIntegration**](OpenIntegration.html) patch_conversations_messaging_integrations_open_integration_id(integration_id, body)
+
+
+
+Update an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/open/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+body = PureCloudPlatformClientV2.OpenIntegrationUpdateRequest() # OpenIntegrationUpdateRequest | OpenIntegrationUpdateRequest
+
+try:
+    # Update an Open messaging integration
+    api_response = api_instance.patch_conversations_messaging_integrations_open_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_messaging_integrations_open_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **body** | [**OpenIntegrationUpdateRequest**](OpenIntegrationUpdateRequest.html)| OpenIntegrationUpdateRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OpenIntegration**](OpenIntegration.html)
 
 <a name="patch_conversations_messaging_integrations_twitter_integration_id"></a>
 
@@ -6653,9 +6923,10 @@ Send message on existing conversation/communication. Only one message body field
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * conversation:message:create
+* conversation:webmessaging:create
 
 ### Example
 
@@ -6708,9 +6979,10 @@ See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-up
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * conversation:message:create
+* conversation:webmessaging:create
 
 ### Example
 
@@ -6764,6 +7036,7 @@ Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk
 Requires ANY permissions: 
 
 * conversation:message:view
+* conversation:webmessaging:view
 
 ### Example
 
@@ -6957,6 +7230,57 @@ except ApiException as e:
 
 [**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse.html)
 
+<a name="post_conversations_messages_inbound_open"></a>
+
+## [**OpenNormalizedMessage**](OpenNormalizedMessage.html) post_conversations_messages_inbound_open(body)
+
+
+
+Send an inbound Open Message
+
+Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/inbound/open 
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.OpenNormalizedMessage() # OpenNormalizedMessage | NormalizedMessage
+
+try:
+    # Send an inbound Open Message
+    api_response = api_instance.post_conversations_messages_inbound_open(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_messages_inbound_open: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OpenNormalizedMessage**](OpenNormalizedMessage.html)| NormalizedMessage |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OpenNormalizedMessage**](OpenNormalizedMessage.html)
+
 <a name="post_conversations_messaging_integrations_facebook"></a>
 
 ## [**FacebookIntegration**](FacebookIntegration.html) post_conversations_messaging_integrations_facebook(body)
@@ -7058,6 +7382,57 @@ except ApiException as e:
 ### Return type
 
 [**LineIntegration**](LineIntegration.html)
+
+<a name="post_conversations_messaging_integrations_open"></a>
+
+## [**OpenIntegration**](OpenIntegration.html) post_conversations_messaging_integrations_open(body)
+
+
+
+Create an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps POST /api/v2/conversations/messaging/integrations/open 
+
+Requires ALL permissions: 
+
+* messaging:integration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.OpenIntegrationRequest() # OpenIntegrationRequest | OpenIntegrationRequest
+
+try:
+    # Create an Open messaging integration
+    api_response = api_instance.post_conversations_messaging_integrations_open(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_open: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OpenIntegrationRequest**](OpenIntegrationRequest.html)| OpenIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OpenIntegration**](OpenIntegration.html)
 
 <a name="post_conversations_messaging_integrations_twitter"></a>
 
@@ -7372,4 +7747,55 @@ except ApiException as e:
 ### Return type
 
 [**LineIntegration**](LineIntegration.html)
+
+<a name="put_conversations_messaging_threadingtimeline"></a>
+
+## [**ConversationThreadingWindow**](ConversationThreadingWindow.html) put_conversations_messaging_threadingtimeline(body)
+
+
+
+Update conversation threading window timeline for each messaging type
+
+PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
+
+Wraps PUT /api/v2/conversations/messaging/threadingtimeline 
+
+Requires ALL permissions: 
+
+* conversation:threadingTimeline:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.ConversationThreadingWindow() # ConversationThreadingWindow | ConversationThreadingWindowRequest
+
+try:
+    # Update conversation threading window timeline for each messaging type
+    api_response = api_instance.put_conversations_messaging_threadingtimeline(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_messaging_threadingtimeline: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationThreadingWindow**](ConversationThreadingWindow.html)| ConversationThreadingWindowRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationThreadingWindow**](ConversationThreadingWindow.html)
 

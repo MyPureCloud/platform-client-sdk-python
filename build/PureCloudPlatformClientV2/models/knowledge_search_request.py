@@ -153,7 +153,7 @@ class KnowledgeSearchRequest(object):
         :param document_type: The document_type of this KnowledgeSearchRequest.
         :type: str
         """
-        allowed_values = ["Faq"]
+        allowed_values = ["Faq", "Article"]
         if document_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for document_type -> " + document_type)
             self._document_type = "outdated_sdk_version"

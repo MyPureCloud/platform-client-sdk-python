@@ -44,6 +44,7 @@ class KnowledgeDocumentBulkRequest(object):
             'external_url': 'str',
             'faq': 'DocumentFaq',
             'categories': 'list[DocumentCategoryInput]',
+            'article': 'DocumentArticle',
             'id': 'str'
         }
 
@@ -52,6 +53,7 @@ class KnowledgeDocumentBulkRequest(object):
             'external_url': 'externalUrl',
             'faq': 'faq',
             'categories': 'categories',
+            'article': 'article',
             'id': 'id'
         }
 
@@ -59,6 +61,7 @@ class KnowledgeDocumentBulkRequest(object):
         self._external_url = None
         self._faq = None
         self._categories = None
+        self._article = None
         self._id = None
 
     @property
@@ -81,7 +84,7 @@ class KnowledgeDocumentBulkRequest(object):
         :param type: The type of this KnowledgeDocumentBulkRequest.
         :type: str
         """
-        allowed_values = ["Faq"]
+        allowed_values = ["Faq", "Article"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -156,6 +159,29 @@ class KnowledgeDocumentBulkRequest(object):
         """
         
         self._categories = categories
+
+    @property
+    def article(self):
+        """
+        Gets the article of this KnowledgeDocumentBulkRequest.
+        Article details
+
+        :return: The article of this KnowledgeDocumentBulkRequest.
+        :rtype: DocumentArticle
+        """
+        return self._article
+
+    @article.setter
+    def article(self, article):
+        """
+        Sets the article of this KnowledgeDocumentBulkRequest.
+        Article details
+
+        :param article: The article of this KnowledgeDocumentBulkRequest.
+        :type: DocumentArticle
+        """
+        
+        self._article = article
 
     @property
     def id(self):

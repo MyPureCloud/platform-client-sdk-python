@@ -63,6 +63,8 @@ class QueueConversationEventTopicCallback(object):
             'wrapup': 'QueueConversationEventTopicWrapup',
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
+            'caller_id': 'str',
+            'caller_id_name': 'str',
             'additional_properties': 'object'
         }
 
@@ -90,6 +92,8 @@ class QueueConversationEventTopicCallback(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
+            'caller_id': 'callerId',
+            'caller_id_name': 'callerIdName',
             'additional_properties': 'additionalProperties'
         }
 
@@ -116,6 +120,8 @@ class QueueConversationEventTopicCallback(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._caller_id = None
+        self._caller_id_name = None
         self._additional_properties = None
 
     @property
@@ -658,6 +664,52 @@ class QueueConversationEventTopicCallback(object):
         """
         
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def caller_id(self):
+        """
+        Gets the caller_id of this QueueConversationEventTopicCallback.
+
+
+        :return: The caller_id of this QueueConversationEventTopicCallback.
+        :rtype: str
+        """
+        return self._caller_id
+
+    @caller_id.setter
+    def caller_id(self, caller_id):
+        """
+        Sets the caller_id of this QueueConversationEventTopicCallback.
+
+
+        :param caller_id: The caller_id of this QueueConversationEventTopicCallback.
+        :type: str
+        """
+        
+        self._caller_id = caller_id
+
+    @property
+    def caller_id_name(self):
+        """
+        Gets the caller_id_name of this QueueConversationEventTopicCallback.
+
+
+        :return: The caller_id_name of this QueueConversationEventTopicCallback.
+        :rtype: str
+        """
+        return self._caller_id_name
+
+    @caller_id_name.setter
+    def caller_id_name(self, caller_id_name):
+        """
+        Sets the caller_id_name of this QueueConversationEventTopicCallback.
+
+
+        :param caller_id_name: The caller_id_name of this QueueConversationEventTopicCallback.
+        :type: str
+        """
+        
+        self._caller_id_name = caller_id_name
 
     @property
     def additional_properties(self):

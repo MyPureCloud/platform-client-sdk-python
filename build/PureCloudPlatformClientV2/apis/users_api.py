@@ -1911,7 +1911,7 @@ class UsersApi(object):
 
     def get_user_favorites(self, user_id, **kwargs):
         """
-        Get favorites
+        Deprecated; will be revived with new contract
         
 
         This method makes a synchronous HTTP request by default. To make an

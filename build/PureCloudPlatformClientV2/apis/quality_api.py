@@ -751,7 +751,7 @@ class QualityApi(object):
     def get_quality_conversation_audits(self, conversation_id, **kwargs):
         """
         Get audits for conversation or recording
-        Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+        Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1011,6 +1011,171 @@ class QualityApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[Survey]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_quality_conversations_audits_query_transaction_id(self, transaction_id, **kwargs):
+        """
+        Get status of audit query execution
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_conversations_audits_query_transaction_id(transaction_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str transaction_id: Transaction ID (required)
+        :return: QualityAuditQueryExecutionStatusResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['transaction_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_conversations_audits_query_transaction_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'transaction_id' is set
+        if ('transaction_id' not in params) or (params['transaction_id'] is None):
+            raise ValueError("Missing the required parameter `transaction_id` when calling `get_quality_conversations_audits_query_transaction_id`")
+
+
+        resource_path = '/api/v2/quality/conversations/audits/query/{transactionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'transaction_id' in params:
+            path_params['transactionId'] = params['transaction_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QualityAuditQueryExecutionStatusResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_quality_conversations_audits_query_transaction_id_results(self, transaction_id, **kwargs):
+        """
+        Get results of audit query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_conversations_audits_query_transaction_id_results(transaction_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str transaction_id: Transaction ID (required)
+        :param str cursor: Indicates where to resume query results (not required for first page)
+        :param int page_size: Page size
+        :param list[str] expand: Which fields, if any, to expand
+        :return: QualityAuditQueryExecutionResultsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['transaction_id', 'cursor', 'page_size', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_conversations_audits_query_transaction_id_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'transaction_id' is set
+        if ('transaction_id' not in params) or (params['transaction_id'] is None):
+            raise ValueError("Missing the required parameter `transaction_id` when calling `get_quality_conversations_audits_query_transaction_id_results`")
+
+
+        resource_path = '/api/v2/quality/conversations/audits/query/{transactionId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'transaction_id' in params:
+            path_params['transactionId'] = params['transaction_id']
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QualityAuditQueryExecutionResultsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3232,6 +3397,84 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_quality_conversations_audits_query(self, body, **kwargs):
+        """
+        Create audit query execution
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_quality_conversations_audits_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param QMAuditQueryRequest body: query (required)
+        :return: QualityAuditQueryExecutionStatusResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_quality_conversations_audits_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_quality_conversations_audits_query`")
+
+
+        resource_path = '/api/v2/quality/conversations/audits/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QualityAuditQueryExecutionStatusResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_quality_evaluations_scoring(self, body, **kwargs):
         """
         Score evaluation
@@ -4285,7 +4528,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_surveys_scorable(self, body, **kwargs):
+    def put_quality_surveys_scorable(self, body, customer_survey_url, **kwargs):
         """
         Update a survey as an end-customer, for the purposes of scoring it.
         
@@ -4296,12 +4539,12 @@ class QualityApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_quality_surveys_scorable(body, callback=callback_function)
+        >>> thread = api.put_quality_surveys_scorable(body, customer_survey_url, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param ScorableSurvey body: survey (required)
-        :param str customer_survey_url: customerSurveyUrl
+        :param str customer_survey_url: customerSurveyUrl (required)
         :return: ScorableSurvey
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4323,6 +4566,9 @@ class QualityApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `put_quality_surveys_scorable`")
+        # verify the required parameter 'customer_survey_url' is set
+        if ('customer_survey_url' not in params) or (params['customer_survey_url'] is None):
+            raise ValueError("Missing the required parameter `customer_survey_url` when calling `put_quality_surveys_scorable`")
 
 
         resource_path = '/api/v2/quality/surveys/scorable'.replace('{format}', 'json')

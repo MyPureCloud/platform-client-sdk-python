@@ -56,7 +56,7 @@ class NotificationTemplateBody(object):
     def text(self):
         """
         Gets the text of this NotificationTemplateBody.
-        Body text. For WhatsApp, ignored
+        Body text. For WhatsApp, ignored.
 
         :return: The text of this NotificationTemplateBody.
         :rtype: str
@@ -67,7 +67,7 @@ class NotificationTemplateBody(object):
     def text(self, text):
         """
         Sets the text of this NotificationTemplateBody.
-        Body text. For WhatsApp, ignored
+        Body text. For WhatsApp, ignored.
 
         :param text: The text of this NotificationTemplateBody.
         :type: str
@@ -79,7 +79,7 @@ class NotificationTemplateBody(object):
     def parameters(self):
         """
         Gets the parameters of this NotificationTemplateBody.
-        Template parameters for placeholders in template
+        Template parameters for placeholders in template.
 
         :return: The parameters of this NotificationTemplateBody.
         :rtype: list[NotificationTemplateParameter]
@@ -90,7 +90,7 @@ class NotificationTemplateBody(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this NotificationTemplateBody.
-        Template parameters for placeholders in template
+        Template parameters for placeholders in template.
 
         :param parameters: The parameters of this NotificationTemplateBody.
         :type: list[NotificationTemplateParameter]

@@ -71,7 +71,7 @@ class ListItemComponent(object):
     def id(self):
         """
         Gets the id of this ListItemComponent.
-        An ID assigned to this component
+        An ID assigned to this list item.
 
         :return: The id of this ListItemComponent.
         :rtype: str
@@ -82,7 +82,7 @@ class ListItemComponent(object):
     def id(self, id):
         """
         Sets the id of this ListItemComponent.
-        An ID assigned to this component
+        An ID assigned to this list item.
 
         :param id: The id of this ListItemComponent.
         :type: str
@@ -94,7 +94,7 @@ class ListItemComponent(object):
     def rmid(self):
         """
         Gets the rmid of this ListItemComponent.
-        An ID of the rich message instance
+        An ID of the rich message instance.
 
         :return: The rmid of this ListItemComponent.
         :rtype: str
@@ -105,7 +105,7 @@ class ListItemComponent(object):
     def rmid(self, rmid):
         """
         Sets the rmid of this ListItemComponent.
-        An ID of the rich message instance
+        An ID of the rich message instance.
 
         :param rmid: The rmid of this ListItemComponent.
         :type: str
@@ -117,7 +117,7 @@ class ListItemComponent(object):
     def type(self):
         """
         Gets the type of this ListItemComponent.
-        The type of component to render
+        The type of list item to render.
 
         :return: The type of this ListItemComponent.
         :rtype: str
@@ -128,7 +128,7 @@ class ListItemComponent(object):
     def type(self, type):
         """
         Sets the type of this ListItemComponent.
-        The type of component to render
+        The type of list item to render.
 
         :param type: The type of this ListItemComponent.
         :type: str
@@ -144,7 +144,7 @@ class ListItemComponent(object):
     def image(self):
         """
         Gets the image of this ListItemComponent.
-        Path or URI to an image file
+        URL of an image.
 
         :return: The image of this ListItemComponent.
         :rtype: str
@@ -155,7 +155,7 @@ class ListItemComponent(object):
     def image(self, image):
         """
         Sets the image of this ListItemComponent.
-        Path or URI to an image file
+        URL of an image.
 
         :param image: The image of this ListItemComponent.
         :type: str
@@ -167,7 +167,7 @@ class ListItemComponent(object):
     def title(self):
         """
         Gets the title of this ListItemComponent.
-        The main headline of the list item
+        The main headline of the list item.
 
         :return: The title of this ListItemComponent.
         :rtype: str
@@ -178,7 +178,7 @@ class ListItemComponent(object):
     def title(self, title):
         """
         Sets the title of this ListItemComponent.
-        The main headline of the list item
+        The main headline of the list item.
 
         :param title: The title of this ListItemComponent.
         :type: str
@@ -190,7 +190,7 @@ class ListItemComponent(object):
     def description(self):
         """
         Gets the description of this ListItemComponent.
-        Text to show in the description row
+        Text to show in the list item description.
 
         :return: The description of this ListItemComponent.
         :rtype: str
@@ -201,7 +201,7 @@ class ListItemComponent(object):
     def description(self, description):
         """
         Sets the description of this ListItemComponent.
-        Text to show in the description row
+        Text to show in the list item description.
 
         :param description: The description of this ListItemComponent.
         :type: str
@@ -213,7 +213,7 @@ class ListItemComponent(object):
     def actions(self):
         """
         Gets the actions of this ListItemComponent.
-        User actions available on the content. All actions are optional and all actions are executed simultaneously.
+        The list item actions.
 
         :return: The actions of this ListItemComponent.
         :rtype: ContentActions
@@ -224,7 +224,7 @@ class ListItemComponent(object):
     def actions(self, actions):
         """
         Sets the actions of this ListItemComponent.
-        User actions available on the content. All actions are optional and all actions are executed simultaneously.
+        The list item actions.
 
         :param actions: The actions of this ListItemComponent.
         :type: ContentActions

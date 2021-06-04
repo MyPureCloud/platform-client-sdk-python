@@ -622,6 +622,84 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_conversations_messaging_integrations_open_integration_id(self, integration_id, **kwargs):
+        """
+        Delete an Open messaging integration
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_conversations_messaging_integrations_open_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_conversations_messaging_integrations_open_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `delete_conversations_messaging_integrations_open_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_conversations_messaging_integrations_twitter_integration_id(self, integration_id, **kwargs):
         """
         Delete a Twitter messaging integration
@@ -4819,6 +4897,171 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_conversations_messaging_integrations_open(self, **kwargs):
+        """
+        Get a list of Open messaging integrations
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_open(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str expand: Expand instructions for the return value.
+        :param str supported_content_id: Filter integrations returned based on the supported content ID
+        :return: OpenIntegrationEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_open" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'supported_content_id' in params:
+            query_params['supportedContent.id'] = params['supported_content_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenIntegrationEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_integrations_open_integration_id(self, integration_id, **kwargs):
+        """
+        Get an Open messaging integration
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_open_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param str expand: Expand instructions for the return value.
+        :return: OpenIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_open_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_conversations_messaging_integrations_open_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_conversations_messaging_integrations_twitter(self, **kwargs):
         """
         Get a list of Twitter Integrations
@@ -5229,6 +5472,78 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='MessagingStickerEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_threadingtimeline(self, **kwargs):
+        """
+        Get conversation threading window timeline for each messaging type
+        Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_threadingtimeline(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: ConversationThreadingWindow
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_threadingtimeline" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/messaging/threadingtimeline'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationThreadingWindow',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -7731,6 +8046,90 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FacebookIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_conversations_messaging_integrations_open_integration_id(self, integration_id, body, **kwargs):
+        """
+        Update an Open messaging integration
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversations_messaging_integrations_open_integration_id(integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param OpenIntegrationUpdateRequest body: OpenIntegrationUpdateRequest (required)
+        :return: OpenIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversations_messaging_integrations_open_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `patch_conversations_messaging_integrations_open_integration_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_conversations_messaging_integrations_open_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenIntegration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10924,6 +11323,84 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversations_messages_inbound_open(self, body, **kwargs):
+        """
+        Send an inbound Open Message
+        Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_messages_inbound_open(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param OpenNormalizedMessage body: NormalizedMessage (required)
+        :return: OpenNormalizedMessage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_messages_inbound_open" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_messages_inbound_open`")
+
+
+        resource_path = '/api/v2/conversations/messages/inbound/open'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenNormalizedMessage',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_conversations_messaging_integrations_facebook(self, body, **kwargs):
         """
         Create a Facebook Integration
@@ -11076,6 +11553,84 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LineIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_messaging_integrations_open(self, body, **kwargs):
+        """
+        Create an Open messaging integration
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_messaging_integrations_open(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param OpenIntegrationRequest body: OpenIntegrationRequest (required)
+        :return: OpenIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_messaging_integrations_open" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_messaging_integrations_open`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenIntegration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11580,6 +12135,84 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LineIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_conversations_messaging_threadingtimeline(self, body, **kwargs):
+        """
+        Update conversation threading window timeline for each messaging type
+        PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_conversations_messaging_threadingtimeline(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ConversationThreadingWindow body: ConversationThreadingWindowRequest (required)
+        :return: ConversationThreadingWindow
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_conversations_messaging_threadingtimeline" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_conversations_messaging_threadingtimeline`")
+
+
+        resource_path = '/api/v2/conversations/messaging/threadingtimeline'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationThreadingWindow',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

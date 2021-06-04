@@ -65,7 +65,7 @@ class ContentQuickReply(object):
     def id(self):
         """
         Gets the id of this ContentQuickReply.
-        An ID assigned to the quick reply. Each object inside the content array has a unique ID.
+        A unique ID assigned to the quick reply (Deprecated).
 
         :return: The id of this ContentQuickReply.
         :rtype: str
@@ -76,7 +76,7 @@ class ContentQuickReply(object):
     def id(self, id):
         """
         Sets the id of this ContentQuickReply.
-        An ID assigned to the quick reply. Each object inside the content array has a unique ID.
+        A unique ID assigned to the quick reply (Deprecated).
 
         :param id: The id of this ContentQuickReply.
         :type: str
@@ -111,7 +111,7 @@ class ContentQuickReply(object):
     def payload(self):
         """
         Gets the payload of this ContentQuickReply.
-        Content of the textback payload after clicking a quick reply
+        Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.
 
         :return: The payload of this ContentQuickReply.
         :rtype: str
@@ -122,7 +122,7 @@ class ContentQuickReply(object):
     def payload(self, payload):
         """
         Sets the payload of this ContentQuickReply.
-        Content of the textback payload after clicking a quick reply
+        Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.
 
         :param payload: The payload of this ContentQuickReply.
         :type: str
@@ -134,7 +134,7 @@ class ContentQuickReply(object):
     def image(self):
         """
         Gets the image of this ContentQuickReply.
-        Path or URI to an image file associated with quick reply
+        URL of an image associated with the quick reply.
 
         :return: The image of this ContentQuickReply.
         :rtype: str
@@ -145,7 +145,7 @@ class ContentQuickReply(object):
     def image(self, image):
         """
         Sets the image of this ContentQuickReply.
-        Path or URI to an image file associated with quick reply
+        URL of an image associated with the quick reply.
 
         :param image: The image of this ContentQuickReply.
         :type: str
@@ -157,7 +157,7 @@ class ContentQuickReply(object):
     def action(self):
         """
         Gets the action of this ContentQuickReply.
-        Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.
+        Specifies the type of action that is triggered upon clicking the quick reply.
 
         :return: The action of this ContentQuickReply.
         :rtype: str
@@ -168,7 +168,7 @@ class ContentQuickReply(object):
     def action(self, action):
         """
         Sets the action of this ContentQuickReply.
-        Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.
+        Specifies the type of action that is triggered upon clicking the quick reply.
 
         :param action: The action of this ContentQuickReply.
         :type: str

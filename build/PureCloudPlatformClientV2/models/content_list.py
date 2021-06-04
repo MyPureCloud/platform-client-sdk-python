@@ -71,7 +71,7 @@ class ContentList(object):
     def id(self):
         """
         Gets the id of this ContentList.
-        An ID assigned to this rich message content. Each instance inside the content array has a unique ID.
+        A unique ID assigned to this rich message content.
 
         :return: The id of this ContentList.
         :rtype: str
@@ -82,7 +82,7 @@ class ContentList(object):
     def id(self, id):
         """
         Sets the id of this ContentList.
-        An ID assigned to this rich message content. Each instance inside the content array has a unique ID.
+        A unique ID assigned to this rich message content.
 
         :param id: The id of this ContentList.
         :type: str
@@ -94,7 +94,7 @@ class ContentList(object):
     def list_type(self):
         """
         Gets the list_type of this ContentList.
-        The type of list this instance represents
+        The type of list this instance represents.
 
         :return: The list_type of this ContentList.
         :rtype: str
@@ -105,7 +105,7 @@ class ContentList(object):
     def list_type(self, list_type):
         """
         Sets the list_type of this ContentList.
-        The type of list this instance represents
+        The type of list this instance represents.
 
         :param list_type: The list_type of this ContentList.
         :type: str
@@ -121,7 +121,7 @@ class ContentList(object):
     def title(self):
         """
         Gets the title of this ContentList.
-        Text to show in the title row
+        Text to show in the title.
 
         :return: The title of this ContentList.
         :rtype: str
@@ -132,7 +132,7 @@ class ContentList(object):
     def title(self, title):
         """
         Sets the title of this ContentList.
-        Text to show in the title row
+        Text to show in the title.
 
         :param title: The title of this ContentList.
         :type: str
@@ -144,7 +144,7 @@ class ContentList(object):
     def description(self):
         """
         Gets the description of this ContentList.
-        Text to show in the description row. This is immediately below the title
+        Text to show in the description.
 
         :return: The description of this ContentList.
         :rtype: str
@@ -155,7 +155,7 @@ class ContentList(object):
     def description(self, description):
         """
         Sets the description of this ContentList.
-        Text to show in the description row. This is immediately below the title
+        Text to show in the description.
 
         :param description: The description of this ContentList.
         :type: str
@@ -167,7 +167,7 @@ class ContentList(object):
     def submit_label(self):
         """
         Gets the submit_label of this ContentList.
-        Label for Submit button
+        Label for Submit button.
 
         :return: The submit_label of this ContentList.
         :rtype: str
@@ -178,7 +178,7 @@ class ContentList(object):
     def submit_label(self, submit_label):
         """
         Sets the submit_label of this ContentList.
-        Label for Submit button
+        Label for Submit button.
 
         :param submit_label: The submit_label of this ContentList.
         :type: str
@@ -190,7 +190,7 @@ class ContentList(object):
     def actions(self):
         """
         Gets the actions of this ContentList.
-        User actions available on the content. All actions are optional and all actions are executed simultaneously.
+        The list actions.
 
         :return: The actions of this ContentList.
         :rtype: ContentActions
@@ -201,7 +201,7 @@ class ContentList(object):
     def actions(self, actions):
         """
         Sets the actions of this ContentList.
-        User actions available on the content. All actions are optional and all actions are executed simultaneously.
+        The list actions.
 
         :param actions: The actions of this ContentList.
         :type: ContentActions
@@ -213,7 +213,7 @@ class ContentList(object):
     def components(self):
         """
         Gets the components of this ContentList.
-        An array of component objects
+        An array of component objects.
 
         :return: The components of this ContentList.
         :rtype: list[ListItemComponent]
@@ -224,7 +224,7 @@ class ContentList(object):
     def components(self, components):
         """
         Sets the components of this ContentList.
-        An array of component objects
+        An array of component objects.
 
         :param components: The components of this ContentList.
         :type: list[ListItemComponent]
