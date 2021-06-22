@@ -1667,7 +1667,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 policy_id = 'policy_id_example' # str | Policy ID
-body = PureCloudPlatformClientV2.CrossPlatformPolicy() # CrossPlatformPolicy | Policy
+body = PureCloudPlatformClientV2.CrossPlatformPolicyUpdate() # CrossPlatformPolicyUpdate | Policy
 
 try:
     # Patch a media retention policy
@@ -1683,7 +1683,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-| **body** | [**CrossPlatformPolicy**](CrossPlatformPolicy.html)| Policy |  |
+| **body** | [**CrossPlatformPolicyUpdate**](CrossPlatformPolicyUpdate.html)| Policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1720,7 +1720,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 policy_id = 'policy_id_example' # str | Policy ID
-body = PureCloudPlatformClientV2.Policy() # Policy | Policy
+body = PureCloudPlatformClientV2.PolicyUpdate() # PolicyUpdate | Policy
 
 try:
     # Patch a media retention policy
@@ -1736,7 +1736,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-| **body** | [**Policy**](Policy.html)| Policy |  |
+| **body** | [**PolicyUpdate**](PolicyUpdate.html)| Policy |  |
 {: class="table table-striped"}
 
 ### Return type

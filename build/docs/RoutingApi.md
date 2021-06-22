@@ -8,8 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_routing_assessment**](RoutingApi.html#delete_routing_assessment) | Delete single benefit assessment.|
 |[**delete_routing_email_domain**](RoutingApi.html#delete_routing_email_domain) | Delete a domain|
 |[**delete_routing_email_domain_route**](RoutingApi.html#delete_routing_email_domain_route) | Delete a route|
+|[**delete_routing_predictor**](RoutingApi.html#delete_routing_predictor) | Delete single predictor.|
 |[**delete_routing_queue**](RoutingApi.html#delete_routing_queue) | Delete a queue|
 |[**delete_routing_queue_member**](RoutingApi.html#delete_routing_queue_member) | Delete a queue member.|
 |[**delete_routing_queue_user**](RoutingApi.html#delete_routing_queue_user) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.|
@@ -23,6 +25,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_wrapupcode**](RoutingApi.html#delete_routing_wrapupcode) | Delete wrap-up code|
 |[**delete_user_routinglanguage**](RoutingApi.html#delete_user_routinglanguage) | Remove routing language from user|
 |[**delete_user_routingskill**](RoutingApi.html#delete_user_routingskill) | Remove routing skill from user|
+|[**get_routing_assessment**](RoutingApi.html#get_routing_assessment) | Retrieve a single benefit assessment.|
+|[**get_routing_assessments**](RoutingApi.html#get_routing_assessments) | Retrieve all benefit assessments.|
+|[**get_routing_assessments_job**](RoutingApi.html#get_routing_assessments_job) | Retrieve a single benefit assessments job.|
+|[**get_routing_assessments_jobs**](RoutingApi.html#get_routing_assessments_jobs) | Retrieve all benefit assessment jobs.|
 |[**get_routing_email_domain**](RoutingApi.html#get_routing_email_domain) | Get domain|
 |[**get_routing_email_domain_route**](RoutingApi.html#get_routing_email_domain_route) | Get a route|
 |[**get_routing_email_domain_routes**](RoutingApi.html#get_routing_email_domain_routes) | Get routes|
@@ -31,7 +37,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_languages**](RoutingApi.html#get_routing_languages) | Get the list of supported languages.|
 |[**get_routing_message_recipient**](RoutingApi.html#get_routing_message_recipient) | Get a recipient|
 |[**get_routing_message_recipients**](RoutingApi.html#get_routing_message_recipients) | Get recipients|
+|[**get_routing_predictor**](RoutingApi.html#get_routing_predictor) | Retrieve a single predictor.|
+|[**get_routing_predictors**](RoutingApi.html#get_routing_predictors) | Retrieve all predictors.|
+|[**get_routing_predictors_keyperformanceindicators**](RoutingApi.html#get_routing_predictors_keyperformanceindicators) | Get a list of Key Performance Indicators available for the predictors.|
 |[**get_routing_queue**](RoutingApi.html#get_routing_queue) | Get details about this queue.|
+|[**get_routing_queue_comparisonperiod**](RoutingApi.html#get_routing_queue_comparisonperiod) | Get a Comparison Period.|
+|[**get_routing_queue_comparisonperiods**](RoutingApi.html#get_routing_queue_comparisonperiods) | Get list of comparison periods|
 |[**get_routing_queue_estimatedwaittime**](RoutingApi.html#get_routing_queue_estimatedwaittime) | Get Estimated Wait Time|
 |[**get_routing_queue_mediatype_estimatedwaittime**](RoutingApi.html#get_routing_queue_mediatype_estimatedwaittime) | Get Estimated Wait Time|
 |[**get_routing_queue_members**](RoutingApi.html#get_routing_queue_members) | Get the members of this queue.|
@@ -61,6 +72,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_conversation**](RoutingApi.html#patch_routing_conversation) | Update attributes of an in-queue conversation|
 |[**patch_routing_email_domain**](RoutingApi.html#patch_routing_email_domain) | Update domain settings|
 |[**patch_routing_email_domain_validate**](RoutingApi.html#patch_routing_email_domain_validate) | Validate domain settings|
+|[**patch_routing_predictor**](RoutingApi.html#patch_routing_predictor) | Update single predictor.|
 |[**patch_routing_queue_member**](RoutingApi.html#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
 |[**patch_routing_queue_members**](RoutingApi.html#patch_routing_queue_members) | Join or unjoin a set of users for a queue|
 |[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.|
@@ -72,10 +84,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_routinglanguages_bulk**](RoutingApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
 |[**patch_user_routingskills_bulk**](RoutingApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
 |[**post_analytics_queues_observations_query**](RoutingApi.html#post_analytics_queues_observations_query) | Query for queue observations|
+|[**post_routing_assessments**](RoutingApi.html#post_routing_assessments) | Create a benefit assessment.|
+|[**post_routing_assessments_jobs**](RoutingApi.html#post_routing_assessments_jobs) | Create a benefit assessment job.|
 |[**post_routing_email_domain_routes**](RoutingApi.html#post_routing_email_domain_routes) | Create a route|
 |[**post_routing_email_domain_testconnection**](RoutingApi.html#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this domain|
 |[**post_routing_email_domains**](RoutingApi.html#post_routing_email_domains) | Create a domain|
 |[**post_routing_languages**](RoutingApi.html#post_routing_languages) | Create Language|
+|[**post_routing_predictors**](RoutingApi.html#post_routing_predictors) | Create a predictor.|
 |[**post_routing_queue_members**](RoutingApi.html#post_routing_queue_members) | Bulk add or delete up to 100 queue members|
 |[**post_routing_queue_users**](RoutingApi.html#post_routing_queue_users) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.|
 |[**post_routing_queue_wrapupcodes**](RoutingApi.html#post_routing_queue_wrapupcodes) | Add up to 100 wrap-up codes to a queue|
@@ -98,6 +113,56 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_routingskill**](RoutingApi.html#put_user_routingskill) | Update routing skill proficiency or state.|
 |[**put_user_routingskills_bulk**](RoutingApi.html#put_user_routingskills_bulk) | Replace all routing skills assigned to a user|
 {: class="table table-striped"}
+
+<a name="delete_routing_assessment"></a>
+
+##  delete_routing_assessment(assessment_id)
+
+
+
+Delete single benefit assessment.
+
+
+
+Wraps DELETE /api/v2/routing/assessments/{assessmentId} 
+
+Requires ANY permissions: 
+
+* routing:assessment:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+assessment_id = 'assessment_id_example' # str | Benefit Assessment ID
+
+try:
+    # Delete single benefit assessment.
+    api_instance.delete_routing_assessment(assessment_id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_assessment: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assessment_id** | **str**| Benefit Assessment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_routing_email_domain"></a>
 
@@ -195,6 +260,57 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_name** | **str**| email domain |  |
 | **route_id** | **str**| route ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_predictor"></a>
+
+##  delete_routing_predictor(predictor_id)
+
+
+
+Delete single predictor.
+
+
+
+Wraps DELETE /api/v2/routing/predictors/{predictorId} 
+
+Requires ALL permissions: 
+
+* routing:predictor:delete
+* routing:queue:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+predictor_id = 'predictor_id_example' # str | Predictor ID
+
+try:
+    # Delete single predictor.
+    api_instance.delete_routing_predictor(predictor_id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_predictor: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **predictor_id** | **str**| Predictor ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -858,6 +974,219 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="get_routing_assessment"></a>
+
+## [**BenefitAssessment**](BenefitAssessment.html) get_routing_assessment(assessment_id)
+
+
+
+Retrieve a single benefit assessment.
+
+
+
+Wraps GET /api/v2/routing/assessments/{assessmentId} 
+
+Requires ANY permissions: 
+
+* routing:assessment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+assessment_id = 'assessment_id_example' # str | Benefit Assessment ID
+
+try:
+    # Retrieve a single benefit assessment.
+    api_response = api_instance.get_routing_assessment(assessment_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_assessment: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assessment_id** | **str**| Benefit Assessment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BenefitAssessment**](BenefitAssessment.html)
+
+<a name="get_routing_assessments"></a>
+
+## [**AssessmentListing**](AssessmentListing.html) get_routing_assessments(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
+
+
+
+Retrieve all benefit assessments.
+
+
+
+Wraps GET /api/v2/routing/assessments 
+
+Requires ANY permissions: 
+
+* routing:queue:view
+* routing:assessment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+queue_id = ['queue_id_example'] # list[str] | Queue ID(s) to filter assessments by. (optional)
+
+try:
+    # Retrieve all benefit assessments.
+    api_response = api_instance.get_routing_assessments(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_assessments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **queue_id** | [**list[str]**](str.html)| Queue ID(s) to filter assessments by. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssessmentListing**](AssessmentListing.html)
+
+<a name="get_routing_assessments_job"></a>
+
+## [**BenefitAssessmentJob**](BenefitAssessmentJob.html) get_routing_assessments_job(job_id)
+
+
+
+Retrieve a single benefit assessments job.
+
+
+
+Wraps GET /api/v2/routing/assessments/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* routing:assessment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+job_id = 'job_id_example' # str | Benefit Assessment Job ID
+
+try:
+    # Retrieve a single benefit assessments job.
+    api_response = api_instance.get_routing_assessments_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_assessments_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| Benefit Assessment Job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BenefitAssessmentJob**](BenefitAssessmentJob.html)
+
+<a name="get_routing_assessments_jobs"></a>
+
+## [**AssessmentJobListing**](AssessmentJobListing.html) get_routing_assessments_jobs(division_id=division_id)
+
+
+
+Retrieve all benefit assessment jobs.
+
+
+
+Wraps GET /api/v2/routing/assessments/jobs 
+
+Requires ANY permissions: 
+
+* routing:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+division_id = ['division_id_example'] # list[str] | Division ID(s) to filter assessment jobs by. (optional)
+
+try:
+    # Retrieve all benefit assessment jobs.
+    api_response = api_instance.get_routing_assessments_jobs(division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_assessments_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | [**list[str]**](str.html)| Division ID(s) to filter assessment jobs by. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssessmentJobListing**](AssessmentJobListing.html)
+
 <a name="get_routing_email_domain"></a>
 
 ## [**InboundDomain**](InboundDomain.html) get_routing_email_domain(domain_id)
@@ -1277,6 +1606,164 @@ except ApiException as e:
 
 [**RecipientListing**](RecipientListing.html)
 
+<a name="get_routing_predictor"></a>
+
+## [**Predictor**](Predictor.html) get_routing_predictor(predictor_id)
+
+
+
+Retrieve a single predictor.
+
+
+
+Wraps GET /api/v2/routing/predictors/{predictorId} 
+
+Requires ANY permissions: 
+
+* routing:predictor:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+predictor_id = 'predictor_id_example' # str | Predictor ID
+
+try:
+    # Retrieve a single predictor.
+    api_response = api_instance.get_routing_predictor(predictor_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_predictor: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **predictor_id** | **str**| Predictor ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Predictor**](Predictor.html)
+
+<a name="get_routing_predictors"></a>
+
+## [**PredictorListing**](PredictorListing.html) get_routing_predictors(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
+
+
+
+Retrieve all predictors.
+
+
+
+Wraps GET /api/v2/routing/predictors 
+
+Requires ANY permissions: 
+
+* routing:predictor:view
+* routing:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+queue_id = ['queue_id_example'] # list[str] | Comma-separated list of queue Ids to filter by. (optional)
+
+try:
+    # Retrieve all predictors.
+    api_response = api_instance.get_routing_predictors(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_predictors: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **queue_id** | [**list[str]**](str.html)| Comma-separated list of queue Ids to filter by. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PredictorListing**](PredictorListing.html)
+
+<a name="get_routing_predictors_keyperformanceindicators"></a>
+
+## [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator.html) get_routing_predictors_keyperformanceindicators()
+
+
+
+Get a list of Key Performance Indicators available for the predictors.
+
+
+
+Wraps GET /api/v2/routing/predictors/keyperformanceindicators 
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Get a list of Key Performance Indicators available for the predictors.
+    api_response = api_instance.get_routing_predictors_keyperformanceindicators()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_predictors_keyperformanceindicators: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator.html)
+
 <a name="get_routing_queue"></a>
 
 ## [**Queue**](Queue.html) get_routing_queue(queue_id)
@@ -1327,6 +1814,112 @@ except ApiException as e:
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="get_routing_queue_comparisonperiod"></a>
+
+## [**ComparisonPeriod**](ComparisonPeriod.html) get_routing_queue_comparisonperiod(queue_id, comparison_period_id)
+
+
+
+Get a Comparison Period.
+
+
+
+Wraps GET /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId} 
+
+Requires ALL permissions: 
+
+* routing:comparisonPeriod:view
+* routing:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+queue_id = 'queue_id_example' # str | Queue id
+comparison_period_id = 'comparison_period_id_example' # str | ComparisonPeriod id
+
+try:
+    # Get a Comparison Period.
+    api_response = api_instance.get_routing_queue_comparisonperiod(queue_id, comparison_period_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_queue_comparisonperiod: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **queue_id** | **str**| Queue id |  |
+| **comparison_period_id** | **str**| ComparisonPeriod id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ComparisonPeriod**](ComparisonPeriod.html)
+
+<a name="get_routing_queue_comparisonperiods"></a>
+
+## [**ComparisonPeriodListing**](ComparisonPeriodListing.html) get_routing_queue_comparisonperiods(queue_id)
+
+
+
+Get list of comparison periods
+
+
+
+Wraps GET /api/v2/routing/queues/{queueId}/comparisonperiods 
+
+Requires ALL permissions: 
+
+* routing:comparisonPeriod:view
+* routing:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+queue_id = 'queue_id_example' # str | Queue id
+
+try:
+    # Get list of comparison periods
+    api_response = api_instance.get_routing_queue_comparisonperiods(queue_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_queue_comparisonperiods: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **queue_id** | **str**| Queue id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ComparisonPeriodListing**](ComparisonPeriodListing.html)
 
 <a name="get_routing_queue_estimatedwaittime"></a>
 
@@ -2940,6 +3533,60 @@ except ApiException as e:
 
 [**InboundDomain**](InboundDomain.html)
 
+<a name="patch_routing_predictor"></a>
+
+## [**Predictor**](Predictor.html) patch_routing_predictor(predictor_id, body=body)
+
+
+
+Update single predictor.
+
+
+
+Wraps PATCH /api/v2/routing/predictors/{predictorId} 
+
+Requires ALL permissions: 
+
+* routing:predictor:edit
+* routing:queue:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+predictor_id = 'predictor_id_example' # str | Predictor ID
+body = PureCloudPlatformClientV2.PatchPredictorRequest() # PatchPredictorRequest |  (optional)
+
+try:
+    # Update single predictor.
+    api_response = api_instance.patch_routing_predictor(predictor_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_predictor: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **predictor_id** | **str**| Predictor ID |  |
+| **body** | [**PatchPredictorRequest**](PatchPredictorRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Predictor**](Predictor.html)
+
 <a name="patch_routing_queue_member"></a>
 
 ##  patch_routing_queue_member(queue_id, member_id, body)
@@ -3534,6 +4181,109 @@ except ApiException as e:
 
 [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
 
+<a name="post_routing_assessments"></a>
+
+## [**BenefitAssessment**](BenefitAssessment.html) post_routing_assessments(body=body)
+
+
+
+Create a benefit assessment.
+
+
+
+Wraps POST /api/v2/routing/assessments 
+
+Requires ALL permissions: 
+
+* routing:assessment:add
+* routing:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.CreateBenefitAssessmentRequest() # CreateBenefitAssessmentRequest |  (optional)
+
+try:
+    # Create a benefit assessment.
+    api_response = api_instance.post_routing_assessments(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_assessments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateBenefitAssessmentRequest**](CreateBenefitAssessmentRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BenefitAssessment**](BenefitAssessment.html)
+
+<a name="post_routing_assessments_jobs"></a>
+
+## [**BenefitAssessmentJob**](BenefitAssessmentJob.html) post_routing_assessments_jobs(body=body)
+
+
+
+Create a benefit assessment job.
+
+
+
+Wraps POST /api/v2/routing/assessments/jobs 
+
+Requires ANY permissions: 
+
+* routing:assessment:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.CreateBenefitAssessmentJobRequest() # CreateBenefitAssessmentJobRequest |  (optional)
+
+try:
+    # Create a benefit assessment job.
+    api_response = api_instance.post_routing_assessments_jobs(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_assessments_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateBenefitAssessmentJobRequest**](CreateBenefitAssessmentJobRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BenefitAssessmentJob**](BenefitAssessmentJob.html)
+
 <a name="post_routing_email_domain_routes"></a>
 
 ## [**InboundRoute**](InboundRoute.html) post_routing_email_domain_routes(domain_name, body)
@@ -3741,6 +4491,58 @@ except ApiException as e:
 ### Return type
 
 [**Language**](Language.html)
+
+<a name="post_routing_predictors"></a>
+
+## [**Predictor**](Predictor.html) post_routing_predictors(body=body)
+
+
+
+Create a predictor.
+
+
+
+Wraps POST /api/v2/routing/predictors 
+
+Requires ALL permissions: 
+
+* routing:predictor:add
+* routing:queue:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.CreatePredictorRequest() # CreatePredictorRequest |  (optional)
+
+try:
+    # Create a predictor.
+    api_response = api_instance.post_routing_predictors(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_predictors: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreatePredictorRequest**](CreatePredictorRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Predictor**](Predictor.html)
 
 <a name="post_routing_queue_members"></a>
 

@@ -2477,7 +2477,7 @@ class RecordingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str policy_id: Policy ID (required)
-        :param CrossPlatformPolicy body: Policy (required)
+        :param CrossPlatformPolicyUpdate body: Policy (required)
         :return: CrossPlatformPolicy
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2561,7 +2561,7 @@ class RecordingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str policy_id: Policy ID (required)
-        :param Policy body: Policy (required)
+        :param PolicyUpdate body: Policy (required)
         :return: Policy
                  If the method is called asynchronously,
                  returns the request thread.

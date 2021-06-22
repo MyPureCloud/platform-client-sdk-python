@@ -55,6 +55,7 @@ from .models.agent_activity_changed_topic_presence import AgentActivityChangedTo
 from .models.agent_activity_changed_topic_routing_status import AgentActivityChangedTopicRoutingStatus
 from .models.agent_activity_entity_listing import AgentActivityEntityListing
 from .models.agent_evaluator_activity import AgentEvaluatorActivity
+from .models.agent_management_unit_reference import AgentManagementUnitReference
 from .models.agent_max_utilization import AgentMaxUtilization
 from .models.agent_owned_mapping_preview import AgentOwnedMappingPreview
 from .models.agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
@@ -132,6 +133,8 @@ from .models.article_content_body import ArticleContentBody
 from .models.assessment_form import AssessmentForm
 from .models.assessment_form_question import AssessmentFormQuestion
 from .models.assessment_form_question_group import AssessmentFormQuestionGroup
+from .models.assessment_job_listing import AssessmentJobListing
+from .models.assessment_listing import AssessmentListing
 from .models.assessment_question_group_score import AssessmentQuestionGroupScore
 from .models.assessment_question_score import AssessmentQuestionScore
 from .models.assessment_scoring_set import AssessmentScoringSet
@@ -197,6 +200,8 @@ from .models.batch_download_job_status_result import BatchDownloadJobStatusResul
 from .models.batch_download_job_submission import BatchDownloadJobSubmission
 from .models.batch_download_job_submission_result import BatchDownloadJobSubmissionResult
 from .models.batch_download_request import BatchDownloadRequest
+from .models.benefit_assessment import BenefitAssessment
+from .models.benefit_assessment_job import BenefitAssessmentJob
 from .models.billing_usage import BillingUsage
 from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
@@ -389,6 +394,7 @@ from .models.chat_media_policy_conditions import ChatMediaPolicyConditions
 from .models.chat_message import ChatMessage
 from .models.chat_message_user import ChatMessageUser
 from .models.chat_settings import ChatSettings
+from .models.check import Check
 from .models.client_app import ClientApp
 from .models.client_app_configuration_info import ClientAppConfigurationInfo
 from .models.client_app_entity_listing import ClientAppEntityListing
@@ -419,6 +425,8 @@ from .models.common_campaign import CommonCampaign
 from .models.common_campaign_division_view import CommonCampaignDivisionView
 from .models.common_campaign_division_view_entity_listing import CommonCampaignDivisionViewEntityListing
 from .models.common_campaign_entity_listing import CommonCampaignEntityListing
+from .models.comparison_period import ComparisonPeriod
+from .models.comparison_period_listing import ComparisonPeriodListing
 from .models.condition import Condition
 from .models.configuration_overrides import ConfigurationOverrides
 from .models.connect_rate import ConnectRate
@@ -688,6 +696,8 @@ from .models.cover_sheet import CoverSheet
 from .models.create_activity_code_request import CreateActivityCodeRequest
 from .models.create_admin_time_off_request import CreateAdminTimeOffRequest
 from .models.create_agent_time_off_request import CreateAgentTimeOffRequest
+from .models.create_benefit_assessment_job_request import CreateBenefitAssessmentJobRequest
+from .models.create_benefit_assessment_request import CreateBenefitAssessmentRequest
 from .models.create_business_unit_request import CreateBusinessUnitRequest
 from .models.create_business_unit_settings import CreateBusinessUnitSettings
 from .models.create_call_request import CreateCallRequest
@@ -702,6 +712,7 @@ from .models.create_management_unit_api_request import CreateManagementUnitApiRe
 from .models.create_management_unit_settings_request import CreateManagementUnitSettingsRequest
 from .models.create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
 from .models.create_planning_group_request import CreatePlanningGroupRequest
+from .models.create_predictor_request import CreatePredictorRequest
 from .models.create_queue_request import CreateQueueRequest
 from .models.create_secure_session import CreateSecureSession
 from .models.create_service_goal_template import CreateServiceGoalTemplate
@@ -731,6 +742,7 @@ from .models.cross_platform_message_media_policy import CrossPlatformMessageMedi
 from .models.cross_platform_policy import CrossPlatformPolicy
 from .models.cross_platform_policy_actions import CrossPlatformPolicyActions
 from .models.cross_platform_policy_create import CrossPlatformPolicyCreate
+from .models.cross_platform_policy_update import CrossPlatformPolicyUpdate
 from .models.cta_button_style_properties import CtaButtonStyleProperties
 from .models.current_user_schedule_request_body import CurrentUserScheduleRequestBody
 from .models.cursor_contact_listing import CursorContactListing
@@ -1002,6 +1014,7 @@ from .models.evaluation_entity_listing import EvaluationEntityListing
 from .models.evaluation_form import EvaluationForm
 from .models.evaluation_form_and_scoring_set import EvaluationFormAndScoringSet
 from .models.evaluation_form_entity_listing import EvaluationFormEntityListing
+from .models.evaluation_quality_v2_topic_calibration import EvaluationQualityV2TopicCalibration
 from .models.evaluation_quality_v2_topic_evaluation_scoring_set import EvaluationQualityV2TopicEvaluationScoringSet
 from .models.evaluation_quality_v2_topic_evaluation_v2 import EvaluationQualityV2TopicEvaluationV2
 from .models.evaluation_quality_v2_topic_user import EvaluationQualityV2TopicUser
@@ -1219,6 +1232,8 @@ from .models.json_node import JsonNode
 from .models.json_node_search_response import JsonNodeSearchResponse
 from .models.json_schema_document import JsonSchemaDocument
 from .models.json_search_response import JsonSearchResponse
+from .models.key_performance_indicator import KeyPerformanceIndicator
+from .models.key_performance_indicator_assessment import KeyPerformanceIndicatorAssessment
 from .models.key_rotation_schedule import KeyRotationSchedule
 from .models.key_value import KeyValue
 from .models.klaxon_heart_beat_alerts_topic_heart_beat_alert import KlaxonHeartBeatAlertsTopicHeartBeatAlert
@@ -1524,6 +1539,7 @@ from .models.patch_external_segment import PatchExternalSegment
 from .models.patch_integration_action import PatchIntegrationAction
 from .models.patch_integration_action_fields import PatchIntegrationActionFields
 from .models.patch_outcome import PatchOutcome
+from .models.patch_predictor_request import PatchPredictorRequest
 from .models.patch_segment import PatchSegment
 from .models.patch_shift_trade_request import PatchShiftTradeRequest
 from .models.patch_survey_question import PatchSurveyQuestion
@@ -1565,6 +1581,7 @@ from .models.policy_create import PolicyCreate
 from .models.policy_entity_listing import PolicyEntityListing
 from .models.policy_error_message import PolicyErrorMessage
 from .models.policy_errors import PolicyErrors
+from .models.policy_update import PolicyUpdate
 from .models.post_action_input import PostActionInput
 from .models.post_input_contract import PostInputContract
 from .models.post_output_contract import PostOutputContract
@@ -1572,6 +1589,10 @@ from .models.post_text_message import PostTextMessage
 from .models.post_text_request import PostTextRequest
 from .models.post_text_response import PostTextResponse
 from .models.prediction_results import PredictionResults
+from .models.predictor import Predictor
+from .models.predictor_listing import PredictorListing
+from .models.predictor_schedule import PredictorSchedule
+from .models.predictor_workload_balancing import PredictorWorkloadBalancing
 from .models.presence_definition import PresenceDefinition
 from .models.presence_detail_query_clause import PresenceDetailQueryClause
 from .models.presence_detail_query_filter import PresenceDetailQueryFilter
@@ -2161,10 +2182,11 @@ from .models.transcript_search_criteria import TranscriptSearchCriteria
 from .models.transcript_search_request import TranscriptSearchRequest
 from .models.transcript_url import TranscriptUrl
 from .models.transcription_settings import TranscriptionSettings
-from .models.transcriptions_topic_transcript_alternative import TranscriptionsTopicTranscriptAlternative
-from .models.transcriptions_topic_transcript_result import TranscriptionsTopicTranscriptResult
-from .models.transcriptions_topic_transcript_word import TranscriptionsTopicTranscriptWord
-from .models.transcriptions_topic_transcription_message import TranscriptionsTopicTranscriptionMessage
+from .models.transcription_topic_transcript_alternative import TranscriptionTopicTranscriptAlternative
+from .models.transcription_topic_transcript_result import TranscriptionTopicTranscriptResult
+from .models.transcription_topic_transcript_word import TranscriptionTopicTranscriptWord
+from .models.transcription_topic_transcription_message import TranscriptionTopicTranscriptionMessage
+from .models.transcription_topic_transcription_request_status import TranscriptionTopicTranscriptionRequestStatus
 from .models.transcripts import Transcripts
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk
@@ -2200,6 +2222,7 @@ from .models.trust_group import TrustGroup
 from .models.trust_member_create import TrustMemberCreate
 from .models.trust_request import TrustRequest
 from .models.trust_request_create import TrustRequestCreate
+from .models.trust_update import TrustUpdate
 from .models.trust_user import TrustUser
 from .models.trust_user_details import TrustUserDetails
 from .models.trust_user_entity_listing import TrustUserEntityListing

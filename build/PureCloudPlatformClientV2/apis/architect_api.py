@@ -2920,12 +2920,13 @@ class ArchitectApi(object):
         :param str sort_order: Sort order
         :param str name: Name of the Schedule Group to filter by.
         :param str schedule_ids: A comma-delimited list of Schedule IDs to filter by.
+        :param list[str] division_id: List of divisionIds on which to filter.
         :return: ScheduleGroupEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name', 'schedule_ids']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name', 'schedule_ids', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -2956,6 +2957,8 @@ class ArchitectApi(object):
             query_params['name'] = params['name']
         if 'schedule_ids' in params:
             query_params['scheduleIds'] = params['schedule_ids']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 
@@ -3009,12 +3012,13 @@ class ArchitectApi(object):
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :param str name: Name of the Schedule to filter by.
+        :param list[str] division_id: List of divisionIds on which to filter.
         :return: ScheduleEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3043,6 +3047,8 @@ class ArchitectApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 

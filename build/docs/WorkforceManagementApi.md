@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_managementunit_workplanrotation**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplanrotation) | Delete a work plan rotation|
 |[**get_workforcemanagement_adherence**](WorkforceManagementApi.html#get_workforcemanagement_adherence) | Get a list of UserScheduleAdherence records for the requested users|
 |[**get_workforcemanagement_adhocmodelingjob**](WorkforceManagementApi.html#get_workforcemanagement_adhocmodelingjob) | Get status of the modeling job|
+|[**get_workforcemanagement_agent_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agent_managementunit) | Get the management unit to which the agent belongs|
+|[**get_workforcemanagement_agents_me_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agents_me_managementunit) | Get the management unit to which the currently logged in agent belongs|
 |[**get_workforcemanagement_businessunit**](WorkforceManagementApi.html#get_workforcemanagement_businessunit) | Get business unit|
 |[**get_workforcemanagement_businessunit_activitycode**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activitycode) | Get an activity code|
 |[**get_workforcemanagement_businessunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activitycodes) | Get activity codes|
@@ -741,6 +743,165 @@ except ApiException as e:
 ### Return type
 
 [**ModelingStatusResponse**](ModelingStatusResponse.html)
+
+<a name="get_workforcemanagement_agent_managementunit"></a>
+
+## [**AgentManagementUnitReference**](AgentManagementUnitReference.html) get_workforcemanagement_agent_managementunit(agent_id)
+
+
+
+Get the management unit to which the agent belongs
+
+
+
+Wraps GET /api/v2/workforcemanagement/agents/{agentId}/managementunit 
+
+Requires ANY permissions: 
+
+* wfm:agent:view
+* wfm:publishedSchedule:view
+* wfm:schedule:view
+* coaching:appointment:add
+* coaching:appointment:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent to look up
+
+try:
+    # Get the management unit to which the agent belongs
+    api_response = api_instance.get_workforcemanagement_agent_managementunit(agent_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_agent_managementunit: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent to look up |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentManagementUnitReference**](AgentManagementUnitReference.html)
+
+<a name="get_workforcemanagement_agents_me_managementunit"></a>
+
+## [**AgentManagementUnitReference**](AgentManagementUnitReference.html) get_workforcemanagement_agents_me_managementunit()
+
+
+
+Get the management unit to which the currently logged in agent belongs
+
+
+
+Wraps GET /api/v2/workforcemanagement/agents/me/managementunit 
+
+Requires ANY permissions: 
+
+* wfm:agentSchedule:view
+* wfm:agentTimeOffRequest:submit
+* wfm:activityCode:add
+* wfm:activityCode:delete
+* wfm:activityCode:edit
+* wfm:activityCode:view
+* wfm:agent:edit
+* wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
+* wfm:historicalAdherence:view
+* wfm:intraday:view
+* wfm:managementUnit:add
+* wfm:managementUnit:delete
+* wfm:managementUnit:edit
+* wfm:managementUnit:view
+* wfm:realtimeAdherence:view
+* wfm:schedule:add
+* wfm:schedule:delete
+* wfm:schedule:edit
+* wfm:schedule:generate
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+* wfm:serviceGoalTemplate:add
+* wfm:serviceGoalTemplate:delete
+* wfm:serviceGoalTemplate:edit
+* wfm:serviceGoalTemplate:view
+* wfm:planningGroup:add
+* wfm:planningGroup:delete
+* wfm:planningGroup:edit
+* wfm:planningGroup:view
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+* wfm:shortTermForecast:add
+* wfm:shortTermForecast:delete
+* wfm:shortTermForecast:edit
+* wfm:shortTermForecast:view
+* wfm:timeOffLimit:add
+* wfm:timeOffLimit:delete
+* wfm:timeOffLimit:edit
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:add
+* wfm:timeOffPlan:delete
+* wfm:timeOffPlan:edit
+* wfm:timeOffPlan:view
+* wfm:timeOffRequest:add
+* wfm:timeOffRequest:edit
+* wfm:timeOffRequest:view
+* wfm:workPlan:add
+* wfm:workPlan:delete
+* wfm:workPlan:edit
+* wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Get the management unit to which the currently logged in agent belongs
+    api_response = api_instance.get_workforcemanagement_agents_me_managementunit()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_agents_me_managementunit: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentManagementUnitReference**](AgentManagementUnitReference.html)
 
 <a name="get_workforcemanagement_businessunit"></a>
 

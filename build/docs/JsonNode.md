@@ -7,8 +7,8 @@ title: JsonNode
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **node_type** | **str** |  | [optional] |
 | **float** | **bool** |  | [optional] |
+| **node_type** | **str** |  | [optional] |
 | **number** | **bool** |  | [optional] |
 | **value_node** | **bool** |  | [optional] |
 | **floating_point_number** | **bool** |  | [optional] |

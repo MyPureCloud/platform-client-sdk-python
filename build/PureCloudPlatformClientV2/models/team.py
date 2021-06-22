@@ -42,6 +42,7 @@ class Team(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'description': 'str',
             'date_modified': 'datetime',
             'member_count': 'int',
@@ -51,6 +52,7 @@ class Team(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'description': 'description',
             'date_modified': 'dateModified',
             'member_count': 'memberCount',
@@ -59,6 +61,7 @@ class Team(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._description = None
         self._date_modified = None
         self._member_count = None
@@ -109,6 +112,29 @@ class Team(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this Team.
+        The division to which this entity belongs.
+
+        :return: The division of this Team.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this Team.
+        The division to which this entity belongs.
+
+        :param division: The division of this Team.
+        :type: Division
+        """
+        
+        self._division = division
 
     @property
     def description(self):

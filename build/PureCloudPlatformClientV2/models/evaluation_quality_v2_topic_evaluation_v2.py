@@ -60,7 +60,8 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'division_ids': 'list[str]',
             'rescore': 'bool',
             'conversation_date': 'datetime',
-            'media_type': 'list[str]'
+            'media_type': 'list[str]',
+            'calibration': 'EvaluationQualityV2TopicCalibration'
         }
 
         self.attribute_map = {
@@ -84,7 +85,8 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'division_ids': 'divisionIds',
             'rescore': 'rescore',
             'conversation_date': 'conversationDate',
-            'media_type': 'mediaType'
+            'media_type': 'mediaType',
+            'calibration': 'calibration'
         }
 
         self._id = None
@@ -108,6 +110,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         self._rescore = None
         self._conversation_date = None
         self._media_type = None
+        self._calibration = None
 
     @property
     def id(self):
@@ -595,6 +598,29 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         """
         
         self._media_type = media_type
+
+    @property
+    def calibration(self):
+        """
+        Gets the calibration of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The calibration of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: EvaluationQualityV2TopicCalibration
+        """
+        return self._calibration
+
+    @calibration.setter
+    def calibration(self, calibration):
+        """
+        Sets the calibration of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param calibration: The calibration of this EvaluationQualityV2TopicEvaluationV2.
+        :type: EvaluationQualityV2TopicCalibration
+        """
+        
+        self._calibration = calibration
 
     def to_dict(self):
         """

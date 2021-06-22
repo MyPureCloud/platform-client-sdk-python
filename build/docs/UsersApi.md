@@ -2106,7 +2106,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
+| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire, Assessment |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2174,7 +2174,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
+| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire, Assessment |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2230,7 +2230,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **activity_id** | **str**| Specifies the activity ID, maps to either assignment or appointment ID |  |
-| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
+| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, Questionnaire |
 {: class="table table-striped"}
 
 ### Return type

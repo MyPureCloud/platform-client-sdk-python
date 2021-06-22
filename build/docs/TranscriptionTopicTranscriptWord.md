@@ -1,7 +1,7 @@
 ---
-title: TranscriptionsTopicTranscriptWord
+title: TranscriptionTopicTranscriptWord
 ---
-## TranscriptionsTopicTranscriptWord
+## TranscriptionTopicTranscriptWord
 
 ## Properties
 

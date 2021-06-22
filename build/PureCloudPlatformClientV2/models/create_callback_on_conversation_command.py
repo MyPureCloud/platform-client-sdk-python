@@ -48,7 +48,9 @@ class CreateCallbackOnConversationCommand(object):
             'callback_scheduled_time': 'datetime',
             'country_code': 'str',
             'validate_callback_numbers': 'bool',
-            'data': 'dict(str, str)'
+            'data': 'dict(str, str)',
+            'caller_id': 'str',
+            'caller_id_name': 'str'
         }
 
         self.attribute_map = {
@@ -60,7 +62,9 @@ class CreateCallbackOnConversationCommand(object):
             'callback_scheduled_time': 'callbackScheduledTime',
             'country_code': 'countryCode',
             'validate_callback_numbers': 'validateCallbackNumbers',
-            'data': 'data'
+            'data': 'data',
+            'caller_id': 'callerId',
+            'caller_id_name': 'callerIdName'
         }
 
         self._script_id = None
@@ -72,6 +76,8 @@ class CreateCallbackOnConversationCommand(object):
         self._country_code = None
         self._validate_callback_numbers = None
         self._data = None
+        self._caller_id = None
+        self._caller_id_name = None
 
     @property
     def script_id(self):
@@ -279,6 +285,52 @@ class CreateCallbackOnConversationCommand(object):
         """
         
         self._data = data
+
+    @property
+    def caller_id(self):
+        """
+        Gets the caller_id of this CreateCallbackOnConversationCommand.
+        The phone number displayed to recipients when a phone call is placed as part of the callback. Must conform to the E.164 format. May be overridden by other settings in the system such as external trunk settings. Telco support for \"callerId\" varies.
+
+        :return: The caller_id of this CreateCallbackOnConversationCommand.
+        :rtype: str
+        """
+        return self._caller_id
+
+    @caller_id.setter
+    def caller_id(self, caller_id):
+        """
+        Sets the caller_id of this CreateCallbackOnConversationCommand.
+        The phone number displayed to recipients when a phone call is placed as part of the callback. Must conform to the E.164 format. May be overridden by other settings in the system such as external trunk settings. Telco support for \"callerId\" varies.
+
+        :param caller_id: The caller_id of this CreateCallbackOnConversationCommand.
+        :type: str
+        """
+        
+        self._caller_id = caller_id
+
+    @property
+    def caller_id_name(self):
+        """
+        Gets the caller_id_name of this CreateCallbackOnConversationCommand.
+        The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \"callerIdName\" varies.
+
+        :return: The caller_id_name of this CreateCallbackOnConversationCommand.
+        :rtype: str
+        """
+        return self._caller_id_name
+
+    @caller_id_name.setter
+    def caller_id_name(self, caller_id_name):
+        """
+        Sets the caller_id_name of this CreateCallbackOnConversationCommand.
+        The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \"callerIdName\" varies.
+
+        :param caller_id_name: The caller_id_name of this CreateCallbackOnConversationCommand.
+        :type: str
+        """
+        
+        self._caller_id_name = caller_id_name
 
     def to_dict(self):
         """

@@ -46,6 +46,7 @@ class VoicemailOrganizationPolicy(object):
             'voicemail_extension': 'str',
             'pin_required': 'bool',
             'send_email_notifications': 'bool',
+            'disable_email_pii': 'bool',
             'modified_date': 'datetime'
         }
 
@@ -56,6 +57,7 @@ class VoicemailOrganizationPolicy(object):
             'voicemail_extension': 'voicemailExtension',
             'pin_required': 'pinRequired',
             'send_email_notifications': 'sendEmailNotifications',
+            'disable_email_pii': 'disableEmailPii',
             'modified_date': 'modifiedDate'
         }
 
@@ -65,6 +67,7 @@ class VoicemailOrganizationPolicy(object):
         self._voicemail_extension = None
         self._pin_required = None
         self._send_email_notifications = None
+        self._disable_email_pii = None
         self._modified_date = None
 
     @property
@@ -204,6 +207,29 @@ class VoicemailOrganizationPolicy(object):
         """
         
         self._send_email_notifications = send_email_notifications
+
+    @property
+    def disable_email_pii(self):
+        """
+        Gets the disable_email_pii of this VoicemailOrganizationPolicy.
+        Removes any PII from emails. This overrides any analogous group configuration value. This is always true if HIPAA is enabled or unknown for an organization.
+
+        :return: The disable_email_pii of this VoicemailOrganizationPolicy.
+        :rtype: bool
+        """
+        return self._disable_email_pii
+
+    @disable_email_pii.setter
+    def disable_email_pii(self, disable_email_pii):
+        """
+        Sets the disable_email_pii of this VoicemailOrganizationPolicy.
+        Removes any PII from emails. This overrides any analogous group configuration value. This is always true if HIPAA is enabled or unknown for an organization.
+
+        :param disable_email_pii: The disable_email_pii of this VoicemailOrganizationPolicy.
+        :type: bool
+        """
+        
+        self._disable_email_pii = disable_email_pii
 
     @property
     def modified_date(self):

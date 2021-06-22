@@ -285,7 +285,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :param substatus: The substatus of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
         :type: str
         """
-        allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "InvalidDailyDuration", "OutsideShift", "Waitlisted"]
+        allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "InvalidDailyDuration", "OutsideShift", "RemovedFromWaitlist", "Waitlisted"]
         if substatus.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for substatus -> " + substatus)
             self._substatus = "outdated_sdk_version"

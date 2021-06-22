@@ -40,8 +40,8 @@ class JsonNode(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'node_type': 'str',
             'float': 'bool',
+            'node_type': 'str',
             'number': 'bool',
             'value_node': 'bool',
             'floating_point_number': 'bool',
@@ -64,8 +64,8 @@ class JsonNode(object):
         }
 
         self.attribute_map = {
-            'node_type': 'nodeType',
             'float': 'float',
+            'node_type': 'nodeType',
             'number': 'number',
             'value_node': 'valueNode',
             'floating_point_number': 'floatingPointNumber',
@@ -87,8 +87,8 @@ class JsonNode(object):
             'null': 'null'
         }
 
-        self._node_type = None
         self._float = None
+        self._node_type = None
         self._number = None
         self._value_node = None
         self._floating_point_number = None
@@ -108,6 +108,29 @@ class JsonNode(object):
         self._binary = None
         self._array = None
         self._null = None
+
+    @property
+    def float(self):
+        """
+        Gets the float of this JsonNode.
+
+
+        :return: The float of this JsonNode.
+        :rtype: bool
+        """
+        return self._float
+
+    @float.setter
+    def float(self, float):
+        """
+        Sets the float of this JsonNode.
+
+
+        :param float: The float of this JsonNode.
+        :type: bool
+        """
+        
+        self._float = float
 
     @property
     def node_type(self):
@@ -135,29 +158,6 @@ class JsonNode(object):
             self._node_type = "outdated_sdk_version"
         else:
             self._node_type = node_type
-
-    @property
-    def float(self):
-        """
-        Gets the float of this JsonNode.
-
-
-        :return: The float of this JsonNode.
-        :rtype: bool
-        """
-        return self._float
-
-    @float.setter
-    def float(self, float):
-        """
-        Sets the float of this JsonNode.
-
-
-        :param float: The float of this JsonNode.
-        :type: bool
-        """
-        
-        self._float = float
 
     @property
     def number(self):

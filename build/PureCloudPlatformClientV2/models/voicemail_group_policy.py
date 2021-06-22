@@ -44,6 +44,7 @@ class VoicemailGroupPolicy(object):
             'group': 'Group',
             'enabled': 'bool',
             'send_email_notifications': 'bool',
+            'disable_email_pii': 'bool',
             'rotate_calls_secs': 'int',
             'stop_ringing_after_rotations': 'int',
             'overflow_group_id': 'str',
@@ -55,6 +56,7 @@ class VoicemailGroupPolicy(object):
             'group': 'group',
             'enabled': 'enabled',
             'send_email_notifications': 'sendEmailNotifications',
+            'disable_email_pii': 'disableEmailPii',
             'rotate_calls_secs': 'rotateCallsSecs',
             'stop_ringing_after_rotations': 'stopRingingAfterRotations',
             'overflow_group_id': 'overflowGroupId',
@@ -65,6 +67,7 @@ class VoicemailGroupPolicy(object):
         self._group = None
         self._enabled = None
         self._send_email_notifications = None
+        self._disable_email_pii = None
         self._rotate_calls_secs = None
         self._stop_ringing_after_rotations = None
         self._overflow_group_id = None
@@ -161,6 +164,29 @@ class VoicemailGroupPolicy(object):
         """
         
         self._send_email_notifications = send_email_notifications
+
+    @property
+    def disable_email_pii(self):
+        """
+        Gets the disable_email_pii of this VoicemailGroupPolicy.
+        Removes any PII from group emails. This is overridden by the analogous organization configuration value. This is always true if HIPAA is enabled or unknown for an organization.
+
+        :return: The disable_email_pii of this VoicemailGroupPolicy.
+        :rtype: bool
+        """
+        return self._disable_email_pii
+
+    @disable_email_pii.setter
+    def disable_email_pii(self, disable_email_pii):
+        """
+        Sets the disable_email_pii of this VoicemailGroupPolicy.
+        Removes any PII from group emails. This is overridden by the analogous organization configuration value. This is always true if HIPAA is enabled or unknown for an organization.
+
+        :param disable_email_pii: The disable_email_pii of this VoicemailGroupPolicy.
+        :type: bool
+        """
+        
+        self._disable_email_pii = disable_email_pii
 
     @property
     def rotate_calls_secs(self):

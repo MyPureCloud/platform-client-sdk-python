@@ -55,6 +55,7 @@ from .agent_activity_changed_topic_presence import AgentActivityChangedTopicPres
 from .agent_activity_changed_topic_routing_status import AgentActivityChangedTopicRoutingStatus
 from .agent_activity_entity_listing import AgentActivityEntityListing
 from .agent_evaluator_activity import AgentEvaluatorActivity
+from .agent_management_unit_reference import AgentManagementUnitReference
 from .agent_max_utilization import AgentMaxUtilization
 from .agent_owned_mapping_preview import AgentOwnedMappingPreview
 from .agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
@@ -132,6 +133,8 @@ from .article_content_body import ArticleContentBody
 from .assessment_form import AssessmentForm
 from .assessment_form_question import AssessmentFormQuestion
 from .assessment_form_question_group import AssessmentFormQuestionGroup
+from .assessment_job_listing import AssessmentJobListing
+from .assessment_listing import AssessmentListing
 from .assessment_question_group_score import AssessmentQuestionGroupScore
 from .assessment_question_score import AssessmentQuestionScore
 from .assessment_scoring_set import AssessmentScoringSet
@@ -197,6 +200,8 @@ from .batch_download_job_status_result import BatchDownloadJobStatusResult
 from .batch_download_job_submission import BatchDownloadJobSubmission
 from .batch_download_job_submission_result import BatchDownloadJobSubmissionResult
 from .batch_download_request import BatchDownloadRequest
+from .benefit_assessment import BenefitAssessment
+from .benefit_assessment_job import BenefitAssessmentJob
 from .billing_usage import BillingUsage
 from .billing_usage_report import BillingUsageReport
 from .billing_usage_resource import BillingUsageResource
@@ -389,6 +394,7 @@ from .chat_media_policy_conditions import ChatMediaPolicyConditions
 from .chat_message import ChatMessage
 from .chat_message_user import ChatMessageUser
 from .chat_settings import ChatSettings
+from .check import Check
 from .client_app import ClientApp
 from .client_app_configuration_info import ClientAppConfigurationInfo
 from .client_app_entity_listing import ClientAppEntityListing
@@ -419,6 +425,8 @@ from .common_campaign import CommonCampaign
 from .common_campaign_division_view import CommonCampaignDivisionView
 from .common_campaign_division_view_entity_listing import CommonCampaignDivisionViewEntityListing
 from .common_campaign_entity_listing import CommonCampaignEntityListing
+from .comparison_period import ComparisonPeriod
+from .comparison_period_listing import ComparisonPeriodListing
 from .condition import Condition
 from .configuration_overrides import ConfigurationOverrides
 from .connect_rate import ConnectRate
@@ -688,6 +696,8 @@ from .cover_sheet import CoverSheet
 from .create_activity_code_request import CreateActivityCodeRequest
 from .create_admin_time_off_request import CreateAdminTimeOffRequest
 from .create_agent_time_off_request import CreateAgentTimeOffRequest
+from .create_benefit_assessment_job_request import CreateBenefitAssessmentJobRequest
+from .create_benefit_assessment_request import CreateBenefitAssessmentRequest
 from .create_business_unit_request import CreateBusinessUnitRequest
 from .create_business_unit_settings import CreateBusinessUnitSettings
 from .create_call_request import CreateCallRequest
@@ -702,6 +712,7 @@ from .create_management_unit_api_request import CreateManagementUnitApiRequest
 from .create_management_unit_settings_request import CreateManagementUnitSettingsRequest
 from .create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
 from .create_planning_group_request import CreatePlanningGroupRequest
+from .create_predictor_request import CreatePredictorRequest
 from .create_queue_request import CreateQueueRequest
 from .create_secure_session import CreateSecureSession
 from .create_service_goal_template import CreateServiceGoalTemplate
@@ -731,6 +742,7 @@ from .cross_platform_message_media_policy import CrossPlatformMessageMediaPolicy
 from .cross_platform_policy import CrossPlatformPolicy
 from .cross_platform_policy_actions import CrossPlatformPolicyActions
 from .cross_platform_policy_create import CrossPlatformPolicyCreate
+from .cross_platform_policy_update import CrossPlatformPolicyUpdate
 from .cta_button_style_properties import CtaButtonStyleProperties
 from .current_user_schedule_request_body import CurrentUserScheduleRequestBody
 from .cursor_contact_listing import CursorContactListing
@@ -1002,6 +1014,7 @@ from .evaluation_entity_listing import EvaluationEntityListing
 from .evaluation_form import EvaluationForm
 from .evaluation_form_and_scoring_set import EvaluationFormAndScoringSet
 from .evaluation_form_entity_listing import EvaluationFormEntityListing
+from .evaluation_quality_v2_topic_calibration import EvaluationQualityV2TopicCalibration
 from .evaluation_quality_v2_topic_evaluation_scoring_set import EvaluationQualityV2TopicEvaluationScoringSet
 from .evaluation_quality_v2_topic_evaluation_v2 import EvaluationQualityV2TopicEvaluationV2
 from .evaluation_quality_v2_topic_user import EvaluationQualityV2TopicUser
@@ -1219,6 +1232,8 @@ from .json_node import JsonNode
 from .json_node_search_response import JsonNodeSearchResponse
 from .json_schema_document import JsonSchemaDocument
 from .json_search_response import JsonSearchResponse
+from .key_performance_indicator import KeyPerformanceIndicator
+from .key_performance_indicator_assessment import KeyPerformanceIndicatorAssessment
 from .key_rotation_schedule import KeyRotationSchedule
 from .key_value import KeyValue
 from .klaxon_heart_beat_alerts_topic_heart_beat_alert import KlaxonHeartBeatAlertsTopicHeartBeatAlert
@@ -1524,6 +1539,7 @@ from .patch_external_segment import PatchExternalSegment
 from .patch_integration_action import PatchIntegrationAction
 from .patch_integration_action_fields import PatchIntegrationActionFields
 from .patch_outcome import PatchOutcome
+from .patch_predictor_request import PatchPredictorRequest
 from .patch_segment import PatchSegment
 from .patch_shift_trade_request import PatchShiftTradeRequest
 from .patch_survey_question import PatchSurveyQuestion
@@ -1565,6 +1581,7 @@ from .policy_create import PolicyCreate
 from .policy_entity_listing import PolicyEntityListing
 from .policy_error_message import PolicyErrorMessage
 from .policy_errors import PolicyErrors
+from .policy_update import PolicyUpdate
 from .post_action_input import PostActionInput
 from .post_input_contract import PostInputContract
 from .post_output_contract import PostOutputContract
@@ -1572,6 +1589,10 @@ from .post_text_message import PostTextMessage
 from .post_text_request import PostTextRequest
 from .post_text_response import PostTextResponse
 from .prediction_results import PredictionResults
+from .predictor import Predictor
+from .predictor_listing import PredictorListing
+from .predictor_schedule import PredictorSchedule
+from .predictor_workload_balancing import PredictorWorkloadBalancing
 from .presence_definition import PresenceDefinition
 from .presence_detail_query_clause import PresenceDetailQueryClause
 from .presence_detail_query_filter import PresenceDetailQueryFilter
@@ -2161,10 +2182,11 @@ from .transcript_search_criteria import TranscriptSearchCriteria
 from .transcript_search_request import TranscriptSearchRequest
 from .transcript_url import TranscriptUrl
 from .transcription_settings import TranscriptionSettings
-from .transcriptions_topic_transcript_alternative import TranscriptionsTopicTranscriptAlternative
-from .transcriptions_topic_transcript_result import TranscriptionsTopicTranscriptResult
-from .transcriptions_topic_transcript_word import TranscriptionsTopicTranscriptWord
-from .transcriptions_topic_transcription_message import TranscriptionsTopicTranscriptionMessage
+from .transcription_topic_transcript_alternative import TranscriptionTopicTranscriptAlternative
+from .transcription_topic_transcript_result import TranscriptionTopicTranscriptResult
+from .transcription_topic_transcript_word import TranscriptionTopicTranscriptWord
+from .transcription_topic_transcription_message import TranscriptionTopicTranscriptionMessage
+from .transcription_topic_transcription_request_status import TranscriptionTopicTranscriptionRequestStatus
 from .transcripts import Transcripts
 from .transfer_request import TransferRequest
 from .trunk import Trunk
@@ -2200,6 +2222,7 @@ from .trust_group import TrustGroup
 from .trust_member_create import TrustMemberCreate
 from .trust_request import TrustRequest
 from .trust_request_create import TrustRequestCreate
+from .trust_update import TrustUpdate
 from .trust_user import TrustUser
 from .trust_user_details import TrustUserDetails
 from .trust_user_entity_listing import TrustUserEntityListing

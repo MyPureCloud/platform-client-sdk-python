@@ -289,7 +289,7 @@ except ApiException as e:
 
 <a name="get_journey_actionmaps"></a>
 
-## [**ActionMapListing**](ActionMapListing.html) get_journey_actionmaps(page_number=page_number, page_size=page_size, sort_by=sort_by, filter_field=filter_field, filter_value=filter_value, action_map_ids=action_map_ids)
+## [**ActionMapListing**](ActionMapListing.html) get_journey_actionmaps(page_number=page_number, page_size=page_size, sort_by=sort_by, filter_field=filter_field, filter_value=filter_value, action_map_ids=action_map_ids, query_fields=query_fields, query_value=query_value)
 
 
 
@@ -321,11 +321,13 @@ page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = 'sort_by_example' # str | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
 filter_field = 'filter_field_example' # str | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set. (optional)
 filter_value = 'filter_value_example' # str | Value to filter by. Requires 'filterValue' to also be set. (optional)
-action_map_ids = ['action_map_ids_example'] # list[str] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request. (optional)
+action_map_ids = ['action_map_ids_example'] # list[str] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. (optional)
+query_fields = ['query_fields_example'] # list[str] | Action Map field(s) to query on. Requires 'queryValue' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
 
 try:
     # Retrieve all action maps.
-    api_response = api_instance.get_journey_actionmaps(page_number=page_number, page_size=page_size, sort_by=sort_by, filter_field=filter_field, filter_value=filter_value, action_map_ids=action_map_ids)
+    api_response = api_instance.get_journey_actionmaps(page_number=page_number, page_size=page_size, sort_by=sort_by, filter_field=filter_field, filter_value=filter_value, action_map_ids=action_map_ids, query_fields=query_fields, query_value=query_value)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling JourneyApi->get_journey_actionmaps: %s\n" % e)
@@ -341,7 +343,9 @@ except ApiException as e:
 | **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
 | **filter_field** | **str**| Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional]  |
 | **filter_value** | **str**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional]  |
-| **action_map_ids** | [**list[str]**](str.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request. | [optional]  |
+| **action_map_ids** | [**list[str]**](str.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
+| **query_fields** | [**list[str]**](str.html)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+| **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -505,7 +509,7 @@ except ApiException as e:
 
 <a name="get_journey_actiontemplates"></a>
 
-## [**ActionTemplateListing**](ActionTemplateListing.html) get_journey_actiontemplates(page_number=page_number, page_size=page_size, sort_by=sort_by, media_type=media_type, state=state)
+## [**ActionTemplateListing**](ActionTemplateListing.html) get_journey_actiontemplates(page_number=page_number, page_size=page_size, sort_by=sort_by, media_type=media_type, state=state, query_fields=query_fields, query_value=query_value)
 
 
 
@@ -536,11 +540,13 @@ page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = 'sort_by_example' # str | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate). (optional)
 media_type = 'media_type_example' # str | Media type (optional)
-state = 'state_example' # str | Action template state (optional)
+state = 'state_example' # str | Action template state. (optional)
+query_fields = ['query_fields_example'] # list[str] | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
 
 try:
     # Retrieve all action templates.
-    api_response = api_instance.get_journey_actiontemplates(page_number=page_number, page_size=page_size, sort_by=sort_by, media_type=media_type, state=state)
+    api_response = api_instance.get_journey_actiontemplates(page_number=page_number, page_size=page_size, sort_by=sort_by, media_type=media_type, state=state, query_fields=query_fields, query_value=query_value)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling JourneyApi->get_journey_actiontemplates: %s\n" % e)
@@ -555,7 +561,9 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). | [optional]  |
 | **media_type** | **str**| Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow |
-| **state** | **str**| Action template state | [optional] <br />**Values**: Active, Inactive, Deleted |
+| **state** | **str**| Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
+| **query_fields** | [**list[str]**](str.html)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+| **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -615,7 +623,7 @@ except ApiException as e:
 
 <a name="get_journey_outcomes"></a>
 
-## [**OutcomeListing**](OutcomeListing.html) get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids)
+## [**OutcomeListing**](OutcomeListing.html) get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids, query_fields=query_fields, query_value=query_value)
 
 
 
@@ -645,11 +653,13 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = 'sort_by_example' # str | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
-outcome_ids = ['outcome_ids_example'] # list[str] | IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request. (optional)
+outcome_ids = ['outcome_ids_example'] # list[str] | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)
+query_fields = ['query_fields_example'] # list[str] | Outcome field(s) to query on. Requires 'queryValue' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
 
 try:
     # Retrieve all outcomes.
-    api_response = api_instance.get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids)
+    api_response = api_instance.get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids, query_fields=query_fields, query_value=query_value)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling JourneyApi->get_journey_outcomes: %s\n" % e)
@@ -663,7 +673,9 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
-| **outcome_ids** | [**list[str]**](str.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request. | [optional]  |
+| **outcome_ids** | [**list[str]**](str.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
+| **query_fields** | [**list[str]**](str.html)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+| **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -723,7 +735,7 @@ except ApiException as e:
 
 <a name="get_journey_segments"></a>
 
-## [**SegmentListing**](SegmentListing.html) get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active, segment_ids=segment_ids)
+## [**SegmentListing**](SegmentListing.html) get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active, segment_ids=segment_ids, query_fields=query_fields, query_value=query_value)
 
 
 
@@ -754,11 +766,13 @@ sort_by = 'sort_by_example' # str | Field(s) to sort by. The response can be sor
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 is_active = true # bool | Determines whether or not to show only active segments. (optional)
-segment_ids = ['segment_ids_example'] # list[str] | IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. (optional)
+segment_ids = ['segment_ids_example'] # list[str] | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. (optional)
+query_fields = ['query_fields_example'] # list[str] | Segment field(s) to query on. Requires 'queryValue' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
 
 try:
     # Retrieve all segments.
-    api_response = api_instance.get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active, segment_ids=segment_ids)
+    api_response = api_instance.get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active, segment_ids=segment_ids, query_fields=query_fields, query_value=query_value)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling JourneyApi->get_journey_segments: %s\n" % e)
@@ -773,7 +787,9 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **is_active** | **bool**| Determines whether or not to show only active segments. | [optional]  |
-| **segment_ids** | [**list[str]**](str.html)| IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. | [optional]  |
+| **segment_ids** | [**list[str]**](str.html)| IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
+| **query_fields** | [**list[str]**](str.html)| Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+| **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

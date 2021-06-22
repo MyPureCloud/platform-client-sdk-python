@@ -975,12 +975,13 @@ class KnowledgeApi(object):
         :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str name: Name of the KnowledgeBase to filter.
+        :param str core_language: To filter knowledgebases by corelanguage.
         :return: KnowledgeBaseListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'limit', 'page_size', 'name']
+        all_params = ['before', 'after', 'limit', 'page_size', 'name', 'core_language']
         all_params.append('callback')
 
         params = locals()
@@ -1009,6 +1010,8 @@ class KnowledgeApi(object):
             query_params['pageSize'] = params['page_size']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'core_language' in params:
+            query_params['coreLanguage'] = params['core_language']
 
         header_params = {}
 

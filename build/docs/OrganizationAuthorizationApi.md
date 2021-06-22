@@ -1123,7 +1123,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
 trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
-body = PureCloudPlatformClientV2.Trustee() # Trustee | Client
+body = PureCloudPlatformClientV2.TrustUpdate() # TrustUpdate | Client
 
 try:
     # Update Org Trust
@@ -1139,7 +1139,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
-| **body** | [**Trustee**](Trustee.html)| Client |  |
+| **body** | [**TrustUpdate**](TrustUpdate.html)| Client |  |
 {: class="table table-striped"}
 
 ### Return type

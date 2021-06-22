@@ -44,12 +44,12 @@ class QualityAudit(object):
             'name': 'str',
             'user': 'User',
             'job_id': 'str',
-            'level': 'str',
-            'entity': 'AuditEntity',
             'action': 'str',
+            'entity': 'AuditEntity',
+            'level': 'str',
             'timestamp': 'str',
-            'status': 'str',
             'changes': 'list[Change]',
+            'status': 'str',
             'entity_type': 'str',
             'self_uri': 'str'
         }
@@ -59,12 +59,12 @@ class QualityAudit(object):
             'name': 'name',
             'user': 'user',
             'job_id': 'jobId',
-            'level': 'level',
-            'entity': 'entity',
             'action': 'action',
+            'entity': 'entity',
+            'level': 'level',
             'timestamp': 'timestamp',
-            'status': 'status',
             'changes': 'changes',
+            'status': 'status',
             'entity_type': 'entityType',
             'self_uri': 'selfUri'
         }
@@ -73,12 +73,12 @@ class QualityAudit(object):
         self._name = None
         self._user = None
         self._job_id = None
-        self._level = None
-        self._entity = None
         self._action = None
+        self._entity = None
+        self._level = None
         self._timestamp = None
-        self._status = None
         self._changes = None
+        self._status = None
         self._entity_type = None
         self._self_uri = None
 
@@ -175,27 +175,27 @@ class QualityAudit(object):
         self._job_id = job_id
 
     @property
-    def level(self):
+    def action(self):
         """
-        Gets the level of this QualityAudit.
+        Gets the action of this QualityAudit.
 
 
-        :return: The level of this QualityAudit.
+        :return: The action of this QualityAudit.
         :rtype: str
         """
-        return self._level
+        return self._action
 
-    @level.setter
-    def level(self, level):
+    @action.setter
+    def action(self, action):
         """
-        Sets the level of this QualityAudit.
+        Sets the action of this QualityAudit.
 
 
-        :param level: The level of this QualityAudit.
+        :param action: The action of this QualityAudit.
         :type: str
         """
         
-        self._level = level
+        self._action = action
 
     @property
     def entity(self):
@@ -221,27 +221,27 @@ class QualityAudit(object):
         self._entity = entity
 
     @property
-    def action(self):
+    def level(self):
         """
-        Gets the action of this QualityAudit.
+        Gets the level of this QualityAudit.
 
 
-        :return: The action of this QualityAudit.
+        :return: The level of this QualityAudit.
         :rtype: str
         """
-        return self._action
+        return self._level
 
-    @action.setter
-    def action(self, action):
+    @level.setter
+    def level(self, level):
         """
-        Sets the action of this QualityAudit.
+        Sets the level of this QualityAudit.
 
 
-        :param action: The action of this QualityAudit.
+        :param level: The level of this QualityAudit.
         :type: str
         """
         
-        self._action = action
+        self._level = level
 
     @property
     def timestamp(self):
@@ -267,29 +267,6 @@ class QualityAudit(object):
         self._timestamp = timestamp
 
     @property
-    def status(self):
-        """
-        Gets the status of this QualityAudit.
-
-
-        :return: The status of this QualityAudit.
-        :rtype: str
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """
-        Sets the status of this QualityAudit.
-
-
-        :param status: The status of this QualityAudit.
-        :type: str
-        """
-        
-        self._status = status
-
-    @property
     def changes(self):
         """
         Gets the changes of this QualityAudit.
@@ -311,6 +288,29 @@ class QualityAudit(object):
         """
         
         self._changes = changes
+
+    @property
+    def status(self):
+        """
+        Gets the status of this QualityAudit.
+
+
+        :return: The status of this QualityAudit.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this QualityAudit.
+
+
+        :param status: The status of this QualityAudit.
+        :type: str
+        """
+        
+        self._status = status
 
     @property
     def entity_type(self):
