@@ -2926,6 +2926,99 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata(self, business_unit_id, week_date_id, forecast_id, **kwargs):
+        """
+        Get the result of a long term forecast calculation
+        Includes modifications unless you pass the doNotApplyModifications query parameter
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata(business_unit_id, week_date_id, forecast_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The business unit ID of the business unit to which the forecast belongs (required)
+        :param date week_date_id: The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param str forecast_id: The ID of the forecast (required)
+        :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
+        :return: LongTermForecastResultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'week_date_id', 'forecast_id', 'force_download_service']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata`")
+        # verify the required parameter 'week_date_id' is set
+        if ('week_date_id' not in params) or (params['week_date_id'] is None):
+            raise ValueError("Missing the required parameter `week_date_id` when calling `get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata`")
+        # verify the required parameter 'forecast_id' is set
+        if ('forecast_id' not in params) or (params['forecast_id'] is None):
+            raise ValueError("Missing the required parameter `forecast_id` when calling `get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'week_date_id' in params:
+            path_params['weekDateId'] = params['week_date_id']
+        if 'forecast_id' in params:
+            path_params['forecastId'] = params['forecast_id']
+
+        query_params = {}
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LongTermForecastResultResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups(self, business_unit_id, week_date_id, forecast_id, **kwargs):
         """
         Gets the forecast planning group snapshot

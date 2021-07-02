@@ -41,16 +41,19 @@ class BuForecastTimeSeriesResult(object):
         """
         self.swagger_types = {
             'metric': 'str',
-            'forecasting_method': 'str'
+            'forecasting_method': 'str',
+            'forecast_type': 'str'
         }
 
         self.attribute_map = {
             'metric': 'metric',
-            'forecasting_method': 'forecastingMethod'
+            'forecasting_method': 'forecastingMethod',
+            'forecast_type': 'forecastType'
         }
 
         self._metric = None
         self._forecasting_method = None
+        self._forecast_type = None
 
     @property
     def metric(self):
@@ -105,6 +108,33 @@ class BuForecastTimeSeriesResult(object):
             self._forecasting_method = "outdated_sdk_version"
         else:
             self._forecasting_method = forecasting_method
+
+    @property
+    def forecast_type(self):
+        """
+        Gets the forecast_type of this BuForecastTimeSeriesResult.
+        The forecasting type in this forecast result
+
+        :return: The forecast_type of this BuForecastTimeSeriesResult.
+        :rtype: str
+        """
+        return self._forecast_type
+
+    @forecast_type.setter
+    def forecast_type(self, forecast_type):
+        """
+        Sets the forecast_type of this BuForecastTimeSeriesResult.
+        The forecasting type in this forecast result
+
+        :param forecast_type: The forecast_type of this BuForecastTimeSeriesResult.
+        :type: str
+        """
+        allowed_values = ["LongTerm", "ShortTerm"]
+        if forecast_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for forecast_type -> " + forecast_type)
+            self._forecast_type = "outdated_sdk_version"
+        else:
+            self._forecast_type = forecast_type
 
     def to_dict(self):
         """

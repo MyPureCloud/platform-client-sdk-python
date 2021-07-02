@@ -41,16 +41,19 @@ class ConversationThreadingWindow(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'settings': 'list[ConversationThreadingWindowSetting]'
+            'settings': 'list[ConversationThreadingWindowSetting]',
+            'default_timeout_minutes': 'int'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'settings': 'settings'
+            'settings': 'settings',
+            'default_timeout_minutes': 'defaultTimeoutMinutes'
         }
 
         self._id = None
         self._settings = None
+        self._default_timeout_minutes = None
 
     @property
     def id(self):
@@ -97,6 +100,29 @@ class ConversationThreadingWindow(object):
         """
         
         self._settings = settings
+
+    @property
+    def default_timeout_minutes(self):
+        """
+        Gets the default_timeout_minutes of this ConversationThreadingWindow.
+        The default conversation threading window timeout (Minutes)
+
+        :return: The default_timeout_minutes of this ConversationThreadingWindow.
+        :rtype: int
+        """
+        return self._default_timeout_minutes
+
+    @default_timeout_minutes.setter
+    def default_timeout_minutes(self, default_timeout_minutes):
+        """
+        Sets the default_timeout_minutes of this ConversationThreadingWindow.
+        The default conversation threading window timeout (Minutes)
+
+        :param default_timeout_minutes: The default_timeout_minutes of this ConversationThreadingWindow.
+        :type: int
+        """
+        
+        self._default_timeout_minutes = default_timeout_minutes
 
     def to_dict(self):
         """

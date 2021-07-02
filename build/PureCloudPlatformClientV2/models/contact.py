@@ -45,7 +45,8 @@ class Contact(object):
             'media_type': 'str',
             'type': 'str',
             'extension': 'str',
-            'country_code': 'str'
+            'country_code': 'str',
+            'integration': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class Contact(object):
             'media_type': 'mediaType',
             'type': 'type',
             'extension': 'extension',
-            'country_code': 'countryCode'
+            'country_code': 'countryCode',
+            'integration': 'integration'
         }
 
         self._address = None
@@ -63,6 +65,7 @@ class Contact(object):
         self._type = None
         self._extension = None
         self._country_code = None
+        self._integration = None
 
     @property
     def address(self):
@@ -209,6 +212,29 @@ class Contact(object):
         """
         
         self._country_code = country_code
+
+    @property
+    def integration(self):
+        """
+        Gets the integration of this Contact.
+        Integration tag value if this number is associated with an external integration.
+
+        :return: The integration of this Contact.
+        :rtype: str
+        """
+        return self._integration
+
+    @integration.setter
+    def integration(self, integration):
+        """
+        Sets the integration of this Contact.
+        Integration tag value if this number is associated with an external integration.
+
+        :param integration: The integration of this Contact.
+        :type: str
+        """
+        
+        self._integration = integration
 
     def to_dict(self):
         """

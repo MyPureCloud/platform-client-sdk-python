@@ -974,14 +974,15 @@ class KnowledgeApi(object):
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
         :param str page_size: Number of entities to return. Maximum of 200.
-        :param str name: Name of the KnowledgeBase to filter.
-        :param str core_language: To filter knowledgebases by corelanguage.
+        :param str name: Filter by Name.
+        :param str core_language: Filter by core language.
+        :param bool published: Filter by published status.
         :return: KnowledgeBaseListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'limit', 'page_size', 'name', 'core_language']
+        all_params = ['before', 'after', 'limit', 'page_size', 'name', 'core_language', 'published']
         all_params.append('callback')
 
         params = locals()
@@ -1012,6 +1013,8 @@ class KnowledgeApi(object):
             query_params['name'] = params['name']
         if 'core_language' in params:
             query_params['coreLanguage'] = params['core_language']
+        if 'published' in params:
+            query_params['published'] = params['published']
 
         header_params = {}
 

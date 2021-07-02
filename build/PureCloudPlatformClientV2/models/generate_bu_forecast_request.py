@@ -41,16 +41,19 @@ class GenerateBuForecastRequest(object):
         """
         self.swagger_types = {
             'description': 'str',
-            'week_count': 'int'
+            'week_count': 'int',
+            'can_use_for_scheduling': 'bool'
         }
 
         self.attribute_map = {
             'description': 'description',
-            'week_count': 'weekCount'
+            'week_count': 'weekCount',
+            'can_use_for_scheduling': 'canUseForScheduling'
         }
 
         self._description = None
         self._week_count = None
+        self._can_use_for_scheduling = None
 
     @property
     def description(self):
@@ -97,6 +100,29 @@ class GenerateBuForecastRequest(object):
         """
         
         self._week_count = week_count
+
+    @property
+    def can_use_for_scheduling(self):
+        """
+        Gets the can_use_for_scheduling of this GenerateBuForecastRequest.
+        Whether this forecast can be used for scheduling
+
+        :return: The can_use_for_scheduling of this GenerateBuForecastRequest.
+        :rtype: bool
+        """
+        return self._can_use_for_scheduling
+
+    @can_use_for_scheduling.setter
+    def can_use_for_scheduling(self, can_use_for_scheduling):
+        """
+        Sets the can_use_for_scheduling of this GenerateBuForecastRequest.
+        Whether this forecast can be used for scheduling
+
+        :param can_use_for_scheduling: The can_use_for_scheduling of this GenerateBuForecastRequest.
+        :type: bool
+        """
+        
+        self._can_use_for_scheduling = can_use_for_scheduling
 
     def to_dict(self):
         """

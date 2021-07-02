@@ -72,6 +72,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_conversation**](RoutingApi.html#patch_routing_conversation) | Update attributes of an in-queue conversation|
 |[**patch_routing_email_domain**](RoutingApi.html#patch_routing_email_domain) | Update domain settings|
 |[**patch_routing_email_domain_validate**](RoutingApi.html#patch_routing_email_domain_validate) | Validate domain settings|
+|[**patch_routing_email_outbound_domain**](RoutingApi.html#patch_routing_email_outbound_domain) | Request an update of the emails from /replyTo of an outbound domain|
 |[**patch_routing_predictor**](RoutingApi.html#patch_routing_predictor) | Update single predictor.|
 |[**patch_routing_queue_member**](RoutingApi.html#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
 |[**patch_routing_queue_members**](RoutingApi.html#patch_routing_queue_members) | Join or unjoin a set of users for a queue|
@@ -3532,6 +3533,59 @@ except ApiException as e:
 ### Return type
 
 [**InboundDomain**](InboundDomain.html)
+
+<a name="patch_routing_email_outbound_domain"></a>
+
+## [**OutboundDomain**](OutboundDomain.html) patch_routing_email_outbound_domain(domain_id, body)
+
+
+
+Request an update of the emails from /replyTo of an outbound domain
+
+
+
+Wraps PATCH /api/v2/routing/email/outbound/domains/{domainId} 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+body = PureCloudPlatformClientV2.OutboundDomain() # OutboundDomain | domain with emails that need update set
+
+try:
+    # Request an update of the emails from /replyTo of an outbound domain
+    api_response = api_instance.patch_routing_email_outbound_domain(domain_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_email_outbound_domain: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+| **body** | [**OutboundDomain**](OutboundDomain.html)| domain with emails that need update set |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundDomain**](OutboundDomain.html)
 
 <a name="patch_routing_predictor"></a>
 

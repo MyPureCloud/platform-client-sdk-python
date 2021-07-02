@@ -603,7 +603,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebases"></a>
 
-## [**KnowledgeBaseListing**](KnowledgeBaseListing.html) get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language)
+## [**KnowledgeBaseListing**](KnowledgeBaseListing.html) get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published)
 
 
 
@@ -634,12 +634,13 @@ before = 'before_example' # str | The cursor that points to the start of the set
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
-name = 'name_example' # str | Name of the KnowledgeBase to filter. (optional)
-core_language = 'core_language_example' # str | To filter knowledgebases by corelanguage. (optional)
+name = 'name_example' # str | Filter by Name. (optional)
+core_language = 'core_language_example' # str | Filter by core language. (optional)
+published = true # bool | Filter by published status. (optional)
 
 try:
     # Get knowledge bases
-    api_response = api_instance.get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language)
+    api_response = api_instance.get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebases: %s\n" % e)
@@ -654,8 +655,9 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **name** | **str**| Name of the KnowledgeBase to filter. | [optional]  |
-| **core_language** | **str**| To filter knowledgebases by corelanguage. | [optional] <br />**Values**: en-US, de-DE |
+| **name** | **str**| Filter by Name. | [optional]  |
+| **core_language** | **str**| Filter by core language. | [optional] <br />**Values**: en-US, de-DE |
+| **published** | **bool**| Filter by published status. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

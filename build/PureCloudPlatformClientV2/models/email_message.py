@@ -46,6 +46,7 @@ class EmailMessage(object):
             'cc': 'list[EmailAddress]',
             'bcc': 'list[EmailAddress]',
             'pcFrom': 'EmailAddress',
+            'reply_to': 'EmailAddress',
             'subject': 'str',
             'attachments': 'list[Attachment]',
             'text_body': 'str',
@@ -62,6 +63,7 @@ class EmailMessage(object):
             'cc': 'cc',
             'bcc': 'bcc',
             'pcFrom': 'from',
+            'reply_to': 'replyTo',
             'subject': 'subject',
             'attachments': 'attachments',
             'text_body': 'textBody',
@@ -77,6 +79,7 @@ class EmailMessage(object):
         self._cc = None
         self._bcc = None
         self._pcFrom = None
+        self._reply_to = None
         self._subject = None
         self._attachments = None
         self._text_body = None
@@ -222,6 +225,29 @@ class EmailMessage(object):
         """
         
         self._pcFrom = pcFrom
+
+    @property
+    def reply_to(self):
+        """
+        Gets the reply_to of this EmailMessage.
+        The receiver of the reply email message.
+
+        :return: The reply_to of this EmailMessage.
+        :rtype: EmailAddress
+        """
+        return self._reply_to
+
+    @reply_to.setter
+    def reply_to(self, reply_to):
+        """
+        Sets the reply_to of this EmailMessage.
+        The receiver of the reply email message.
+
+        :param reply_to: The reply_to of this EmailMessage.
+        :type: EmailAddress
+        """
+        
+        self._reply_to = reply_to
 
     @property
     def subject(self):

@@ -44,8 +44,8 @@ class ArrayNode(object):
             'float': 'bool',
             'number': 'bool',
             'value_node': 'bool',
-            'floating_point_number': 'bool',
             'container_node': 'bool',
+            'floating_point_number': 'bool',
             'missing_node': 'bool',
             'object': 'bool',
             'pojo': 'bool',
@@ -68,8 +68,8 @@ class ArrayNode(object):
             'float': 'float',
             'number': 'number',
             'value_node': 'valueNode',
-            'floating_point_number': 'floatingPointNumber',
             'container_node': 'containerNode',
+            'floating_point_number': 'floatingPointNumber',
             'missing_node': 'missingNode',
             'object': 'object',
             'pojo': 'pojo',
@@ -91,8 +91,8 @@ class ArrayNode(object):
         self._float = None
         self._number = None
         self._value_node = None
-        self._floating_point_number = None
         self._container_node = None
+        self._floating_point_number = None
         self._missing_node = None
         self._object = None
         self._pojo = None
@@ -206,29 +206,6 @@ class ArrayNode(object):
         self._value_node = value_node
 
     @property
-    def floating_point_number(self):
-        """
-        Gets the floating_point_number of this ArrayNode.
-
-
-        :return: The floating_point_number of this ArrayNode.
-        :rtype: bool
-        """
-        return self._floating_point_number
-
-    @floating_point_number.setter
-    def floating_point_number(self, floating_point_number):
-        """
-        Sets the floating_point_number of this ArrayNode.
-
-
-        :param floating_point_number: The floating_point_number of this ArrayNode.
-        :type: bool
-        """
-        
-        self._floating_point_number = floating_point_number
-
-    @property
     def container_node(self):
         """
         Gets the container_node of this ArrayNode.
@@ -250,6 +227,29 @@ class ArrayNode(object):
         """
         
         self._container_node = container_node
+
+    @property
+    def floating_point_number(self):
+        """
+        Gets the floating_point_number of this ArrayNode.
+
+
+        :return: The floating_point_number of this ArrayNode.
+        :rtype: bool
+        """
+        return self._floating_point_number
+
+    @floating_point_number.setter
+    def floating_point_number(self, floating_point_number):
+        """
+        Sets the floating_point_number of this ArrayNode.
+
+
+        :param floating_point_number: The floating_point_number of this ArrayNode.
+        :type: bool
+        """
+        
+        self._floating_point_number = floating_point_number
 
     @property
     def missing_node(self):

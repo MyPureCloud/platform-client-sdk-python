@@ -49,6 +49,7 @@ class KnowledgeBase(object):
             'faq_count': 'int',
             'date_document_last_modified': 'datetime',
             'article_count': 'int',
+            'published': 'bool',
             'self_uri': 'str'
         }
 
@@ -62,6 +63,7 @@ class KnowledgeBase(object):
             'faq_count': 'faqCount',
             'date_document_last_modified': 'dateDocumentLastModified',
             'article_count': 'articleCount',
+            'published': 'published',
             'self_uri': 'selfUri'
         }
 
@@ -74,6 +76,7 @@ class KnowledgeBase(object):
         self._faq_count = None
         self._date_document_last_modified = None
         self._article_count = None
+        self._published = None
         self._self_uri = None
 
     @property
@@ -286,6 +289,29 @@ class KnowledgeBase(object):
         """
         
         self._article_count = article_count
+
+    @property
+    def published(self):
+        """
+        Gets the published of this KnowledgeBase.
+        Flag that indicates the knowledge base is published
+
+        :return: The published of this KnowledgeBase.
+        :rtype: bool
+        """
+        return self._published
+
+    @published.setter
+    def published(self, published):
+        """
+        Sets the published of this KnowledgeBase.
+        Flag that indicates the knowledge base is published
+
+        :param published: The published of this KnowledgeBase.
+        :type: bool
+        """
+        
+        self._published = published
 
     @property
     def self_uri(self):

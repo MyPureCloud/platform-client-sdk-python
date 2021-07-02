@@ -13,6 +13,7 @@ title: EmailMessage
 | **cc** | [**list[EmailAddress]**](EmailAddress.html) | The recipients that were copied on the email message. | [optional] |
 | **bcc** | [**list[EmailAddress]**](EmailAddress.html) | The recipients that were blind copied on the email message. | [optional] |
 | **pcFrom** | [**EmailAddress**](EmailAddress.html) | The sender of the email message. | |
+| **reply_to** | [**EmailAddress**](EmailAddress.html) | The receiver of the reply email message. | [optional] |
 | **subject** | **str** | The subject of the email message. | [optional] |
 | **attachments** | [**list[Attachment]**](Attachment.html) | The attachments of the email message. | [optional] |
 | **text_body** | **str** | The text body of the email message. | |

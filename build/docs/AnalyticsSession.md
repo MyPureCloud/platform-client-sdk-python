@@ -15,6 +15,7 @@ title: AnalyticsSession
 | **address_to** | **str** | The address receiving an action | [optional] |
 | **agent_assistant_id** | **str** | Unique identifier of the active virtual agent assistant | [optional] |
 | **agent_bullseye_ring** | **int** | Bullseye ring of the targeted agent | [optional] |
+| **agent_owned** | **bool** | Flag indicating an agent-owned callback | [optional] |
 | **ani** | **str** | Automatic Number Identification (caller&#39;s number) | [optional] |
 | **assigner_id** | **str** | ID of the user that manually assigned a conversation | [optional] |
 | **authenticated** | **bool** | Flag that indicates that the identity of the customer has been asserted as verified by the provider. | [optional] |
@@ -64,6 +65,7 @@ title: AnalyticsSession
 | **session_id** | **str** | The unique identifier of this session | [optional] |
 | **sharing_screen** | **bool** | Flag determining if screenShare is started or not (true/false) | [optional] |
 | **skip_enabled** | **bool** | (Dialer) Whether the agent can skip the dialer contact | [optional] |
+| **timeout_seconds** | **int** | The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling) | [optional] |
 | **used_routing** | **str** | Complete routing method | [optional] |
 | **video_address_self** | **str** | Direct Video address | [optional] |
 | **video_room_id** | **str** | A unique identifier for a PureCloud video room | [optional] |
@@ -72,7 +74,6 @@ title: AnalyticsSession
 | **flow** | [**AnalyticsFlow**](AnalyticsFlow.html) | IVR flow execution associated with this session | [optional] |
 | **metrics** | [**list[AnalyticsSessionMetric]**](AnalyticsSessionMetric.html) | List of metrics for this session | [optional] |
 | **segments** | [**list[AnalyticsConversationSegment]**](AnalyticsConversationSegment.html) | List of segments for this session | [optional] |
-| **timeout_seconds** | **int** | The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling) | [optional] |
 {: class="table table-striped"}
 
 

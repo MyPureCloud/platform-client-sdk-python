@@ -130,6 +130,7 @@ from .models.archive_retention import ArchiveRetention
 from .models.array_node import ArrayNode
 from .models.article_content import ArticleContent
 from .models.article_content_body import ArticleContentBody
+from .models.asg_scale_request import AsgScaleRequest
 from .models.assessment_form import AssessmentForm
 from .models.assessment_form_question import AssessmentFormQuestion
 from .models.assessment_form_question_group import AssessmentFormQuestionGroup
@@ -1344,6 +1345,9 @@ from .models.locations_search_response import LocationsSearchResponse
 from .models.lock_info import LockInfo
 from .models.log_capture_user_configuration import LogCaptureUserConfiguration
 from .models.logical_interface_entity_listing import LogicalInterfaceEntityListing
+from .models.long_term_forecast_planning_group_data import LongTermForecastPlanningGroupData
+from .models.long_term_forecast_result import LongTermForecastResult
+from .models.long_term_forecast_result_response import LongTermForecastResultResponse
 from .models.mail_from_result import MailFromResult
 from .models.management_unit import ManagementUnit
 from .models.management_unit_listing import ManagementUnitListing
@@ -1490,6 +1494,7 @@ from .models.orphan_update_request import OrphanUpdateRequest
 from .models.out_of_office import OutOfOffice
 from .models.out_of_office_event_out_of_office import OutOfOfficeEventOutOfOffice
 from .models.out_of_office_event_user import OutOfOfficeEventUser
+from .models.outbound_domain import OutboundDomain
 from .models.outbound_messaging_messaging_campaign_config_change_contact_sort import OutboundMessagingMessagingCampaignConfigChangeContactSort
 from .models.outbound_messaging_messaging_campaign_config_change_error_detail import OutboundMessagingMessagingCampaignConfigChangeErrorDetail
 from .models.outbound_messaging_messaging_campaign_config_change_messaging_campaign import OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign
@@ -1941,6 +1946,7 @@ from .models.run_now_response import RunNowResponse
 from .models.sip_search_public_request import SIPSearchPublicRequest
 from .models.sms_available_phone_number_entity_listing import SMSAvailablePhoneNumberEntityListing
 from .models.salesforce import Salesforce
+from .models.scale_asg_response import ScaleASGResponse
 from .models.schedule import Schedule
 from .models.schedule_entity_listing import ScheduleEntityListing
 from .models.schedule_generation_message import ScheduleGenerationMessage
@@ -2358,6 +2364,7 @@ from .models.value_wrapper_date import ValueWrapperDate
 from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .models.value_wrapper_string import ValueWrapperString
 from .models.vendor_connection_request import VendorConnectionRequest
+from .models.verification_result import VerificationResult
 from .models.video import Video
 from .models.view_filter import ViewFilter
 from .models.visibility_condition import VisibilityCondition

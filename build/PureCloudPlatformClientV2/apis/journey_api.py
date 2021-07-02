@@ -629,7 +629,7 @@ class JourneyApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int page_number: Page number
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :return: ActionTargetListing
                  If the method is called asynchronously,
                  returns the request thread.

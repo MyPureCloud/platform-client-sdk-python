@@ -47,6 +47,7 @@ class BuShortTermForecast(object):
             'description': 'str',
             'legacy': 'bool',
             'metadata': 'WfmVersionedEntityMetadata',
+            'can_use_for_scheduling': 'bool',
             'reference_start_date': 'datetime',
             'source_days': 'list[ForecastSourceDayPointer]',
             'modifications': 'list[BuForecastModification]',
@@ -65,6 +66,7 @@ class BuShortTermForecast(object):
             'description': 'description',
             'legacy': 'legacy',
             'metadata': 'metadata',
+            'can_use_for_scheduling': 'canUseForScheduling',
             'reference_start_date': 'referenceStartDate',
             'source_days': 'sourceDays',
             'modifications': 'modifications',
@@ -82,6 +84,7 @@ class BuShortTermForecast(object):
         self._description = None
         self._legacy = None
         self._metadata = None
+        self._can_use_for_scheduling = None
         self._reference_start_date = None
         self._source_days = None
         self._modifications = None
@@ -255,6 +258,29 @@ class BuShortTermForecast(object):
         """
         
         self._metadata = metadata
+
+    @property
+    def can_use_for_scheduling(self):
+        """
+        Gets the can_use_for_scheduling of this BuShortTermForecast.
+        Whether this forecast can be used for scheduling
+
+        :return: The can_use_for_scheduling of this BuShortTermForecast.
+        :rtype: bool
+        """
+        return self._can_use_for_scheduling
+
+    @can_use_for_scheduling.setter
+    def can_use_for_scheduling(self, can_use_for_scheduling):
+        """
+        Sets the can_use_for_scheduling of this BuShortTermForecast.
+        Whether this forecast can be used for scheduling
+
+        :param can_use_for_scheduling: The can_use_for_scheduling of this BuShortTermForecast.
+        :type: bool
+        """
+        
+        self._can_use_for_scheduling = can_use_for_scheduling
 
     @property
     def reference_start_date(self):

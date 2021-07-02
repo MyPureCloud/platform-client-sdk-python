@@ -130,6 +130,7 @@ from .archive_retention import ArchiveRetention
 from .array_node import ArrayNode
 from .article_content import ArticleContent
 from .article_content_body import ArticleContentBody
+from .asg_scale_request import AsgScaleRequest
 from .assessment_form import AssessmentForm
 from .assessment_form_question import AssessmentFormQuestion
 from .assessment_form_question_group import AssessmentFormQuestionGroup
@@ -1344,6 +1345,9 @@ from .locations_search_response import LocationsSearchResponse
 from .lock_info import LockInfo
 from .log_capture_user_configuration import LogCaptureUserConfiguration
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
+from .long_term_forecast_planning_group_data import LongTermForecastPlanningGroupData
+from .long_term_forecast_result import LongTermForecastResult
+from .long_term_forecast_result_response import LongTermForecastResultResponse
 from .mail_from_result import MailFromResult
 from .management_unit import ManagementUnit
 from .management_unit_listing import ManagementUnitListing
@@ -1490,6 +1494,7 @@ from .orphan_update_request import OrphanUpdateRequest
 from .out_of_office import OutOfOffice
 from .out_of_office_event_out_of_office import OutOfOfficeEventOutOfOffice
 from .out_of_office_event_user import OutOfOfficeEventUser
+from .outbound_domain import OutboundDomain
 from .outbound_messaging_messaging_campaign_config_change_contact_sort import OutboundMessagingMessagingCampaignConfigChangeContactSort
 from .outbound_messaging_messaging_campaign_config_change_error_detail import OutboundMessagingMessagingCampaignConfigChangeErrorDetail
 from .outbound_messaging_messaging_campaign_config_change_messaging_campaign import OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign
@@ -1941,6 +1946,7 @@ from .run_now_response import RunNowResponse
 from .sip_search_public_request import SIPSearchPublicRequest
 from .sms_available_phone_number_entity_listing import SMSAvailablePhoneNumberEntityListing
 from .salesforce import Salesforce
+from .scale_asg_response import ScaleASGResponse
 from .schedule import Schedule
 from .schedule_entity_listing import ScheduleEntityListing
 from .schedule_generation_message import ScheduleGenerationMessage
@@ -2358,6 +2364,7 @@ from .value_wrapper_date import ValueWrapperDate
 from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .value_wrapper_string import ValueWrapperString
 from .vendor_connection_request import VendorConnectionRequest
+from .verification_result import VerificationResult
 from .video import Video
 from .view_filter import ViewFilter
 from .visibility_condition import VisibilityCondition

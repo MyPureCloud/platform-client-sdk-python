@@ -541,6 +541,90 @@ class ObjectsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_authorization_division_restore(self, division_id, body, **kwargs):
+        """
+        Recreate a previously deleted division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_authorization_division_restore(division_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str division_id: Division ID (required)
+        :param AuthzDivision body: Recreated division data (required)
+        :return: AuthzDivision
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['division_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_authorization_division_restore" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'division_id' is set
+        if ('division_id' not in params) or (params['division_id'] is None):
+            raise ValueError("Missing the required parameter `division_id` when calling `post_authorization_division_restore`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_authorization_division_restore`")
+
+
+        resource_path = '/api/v2/authorization/divisions/{divisionId}/restore'.replace('{format}', 'json')
+        path_params = {}
+        if 'division_id' in params:
+            path_params['divisionId'] = params['division_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzDivision',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_authorization_divisions(self, body, **kwargs):
         """
         Create a division.

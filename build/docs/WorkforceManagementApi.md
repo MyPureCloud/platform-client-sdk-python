@@ -42,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_week_shorttermforecast**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast) | Get a short term forecast|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_data**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_data) | Get the result of a short term forecast calculation|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_generationresults**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_generationresults) | Gets the forecast generation results|
+|[**get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata) | Get the result of a long term forecast calculation|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups) | Gets the forecast planning group snapshot|
 |[**get_workforcemanagement_businessunit_week_shorttermforecasts**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecasts) | Get short term forecasts|
 |[**get_workforcemanagement_businessunits**](WorkforceManagementApi.html#get_workforcemanagement_businessunits) | Get business units|
@@ -2124,6 +2125,63 @@ except ApiException as e:
 ### Return type
 
 [**BuForecastGenerationResult**](BuForecastGenerationResult.html)
+
+<a name="get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata"></a>
+
+## [**LongTermForecastResultResponse**](LongTermForecastResultResponse.html) get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata(business_unit_id, week_date_id, forecast_id, force_download_service=force_download_service)
+
+
+
+Get the result of a long term forecast calculation
+
+Includes modifications unless you pass the doNotApplyModifications query parameter
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | The ID of the forecast
+force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+
+try:
+    # Get the result of a long term forecast calculation
+    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata(business_unit_id, week_date_id, forecast_id, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| The ID of the forecast |  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LongTermForecastResultResponse**](LongTermForecastResultResponse.html)
 
 <a name="get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups"></a>
 

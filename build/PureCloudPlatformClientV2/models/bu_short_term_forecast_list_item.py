@@ -47,6 +47,7 @@ class BuShortTermForecastListItem(object):
             'description': 'str',
             'legacy': 'bool',
             'metadata': 'WfmVersionedEntityMetadata',
+            'can_use_for_scheduling': 'bool',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class BuShortTermForecastListItem(object):
             'description': 'description',
             'legacy': 'legacy',
             'metadata': 'metadata',
+            'can_use_for_scheduling': 'canUseForScheduling',
             'self_uri': 'selfUri'
         }
 
@@ -68,6 +70,7 @@ class BuShortTermForecastListItem(object):
         self._description = None
         self._legacy = None
         self._metadata = None
+        self._can_use_for_scheduling = None
         self._self_uri = None
 
     @property
@@ -234,6 +237,29 @@ class BuShortTermForecastListItem(object):
         """
         
         self._metadata = metadata
+
+    @property
+    def can_use_for_scheduling(self):
+        """
+        Gets the can_use_for_scheduling of this BuShortTermForecastListItem.
+        Whether this forecast can be used for scheduling
+
+        :return: The can_use_for_scheduling of this BuShortTermForecastListItem.
+        :rtype: bool
+        """
+        return self._can_use_for_scheduling
+
+    @can_use_for_scheduling.setter
+    def can_use_for_scheduling(self, can_use_for_scheduling):
+        """
+        Sets the can_use_for_scheduling of this BuShortTermForecastListItem.
+        Whether this forecast can be used for scheduling
+
+        :param can_use_for_scheduling: The can_use_for_scheduling of this BuShortTermForecastListItem.
+        :type: bool
+        """
+        
+        self._can_use_for_scheduling = can_use_for_scheduling
 
     @property
     def self_uri(self):

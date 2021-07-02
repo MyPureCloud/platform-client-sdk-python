@@ -433,7 +433,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.JourneyApi()
 page_number = 1 # int | Page number (optional) (default to 1)
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 
 try:
     # Retrieve all action targets.
@@ -449,7 +449,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type

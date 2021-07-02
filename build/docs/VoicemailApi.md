@@ -691,7 +691,7 @@ Wraps GET /api/v2/voicemail/queues/{queueId}/messages
 
 Requires ANY permissions: 
 
-* voicemail:acdVoicemail:view
+* voicemail:acdvoicemail:view
 
 ### Example
 

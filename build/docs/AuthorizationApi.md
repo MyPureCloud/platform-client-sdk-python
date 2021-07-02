@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_roles**](AuthorizationApi.html#get_user_roles) | Returns a listing of roles and permissions for a user.|
 |[**patch_authorization_role**](AuthorizationApi.html#patch_authorization_role) | Patch Organization Role for needsUpdate Field|
 |[**post_authorization_division_object**](AuthorizationApi.html#post_authorization_division_object) | Assign a list of objects to a division|
+|[**post_authorization_division_restore**](AuthorizationApi.html#post_authorization_division_restore) | Recreate a previously deleted division.|
 |[**post_authorization_divisions**](AuthorizationApi.html#post_authorization_divisions) | Create a division.|
 |[**post_authorization_role**](AuthorizationApi.html#post_authorization_role) | Bulk-grant subjects and divisions with an organization role.|
 |[**post_authorization_role_comparedefault_right_role_id**](AuthorizationApi.html#post_authorization_role_comparedefault_right_role_id) | Get an unsaved org role to default role comparison|
@@ -1332,6 +1333,59 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_authorization_division_restore"></a>
+
+## [**AuthzDivision**](AuthzDivision.html) post_authorization_division_restore(division_id, body)
+
+
+
+Recreate a previously deleted division.
+
+
+
+Wraps POST /api/v2/authorization/divisions/{divisionId}/restore 
+
+Requires ANY permissions: 
+
+* authorization:division:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+division_id = 'division_id_example' # str | Division ID
+body = PureCloudPlatformClientV2.AuthzDivision() # AuthzDivision | Recreated division data
+
+try:
+    # Recreate a previously deleted division.
+    api_response = api_instance.post_authorization_division_restore(division_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->post_authorization_division_restore: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | **str**| Division ID |  |
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Recreated division data |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzDivision**](AuthzDivision.html)
 
 <a name="post_authorization_divisions"></a>
 

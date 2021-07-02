@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_authorization_divisions_home**](ObjectsApi.html#get_authorization_divisions_home) | Retrieve the home division for the organization.|
 |[**get_authorization_divisions_limit**](ObjectsApi.html#get_authorization_divisions_limit) | Returns the maximum allowed number of divisions.|
 |[**post_authorization_division_object**](ObjectsApi.html#post_authorization_division_object) | Assign a list of objects to a division|
+|[**post_authorization_division_restore**](ObjectsApi.html#post_authorization_division_restore) | Recreate a previously deleted division.|
 |[**post_authorization_divisions**](ObjectsApi.html#post_authorization_divisions) | Create a division.|
 |[**put_authorization_division**](ObjectsApi.html#put_authorization_division) | Update a division.|
 {: class="table table-striped"}
@@ -332,6 +333,59 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_authorization_division_restore"></a>
+
+## [**AuthzDivision**](AuthzDivision.html) post_authorization_division_restore(division_id, body)
+
+
+
+Recreate a previously deleted division.
+
+
+
+Wraps POST /api/v2/authorization/divisions/{divisionId}/restore 
+
+Requires ANY permissions: 
+
+* authorization:division:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ObjectsApi()
+division_id = 'division_id_example' # str | Division ID
+body = PureCloudPlatformClientV2.AuthzDivision() # AuthzDivision | Recreated division data
+
+try:
+    # Recreate a previously deleted division.
+    api_response = api_instance.post_authorization_division_restore(division_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ObjectsApi->post_authorization_division_restore: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | **str**| Division ID |  |
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Recreated division data |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzDivision**](AuthzDivision.html)
 
 <a name="post_authorization_divisions"></a>
 
