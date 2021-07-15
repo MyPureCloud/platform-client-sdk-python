@@ -8,11 +8,65 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**post_languageunderstanding_miner_uploads**](UploadsApi.html#post_languageunderstanding_miner_uploads) | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner|
 |[**post_uploads_publicassets_images**](UploadsApi.html#post_uploads_publicassets_images) | Creates presigned url for uploading a public asset image|
 |[**post_uploads_recordings**](UploadsApi.html#post_uploads_recordings) | Creates presigned url for uploading a recording file|
 |[**post_uploads_workforcemanagement_historicaldata_csv**](UploadsApi.html#post_uploads_workforcemanagement_historicaldata_csv) | Creates presigned url for uploading WFM historical data file. Requires data in csv format.|
 |[**post_uploads_workforcemanagement_historicaldata_json**](UploadsApi.html#post_uploads_workforcemanagement_historicaldata_json) | Creates presigned url for uploading WFM historical data file. Requires data in json format.|
 {: class="table table-striped"}
+
+<a name="post_languageunderstanding_miner_uploads"></a>
+
+## [**UploadUrlResponse**](UploadUrlResponse.html) post_languageunderstanding_miner_uploads(miner_id, body)
+
+
+
+Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+
+
+
+Wraps POST /api/v2/languageunderstanding/miners/{minerId}/uploads 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UploadsApi()
+miner_id = 'miner_id_example' # str | Miner ID
+body = PureCloudPlatformClientV2.Empty() # Empty | query
+
+try:
+    # Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+    api_response = api_instance.post_languageunderstanding_miner_uploads(miner_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UploadsApi->post_languageunderstanding_miner_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **body** | [**Empty**](Empty.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
 
 <a name="post_uploads_publicassets_images"></a>
 

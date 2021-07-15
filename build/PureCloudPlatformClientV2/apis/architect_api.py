@@ -4444,7 +4444,7 @@ class ArchitectApi(object):
         :param str datatable_id: id of datatable (required)
         :param int page_number: Page number
         :param int page_size: Page size
-        :return: EntityListing
+        :return: DataTableImportEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4505,7 +4505,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EntityListing',
+                                            response_type='DataTableImportEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

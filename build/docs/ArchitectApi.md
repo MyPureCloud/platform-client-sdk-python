@@ -2959,7 +2959,7 @@ except ApiException as e:
 
 <a name="get_flows_datatable_import_jobs"></a>
 
-## [**EntityListing**](EntityListing.html) get_flows_datatable_import_jobs(datatable_id, page_number=page_number, page_size=page_size)
+## [**DataTableImportEntityListing**](DataTableImportEntityListing.html) get_flows_datatable_import_jobs(datatable_id, page_number=page_number, page_size=page_size)
 
 
 
@@ -3010,7 +3010,7 @@ except ApiException as e:
 
 ### Return type
 
-[**EntityListing**](EntityListing.html)
+[**DataTableImportEntityListing**](DataTableImportEntityListing.html)
 
 <a name="get_flows_datatable_row"></a>
 

@@ -45,6 +45,7 @@ class AvailableTopic(object):
             'permission_details': 'list[PermissionDetails]',
             'requires_permissions': 'list[str]',
             'requires_division_permissions': 'bool',
+            'requires_any_validator': 'bool',
             'enforced': 'bool',
             'visibility': 'str',
             'schema': 'dict(str, object)',
@@ -60,6 +61,7 @@ class AvailableTopic(object):
             'permission_details': 'permissionDetails',
             'requires_permissions': 'requiresPermissions',
             'requires_division_permissions': 'requiresDivisionPermissions',
+            'requires_any_validator': 'requiresAnyValidator',
             'enforced': 'enforced',
             'visibility': 'visibility',
             'schema': 'schema',
@@ -74,6 +76,7 @@ class AvailableTopic(object):
         self._permission_details = None
         self._requires_permissions = None
         self._requires_division_permissions = None
+        self._requires_any_validator = None
         self._enforced = None
         self._visibility = None
         self._schema = None
@@ -196,6 +199,29 @@ class AvailableTopic(object):
         """
         
         self._requires_division_permissions = requires_division_permissions
+
+    @property
+    def requires_any_validator(self):
+        """
+        Gets the requires_any_validator of this AvailableTopic.
+        If multiple permissions are required for this topic, such as both requiresCurrentUser and requiresDivisionPermissions, then true here indicates that meeting any one condition will satisfy the requirements; false indicates all conditions must be met.
+
+        :return: The requires_any_validator of this AvailableTopic.
+        :rtype: bool
+        """
+        return self._requires_any_validator
+
+    @requires_any_validator.setter
+    def requires_any_validator(self, requires_any_validator):
+        """
+        Sets the requires_any_validator of this AvailableTopic.
+        If multiple permissions are required for this topic, such as both requiresCurrentUser and requiresDivisionPermissions, then true here indicates that meeting any one condition will satisfy the requirements; false indicates all conditions must be met.
+
+        :param requires_any_validator: The requires_any_validator of this AvailableTopic.
+        :type: bool
+        """
+        
+        self._requires_any_validator = requires_any_validator
 
     @property
     def enforced(self):

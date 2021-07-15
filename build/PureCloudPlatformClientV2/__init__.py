@@ -214,6 +214,15 @@ from .models.bot_aggregate_query_predicate import BotAggregateQueryPredicate
 from .models.bot_aggregate_query_response import BotAggregateQueryResponse
 from .models.bot_aggregation_query import BotAggregationQuery
 from .models.bot_aggregation_view import BotAggregationView
+from .models.bot_connector_bot import BotConnectorBot
+from .models.bot_connector_bot_summary_entity_listing import BotConnectorBotSummaryEntityListing
+from .models.bot_connector_bot_version import BotConnectorBotVersion
+from .models.bot_connector_bot_version_summary_entity_listing import BotConnectorBotVersionSummaryEntityListing
+from .models.bot_intent import BotIntent
+from .models.bot_list import BotList
+from .models.bot_slot import BotSlot
+from .models.bot_summary import BotSummary
+from .models.bot_version_summary import BotVersionSummary
 from .models.bu_abandon_rate import BuAbandonRate
 from .models.bu_agent_schedule_activity import BuAgentScheduleActivity
 from .models.bu_agent_schedule_history_change import BuAgentScheduleHistoryChange
@@ -316,6 +325,7 @@ from .models.business_unit_reference import BusinessUnitReference
 from .models.business_unit_settings import BusinessUnitSettings
 from .models.button_component import ButtonComponent
 from .models.button_response import ButtonResponse
+from .models.calendar_url_response import CalendarUrlResponse
 from .models.calibration import Calibration
 from .models.calibration_assignment import CalibrationAssignment
 from .models.calibration_create import CalibrationCreate
@@ -764,6 +774,7 @@ from .models.data_schema import DataSchema
 from .models.data_schema_listing import DataSchemaListing
 from .models.data_table import DataTable
 from .models.data_table_export_job import DataTableExportJob
+from .models.data_table_import_entity_listing import DataTableImportEntityListing
 from .models.data_table_import_job import DataTableImportJob
 from .models.data_table_row_entity_listing import DataTableRowEntityListing
 from .models.data_tables_domain_entity_listing import DataTablesDomainEntityListing
@@ -926,6 +937,10 @@ from .models.domain_resource_condition_value import DomainResourceConditionValue
 from .models.domain_role import DomainRole
 from .models.domain_schema_reference import DomainSchemaReference
 from .models.download_response import DownloadResponse
+from .models.draft import Draft
+from .models.draft_intents import DraftIntents
+from .models.draft_listing import DraftListing
+from .models.draft_request import DraftRequest
 from .models.draft_validation_result import DraftValidationResult
 from .models.duration_condition import DurationCondition
 from .models.edge import Edge
@@ -974,6 +989,7 @@ from .models.email import Email
 from .models.email_address import EmailAddress
 from .models.email_attachment import EmailAttachment
 from .models.email_column import EmailColumn
+from .models.email_config import EmailConfig
 from .models.email_conversation import EmailConversation
 from .models.email_conversation_entity_listing import EmailConversationEntityListing
 from .models.email_media_participant import EmailMediaParticipant
@@ -992,7 +1008,6 @@ from .models.encryption_key import EncryptionKey
 from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.endpoint import Endpoint
 from .models.entity import Entity
-from .models.entity_listing import EntityListing
 from .models.entity_type_criteria import EntityTypeCriteria
 from .models.entry import Entry
 from .models.error_body import ErrorBody
@@ -1115,6 +1130,7 @@ from .models.forecast_service_goal_template_response import ForecastServiceGoalT
 from .models.forecast_service_level_response import ForecastServiceLevelResponse
 from .models.forecast_source_day_pointer import ForecastSourceDayPointer
 from .models.free_seating_configuration import FreeSeatingConfiguration
+from .models.from_email_address import FromEmailAddress
 from .models.gdpr_journey_customer import GDPRJourneyCustomer
 from .models.gdpr_request import GDPRRequest
 from .models.gdpr_request_entity_listing import GDPRRequestEntityListing
@@ -1407,6 +1423,11 @@ from .models.metric import Metric
 from .models.metric_definition import MetricDefinition
 from .models.metrics import Metrics
 from .models.min_length import MinLength
+from .models.mined_intents_listing import MinedIntentsListing
+from .models.miner import Miner
+from .models.miner_execute_request import MinerExecuteRequest
+from .models.miner_intent import MinerIntent
+from .models.miner_listing import MinerListing
 from .models.modeling_processing_error import ModelingProcessingError
 from .models.modeling_status_response import ModelingStatusResponse
 from .models.move_management_unit_request import MoveManagementUnitRequest
@@ -1448,6 +1469,7 @@ from .models.notification_template_footer import NotificationTemplateFooter
 from .models.notification_template_header import NotificationTemplateHeader
 from .models.notification_template_parameter import NotificationTemplateParameter
 from .models.notifications_response import NotificationsResponse
+from .models.nuance_mix_dlg_settings import NuanceMixDlgSettings
 from .models.number import Number
 from .models.number_plan import NumberPlan
 from .models.numeric_range import NumericRange
@@ -1516,6 +1538,7 @@ from .models.overall_best_points import OverallBestPoints
 from .models.overall_best_points_item import OverallBestPointsItem
 from .models.pin_configuration import PINConfiguration
 from .models.page import Page
+from .models.paged_namespace_listing import PagedNamespaceListing
 from .models.paging_spec import PagingSpec
 from .models.parameter import Parameter
 from .models.parsed_certificate import ParsedCertificate
@@ -1886,6 +1909,7 @@ from .models.relationship_listing import RelationshipListing
 from .models.replace_request import ReplaceRequest
 from .models.replace_response import ReplaceResponse
 from .models.replacement_term import ReplacementTerm
+from .models.reply_to_email_address import ReplyToEmailAddress
 from .models.report_meta_data import ReportMetaData
 from .models.report_meta_data_entity_listing import ReportMetaDataEntityListing
 from .models.report_run_entry import ReportRunEntry
@@ -2354,6 +2378,7 @@ from .models.user_tokens_topic_token_notification import UserTokensTopicTokenNot
 from .models.user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .models.users_search_response import UsersSearchResponse
 from .models.utilization import Utilization
+from .models.utterance import Utterance
 from .models.validate_address_request import ValidateAddressRequest
 from .models.validate_address_response import ValidateAddressResponse
 from .models.validate_work_plan_messages import ValidateWorkPlanMessages

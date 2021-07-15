@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_notifications_availabletopics**](NotificationsApi.html#get_notifications_availabletopics) | Get available notification topics.|
 |[**get_notifications_channel_subscriptions**](NotificationsApi.html#get_notifications_channel_subscriptions) | The list of all subscriptions for this channel|
 |[**get_notifications_channels**](NotificationsApi.html#get_notifications_channels) | The list of existing channels|
+|[**head_notifications_channel**](NotificationsApi.html#head_notifications_channel) | Verify a channel still exists and is valid|
 |[**post_notifications_channel_subscriptions**](NotificationsApi.html#post_notifications_channel_subscriptions) | Add a list of subscriptions to the existing list of subscriptions|
 |[**post_notifications_channels**](NotificationsApi.html#post_notifications_channels) | Create a new channel|
 |[**put_notifications_channel_subscriptions**](NotificationsApi.html#put_notifications_channel_subscriptions) | Replace the current list of subscriptions with a new list.|
@@ -217,6 +218,56 @@ except ApiException as e:
 ### Return type
 
 [**ChannelEntityListing**](ChannelEntityListing.html)
+
+<a name="head_notifications_channel"></a>
+
+## bool** head_notifications_channel(channel_id)
+
+
+
+Verify a channel still exists and is valid
+
+
+
+Wraps HEAD /api/v2/notifications/channels/{channelId} 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.NotificationsApi()
+channel_id = 'channel_id_example' # str | Channel ID
+
+try:
+    # Verify a channel still exists and is valid
+    api_response = api_instance.head_notifications_channel(channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling NotificationsApi->head_notifications_channel: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **channel_id** | **str**| Channel ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**bool**
 
 <a name="post_notifications_channel_subscriptions"></a>
 

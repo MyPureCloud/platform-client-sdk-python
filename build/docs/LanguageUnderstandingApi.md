@@ -11,6 +11,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_languageunderstanding_domain**](LanguageUnderstandingApi.html#delete_languageunderstanding_domain) | Delete an NLU Domain.|
 |[**delete_languageunderstanding_domain_feedback_feedback_id**](LanguageUnderstandingApi.html#delete_languageunderstanding_domain_feedback_feedback_id) | Delete the feedback on the NLU Domain Version.|
 |[**delete_languageunderstanding_domain_version**](LanguageUnderstandingApi.html#delete_languageunderstanding_domain_version) | Delete an NLU Domain Version|
+|[**delete_languageunderstanding_miner**](LanguageUnderstandingApi.html#delete_languageunderstanding_miner) | Delete a miner.|
+|[**delete_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#delete_languageunderstanding_miner_draft) | Delete a draft|
 |[**get_languageunderstanding_domain**](LanguageUnderstandingApi.html#get_languageunderstanding_domain) | Find an NLU Domain.|
 |[**get_languageunderstanding_domain_feedback**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_feedback) | Get all feedback in the given NLU Domain Version.|
 |[**get_languageunderstanding_domain_feedback_feedback_id**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_feedback_feedback_id) | Find a Feedback|
@@ -18,13 +20,23 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_languageunderstanding_domain_version_report**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_version_report) | Retrieved quality report for the specified NLU Domain Version|
 |[**get_languageunderstanding_domain_versions**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_versions) | Get all NLU Domain Versions for a given Domain.|
 |[**get_languageunderstanding_domains**](LanguageUnderstandingApi.html#get_languageunderstanding_domains) | Get all NLU Domains.|
+|[**get_languageunderstanding_miner**](LanguageUnderstandingApi.html#get_languageunderstanding_miner) | Get information about a miner.|
+|[**get_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_draft) | Get information about a draft.|
+|[**get_languageunderstanding_miner_drafts**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_drafts) | Retrieve the list of drafts created.|
+|[**get_languageunderstanding_miner_intent**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_intent) | Get information about a mined intent|
+|[**get_languageunderstanding_miner_intents**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_intents) | Retrieve a list of mined intents.|
+|[**get_languageunderstanding_miners**](LanguageUnderstandingApi.html#get_languageunderstanding_miners) | Retrieve the list of miners created.|
 |[**patch_languageunderstanding_domain**](LanguageUnderstandingApi.html#patch_languageunderstanding_domain) | Update an NLU Domain.|
+|[**patch_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#patch_languageunderstanding_miner_draft) | Save information for the draft|
 |[**post_languageunderstanding_domain_feedback**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_feedback) | Create feedback for the NLU Domain Version.|
 |[**post_languageunderstanding_domain_version_detect**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_detect) | Detect intent, entities, etc. in the submitted text using the specified NLU domain version.|
 |[**post_languageunderstanding_domain_version_publish**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_publish) | Publish the draft NLU Domain Version.|
 |[**post_languageunderstanding_domain_version_train**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_train) | Train the draft NLU Domain Version.|
 |[**post_languageunderstanding_domain_versions**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_versions) | Create an NLU Domain Version.|
 |[**post_languageunderstanding_domains**](LanguageUnderstandingApi.html#post_languageunderstanding_domains) | Create an NLU Domain.|
+|[**post_languageunderstanding_miner_drafts**](LanguageUnderstandingApi.html#post_languageunderstanding_miner_drafts) | Create a new draft resource.|
+|[**post_languageunderstanding_miner_execute**](LanguageUnderstandingApi.html#post_languageunderstanding_miner_execute) | Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.|
+|[**post_languageunderstanding_miners**](LanguageUnderstandingApi.html#post_languageunderstanding_miners) | Create a unique miner.|
 |[**put_languageunderstanding_domain_version**](LanguageUnderstandingApi.html#put_languageunderstanding_domain_version) | Update an NLU Domain Version.|
 {: class="table table-striped"}
 
@@ -179,6 +191,108 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_languageunderstanding_miner"></a>
+
+##  delete_languageunderstanding_miner(miner_id)
+
+
+
+Delete a miner.
+
+
+
+Wraps DELETE /api/v2/languageunderstanding/miners/{minerId} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+
+try:
+    # Delete a miner.
+    api_instance.delete_languageunderstanding_miner(miner_id)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->delete_languageunderstanding_miner: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_languageunderstanding_miner_draft"></a>
+
+##  delete_languageunderstanding_miner_draft(miner_id, draft_id)
+
+
+
+Delete a draft
+
+
+
+Wraps DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+draft_id = 'draft_id_example' # str | Draft ID
+
+try:
+    # Delete a draft
+    api_instance.delete_languageunderstanding_miner_draft(miner_id, draft_id)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->delete_languageunderstanding_miner_draft: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **draft_id** | **str**| Draft ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -587,6 +701,316 @@ except ApiException as e:
 
 [**NluDomainListing**](NluDomainListing.html)
 
+<a name="get_languageunderstanding_miner"></a>
+
+## [**Miner**](Miner.html) get_languageunderstanding_miner(miner_id)
+
+
+
+Get information about a miner.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+
+try:
+    # Get information about a miner.
+    api_response = api_instance.get_languageunderstanding_miner(miner_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miner: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Miner**](Miner.html)
+
+<a name="get_languageunderstanding_miner_draft"></a>
+
+## [**Draft**](Draft.html) get_languageunderstanding_miner_draft(miner_id, draft_id)
+
+
+
+Get information about a draft.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+draft_id = 'draft_id_example' # str | Draft ID
+
+try:
+    # Get information about a draft.
+    api_response = api_instance.get_languageunderstanding_miner_draft(miner_id, draft_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miner_draft: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **draft_id** | **str**| Draft ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Draft**](Draft.html)
+
+<a name="get_languageunderstanding_miner_drafts"></a>
+
+## [**DraftListing**](DraftListing.html) get_languageunderstanding_miner_drafts(miner_id)
+
+
+
+Retrieve the list of drafts created.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/drafts 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+
+try:
+    # Retrieve the list of drafts created.
+    api_response = api_instance.get_languageunderstanding_miner_drafts(miner_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miner_drafts: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DraftListing**](DraftListing.html)
+
+<a name="get_languageunderstanding_miner_intent"></a>
+
+## [**MinerIntent**](MinerIntent.html) get_languageunderstanding_miner_intent(miner_id, intent_id, expand=expand)
+
+
+
+Get information about a mined intent
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:minerIntent:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+intent_id = 'intent_id_example' # str | The ID of the intent to be retrieved.
+expand = 'expand_example' # str | Option to fetch utterances (optional)
+
+try:
+    # Get information about a mined intent
+    api_response = api_instance.get_languageunderstanding_miner_intent(miner_id, intent_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miner_intent: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **intent_id** | **str**| The ID of the intent to be retrieved. |  |
+| **expand** | **str**| Option to fetch utterances | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MinerIntent**](MinerIntent.html)
+
+<a name="get_languageunderstanding_miner_intents"></a>
+
+## [**MinedIntentsListing**](MinedIntentsListing.html) get_languageunderstanding_miner_intents(miner_id, expand=expand)
+
+
+
+Retrieve a list of mined intents.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/intents 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:minerIntent:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+expand = 'expand_example' # str | Option to fetch utterances. (optional)
+
+try:
+    # Retrieve a list of mined intents.
+    api_response = api_instance.get_languageunderstanding_miner_intents(miner_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miner_intents: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **expand** | **str**| Option to fetch utterances. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MinedIntentsListing**](MinedIntentsListing.html)
+
+<a name="get_languageunderstanding_miners"></a>
+
+## [**MinerListing**](MinerListing.html) get_languageunderstanding_miners()
+
+
+
+Retrieve the list of miners created.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+
+try:
+    # Retrieve the list of miners created.
+    api_response = api_instance.get_languageunderstanding_miners()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miners: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**MinerListing**](MinerListing.html)
+
 <a name="patch_languageunderstanding_domain"></a>
 
 ## [**NluDomain**](NluDomain.html) patch_languageunderstanding_domain(domain_id, body)
@@ -640,6 +1064,61 @@ except ApiException as e:
 ### Return type
 
 [**NluDomain**](NluDomain.html)
+
+<a name="patch_languageunderstanding_miner_draft"></a>
+
+## [**Draft**](Draft.html) patch_languageunderstanding_miner_draft(miner_id, draft_id, body=body)
+
+
+
+Save information for the draft
+
+
+
+Wraps PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+draft_id = 'draft_id_example' # str | Draft ID
+body = PureCloudPlatformClientV2.DraftRequest() # DraftRequest |  (optional)
+
+try:
+    # Save information for the draft
+    api_response = api_instance.patch_languageunderstanding_miner_draft(miner_id, draft_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->patch_languageunderstanding_miner_draft: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **draft_id** | **str**| Draft ID |  |
+| **body** | [**DraftRequest**](DraftRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Draft**](Draft.html)
 
 <a name="post_languageunderstanding_domain_feedback"></a>
 
@@ -964,6 +1443,163 @@ except ApiException as e:
 ### Return type
 
 [**NluDomain**](NluDomain.html)
+
+<a name="post_languageunderstanding_miner_drafts"></a>
+
+## [**Draft**](Draft.html) post_languageunderstanding_miner_drafts(miner_id, body)
+
+
+
+Create a new draft resource.
+
+
+
+Wraps POST /api/v2/languageunderstanding/miners/{minerId}/drafts 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+body = PureCloudPlatformClientV2.Draft() # Draft | Details for creating draft resource
+
+try:
+    # Create a new draft resource.
+    api_response = api_instance.post_languageunderstanding_miner_drafts(miner_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_miner_drafts: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **body** | [**Draft**](Draft.html)| Details for creating draft resource |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Draft**](Draft.html)
+
+<a name="post_languageunderstanding_miner_execute"></a>
+
+## [**Miner**](Miner.html) post_languageunderstanding_miner_execute(miner_id, body=body)
+
+
+
+Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+
+
+
+Wraps POST /api/v2/languageunderstanding/miners/{minerId}/execute 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:execute
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+body = PureCloudPlatformClientV2.MinerExecuteRequest() # MinerExecuteRequest |  (optional)
+
+try:
+    # Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+    api_response = api_instance.post_languageunderstanding_miner_execute(miner_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_miner_execute: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **body** | [**MinerExecuteRequest**](MinerExecuteRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Miner**](Miner.html)
+
+<a name="post_languageunderstanding_miners"></a>
+
+## [**Miner**](Miner.html) post_languageunderstanding_miners(body)
+
+
+
+Create a unique miner.
+
+
+
+Wraps POST /api/v2/languageunderstanding/miners 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+body = PureCloudPlatformClientV2.Miner() # Miner | Details for creating a new miner resource.
+
+try:
+    # Create a unique miner.
+    api_response = api_instance.post_languageunderstanding_miners(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_miners: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Miner**](Miner.html)| Details for creating a new miner resource. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Miner**](Miner.html)
 
 <a name="put_languageunderstanding_domain_version"></a>
 

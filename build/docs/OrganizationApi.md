@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_organizations_limits_changerequests**](OrganizationApi.html#get_organizations_limits_changerequests) | Get the available limit change requests|
 |[**get_organizations_limits_docs**](OrganizationApi.html#get_organizations_limits_docs) | Get a link to the limit documentation|
 |[**get_organizations_limits_namespace**](OrganizationApi.html#get_organizations_limits_namespace) | Get the effective limits in a namespace for an organization|
+|[**get_organizations_limits_namespace_defaults**](OrganizationApi.html#get_organizations_limits_namespace_defaults) | Get the default limits in a namespace for an organization|
 |[**get_organizations_limits_namespaces**](OrganizationApi.html#get_organizations_limits_namespaces) | Get the available limit namespaces|
 |[**get_organizations_me**](OrganizationApi.html#get_organizations_me) | Get organization.|
 |[**get_organizations_whitelist**](OrganizationApi.html#get_organizations_whitelist) | Use PUT /api/v2/organizations/embeddedintegration instead|
@@ -375,9 +376,59 @@ except ApiException as e:
 
 [**LimitsEntityListing**](LimitsEntityListing.html)
 
+<a name="get_organizations_limits_namespace_defaults"></a>
+
+## [**LimitsEntityListing**](LimitsEntityListing.html) get_organizations_limits_namespace_defaults(namespace_name)
+
+
+
+Get the default limits in a namespace for an organization
+
+
+
+Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+namespace_name = 'namespace_name_example' # str | The namespace to fetch defaults limits for
+
+try:
+    # Get the default limits in a namespace for an organization
+    api_response = api_instance.get_organizations_limits_namespace_defaults(namespace_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationApi->get_organizations_limits_namespace_defaults: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **namespace_name** | **str**| The namespace to fetch defaults limits for |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LimitsEntityListing**](LimitsEntityListing.html)
+
 <a name="get_organizations_limits_namespaces"></a>
 
-## [**LimitsEntityListing**](LimitsEntityListing.html) get_organizations_limits_namespaces(page_size=page_size, page_number=page_number)
+## [**PagedNamespaceListing**](PagedNamespaceListing.html) get_organizations_limits_namespaces(page_size=page_size, page_number=page_number)
 
 
 
@@ -426,7 +477,7 @@ except ApiException as e:
 
 ### Return type
 
-[**LimitsEntityListing**](LimitsEntityListing.html)
+[**PagedNamespaceListing**](PagedNamespaceListing.html)
 
 <a name="get_organizations_me"></a>
 

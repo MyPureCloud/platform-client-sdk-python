@@ -1058,7 +1058,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 queue_id = ['queue_id_example'] # list[str] | Queue ID(s) to filter assessments by. (optional)
 
@@ -1077,7 +1077,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **queue_id** | [**list[str]**](str.html)| Queue ID(s) to filter assessments by. | [optional]  |
 {: class="table table-striped"}
@@ -1690,7 +1690,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 queue_id = ['queue_id_example'] # list[str] | Comma-separated list of queue Ids to filter by. (optional)
 
@@ -1709,7 +1709,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **queue_id** | [**list[str]**](str.html)| Comma-separated list of queue Ids to filter by. | [optional]  |
 {: class="table table-striped"}

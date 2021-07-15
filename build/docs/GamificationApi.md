@@ -260,7 +260,7 @@ This endpoint does not need any parameter.
 
 <a name="get_gamification_metric"></a>
 
-## [**Metric**](Metric.html) get_gamification_metric(metric_id, performance_profile_id=performance_profile_id)
+## [**Metric**](Metric.html) get_gamification_metric(metric_id, workday=workday, performance_profile_id=performance_profile_id)
 
 
 
@@ -290,11 +290,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 metric_id = 'metric_id_example' # str | metric Id
+workday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 performance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
 
 try:
     # Gamified metric by id
-    api_response = api_instance.get_gamification_metric(metric_id, performance_profile_id=performance_profile_id)
+    api_response = api_instance.get_gamification_metric(metric_id, workday=workday, performance_profile_id=performance_profile_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_metric: %s\n" % e)
@@ -306,6 +307,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **metric_id** | **str**| metric Id |  |
+| **workday** | **date**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **performance_profile_id** | **str**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
 {: class="table table-striped"}
 
@@ -413,7 +415,7 @@ This endpoint does not need any parameter.
 
 <a name="get_gamification_metrics"></a>
 
-## [**GetMetricsResponse**](GetMetricsResponse.html) get_gamification_metrics(performance_profile_id=performance_profile_id)
+## [**GetMetricsResponse**](GetMetricsResponse.html) get_gamification_metrics(performance_profile_id=performance_profile_id, workday=workday)
 
 
 
@@ -443,10 +445,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 performance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
+workday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 
 try:
     # All gamified metrics for a given profile
-    api_response = api_instance.get_gamification_metrics(performance_profile_id=performance_profile_id)
+    api_response = api_instance.get_gamification_metrics(performance_profile_id=performance_profile_id, workday=workday)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_metrics: %s\n" % e)
@@ -458,6 +461,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **performance_profile_id** | **str**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
+| **workday** | **date**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

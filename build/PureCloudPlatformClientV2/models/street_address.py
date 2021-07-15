@@ -143,7 +143,7 @@ class StreetAddress(object):
     def rd(self):
         """
         Gets the rd of this StreetAddress.
-
+        Number and street
 
         :return: The rd of this StreetAddress.
         :rtype: str
@@ -154,7 +154,7 @@ class StreetAddress(object):
     def rd(self, rd):
         """
         Sets the rd of this StreetAddress.
-
+        Number and street
 
         :param rd: The rd of this StreetAddress.
         :type: str
@@ -166,7 +166,7 @@ class StreetAddress(object):
     def hno(self):
         """
         Gets the hno of this StreetAddress.
-
+        House Number
 
         :return: The hno of this StreetAddress.
         :rtype: str
@@ -177,7 +177,7 @@ class StreetAddress(object):
     def hno(self, hno):
         """
         Sets the hno of this StreetAddress.
-
+        House Number
 
         :param hno: The hno of this StreetAddress.
         :type: str
@@ -189,7 +189,7 @@ class StreetAddress(object):
     def loc(self):
         """
         Gets the loc of this StreetAddress.
-
+        extra location info like suite 300
 
         :return: The loc of this StreetAddress.
         :rtype: str
@@ -200,7 +200,7 @@ class StreetAddress(object):
     def loc(self, loc):
         """
         Sets the loc of this StreetAddress.
-
+        extra location info like suite 300
 
         :param loc: The loc of this StreetAddress.
         :type: str
@@ -212,7 +212,7 @@ class StreetAddress(object):
     def nam(self):
         """
         Gets the nam of this StreetAddress.
-
+        Name of the customer
 
         :return: The nam of this StreetAddress.
         :rtype: str
@@ -223,7 +223,7 @@ class StreetAddress(object):
     def nam(self, nam):
         """
         Sets the nam of this StreetAddress.
-
+        Name of the customer
 
         :param nam: The nam of this StreetAddress.
         :type: str
@@ -235,7 +235,7 @@ class StreetAddress(object):
     def pc(self):
         """
         Gets the pc of this StreetAddress.
-
+        Postal code
 
         :return: The pc of this StreetAddress.
         :rtype: str
@@ -246,7 +246,7 @@ class StreetAddress(object):
     def pc(self, pc):
         """
         Sets the pc of this StreetAddress.
-
+        Postal code
 
         :param pc: The pc of this StreetAddress.
         :type: str

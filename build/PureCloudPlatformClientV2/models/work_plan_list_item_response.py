@@ -70,8 +70,8 @@ class WorkPlanListItemResponse(object):
             'shift_start_variances': 'ListWrapperShiftStartVariance',
             'shifts': 'list[WorkPlanShift]',
             'agents': 'list[DeletableUserReference]',
-            'metadata': 'WfmVersionedEntityMetadata',
             'agent_count': 'int',
+            'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
 
@@ -106,8 +106,8 @@ class WorkPlanListItemResponse(object):
             'shift_start_variances': 'shiftStartVariances',
             'shifts': 'shifts',
             'agents': 'agents',
-            'metadata': 'metadata',
             'agent_count': 'agentCount',
+            'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
 
@@ -141,8 +141,8 @@ class WorkPlanListItemResponse(object):
         self._shift_start_variances = None
         self._shifts = None
         self._agents = None
-        self._metadata = None
         self._agent_count = None
+        self._metadata = None
         self._self_uri = None
 
     @property
@@ -840,29 +840,6 @@ class WorkPlanListItemResponse(object):
         self._agents = agents
 
     @property
-    def metadata(self):
-        """
-        Gets the metadata of this WorkPlanListItemResponse.
-        Version metadata for this work plan
-
-        :return: The metadata of this WorkPlanListItemResponse.
-        :rtype: WfmVersionedEntityMetadata
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata):
-        """
-        Sets the metadata of this WorkPlanListItemResponse.
-        Version metadata for this work plan
-
-        :param metadata: The metadata of this WorkPlanListItemResponse.
-        :type: WfmVersionedEntityMetadata
-        """
-        
-        self._metadata = metadata
-
-    @property
     def agent_count(self):
         """
         Gets the agent_count of this WorkPlanListItemResponse.
@@ -884,6 +861,29 @@ class WorkPlanListItemResponse(object):
         """
         
         self._agent_count = agent_count
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this WorkPlanListItemResponse.
+        Version metadata for this work plan
+
+        :return: The metadata of this WorkPlanListItemResponse.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this WorkPlanListItemResponse.
+        Version metadata for this work plan
+
+        :param metadata: The metadata of this WorkPlanListItemResponse.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+        self._metadata = metadata
 
     @property
     def self_uri(self):

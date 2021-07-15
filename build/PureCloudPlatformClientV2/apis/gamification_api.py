@@ -404,13 +404,14 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str metric_id: metric Id (required)
+        :param date workday: The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :param str performance_profile_id: The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
         :return: Metric
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['metric_id', 'performance_profile_id']
+        all_params = ['metric_id', 'workday', 'performance_profile_id']
         all_params.append('callback')
 
         params = locals()
@@ -434,8 +435,10 @@ class GamificationApi(object):
             path_params['metricId'] = params['metric_id']
 
         query_params = {}
+        if 'workday' in params:
+            query_params['workday'] = params['workday']
         if 'performance_profile_id' in params:
-            query_params['performance profile id'] = params['performance_profile_id']
+            query_params['performanceProfileId'] = params['performance_profile_id']
 
         header_params = {}
 
@@ -635,12 +638,13 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str performance_profile_id: The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
+        :param date workday: The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :return: GetMetricsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['performance_profile_id']
+        all_params = ['performance_profile_id', 'workday']
         all_params.append('callback')
 
         params = locals()
@@ -660,7 +664,9 @@ class GamificationApi(object):
 
         query_params = {}
         if 'performance_profile_id' in params:
-            query_params['performance profile id'] = params['performance_profile_id']
+            query_params['performanceProfileId'] = params['performance_profile_id']
+        if 'workday' in params:
+            query_params['workday'] = params['workday']
 
         header_params = {}
 
@@ -2653,7 +2659,7 @@ class GamificationApi(object):
 
         query_params = {}
         if 'performance_profile_id' in params:
-            query_params['performance profile id'] = params['performance_profile_id']
+            query_params['performanceProfileId'] = params['performance_profile_id']
 
         header_params = {}
 

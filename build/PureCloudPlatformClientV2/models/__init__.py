@@ -214,6 +214,15 @@ from .bot_aggregate_query_predicate import BotAggregateQueryPredicate
 from .bot_aggregate_query_response import BotAggregateQueryResponse
 from .bot_aggregation_query import BotAggregationQuery
 from .bot_aggregation_view import BotAggregationView
+from .bot_connector_bot import BotConnectorBot
+from .bot_connector_bot_summary_entity_listing import BotConnectorBotSummaryEntityListing
+from .bot_connector_bot_version import BotConnectorBotVersion
+from .bot_connector_bot_version_summary_entity_listing import BotConnectorBotVersionSummaryEntityListing
+from .bot_intent import BotIntent
+from .bot_list import BotList
+from .bot_slot import BotSlot
+from .bot_summary import BotSummary
+from .bot_version_summary import BotVersionSummary
 from .bu_abandon_rate import BuAbandonRate
 from .bu_agent_schedule_activity import BuAgentScheduleActivity
 from .bu_agent_schedule_history_change import BuAgentScheduleHistoryChange
@@ -316,6 +325,7 @@ from .business_unit_reference import BusinessUnitReference
 from .business_unit_settings import BusinessUnitSettings
 from .button_component import ButtonComponent
 from .button_response import ButtonResponse
+from .calendar_url_response import CalendarUrlResponse
 from .calibration import Calibration
 from .calibration_assignment import CalibrationAssignment
 from .calibration_create import CalibrationCreate
@@ -764,6 +774,7 @@ from .data_schema import DataSchema
 from .data_schema_listing import DataSchemaListing
 from .data_table import DataTable
 from .data_table_export_job import DataTableExportJob
+from .data_table_import_entity_listing import DataTableImportEntityListing
 from .data_table_import_job import DataTableImportJob
 from .data_table_row_entity_listing import DataTableRowEntityListing
 from .data_tables_domain_entity_listing import DataTablesDomainEntityListing
@@ -926,6 +937,10 @@ from .domain_resource_condition_value import DomainResourceConditionValue
 from .domain_role import DomainRole
 from .domain_schema_reference import DomainSchemaReference
 from .download_response import DownloadResponse
+from .draft import Draft
+from .draft_intents import DraftIntents
+from .draft_listing import DraftListing
+from .draft_request import DraftRequest
 from .draft_validation_result import DraftValidationResult
 from .duration_condition import DurationCondition
 from .edge import Edge
@@ -974,6 +989,7 @@ from .email import Email
 from .email_address import EmailAddress
 from .email_attachment import EmailAttachment
 from .email_column import EmailColumn
+from .email_config import EmailConfig
 from .email_conversation import EmailConversation
 from .email_conversation_entity_listing import EmailConversationEntityListing
 from .email_media_participant import EmailMediaParticipant
@@ -992,7 +1008,6 @@ from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .endpoint import Endpoint
 from .entity import Entity
-from .entity_listing import EntityListing
 from .entity_type_criteria import EntityTypeCriteria
 from .entry import Entry
 from .error_body import ErrorBody
@@ -1115,6 +1130,7 @@ from .forecast_service_goal_template_response import ForecastServiceGoalTemplate
 from .forecast_service_level_response import ForecastServiceLevelResponse
 from .forecast_source_day_pointer import ForecastSourceDayPointer
 from .free_seating_configuration import FreeSeatingConfiguration
+from .from_email_address import FromEmailAddress
 from .gdpr_journey_customer import GDPRJourneyCustomer
 from .gdpr_request import GDPRRequest
 from .gdpr_request_entity_listing import GDPRRequestEntityListing
@@ -1407,6 +1423,11 @@ from .metric import Metric
 from .metric_definition import MetricDefinition
 from .metrics import Metrics
 from .min_length import MinLength
+from .mined_intents_listing import MinedIntentsListing
+from .miner import Miner
+from .miner_execute_request import MinerExecuteRequest
+from .miner_intent import MinerIntent
+from .miner_listing import MinerListing
 from .modeling_processing_error import ModelingProcessingError
 from .modeling_status_response import ModelingStatusResponse
 from .move_management_unit_request import MoveManagementUnitRequest
@@ -1448,6 +1469,7 @@ from .notification_template_footer import NotificationTemplateFooter
 from .notification_template_header import NotificationTemplateHeader
 from .notification_template_parameter import NotificationTemplateParameter
 from .notifications_response import NotificationsResponse
+from .nuance_mix_dlg_settings import NuanceMixDlgSettings
 from .number import Number
 from .number_plan import NumberPlan
 from .numeric_range import NumericRange
@@ -1516,6 +1538,7 @@ from .overall_best_points import OverallBestPoints
 from .overall_best_points_item import OverallBestPointsItem
 from .pin_configuration import PINConfiguration
 from .page import Page
+from .paged_namespace_listing import PagedNamespaceListing
 from .paging_spec import PagingSpec
 from .parameter import Parameter
 from .parsed_certificate import ParsedCertificate
@@ -1886,6 +1909,7 @@ from .relationship_listing import RelationshipListing
 from .replace_request import ReplaceRequest
 from .replace_response import ReplaceResponse
 from .replacement_term import ReplacementTerm
+from .reply_to_email_address import ReplyToEmailAddress
 from .report_meta_data import ReportMetaData
 from .report_meta_data_entity_listing import ReportMetaDataEntityListing
 from .report_run_entry import ReportRunEntry
@@ -2354,6 +2378,7 @@ from .user_tokens_topic_token_notification import UserTokensTopicTokenNotificati
 from .user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .users_search_response import UsersSearchResponse
 from .utilization import Utilization
+from .utterance import Utterance
 from .validate_address_request import ValidateAddressRequest
 from .validate_address_response import ValidateAddressResponse
 from .validate_work_plan_messages import ValidateWorkPlanMessages

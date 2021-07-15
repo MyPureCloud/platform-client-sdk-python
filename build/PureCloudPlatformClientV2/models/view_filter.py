@@ -145,7 +145,17 @@ class ViewFilter(object):
             'topic_ids': 'list[str]',
             'external_tags': 'list[str]',
             'is_not_responding': 'bool',
-            'is_authenticated': 'bool'
+            'is_authenticated': 'bool',
+            'bot_ids': 'list[str]',
+            'bot_versions': 'list[str]',
+            'bot_message_types': 'list[str]',
+            'bot_provider_list': 'list[str]',
+            'bot_product_list': 'list[str]',
+            'bot_recognition_failure_reason_list': 'list[str]',
+            'bot_intent_list': 'list[str]',
+            'bot_final_intent_list': 'list[str]',
+            'bot_slot_list': 'list[str]',
+            'bot_result_list': 'list[str]'
         }
 
         self.attribute_map = {
@@ -254,7 +264,17 @@ class ViewFilter(object):
             'topic_ids': 'topicIds',
             'external_tags': 'externalTags',
             'is_not_responding': 'isNotResponding',
-            'is_authenticated': 'isAuthenticated'
+            'is_authenticated': 'isAuthenticated',
+            'bot_ids': 'botIds',
+            'bot_versions': 'botVersions',
+            'bot_message_types': 'botMessageTypes',
+            'bot_provider_list': 'botProviderList',
+            'bot_product_list': 'botProductList',
+            'bot_recognition_failure_reason_list': 'botRecognitionFailureReasonList',
+            'bot_intent_list': 'botIntentList',
+            'bot_final_intent_list': 'botFinalIntentList',
+            'bot_slot_list': 'botSlotList',
+            'bot_result_list': 'botResultList'
         }
 
         self._media_types = None
@@ -363,6 +383,16 @@ class ViewFilter(object):
         self._external_tags = None
         self._is_not_responding = None
         self._is_authenticated = None
+        self._bot_ids = None
+        self._bot_versions = None
+        self._bot_message_types = None
+        self._bot_provider_list = None
+        self._bot_product_list = None
+        self._bot_recognition_failure_reason_list = None
+        self._bot_intent_list = None
+        self._bot_final_intent_list = None
+        self._bot_slot_list = None
+        self._bot_result_list = None
 
     @property
     def media_types(self):
@@ -2801,6 +2831,236 @@ class ViewFilter(object):
         """
         
         self._is_authenticated = is_authenticated
+
+    @property
+    def bot_ids(self):
+        """
+        Gets the bot_ids of this ViewFilter.
+        The list of bot IDs used to filter bot views
+
+        :return: The bot_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_ids
+
+    @bot_ids.setter
+    def bot_ids(self, bot_ids):
+        """
+        Sets the bot_ids of this ViewFilter.
+        The list of bot IDs used to filter bot views
+
+        :param bot_ids: The bot_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_ids = bot_ids
+
+    @property
+    def bot_versions(self):
+        """
+        Gets the bot_versions of this ViewFilter.
+        The list of bot versions used to filter bot views
+
+        :return: The bot_versions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_versions
+
+    @bot_versions.setter
+    def bot_versions(self, bot_versions):
+        """
+        Sets the bot_versions of this ViewFilter.
+        The list of bot versions used to filter bot views
+
+        :param bot_versions: The bot_versions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_versions = bot_versions
+
+    @property
+    def bot_message_types(self):
+        """
+        Gets the bot_message_types of this ViewFilter.
+        The list of bot message types used to filter bot views
+
+        :return: The bot_message_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_message_types
+
+    @bot_message_types.setter
+    def bot_message_types(self, bot_message_types):
+        """
+        Sets the bot_message_types of this ViewFilter.
+        The list of bot message types used to filter bot views
+
+        :param bot_message_types: The bot_message_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_message_types = bot_message_types
+
+    @property
+    def bot_provider_list(self):
+        """
+        Gets the bot_provider_list of this ViewFilter.
+        The list of bot providers used to filter bot views
+
+        :return: The bot_provider_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_provider_list
+
+    @bot_provider_list.setter
+    def bot_provider_list(self, bot_provider_list):
+        """
+        Sets the bot_provider_list of this ViewFilter.
+        The list of bot providers used to filter bot views
+
+        :param bot_provider_list: The bot_provider_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_provider_list = bot_provider_list
+
+    @property
+    def bot_product_list(self):
+        """
+        Gets the bot_product_list of this ViewFilter.
+        The list of bot products used to filter bot views
+
+        :return: The bot_product_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_product_list
+
+    @bot_product_list.setter
+    def bot_product_list(self, bot_product_list):
+        """
+        Sets the bot_product_list of this ViewFilter.
+        The list of bot products used to filter bot views
+
+        :param bot_product_list: The bot_product_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_product_list = bot_product_list
+
+    @property
+    def bot_recognition_failure_reason_list(self):
+        """
+        Gets the bot_recognition_failure_reason_list of this ViewFilter.
+        The list of bot recognition failure reasons used to filter bot views
+
+        :return: The bot_recognition_failure_reason_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_recognition_failure_reason_list
+
+    @bot_recognition_failure_reason_list.setter
+    def bot_recognition_failure_reason_list(self, bot_recognition_failure_reason_list):
+        """
+        Sets the bot_recognition_failure_reason_list of this ViewFilter.
+        The list of bot recognition failure reasons used to filter bot views
+
+        :param bot_recognition_failure_reason_list: The bot_recognition_failure_reason_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_recognition_failure_reason_list = bot_recognition_failure_reason_list
+
+    @property
+    def bot_intent_list(self):
+        """
+        Gets the bot_intent_list of this ViewFilter.
+        The list of bot intents used to filter bot views
+
+        :return: The bot_intent_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_intent_list
+
+    @bot_intent_list.setter
+    def bot_intent_list(self, bot_intent_list):
+        """
+        Sets the bot_intent_list of this ViewFilter.
+        The list of bot intents used to filter bot views
+
+        :param bot_intent_list: The bot_intent_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_intent_list = bot_intent_list
+
+    @property
+    def bot_final_intent_list(self):
+        """
+        Gets the bot_final_intent_list of this ViewFilter.
+        The list of bot final intents used to filter bot views
+
+        :return: The bot_final_intent_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_final_intent_list
+
+    @bot_final_intent_list.setter
+    def bot_final_intent_list(self, bot_final_intent_list):
+        """
+        Sets the bot_final_intent_list of this ViewFilter.
+        The list of bot final intents used to filter bot views
+
+        :param bot_final_intent_list: The bot_final_intent_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_final_intent_list = bot_final_intent_list
+
+    @property
+    def bot_slot_list(self):
+        """
+        Gets the bot_slot_list of this ViewFilter.
+        The list of bot slots used to filter bot views
+
+        :return: The bot_slot_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_slot_list
+
+    @bot_slot_list.setter
+    def bot_slot_list(self, bot_slot_list):
+        """
+        Sets the bot_slot_list of this ViewFilter.
+        The list of bot slots used to filter bot views
+
+        :param bot_slot_list: The bot_slot_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_slot_list = bot_slot_list
+
+    @property
+    def bot_result_list(self):
+        """
+        Gets the bot_result_list of this ViewFilter.
+        The list of bot results used to filter bot views
+
+        :return: The bot_result_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_result_list
+
+    @bot_result_list.setter
+    def bot_result_list(self, bot_result_list):
+        """
+        Sets the bot_result_list of this ViewFilter.
+        The list of bot results used to filter bot views
+
+        :param bot_result_list: The bot_result_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._bot_result_list = bot_result_list
 
     def to_dict(self):
         """

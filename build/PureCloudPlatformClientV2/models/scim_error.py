@@ -40,23 +40,46 @@ class ScimError(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'schemas': 'list[str]',
             'status': 'str',
             'scim_type': 'str',
-            'detail': 'str',
-            'schemas': 'list[str]'
+            'detail': 'str'
         }
 
         self.attribute_map = {
+            'schemas': 'schemas',
             'status': 'status',
             'scim_type': 'scimType',
-            'detail': 'detail',
-            'schemas': 'schemas'
+            'detail': 'detail'
         }
 
+        self._schemas = None
         self._status = None
         self._scim_type = None
         self._detail = None
-        self._schemas = None
+
+    @property
+    def schemas(self):
+        """
+        Gets the schemas of this ScimError.
+        The list of schemas for the SCIM error.
+
+        :return: The schemas of this ScimError.
+        :rtype: list[str]
+        """
+        return self._schemas
+
+    @schemas.setter
+    def schemas(self, schemas):
+        """
+        Sets the schemas of this ScimError.
+        The list of schemas for the SCIM error.
+
+        :param schemas: The schemas of this ScimError.
+        :type: list[str]
+        """
+        
+        self._schemas = schemas
 
     @property
     def status(self):
@@ -130,29 +153,6 @@ class ScimError(object):
         """
         
         self._detail = detail
-
-    @property
-    def schemas(self):
-        """
-        Gets the schemas of this ScimError.
-        The list of schemas for the SCIM error.
-
-        :return: The schemas of this ScimError.
-        :rtype: list[str]
-        """
-        return self._schemas
-
-    @schemas.setter
-    def schemas(self, schemas):
-        """
-        Sets the schemas of this ScimError.
-        The list of schemas for the SCIM error.
-
-        :param schemas: The schemas of this ScimError.
-        :type: list[str]
-        """
-        
-        self._schemas = schemas
 
     def to_dict(self):
         """

@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_servicegoaltemplate) | Delete a service goal template|
 |[**delete_workforcemanagement_businessunit_week_schedule**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_week_schedule) | Delete a schedule|
 |[**delete_workforcemanagement_businessunit_week_shorttermforecast**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_week_shorttermforecast) | Delete a short term forecast|
+|[**delete_workforcemanagement_calendar_url_ics**](WorkforceManagementApi.html#delete_workforcemanagement_calendar_url_ics) | Disable generated calendar link for the current user|
 |[**delete_workforcemanagement_managementunit**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit) | Delete management unit|
 |[**delete_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplan) | Delete a work plan|
 |[**delete_workforcemanagement_managementunit_workplanrotation**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplanrotation) | Delete a work plan rotation|
@@ -47,6 +48,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_week_shorttermforecasts**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecasts) | Get short term forecasts|
 |[**get_workforcemanagement_businessunits**](WorkforceManagementApi.html#get_workforcemanagement_businessunits) | Get business units|
 |[**get_workforcemanagement_businessunits_divisionviews**](WorkforceManagementApi.html#get_workforcemanagement_businessunits_divisionviews) | Get business units across divisions|
+|[**get_workforcemanagement_calendar_data_ics**](WorkforceManagementApi.html#get_workforcemanagement_calendar_data_ics) | Get ics formatted calendar based on shareable link|
+|[**get_workforcemanagement_calendar_url_ics**](WorkforceManagementApi.html#get_workforcemanagement_calendar_url_ics) | Get existing calendar link for the current user|
 |[**get_workforcemanagement_historicaldata_deletejob**](WorkforceManagementApi.html#get_workforcemanagement_historicaldata_deletejob) | Retrieves delete job status for historical data imports of the organization|
 |[**get_workforcemanagement_historicaldata_importstatus**](WorkforceManagementApi.html#get_workforcemanagement_historicaldata_importstatus) | Retrieves status of the historical data imports of the organization|
 |[**get_workforcemanagement_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_managementunit) | Get management unit|
@@ -99,6 +102,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_week_shorttermforecast_copy**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecast_copy) | Copy a short term forecast|
 |[**post_workforcemanagement_businessunit_week_shorttermforecasts_generate**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecasts_generate) | Generate a short term forecast|
 |[**post_workforcemanagement_businessunits**](WorkforceManagementApi.html#post_workforcemanagement_businessunits) | Add a new business unit|
+|[**post_workforcemanagement_calendar_url_ics**](WorkforceManagementApi.html#post_workforcemanagement_calendar_url_ics) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned|
 |[**post_workforcemanagement_historicaldata_deletejob**](WorkforceManagementApi.html#post_workforcemanagement_historicaldata_deletejob) | Delete the entries of the historical data imports in the organization|
 |[**post_workforcemanagement_historicaldata_validate**](WorkforceManagementApi.html#post_workforcemanagement_historicaldata_validate) | Trigger validation process for historical import|
 |[**post_workforcemanagement_managementunit_agentschedules_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_agentschedules_search) | Query published schedules for given given time range for set of users|
@@ -483,6 +487,52 @@ except ApiException as e:
 | **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_calendar_url_ics"></a>
+
+##  delete_workforcemanagement_calendar_url_ics()
+
+
+
+Disable generated calendar link for the current user
+
+
+
+Wraps DELETE /api/v2/workforcemanagement/calendar/url/ics 
+
+Requires ALL permissions: 
+
+* wfm:agentSchedule:sync
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Disable generated calendar link for the current user
+    api_instance.delete_workforcemanagement_calendar_url_ics()
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_calendar_url_ics: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
 {: class="table table-striped"}
 
 ### Return type
@@ -2397,6 +2447,101 @@ except ApiException as e:
 
 [**BusinessUnitListing**](BusinessUnitListing.html)
 
+<a name="get_workforcemanagement_calendar_data_ics"></a>
+
+## str** get_workforcemanagement_calendar_data_ics(calendar_id)
+
+
+
+Get ics formatted calendar based on shareable link
+
+
+
+Wraps GET /api/v2/workforcemanagement/calendar/data/ics 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+calendar_id = 'calendar_id_example' # str | The id of the ics-formatted calendar
+
+try:
+    # Get ics formatted calendar based on shareable link
+    api_response = api_instance.get_workforcemanagement_calendar_data_ics(calendar_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_calendar_data_ics: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **calendar_id** | **str**| The id of the ics-formatted calendar |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="get_workforcemanagement_calendar_url_ics"></a>
+
+## [**CalendarUrlResponse**](CalendarUrlResponse.html) get_workforcemanagement_calendar_url_ics()
+
+
+
+Get existing calendar link for the current user
+
+
+
+Wraps GET /api/v2/workforcemanagement/calendar/url/ics 
+
+Requires ALL permissions: 
+
+* wfm:agentSchedule:sync
+* wfm:agentSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Get existing calendar link for the current user
+    api_response = api_instance.get_workforcemanagement_calendar_url_ics()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_calendar_url_ics: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**CalendarUrlResponse**](CalendarUrlResponse.html)
+
 <a name="get_workforcemanagement_historicaldata_deletejob"></a>
 
 ## [**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse.html) get_workforcemanagement_historicaldata_deletejob()
@@ -3303,7 +3448,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_workplan"></a>
 
-## [**WorkPlan**](WorkPlan.html) get_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id)
+## [**WorkPlan**](WorkPlan.html) get_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, include_only=include_only)
 
 
 
@@ -3334,10 +3479,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 work_plan_id = 'work_plan_id_example' # str | The ID of the work plan to fetch
+include_only = ['include_only_example'] # list[str] | limit response to the specified fields (optional)
 
 try:
     # Get a work plan
-    api_response = api_instance.get_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id)
+    api_response = api_instance.get_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, include_only=include_only)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplan: %s\n" % e)
@@ -3350,6 +3496,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_id** | **str**| The ID of the work plan to fetch |  |
+| **include_only** | [**list[str]**](str.html)| limit response to the specified fields | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances |
 {: class="table table-striped"}
 
 ### Return type
@@ -5309,6 +5456,58 @@ except ApiException as e:
 ### Return type
 
 [**BusinessUnit**](BusinessUnit.html)
+
+<a name="post_workforcemanagement_calendar_url_ics"></a>
+
+## [**CalendarUrlResponse**](CalendarUrlResponse.html) post_workforcemanagement_calendar_url_ics(language=language)
+
+
+
+Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+
+
+
+Wraps POST /api/v2/workforcemanagement/calendar/url/ics 
+
+Requires ALL permissions: 
+
+* wfm:agentSchedule:sync
+* wfm:agentSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+language = 'en-US' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar (optional) (default to en-US)
+
+try:
+    # Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+    api_response = api_instance.post_workforcemanagement_calendar_url_ics(language=language)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_calendar_url_ics: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to en-US] |
+{: class="table table-striped"}
+
+### Return type
+
+[**CalendarUrlResponse**](CalendarUrlResponse.html)
 
 <a name="post_workforcemanagement_historicaldata_deletejob"></a>
 

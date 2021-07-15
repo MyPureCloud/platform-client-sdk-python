@@ -41,7 +41,7 @@ class Leaderboard(object):
         """
         self.swagger_types = {
             'division': 'Division',
-            'metric': 'Metric',
+            'metric': 'AddressableEntityRef',
             'date_start_workday': 'date',
             'date_end_workday': 'date',
             'leaders': 'list[LeaderboardItem]',
@@ -94,7 +94,7 @@ class Leaderboard(object):
         The metric id if the leaderboard is about a specific metric
 
         :return: The metric of this Leaderboard.
-        :rtype: Metric
+        :rtype: AddressableEntityRef
         """
         return self._metric
 
@@ -105,7 +105,7 @@ class Leaderboard(object):
         The metric id if the leaderboard is about a specific metric
 
         :param metric: The metric of this Leaderboard.
-        :type: Metric
+        :type: AddressableEntityRef
         """
         
         self._metric = metric

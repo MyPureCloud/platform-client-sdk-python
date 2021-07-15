@@ -292,6 +292,168 @@ class LanguageUnderstandingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_languageunderstanding_miner(self, miner_id, **kwargs):
+        """
+        Delete a miner.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_languageunderstanding_miner(miner_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_languageunderstanding_miner" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `delete_languageunderstanding_miner`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_languageunderstanding_miner_draft(self, miner_id, draft_id, **kwargs):
+        """
+        Delete a draft
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_languageunderstanding_miner_draft(miner_id, draft_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :param str draft_id: Draft ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id', 'draft_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_languageunderstanding_miner_draft" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `delete_languageunderstanding_miner_draft`")
+        # verify the required parameter 'draft_id' is set
+        if ('draft_id' not in params) or (params['draft_id'] is None):
+            raise ValueError("Missing the required parameter `draft_id` when calling `delete_languageunderstanding_miner_draft`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+        if 'draft_id' in params:
+            path_params['draftId'] = params['draft_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_languageunderstanding_domain(self, domain_id, **kwargs):
         """
         Find an NLU Domain.
@@ -901,6 +1063,486 @@ class LanguageUnderstandingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_languageunderstanding_miner(self, miner_id, **kwargs):
+        """
+        Get information about a miner.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_languageunderstanding_miner(miner_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :return: Miner
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_languageunderstanding_miner" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `get_languageunderstanding_miner`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Miner',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_languageunderstanding_miner_draft(self, miner_id, draft_id, **kwargs):
+        """
+        Get information about a draft.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_languageunderstanding_miner_draft(miner_id, draft_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :param str draft_id: Draft ID (required)
+        :return: Draft
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id', 'draft_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_languageunderstanding_miner_draft" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `get_languageunderstanding_miner_draft`")
+        # verify the required parameter 'draft_id' is set
+        if ('draft_id' not in params) or (params['draft_id'] is None):
+            raise ValueError("Missing the required parameter `draft_id` when calling `get_languageunderstanding_miner_draft`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+        if 'draft_id' in params:
+            path_params['draftId'] = params['draft_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Draft',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_languageunderstanding_miner_drafts(self, miner_id, **kwargs):
+        """
+        Retrieve the list of drafts created.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_languageunderstanding_miner_drafts(miner_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :return: DraftListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_languageunderstanding_miner_drafts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `get_languageunderstanding_miner_drafts`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}/drafts'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DraftListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_languageunderstanding_miner_intent(self, miner_id, intent_id, **kwargs):
+        """
+        Get information about a mined intent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_languageunderstanding_miner_intent(miner_id, intent_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :param str intent_id: The ID of the intent to be retrieved. (required)
+        :param str expand: Option to fetch utterances
+        :return: MinerIntent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id', 'intent_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_languageunderstanding_miner_intent" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `get_languageunderstanding_miner_intent`")
+        # verify the required parameter 'intent_id' is set
+        if ('intent_id' not in params) or (params['intent_id'] is None):
+            raise ValueError("Missing the required parameter `intent_id` when calling `get_languageunderstanding_miner_intent`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+        if 'intent_id' in params:
+            path_params['intentId'] = params['intent_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MinerIntent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_languageunderstanding_miner_intents(self, miner_id, **kwargs):
+        """
+        Retrieve a list of mined intents.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_languageunderstanding_miner_intents(miner_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :param str expand: Option to fetch utterances.
+        :return: MinedIntentsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_languageunderstanding_miner_intents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `get_languageunderstanding_miner_intents`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}/intents'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MinedIntentsListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_languageunderstanding_miners(self, **kwargs):
+        """
+        Retrieve the list of miners created.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_languageunderstanding_miners(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: MinerListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_languageunderstanding_miners" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/languageunderstanding/miners'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MinerListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_languageunderstanding_domain(self, domain_id, body, **kwargs):
         """
         Update an NLU Domain.
@@ -981,6 +1623,93 @@ class LanguageUnderstandingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='NluDomain',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_languageunderstanding_miner_draft(self, miner_id, draft_id, **kwargs):
+        """
+        Save information for the draft
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_languageunderstanding_miner_draft(miner_id, draft_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :param str draft_id: Draft ID (required)
+        :param DraftRequest body: 
+        :return: Draft
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id', 'draft_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_languageunderstanding_miner_draft" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `patch_languageunderstanding_miner_draft`")
+        # verify the required parameter 'draft_id' is set
+        if ('draft_id' not in params) or (params['draft_id'] is None):
+            raise ValueError("Missing the required parameter `draft_id` when calling `patch_languageunderstanding_miner_draft`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+        if 'draft_id' in params:
+            path_params['draftId'] = params['draft_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Draft',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1485,6 +2214,249 @@ class LanguageUnderstandingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='NluDomain',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_languageunderstanding_miner_drafts(self, miner_id, body, **kwargs):
+        """
+        Create a new draft resource.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_languageunderstanding_miner_drafts(miner_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :param Draft body: Details for creating draft resource (required)
+        :return: Draft
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_languageunderstanding_miner_drafts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `post_languageunderstanding_miner_drafts`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_miner_drafts`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}/drafts'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Draft',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_languageunderstanding_miner_execute(self, miner_id, **kwargs):
+        """
+        Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_languageunderstanding_miner_execute(miner_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str miner_id: Miner ID (required)
+        :param MinerExecuteRequest body: 
+        :return: Miner
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['miner_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_languageunderstanding_miner_execute" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'miner_id' is set
+        if ('miner_id' not in params) or (params['miner_id'] is None):
+            raise ValueError("Missing the required parameter `miner_id` when calling `post_languageunderstanding_miner_execute`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners/{minerId}/execute'.replace('{format}', 'json')
+        path_params = {}
+        if 'miner_id' in params:
+            path_params['minerId'] = params['miner_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Miner',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_languageunderstanding_miners(self, body, **kwargs):
+        """
+        Create a unique miner.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_languageunderstanding_miners(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param Miner body: Details for creating a new miner resource. (required)
+        :return: Miner
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_languageunderstanding_miners" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_miners`")
+
+
+        resource_path = '/api/v2/languageunderstanding/miners'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Miner',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

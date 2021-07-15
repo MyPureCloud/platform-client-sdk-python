@@ -1908,7 +1908,7 @@ except ApiException as e:
 
 Create media retention policy
 
-
+Policy does not work retroactively
 
 Wraps POST /api/v2/recording/crossplatform/mediaretentionpolicies 
 
@@ -2112,7 +2112,7 @@ except ApiException as e:
 
 Create media retention policy
 
-
+Policy does not work retroactively
 
 Wraps POST /api/v2/recording/mediaretentionpolicies 
 
@@ -2525,7 +2525,7 @@ except ApiException as e:
 
 Update a media retention policy
 
-
+Policy does not work retroactively
 
 Wraps PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
 
@@ -2686,7 +2686,7 @@ except ApiException as e:
 
 Update a media retention policy
 
-
+Policy does not work retroactively
 
 Wraps PUT /api/v2/recording/mediaretentionpolicies/{policyId} 
 

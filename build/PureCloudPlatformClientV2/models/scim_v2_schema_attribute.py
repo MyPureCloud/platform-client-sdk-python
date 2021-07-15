@@ -125,7 +125,7 @@ class ScimV2SchemaAttribute(object):
         :param type: The type of this ScimV2SchemaAttribute.
         :type: str
         """
-        allowed_values = ["STRING", "BOOLEAN", "DECIMAL", "INTEGER", "DATE_TIME", "REFERENCE", "COMPLEX"]
+        allowed_values = ["string", "boolean", "decimal", "integer", "dateTime", "reference", "complex"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -317,7 +317,7 @@ class ScimV2SchemaAttribute(object):
         :param returned: The returned of this ScimV2SchemaAttribute.
         :type: str
         """
-        allowed_values = ["ALWAYS", "NEVER", "DEFAULT", "REQUEST"]
+        allowed_values = ["always", "never", "default", "request"]
         if returned.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for returned -> " + returned)
             self._returned = "outdated_sdk_version"
@@ -344,7 +344,7 @@ class ScimV2SchemaAttribute(object):
         :param uniqueness: The uniqueness of this ScimV2SchemaAttribute.
         :type: str
         """
-        allowed_values = ["NONE", "SERVER", "GLOBAL"]
+        allowed_values = ["none", "server", "global"]
         if uniqueness.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for uniqueness -> " + uniqueness)
             self._uniqueness = "outdated_sdk_version"

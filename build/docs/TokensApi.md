@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_token**](TokensApi.html#delete_token) | Delete all auth tokens for the specified user.|
 |[**delete_tokens_me**](TokensApi.html#delete_tokens_me) | Delete auth token used to make the request.|
 |[**get_tokens_me**](TokensApi.html#get_tokens_me) | Fetch information about the current token|
+|[**head_tokens_me**](TokensApi.html#head_tokens_me) | Verify user token|
 {: class="table table-striped"}
 
 <a name="delete_token"></a>
@@ -153,4 +154,49 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**TokenInfo**](TokenInfo.html)
+
+<a name="head_tokens_me"></a>
+
+##  head_tokens_me()
+
+
+
+Verify user token
+
+
+
+Wraps HEAD /api/v2/tokens/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TokensApi()
+
+try:
+    # Verify user token
+    api_instance.head_tokens_me()
+except ApiException as e:
+    print("Exception when calling TokensApi->head_tokens_me: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 

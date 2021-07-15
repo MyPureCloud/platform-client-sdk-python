@@ -78,7 +78,7 @@ class PermissionDetails(object):
         :param type: The type of this PermissionDetails.
         :type: str
         """
-        allowed_values = ["requiresCurrentUser", "requiresPermissions", "requiresDivisionPermissions", "requiresAnyDivisionPermissions"]
+        allowed_values = ["requiresCurrentUser", "requiresPermissions", "requiresDivisionPermissions", "requiresAnyDivisionPermissions", "requiresUserBeConversationParticipant"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

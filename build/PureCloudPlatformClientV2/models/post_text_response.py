@@ -48,7 +48,8 @@ class PostTextResponse(object):
             'amazon_lex': 'dict(str, object)',
             'google_dialog_flow': 'dict(str, object)',
             'genesys_dialog_engine': 'dict(str, object)',
-            'genesys_bot_connector': 'dict(str, object)'
+            'genesys_bot_connector': 'dict(str, object)',
+            'nuance_mix_dlg': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class PostTextResponse(object):
             'amazon_lex': 'amazonLex',
             'google_dialog_flow': 'googleDialogFlow',
             'genesys_dialog_engine': 'genesysDialogEngine',
-            'genesys_bot_connector': 'genesysBotConnector'
+            'genesys_bot_connector': 'genesysBotConnector',
+            'nuance_mix_dlg': 'nuanceMixDlg'
         }
 
         self._bot_state = None
@@ -72,6 +74,7 @@ class PostTextResponse(object):
         self._google_dialog_flow = None
         self._genesys_dialog_engine = None
         self._genesys_bot_connector = None
+        self._nuance_mix_dlg = None
 
     @property
     def bot_state(self):
@@ -283,6 +286,29 @@ class PostTextResponse(object):
         """
         
         self._genesys_bot_connector = genesys_bot_connector
+
+    @property
+    def nuance_mix_dlg(self):
+        """
+        Gets the nuance_mix_dlg of this PostTextResponse.
+        Raw data response from Nuance Mix Dlg (if called)
+
+        :return: The nuance_mix_dlg of this PostTextResponse.
+        :rtype: dict(str, object)
+        """
+        return self._nuance_mix_dlg
+
+    @nuance_mix_dlg.setter
+    def nuance_mix_dlg(self, nuance_mix_dlg):
+        """
+        Sets the nuance_mix_dlg of this PostTextResponse.
+        Raw data response from Nuance Mix Dlg (if called)
+
+        :param nuance_mix_dlg: The nuance_mix_dlg of this PostTextResponse.
+        :type: dict(str, object)
+        """
+        
+        self._nuance_mix_dlg = nuance_mix_dlg
 
     def to_dict(self):
         """

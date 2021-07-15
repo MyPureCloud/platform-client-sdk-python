@@ -45,6 +45,10 @@ class Metric(object):
             'metric_definition_id': 'str',
             'objective': 'Objective',
             'performance_profile_id': 'str',
+            'linked_metric': 'AddressableEntityRef',
+            'date_created': 'datetime',
+            'date_unlinked': 'date',
+            'source_performance_profile': 'PerformanceProfile',
             'self_uri': 'str'
         }
 
@@ -54,6 +58,10 @@ class Metric(object):
             'metric_definition_id': 'metricDefinitionId',
             'objective': 'objective',
             'performance_profile_id': 'performanceProfileId',
+            'linked_metric': 'linkedMetric',
+            'date_created': 'dateCreated',
+            'date_unlinked': 'dateUnlinked',
+            'source_performance_profile': 'sourcePerformanceProfile',
             'self_uri': 'selfUri'
         }
 
@@ -62,6 +70,10 @@ class Metric(object):
         self._metric_definition_id = None
         self._objective = None
         self._performance_profile_id = None
+        self._linked_metric = None
+        self._date_created = None
+        self._date_unlinked = None
+        self._source_performance_profile = None
         self._self_uri = None
 
     @property
@@ -178,6 +190,98 @@ class Metric(object):
         """
         
         self._performance_profile_id = performance_profile_id
+
+    @property
+    def linked_metric(self):
+        """
+        Gets the linked_metric of this Metric.
+        The linked metric entity reference
+
+        :return: The linked_metric of this Metric.
+        :rtype: AddressableEntityRef
+        """
+        return self._linked_metric
+
+    @linked_metric.setter
+    def linked_metric(self, linked_metric):
+        """
+        Sets the linked_metric of this Metric.
+        The linked metric entity reference
+
+        :param linked_metric: The linked_metric of this Metric.
+        :type: AddressableEntityRef
+        """
+        
+        self._linked_metric = linked_metric
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this Metric.
+        The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this Metric.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this Metric.
+        The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this Metric.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_unlinked(self):
+        """
+        Gets the date_unlinked of this Metric.
+        The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :return: The date_unlinked of this Metric.
+        :rtype: date
+        """
+        return self._date_unlinked
+
+    @date_unlinked.setter
+    def date_unlinked(self, date_unlinked):
+        """
+        Sets the date_unlinked of this Metric.
+        The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :param date_unlinked: The date_unlinked of this Metric.
+        :type: date
+        """
+        
+        self._date_unlinked = date_unlinked
+
+    @property
+    def source_performance_profile(self):
+        """
+        Gets the source_performance_profile of this Metric.
+        The source performance profile when this metric is linked
+
+        :return: The source_performance_profile of this Metric.
+        :rtype: PerformanceProfile
+        """
+        return self._source_performance_profile
+
+    @source_performance_profile.setter
+    def source_performance_profile(self, source_performance_profile):
+        """
+        Sets the source_performance_profile of this Metric.
+        The source performance profile when this metric is linked
+
+        :param source_performance_profile: The source_performance_profile of this Metric.
+        :type: PerformanceProfile
+        """
+        
+        self._source_performance_profile = source_performance_profile
 
     @property
     def self_uri(self):

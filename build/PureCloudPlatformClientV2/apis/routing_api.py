@@ -1494,7 +1494,7 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param list[str] queue_id: Queue ID(s) to filter assessments by.
         :return: AssessmentListing
@@ -2451,7 +2451,7 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param list[str] queue_id: Comma-separated list of queue Ids to filter by.
         :return: PredictorListing

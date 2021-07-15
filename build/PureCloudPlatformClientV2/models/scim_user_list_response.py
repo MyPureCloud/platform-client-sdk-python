@@ -40,26 +40,49 @@ class ScimUserListResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'schemas': 'list[str]',
             'total_results': 'int',
             'start_index': 'int',
             'items_per_page': 'int',
-            'resources': 'list[ScimV2User]',
-            'schemas': 'list[str]'
+            'resources': 'list[ScimV2User]'
         }
 
         self.attribute_map = {
+            'schemas': 'schemas',
             'total_results': 'totalResults',
             'start_index': 'startIndex',
             'items_per_page': 'itemsPerPage',
-            'resources': 'Resources',
-            'schemas': 'schemas'
+            'resources': 'Resources'
         }
 
+        self._schemas = None
         self._total_results = None
         self._start_index = None
         self._items_per_page = None
         self._resources = None
-        self._schemas = None
+
+    @property
+    def schemas(self):
+        """
+        Gets the schemas of this ScimUserListResponse.
+        The list of supported schemas.
+
+        :return: The schemas of this ScimUserListResponse.
+        :rtype: list[str]
+        """
+        return self._schemas
+
+    @schemas.setter
+    def schemas(self, schemas):
+        """
+        Sets the schemas of this ScimUserListResponse.
+        The list of supported schemas.
+
+        :param schemas: The schemas of this ScimUserListResponse.
+        :type: list[str]
+        """
+        
+        self._schemas = schemas
 
     @property
     def total_results(self):
@@ -152,29 +175,6 @@ class ScimUserListResponse(object):
         """
         
         self._resources = resources
-
-    @property
-    def schemas(self):
-        """
-        Gets the schemas of this ScimUserListResponse.
-        The list of supported schemas.
-
-        :return: The schemas of this ScimUserListResponse.
-        :rtype: list[str]
-        """
-        return self._schemas
-
-    @schemas.setter
-    def schemas(self, schemas):
-        """
-        Sets the schemas of this ScimUserListResponse.
-        The list of supported schemas.
-
-        :param schemas: The schemas of this ScimUserListResponse.
-        :type: list[str]
-        """
-        
-        self._schemas = schemas
 
     def to_dict(self):
         """

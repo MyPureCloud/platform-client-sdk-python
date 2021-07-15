@@ -1030,7 +1030,7 @@ class AnalyticsSession(object):
         :param media_type: The media_type of this AnalyticsSession.
         :type: str
         """
-        allowed_values = ["callback", "chat", "cobrowse", "email", "message", "screenshare", "video", "voice"]
+        allowed_values = ["unknown", "callback", "chat", "cobrowse", "email", "message", "screenshare", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

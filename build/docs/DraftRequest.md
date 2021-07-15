@@ -1,13 +1,13 @@
 ---
-title: EntityListing
+title: DraftRequest
 ---
-## EntityListing
+## DraftRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | **list[object]** |  | [optional] |
+| **intents** | [**list[DraftIntents]**](DraftIntents.html) | Draft intent object. | [optional] |
 {: class="table table-striped"}
 
 

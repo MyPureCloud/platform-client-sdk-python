@@ -113,6 +113,16 @@ title: ViewFilter
 | **external_tags** | **list[str]** | The list of external Tags used to filter conversation data | [optional] |
 | **is_not_responding** | **bool** | Indicates filtering for not responding users | [optional] |
 | **is_authenticated** | **bool** | Indicates filtering for the authenticated chat | [optional] |
+| **bot_ids** | **list[str]** | The list of bot IDs used to filter bot views | [optional] |
+| **bot_versions** | **list[str]** | The list of bot versions used to filter bot views | [optional] |
+| **bot_message_types** | **list[str]** | The list of bot message types used to filter bot views | [optional] |
+| **bot_provider_list** | **list[str]** | The list of bot providers used to filter bot views | [optional] |
+| **bot_product_list** | **list[str]** | The list of bot products used to filter bot views | [optional] |
+| **bot_recognition_failure_reason_list** | **list[str]** | The list of bot recognition failure reasons used to filter bot views | [optional] |
+| **bot_intent_list** | **list[str]** | The list of bot intents used to filter bot views | [optional] |
+| **bot_final_intent_list** | **list[str]** | The list of bot final intents used to filter bot views | [optional] |
+| **bot_slot_list** | **list[str]** | The list of bot slots used to filter bot views | [optional] |
+| **bot_result_list** | **list[str]** | The list of bot results used to filter bot views | [optional] |
 {: class="table table-striped"}
 
 

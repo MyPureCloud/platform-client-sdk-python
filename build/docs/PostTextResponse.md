@@ -16,6 +16,7 @@ title: PostTextResponse
 | **google_dialog_flow** | **dict(str, object)** | Raw data response from Google Dialogflow (if called) | [optional] |
 | **genesys_dialog_engine** | **dict(str, object)** | Raw data response from Genesys&#39; Dialogengine (if called) | [optional] |
 | **genesys_bot_connector** | **dict(str, object)** | Raw data response from Genesys&#39; BotConnector (if called) | [optional] |
+| **nuance_mix_dlg** | **dict(str, object)** | Raw data response from Nuance Mix Dlg (if called) | [optional] |
 {: class="table table-striped"}
 
 

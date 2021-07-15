@@ -70,6 +70,7 @@ class WorkPlan(object):
             'shift_start_variances': 'ListWrapperShiftStartVariance',
             'shifts': 'list[WorkPlanShift]',
             'agents': 'list[DeletableUserReference]',
+            'agent_count': 'int',
             'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
@@ -105,6 +106,7 @@ class WorkPlan(object):
             'shift_start_variances': 'shiftStartVariances',
             'shifts': 'shifts',
             'agents': 'agents',
+            'agent_count': 'agentCount',
             'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
@@ -139,6 +141,7 @@ class WorkPlan(object):
         self._shift_start_variances = None
         self._shifts = None
         self._agents = None
+        self._agent_count = None
         self._metadata = None
         self._self_uri = None
 
@@ -835,6 +838,29 @@ class WorkPlan(object):
         """
         
         self._agents = agents
+
+    @property
+    def agent_count(self):
+        """
+        Gets the agent_count of this WorkPlan.
+        Number of agents in this work plan
+
+        :return: The agent_count of this WorkPlan.
+        :rtype: int
+        """
+        return self._agent_count
+
+    @agent_count.setter
+    def agent_count(self, agent_count):
+        """
+        Sets the agent_count of this WorkPlan.
+        Number of agents in this work plan
+
+        :param agent_count: The agent_count of this WorkPlan.
+        :type: int
+        """
+        
+        self._agent_count = agent_count
 
     @property
     def metadata(self):

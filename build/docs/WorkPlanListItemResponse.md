@@ -37,8 +37,8 @@ title: WorkPlanListItemResponse
 | **shift_start_variances** | [**ListWrapperShiftStartVariance**](ListWrapperShiftStartVariance.html) | Variance in minutes among start times of shifts in this work plan. Populate with expand=details | [optional] |
 | **shifts** | [**list[WorkPlanShift]**](WorkPlanShift.html) | Shifts in this work plan. Populate with expand=details (defaults to empty list) | [optional] |
 | **agents** | [**list[DeletableUserReference]**](DeletableUserReference.html) | Agents in this work plan. Populate with expand=details (defaults to empty list) | [optional] |
-| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Version metadata for this work plan | |
 | **agent_count** | **int** | Number of agents in this work plan.  Populate with expand=agentCount | [optional] |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Version metadata for this work plan | |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

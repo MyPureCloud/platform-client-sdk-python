@@ -52,7 +52,8 @@ class PostTextRequest(object):
             'messaging_platform_type': 'str',
             'amazon_lex_request': 'AmazonLexRequest',
             'google_dialogflow': 'GoogleDialogflowCustomSettings',
-            'genesys_bot_connector': 'GenesysBotConnector'
+            'genesys_bot_connector': 'GenesysBotConnector',
+            'nuance_mix_dlg': 'NuanceMixDlgSettings'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class PostTextRequest(object):
             'messaging_platform_type': 'messagingPlatformType',
             'amazon_lex_request': 'amazonLexRequest',
             'google_dialogflow': 'googleDialogflow',
-            'genesys_bot_connector': 'genesysBotConnector'
+            'genesys_bot_connector': 'genesysBotConnector',
+            'nuance_mix_dlg': 'nuanceMixDlg'
         }
 
         self._bot_id = None
@@ -84,6 +86,7 @@ class PostTextRequest(object):
         self._amazon_lex_request = None
         self._google_dialogflow = None
         self._genesys_bot_connector = None
+        self._nuance_mix_dlg = None
 
     @property
     def bot_id(self):
@@ -323,7 +326,7 @@ class PostTextRequest(object):
     def amazon_lex_request(self):
         """
         Gets the amazon_lex_request of this PostTextRequest.
-
+        Provider specific settings, if any
 
         :return: The amazon_lex_request of this PostTextRequest.
         :rtype: AmazonLexRequest
@@ -334,7 +337,7 @@ class PostTextRequest(object):
     def amazon_lex_request(self, amazon_lex_request):
         """
         Sets the amazon_lex_request of this PostTextRequest.
-
+        Provider specific settings, if any
 
         :param amazon_lex_request: The amazon_lex_request of this PostTextRequest.
         :type: AmazonLexRequest
@@ -346,7 +349,7 @@ class PostTextRequest(object):
     def google_dialogflow(self):
         """
         Gets the google_dialogflow of this PostTextRequest.
-
+        Provider specific settings, if any
 
         :return: The google_dialogflow of this PostTextRequest.
         :rtype: GoogleDialogflowCustomSettings
@@ -357,7 +360,7 @@ class PostTextRequest(object):
     def google_dialogflow(self, google_dialogflow):
         """
         Sets the google_dialogflow of this PostTextRequest.
-
+        Provider specific settings, if any
 
         :param google_dialogflow: The google_dialogflow of this PostTextRequest.
         :type: GoogleDialogflowCustomSettings
@@ -369,7 +372,7 @@ class PostTextRequest(object):
     def genesys_bot_connector(self):
         """
         Gets the genesys_bot_connector of this PostTextRequest.
-
+        Provider specific settings, if any
 
         :return: The genesys_bot_connector of this PostTextRequest.
         :rtype: GenesysBotConnector
@@ -380,13 +383,36 @@ class PostTextRequest(object):
     def genesys_bot_connector(self, genesys_bot_connector):
         """
         Sets the genesys_bot_connector of this PostTextRequest.
-
+        Provider specific settings, if any
 
         :param genesys_bot_connector: The genesys_bot_connector of this PostTextRequest.
         :type: GenesysBotConnector
         """
         
         self._genesys_bot_connector = genesys_bot_connector
+
+    @property
+    def nuance_mix_dlg(self):
+        """
+        Gets the nuance_mix_dlg of this PostTextRequest.
+        Provider specific settings, if any
+
+        :return: The nuance_mix_dlg of this PostTextRequest.
+        :rtype: NuanceMixDlgSettings
+        """
+        return self._nuance_mix_dlg
+
+    @nuance_mix_dlg.setter
+    def nuance_mix_dlg(self, nuance_mix_dlg):
+        """
+        Sets the nuance_mix_dlg of this PostTextRequest.
+        Provider specific settings, if any
+
+        :param nuance_mix_dlg: The nuance_mix_dlg of this PostTextRequest.
+        :type: NuanceMixDlgSettings
+        """
+        
+        self._nuance_mix_dlg = nuance_mix_dlg
 
     def to_dict(self):
         """

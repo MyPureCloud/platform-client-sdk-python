@@ -2881,7 +2881,7 @@ class RecordingApi(object):
     def post_recording_crossplatform_mediaretentionpolicies(self, body, **kwargs):
         """
         Create media retention policy
-        
+        Policy does not work retroactively
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3193,7 +3193,7 @@ class RecordingApi(object):
     def post_recording_mediaretentionpolicies(self, body, **kwargs):
         """
         Create media retention policy
-        
+        Policy does not work retroactively
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3844,7 +3844,7 @@ class RecordingApi(object):
     def put_recording_crossplatform_mediaretentionpolicy(self, policy_id, body, **kwargs):
         """
         Update a media retention policy
-        
+        Policy does not work retroactively
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4096,7 +4096,7 @@ class RecordingApi(object):
     def put_recording_mediaretentionpolicy(self, policy_id, body, **kwargs):
         """
         Update a media retention policy
-        
+        Policy does not work retroactively
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

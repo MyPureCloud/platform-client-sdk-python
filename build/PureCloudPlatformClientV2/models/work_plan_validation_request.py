@@ -70,6 +70,7 @@ class WorkPlanValidationRequest(object):
             'shift_start_variances': 'ListWrapperShiftStartVariance',
             'shifts': 'list[WorkPlanShift]',
             'agents': 'list[DeletableUserReference]',
+            'agent_count': 'int',
             'self_uri': 'str'
         }
 
@@ -104,6 +105,7 @@ class WorkPlanValidationRequest(object):
             'shift_start_variances': 'shiftStartVariances',
             'shifts': 'shifts',
             'agents': 'agents',
+            'agent_count': 'agentCount',
             'self_uri': 'selfUri'
         }
 
@@ -137,6 +139,7 @@ class WorkPlanValidationRequest(object):
         self._shift_start_variances = None
         self._shifts = None
         self._agents = None
+        self._agent_count = None
         self._self_uri = None
 
     @property
@@ -832,6 +835,29 @@ class WorkPlanValidationRequest(object):
         """
         
         self._agents = agents
+
+    @property
+    def agent_count(self):
+        """
+        Gets the agent_count of this WorkPlanValidationRequest.
+        Number of agents in this work plan
+
+        :return: The agent_count of this WorkPlanValidationRequest.
+        :rtype: int
+        """
+        return self._agent_count
+
+    @agent_count.setter
+    def agent_count(self, agent_count):
+        """
+        Sets the agent_count of this WorkPlanValidationRequest.
+        Number of agents in this work plan
+
+        :param agent_count: The agent_count of this WorkPlanValidationRequest.
+        :type: int
+        """
+        
+        self._agent_count = agent_count
 
     @property
     def self_uri(self):

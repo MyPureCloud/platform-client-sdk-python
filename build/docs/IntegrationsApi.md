@@ -25,6 +25,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_actions**](IntegrationsApi.html#get_integrations_actions) | Retrieves all actions associated with filters passed in via query param.|
 |[**get_integrations_actions_categories**](IntegrationsApi.html#get_integrations_actions_categories) | Retrieves all categories of available Actions|
 |[**get_integrations_actions_drafts**](IntegrationsApi.html#get_integrations_actions_drafts) | Retrieves all action drafts associated with the filters passed in via query param.|
+|[**get_integrations_botconnector_integration_id_bot**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bot) | Get a specific botConnector bot, plus versions, for this integration|
+|[**get_integrations_botconnector_integration_id_bot_versions**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bot_versions) | Get a list of bot versions for a bot|
+|[**get_integrations_botconnector_integration_id_bots**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bots) | Get a list of botConnector bots for this integration|
+|[**get_integrations_botconnector_integration_id_bots_summaries**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bots_summaries) | Get a summary list of botConnector bots for this integration|
 |[**get_integrations_clientapps**](IntegrationsApi.html#get_integrations_clientapps) | List permitted client app integrations for the logged in user|
 |[**get_integrations_credential**](IntegrationsApi.html#get_integrations_credential) | Get a single credential with sensitive fields redacted|
 |[**get_integrations_credentials**](IntegrationsApi.html#get_integrations_credentials) | List multiple sets of credentials|
@@ -59,6 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_integrations_credentials**](IntegrationsApi.html#post_integrations_credentials) | Create a set of credentials|
 |[**post_integrations_workforcemanagement_vendorconnection**](IntegrationsApi.html#post_integrations_workforcemanagement_vendorconnection) | Add a vendor connection|
 |[**put_integration_config_current**](IntegrationsApi.html#put_integration_config_current) | Update integration configuration.|
+|[**put_integrations_botconnector_integration_id_bots**](IntegrationsApi.html#put_integrations_botconnector_integration_id_bots) | Set a list of botConnector bots plus versions for this integration|
 |[**put_integrations_credential**](IntegrationsApi.html#put_integrations_credential) | Update a set of credentials|
 |[**put_integrations_speech_tts_settings**](IntegrationsApi.html#put_integrations_speech_tts_settings) | Update TTS settings for an org|
 {: class="table table-striped"}
@@ -917,7 +922,7 @@ page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
-sort_by = 'sort_by_example' # str | Root level field name to sort on. (optional)
+sort_by = 'sort_by_example' # str | Root level field name to sort on.  Only 'name' is supported on this endpoint. (optional)
 sort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)
 secure = 'secure_example' # str | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
 
@@ -938,7 +943,7 @@ except ApiException as e:
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
-| **sort_by** | **str**| Root level field name to sort on. | [optional]  |
+| **sort_by** | **str**| Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. | [optional]  |
 | **sort_order** | **str**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
 | **secure** | **str**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 {: class="table table-striped"}
@@ -1016,6 +1021,224 @@ except ApiException as e:
 ### Return type
 
 [**ActionEntityListing**](ActionEntityListing.html)
+
+<a name="get_integrations_botconnector_integration_id_bot"></a>
+
+## [**BotConnectorBot**](BotConnectorBot.html) get_integrations_botconnector_integration_id_bot(integration_id, bot_id, version=version)
+
+
+
+Get a specific botConnector bot, plus versions, for this integration
+
+
+
+Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId} 
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+integration_id = 'integration_id_example' # str | The integration ID for this group of bots
+bot_id = 'bot_id_example' # str | The botID for this bot
+version = 'version_example' # str | Specific Version (optional)
+
+try:
+    # Get a specific botConnector bot, plus versions, for this integration
+    api_response = api_instance.get_integrations_botconnector_integration_id_bot(integration_id, bot_id, version=version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_botconnector_integration_id_bot: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| The integration ID for this group of bots |  |
+| **bot_id** | **str**| The botID for this bot |  |
+| **version** | **str**| Specific Version | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BotConnectorBot**](BotConnectorBot.html)
+
+<a name="get_integrations_botconnector_integration_id_bot_versions"></a>
+
+## [**BotConnectorBotVersionSummaryEntityListing**](BotConnectorBotVersionSummaryEntityListing.html) get_integrations_botconnector_integration_id_bot_versions(integration_id, bot_id, page_number=page_number, page_size=page_size)
+
+
+
+Get a list of bot versions for a bot
+
+
+
+Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions 
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+integration_id = 'integration_id_example' # str | The integration ID for this bot group
+bot_id = 'bot_id_example' # str | The botID for this bot
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get a list of bot versions for a bot
+    api_response = api_instance.get_integrations_botconnector_integration_id_bot_versions(integration_id, bot_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_botconnector_integration_id_bot_versions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| The integration ID for this bot group |  |
+| **bot_id** | **str**| The botID for this bot |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**BotConnectorBotVersionSummaryEntityListing**](BotConnectorBotVersionSummaryEntityListing.html)
+
+<a name="get_integrations_botconnector_integration_id_bots"></a>
+
+## [**BotList**](BotList.html) get_integrations_botconnector_integration_id_bots(integration_id)
+
+
+
+Get a list of botConnector bots for this integration
+
+
+
+Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots 
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+integration_id = 'integration_id_example' # str | The integration ID for this group of bots
+
+try:
+    # Get a list of botConnector bots for this integration
+    api_response = api_instance.get_integrations_botconnector_integration_id_bots(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_botconnector_integration_id_bots: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| The integration ID for this group of bots |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BotList**](BotList.html)
+
+<a name="get_integrations_botconnector_integration_id_bots_summaries"></a>
+
+## [**BotConnectorBotSummaryEntityListing**](BotConnectorBotSummaryEntityListing.html) get_integrations_botconnector_integration_id_bots_summaries(integration_id, page_number=page_number, page_size=page_size)
+
+
+
+Get a summary list of botConnector bots for this integration
+
+
+
+Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/summaries 
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+integration_id = 'integration_id_example' # str | The integration ID for this group of bots
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get a summary list of botConnector bots for this integration
+    api_response = api_instance.get_integrations_botconnector_integration_id_bots_summaries(integration_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_botconnector_integration_id_bots_summaries: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| The integration ID for this group of bots |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**BotConnectorBotSummaryEntityListing**](BotConnectorBotSummaryEntityListing.html)
 
 <a name="get_integrations_clientapps"></a>
 
@@ -2837,6 +3060,58 @@ except ApiException as e:
 ### Return type
 
 [**IntegrationConfiguration**](IntegrationConfiguration.html)
+
+<a name="put_integrations_botconnector_integration_id_bots"></a>
+
+##  put_integrations_botconnector_integration_id_bots(integration_id, bot_list)
+
+
+
+Set a list of botConnector bots plus versions for this integration
+
+
+
+Wraps PUT /api/v2/integrations/botconnector/{integrationId}/bots 
+
+Requires ANY permissions: 
+
+* integration:botconnector:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+integration_id = 'integration_id_example' # str | The integration ID for this group of bots
+bot_list = PureCloudPlatformClientV2.BotList() # BotList | 
+
+try:
+    # Set a list of botConnector bots plus versions for this integration
+    api_instance.put_integrations_botconnector_integration_id_bots(integration_id, bot_list)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->put_integrations_botconnector_integration_id_bots: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| The integration ID for this group of bots |  |
+| **bot_list** | [**BotList**](BotList.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="put_integrations_credential"></a>
 

@@ -50,6 +50,7 @@ class OutboundSettings(object):
             'max_line_utilization': 'float',
             'abandon_seconds': 'float',
             'compliance_abandon_rate_denominator': 'str',
+            'automatic_time_zone_mapping': 'AutomaticTimeZoneMappingSettings',
             'self_uri': 'str'
         }
 
@@ -64,6 +65,7 @@ class OutboundSettings(object):
             'max_line_utilization': 'maxLineUtilization',
             'abandon_seconds': 'abandonSeconds',
             'compliance_abandon_rate_denominator': 'complianceAbandonRateDenominator',
+            'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
             'self_uri': 'selfUri'
         }
 
@@ -77,6 +79,7 @@ class OutboundSettings(object):
         self._max_line_utilization = None
         self._abandon_seconds = None
         self._compliance_abandon_rate_denominator = None
+        self._automatic_time_zone_mapping = None
         self._self_uri = None
 
     @property
@@ -312,6 +315,29 @@ class OutboundSettings(object):
             self._compliance_abandon_rate_denominator = "outdated_sdk_version"
         else:
             self._compliance_abandon_rate_denominator = compliance_abandon_rate_denominator
+
+    @property
+    def automatic_time_zone_mapping(self):
+        """
+        Gets the automatic_time_zone_mapping of this OutboundSettings.
+        The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns.
+
+        :return: The automatic_time_zone_mapping of this OutboundSettings.
+        :rtype: AutomaticTimeZoneMappingSettings
+        """
+        return self._automatic_time_zone_mapping
+
+    @automatic_time_zone_mapping.setter
+    def automatic_time_zone_mapping(self, automatic_time_zone_mapping):
+        """
+        Sets the automatic_time_zone_mapping of this OutboundSettings.
+        The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns.
+
+        :param automatic_time_zone_mapping: The automatic_time_zone_mapping of this OutboundSettings.
+        :type: AutomaticTimeZoneMappingSettings
+        """
+        
+        self._automatic_time_zone_mapping = automatic_time_zone_mapping
 
     @property
     def self_uri(self):
