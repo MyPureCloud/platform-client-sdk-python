@@ -726,8 +726,8 @@ class ApiClient(object):
         :return: date.
         """
         try:
-            from dateutil.parser import parse
-            return parse(string).date()
+            from dateutil.parser import isoparse
+            return isoparse(string).date()
         except ImportError:
             return string
         except ValueError:
@@ -747,8 +747,8 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-            from dateutil.parser import parse
-            return parse(string)
+            from dateutil.parser import isoparse
+            return isoparse(string)
         except ImportError:
             return string
         except ValueError:
