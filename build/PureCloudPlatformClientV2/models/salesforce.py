@@ -45,6 +45,8 @@ class Salesforce(object):
             'disabled': 'bool',
             'issuer_uri': 'str',
             'sso_target_uri': 'str',
+            'slo_uri': 'str',
+            'slo_binding': 'str',
             'certificate': 'str',
             'certificates': 'list[str]',
             'self_uri': 'str'
@@ -56,6 +58,8 @@ class Salesforce(object):
             'disabled': 'disabled',
             'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
+            'slo_uri': 'sloURI',
+            'slo_binding': 'sloBinding',
             'certificate': 'certificate',
             'certificates': 'certificates',
             'self_uri': 'selfUri'
@@ -66,6 +70,8 @@ class Salesforce(object):
         self._disabled = None
         self._issuer_uri = None
         self._sso_target_uri = None
+        self._slo_uri = None
+        self._slo_binding = None
         self._certificate = None
         self._certificates = None
         self._self_uri = None
@@ -184,6 +190,52 @@ class Salesforce(object):
         """
         
         self._sso_target_uri = sso_target_uri
+
+    @property
+    def slo_uri(self):
+        """
+        Gets the slo_uri of this Salesforce.
+
+
+        :return: The slo_uri of this Salesforce.
+        :rtype: str
+        """
+        return self._slo_uri
+
+    @slo_uri.setter
+    def slo_uri(self, slo_uri):
+        """
+        Sets the slo_uri of this Salesforce.
+
+
+        :param slo_uri: The slo_uri of this Salesforce.
+        :type: str
+        """
+        
+        self._slo_uri = slo_uri
+
+    @property
+    def slo_binding(self):
+        """
+        Gets the slo_binding of this Salesforce.
+
+
+        :return: The slo_binding of this Salesforce.
+        :rtype: str
+        """
+        return self._slo_binding
+
+    @slo_binding.setter
+    def slo_binding(self, slo_binding):
+        """
+        Sets the slo_binding of this Salesforce.
+
+
+        :param slo_binding: The slo_binding of this Salesforce.
+        :type: str
+        """
+        
+        self._slo_binding = slo_binding
 
     @property
     def certificate(self):

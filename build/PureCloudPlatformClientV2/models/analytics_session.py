@@ -57,11 +57,14 @@ class AnalyticsSession(object):
             'callback_user_name': 'str',
             'cobrowse_role': 'str',
             'cobrowse_room_id': 'str',
+            'delivery_status': 'str',
+            'delivery_status_change_date': 'datetime',
             'direction': 'str',
             'disposition_analyzer': 'str',
             'disposition_name': 'str',
             'dnis': 'str',
             'edge_id': 'str',
+            'eligible_agent_counts': 'list[int]',
             'flow_in_type': 'str',
             'flow_out_type': 'str',
             'journey_action_id': 'str',
@@ -102,6 +105,7 @@ class AnalyticsSession(object):
             'used_routing': 'str',
             'video_address_self': 'str',
             'video_room_id': 'str',
+            'waiting_interaction_counts': 'list[int]',
             'proposed_agents': 'list[AnalyticsProposedAgent]',
             'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
             'flow': 'AnalyticsFlow',
@@ -127,11 +131,14 @@ class AnalyticsSession(object):
             'callback_user_name': 'callbackUserName',
             'cobrowse_role': 'cobrowseRole',
             'cobrowse_room_id': 'cobrowseRoomId',
+            'delivery_status': 'deliveryStatus',
+            'delivery_status_change_date': 'deliveryStatusChangeDate',
             'direction': 'direction',
             'disposition_analyzer': 'dispositionAnalyzer',
             'disposition_name': 'dispositionName',
             'dnis': 'dnis',
             'edge_id': 'edgeId',
+            'eligible_agent_counts': 'eligibleAgentCounts',
             'flow_in_type': 'flowInType',
             'flow_out_type': 'flowOutType',
             'journey_action_id': 'journeyActionId',
@@ -172,6 +179,7 @@ class AnalyticsSession(object):
             'used_routing': 'usedRouting',
             'video_address_self': 'videoAddressSelf',
             'video_room_id': 'videoRoomId',
+            'waiting_interaction_counts': 'waitingInteractionCounts',
             'proposed_agents': 'proposedAgents',
             'media_endpoint_stats': 'mediaEndpointStats',
             'flow': 'flow',
@@ -196,11 +204,14 @@ class AnalyticsSession(object):
         self._callback_user_name = None
         self._cobrowse_role = None
         self._cobrowse_room_id = None
+        self._delivery_status = None
+        self._delivery_status_change_date = None
         self._direction = None
         self._disposition_analyzer = None
         self._disposition_name = None
         self._dnis = None
         self._edge_id = None
+        self._eligible_agent_counts = None
         self._flow_in_type = None
         self._flow_out_type = None
         self._journey_action_id = None
@@ -241,6 +252,7 @@ class AnalyticsSession(object):
         self._used_routing = None
         self._video_address_self = None
         self._video_room_id = None
+        self._waiting_interaction_counts = None
         self._proposed_agents = None
         self._media_endpoint_stats = None
         self._flow = None
@@ -639,6 +651,56 @@ class AnalyticsSession(object):
         self._cobrowse_room_id = cobrowse_room_id
 
     @property
+    def delivery_status(self):
+        """
+        Gets the delivery_status of this AnalyticsSession.
+        The email delivery status
+
+        :return: The delivery_status of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._delivery_status
+
+    @delivery_status.setter
+    def delivery_status(self, delivery_status):
+        """
+        Sets the delivery_status of this AnalyticsSession.
+        The email delivery status
+
+        :param delivery_status: The delivery_status of this AnalyticsSession.
+        :type: str
+        """
+        allowed_values = ["DeliveryFailed", "DeliverySuccess", "Failed", "Queued", "Read", "Received", "Sent"]
+        if delivery_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for delivery_status -> " + delivery_status)
+            self._delivery_status = "outdated_sdk_version"
+        else:
+            self._delivery_status = delivery_status
+
+    @property
+    def delivery_status_change_date(self):
+        """
+        Gets the delivery_status_change_date of this AnalyticsSession.
+        Date and time of the most recent delivery status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The delivery_status_change_date of this AnalyticsSession.
+        :rtype: datetime
+        """
+        return self._delivery_status_change_date
+
+    @delivery_status_change_date.setter
+    def delivery_status_change_date(self, delivery_status_change_date):
+        """
+        Sets the delivery_status_change_date of this AnalyticsSession.
+        Date and time of the most recent delivery status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param delivery_status_change_date: The delivery_status_change_date of this AnalyticsSession.
+        :type: datetime
+        """
+        
+        self._delivery_status_change_date = delivery_status_change_date
+
+    @property
     def direction(self):
         """
         Gets the direction of this AnalyticsSession.
@@ -756,6 +818,29 @@ class AnalyticsSession(object):
         """
         
         self._edge_id = edge_id
+
+    @property
+    def eligible_agent_counts(self):
+        """
+        Gets the eligible_agent_counts of this AnalyticsSession.
+        Number of eligible agents for each predictive routing attempt
+
+        :return: The eligible_agent_counts of this AnalyticsSession.
+        :rtype: list[int]
+        """
+        return self._eligible_agent_counts
+
+    @eligible_agent_counts.setter
+    def eligible_agent_counts(self, eligible_agent_counts):
+        """
+        Sets the eligible_agent_counts of this AnalyticsSession.
+        Number of eligible agents for each predictive routing attempt
+
+        :param eligible_agent_counts: The eligible_agent_counts of this AnalyticsSession.
+        :type: list[int]
+        """
+        
+        self._eligible_agent_counts = eligible_agent_counts
 
     @property
     def flow_in_type(self):
@@ -1684,6 +1769,29 @@ class AnalyticsSession(object):
         """
         
         self._video_room_id = video_room_id
+
+    @property
+    def waiting_interaction_counts(self):
+        """
+        Gets the waiting_interaction_counts of this AnalyticsSession.
+        Number of waiting interactions for each predictive routing attempt
+
+        :return: The waiting_interaction_counts of this AnalyticsSession.
+        :rtype: list[int]
+        """
+        return self._waiting_interaction_counts
+
+    @waiting_interaction_counts.setter
+    def waiting_interaction_counts(self, waiting_interaction_counts):
+        """
+        Sets the waiting_interaction_counts of this AnalyticsSession.
+        Number of waiting interactions for each predictive routing attempt
+
+        :param waiting_interaction_counts: The waiting_interaction_counts of this AnalyticsSession.
+        :type: list[int]
+        """
+        
+        self._waiting_interaction_counts = waiting_interaction_counts
 
     @property
     def proposed_agents(self):

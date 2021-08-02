@@ -42,24 +42,18 @@ class ContentActions(object):
         self.swagger_types = {
             'url': 'str',
             'url_target': 'str',
-            'textback': 'str',
-            'command_name': 'str',
-            'context': 'dict(str, object)'
+            'textback': 'str'
         }
 
         self.attribute_map = {
             'url': 'url',
             'url_target': 'urlTarget',
-            'textback': 'textback',
-            'command_name': 'commandName',
-            'context': 'context'
+            'textback': 'textback'
         }
 
         self._url = None
         self._url_target = None
         self._textback = None
-        self._command_name = None
-        self._context = None
 
     @property
     def url(self):
@@ -129,52 +123,6 @@ class ContentActions(object):
         """
         
         self._textback = textback
-
-    @property
-    def command_name(self):
-        """
-        Gets the command_name of this ContentActions.
-        Execute an organization's specific command.
-
-        :return: The command_name of this ContentActions.
-        :rtype: str
-        """
-        return self._command_name
-
-    @command_name.setter
-    def command_name(self, command_name):
-        """
-        Sets the command_name of this ContentActions.
-        Execute an organization's specific command.
-
-        :param command_name: The command_name of this ContentActions.
-        :type: str
-        """
-        
-        self._command_name = command_name
-
-    @property
-    def context(self):
-        """
-        Gets the context of this ContentActions.
-        Additional context for the command.
-
-        :return: The context of this ContentActions.
-        :rtype: dict(str, object)
-        """
-        return self._context
-
-    @context.setter
-    def context(self, context):
-        """
-        Sets the context of this ContentActions.
-        Additional context for the command.
-
-        :param context: The context of this ContentActions.
-        :type: dict(str, object)
-        """
-        
-        self._context = context
 
     def to_dict(self):
         """

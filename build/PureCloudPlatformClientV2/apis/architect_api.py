@@ -4705,12 +4705,13 @@ class ArchitectApi(object):
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :param list[str] division_id: division ID(s)
+        :param str name: Name to filter by
         :return: DataTablesDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['expand', 'page_number', 'page_size', 'sort_by', 'sort_order', 'division_id']
+        all_params = ['expand', 'page_number', 'page_size', 'sort_by', 'sort_order', 'division_id', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -4741,6 +4742,8 @@ class ArchitectApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'division_id' in params:
             query_params['divisionId'] = params['division_id']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 

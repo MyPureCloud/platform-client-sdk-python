@@ -52,6 +52,7 @@ class Response(object):
             'substitutions_schema': 'JsonSchemaDocument',
             'response_type': 'str',
             'messaging_template': 'MessagingTemplate',
+            'assets': 'list[AddressableEntityRef]',
             'self_uri': 'str'
         }
 
@@ -68,6 +69,7 @@ class Response(object):
             'substitutions_schema': 'substitutionsSchema',
             'response_type': 'responseType',
             'messaging_template': 'messagingTemplate',
+            'assets': 'assets',
             'self_uri': 'selfUri'
         }
 
@@ -83,6 +85,7 @@ class Response(object):
         self._substitutions_schema = None
         self._response_type = None
         self._messaging_template = None
+        self._assets = None
         self._self_uri = None
 
     @property
@@ -368,6 +371,29 @@ class Response(object):
         """
         
         self._messaging_template = messaging_template
+
+    @property
+    def assets(self):
+        """
+        Gets the assets of this Response.
+        Assets used in the response
+
+        :return: The assets of this Response.
+        :rtype: list[AddressableEntityRef]
+        """
+        return self._assets
+
+    @assets.setter
+    def assets(self, assets):
+        """
+        Sets the assets of this Response.
+        Assets used in the response
+
+        :param assets: The assets of this Response.
+        :type: list[AddressableEntityRef]
+        """
+        
+        self._assets = assets
 
     @property
     def self_uri(self):

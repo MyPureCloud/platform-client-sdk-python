@@ -11,11 +11,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_knowledge_knowledgebase**](KnowledgeApi.html#delete_knowledge_knowledgebase) | Delete knowledge base|
 |[**delete_knowledge_knowledgebase_language_category**](KnowledgeApi.html#delete_knowledge_knowledgebase_language_category) | Delete category|
 |[**delete_knowledge_knowledgebase_language_document**](KnowledgeApi.html#delete_knowledge_knowledgebase_language_document) | Delete document|
+|[**delete_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#delete_knowledge_knowledgebase_language_documents_import) | Delete import operation|
 |[**get_knowledge_knowledgebase**](KnowledgeApi.html#get_knowledge_knowledgebase) | Get knowledge base|
 |[**get_knowledge_knowledgebase_language_categories**](KnowledgeApi.html#get_knowledge_knowledgebase_language_categories) | Get categories|
 |[**get_knowledge_knowledgebase_language_category**](KnowledgeApi.html#get_knowledge_knowledgebase_language_category) | Get category|
 |[**get_knowledge_knowledgebase_language_document**](KnowledgeApi.html#get_knowledge_knowledgebase_language_document) | Get document|
 |[**get_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#get_knowledge_knowledgebase_language_documents) | Get documents|
+|[**get_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#get_knowledge_knowledgebase_language_documents_import) | Get import operation report|
 |[**get_knowledge_knowledgebase_language_training**](KnowledgeApi.html#get_knowledge_knowledgebase_language_training) | Get training detail|
 |[**get_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#get_knowledge_knowledgebase_language_trainings) | Get all trainings information for a knowledgebase|
 |[**get_knowledge_knowledgebases**](KnowledgeApi.html#get_knowledge_knowledgebases) | Get knowledge bases|
@@ -23,8 +25,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_knowledge_knowledgebase_language_category**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_category) | Update category|
 |[**patch_knowledge_knowledgebase_language_document**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_document) | Update document|
 |[**patch_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_documents) | Update documents collection|
+|[**patch_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_documents_import) | Start import operation|
+|[**post_knowledge_documentuploads**](KnowledgeApi.html#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
 |[**post_knowledge_knowledgebase_language_categories**](KnowledgeApi.html#post_knowledge_knowledgebase_language_categories) | Create new category|
 |[**post_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#post_knowledge_knowledgebase_language_documents) | Create document|
+|[**post_knowledge_knowledgebase_language_documents_imports**](KnowledgeApi.html#post_knowledge_knowledgebase_language_documents_imports) | Create import operation|
 |[**post_knowledge_knowledgebase_language_training_promote**](KnowledgeApi.html#post_knowledge_knowledgebase_language_training_promote) | Promote trained documents from draft state to active.|
 |[**post_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#post_knowledge_knowledgebase_language_trainings) | Trigger training|
 |[**post_knowledge_knowledgebase_search**](KnowledgeApi.html#post_knowledge_knowledgebase_search) | Search Documents|
@@ -191,6 +196,60 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeDocument**](KnowledgeDocument.html)
+
+<a name="delete_knowledge_knowledgebase_language_documents_import"></a>
+
+##  delete_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
+
+
+
+Delete import operation
+
+
+
+Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} 
+
+Requires ALL permissions: 
+
+* knowledge:document:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+language_code = 'en-US' # str | Language code, format: iso2-LOCALE
+import_id = 'import_id_example' # str | Import ID
+
+try:
+    # Delete import operation
+    api_instance.delete_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_knowledgebase_language_documents_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **import_id** | **str**| Import ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="get_knowledge_knowledgebase"></a>
 
@@ -482,6 +541,61 @@ except ApiException as e:
 ### Return type
 
 [**DocumentListing**](DocumentListing.html)
+
+<a name="get_knowledge_knowledgebase_language_documents_import"></a>
+
+## [**KnowledgeImport**](KnowledgeImport.html) get_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
+
+
+
+Get import operation report
+
+
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} 
+
+Requires ALL permissions: 
+
+* knowledge:document:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+language_code = 'en-US' # str | Language code, format: iso2-LOCALE
+import_id = 'import_id_example' # str | Import ID
+
+try:
+    # Get import operation report
+    api_response = api_instance.get_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_documents_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **import_id** | **str**| Import ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeImport**](KnowledgeImport.html)
 
 <a name="get_knowledge_knowledgebase_language_training"></a>
 
@@ -886,6 +1000,115 @@ except ApiException as e:
 
 [**DocumentListing**](DocumentListing.html)
 
+<a name="patch_knowledge_knowledgebase_language_documents_import"></a>
+
+## [**KnowledgeImport**](KnowledgeImport.html) patch_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id, body)
+
+
+
+Start import operation
+
+
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} 
+
+Requires ALL permissions: 
+
+* knowledge:document:edit
+* knowledge:document:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+language_code = 'en-US' # str | Language code, format: iso2-LOCALE
+import_id = 'import_id_example' # str | Import ID
+body = PureCloudPlatformClientV2.ImportStatusRequest() # ImportStatusRequest | 
+
+try:
+    # Start import operation
+    api_response = api_instance.patch_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_language_documents_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **import_id** | **str**| Import ID |  |
+| **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeImport**](KnowledgeImport.html)
+
+<a name="post_knowledge_documentuploads"></a>
+
+## [**UploadUrlResponse**](UploadUrlResponse.html) post_knowledge_documentuploads(body)
+
+
+
+Creates a presigned URL for uploading a knowledge import file with a set of documents
+
+
+
+Wraps POST /api/v2/knowledge/documentuploads 
+
+Requires ALL permissions: 
+
+* knowledge:document:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+body = PureCloudPlatformClientV2.UploadUrlRequest() # UploadUrlRequest | query
+
+try:
+    # Creates a presigned URL for uploading a knowledge import file with a set of documents
+    api_response = api_instance.post_knowledge_documentuploads(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_documentuploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
+
 <a name="post_knowledge_knowledgebase_language_categories"></a>
 
 ## [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html) post_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, body)
@@ -995,6 +1218,61 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeDocument**](KnowledgeDocument.html)
+
+<a name="post_knowledge_knowledgebase_language_documents_imports"></a>
+
+## [**KnowledgeImport**](KnowledgeImport.html) post_knowledge_knowledgebase_language_documents_imports(knowledge_base_id, language_code, body)
+
+
+
+Create import operation
+
+
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports 
+
+Requires ALL permissions: 
+
+* knowledge:document:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+language_code = 'en-US' # str | Language code, format: iso2-LOCALE
+body = PureCloudPlatformClientV2.KnowledgeImport() # KnowledgeImport | 
+
+try:
+    # Create import operation
+    api_response = api_instance.post_knowledge_knowledgebase_language_documents_imports(knowledge_base_id, language_code, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_documents_imports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **body** | [**KnowledgeImport**](KnowledgeImport.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeImport**](KnowledgeImport.html)
 
 <a name="post_knowledge_knowledgebase_language_training_promote"></a>
 

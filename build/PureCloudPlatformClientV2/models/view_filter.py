@@ -155,7 +155,8 @@ class ViewFilter(object):
             'bot_intent_list': 'list[str]',
             'bot_final_intent_list': 'list[str]',
             'bot_slot_list': 'list[str]',
-            'bot_result_list': 'list[str]'
+            'bot_result_list': 'list[str]',
+            'blocked_reasons': 'list[str]'
         }
 
         self.attribute_map = {
@@ -274,7 +275,8 @@ class ViewFilter(object):
             'bot_intent_list': 'botIntentList',
             'bot_final_intent_list': 'botFinalIntentList',
             'bot_slot_list': 'botSlotList',
-            'bot_result_list': 'botResultList'
+            'bot_result_list': 'botResultList',
+            'blocked_reasons': 'blockedReasons'
         }
 
         self._media_types = None
@@ -393,6 +395,7 @@ class ViewFilter(object):
         self._bot_final_intent_list = None
         self._bot_slot_list = None
         self._bot_result_list = None
+        self._blocked_reasons = None
 
     @property
     def media_types(self):
@@ -3061,6 +3064,29 @@ class ViewFilter(object):
         """
         
         self._bot_result_list = bot_result_list
+
+    @property
+    def blocked_reasons(self):
+        """
+        Gets the blocked_reasons of this ViewFilter.
+        The list of blocked reason used to filter action map constraints views
+
+        :return: The blocked_reasons of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._blocked_reasons
+
+    @blocked_reasons.setter
+    def blocked_reasons(self, blocked_reasons):
+        """
+        Sets the blocked_reasons of this ViewFilter.
+        The list of blocked reason used to filter action map constraints views
+
+        :param blocked_reasons: The blocked_reasons of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._blocked_reasons = blocked_reasons
 
     def to_dict(self):
         """

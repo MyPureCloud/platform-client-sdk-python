@@ -83,6 +83,7 @@ class CallMediaParticipant(object):
             'document_id': 'str',
             'fax_status': 'FaxStatus',
             'monitored_participant_id': 'str',
+            'coached_participant_id': 'str',
             'consult_participant_id': 'str',
             'uui_data': 'str'
         }
@@ -131,6 +132,7 @@ class CallMediaParticipant(object):
             'document_id': 'documentId',
             'fax_status': 'faxStatus',
             'monitored_participant_id': 'monitoredParticipantId',
+            'coached_participant_id': 'coachedParticipantId',
             'consult_participant_id': 'consultParticipantId',
             'uui_data': 'uuiData'
         }
@@ -178,6 +180,7 @@ class CallMediaParticipant(object):
         self._document_id = None
         self._fax_status = None
         self._monitored_participant_id = None
+        self._coached_participant_id = None
         self._consult_participant_id = None
         self._uui_data = None
 
@@ -1189,6 +1192,29 @@ class CallMediaParticipant(object):
         """
         
         self._monitored_participant_id = monitored_participant_id
+
+    @property
+    def coached_participant_id(self):
+        """
+        Gets the coached_participant_id of this CallMediaParticipant.
+        The ID of the participant being coached when performing a call coach.
+
+        :return: The coached_participant_id of this CallMediaParticipant.
+        :rtype: str
+        """
+        return self._coached_participant_id
+
+    @coached_participant_id.setter
+    def coached_participant_id(self, coached_participant_id):
+        """
+        Sets the coached_participant_id of this CallMediaParticipant.
+        The ID of the participant being coached when performing a call coach.
+
+        :param coached_participant_id: The coached_participant_id of this CallMediaParticipant.
+        :type: str
+        """
+        
+        self._coached_participant_id = coached_participant_id
 
     @property
     def consult_participant_id(self):

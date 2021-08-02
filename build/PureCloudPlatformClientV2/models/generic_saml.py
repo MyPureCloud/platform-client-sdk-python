@@ -45,6 +45,8 @@ class GenericSAML(object):
             'disabled': 'bool',
             'issuer_uri': 'str',
             'sso_target_uri': 'str',
+            'slo_uri': 'str',
+            'slo_binding': 'str',
             'certificate': 'str',
             'certificates': 'list[str]',
             'relying_party_identifier': 'str',
@@ -60,6 +62,8 @@ class GenericSAML(object):
             'disabled': 'disabled',
             'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
+            'slo_uri': 'sloURI',
+            'slo_binding': 'sloBinding',
             'certificate': 'certificate',
             'certificates': 'certificates',
             'relying_party_identifier': 'relyingPartyIdentifier',
@@ -74,6 +78,8 @@ class GenericSAML(object):
         self._disabled = None
         self._issuer_uri = None
         self._sso_target_uri = None
+        self._slo_uri = None
+        self._slo_binding = None
         self._certificate = None
         self._certificates = None
         self._relying_party_identifier = None
@@ -196,6 +202,52 @@ class GenericSAML(object):
         """
         
         self._sso_target_uri = sso_target_uri
+
+    @property
+    def slo_uri(self):
+        """
+        Gets the slo_uri of this GenericSAML.
+
+
+        :return: The slo_uri of this GenericSAML.
+        :rtype: str
+        """
+        return self._slo_uri
+
+    @slo_uri.setter
+    def slo_uri(self, slo_uri):
+        """
+        Sets the slo_uri of this GenericSAML.
+
+
+        :param slo_uri: The slo_uri of this GenericSAML.
+        :type: str
+        """
+        
+        self._slo_uri = slo_uri
+
+    @property
+    def slo_binding(self):
+        """
+        Gets the slo_binding of this GenericSAML.
+
+
+        :return: The slo_binding of this GenericSAML.
+        :rtype: str
+        """
+        return self._slo_binding
+
+    @slo_binding.setter
+    def slo_binding(self, slo_binding):
+        """
+        Sets the slo_binding of this GenericSAML.
+
+
+        :param slo_binding: The slo_binding of this GenericSAML.
+        :type: str
+        """
+        
+        self._slo_binding = slo_binding
 
     @property
     def certificate(self):

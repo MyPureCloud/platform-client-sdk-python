@@ -19,6 +19,7 @@ title: Response
 | **substitutions_schema** | [**JsonSchemaDocument**](JsonSchemaDocument.html) | Metadata about the text substitutions in json schema format. | [optional] |
 | **response_type** | **str** | The response type represented by the response. | [optional] |
 | **messaging_template** | [**MessagingTemplate**](MessagingTemplate.html) | An optional messaging template definition for responseType.MessagingTemplate. | [optional] |
+| **assets** | [**list[AddressableEntityRef]**](AddressableEntityRef.html) | Assets used in the response | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

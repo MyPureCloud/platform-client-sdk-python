@@ -45,11 +45,11 @@ class QualityAudit(object):
             'user': 'User',
             'job_id': 'str',
             'action': 'str',
-            'entity': 'AuditEntity',
             'level': 'str',
+            'entity': 'AuditEntity',
+            'changes': 'list[Change]',
             'timestamp': 'str',
             'status': 'str',
-            'changes': 'list[Change]',
             'entity_type': 'str',
             'self_uri': 'str'
         }
@@ -60,11 +60,11 @@ class QualityAudit(object):
             'user': 'user',
             'job_id': 'jobId',
             'action': 'action',
-            'entity': 'entity',
             'level': 'level',
+            'entity': 'entity',
+            'changes': 'changes',
             'timestamp': 'timestamp',
             'status': 'status',
-            'changes': 'changes',
             'entity_type': 'entityType',
             'self_uri': 'selfUri'
         }
@@ -74,11 +74,11 @@ class QualityAudit(object):
         self._user = None
         self._job_id = None
         self._action = None
-        self._entity = None
         self._level = None
+        self._entity = None
+        self._changes = None
         self._timestamp = None
         self._status = None
-        self._changes = None
         self._entity_type = None
         self._self_uri = None
 
@@ -198,6 +198,29 @@ class QualityAudit(object):
         self._action = action
 
     @property
+    def level(self):
+        """
+        Gets the level of this QualityAudit.
+
+
+        :return: The level of this QualityAudit.
+        :rtype: str
+        """
+        return self._level
+
+    @level.setter
+    def level(self, level):
+        """
+        Sets the level of this QualityAudit.
+
+
+        :param level: The level of this QualityAudit.
+        :type: str
+        """
+        
+        self._level = level
+
+    @property
     def entity(self):
         """
         Gets the entity of this QualityAudit.
@@ -221,27 +244,27 @@ class QualityAudit(object):
         self._entity = entity
 
     @property
-    def level(self):
+    def changes(self):
         """
-        Gets the level of this QualityAudit.
+        Gets the changes of this QualityAudit.
 
 
-        :return: The level of this QualityAudit.
-        :rtype: str
+        :return: The changes of this QualityAudit.
+        :rtype: list[Change]
         """
-        return self._level
+        return self._changes
 
-    @level.setter
-    def level(self, level):
+    @changes.setter
+    def changes(self, changes):
         """
-        Sets the level of this QualityAudit.
+        Sets the changes of this QualityAudit.
 
 
-        :param level: The level of this QualityAudit.
-        :type: str
+        :param changes: The changes of this QualityAudit.
+        :type: list[Change]
         """
         
-        self._level = level
+        self._changes = changes
 
     @property
     def timestamp(self):
@@ -288,29 +311,6 @@ class QualityAudit(object):
         """
         
         self._status = status
-
-    @property
-    def changes(self):
-        """
-        Gets the changes of this QualityAudit.
-
-
-        :return: The changes of this QualityAudit.
-        :rtype: list[Change]
-        """
-        return self._changes
-
-    @changes.setter
-    def changes(self, changes):
-        """
-        Sets the changes of this QualityAudit.
-
-
-        :param changes: The changes of this QualityAudit.
-        :type: list[Change]
-        """
-        
-        self._changes = changes
 
     @property
     def entity_type(self):

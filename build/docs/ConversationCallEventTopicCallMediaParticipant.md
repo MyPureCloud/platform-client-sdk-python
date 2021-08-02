@@ -50,6 +50,7 @@ title: ConversationCallEventTopicCallMediaParticipant
 | **dnis** | **str** |  | [optional] |
 | **document_id** | **str** |  | [optional] |
 | **monitored_participant_id** | **str** |  | [optional] |
+| **coached_participant_id** | **str** |  | [optional] |
 | **consult_participant_id** | **str** |  | [optional] |
 | **fax_status** | [**ConversationCallEventTopicFaxStatus**](ConversationCallEventTopicFaxStatus.html) |  | [optional] |
 {: class="table table-striped"}

@@ -50,6 +50,7 @@ class Document(object):
             'workspace': 'DomainEntityRef',
             'created_by': 'DomainEntityRef',
             'uploaded_by': 'DomainEntityRef',
+            'sharing_uri': 'str',
             'content_type': 'str',
             'content_length': 'int',
             'system_type': 'str',
@@ -68,7 +69,6 @@ class Document(object):
             'lock_info': 'LockInfo',
             'acl': 'list[str]',
             'sharing_status': 'str',
-            'sharing_uri': 'str',
             'download_sharing_uri': 'str',
             'self_uri': 'str'
         }
@@ -84,6 +84,7 @@ class Document(object):
             'workspace': 'workspace',
             'created_by': 'createdBy',
             'uploaded_by': 'uploadedBy',
+            'sharing_uri': 'sharingUri',
             'content_type': 'contentType',
             'content_length': 'contentLength',
             'system_type': 'systemType',
@@ -102,7 +103,6 @@ class Document(object):
             'lock_info': 'lockInfo',
             'acl': 'acl',
             'sharing_status': 'sharingStatus',
-            'sharing_uri': 'sharingUri',
             'download_sharing_uri': 'downloadSharingUri',
             'self_uri': 'selfUri'
         }
@@ -117,6 +117,7 @@ class Document(object):
         self._workspace = None
         self._created_by = None
         self._uploaded_by = None
+        self._sharing_uri = None
         self._content_type = None
         self._content_length = None
         self._system_type = None
@@ -135,7 +136,6 @@ class Document(object):
         self._lock_info = None
         self._acl = None
         self._sharing_status = None
-        self._sharing_uri = None
         self._download_sharing_uri = None
         self._self_uri = None
 
@@ -368,6 +368,29 @@ class Document(object):
         """
         
         self._uploaded_by = uploaded_by
+
+    @property
+    def sharing_uri(self):
+        """
+        Gets the sharing_uri of this Document.
+
+
+        :return: The sharing_uri of this Document.
+        :rtype: str
+        """
+        return self._sharing_uri
+
+    @sharing_uri.setter
+    def sharing_uri(self, sharing_uri):
+        """
+        Sets the sharing_uri of this Document.
+
+
+        :param sharing_uri: The sharing_uri of this Document.
+        :type: str
+        """
+        
+        self._sharing_uri = sharing_uri
 
     @property
     def content_type(self):
@@ -794,29 +817,6 @@ class Document(object):
             self._sharing_status = "outdated_sdk_version"
         else:
             self._sharing_status = sharing_status
-
-    @property
-    def sharing_uri(self):
-        """
-        Gets the sharing_uri of this Document.
-
-
-        :return: The sharing_uri of this Document.
-        :rtype: str
-        """
-        return self._sharing_uri
-
-    @sharing_uri.setter
-    def sharing_uri(self, sharing_uri):
-        """
-        Sets the sharing_uri of this Document.
-
-
-        :param sharing_uri: The sharing_uri of this Document.
-        :type: str
-        """
-        
-        self._sharing_uri = sharing_uri
 
     @property
     def download_sharing_uri(self):

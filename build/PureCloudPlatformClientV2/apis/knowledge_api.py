@@ -304,6 +304,96 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id, language_code, import_id, **kwargs):
+        """
+        Delete import operation
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str language_code: Language code, format: iso2-LOCALE (required)
+        :param str import_id: Import ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'language_code', 'import_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_knowledgebase_language_documents_import" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `delete_knowledge_knowledgebase_language_documents_import`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `delete_knowledge_knowledgebase_language_documents_import`")
+        # verify the required parameter 'import_id' is set
+        if ('import_id' not in params) or (params['import_id'] is None):
+            raise ValueError("Missing the required parameter `import_id` when calling `delete_knowledge_knowledgebase_language_documents_import`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+        if 'import_id' in params:
+            path_params['importId'] = params['import_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_knowledge_knowledgebase(self, knowledge_base_id, **kwargs):
         """
         Get knowledge base
@@ -762,6 +852,96 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DocumentListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id, language_code, import_id, **kwargs):
+        """
+        Get import operation report
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str language_code: Language code, format: iso2-LOCALE (required)
+        :param str import_id: Import ID (required)
+        :return: KnowledgeImport
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'language_code', 'import_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_language_documents_import" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_language_documents_import`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `get_knowledge_knowledgebase_language_documents_import`")
+        # verify the required parameter 'import_id' is set
+        if ('import_id' not in params) or (params['import_id'] is None):
+            raise ValueError("Missing the required parameter `import_id` when calling `get_knowledge_knowledgebase_language_documents_import`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+        if 'import_id' in params:
+            path_params['importId'] = params['import_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeImport',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1414,6 +1594,180 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id, language_code, import_id, body, **kwargs):
+        """
+        Start import operation
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str language_code: Language code, format: iso2-LOCALE (required)
+        :param str import_id: Import ID (required)
+        :param ImportStatusRequest body:  (required)
+        :return: KnowledgeImport
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'language_code', 'import_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_knowledgebase_language_documents_import" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `patch_knowledge_knowledgebase_language_documents_import`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `patch_knowledge_knowledgebase_language_documents_import`")
+        # verify the required parameter 'import_id' is set
+        if ('import_id' not in params) or (params['import_id'] is None):
+            raise ValueError("Missing the required parameter `import_id` when calling `patch_knowledge_knowledgebase_language_documents_import`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_knowledge_knowledgebase_language_documents_import`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+        if 'import_id' in params:
+            path_params['importId'] = params['import_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeImport',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_documentuploads(self, body, **kwargs):
+        """
+        Creates a presigned URL for uploading a knowledge import file with a set of documents
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_documentuploads(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UploadUrlRequest body: query (required)
+        :return: UploadUrlResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_documentuploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_documentuploads`")
+
+
+        resource_path = '/api/v2/knowledge/documentuploads'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UploadUrlResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_knowledge_knowledgebase_language_categories(self, knowledge_base_id, language_code, body, **kwargs):
         """
         Create new category
@@ -1590,6 +1944,96 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='KnowledgeDocument',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_language_documents_imports(self, knowledge_base_id, language_code, body, **kwargs):
+        """
+        Create import operation
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_language_documents_imports(knowledge_base_id, language_code, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str language_code: Language code, format: iso2-LOCALE (required)
+        :param KnowledgeImport body:  (required)
+        :return: KnowledgeImport
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'language_code', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_language_documents_imports" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_language_documents_imports`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `post_knowledge_knowledgebase_language_documents_imports`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_language_documents_imports`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeImport',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

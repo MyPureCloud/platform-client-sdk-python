@@ -55,6 +55,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
             'contact_sorts': 'list[OutboundMessagingMessagingCampaignConfigChangeContactSort]',
             'messages_per_minute': 'int',
             'sms_config': 'OutboundMessagingMessagingCampaignConfigChangeSmsConfig',
+            'email_config': 'OutboundMessagingMessagingCampaignConfigChangeEmailConfig',
             'errors': 'list[OutboundMessagingMessagingCampaignConfigChangeErrorDetail]'
         }
 
@@ -74,6 +75,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
             'contact_sorts': 'contactSorts',
             'messages_per_minute': 'messagesPerMinute',
             'sms_config': 'smsConfig',
+            'email_config': 'emailConfig',
             'errors': 'errors'
         }
 
@@ -92,6 +94,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         self._contact_sorts = None
         self._messages_per_minute = None
         self._sms_config = None
+        self._email_config = None
         self._errors = None
 
     @property
@@ -442,6 +445,29 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         """
         
         self._sms_config = sms_config
+
+    @property
+    def email_config(self):
+        """
+        Gets the email_config of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+
+
+        :return: The email_config of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: OutboundMessagingMessagingCampaignConfigChangeEmailConfig
+        """
+        return self._email_config
+
+    @email_config.setter
+    def email_config(self, email_config):
+        """
+        Sets the email_config of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+
+
+        :param email_config: The email_config of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: OutboundMessagingMessagingCampaignConfigChangeEmailConfig
+        """
+        
+        self._email_config = email_config
 
     @property
     def errors(self):

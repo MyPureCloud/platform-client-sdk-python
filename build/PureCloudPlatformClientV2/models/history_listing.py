@@ -56,9 +56,9 @@ class HistoryListing(object):
             'started': 'datetime',
             'completed': 'datetime',
             'entities': 'list[HistoryEntry]',
-            'total': 'int',
-            'page_size': 'int',
             'page_number': 'int',
+            'page_size': 'int',
+            'total': 'int',
             'page_count': 'int'
         }
 
@@ -79,9 +79,9 @@ class HistoryListing(object):
             'started': 'started',
             'completed': 'completed',
             'entities': 'entities',
-            'total': 'total',
-            'page_size': 'pageSize',
             'page_number': 'pageNumber',
+            'page_size': 'pageSize',
+            'total': 'total',
             'page_count': 'pageCount'
         }
 
@@ -101,9 +101,9 @@ class HistoryListing(object):
         self._started = None
         self._completed = None
         self._entities = None
-        self._total = None
-        self._page_size = None
         self._page_number = None
+        self._page_size = None
+        self._total = None
         self._page_count = None
 
     @property
@@ -483,27 +483,27 @@ class HistoryListing(object):
         self._entities = entities
 
     @property
-    def total(self):
+    def page_number(self):
         """
-        Gets the total of this HistoryListing.
+        Gets the page_number of this HistoryListing.
 
 
-        :return: The total of this HistoryListing.
+        :return: The page_number of this HistoryListing.
         :rtype: int
         """
-        return self._total
+        return self._page_number
 
-    @total.setter
-    def total(self, total):
+    @page_number.setter
+    def page_number(self, page_number):
         """
-        Sets the total of this HistoryListing.
+        Sets the page_number of this HistoryListing.
 
 
-        :param total: The total of this HistoryListing.
+        :param page_number: The page_number of this HistoryListing.
         :type: int
         """
         
-        self._total = total
+        self._page_number = page_number
 
     @property
     def page_size(self):
@@ -529,27 +529,27 @@ class HistoryListing(object):
         self._page_size = page_size
 
     @property
-    def page_number(self):
+    def total(self):
         """
-        Gets the page_number of this HistoryListing.
+        Gets the total of this HistoryListing.
 
 
-        :return: The page_number of this HistoryListing.
+        :return: The total of this HistoryListing.
         :rtype: int
         """
-        return self._page_number
+        return self._total
 
-    @page_number.setter
-    def page_number(self, page_number):
+    @total.setter
+    def total(self, total):
         """
-        Sets the page_number of this HistoryListing.
+        Sets the total of this HistoryListing.
 
 
-        :param page_number: The page_number of this HistoryListing.
+        :param total: The total of this HistoryListing.
         :type: int
         """
         
-        self._page_number = page_number
+        self._total = total
 
     @property
     def page_count(self):

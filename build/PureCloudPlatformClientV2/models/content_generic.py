@@ -40,7 +40,6 @@ class ContentGeneric(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
             'title': 'str',
             'description': 'str',
             'image': 'str',
@@ -50,7 +49,6 @@ class ContentGeneric(object):
         }
 
         self.attribute_map = {
-            'id': 'id',
             'title': 'title',
             'description': 'description',
             'image': 'image',
@@ -59,36 +57,12 @@ class ContentGeneric(object):
             'components': 'components'
         }
 
-        self._id = None
         self._title = None
         self._description = None
         self._image = None
         self._video = None
         self._actions = None
         self._components = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this ContentGeneric.
-        A unique ID assigned to this rich message content.
-
-        :return: The id of this ContentGeneric.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this ContentGeneric.
-        A unique ID assigned to this rich message content.
-
-        :param id: The id of this ContentGeneric.
-        :type: str
-        """
-        
-        self._id = id
 
     @property
     def title(self):

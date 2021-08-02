@@ -17,6 +17,7 @@ title: Document
 | **workspace** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **created_by** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **uploaded_by** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
+| **sharing_uri** | **str** |  | [optional] |
 | **content_type** | **str** |  | [optional] |
 | **content_length** | **int** |  | [optional] |
 | **system_type** | **str** |  | [optional] |
@@ -35,7 +36,6 @@ title: Document
 | **lock_info** | [**LockInfo**](LockInfo.html) |  | [optional] |
 | **acl** | **list[str]** | A list of permitted action rights for the user making the request | [optional] |
 | **sharing_status** | **str** |  | [optional] |
-| **sharing_uri** | **str** |  | [optional] |
 | **download_sharing_uri** | **str** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

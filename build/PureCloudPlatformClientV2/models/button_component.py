@@ -40,69 +40,17 @@ class ButtonComponent(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'text': 'str',
             'title': 'str',
             'actions': 'ContentActions'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'text': 'text',
             'title': 'title',
             'actions': 'actions'
         }
 
-        self._id = None
-        self._text = None
         self._title = None
         self._actions = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this ButtonComponent.
-        The ID of this component.
-
-        :return: The id of this ButtonComponent.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this ButtonComponent.
-        The ID of this component.
-
-        :param id: The id of this ButtonComponent.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def text(self):
-        """
-        Gets the text of this ButtonComponent.
-        Deprecated - Use title instead.
-
-        :return: The text of this ButtonComponent.
-        :rtype: str
-        """
-        return self._text
-
-    @text.setter
-    def text(self, text):
-        """
-        Sets the text of this ButtonComponent.
-        Deprecated - Use title instead.
-
-        :param text: The text of this ButtonComponent.
-        :type: str
-        """
-        
-        self._text = text
 
     @property
     def title(self):

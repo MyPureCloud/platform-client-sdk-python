@@ -83,6 +83,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'dnis': 'str',
             'document_id': 'str',
             'monitored_participant_id': 'str',
+            'coached_participant_id': 'str',
             'consult_participant_id': 'str',
             'fax_status': 'QueueConversationCallEventTopicFaxStatus'
         }
@@ -131,6 +132,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'dnis': 'dnis',
             'document_id': 'documentId',
             'monitored_participant_id': 'monitoredParticipantId',
+            'coached_participant_id': 'coachedParticipantId',
             'consult_participant_id': 'consultParticipantId',
             'fax_status': 'faxStatus'
         }
@@ -178,6 +180,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         self._dnis = None
         self._document_id = None
         self._monitored_participant_id = None
+        self._coached_participant_id = None
         self._consult_participant_id = None
         self._fax_status = None
 
@@ -1189,6 +1192,29 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         """
         
         self._monitored_participant_id = monitored_participant_id
+
+    @property
+    def coached_participant_id(self):
+        """
+        Gets the coached_participant_id of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The coached_participant_id of this QueueConversationCallEventTopicCallMediaParticipant.
+        :rtype: str
+        """
+        return self._coached_participant_id
+
+    @coached_participant_id.setter
+    def coached_participant_id(self, coached_participant_id):
+        """
+        Sets the coached_participant_id of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :param coached_participant_id: The coached_participant_id of this QueueConversationCallEventTopicCallMediaParticipant.
+        :type: str
+        """
+        
+        self._coached_participant_id = coached_participant_id
 
     @property
     def consult_participant_id(self):

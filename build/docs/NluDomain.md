@@ -14,6 +14,7 @@ title: NluDomain
 | **last_published_version** | [**NluDomainVersion**](NluDomainVersion.html) | The last published version of that NLU domain. | [optional] |
 | **date_created** | **datetime** | The date when the NLU domain was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **date_modified** | **datetime** | The date when the NLU domain was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **engine_version** | **str** | The version of the NLU engine to use. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

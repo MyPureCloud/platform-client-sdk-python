@@ -911,8 +911,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -1582,8 +1582,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -1628,8 +1628,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -1730,8 +1730,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -2042,8 +2042,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -2244,8 +2244,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -2598,8 +2598,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -2910,8 +2910,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -2957,8 +2957,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -3666,8 +3666,8 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
-{: class="table table-striped"}
+This endpoint does not need any parameters.
+
 
 ### Return type
 

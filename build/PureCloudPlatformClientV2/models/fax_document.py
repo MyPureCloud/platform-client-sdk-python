@@ -47,6 +47,7 @@ class FaxDocument(object):
             'content_uri': 'str',
             'workspace': 'DomainEntityRef',
             'created_by': 'DomainEntityRef',
+            'sharing_uri': 'str',
             'content_type': 'str',
             'content_length': 'int',
             'filename': 'str',
@@ -55,7 +56,6 @@ class FaxDocument(object):
             'caller_address': 'str',
             'receiver_address': 'str',
             'thumbnails': 'list[DocumentThumbnail]',
-            'sharing_uri': 'str',
             'download_sharing_uri': 'str',
             'self_uri': 'str'
         }
@@ -68,6 +68,7 @@ class FaxDocument(object):
             'content_uri': 'contentUri',
             'workspace': 'workspace',
             'created_by': 'createdBy',
+            'sharing_uri': 'sharingUri',
             'content_type': 'contentType',
             'content_length': 'contentLength',
             'filename': 'filename',
@@ -76,7 +77,6 @@ class FaxDocument(object):
             'caller_address': 'callerAddress',
             'receiver_address': 'receiverAddress',
             'thumbnails': 'thumbnails',
-            'sharing_uri': 'sharingUri',
             'download_sharing_uri': 'downloadSharingUri',
             'self_uri': 'selfUri'
         }
@@ -88,6 +88,7 @@ class FaxDocument(object):
         self._content_uri = None
         self._workspace = None
         self._created_by = None
+        self._sharing_uri = None
         self._content_type = None
         self._content_length = None
         self._filename = None
@@ -96,7 +97,6 @@ class FaxDocument(object):
         self._caller_address = None
         self._receiver_address = None
         self._thumbnails = None
-        self._sharing_uri = None
         self._download_sharing_uri = None
         self._self_uri = None
 
@@ -260,6 +260,29 @@ class FaxDocument(object):
         """
         
         self._created_by = created_by
+
+    @property
+    def sharing_uri(self):
+        """
+        Gets the sharing_uri of this FaxDocument.
+
+
+        :return: The sharing_uri of this FaxDocument.
+        :rtype: str
+        """
+        return self._sharing_uri
+
+    @sharing_uri.setter
+    def sharing_uri(self, sharing_uri):
+        """
+        Sets the sharing_uri of this FaxDocument.
+
+
+        :param sharing_uri: The sharing_uri of this FaxDocument.
+        :type: str
+        """
+        
+        self._sharing_uri = sharing_uri
 
     @property
     def content_type(self):
@@ -444,29 +467,6 @@ class FaxDocument(object):
         """
         
         self._thumbnails = thumbnails
-
-    @property
-    def sharing_uri(self):
-        """
-        Gets the sharing_uri of this FaxDocument.
-
-
-        :return: The sharing_uri of this FaxDocument.
-        :rtype: str
-        """
-        return self._sharing_uri
-
-    @sharing_uri.setter
-    def sharing_uri(self, sharing_uri):
-        """
-        Sets the sharing_uri of this FaxDocument.
-
-
-        :param sharing_uri: The sharing_uri of this FaxDocument.
-        :type: str
-        """
-        
-        self._sharing_uri = sharing_uri
 
     @property
     def download_sharing_uri(self):

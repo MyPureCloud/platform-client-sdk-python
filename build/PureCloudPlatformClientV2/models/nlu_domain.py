@@ -47,6 +47,7 @@ class NluDomain(object):
             'last_published_version': 'NluDomainVersion',
             'date_created': 'datetime',
             'date_modified': 'datetime',
+            'engine_version': 'str',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class NluDomain(object):
             'last_published_version': 'lastPublishedVersion',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
+            'engine_version': 'engineVersion',
             'self_uri': 'selfUri'
         }
 
@@ -68,6 +70,7 @@ class NluDomain(object):
         self._last_published_version = None
         self._date_created = None
         self._date_modified = None
+        self._engine_version = None
         self._self_uri = None
 
     @property
@@ -230,6 +233,29 @@ class NluDomain(object):
         """
         
         self._date_modified = date_modified
+
+    @property
+    def engine_version(self):
+        """
+        Gets the engine_version of this NluDomain.
+        The version of the NLU engine to use.
+
+        :return: The engine_version of this NluDomain.
+        :rtype: str
+        """
+        return self._engine_version
+
+    @engine_version.setter
+    def engine_version(self, engine_version):
+        """
+        Sets the engine_version of this NluDomain.
+        The version of the NLU engine to use.
+
+        :param engine_version: The engine_version of this NluDomain.
+        :type: str
+        """
+        
+        self._engine_version = engine_version
 
     @property
     def self_uri(self):
