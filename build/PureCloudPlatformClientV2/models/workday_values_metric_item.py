@@ -40,7 +40,7 @@ class WorkdayValuesMetricItem(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'metric_definition': 'MetricDefinition',
+            'metric_definition': 'DomainEntityRef',
             'average': 'float',
             'unit_type': 'str',
             'trend': 'list[WorkdayValuesTrendItem]'
@@ -65,7 +65,7 @@ class WorkdayValuesMetricItem(object):
         Gamification metric for the average and the trend
 
         :return: The metric_definition of this WorkdayValuesMetricItem.
-        :rtype: MetricDefinition
+        :rtype: DomainEntityRef
         """
         return self._metric_definition
 
@@ -76,7 +76,7 @@ class WorkdayValuesMetricItem(object):
         Gamification metric for the average and the trend
 
         :param metric_definition: The metric_definition of this WorkdayValuesMetricItem.
-        :type: MetricDefinition
+        :type: DomainEntityRef
         """
         
         self._metric_definition = metric_definition

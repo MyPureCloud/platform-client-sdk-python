@@ -1,0 +1,17 @@
+---
+title: TextBotExitAction
+---
+## TextBotExitAction
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **reason** | **str** | The reason for the exit. | |
+| **reason_extended_info** | **str** | Extended information related to the reason, if available. | [optional] |
+| **active_intent** | **str** | The active intent at the time of the exit. | [optional] |
+| **flow_location** | [**TextBotFlowLocation**](TextBotFlowLocation.html) | Describes where in the Bot Flow the user was when the exit occurred. | [optional] |
+| **output_data** | [**TextBotInputOutputData**](TextBotInputOutputData.html) | The output data for the bot flow. | [optional] |
+{: class="table table-striped"}
+
+

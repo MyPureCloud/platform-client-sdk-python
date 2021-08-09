@@ -1152,12 +1152,15 @@ class SpeechTextAnalyticsApi(object):
             for asynchronous request. (optional)
         :param str next_page: The key for listing the next page
         :param int page_size: The page size for the listing
+        :param str state: Topic state
+        :param str name: Case insensitive partial name to filter by
+        :param list[str] ids: Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
         :return: TopicsEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['next_page', 'page_size']
+        all_params = ['next_page', 'page_size', 'state', 'name', 'ids']
         all_params.append('callback')
 
         params = locals()
@@ -1180,6 +1183,12 @@ class SpeechTextAnalyticsApi(object):
             query_params['nextPage'] = params['next_page']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'state' in params:
+            query_params['state'] = params['state']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
 
         header_params = {}
 

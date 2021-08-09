@@ -94,7 +94,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_trunks**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunks) | Get the list of available trunks.|
 |[**get_telephony_providers_edges_trunks_metrics**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunks_metrics) | Get the metrics for a list of trunks.|
 |[**get_telephony_providers_edges_trunkswithrecording**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkswithrecording) | Get Counts of trunks that have recording disabled or enabled|
-|[**patch_telephony_providers_edges_autoscalinggroup_capacity**](TelephonyProvidersEdgeApi.html#patch_telephony_providers_edges_autoscalinggroup_capacity) | Scales the ASG to match the desired capacity|
 |[**post_telephony_providers_edge_diagnostic_nslookup**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_nslookup) | Nslookup request command to collect networking-related information from an Edge for a target IP or host.|
 |[**post_telephony_providers_edge_diagnostic_ping**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_ping) | Ping Request command to collect networking-related information from an Edge for a target IP or host.|
 |[**post_telephony_providers_edge_diagnostic_route**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_route) | Route request command to collect networking-related information from an Edge for a target IP or host.|
@@ -499,7 +498,7 @@ void (empty response body)
 
 Delete Outbound Route
 
-
+This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
 Wraps DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
 
@@ -3268,7 +3267,7 @@ except ApiException as e:
 
 Get outbound route
 
-
+This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
 Wraps GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
 
@@ -4755,60 +4754,6 @@ except ApiException as e:
 
 [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html)
 
-<a name="patch_telephony_providers_edges_autoscalinggroup_capacity"></a>
-
-## [**ScaleASGResponse**](ScaleASGResponse.html) patch_telephony_providers_edges_autoscalinggroup_capacity(asg_id, body)
-
-
-
-Scales the ASG to match the desired capacity
-
-
-
-Wraps PATCH /api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-* internal:edge:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-asg_id = 'asg_id_example' # str | Id of the asg that is to be scaled
-body = PureCloudPlatformClientV2.AsgScaleRequest() # AsgScaleRequest | AsgScaleRequest
-
-try:
-    # Scales the ASG to match the desired capacity
-    api_response = api_instance.patch_telephony_providers_edges_autoscalinggroup_capacity(asg_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->patch_telephony_providers_edges_autoscalinggroup_capacity: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **asg_id** | **str**| Id of the asg that is to be scaled |  |
-| **body** | [**AsgScaleRequest**](AsgScaleRequest.html)| AsgScaleRequest |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ScaleASGResponse**](ScaleASGResponse.html)
-
 <a name="post_telephony_providers_edge_diagnostic_nslookup"></a>
 
 ## [**EdgeNetworkDiagnostic**](EdgeNetworkDiagnostic.html) post_telephony_providers_edge_diagnostic_nslookup(edge_id, body)
@@ -5703,7 +5648,7 @@ except ApiException as e:
 
 Create outbound rule
 
-
+This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
 
 Wraps POST /api/v2/telephony/providers/edges/outboundroutes 
 
@@ -6697,7 +6642,7 @@ except ApiException as e:
 
 Update outbound route
 
-
+This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
 Wraps PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
 

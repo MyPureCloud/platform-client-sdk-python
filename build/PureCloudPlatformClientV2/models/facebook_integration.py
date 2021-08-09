@@ -44,6 +44,8 @@ class FacebookIntegration(object):
             'name': 'str',
             'app_id': 'str',
             'page_id': 'str',
+            'page_name': 'str',
+            'page_profile_image_url': 'str',
             'status': 'str',
             'recipient': 'DomainEntityRef',
             'date_created': 'datetime',
@@ -61,6 +63,8 @@ class FacebookIntegration(object):
             'name': 'name',
             'app_id': 'appId',
             'page_id': 'pageId',
+            'page_name': 'pageName',
+            'page_profile_image_url': 'pageProfileImageUrl',
             'status': 'status',
             'recipient': 'recipient',
             'date_created': 'dateCreated',
@@ -77,6 +81,8 @@ class FacebookIntegration(object):
         self._name = None
         self._app_id = None
         self._page_id = None
+        self._page_name = None
+        self._page_profile_image_url = None
         self._status = None
         self._recipient = None
         self._date_created = None
@@ -179,6 +185,52 @@ class FacebookIntegration(object):
         """
         
         self._page_id = page_id
+
+    @property
+    def page_name(self):
+        """
+        Gets the page_name of this FacebookIntegration.
+        The name of the Facebook page
+
+        :return: The page_name of this FacebookIntegration.
+        :rtype: str
+        """
+        return self._page_name
+
+    @page_name.setter
+    def page_name(self, page_name):
+        """
+        Sets the page_name of this FacebookIntegration.
+        The name of the Facebook page
+
+        :param page_name: The page_name of this FacebookIntegration.
+        :type: str
+        """
+        
+        self._page_name = page_name
+
+    @property
+    def page_profile_image_url(self):
+        """
+        Gets the page_profile_image_url of this FacebookIntegration.
+        The url of the profile image of the Facebook page
+
+        :return: The page_profile_image_url of this FacebookIntegration.
+        :rtype: str
+        """
+        return self._page_profile_image_url
+
+    @page_profile_image_url.setter
+    def page_profile_image_url(self, page_profile_image_url):
+        """
+        Sets the page_profile_image_url of this FacebookIntegration.
+        The url of the profile image of the Facebook page
+
+        :param page_profile_image_url: The page_profile_image_url of this FacebookIntegration.
+        :type: str
+        """
+        
+        self._page_profile_image_url = page_profile_image_url
 
     @property
     def status(self):

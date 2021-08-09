@@ -3014,23 +3014,24 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
-        :param int page_size: Page size [max 100]
-        :param int page_number: Page number
-        :param str sort_by: Sort by
+        :param int page_number: 
+        :param int page_size: Max value is 100
+        :param str sort_order: Note: results are sorted by name.
         :param list[str] expand: Which fields, if any, to expand.
-        :param bool joined: Filter by joined status
         :param str name: Filter by queue member name
         :param list[str] profile_skills: Filter by profile skill
         :param list[str] skills: Filter by skill
         :param list[str] languages: Filter by language
         :param list[str] routing_status: Filter by routing status
         :param list[str] presence: Filter by presence
+        :param str member_by: Filter by member type
+        :param bool joined: Filter by joined status
         :return: QueueMemberEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['queue_id', 'page_size', 'page_number', 'sort_by', 'expand', 'joined', 'name', 'profile_skills', 'skills', 'languages', 'routing_status', 'presence']
+        all_params = ['queue_id', 'page_number', 'page_size', 'sort_order', 'expand', 'name', 'profile_skills', 'skills', 'languages', 'routing_status', 'presence', 'member_by', 'joined']
         all_params.append('callback')
 
         params = locals()
@@ -3054,16 +3055,14 @@ class RoutingApi(object):
             path_params['queueId'] = params['queue_id']
 
         query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
         if 'expand' in params:
             query_params['expand'] = params['expand']
-        if 'joined' in params:
-            query_params['joined'] = params['joined']
         if 'name' in params:
             query_params['name'] = params['name']
         if 'profile_skills' in params:
@@ -3076,6 +3075,10 @@ class RoutingApi(object):
             query_params['routingStatus'] = params['routing_status']
         if 'presence' in params:
             query_params['presence'] = params['presence']
+        if 'member_by' in params:
+            query_params['memberBy'] = params['member_by']
+        if 'joined' in params:
+            query_params['joined'] = params['joined']
 
         header_params = {}
 
@@ -3125,9 +3128,9 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
-        :param int page_size: Page size [max 100]
-        :param int page_number: Page number
-        :param str sort_by: Sort by
+        :param int page_number: 
+        :param int page_size: Max value is 100
+        :param str sort_order: Note: results are sorted by name.
         :param list[str] expand: Which fields, if any, to expand.
         :param bool joined: Filter by joined status
         :param str name: Filter by queue member name
@@ -3141,7 +3144,7 @@ class RoutingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['queue_id', 'page_size', 'page_number', 'sort_by', 'expand', 'joined', 'name', 'profile_skills', 'skills', 'languages', 'routing_status', 'presence']
+        all_params = ['queue_id', 'page_number', 'page_size', 'sort_order', 'expand', 'joined', 'name', 'profile_skills', 'skills', 'languages', 'routing_status', 'presence']
         all_params.append('callback')
 
         params = locals()
@@ -3165,12 +3168,12 @@ class RoutingApi(object):
             path_params['queueId'] = params['queue_id']
 
         query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
         if 'expand' in params:
             query_params['expand'] = params['expand']
         if 'joined' in params:
@@ -3319,18 +3322,18 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
         :param int page_number: Page number
-        :param str sort_by: Sort by
-        :param str name: Name
-        :param list[str] id: ID(s)
-        :param list[str] division_id: Division ID(s)
+        :param int page_size: Page size
+        :param str sort_order: Note: results are sorted by name.
+        :param str name: Filter by queue name
+        :param list[str] id: Filter by queue ID(s)
+        :param list[str] division_id: Filter by queue division ID(s)
         :return: QueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'name', 'id', 'division_id']
+        all_params = ['page_number', 'page_size', 'sort_order', 'name', 'id', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3349,12 +3352,12 @@ class RoutingApi(object):
         path_params = {}
 
         query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
         if 'name' in params:
             query_params['name'] = params['name']
         if 'id' in params:
@@ -3586,17 +3589,16 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param bool joined: Joined
-        :param int page_size: Page size
         :param int page_number: Page number
-        :param str sort_by: Sort by
-        :param str sort_order: Sort order
+        :param int page_size: Page size
+        :param bool joined: Filter by joined status.
+        :param str sort_order: Note: results are sorted by name.
         :return: UserQueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['joined', 'page_size', 'page_number', 'sort_by', 'sort_order']
+        all_params = ['page_number', 'page_size', 'joined', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -3615,14 +3617,12 @@ class RoutingApi(object):
         path_params = {}
 
         query_params = {}
-        if 'joined' in params:
-            query_params['joined'] = params['joined']
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'joined' in params:
+            query_params['joined'] = params['joined']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
 
@@ -5038,7 +5038,7 @@ class RoutingApi(object):
     def patch_routing_conversation(self, conversation_id, body, **kwargs):
         """
         Update attributes of an in-queue conversation
-        Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+        Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5051,8 +5051,8 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str conversation_id: Conversation ID (required)
-        :param RoutingConversationAttributes body: Conversation Attributes (required)
-        :return: RoutingConversationAttributes
+        :param RoutingConversationAttributesRequest body: Conversation Attributes (required)
+        :return: RoutingConversationAttributesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5114,7 +5114,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='RoutingConversationAttributes',
+                                            response_type='RoutingConversationAttributesResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5283,90 +5283,6 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='InboundDomain',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def patch_routing_email_outbound_domain(self, domain_id, body, **kwargs):
-        """
-        Request an update of the emails from /replyTo of an outbound domain
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.patch_routing_email_outbound_domain(domain_id, body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str domain_id: domain ID (required)
-        :param OutboundDomain body: domain with emails that need update set (required)
-        :return: OutboundDomain
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['domain_id', 'body']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method patch_routing_email_outbound_domain" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'domain_id' is set
-        if ('domain_id' not in params) or (params['domain_id'] is None):
-            raise ValueError("Missing the required parameter `domain_id` when calling `patch_routing_email_outbound_domain`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `patch_routing_email_outbound_domain`")
-
-
-        resource_path = '/api/v2/routing/email/outbound/domains/{domainId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'domain_id' in params:
-            path_params['domainId'] = params['domain_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'PATCH',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='OutboundDomain',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

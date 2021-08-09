@@ -41,16 +41,19 @@ class GamificationStatus(object):
         """
         self.swagger_types = {
             'is_active': 'bool',
-            'date_start': 'date'
+            'date_start': 'date',
+            'automatic_user_assignment': 'bool'
         }
 
         self.attribute_map = {
             'is_active': 'isActive',
-            'date_start': 'dateStart'
+            'date_start': 'dateStart',
+            'automatic_user_assignment': 'automaticUserAssignment'
         }
 
         self._is_active = None
         self._date_start = None
+        self._automatic_user_assignment = None
 
     @property
     def is_active(self):
@@ -97,6 +100,29 @@ class GamificationStatus(object):
         """
         
         self._date_start = date_start
+
+    @property
+    def automatic_user_assignment(self):
+        """
+        Gets the automatic_user_assignment of this GamificationStatus.
+        Automatic assignment of users to the default profile
+
+        :return: The automatic_user_assignment of this GamificationStatus.
+        :rtype: bool
+        """
+        return self._automatic_user_assignment
+
+    @automatic_user_assignment.setter
+    def automatic_user_assignment(self, automatic_user_assignment):
+        """
+        Sets the automatic_user_assignment of this GamificationStatus.
+        Automatic assignment of users to the default profile
+
+        :param automatic_user_assignment: The automatic_user_assignment of this GamificationStatus.
+        :type: bool
+        """
+        
+        self._automatic_user_assignment = automatic_user_assignment
 
     def to_dict(self):
         """

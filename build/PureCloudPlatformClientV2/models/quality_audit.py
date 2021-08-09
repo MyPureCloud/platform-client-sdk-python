@@ -44,12 +44,12 @@ class QualityAudit(object):
             'name': 'str',
             'user': 'User',
             'job_id': 'str',
-            'action': 'str',
             'level': 'str',
             'entity': 'AuditEntity',
-            'changes': 'list[Change]',
+            'action': 'str',
             'timestamp': 'str',
             'status': 'str',
+            'changes': 'list[Change]',
             'entity_type': 'str',
             'self_uri': 'str'
         }
@@ -59,12 +59,12 @@ class QualityAudit(object):
             'name': 'name',
             'user': 'user',
             'job_id': 'jobId',
-            'action': 'action',
             'level': 'level',
             'entity': 'entity',
-            'changes': 'changes',
+            'action': 'action',
             'timestamp': 'timestamp',
             'status': 'status',
+            'changes': 'changes',
             'entity_type': 'entityType',
             'self_uri': 'selfUri'
         }
@@ -73,12 +73,12 @@ class QualityAudit(object):
         self._name = None
         self._user = None
         self._job_id = None
-        self._action = None
         self._level = None
         self._entity = None
-        self._changes = None
+        self._action = None
         self._timestamp = None
         self._status = None
+        self._changes = None
         self._entity_type = None
         self._self_uri = None
 
@@ -175,29 +175,6 @@ class QualityAudit(object):
         self._job_id = job_id
 
     @property
-    def action(self):
-        """
-        Gets the action of this QualityAudit.
-
-
-        :return: The action of this QualityAudit.
-        :rtype: str
-        """
-        return self._action
-
-    @action.setter
-    def action(self, action):
-        """
-        Sets the action of this QualityAudit.
-
-
-        :param action: The action of this QualityAudit.
-        :type: str
-        """
-        
-        self._action = action
-
-    @property
     def level(self):
         """
         Gets the level of this QualityAudit.
@@ -244,27 +221,27 @@ class QualityAudit(object):
         self._entity = entity
 
     @property
-    def changes(self):
+    def action(self):
         """
-        Gets the changes of this QualityAudit.
+        Gets the action of this QualityAudit.
 
 
-        :return: The changes of this QualityAudit.
-        :rtype: list[Change]
+        :return: The action of this QualityAudit.
+        :rtype: str
         """
-        return self._changes
+        return self._action
 
-    @changes.setter
-    def changes(self, changes):
+    @action.setter
+    def action(self, action):
         """
-        Sets the changes of this QualityAudit.
+        Sets the action of this QualityAudit.
 
 
-        :param changes: The changes of this QualityAudit.
-        :type: list[Change]
+        :param action: The action of this QualityAudit.
+        :type: str
         """
         
-        self._changes = changes
+        self._action = action
 
     @property
     def timestamp(self):
@@ -311,6 +288,29 @@ class QualityAudit(object):
         """
         
         self._status = status
+
+    @property
+    def changes(self):
+        """
+        Gets the changes of this QualityAudit.
+
+
+        :return: The changes of this QualityAudit.
+        :rtype: list[Change]
+        """
+        return self._changes
+
+    @changes.setter
+    def changes(self, changes):
+        """
+        Sets the changes of this QualityAudit.
+
+
+        :param changes: The changes of this QualityAudit.
+        :type: list[Change]
+        """
+        
+        self._changes = changes
 
     @property
     def entity_type(self):

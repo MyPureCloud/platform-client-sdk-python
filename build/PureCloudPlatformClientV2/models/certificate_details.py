@@ -45,8 +45,8 @@ class CertificateDetails(object):
             'expiration_date': 'datetime',
             'issue_date': 'datetime',
             'expired': 'bool',
-            'valid': 'bool',
-            'signature_valid': 'bool'
+            'signature_valid': 'bool',
+            'valid': 'bool'
         }
 
         self.attribute_map = {
@@ -55,8 +55,8 @@ class CertificateDetails(object):
             'expiration_date': 'expirationDate',
             'issue_date': 'issueDate',
             'expired': 'expired',
-            'valid': 'valid',
-            'signature_valid': 'signatureValid'
+            'signature_valid': 'signatureValid',
+            'valid': 'valid'
         }
 
         self._issuer = None
@@ -64,8 +64,8 @@ class CertificateDetails(object):
         self._expiration_date = None
         self._issue_date = None
         self._expired = None
-        self._valid = None
         self._signature_valid = None
+        self._valid = None
 
     @property
     def issuer(self):
@@ -183,29 +183,6 @@ class CertificateDetails(object):
         self._expired = expired
 
     @property
-    def valid(self):
-        """
-        Gets the valid of this CertificateDetails.
-
-
-        :return: The valid of this CertificateDetails.
-        :rtype: bool
-        """
-        return self._valid
-
-    @valid.setter
-    def valid(self, valid):
-        """
-        Sets the valid of this CertificateDetails.
-
-
-        :param valid: The valid of this CertificateDetails.
-        :type: bool
-        """
-        
-        self._valid = valid
-
-    @property
     def signature_valid(self):
         """
         Gets the signature_valid of this CertificateDetails.
@@ -227,6 +204,29 @@ class CertificateDetails(object):
         """
         
         self._signature_valid = signature_valid
+
+    @property
+    def valid(self):
+        """
+        Gets the valid of this CertificateDetails.
+
+
+        :return: The valid of this CertificateDetails.
+        :rtype: bool
+        """
+        return self._valid
+
+    @valid.setter
+    def valid(self, valid):
+        """
+        Sets the valid of this CertificateDetails.
+
+
+        :param valid: The valid of this CertificateDetails.
+        :type: bool
+        """
+        
+        self._valid = valid
 
     def to_dict(self):
         """

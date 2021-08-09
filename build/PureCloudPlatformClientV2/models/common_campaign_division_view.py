@@ -150,7 +150,7 @@ class CommonCampaignDivisionView(object):
         :param media_type: The media_type of this CommonCampaignDivisionView.
         :type: str
         """
-        allowed_values = ["sms", "voice"]
+        allowed_values = ["email", "sms", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

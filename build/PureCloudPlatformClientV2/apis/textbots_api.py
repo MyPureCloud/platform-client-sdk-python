@@ -46,6 +46,168 @@ class TextbotsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def post_textbots_botflows_session_turns(self, session_id, turn_request, **kwargs):
+        """
+        Issue a bot flow turn event
+        Send a turn event to an executing bot flow and produce the next action to take.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_textbots_botflows_session_turns(session_id, turn_request, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str session_id: The bot flow session ID, typically obtained from 'POST /api/v2/textbots/botflows/sessions' (required)
+        :param TextBotFlowTurnRequest turn_request:  (required)
+        :return: TextBotFlowTurnResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['session_id', 'turn_request']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_textbots_botflows_session_turns" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `post_textbots_botflows_session_turns`")
+        # verify the required parameter 'turn_request' is set
+        if ('turn_request' not in params) or (params['turn_request'] is None):
+            raise ValueError("Missing the required parameter `turn_request` when calling `post_textbots_botflows_session_turns`")
+
+
+        resource_path = '/api/v2/textbots/botflows/sessions/{sessionId}/turns'.replace('{format}', 'json')
+        path_params = {}
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'turn_request' in params:
+            body_params = params['turn_request']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TextBotFlowTurnResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_textbots_botflows_sessions(self, launch_request, **kwargs):
+        """
+        Create an execution instance of a bot flow definition.
+        The launch is asynchronous; use the returned instance ID to post turns to it using 'POST /api/v2/textbots/botflows/sessions/{sessionId}/turns'.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_textbots_botflows_sessions(launch_request, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param TextBotFlowLaunchRequest launch_request:  (required)
+        :return: TextBotFlowLaunchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['launch_request']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_textbots_botflows_sessions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'launch_request' is set
+        if ('launch_request' not in params) or (params['launch_request'] is None):
+            raise ValueError("Missing the required parameter `launch_request` when calling `post_textbots_botflows_sessions`")
+
+
+        resource_path = '/api/v2/textbots/botflows/sessions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'launch_request' in params:
+            body_params = params['launch_request']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TextBotFlowLaunchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_textbots_bots_execute(self, post_text_request, **kwargs):
         """
         Send an intent to a bot to start a dialog/interact with it via text

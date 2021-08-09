@@ -11,6 +11,8 @@ title: FacebookIntegration
 | **name** | **str** | The name of the Facebook Integration | |
 | **app_id** | **str** | The App Id from Facebook messenger | |
 | **page_id** | **str** | The Page Id from Facebook messenger | [optional] |
+| **page_name** | **str** | The name of the Facebook page | [optional] |
+| **page_profile_image_url** | **str** | The url of the profile image of the Facebook page | [optional] |
 | **status** | **str** | The status of the Facebook Integration | [optional] |
 | **recipient** | [**DomainEntityRef**](DomainEntityRef.html) | The recipient reference associated to the Facebook Integration. This recipient is used to associate a flow to an integration | [optional] |
 | **date_created** | **datetime** | Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |

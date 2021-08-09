@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_audits_query_transaction_id**](AuditApi.html#get_audits_query_transaction_id) | Get status of audit query execution|
 |[**get_audits_query_transaction_id_results**](AuditApi.html#get_audits_query_transaction_id_results) | Get results of audit query|
 |[**post_audits_query**](AuditApi.html#post_audits_query) | Create audit query execution|
-|[**post_audits_query_realtime**](AuditApi.html#post_audits_query_realtime) | This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.|
+|[**post_audits_query_realtime**](AuditApi.html#post_audits_query_realtime) | This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.|
 {: class="table table-striped"}
 
 <a name="get_audits_query_realtime_servicemapping"></a>
@@ -275,7 +275,7 @@ except ApiException as e:
 
 
 
-This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
 
 
 
@@ -302,7 +302,7 @@ body = PureCloudPlatformClientV2.AuditRealtimeQueryRequest() # AuditRealtimeQuer
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
-    # This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+    # This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
     api_response = api_instance.post_audits_query_realtime(body, expand=expand)
     pprint(api_response)
 except ApiException as e:

@@ -295,7 +295,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '122.0.0'
+        header_params['purecloud-sdk'] = '123.0.0'
 
         # path parameters
         if path_params:
@@ -726,16 +726,24 @@ class ApiClient(object):
         :return: date.
         """
         try:
-            from dateutil.parser import parse
-            return parse(string).date()
+            from dateutil.parser import isoparse
+            return isoparse(string).date()
+        except ValueError:
+            # Try parsing independent of ISO if we get a ValueError
+            try:
+                from dateutil.parser import parse
+                return parse(string).date()
+            except ImportError:
+                return string
+            # Not much we can do if `parse` returns a ValueError
+            except ValueError:
+                raise ApiException(
+                    status=0,
+                    reason="Failed to parse `{0}` into a date object"
+                    .format(string)
+                )
         except ImportError:
             return string
-        except ValueError:
-            raise ApiException(
-                status=0,
-                reason="Failed to parse `{0}` into a date object"
-                .format(string)
-            )
 
     def __deserialize_datatime(self, string):
         """
@@ -747,16 +755,24 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-            from dateutil.parser import parse
-            return parse(string)
+            from dateutil.parser import isoparse
+            return isoparse(string)
+        except ValueError:
+            # Try parsing independent of ISO if we get a ValueError
+            try:
+                from dateutil.parser import parse
+                return parse(string)
+            except ImportError:
+                return string
+            # Not much we can do if `parse` returns a ValueError
+            except ValueError:
+                raise ApiException(
+                    status=0,
+                    reason="Failed to parse `{0}` into a datetime object".
+                    format(string)
+                )
         except ImportError:
             return string
-        except ValueError:
-            raise ApiException(
-                status=0,
-                reason="Failed to parse `{0}` into a datetime object".
-                format(string)
-            )
 
     def __deserialize_model(self, data, klass):
         """

@@ -72,7 +72,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_conversation**](RoutingApi.html#patch_routing_conversation) | Update attributes of an in-queue conversation|
 |[**patch_routing_email_domain**](RoutingApi.html#patch_routing_email_domain) | Update domain settings|
 |[**patch_routing_email_domain_validate**](RoutingApi.html#patch_routing_email_domain_validate) | Validate domain settings|
-|[**patch_routing_email_outbound_domain**](RoutingApi.html#patch_routing_email_outbound_domain) | Request an update of the emails from /replyTo of an outbound domain|
 |[**patch_routing_predictor**](RoutingApi.html#patch_routing_predictor) | Update single predictor.|
 |[**patch_routing_queue_member**](RoutingApi.html#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
 |[**patch_routing_queue_members**](RoutingApi.html#patch_routing_queue_members) | Join or unjoin a set of users for a queue|
@@ -2030,7 +2029,7 @@ except ApiException as e:
 
 <a name="get_routing_queue_members"></a>
 
-## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) get_routing_queue_members(queue_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
+## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) get_routing_queue_members(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence, member_by=member_by, joined=joined)
 
 
 
@@ -2059,21 +2058,22 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
-page_size = 25 # int | Page size [max 100] (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | Sort by (optional) (default to name)
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int | Max value is 100 (optional) (default to 25)
+sort_order = 'asc' # str | Note: results are sorted by name. (optional) (default to asc)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
-joined = true # bool | Filter by joined status (optional)
 name = 'name_example' # str | Filter by queue member name (optional)
 profile_skills = ['profile_skills_example'] # list[str] | Filter by profile skill (optional)
 skills = ['skills_example'] # list[str] | Filter by skill (optional)
 languages = ['languages_example'] # list[str] | Filter by language (optional)
 routing_status = ['routing_status_example'] # list[str] | Filter by routing status (optional)
 presence = ['presence_example'] # list[str] | Filter by presence (optional)
+member_by = 'member_by_example' # str | Filter by member type (optional)
+joined = true # bool | Filter by joined status (optional)
 
 try:
     # Get the members of this queue.
-    api_response = api_instance.get_routing_queue_members(queue_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
+    api_response = api_instance.get_routing_queue_members(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence, member_by=member_by, joined=joined)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queue_members: %s\n" % e)
@@ -2085,17 +2085,18 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **page_size** | **int**| Page size [max 100] | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
+| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
 | **skills** | [**list[str]**](str.html)| Filter by skill | [optional]  |
 | **languages** | [**list[str]**](str.html)| Filter by language | [optional]  |
 | **routing_status** | [**list[str]**](str.html)| Filter by routing status | [optional]  |
 | **presence** | [**list[str]**](str.html)| Filter by presence | [optional]  |
+| **member_by** | **str**| Filter by member type | [optional] <br />**Values**: user, group |
+| **joined** | **bool**| Filter by joined status | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2104,7 +2105,7 @@ except ApiException as e:
 
 <a name="get_routing_queue_users"></a>
 
-## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) get_routing_queue_users(queue_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
+## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) get_routing_queue_users(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -2133,9 +2134,9 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
-page_size = 25 # int | Page size [max 100] (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | Sort by (optional) (default to name)
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int | Max value is 100 (optional) (default to 25)
+sort_order = 'asc' # str | Note: results are sorted by name. (optional) (default to asc)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 joined = true # bool | Filter by joined status (optional)
 name = 'name_example' # str | Filter by queue member name (optional)
@@ -2147,7 +2148,7 @@ presence = ['presence_example'] # list[str] | Filter by presence (optional)
 
 try:
     # DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
-    api_response = api_instance.get_routing_queue_users(queue_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
+    api_response = api_instance.get_routing_queue_users(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queue_users: %s\n" % e)
@@ -2159,9 +2160,9 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **page_size** | **int**| Page size [max 100] | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
+| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
@@ -2233,7 +2234,7 @@ except ApiException as e:
 
 <a name="get_routing_queues"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, id=id, division_id=division_id)
+## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id)
 
 
 
@@ -2260,16 +2261,16 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-name = 'name_example' # str | Name (optional)
-id = ['id_example'] # list[str] | ID(s) (optional)
-division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_order = 'asc' # str | Note: results are sorted by name. (optional) (default to asc)
+name = 'name_example' # str | Filter by queue name (optional)
+id = ['id_example'] # list[str] | Filter by queue ID(s) (optional)
+division_id = ['division_id_example'] # list[str] | Filter by queue division ID(s) (optional)
 
 try:
     # Get list of queues.
-    api_response = api_instance.get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, id=id, division_id=division_id)
+    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queues: %s\n" % e)
@@ -2280,12 +2281,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **name** | **str**| Name | [optional]  |
-| **id** | [**list[str]**](str.html)| ID(s) | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
+| **name** | **str**| Filter by queue name | [optional]  |
+| **id** | [**list[str]**](str.html)| Filter by queue ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Filter by queue division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2414,7 +2415,7 @@ except ApiException as e:
 
 <a name="get_routing_queues_me"></a>
 
-## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_routing_queues_me(joined=joined, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_routing_queues_me(page_number=page_number, page_size=page_size, joined=joined, sort_order=sort_order)
 
 
 
@@ -2440,15 +2441,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-joined = true # bool | Joined (optional)
-page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+page_size = 25 # int | Page size (optional) (default to 25)
+joined = true # bool | Filter by joined status. (optional)
+sort_order = 'asc' # str | Note: results are sorted by name. (optional) (default to asc)
 
 try:
     # Get a paged listing of queues the user is a member of.
-    api_response = api_instance.get_routing_queues_me(joined=joined, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_routing_queues_me(page_number=page_number, page_size=page_size, joined=joined, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queues_me: %s\n" % e)
@@ -2459,11 +2459,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **joined** | **bool**| Joined | [optional]  |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **joined** | **bool**| Filter by joined status. | [optional]  |
+| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type
@@ -3377,13 +3376,13 @@ except ApiException as e:
 
 <a name="patch_routing_conversation"></a>
 
-## [**RoutingConversationAttributes**](RoutingConversationAttributes.html) patch_routing_conversation(conversation_id, body)
+## [**RoutingConversationAttributesResponse**](RoutingConversationAttributesResponse.html) patch_routing_conversation(conversation_id, body)
 
 
 
 Update attributes of an in-queue conversation
 
-Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
 
 Wraps PATCH /api/v2/routing/conversations/{conversationId} 
 
@@ -3405,7 +3404,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
-body = PureCloudPlatformClientV2.RoutingConversationAttributes() # RoutingConversationAttributes | Conversation Attributes
+body = PureCloudPlatformClientV2.RoutingConversationAttributesRequest() # RoutingConversationAttributesRequest | Conversation Attributes
 
 try:
     # Update attributes of an in-queue conversation
@@ -3421,12 +3420,12 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
-| **body** | [**RoutingConversationAttributes**](RoutingConversationAttributes.html)| Conversation Attributes |  |
+| **body** | [**RoutingConversationAttributesRequest**](RoutingConversationAttributesRequest.html)| Conversation Attributes |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RoutingConversationAttributes**](RoutingConversationAttributes.html)
+[**RoutingConversationAttributesResponse**](RoutingConversationAttributesResponse.html)
 
 <a name="patch_routing_email_domain"></a>
 
@@ -3533,59 +3532,6 @@ except ApiException as e:
 ### Return type
 
 [**InboundDomain**](InboundDomain.html)
-
-<a name="patch_routing_email_outbound_domain"></a>
-
-## [**OutboundDomain**](OutboundDomain.html) patch_routing_email_outbound_domain(domain_id, body)
-
-
-
-Request an update of the emails from /replyTo of an outbound domain
-
-
-
-Wraps PATCH /api/v2/routing/email/outbound/domains/{domainId} 
-
-Requires ALL permissions: 
-
-* routing:email:manage
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RoutingApi()
-domain_id = 'domain_id_example' # str | domain ID
-body = PureCloudPlatformClientV2.OutboundDomain() # OutboundDomain | domain with emails that need update set
-
-try:
-    # Request an update of the emails from /replyTo of an outbound domain
-    api_response = api_instance.patch_routing_email_outbound_domain(domain_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RoutingApi->patch_routing_email_outbound_domain: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **domain_id** | **str**| domain ID |  |
-| **body** | [**OutboundDomain**](OutboundDomain.html)| domain with emails that need update set |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**OutboundDomain**](OutboundDomain.html)
 
 <a name="patch_routing_predictor"></a>
 

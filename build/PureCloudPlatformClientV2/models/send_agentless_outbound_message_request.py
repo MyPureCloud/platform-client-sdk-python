@@ -111,7 +111,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address_messenger_type(self):
         """
         Gets the to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
-        The recipient messaging address messenger type. Currently SMS is the only one supported. WhatsApp will be supported in a future release.
+        The recipient messaging address messenger type. Currently SMS and Open are the only supported types. WhatsApp will be supported in a future release
 
         :return: The to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
         :rtype: str
@@ -122,7 +122,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address_messenger_type(self, to_address_messenger_type):
         """
         Sets the to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
-        The recipient messaging address messenger type. Currently SMS is the only one supported. WhatsApp will be supported in a future release.
+        The recipient messaging address messenger type. Currently SMS and Open are the only supported types. WhatsApp will be supported in a future release
 
         :param to_address_messenger_type: The to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
         :type: str

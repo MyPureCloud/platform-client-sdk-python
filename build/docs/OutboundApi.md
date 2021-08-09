@@ -1832,6 +1832,7 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 * outbound:messagingCampaign:view
+* outbound:emailCampaign:view
 
 ### Example
 
@@ -1872,7 +1873,7 @@ except ApiException as e:
 | **id** | [**list[str]**](str.html)| Campaign ID(s) | [optional]  |
 | **name** | **str**| Campaign name(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
-| **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: sms, voice |
+| **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
 | **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
@@ -1896,6 +1897,7 @@ Requires ANY permissions:
 
 * outbound:campaign:search
 * outbound:messagingCampaign:search
+* outbound:emailCampaign:search
 
 ### Example
 
@@ -1936,7 +1938,7 @@ except ApiException as e:
 | **id** | [**list[str]**](str.html)| Campaign ID(s) | [optional]  |
 | **name** | **str**| Campaign name(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
-| **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: sms, voice |
+| **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
 | **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
@@ -3219,6 +3221,7 @@ Wraps GET /api/v2/outbound/messagingcampaigns
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:view
+* outbound:emailCampaign:view
 
 ### Example
 

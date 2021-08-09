@@ -72,7 +72,7 @@ class AuditQueryService(object):
         :param name: The name of this AuditQueryService.
         :type: str
         """
-        allowed_values = ["AnalyticsReporting", "Architect", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Gamification", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Limits", "Outbound", "PeoplePermissions", "EmployeePerformance", "PredictiveEngagement", "Presence", "Quality", "ResponseManagement", "Routing", "SpeechAndTextAnalytics", "Telephony", "TopicsDefinitions", "Triggers", "ProcessAutomation", "WebDeployments", "Webhooks", "WorkforceManagement", "Messaging", "Supportability"]
+        allowed_values = ["AnalyticsReporting", "Architect", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Gamification", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Learning", "Limits", "Outbound", "PeoplePermissions", "EmployeePerformance", "PredictiveEngagement", "Presence", "Quality", "ResponseManagement", "Routing", "SpeechAndTextAnalytics", "Telephony", "TopicsDefinitions", "Triggers", "ProcessAutomation", "WebDeployments", "Webhooks", "WorkforceManagement", "Messaging", "Supportability"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"

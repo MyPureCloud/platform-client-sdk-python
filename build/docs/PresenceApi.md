@@ -657,7 +657,7 @@ Wraps PUT /api/v2/users/presences/bulk
 
 Requires ANY permissions: 
 
-* directory:user:edit
+* presence:userPresence:edit
 
 ### Example
 

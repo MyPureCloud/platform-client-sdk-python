@@ -435,7 +435,7 @@ class AuditApi(object):
 
     def post_audits_query_realtime(self, body, **kwargs):
         """
-        This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+        This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
         
 
         This method makes a synchronous HTTP request by default. To make an
