@@ -304,6 +304,9 @@ class LearningApi(object):
         :param str overdue: Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned
         :param int page_size: Page size
         :param int page_number: Page number
+        :param str pcPass: Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned
+        :param float min_percentage_score: The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
+        :param float max_percentage_score: The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
         :param str sort_order: Specifies result set sort order; if not specified, default sort order is descending (Desc)
         :param str sort_by: Specifies which field to sort the results by, default sort is by recommendedCompletionDate
         :param list[str] user_id: Specifies the list of user IDs to be queried, up to 100 user IDs.
@@ -315,7 +318,7 @@ class LearningApi(object):
                  returns the request thread.
         """
 
-        all_params = ['module_id', 'interval', 'completion_interval', 'overdue', 'page_size', 'page_number', 'sort_order', 'sort_by', 'user_id', 'types', 'states', 'expand']
+        all_params = ['module_id', 'interval', 'completion_interval', 'overdue', 'page_size', 'page_number', 'pcPass', 'min_percentage_score', 'max_percentage_score', 'sort_order', 'sort_by', 'user_id', 'types', 'states', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -346,6 +349,12 @@ class LearningApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'pcPass' in params:
+            query_params['pass'] = params['pcPass']
+        if 'min_percentage_score' in params:
+            query_params['minPercentageScore'] = params['min_percentage_score']
+        if 'max_percentage_score' in params:
+            query_params['maxPercentageScore'] = params['max_percentage_score']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
         if 'sort_by' in params:
@@ -412,6 +421,9 @@ class LearningApi(object):
         :param str overdue: Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned
         :param int page_size: Page size
         :param int page_number: Page number
+        :param str pcPass: Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned
+        :param float min_percentage_score: The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
+        :param float max_percentage_score: The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
         :param str sort_order: Specifies result set sort order; if not specified, default sort order is descending (Desc)
         :param str sort_by: Specifies which field to sort the results by, default sort is by recommendedCompletionDate
         :param list[str] types: Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
@@ -422,7 +434,7 @@ class LearningApi(object):
                  returns the request thread.
         """
 
-        all_params = ['module_id', 'interval', 'completion_interval', 'overdue', 'page_size', 'page_number', 'sort_order', 'sort_by', 'types', 'states', 'expand']
+        all_params = ['module_id', 'interval', 'completion_interval', 'overdue', 'page_size', 'page_number', 'pcPass', 'min_percentage_score', 'max_percentage_score', 'sort_order', 'sort_by', 'types', 'states', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -453,6 +465,12 @@ class LearningApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'pcPass' in params:
+            query_params['pass'] = params['pcPass']
+        if 'min_percentage_score' in params:
+            query_params['minPercentageScore'] = params['min_percentage_score']
+        if 'max_percentage_score' in params:
+            query_params['maxPercentageScore'] = params['max_percentage_score']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
         if 'sort_by' in params:
@@ -765,12 +783,13 @@ class LearningApi(object):
         :param str sort_by: Sort by
         :param str search_term: Search Term (searchable by name)
         :param list[str] expand: Fields to expand in response(case insensitive)
+        :param str is_published: Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
         :return: LearningModulesDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['is_archived', 'types', 'page_size', 'page_number', 'sort_order', 'sort_by', 'search_term', 'expand']
+        all_params = ['is_archived', 'types', 'page_size', 'page_number', 'sort_order', 'sort_by', 'search_term', 'expand', 'is_published']
         all_params.append('callback')
 
         params = locals()
@@ -805,6 +824,8 @@ class LearningApi(object):
             query_params['searchTerm'] = params['search_term']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'is_published' in params:
+            query_params['isPublished'] = params['is_published']
 
         header_params = {}
 
@@ -915,6 +936,84 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningAssignment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_learning_assessments_scoring(self, body, **kwargs):
+        """
+        Score learning assessment for preview
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_learning_assessments_scoring(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param LearningAssessmentScoringRequest body: Assessment form and answers to score (required)
+        :return: AssessmentScoringSet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_learning_assessments_scoring" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_learning_assessments_scoring`")
+
+
+        resource_path = '/api/v2/learning/assessments/scoring'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AssessmentScoringSet',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -3288,9 +3288,10 @@ This returns a simplified version of a Messaging Campaign, consisting of id, nam
 
 Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId} 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * outbound:messagingCampaign:search
+* outbound:emailCampaign:search
 
 ### Example
 
@@ -3329,7 +3330,7 @@ except ApiException as e:
 
 <a name="get_outbound_messagingcampaigns_divisionviews"></a>
 
-## [**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing.html) get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id, sender_sms_phone_number=sender_sms_phone_number)
+## [**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing.html) get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, type=type, id=id, sender_sms_phone_number=sender_sms_phone_number)
 
 
 
@@ -3339,9 +3340,10 @@ This returns a listing of simplified Messaging Campaigns, each consisting of id,
 
 Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * outbound:messagingCampaign:search
+* outbound:emailCampaign:search
 
 ### Example
 
@@ -3360,12 +3362,13 @@ page_size = 25 # int | Page size. The max that will be returned is 100. (optiona
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_order = 'a' # str | The direction to sort (optional) (default to a)
 name = 'name_example' # str | Name (optional)
+type = 'type_example' # str | Campaign Type (optional)
 id = ['id_example'] # list[str] | id (optional)
 sender_sms_phone_number = 'sender_sms_phone_number_example' # str | Sender SMS Phone Number (optional)
 
 try:
     # Query a list of basic Messaging Campaign information objects
-    api_response = api_instance.get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id, sender_sms_phone_number=sender_sms_phone_number)
+    api_response = api_instance.get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, type=type, id=id, sender_sms_phone_number=sender_sms_phone_number)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->get_outbound_messagingcampaigns_divisionviews: %s\n" % e)
@@ -3380,6 +3383,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
+| **type** | **str**| Campaign Type | [optional] <br />**Values**: EMAIL, SMS |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **sender_sms_phone_number** | **str**| Sender SMS Phone Number | [optional]  |
 {: class="table table-striped"}

@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_recording_crossplatform_mediaretentionpolicies**](RecordingApi.html#get_recording_crossplatform_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
 |[**get_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#get_recording_crossplatform_mediaretentionpolicy) | Get a media retention policy|
 |[**get_recording_job**](RecordingApi.html#get_recording_job) | Get the status of the job associated with the job id.|
+|[**get_recording_job_failedrecordings**](RecordingApi.html#get_recording_job_failedrecordings) | Get IDs of recordings that the bulk job failed for|
 |[**get_recording_jobs**](RecordingApi.html#get_recording_jobs) | Get the status of all jobs within the user&#39;s organization|
 |[**get_recording_localkeys_setting**](RecordingApi.html#get_recording_localkeys_setting) | Get the local encryption settings|
 |[**get_recording_localkeys_settings**](RecordingApi.html#get_recording_localkeys_settings) | gets a list local key settings data|
@@ -1152,6 +1153,61 @@ except ApiException as e:
 ### Return type
 
 [**RecordingJob**](RecordingJob.html)
+
+<a name="get_recording_job_failedrecordings"></a>
+
+## [**FailedRecordingsEntityListing**](FailedRecordingsEntityListing.html) get_recording_job_failedrecordings(job_id, page_size=page_size, page_number=page_number)
+
+
+
+Get IDs of recordings that the bulk job failed for
+
+
+
+Wraps GET /api/v2/recording/jobs/{jobId}/failedrecordings 
+
+Requires ALL permissions: 
+
+* recording:job:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+job_id = 'job_id_example' # str | jobId
+page_size = 25 # int | Page size. Maximum is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get IDs of recordings that the bulk job failed for
+    api_response = api_instance.get_recording_job_failedrecordings(job_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recording_job_failedrecordings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **page_size** | **int**| Page size. Maximum is 100. | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**FailedRecordingsEntityListing**](FailedRecordingsEntityListing.html)
 
 <a name="get_recording_jobs"></a>
 

@@ -39,6 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_gamification_template**](GamificationApi.html#get_gamification_template) | Objective template by id|
 |[**get_gamification_templates**](GamificationApi.html#get_gamification_templates) | All objective templates|
 |[**post_gamification_metrics**](GamificationApi.html#post_gamification_metrics) | Creates a gamified metric with a given metric definition and metric objective|
+|[**post_gamification_profile_activate**](GamificationApi.html#post_gamification_profile_activate) | Activate a performance profile|
+|[**post_gamification_profile_deactivate**](GamificationApi.html#post_gamification_profile_deactivate) | Deactivate a performance profile|
 |[**put_gamification_metric**](GamificationApi.html#put_gamification_metric) | Updates a metric|
 |[**put_gamification_profile**](GamificationApi.html#put_gamification_profile) | Updates a performance profile|
 |[**put_gamification_status**](GamificationApi.html#put_gamification_status) | Update gamification activation status|
@@ -1682,6 +1684,108 @@ except ApiException as e:
 ### Return type
 
 [**Metric**](Metric.html)
+
+<a name="post_gamification_profile_activate"></a>
+
+## [**PerformanceProfile**](PerformanceProfile.html) post_gamification_profile_activate(performance_profile_id)
+
+
+
+Activate a performance profile
+
+
+
+Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/activate 
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+
+try:
+    # Activate a performance profile
+    api_response = api_instance.post_gamification_profile_activate(performance_profile_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profile_activate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **performance_profile_id** | **str**| Performance Profile Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="post_gamification_profile_deactivate"></a>
+
+## [**PerformanceProfile**](PerformanceProfile.html) post_gamification_profile_deactivate(performance_profile_id)
+
+
+
+Deactivate a performance profile
+
+
+
+Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/deactivate 
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+
+try:
+    # Deactivate a performance profile
+    api_response = api_instance.post_gamification_profile_deactivate(performance_profile_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profile_deactivate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **performance_profile_id** | **str**| Performance Profile Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PerformanceProfile**](PerformanceProfile.html)
 
 <a name="put_gamification_metric"></a>
 

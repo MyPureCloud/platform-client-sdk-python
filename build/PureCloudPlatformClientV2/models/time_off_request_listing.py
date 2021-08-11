@@ -53,7 +53,7 @@ class TimeOffRequestListing(object):
     def entities(self):
         """
         Gets the entities of this TimeOffRequestListing.
-        List of time off request look up objects
+        List of time off requests
 
         :return: The entities of this TimeOffRequestListing.
         :rtype: list[TimeOffRequest]
@@ -64,7 +64,7 @@ class TimeOffRequestListing(object):
     def entities(self, entities):
         """
         Sets the entities of this TimeOffRequestListing.
-        List of time off request look up objects
+        List of time off requests
 
         :param entities: The entities of this TimeOffRequestListing.
         :type: list[TimeOffRequest]

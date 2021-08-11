@@ -156,7 +156,10 @@ class ViewFilter(object):
             'bot_final_intent_list': 'list[str]',
             'bot_slot_list': 'list[str]',
             'bot_result_list': 'list[str]',
-            'blocked_reasons': 'list[str]'
+            'blocked_reasons': 'list[str]',
+            'is_recorded': 'bool',
+            'has_evaluation': 'bool',
+            'has_scored_evaluation': 'bool'
         }
 
         self.attribute_map = {
@@ -276,7 +279,10 @@ class ViewFilter(object):
             'bot_final_intent_list': 'botFinalIntentList',
             'bot_slot_list': 'botSlotList',
             'bot_result_list': 'botResultList',
-            'blocked_reasons': 'blockedReasons'
+            'blocked_reasons': 'blockedReasons',
+            'is_recorded': 'isRecorded',
+            'has_evaluation': 'hasEvaluation',
+            'has_scored_evaluation': 'hasScoredEvaluation'
         }
 
         self._media_types = None
@@ -396,6 +402,9 @@ class ViewFilter(object):
         self._bot_slot_list = None
         self._bot_result_list = None
         self._blocked_reasons = None
+        self._is_recorded = None
+        self._has_evaluation = None
+        self._has_scored_evaluation = None
 
     @property
     def media_types(self):
@@ -3087,6 +3096,75 @@ class ViewFilter(object):
         """
         
         self._blocked_reasons = blocked_reasons
+
+    @property
+    def is_recorded(self):
+        """
+        Gets the is_recorded of this ViewFilter.
+        Indicates filtering for recorded
+
+        :return: The is_recorded of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_recorded
+
+    @is_recorded.setter
+    def is_recorded(self, is_recorded):
+        """
+        Sets the is_recorded of this ViewFilter.
+        Indicates filtering for recorded
+
+        :param is_recorded: The is_recorded of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_recorded = is_recorded
+
+    @property
+    def has_evaluation(self):
+        """
+        Gets the has_evaluation of this ViewFilter.
+        Indicates filtering for evaluation
+
+        :return: The has_evaluation of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_evaluation
+
+    @has_evaluation.setter
+    def has_evaluation(self, has_evaluation):
+        """
+        Sets the has_evaluation of this ViewFilter.
+        Indicates filtering for evaluation
+
+        :param has_evaluation: The has_evaluation of this ViewFilter.
+        :type: bool
+        """
+        
+        self._has_evaluation = has_evaluation
+
+    @property
+    def has_scored_evaluation(self):
+        """
+        Gets the has_scored_evaluation of this ViewFilter.
+        Indicates filtering for scored evaluation
+
+        :return: The has_scored_evaluation of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_scored_evaluation
+
+    @has_scored_evaluation.setter
+    def has_scored_evaluation(self, has_scored_evaluation):
+        """
+        Sets the has_scored_evaluation of this ViewFilter.
+        Indicates filtering for scored evaluation
+
+        :param has_scored_evaluation: The has_scored_evaluation of this ViewFilter.
+        :type: bool
+        """
+        
+        self._has_scored_evaluation = has_scored_evaluation
 
     def to_dict(self):
         """

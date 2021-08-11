@@ -43,20 +43,26 @@ class LearningModuleRequest(object):
             'name': 'str',
             'description': 'str',
             'completion_time_in_days': 'int',
-            'inform_steps': 'list[LearningModuleInformStepRequest]'
+            'inform_steps': 'list[LearningModuleInformStepRequest]',
+            'type': 'str',
+            'assessment_form': 'AssessmentForm'
         }
 
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'completion_time_in_days': 'completionTimeInDays',
-            'inform_steps': 'informSteps'
+            'inform_steps': 'informSteps',
+            'type': 'type',
+            'assessment_form': 'assessmentForm'
         }
 
         self._name = None
         self._description = None
         self._completion_time_in_days = None
         self._inform_steps = None
+        self._type = None
+        self._assessment_form = None
 
     @property
     def name(self):
@@ -149,6 +155,56 @@ class LearningModuleRequest(object):
         """
         
         self._inform_steps = inform_steps
+
+    @property
+    def type(self):
+        """
+        Gets the type of this LearningModuleRequest.
+        The type for the learning module
+
+        :return: The type of this LearningModuleRequest.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this LearningModuleRequest.
+        The type for the learning module
+
+        :param type: The type of this LearningModuleRequest.
+        :type: str
+        """
+        allowed_values = ["Informational", "AssessedContent", "Questionnaire", "Assessment"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def assessment_form(self):
+        """
+        Gets the assessment_form of this LearningModuleRequest.
+        The assessment form for learning module
+
+        :return: The assessment_form of this LearningModuleRequest.
+        :rtype: AssessmentForm
+        """
+        return self._assessment_form
+
+    @assessment_form.setter
+    def assessment_form(self, assessment_form):
+        """
+        Sets the assessment_form of this LearningModuleRequest.
+        The assessment form for learning module
+
+        :param assessment_form: The assessment_form of this LearningModuleRequest.
+        :type: AssessmentForm
+        """
+        
+        self._assessment_form = assessment_form
 
     def to_dict(self):
         """

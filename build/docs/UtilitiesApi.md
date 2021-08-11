@@ -11,8 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_date**](UtilitiesApi.html#get_date) | Get the current system date/time|
 |[**get_ipranges**](UtilitiesApi.html#get_ipranges) | Get public ip address ranges for PureCloud|
 |[**get_timezones**](UtilitiesApi.html#get_timezones) | Get time zones list|
-|[**get_uploads_v1_publicasset**](UtilitiesApi.html#get_uploads_v1_publicasset) | 301 redirect.|
-|[**get_webdeployments_v1_sub_resources**](UtilitiesApi.html#get_webdeployments_v1_sub_resources) | 301 redirect.|
 |[**post_certificate_details**](UtilitiesApi.html#post_certificate_details) | Returns the information about an X509 PEM encoded certificate or certificate chain.|
 {: class="table table-striped"}
 
@@ -159,90 +157,6 @@ except ApiException as e:
 ### Return type
 
 [**TimeZoneEntityListing**](TimeZoneEntityListing.html)
-
-<a name="get_uploads_v1_publicasset"></a>
-
-##  get_uploads_v1_publicasset()
-
-
-
-301 redirect.
-
-
-
-Wraps GET /uploads/v1/publicassets/{subResources} 
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.UtilitiesApi()
-
-try:
-    # 301 redirect.
-    api_instance.get_uploads_v1_publicasset()
-except ApiException as e:
-    print("Exception when calling UtilitiesApi->get_uploads_v1_publicasset: %s\n" % e)
-```
-
-### Parameters
-
-This endpoint does not need any parameters.
-
-
-### Return type
-
-void (empty response body)
-
-<a name="get_webdeployments_v1_sub_resources"></a>
-
-##  get_webdeployments_v1_sub_resources()
-
-
-
-301 redirect.
-
-
-
-Wraps GET /webdeployments/v1/{subResources} 
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.UtilitiesApi()
-
-try:
-    # 301 redirect.
-    api_instance.get_webdeployments_v1_sub_resources()
-except ApiException as e:
-    print("Exception when calling UtilitiesApi->get_webdeployments_v1_sub_resources: %s\n" % e)
-```
-
-### Parameters
-
-This endpoint does not need any parameters.
-
-
-### Return type
-
-void (empty response body)
 
 <a name="post_certificate_details"></a>
 

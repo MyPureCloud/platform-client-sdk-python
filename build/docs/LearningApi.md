@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_learning_module_version**](LearningApi.html#get_learning_module_version) | Get specific version of a published module|
 |[**get_learning_modules**](LearningApi.html#get_learning_modules) | Get all learning modules of an organization|
 |[**patch_learning_assignment**](LearningApi.html#patch_learning_assignment) | Update Learning Assignment|
+|[**post_learning_assessments_scoring**](LearningApi.html#post_learning_assessments_scoring) | Score learning assessment for preview|
 |[**post_learning_assignments**](LearningApi.html#post_learning_assignments) | Create Learning Assignment|
 |[**post_learning_assignments_aggregates_query**](LearningApi.html#post_learning_assignments_aggregates_query) | Retrieve aggregated assignment data|
 |[**post_learning_assignments_bulkadd**](LearningApi.html#post_learning_assignments_bulkadd) | Add multiple learning assignments|
@@ -184,7 +185,7 @@ except ApiException as e:
 
 <a name="get_learning_assignments"></a>
 
-## [**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity.html) get_learning_assignments(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, user_id=user_id, types=types, states=states, expand=expand)
+## [**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity.html) get_learning_assignments(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, user_id=user_id, types=types, states=states, expand=expand)
 
 
 
@@ -217,6 +218,9 @@ completion_interval = 'completion_interval_example' # str | Specifies the range 
 overdue = 'Any' # str | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to Any)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+pcPass = 'Any' # str | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to Any)
+min_percentage_score = 3.4 # float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
+max_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
 sort_order = 'Desc' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to Desc)
 sort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
 user_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
@@ -226,7 +230,7 @@ expand = ['expand_example'] # list[str] | Specifies the expand option for return
 
 try:
     # List of Learning module Assignments
-    api_response = api_instance.get_learning_assignments(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, user_id=user_id, types=types, states=states, expand=expand)
+    api_response = api_instance.get_learning_assignments(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, user_id=user_id, types=types, states=states, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->get_learning_assignments: %s\n" % e)
@@ -243,6 +247,9 @@ except ApiException as e:
 | **overdue** | **str**| Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **pcPass** | **str**| Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+| **min_percentage_score** | **float**| The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
+| **max_percentage_score** | **float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **user_id** | [**list[str]**](str.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
@@ -257,7 +264,7 @@ except ApiException as e:
 
 <a name="get_learning_assignments_me"></a>
 
-## [**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity.html) get_learning_assignments_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, types=types, states=states, expand=expand)
+## [**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity.html) get_learning_assignments_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, types=types, states=states, expand=expand)
 
 
 
@@ -289,6 +296,9 @@ completion_interval = 'completion_interval_example' # str | Specifies the range 
 overdue = 'Any' # str | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to Any)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+pcPass = 'Any' # str | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to Any)
+min_percentage_score = 3.4 # float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
+max_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
 sort_order = 'Desc' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to Desc)
 sort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
 types = ['types_example'] # list[str] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
@@ -297,7 +307,7 @@ expand = ['expand_example'] # list[str] | Specifies the expand option for return
 
 try:
     # List of Learning Assignments assigned to current user
-    api_response = api_instance.get_learning_assignments_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, types=types, states=states, expand=expand)
+    api_response = api_instance.get_learning_assignments_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, types=types, states=states, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->get_learning_assignments_me: %s\n" % e)
@@ -314,6 +324,9 @@ except ApiException as e:
 | **overdue** | **str**| Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **pcPass** | **str**| Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+| **min_percentage_score** | **float**| The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
+| **max_percentage_score** | **float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **types** | [**list[str]**](str.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Questionnaire, Assessment |
@@ -486,7 +499,7 @@ except ApiException as e:
 
 <a name="get_learning_modules"></a>
 
-## [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand)
+## [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published)
 
 
 
@@ -521,10 +534,11 @@ sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
 sort_by = 'name' # str | Sort by (optional) (default to name)
 search_term = 'search_term_example' # str | Search Term (searchable by name) (optional)
 expand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)
+is_published = 'Any' # str | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional) (default to Any)
 
 try:
     # Get all learning modules of an organization
-    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand)
+    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->get_learning_modules: %s\n" % e)
@@ -543,6 +557,7 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to name]<br />**Values**: name |
 | **search_term** | **str**| Search Term (searchable by name) | [optional]  |
 | **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
+| **is_published** | **str**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
 {: class="table table-striped"}
 
 ### Return type
@@ -600,6 +615,59 @@ except ApiException as e:
 ### Return type
 
 [**LearningAssignment**](LearningAssignment.html)
+
+<a name="post_learning_assessments_scoring"></a>
+
+## [**AssessmentScoringSet**](AssessmentScoringSet.html) post_learning_assessments_scoring(body)
+
+
+
+Score learning assessment for preview
+
+
+
+Wraps POST /api/v2/learning/assessments/scoring 
+
+Requires ANY permissions: 
+
+* learning:module:view
+* learning:module:add
+* learning:module:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+body = PureCloudPlatformClientV2.LearningAssessmentScoringRequest() # LearningAssessmentScoringRequest | Assessment form and answers to score
+
+try:
+    # Score learning assessment for preview
+    api_response = api_instance.post_learning_assessments_scoring(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_assessments_scoring: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**LearningAssessmentScoringRequest**](LearningAssessmentScoringRequest.html)| Assessment form and answers to score |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssessmentScoringSet**](AssessmentScoringSet.html)
 
 <a name="post_learning_assignments"></a>
 

@@ -16,7 +16,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_agents_activity**](QualityApi.html#get_quality_agents_activity) | Gets a list of Agent Activities|
 |[**get_quality_calibration**](QualityApi.html#get_quality_calibration) | Get a calibration by id.  Requires either calibrator id or conversation id|
 |[**get_quality_calibrations**](QualityApi.html#get_quality_calibrations) | Get the list of calibrations|
-|[**get_quality_conversation_audits**](QualityApi.html#get_quality_conversation_audits) | Get audits for conversation or recording|
 |[**get_quality_conversation_evaluation**](QualityApi.html#get_quality_conversation_evaluation) | Get an evaluation|
 |[**get_quality_conversation_surveys**](QualityApi.html#get_quality_conversation_surveys) | Get the surveys for a conversation|
 |[**get_quality_conversations_audits_query_transaction_id**](QualityApi.html#get_quality_conversations_audits_query_transaction_id) | Get status of audit query execution|
@@ -518,78 +517,6 @@ except ApiException as e:
 ### Return type
 
 [**CalibrationEntityListing**](CalibrationEntityListing.html)
-
-<a name="get_quality_conversation_audits"></a>
-
-## [**QualityAuditPage**](QualityAuditPage.html) get_quality_conversation_audits(conversation_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, recording_id=recording_id, entity_type=entity_type)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get audits for conversation or recording
-
-Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
-
-Wraps GET /api/v2/quality/conversations/{conversationId}/audits 
-
-Requires ANY permissions: 
-
-* quality:calibration:viewAudit
-* quality:evaluation:viewAudit
-* quality:survey:viewAudit
-* recording:recording:viewAudit
-* recording:annotation:viewAudit
-* recording:screenRecording:viewAudit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.QualityApi()
-conversation_id = 'conversation_id_example' # str | Conversation ID
-page_size = 25 # int | The total page size requested (optional) (default to 25)
-page_number = 1 # int | The page number requested (optional) (default to 1)
-sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
-next_page = 'next_page_example' # str | next page token (optional)
-previous_page = 'previous_page_example' # str | Previous page token (optional)
-recording_id = 'recording_id_example' # str | id of the recording (optional)
-entity_type = 'Recording' # str | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional) (default to Recording)
-
-try:
-    # Get audits for conversation or recording
-    api_response = api_instance.get_quality_conversation_audits(conversation_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, recording_id=recording_id, entity_type=entity_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling QualityApi->get_quality_conversation_audits: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID |  |
-| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
-| **page_number** | **int**| The page number requested | [optional] [default to 1] |
-| **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
-| **next_page** | **str**| next page token | [optional]  |
-| **previous_page** | **str**| Previous page token | [optional]  |
-| **recording_id** | **str**| id of the recording | [optional]  |
-| **entity_type** | **str**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to Recording] |
-{: class="table table-striped"}
-
-### Return type
-
-[**QualityAuditPage**](QualityAuditPage.html)
 
 <a name="get_quality_conversation_evaluation"></a>
 

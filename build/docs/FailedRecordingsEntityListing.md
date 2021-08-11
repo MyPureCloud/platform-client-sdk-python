@@ -1,13 +1,13 @@
 ---
-title: QualityAuditPage
+title: FailedRecordingsEntityListing
 ---
-## QualityAuditPage
+## FailedRecordingsEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[QualityAudit]**](QualityAudit.html) |  | [optional] |
+| **entities** | [**list[RecordingJobFailedRecording]**](RecordingJobFailedRecording.html) |  | [optional] |
 | **page_size** | **int** |  | [optional] |
 | **page_number** | **int** |  | [optional] |
 | **total** | **int** |  | [optional] |

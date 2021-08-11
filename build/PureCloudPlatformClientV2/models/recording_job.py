@@ -49,6 +49,7 @@ class RecordingJob(object):
             'total_processed_recordings': 'int',
             'percent_progress': 'int',
             'error_message': 'str',
+            'failed_recordings': 'str',
             'self_uri': 'str',
             'user': 'AddressableEntityRef'
         }
@@ -63,6 +64,7 @@ class RecordingJob(object):
             'total_processed_recordings': 'totalProcessedRecordings',
             'percent_progress': 'percentProgress',
             'error_message': 'errorMessage',
+            'failed_recordings': 'failedRecordings',
             'self_uri': 'selfUri',
             'user': 'user'
         }
@@ -76,6 +78,7 @@ class RecordingJob(object):
         self._total_processed_recordings = None
         self._percent_progress = None
         self._error_message = None
+        self._failed_recordings = None
         self._self_uri = None
         self._user = None
 
@@ -289,6 +292,29 @@ class RecordingJob(object):
         """
         
         self._error_message = error_message
+
+    @property
+    def failed_recordings(self):
+        """
+        Gets the failed_recordings of this RecordingJob.
+        Get IDs of recordings that the bulk job failed for
+
+        :return: The failed_recordings of this RecordingJob.
+        :rtype: str
+        """
+        return self._failed_recordings
+
+    @failed_recordings.setter
+    def failed_recordings(self, failed_recordings):
+        """
+        Sets the failed_recordings of this RecordingJob.
+        Get IDs of recordings that the bulk job failed for
+
+        :param failed_recordings: The failed_recordings of this RecordingJob.
+        :type: str
+        """
+        
+        self._failed_recordings = failed_recordings
 
     @property
     def self_uri(self):

@@ -55,7 +55,10 @@ class LearningModule(object):
             'is_published': 'bool',
             'description': 'str',
             'completion_time_in_days': 'int',
-            'inform_steps': 'list[LearningModuleInformStep]'
+            'type': 'str',
+            'inform_steps': 'list[LearningModuleInformStep]',
+            'assessment_form': 'AssessmentForm',
+            'summary_data': 'LearningModuleSummary'
         }
 
         self.attribute_map = {
@@ -74,7 +77,10 @@ class LearningModule(object):
             'is_published': 'isPublished',
             'description': 'description',
             'completion_time_in_days': 'completionTimeInDays',
-            'inform_steps': 'informSteps'
+            'type': 'type',
+            'inform_steps': 'informSteps',
+            'assessment_form': 'assessmentForm',
+            'summary_data': 'summaryData'
         }
 
         self._id = None
@@ -92,7 +98,10 @@ class LearningModule(object):
         self._is_published = None
         self._description = None
         self._completion_time_in_days = None
+        self._type = None
         self._inform_steps = None
+        self._assessment_form = None
+        self._summary_data = None
 
     @property
     def id(self):
@@ -444,6 +453,33 @@ class LearningModule(object):
         self._completion_time_in_days = completion_time_in_days
 
     @property
+    def type(self):
+        """
+        Gets the type of this LearningModule.
+        The type for the learning module
+
+        :return: The type of this LearningModule.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this LearningModule.
+        The type for the learning module
+
+        :param type: The type of this LearningModule.
+        :type: str
+        """
+        allowed_values = ["Informational", "AssessedContent", "Questionnaire", "Assessment"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
     def inform_steps(self):
         """
         Gets the inform_steps of this LearningModule.
@@ -465,6 +501,52 @@ class LearningModule(object):
         """
         
         self._inform_steps = inform_steps
+
+    @property
+    def assessment_form(self):
+        """
+        Gets the assessment_form of this LearningModule.
+        The assessment form for learning module
+
+        :return: The assessment_form of this LearningModule.
+        :rtype: AssessmentForm
+        """
+        return self._assessment_form
+
+    @assessment_form.setter
+    def assessment_form(self, assessment_form):
+        """
+        Sets the assessment_form of this LearningModule.
+        The assessment form for learning module
+
+        :param assessment_form: The assessment_form of this LearningModule.
+        :type: AssessmentForm
+        """
+        
+        self._assessment_form = assessment_form
+
+    @property
+    def summary_data(self):
+        """
+        Gets the summary_data of this LearningModule.
+        The learning module summary data
+
+        :return: The summary_data of this LearningModule.
+        :rtype: LearningModuleSummary
+        """
+        return self._summary_data
+
+    @summary_data.setter
+    def summary_data(self, summary_data):
+        """
+        Sets the summary_data of this LearningModule.
+        The learning module summary data
+
+        :param summary_data: The summary_data of this LearningModule.
+        :type: LearningModuleSummary
+        """
+        
+        self._summary_data = summary_data
 
     def to_dict(self):
         """

@@ -40,14 +40,23 @@ class DevelopmentActivityAggregateQueryResponseStatistics(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'count': 'int'
+            'count': 'int',
+            'min': 'int',
+            'max': 'int',
+            'sum': 'int'
         }
 
         self.attribute_map = {
-            'count': 'count'
+            'count': 'count',
+            'min': 'min',
+            'max': 'max',
+            'sum': 'sum'
         }
 
         self._count = None
+        self._min = None
+        self._max = None
+        self._sum = None
 
     @property
     def count(self):
@@ -71,6 +80,75 @@ class DevelopmentActivityAggregateQueryResponseStatistics(object):
         """
         
         self._count = count
+
+    @property
+    def min(self):
+        """
+        Gets the min of this DevelopmentActivityAggregateQueryResponseStatistics.
+        The minimum value in this metric
+
+        :return: The min of this DevelopmentActivityAggregateQueryResponseStatistics.
+        :rtype: int
+        """
+        return self._min
+
+    @min.setter
+    def min(self, min):
+        """
+        Sets the min of this DevelopmentActivityAggregateQueryResponseStatistics.
+        The minimum value in this metric
+
+        :param min: The min of this DevelopmentActivityAggregateQueryResponseStatistics.
+        :type: int
+        """
+        
+        self._min = min
+
+    @property
+    def max(self):
+        """
+        Gets the max of this DevelopmentActivityAggregateQueryResponseStatistics.
+        The maximum value in this metric
+
+        :return: The max of this DevelopmentActivityAggregateQueryResponseStatistics.
+        :rtype: int
+        """
+        return self._max
+
+    @max.setter
+    def max(self, max):
+        """
+        Sets the max of this DevelopmentActivityAggregateQueryResponseStatistics.
+        The maximum value in this metric
+
+        :param max: The max of this DevelopmentActivityAggregateQueryResponseStatistics.
+        :type: int
+        """
+        
+        self._max = max
+
+    @property
+    def sum(self):
+        """
+        Gets the sum of this DevelopmentActivityAggregateQueryResponseStatistics.
+        The total of the values for this metric
+
+        :return: The sum of this DevelopmentActivityAggregateQueryResponseStatistics.
+        :rtype: int
+        """
+        return self._sum
+
+    @sum.setter
+    def sum(self, sum):
+        """
+        Sets the sum of this DevelopmentActivityAggregateQueryResponseStatistics.
+        The total of the values for this metric
+
+        :param sum: The sum of this DevelopmentActivityAggregateQueryResponseStatistics.
+        :type: int
+        """
+        
+        self._sum = sum
 
     def to_dict(self):
         """

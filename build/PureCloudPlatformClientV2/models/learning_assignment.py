@@ -41,52 +41,64 @@ class LearningAssignment(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'assessment': 'LearningAssessment',
             'created_by': 'UserReference',
             'date_created': 'datetime',
             'modified_by': 'UserReference',
             'date_modified': 'datetime',
             'is_overdue': 'bool',
+            'percentage_score': 'float',
             'is_rule': 'bool',
             'is_manual': 'bool',
+            'is_passed': 'bool',
             'self_uri': 'str',
             'state': 'str',
             'date_recommended_for_completion': 'datetime',
             'version': 'int',
             'module': 'LearningModule',
-            'user': 'UserReference'
+            'user': 'UserReference',
+            'assessment_form': 'AssessmentForm'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'assessment': 'assessment',
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'modified_by': 'modifiedBy',
             'date_modified': 'dateModified',
             'is_overdue': 'isOverdue',
+            'percentage_score': 'percentageScore',
             'is_rule': 'isRule',
             'is_manual': 'isManual',
+            'is_passed': 'isPassed',
             'self_uri': 'selfUri',
             'state': 'state',
             'date_recommended_for_completion': 'dateRecommendedForCompletion',
             'version': 'version',
             'module': 'module',
-            'user': 'user'
+            'user': 'user',
+            'assessment_form': 'assessmentForm'
         }
 
         self._id = None
+        self._assessment = None
         self._created_by = None
         self._date_created = None
         self._modified_by = None
         self._date_modified = None
         self._is_overdue = None
+        self._percentage_score = None
         self._is_rule = None
         self._is_manual = None
+        self._is_passed = None
         self._self_uri = None
         self._state = None
         self._date_recommended_for_completion = None
         self._version = None
         self._module = None
         self._user = None
+        self._assessment_form = None
 
     @property
     def id(self):
@@ -110,6 +122,29 @@ class LearningAssignment(object):
         """
         
         self._id = id
+
+    @property
+    def assessment(self):
+        """
+        Gets the assessment of this LearningAssignment.
+        The assessment associated with this assignment
+
+        :return: The assessment of this LearningAssignment.
+        :rtype: LearningAssessment
+        """
+        return self._assessment
+
+    @assessment.setter
+    def assessment(self, assessment):
+        """
+        Sets the assessment of this LearningAssignment.
+        The assessment associated with this assignment
+
+        :param assessment: The assessment of this LearningAssignment.
+        :type: LearningAssessment
+        """
+        
+        self._assessment = assessment
 
     @property
     def created_by(self):
@@ -227,6 +262,29 @@ class LearningAssignment(object):
         self._is_overdue = is_overdue
 
     @property
+    def percentage_score(self):
+        """
+        Gets the percentage_score of this LearningAssignment.
+        The user's percentage score for this assignment
+
+        :return: The percentage_score of this LearningAssignment.
+        :rtype: float
+        """
+        return self._percentage_score
+
+    @percentage_score.setter
+    def percentage_score(self, percentage_score):
+        """
+        Sets the percentage_score of this LearningAssignment.
+        The user's percentage score for this assignment
+
+        :param percentage_score: The percentage_score of this LearningAssignment.
+        :type: float
+        """
+        
+        self._percentage_score = percentage_score
+
+    @property
     def is_rule(self):
         """
         Gets the is_rule of this LearningAssignment.
@@ -271,6 +329,29 @@ class LearningAssignment(object):
         """
         
         self._is_manual = is_manual
+
+    @property
+    def is_passed(self):
+        """
+        Gets the is_passed of this LearningAssignment.
+        True if the assessment was passed
+
+        :return: The is_passed of this LearningAssignment.
+        :rtype: bool
+        """
+        return self._is_passed
+
+    @is_passed.setter
+    def is_passed(self, is_passed):
+        """
+        Sets the is_passed of this LearningAssignment.
+        True if the assessment was passed
+
+        :param is_passed: The is_passed of this LearningAssignment.
+        :type: bool
+        """
+        
+        self._is_passed = is_passed
 
     @property
     def self_uri(self):
@@ -413,6 +494,29 @@ class LearningAssignment(object):
         """
         
         self._user = user
+
+    @property
+    def assessment_form(self):
+        """
+        Gets the assessment_form of this LearningAssignment.
+        The assessment form associated with this assignment
+
+        :return: The assessment_form of this LearningAssignment.
+        :rtype: AssessmentForm
+        """
+        return self._assessment_form
+
+    @assessment_form.setter
+    def assessment_form(self, assessment_form):
+        """
+        Sets the assessment_form of this LearningAssignment.
+        The assessment form associated with this assignment
+
+        :param assessment_form: The assessment_form of this LearningAssignment.
+        :type: AssessmentForm
+        """
+        
+        self._assessment_form = assessment_form
 
     def to_dict(self):
         """

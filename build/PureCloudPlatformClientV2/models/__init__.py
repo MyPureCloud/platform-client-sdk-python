@@ -181,6 +181,7 @@ from .audit_topic_domain_entity_ref import AuditTopicDomainEntityRef
 from .audit_topic_message_info import AuditTopicMessageInfo
 from .audit_topic_property_change import AuditTopicPropertyChange
 from .audit_user import AuditUser
+from .authentication_settings import AuthenticationSettings
 from .authz_division import AuthzDivision
 from .authz_division_entity_listing import AuthzDivisionEntityListing
 from .authz_division_grant_entity_listing import AuthzDivisionGrantEntityListing
@@ -1074,6 +1075,7 @@ from .facet_key_attribute import FacetKeyAttribute
 from .facet_statistics import FacetStatistics
 from .facet_term import FacetTerm
 from .failed_object import FailedObject
+from .failed_recordings_entity_listing import FailedRecordingsEntityListing
 from .fax_document import FaxDocument
 from .fax_document_entity_listing import FaxDocumentEntityListing
 from .fax_send_request import FaxSendRequest
@@ -1088,6 +1090,8 @@ from .feature_state import FeatureState
 from .field_config import FieldConfig
 from .field_configs import FieldConfigs
 from .field_list import FieldList
+from .file_upload_mode import FileUploadMode
+from .file_upload_settings import FileUploadSettings
 from .filter import Filter
 from .filter_preview_response import FilterPreviewResponse
 from .flow import Flow
@@ -1130,6 +1134,7 @@ from .forecast_service_goal_template_response import ForecastServiceGoalTemplate
 from .forecast_service_level_response import ForecastServiceLevelResponse
 from .forecast_source_day_pointer import ForecastSourceDayPointer
 from .format import Format
+from .forms_track_trigger import FormsTrackTrigger
 from .free_seating_configuration import FreeSeatingConfiguration
 from .from_email_address import FromEmailAddress
 from .gdpr_journey_customer import GDPRJourneyCustomer
@@ -1194,6 +1199,7 @@ from .homer_record import HomerRecord
 from .ivr import IVR
 from .ivr_entity_listing import IVREntityListing
 from .identity_now import IdentityNow
+from .idle_event_trigger import IdleEventTrigger
 from .ignored_activity_categories import IgnoredActivityCategories
 from .import_error import ImportError
 from .import_report import ImportReport
@@ -1246,6 +1252,7 @@ from .journey_aggregation_view import JourneyAggregationView
 from .journey_context import JourneyContext
 from .journey_customer import JourneyCustomer
 from .journey_customer_session import JourneyCustomerSession
+from .journey_events_settings import JourneyEventsSettings
 from .journey_pattern import JourneyPattern
 from .journey_segment import JourneySegment
 from .journey_survey_question import JourneySurveyQuestion
@@ -1282,9 +1289,11 @@ from .language import Language
 from .language_entity_listing import LanguageEntityListing
 from .language_override import LanguageOverride
 from .language_reference import LanguageReference
+from .launcher_button_settings import LauncherButtonSettings
 from .leaderboard import Leaderboard
 from .leaderboard_item import LeaderboardItem
 from .learning_assessment import LearningAssessment
+from .learning_assessment_scoring_request import LearningAssessmentScoringRequest
 from .learning_assignment import LearningAssignment
 from .learning_assignment_aggregate_param import LearningAssignmentAggregateParam
 from .learning_assignment_aggregate_query_request_clause import LearningAssignmentAggregateQueryRequestClause
@@ -1426,6 +1435,8 @@ from .messaging_sticker import MessagingSticker
 from .messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .messaging_template import MessagingTemplate
 from .messaging_template_request import MessagingTemplateRequest
+from .messenger_settings import MessengerSettings
+from .messenger_styles import MessengerStyles
 from .meta_data import MetaData
 from .metabase import Metabase
 from .metered_assignment_by_agent import MeteredAssignmentByAgent
@@ -1666,9 +1677,7 @@ from .punctuality_event import PunctualityEvent
 from .pure_cloud import PureCloud
 from .pure_engage import PureEngage
 from .qm_audit_query_request import QMAuditQueryRequest
-from .quality_audit import QualityAudit
 from .quality_audit_log_message import QualityAuditLogMessage
-from .quality_audit_page import QualityAuditPage
 from .quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
 from .quality_audit_query_execution_status_response import QualityAuditQueryExecutionStatusResponse
 from .quality_audit_query_filter import QualityAuditQueryFilter
@@ -1910,6 +1919,7 @@ from .recording_event_media_result import RecordingEventMediaResult
 from .recording_event_recording import RecordingEventRecording
 from .recording_job import RecordingJob
 from .recording_job_entity_listing import RecordingJobEntityListing
+from .recording_job_failed_recording import RecordingJobFailedRecording
 from .recording_jobs_query import RecordingJobsQuery
 from .recording_messaging_message import RecordingMessagingMessage
 from .recording_metadata import RecordingMetadata
@@ -2045,6 +2055,7 @@ from .screen_recording_session_request import ScreenRecordingSessionRequest
 from .screenshare import Screenshare
 from .script import Script
 from .script_entity_listing import ScriptEntityListing
+from .scroll_percentage_event_trigger import ScrollPercentageEventTrigger
 from .search_aggregation import SearchAggregation
 from .search_criteria import SearchCriteria
 from .search_request import SearchRequest
@@ -2063,6 +2074,7 @@ from .segment_detail_query_filter import SegmentDetailQueryFilter
 from .segment_detail_query_predicate import SegmentDetailQueryPredicate
 from .segment_listing import SegmentListing
 from .selected_columns import SelectedColumns
+from .selector_event_trigger import SelectorEventTrigger
 from .send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
 from .send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse
 from .sequence_schedule import SequenceSchedule
@@ -2459,6 +2471,11 @@ from .web_chat_message_entity_list import WebChatMessageEntityList
 from .web_chat_routing_target import WebChatRoutingTarget
 from .web_chat_settings import WebChatSettings
 from .web_chat_typing import WebChatTyping
+from .web_deployment import WebDeployment
+from .web_deployment_configuration_version import WebDeploymentConfigurationVersion
+from .web_deployment_configuration_version_entity_listing import WebDeploymentConfigurationVersionEntityListing
+from .web_deployment_configuration_version_entity_ref import WebDeploymentConfigurationVersionEntityRef
+from .web_deployment_entity_listing import WebDeploymentEntityListing
 from .web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 from .web_deployments_deployment_topic_web_messaging_config_change_event_body import WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody
 from .web_deployments_deployment_topic_web_messaging_deployment_change_event_body import WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody

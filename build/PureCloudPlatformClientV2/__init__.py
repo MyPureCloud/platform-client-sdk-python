@@ -181,6 +181,7 @@ from .models.audit_topic_domain_entity_ref import AuditTopicDomainEntityRef
 from .models.audit_topic_message_info import AuditTopicMessageInfo
 from .models.audit_topic_property_change import AuditTopicPropertyChange
 from .models.audit_user import AuditUser
+from .models.authentication_settings import AuthenticationSettings
 from .models.authz_division import AuthzDivision
 from .models.authz_division_entity_listing import AuthzDivisionEntityListing
 from .models.authz_division_grant_entity_listing import AuthzDivisionGrantEntityListing
@@ -1074,6 +1075,7 @@ from .models.facet_key_attribute import FacetKeyAttribute
 from .models.facet_statistics import FacetStatistics
 from .models.facet_term import FacetTerm
 from .models.failed_object import FailedObject
+from .models.failed_recordings_entity_listing import FailedRecordingsEntityListing
 from .models.fax_document import FaxDocument
 from .models.fax_document_entity_listing import FaxDocumentEntityListing
 from .models.fax_send_request import FaxSendRequest
@@ -1088,6 +1090,8 @@ from .models.feature_state import FeatureState
 from .models.field_config import FieldConfig
 from .models.field_configs import FieldConfigs
 from .models.field_list import FieldList
+from .models.file_upload_mode import FileUploadMode
+from .models.file_upload_settings import FileUploadSettings
 from .models.filter import Filter
 from .models.filter_preview_response import FilterPreviewResponse
 from .models.flow import Flow
@@ -1130,6 +1134,7 @@ from .models.forecast_service_goal_template_response import ForecastServiceGoalT
 from .models.forecast_service_level_response import ForecastServiceLevelResponse
 from .models.forecast_source_day_pointer import ForecastSourceDayPointer
 from .models.format import Format
+from .models.forms_track_trigger import FormsTrackTrigger
 from .models.free_seating_configuration import FreeSeatingConfiguration
 from .models.from_email_address import FromEmailAddress
 from .models.gdpr_journey_customer import GDPRJourneyCustomer
@@ -1194,6 +1199,7 @@ from .models.homer_record import HomerRecord
 from .models.ivr import IVR
 from .models.ivr_entity_listing import IVREntityListing
 from .models.identity_now import IdentityNow
+from .models.idle_event_trigger import IdleEventTrigger
 from .models.ignored_activity_categories import IgnoredActivityCategories
 from .models.import_error import ImportError
 from .models.import_report import ImportReport
@@ -1246,6 +1252,7 @@ from .models.journey_aggregation_view import JourneyAggregationView
 from .models.journey_context import JourneyContext
 from .models.journey_customer import JourneyCustomer
 from .models.journey_customer_session import JourneyCustomerSession
+from .models.journey_events_settings import JourneyEventsSettings
 from .models.journey_pattern import JourneyPattern
 from .models.journey_segment import JourneySegment
 from .models.journey_survey_question import JourneySurveyQuestion
@@ -1282,9 +1289,11 @@ from .models.language import Language
 from .models.language_entity_listing import LanguageEntityListing
 from .models.language_override import LanguageOverride
 from .models.language_reference import LanguageReference
+from .models.launcher_button_settings import LauncherButtonSettings
 from .models.leaderboard import Leaderboard
 from .models.leaderboard_item import LeaderboardItem
 from .models.learning_assessment import LearningAssessment
+from .models.learning_assessment_scoring_request import LearningAssessmentScoringRequest
 from .models.learning_assignment import LearningAssignment
 from .models.learning_assignment_aggregate_param import LearningAssignmentAggregateParam
 from .models.learning_assignment_aggregate_query_request_clause import LearningAssignmentAggregateQueryRequestClause
@@ -1426,6 +1435,8 @@ from .models.messaging_sticker import MessagingSticker
 from .models.messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .models.messaging_template import MessagingTemplate
 from .models.messaging_template_request import MessagingTemplateRequest
+from .models.messenger_settings import MessengerSettings
+from .models.messenger_styles import MessengerStyles
 from .models.meta_data import MetaData
 from .models.metabase import Metabase
 from .models.metered_assignment_by_agent import MeteredAssignmentByAgent
@@ -1666,9 +1677,7 @@ from .models.punctuality_event import PunctualityEvent
 from .models.pure_cloud import PureCloud
 from .models.pure_engage import PureEngage
 from .models.qm_audit_query_request import QMAuditQueryRequest
-from .models.quality_audit import QualityAudit
 from .models.quality_audit_log_message import QualityAuditLogMessage
-from .models.quality_audit_page import QualityAuditPage
 from .models.quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
 from .models.quality_audit_query_execution_status_response import QualityAuditQueryExecutionStatusResponse
 from .models.quality_audit_query_filter import QualityAuditQueryFilter
@@ -1910,6 +1919,7 @@ from .models.recording_event_media_result import RecordingEventMediaResult
 from .models.recording_event_recording import RecordingEventRecording
 from .models.recording_job import RecordingJob
 from .models.recording_job_entity_listing import RecordingJobEntityListing
+from .models.recording_job_failed_recording import RecordingJobFailedRecording
 from .models.recording_jobs_query import RecordingJobsQuery
 from .models.recording_messaging_message import RecordingMessagingMessage
 from .models.recording_metadata import RecordingMetadata
@@ -2045,6 +2055,7 @@ from .models.screen_recording_session_request import ScreenRecordingSessionReque
 from .models.screenshare import Screenshare
 from .models.script import Script
 from .models.script_entity_listing import ScriptEntityListing
+from .models.scroll_percentage_event_trigger import ScrollPercentageEventTrigger
 from .models.search_aggregation import SearchAggregation
 from .models.search_criteria import SearchCriteria
 from .models.search_request import SearchRequest
@@ -2063,6 +2074,7 @@ from .models.segment_detail_query_filter import SegmentDetailQueryFilter
 from .models.segment_detail_query_predicate import SegmentDetailQueryPredicate
 from .models.segment_listing import SegmentListing
 from .models.selected_columns import SelectedColumns
+from .models.selector_event_trigger import SelectorEventTrigger
 from .models.send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
 from .models.send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse
 from .models.sequence_schedule import SequenceSchedule
@@ -2459,6 +2471,11 @@ from .models.web_chat_message_entity_list import WebChatMessageEntityList
 from .models.web_chat_routing_target import WebChatRoutingTarget
 from .models.web_chat_settings import WebChatSettings
 from .models.web_chat_typing import WebChatTyping
+from .models.web_deployment import WebDeployment
+from .models.web_deployment_configuration_version import WebDeploymentConfigurationVersion
+from .models.web_deployment_configuration_version_entity_listing import WebDeploymentConfigurationVersionEntityListing
+from .models.web_deployment_configuration_version_entity_ref import WebDeploymentConfigurationVersionEntityRef
+from .models.web_deployment_entity_listing import WebDeploymentEntityListing
 from .models.web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 from .models.web_deployments_deployment_topic_web_messaging_config_change_event_body import WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody
 from .models.web_deployments_deployment_topic_web_messaging_deployment_change_event_body import WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody
@@ -2698,6 +2715,7 @@ from .apis.users_api import UsersApi
 from .apis.utilities_api import UtilitiesApi
 from .apis.voicemail_api import VoicemailApi
 from .apis.web_chat_api import WebChatApi
+from .apis.web_deployments_api import WebDeploymentsApi
 from .apis.widgets_api import WidgetsApi
 from .apis.workforce_management_api import WorkforceManagementApi
 

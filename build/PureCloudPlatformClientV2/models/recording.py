@@ -68,6 +68,7 @@ class Recording(object):
             'session_id': 'str',
             'users': 'list[User]',
             'recording_file_role': 'str',
+            'recording_error_status': 'str',
             'self_uri': 'str'
         }
 
@@ -100,6 +101,7 @@ class Recording(object):
             'session_id': 'sessionId',
             'users': 'users',
             'recording_file_role': 'recordingFileRole',
+            'recording_error_status': 'recordingErrorStatus',
             'self_uri': 'selfUri'
         }
 
@@ -131,6 +133,7 @@ class Recording(object):
         self._session_id = None
         self._users = None
         self._recording_file_role = None
+        self._recording_error_status = None
         self._self_uri = None
 
     @property
@@ -788,6 +791,33 @@ class Recording(object):
             self._recording_file_role = "outdated_sdk_version"
         else:
             self._recording_file_role = recording_file_role
+
+    @property
+    def recording_error_status(self):
+        """
+        Gets the recording_error_status of this Recording.
+        Status of a recording that cannot be returned because of an error
+
+        :return: The recording_error_status of this Recording.
+        :rtype: str
+        """
+        return self._recording_error_status
+
+    @recording_error_status.setter
+    def recording_error_status(self, recording_error_status):
+        """
+        Sets the recording_error_status of this Recording.
+        Status of a recording that cannot be returned because of an error
+
+        :param recording_error_status: The recording_error_status of this Recording.
+        :type: str
+        """
+        allowed_values = ["EMAIL_TRANSCRIPT_TOO_LARGE"]
+        if recording_error_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for recording_error_status -> " + recording_error_status)
+            self._recording_error_status = "outdated_sdk_version"
+        else:
+            self._recording_error_status = recording_error_status
 
     @property
     def self_uri(self):

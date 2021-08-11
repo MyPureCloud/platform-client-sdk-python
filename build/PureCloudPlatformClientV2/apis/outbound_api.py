@@ -4931,6 +4931,7 @@ class OutboundApi(object):
         :param int page_number: Page number
         :param str sort_order: The direction to sort
         :param str name: Name
+        :param str type: Campaign Type
         :param list[str] id: id
         :param str sender_sms_phone_number: Sender SMS Phone Number
         :return: MessagingCampaignDivisionViewEntityListing
@@ -4938,7 +4939,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_order', 'name', 'id', 'sender_sms_phone_number']
+        all_params = ['page_size', 'page_number', 'sort_order', 'name', 'type', 'id', 'sender_sms_phone_number']
         all_params.append('callback')
 
         params = locals()
@@ -4965,6 +4966,8 @@ class OutboundApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'type' in params:
+            query_params['type'] = params['type']
         if 'id' in params:
             query_params['id'] = params['id']
         if 'sender_sms_phone_number' in params:

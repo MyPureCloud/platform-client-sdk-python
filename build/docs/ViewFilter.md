@@ -124,6 +124,9 @@ title: ViewFilter
 | **bot_slot_list** | **list[str]** | The list of bot slots used to filter bot views | [optional] |
 | **bot_result_list** | **list[str]** | The list of bot results used to filter bot views | [optional] |
 | **blocked_reasons** | **list[str]** | The list of blocked reason used to filter action map constraints views | [optional] |
+| **is_recorded** | **bool** | Indicates filtering for recorded | [optional] |
+| **has_evaluation** | **bool** | Indicates filtering for evaluation | [optional] |
+| **has_scored_evaluation** | **bool** | Indicates filtering for scored evaluation | [optional] |
 {: class="table table-striped"}
 
 
