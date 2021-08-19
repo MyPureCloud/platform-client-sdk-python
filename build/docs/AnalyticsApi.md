@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_analytics_conversations_details_job**](AnalyticsApi.html#delete_analytics_conversations_details_job) | Delete/cancel an async request|
 |[**delete_analytics_reporting_schedule**](AnalyticsApi.html#delete_analytics_reporting_schedule) | Delete a scheduled report job.|
 |[**delete_analytics_users_details_job**](AnalyticsApi.html#delete_analytics_users_details_job) | Delete/cancel an async request|
+|[**get_analytics_botflow_reportingturns**](AnalyticsApi.html#get_analytics_botflow_reportingturns) | Get Reporting Turns.|
 |[**get_analytics_conversation_details**](AnalyticsApi.html#get_analytics_conversation_details) | Get a conversation by id|
 |[**get_analytics_conversations_details**](AnalyticsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_analytics_conversations_details_job**](AnalyticsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
@@ -201,6 +202,65 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_analytics_botflow_reportingturns"></a>
+
+## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id)
+
+
+
+Get Reporting Turns.
+
+
+
+Wraps GET /api/v2/analytics/botflows/{botFlowId}/reportingturns 
+
+Requires ANY permissions: 
+
+* analytics:botFlowReportingTurn:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+bot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.
+after = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
+page_size = '50' # str | Max number of entities to return. Maximum of 250 (optional) (default to 50)
+action_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)
+session_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session (optional)
+
+try:
+    # Get Reporting Turns.
+    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_botflow_reportingturns: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bot_flow_id** | **str**| ID of the bot flow. |  |
+| **after** | **str**| The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Max number of entities to return. Maximum of 250 | [optional] [default to 50] |
+| **action_id** | **str**| Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
+| **session_id** | **str**| Optional session ID to get the reporting turns for a particular session | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ReportingTurnsResponse**](ReportingTurnsResponse.html)
 
 <a name="get_analytics_conversation_details"></a>
 

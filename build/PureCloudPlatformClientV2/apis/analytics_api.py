@@ -280,6 +280,96 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_analytics_botflow_reportingturns(self, bot_flow_id, **kwargs):
+        """
+        Get Reporting Turns.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_botflow_reportingturns(bot_flow_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bot_flow_id: ID of the bot flow. (required)
+        :param str after: The cursor that points to the ID of the last item in the list of entities that has been returned.
+        :param str page_size: Max number of entities to return. Maximum of 250
+        :param str action_id: Optional action ID to get the reporting turns associated to a particular flow action
+        :param str session_id: Optional session ID to get the reporting turns for a particular session
+        :return: ReportingTurnsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bot_flow_id', 'after', 'page_size', 'action_id', 'session_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_botflow_reportingturns" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bot_flow_id' is set
+        if ('bot_flow_id' not in params) or (params['bot_flow_id'] is None):
+            raise ValueError("Missing the required parameter `bot_flow_id` when calling `get_analytics_botflow_reportingturns`")
+
+
+        resource_path = '/api/v2/analytics/botflows/{botFlowId}/reportingturns'.replace('{format}', 'json')
+        path_params = {}
+        if 'bot_flow_id' in params:
+            path_params['botFlowId'] = params['bot_flow_id']
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'action_id' in params:
+            query_params['actionId'] = params['action_id']
+        if 'session_id' in params:
+            query_params['sessionId'] = params['session_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ReportingTurnsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_analytics_conversation_details(self, conversation_id, **kwargs):
         """
         Get a conversation by id

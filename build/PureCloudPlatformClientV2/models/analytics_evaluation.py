@@ -49,6 +49,7 @@ class AnalyticsEvaluation(object):
             'form_id': 'str',
             'form_name': 'str',
             'queue_id': 'str',
+            'released': 'bool',
             'rescored': 'bool',
             'user_id': 'str',
             'o_total_critical_score': 'int',
@@ -65,6 +66,7 @@ class AnalyticsEvaluation(object):
             'form_id': 'formId',
             'form_name': 'formName',
             'queue_id': 'queueId',
+            'released': 'released',
             'rescored': 'rescored',
             'user_id': 'userId',
             'o_total_critical_score': 'oTotalCriticalScore',
@@ -80,6 +82,7 @@ class AnalyticsEvaluation(object):
         self._form_id = None
         self._form_name = None
         self._queue_id = None
+        self._released = None
         self._rescored = None
         self._user_id = None
         self._o_total_critical_score = None
@@ -291,6 +294,29 @@ class AnalyticsEvaluation(object):
         """
         
         self._queue_id = queue_id
+
+    @property
+    def released(self):
+        """
+        Gets the released of this AnalyticsEvaluation.
+        Whether the evaluation has been released
+
+        :return: The released of this AnalyticsEvaluation.
+        :rtype: bool
+        """
+        return self._released
+
+    @released.setter
+    def released(self, released):
+        """
+        Sets the released of this AnalyticsEvaluation.
+        Whether the evaluation has been released
+
+        :param released: The released of this AnalyticsEvaluation.
+        :type: bool
+        """
+        
+        self._released = released
 
     @property
     def rescored(self):

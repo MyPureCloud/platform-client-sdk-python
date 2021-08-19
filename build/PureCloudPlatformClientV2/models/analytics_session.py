@@ -55,6 +55,7 @@ class AnalyticsSession(object):
             'callback_numbers': 'list[str]',
             'callback_scheduled_time': 'datetime',
             'callback_user_name': 'str',
+            'coached_participant_id': 'str',
             'cobrowse_role': 'str',
             'cobrowse_room_id': 'str',
             'delivery_status': 'str',
@@ -129,6 +130,7 @@ class AnalyticsSession(object):
             'callback_numbers': 'callbackNumbers',
             'callback_scheduled_time': 'callbackScheduledTime',
             'callback_user_name': 'callbackUserName',
+            'coached_participant_id': 'coachedParticipantId',
             'cobrowse_role': 'cobrowseRole',
             'cobrowse_room_id': 'cobrowseRoomId',
             'delivery_status': 'deliveryStatus',
@@ -202,6 +204,7 @@ class AnalyticsSession(object):
         self._callback_numbers = None
         self._callback_scheduled_time = None
         self._callback_user_name = None
+        self._coached_participant_id = None
         self._cobrowse_role = None
         self._cobrowse_room_id = None
         self._delivery_status = None
@@ -603,6 +606,29 @@ class AnalyticsSession(object):
         """
         
         self._callback_user_name = callback_user_name
+
+    @property
+    def coached_participant_id(self):
+        """
+        Gets the coached_participant_id of this AnalyticsSession.
+        The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation)
+
+        :return: The coached_participant_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._coached_participant_id
+
+    @coached_participant_id.setter
+    def coached_participant_id(self, coached_participant_id):
+        """
+        Sets the coached_participant_id of this AnalyticsSession.
+        The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation)
+
+        :param coached_participant_id: The coached_participant_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._coached_participant_id = coached_participant_id
 
     @property
     def cobrowse_role(self):
@@ -1115,7 +1141,7 @@ class AnalyticsSession(object):
         :param media_type: The media_type of this AnalyticsSession.
         :type: str
         """
-        allowed_values = ["unknown", "callback", "chat", "cobrowse", "email", "message", "screenshare", "video", "voice"]
+        allowed_values = ["callback", "chat", "cobrowse", "email", "message", "screenshare", "unknown", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"
@@ -1149,7 +1175,7 @@ class AnalyticsSession(object):
     def monitored_participant_id(self):
         """
         Gets the monitored_participant_id of this AnalyticsSession.
-        The participantId being monitored (if someone (e.g. an agent) is being monitored, this would be the ID of the participant that was monitored that would correspond to other participantIds present in the conversation)
+        The participantId being monitored (if someone (e.g. an agent) is being monitored, this would correspond to one of the other participantIds present in the conversation)
 
         :return: The monitored_participant_id of this AnalyticsSession.
         :rtype: str
@@ -1160,7 +1186,7 @@ class AnalyticsSession(object):
     def monitored_participant_id(self, monitored_participant_id):
         """
         Sets the monitored_participant_id of this AnalyticsSession.
-        The participantId being monitored (if someone (e.g. an agent) is being monitored, this would be the ID of the participant that was monitored that would correspond to other participantIds present in the conversation)
+        The participantId being monitored (if someone (e.g. an agent) is being monitored, this would correspond to one of the other participantIds present in the conversation)
 
         :param monitored_participant_id: The monitored_participant_id of this AnalyticsSession.
         :type: str

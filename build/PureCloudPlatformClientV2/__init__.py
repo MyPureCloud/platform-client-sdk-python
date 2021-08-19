@@ -393,6 +393,7 @@ from .models.change_my_password_request import ChangeMyPasswordRequest
 from .models.change_password_request import ChangePasswordRequest
 from .models.channel import Channel
 from .models.channel_entity_listing import ChannelEntityListing
+from .models.channel_metadata import ChannelMetadata
 from .models.channel_topic import ChannelTopic
 from .models.channel_topic_entity_listing import ChannelTopicEntityListing
 from .models.chat import Chat
@@ -642,6 +643,7 @@ from .models.conversation_message_event_topic_scored_agent import ConversationMe
 from .models.conversation_message_event_topic_uri_reference import ConversationMessageEventTopicUriReference
 from .models.conversation_message_event_topic_wrapup import ConversationMessageEventTopicWrapup
 from .models.conversation_messaging_channel import ConversationMessagingChannel
+from .models.conversation_messaging_channel_metadata import ConversationMessagingChannelMetadata
 from .models.conversation_messaging_from_recipient import ConversationMessagingFromRecipient
 from .models.conversation_messaging_to_recipient import ConversationMessagingToRecipient
 from .models.conversation_metrics import ConversationMetrics
@@ -1009,6 +1011,7 @@ from .models.encryption_key import EncryptionKey
 from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.endpoint import Endpoint
 from .models.entity import Entity
+from .models.entity_listing import EntityListing
 from .models.entity_type_criteria import EntityTypeCriteria
 from .models.entry import Entry
 from .models.error_body import ErrorBody
@@ -1159,6 +1162,7 @@ from .models.geolocation import Geolocation
 from .models.geolocation_event_geolocation import GeolocationEventGeolocation
 from .models.geolocation_settings import GeolocationSettings
 from .models.get_metric_definitions_response import GetMetricDefinitionsResponse
+from .models.get_metric_response import GetMetricResponse
 from .models.get_metrics_response import GetMetricsResponse
 from .models.get_profiles_response import GetProfilesResponse
 from .models.get_templates_response import GetTemplatesResponse
@@ -1946,6 +1950,15 @@ from .models.reporting_export_job_response import ReportingExportJobResponse
 from .models.reporting_export_metadata_job_listing import ReportingExportMetadataJobListing
 from .models.reporting_export_metadata_job_response import ReportingExportMetadataJobResponse
 from .models.reporting_interval import ReportingInterval
+from .models.reporting_turn import ReportingTurn
+from .models.reporting_turn_action import ReportingTurnAction
+from .models.reporting_turn_intent import ReportingTurnIntent
+from .models.reporting_turn_intent_slot import ReportingTurnIntentSlot
+from .models.reporting_turn_knowledge import ReportingTurnKnowledge
+from .models.reporting_turn_knowledge_document import ReportingTurnKnowledgeDocument
+from .models.reporting_turn_knowledge_feedback import ReportingTurnKnowledgeFeedback
+from .models.reporting_turn_knowledge_search import ReportingTurnKnowledgeSearch
+from .models.reporting_turns_response import ReportingTurnsResponse
 from .models.request_config import RequestConfig
 from .models.request_mapping import RequestMapping
 from .models.rescheduling_management_unit_response import ReschedulingManagementUnitResponse

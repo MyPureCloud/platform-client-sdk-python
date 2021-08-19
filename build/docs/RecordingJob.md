@@ -13,6 +13,8 @@ title: RecordingJob
 | **date_created** | **datetime** | Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **total_conversations** | **int** | Total number of conversations affected. | [optional] |
 | **total_recordings** | **int** | Total number of recordings affected. | [optional] |
+| **total_skipped_recordings** | **int** | Total number of recordings that have been skipped. | [optional] |
+| **total_failed_recordings** | **int** | Total number of recordings that the bulk job failed to process. | [optional] |
 | **total_processed_recordings** | **int** | Total number of recordings have been processed. | [optional] |
 | **percent_progress** | **int** | Progress in percentage based on the number of recordings | [optional] |
 | **error_message** | **str** | Error occurred during the job execution | [optional] |

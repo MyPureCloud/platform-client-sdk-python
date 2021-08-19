@@ -22,6 +22,7 @@ title: AnalyticsSession
 | **callback_numbers** | **list[str]** | Callback phone number(s) | [optional] |
 | **callback_scheduled_time** | **datetime** | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **callback_user_name** | **str** | The name of the user requesting a call back | [optional] |
+| **coached_participant_id** | **str** | The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation) | [optional] |
 | **cobrowse_role** | **str** | Describes side of the cobrowse (sharer or viewer) | [optional] |
 | **cobrowse_room_id** | **str** | A unique identifier for a PureCloud cobrowse room | [optional] |
 | **delivery_status** | **str** | The email delivery status | [optional] |
@@ -45,7 +46,7 @@ title: AnalyticsSession
 | **media_count** | **int** | Count of any media (images, files, etc) included in this session | [optional] |
 | **media_type** | **str** | The session media type | [optional] |
 | **message_type** | **str** | Message type for messaging services. E.g.: sms, facebook, twitter, line | [optional] |
-| **monitored_participant_id** | **str** | The participantId being monitored (if someone (e.g. an agent) is being monitored, this would be the ID of the participant that was monitored that would correspond to other participantIds present in the conversation) | [optional] |
+| **monitored_participant_id** | **str** | The participantId being monitored (if someone (e.g. an agent) is being monitored, this would correspond to one of the other participantIds present in the conversation) | [optional] |
 | **outbound_campaign_id** | **str** | (Dialer) Unique identifier of the outbound campaign | [optional] |
 | **outbound_contact_id** | **str** | (Dialer) Unique identifier of the contact | [optional] |
 | **outbound_contact_list_id** | **str** | (Dialer) Unique identifier of the contact list that this contact belongs to | [optional] |

@@ -1074,7 +1074,7 @@ class OutboundApi(object):
 
     def delete_outbound_ruleset(self, rule_set_id, **kwargs):
         """
-        Delete a Rule set.
+        Delete a Rule Set.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -7635,7 +7635,7 @@ class OutboundApi(object):
 
     def post_outbound_rulesets(self, body, **kwargs):
         """
-        Create a Dialer Call Analysis Response Set.
+        Create a Rule Set.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -8727,7 +8727,7 @@ class OutboundApi(object):
 
     def put_outbound_ruleset(self, rule_set_id, body, **kwargs):
         """
-        Update a RuleSet.
+        Update a Rule Set.
         
 
         This method makes a synchronous HTTP request by default. To make an

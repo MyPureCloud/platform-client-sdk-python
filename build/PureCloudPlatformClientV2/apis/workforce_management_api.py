@@ -2632,7 +2632,7 @@ class WorkforceManagementApi(object):
     def get_workforcemanagement_businessunit_week_schedules(self, business_unit_id, week_id, **kwargs):
         """
         Get the list of week schedules for the specified week
-        Use \"recent\" for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2645,7 +2645,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param str week_id: First day of schedule week in yyyy-MM-dd format, or 'recent' to get recent schedules (required)
+        :param str week_id: First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules (required)
         :param bool include_only_published: includeOnlyPublished
         :param str expand: expand
         :return: BuScheduleListing
@@ -3184,7 +3184,7 @@ class WorkforceManagementApi(object):
     def get_workforcemanagement_businessunit_week_shorttermforecasts(self, business_unit_id, week_date_id, **kwargs):
         """
         Get short term forecasts
-        Use \"recent\" for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3197,7 +3197,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The business unit ID of the business unit to which the forecast belongs (required)
-        :param str week_date_id: The week start date of the forecast in yyyy-MM-dd format or 'recent' to fetch recent forecasts (required)
+        :param str week_date_id: The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts (required)
         :return: BuShortTermForecastListing
                  If the method is called asynchronously,
                  returns the request thread.

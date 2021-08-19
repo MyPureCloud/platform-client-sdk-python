@@ -46,6 +46,8 @@ class RecordingJob(object):
             'date_created': 'datetime',
             'total_conversations': 'int',
             'total_recordings': 'int',
+            'total_skipped_recordings': 'int',
+            'total_failed_recordings': 'int',
             'total_processed_recordings': 'int',
             'percent_progress': 'int',
             'error_message': 'str',
@@ -61,6 +63,8 @@ class RecordingJob(object):
             'date_created': 'dateCreated',
             'total_conversations': 'totalConversations',
             'total_recordings': 'totalRecordings',
+            'total_skipped_recordings': 'totalSkippedRecordings',
+            'total_failed_recordings': 'totalFailedRecordings',
             'total_processed_recordings': 'totalProcessedRecordings',
             'percent_progress': 'percentProgress',
             'error_message': 'errorMessage',
@@ -75,6 +79,8 @@ class RecordingJob(object):
         self._date_created = None
         self._total_conversations = None
         self._total_recordings = None
+        self._total_skipped_recordings = None
+        self._total_failed_recordings = None
         self._total_processed_recordings = None
         self._percent_progress = None
         self._error_message = None
@@ -223,6 +229,52 @@ class RecordingJob(object):
         """
         
         self._total_recordings = total_recordings
+
+    @property
+    def total_skipped_recordings(self):
+        """
+        Gets the total_skipped_recordings of this RecordingJob.
+        Total number of recordings that have been skipped.
+
+        :return: The total_skipped_recordings of this RecordingJob.
+        :rtype: int
+        """
+        return self._total_skipped_recordings
+
+    @total_skipped_recordings.setter
+    def total_skipped_recordings(self, total_skipped_recordings):
+        """
+        Sets the total_skipped_recordings of this RecordingJob.
+        Total number of recordings that have been skipped.
+
+        :param total_skipped_recordings: The total_skipped_recordings of this RecordingJob.
+        :type: int
+        """
+        
+        self._total_skipped_recordings = total_skipped_recordings
+
+    @property
+    def total_failed_recordings(self):
+        """
+        Gets the total_failed_recordings of this RecordingJob.
+        Total number of recordings that the bulk job failed to process.
+
+        :return: The total_failed_recordings of this RecordingJob.
+        :rtype: int
+        """
+        return self._total_failed_recordings
+
+    @total_failed_recordings.setter
+    def total_failed_recordings(self, total_failed_recordings):
+        """
+        Sets the total_failed_recordings of this RecordingJob.
+        Total number of recordings that the bulk job failed to process.
+
+        :param total_failed_recordings: The total_failed_recordings of this RecordingJob.
+        :type: int
+        """
+        
+        self._total_failed_recordings = total_failed_recordings
 
     @property
     def total_processed_recordings(self):

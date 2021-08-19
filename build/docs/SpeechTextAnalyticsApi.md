@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_settings) | Get Speech And Text Analytics Settings|
 |[**get_speechandtextanalytics_topic**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topic) | Get a Speech &amp; Text Analytics topic by id|
 |[**get_speechandtextanalytics_topics**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics) | Get the list of Speech &amp; Text Analytics topics|
+|[**get_speechandtextanalytics_topics_dialects**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_dialects) | Get list of supported Speech &amp; Text Analytics topics dialects|
 |[**get_speechandtextanalytics_topics_general**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_general) | Get the Speech &amp; Text Analytics general topics for a given dialect|
 |[**get_speechandtextanalytics_topics_publishjob**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_publishjob) | Get a Speech &amp; Text Analytics publish topics job by id|
 |[**patch_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#patch_speechandtextanalytics_settings) | Patch Speech And Text Analytics Settings|
@@ -812,6 +813,52 @@ except ApiException as e:
 ### Return type
 
 [**TopicsEntityListing**](TopicsEntityListing.html)
+
+<a name="get_speechandtextanalytics_topics_dialects"></a>
+
+## [**EntityListing**](EntityListing.html) get_speechandtextanalytics_topics_dialects()
+
+
+
+Get list of supported Speech & Text Analytics topics dialects
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/topics/dialects 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+
+try:
+    # Get list of supported Speech & Text Analytics topics dialects
+    api_response = api_instance.get_speechandtextanalytics_topics_dialects()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_topics_dialects: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**EntityListing**](EntityListing.html)
 
 <a name="get_speechandtextanalytics_topics_general"></a>
 

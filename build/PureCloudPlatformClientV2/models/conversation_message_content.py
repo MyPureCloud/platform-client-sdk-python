@@ -44,7 +44,8 @@ class ConversationMessageContent(object):
             'attachment': 'ConversationContentAttachment',
             'quick_reply': 'ConversationContentQuickReply',
             'template': 'ConversationContentNotificationTemplate',
-            'button_response': 'ConversationContentButtonResponse'
+            'button_response': 'ConversationContentButtonResponse',
+            'generic': 'ContentGeneric'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class ConversationMessageContent(object):
             'attachment': 'attachment',
             'quick_reply': 'quickReply',
             'template': 'template',
-            'button_response': 'buttonResponse'
+            'button_response': 'buttonResponse',
+            'generic': 'generic'
         }
 
         self._content_type = None
@@ -60,6 +62,7 @@ class ConversationMessageContent(object):
         self._quick_reply = None
         self._template = None
         self._button_response = None
+        self._generic = None
 
     @property
     def content_type(self):
@@ -81,7 +84,7 @@ class ConversationMessageContent(object):
         :param content_type: The content_type of this ConversationMessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "QuickReply", "Notification", "ButtonResponse"]
+        allowed_values = ["Attachment", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -179,6 +182,29 @@ class ConversationMessageContent(object):
         """
         
         self._button_response = button_response
+
+    @property
+    def generic(self):
+        """
+        Gets the generic of this ConversationMessageContent.
+        Generic Template Object
+
+        :return: The generic of this ConversationMessageContent.
+        :rtype: ContentGeneric
+        """
+        return self._generic
+
+    @generic.setter
+    def generic(self, generic):
+        """
+        Sets the generic of this ConversationMessageContent.
+        Generic Template Object
+
+        :param generic: The generic of this ConversationMessageContent.
+        :type: ContentGeneric
+        """
+        
+        self._generic = generic
 
     def to_dict(self):
         """

@@ -42,6 +42,7 @@ class MessageEvaluation(object):
         self.swagger_types = {
             'contact_column': 'str',
             'contact_address': 'str',
+            'message_type': 'str',
             'wrapup_code_id': 'str',
             'timestamp': 'datetime'
         }
@@ -49,12 +50,14 @@ class MessageEvaluation(object):
         self.attribute_map = {
             'contact_column': 'contactColumn',
             'contact_address': 'contactAddress',
+            'message_type': 'messageType',
             'wrapup_code_id': 'wrapupCodeId',
             'timestamp': 'timestamp'
         }
 
         self._contact_column = None
         self._contact_address = None
+        self._message_type = None
         self._wrapup_code_id = None
         self._timestamp = None
 
@@ -62,7 +65,7 @@ class MessageEvaluation(object):
     def contact_column(self):
         """
         Gets the contact_column of this MessageEvaluation.
-
+        The name of the contact column that was wrapped up
 
         :return: The contact_column of this MessageEvaluation.
         :rtype: str
@@ -73,7 +76,7 @@ class MessageEvaluation(object):
     def contact_column(self, contact_column):
         """
         Sets the contact_column of this MessageEvaluation.
-
+        The name of the contact column that was wrapped up
 
         :param contact_column: The contact_column of this MessageEvaluation.
         :type: str
@@ -85,7 +88,7 @@ class MessageEvaluation(object):
     def contact_address(self):
         """
         Gets the contact_address of this MessageEvaluation.
-
+        The address (phone or email) that was wrapped up
 
         :return: The contact_address of this MessageEvaluation.
         :rtype: str
@@ -96,7 +99,7 @@ class MessageEvaluation(object):
     def contact_address(self, contact_address):
         """
         Sets the contact_address of this MessageEvaluation.
-
+        The address (phone or email) that was wrapped up
 
         :param contact_address: The contact_address of this MessageEvaluation.
         :type: str
@@ -105,10 +108,37 @@ class MessageEvaluation(object):
         self._contact_address = contact_address
 
     @property
+    def message_type(self):
+        """
+        Gets the message_type of this MessageEvaluation.
+        The type of message sent
+
+        :return: The message_type of this MessageEvaluation.
+        :rtype: str
+        """
+        return self._message_type
+
+    @message_type.setter
+    def message_type(self, message_type):
+        """
+        Sets the message_type of this MessageEvaluation.
+        The type of message sent
+
+        :param message_type: The message_type of this MessageEvaluation.
+        :type: str
+        """
+        allowed_values = ["Sms", "Email"]
+        if message_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for message_type -> " + message_type)
+            self._message_type = "outdated_sdk_version"
+        else:
+            self._message_type = message_type
+
+    @property
     def wrapup_code_id(self):
         """
         Gets the wrapup_code_id of this MessageEvaluation.
-
+        The id of the wrap-up code
 
         :return: The wrapup_code_id of this MessageEvaluation.
         :rtype: str
@@ -119,7 +149,7 @@ class MessageEvaluation(object):
     def wrapup_code_id(self, wrapup_code_id):
         """
         Sets the wrapup_code_id of this MessageEvaluation.
-
+        The id of the wrap-up code
 
         :param wrapup_code_id: The wrapup_code_id of this MessageEvaluation.
         :type: str
@@ -131,7 +161,7 @@ class MessageEvaluation(object):
     def timestamp(self):
         """
         Gets the timestamp of this MessageEvaluation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The time that the wrap-up was applied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The timestamp of this MessageEvaluation.
         :rtype: datetime
@@ -142,7 +172,7 @@ class MessageEvaluation(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this MessageEvaluation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The time that the wrap-up was applied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param timestamp: The timestamp of this MessageEvaluation.
         :type: datetime

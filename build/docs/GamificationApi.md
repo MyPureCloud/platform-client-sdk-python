@@ -10,14 +10,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_gamification_leaderboard**](GamificationApi.html#get_gamification_leaderboard) | Leaderboard of the requesting user&#39;s division or performance profile|
 |[**get_gamification_leaderboard_all**](GamificationApi.html#get_gamification_leaderboard_all) | Leaderboard by filter type|
-|[**get_gamification_leaderboard_all_bestpoints**](GamificationApi.html#get_gamification_leaderboard_all_bestpoints) | Best Points by division|
-|[**get_gamification_leaderboard_bestpoints**](GamificationApi.html#get_gamification_leaderboard_bestpoints) | Best Points of the requesting user&#39;s division|
+|[**get_gamification_leaderboard_all_bestpoints**](GamificationApi.html#get_gamification_leaderboard_all_bestpoints) | Best Points by division or performance profile|
+|[**get_gamification_leaderboard_bestpoints**](GamificationApi.html#get_gamification_leaderboard_bestpoints) | Best Points of the requesting user&#39;s current performance profile or division|
 |[**get_gamification_metric**](GamificationApi.html#get_gamification_metric) | Gamified metric by id|
 |[**get_gamification_metricdefinition**](GamificationApi.html#get_gamification_metricdefinition) | Metric definition by id|
 |[**get_gamification_metricdefinitions**](GamificationApi.html#get_gamification_metricdefinitions) | All metric definitions|
 |[**get_gamification_metrics**](GamificationApi.html#get_gamification_metrics) | All gamified metrics for a given profile|
 |[**get_gamification_profile**](GamificationApi.html#get_gamification_profile) | Performance profile by id|
+|[**get_gamification_profile_metric**](GamificationApi.html#get_gamification_profile_metric) | Performance profile gamified metric by id|
+|[**get_gamification_profile_metrics**](GamificationApi.html#get_gamification_profile_metrics) | All gamified metrics for a given performance profile|
+|[**get_gamification_profile_metrics_objectivedetails**](GamificationApi.html#get_gamification_profile_metrics_objectivedetails) | All metrics for a given performance profile with objective details such as order and maxPoints|
 |[**get_gamification_profiles**](GamificationApi.html#get_gamification_profiles) | All performance profiles|
+|[**get_gamification_profiles_user**](GamificationApi.html#get_gamification_profiles_user) | Performance profile of a user|
+|[**get_gamification_profiles_users_me**](GamificationApi.html#get_gamification_profiles_users_me) | Performance profile of the requesting user|
 |[**get_gamification_scorecards**](GamificationApi.html#get_gamification_scorecards) | Workday performance metrics of the requesting user|
 |[**get_gamification_scorecards_attendance**](GamificationApi.html#get_gamification_scorecards_attendance) | Attendance status metrics of the requesting user|
 |[**get_gamification_scorecards_bestpoints**](GamificationApi.html#get_gamification_scorecards_bestpoints) | Best points of the requesting user|
@@ -41,8 +46,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_gamification_metrics**](GamificationApi.html#post_gamification_metrics) | Creates a gamified metric with a given metric definition and metric objective|
 |[**post_gamification_profile_activate**](GamificationApi.html#post_gamification_profile_activate) | Activate a performance profile|
 |[**post_gamification_profile_deactivate**](GamificationApi.html#post_gamification_profile_deactivate) | Deactivate a performance profile|
+|[**post_gamification_profile_metrics**](GamificationApi.html#post_gamification_profile_metrics) | Creates a gamified metric with a given metric definition and metric objective under in a performance profile|
 |[**put_gamification_metric**](GamificationApi.html#put_gamification_metric) | Updates a metric|
 |[**put_gamification_profile**](GamificationApi.html#put_gamification_profile) | Updates a performance profile|
+|[**put_gamification_profile_metric**](GamificationApi.html#put_gamification_profile_metric) | Updates a metric in performance profile|
 |[**put_gamification_status**](GamificationApi.html#put_gamification_status) | Update gamification activation status|
 {: class="table table-striped"}
 
@@ -131,7 +138,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 filter_type = 'filter_type_example' # str | Filter type for the query request.
-filter_id = 'filter_id_example' # str | ID for the filter type. For example, division Id
+filter_id = 'filter_id_example' # str | ID for the filter type. For example, division or performance profile Id
 start_workday = '2013-10-20' # date | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 end_workday = '2013-10-20' # date | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 metric_id = 'metric_id_example' # str | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)
@@ -150,7 +157,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
-| **filter_id** | **str**| ID for the filter type. For example, division Id |  |
+| **filter_id** | **str**| ID for the filter type. For example, division or performance profile Id |  |
 | **start_workday** | **date**| Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **end_workday** | **date**| End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **metric_id** | **str**| Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. | [optional]  |
@@ -166,7 +173,7 @@ except ApiException as e:
 
 
 
-Best Points by division
+Best Points by division or performance profile
 
 
 
@@ -190,10 +197,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 filter_type = 'filter_type_example' # str | Filter type for the query request.
-filter_id = 'filter_id_example' # str | ID for the filter type. For example, division Id
+filter_id = 'filter_id_example' # str | ID for the filter type. For example, division or performance profile Id
 
 try:
-    # Best Points by division
+    # Best Points by division or performance profile
     api_response = api_instance.get_gamification_leaderboard_all_bestpoints(filter_type, filter_id)
     pprint(api_response)
 except ApiException as e:
@@ -206,7 +213,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
-| **filter_id** | **str**| ID for the filter type. For example, division Id |  |
+| **filter_id** | **str**| ID for the filter type. For example, division or performance profile Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -219,7 +226,7 @@ except ApiException as e:
 
 
 
-Best Points of the requesting user's division
+Best Points of the requesting user's current performance profile or division
 
 
 
@@ -244,7 +251,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 
 try:
-    # Best Points of the requesting user's division
+    # Best Points of the requesting user's current performance profile or division
     api_response = api_instance.get_gamification_leaderboard_bestpoints()
     pprint(api_response)
 except ApiException as e:
@@ -521,6 +528,175 @@ except ApiException as e:
 
 [**PerformanceProfile**](PerformanceProfile.html)
 
+<a name="get_gamification_profile_metric"></a>
+
+## [**Metric**](Metric.html) get_gamification_profile_metric(profile_id, metric_id, workday=workday)
+
+
+
+Performance profile gamified metric by id
+
+
+
+Wraps GET /api/v2/gamification/profiles/{profileId}/metrics/{metricId} 
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+* gamification:leaderboard:view
+* gamification:scorecard:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+profile_id = 'profile_id_example' # str | Performance Profile Id
+metric_id = 'metric_id_example' # str | Metric Id
+workday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+
+try:
+    # Performance profile gamified metric by id
+    api_response = api_instance.get_gamification_profile_metric(profile_id, metric_id, workday=workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_profile_metric: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profile_id** | **str**| Performance Profile Id |  |
+| **metric_id** | **str**| Metric Id |  |
+| **workday** | **date**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Metric**](Metric.html)
+
+<a name="get_gamification_profile_metrics"></a>
+
+## [**GetMetricResponse**](GetMetricResponse.html) get_gamification_profile_metrics(profile_id, expand=expand, workday=workday)
+
+
+
+All gamified metrics for a given performance profile
+
+
+
+Wraps GET /api/v2/gamification/profiles/{profileId}/metrics 
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+* gamification:leaderboard:view
+* gamification:scorecard:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+profile_id = 'profile_id_example' # str | Performance Profile Id
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+workday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+
+try:
+    # All gamified metrics for a given performance profile
+    api_response = api_instance.get_gamification_profile_metrics(profile_id, expand=expand, workday=workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_profile_metrics: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profile_id** | **str**| Performance Profile Id |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
+| **workday** | **date**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GetMetricResponse**](GetMetricResponse.html)
+
+<a name="get_gamification_profile_metrics_objectivedetails"></a>
+
+## [**GetMetricsResponse**](GetMetricsResponse.html) get_gamification_profile_metrics_objectivedetails(profile_id, workday=workday)
+
+
+
+All metrics for a given performance profile with objective details such as order and maxPoints
+
+
+
+Wraps GET /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails 
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+* gamification:leaderboard:view
+* gamification:scorecard:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+profile_id = 'profile_id_example' # str | Performance Profile Id
+workday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+
+try:
+    # All metrics for a given performance profile with objective details such as order and maxPoints
+    api_response = api_instance.get_gamification_profile_metrics_objectivedetails(profile_id, workday=workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_profile_metrics_objectivedetails: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profile_id** | **str**| Performance Profile Id |  |
+| **workday** | **date**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GetMetricsResponse**](GetMetricsResponse.html)
+
 <a name="get_gamification_profiles"></a>
 
 ## [**GetProfilesResponse**](GetProfilesResponse.html) get_gamification_profiles()
@@ -567,6 +743,109 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**GetProfilesResponse**](GetProfilesResponse.html)
+
+<a name="get_gamification_profiles_user"></a>
+
+## [**PerformanceProfile**](PerformanceProfile.html) get_gamification_profiles_user(user_id, workday=workday)
+
+
+
+Performance profile of a user
+
+
+
+Wraps GET /api/v2/gamification/profiles/users/{userId} 
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+user_id = 'user_id_example' # str | 
+workday = '2013-10-20' # date | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+
+try:
+    # Performance profile of a user
+    api_response = api_instance.get_gamification_profiles_user(user_id, workday=workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_profiles_user: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**|  |  |
+| **workday** | **date**| Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="get_gamification_profiles_users_me"></a>
+
+## [**PerformanceProfile**](PerformanceProfile.html) get_gamification_profiles_users_me(workday=workday)
+
+
+
+Performance profile of the requesting user
+
+
+
+Wraps GET /api/v2/gamification/profiles/users/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+workday = '2013-10-20' # date | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+
+try:
+    # Performance profile of the requesting user
+    api_response = api_instance.get_gamification_profiles_users_me(workday=workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_profiles_users_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **workday** | **date**| Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PerformanceProfile**](PerformanceProfile.html)
 
 <a name="get_gamification_scorecards"></a>
 
@@ -1787,6 +2066,59 @@ except ApiException as e:
 
 [**PerformanceProfile**](PerformanceProfile.html)
 
+<a name="post_gamification_profile_metrics"></a>
+
+## [**Metric**](Metric.html) post_gamification_profile_metrics(profile_id, body)
+
+
+
+Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+
+
+
+Wraps POST /api/v2/gamification/profiles/{profileId}/metrics 
+
+Requires ALL permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+profile_id = 'profile_id_example' # str | Performance Profile Id
+body = PureCloudPlatformClientV2.Metric() # Metric | Metric
+
+try:
+    # Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+    api_response = api_instance.post_gamification_profile_metrics(profile_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profile_metrics: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profile_id** | **str**| Performance Profile Id |  |
+| **body** | [**Metric**](Metric.html)| Metric |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Metric**](Metric.html)
+
 <a name="put_gamification_metric"></a>
 
 ## [**Metric**](Metric.html) put_gamification_metric(metric_id, body, performance_profile_id=performance_profile_id)
@@ -1894,6 +2226,61 @@ except ApiException as e:
 ### Return type
 
 [**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="put_gamification_profile_metric"></a>
+
+## [**Metric**](Metric.html) put_gamification_profile_metric(profile_id, metric_id, body)
+
+
+
+Updates a metric in performance profile
+
+
+
+Wraps PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId} 
+
+Requires ALL permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+profile_id = 'profile_id_example' # str | Performance Profile Id
+metric_id = 'metric_id_example' # str | Metric Id
+body = PureCloudPlatformClientV2.Metric() # Metric | Metric
+
+try:
+    # Updates a metric in performance profile
+    api_response = api_instance.put_gamification_profile_metric(profile_id, metric_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->put_gamification_profile_metric: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profile_id** | **str**| Performance Profile Id |  |
+| **metric_id** | **str**| Metric Id |  |
+| **body** | [**Metric**](Metric.html)| Metric |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Metric**](Metric.html)
 
 <a name="put_gamification_status"></a>
 

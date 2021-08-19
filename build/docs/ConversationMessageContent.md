@@ -12,6 +12,7 @@ title: ConversationMessageContent
 | **quick_reply** | [**ConversationContentQuickReply**](ConversationContentQuickReply.html) | Quick reply content. | [optional] |
 | **template** | [**ConversationContentNotificationTemplate**](ConversationContentNotificationTemplate.html) | Template notification content. | [optional] |
 | **button_response** | [**ConversationContentButtonResponse**](ConversationContentButtonResponse.html) | Button response content. | [optional] |
+| **generic** | [**ContentGeneric**](ContentGeneric.html) | Generic Template Object | [optional] |
 {: class="table table-striped"}
 
 

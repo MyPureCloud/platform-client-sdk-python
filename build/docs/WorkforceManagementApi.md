@@ -1955,7 +1955,7 @@ except ApiException as e:
 
 Get the list of week schedules for the specified week
 
-Use \"recent\" for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules 
 
@@ -1978,7 +1978,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
-week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format, or 'recent' to get recent schedules
+week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
 include_only_published = true # bool | includeOnlyPublished (optional)
 expand = 'expand_example' # str | expand (optional)
 
@@ -1996,7 +1996,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **week_id** | **str**| First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; to get recent schedules |  |
+| **week_id** | **str**| First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules |  |
 | **include_only_published** | **bool**| includeOnlyPublished | [optional]  |
 | **expand** | **str**| expand | [optional] <br />**Values**: forecast.description |
 {: class="table table-striped"}
@@ -2298,7 +2298,7 @@ except ApiException as e:
 
 Get short term forecasts
 
-Use \"recent\" for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts 
 
@@ -2321,7 +2321,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
-week_date_id = 'week_date_id_example' # str | The week start date of the forecast in yyyy-MM-dd format or 'recent' to fetch recent forecasts
+week_date_id = 'week_date_id_example' # str | The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
 
 try:
     # Get short term forecasts
@@ -2337,7 +2337,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
-| **week_date_id** | **str**| The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; to fetch recent forecasts |  |
+| **week_date_id** | **str**| The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts |  |
 {: class="table table-striped"}
 
 ### Return type

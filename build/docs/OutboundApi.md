@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_contactlists**](OutboundApi.html#delete_outbound_contactlists) | Delete multiple contact lists.|
 |[**delete_outbound_dnclist**](OutboundApi.html#delete_outbound_dnclist) | Delete dialer DNC list|
 |[**delete_outbound_messagingcampaign**](OutboundApi.html#delete_outbound_messagingcampaign) | Delete an Outbound Messaging Campaign|
-|[**delete_outbound_ruleset**](OutboundApi.html#delete_outbound_ruleset) | Delete a Rule set.|
+|[**delete_outbound_ruleset**](OutboundApi.html#delete_outbound_ruleset) | Delete a Rule Set.|
 |[**delete_outbound_schedules_campaign**](OutboundApi.html#delete_outbound_schedules_campaign) | Delete a dialer campaign schedule.|
 |[**delete_outbound_schedules_sequence**](OutboundApi.html#delete_outbound_schedules_sequence) | Delete a dialer sequence schedule.|
 |[**delete_outbound_sequence**](OutboundApi.html#delete_outbound_sequence) | Delete a dialer campaign sequence.|
@@ -100,7 +100,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_dnclists**](OutboundApi.html#post_outbound_dnclists) | Create dialer DNC list|
 |[**post_outbound_messagingcampaigns**](OutboundApi.html#post_outbound_messagingcampaigns) | Create a Messaging Campaign|
 |[**post_outbound_messagingcampaigns_progress**](OutboundApi.html#post_outbound_messagingcampaigns_progress) | Get progress for a list of messaging campaigns|
-|[**post_outbound_rulesets**](OutboundApi.html#post_outbound_rulesets) | Create a Dialer Call Analysis Response Set.|
+|[**post_outbound_rulesets**](OutboundApi.html#post_outbound_rulesets) | Create a Rule Set.|
 |[**post_outbound_sequences**](OutboundApi.html#post_outbound_sequences) | Create a new campaign sequence.|
 |[**put_outbound_attemptlimit**](OutboundApi.html#put_outbound_attemptlimit) | Update attempt limits|
 |[**put_outbound_callabletimeset**](OutboundApi.html#put_outbound_callabletimeset) | Update callable time set|
@@ -113,7 +113,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_outbound_contactlistfilter**](OutboundApi.html#put_outbound_contactlistfilter) | Update Contact List Filter|
 |[**put_outbound_dnclist**](OutboundApi.html#put_outbound_dnclist) | Update dialer DNC list|
 |[**put_outbound_messagingcampaign**](OutboundApi.html#put_outbound_messagingcampaign) | Update an Outbound Messaging Campaign|
-|[**put_outbound_ruleset**](OutboundApi.html#put_outbound_ruleset) | Update a RuleSet.|
+|[**put_outbound_ruleset**](OutboundApi.html#put_outbound_ruleset) | Update a Rule Set.|
 |[**put_outbound_schedules_campaign**](OutboundApi.html#put_outbound_schedules_campaign) | Update a new campaign schedule.|
 |[**put_outbound_schedules_sequence**](OutboundApi.html#put_outbound_schedules_sequence) | Update a new sequence schedule.|
 |[**put_outbound_sequence**](OutboundApi.html#put_outbound_sequence) | Update a new campaign sequence.|
@@ -783,7 +783,7 @@ except ApiException as e:
 
 
 
-Delete a Rule set.
+Delete a Rule Set.
 
 
 
@@ -809,7 +809,7 @@ api_instance = PureCloudPlatformClientV2.OutboundApi()
 rule_set_id = 'rule_set_id_example' # str | Rule Set ID
 
 try:
-    # Delete a Rule set.
+    # Delete a Rule Set.
     api_instance.delete_outbound_ruleset(rule_set_id)
 except ApiException as e:
     print("Exception when calling OutboundApi->delete_outbound_ruleset: %s\n" % e)
@@ -5113,7 +5113,7 @@ except ApiException as e:
 
 
 
-Create a Dialer Call Analysis Response Set.
+Create a Rule Set.
 
 
 
@@ -5139,7 +5139,7 @@ api_instance = PureCloudPlatformClientV2.OutboundApi()
 body = PureCloudPlatformClientV2.RuleSet() # RuleSet | RuleSet
 
 try:
-    # Create a Dialer Call Analysis Response Set.
+    # Create a Rule Set.
     api_response = api_instance.post_outbound_rulesets(body)
     pprint(api_response)
 except ApiException as e:
@@ -5802,7 +5802,7 @@ except ApiException as e:
 
 
 
-Update a RuleSet.
+Update a Rule Set.
 
 
 
@@ -5829,7 +5829,7 @@ rule_set_id = 'rule_set_id_example' # str | Rule Set ID
 body = PureCloudPlatformClientV2.RuleSet() # RuleSet | RuleSet
 
 try:
-    # Update a RuleSet.
+    # Update a Rule Set.
     api_response = api_instance.put_outbound_ruleset(rule_set_id, body)
     pprint(api_response)
 except ApiException as e:

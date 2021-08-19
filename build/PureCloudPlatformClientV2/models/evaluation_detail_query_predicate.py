@@ -111,7 +111,7 @@ class EvaluationDetailQueryPredicate(object):
         :param dimension: The dimension of this EvaluationDetailQueryPredicate.
         :type: str
         """
-        allowed_values = ["calibrationId", "contextId", "deleted", "evaluationId", "evaluatorId", "eventTime", "formId", "formName", "queueId", "rescored", "userId"]
+        allowed_values = ["calibrationId", "contextId", "deleted", "evaluationId", "evaluatorId", "eventTime", "formId", "formName", "queueId", "released", "rescored", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

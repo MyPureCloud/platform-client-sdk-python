@@ -393,6 +393,7 @@ from .change_my_password_request import ChangeMyPasswordRequest
 from .change_password_request import ChangePasswordRequest
 from .channel import Channel
 from .channel_entity_listing import ChannelEntityListing
+from .channel_metadata import ChannelMetadata
 from .channel_topic import ChannelTopic
 from .channel_topic_entity_listing import ChannelTopicEntityListing
 from .chat import Chat
@@ -642,6 +643,7 @@ from .conversation_message_event_topic_scored_agent import ConversationMessageEv
 from .conversation_message_event_topic_uri_reference import ConversationMessageEventTopicUriReference
 from .conversation_message_event_topic_wrapup import ConversationMessageEventTopicWrapup
 from .conversation_messaging_channel import ConversationMessagingChannel
+from .conversation_messaging_channel_metadata import ConversationMessagingChannelMetadata
 from .conversation_messaging_from_recipient import ConversationMessagingFromRecipient
 from .conversation_messaging_to_recipient import ConversationMessagingToRecipient
 from .conversation_metrics import ConversationMetrics
@@ -1009,6 +1011,7 @@ from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .endpoint import Endpoint
 from .entity import Entity
+from .entity_listing import EntityListing
 from .entity_type_criteria import EntityTypeCriteria
 from .entry import Entry
 from .error_body import ErrorBody
@@ -1159,6 +1162,7 @@ from .geolocation import Geolocation
 from .geolocation_event_geolocation import GeolocationEventGeolocation
 from .geolocation_settings import GeolocationSettings
 from .get_metric_definitions_response import GetMetricDefinitionsResponse
+from .get_metric_response import GetMetricResponse
 from .get_metrics_response import GetMetricsResponse
 from .get_profiles_response import GetProfilesResponse
 from .get_templates_response import GetTemplatesResponse
@@ -1946,6 +1950,15 @@ from .reporting_export_job_response import ReportingExportJobResponse
 from .reporting_export_metadata_job_listing import ReportingExportMetadataJobListing
 from .reporting_export_metadata_job_response import ReportingExportMetadataJobResponse
 from .reporting_interval import ReportingInterval
+from .reporting_turn import ReportingTurn
+from .reporting_turn_action import ReportingTurnAction
+from .reporting_turn_intent import ReportingTurnIntent
+from .reporting_turn_intent_slot import ReportingTurnIntentSlot
+from .reporting_turn_knowledge import ReportingTurnKnowledge
+from .reporting_turn_knowledge_document import ReportingTurnKnowledgeDocument
+from .reporting_turn_knowledge_feedback import ReportingTurnKnowledgeFeedback
+from .reporting_turn_knowledge_search import ReportingTurnKnowledgeSearch
+from .reporting_turns_response import ReportingTurnsResponse
 from .request_config import RequestConfig
 from .request_mapping import RequestMapping
 from .rescheduling_management_unit_response import ReschedulingManagementUnitResponse
