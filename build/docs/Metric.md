@@ -10,6 +10,7 @@ title: Metric
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | The name of this metric | |
 | **metric_definition_id** | **str** | The id of associated metric definition | [optional] |
+| **external_metric_definition_id** | **str** | The id of associated external metric definition | [optional] |
 | **objective** | [**Objective**](Objective.html) | Associated objective for this metric | [optional] |
 | **performance_profile_id** | **str** | Performance profile id of this metric | [optional] |
 | **linked_metric** | [**AddressableEntityRef**](AddressableEntityRef.html) | The linked metric entity reference | [optional] |

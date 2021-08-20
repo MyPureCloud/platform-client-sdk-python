@@ -63,6 +63,7 @@ class Evaluation(object):
             'resource_type': 'str',
             'redacted': 'bool',
             'is_scoring_index': 'bool',
+            'authorized_actions': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -90,6 +91,7 @@ class Evaluation(object):
             'resource_type': 'resourceType',
             'redacted': 'redacted',
             'is_scoring_index': 'isScoringIndex',
+            'authorized_actions': 'authorizedActions',
             'self_uri': 'selfUri'
         }
 
@@ -116,6 +118,7 @@ class Evaluation(object):
         self._resource_type = None
         self._redacted = None
         self._is_scoring_index = None
+        self._authorized_actions = None
         self._self_uri = None
 
     @property
@@ -654,6 +657,29 @@ class Evaluation(object):
         """
         
         self._is_scoring_index = is_scoring_index
+
+    @property
+    def authorized_actions(self):
+        """
+        Gets the authorized_actions of this Evaluation.
+        List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit
+
+        :return: The authorized_actions of this Evaluation.
+        :rtype: list[str]
+        """
+        return self._authorized_actions
+
+    @authorized_actions.setter
+    def authorized_actions(self, authorized_actions):
+        """
+        Sets the authorized_actions of this Evaluation.
+        List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit
+
+        :param authorized_actions: The authorized_actions of this Evaluation.
+        :type: list[str]
+        """
+        
+        self._authorized_actions = authorized_actions
 
     @property
     def self_uri(self):

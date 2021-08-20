@@ -30,6 +30,7 @@ title: Evaluation
 | **resource_type** | **str** | The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources. | [optional] |
 | **redacted** | **bool** | Is only true when the user making the request does not have sufficient permissions to see evaluation | [optional] |
 | **is_scoring_index** | **bool** |  | [optional] |
+| **authorized_actions** | **list[str]** | List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

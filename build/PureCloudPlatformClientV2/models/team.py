@@ -42,7 +42,7 @@ class Team(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'Division',
+            'division': 'WritableDivision',
             'description': 'str',
             'date_modified': 'datetime',
             'member_count': 'int',
@@ -120,7 +120,7 @@ class Team(object):
         The division to which this entity belongs.
 
         :return: The division of this Team.
-        :rtype: Division
+        :rtype: WritableDivision
         """
         return self._division
 
@@ -131,7 +131,7 @@ class Team(object):
         The division to which this entity belongs.
 
         :param division: The division of this Team.
-        :type: Division
+        :type: WritableDivision
         """
         
         self._division = division

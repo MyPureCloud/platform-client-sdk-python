@@ -43,6 +43,7 @@ class Metric(object):
             'id': 'str',
             'name': 'str',
             'metric_definition_id': 'str',
+            'external_metric_definition_id': 'str',
             'objective': 'Objective',
             'performance_profile_id': 'str',
             'linked_metric': 'AddressableEntityRef',
@@ -56,6 +57,7 @@ class Metric(object):
             'id': 'id',
             'name': 'name',
             'metric_definition_id': 'metricDefinitionId',
+            'external_metric_definition_id': 'externalMetricDefinitionId',
             'objective': 'objective',
             'performance_profile_id': 'performanceProfileId',
             'linked_metric': 'linkedMetric',
@@ -68,6 +70,7 @@ class Metric(object):
         self._id = None
         self._name = None
         self._metric_definition_id = None
+        self._external_metric_definition_id = None
         self._objective = None
         self._performance_profile_id = None
         self._linked_metric = None
@@ -144,6 +147,29 @@ class Metric(object):
         """
         
         self._metric_definition_id = metric_definition_id
+
+    @property
+    def external_metric_definition_id(self):
+        """
+        Gets the external_metric_definition_id of this Metric.
+        The id of associated external metric definition
+
+        :return: The external_metric_definition_id of this Metric.
+        :rtype: str
+        """
+        return self._external_metric_definition_id
+
+    @external_metric_definition_id.setter
+    def external_metric_definition_id(self, external_metric_definition_id):
+        """
+        Sets the external_metric_definition_id of this Metric.
+        The id of associated external metric definition
+
+        :param external_metric_definition_id: The external_metric_definition_id of this Metric.
+        :type: str
+        """
+        
+        self._external_metric_definition_id = external_metric_definition_id
 
     @property
     def objective(self):

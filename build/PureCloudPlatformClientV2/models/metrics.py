@@ -45,11 +45,14 @@ class Metrics(object):
             'order': 'int',
             'metric_definition_name': 'str',
             'metric_definition_id': 'str',
+            'external_metric_definition_id': 'str',
             'unit_type': 'str',
             'enabled': 'bool',
             'template_name': 'str',
             'max_points': 'int',
             'performance_profile_id': 'str',
+            'unit_definition': 'str',
+            'precision': 'int',
             'self_uri': 'str'
         }
 
@@ -59,11 +62,14 @@ class Metrics(object):
             'order': 'order',
             'metric_definition_name': 'metricDefinitionName',
             'metric_definition_id': 'metricDefinitionId',
+            'external_metric_definition_id': 'externalMetricDefinitionId',
             'unit_type': 'unitType',
             'enabled': 'enabled',
             'template_name': 'templateName',
             'max_points': 'maxPoints',
             'performance_profile_id': 'performanceProfileId',
+            'unit_definition': 'unitDefinition',
+            'precision': 'precision',
             'self_uri': 'selfUri'
         }
 
@@ -72,11 +78,14 @@ class Metrics(object):
         self._order = None
         self._metric_definition_name = None
         self._metric_definition_id = None
+        self._external_metric_definition_id = None
         self._unit_type = None
         self._enabled = None
         self._template_name = None
         self._max_points = None
         self._performance_profile_id = None
+        self._unit_definition = None
+        self._precision = None
         self._self_uri = None
 
     @property
@@ -195,6 +204,29 @@ class Metrics(object):
         self._metric_definition_id = metric_definition_id
 
     @property
+    def external_metric_definition_id(self):
+        """
+        Gets the external_metric_definition_id of this Metrics.
+        The id of associated external metric definition
+
+        :return: The external_metric_definition_id of this Metrics.
+        :rtype: str
+        """
+        return self._external_metric_definition_id
+
+    @external_metric_definition_id.setter
+    def external_metric_definition_id(self, external_metric_definition_id):
+        """
+        Sets the external_metric_definition_id of this Metrics.
+        The id of associated external metric definition
+
+        :param external_metric_definition_id: The external_metric_definition_id of this Metrics.
+        :type: str
+        """
+        
+        self._external_metric_definition_id = external_metric_definition_id
+
+    @property
     def unit_type(self):
         """
         Gets the unit_type of this Metrics.
@@ -214,7 +246,7 @@ class Metrics(object):
         :param unit_type: The unit_type of this Metrics.
         :type: str
         """
-        allowed_values = ["None", "Percent", "Seconds", "Number", "AttendanceStatus", "Unit"]
+        allowed_values = ["None", "Percent", "Currency", "Seconds", "Number", "AttendanceStatus", "Unit"]
         if unit_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for unit_type -> " + unit_type)
             self._unit_type = "outdated_sdk_version"
@@ -312,6 +344,52 @@ class Metrics(object):
         """
         
         self._performance_profile_id = performance_profile_id
+
+    @property
+    def unit_definition(self):
+        """
+        Gets the unit_definition of this Metrics.
+        Unit definition of linked external metric
+
+        :return: The unit_definition of this Metrics.
+        :rtype: str
+        """
+        return self._unit_definition
+
+    @unit_definition.setter
+    def unit_definition(self, unit_definition):
+        """
+        Sets the unit_definition of this Metrics.
+        Unit definition of linked external metric
+
+        :param unit_definition: The unit_definition of this Metrics.
+        :type: str
+        """
+        
+        self._unit_definition = unit_definition
+
+    @property
+    def precision(self):
+        """
+        Gets the precision of this Metrics.
+        Precision of linked external metric
+
+        :return: The precision of this Metrics.
+        :rtype: int
+        """
+        return self._precision
+
+    @precision.setter
+    def precision(self, precision):
+        """
+        Sets the precision of this Metrics.
+        Precision of linked external metric
+
+        :param precision: The precision of this Metrics.
+        :type: int
+        """
+        
+        self._precision = precision
 
     @property
     def self_uri(self):
