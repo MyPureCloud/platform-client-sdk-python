@@ -4777,6 +4777,180 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_flows_datatables_divisionview(self, datatable_id, **kwargs):
+        """
+        Returns a specific datatable by id
+        Given a datatableId returns the datatable object and schema associated with it.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_datatables_divisionview(datatable_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param str expand: Expand instructions for the result
+        :return: DataTable
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_datatables_divisionview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `get_flows_datatables_divisionview`")
+
+
+        resource_path = '/api/v2/flows/datatables/divisionviews/{datatableId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataTable',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_datatables_divisionviews(self, **kwargs):
+        """
+        Retrieve a list of datatables for the org
+        Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_datatables_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str expand: Expand instructions for the result
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param list[str] division_id: division ID(s)
+        :param str name: Name to filter by
+        :return: DataTablesDomainEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['expand', 'page_number', 'page_size', 'sort_by', 'sort_order', 'division_id', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_datatables_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/datatables/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataTablesDomainEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_flows_divisionviews(self, **kwargs):
         """
         Get a pageable list of basic flow information objects filterable by query parameters.

@@ -72,7 +72,7 @@ class LearningAssignmentAggregateQueryRequestPredicate(object):
         :param dimension: The dimension of this LearningAssignmentAggregateQueryRequestPredicate.
         :type: str
         """
-        allowed_values = ["attendeeId", "type", "moduleId"]
+        allowed_values = ["attendeeId", "type", "moduleId", "isPassed"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"
@@ -83,7 +83,7 @@ class LearningAssignmentAggregateQueryRequestPredicate(object):
     def value(self):
         """
         Gets the value of this LearningAssignmentAggregateQueryRequestPredicate.
-        Corresponding value for dimensions in predicates. If the dimensions is type, Valid Values: Informational, AssessedContent, Questionnaire
+        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment
 
         :return: The value of this LearningAssignmentAggregateQueryRequestPredicate.
         :rtype: str
@@ -94,7 +94,7 @@ class LearningAssignmentAggregateQueryRequestPredicate(object):
     def value(self, value):
         """
         Sets the value of this LearningAssignmentAggregateQueryRequestPredicate.
-        Corresponding value for dimensions in predicates. If the dimensions is type, Valid Values: Informational, AssessedContent, Questionnaire
+        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment
 
         :param value: The value of this LearningAssignmentAggregateQueryRequestPredicate.
         :type: str

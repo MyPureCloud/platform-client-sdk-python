@@ -56,7 +56,7 @@ class Ring(object):
     def expansion_criteria(self):
         """
         Gets the expansion_criteria of this Ring.
-
+        The conditions that will trigger conversations to move to the next bullseye ring.
 
         :return: The expansion_criteria of this Ring.
         :rtype: list[ExpansionCriterium]
@@ -67,7 +67,7 @@ class Ring(object):
     def expansion_criteria(self, expansion_criteria):
         """
         Sets the expansion_criteria of this Ring.
-
+        The conditions that will trigger conversations to move to the next bullseye ring.
 
         :param expansion_criteria: The expansion_criteria of this Ring.
         :type: list[ExpansionCriterium]
@@ -79,7 +79,7 @@ class Ring(object):
     def actions(self):
         """
         Gets the actions of this Ring.
-
+        The actions that will be performed just before moving conversations to the next bullseye ring.
 
         :return: The actions of this Ring.
         :rtype: Actions
@@ -90,7 +90,7 @@ class Ring(object):
     def actions(self, actions):
         """
         Sets the actions of this Ring.
-
+        The actions that will be performed just before moving conversations to the next bullseye ring.
 
         :param actions: The actions of this Ring.
         :type: Actions

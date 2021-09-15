@@ -159,7 +159,9 @@ class ViewFilter(object):
             'blocked_reasons': 'list[str]',
             'is_recorded': 'bool',
             'has_evaluation': 'bool',
-            'has_scored_evaluation': 'bool'
+            'has_scored_evaluation': 'bool',
+            'is_agent_owned_callback': 'bool',
+            'agent_callback_owner_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -282,7 +284,9 @@ class ViewFilter(object):
             'blocked_reasons': 'blockedReasons',
             'is_recorded': 'isRecorded',
             'has_evaluation': 'hasEvaluation',
-            'has_scored_evaluation': 'hasScoredEvaluation'
+            'has_scored_evaluation': 'hasScoredEvaluation',
+            'is_agent_owned_callback': 'isAgentOwnedCallback',
+            'agent_callback_owner_ids': 'agentCallbackOwnerIds'
         }
 
         self._media_types = None
@@ -405,6 +409,8 @@ class ViewFilter(object):
         self._is_recorded = None
         self._has_evaluation = None
         self._has_scored_evaluation = None
+        self._is_agent_owned_callback = None
+        self._agent_callback_owner_ids = None
 
     @property
     def media_types(self):
@@ -3165,6 +3171,52 @@ class ViewFilter(object):
         """
         
         self._has_scored_evaluation = has_scored_evaluation
+
+    @property
+    def is_agent_owned_callback(self):
+        """
+        Gets the is_agent_owned_callback of this ViewFilter.
+        Indicates filtering for agent owned callback interactions
+
+        :return: The is_agent_owned_callback of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_agent_owned_callback
+
+    @is_agent_owned_callback.setter
+    def is_agent_owned_callback(self, is_agent_owned_callback):
+        """
+        Sets the is_agent_owned_callback of this ViewFilter.
+        Indicates filtering for agent owned callback interactions
+
+        :param is_agent_owned_callback: The is_agent_owned_callback of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_agent_owned_callback = is_agent_owned_callback
+
+    @property
+    def agent_callback_owner_ids(self):
+        """
+        Gets the agent_callback_owner_ids of this ViewFilter.
+        The list of callback owners used to filter interactions
+
+        :return: The agent_callback_owner_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._agent_callback_owner_ids
+
+    @agent_callback_owner_ids.setter
+    def agent_callback_owner_ids(self, agent_callback_owner_ids):
+        """
+        Sets the agent_callback_owner_ids of this ViewFilter.
+        The list of callback owners used to filter interactions
+
+        :param agent_callback_owner_ids: The agent_callback_owner_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._agent_callback_owner_ids = agent_callback_owner_ids
 
     def to_dict(self):
         """

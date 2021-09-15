@@ -15,6 +15,7 @@ title: PerformanceProfile
 | **date_created** | **datetime** | Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **reporting_intervals** | [**list[ReportingInterval]**](ReportingInterval.html) | The reporting interval periods for this performance profile | [optional] |
 | **active** | **bool** | The flag for active profiles | [optional] |
+| **member_count** | **int** | The number of members in this performance profile | [optional] |
 | **max_leaderboard_rank_size** | **int** | The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

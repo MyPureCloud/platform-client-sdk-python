@@ -48,6 +48,7 @@ class PerformanceProfile(object):
             'date_created': 'datetime',
             'reporting_intervals': 'list[ReportingInterval]',
             'active': 'bool',
+            'member_count': 'int',
             'max_leaderboard_rank_size': 'int',
             'self_uri': 'str'
         }
@@ -61,6 +62,7 @@ class PerformanceProfile(object):
             'date_created': 'dateCreated',
             'reporting_intervals': 'reportingIntervals',
             'active': 'active',
+            'member_count': 'memberCount',
             'max_leaderboard_rank_size': 'maxLeaderboardRankSize',
             'self_uri': 'selfUri'
         }
@@ -73,6 +75,7 @@ class PerformanceProfile(object):
         self._date_created = None
         self._reporting_intervals = None
         self._active = None
+        self._member_count = None
         self._max_leaderboard_rank_size = None
         self._self_uri = None
 
@@ -259,6 +262,29 @@ class PerformanceProfile(object):
         """
         
         self._active = active
+
+    @property
+    def member_count(self):
+        """
+        Gets the member_count of this PerformanceProfile.
+        The number of members in this performance profile
+
+        :return: The member_count of this PerformanceProfile.
+        :rtype: int
+        """
+        return self._member_count
+
+    @member_count.setter
+    def member_count(self, member_count):
+        """
+        Sets the member_count of this PerformanceProfile.
+        The number of members in this performance profile
+
+        :param member_count: The member_count of this PerformanceProfile.
+        :type: int
+        """
+        
+        self._member_count = member_count
 
     @property
     def max_leaderboard_rank_size(self):

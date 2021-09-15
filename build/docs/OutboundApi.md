@@ -5071,6 +5071,7 @@ Wraps POST /api/v2/outbound/messagingcampaigns/progress
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:view
+* outbound:emailCampaign:view
 
 ### Example
 

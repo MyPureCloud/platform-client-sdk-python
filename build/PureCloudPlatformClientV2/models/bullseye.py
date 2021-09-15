@@ -53,7 +53,7 @@ class Bullseye(object):
     def rings(self):
         """
         Gets the rings of this Bullseye.
-
+        The bullseye rings configured for this queue.
 
         :return: The rings of this Bullseye.
         :rtype: list[Ring]
@@ -64,7 +64,7 @@ class Bullseye(object):
     def rings(self, rings):
         """
         Sets the rings of this Bullseye.
-
+        The bullseye rings configured for this queue.
 
         :param rings: The rings of this Bullseye.
         :type: list[Ring]

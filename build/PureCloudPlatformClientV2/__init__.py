@@ -2,6 +2,7 @@ from __future__ import absolute_import
 
 # import models into sdk package
 from .models.adfs import ADFS
+from .models.achieved_outcome import AchievedOutcome
 from .models.acknowledge_screen_recording_request import AcknowledgeScreenRecordingRequest
 from .models.action import Action
 from .models.action_config import ActionConfig
@@ -83,6 +84,7 @@ from .models.analytics_participant_without_attributes import AnalyticsParticipan
 from .models.analytics_property import AnalyticsProperty
 from .models.analytics_proposed_agent import AnalyticsProposedAgent
 from .models.analytics_query_aggregation import AnalyticsQueryAggregation
+from .models.analytics_reporting_settings import AnalyticsReportingSettings
 from .models.analytics_resolution import AnalyticsResolution
 from .models.analytics_routing_status_record import AnalyticsRoutingStatusRecord
 from .models.analytics_scored_agent import AnalyticsScoredAgent
@@ -139,8 +141,8 @@ from .models.assessment_listing import AssessmentListing
 from .models.assessment_question_group_score import AssessmentQuestionGroupScore
 from .models.assessment_question_score import AssessmentQuestionScore
 from .models.assessment_scoring_set import AssessmentScoringSet
+from .models.assigned_segment import AssignedSegment
 from .models.assigned_wrapup_code import AssignedWrapupCode
-from .models.assignment_group import AssignmentGroup
 from .models.async_conversation_query import AsyncConversationQuery
 from .models.async_forecast_operation_result import AsyncForecastOperationResult
 from .models.async_intraday_response import AsyncIntradayResponse
@@ -224,6 +226,7 @@ from .models.bot_list import BotList
 from .models.bot_slot import BotSlot
 from .models.bot_summary import BotSummary
 from .models.bot_version_summary import BotVersionSummary
+from .models.browser import Browser
 from .models.bu_abandon_rate import BuAbandonRate
 from .models.bu_agent_schedule_activity import BuAgentScheduleActivity
 from .models.bu_agent_schedule_history_change import BuAgentScheduleHistoryChange
@@ -431,6 +434,7 @@ from .models.coaching_slots_response import CoachingSlotsResponse
 from .models.cobrowse_conversation import CobrowseConversation
 from .models.cobrowse_conversation_entity_listing import CobrowseConversationEntityListing
 from .models.cobrowse_media_participant import CobrowseMediaParticipant
+from .models.cobrowse_settings import CobrowseSettings
 from .models.cobrowsesession import Cobrowsesession
 from .models.command_status import CommandStatus
 from .models.command_status_entity_listing import CommandStatusEntityListing
@@ -444,6 +448,8 @@ from .models.condition import Condition
 from .models.configuration_overrides import ConfigurationOverrides
 from .models.connect_rate import ConnectRate
 from .models.connected_edge import ConnectedEdge
+from .models.connected_queue import ConnectedQueue
+from .models.connected_user import ConnectedUser
 from .models.constraint_conflict_message import ConstraintConflictMessage
 from .models.consult_transfer import ConsultTransfer
 from .models.consult_transfer_response import ConsultTransferResponse
@@ -541,6 +547,7 @@ from .models.conversation_callback_event_topic_scored_agent import ConversationC
 from .models.conversation_callback_event_topic_uri_reference import ConversationCallbackEventTopicUriReference
 from .models.conversation_callback_event_topic_voicemail import ConversationCallbackEventTopicVoicemail
 from .models.conversation_callback_event_topic_wrapup import ConversationCallbackEventTopicWrapup
+from .models.conversation_channel import ConversationChannel
 from .models.conversation_chat import ConversationChat
 from .models.conversation_chat_event_topic_chat_conversation import ConversationChatEventTopicChatConversation
 from .models.conversation_chat_event_topic_chat_media_participant import ConversationChatEventTopicChatMediaParticipant
@@ -686,6 +693,7 @@ from .models.conversation_social_expression_event_topic_wrapup import Conversati
 from .models.conversation_threading_window import ConversationThreadingWindow
 from .models.conversation_threading_window_setting import ConversationThreadingWindowSetting
 from .models.conversation_user import ConversationUser
+from .models.conversation_user_disposition import ConversationUserDisposition
 from .models.conversation_video_event_topic_conversation_routing_data import ConversationVideoEventTopicConversationRoutingData
 from .models.conversation_video_event_topic_detail import ConversationVideoEventTopicDetail
 from .models.conversation_video_event_topic_error_body import ConversationVideoEventTopicErrorBody
@@ -725,6 +733,7 @@ from .models.create_integration_request import CreateIntegrationRequest
 from .models.create_management_unit_api_request import CreateManagementUnitApiRequest
 from .models.create_management_unit_settings_request import CreateManagementUnitSettingsRequest
 from .models.create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
+from .models.create_performance_profile import CreatePerformanceProfile
 from .models.create_planning_group_request import CreatePlanningGroupRequest
 from .models.create_predictor_request import CreatePredictorRequest
 from .models.create_queue_request import CreateQueueRequest
@@ -764,6 +773,8 @@ from .models.cursor_note_listing import CursorNoteListing
 from .models.cursor_organization_listing import CursorOrganizationListing
 from .models.cursor_relationship_listing import CursorRelationshipListing
 from .models.cursors import Cursors
+from .models.custom_event_attribute import CustomEventAttribute
+from .models.custom_event_attribute_list import CustomEventAttributeList
 from .models.customer_interaction_center import CustomerInteractionCenter
 from .models.did import DID
 from .models.did_entity_listing import DIDEntityListing
@@ -810,6 +821,7 @@ from .models.development_activity_aggregate_query_response_metric import Develop
 from .models.development_activity_aggregate_query_response_statistics import DevelopmentActivityAggregateQueryResponseStatistics
 from .models.development_activity_aggregate_response import DevelopmentActivityAggregateResponse
 from .models.development_activity_listing import DevelopmentActivityListing
+from .models.device import Device
 from .models.dialer_action import DialerAction
 from .models.dialer_attempt_limits_config_change_attempt_limits import DialerAttemptLimitsConfigChangeAttemptLimits
 from .models.dialer_attempt_limits_config_change_recall_entry import DialerAttemptLimitsConfigChangeRecallEntry
@@ -1253,10 +1265,13 @@ from .models.journey_aggregate_query_predicate import JourneyAggregateQueryPredi
 from .models.journey_aggregate_query_response import JourneyAggregateQueryResponse
 from .models.journey_aggregation_query import JourneyAggregationQuery
 from .models.journey_aggregation_view import JourneyAggregationView
+from .models.journey_campaign import JourneyCampaign
 from .models.journey_context import JourneyContext
 from .models.journey_customer import JourneyCustomer
 from .models.journey_customer_session import JourneyCustomerSession
 from .models.journey_events_settings import JourneyEventsSettings
+from .models.journey_geolocation import JourneyGeolocation
+from .models.journey_page import JourneyPage
 from .models.journey_pattern import JourneyPattern
 from .models.journey_segment import JourneySegment
 from .models.journey_survey_question import JourneySurveyQuestion
@@ -1411,6 +1426,7 @@ from .models.media_type_access import MediaTypeAccess
 from .models.media_types import MediaTypes
 from .models.media_utilization import MediaUtilization
 from .models.member_entity import MemberEntity
+from .models.member_group import MemberGroup
 from .models.merge_operation import MergeOperation
 from .models.message import Message
 from .models.message_content import MessageContent
@@ -1560,8 +1576,11 @@ from .models.outbound_route_base_entity_listing import OutboundRouteBaseEntityLi
 from .models.outbound_route_entity_listing import OutboundRouteEntityListing
 from .models.outbound_settings import OutboundSettings
 from .models.outcome import Outcome
+from .models.outcome_achievement import OutcomeAchievement
+from .models.outcome_event_score import OutcomeEventScore
 from .models.outcome_listing import OutcomeListing
 from .models.outcome_probability_condition import OutcomeProbabilityCondition
+from .models.outcome_scores_result import OutcomeScoresResult
 from .models.overall_best_points import OverallBestPoints
 from .models.overall_best_points_item import OverallBestPointsItem
 from .models.pin_configuration import PINConfiguration
@@ -1930,6 +1949,7 @@ from .models.recording_metadata import RecordingMetadata
 from .models.recording_settings import RecordingSettings
 from .models.recording_transcode_complete_topic_media_result import RecordingTranscodeCompleteTopicMediaResult
 from .models.recording_transcode_complete_topic_recording import RecordingTranscodeCompleteTopicRecording
+from .models.referrer import Referrer
 from .models.region_time_zone import RegionTimeZone
 from .models.relationship import Relationship
 from .models.relationship_listing import RelationshipListing
@@ -2097,6 +2117,9 @@ from .models.service_goal_template import ServiceGoalTemplate
 from .models.service_goal_template_list import ServiceGoalTemplateList
 from .models.service_goal_template_reference import ServiceGoalTemplateReference
 from .models.service_level import ServiceLevel
+from .models.session import Session
+from .models.session_last_event import SessionLastEvent
+from .models.session_segment_assignment import SessionSegmentAssignment
 from .models.set_uui_data_request import SetUuiDataRequest
 from .models.set_wrapper_day_of_week import SetWrapperDayOfWeek
 from .models.set_wrapper_route_path_request import SetWrapperRoutePathRequest

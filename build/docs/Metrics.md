@@ -18,6 +18,10 @@ title: Metrics
 | **template_name** | **str** | The name of associated objective template | [optional] |
 | **max_points** | **int** | Achievable maximum points for this metric | [optional] |
 | **performance_profile_id** | **str** | Performance profile id of this metric | [optional] |
+| **linked_metric** | [**AddressableEntityRef**](AddressableEntityRef.html) | The linked metric entity reference | [optional] |
+| **date_created** | **int** | The created date of this metric | [optional] |
+| **date_unlinked** | **date** | The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] |
+| **source_performance_profile** | [**PerformanceProfile**](PerformanceProfile.html) | The source performance profile when this metric is linked | [optional] |
 | **unit_definition** | **str** | Unit definition of linked external metric | [optional] |
 | **precision** | **int** | Precision of linked external metric | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |

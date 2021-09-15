@@ -53,6 +53,7 @@ class Message(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'provider': 'str',
+            'authenticated': 'bool',
             'type': 'str',
             'recipient_country': 'str',
             'recipient_type': 'str',
@@ -64,7 +65,8 @@ class Message(object):
             'journey_context': 'JourneyContext',
             'wrapup': 'Wrapup',
             'after_call_work': 'AfterCallWork',
-            'after_call_work_required': 'bool'
+            'after_call_work_required': 'bool',
+            'agent_assistant_id': 'str'
         }
 
         self.attribute_map = {
@@ -81,6 +83,7 @@ class Message(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
+            'authenticated': 'authenticated',
             'type': 'type',
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
@@ -92,7 +95,8 @@ class Message(object):
             'journey_context': 'journeyContext',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired'
+            'after_call_work_required': 'afterCallWorkRequired',
+            'agent_assistant_id': 'agentAssistantId'
         }
 
         self._state = None
@@ -108,6 +112,7 @@ class Message(object):
         self._connected_time = None
         self._disconnected_time = None
         self._provider = None
+        self._authenticated = None
         self._type = None
         self._recipient_country = None
         self._recipient_type = None
@@ -120,6 +125,7 @@ class Message(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._agent_assistant_id = None
 
     @property
     def state(self):
@@ -433,6 +439,29 @@ class Message(object):
         self._provider = provider
 
     @property
+    def authenticated(self):
+        """
+        Gets the authenticated of this Message.
+        If true, the participant member is authenticated.
+
+        :return: The authenticated of this Message.
+        :rtype: bool
+        """
+        return self._authenticated
+
+    @authenticated.setter
+    def authenticated(self, authenticated):
+        """
+        Sets the authenticated of this Message.
+        If true, the participant member is authenticated.
+
+        :param authenticated: The authenticated of this Message.
+        :type: bool
+        """
+        
+        self._authenticated = authenticated
+
+    @property
     def type(self):
         """
         Gets the type of this Message.
@@ -711,6 +740,29 @@ class Message(object):
         """
         
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def agent_assistant_id(self):
+        """
+        Gets the agent_assistant_id of this Message.
+        UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
+
+        :return: The agent_assistant_id of this Message.
+        :rtype: str
+        """
+        return self._agent_assistant_id
+
+    @agent_assistant_id.setter
+    def agent_assistant_id(self, agent_assistant_id):
+        """
+        Sets the agent_assistant_id of this Message.
+        UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
+
+        :param agent_assistant_id: The agent_assistant_id of this Message.
+        :type: str
+        """
+        
+        self._agent_assistant_id = agent_assistant_id
 
     def to_dict(self):
         """

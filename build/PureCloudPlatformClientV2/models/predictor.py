@@ -49,6 +49,7 @@ class Predictor(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'workload_balancing_config': 'PredictorWorkloadBalancing',
+            'error_code': 'str',
             'self_uri': 'str'
         }
 
@@ -62,6 +63,7 @@ class Predictor(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'workload_balancing_config': 'workloadBalancingConfig',
+            'error_code': 'errorCode',
             'self_uri': 'selfUri'
         }
 
@@ -74,6 +76,7 @@ class Predictor(object):
         self._date_created = None
         self._date_modified = None
         self._workload_balancing_config = None
+        self._error_code = None
         self._self_uri = None
 
     @property
@@ -286,6 +289,29 @@ class Predictor(object):
         """
         
         self._workload_balancing_config = workload_balancing_config
+
+    @property
+    def error_code(self):
+        """
+        Gets the error_code of this Predictor.
+        Predictor error code - optional details on why the predictor went into error state.
+
+        :return: The error_code of this Predictor.
+        :rtype: str
+        """
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code):
+        """
+        Sets the error_code of this Predictor.
+        Predictor error code - optional details on why the predictor went into error state.
+
+        :param error_code: The error_code of this Predictor.
+        :type: str
+        """
+        
+        self._error_code = error_code
 
     @property
     def self_uri(self):

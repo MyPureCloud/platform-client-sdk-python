@@ -41,9 +41,9 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         """
         self.swagger_types = {
             'count': 'int',
-            'min': 'int',
-            'max': 'int',
-            'sum': 'int'
+            'min': 'float',
+            'max': 'float',
+            'sum': 'float'
         }
 
         self.attribute_map = {
@@ -88,7 +88,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         The minimum value in this metric
 
         :return: The min of this LearningAssignmentAggregateQueryResponseStats.
-        :rtype: int
+        :rtype: float
         """
         return self._min
 
@@ -99,7 +99,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         The minimum value in this metric
 
         :param min: The min of this LearningAssignmentAggregateQueryResponseStats.
-        :type: int
+        :type: float
         """
         
         self._min = min
@@ -111,7 +111,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         The maximum value in this metric
 
         :return: The max of this LearningAssignmentAggregateQueryResponseStats.
-        :rtype: int
+        :rtype: float
         """
         return self._max
 
@@ -122,7 +122,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         The maximum value in this metric
 
         :param max: The max of this LearningAssignmentAggregateQueryResponseStats.
-        :type: int
+        :type: float
         """
         
         self._max = max
@@ -134,7 +134,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         The total of the values for this metric
 
         :return: The sum of this LearningAssignmentAggregateQueryResponseStats.
-        :rtype: int
+        :rtype: float
         """
         return self._sum
 
@@ -145,7 +145,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         The total of the values for this metric
 
         :param sum: The sum of this LearningAssignmentAggregateQueryResponseStats.
-        :type: int
+        :type: float
         """
         
         self._sum = sum

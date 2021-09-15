@@ -77,7 +77,7 @@ class DataSchema(object):
     def id(self):
         """
         Gets the id of this DataSchema.
-        The globally unique identifier for the object.
+        The globally unique identifier for the schema.  Only required if a schema is used for custom fields during external entity creation or updates.
 
         :return: The id of this DataSchema.
         :rtype: str
@@ -88,7 +88,7 @@ class DataSchema(object):
     def id(self, id):
         """
         Sets the id of this DataSchema.
-        The globally unique identifier for the object.
+        The globally unique identifier for the schema.  Only required if a schema is used for custom fields during external entity creation or updates.
 
         :param id: The id of this DataSchema.
         :type: str

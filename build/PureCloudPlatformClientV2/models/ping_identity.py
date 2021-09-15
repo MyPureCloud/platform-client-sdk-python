@@ -47,9 +47,9 @@ class PingIdentity(object):
             'sso_target_uri': 'str',
             'slo_uri': 'str',
             'slo_binding': 'str',
+            'relying_party_identifier': 'str',
             'certificate': 'str',
             'certificates': 'list[str]',
-            'relying_party_identifier': 'str',
             'self_uri': 'str'
         }
 
@@ -61,9 +61,9 @@ class PingIdentity(object):
             'sso_target_uri': 'ssoTargetURI',
             'slo_uri': 'sloURI',
             'slo_binding': 'sloBinding',
+            'relying_party_identifier': 'relyingPartyIdentifier',
             'certificate': 'certificate',
             'certificates': 'certificates',
-            'relying_party_identifier': 'relyingPartyIdentifier',
             'self_uri': 'selfUri'
         }
 
@@ -74,9 +74,9 @@ class PingIdentity(object):
         self._sso_target_uri = None
         self._slo_uri = None
         self._slo_binding = None
+        self._relying_party_identifier = None
         self._certificate = None
         self._certificates = None
-        self._relying_party_identifier = None
         self._self_uri = None
 
     @property
@@ -241,6 +241,29 @@ class PingIdentity(object):
         self._slo_binding = slo_binding
 
     @property
+    def relying_party_identifier(self):
+        """
+        Gets the relying_party_identifier of this PingIdentity.
+
+
+        :return: The relying_party_identifier of this PingIdentity.
+        :rtype: str
+        """
+        return self._relying_party_identifier
+
+    @relying_party_identifier.setter
+    def relying_party_identifier(self, relying_party_identifier):
+        """
+        Sets the relying_party_identifier of this PingIdentity.
+
+
+        :param relying_party_identifier: The relying_party_identifier of this PingIdentity.
+        :type: str
+        """
+        
+        self._relying_party_identifier = relying_party_identifier
+
+    @property
     def certificate(self):
         """
         Gets the certificate of this PingIdentity.
@@ -285,29 +308,6 @@ class PingIdentity(object):
         """
         
         self._certificates = certificates
-
-    @property
-    def relying_party_identifier(self):
-        """
-        Gets the relying_party_identifier of this PingIdentity.
-
-
-        :return: The relying_party_identifier of this PingIdentity.
-        :rtype: str
-        """
-        return self._relying_party_identifier
-
-    @relying_party_identifier.setter
-    def relying_party_identifier(self, relying_party_identifier):
-        """
-        Sets the relying_party_identifier of this PingIdentity.
-
-
-        :param relying_party_identifier: The relying_party_identifier of this PingIdentity.
-        :type: str
-        """
-        
-        self._relying_party_identifier = relying_party_identifier
 
     @property
     def self_uri(self):

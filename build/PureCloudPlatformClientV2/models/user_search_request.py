@@ -242,7 +242,7 @@ class UserSearchRequest(object):
     def integration_presence_source(self):
         """
         Gets the integration_presence_source of this UserSearchRequest.
-        Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+        Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
 
         :return: The integration_presence_source of this UserSearchRequest.
         :rtype: str
@@ -253,7 +253,7 @@ class UserSearchRequest(object):
     def integration_presence_source(self, integration_presence_source):
         """
         Sets the integration_presence_source of this UserSearchRequest.
-        Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+        Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
 
         :param integration_presence_source: The integration_presence_source of this UserSearchRequest.
         :type: str

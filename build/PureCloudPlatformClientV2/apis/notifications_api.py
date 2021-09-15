@@ -358,7 +358,7 @@ class NotificationsApi(object):
     def head_notifications_channel(self, channel_id, **kwargs):
         """
         Verify a channel still exists and is valid
-        
+        Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -371,7 +371,7 @@ class NotificationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str channel_id: Channel ID (required)
-        :return: bool
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -428,7 +428,7 @@ class NotificationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='bool',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

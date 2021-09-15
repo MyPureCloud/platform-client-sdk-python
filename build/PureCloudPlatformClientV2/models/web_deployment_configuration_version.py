@@ -47,6 +47,7 @@ class WebDeploymentConfigurationVersion(object):
             'languages': 'list[str]',
             'default_language': 'str',
             'messenger': 'MessengerSettings',
+            'cobrowse': 'CobrowseSettings',
             'journey_events': 'JourneyEventsSettings',
             'authentication_settings': 'AuthenticationSettings',
             'date_created': 'datetime',
@@ -67,6 +68,7 @@ class WebDeploymentConfigurationVersion(object):
             'languages': 'languages',
             'default_language': 'defaultLanguage',
             'messenger': 'messenger',
+            'cobrowse': 'cobrowse',
             'journey_events': 'journeyEvents',
             'authentication_settings': 'authenticationSettings',
             'date_created': 'dateCreated',
@@ -86,6 +88,7 @@ class WebDeploymentConfigurationVersion(object):
         self._languages = None
         self._default_language = None
         self._messenger = None
+        self._cobrowse = None
         self._journey_events = None
         self._authentication_settings = None
         self._date_created = None
@@ -257,6 +260,29 @@ class WebDeploymentConfigurationVersion(object):
         """
         
         self._messenger = messenger
+
+    @property
+    def cobrowse(self):
+        """
+        Gets the cobrowse of this WebDeploymentConfigurationVersion.
+        The settings for cobrowse
+
+        :return: The cobrowse of this WebDeploymentConfigurationVersion.
+        :rtype: CobrowseSettings
+        """
+        return self._cobrowse
+
+    @cobrowse.setter
+    def cobrowse(self, cobrowse):
+        """
+        Sets the cobrowse of this WebDeploymentConfigurationVersion.
+        The settings for cobrowse
+
+        :param cobrowse: The cobrowse of this WebDeploymentConfigurationVersion.
+        :type: CobrowseSettings
+        """
+        
+        self._cobrowse = cobrowse
 
     @property
     def journey_events(self):

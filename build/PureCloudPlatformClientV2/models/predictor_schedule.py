@@ -72,7 +72,7 @@ class PredictorSchedule(object):
         :param schedule_type: The schedule_type of this PredictorSchedule.
         :type: str
         """
-        allowed_values = ["HourOnHourOff"]
+        allowed_values = ["HourOnHourOff", "OngoingValueMonitoring"]
         if schedule_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for schedule_type -> " + schedule_type)
             self._schedule_type = "outdated_sdk_version"

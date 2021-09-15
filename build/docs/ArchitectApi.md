@@ -63,6 +63,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_datatable_row**](ArchitectApi.html#get_flows_datatable_row) | Returns a specific row for the datatable|
 |[**get_flows_datatable_rows**](ArchitectApi.html#get_flows_datatable_rows) | Returns the rows for the datatable with the given id|
 |[**get_flows_datatables**](ArchitectApi.html#get_flows_datatables) | Retrieve a list of datatables for the org|
+|[**get_flows_datatables_divisionview**](ArchitectApi.html#get_flows_datatables_divisionview) | Returns a specific datatable by id|
+|[**get_flows_datatables_divisionviews**](ArchitectApi.html#get_flows_datatables_divisionviews) | Retrieve a list of datatables for the org|
 |[**get_flows_divisionviews**](ArchitectApi.html#get_flows_divisionviews) | Get a pageable list of basic flow information objects filterable by query parameters.|
 |[**get_flows_execution**](ArchitectApi.html#get_flows_execution) | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.|
 |[**get_flows_milestone**](ArchitectApi.html#get_flows_milestone) | Get a flow milestone|
@@ -3167,6 +3169,122 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_flows_datatables: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **expand** | **str**| Expand instructions for the result | [optional] <br />**Values**: schema |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to id]<br />**Values**: id, name |
+| **sort_order** | **str**| Sort order | [optional] [default to ascending] |
+| **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
+| **name** | **str**| Name to filter by | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html)
+
+<a name="get_flows_datatables_divisionview"></a>
+
+## [**DataTable**](DataTable.html) get_flows_datatables_divisionview(datatable_id, expand=expand)
+
+
+
+Returns a specific datatable by id
+
+Given a datatableId returns the datatable object and schema associated with it.
+
+Wraps GET /api/v2/flows/datatables/divisionviews/{datatableId} 
+
+Requires ALL permissions: 
+
+* architect:datatable:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+datatable_id = 'datatable_id_example' # str | id of datatable
+expand = 'expand_example' # str | Expand instructions for the result (optional)
+
+try:
+    # Returns a specific datatable by id
+    api_response = api_instance.get_flows_datatables_divisionview(datatable_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_datatables_divisionview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **datatable_id** | **str**| id of datatable |  |
+| **expand** | **str**| Expand instructions for the result | [optional] <br />**Values**: schema |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataTable**](DataTable.html)
+
+<a name="get_flows_datatables_divisionviews"></a>
+
+## [**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html) get_flows_datatables_divisionviews(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, division_id=division_id, name=name)
+
+
+
+Retrieve a list of datatables for the org
+
+Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+
+Wraps GET /api/v2/flows/datatables/divisionviews 
+
+Requires ALL permissions: 
+
+* architect:datatable:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+expand = 'expand_example' # str | Expand instructions for the result (optional)
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'id' # str | Sort by (optional) (default to id)
+sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
+name = 'name_example' # str | Name to filter by (optional)
+
+try:
+    # Retrieve a list of datatables for the org
+    api_response = api_instance.get_flows_datatables_divisionviews(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, division_id=division_id, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_datatables_divisionviews: %s\n" % e)
 ```
 
 ### Parameters

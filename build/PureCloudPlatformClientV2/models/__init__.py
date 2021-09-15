@@ -2,6 +2,7 @@ from __future__ import absolute_import
 
 # import models into model package
 from .adfs import ADFS
+from .achieved_outcome import AchievedOutcome
 from .acknowledge_screen_recording_request import AcknowledgeScreenRecordingRequest
 from .action import Action
 from .action_config import ActionConfig
@@ -83,6 +84,7 @@ from .analytics_participant_without_attributes import AnalyticsParticipantWithou
 from .analytics_property import AnalyticsProperty
 from .analytics_proposed_agent import AnalyticsProposedAgent
 from .analytics_query_aggregation import AnalyticsQueryAggregation
+from .analytics_reporting_settings import AnalyticsReportingSettings
 from .analytics_resolution import AnalyticsResolution
 from .analytics_routing_status_record import AnalyticsRoutingStatusRecord
 from .analytics_scored_agent import AnalyticsScoredAgent
@@ -139,8 +141,8 @@ from .assessment_listing import AssessmentListing
 from .assessment_question_group_score import AssessmentQuestionGroupScore
 from .assessment_question_score import AssessmentQuestionScore
 from .assessment_scoring_set import AssessmentScoringSet
+from .assigned_segment import AssignedSegment
 from .assigned_wrapup_code import AssignedWrapupCode
-from .assignment_group import AssignmentGroup
 from .async_conversation_query import AsyncConversationQuery
 from .async_forecast_operation_result import AsyncForecastOperationResult
 from .async_intraday_response import AsyncIntradayResponse
@@ -224,6 +226,7 @@ from .bot_list import BotList
 from .bot_slot import BotSlot
 from .bot_summary import BotSummary
 from .bot_version_summary import BotVersionSummary
+from .browser import Browser
 from .bu_abandon_rate import BuAbandonRate
 from .bu_agent_schedule_activity import BuAgentScheduleActivity
 from .bu_agent_schedule_history_change import BuAgentScheduleHistoryChange
@@ -431,6 +434,7 @@ from .coaching_slots_response import CoachingSlotsResponse
 from .cobrowse_conversation import CobrowseConversation
 from .cobrowse_conversation_entity_listing import CobrowseConversationEntityListing
 from .cobrowse_media_participant import CobrowseMediaParticipant
+from .cobrowse_settings import CobrowseSettings
 from .cobrowsesession import Cobrowsesession
 from .command_status import CommandStatus
 from .command_status_entity_listing import CommandStatusEntityListing
@@ -444,6 +448,8 @@ from .condition import Condition
 from .configuration_overrides import ConfigurationOverrides
 from .connect_rate import ConnectRate
 from .connected_edge import ConnectedEdge
+from .connected_queue import ConnectedQueue
+from .connected_user import ConnectedUser
 from .constraint_conflict_message import ConstraintConflictMessage
 from .consult_transfer import ConsultTransfer
 from .consult_transfer_response import ConsultTransferResponse
@@ -541,6 +547,7 @@ from .conversation_callback_event_topic_scored_agent import ConversationCallback
 from .conversation_callback_event_topic_uri_reference import ConversationCallbackEventTopicUriReference
 from .conversation_callback_event_topic_voicemail import ConversationCallbackEventTopicVoicemail
 from .conversation_callback_event_topic_wrapup import ConversationCallbackEventTopicWrapup
+from .conversation_channel import ConversationChannel
 from .conversation_chat import ConversationChat
 from .conversation_chat_event_topic_chat_conversation import ConversationChatEventTopicChatConversation
 from .conversation_chat_event_topic_chat_media_participant import ConversationChatEventTopicChatMediaParticipant
@@ -686,6 +693,7 @@ from .conversation_social_expression_event_topic_wrapup import ConversationSocia
 from .conversation_threading_window import ConversationThreadingWindow
 from .conversation_threading_window_setting import ConversationThreadingWindowSetting
 from .conversation_user import ConversationUser
+from .conversation_user_disposition import ConversationUserDisposition
 from .conversation_video_event_topic_conversation_routing_data import ConversationVideoEventTopicConversationRoutingData
 from .conversation_video_event_topic_detail import ConversationVideoEventTopicDetail
 from .conversation_video_event_topic_error_body import ConversationVideoEventTopicErrorBody
@@ -725,6 +733,7 @@ from .create_integration_request import CreateIntegrationRequest
 from .create_management_unit_api_request import CreateManagementUnitApiRequest
 from .create_management_unit_settings_request import CreateManagementUnitSettingsRequest
 from .create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
+from .create_performance_profile import CreatePerformanceProfile
 from .create_planning_group_request import CreatePlanningGroupRequest
 from .create_predictor_request import CreatePredictorRequest
 from .create_queue_request import CreateQueueRequest
@@ -764,6 +773,8 @@ from .cursor_note_listing import CursorNoteListing
 from .cursor_organization_listing import CursorOrganizationListing
 from .cursor_relationship_listing import CursorRelationshipListing
 from .cursors import Cursors
+from .custom_event_attribute import CustomEventAttribute
+from .custom_event_attribute_list import CustomEventAttributeList
 from .customer_interaction_center import CustomerInteractionCenter
 from .did import DID
 from .did_entity_listing import DIDEntityListing
@@ -810,6 +821,7 @@ from .development_activity_aggregate_query_response_metric import DevelopmentAct
 from .development_activity_aggregate_query_response_statistics import DevelopmentActivityAggregateQueryResponseStatistics
 from .development_activity_aggregate_response import DevelopmentActivityAggregateResponse
 from .development_activity_listing import DevelopmentActivityListing
+from .device import Device
 from .dialer_action import DialerAction
 from .dialer_attempt_limits_config_change_attempt_limits import DialerAttemptLimitsConfigChangeAttemptLimits
 from .dialer_attempt_limits_config_change_recall_entry import DialerAttemptLimitsConfigChangeRecallEntry
@@ -1253,10 +1265,13 @@ from .journey_aggregate_query_predicate import JourneyAggregateQueryPredicate
 from .journey_aggregate_query_response import JourneyAggregateQueryResponse
 from .journey_aggregation_query import JourneyAggregationQuery
 from .journey_aggregation_view import JourneyAggregationView
+from .journey_campaign import JourneyCampaign
 from .journey_context import JourneyContext
 from .journey_customer import JourneyCustomer
 from .journey_customer_session import JourneyCustomerSession
 from .journey_events_settings import JourneyEventsSettings
+from .journey_geolocation import JourneyGeolocation
+from .journey_page import JourneyPage
 from .journey_pattern import JourneyPattern
 from .journey_segment import JourneySegment
 from .journey_survey_question import JourneySurveyQuestion
@@ -1411,6 +1426,7 @@ from .media_type_access import MediaTypeAccess
 from .media_types import MediaTypes
 from .media_utilization import MediaUtilization
 from .member_entity import MemberEntity
+from .member_group import MemberGroup
 from .merge_operation import MergeOperation
 from .message import Message
 from .message_content import MessageContent
@@ -1560,8 +1576,11 @@ from .outbound_route_base_entity_listing import OutboundRouteBaseEntityListing
 from .outbound_route_entity_listing import OutboundRouteEntityListing
 from .outbound_settings import OutboundSettings
 from .outcome import Outcome
+from .outcome_achievement import OutcomeAchievement
+from .outcome_event_score import OutcomeEventScore
 from .outcome_listing import OutcomeListing
 from .outcome_probability_condition import OutcomeProbabilityCondition
+from .outcome_scores_result import OutcomeScoresResult
 from .overall_best_points import OverallBestPoints
 from .overall_best_points_item import OverallBestPointsItem
 from .pin_configuration import PINConfiguration
@@ -1930,6 +1949,7 @@ from .recording_metadata import RecordingMetadata
 from .recording_settings import RecordingSettings
 from .recording_transcode_complete_topic_media_result import RecordingTranscodeCompleteTopicMediaResult
 from .recording_transcode_complete_topic_recording import RecordingTranscodeCompleteTopicRecording
+from .referrer import Referrer
 from .region_time_zone import RegionTimeZone
 from .relationship import Relationship
 from .relationship_listing import RelationshipListing
@@ -2097,6 +2117,9 @@ from .service_goal_template import ServiceGoalTemplate
 from .service_goal_template_list import ServiceGoalTemplateList
 from .service_goal_template_reference import ServiceGoalTemplateReference
 from .service_level import ServiceLevel
+from .session import Session
+from .session_last_event import SessionLastEvent
+from .session_segment_assignment import SessionSegmentAssignment
 from .set_uui_data_request import SetUuiDataRequest
 from .set_wrapper_day_of_week import SetWrapperDayOfWeek
 from .set_wrapper_route_path_request import SetWrapperRoutePathRequest

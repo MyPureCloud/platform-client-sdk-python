@@ -42,18 +42,21 @@ class TextBotPromptSegment(object):
         self.swagger_types = {
             'text': 'str',
             'type': 'str',
-            'format': 'Format'
+            'format': 'Format',
+            'content': 'list[MessageContent]'
         }
 
         self.attribute_map = {
             'text': 'text',
             'type': 'type',
-            'format': 'format'
+            'format': 'format',
+            'content': 'content'
         }
 
         self._text = None
         self._type = None
         self._format = None
+        self._content = None
 
     @property
     def text(self):
@@ -98,7 +101,7 @@ class TextBotPromptSegment(object):
         :param type: The type of this TextBotPromptSegment.
         :type: str
         """
-        allowed_values = ["Text"]
+        allowed_values = ["Text", "RichMedia"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -127,6 +130,29 @@ class TextBotPromptSegment(object):
         """
         
         self._format = format
+
+    @property
+    def content(self):
+        """
+        Gets the content of this TextBotPromptSegment.
+        Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.
+
+        :return: The content of this TextBotPromptSegment.
+        :rtype: list[MessageContent]
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """
+        Sets the content of this TextBotPromptSegment.
+        Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.
+
+        :param content: The content of this TextBotPromptSegment.
+        :type: list[MessageContent]
+        """
+        
+        self._content = content
 
     def to_dict(self):
         """

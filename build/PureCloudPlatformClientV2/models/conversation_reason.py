@@ -72,7 +72,7 @@ class ConversationReason(object):
         :param code: The code of this ConversationReason.
         :type: str
         """
-        allowed_values = ["MessageExpired", "RateLimited", "MessageNotAllowed", "GeneralError", "UnsupportedMessage", "UnknownMessage", "InvalidMessageStructure", "InvalidDestination", "ServerError", "MediaTypeNotAllowed", "InvalidMediaContentLength"]
+        allowed_values = ["MessageExpired", "RateLimited", "MessageNotAllowed", "GeneralError", "UnsupportedMessage", "UnknownMessage", "InvalidMessageStructure", "InvalidDestination", "ServerError", "MediaTypeNotAllowed", "InvalidMediaContentLength", "RecipientOptedOut"]
         if code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for code -> " + code)
             self._code = "outdated_sdk_version"

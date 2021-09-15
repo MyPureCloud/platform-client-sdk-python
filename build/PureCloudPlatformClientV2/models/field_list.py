@@ -48,7 +48,8 @@ class FieldList(object):
             'repeatable': 'bool',
             'state': 'str',
             'type': 'str',
-            'required': 'bool'
+            'required': 'bool',
+            'gdpr': 'bool'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class FieldList(object):
             'repeatable': 'repeatable',
             'state': 'state',
             'type': 'type',
-            'required': 'required'
+            'required': 'required',
+            'gdpr': 'gdpr'
         }
 
         self._custom_labels = None
@@ -72,6 +74,7 @@ class FieldList(object):
         self._state = None
         self._type = None
         self._required = None
+        self._gdpr = None
 
     @property
     def custom_labels(self):
@@ -279,6 +282,29 @@ class FieldList(object):
         """
         
         self._required = required
+
+    @property
+    def gdpr(self):
+        """
+        Gets the gdpr of this FieldList.
+
+
+        :return: The gdpr of this FieldList.
+        :rtype: bool
+        """
+        return self._gdpr
+
+    @gdpr.setter
+    def gdpr(self, gdpr):
+        """
+        Sets the gdpr of this FieldList.
+
+
+        :param gdpr: The gdpr of this FieldList.
+        :type: bool
+        """
+        
+        self._gdpr = gdpr
 
     def to_dict(self):
         """

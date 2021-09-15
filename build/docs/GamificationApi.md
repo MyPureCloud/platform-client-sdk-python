@@ -27,18 +27,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_gamification_scorecards_attendance**](GamificationApi.html#get_gamification_scorecards_attendance) | Attendance status metrics of the requesting user|
 |[**get_gamification_scorecards_bestpoints**](GamificationApi.html#get_gamification_scorecards_bestpoints) | Best points of the requesting user|
 |[**get_gamification_scorecards_points_alltime**](GamificationApi.html#get_gamification_scorecards_points_alltime) | All-time points of the requesting user|
-|[**get_gamification_scorecards_points_average**](GamificationApi.html#get_gamification_scorecards_points_average) | Average points of the requesting user&#39;s division|
+|[**get_gamification_scorecards_points_average**](GamificationApi.html#get_gamification_scorecards_points_average) | Average points of the requesting user&#39;s division or performance profile|
 |[**get_gamification_scorecards_points_trends**](GamificationApi.html#get_gamification_scorecards_points_trends) | Points trends of the requesting user|
 |[**get_gamification_scorecards_user**](GamificationApi.html#get_gamification_scorecards_user) | Workday performance metrics for a user|
 |[**get_gamification_scorecards_user_attendance**](GamificationApi.html#get_gamification_scorecards_user_attendance) | Attendance status metrics for a user|
 |[**get_gamification_scorecards_user_bestpoints**](GamificationApi.html#get_gamification_scorecards_user_bestpoints) | Best points of a user|
 |[**get_gamification_scorecards_user_points_alltime**](GamificationApi.html#get_gamification_scorecards_user_points_alltime) | All-time points for a user|
 |[**get_gamification_scorecards_user_points_trends**](GamificationApi.html#get_gamification_scorecards_user_points_trends) | Points trend for a user|
-|[**get_gamification_scorecards_user_values_trends**](GamificationApi.html#get_gamification_scorecards_user_values_trends) | Values Trends of a user|
+|[**get_gamification_scorecards_user_values_trends**](GamificationApi.html#get_gamification_scorecards_user_values_trends) | Values trends of a user|
 |[**get_gamification_scorecards_users_points_average**](GamificationApi.html#get_gamification_scorecards_users_points_average) | Workday average points by target group|
 |[**get_gamification_scorecards_users_values_average**](GamificationApi.html#get_gamification_scorecards_users_values_average) | Workday average values by target group|
 |[**get_gamification_scorecards_users_values_trends**](GamificationApi.html#get_gamification_scorecards_users_values_trends) | Values trend by target group|
-|[**get_gamification_scorecards_values_average**](GamificationApi.html#get_gamification_scorecards_values_average) | Average values of the requesting user&#39;s division|
+|[**get_gamification_scorecards_values_average**](GamificationApi.html#get_gamification_scorecards_values_average) | Average values of the requesting user&#39;s division or performance profile|
 |[**get_gamification_scorecards_values_trends**](GamificationApi.html#get_gamification_scorecards_values_trends) | Values trends of the requesting user or group|
 |[**get_gamification_status**](GamificationApi.html#get_gamification_status) | Gamification activation status|
 |[**get_gamification_template**](GamificationApi.html#get_gamification_template) | Objective template by id|
@@ -47,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_gamification_profile_activate**](GamificationApi.html#post_gamification_profile_activate) | Activate a performance profile|
 |[**post_gamification_profile_deactivate**](GamificationApi.html#post_gamification_profile_deactivate) | Deactivate a performance profile|
 |[**post_gamification_profile_metrics**](GamificationApi.html#post_gamification_profile_metrics) | Creates a gamified metric with a given metric definition and metric objective under in a performance profile|
+|[**post_gamification_profiles**](GamificationApi.html#post_gamification_profiles) | Create a new custom performance profile|
 |[**put_gamification_metric**](GamificationApi.html#put_gamification_metric) | Updates a metric|
 |[**put_gamification_profile**](GamificationApi.html#put_gamification_profile) | Updates a performance profile|
 |[**put_gamification_profile_metric**](GamificationApi.html#put_gamification_profile_metric) | Updates a metric in performance profile|
@@ -759,6 +760,8 @@ Wraps GET /api/v2/gamification/profiles/users/{userId}
 Requires ANY permissions: 
 
 * gamification:profile:view
+* gamification:scorecard:viewAll
+* gamification:leaderboard:viewAll
 
 ### Example
 
@@ -1057,7 +1060,7 @@ except ApiException as e:
 
 
 
-Average points of the requesting user's division
+Average points of the requesting user's division or performance profile
 
 
 
@@ -1083,7 +1086,7 @@ api_instance = PureCloudPlatformClientV2.GamificationApi()
 workday = '2013-10-20' # date | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 try:
-    # Average points of the requesting user's division
+    # Average points of the requesting user's division or performance profile
     api_response = api_instance.get_gamification_scorecards_points_average(workday)
     pprint(api_response)
 except ApiException as e:
@@ -1434,7 +1437,7 @@ except ApiException as e:
 
 
 
-Values Trends of a user
+Values trends of a user
 
 
 
@@ -1463,7 +1466,7 @@ end_workday = '2013-10-20' # date | End workday of querying workdays range. Date
 time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
 
 try:
-    # Values Trends of a user
+    # Values trends of a user
     api_response = api_instance.get_gamification_scorecards_user_values_trends(user_id, start_workday, end_workday, time_zone=time_zone)
     pprint(api_response)
 except ApiException as e:
@@ -1662,7 +1665,7 @@ except ApiException as e:
 
 
 
-Average values of the requesting user's division
+Average values of the requesting user's division or performance profile
 
 
 
@@ -1689,7 +1692,7 @@ workday = '2013-10-20' # date | The target workday. Dates are represented as an 
 time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
 
 try:
-    # Average values of the requesting user's division
+    # Average values of the requesting user's division or performance profile
     api_response = api_instance.get_gamification_scorecards_values_average(workday, time_zone=time_zone)
     pprint(api_response)
 except ApiException as e:
@@ -1711,7 +1714,7 @@ except ApiException as e:
 
 <a name="get_gamification_scorecards_values_trends"></a>
 
-## [**WorkdayValuesTrend**](WorkdayValuesTrend.html) get_gamification_scorecards_values_trends(start_workday, end_workday, filter_type=filter_type, time_zone=time_zone)
+## [**WorkdayValuesTrend**](WorkdayValuesTrend.html) get_gamification_scorecards_values_trends(start_workday, end_workday, filter_type=filter_type, reference_workday=reference_workday, time_zone=time_zone)
 
 
 
@@ -1741,11 +1744,12 @@ api_instance = PureCloudPlatformClientV2.GamificationApi()
 start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 filter_type = 'filter_type_example' # str | Filter type for the query request. If not set, then the request is for the requesting user. (optional)
+reference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
 
 try:
     # Values trends of the requesting user or group
-    api_response = api_instance.get_gamification_scorecards_values_trends(start_workday, end_workday, filter_type=filter_type, time_zone=time_zone)
+    api_response = api_instance.get_gamification_scorecards_values_trends(start_workday, end_workday, filter_type=filter_type, reference_workday=reference_workday, time_zone=time_zone)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_scorecards_values_trends: %s\n" % e)
@@ -1759,6 +1763,7 @@ except ApiException as e:
 | **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **filter_type** | **str**| Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: PerformanceProfile, Division |
+| **reference_workday** | **date**| Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
 {: class="table table-striped"}
 
@@ -2118,6 +2123,57 @@ except ApiException as e:
 ### Return type
 
 [**Metric**](Metric.html)
+
+<a name="post_gamification_profiles"></a>
+
+## [**GetProfilesResponse**](GetProfilesResponse.html) post_gamification_profiles(body)
+
+
+
+Create a new custom performance profile
+
+
+
+Wraps POST /api/v2/gamification/profiles 
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+body = PureCloudPlatformClientV2.CreatePerformanceProfile() # CreatePerformanceProfile | performanceProfile
+
+try:
+    # Create a new custom performance profile
+    api_response = api_instance.post_gamification_profiles(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profiles: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreatePerformanceProfile**](CreatePerformanceProfile.html)| performanceProfile |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GetProfilesResponse**](GetProfilesResponse.html)
 
 <a name="put_gamification_metric"></a>
 

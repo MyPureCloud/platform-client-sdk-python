@@ -221,13 +221,13 @@ except ApiException as e:
 
 <a name="head_notifications_channel"></a>
 
-## bool** head_notifications_channel(channel_id)
+##  head_notifications_channel(channel_id)
 
 
 
 Verify a channel still exists and is valid
 
-
+Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
 
 Wraps HEAD /api/v2/notifications/channels/{channelId} 
 
@@ -251,8 +251,7 @@ channel_id = 'channel_id_example' # str | Channel ID
 
 try:
     # Verify a channel still exists and is valid
-    api_response = api_instance.head_notifications_channel(channel_id)
-    pprint(api_response)
+    api_instance.head_notifications_channel(channel_id)
 except ApiException as e:
     print("Exception when calling NotificationsApi->head_notifications_channel: %s\n" % e)
 ```
@@ -267,7 +266,7 @@ except ApiException as e:
 
 ### Return type
 
-**bool**
+void (empty response body)
 
 <a name="post_notifications_channel_subscriptions"></a>
 

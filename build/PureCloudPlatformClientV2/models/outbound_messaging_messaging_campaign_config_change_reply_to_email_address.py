@@ -41,16 +41,16 @@ class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress(object):
         """
         self.swagger_types = {
             'domain': 'OutboundMessagingMessagingCampaignConfigChangeUriReference',
-            'route_id': 'OutboundMessagingMessagingCampaignConfigChangeUriReference'
+            'route': 'OutboundMessagingMessagingCampaignConfigChangeUriReference'
         }
 
         self.attribute_map = {
             'domain': 'domain',
-            'route_id': 'routeId'
+            'route': 'route'
         }
 
         self._domain = None
-        self._route_id = None
+        self._route = None
 
     @property
     def domain(self):
@@ -76,27 +76,27 @@ class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress(object):
         self._domain = domain
 
     @property
-    def route_id(self):
+    def route(self):
         """
-        Gets the route_id of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
+        Gets the route of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
 
 
-        :return: The route_id of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
+        :return: The route of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
         :rtype: OutboundMessagingMessagingCampaignConfigChangeUriReference
         """
-        return self._route_id
+        return self._route
 
-    @route_id.setter
-    def route_id(self, route_id):
+    @route.setter
+    def route(self, route):
         """
-        Sets the route_id of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
+        Sets the route of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
 
 
-        :param route_id: The route_id of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
+        :param route: The route of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
         """
         
-        self._route_id = route_id
+        self._route = route
 
     def to_dict(self):
         """

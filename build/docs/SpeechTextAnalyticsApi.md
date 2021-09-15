@@ -757,7 +757,7 @@ except ApiException as e:
 
 <a name="get_speechandtextanalytics_topics"></a>
 
-## [**TopicsEntityListing**](TopicsEntityListing.html) get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids)
+## [**TopicsEntityListing**](TopicsEntityListing.html) get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -786,13 +786,15 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
 next_page = 'next_page_example' # str | The key for listing the next page (optional)
 page_size = 20 # int | The page size for the listing (optional) (default to 20)
-state = 'state_example' # str | Topic state (optional)
+state = 'state_example' # str | Topic state. Defaults to latest (optional)
 name = 'name_example' # str | Case insensitive partial name to filter by (optional)
 ids = ['ids_example'] # list[str] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
+sort_by = 'sort_by_example' # str | Sort results by. Defaults to name (optional)
+sort_order = 'sort_order_example' # str | Sort order. Defaults to asc (optional)
 
 try:
     # Get the list of Speech & Text Analytics topics
-    api_response = api_instance.get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids)
+    api_response = api_instance.get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_topics: %s\n" % e)
@@ -805,9 +807,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **next_page** | **str**| The key for listing the next page | [optional]  |
 | **page_size** | **int**| The page size for the listing | [optional] [default to 20] |
-| **state** | **str**| Topic state | [optional] <br />**Values**: latest, published |
+| **state** | **str**| Topic state. Defaults to latest | [optional] <br />**Values**: latest, published |
 | **name** | **str**| Case insensitive partial name to filter by | [optional]  |
 | **ids** | [**list[str]**](str.html)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+| **sort_by** | **str**| Sort results by. Defaults to name | [optional] <br />**Values**: name |
+| **sort_order** | **str**| Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type
@@ -904,7 +908,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **dialect** | **str**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN |
+| **dialect** | **str**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR |
 {: class="table table-striped"}
 
 ### Return type

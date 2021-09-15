@@ -22,6 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_outcomes**](JourneyApi.html#get_journey_outcomes) | Retrieve all outcomes.|
 |[**get_journey_segment**](JourneyApi.html#get_journey_segment) | Retrieve a single segment.|
 |[**get_journey_segments**](JourneyApi.html#get_journey_segments) | Retrieve all segments.|
+|[**get_journey_session**](JourneyApi.html#get_journey_session) | Retrieve a single session.|
+|[**get_journey_session_outcomescores**](JourneyApi.html#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
 |[**patch_journey_actionmap**](JourneyApi.html#patch_journey_actionmap) | Update single action map.|
 |[**patch_journey_actiontarget**](JourneyApi.html#patch_journey_actiontarget) | Update a single action target.|
 |[**patch_journey_actiontemplate**](JourneyApi.html#patch_journey_actiontemplate) | Update a single action template.|
@@ -795,6 +797,108 @@ except ApiException as e:
 ### Return type
 
 [**SegmentListing**](SegmentListing.html)
+
+<a name="get_journey_session"></a>
+
+## [**Session**](Session.html) get_journey_session(session_id)
+
+
+
+Retrieve a single session.
+
+
+
+Wraps GET /api/v2/journey/sessions/{sessionId} 
+
+Requires ANY permissions: 
+
+* journey:session:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+session_id = 'session_id_example' # str | ID of the session.
+
+try:
+    # Retrieve a single session.
+    api_response = api_instance.get_journey_session(session_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_session: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **session_id** | **str**| ID of the session. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Session**](Session.html)
+
+<a name="get_journey_session_outcomescores"></a>
+
+## [**OutcomeScoresResult**](OutcomeScoresResult.html) get_journey_session_outcomescores(session_id)
+
+
+
+Retrieve latest outcome score associated with a session for all outcomes.
+
+
+
+Wraps GET /api/v2/journey/sessions/{sessionId}/outcomescores 
+
+Requires ANY permissions: 
+
+* journey:outcomescores:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+session_id = 'session_id_example' # str | ID of the session.
+
+try:
+    # Retrieve latest outcome score associated with a session for all outcomes.
+    api_response = api_instance.get_journey_session_outcomescores(session_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_session_outcomescores: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **session_id** | **str**| ID of the session. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutcomeScoresResult**](OutcomeScoresResult.html)
 
 <a name="patch_journey_actionmap"></a>
 

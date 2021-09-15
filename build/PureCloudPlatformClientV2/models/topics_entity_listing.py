@@ -42,6 +42,7 @@ class TopicsEntityListing(object):
         self.swagger_types = {
             'entities': 'list[ListedTopic]',
             'page_size': 'int',
+            'total': 'int',
             'self_uri': 'str',
             'next_uri': 'str',
             'page_count': 'int'
@@ -50,6 +51,7 @@ class TopicsEntityListing(object):
         self.attribute_map = {
             'entities': 'entities',
             'page_size': 'pageSize',
+            'total': 'total',
             'self_uri': 'selfUri',
             'next_uri': 'nextUri',
             'page_count': 'pageCount'
@@ -57,6 +59,7 @@ class TopicsEntityListing(object):
 
         self._entities = None
         self._page_size = None
+        self._total = None
         self._self_uri = None
         self._next_uri = None
         self._page_count = None
@@ -106,6 +109,29 @@ class TopicsEntityListing(object):
         """
         
         self._page_size = page_size
+
+    @property
+    def total(self):
+        """
+        Gets the total of this TopicsEntityListing.
+
+
+        :return: The total of this TopicsEntityListing.
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total):
+        """
+        Sets the total of this TopicsEntityListing.
+
+
+        :param total: The total of this TopicsEntityListing.
+        :type: int
+        """
+        
+        self._total = total
 
     @property
     def self_uri(self):

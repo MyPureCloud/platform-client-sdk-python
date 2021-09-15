@@ -3007,7 +3007,7 @@ class UsersApi(object):
         :param list[str] jabber_id: A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
         :param str sort_order: Ascending or descending sort order
         :param list[str] expand: Which fields, if any, to expand
-        :param str integration_presence_source: Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+        :param str integration_presence_source: Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
         :param str state: Only list users of this state
         :return: UserEntityListing
                  If the method is called asynchronously,

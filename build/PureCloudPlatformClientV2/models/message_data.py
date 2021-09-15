@@ -53,6 +53,7 @@ class MessageData(object):
             'media': 'list[MessageMedia]',
             'stickers': 'list[MessageSticker]',
             'created_by': 'User',
+            'conversation_id': 'str',
             'self_uri': 'str'
         }
 
@@ -70,6 +71,7 @@ class MessageData(object):
             'media': 'media',
             'stickers': 'stickers',
             'created_by': 'createdBy',
+            'conversation_id': 'conversationId',
             'self_uri': 'selfUri'
         }
 
@@ -86,6 +88,7 @@ class MessageData(object):
         self._media = None
         self._stickers = None
         self._created_by = None
+        self._conversation_id = None
         self._self_uri = None
 
     @property
@@ -398,6 +401,29 @@ class MessageData(object):
         """
         
         self._created_by = created_by
+
+    @property
+    def conversation_id(self):
+        """
+        Gets the conversation_id of this MessageData.
+        The id of the conversation of this message.
+
+        :return: The conversation_id of this MessageData.
+        :rtype: str
+        """
+        return self._conversation_id
+
+    @conversation_id.setter
+    def conversation_id(self, conversation_id):
+        """
+        Sets the conversation_id of this MessageData.
+        The id of the conversation of this message.
+
+        :param conversation_id: The conversation_id of this MessageData.
+        :type: str
+        """
+        
+        self._conversation_id = conversation_id
 
     @property
     def self_uri(self):

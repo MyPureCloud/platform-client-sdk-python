@@ -56,6 +56,8 @@ class UserQueue(object):
             'acw_settings': 'AcwSettings',
             'skill_evaluation_method': 'str',
             'queue_flow': 'DomainEntityRef',
+            'email_in_queue_flow': 'DomainEntityRef',
+            'message_in_queue_flow': 'DomainEntityRef',
             'whisper_prompt': 'DomainEntityRef',
             'enable_transcription': 'bool',
             'enable_manual_assignment': 'bool',
@@ -85,6 +87,8 @@ class UserQueue(object):
             'acw_settings': 'acwSettings',
             'skill_evaluation_method': 'skillEvaluationMethod',
             'queue_flow': 'queueFlow',
+            'email_in_queue_flow': 'emailInQueueFlow',
+            'message_in_queue_flow': 'messageInQueueFlow',
             'whisper_prompt': 'whisperPrompt',
             'enable_transcription': 'enableTranscription',
             'enable_manual_assignment': 'enableManualAssignment',
@@ -113,6 +117,8 @@ class UserQueue(object):
         self._acw_settings = None
         self._skill_evaluation_method = None
         self._queue_flow = None
+        self._email_in_queue_flow = None
+        self._message_in_queue_flow = None
         self._whisper_prompt = None
         self._enable_transcription = None
         self._enable_manual_assignment = None
@@ -477,7 +483,7 @@ class UserQueue(object):
     def queue_flow(self):
         """
         Gets the queue_flow of this UserQueue.
-        The in-queue flow to use for conversations waiting in queue.
+        The in-queue flow to use for call conversations waiting in queue.
 
         :return: The queue_flow of this UserQueue.
         :rtype: DomainEntityRef
@@ -488,13 +494,59 @@ class UserQueue(object):
     def queue_flow(self, queue_flow):
         """
         Sets the queue_flow of this UserQueue.
-        The in-queue flow to use for conversations waiting in queue.
+        The in-queue flow to use for call conversations waiting in queue.
 
         :param queue_flow: The queue_flow of this UserQueue.
         :type: DomainEntityRef
         """
         
         self._queue_flow = queue_flow
+
+    @property
+    def email_in_queue_flow(self):
+        """
+        Gets the email_in_queue_flow of this UserQueue.
+        The in-queue flow to use for email conversations waiting in queue.
+
+        :return: The email_in_queue_flow of this UserQueue.
+        :rtype: DomainEntityRef
+        """
+        return self._email_in_queue_flow
+
+    @email_in_queue_flow.setter
+    def email_in_queue_flow(self, email_in_queue_flow):
+        """
+        Sets the email_in_queue_flow of this UserQueue.
+        The in-queue flow to use for email conversations waiting in queue.
+
+        :param email_in_queue_flow: The email_in_queue_flow of this UserQueue.
+        :type: DomainEntityRef
+        """
+        
+        self._email_in_queue_flow = email_in_queue_flow
+
+    @property
+    def message_in_queue_flow(self):
+        """
+        Gets the message_in_queue_flow of this UserQueue.
+        The in-queue flow to use for message conversations waiting in queue.
+
+        :return: The message_in_queue_flow of this UserQueue.
+        :rtype: DomainEntityRef
+        """
+        return self._message_in_queue_flow
+
+    @message_in_queue_flow.setter
+    def message_in_queue_flow(self, message_in_queue_flow):
+        """
+        Sets the message_in_queue_flow of this UserQueue.
+        The in-queue flow to use for message conversations waiting in queue.
+
+        :param message_in_queue_flow: The message_in_queue_flow of this UserQueue.
+        :type: DomainEntityRef
+        """
+        
+        self._message_in_queue_flow = message_in_queue_flow
 
     @property
     def whisper_prompt(self):

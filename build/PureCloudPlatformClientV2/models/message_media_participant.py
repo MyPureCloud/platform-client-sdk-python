@@ -78,7 +78,8 @@ class MessageMediaParticipant(object):
             'messages': 'list[MessageDetails]',
             'type': 'str',
             'recipient_country': 'str',
-            'recipient_type': 'str'
+            'recipient_type': 'str',
+            'authenticated': 'bool'
         }
 
         self.attribute_map = {
@@ -120,7 +121,8 @@ class MessageMediaParticipant(object):
             'messages': 'messages',
             'type': 'type',
             'recipient_country': 'recipientCountry',
-            'recipient_type': 'recipientType'
+            'recipient_type': 'recipientType',
+            'authenticated': 'authenticated'
         }
 
         self._id = None
@@ -162,6 +164,7 @@ class MessageMediaParticipant(object):
         self._type = None
         self._recipient_country = None
         self._recipient_type = None
+        self._authenticated = None
 
     @property
     def id(self):
@@ -1079,6 +1082,29 @@ class MessageMediaParticipant(object):
         """
         
         self._recipient_type = recipient_type
+
+    @property
+    def authenticated(self):
+        """
+        Gets the authenticated of this MessageMediaParticipant.
+        If true, the participant member is authenticated.
+
+        :return: The authenticated of this MessageMediaParticipant.
+        :rtype: bool
+        """
+        return self._authenticated
+
+    @authenticated.setter
+    def authenticated(self, authenticated):
+        """
+        Sets the authenticated of this MessageMediaParticipant.
+        If true, the participant member is authenticated.
+
+        :param authenticated: The authenticated of this MessageMediaParticipant.
+        :type: bool
+        """
+        
+        self._authenticated = authenticated
 
     def to_dict(self):
         """

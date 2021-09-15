@@ -58,7 +58,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_emails**](ConversationsApi.html#get_conversations_emails) | Get active email conversations for the logged in user|
 |[**get_conversations_message**](ConversationsApi.html#get_conversations_message) | Get message conversation|
 |[**get_conversations_message_communication_messages_media_media_id**](ConversationsApi.html#get_conversations_message_communication_messages_media_media_id) | Get media|
-|[**get_conversations_message_message**](ConversationsApi.html#get_conversations_message_message) | Get message|
+|[**get_conversations_message_details**](ConversationsApi.html#get_conversations_message_details) | Get message|
+|[**get_conversations_message_message**](ConversationsApi.html#get_conversations_message_message) | Get conversation message|
 |[**get_conversations_message_participant_wrapup**](ConversationsApi.html#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_message_participant_wrapupcodes**](ConversationsApi.html#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_messages**](ConversationsApi.html#get_conversations_messages) | Get active message conversations for the logged in user|
@@ -2711,13 +2712,65 @@ except ApiException as e:
 
 [**MessageMediaData**](MessageMediaData.html)
 
+<a name="get_conversations_message_details"></a>
+
+## [**MessageData**](MessageData.html) get_conversations_message_details(message_id)
+
+
+
+Get message
+
+
+
+Wraps GET /api/v2/conversations/messages/{messageId}/details 
+
+Requires ANY permissions: 
+
+* conversation:message:view
+* conversation:webmessaging:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+message_id = 'message_id_example' # str | messageId
+
+try:
+    # Get message
+    api_response = api_instance.get_conversations_message_details(message_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_message_details: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **message_id** | **str**| messageId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageData**](MessageData.html)
+
 <a name="get_conversations_message_message"></a>
 
 ## [**MessageData**](MessageData.html) get_conversations_message_message(conversation_id, message_id)
 
 
 
-Get message
+Get conversation message
 
 
 
@@ -2745,7 +2798,7 @@ conversation_id = 'conversation_id_example' # str | conversationId
 message_id = 'message_id_example' # str | messageId
 
 try:
-    # Get message
+    # Get conversation message
     api_response = api_instance.get_conversations_message_message(conversation_id, message_id)
     pprint(api_response)
 except ApiException as e:

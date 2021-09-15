@@ -46,8 +46,8 @@ class CallableTimeSetEntityListing(object):
             'total': 'int',
             'first_uri': 'str',
             'self_uri': 'str',
-            'next_uri': 'str',
             'previous_uri': 'str',
+            'next_uri': 'str',
             'last_uri': 'str',
             'page_count': 'int'
         }
@@ -59,8 +59,8 @@ class CallableTimeSetEntityListing(object):
             'total': 'total',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
-            'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
+            'next_uri': 'nextUri',
             'last_uri': 'lastUri',
             'page_count': 'pageCount'
         }
@@ -71,8 +71,8 @@ class CallableTimeSetEntityListing(object):
         self._total = None
         self._first_uri = None
         self._self_uri = None
-        self._next_uri = None
         self._previous_uri = None
+        self._next_uri = None
         self._last_uri = None
         self._page_count = None
 
@@ -215,29 +215,6 @@ class CallableTimeSetEntityListing(object):
         self._self_uri = self_uri
 
     @property
-    def next_uri(self):
-        """
-        Gets the next_uri of this CallableTimeSetEntityListing.
-
-
-        :return: The next_uri of this CallableTimeSetEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri):
-        """
-        Sets the next_uri of this CallableTimeSetEntityListing.
-
-
-        :param next_uri: The next_uri of this CallableTimeSetEntityListing.
-        :type: str
-        """
-        
-        self._next_uri = next_uri
-
-    @property
     def previous_uri(self):
         """
         Gets the previous_uri of this CallableTimeSetEntityListing.
@@ -259,6 +236,29 @@ class CallableTimeSetEntityListing(object):
         """
         
         self._previous_uri = previous_uri
+
+    @property
+    def next_uri(self):
+        """
+        Gets the next_uri of this CallableTimeSetEntityListing.
+
+
+        :return: The next_uri of this CallableTimeSetEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri):
+        """
+        Sets the next_uri of this CallableTimeSetEntityListing.
+
+
+        :param next_uri: The next_uri of this CallableTimeSetEntityListing.
+        :type: str
+        """
+        
+        self._next_uri = next_uri
 
     @property
     def last_uri(self):

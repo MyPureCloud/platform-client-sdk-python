@@ -14,6 +14,7 @@ title: OneLogin
 | **sso_target_uri** | **str** |  | [optional] |
 | **slo_uri** | **str** |  | [optional] |
 | **slo_binding** | **str** |  | [optional] |
+| **relying_party_identifier** | **str** |  | [optional] |
 | **certificate** | **str** |  | [optional] |
 | **certificates** | **list[str]** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |

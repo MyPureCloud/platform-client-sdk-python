@@ -47,9 +47,9 @@ class GenericSAML(object):
             'sso_target_uri': 'str',
             'slo_uri': 'str',
             'slo_binding': 'str',
+            'relying_party_identifier': 'str',
             'certificate': 'str',
             'certificates': 'list[str]',
-            'relying_party_identifier': 'str',
             'logo_image_data': 'str',
             'endpoint_compression': 'bool',
             'name_identifier_format': 'str',
@@ -64,9 +64,9 @@ class GenericSAML(object):
             'sso_target_uri': 'ssoTargetURI',
             'slo_uri': 'sloURI',
             'slo_binding': 'sloBinding',
+            'relying_party_identifier': 'relyingPartyIdentifier',
             'certificate': 'certificate',
             'certificates': 'certificates',
-            'relying_party_identifier': 'relyingPartyIdentifier',
             'logo_image_data': 'logoImageData',
             'endpoint_compression': 'endpointCompression',
             'name_identifier_format': 'nameIdentifierFormat',
@@ -80,9 +80,9 @@ class GenericSAML(object):
         self._sso_target_uri = None
         self._slo_uri = None
         self._slo_binding = None
+        self._relying_party_identifier = None
         self._certificate = None
         self._certificates = None
-        self._relying_party_identifier = None
         self._logo_image_data = None
         self._endpoint_compression = None
         self._name_identifier_format = None
@@ -250,6 +250,29 @@ class GenericSAML(object):
         self._slo_binding = slo_binding
 
     @property
+    def relying_party_identifier(self):
+        """
+        Gets the relying_party_identifier of this GenericSAML.
+
+
+        :return: The relying_party_identifier of this GenericSAML.
+        :rtype: str
+        """
+        return self._relying_party_identifier
+
+    @relying_party_identifier.setter
+    def relying_party_identifier(self, relying_party_identifier):
+        """
+        Sets the relying_party_identifier of this GenericSAML.
+
+
+        :param relying_party_identifier: The relying_party_identifier of this GenericSAML.
+        :type: str
+        """
+        
+        self._relying_party_identifier = relying_party_identifier
+
+    @property
     def certificate(self):
         """
         Gets the certificate of this GenericSAML.
@@ -294,29 +317,6 @@ class GenericSAML(object):
         """
         
         self._certificates = certificates
-
-    @property
-    def relying_party_identifier(self):
-        """
-        Gets the relying_party_identifier of this GenericSAML.
-
-
-        :return: The relying_party_identifier of this GenericSAML.
-        :rtype: str
-        """
-        return self._relying_party_identifier
-
-    @relying_party_identifier.setter
-    def relying_party_identifier(self, relying_party_identifier):
-        """
-        Sets the relying_party_identifier of this GenericSAML.
-
-
-        :param relying_party_identifier: The relying_party_identifier of this GenericSAML.
-        :type: str
-        """
-        
-        self._relying_party_identifier = relying_party_identifier
 
     @property
     def logo_image_data(self):

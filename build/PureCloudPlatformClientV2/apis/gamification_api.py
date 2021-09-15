@@ -1575,7 +1575,7 @@ class GamificationApi(object):
 
     def get_gamification_scorecards_points_average(self, workday, **kwargs):
         """
-        Average points of the requesting user's division
+        Average points of the requesting user's division or performance profile
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2172,7 +2172,7 @@ class GamificationApi(object):
 
     def get_gamification_scorecards_user_values_trends(self, user_id, start_workday, end_workday, **kwargs):
         """
-        Values Trends of a user
+        Values trends of a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2547,7 +2547,7 @@ class GamificationApi(object):
 
     def get_gamification_scorecards_values_average(self, workday, **kwargs):
         """
-        Average values of the requesting user's division
+        Average values of the requesting user's division or performance profile
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2644,13 +2644,14 @@ class GamificationApi(object):
         :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str filter_type: Filter type for the query request. If not set, then the request is for the requesting user.
+        :param date reference_workday: Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :param str time_zone: Timezone for the workday. Defaults to UTC
         :return: WorkdayValuesTrend
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['start_workday', 'end_workday', 'filter_type', 'time_zone']
+        all_params = ['start_workday', 'end_workday', 'filter_type', 'reference_workday', 'time_zone']
         all_params.append('callback')
 
         params = locals()
@@ -2677,6 +2678,8 @@ class GamificationApi(object):
         query_params = {}
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
+        if 'reference_workday' in params:
+            query_params['referenceWorkday'] = params['reference_workday']
         if 'start_workday' in params:
             query_params['startWorkday'] = params['start_workday']
         if 'end_workday' in params:
@@ -3252,6 +3255,84 @@ class GamificationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Metric',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_gamification_profiles(self, body, **kwargs):
+        """
+        Create a new custom performance profile
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_gamification_profiles(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreatePerformanceProfile body: performanceProfile (required)
+        :return: GetProfilesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_gamification_profiles" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_gamification_profiles`")
+
+
+        resource_path = '/api/v2/gamification/profiles'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GetProfilesResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
