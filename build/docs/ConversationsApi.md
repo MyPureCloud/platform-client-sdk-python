@@ -151,6 +151,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messaging_integrations_twitter**](ConversationsApi.html#post_conversations_messaging_integrations_twitter) | Create a Twitter Integration|
 |[**post_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp) | Create a WhatsApp Integration|
 |[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
+|[**put_conversation_tags**](ConversationsApi.html#put_conversation_tags) | Update the tags on a conversation.|
 |[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
 |[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
 |[**put_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#put_conversations_messaging_integrations_line_integration_id) | Update a LINE messenger integration|
@@ -7639,6 +7640,59 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="put_conversation_tags"></a>
+
+## str** put_conversation_tags(conversation_id, body)
+
+
+
+Update the tags on a conversation.
+
+
+
+Wraps PUT /api/v2/conversations/{conversationId}/tags 
+
+Requires ANY permissions: 
+
+* conversation:externalTag:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = PureCloudPlatformClientV2.ConversationTagsUpdate() # ConversationTagsUpdate | Conversation Tags
+
+try:
+    # Update the tags on a conversation.
+    api_response = api_instance.put_conversation_tags(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversation_tags: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**ConversationTagsUpdate**](ConversationTagsUpdate.html)| Conversation Tags |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
 
 <a name="put_conversations_call_participant_communication_uuidata"></a>
 

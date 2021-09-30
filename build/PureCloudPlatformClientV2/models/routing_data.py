@@ -45,7 +45,8 @@ class RoutingData(object):
             'priority': 'int',
             'skill_ids': 'list[str]',
             'preferred_agent_ids': 'list[str]',
-            'scored_agents': 'list[ScoredAgent]'
+            'scored_agents': 'list[ScoredAgent]',
+            'routing_flags': 'list[str]'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class RoutingData(object):
             'priority': 'priority',
             'skill_ids': 'skillIds',
             'preferred_agent_ids': 'preferredAgentIds',
-            'scored_agents': 'scoredAgents'
+            'scored_agents': 'scoredAgents',
+            'routing_flags': 'routingFlags'
         }
 
         self._queue_id = None
@@ -63,6 +65,7 @@ class RoutingData(object):
         self._skill_ids = None
         self._preferred_agent_ids = None
         self._scored_agents = None
+        self._routing_flags = None
 
     @property
     def queue_id(self):
@@ -201,6 +204,29 @@ class RoutingData(object):
         """
         
         self._scored_agents = scored_agents
+
+    @property
+    def routing_flags(self):
+        """
+        Gets the routing_flags of this RoutingData.
+        An array of flags indicating how the conversation should be routed
+
+        :return: The routing_flags of this RoutingData.
+        :rtype: list[str]
+        """
+        return self._routing_flags
+
+    @routing_flags.setter
+    def routing_flags(self, routing_flags):
+        """
+        Sets the routing_flags of this RoutingData.
+        An array of flags indicating how the conversation should be routed
+
+        :param routing_flags: The routing_flags of this RoutingData.
+        :type: list[str]
+        """
+        
+        self._routing_flags = routing_flags
 
     def to_dict(self):
         """

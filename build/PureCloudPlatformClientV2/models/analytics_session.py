@@ -60,6 +60,7 @@ class AnalyticsSession(object):
             'cobrowse_room_id': 'str',
             'delivery_status': 'str',
             'delivery_status_change_date': 'datetime',
+            'destination_addresses': 'list[str]',
             'direction': 'str',
             'disposition_analyzer': 'str',
             'disposition_name': 'str',
@@ -135,6 +136,7 @@ class AnalyticsSession(object):
             'cobrowse_room_id': 'cobrowseRoomId',
             'delivery_status': 'deliveryStatus',
             'delivery_status_change_date': 'deliveryStatusChangeDate',
+            'destination_addresses': 'destinationAddresses',
             'direction': 'direction',
             'disposition_analyzer': 'dispositionAnalyzer',
             'disposition_name': 'dispositionName',
@@ -209,6 +211,7 @@ class AnalyticsSession(object):
         self._cobrowse_room_id = None
         self._delivery_status = None
         self._delivery_status_change_date = None
+        self._destination_addresses = None
         self._direction = None
         self._disposition_analyzer = None
         self._disposition_name = None
@@ -725,6 +728,29 @@ class AnalyticsSession(object):
         """
         
         self._delivery_status_change_date = delivery_status_change_date
+
+    @property
+    def destination_addresses(self):
+        """
+        Gets the destination_addresses of this AnalyticsSession.
+        Destination address(es) of transfers or consults
+
+        :return: The destination_addresses of this AnalyticsSession.
+        :rtype: list[str]
+        """
+        return self._destination_addresses
+
+    @destination_addresses.setter
+    def destination_addresses(self, destination_addresses):
+        """
+        Sets the destination_addresses of this AnalyticsSession.
+        Destination address(es) of transfers or consults
+
+        :param destination_addresses: The destination_addresses of this AnalyticsSession.
+        :type: list[str]
+        """
+        
+        self._destination_addresses = destination_addresses
 
     @property
     def direction(self):

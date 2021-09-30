@@ -62,6 +62,7 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
             'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
             'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
+            'agent_assistant_id': 'str',
             'additional_properties': 'object'
         }
 
@@ -88,6 +89,7 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
+            'agent_assistant_id': 'agentAssistantId',
             'additional_properties': 'additionalProperties'
         }
 
@@ -113,6 +115,7 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._agent_assistant_id = None
         self._additional_properties = None
 
     @property
@@ -632,6 +635,29 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
         """
         
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def agent_assistant_id(self):
+        """
+        Gets the agent_assistant_id of this QueueConversationSocialExpressionEventTopicMessage.
+
+
+        :return: The agent_assistant_id of this QueueConversationSocialExpressionEventTopicMessage.
+        :rtype: str
+        """
+        return self._agent_assistant_id
+
+    @agent_assistant_id.setter
+    def agent_assistant_id(self, agent_assistant_id):
+        """
+        Sets the agent_assistant_id of this QueueConversationSocialExpressionEventTopicMessage.
+
+
+        :param agent_assistant_id: The agent_assistant_id of this QueueConversationSocialExpressionEventTopicMessage.
+        :type: str
+        """
+        
+        self._agent_assistant_id = agent_assistant_id
 
     @property
     def additional_properties(self):

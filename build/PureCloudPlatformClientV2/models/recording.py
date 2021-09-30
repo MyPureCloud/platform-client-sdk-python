@@ -69,6 +69,7 @@ class Recording(object):
             'users': 'list[User]',
             'recording_file_role': 'str',
             'recording_error_status': 'str',
+            'original_recording_start_time': 'datetime',
             'self_uri': 'str'
         }
 
@@ -102,6 +103,7 @@ class Recording(object):
             'users': 'users',
             'recording_file_role': 'recordingFileRole',
             'recording_error_status': 'recordingErrorStatus',
+            'original_recording_start_time': 'originalRecordingStartTime',
             'self_uri': 'selfUri'
         }
 
@@ -134,6 +136,7 @@ class Recording(object):
         self._users = None
         self._recording_file_role = None
         self._recording_error_status = None
+        self._original_recording_start_time = None
         self._self_uri = None
 
     @property
@@ -818,6 +821,29 @@ class Recording(object):
             self._recording_error_status = "outdated_sdk_version"
         else:
             self._recording_error_status = recording_error_status
+
+    @property
+    def original_recording_start_time(self):
+        """
+        Gets the original_recording_start_time of this Recording.
+        The start time of the full recording, before any segment access restrictions are applied. Null when there is no playable media. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The original_recording_start_time of this Recording.
+        :rtype: datetime
+        """
+        return self._original_recording_start_time
+
+    @original_recording_start_time.setter
+    def original_recording_start_time(self, original_recording_start_time):
+        """
+        Sets the original_recording_start_time of this Recording.
+        The start time of the full recording, before any segment access restrictions are applied. Null when there is no playable media. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param original_recording_start_time: The original_recording_start_time of this Recording.
+        :type: datetime
+        """
+        
+        self._original_recording_start_time = original_recording_start_time
 
     @property
     def self_uri(self):

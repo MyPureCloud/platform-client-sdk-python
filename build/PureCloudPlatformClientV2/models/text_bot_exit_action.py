@@ -44,7 +44,8 @@ class TextBotExitAction(object):
             'reason_extended_info': 'str',
             'active_intent': 'str',
             'flow_location': 'TextBotFlowLocation',
-            'output_data': 'TextBotInputOutputData'
+            'output_data': 'TextBotInputOutputData',
+            'flow_outcomes': 'list[TextBotFlowOutcome]'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class TextBotExitAction(object):
             'reason_extended_info': 'reasonExtendedInfo',
             'active_intent': 'activeIntent',
             'flow_location': 'flowLocation',
-            'output_data': 'outputData'
+            'output_data': 'outputData',
+            'flow_outcomes': 'flowOutcomes'
         }
 
         self._reason = None
@@ -60,6 +62,7 @@ class TextBotExitAction(object):
         self._active_intent = None
         self._flow_location = None
         self._output_data = None
+        self._flow_outcomes = None
 
     @property
     def reason(self):
@@ -179,6 +182,29 @@ class TextBotExitAction(object):
         """
         
         self._output_data = output_data
+
+    @property
+    def flow_outcomes(self):
+        """
+        Gets the flow_outcomes of this TextBotExitAction.
+        The list of Flow Outcomes for the bot flow and their details.
+
+        :return: The flow_outcomes of this TextBotExitAction.
+        :rtype: list[TextBotFlowOutcome]
+        """
+        return self._flow_outcomes
+
+    @flow_outcomes.setter
+    def flow_outcomes(self, flow_outcomes):
+        """
+        Sets the flow_outcomes of this TextBotExitAction.
+        The list of Flow Outcomes for the bot flow and their details.
+
+        :param flow_outcomes: The flow_outcomes of this TextBotExitAction.
+        :type: list[TextBotFlowOutcome]
+        """
+        
+        self._flow_outcomes = flow_outcomes
 
     def to_dict(self):
         """

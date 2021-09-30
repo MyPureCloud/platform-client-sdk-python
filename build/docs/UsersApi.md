@@ -41,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_routinglanguages**](UsersApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](UsersApi.html#get_user_routingskills) | List routing skills for user|
 |[**get_user_routingstatus**](UsersApi.html#get_user_routingstatus) | Fetch the routing status of a user|
+|[**get_user_state**](UsersApi.html#get_user_state) | Get user state information.|
 |[**get_user_station**](UsersApi.html#get_user_station) | Get station information for user|
 |[**get_user_superiors**](UsersApi.html#get_user_superiors) | Get superiors|
 |[**get_user_trustors**](UsersApi.html#get_user_trustors) | List the organizations that have authorized/trusted the user.|
@@ -83,6 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_routingskill**](UsersApi.html#put_user_routingskill) | Update routing skill proficiency or state.|
 |[**put_user_routingskills_bulk**](UsersApi.html#put_user_routingskills_bulk) | Replace all routing skills assigned to a user|
 |[**put_user_routingstatus**](UsersApi.html#put_user_routingstatus) | Update the routing status of a user|
+|[**put_user_state**](UsersApi.html#put_user_state) | Update user state information.|
 |[**put_user_station_associatedstation_station_id**](UsersApi.html#put_user_station_associatedstation_station_id) | Set associated station|
 |[**put_user_station_defaultstation_station_id**](UsersApi.html#put_user_station_defaultstation_station_id) | Set default station|
 {: class="table table-striped"}
@@ -1822,6 +1824,57 @@ except ApiException as e:
 
 [**RoutingStatus**](RoutingStatus.html)
 
+<a name="get_user_state"></a>
+
+## [**UserState**](UserState.html) get_user_state(user_id)
+
+
+
+Get user state information.
+
+
+
+Wraps GET /api/v2/users/{userId}/state 
+
+Requires ANY permissions: 
+
+* directory:userStateChange:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get user state information.
+    api_response = api_instance.get_user_state(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_user_state: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserState**](UserState.html)
+
 <a name="get_user_station"></a>
 
 ## [**UserStations**](UserStations.html) get_user_station(user_id)
@@ -2106,7 +2159,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire, Assessment |
+| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2174,7 +2227,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire, Assessment |
+| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2230,7 +2283,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **activity_id** | **str**| Specifies the activity ID, maps to either assignment or appointment ID |  |
-| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, Questionnaire |
+| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
 {: class="table table-striped"}
 
 ### Return type
@@ -4089,6 +4142,59 @@ except ApiException as e:
 ### Return type
 
 [**RoutingStatus**](RoutingStatus.html)
+
+<a name="put_user_state"></a>
+
+## [**UserState**](UserState.html) put_user_state(user_id, body)
+
+
+
+Update user state information.
+
+
+
+Wraps PUT /api/v2/users/{userId}/state 
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.UserState() # UserState | User
+
+try:
+    # Update user state information.
+    api_response = api_instance.put_user_state(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->put_user_state: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**UserState**](UserState.html)| User |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserState**](UserState.html)
 
 <a name="put_user_station_associatedstation_station_id"></a>
 

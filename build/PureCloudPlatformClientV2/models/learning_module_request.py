@@ -176,7 +176,7 @@ class LearningModuleRequest(object):
         :param type: The type of this LearningModuleRequest.
         :type: str
         """
-        allowed_values = ["Informational", "AssessedContent", "Questionnaire", "Assessment"]
+        allowed_values = ["Informational", "AssessedContent", "Assessment"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

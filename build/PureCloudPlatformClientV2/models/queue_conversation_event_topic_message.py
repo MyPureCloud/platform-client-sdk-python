@@ -62,6 +62,7 @@ class QueueConversationEventTopicMessage(object):
             'wrapup': 'QueueConversationEventTopicWrapup',
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
+            'agent_assistant_id': 'str',
             'additional_properties': 'object'
         }
 
@@ -88,6 +89,7 @@ class QueueConversationEventTopicMessage(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
+            'agent_assistant_id': 'agentAssistantId',
             'additional_properties': 'additionalProperties'
         }
 
@@ -113,6 +115,7 @@ class QueueConversationEventTopicMessage(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._agent_assistant_id = None
         self._additional_properties = None
 
     @property
@@ -632,6 +635,29 @@ class QueueConversationEventTopicMessage(object):
         """
         
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def agent_assistant_id(self):
+        """
+        Gets the agent_assistant_id of this QueueConversationEventTopicMessage.
+
+
+        :return: The agent_assistant_id of this QueueConversationEventTopicMessage.
+        :rtype: str
+        """
+        return self._agent_assistant_id
+
+    @agent_assistant_id.setter
+    def agent_assistant_id(self, agent_assistant_id):
+        """
+        Sets the agent_assistant_id of this QueueConversationEventTopicMessage.
+
+
+        :param agent_assistant_id: The agent_assistant_id of this QueueConversationEventTopicMessage.
+        :type: str
+        """
+        
+        self._agent_assistant_id = agent_assistant_id
 
     @property
     def additional_properties(self):

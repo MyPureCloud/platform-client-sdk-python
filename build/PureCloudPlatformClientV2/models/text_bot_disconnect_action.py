@@ -42,18 +42,21 @@ class TextBotDisconnectAction(object):
         self.swagger_types = {
             'reason': 'str',
             'reason_extended_info': 'str',
-            'flow_location': 'TextBotFlowLocation'
+            'flow_location': 'TextBotFlowLocation',
+            'flow_outcomes': 'list[TextBotFlowOutcome]'
         }
 
         self.attribute_map = {
             'reason': 'reason',
             'reason_extended_info': 'reasonExtendedInfo',
-            'flow_location': 'flowLocation'
+            'flow_location': 'flowLocation',
+            'flow_outcomes': 'flowOutcomes'
         }
 
         self._reason = None
         self._reason_extended_info = None
         self._flow_location = None
+        self._flow_outcomes = None
 
     @property
     def reason(self):
@@ -127,6 +130,29 @@ class TextBotDisconnectAction(object):
         """
         
         self._flow_location = flow_location
+
+    @property
+    def flow_outcomes(self):
+        """
+        Gets the flow_outcomes of this TextBotDisconnectAction.
+        The list of Flow Outcomes for the bot flow and their details.
+
+        :return: The flow_outcomes of this TextBotDisconnectAction.
+        :rtype: list[TextBotFlowOutcome]
+        """
+        return self._flow_outcomes
+
+    @flow_outcomes.setter
+    def flow_outcomes(self, flow_outcomes):
+        """
+        Sets the flow_outcomes of this TextBotDisconnectAction.
+        The list of Flow Outcomes for the bot flow and their details.
+
+        :param flow_outcomes: The flow_outcomes of this TextBotDisconnectAction.
+        :type: list[TextBotFlowOutcome]
+        """
+        
+        self._flow_outcomes = flow_outcomes
 
     def to_dict(self):
         """

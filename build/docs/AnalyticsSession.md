@@ -27,6 +27,7 @@ title: AnalyticsSession
 | **cobrowse_room_id** | **str** | A unique identifier for a PureCloud cobrowse room | [optional] |
 | **delivery_status** | **str** | The email delivery status | [optional] |
 | **delivery_status_change_date** | **datetime** | Date and time of the most recent delivery status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **destination_addresses** | **list[str]** | Destination address(es) of transfers or consults | [optional] |
 | **direction** | **str** | The direction of the communication | [optional] |
 | **disposition_analyzer** | **str** | (Dialer) Analyzer (for example speech.person) | [optional] |
 | **disposition_name** | **str** | (Dialer) Result of the analysis (for example disposition.classification.callable.machine) | [optional] |

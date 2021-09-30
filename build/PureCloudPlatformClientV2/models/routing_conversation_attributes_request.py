@@ -78,10 +78,10 @@ class RoutingConversationAttributesRequest(object):
         
         if not priority:
             raise ValueError("Invalid value for `priority`, must not be `None`")
-        if priority > 2.5E7: 
-            raise ValueError("Invalid value for `priority`, must be a value less than or equal to `2.5E7`")
-        if priority < -2.5E7: 
-            raise ValueError("Invalid value for `priority`, must be a value greater than or equal to `-2.5E7`")
+        if priority > 25000000: 
+            raise ValueError("Invalid value for `priority`, must be a value less than or equal to `25000000`")
+        if priority < -25000000: 
+            raise ValueError("Invalid value for `priority`, must be a value greater than or equal to `-25000000`")
 
         self._priority = priority
 

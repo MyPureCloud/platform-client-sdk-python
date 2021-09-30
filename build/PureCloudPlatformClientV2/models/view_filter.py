@@ -160,6 +160,7 @@ class ViewFilter(object):
             'is_recorded': 'bool',
             'has_evaluation': 'bool',
             'has_scored_evaluation': 'bool',
+            'email_delivery_status_list': 'list[str]',
             'is_agent_owned_callback': 'bool',
             'agent_callback_owner_ids': 'list[str]'
         }
@@ -285,6 +286,7 @@ class ViewFilter(object):
             'is_recorded': 'isRecorded',
             'has_evaluation': 'hasEvaluation',
             'has_scored_evaluation': 'hasScoredEvaluation',
+            'email_delivery_status_list': 'emailDeliveryStatusList',
             'is_agent_owned_callback': 'isAgentOwnedCallback',
             'agent_callback_owner_ids': 'agentCallbackOwnerIds'
         }
@@ -409,6 +411,7 @@ class ViewFilter(object):
         self._is_recorded = None
         self._has_evaluation = None
         self._has_scored_evaluation = None
+        self._email_delivery_status_list = None
         self._is_agent_owned_callback = None
         self._agent_callback_owner_ids = None
 
@@ -3171,6 +3174,29 @@ class ViewFilter(object):
         """
         
         self._has_scored_evaluation = has_scored_evaluation
+
+    @property
+    def email_delivery_status_list(self):
+        """
+        Gets the email_delivery_status_list of this ViewFilter.
+        The list of email delivery statuses used to filter views
+
+        :return: The email_delivery_status_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._email_delivery_status_list
+
+    @email_delivery_status_list.setter
+    def email_delivery_status_list(self, email_delivery_status_list):
+        """
+        Sets the email_delivery_status_list of this ViewFilter.
+        The list of email delivery statuses used to filter views
+
+        :param email_delivery_status_list: The email_delivery_status_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._email_delivery_status_list = email_delivery_status_list
 
     @property
     def is_agent_owned_callback(self):

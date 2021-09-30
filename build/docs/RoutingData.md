@@ -13,6 +13,7 @@ title: RoutingData
 | **skill_ids** | **list[str]** | A list of skill identifiers to be considered in routing | [optional] |
 | **preferred_agent_ids** | **list[str]** | A list of agents to be preferred in routing | [optional] |
 | **scored_agents** | [**list[ScoredAgent]**](ScoredAgent.html) | A list of scored agents for routing decisions | [optional] |
+| **routing_flags** | **list[str]** | An array of flags indicating how the conversation should be routed | [optional] |
 {: class="table table-striped"}
 
 

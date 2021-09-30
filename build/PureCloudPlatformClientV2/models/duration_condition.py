@@ -42,18 +42,21 @@ class DurationCondition(object):
         self.swagger_types = {
             'duration_target': 'str',
             'duration_operator': 'str',
-            'duration_range': 'str'
+            'duration_range': 'str',
+            'duration_mode': 'str'
         }
 
         self.attribute_map = {
             'duration_target': 'durationTarget',
             'duration_operator': 'durationOperator',
-            'duration_range': 'durationRange'
+            'duration_range': 'durationRange',
+            'duration_mode': 'durationMode'
         }
 
         self._duration_target = None
         self._duration_operator = None
         self._duration_range = None
+        self._duration_mode = None
 
     @property
     def duration_target(self):
@@ -127,6 +130,33 @@ class DurationCondition(object):
         """
         
         self._duration_range = duration_range
+
+    @property
+    def duration_mode(self):
+        """
+        Gets the duration_mode of this DurationCondition.
+
+
+        :return: The duration_mode of this DurationCondition.
+        :rtype: str
+        """
+        return self._duration_mode
+
+    @duration_mode.setter
+    def duration_mode(self, duration_mode):
+        """
+        Sets the duration_mode of this DurationCondition.
+
+
+        :param duration_mode: The duration_mode of this DurationCondition.
+        :type: str
+        """
+        allowed_values = ["Between", "Over", "Under"]
+        if duration_mode.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for duration_mode -> " + duration_mode)
+            self._duration_mode = "outdated_sdk_version"
+        else:
+            self._duration_mode = duration_mode
 
     def to_dict(self):
         """

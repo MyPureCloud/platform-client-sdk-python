@@ -278,6 +278,7 @@ from .bu_schedule_reference import BuScheduleReference
 from .bu_schedule_reference_for_mu_route import BuScheduleReferenceForMuRoute
 from .bu_schedule_run import BuScheduleRun
 from .bu_schedule_run_listing import BuScheduleRunListing
+from .bu_scheduling_settings import BuSchedulingSettings
 from .bu_search_agent_schedules_request import BuSearchAgentSchedulesRequest
 from .bu_service_level import BuServiceLevel
 from .bu_short_term_forecast import BuShortTermForecast
@@ -690,6 +691,7 @@ from .conversation_social_expression_event_topic_social_conversation import Conv
 from .conversation_social_expression_event_topic_social_media_participant import ConversationSocialExpressionEventTopicSocialMediaParticipant
 from .conversation_social_expression_event_topic_uri_reference import ConversationSocialExpressionEventTopicUriReference
 from .conversation_social_expression_event_topic_wrapup import ConversationSocialExpressionEventTopicWrapup
+from .conversation_tags_update import ConversationTagsUpdate
 from .conversation_threading_window import ConversationThreadingWindow
 from .conversation_threading_window_setting import ConversationThreadingWindowSetting
 from .conversation_user import ConversationUser
@@ -2038,6 +2040,9 @@ from .schedule_group import ScheduleGroup
 from .schedule_group_entity_listing import ScheduleGroupEntityListing
 from .schedule_interval import ScheduleInterval
 from .scheduler_message_argument import SchedulerMessageArgument
+from .scheduler_message_type_severity import SchedulerMessageTypeSeverity
+from .scheduling_no_forecast_options_request import SchedulingNoForecastOptionsRequest
+from .scheduling_options_request import SchedulingOptionsRequest
 from .scheduling_processing_error import SchedulingProcessingError
 from .scheduling_settings_request import SchedulingSettingsRequest
 from .scheduling_settings_response import SchedulingSettingsResponse
@@ -2246,6 +2251,8 @@ from .text_bot_flow import TextBotFlow
 from .text_bot_flow_launch_request import TextBotFlowLaunchRequest
 from .text_bot_flow_launch_response import TextBotFlowLaunchResponse
 from .text_bot_flow_location import TextBotFlowLocation
+from .text_bot_flow_milestone import TextBotFlowMilestone
+from .text_bot_flow_outcome import TextBotFlowOutcome
 from .text_bot_flow_turn_request import TextBotFlowTurnRequest
 from .text_bot_flow_turn_response import TextBotFlowTurnResponse
 from .text_bot_input_output_data import TextBotInputOutputData
@@ -2453,6 +2460,7 @@ from .user_schedule_shift import UserScheduleShift
 from .user_search_criteria import UserSearchCriteria
 from .user_search_request import UserSearchRequest
 from .user_skill_entity_listing import UserSkillEntityListing
+from .user_state import UserState
 from .user_station import UserStation
 from .user_station_change_topic_user import UserStationChangeTopicUser
 from .user_station_change_topic_user_station import UserStationChangeTopicUserStation

@@ -454,7 +454,7 @@ class QualityApi(object):
     def get_quality_agents_activity(self, **kwargs):
         """
         Gets a list of Agent Activities
-        Including the number of evaluations and average evaluation score
+        Includes the number of evaluations and average evaluation score. These statistics include released evaluations only when evaluatorUserId is provided. In the absence of evaluatorUserId in the request, the api excludes evaluations which are set to never release for the calculation of evaluation statistics. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -472,8 +472,8 @@ class QualityApi(object):
         :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
-        :param datetime start_time: Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-        :param datetime end_time: End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        :param datetime start_time: Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        :param datetime end_time: End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         :param list[str] agent_user_id: user id of agent requested
         :param str evaluator_user_id: user id of the evaluator
         :param str name: name
