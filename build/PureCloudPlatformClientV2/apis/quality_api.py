@@ -2181,7 +2181,7 @@ class QualityApi(object):
             for asynchronous request. (optional)
         :param list[str] context_id: A comma-delimited list of valid survey form context ids (required)
         :param bool published: If true, the latest published version will be included. If false, only the unpublished version will be included.
-        :return: SurveyFormEntityListing
+        :return: list[SurveyForm]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2240,7 +2240,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='SurveyFormEntityListing',
+                                            response_type='list[SurveyForm]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

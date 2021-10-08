@@ -9,7 +9,7 @@ title: CreatePerformanceProfile
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | A name for this performance profile | |
-| **division** | [**WritableDivision**](WritableDivision.html) | The associated division for this Performance Profile | [optional] |
+| **division** | [**WritableDivision**](WritableDivision.html) | The associated division for this Performance Profile | |
 | **description** | **str** | A description about this performance profile | |
 | **metric_orders** | **list[str]** | Order of the associated metrics. The list should contain valid ids for metrics | [optional] |
 | **date_created** | **datetime** | Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |

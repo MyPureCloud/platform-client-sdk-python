@@ -518,6 +518,7 @@ from .models.conversation_aggregation_query import ConversationAggregationQuery
 from .models.conversation_aggregation_view import ConversationAggregationView
 from .models.conversation_association import ConversationAssociation
 from .models.conversation_basic import ConversationBasic
+from .models.conversation_button_component import ConversationButtonComponent
 from .models.conversation_call_event_topic_call_conversation import ConversationCallEventTopicCallConversation
 from .models.conversation_call_event_topic_call_media_participant import ConversationCallEventTopicCallMediaParticipant
 from .models.conversation_call_event_topic_conversation_routing_data import ConversationCallEventTopicConversationRoutingData
@@ -576,8 +577,11 @@ from .models.conversation_cobrowse_event_topic_journey_customer_session import C
 from .models.conversation_cobrowse_event_topic_scored_agent import ConversationCobrowseEventTopicScoredAgent
 from .models.conversation_cobrowse_event_topic_uri_reference import ConversationCobrowseEventTopicUriReference
 from .models.conversation_cobrowse_event_topic_wrapup import ConversationCobrowseEventTopicWrapup
+from .models.conversation_content_actions import ConversationContentActions
 from .models.conversation_content_attachment import ConversationContentAttachment
 from .models.conversation_content_button_response import ConversationContentButtonResponse
+from .models.conversation_content_generic import ConversationContentGeneric
+from .models.conversation_content_location import ConversationContentLocation
 from .models.conversation_content_notification_template import ConversationContentNotificationTemplate
 from .models.conversation_content_quick_reply import ConversationContentQuickReply
 from .models.conversation_deletion_protection_query import ConversationDeletionProtectionQuery
@@ -1932,6 +1936,7 @@ from .models.queue_user_event_topic_user_reference import QueueUserEventTopicUse
 from .models.queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .models.quick_reply import QuickReply
 from .models.reaction import Reaction
+from .models.reason import Reason
 from .models.recall_entry import RecallEntry
 from .models.recipient import Recipient
 from .models.recipient_listing import RecipientListing
@@ -2301,6 +2306,7 @@ from .models.transcript_conversation_detail_search_criteria import TranscriptCon
 from .models.transcript_conversation_detail_search_request import TranscriptConversationDetailSearchRequest
 from .models.transcript_search_criteria import TranscriptSearchCriteria
 from .models.transcript_search_request import TranscriptSearchRequest
+from .models.transcript_topics import TranscriptTopics
 from .models.transcript_url import TranscriptUrl
 from .models.transcription_settings import TranscriptionSettings
 from .models.transcription_topic_transcript_alternative import TranscriptionTopicTranscriptAlternative
@@ -2523,7 +2529,16 @@ from .models.web_deployment_entity_listing import WebDeploymentEntityListing
 from .models.web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 from .models.web_deployments_deployment_topic_web_messaging_config_change_event_body import WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody
 from .models.web_deployments_deployment_topic_web_messaging_deployment_change_event_body import WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody
+from .models.web_messaging_attachment import WebMessagingAttachment
+from .models.web_messaging_button_response import WebMessagingButtonResponse
+from .models.web_messaging_channel import WebMessagingChannel
+from .models.web_messaging_content import WebMessagingContent
+from .models.web_messaging_generic import WebMessagingGeneric
+from .models.web_messaging_message import WebMessagingMessage
+from .models.web_messaging_message_entity_list import WebMessagingMessageEntityList
 from .models.web_messaging_offer_fields import WebMessagingOfferFields
+from .models.web_messaging_quick_reply import WebMessagingQuickReply
+from .models.web_messaging_recipient import WebMessagingRecipient
 from .models.week_schedule import WeekSchedule
 from .models.week_schedule_generation_result import WeekScheduleGenerationResult
 from .models.week_schedule_list_item_response import WeekScheduleListItemResponse
@@ -2760,6 +2775,7 @@ from .apis.utilities_api import UtilitiesApi
 from .apis.voicemail_api import VoicemailApi
 from .apis.web_chat_api import WebChatApi
 from .apis.web_deployments_api import WebDeploymentsApi
+from .apis.web_messaging_api import WebMessagingApi
 from .apis.widgets_api import WidgetsApi
 from .apis.workforce_management_api import WorkforceManagementApi
 

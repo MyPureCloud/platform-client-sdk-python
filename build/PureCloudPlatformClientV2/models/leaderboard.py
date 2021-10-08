@@ -45,7 +45,8 @@ class Leaderboard(object):
             'date_start_workday': 'date',
             'date_end_workday': 'date',
             'leaders': 'list[LeaderboardItem]',
-            'user_rank': 'LeaderboardItem'
+            'user_rank': 'LeaderboardItem',
+            'performance_profile': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class Leaderboard(object):
             'date_start_workday': 'dateStartWorkday',
             'date_end_workday': 'dateEndWorkday',
             'leaders': 'leaders',
-            'user_rank': 'userRank'
+            'user_rank': 'userRank',
+            'performance_profile': 'performanceProfile'
         }
 
         self._division = None
@@ -63,6 +65,7 @@ class Leaderboard(object):
         self._date_end_workday = None
         self._leaders = None
         self._user_rank = None
+        self._performance_profile = None
 
     @property
     def division(self):
@@ -201,6 +204,29 @@ class Leaderboard(object):
         """
         
         self._user_rank = user_rank
+
+    @property
+    def performance_profile(self):
+        """
+        Gets the performance_profile of this Leaderboard.
+        The targeted performance profile for the average points
+
+        :return: The performance_profile of this Leaderboard.
+        :rtype: AddressableEntityRef
+        """
+        return self._performance_profile
+
+    @performance_profile.setter
+    def performance_profile(self, performance_profile):
+        """
+        Sets the performance_profile of this Leaderboard.
+        The targeted performance profile for the average points
+
+        :param performance_profile: The performance_profile of this Leaderboard.
+        :type: AddressableEntityRef
+        """
+        
+        self._performance_profile = performance_profile
 
     def to_dict(self):
         """

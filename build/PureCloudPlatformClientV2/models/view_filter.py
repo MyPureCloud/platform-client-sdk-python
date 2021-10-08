@@ -162,7 +162,8 @@ class ViewFilter(object):
             'has_scored_evaluation': 'bool',
             'email_delivery_status_list': 'list[str]',
             'is_agent_owned_callback': 'bool',
-            'agent_callback_owner_ids': 'list[str]'
+            'agent_callback_owner_ids': 'list[str]',
+            'transcript_topics': 'list[TranscriptTopics]'
         }
 
         self.attribute_map = {
@@ -288,7 +289,8 @@ class ViewFilter(object):
             'has_scored_evaluation': 'hasScoredEvaluation',
             'email_delivery_status_list': 'emailDeliveryStatusList',
             'is_agent_owned_callback': 'isAgentOwnedCallback',
-            'agent_callback_owner_ids': 'agentCallbackOwnerIds'
+            'agent_callback_owner_ids': 'agentCallbackOwnerIds',
+            'transcript_topics': 'transcriptTopics'
         }
 
         self._media_types = None
@@ -414,6 +416,7 @@ class ViewFilter(object):
         self._email_delivery_status_list = None
         self._is_agent_owned_callback = None
         self._agent_callback_owner_ids = None
+        self._transcript_topics = None
 
     @property
     def media_types(self):
@@ -3243,6 +3246,29 @@ class ViewFilter(object):
         """
         
         self._agent_callback_owner_ids = agent_callback_owner_ids
+
+    @property
+    def transcript_topics(self):
+        """
+        Gets the transcript_topics of this ViewFilter.
+        The list of transcript topics requested in filter
+
+        :return: The transcript_topics of this ViewFilter.
+        :rtype: list[TranscriptTopics]
+        """
+        return self._transcript_topics
+
+    @transcript_topics.setter
+    def transcript_topics(self, transcript_topics):
+        """
+        Sets the transcript_topics of this ViewFilter.
+        The list of transcript topics requested in filter
+
+        :param transcript_topics: The transcript_topics of this ViewFilter.
+        :type: list[TranscriptTopics]
+        """
+        
+        self._transcript_topics = transcript_topics
 
     def to_dict(self):
         """

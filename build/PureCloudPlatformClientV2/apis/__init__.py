@@ -59,5 +59,6 @@ from .utilities_api import UtilitiesApi
 from .voicemail_api import VoicemailApi
 from .web_chat_api import WebChatApi
 from .web_deployments_api import WebDeploymentsApi
+from .web_messaging_api import WebMessagingApi
 from .widgets_api import WidgetsApi
 from .workforce_management_api import WorkforceManagementApi

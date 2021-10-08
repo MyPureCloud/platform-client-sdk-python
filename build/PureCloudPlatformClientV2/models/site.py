@@ -42,6 +42,7 @@ class Site(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'description': 'str',
             'version': 'int',
             'date_created': 'datetime',
@@ -71,6 +72,7 @@ class Site(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'description': 'description',
             'version': 'version',
             'date_created': 'dateCreated',
@@ -99,6 +101,7 @@ class Site(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._description = None
         self._version = None
         self._date_created = None
@@ -169,6 +172,29 @@ class Site(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this Site.
+        The division to which this entity belongs.
+
+        :return: The division of this Site.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this Site.
+        The division to which this entity belongs.
+
+        :param division: The division of this Site.
+        :type: Division
+        """
+        
+        self._division = division
 
     @property
     def description(self):

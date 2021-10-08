@@ -41,16 +41,19 @@ class OverallBestPoints(object):
         """
         self.swagger_types = {
             'division': 'Division',
-            'best_points': 'list[OverallBestPointsItem]'
+            'best_points': 'list[OverallBestPointsItem]',
+            'performance_profile': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
             'division': 'division',
-            'best_points': 'bestPoints'
+            'best_points': 'bestPoints',
+            'performance_profile': 'performanceProfile'
         }
 
         self._division = None
         self._best_points = None
+        self._performance_profile = None
 
     @property
     def division(self):
@@ -97,6 +100,29 @@ class OverallBestPoints(object):
         """
         
         self._best_points = best_points
+
+    @property
+    def performance_profile(self):
+        """
+        Gets the performance_profile of this OverallBestPoints.
+        The targeted performance profile for the average points
+
+        :return: The performance_profile of this OverallBestPoints.
+        :rtype: AddressableEntityRef
+        """
+        return self._performance_profile
+
+    @performance_profile.setter
+    def performance_profile(self, performance_profile):
+        """
+        Sets the performance_profile of this OverallBestPoints.
+        The targeted performance profile for the average points
+
+        :param performance_profile: The performance_profile of this OverallBestPoints.
+        :type: AddressableEntityRef
+        """
+        
+        self._performance_profile = performance_profile
 
     def to_dict(self):
         """

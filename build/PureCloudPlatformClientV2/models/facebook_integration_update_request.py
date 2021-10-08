@@ -111,7 +111,7 @@ class FacebookIntegrationUpdateRequest(object):
     def page_access_token(self):
         """
         Gets the page_access_token of this FacebookIntegrationUpdateRequest.
-        The long-lived Page Access Token of a facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
+        The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
 
         :return: The page_access_token of this FacebookIntegrationUpdateRequest.
         :rtype: str
@@ -122,7 +122,7 @@ class FacebookIntegrationUpdateRequest(object):
     def page_access_token(self, page_access_token):
         """
         Sets the page_access_token of this FacebookIntegrationUpdateRequest.
-        The long-lived Page Access Token of a facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
+        The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
 
         :param page_access_token: The page_access_token of this FacebookIntegrationUpdateRequest.
         :type: str
@@ -134,7 +134,7 @@ class FacebookIntegrationUpdateRequest(object):
     def user_access_token(self):
         """
         Gets the user_access_token of this FacebookIntegrationUpdateRequest.
-        The short-lived User Access Token of the facebook user logged into the facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
+        The short-lived User Access Token of the Facebook user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
 
         :return: The user_access_token of this FacebookIntegrationUpdateRequest.
         :rtype: str
@@ -145,7 +145,7 @@ class FacebookIntegrationUpdateRequest(object):
     def user_access_token(self, user_access_token):
         """
         Sets the user_access_token of this FacebookIntegrationUpdateRequest.
-        The short-lived User Access Token of the facebook user logged into the facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
+        The short-lived User Access Token of the Facebook user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
 
         :param user_access_token: The user_access_token of this FacebookIntegrationUpdateRequest.
         :type: str

@@ -1597,7 +1597,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, open |
+| **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, open, instagram |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}

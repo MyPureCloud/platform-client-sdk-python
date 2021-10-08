@@ -13,6 +13,7 @@ title: WorkdayValuesTrend
 | **user** | [**UserReference**](UserReference.html) | The targeted user for the query | [optional] |
 | **timezone** | **str** | The time zone used for aggregating metric values | [optional] |
 | **results** | [**list[WorkdayValuesMetricItem]**](WorkdayValuesMetricItem.html) | The metric value trends | [optional] |
+| **performance_profile** | [**AddressableEntityRef**](AddressableEntityRef.html) | The targeted performance profile for the average points | [optional] |
 {: class="table table-striped"}
 
 

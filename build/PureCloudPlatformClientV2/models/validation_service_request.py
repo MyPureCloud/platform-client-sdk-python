@@ -41,16 +41,19 @@ class ValidationServiceRequest(object):
         """
         self.swagger_types = {
             'date_import_ended': 'datetime',
-            'file_url': 'str'
+            'file_url': 'str',
+            'upload_key': 'str'
         }
 
         self.attribute_map = {
             'date_import_ended': 'dateImportEnded',
-            'file_url': 'fileUrl'
+            'file_url': 'fileUrl',
+            'upload_key': 'uploadKey'
         }
 
         self._date_import_ended = None
         self._file_url = None
+        self._upload_key = None
 
     @property
     def date_import_ended(self):
@@ -79,7 +82,7 @@ class ValidationServiceRequest(object):
     def file_url(self):
         """
         Gets the file_url of this ValidationServiceRequest.
-        Path to the file in the storage including the file name
+        File URL is deprecated, please use upload key
 
         :return: The file_url of this ValidationServiceRequest.
         :rtype: str
@@ -90,13 +93,36 @@ class ValidationServiceRequest(object):
     def file_url(self, file_url):
         """
         Sets the file_url of this ValidationServiceRequest.
-        Path to the file in the storage including the file name
+        File URL is deprecated, please use upload key
 
         :param file_url: The file_url of this ValidationServiceRequest.
         :type: str
         """
         
         self._file_url = file_url
+
+    @property
+    def upload_key(self):
+        """
+        Gets the upload_key of this ValidationServiceRequest.
+        S3 key for the uploaded file
+
+        :return: The upload_key of this ValidationServiceRequest.
+        :rtype: str
+        """
+        return self._upload_key
+
+    @upload_key.setter
+    def upload_key(self, upload_key):
+        """
+        Sets the upload_key of this ValidationServiceRequest.
+        S3 key for the uploaded file
+
+        :param upload_key: The upload_key of this ValidationServiceRequest.
+        :type: str
+        """
+        
+        self._upload_key = upload_key
 
     def to_dict(self):
         """

@@ -52,7 +52,8 @@ class AvailableTopic(object):
             'requires_current_user': 'bool',
             'requires_current_user_or_permission': 'bool',
             'transports': 'list[str]',
-            'public_api_template_uri_paths': 'list[str]'
+            'public_api_template_uri_paths': 'list[str]',
+            'topic_parameters': 'list[str]'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class AvailableTopic(object):
             'requires_current_user': 'requiresCurrentUser',
             'requires_current_user_or_permission': 'requiresCurrentUserOrPermission',
             'transports': 'transports',
-            'public_api_template_uri_paths': 'publicApiTemplateUriPaths'
+            'public_api_template_uri_paths': 'publicApiTemplateUriPaths',
+            'topic_parameters': 'topicParameters'
         }
 
         self._description = None
@@ -84,6 +86,7 @@ class AvailableTopic(object):
         self._requires_current_user_or_permission = None
         self._transports = None
         self._public_api_template_uri_paths = None
+        self._topic_parameters = None
 
     @property
     def description(self):
@@ -387,6 +390,29 @@ class AvailableTopic(object):
         """
         
         self._public_api_template_uri_paths = public_api_template_uri_paths
+
+    @property
+    def topic_parameters(self):
+        """
+        Gets the topic_parameters of this AvailableTopic.
+        Parameters in the topic name that can be substituted
+
+        :return: The topic_parameters of this AvailableTopic.
+        :rtype: list[str]
+        """
+        return self._topic_parameters
+
+    @topic_parameters.setter
+    def topic_parameters(self, topic_parameters):
+        """
+        Sets the topic_parameters of this AvailableTopic.
+        Parameters in the topic name that can be substituted
+
+        :param topic_parameters: The topic_parameters of this AvailableTopic.
+        :type: list[str]
+        """
+        
+        self._topic_parameters = topic_parameters
 
     def to_dict(self):
         """

@@ -45,7 +45,11 @@ class OpenNormalizedMessage(object):
             'type': 'str',
             'text': 'str',
             'content': 'list[OpenMessageContent]',
-            'direction': 'str'
+            'status': 'str',
+            'reasons': 'list[Reason]',
+            'is_final_receipt': 'bool',
+            'direction': 'str',
+            'metadata': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -54,7 +58,11 @@ class OpenNormalizedMessage(object):
             'type': 'type',
             'text': 'text',
             'content': 'content',
-            'direction': 'direction'
+            'status': 'status',
+            'reasons': 'reasons',
+            'is_final_receipt': 'isFinalReceipt',
+            'direction': 'direction',
+            'metadata': 'metadata'
         }
 
         self._id = None
@@ -62,7 +70,11 @@ class OpenNormalizedMessage(object):
         self._type = None
         self._text = None
         self._content = None
+        self._status = None
+        self._reasons = None
+        self._is_final_receipt = None
         self._direction = None
+        self._metadata = None
 
     @property
     def id(self):
@@ -130,7 +142,7 @@ class OpenNormalizedMessage(object):
         :param type: The type of this OpenNormalizedMessage.
         :type: str
         """
-        allowed_values = ["Text"]
+        allowed_values = ["Text", "Receipt"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -184,6 +196,79 @@ class OpenNormalizedMessage(object):
         self._content = content
 
     @property
+    def status(self):
+        """
+        Gets the status of this OpenNormalizedMessage.
+        Message receipt status, only used with type Receipt.
+
+        :return: The status of this OpenNormalizedMessage.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this OpenNormalizedMessage.
+        Message receipt status, only used with type Receipt.
+
+        :param status: The status of this OpenNormalizedMessage.
+        :type: str
+        """
+        allowed_values = ["Sent", "Delivered", "Read", "Failed", "Published", "Removed"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status -> " + status)
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
+
+    @property
+    def reasons(self):
+        """
+        Gets the reasons of this OpenNormalizedMessage.
+        List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
+
+        :return: The reasons of this OpenNormalizedMessage.
+        :rtype: list[Reason]
+        """
+        return self._reasons
+
+    @reasons.setter
+    def reasons(self, reasons):
+        """
+        Sets the reasons of this OpenNormalizedMessage.
+        List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
+
+        :param reasons: The reasons of this OpenNormalizedMessage.
+        :type: list[Reason]
+        """
+        
+        self._reasons = reasons
+
+    @property
+    def is_final_receipt(self):
+        """
+        Gets the is_final_receipt of this OpenNormalizedMessage.
+        Indicates if this is the last message receipt for this message, or if another message receipt can be expected.
+
+        :return: The is_final_receipt of this OpenNormalizedMessage.
+        :rtype: bool
+        """
+        return self._is_final_receipt
+
+    @is_final_receipt.setter
+    def is_final_receipt(self, is_final_receipt):
+        """
+        Sets the is_final_receipt of this OpenNormalizedMessage.
+        Indicates if this is the last message receipt for this message, or if another message receipt can be expected.
+
+        :param is_final_receipt: The is_final_receipt of this OpenNormalizedMessage.
+        :type: bool
+        """
+        
+        self._is_final_receipt = is_final_receipt
+
+    @property
     def direction(self):
         """
         Gets the direction of this OpenNormalizedMessage.
@@ -209,6 +294,29 @@ class OpenNormalizedMessage(object):
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this OpenNormalizedMessage.
+        Additional metadata about this message.
+
+        :return: The metadata of this OpenNormalizedMessage.
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this OpenNormalizedMessage.
+        Additional metadata about this message.
+
+        :param metadata: The metadata of this OpenNormalizedMessage.
+        :type: dict(str, str)
+        """
+        
+        self._metadata = metadata
 
     def to_dict(self):
         """

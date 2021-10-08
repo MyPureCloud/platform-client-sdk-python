@@ -45,6 +45,7 @@ class VoicemailOrganizationPolicy(object):
             'pin_configuration': 'PINConfiguration',
             'voicemail_extension': 'str',
             'pin_required': 'bool',
+            'interactive_response_required': 'bool',
             'send_email_notifications': 'bool',
             'disable_email_pii': 'bool',
             'modified_date': 'datetime'
@@ -56,6 +57,7 @@ class VoicemailOrganizationPolicy(object):
             'pin_configuration': 'pinConfiguration',
             'voicemail_extension': 'voicemailExtension',
             'pin_required': 'pinRequired',
+            'interactive_response_required': 'interactiveResponseRequired',
             'send_email_notifications': 'sendEmailNotifications',
             'disable_email_pii': 'disableEmailPii',
             'modified_date': 'modifiedDate'
@@ -66,6 +68,7 @@ class VoicemailOrganizationPolicy(object):
         self._pin_configuration = None
         self._voicemail_extension = None
         self._pin_required = None
+        self._interactive_response_required = None
         self._send_email_notifications = None
         self._disable_email_pii = None
         self._modified_date = None
@@ -74,7 +77,7 @@ class VoicemailOrganizationPolicy(object):
     def enabled(self):
         """
         Gets the enabled of this VoicemailOrganizationPolicy.
-        Whether voicemail is enable for this organization
+        Whether voicemail is enabled for this organization
 
         :return: The enabled of this VoicemailOrganizationPolicy.
         :rtype: bool
@@ -85,7 +88,7 @@ class VoicemailOrganizationPolicy(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this VoicemailOrganizationPolicy.
-        Whether voicemail is enable for this organization
+        Whether voicemail is enabled for this organization
 
         :param enabled: The enabled of this VoicemailOrganizationPolicy.
         :type: bool
@@ -97,7 +100,7 @@ class VoicemailOrganizationPolicy(object):
     def alert_timeout_seconds(self):
         """
         Gets the alert_timeout_seconds of this VoicemailOrganizationPolicy.
-        The organization's default number of seconds to ring a user's phone before a call is transfered to voicemail
+        The organization's default number of seconds to ring a user's phone before a call is transferred to voicemail
 
         :return: The alert_timeout_seconds of this VoicemailOrganizationPolicy.
         :rtype: int
@@ -108,7 +111,7 @@ class VoicemailOrganizationPolicy(object):
     def alert_timeout_seconds(self, alert_timeout_seconds):
         """
         Sets the alert_timeout_seconds of this VoicemailOrganizationPolicy.
-        The organization's default number of seconds to ring a user's phone before a call is transfered to voicemail
+        The organization's default number of seconds to ring a user's phone before a call is transferred to voicemail
 
         :param alert_timeout_seconds: The alert_timeout_seconds of this VoicemailOrganizationPolicy.
         :type: int
@@ -184,6 +187,29 @@ class VoicemailOrganizationPolicy(object):
         """
         
         self._pin_required = pin_required
+
+    @property
+    def interactive_response_required(self):
+        """
+        Gets the interactive_response_required of this VoicemailOrganizationPolicy.
+        Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
+
+        :return: The interactive_response_required of this VoicemailOrganizationPolicy.
+        :rtype: bool
+        """
+        return self._interactive_response_required
+
+    @interactive_response_required.setter
+    def interactive_response_required(self, interactive_response_required):
+        """
+        Sets the interactive_response_required of this VoicemailOrganizationPolicy.
+        Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
+
+        :param interactive_response_required: The interactive_response_required of this VoicemailOrganizationPolicy.
+        :type: bool
+        """
+        
+        self._interactive_response_required = interactive_response_required
 
     @property
     def send_email_notifications(self):

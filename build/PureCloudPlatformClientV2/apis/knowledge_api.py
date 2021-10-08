@@ -774,13 +774,15 @@ class KnowledgeApi(object):
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str categories: Filter by categories ids, comma separated values expected.
         :param str title: Filter by document title.
+        :param str sort_by: Sort by.
+        :param str sort_order: Sort Order.
         :param list[str] document_ids: Comma-separated list of document identifiers to fetch by.
         :return: DocumentListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'language_code', 'before', 'after', 'limit', 'page_size', 'categories', 'title', 'document_ids']
+        all_params = ['knowledge_base_id', 'language_code', 'before', 'after', 'limit', 'page_size', 'categories', 'title', 'sort_by', 'sort_order', 'document_ids']
         all_params.append('callback')
 
         params = locals()
@@ -821,6 +823,10 @@ class KnowledgeApi(object):
             query_params['categories'] = params['categories']
         if 'title' in params:
             query_params['title'] = params['title']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
         if 'document_ids' in params:
             query_params['documentIds'] = params['document_ids']
 
@@ -1157,12 +1163,14 @@ class KnowledgeApi(object):
         :param str name: Filter by Name.
         :param str core_language: Filter by core language.
         :param bool published: Filter by published status.
+        :param str sort_by: Sort by.
+        :param str sort_order: Sort Order.
         :return: KnowledgeBaseListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'limit', 'page_size', 'name', 'core_language', 'published']
+        all_params = ['before', 'after', 'limit', 'page_size', 'name', 'core_language', 'published', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1195,6 +1203,10 @@ class KnowledgeApi(object):
             query_params['coreLanguage'] = params['core_language']
         if 'published' in params:
             query_params['published'] = params['published']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 

@@ -45,7 +45,8 @@ class WorkdayValuesTrend(object):
             'division': 'Division',
             'user': 'UserReference',
             'timezone': 'str',
-            'results': 'list[WorkdayValuesMetricItem]'
+            'results': 'list[WorkdayValuesMetricItem]',
+            'performance_profile': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class WorkdayValuesTrend(object):
             'division': 'division',
             'user': 'user',
             'timezone': 'timezone',
-            'results': 'results'
+            'results': 'results',
+            'performance_profile': 'performanceProfile'
         }
 
         self._date_start_workday = None
@@ -63,6 +65,7 @@ class WorkdayValuesTrend(object):
         self._user = None
         self._timezone = None
         self._results = None
+        self._performance_profile = None
 
     @property
     def date_start_workday(self):
@@ -201,6 +204,29 @@ class WorkdayValuesTrend(object):
         """
         
         self._results = results
+
+    @property
+    def performance_profile(self):
+        """
+        Gets the performance_profile of this WorkdayValuesTrend.
+        The targeted performance profile for the average points
+
+        :return: The performance_profile of this WorkdayValuesTrend.
+        :rtype: AddressableEntityRef
+        """
+        return self._performance_profile
+
+    @performance_profile.setter
+    def performance_profile(self, performance_profile):
+        """
+        Sets the performance_profile of this WorkdayValuesTrend.
+        The targeted performance profile for the average points
+
+        :param performance_profile: The performance_profile of this WorkdayValuesTrend.
+        :type: AddressableEntityRef
+        """
+        
+        self._performance_profile = performance_profile
 
     def to_dict(self):
         """

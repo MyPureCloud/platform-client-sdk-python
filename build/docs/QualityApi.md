@@ -1456,7 +1456,7 @@ except ApiException as e:
 
 <a name="get_quality_forms_surveys_bulk_contexts"></a>
 
-## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys_bulk_contexts(context_id, published=published)
+## [**list[SurveyForm]**](SurveyForm.html) get_quality_forms_surveys_bulk_contexts(context_id, published=published)
 
 
 
@@ -1505,7 +1505,7 @@ except ApiException as e:
 
 ### Return type
 
-[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+[**list[SurveyForm]**](SurveyForm.html)
 
 <a name="get_quality_publishedform"></a>
 

@@ -8413,7 +8413,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_flows_datatable(self, datatable_id, **kwargs):
+    def put_flows_datatable(self, datatable_id, body, **kwargs):
         """
         Updates a specific datatable by id
         Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
@@ -8424,19 +8424,19 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_flows_datatable(datatable_id, callback=callback_function)
+        >>> thread = api.put_flows_datatable(datatable_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str datatable_id: id of datatable (required)
+        :param DataTable body: datatable json-schema (required)
         :param str expand: Expand instructions for the result
-        :param DataTable body: datatable json-schema
         :return: DataTable
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['datatable_id', 'expand', 'body']
+        all_params = ['datatable_id', 'body', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -8452,6 +8452,9 @@ class ArchitectApi(object):
         # verify the required parameter 'datatable_id' is set
         if ('datatable_id' not in params) or (params['datatable_id'] is None):
             raise ValueError("Missing the required parameter `datatable_id` when calling `put_flows_datatable`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_flows_datatable`")
 
 
         resource_path = '/api/v2/flows/datatables/{datatableId}'.replace('{format}', 'json')

@@ -48,7 +48,8 @@ class VoicemailGroupPolicy(object):
             'rotate_calls_secs': 'int',
             'stop_ringing_after_rotations': 'int',
             'overflow_group_id': 'str',
-            'group_alert_type': 'str'
+            'group_alert_type': 'str',
+            'interactive_response_prompt_id': 'str'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class VoicemailGroupPolicy(object):
             'rotate_calls_secs': 'rotateCallsSecs',
             'stop_ringing_after_rotations': 'stopRingingAfterRotations',
             'overflow_group_id': 'overflowGroupId',
-            'group_alert_type': 'groupAlertType'
+            'group_alert_type': 'groupAlertType',
+            'interactive_response_prompt_id': 'interactiveResponsePromptId'
         }
 
         self._name = None
@@ -72,6 +74,7 @@ class VoicemailGroupPolicy(object):
         self._stop_ringing_after_rotations = None
         self._overflow_group_id = None
         self._group_alert_type = None
+        self._interactive_response_prompt_id = None
 
     @property
     def name(self):
@@ -238,7 +241,7 @@ class VoicemailGroupPolicy(object):
     def overflow_group_id(self):
         """
         Gets the overflow_group_id of this VoicemailGroupPolicy.
-         A fallback group to contact when all of the members in this group did not answer the call.
+        A fallback group to contact when all of the members in this group did not answer the call.
 
         :return: The overflow_group_id of this VoicemailGroupPolicy.
         :rtype: str
@@ -249,7 +252,7 @@ class VoicemailGroupPolicy(object):
     def overflow_group_id(self, overflow_group_id):
         """
         Sets the overflow_group_id of this VoicemailGroupPolicy.
-         A fallback group to contact when all of the members in this group did not answer the call.
+        A fallback group to contact when all of the members in this group did not answer the call.
 
         :param overflow_group_id: The overflow_group_id of this VoicemailGroupPolicy.
         :type: str
@@ -283,6 +286,29 @@ class VoicemailGroupPolicy(object):
             self._group_alert_type = "outdated_sdk_version"
         else:
             self._group_alert_type = group_alert_type
+
+    @property
+    def interactive_response_prompt_id(self):
+        """
+        Gets the interactive_response_prompt_id of this VoicemailGroupPolicy.
+        The prompt to use when connecting a user to a Group Ring call
+
+        :return: The interactive_response_prompt_id of this VoicemailGroupPolicy.
+        :rtype: str
+        """
+        return self._interactive_response_prompt_id
+
+    @interactive_response_prompt_id.setter
+    def interactive_response_prompt_id(self, interactive_response_prompt_id):
+        """
+        Sets the interactive_response_prompt_id of this VoicemailGroupPolicy.
+        The prompt to use when connecting a user to a Group Ring call
+
+        :param interactive_response_prompt_id: The interactive_response_prompt_id of this VoicemailGroupPolicy.
+        :type: str
+        """
+        
+        self._interactive_response_prompt_id = interactive_response_prompt_id
 
     def to_dict(self):
         """

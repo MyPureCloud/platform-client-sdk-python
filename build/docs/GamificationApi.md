@@ -493,6 +493,8 @@ Wraps GET /api/v2/gamification/profiles/{performanceProfileId}
 Requires ANY permissions: 
 
 * gamification:profile:view
+* gamification:leaderboard:viewAll
+* gamification:scorecard:viewAll
 
 ### Example
 
@@ -713,6 +715,8 @@ Wraps GET /api/v2/gamification/profiles
 Requires ANY permissions: 
 
 * gamification:profile:view
+* gamification:leaderboard:viewAll
+* gamification:scorecard:viewAll
 
 ### Example
 

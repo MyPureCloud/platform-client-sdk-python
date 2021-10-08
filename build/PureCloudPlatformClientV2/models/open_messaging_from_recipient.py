@@ -44,7 +44,9 @@ class OpenMessagingFromRecipient(object):
             'id': 'str',
             'id_type': 'str',
             'first_name': 'str',
-            'last_name': 'str'
+            'last_name': 'str',
+            'image': 'str',
+            'email': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +54,9 @@ class OpenMessagingFromRecipient(object):
             'id': 'id',
             'id_type': 'idType',
             'first_name': 'firstName',
-            'last_name': 'lastName'
+            'last_name': 'lastName',
+            'image': 'image',
+            'email': 'email'
         }
 
         self._nickname = None
@@ -60,6 +64,8 @@ class OpenMessagingFromRecipient(object):
         self._id_type = None
         self._first_name = None
         self._last_name = None
+        self._image = None
+        self._email = None
 
     @property
     def nickname(self):
@@ -179,6 +185,52 @@ class OpenMessagingFromRecipient(object):
         """
         
         self._last_name = last_name
+
+    @property
+    def image(self):
+        """
+        Gets the image of this OpenMessagingFromRecipient.
+        URL of an image that represents the recipient.
+
+        :return: The image of this OpenMessagingFromRecipient.
+        :rtype: str
+        """
+        return self._image
+
+    @image.setter
+    def image(self, image):
+        """
+        Sets the image of this OpenMessagingFromRecipient.
+        URL of an image that represents the recipient.
+
+        :param image: The image of this OpenMessagingFromRecipient.
+        :type: str
+        """
+        
+        self._image = image
+
+    @property
+    def email(self):
+        """
+        Gets the email of this OpenMessagingFromRecipient.
+        E-mail address of the recipient.
+
+        :return: The email of this OpenMessagingFromRecipient.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """
+        Sets the email of this OpenMessagingFromRecipient.
+        E-mail address of the recipient.
+
+        :param email: The email of this OpenMessagingFromRecipient.
+        :type: str
+        """
+        
+        self._email = email
 
     def to_dict(self):
         """

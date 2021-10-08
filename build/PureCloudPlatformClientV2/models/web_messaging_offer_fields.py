@@ -40,14 +40,17 @@ class WebMessagingOfferFields(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'offer_text': 'str'
+            'offer_text': 'str',
+            'architect_flow': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
-            'offer_text': 'offerText'
+            'offer_text': 'offerText',
+            'architect_flow': 'architectFlow'
         }
 
         self._offer_text = None
+        self._architect_flow = None
 
     @property
     def offer_text(self):
@@ -71,6 +74,29 @@ class WebMessagingOfferFields(object):
         """
         
         self._offer_text = offer_text
+
+    @property
+    def architect_flow(self):
+        """
+        Gets the architect_flow of this WebMessagingOfferFields.
+        Flow to be invoked, overrides default flow when specified.
+
+        :return: The architect_flow of this WebMessagingOfferFields.
+        :rtype: AddressableEntityRef
+        """
+        return self._architect_flow
+
+    @architect_flow.setter
+    def architect_flow(self, architect_flow):
+        """
+        Sets the architect_flow of this WebMessagingOfferFields.
+        Flow to be invoked, overrides default flow when specified.
+
+        :param architect_flow: The architect_flow of this WebMessagingOfferFields.
+        :type: AddressableEntityRef
+        """
+        
+        self._architect_flow = architect_flow
 
     def to_dict(self):
         """

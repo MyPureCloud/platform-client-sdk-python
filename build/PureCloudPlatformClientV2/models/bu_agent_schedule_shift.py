@@ -68,7 +68,7 @@ class BuAgentScheduleShift(object):
     def id(self):
         """
         Gets the id of this BuAgentScheduleShift.
-        The globally unique identifier for the object.
+        The ID of the shift
 
         :return: The id of this BuAgentScheduleShift.
         :rtype: str
@@ -79,7 +79,7 @@ class BuAgentScheduleShift(object):
     def id(self, id):
         """
         Sets the id of this BuAgentScheduleShift.
-        The globally unique identifier for the object.
+        The ID of the shift
 
         :param id: The id of this BuAgentScheduleShift.
         :type: str

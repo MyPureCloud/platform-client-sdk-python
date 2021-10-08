@@ -135,7 +135,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -190,7 +190,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -243,7 +243,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **import_id** | **str**| Import ID |  |
 {: class="table table-striped"}
 
@@ -353,7 +353,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
@@ -413,7 +413,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -468,7 +468,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -477,7 +477,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_language_documents"></a>
 
-## [**DocumentListing**](DocumentListing.html) get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, document_ids=document_ids)
+## [**DocumentListing**](DocumentListing.html) get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, sort_by=sort_by, sort_order=sort_order, document_ids=document_ids)
 
 
 
@@ -512,11 +512,13 @@ limit = 'limit_example' # str | Number of entities to return. Maximum of 200. De
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 categories = 'categories_example' # str | Filter by categories ids, comma separated values expected. (optional)
 title = 'title_example' # str | Filter by document title. (optional)
+sort_by = 'sort_by_example' # str | Sort by. (optional)
+sort_order = 'sort_order_example' # str | Sort Order. (optional)
 document_ids = ['document_ids_example'] # list[str] | Comma-separated list of document identifiers to fetch by. (optional)
 
 try:
     # Get documents
-    api_response = api_instance.get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, document_ids=document_ids)
+    api_response = api_instance.get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, sort_by=sort_by, sort_order=sort_order, document_ids=document_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_documents: %s\n" % e)
@@ -528,13 +530,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **categories** | **str**| Filter by categories ids, comma separated values expected. | [optional]  |
 | **title** | **str**| Filter by document title. | [optional]  |
+| **sort_by** | **str**| Sort by. | [optional] <br />**Values**: Title, Date |
+| **sort_order** | **str**| Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
 | **document_ids** | [**list[str]**](str.html)| Comma-separated list of document identifiers to fetch by. | [optional]  |
 {: class="table table-striped"}
 
@@ -589,7 +593,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **import_id** | **str**| Import ID |  |
 {: class="table table-striped"}
 
@@ -644,7 +648,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **training_id** | **str**| Training ID |  |
 {: class="table table-striped"}
 
@@ -703,7 +707,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
@@ -717,7 +721,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebases"></a>
 
-## [**KnowledgeBaseListing**](KnowledgeBaseListing.html) get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published)
+## [**KnowledgeBaseListing**](KnowledgeBaseListing.html) get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -751,10 +755,12 @@ page_size = 'page_size_example' # str | Number of entities to return. Maximum of
 name = 'name_example' # str | Filter by Name. (optional)
 core_language = 'core_language_example' # str | Filter by core language. (optional)
 published = true # bool | Filter by published status. (optional)
+sort_by = 'sort_by_example' # str | Sort by. (optional)
+sort_order = 'sort_order_example' # str | Sort Order. (optional)
 
 try:
     # Get knowledge bases
-    api_response = api_instance.get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published)
+    api_response = api_instance.get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebases: %s\n" % e)
@@ -770,8 +776,10 @@ except ApiException as e:
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **name** | **str**| Filter by Name. | [optional]  |
-| **core_language** | **str**| Filter by core language. | [optional] <br />**Values**: en-US, de-DE |
+| **core_language** | **str**| Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **published** | **bool**| Filter by published status. | [optional]  |
+| **sort_by** | **str**| Sort by. | [optional] <br />**Values**: Name, Date |
+| **sort_order** | **str**| Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -880,7 +888,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -937,7 +945,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -992,7 +1000,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **body** | [**list[KnowledgeDocumentBulkRequest]**](KnowledgeDocumentBulkRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -1049,7 +1057,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **import_id** | **str**| Import ID |  |
 | **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  |  |
 {: class="table table-striped"}
@@ -1156,7 +1164,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -1211,7 +1219,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -1266,7 +1274,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **body** | [**KnowledgeImport**](KnowledgeImport.html)|  |  |
 {: class="table table-striped"}
 
@@ -1321,7 +1329,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 | **training_id** | **str**| Training ID |  |
 {: class="table table-striped"}
 
@@ -1375,7 +1383,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type

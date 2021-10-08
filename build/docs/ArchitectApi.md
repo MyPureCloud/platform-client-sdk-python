@@ -5558,7 +5558,7 @@ except ApiException as e:
 
 <a name="put_flows_datatable"></a>
 
-## [**DataTable**](DataTable.html) put_flows_datatable(datatable_id, expand=expand, body=body)
+## [**DataTable**](DataTable.html) put_flows_datatable(datatable_id, body, expand=expand)
 
 
 
@@ -5586,12 +5586,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 datatable_id = 'datatable_id_example' # str | id of datatable
+body = PureCloudPlatformClientV2.DataTable() # DataTable | datatable json-schema
 expand = 'expand_example' # str | Expand instructions for the result (optional)
-body = PureCloudPlatformClientV2.DataTable() # DataTable | datatable json-schema (optional)
 
 try:
     # Updates a specific datatable by id
-    api_response = api_instance.put_flows_datatable(datatable_id, expand=expand, body=body)
+    api_response = api_instance.put_flows_datatable(datatable_id, body, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->put_flows_datatable: %s\n" % e)
@@ -5603,8 +5603,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **datatable_id** | **str**| id of datatable |  |
+| **body** | [**DataTable**](DataTable.html)| datatable json-schema |  |
 | **expand** | **str**| Expand instructions for the result | [optional] <br />**Values**: schema |
-| **body** | [**DataTable**](DataTable.html)| datatable json-schema | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

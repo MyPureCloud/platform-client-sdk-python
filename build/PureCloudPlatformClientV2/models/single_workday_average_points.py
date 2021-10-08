@@ -42,18 +42,21 @@ class SingleWorkdayAveragePoints(object):
         self.swagger_types = {
             'date_workday': 'date',
             'division': 'Division',
-            'average_points': 'float'
+            'average_points': 'float',
+            'performance_profile': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
             'date_workday': 'dateWorkday',
             'division': 'division',
-            'average_points': 'averagePoints'
+            'average_points': 'averagePoints',
+            'performance_profile': 'performanceProfile'
         }
 
         self._date_workday = None
         self._division = None
         self._average_points = None
+        self._performance_profile = None
 
     @property
     def date_workday(self):
@@ -123,6 +126,29 @@ class SingleWorkdayAveragePoints(object):
         """
         
         self._average_points = average_points
+
+    @property
+    def performance_profile(self):
+        """
+        Gets the performance_profile of this SingleWorkdayAveragePoints.
+        The targeted performance profile for the average points
+
+        :return: The performance_profile of this SingleWorkdayAveragePoints.
+        :rtype: AddressableEntityRef
+        """
+        return self._performance_profile
+
+    @performance_profile.setter
+    def performance_profile(self, performance_profile):
+        """
+        Sets the performance_profile of this SingleWorkdayAveragePoints.
+        The targeted performance profile for the average points
+
+        :param performance_profile: The performance_profile of this SingleWorkdayAveragePoints.
+        :type: AddressableEntityRef
+        """
+        
+        self._performance_profile = performance_profile
 
     def to_dict(self):
         """

@@ -8700,7 +8700,7 @@ class ConversationsApi(object):
 
     def post_conversation_assign(self, conversation_id, body, **kwargs):
         """
-        Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+        Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
         
 
         This method makes a synchronous HTTP request by default. To make an

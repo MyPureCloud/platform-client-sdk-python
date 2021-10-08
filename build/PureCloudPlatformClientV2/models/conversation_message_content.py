@@ -41,15 +41,17 @@ class ConversationMessageContent(object):
         """
         self.swagger_types = {
             'content_type': 'str',
+            'location': 'ConversationContentLocation',
             'attachment': 'ConversationContentAttachment',
             'quick_reply': 'ConversationContentQuickReply',
             'template': 'ConversationContentNotificationTemplate',
             'button_response': 'ConversationContentButtonResponse',
-            'generic': 'ContentGeneric'
+            'generic': 'ConversationContentGeneric'
         }
 
         self.attribute_map = {
             'content_type': 'contentType',
+            'location': 'location',
             'attachment': 'attachment',
             'quick_reply': 'quickReply',
             'template': 'template',
@@ -58,6 +60,7 @@ class ConversationMessageContent(object):
         }
 
         self._content_type = None
+        self._location = None
         self._attachment = None
         self._quick_reply = None
         self._template = None
@@ -84,12 +87,35 @@ class ConversationMessageContent(object):
         :param content_type: The content_type of this ConversationMessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate"]
+        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
         else:
             self._content_type = content_type
+
+    @property
+    def location(self):
+        """
+        Gets the location of this ConversationMessageContent.
+        Location content.
+
+        :return: The location of this ConversationMessageContent.
+        :rtype: ConversationContentLocation
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """
+        Sets the location of this ConversationMessageContent.
+        Location content.
+
+        :param location: The location of this ConversationMessageContent.
+        :type: ConversationContentLocation
+        """
+        
+        self._location = location
 
     @property
     def attachment(self):
@@ -190,7 +216,7 @@ class ConversationMessageContent(object):
         Generic Template Object
 
         :return: The generic of this ConversationMessageContent.
-        :rtype: ContentGeneric
+        :rtype: ConversationContentGeneric
         """
         return self._generic
 
@@ -201,7 +227,7 @@ class ConversationMessageContent(object):
         Generic Template Object
 
         :param generic: The generic of this ConversationMessageContent.
-        :type: ContentGeneric
+        :type: ConversationContentGeneric
         """
         
         self._generic = generic
