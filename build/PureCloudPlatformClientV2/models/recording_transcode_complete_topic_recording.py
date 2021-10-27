@@ -44,8 +44,8 @@ class RecordingTranscodeCompleteTopicRecording(object):
             'conversation_id': 'str',
             'file_state': 'str',
             'media_uris': 'list[RecordingTranscodeCompleteTopicMediaResult]',
-            'estimated_transcode_time_ms': 'float',
-            'actual_transcode_time_ms': 'float'
+            'estimated_transcode_time_ms': 'int',
+            'actual_transcode_time_ms': 'int'
         }
 
         self.attribute_map = {
@@ -163,7 +163,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
 
 
         :return: The estimated_transcode_time_ms of this RecordingTranscodeCompleteTopicRecording.
-        :rtype: float
+        :rtype: int
         """
         return self._estimated_transcode_time_ms
 
@@ -174,7 +174,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
 
 
         :param estimated_transcode_time_ms: The estimated_transcode_time_ms of this RecordingTranscodeCompleteTopicRecording.
-        :type: float
+        :type: int
         """
         
         self._estimated_transcode_time_ms = estimated_transcode_time_ms
@@ -186,7 +186,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
 
 
         :return: The actual_transcode_time_ms of this RecordingTranscodeCompleteTopicRecording.
-        :rtype: float
+        :rtype: int
         """
         return self._actual_transcode_time_ms
 
@@ -197,7 +197,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
 
 
         :param actual_transcode_time_ms: The actual_transcode_time_ms of this RecordingTranscodeCompleteTopicRecording.
-        :type: float
+        :type: int
         """
         
         self._actual_transcode_time_ms = actual_transcode_time_ms

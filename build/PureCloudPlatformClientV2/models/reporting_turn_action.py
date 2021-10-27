@@ -147,7 +147,7 @@ class ReportingTurnAction(object):
         :param action_type: The action_type of this ReportingTurnAction.
         :type: str
         """
-        allowed_values = ["AskForNLUIntentAction", "AskForBooleanAction", "AskForSlotAction", "AskForNLUNextIntentAction", "BotState", "DisconnectAction", "ExitBotFlowAction", "CallTaskAction", "EndTaskAction", "UpdateVariableAction", "CommunicateAction", "DecisionAction", "SwitchAction", "DataAction", "DataTableLookupAction", "GetExternalContactAction", "GetExternalOrganizationAction", "LoopAction", "ExitLoopAction", "NextLoopAction", "LoopUntilAction", "SetActiveIntentAction", "ClearSlotAction", "SetFlowOutcomeAction", "InitializeFlowOutcomeAction", "AddFlowMilestoneAction", "AskForStringAction", "SendResponseAction", "Unknown"]
+        allowed_values = ["AskForNLUIntentAction", "AskForBooleanAction", "AskForSlotAction", "AskForNLUNextIntentAction", "BotState", "DisconnectAction", "ExitBotFlowAction", "CallTaskAction", "EndTaskAction", "UpdateVariableAction", "CommunicateAction", "DecisionAction", "SwitchAction", "DataAction", "DataTableLookupAction", "GetExternalContactAction", "GetExternalOrganizationAction", "LoopAction", "ExitLoopAction", "NextLoopAction", "LoopUntilAction", "SetActiveIntentAction", "ClearSlotAction", "SetFlowOutcomeAction", "InitializeFlowOutcomeAction", "AddFlowMilestoneAction", "AskForStringAction", "SendResponseAction", "GetResponseAction", "Unknown"]
         if action_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_type -> " + action_type)
             self._action_type = "outdated_sdk_version"

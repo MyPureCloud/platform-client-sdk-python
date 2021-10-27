@@ -131,6 +131,19 @@ title: ViewFilter
 | **is_agent_owned_callback** | **bool** | Indicates filtering for agent owned callback interactions | [optional] |
 | **agent_callback_owner_ids** | **list[str]** | The list of callback owners used to filter interactions | [optional] |
 | **transcript_topics** | [**list[TranscriptTopics]**](TranscriptTopics.html) | The list of transcript topics requested in filter | [optional] |
+| **journey_frequency_cap_reasons** | **list[str]** | The list of frequency cap reasons to filter offer constraints | [optional] |
+| **journey_blocking_action_map_ids** | **list[str]** | The list of blocking action maps to filter offer constraints | [optional] |
+| **journey_action_target_ids** | **list[str]** | The list of action targets to filter offer constraints | [optional] |
+| **journey_blocking_schedule_group_ids** | **list[str]** | The list of blocking schedule groups to filter offer constraints | [optional] |
+| **journey_blocking_emergency_schedule_group_ids** | **list[str]** | The list of emergency schedule groups to filter offer constraints | [optional] |
+| **journey_url_equal_conditions** | **list[str]** | The list of url equal conditions to filter offer constraints | [optional] |
+| **journey_url_not_equal_conditions** | **list[str]** | The list of url not equal conditions to filter offer constraints | [optional] |
+| **journey_url_starts_with_conditions** | **list[str]** | The list of url starts with conditions to filter offer constraints | [optional] |
+| **journey_url_ends_with_conditions** | **list[str]** | The list of url ends with conditions to filter offer constraints | [optional] |
+| **journey_url_contains_any_conditions** | **list[str]** | The list of url contains any conditions to filter offer constraints | [optional] |
+| **journey_url_not_contains_any_conditions** | **list[str]** | The list of url not contains any conditions to filter offer constraints | [optional] |
+| **journey_url_contains_all_conditions** | **list[str]** | The list of url contains all conditions to filter offer constraints | [optional] |
+| **journey_url_not_contains_all_conditions** | **list[str]** | The list of url not contains all conditions to filter offer constraints | [optional] |
 {: class="table table-striped"}
 
 

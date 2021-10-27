@@ -163,7 +163,20 @@ class ViewFilter(object):
             'email_delivery_status_list': 'list[str]',
             'is_agent_owned_callback': 'bool',
             'agent_callback_owner_ids': 'list[str]',
-            'transcript_topics': 'list[TranscriptTopics]'
+            'transcript_topics': 'list[TranscriptTopics]',
+            'journey_frequency_cap_reasons': 'list[str]',
+            'journey_blocking_action_map_ids': 'list[str]',
+            'journey_action_target_ids': 'list[str]',
+            'journey_blocking_schedule_group_ids': 'list[str]',
+            'journey_blocking_emergency_schedule_group_ids': 'list[str]',
+            'journey_url_equal_conditions': 'list[str]',
+            'journey_url_not_equal_conditions': 'list[str]',
+            'journey_url_starts_with_conditions': 'list[str]',
+            'journey_url_ends_with_conditions': 'list[str]',
+            'journey_url_contains_any_conditions': 'list[str]',
+            'journey_url_not_contains_any_conditions': 'list[str]',
+            'journey_url_contains_all_conditions': 'list[str]',
+            'journey_url_not_contains_all_conditions': 'list[str]'
         }
 
         self.attribute_map = {
@@ -290,7 +303,20 @@ class ViewFilter(object):
             'email_delivery_status_list': 'emailDeliveryStatusList',
             'is_agent_owned_callback': 'isAgentOwnedCallback',
             'agent_callback_owner_ids': 'agentCallbackOwnerIds',
-            'transcript_topics': 'transcriptTopics'
+            'transcript_topics': 'transcriptTopics',
+            'journey_frequency_cap_reasons': 'journeyFrequencyCapReasons',
+            'journey_blocking_action_map_ids': 'journeyBlockingActionMapIds',
+            'journey_action_target_ids': 'journeyActionTargetIds',
+            'journey_blocking_schedule_group_ids': 'journeyBlockingScheduleGroupIds',
+            'journey_blocking_emergency_schedule_group_ids': 'journeyBlockingEmergencyScheduleGroupIds',
+            'journey_url_equal_conditions': 'journeyUrlEqualConditions',
+            'journey_url_not_equal_conditions': 'journeyUrlNotEqualConditions',
+            'journey_url_starts_with_conditions': 'journeyUrlStartsWithConditions',
+            'journey_url_ends_with_conditions': 'journeyUrlEndsWithConditions',
+            'journey_url_contains_any_conditions': 'journeyUrlContainsAnyConditions',
+            'journey_url_not_contains_any_conditions': 'journeyUrlNotContainsAnyConditions',
+            'journey_url_contains_all_conditions': 'journeyUrlContainsAllConditions',
+            'journey_url_not_contains_all_conditions': 'journeyUrlNotContainsAllConditions'
         }
 
         self._media_types = None
@@ -417,6 +443,19 @@ class ViewFilter(object):
         self._is_agent_owned_callback = None
         self._agent_callback_owner_ids = None
         self._transcript_topics = None
+        self._journey_frequency_cap_reasons = None
+        self._journey_blocking_action_map_ids = None
+        self._journey_action_target_ids = None
+        self._journey_blocking_schedule_group_ids = None
+        self._journey_blocking_emergency_schedule_group_ids = None
+        self._journey_url_equal_conditions = None
+        self._journey_url_not_equal_conditions = None
+        self._journey_url_starts_with_conditions = None
+        self._journey_url_ends_with_conditions = None
+        self._journey_url_contains_any_conditions = None
+        self._journey_url_not_contains_any_conditions = None
+        self._journey_url_contains_all_conditions = None
+        self._journey_url_not_contains_all_conditions = None
 
     @property
     def media_types(self):
@@ -3269,6 +3308,305 @@ class ViewFilter(object):
         """
         
         self._transcript_topics = transcript_topics
+
+    @property
+    def journey_frequency_cap_reasons(self):
+        """
+        Gets the journey_frequency_cap_reasons of this ViewFilter.
+        The list of frequency cap reasons to filter offer constraints
+
+        :return: The journey_frequency_cap_reasons of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_frequency_cap_reasons
+
+    @journey_frequency_cap_reasons.setter
+    def journey_frequency_cap_reasons(self, journey_frequency_cap_reasons):
+        """
+        Sets the journey_frequency_cap_reasons of this ViewFilter.
+        The list of frequency cap reasons to filter offer constraints
+
+        :param journey_frequency_cap_reasons: The journey_frequency_cap_reasons of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_frequency_cap_reasons = journey_frequency_cap_reasons
+
+    @property
+    def journey_blocking_action_map_ids(self):
+        """
+        Gets the journey_blocking_action_map_ids of this ViewFilter.
+        The list of blocking action maps to filter offer constraints
+
+        :return: The journey_blocking_action_map_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_blocking_action_map_ids
+
+    @journey_blocking_action_map_ids.setter
+    def journey_blocking_action_map_ids(self, journey_blocking_action_map_ids):
+        """
+        Sets the journey_blocking_action_map_ids of this ViewFilter.
+        The list of blocking action maps to filter offer constraints
+
+        :param journey_blocking_action_map_ids: The journey_blocking_action_map_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_blocking_action_map_ids = journey_blocking_action_map_ids
+
+    @property
+    def journey_action_target_ids(self):
+        """
+        Gets the journey_action_target_ids of this ViewFilter.
+        The list of action targets to filter offer constraints
+
+        :return: The journey_action_target_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_action_target_ids
+
+    @journey_action_target_ids.setter
+    def journey_action_target_ids(self, journey_action_target_ids):
+        """
+        Sets the journey_action_target_ids of this ViewFilter.
+        The list of action targets to filter offer constraints
+
+        :param journey_action_target_ids: The journey_action_target_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_action_target_ids = journey_action_target_ids
+
+    @property
+    def journey_blocking_schedule_group_ids(self):
+        """
+        Gets the journey_blocking_schedule_group_ids of this ViewFilter.
+        The list of blocking schedule groups to filter offer constraints
+
+        :return: The journey_blocking_schedule_group_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_blocking_schedule_group_ids
+
+    @journey_blocking_schedule_group_ids.setter
+    def journey_blocking_schedule_group_ids(self, journey_blocking_schedule_group_ids):
+        """
+        Sets the journey_blocking_schedule_group_ids of this ViewFilter.
+        The list of blocking schedule groups to filter offer constraints
+
+        :param journey_blocking_schedule_group_ids: The journey_blocking_schedule_group_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_blocking_schedule_group_ids = journey_blocking_schedule_group_ids
+
+    @property
+    def journey_blocking_emergency_schedule_group_ids(self):
+        """
+        Gets the journey_blocking_emergency_schedule_group_ids of this ViewFilter.
+        The list of emergency schedule groups to filter offer constraints
+
+        :return: The journey_blocking_emergency_schedule_group_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_blocking_emergency_schedule_group_ids
+
+    @journey_blocking_emergency_schedule_group_ids.setter
+    def journey_blocking_emergency_schedule_group_ids(self, journey_blocking_emergency_schedule_group_ids):
+        """
+        Sets the journey_blocking_emergency_schedule_group_ids of this ViewFilter.
+        The list of emergency schedule groups to filter offer constraints
+
+        :param journey_blocking_emergency_schedule_group_ids: The journey_blocking_emergency_schedule_group_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_blocking_emergency_schedule_group_ids = journey_blocking_emergency_schedule_group_ids
+
+    @property
+    def journey_url_equal_conditions(self):
+        """
+        Gets the journey_url_equal_conditions of this ViewFilter.
+        The list of url equal conditions to filter offer constraints
+
+        :return: The journey_url_equal_conditions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_url_equal_conditions
+
+    @journey_url_equal_conditions.setter
+    def journey_url_equal_conditions(self, journey_url_equal_conditions):
+        """
+        Sets the journey_url_equal_conditions of this ViewFilter.
+        The list of url equal conditions to filter offer constraints
+
+        :param journey_url_equal_conditions: The journey_url_equal_conditions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_url_equal_conditions = journey_url_equal_conditions
+
+    @property
+    def journey_url_not_equal_conditions(self):
+        """
+        Gets the journey_url_not_equal_conditions of this ViewFilter.
+        The list of url not equal conditions to filter offer constraints
+
+        :return: The journey_url_not_equal_conditions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_url_not_equal_conditions
+
+    @journey_url_not_equal_conditions.setter
+    def journey_url_not_equal_conditions(self, journey_url_not_equal_conditions):
+        """
+        Sets the journey_url_not_equal_conditions of this ViewFilter.
+        The list of url not equal conditions to filter offer constraints
+
+        :param journey_url_not_equal_conditions: The journey_url_not_equal_conditions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_url_not_equal_conditions = journey_url_not_equal_conditions
+
+    @property
+    def journey_url_starts_with_conditions(self):
+        """
+        Gets the journey_url_starts_with_conditions of this ViewFilter.
+        The list of url starts with conditions to filter offer constraints
+
+        :return: The journey_url_starts_with_conditions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_url_starts_with_conditions
+
+    @journey_url_starts_with_conditions.setter
+    def journey_url_starts_with_conditions(self, journey_url_starts_with_conditions):
+        """
+        Sets the journey_url_starts_with_conditions of this ViewFilter.
+        The list of url starts with conditions to filter offer constraints
+
+        :param journey_url_starts_with_conditions: The journey_url_starts_with_conditions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_url_starts_with_conditions = journey_url_starts_with_conditions
+
+    @property
+    def journey_url_ends_with_conditions(self):
+        """
+        Gets the journey_url_ends_with_conditions of this ViewFilter.
+        The list of url ends with conditions to filter offer constraints
+
+        :return: The journey_url_ends_with_conditions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_url_ends_with_conditions
+
+    @journey_url_ends_with_conditions.setter
+    def journey_url_ends_with_conditions(self, journey_url_ends_with_conditions):
+        """
+        Sets the journey_url_ends_with_conditions of this ViewFilter.
+        The list of url ends with conditions to filter offer constraints
+
+        :param journey_url_ends_with_conditions: The journey_url_ends_with_conditions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_url_ends_with_conditions = journey_url_ends_with_conditions
+
+    @property
+    def journey_url_contains_any_conditions(self):
+        """
+        Gets the journey_url_contains_any_conditions of this ViewFilter.
+        The list of url contains any conditions to filter offer constraints
+
+        :return: The journey_url_contains_any_conditions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_url_contains_any_conditions
+
+    @journey_url_contains_any_conditions.setter
+    def journey_url_contains_any_conditions(self, journey_url_contains_any_conditions):
+        """
+        Sets the journey_url_contains_any_conditions of this ViewFilter.
+        The list of url contains any conditions to filter offer constraints
+
+        :param journey_url_contains_any_conditions: The journey_url_contains_any_conditions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_url_contains_any_conditions = journey_url_contains_any_conditions
+
+    @property
+    def journey_url_not_contains_any_conditions(self):
+        """
+        Gets the journey_url_not_contains_any_conditions of this ViewFilter.
+        The list of url not contains any conditions to filter offer constraints
+
+        :return: The journey_url_not_contains_any_conditions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_url_not_contains_any_conditions
+
+    @journey_url_not_contains_any_conditions.setter
+    def journey_url_not_contains_any_conditions(self, journey_url_not_contains_any_conditions):
+        """
+        Sets the journey_url_not_contains_any_conditions of this ViewFilter.
+        The list of url not contains any conditions to filter offer constraints
+
+        :param journey_url_not_contains_any_conditions: The journey_url_not_contains_any_conditions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_url_not_contains_any_conditions = journey_url_not_contains_any_conditions
+
+    @property
+    def journey_url_contains_all_conditions(self):
+        """
+        Gets the journey_url_contains_all_conditions of this ViewFilter.
+        The list of url contains all conditions to filter offer constraints
+
+        :return: The journey_url_contains_all_conditions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_url_contains_all_conditions
+
+    @journey_url_contains_all_conditions.setter
+    def journey_url_contains_all_conditions(self, journey_url_contains_all_conditions):
+        """
+        Sets the journey_url_contains_all_conditions of this ViewFilter.
+        The list of url contains all conditions to filter offer constraints
+
+        :param journey_url_contains_all_conditions: The journey_url_contains_all_conditions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_url_contains_all_conditions = journey_url_contains_all_conditions
+
+    @property
+    def journey_url_not_contains_all_conditions(self):
+        """
+        Gets the journey_url_not_contains_all_conditions of this ViewFilter.
+        The list of url not contains all conditions to filter offer constraints
+
+        :return: The journey_url_not_contains_all_conditions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_url_not_contains_all_conditions
+
+    @journey_url_not_contains_all_conditions.setter
+    def journey_url_not_contains_all_conditions(self, journey_url_not_contains_all_conditions):
+        """
+        Sets the journey_url_not_contains_all_conditions of this ViewFilter.
+        The list of url not contains all conditions to filter offer constraints
+
+        :param journey_url_not_contains_all_conditions: The journey_url_not_contains_all_conditions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_url_not_contains_all_conditions = journey_url_not_contains_all_conditions
 
     def to_dict(self):
         """

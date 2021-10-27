@@ -51,7 +51,8 @@ class CreateCallRequest(object):
             'routing_skills_ids': 'list[str]',
             'conversation_ids': 'list[str]',
             'participants': 'list[Destination]',
-            'uui_data': 'str'
+            'uui_data': 'str',
+            'external_contact_id': 'str'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class CreateCallRequest(object):
             'routing_skills_ids': 'routingSkillsIds',
             'conversation_ids': 'conversationIds',
             'participants': 'participants',
-            'uui_data': 'uuiData'
+            'uui_data': 'uuiData',
+            'external_contact_id': 'externalContactId'
         }
 
         self._phone_number = None
@@ -81,6 +83,7 @@ class CreateCallRequest(object):
         self._conversation_ids = None
         self._participants = None
         self._uui_data = None
+        self._external_contact_id = None
 
     @property
     def phone_number(self):
@@ -357,6 +360,29 @@ class CreateCallRequest(object):
         """
         
         self._uui_data = uui_data
+
+    @property
+    def external_contact_id(self):
+        """
+        Gets the external_contact_id of this CreateCallRequest.
+        The external contact with which to associate the call.
+
+        :return: The external_contact_id of this CreateCallRequest.
+        :rtype: str
+        """
+        return self._external_contact_id
+
+    @external_contact_id.setter
+    def external_contact_id(self, external_contact_id):
+        """
+        Sets the external_contact_id of this CreateCallRequest.
+        The external contact with which to associate the call.
+
+        :param external_contact_id: The external_contact_id of this CreateCallRequest.
+        :type: str
+        """
+        
+        self._external_contact_id = external_contact_id
 
     def to_dict(self):
         """

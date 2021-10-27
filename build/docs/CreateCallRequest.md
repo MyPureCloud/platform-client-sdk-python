@@ -19,6 +19,7 @@ title: CreateCallRequest
 | **conversation_ids** | **list[str]** | The list of existing call conversations to merge into a new ad-hoc conference. | [optional] |
 | **participants** | [**list[Destination]**](Destination.html) | The list of participants to call to create a new ad-hoc conference. | [optional] |
 | **uui_data** | **str** | User to User Information (UUI) data managed by SIP session application. | [optional] |
+| **external_contact_id** | **str** | The external contact with which to associate the call. | [optional] |
 {: class="table table-striped"}
 
 

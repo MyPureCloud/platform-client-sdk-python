@@ -79,7 +79,7 @@ class MessageStickerAttachment(object):
     def id(self):
         """
         Gets the id of this MessageStickerAttachment.
-
+        A globally unique identifier for the media object.
 
         :return: The id of this MessageStickerAttachment.
         :rtype: str
@@ -90,7 +90,7 @@ class MessageStickerAttachment(object):
     def id(self, id):
         """
         Sets the id of this MessageStickerAttachment.
-
+        A globally unique identifier for the media object.
 
         :param id: The id of this MessageStickerAttachment.
         :type: str

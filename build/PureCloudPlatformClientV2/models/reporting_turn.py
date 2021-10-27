@@ -254,7 +254,7 @@ class ReportingTurn(object):
         :param ask_action_result: The ask_action_result of this ReportingTurn.
         :type: str
         """
-        allowed_values = ["SuccessCollection", "SuccessConfirmationYes", "SuccessConfirmationNo", "NoMatchCollection", "NoMatchConfirmation", "AgentRequestedByUser", "ConfirmationRequired", "Error", "NoInputCollection", "NoInputConfirmation", "DisambiguationRequired", "SuccessDisambiguation", "SuccessDisambiguationNone", "NoMatchDisambiguation", "NoInputDisambiguation"]
+        allowed_values = ["SuccessCollection", "SuccessConfirmationYes", "SuccessConfirmationNo", "NoMatchCollection", "NoMatchConfirmation", "AgentRequestedByUser", "ConfirmationRequired", "Error", "ExpressionError", "NoInputCollection", "NoInputConfirmation", "DisambiguationRequired", "SuccessDisambiguation", "SuccessDisambiguationNone", "NoMatchDisambiguation", "NoInputDisambiguation"]
         if ask_action_result.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for ask_action_result -> " + ask_action_result)
             self._ask_action_result = "outdated_sdk_version"
@@ -265,7 +265,7 @@ class ReportingTurn(object):
     def conversation(self):
         """
         Gets the conversation of this ReportingTurn.
-        The conversation details, across potentially multiple Cicero sessions.
+        The conversation details, across potentially multiple Bot Flow sessions.
 
         :return: The conversation of this ReportingTurn.
         :rtype: AddressableEntityRef
@@ -276,7 +276,7 @@ class ReportingTurn(object):
     def conversation(self, conversation):
         """
         Sets the conversation of this ReportingTurn.
-        The conversation details, across potentially multiple Cicero sessions.
+        The conversation details, across potentially multiple Bot Flow sessions.
 
         :param conversation: The conversation of this ReportingTurn.
         :type: AddressableEntityRef

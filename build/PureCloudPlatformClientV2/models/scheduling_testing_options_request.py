@@ -43,20 +43,23 @@ class SchedulingTestingOptionsRequest(object):
             'fast_scheduling': 'bool',
             'delay_scheduling': 'bool',
             'fail_scheduling': 'bool',
-            'populate_warnings': 'bool'
+            'populate_warnings': 'bool',
+            'populate_deprecated_warnings': 'bool'
         }
 
         self.attribute_map = {
             'fast_scheduling': 'fastScheduling',
             'delay_scheduling': 'delayScheduling',
             'fail_scheduling': 'failScheduling',
-            'populate_warnings': 'populateWarnings'
+            'populate_warnings': 'populateWarnings',
+            'populate_deprecated_warnings': 'populateDeprecatedWarnings'
         }
 
         self._fast_scheduling = None
         self._delay_scheduling = None
         self._fail_scheduling = None
         self._populate_warnings = None
+        self._populate_deprecated_warnings = None
 
     @property
     def fast_scheduling(self):
@@ -149,6 +152,29 @@ class SchedulingTestingOptionsRequest(object):
         """
         
         self._populate_warnings = populate_warnings
+
+    @property
+    def populate_deprecated_warnings(self):
+        """
+        Gets the populate_deprecated_warnings of this SchedulingTestingOptionsRequest.
+        Whether to populate deprecated warnings in the generated schedule
+
+        :return: The populate_deprecated_warnings of this SchedulingTestingOptionsRequest.
+        :rtype: bool
+        """
+        return self._populate_deprecated_warnings
+
+    @populate_deprecated_warnings.setter
+    def populate_deprecated_warnings(self, populate_deprecated_warnings):
+        """
+        Sets the populate_deprecated_warnings of this SchedulingTestingOptionsRequest.
+        Whether to populate deprecated warnings in the generated schedule
+
+        :param populate_deprecated_warnings: The populate_deprecated_warnings of this SchedulingTestingOptionsRequest.
+        :type: bool
+        """
+        
+        self._populate_deprecated_warnings = populate_deprecated_warnings
 
     def to_dict(self):
         """

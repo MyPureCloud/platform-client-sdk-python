@@ -138,7 +138,7 @@ class MessageMediaAttachment(object):
     def name(self):
         """
         Gets the name of this MessageMediaAttachment.
-
+        The name of the media object.
 
         :return: The name of this MessageMediaAttachment.
         :rtype: str
@@ -149,7 +149,7 @@ class MessageMediaAttachment(object):
     def name(self, name):
         """
         Sets the name of this MessageMediaAttachment.
-
+        The name of the media object.
 
         :param name: The name of this MessageMediaAttachment.
         :type: str
@@ -161,7 +161,7 @@ class MessageMediaAttachment(object):
     def id(self):
         """
         Gets the id of this MessageMediaAttachment.
-
+        A globally unique identifier for the media object.
 
         :return: The id of this MessageMediaAttachment.
         :rtype: str
@@ -172,7 +172,7 @@ class MessageMediaAttachment(object):
     def id(self, id):
         """
         Sets the id of this MessageMediaAttachment.
-
+        A globally unique identifier for the media object.
 
         :param id: The id of this MessageMediaAttachment.
         :type: str

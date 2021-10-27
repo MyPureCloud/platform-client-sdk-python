@@ -54,7 +54,8 @@ class CreateEmailRequest(object):
             'subject': 'str',
             'direction': 'str',
             'html_body': 'str',
-            'text_body': 'str'
+            'text_body': 'str',
+            'external_contact_id': 'str'
         }
 
         self.attribute_map = {
@@ -72,7 +73,8 @@ class CreateEmailRequest(object):
             'subject': 'subject',
             'direction': 'direction',
             'html_body': 'htmlBody',
-            'text_body': 'textBody'
+            'text_body': 'textBody',
+            'external_contact_id': 'externalContactId'
         }
 
         self._queue_id = None
@@ -90,6 +92,7 @@ class CreateEmailRequest(object):
         self._direction = None
         self._html_body = None
         self._text_body = None
+        self._external_contact_id = None
 
     @property
     def queue_id(self):
@@ -439,6 +442,29 @@ class CreateEmailRequest(object):
         """
         
         self._text_body = text_body
+
+    @property
+    def external_contact_id(self):
+        """
+        Gets the external_contact_id of this CreateEmailRequest.
+        The external contact with which the email should be associated. This field is only valid for OUTBOUND email.
+
+        :return: The external_contact_id of this CreateEmailRequest.
+        :rtype: str
+        """
+        return self._external_contact_id
+
+    @external_contact_id.setter
+    def external_contact_id(self, external_contact_id):
+        """
+        Sets the external_contact_id of this CreateEmailRequest.
+        The external contact with which the email should be associated. This field is only valid for OUTBOUND email.
+
+        :param external_contact_id: The external_contact_id of this CreateEmailRequest.
+        :type: str
+        """
+        
+        self._external_contact_id = external_contact_id
 
     def to_dict(self):
         """

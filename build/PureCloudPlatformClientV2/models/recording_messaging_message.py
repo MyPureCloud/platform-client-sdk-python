@@ -48,7 +48,9 @@ class RecordingMessagingMessage(object):
             'id': 'str',
             'message_text': 'str',
             'message_media_attachments': 'list[MessageMediaAttachment]',
-            'message_sticker_attachments': 'list[MessageStickerAttachment]'
+            'message_sticker_attachments': 'list[MessageStickerAttachment]',
+            'quick_replies': 'list[QuickReply]',
+            'button_response': 'ButtonResponse'
         }
 
         self.attribute_map = {
@@ -60,7 +62,9 @@ class RecordingMessagingMessage(object):
             'id': 'id',
             'message_text': 'messageText',
             'message_media_attachments': 'messageMediaAttachments',
-            'message_sticker_attachments': 'messageStickerAttachments'
+            'message_sticker_attachments': 'messageStickerAttachments',
+            'quick_replies': 'quickReplies',
+            'button_response': 'buttonResponse'
         }
 
         self._pcFrom = None
@@ -72,12 +76,14 @@ class RecordingMessagingMessage(object):
         self._message_text = None
         self._message_media_attachments = None
         self._message_sticker_attachments = None
+        self._quick_replies = None
+        self._button_response = None
 
     @property
     def pcFrom(self):
         """
         Gets the pcFrom of this RecordingMessagingMessage.
-
+        The message sender session id.
 
         :return: The pcFrom of this RecordingMessagingMessage.
         :rtype: str
@@ -88,7 +94,7 @@ class RecordingMessagingMessage(object):
     def pcFrom(self, pcFrom):
         """
         Sets the pcFrom of this RecordingMessagingMessage.
-
+        The message sender session id.
 
         :param pcFrom: The pcFrom of this RecordingMessagingMessage.
         :type: str
@@ -100,7 +106,7 @@ class RecordingMessagingMessage(object):
     def from_user(self):
         """
         Gets the from_user of this RecordingMessagingMessage.
-
+        The user who sent this message.
 
         :return: The from_user of this RecordingMessagingMessage.
         :rtype: User
@@ -111,7 +117,7 @@ class RecordingMessagingMessage(object):
     def from_user(self, from_user):
         """
         Sets the from_user of this RecordingMessagingMessage.
-
+        The user who sent this message.
 
         :param from_user: The from_user of this RecordingMessagingMessage.
         :type: User
@@ -123,7 +129,7 @@ class RecordingMessagingMessage(object):
     def from_external_contact(self):
         """
         Gets the from_external_contact of this RecordingMessagingMessage.
-
+        The PureCloud external contact sender details.
 
         :return: The from_external_contact of this RecordingMessagingMessage.
         :rtype: ExternalContact
@@ -134,7 +140,7 @@ class RecordingMessagingMessage(object):
     def from_external_contact(self, from_external_contact):
         """
         Sets the from_external_contact of this RecordingMessagingMessage.
-
+        The PureCloud external contact sender details.
 
         :param from_external_contact: The from_external_contact of this RecordingMessagingMessage.
         :type: ExternalContact
@@ -146,7 +152,7 @@ class RecordingMessagingMessage(object):
     def to(self):
         """
         Gets the to of this RecordingMessagingMessage.
-
+        The message recipient.
 
         :return: The to of this RecordingMessagingMessage.
         :rtype: str
@@ -157,7 +163,7 @@ class RecordingMessagingMessage(object):
     def to(self, to):
         """
         Sets the to of this RecordingMessagingMessage.
-
+        The message recipient.
 
         :param to: The to of this RecordingMessagingMessage.
         :type: str
@@ -169,7 +175,7 @@ class RecordingMessagingMessage(object):
     def timestamp(self):
         """
         Gets the timestamp of this RecordingMessagingMessage.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The timestamp of this RecordingMessagingMessage.
         :rtype: datetime
@@ -180,7 +186,7 @@ class RecordingMessagingMessage(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this RecordingMessagingMessage.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param timestamp: The timestamp of this RecordingMessagingMessage.
         :type: datetime
@@ -192,7 +198,7 @@ class RecordingMessagingMessage(object):
     def id(self):
         """
         Gets the id of this RecordingMessagingMessage.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this RecordingMessagingMessage.
         :rtype: str
@@ -203,7 +209,7 @@ class RecordingMessagingMessage(object):
     def id(self, id):
         """
         Sets the id of this RecordingMessagingMessage.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this RecordingMessagingMessage.
         :type: str
@@ -215,7 +221,7 @@ class RecordingMessagingMessage(object):
     def message_text(self):
         """
         Gets the message_text of this RecordingMessagingMessage.
-
+        The content of this message.
 
         :return: The message_text of this RecordingMessagingMessage.
         :rtype: str
@@ -226,7 +232,7 @@ class RecordingMessagingMessage(object):
     def message_text(self, message_text):
         """
         Sets the message_text of this RecordingMessagingMessage.
-
+        The content of this message.
 
         :param message_text: The message_text of this RecordingMessagingMessage.
         :type: str
@@ -238,7 +244,7 @@ class RecordingMessagingMessage(object):
     def message_media_attachments(self):
         """
         Gets the message_media_attachments of this RecordingMessagingMessage.
-
+        List of media objects attached  with this message.
 
         :return: The message_media_attachments of this RecordingMessagingMessage.
         :rtype: list[MessageMediaAttachment]
@@ -249,7 +255,7 @@ class RecordingMessagingMessage(object):
     def message_media_attachments(self, message_media_attachments):
         """
         Sets the message_media_attachments of this RecordingMessagingMessage.
-
+        List of media objects attached  with this message.
 
         :param message_media_attachments: The message_media_attachments of this RecordingMessagingMessage.
         :type: list[MessageMediaAttachment]
@@ -261,7 +267,7 @@ class RecordingMessagingMessage(object):
     def message_sticker_attachments(self):
         """
         Gets the message_sticker_attachments of this RecordingMessagingMessage.
-
+        List of message stickers attached with this message.
 
         :return: The message_sticker_attachments of this RecordingMessagingMessage.
         :rtype: list[MessageStickerAttachment]
@@ -272,13 +278,59 @@ class RecordingMessagingMessage(object):
     def message_sticker_attachments(self, message_sticker_attachments):
         """
         Sets the message_sticker_attachments of this RecordingMessagingMessage.
-
+        List of message stickers attached with this message.
 
         :param message_sticker_attachments: The message_sticker_attachments of this RecordingMessagingMessage.
         :type: list[MessageStickerAttachment]
         """
         
         self._message_sticker_attachments = message_sticker_attachments
+
+    @property
+    def quick_replies(self):
+        """
+        Gets the quick_replies of this RecordingMessagingMessage.
+        List of quick reply options offered with this message.
+
+        :return: The quick_replies of this RecordingMessagingMessage.
+        :rtype: list[QuickReply]
+        """
+        return self._quick_replies
+
+    @quick_replies.setter
+    def quick_replies(self, quick_replies):
+        """
+        Sets the quick_replies of this RecordingMessagingMessage.
+        List of quick reply options offered with this message.
+
+        :param quick_replies: The quick_replies of this RecordingMessagingMessage.
+        :type: list[QuickReply]
+        """
+        
+        self._quick_replies = quick_replies
+
+    @property
+    def button_response(self):
+        """
+        Gets the button_response of this RecordingMessagingMessage.
+        Button Response selected by user for this message.
+
+        :return: The button_response of this RecordingMessagingMessage.
+        :rtype: ButtonResponse
+        """
+        return self._button_response
+
+    @button_response.setter
+    def button_response(self, button_response):
+        """
+        Sets the button_response of this RecordingMessagingMessage.
+        Button Response selected by user for this message.
+
+        :param button_response: The button_response of this RecordingMessagingMessage.
+        :type: ButtonResponse
+        """
+        
+        self._button_response = button_response
 
     def to_dict(self):
         """

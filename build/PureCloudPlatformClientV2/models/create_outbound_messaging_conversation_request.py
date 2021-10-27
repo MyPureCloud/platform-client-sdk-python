@@ -44,8 +44,7 @@ class CreateOutboundMessagingConversationRequest(object):
             'to_address': 'str',
             'to_address_messenger_type': 'str',
             'use_existing_conversation': 'bool',
-            'external_contact_id': 'str',
-            'external_organization_id': 'str'
+            'external_contact_id': 'str'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class CreateOutboundMessagingConversationRequest(object):
             'to_address': 'toAddress',
             'to_address_messenger_type': 'toAddressMessengerType',
             'use_existing_conversation': 'useExistingConversation',
-            'external_contact_id': 'externalContactId',
-            'external_organization_id': 'externalOrganizationId'
+            'external_contact_id': 'externalContactId'
         }
 
         self._queue_id = None
@@ -62,7 +60,6 @@ class CreateOutboundMessagingConversationRequest(object):
         self._to_address_messenger_type = None
         self._use_existing_conversation = None
         self._external_contact_id = None
-        self._external_organization_id = None
 
     @property
     def queue_id(self):
@@ -164,7 +161,7 @@ class CreateOutboundMessagingConversationRequest(object):
     def external_contact_id(self):
         """
         Gets the external_contact_id of this CreateOutboundMessagingConversationRequest.
-        The external contact Id of the recipient of the message.
+        The external contact with which the message will be associated.
 
         :return: The external_contact_id of this CreateOutboundMessagingConversationRequest.
         :rtype: str
@@ -175,36 +172,13 @@ class CreateOutboundMessagingConversationRequest(object):
     def external_contact_id(self, external_contact_id):
         """
         Sets the external_contact_id of this CreateOutboundMessagingConversationRequest.
-        The external contact Id of the recipient of the message.
+        The external contact with which the message will be associated.
 
         :param external_contact_id: The external_contact_id of this CreateOutboundMessagingConversationRequest.
         :type: str
         """
         
         self._external_contact_id = external_contact_id
-
-    @property
-    def external_organization_id(self):
-        """
-        Gets the external_organization_id of this CreateOutboundMessagingConversationRequest.
-        The external organization Id of the recipient of the message.
-
-        :return: The external_organization_id of this CreateOutboundMessagingConversationRequest.
-        :rtype: str
-        """
-        return self._external_organization_id
-
-    @external_organization_id.setter
-    def external_organization_id(self, external_organization_id):
-        """
-        Sets the external_organization_id of this CreateOutboundMessagingConversationRequest.
-        The external organization Id of the recipient of the message.
-
-        :param external_organization_id: The external_organization_id of this CreateOutboundMessagingConversationRequest.
-        :type: str
-        """
-        
-        self._external_organization_id = external_organization_id
 
     def to_dict(self):
         """

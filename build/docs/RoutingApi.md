@@ -3382,7 +3382,7 @@ except ApiException as e:
 
 Update attributes of an in-queue conversation
 
-Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
+Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
 
 Wraps PATCH /api/v2/routing/conversations/{conversationId} 
 

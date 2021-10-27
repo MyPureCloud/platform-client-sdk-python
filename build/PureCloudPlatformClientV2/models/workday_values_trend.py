@@ -42,30 +42,36 @@ class WorkdayValuesTrend(object):
         self.swagger_types = {
             'date_start_workday': 'date',
             'date_end_workday': 'date',
+            'date_reference_workday': 'date',
             'division': 'Division',
             'user': 'UserReference',
             'timezone': 'str',
             'results': 'list[WorkdayValuesMetricItem]',
-            'performance_profile': 'AddressableEntityRef'
+            'performance_profile': 'AddressableEntityRef',
+            'metric': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
             'date_start_workday': 'dateStartWorkday',
             'date_end_workday': 'dateEndWorkday',
+            'date_reference_workday': 'dateReferenceWorkday',
             'division': 'division',
             'user': 'user',
             'timezone': 'timezone',
             'results': 'results',
-            'performance_profile': 'performanceProfile'
+            'performance_profile': 'performanceProfile',
+            'metric': 'metric'
         }
 
         self._date_start_workday = None
         self._date_end_workday = None
+        self._date_reference_workday = None
         self._division = None
         self._user = None
         self._timezone = None
         self._results = None
         self._performance_profile = None
+        self._metric = None
 
     @property
     def date_start_workday(self):
@@ -112,6 +118,29 @@ class WorkdayValuesTrend(object):
         """
         
         self._date_end_workday = date_end_workday
+
+    @property
+    def date_reference_workday(self):
+        """
+        Gets the date_reference_workday of this WorkdayValuesTrend.
+        The reference workday used to determine the metric definition. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :return: The date_reference_workday of this WorkdayValuesTrend.
+        :rtype: date
+        """
+        return self._date_reference_workday
+
+    @date_reference_workday.setter
+    def date_reference_workday(self, date_reference_workday):
+        """
+        Sets the date_reference_workday of this WorkdayValuesTrend.
+        The reference workday used to determine the metric definition. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :param date_reference_workday: The date_reference_workday of this WorkdayValuesTrend.
+        :type: date
+        """
+        
+        self._date_reference_workday = date_reference_workday
 
     @property
     def division(self):
@@ -227,6 +256,29 @@ class WorkdayValuesTrend(object):
         """
         
         self._performance_profile = performance_profile
+
+    @property
+    def metric(self):
+        """
+        Gets the metric of this WorkdayValuesTrend.
+        The targeted metric for the average points
+
+        :return: The metric of this WorkdayValuesTrend.
+        :rtype: AddressableEntityRef
+        """
+        return self._metric
+
+    @metric.setter
+    def metric(self, metric):
+        """
+        Sets the metric of this WorkdayValuesTrend.
+        The targeted metric for the average points
+
+        :param metric: The metric of this WorkdayValuesTrend.
+        :type: AddressableEntityRef
+        """
+        
+        self._metric = metric
 
     def to_dict(self):
         """

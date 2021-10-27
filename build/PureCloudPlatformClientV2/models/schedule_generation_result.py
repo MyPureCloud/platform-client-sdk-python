@@ -85,7 +85,7 @@ class ScheduleGenerationResult(object):
     def run_id(self):
         """
         Gets the run_id of this ScheduleGenerationResult.
-        The run ID for the schedule generation. Reference this when requesting support
+        The ID of the schedule generation run. Reference this when requesting support
 
         :return: The run_id of this ScheduleGenerationResult.
         :rtype: str
@@ -96,7 +96,7 @@ class ScheduleGenerationResult(object):
     def run_id(self, run_id):
         """
         Sets the run_id of this ScheduleGenerationResult.
-        The run ID for the schedule generation. Reference this when requesting support
+        The ID of the schedule generation run. Reference this when requesting support
 
         :param run_id: The run_id of this ScheduleGenerationResult.
         :type: str

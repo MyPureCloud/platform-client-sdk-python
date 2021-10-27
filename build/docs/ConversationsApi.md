@@ -173,6 +173,7 @@ Wraps DELETE /api/v2/analytics/conversations/details/jobs/{jobId}
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example
 
@@ -782,6 +783,7 @@ Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example
 
@@ -833,6 +835,7 @@ Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}/results
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example
 
@@ -5508,6 +5511,7 @@ Wraps POST /api/v2/analytics/conversations/details/jobs
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example
 
@@ -5559,6 +5563,7 @@ Wraps POST /api/v2/analytics/conversations/details/query
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example
 

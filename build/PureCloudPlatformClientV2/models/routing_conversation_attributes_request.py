@@ -59,7 +59,7 @@ class RoutingConversationAttributesRequest(object):
     def priority(self):
         """
         Gets the priority of this RoutingConversationAttributesRequest.
-        Priority to be updated on in-queue conversation. Range:[-25000000, 25000000]
+        Priority for the conversation.  Each point of priority is equivalent to one minute of time in queue.  Range:[-25000000, 25000000].  To reset, specify 0.
 
         :return: The priority of this RoutingConversationAttributesRequest.
         :rtype: int
@@ -70,7 +70,7 @@ class RoutingConversationAttributesRequest(object):
     def priority(self, priority):
         """
         Sets the priority of this RoutingConversationAttributesRequest.
-        Priority to be updated on in-queue conversation. Range:[-25000000, 25000000]
+        Priority for the conversation.  Each point of priority is equivalent to one minute of time in queue.  Range:[-25000000, 25000000].  To reset, specify 0.
 
         :param priority: The priority of this RoutingConversationAttributesRequest.
         :type: int
@@ -89,7 +89,7 @@ class RoutingConversationAttributesRequest(object):
     def skill_ids(self):
         """
         Gets the skill_ids of this RoutingConversationAttributesRequest.
-        Skills to be updated on in-queue conversation.
+        Skill requirements for the conversation.  To remove all skill requirements, specify an empty list, i.e. [].
 
         :return: The skill_ids of this RoutingConversationAttributesRequest.
         :rtype: list[str]
@@ -100,7 +100,7 @@ class RoutingConversationAttributesRequest(object):
     def skill_ids(self, skill_ids):
         """
         Sets the skill_ids of this RoutingConversationAttributesRequest.
-        Skills to be updated on in-queue conversation.
+        Skill requirements for the conversation.  To remove all skill requirements, specify an empty list, i.e. [].
 
         :param skill_ids: The skill_ids of this RoutingConversationAttributesRequest.
         :type: list[str]
@@ -112,7 +112,7 @@ class RoutingConversationAttributesRequest(object):
     def language_id(self):
         """
         Gets the language_id of this RoutingConversationAttributesRequest.
-        Language required on the in-queue conversation.
+        Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \"\".
 
         :return: The language_id of this RoutingConversationAttributesRequest.
         :rtype: str
@@ -123,7 +123,7 @@ class RoutingConversationAttributesRequest(object):
     def language_id(self, language_id):
         """
         Sets the language_id of this RoutingConversationAttributesRequest.
-        Language required on the in-queue conversation.
+        Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \"\".
 
         :param language_id: The language_id of this RoutingConversationAttributesRequest.
         :type: str

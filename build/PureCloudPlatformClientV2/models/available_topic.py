@@ -395,7 +395,7 @@ class AvailableTopic(object):
     def topic_parameters(self):
         """
         Gets the topic_parameters of this AvailableTopic.
-        Parameters in the topic name that can be substituted
+        Parameters in the topic name that can be substituted, in the order they appear in the topic name
 
         :return: The topic_parameters of this AvailableTopic.
         :rtype: list[str]
@@ -406,7 +406,7 @@ class AvailableTopic(object):
     def topic_parameters(self, topic_parameters):
         """
         Sets the topic_parameters of this AvailableTopic.
-        Parameters in the topic name that can be substituted
+        Parameters in the topic name that can be substituted, in the order they appear in the topic name
 
         :param topic_parameters: The topic_parameters of this AvailableTopic.
         :type: list[str]

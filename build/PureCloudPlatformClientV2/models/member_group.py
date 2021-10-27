@@ -137,7 +137,7 @@ class MemberGroup(object):
     def type(self):
         """
         Gets the type of this MemberGroup.
-        The type of group, e.g. TEAM, etc.
+        The group type
 
         :return: The type of this MemberGroup.
         :rtype: str
@@ -148,12 +148,12 @@ class MemberGroup(object):
     def type(self, type):
         """
         Sets the type of this MemberGroup.
-        The type of group, e.g. TEAM, etc.
+        The group type
 
         :param type: The type of this MemberGroup.
         :type: str
         """
-        allowed_values = ["TEAM"]
+        allowed_values = ["TEAM", "GROUP"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

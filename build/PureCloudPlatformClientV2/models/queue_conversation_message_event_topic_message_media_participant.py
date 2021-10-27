@@ -1001,7 +1001,7 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         :param type: The type of this QueueConversationMessageEventTopicMessageMediaParticipant.
         :type: str
         """
-        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "VIBER", "WECHAT", "WHATSAPP", "TELEGRAM", "KAKAO", "WEBMESSAGING", "OPEN"]
+        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "VIBER", "WECHAT", "WHATSAPP", "TELEGRAM", "KAKAO", "WEBMESSAGING", "OPEN", "INSTAGRAM"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

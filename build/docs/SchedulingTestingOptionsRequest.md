@@ -11,6 +11,7 @@ title: SchedulingTestingOptionsRequest
 | **delay_scheduling** | **bool** | Whether to force delayed scheduling | [optional] |
 | **fail_scheduling** | **bool** | Whether to force scheduling to fail | [optional] |
 | **populate_warnings** | **bool** | Whether to populate warnings in the generated schedule | [optional] |
+| **populate_deprecated_warnings** | **bool** | Whether to populate deprecated warnings in the generated schedule | [optional] |
 {: class="table table-striped"}
 
 

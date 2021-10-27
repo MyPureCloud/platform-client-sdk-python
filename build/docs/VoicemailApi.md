@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_voicemail_search**](VoicemailApi.html#post_voicemail_search) | Search voicemails|
 |[**put_voicemail_message**](VoicemailApi.html#put_voicemail_message) | Update a voicemail message|
 |[**put_voicemail_policy**](VoicemailApi.html#put_voicemail_policy) | Update a policy|
+|[**put_voicemail_userpolicy**](VoicemailApi.html#put_voicemail_userpolicy) | Update a user&#39;s voicemail policy|
 {: class="table table-striped"}
 
 <a name="delete_voicemail_message"></a>
@@ -1244,4 +1245,57 @@ except ApiException as e:
 ### Return type
 
 [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+
+<a name="put_voicemail_userpolicy"></a>
+
+## [**VoicemailUserPolicy**](VoicemailUserPolicy.html) put_voicemail_userpolicy(user_id, body)
+
+
+
+Update a user's voicemail policy
+
+
+
+Wraps PUT /api/v2/voicemail/userpolicies/{userId} 
+
+Requires ALL permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.VoicemailApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.VoicemailUserPolicy() # VoicemailUserPolicy | The user's voicemail policy
+
+try:
+    # Update a user's voicemail policy
+    api_response = api_instance.put_voicemail_userpolicy(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VoicemailApi->put_voicemail_userpolicy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
 

@@ -5038,7 +5038,7 @@ class RoutingApi(object):
     def patch_routing_conversation(self, conversation_id, body, **kwargs):
         """
         Update attributes of an in-queue conversation
-        Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
+        Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

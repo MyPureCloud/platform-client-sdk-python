@@ -424,7 +424,7 @@ class Schedule(object):
     def rrule(self):
         """
         Gets the rrule of this Schedule.
-        An iCal Recurrence Rule (RRULE) string.
+        An iCal Recurrence Rule (RRULE) string. It is required to be set for schedules determining when upgrades to the Edge software can be applied.
 
         :return: The rrule of this Schedule.
         :rtype: str
@@ -435,7 +435,7 @@ class Schedule(object):
     def rrule(self, rrule):
         """
         Sets the rrule of this Schedule.
-        An iCal Recurrence Rule (RRULE) string.
+        An iCal Recurrence Rule (RRULE) string. It is required to be set for schedules determining when upgrades to the Edge software can be applied.
 
         :param rrule: The rrule of this Schedule.
         :type: str
