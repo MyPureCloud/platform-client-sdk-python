@@ -176,7 +176,8 @@ class ViewFilter(object):
             'journey_url_contains_any_conditions': 'list[str]',
             'journey_url_not_contains_any_conditions': 'list[str]',
             'journey_url_contains_all_conditions': 'list[str]',
-            'journey_url_not_contains_all_conditions': 'list[str]'
+            'journey_url_not_contains_all_conditions': 'list[str]',
+            'flow_milestone_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -316,7 +317,8 @@ class ViewFilter(object):
             'journey_url_contains_any_conditions': 'journeyUrlContainsAnyConditions',
             'journey_url_not_contains_any_conditions': 'journeyUrlNotContainsAnyConditions',
             'journey_url_contains_all_conditions': 'journeyUrlContainsAllConditions',
-            'journey_url_not_contains_all_conditions': 'journeyUrlNotContainsAllConditions'
+            'journey_url_not_contains_all_conditions': 'journeyUrlNotContainsAllConditions',
+            'flow_milestone_ids': 'flowMilestoneIds'
         }
 
         self._media_types = None
@@ -456,6 +458,7 @@ class ViewFilter(object):
         self._journey_url_not_contains_any_conditions = None
         self._journey_url_contains_all_conditions = None
         self._journey_url_not_contains_all_conditions = None
+        self._flow_milestone_ids = None
 
     @property
     def media_types(self):
@@ -3607,6 +3610,29 @@ class ViewFilter(object):
         """
         
         self._journey_url_not_contains_all_conditions = journey_url_not_contains_all_conditions
+
+    @property
+    def flow_milestone_ids(self):
+        """
+        Gets the flow_milestone_ids of this ViewFilter.
+        The list of flow milestones to filter exports
+
+        :return: The flow_milestone_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_milestone_ids
+
+    @flow_milestone_ids.setter
+    def flow_milestone_ids(self, flow_milestone_ids):
+        """
+        Sets the flow_milestone_ids of this ViewFilter.
+        The list of flow milestones to filter exports
+
+        :param flow_milestone_ids: The flow_milestone_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_milestone_ids = flow_milestone_ids
 
     def to_dict(self):
         """

@@ -675,7 +675,7 @@ void (empty response body)
 
 <a name="delete_routing_sms_phonenumber"></a>
 
-##  delete_routing_sms_phonenumber(address_id)
+##  delete_routing_sms_phonenumber(address_id, async=async)
 
 
 
@@ -703,10 +703,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 address_id = 'address_id_example' # str | Address ID
+async = false # bool | Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (optional) (default to false)
 
 try:
     # Delete a phone number provisioned for SMS.
-    api_instance.delete_routing_sms_phonenumber(address_id)
+    api_instance.delete_routing_sms_phonenumber(address_id, async=async)
 except ApiException as e:
     print("Exception when calling RoutingApi->delete_routing_sms_phonenumber: %s\n" % e)
 ```
@@ -717,6 +718,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
+| **async** | **bool**| Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2088,7 +2090,7 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
 | **skills** | [**list[str]**](str.html)| Filter by skill | [optional]  |
@@ -2163,7 +2165,7 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
@@ -4862,7 +4864,7 @@ except ApiException as e:
 
 <a name="post_routing_sms_phonenumbers"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_phonenumbers(body)
+## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_phonenumbers(body, async=async)
 
 
 
@@ -4890,10 +4892,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 body = PureCloudPlatformClientV2.SmsPhoneNumberProvision() # SmsPhoneNumberProvision | SmsPhoneNumber
+async = false # bool | Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (optional) (default to false)
 
 try:
     # Provision a phone number for SMS
-    api_response = api_instance.post_routing_sms_phonenumbers(body)
+    api_response = api_instance.post_routing_sms_phonenumbers(body, async=async)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->post_routing_sms_phonenumbers: %s\n" % e)
@@ -4905,6 +4908,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber |  |
+| **async** | **bool**| Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -5334,7 +5338,7 @@ except ApiException as e:
 
 <a name="put_routing_sms_phonenumber"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) put_routing_sms_phonenumber(address_id, body)
+## [**SmsPhoneNumber**](SmsPhoneNumber.html) put_routing_sms_phonenumber(address_id, body, async=async)
 
 
 
@@ -5363,10 +5367,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 address_id = 'address_id_example' # str | Address ID
 body = PureCloudPlatformClientV2.SmsPhoneNumber() # SmsPhoneNumber | SmsPhoneNumber
+async = false # bool | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (optional) (default to false)
 
 try:
     # Update a phone number provisioned for SMS.
-    api_response = api_instance.put_routing_sms_phonenumber(address_id, body)
+    api_response = api_instance.put_routing_sms_phonenumber(address_id, body, async=async)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->put_routing_sms_phonenumber: %s\n" % e)
@@ -5379,6 +5384,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
 | **body** | [**SmsPhoneNumber**](SmsPhoneNumber.html)| SmsPhoneNumber |  |
+| **async** | **bool**| Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

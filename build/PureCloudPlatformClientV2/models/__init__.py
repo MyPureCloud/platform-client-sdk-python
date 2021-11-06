@@ -588,6 +588,7 @@ from .conversation_content_generic import ConversationContentGeneric
 from .conversation_content_location import ConversationContentLocation
 from .conversation_content_notification_template import ConversationContentNotificationTemplate
 from .conversation_content_quick_reply import ConversationContentQuickReply
+from .conversation_content_story import ConversationContentStory
 from .conversation_deletion_protection_query import ConversationDeletionProtectionQuery
 from .conversation_detail_query_clause import ConversationDetailQueryClause
 from .conversation_detail_query_filter import ConversationDetailQueryFilter
@@ -609,6 +610,7 @@ from .conversation_email_event_topic_scored_agent import ConversationEmailEventT
 from .conversation_email_event_topic_uri_reference import ConversationEmailEventTopicUriReference
 from .conversation_email_event_topic_wrapup import ConversationEmailEventTopicWrapup
 from .conversation_entity_listing import ConversationEntityListing
+from .conversation_event_co_browse import ConversationEventCoBrowse
 from .conversation_event_topic_address import ConversationEventTopicAddress
 from .conversation_event_topic_after_call_work import ConversationEventTopicAfterCallWork
 from .conversation_event_topic_attachment import ConversationEventTopicAttachment
@@ -642,6 +644,7 @@ from .conversation_event_topic_video import ConversationEventTopicVideo
 from .conversation_event_topic_voicemail import ConversationEventTopicVoicemail
 from .conversation_event_topic_wrapup import ConversationEventTopicWrapup
 from .conversation_message_content import ConversationMessageContent
+from .conversation_message_event import ConversationMessageEvent
 from .conversation_message_event_topic_conversation_routing_data import ConversationMessageEventTopicConversationRoutingData
 from .conversation_message_event_topic_detail import ConversationMessageEventTopicDetail
 from .conversation_message_event_topic_error_body import ConversationMessageEventTopicErrorBody
@@ -1361,6 +1364,10 @@ from .knowledge_base import KnowledgeBase
 from .knowledge_base_listing import KnowledgeBaseListing
 from .knowledge_category import KnowledgeCategory
 from .knowledge_category_request import KnowledgeCategoryRequest
+from .knowledge_context_request import KnowledgeContextRequest
+from .knowledge_context_response import KnowledgeContextResponse
+from .knowledge_context_value_request import KnowledgeContextValueRequest
+from .knowledge_context_value_response import KnowledgeContextValueResponse
 from .knowledge_document import KnowledgeDocument
 from .knowledge_document_bulk_request import KnowledgeDocumentBulkRequest
 from .knowledge_document_request import KnowledgeDocumentRequest
@@ -2182,6 +2189,8 @@ from .selected_columns import SelectedColumns
 from .selector_event_trigger import SelectorEventTrigger
 from .send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
 from .send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse
+from .sentiment_feedback import SentimentFeedback
+from .sentiment_feedback_entity_listing import SentimentFeedbackEntityListing
 from .sequence_schedule import SequenceSchedule
 from .server_date import ServerDate
 from .service_context import ServiceContext
@@ -2234,6 +2243,7 @@ from .sms_phone_number import SmsPhoneNumber
 from .sms_phone_number_entity_listing import SmsPhoneNumberEntityListing
 from .sms_phone_number_provision import SmsPhoneNumberProvision
 from .sms_phone_number_ref import SmsPhoneNumberRef
+from .sms_provisioning_status import SmsProvisioningStatus
 from .social_expression import SocialExpression
 from .social_handle import SocialHandle
 from .sort_item import SortItem

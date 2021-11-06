@@ -40,6 +40,7 @@ title: OrgUser
 | **acd_auto_answer** | **bool** | acd auto answer | [optional] |
 | **language_preference** | **str** | preferred language by the user | [optional] |
 | **last_token_issued** | [**OAuthLastTokenIssued**](OAuthLastTokenIssued.html) |  | [optional] |
+| **date_last_login** | **datetime** | The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **organization** | [**Organization**](Organization.html) |  | [optional] |
 {: class="table table-striped"}
 

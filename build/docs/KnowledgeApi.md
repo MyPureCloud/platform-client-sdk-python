@@ -22,6 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#get_knowledge_knowledgebase_language_trainings) | Get all trainings information for a knowledgebase|
 |[**get_knowledge_knowledgebases**](KnowledgeApi.html#get_knowledge_knowledgebases) | Get knowledge bases|
 |[**patch_knowledge_knowledgebase**](KnowledgeApi.html#patch_knowledge_knowledgebase) | Update knowledge base|
+|[**patch_knowledge_knowledgebase_context**](KnowledgeApi.html#patch_knowledge_knowledgebase_context) | Update specific context data of the knowledge base.|
+|[**patch_knowledge_knowledgebase_context_value**](KnowledgeApi.html#patch_knowledge_knowledgebase_context_value) | Update context value.|
 |[**patch_knowledge_knowledgebase_language_category**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_category) | Update category|
 |[**patch_knowledge_knowledgebase_language_document**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_document) | Update document|
 |[**patch_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_documents) | Update documents collection|
@@ -838,6 +840,118 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeBase**](KnowledgeBase.html)
+
+<a name="patch_knowledge_knowledgebase_context"></a>
+
+## [**KnowledgeContextResponse**](KnowledgeContextResponse.html) patch_knowledge_knowledgebase_context(knowledge_base_id, context_id, body=body)
+
+
+
+Update specific context data of the knowledge base.
+
+
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId} 
+
+Requires ALL permissions: 
+
+* knowledge:context:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.
+context_id = 'context_id_example' # str | Context ID.
+body = PureCloudPlatformClientV2.KnowledgeContextRequest() # KnowledgeContextRequest |  (optional)
+
+try:
+    # Update specific context data of the knowledge base.
+    api_response = api_instance.patch_knowledge_knowledgebase_context(knowledge_base_id, context_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_context: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID. |  |
+| **context_id** | **str**| Context ID. |  |
+| **body** | [**KnowledgeContextRequest**](KnowledgeContextRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeContextResponse**](KnowledgeContextResponse.html)
+
+<a name="patch_knowledge_knowledgebase_context_value"></a>
+
+## [**KnowledgeContextValueResponse**](KnowledgeContextValueResponse.html) patch_knowledge_knowledgebase_context_value(knowledge_base_id, context_id, context_value_id, body=body)
+
+
+
+Update context value.
+
+
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId} 
+
+Requires ALL permissions: 
+
+* knowledge:context:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.
+context_id = 'context_id_example' # str | Context ID.
+context_value_id = 'context_value_id_example' # str | Context Value ID.
+body = PureCloudPlatformClientV2.KnowledgeContextValueRequest() # KnowledgeContextValueRequest |  (optional)
+
+try:
+    # Update context value.
+    api_response = api_instance.patch_knowledge_knowledgebase_context_value(knowledge_base_id, context_id, context_value_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_context_value: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID. |  |
+| **context_id** | **str**| Context ID. |  |
+| **context_value_id** | **str**| Context Value ID. |  |
+| **body** | [**KnowledgeContextValueRequest**](KnowledgeContextValueRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeContextValueResponse**](KnowledgeContextValueResponse.html)
 
 <a name="patch_knowledge_knowledgebase_language_category"></a>
 

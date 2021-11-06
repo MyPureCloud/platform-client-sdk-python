@@ -588,6 +588,7 @@ from .models.conversation_content_generic import ConversationContentGeneric
 from .models.conversation_content_location import ConversationContentLocation
 from .models.conversation_content_notification_template import ConversationContentNotificationTemplate
 from .models.conversation_content_quick_reply import ConversationContentQuickReply
+from .models.conversation_content_story import ConversationContentStory
 from .models.conversation_deletion_protection_query import ConversationDeletionProtectionQuery
 from .models.conversation_detail_query_clause import ConversationDetailQueryClause
 from .models.conversation_detail_query_filter import ConversationDetailQueryFilter
@@ -609,6 +610,7 @@ from .models.conversation_email_event_topic_scored_agent import ConversationEmai
 from .models.conversation_email_event_topic_uri_reference import ConversationEmailEventTopicUriReference
 from .models.conversation_email_event_topic_wrapup import ConversationEmailEventTopicWrapup
 from .models.conversation_entity_listing import ConversationEntityListing
+from .models.conversation_event_co_browse import ConversationEventCoBrowse
 from .models.conversation_event_topic_address import ConversationEventTopicAddress
 from .models.conversation_event_topic_after_call_work import ConversationEventTopicAfterCallWork
 from .models.conversation_event_topic_attachment import ConversationEventTopicAttachment
@@ -642,6 +644,7 @@ from .models.conversation_event_topic_video import ConversationEventTopicVideo
 from .models.conversation_event_topic_voicemail import ConversationEventTopicVoicemail
 from .models.conversation_event_topic_wrapup import ConversationEventTopicWrapup
 from .models.conversation_message_content import ConversationMessageContent
+from .models.conversation_message_event import ConversationMessageEvent
 from .models.conversation_message_event_topic_conversation_routing_data import ConversationMessageEventTopicConversationRoutingData
 from .models.conversation_message_event_topic_detail import ConversationMessageEventTopicDetail
 from .models.conversation_message_event_topic_error_body import ConversationMessageEventTopicErrorBody
@@ -1361,6 +1364,10 @@ from .models.knowledge_base import KnowledgeBase
 from .models.knowledge_base_listing import KnowledgeBaseListing
 from .models.knowledge_category import KnowledgeCategory
 from .models.knowledge_category_request import KnowledgeCategoryRequest
+from .models.knowledge_context_request import KnowledgeContextRequest
+from .models.knowledge_context_response import KnowledgeContextResponse
+from .models.knowledge_context_value_request import KnowledgeContextValueRequest
+from .models.knowledge_context_value_response import KnowledgeContextValueResponse
 from .models.knowledge_document import KnowledgeDocument
 from .models.knowledge_document_bulk_request import KnowledgeDocumentBulkRequest
 from .models.knowledge_document_request import KnowledgeDocumentRequest
@@ -2182,6 +2189,8 @@ from .models.selected_columns import SelectedColumns
 from .models.selector_event_trigger import SelectorEventTrigger
 from .models.send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
 from .models.send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse
+from .models.sentiment_feedback import SentimentFeedback
+from .models.sentiment_feedback_entity_listing import SentimentFeedbackEntityListing
 from .models.sequence_schedule import SequenceSchedule
 from .models.server_date import ServerDate
 from .models.service_context import ServiceContext
@@ -2234,6 +2243,7 @@ from .models.sms_phone_number import SmsPhoneNumber
 from .models.sms_phone_number_entity_listing import SmsPhoneNumberEntityListing
 from .models.sms_phone_number_provision import SmsPhoneNumberProvision
 from .models.sms_phone_number_ref import SmsPhoneNumberRef
+from .models.sms_provisioning_status import SmsProvisioningStatus
 from .models.social_expression import SocialExpression
 from .models.social_handle import SocialHandle
 from .models.sort_item import SortItem

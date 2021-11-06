@@ -45,6 +45,7 @@ class ConversationNormalizedMessage(object):
             'type': 'str',
             'text': 'str',
             'content': 'list[ConversationMessageContent]',
+            'events': 'list[ConversationMessageEvent]',
             'status': 'str',
             'reasons': 'list[ConversationReason]',
             'originating_entity': 'str',
@@ -59,6 +60,7 @@ class ConversationNormalizedMessage(object):
             'type': 'type',
             'text': 'text',
             'content': 'content',
+            'events': 'events',
             'status': 'status',
             'reasons': 'reasons',
             'originating_entity': 'originatingEntity',
@@ -72,6 +74,7 @@ class ConversationNormalizedMessage(object):
         self._type = None
         self._text = None
         self._content = None
+        self._events = None
         self._status = None
         self._reasons = None
         self._originating_entity = None
@@ -145,7 +148,7 @@ class ConversationNormalizedMessage(object):
         :param type: The type of this ConversationNormalizedMessage.
         :type: str
         """
-        allowed_values = ["Text", "Structured", "Receipt"]
+        allowed_values = ["Text", "Structured", "Receipt", "Event"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -197,6 +200,29 @@ class ConversationNormalizedMessage(object):
         """
         
         self._content = content
+
+    @property
+    def events(self):
+        """
+        Gets the events of this ConversationNormalizedMessage.
+        List of event elements.
+
+        :return: The events of this ConversationNormalizedMessage.
+        :rtype: list[ConversationMessageEvent]
+        """
+        return self._events
+
+    @events.setter
+    def events(self, events):
+        """
+        Sets the events of this ConversationNormalizedMessage.
+        List of event elements.
+
+        :param events: The events of this ConversationNormalizedMessage.
+        :type: list[ConversationMessageEvent]
+        """
+        
+        self._events = events
 
     @property
     def status(self):

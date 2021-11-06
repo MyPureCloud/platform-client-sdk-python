@@ -73,6 +73,7 @@ class User(object):
             'acd_auto_answer': 'bool',
             'language_preference': 'str',
             'last_token_issued': 'OAuthLastTokenIssued',
+            'date_last_login': 'datetime',
             'self_uri': 'str'
         }
 
@@ -110,6 +111,7 @@ class User(object):
             'acd_auto_answer': 'acdAutoAnswer',
             'language_preference': 'languagePreference',
             'last_token_issued': 'lastTokenIssued',
+            'date_last_login': 'dateLastLogin',
             'self_uri': 'selfUri'
         }
 
@@ -146,6 +148,7 @@ class User(object):
         self._acd_auto_answer = None
         self._language_preference = None
         self._last_token_issued = None
+        self._date_last_login = None
         self._self_uri = None
 
     @property
@@ -910,6 +913,29 @@ class User(object):
         """
         
         self._last_token_issued = last_token_issued
+
+    @property
+    def date_last_login(self):
+        """
+        Gets the date_last_login of this User.
+        The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_last_login of this User.
+        :rtype: datetime
+        """
+        return self._date_last_login
+
+    @date_last_login.setter
+    def date_last_login(self, date_last_login):
+        """
+        Sets the date_last_login of this User.
+        The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_last_login: The date_last_login of this User.
+        :type: datetime
+        """
+        
+        self._date_last_login = date_last_login
 
     @property
     def self_uri(self):

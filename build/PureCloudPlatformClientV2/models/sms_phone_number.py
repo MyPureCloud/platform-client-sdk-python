@@ -59,6 +59,7 @@ class SmsPhoneNumber(object):
             'auto_renewable': 'str',
             'address_id': 'SmsAddress',
             'short_code_billing_type': 'str',
+            'provisioning_status': 'SmsProvisioningStatus',
             'self_uri': 'str'
         }
 
@@ -82,6 +83,7 @@ class SmsPhoneNumber(object):
             'auto_renewable': 'autoRenewable',
             'address_id': 'addressId',
             'short_code_billing_type': 'shortCodeBillingType',
+            'provisioning_status': 'provisioningStatus',
             'self_uri': 'selfUri'
         }
 
@@ -104,6 +106,7 @@ class SmsPhoneNumber(object):
         self._auto_renewable = None
         self._address_id = None
         self._short_code_billing_type = None
+        self._provisioning_status = None
         self._self_uri = None
 
     @property
@@ -245,7 +248,7 @@ class SmsPhoneNumber(object):
         :param phone_number_status: The phone_number_status of this SmsPhoneNumber.
         :type: str
         """
-        allowed_values = ["INVALID", "ACTIVE", "PORTING", "PENDING", "PENDING_CANCELLATION"]
+        allowed_values = ["INVALID", "ACTIVE", "PORTING", "PENDING", "PENDING_CANCELLATION", "INITIATED"]
         if phone_number_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for phone_number_status -> " + phone_number_status)
             self._phone_number_status = "outdated_sdk_version"
@@ -558,6 +561,29 @@ class SmsPhoneNumber(object):
             self._short_code_billing_type = "outdated_sdk_version"
         else:
             self._short_code_billing_type = short_code_billing_type
+
+    @property
+    def provisioning_status(self):
+        """
+        Gets the provisioning_status of this SmsPhoneNumber.
+        Status of latest asynchronous provisioning action
+
+        :return: The provisioning_status of this SmsPhoneNumber.
+        :rtype: SmsProvisioningStatus
+        """
+        return self._provisioning_status
+
+    @provisioning_status.setter
+    def provisioning_status(self, provisioning_status):
+        """
+        Sets the provisioning_status of this SmsPhoneNumber.
+        Status of latest asynchronous provisioning action
+
+        :param provisioning_status: The provisioning_status of this SmsPhoneNumber.
+        :type: SmsProvisioningStatus
+        """
+        
+        self._provisioning_status = provisioning_status
 
     @property
     def self_uri(self):

@@ -42,6 +42,7 @@ class ConversationMessageContent(object):
         self.swagger_types = {
             'content_type': 'str',
             'location': 'ConversationContentLocation',
+            'story': 'ConversationContentStory',
             'attachment': 'ConversationContentAttachment',
             'quick_reply': 'ConversationContentQuickReply',
             'template': 'ConversationContentNotificationTemplate',
@@ -52,6 +53,7 @@ class ConversationMessageContent(object):
         self.attribute_map = {
             'content_type': 'contentType',
             'location': 'location',
+            'story': 'story',
             'attachment': 'attachment',
             'quick_reply': 'quickReply',
             'template': 'template',
@@ -61,6 +63,7 @@ class ConversationMessageContent(object):
 
         self._content_type = None
         self._location = None
+        self._story = None
         self._attachment = None
         self._quick_reply = None
         self._template = None
@@ -87,7 +90,7 @@ class ConversationMessageContent(object):
         :param content_type: The content_type of this ConversationMessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate"]
+        allowed_values = ["Attachment", "Location", "Story", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -116,6 +119,29 @@ class ConversationMessageContent(object):
         """
         
         self._location = location
+
+    @property
+    def story(self):
+        """
+        Gets the story of this ConversationMessageContent.
+        Ephemeral story content.
+
+        :return: The story of this ConversationMessageContent.
+        :rtype: ConversationContentStory
+        """
+        return self._story
+
+    @story.setter
+    def story(self, story):
+        """
+        Sets the story of this ConversationMessageContent.
+        Ephemeral story content.
+
+        :param story: The story of this ConversationMessageContent.
+        :type: ConversationContentStory
+        """
+        
+        self._story = story
 
     @property
     def attachment(self):
