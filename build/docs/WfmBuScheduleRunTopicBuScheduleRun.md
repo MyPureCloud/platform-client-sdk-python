@@ -16,6 +16,7 @@ title: WfmBuScheduleRunTopicBuScheduleRun
 | **scheduling_canceled_by** | [**WfmBuScheduleRunTopicUserReference**](WfmBuScheduleRunTopicUserReference.html) |  | [optional] |
 | **scheduling_completed_time** | **str** |  | [optional] |
 | **message_count** | **int** |  | [optional] |
+| **message_severity_counts** | [**list[WfmBuScheduleRunTopicSchedulerMessageSeverityCount]**](WfmBuScheduleRunTopicSchedulerMessageSeverityCount.html) |  | [optional] |
 {: class="table table-striped"}
 
 

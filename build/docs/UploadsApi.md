@@ -277,7 +277,7 @@ except ApiException as e:
 
 ## [**UploadUrlResponse**](UploadUrlResponse.html) post_uploads_workforcemanagement_historicaldata_json(body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Creates presigned url for uploading WFM historical data file. Requires data in json format.
 

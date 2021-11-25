@@ -3495,7 +3495,7 @@ class RoutingApi(object):
 
     def get_routing_queues_divisionviews_all(self, **kwargs):
         """
-        Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+        Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3510,14 +3510,13 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size [max value is 500]
         :param int page_number: Page number
-        :param str sort_by: Sort by
         :param str sort_order: Sort order
         :return: QueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -3540,8 +3539,6 @@ class RoutingApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
 

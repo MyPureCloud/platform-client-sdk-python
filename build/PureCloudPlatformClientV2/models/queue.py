@@ -49,6 +49,7 @@ class Queue(object):
             'modified_by': 'str',
             'created_by': 'str',
             'member_count': 'int',
+            'user_member_count': 'int',
             'joined_member_count': 'int',
             'media_settings': 'dict(str, MediaSetting)',
             'routing_rules': 'list[RoutingRule]',
@@ -80,6 +81,7 @@ class Queue(object):
             'modified_by': 'modifiedBy',
             'created_by': 'createdBy',
             'member_count': 'memberCount',
+            'user_member_count': 'userMemberCount',
             'joined_member_count': 'joinedMemberCount',
             'media_settings': 'mediaSettings',
             'routing_rules': 'routingRules',
@@ -110,6 +112,7 @@ class Queue(object):
         self._modified_by = None
         self._created_by = None
         self._member_count = None
+        self._user_member_count = None
         self._joined_member_count = None
         self._media_settings = None
         self._routing_rules = None
@@ -318,7 +321,7 @@ class Queue(object):
     def member_count(self):
         """
         Gets the member_count of this Queue.
-        The total number of members (joined or unjoined) in the queue.
+        The total number of members in the queue.
 
         :return: The member_count of this Queue.
         :rtype: int
@@ -329,13 +332,36 @@ class Queue(object):
     def member_count(self, member_count):
         """
         Sets the member_count of this Queue.
-        The total number of members (joined or unjoined) in the queue.
+        The total number of members in the queue.
 
         :param member_count: The member_count of this Queue.
         :type: int
         """
         
         self._member_count = member_count
+
+    @property
+    def user_member_count(self):
+        """
+        Gets the user_member_count of this Queue.
+        The number of user members (i.e., non-group members) in the queue.
+
+        :return: The user_member_count of this Queue.
+        :rtype: int
+        """
+        return self._user_member_count
+
+    @user_member_count.setter
+    def user_member_count(self, user_member_count):
+        """
+        Sets the user_member_count of this Queue.
+        The number of user members (i.e., non-group members) in the queue.
+
+        :param user_member_count: The user_member_count of this Queue.
+        :type: int
+        """
+        
+        self._user_member_count = user_member_count
 
     @property
     def joined_member_count(self):

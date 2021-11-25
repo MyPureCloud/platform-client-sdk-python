@@ -44,7 +44,8 @@ class SendAgentlessOutboundMessageRequest(object):
             'to_address': 'str',
             'to_address_messenger_type': 'str',
             'text_body': 'str',
-            'messaging_template': 'MessagingTemplateRequest'
+            'messaging_template': 'MessagingTemplateRequest',
+            'use_existing_active_conversation': 'bool'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class SendAgentlessOutboundMessageRequest(object):
             'to_address': 'toAddress',
             'to_address_messenger_type': 'toAddressMessengerType',
             'text_body': 'textBody',
-            'messaging_template': 'messagingTemplate'
+            'messaging_template': 'messagingTemplate',
+            'use_existing_active_conversation': 'useExistingActiveConversation'
         }
 
         self._from_address = None
@@ -60,6 +62,7 @@ class SendAgentlessOutboundMessageRequest(object):
         self._to_address_messenger_type = None
         self._text_body = None
         self._messaging_template = None
+        self._use_existing_active_conversation = None
 
     @property
     def from_address(self):
@@ -179,6 +182,29 @@ class SendAgentlessOutboundMessageRequest(object):
         """
         
         self._messaging_template = messaging_template
+
+    @property
+    def use_existing_active_conversation(self):
+        """
+        Gets the use_existing_active_conversation of this SendAgentlessOutboundMessageRequest.
+        Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
+
+        :return: The use_existing_active_conversation of this SendAgentlessOutboundMessageRequest.
+        :rtype: bool
+        """
+        return self._use_existing_active_conversation
+
+    @use_existing_active_conversation.setter
+    def use_existing_active_conversation(self, use_existing_active_conversation):
+        """
+        Sets the use_existing_active_conversation of this SendAgentlessOutboundMessageRequest.
+        Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
+
+        :param use_existing_active_conversation: The use_existing_active_conversation of this SendAgentlessOutboundMessageRequest.
+        :type: bool
+        """
+        
+        self._use_existing_active_conversation = use_existing_active_conversation
 
     def to_dict(self):
         """

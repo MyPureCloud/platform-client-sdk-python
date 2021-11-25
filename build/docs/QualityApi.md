@@ -740,7 +740,7 @@ except ApiException as e:
 
 Queries Evaluations and returns a paged list
 
-Query params must include one of conversationId, evaluatorUserId, or agentUserId
+Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
 
 Wraps GET /api/v2/quality/evaluations/query 
 

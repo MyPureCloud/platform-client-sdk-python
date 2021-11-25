@@ -47,7 +47,7 @@ class Metric(object):
             'objective': 'Objective',
             'performance_profile_id': 'str',
             'linked_metric': 'AddressableEntityRef',
-            'date_created': 'int',
+            'date_created': 'datetime',
             'date_unlinked': 'date',
             'source_performance_profile': 'PerformanceProfile',
             'self_uri': 'str'
@@ -244,10 +244,10 @@ class Metric(object):
     def date_created(self):
         """
         Gets the date_created of this Metric.
-        The created date of this metric
+        The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this Metric.
-        :rtype: int
+        :rtype: datetime
         """
         return self._date_created
 
@@ -255,10 +255,10 @@ class Metric(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this Metric.
-        The created date of this metric
+        The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this Metric.
-        :type: int
+        :type: datetime
         """
         
         self._date_created = date_created

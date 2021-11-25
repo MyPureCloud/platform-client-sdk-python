@@ -520,7 +520,7 @@ class SpeechTextAnalyticsApi(object):
     def get_speechandtextanalytics_dialects(self, **kwargs):
         """
         Get list of supported Speech & Text Analytics dialects
-        
+        This api has been deprecated. Use api/v2/topics/dialects instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -370,7 +370,7 @@ class OAuthClient(object):
         :param authorized_grant_type: The authorized_grant_type of this OAuthClient.
         :type: str
         """
-        allowed_values = ["CODE", "TOKEN", "SAML2BEARER", "PASSWORD", "CLIENT_CREDENTIALS"]
+        allowed_values = ["CODE", "TOKEN", "SAML2-BEARER", "PASSWORD", "CLIENT-CREDENTIALS"]
         if authorized_grant_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for authorized_grant_type -> " + authorized_grant_type)
             self._authorized_grant_type = "outdated_sdk_version"

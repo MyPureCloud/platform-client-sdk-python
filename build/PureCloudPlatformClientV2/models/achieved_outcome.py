@@ -41,18 +41,15 @@ class AchievedOutcome(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'outcome': 'AddressableEntityRef',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'outcome': 'outcome',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._outcome = None
         self._self_uri = None
 
     @property
@@ -77,29 +74,6 @@ class AchievedOutcome(object):
         """
         
         self._id = id
-
-    @property
-    def outcome(self):
-        """
-        Gets the outcome of this AchievedOutcome.
-        The ID of the outcome achieved.
-
-        :return: The outcome of this AchievedOutcome.
-        :rtype: AddressableEntityRef
-        """
-        return self._outcome
-
-    @outcome.setter
-    def outcome(self, outcome):
-        """
-        Sets the outcome of this AchievedOutcome.
-        The ID of the outcome achieved.
-
-        :param outcome: The outcome of this AchievedOutcome.
-        :type: AddressableEntityRef
-        """
-        
-        self._outcome = outcome
 
     @property
     def self_uri(self):

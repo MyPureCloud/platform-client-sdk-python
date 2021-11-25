@@ -9,17 +9,23 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_orgauthorization_trustee**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee) | Delete Org Trust|
+|[**delete_orgauthorization_trustee_cloneduser**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_cloneduser) | Deletes cloned user|
 |[**delete_orgauthorization_trustee_user**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_user) | Delete Trustee User|
 |[**delete_orgauthorization_trustee_user_roles**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_user_roles) | Delete Trustee User Roles|
 |[**delete_orgauthorization_trustor**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor) | Delete Org Trust|
+|[**delete_orgauthorization_trustor_cloneduser**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor_cloneduser) | Delete Cloned User|
 |[**delete_orgauthorization_trustor_user**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor_user) | Delete Trustee User|
 |[**get_orgauthorization_pairing**](OrganizationAuthorizationApi.html#get_orgauthorization_pairing) | Get Pairing Info|
 |[**get_orgauthorization_trustee**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee) | Get Org Trust|
+|[**get_orgauthorization_trustee_clonedusers**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_clonedusers) | The list of cloned users from the trustee organization (i.e. users with a native user record).|
 |[**get_orgauthorization_trustee_user**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_user) | Get Trustee User|
 |[**get_orgauthorization_trustee_user_roles**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_user_roles) | Get Trustee User Roles|
 |[**get_orgauthorization_trustee_users**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_users) | The list of trustee users for this organization (i.e. users granted access to this organization).|
 |[**get_orgauthorization_trustees**](OrganizationAuthorizationApi.html#get_orgauthorization_trustees) | The list of trustees for this organization (i.e. organizations granted access to this organization).|
+|[**get_orgauthorization_trustees_default**](OrganizationAuthorizationApi.html#get_orgauthorization_trustees_default) | Get organization authorization trust with Customer Care, if one exists.|
 |[**get_orgauthorization_trustor**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor) | Get Org Trust|
+|[**get_orgauthorization_trustor_cloneduser**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_cloneduser) | Get Cloned User|
+|[**get_orgauthorization_trustor_clonedusers**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_clonedusers) | The list of cloned users in the trustor organization (i.e. users with a native user record).|
 |[**get_orgauthorization_trustor_user**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_user) | Get Trustee User|
 |[**get_orgauthorization_trustor_users**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_users) | The list of users in the trustor organization (i.e. users granted access).|
 |[**get_orgauthorization_trustors**](OrganizationAuthorizationApi.html#get_orgauthorization_trustors) | The list of organizations that have authorized/trusted your organization.|
@@ -27,10 +33,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_orgauthorization_trustee_users**](OrganizationAuthorizationApi.html#post_orgauthorization_trustee_users) | Add a user to the trust.|
 |[**post_orgauthorization_trustees**](OrganizationAuthorizationApi.html#post_orgauthorization_trustees) | Create a new organization authorization trust. This is required to grant other organizations access to your organization.|
 |[**post_orgauthorization_trustees_audits**](OrganizationAuthorizationApi.html#post_orgauthorization_trustees_audits) | Get Org Trustee Audits|
+|[**post_orgauthorization_trustees_default**](OrganizationAuthorizationApi.html#post_orgauthorization_trustees_default) | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.|
 |[**post_orgauthorization_trustor_audits**](OrganizationAuthorizationApi.html#post_orgauthorization_trustor_audits) | Get Org Trustor Audits|
 |[**put_orgauthorization_trustee**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee) | Update Org Trust|
 |[**put_orgauthorization_trustee_user_roledivisions**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee_user_roledivisions) | Update Trustee User Roles|
 |[**put_orgauthorization_trustee_user_roles**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee_user_roles) | Update Trustee User Roles|
+|[**put_orgauthorization_trustor_cloneduser**](OrganizationAuthorizationApi.html#put_orgauthorization_trustor_cloneduser) | Creates a clone of the trustee user in the trustor org.|
 |[**put_orgauthorization_trustor_user**](OrganizationAuthorizationApi.html#put_orgauthorization_trustor_user) | Add a Trustee user to the trust.|
 {: class="table table-striped"}
 
@@ -78,6 +86,58 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_orgauthorization_trustee_cloneduser"></a>
+
+##  delete_orgauthorization_trustee_cloneduser(trustee_org_id, trustee_user_id)
+
+
+
+Deletes cloned user
+
+
+
+Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId} 
+
+Requires ANY permissions: 
+
+* directory:user:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+trustee_user_id = 'trustee_user_id_example' # str | Id of the cloned user to delete
+
+try:
+    # Deletes cloned user
+    api_instance.delete_orgauthorization_trustee_cloneduser(trustee_org_id, trustee_user_id)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee_cloneduser: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **trustee_user_id** | **str**| Id of the cloned user to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -238,6 +298,58 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="delete_orgauthorization_trustor_cloneduser"></a>
+
+##  delete_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
+
+
+
+Delete Cloned User
+
+
+
+Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id
+trustee_user_id = 'trustee_user_id_example' # str | Trustee User Id
+
+try:
+    # Delete Cloned User
+    api_instance.delete_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustor_cloneduser: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustor_org_id** | **str**| Trustor Organization Id |  |
+| **trustee_user_id** | **str**| Trustee User Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="delete_orgauthorization_trustor_user"></a>
 
 ##  delete_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
@@ -392,6 +504,57 @@ except ApiException as e:
 ### Return type
 
 [**Trustee**](Trustee.html)
+
+<a name="get_orgauthorization_trustee_clonedusers"></a>
+
+## [**ClonedUserEntityListing**](ClonedUserEntityListing.html) get_orgauthorization_trustee_clonedusers(trustee_org_id)
+
+
+
+The list of cloned users from the trustee organization (i.e. users with a native user record).
+
+There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
+
+Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers 
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+
+try:
+    # The list of cloned users from the trustee organization (i.e. users with a native user record).
+    api_response = api_instance.get_orgauthorization_trustee_clonedusers(trustee_org_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_clonedusers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ClonedUserEntityListing**](ClonedUserEntityListing.html)
 
 <a name="get_orgauthorization_trustee_user"></a>
 
@@ -607,6 +770,54 @@ except ApiException as e:
 
 [**TrustEntityListing**](TrustEntityListing.html)
 
+<a name="get_orgauthorization_trustees_default"></a>
+
+## [**Trustee**](Trustee.html) get_orgauthorization_trustees_default()
+
+
+
+Get organization authorization trust with Customer Care, if one exists.
+
+
+
+Wraps GET /api/v2/orgauthorization/trustees/default 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view
+* authorization:orgTrusteeUser:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+
+try:
+    # Get organization authorization trust with Customer Care, if one exists.
+    api_response = api_instance.get_orgauthorization_trustees_default()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustees_default: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**Trustee**](Trustee.html)
+
 <a name="get_orgauthorization_trustor"></a>
 
 ## [**Trustor**](Trustor.html) get_orgauthorization_trustor(trustor_org_id)
@@ -657,6 +868,110 @@ except ApiException as e:
 ### Return type
 
 [**Trustor**](Trustor.html)
+
+<a name="get_orgauthorization_trustor_cloneduser"></a>
+
+## [**ClonedUser**](ClonedUser.html) get_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
+
+
+
+Get Cloned User
+
+
+
+Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id
+trustee_user_id = 'trustee_user_id_example' # str | Trustee User Id
+
+try:
+    # Get Cloned User
+    api_response = api_instance.get_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_cloneduser: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustor_org_id** | **str**| Trustor Organization Id |  |
+| **trustee_user_id** | **str**| Trustee User Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ClonedUser**](ClonedUser.html)
+
+<a name="get_orgauthorization_trustor_clonedusers"></a>
+
+## [**ClonedUserEntityListing**](ClonedUserEntityListing.html) get_orgauthorization_trustor_clonedusers(trustor_org_id)
+
+
+
+The list of cloned users in the trustor organization (i.e. users with a native user record).
+
+
+
+Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id
+
+try:
+    # The list of cloned users in the trustor organization (i.e. users with a native user record).
+    api_response = api_instance.get_orgauthorization_trustor_clonedusers(trustor_org_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_clonedusers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustor_org_id** | **str**| Trustor Organization Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ClonedUserEntityListing**](ClonedUserEntityListing.html)
 
 <a name="get_orgauthorization_trustor_user"></a>
 
@@ -1034,6 +1349,60 @@ except ApiException as e:
 
 [**AuditQueryResponse**](AuditQueryResponse.html)
 
+<a name="post_orgauthorization_trustees_default"></a>
+
+## [**Trustee**](Trustee.html) post_orgauthorization_trustees_default(assign_default_role=assign_default_role, auto_expire=auto_expire)
+
+
+
+Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+
+
+
+Wraps POST /api/v2/orgauthorization/trustees/default 
+
+Requires ALL permissions: 
+
+* authorization:orgTrustee:add
+* authorization:orgTrusteeUser:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+assign_default_role = true # bool | Assign Admin role to default pairing with Customer Care (optional)
+auto_expire = true # bool | Automatically expire pairing after 30 days (optional)
+
+try:
+    # Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+    api_response = api_instance.post_orgauthorization_trustees_default(assign_default_role=assign_default_role, auto_expire=auto_expire)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustees_default: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assign_default_role** | **bool**| Assign Admin role to default pairing with Customer Care | [optional]  |
+| **auto_expire** | **bool**| Automatically expire pairing after 30 days | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Trustee**](Trustee.html)
+
 <a name="post_orgauthorization_trustor_audits"></a>
 
 ## [**AuditQueryResponse**](AuditQueryResponse.html) post_orgauthorization_trustor_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
@@ -1255,6 +1624,59 @@ except ApiException as e:
 ### Return type
 
 [**UserAuthorization**](UserAuthorization.html)
+
+<a name="put_orgauthorization_trustor_cloneduser"></a>
+
+## [**ClonedUser**](ClonedUser.html) put_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
+
+
+
+Creates a clone of the trustee user in the trustor org.
+
+
+
+Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} 
+
+Requires ALL permissions: 
+
+* authorization:orgTrusteeUser:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id
+trustee_user_id = 'trustee_user_id_example' # str | Trustee User Id
+
+try:
+    # Creates a clone of the trustee user in the trustor org.
+    api_response = api_instance.put_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustor_cloneduser: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustor_org_id** | **str**| Trustor Organization Id |  |
+| **trustee_user_id** | **str**| Trustee User Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ClonedUser**](ClonedUser.html)
 
 <a name="put_orgauthorization_trustor_user"></a>
 

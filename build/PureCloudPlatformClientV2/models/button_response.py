@@ -42,18 +42,21 @@ class ButtonResponse(object):
         self.swagger_types = {
             'type': 'str',
             'text': 'str',
-            'payload': 'str'
+            'payload': 'str',
+            'message_type': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
             'text': 'text',
-            'payload': 'payload'
+            'payload': 'payload',
+            'message_type': 'messageType'
         }
 
         self._type = None
         self._text = None
         self._payload = None
+        self._message_type = None
 
     @property
     def type(self):
@@ -127,6 +130,33 @@ class ButtonResponse(object):
         """
         
         self._payload = payload
+
+    @property
+    def message_type(self):
+        """
+        Gets the message_type of this ButtonResponse.
+        Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+
+        :return: The message_type of this ButtonResponse.
+        :rtype: str
+        """
+        return self._message_type
+
+    @message_type.setter
+    def message_type(self, message_type):
+        """
+        Sets the message_type of this ButtonResponse.
+        Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+
+        :param message_type: The message_type of this ButtonResponse.
+        :type: str
+        """
+        allowed_values = ["QuickReply", "Card", "Carousel"]
+        if message_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for message_type -> " + message_type)
+            self._message_type = "outdated_sdk_version"
+        else:
+            self._message_type = message_type
 
     def to_dict(self):
         """

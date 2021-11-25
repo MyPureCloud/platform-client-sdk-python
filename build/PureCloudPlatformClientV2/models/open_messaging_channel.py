@@ -46,7 +46,8 @@ class OpenMessagingChannel(object):
             'message_id': 'str',
             'to': 'OpenMessagingToRecipient',
             'pcFrom': 'OpenMessagingFromRecipient',
-            'time': 'datetime'
+            'time': 'datetime',
+            'metadata': 'ChannelMetadata'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class OpenMessagingChannel(object):
             'message_id': 'messageId',
             'to': 'to',
             'pcFrom': 'from',
-            'time': 'time'
+            'time': 'time',
+            'metadata': 'metadata'
         }
 
         self._id = None
@@ -66,6 +68,7 @@ class OpenMessagingChannel(object):
         self._to = None
         self._pcFrom = None
         self._time = None
+        self._metadata = None
 
     @property
     def id(self):
@@ -235,6 +238,29 @@ class OpenMessagingChannel(object):
         """
         
         self._time = time
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this OpenMessagingChannel.
+        Information about the channel.
+
+        :return: The metadata of this OpenMessagingChannel.
+        :rtype: ChannelMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this OpenMessagingChannel.
+        Information about the channel.
+
+        :param metadata: The metadata of this OpenMessagingChannel.
+        :type: ChannelMetadata
+        """
+        
+        self._metadata = metadata
 
     def to_dict(self):
         """

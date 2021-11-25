@@ -82,7 +82,7 @@ class LogCaptureUserConfiguration(object):
     def date_expired(self):
         """
         Gets the date_expired of this LogCaptureUserConfiguration.
-        Indicates when log capture will be turned off for the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Indicates when log capture will be turned off for the user. (Must be within 24 hours). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_expired of this LogCaptureUserConfiguration.
         :rtype: datetime
@@ -93,7 +93,7 @@ class LogCaptureUserConfiguration(object):
     def date_expired(self, date_expired):
         """
         Sets the date_expired of this LogCaptureUserConfiguration.
-        Indicates when log capture will be turned off for the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Indicates when log capture will be turned off for the user. (Must be within 24 hours). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_expired: The date_expired of this LogCaptureUserConfiguration.
         :type: datetime

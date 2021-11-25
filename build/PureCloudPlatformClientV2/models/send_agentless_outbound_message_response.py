@@ -47,6 +47,7 @@ class SendAgentlessOutboundMessageResponse(object):
             'messenger_type': 'str',
             'text_body': 'str',
             'messaging_template': 'MessagingTemplateRequest',
+            'use_existing_active_conversation': 'bool',
             'timestamp': 'datetime',
             'self_uri': 'str',
             'user': 'AddressableEntityRef'
@@ -60,6 +61,7 @@ class SendAgentlessOutboundMessageResponse(object):
             'messenger_type': 'messengerType',
             'text_body': 'textBody',
             'messaging_template': 'messagingTemplate',
+            'use_existing_active_conversation': 'useExistingActiveConversation',
             'timestamp': 'timestamp',
             'self_uri': 'selfUri',
             'user': 'user'
@@ -72,6 +74,7 @@ class SendAgentlessOutboundMessageResponse(object):
         self._messenger_type = None
         self._text_body = None
         self._messaging_template = None
+        self._use_existing_active_conversation = None
         self._timestamp = None
         self._self_uri = None
         self._user = None
@@ -240,6 +243,29 @@ class SendAgentlessOutboundMessageResponse(object):
         """
         
         self._messaging_template = messaging_template
+
+    @property
+    def use_existing_active_conversation(self):
+        """
+        Gets the use_existing_active_conversation of this SendAgentlessOutboundMessageResponse.
+        Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
+
+        :return: The use_existing_active_conversation of this SendAgentlessOutboundMessageResponse.
+        :rtype: bool
+        """
+        return self._use_existing_active_conversation
+
+    @use_existing_active_conversation.setter
+    def use_existing_active_conversation(self, use_existing_active_conversation):
+        """
+        Sets the use_existing_active_conversation of this SendAgentlessOutboundMessageResponse.
+        Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
+
+        :param use_existing_active_conversation: The use_existing_active_conversation of this SendAgentlessOutboundMessageResponse.
+        :type: bool
+        """
+        
+        self._use_existing_active_conversation = use_existing_active_conversation
 
     @property
     def timestamp(self):

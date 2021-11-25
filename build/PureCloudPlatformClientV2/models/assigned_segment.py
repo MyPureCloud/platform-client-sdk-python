@@ -41,18 +41,15 @@ class AssignedSegment(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'segment': 'AddressableEntityRef',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'segment': 'segment',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._segment = None
         self._self_uri = None
 
     @property
@@ -77,29 +74,6 @@ class AssignedSegment(object):
         """
         
         self._id = id
-
-    @property
-    def segment(self):
-        """
-        Gets the segment of this AssignedSegment.
-        The ID of the segment assigned.
-
-        :return: The segment of this AssignedSegment.
-        :rtype: AddressableEntityRef
-        """
-        return self._segment
-
-    @segment.setter
-    def segment(self, segment):
-        """
-        Sets the segment of this AssignedSegment.
-        The ID of the segment assigned.
-
-        :param segment: The segment of this AssignedSegment.
-        :type: AddressableEntityRef
-        """
-        
-        self._segment = segment
 
     @property
     def self_uri(self):

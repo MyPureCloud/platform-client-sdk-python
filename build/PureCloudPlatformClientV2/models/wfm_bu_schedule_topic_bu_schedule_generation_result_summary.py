@@ -42,18 +42,21 @@ class WfmBuScheduleTopicBuScheduleGenerationResultSummary(object):
         self.swagger_types = {
             'failed': 'bool',
             'run_id': 'str',
-            'message_count': 'int'
+            'message_count': 'int',
+            'message_severity_counts': 'list[WfmBuScheduleTopicSchedulerMessageSeverityCount]'
         }
 
         self.attribute_map = {
             'failed': 'failed',
             'run_id': 'runId',
-            'message_count': 'messageCount'
+            'message_count': 'messageCount',
+            'message_severity_counts': 'messageSeverityCounts'
         }
 
         self._failed = None
         self._run_id = None
         self._message_count = None
+        self._message_severity_counts = None
 
     @property
     def failed(self):
@@ -123,6 +126,29 @@ class WfmBuScheduleTopicBuScheduleGenerationResultSummary(object):
         """
         
         self._message_count = message_count
+
+    @property
+    def message_severity_counts(self):
+        """
+        Gets the message_severity_counts of this WfmBuScheduleTopicBuScheduleGenerationResultSummary.
+
+
+        :return: The message_severity_counts of this WfmBuScheduleTopicBuScheduleGenerationResultSummary.
+        :rtype: list[WfmBuScheduleTopicSchedulerMessageSeverityCount]
+        """
+        return self._message_severity_counts
+
+    @message_severity_counts.setter
+    def message_severity_counts(self, message_severity_counts):
+        """
+        Sets the message_severity_counts of this WfmBuScheduleTopicBuScheduleGenerationResultSummary.
+
+
+        :param message_severity_counts: The message_severity_counts of this WfmBuScheduleTopicBuScheduleGenerationResultSummary.
+        :type: list[WfmBuScheduleTopicSchedulerMessageSeverityCount]
+        """
+        
+        self._message_severity_counts = message_severity_counts
 
     def to_dict(self):
         """

@@ -43,20 +43,23 @@ class ActionMapAction(object):
             'action_template': 'ActionMapActionTemplate',
             'media_type': 'str',
             'architect_flow_fields': 'ArchitectFlowFields',
-            'web_messaging_offer_fields': 'WebMessagingOfferFields'
+            'web_messaging_offer_fields': 'WebMessagingOfferFields',
+            'open_action_fields': 'OpenActionFields'
         }
 
         self.attribute_map = {
             'action_template': 'actionTemplate',
             'media_type': 'mediaType',
             'architect_flow_fields': 'architectFlowFields',
-            'web_messaging_offer_fields': 'webMessagingOfferFields'
+            'web_messaging_offer_fields': 'webMessagingOfferFields',
+            'open_action_fields': 'openActionFields'
         }
 
         self._action_template = None
         self._media_type = None
         self._architect_flow_fields = None
         self._web_messaging_offer_fields = None
+        self._open_action_fields = None
 
     @property
     def action_template(self):
@@ -101,7 +104,7 @@ class ActionMapAction(object):
         :param media_type: The media_type of this ActionMapAction.
         :type: str
         """
-        allowed_values = ["webchat", "webMessagingOffer", "contentOffer", "integrationAction", "architectFlow"]
+        allowed_values = ["webchat", "webMessagingOffer", "contentOffer", "integrationAction", "architectFlow", "openAction"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"
@@ -153,6 +156,29 @@ class ActionMapAction(object):
         """
         
         self._web_messaging_offer_fields = web_messaging_offer_fields
+
+    @property
+    def open_action_fields(self):
+        """
+        Gets the open_action_fields of this ActionMapAction.
+        Admin-configurable fields of an open action.
+
+        :return: The open_action_fields of this ActionMapAction.
+        :rtype: OpenActionFields
+        """
+        return self._open_action_fields
+
+    @open_action_fields.setter
+    def open_action_fields(self, open_action_fields):
+        """
+        Sets the open_action_fields of this ActionMapAction.
+        Admin-configurable fields of an open action.
+
+        :param open_action_fields: The open_action_fields of this ActionMapAction.
+        :type: OpenActionFields
+        """
+        
+        self._open_action_fields = open_action_fields
 
     def to_dict(self):
         """

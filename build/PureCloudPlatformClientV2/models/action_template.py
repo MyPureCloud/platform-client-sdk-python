@@ -162,7 +162,7 @@ class ActionTemplate(object):
         :param media_type: The media_type of this ActionTemplate.
         :type: str
         """
-        allowed_values = ["webchat", "webMessagingOffer", "contentOffer", "integrationAction", "architectFlow"]
+        allowed_values = ["webchat", "webMessagingOffer", "contentOffer", "integrationAction", "architectFlow", "openAction"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

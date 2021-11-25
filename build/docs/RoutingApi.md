@@ -50,7 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queue_wrapupcodes**](RoutingApi.html#get_routing_queue_wrapupcodes) | Get the wrap-up codes for a queue|
 |[**get_routing_queues**](RoutingApi.html#get_routing_queues) | Get list of queues.|
 |[**get_routing_queues_divisionviews**](RoutingApi.html#get_routing_queues_divisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).|
-|[**get_routing_queues_divisionviews_all**](RoutingApi.html#get_routing_queues_divisionviews_all) | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.|
+|[**get_routing_queues_divisionviews_all**](RoutingApi.html#get_routing_queues_divisionviews_all) | Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.|
 |[**get_routing_queues_me**](RoutingApi.html#get_routing_queues_me) | Get a paged listing of queues the user is a member of.|
 |[**get_routing_settings**](RoutingApi.html#get_routing_settings) | Get an organization&#39;s routing settings|
 |[**get_routing_settings_contactcenter**](RoutingApi.html#get_routing_settings_contactcenter) | Get Contact Center Settings|
@@ -2044,6 +2044,8 @@ Wraps GET /api/v2/routing/queues/{queueId}/members
 Requires ANY permissions: 
 
 * routing:queue:view
+* routing:queue:edit
+* routing:queue:readonly
 * routing:queueMember:manage
 
 ### Example
@@ -2348,7 +2350,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size [max value is 100] | [optional] [default to 25] |
 | **page_number** | **int**| Page number [max value is 5] | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId |
-| **sort_order** | **str**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score |
+| **sort_order** | **str**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| Queue ID(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
@@ -2360,11 +2362,11 @@ except ApiException as e:
 
 <a name="get_routing_queues_divisionviews_all"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues_divisionviews_all(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues_divisionviews_all(page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 
 
-Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
 
 
 
@@ -2389,12 +2391,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size [max value is 500] (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | Sort by (optional) (default to name)
 sort_order = 'asc' # str | Sort order (optional) (default to asc)
 
 try:
-    # Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
-    api_response = api_instance.get_routing_queues_divisionviews_all(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+    # Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
+    api_response = api_instance.get_routing_queues_divisionviews_all(page_size=page_size, page_number=page_number, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queues_divisionviews_all: %s\n" % e)
@@ -2407,8 +2408,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size [max value is 500] | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId |
-| **sort_order** | **str**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score |
+| **sort_order** | **str**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type

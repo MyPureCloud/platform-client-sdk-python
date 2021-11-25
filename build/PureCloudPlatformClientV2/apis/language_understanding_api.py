@@ -1629,7 +1629,7 @@ class LanguageUnderstandingApi(object):
 
     def patch_languageunderstanding_miner_draft(self, miner_id, draft_id, **kwargs):
         """
-        Save information for the draft
+        Save information for the draft. Either topic draft or intent draft should be sent.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2304,7 +2304,7 @@ class LanguageUnderstandingApi(object):
 
     def post_languageunderstanding_miner_execute(self, miner_id, **kwargs):
         """
-        Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+        Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
         
 
         This method makes a synchronous HTTP request by default. To make an

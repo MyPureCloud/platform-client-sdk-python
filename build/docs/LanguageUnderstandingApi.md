@@ -27,7 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_languageunderstanding_miner_intents**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_intents) | Retrieve a list of mined intents.|
 |[**get_languageunderstanding_miners**](LanguageUnderstandingApi.html#get_languageunderstanding_miners) | Retrieve the list of miners created.|
 |[**patch_languageunderstanding_domain**](LanguageUnderstandingApi.html#patch_languageunderstanding_domain) | Update an NLU Domain.|
-|[**patch_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#patch_languageunderstanding_miner_draft) | Save information for the draft|
+|[**patch_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#patch_languageunderstanding_miner_draft) | Save information for the draft. Either topic draft or intent draft should be sent.|
 |[**post_languageunderstanding_domain_feedback**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_feedback) | Create feedback for the NLU Domain Version.|
 |[**post_languageunderstanding_domain_version_detect**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_detect) | Detect intent, entities, etc. in the submitted text using the specified NLU domain version.|
 |[**post_languageunderstanding_domain_version_publish**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_publish) | Publish the draft NLU Domain Version.|
@@ -35,7 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_languageunderstanding_domain_versions**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_versions) | Create an NLU Domain Version.|
 |[**post_languageunderstanding_domains**](LanguageUnderstandingApi.html#post_languageunderstanding_domains) | Create an NLU Domain.|
 |[**post_languageunderstanding_miner_drafts**](LanguageUnderstandingApi.html#post_languageunderstanding_miner_drafts) | Create a new draft resource.|
-|[**post_languageunderstanding_miner_execute**](LanguageUnderstandingApi.html#post_languageunderstanding_miner_execute) | Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.|
+|[**post_languageunderstanding_miner_execute**](LanguageUnderstandingApi.html#post_languageunderstanding_miner_execute) | Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.|
 |[**post_languageunderstanding_miners**](LanguageUnderstandingApi.html#post_languageunderstanding_miners) | Create a unique miner.|
 |[**put_languageunderstanding_domain_version**](LanguageUnderstandingApi.html#put_languageunderstanding_domain_version) | Update an NLU Domain Version.|
 {: class="table table-striped"}
@@ -1071,7 +1071,7 @@ except ApiException as e:
 
 
 
-Save information for the draft
+Save information for the draft. Either topic draft or intent draft should be sent.
 
 
 
@@ -1099,7 +1099,7 @@ draft_id = 'draft_id_example' # str | Draft ID
 body = PureCloudPlatformClientV2.DraftRequest() # DraftRequest |  (optional)
 
 try:
-    # Save information for the draft
+    # Save information for the draft. Either topic draft or intent draft should be sent.
     api_response = api_instance.patch_languageunderstanding_miner_draft(miner_id, draft_id, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -1503,7 +1503,7 @@ except ApiException as e:
 
 
 
-Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
 
 
 
@@ -1530,7 +1530,7 @@ miner_id = 'miner_id_example' # str | Miner ID
 body = PureCloudPlatformClientV2.MinerExecuteRequest() # MinerExecuteRequest |  (optional)
 
 try:
-    # Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+    # Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
     api_response = api_instance.post_languageunderstanding_miner_execute(miner_id, body=body)
     pprint(api_response)
 except ApiException as e:

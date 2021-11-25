@@ -43,20 +43,23 @@ class CoachingSlotsRequest(object):
             'interval': 'str',
             'length_in_minutes': 'int',
             'attendee_ids': 'list[str]',
-            'facilitator_ids': 'list[str]'
+            'facilitator_ids': 'list[str]',
+            'interruptible_appointment_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'interval': 'interval',
             'length_in_minutes': 'lengthInMinutes',
             'attendee_ids': 'attendeeIds',
-            'facilitator_ids': 'facilitatorIds'
+            'facilitator_ids': 'facilitatorIds',
+            'interruptible_appointment_ids': 'interruptibleAppointmentIds'
         }
 
         self._interval = None
         self._length_in_minutes = None
         self._attendee_ids = None
         self._facilitator_ids = None
+        self._interruptible_appointment_ids = None
 
     @property
     def interval(self):
@@ -149,6 +152,29 @@ class CoachingSlotsRequest(object):
         """
         
         self._facilitator_ids = facilitator_ids
+
+    @property
+    def interruptible_appointment_ids(self):
+        """
+        Gets the interruptible_appointment_ids of this CoachingSlotsRequest.
+        List of appointment ids to exclude from consideration when determining blocked slots
+
+        :return: The interruptible_appointment_ids of this CoachingSlotsRequest.
+        :rtype: list[str]
+        """
+        return self._interruptible_appointment_ids
+
+    @interruptible_appointment_ids.setter
+    def interruptible_appointment_ids(self, interruptible_appointment_ids):
+        """
+        Sets the interruptible_appointment_ids of this CoachingSlotsRequest.
+        List of appointment ids to exclude from consideration when determining blocked slots
+
+        :param interruptible_appointment_ids: The interruptible_appointment_ids of this CoachingSlotsRequest.
+        :type: list[str]
+        """
+        
+        self._interruptible_appointment_ids = interruptible_appointment_ids
 
     def to_dict(self):
         """

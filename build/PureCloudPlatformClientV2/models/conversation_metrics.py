@@ -42,18 +42,21 @@ class ConversationMetrics(object):
         self.swagger_types = {
             'conversation': 'AddressableEntityRef',
             'sentiment_score': 'float',
-            'sentiment_trend': 'float'
+            'sentiment_trend': 'float',
+            'sentiment_trend_class': 'str'
         }
 
         self.attribute_map = {
             'conversation': 'conversation',
             'sentiment_score': 'sentimentScore',
-            'sentiment_trend': 'sentimentTrend'
+            'sentiment_trend': 'sentimentTrend',
+            'sentiment_trend_class': 'sentimentTrendClass'
         }
 
         self._conversation = None
         self._sentiment_score = None
         self._sentiment_trend = None
+        self._sentiment_trend_class = None
 
     @property
     def conversation(self):
@@ -123,6 +126,33 @@ class ConversationMetrics(object):
         """
         
         self._sentiment_trend = sentiment_trend
+
+    @property
+    def sentiment_trend_class(self):
+        """
+        Gets the sentiment_trend_class of this ConversationMetrics.
+        The Sentiment Trend Class
+
+        :return: The sentiment_trend_class of this ConversationMetrics.
+        :rtype: str
+        """
+        return self._sentiment_trend_class
+
+    @sentiment_trend_class.setter
+    def sentiment_trend_class(self, sentiment_trend_class):
+        """
+        Sets the sentiment_trend_class of this ConversationMetrics.
+        The Sentiment Trend Class
+
+        :param sentiment_trend_class: The sentiment_trend_class of this ConversationMetrics.
+        :type: str
+        """
+        allowed_values = ["NotCalculated", "Declining", "SlightlyDeclining", "NoChange", "SlightlyImproving", "Improving"]
+        if sentiment_trend_class.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for sentiment_trend_class -> " + sentiment_trend_class)
+            self._sentiment_trend_class = "outdated_sdk_version"
+        else:
+            self._sentiment_trend_class = sentiment_trend_class
 
     def to_dict(self):
         """

@@ -48,6 +48,7 @@ class Outcome(object):
             'is_positive': 'bool',
             'context': 'Context',
             'journey': 'Journey',
+            'associated_value_field': 'AssociatedValueField',
             'self_uri': 'str',
             'created_date': 'datetime',
             'modified_date': 'datetime'
@@ -62,6 +63,7 @@ class Outcome(object):
             'is_positive': 'isPositive',
             'context': 'context',
             'journey': 'journey',
+            'associated_value_field': 'associatedValueField',
             'self_uri': 'selfUri',
             'created_date': 'createdDate',
             'modified_date': 'modifiedDate'
@@ -75,6 +77,7 @@ class Outcome(object):
         self._is_positive = None
         self._context = None
         self._journey = None
+        self._associated_value_field = None
         self._self_uri = None
         self._created_date = None
         self._modified_date = None
@@ -262,6 +265,29 @@ class Outcome(object):
         """
         
         self._journey = journey
+
+    @property
+    def associated_value_field(self):
+        """
+        Gets the associated_value_field of this Outcome.
+        The field from the event indicating the associated value.
+
+        :return: The associated_value_field of this Outcome.
+        :rtype: AssociatedValueField
+        """
+        return self._associated_value_field
+
+    @associated_value_field.setter
+    def associated_value_field(self, associated_value_field):
+        """
+        Sets the associated_value_field of this Outcome.
+        The field from the event indicating the associated value.
+
+        :param associated_value_field: The associated_value_field of this Outcome.
+        :type: AssociatedValueField
+        """
+        
+        self._associated_value_field = associated_value_field
 
     @property
     def self_uri(self):

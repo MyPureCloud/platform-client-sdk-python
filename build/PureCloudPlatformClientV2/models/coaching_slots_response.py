@@ -42,18 +42,21 @@ class CoachingSlotsResponse(object):
         self.swagger_types = {
             'suggested_slots': 'list[CoachingSlot]',
             'attendee_schedules': 'list[UserAvailableTimes]',
-            'facilitator_schedules': 'list[UserAvailableTimes]'
+            'facilitator_schedules': 'list[UserAvailableTimes]',
+            'wfm_schedule_activities': 'list[WfmScheduleActivity]'
         }
 
         self.attribute_map = {
             'suggested_slots': 'suggestedSlots',
             'attendee_schedules': 'attendeeSchedules',
-            'facilitator_schedules': 'facilitatorSchedules'
+            'facilitator_schedules': 'facilitatorSchedules',
+            'wfm_schedule_activities': 'wfmScheduleActivities'
         }
 
         self._suggested_slots = None
         self._attendee_schedules = None
         self._facilitator_schedules = None
+        self._wfm_schedule_activities = None
 
     @property
     def suggested_slots(self):
@@ -123,6 +126,29 @@ class CoachingSlotsResponse(object):
         """
         
         self._facilitator_schedules = facilitator_schedules
+
+    @property
+    def wfm_schedule_activities(self):
+        """
+        Gets the wfm_schedule_activities of this CoachingSlotsResponse.
+        Detailed data for WFM scheduled activities
+
+        :return: The wfm_schedule_activities of this CoachingSlotsResponse.
+        :rtype: list[WfmScheduleActivity]
+        """
+        return self._wfm_schedule_activities
+
+    @wfm_schedule_activities.setter
+    def wfm_schedule_activities(self, wfm_schedule_activities):
+        """
+        Sets the wfm_schedule_activities of this CoachingSlotsResponse.
+        Detailed data for WFM scheduled activities
+
+        :param wfm_schedule_activities: The wfm_schedule_activities of this CoachingSlotsResponse.
+        :type: list[WfmScheduleActivity]
+        """
+        
+        self._wfm_schedule_activities = wfm_schedule_activities
 
     def to_dict(self):
         """

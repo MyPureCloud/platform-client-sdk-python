@@ -10,6 +10,7 @@ title: ConversationMetrics
 | **conversation** | [**AddressableEntityRef**](AddressableEntityRef.html) | The Conversation Reference | [optional] |
 | **sentiment_score** | **float** | The Sentiment Score | [optional] |
 | **sentiment_trend** | **float** | The Sentiment Trend | [optional] |
+| **sentiment_trend_class** | **str** | The Sentiment Trend Class | [optional] |
 {: class="table table-striped"}
 
 

@@ -87,7 +87,6 @@ from .models.analytics_participant_without_attributes import AnalyticsParticipan
 from .models.analytics_property import AnalyticsProperty
 from .models.analytics_proposed_agent import AnalyticsProposedAgent
 from .models.analytics_query_aggregation import AnalyticsQueryAggregation
-from .models.analytics_reporting_settings import AnalyticsReportingSettings
 from .models.analytics_resolution import AnalyticsResolution
 from .models.analytics_routing_status_record import AnalyticsRoutingStatusRecord
 from .models.analytics_scored_agent import AnalyticsScoredAgent
@@ -146,6 +145,7 @@ from .models.assessment_question_score import AssessmentQuestionScore
 from .models.assessment_scoring_set import AssessmentScoringSet
 from .models.assigned_segment import AssignedSegment
 from .models.assigned_wrapup_code import AssignedWrapupCode
+from .models.associated_value_field import AssociatedValueField
 from .models.async_conversation_query import AsyncConversationQuery
 from .models.async_forecast_operation_result import AsyncForecastOperationResult
 from .models.async_intraday_response import AsyncIntradayResponse
@@ -198,6 +198,9 @@ from .models.authz_subject import AuthzSubject
 from .models.automatic_time_zone_mapping_settings import AutomaticTimeZoneMappingSettings
 from .models.available_language_list import AvailableLanguageList
 from .models.available_time import AvailableTime
+from .models.available_time_off_range import AvailableTimeOffRange
+from .models.available_time_off_request import AvailableTimeOffRequest
+from .models.available_time_off_response import AvailableTimeOffResponse
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
 from .models.available_translations import AvailableTranslations
@@ -419,6 +422,8 @@ from .models.check import Check
 from .models.client_app import ClientApp
 from .models.client_app_configuration_info import ClientAppConfigurationInfo
 from .models.client_app_entity_listing import ClientAppEntityListing
+from .models.cloned_user import ClonedUser
+from .models.cloned_user_entity_listing import ClonedUserEntityListing
 from .models.close_button_style_properties import CloseButtonStyleProperties
 from .models.coaching_annotation import CoachingAnnotation
 from .models.coaching_annotation_create_request import CoachingAnnotationCreateRequest
@@ -755,6 +760,8 @@ from .models.create_service_goal_template import CreateServiceGoalTemplate
 from .models.create_share_request import CreateShareRequest
 from .models.create_share_request_member import CreateShareRequestMember
 from .models.create_share_response import CreateShareResponse
+from .models.create_time_off_limit_request import CreateTimeOffLimitRequest
+from .models.create_time_off_plan_request import CreateTimeOffPlanRequest
 from .models.create_user import CreateUser
 from .models.create_web_chat_conversation_request import CreateWebChatConversationRequest
 from .models.create_web_chat_conversation_response import CreateWebChatConversationResponse
@@ -971,6 +978,7 @@ from .models.draft import Draft
 from .models.draft_intents import DraftIntents
 from .models.draft_listing import DraftListing
 from .models.draft_request import DraftRequest
+from .models.draft_topics import DraftTopics
 from .models.draft_validation_result import DraftValidationResult
 from .models.duration_condition import DurationCondition
 from .models.edge import Edge
@@ -1169,6 +1177,7 @@ from .models.format import Format
 from .models.forms_track_trigger import FormsTrackTrigger
 from .models.free_seating_configuration import FreeSeatingConfiguration
 from .models.from_email_address import FromEmailAddress
+from .models.full_day_time_off_marker import FullDayTimeOffMarker
 from .models.gdpr_journey_customer import GDPRJourneyCustomer
 from .models.gdpr_request import GDPRRequest
 from .models.gdpr_request_entity_listing import GDPRRequestEntityListing
@@ -1190,6 +1199,7 @@ from .models.general_topic import GeneralTopic
 from .models.general_topics_entity_listing import GeneralTopicsEntityListing
 from .models.generate_bu_forecast_request import GenerateBuForecastRequest
 from .models.generic_saml import GenericSAML
+from .models.generic_template import GenericTemplate
 from .models.genesys_bot_connector import GenesysBotConnector
 from .models.geolocation import Geolocation
 from .models.geolocation_event_geolocation import GeolocationEventGeolocation
@@ -1364,10 +1374,6 @@ from .models.knowledge_base import KnowledgeBase
 from .models.knowledge_base_listing import KnowledgeBaseListing
 from .models.knowledge_category import KnowledgeCategory
 from .models.knowledge_category_request import KnowledgeCategoryRequest
-from .models.knowledge_context_request import KnowledgeContextRequest
-from .models.knowledge_context_response import KnowledgeContextResponse
-from .models.knowledge_context_value_request import KnowledgeContextValueRequest
-from .models.knowledge_context_value_response import KnowledgeContextValueResponse
 from .models.knowledge_document import KnowledgeDocument
 from .models.knowledge_document_bulk_request import KnowledgeDocumentBulkRequest
 from .models.knowledge_document_request import KnowledgeDocumentRequest
@@ -1455,6 +1461,7 @@ from .models.list_wrapper_interval import ListWrapperInterval
 from .models.list_wrapper_shift_start_variance import ListWrapperShiftStartVariance
 from .models.listed_program import ListedProgram
 from .models.listed_topic import ListedTopic
+from .models.local_date_range import LocalDateRange
 from .models.local_encryption_configuration import LocalEncryptionConfiguration
 from .models.local_encryption_configuration_listing import LocalEncryptionConfigurationListing
 from .models.local_encryption_key_request import LocalEncryptionKeyRequest
@@ -1606,6 +1613,7 @@ from .models.observation_metric_data import ObservationMetricData
 from .models.observation_value import ObservationValue
 from .models.okta import Okta
 from .models.one_login import OneLogin
+from .models.open_action_fields import OpenActionFields
 from .models.open_integration import OpenIntegration
 from .models.open_integration_entity_listing import OpenIntegrationEntityListing
 from .models.open_integration_request import OpenIntegrationRequest
@@ -1790,6 +1798,9 @@ from .models.query_response_metric import QueryResponseMetric
 from .models.query_response_stats import QueryResponseStats
 from .models.query_result import QueryResult
 from .models.query_results import QueryResults
+from .models.query_time_off_limit_values_request import QueryTimeOffLimitValuesRequest
+from .models.query_time_off_limit_values_response import QueryTimeOffLimitValuesResponse
+from .models.query_waitlist_positions_request import QueryWaitlistPositionsRequest
 from .models.queue import Queue
 from .models.queue_conversation_call_event_topic_call_conversation import QueueConversationCallEventTopicCallConversation
 from .models.queue_conversation_call_event_topic_call_media_participant import QueueConversationCallEventTopicCallMediaParticipant
@@ -2012,6 +2023,8 @@ from .models.record import Record
 from .models.recording import Recording
 from .models.recording_archive_restore_topic_media_result import RecordingArchiveRestoreTopicMediaResult
 from .models.recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
+from .models.recording_button_component import RecordingButtonComponent
+from .models.recording_content_actions import RecordingContentActions
 from .models.recording_email_message import RecordingEmailMessage
 from .models.recording_event_media_result import RecordingEventMediaResult
 from .models.recording_event_recording import RecordingEventRecording
@@ -2104,6 +2117,7 @@ from .models.sip_search_public_request import SIPSearchPublicRequest
 from .models.sms_available_phone_number_entity_listing import SMSAvailablePhoneNumberEntityListing
 from .models.salesforce import Salesforce
 from .models.schedule import Schedule
+from .models.schedule_activity import ScheduleActivity
 from .models.schedule_entity_listing import ScheduleEntityListing
 from .models.schedule_generation_message import ScheduleGenerationMessage
 from .models.schedule_generation_result import ScheduleGenerationResult
@@ -2201,9 +2215,11 @@ from .models.service_level import ServiceLevel
 from .models.session import Session
 from .models.session_last_event import SessionLastEvent
 from .models.session_segment_assignment import SessionSegmentAssignment
+from .models.set_time_off_limit_values_request import SetTimeOffLimitValuesRequest
 from .models.set_uui_data_request import SetUuiDataRequest
 from .models.set_wrapper_day_of_week import SetWrapperDayOfWeek
 from .models.set_wrapper_route_path_request import SetWrapperRoutePathRequest
+from .models.set_wrapper_string import SetWrapperString
 from .models.share import Share
 from .models.share_entity_listing import ShareEntityListing
 from .models.shared_entity import SharedEntity
@@ -2349,11 +2365,19 @@ from .models.text_style_properties import TextStyleProperties
 from .models.ticker import Ticker
 from .models.time_allowed import TimeAllowed
 from .models.time_interval import TimeInterval
+from .models.time_off_limit import TimeOffLimit
+from .models.time_off_limit_listing import TimeOffLimitListing
+from .models.time_off_limit_range import TimeOffLimitRange
+from .models.time_off_limit_reference import TimeOffLimitReference
+from .models.time_off_limit_value_range import TimeOffLimitValueRange
+from .models.time_off_plan import TimeOffPlan
+from .models.time_off_plan_listing import TimeOffPlanListing
 from .models.time_off_request import TimeOffRequest
 from .models.time_off_request_list import TimeOffRequestList
 from .models.time_off_request_listing import TimeOffRequestListing
 from .models.time_off_request_notification import TimeOffRequestNotification
 from .models.time_off_request_query_body import TimeOffRequestQueryBody
+from .models.time_off_request_reference import TimeOffRequestReference
 from .models.time_off_request_response import TimeOffRequestResponse
 from .models.time_off_request_settings import TimeOffRequestSettings
 from .models.time_slot import TimeSlot
@@ -2456,6 +2480,8 @@ from .models.update_notifications_request import UpdateNotificationsRequest
 from .models.update_notifications_response import UpdateNotificationsResponse
 from .models.update_planning_group_request import UpdatePlanningGroupRequest
 from .models.update_service_goal_template import UpdateServiceGoalTemplate
+from .models.update_time_off_limit_request import UpdateTimeOffLimitRequest
+from .models.update_time_off_plan_request import UpdateTimeOffPlanRequest
 from .models.update_user import UpdateUser
 from .models.update_work_plan_rotation_agent_request import UpdateWorkPlanRotationAgentRequest
 from .models.update_work_plan_rotation_request import UpdateWorkPlanRotationRequest
@@ -2546,6 +2572,7 @@ from .models.user_station_change_topic_user import UserStationChangeTopicUser
 from .models.user_station_change_topic_user_station import UserStationChangeTopicUserStation
 from .models.user_station_change_topic_user_stations import UserStationChangeTopicUserStations
 from .models.user_stations import UserStations
+from .models.user_time_off_request_reference import UserTimeOffRequestReference
 from .models.user_tokens_topic_token_notification import UserTokensTopicTokenNotification
 from .models.user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .models.users_search_response import UsersSearchResponse
@@ -2584,6 +2611,8 @@ from .models.voicemail_start_detail_event_topic_voicemail_start_event import Voi
 from .models.voicemail_user_policy import VoicemailUserPolicy
 from .models.voicemails_search_response import VoicemailsSearchResponse
 from .models.void import Void
+from .models.waitlist_position import WaitlistPosition
+from .models.waitlist_position_listing import WaitlistPositionListing
 from .models.web_chat_config import WebChatConfig
 from .models.web_chat_conversation import WebChatConversation
 from .models.web_chat_deployment import WebChatDeployment
@@ -2648,6 +2677,7 @@ from .models.wfm_bu_schedule_query_result_topic_bu_schedule_search_result_notifi
 from .models.wfm_bu_schedule_run_topic_bu_schedule_reference import WfmBuScheduleRunTopicBuScheduleReference
 from .models.wfm_bu_schedule_run_topic_bu_schedule_run import WfmBuScheduleRunTopicBuScheduleRun
 from .models.wfm_bu_schedule_run_topic_bu_scheduling_run_progress_notification import WfmBuScheduleRunTopicBuSchedulingRunProgressNotification
+from .models.wfm_bu_schedule_run_topic_scheduler_message_severity_count import WfmBuScheduleRunTopicSchedulerMessageSeverityCount
 from .models.wfm_bu_schedule_run_topic_user_reference import WfmBuScheduleRunTopicUserReference
 from .models.wfm_bu_schedule_search_result_topic_bu_schedule_search_result_notification import WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification
 from .models.wfm_bu_schedule_topic_bu_management_unit_schedule_summary import WfmBuScheduleTopicBuManagementUnitScheduleSummary
@@ -2656,6 +2686,7 @@ from .models.wfm_bu_schedule_topic_bu_schedule_metadata import WfmBuScheduleTopi
 from .models.wfm_bu_schedule_topic_bu_schedule_notification import WfmBuScheduleTopicBuScheduleNotification
 from .models.wfm_bu_schedule_topic_bu_short_term_forecast_reference import WfmBuScheduleTopicBuShortTermForecastReference
 from .models.wfm_bu_schedule_topic_management_unit import WfmBuScheduleTopicManagementUnit
+from .models.wfm_bu_schedule_topic_scheduler_message_severity_count import WfmBuScheduleTopicSchedulerMessageSeverityCount
 from .models.wfm_bu_schedule_topic_user_reference import WfmBuScheduleTopicUserReference
 from .models.wfm_bu_schedule_topic_wfm_versioned_entity_metadata import WfmBuScheduleTopicWfmVersionedEntityMetadata
 from .models.wfm_bu_short_term_forecast_copy_complete_topic_bu_forecast_modification import WfmBuShortTermForecastCopyCompleteTopicBuForecastModification
@@ -2716,6 +2747,7 @@ from .models.wfm_move_agents_complete_topic_wfm_move_agent_data import WfmMoveAg
 from .models.wfm_move_agents_complete_topic_wfm_move_agents_complete import WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete
 from .models.wfm_move_management_unit_topic_business_unit import WfmMoveManagementUnitTopicBusinessUnit
 from .models.wfm_move_management_unit_topic_move_management_unit_notification import WfmMoveManagementUnitTopicMoveManagementUnitNotification
+from .models.wfm_schedule_activity import WfmScheduleActivity
 from .models.wfm_schedule_reference import WfmScheduleReference
 from .models.wfm_schedule_topic_wfm_schedule_notification import WfmScheduleTopicWfmScheduleNotification
 from .models.wfm_time_off_request_update_topic_time_off_request_update import WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate

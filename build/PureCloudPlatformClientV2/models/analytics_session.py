@@ -683,7 +683,7 @@ class AnalyticsSession(object):
     def delivery_status(self):
         """
         Gets the delivery_status of this AnalyticsSession.
-        The email delivery status
+        The email or SMS delivery status
 
         :return: The delivery_status of this AnalyticsSession.
         :rtype: str
@@ -694,7 +694,7 @@ class AnalyticsSession(object):
     def delivery_status(self, delivery_status):
         """
         Sets the delivery_status of this AnalyticsSession.
-        The email delivery status
+        The email or SMS delivery status
 
         :param delivery_status: The delivery_status of this AnalyticsSession.
         :type: str

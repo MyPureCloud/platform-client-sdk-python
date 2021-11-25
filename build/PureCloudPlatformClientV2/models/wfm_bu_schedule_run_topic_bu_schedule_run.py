@@ -48,7 +48,8 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
             'schedule': 'WfmBuScheduleRunTopicBuScheduleReference',
             'scheduling_canceled_by': 'WfmBuScheduleRunTopicUserReference',
             'scheduling_completed_time': 'str',
-            'message_count': 'int'
+            'message_count': 'int',
+            'message_severity_counts': 'list[WfmBuScheduleRunTopicSchedulerMessageSeverityCount]'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
             'schedule': 'schedule',
             'scheduling_canceled_by': 'schedulingCanceledBy',
             'scheduling_completed_time': 'schedulingCompletedTime',
-            'message_count': 'messageCount'
+            'message_count': 'messageCount',
+            'message_severity_counts': 'messageSeverityCounts'
         }
 
         self._id = None
@@ -72,6 +74,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         self._scheduling_canceled_by = None
         self._scheduling_completed_time = None
         self._message_count = None
+        self._message_severity_counts = None
 
     @property
     def id(self):
@@ -283,6 +286,29 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         """
         
         self._message_count = message_count
+
+    @property
+    def message_severity_counts(self):
+        """
+        Gets the message_severity_counts of this WfmBuScheduleRunTopicBuScheduleRun.
+
+
+        :return: The message_severity_counts of this WfmBuScheduleRunTopicBuScheduleRun.
+        :rtype: list[WfmBuScheduleRunTopicSchedulerMessageSeverityCount]
+        """
+        return self._message_severity_counts
+
+    @message_severity_counts.setter
+    def message_severity_counts(self, message_severity_counts):
+        """
+        Sets the message_severity_counts of this WfmBuScheduleRunTopicBuScheduleRun.
+
+
+        :param message_severity_counts: The message_severity_counts of this WfmBuScheduleRunTopicBuScheduleRun.
+        :type: list[WfmBuScheduleRunTopicSchedulerMessageSeverityCount]
+        """
+        
+        self._message_severity_counts = message_severity_counts
 
     def to_dict(self):
         """

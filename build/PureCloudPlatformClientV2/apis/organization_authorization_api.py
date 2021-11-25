@@ -124,6 +124,90 @@ class OrganizationAuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_orgauthorization_trustee_cloneduser(self, trustee_org_id, trustee_user_id, **kwargs):
+        """
+        Deletes cloned user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_orgauthorization_trustee_cloneduser(trustee_org_id, trustee_user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :param str trustee_user_id: Id of the cloned user to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id', 'trustee_user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_orgauthorization_trustee_cloneduser" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `delete_orgauthorization_trustee_cloneduser`")
+        # verify the required parameter 'trustee_user_id' is set
+        if ('trustee_user_id' not in params) or (params['trustee_user_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_user_id` when calling `delete_orgauthorization_trustee_cloneduser`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+        if 'trustee_user_id' in params:
+            path_params['trusteeUserId'] = params['trustee_user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_orgauthorization_trustee_user(self, trustee_org_id, trustee_user_id, **kwargs):
         """
         Delete Trustee User
@@ -335,6 +419,90 @@ class OrganizationAuthorizationApi(object):
         path_params = {}
         if 'trustor_org_id' in params:
             path_params['trustorOrgId'] = params['trustor_org_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_orgauthorization_trustor_cloneduser(self, trustor_org_id, trustee_user_id, **kwargs):
+        """
+        Delete Cloned User
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustor_org_id: Trustor Organization Id (required)
+        :param str trustee_user_id: Trustee User Id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustor_org_id', 'trustee_user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_orgauthorization_trustor_cloneduser" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustor_org_id' is set
+        if ('trustor_org_id' not in params) or (params['trustor_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_org_id` when calling `delete_orgauthorization_trustor_cloneduser`")
+        # verify the required parameter 'trustee_user_id' is set
+        if ('trustee_user_id' not in params) or (params['trustee_user_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_user_id` when calling `delete_orgauthorization_trustor_cloneduser`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustor_org_id' in params:
+            path_params['trustorOrgId'] = params['trustor_org_id']
+        if 'trustee_user_id' in params:
+            path_params['trusteeUserId'] = params['trustee_user_id']
 
         query_params = {}
 
@@ -606,6 +774,84 @@ class OrganizationAuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Trustee',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_orgauthorization_trustee_clonedusers(self, trustee_org_id, **kwargs):
+        """
+        The list of cloned users from the trustee organization (i.e. users with a native user record).
+        There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_orgauthorization_trustee_clonedusers(trustee_org_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :return: ClonedUserEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orgauthorization_trustee_clonedusers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `get_orgauthorization_trustee_clonedusers`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClonedUserEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -940,6 +1186,78 @@ class OrganizationAuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_orgauthorization_trustees_default(self, **kwargs):
+        """
+        Get organization authorization trust with Customer Care, if one exists.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_orgauthorization_trustees_default(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: Trustee
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orgauthorization_trustees_default" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/default'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Trustee',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_orgauthorization_trustor(self, trustor_org_id, **kwargs):
         """
         Get Org Trust
@@ -1014,6 +1332,168 @@ class OrganizationAuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Trustor',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_orgauthorization_trustor_cloneduser(self, trustor_org_id, trustee_user_id, **kwargs):
+        """
+        Get Cloned User
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustor_org_id: Trustor Organization Id (required)
+        :param str trustee_user_id: Trustee User Id (required)
+        :return: ClonedUser
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustor_org_id', 'trustee_user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orgauthorization_trustor_cloneduser" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustor_org_id' is set
+        if ('trustor_org_id' not in params) or (params['trustor_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_org_id` when calling `get_orgauthorization_trustor_cloneduser`")
+        # verify the required parameter 'trustee_user_id' is set
+        if ('trustee_user_id' not in params) or (params['trustee_user_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_user_id` when calling `get_orgauthorization_trustor_cloneduser`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustor_org_id' in params:
+            path_params['trustorOrgId'] = params['trustor_org_id']
+        if 'trustee_user_id' in params:
+            path_params['trusteeUserId'] = params['trustee_user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClonedUser',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_orgauthorization_trustor_clonedusers(self, trustor_org_id, **kwargs):
+        """
+        The list of cloned users in the trustor organization (i.e. users with a native user record).
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_orgauthorization_trustor_clonedusers(trustor_org_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustor_org_id: Trustor Organization Id (required)
+        :return: ClonedUserEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustor_org_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orgauthorization_trustor_clonedusers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustor_org_id' is set
+        if ('trustor_org_id' not in params) or (params['trustor_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_org_id` when calling `get_orgauthorization_trustor_clonedusers`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustor_org_id' in params:
+            path_params['trustorOrgId'] = params['trustor_org_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClonedUserEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1594,6 +2074,84 @@ class OrganizationAuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_orgauthorization_trustees_default(self, **kwargs):
+        """
+        Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_orgauthorization_trustees_default(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param bool assign_default_role: Assign Admin role to default pairing with Customer Care
+        :param bool auto_expire: Automatically expire pairing after 30 days
+        :return: Trustee
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assign_default_role', 'auto_expire']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_orgauthorization_trustees_default" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/default'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'assign_default_role' in params:
+            query_params['assignDefaultRole'] = params['assign_default_role']
+        if 'auto_expire' in params:
+            query_params['autoExpire'] = params['auto_expire']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Trustee',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_orgauthorization_trustor_audits(self, body, **kwargs):
         """
         Get Org Trustor Audits
@@ -1944,6 +2502,90 @@ class OrganizationAuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UserAuthorization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_orgauthorization_trustor_cloneduser(self, trustor_org_id, trustee_user_id, **kwargs):
+        """
+        Creates a clone of the trustee user in the trustor org.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustor_org_id: Trustor Organization Id (required)
+        :param str trustee_user_id: Trustee User Id (required)
+        :return: ClonedUser
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustor_org_id', 'trustee_user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_orgauthorization_trustor_cloneduser" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustor_org_id' is set
+        if ('trustor_org_id' not in params) or (params['trustor_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_org_id` when calling `put_orgauthorization_trustor_cloneduser`")
+        # verify the required parameter 'trustee_user_id' is set
+        if ('trustee_user_id' not in params) or (params['trustee_user_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_user_id` when calling `put_orgauthorization_trustor_cloneduser`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustor_org_id' in params:
+            path_params['trustorOrgId'] = params['trustor_org_id']
+        if 'trustee_user_id' in params:
+            path_params['trusteeUserId'] = params['trustee_user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClonedUser',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
