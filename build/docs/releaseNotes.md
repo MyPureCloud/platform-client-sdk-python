@@ -1,18 +1,12 @@
 Platform API version: 5216
 
 
+Fixing a bug where boolean query params had a capitalized first letter.
+
 # Major Changes (0 changes)
 
 
-# Minor Changes (2 changes)
-
-**JourneyAggregationQuery** (1 change)
-
-* Enum value oJourneyOutcomeValue was added to property metrics
-
-**JourneyAggregationView** (1 change)
-
-* Enum value oJourneyOutcomeValue was added to property target
+# Minor Changes (0 changes)
 
 
 # Point Changes (0 changes)

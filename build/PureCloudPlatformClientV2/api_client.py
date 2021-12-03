@@ -295,7 +295,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '131.1.0'
+        header_params['purecloud-sdk'] = '131.1.1'
 
         # path parameters
         if path_params:
@@ -328,12 +328,22 @@ class ApiClient(object):
 
         response_data = None
 
+        log_url = url
+        if query_params:
+            log_url += '?'
+            i = 0
+            for k, v in query_params.items():
+                if i > 0:
+                    log_url += '&'
+                log_url += '{}={}'.format(k, v)
+                i += 1
+
         try:
             # perform request and return response
             response_data = self.request(method, url, query_params=query_params,
                                         headers=header_params, post_params=post_params, body=body)
-            Configuration().logger.trace(method, url, body, response_data.status, header_params, response_data.getheaders())
-            Configuration().logger.debug(method, url, body, response_data.status, header_params)
+            Configuration().logger.trace(method, log_url, body, response_data.status, header_params, response_data.getheaders())
+            Configuration().logger.debug(method, log_url, body, response_data.status, header_params)
         except ApiException as e:
             if Configuration().should_refresh_access_token and e.status == 401 and self.refresh_token != "":
                 self.handle_expired_access_token()
@@ -341,7 +351,7 @@ class ApiClient(object):
                             query_params, header_params, body, post_params,
                             files, response_type, auth_settings, callback)
             else:
-                Configuration().logger.error(method, url, body, e.status, header_params, e.body, e.headers)
+                Configuration().logger.error(method, log_url, body, e.status, header_params, e.body, e.headers)
                 raise
 
         self.last_response = response_data
@@ -368,6 +378,8 @@ class ApiClient(object):
         """
         if type(obj) == list:
             return ','.join(obj)
+        elif type(obj) == bool:
+            return str(obj).lower()
         else:
             return str(obj)
 

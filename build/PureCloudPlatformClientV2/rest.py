@@ -99,7 +99,7 @@ class RESTClientObject(object):
         proxy_password = Configuration().proxy_password
 
         retries = urllib3.util.Retry()
-        retries.method_whitelist = {'DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'TRACE'}
+        retries.allowed_methods = {'DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'TRACE'}
         # https pool manager
         if proxy:
             headers = None
