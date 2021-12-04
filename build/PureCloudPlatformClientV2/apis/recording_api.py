@@ -1756,12 +1756,14 @@ class RecordingApi(object):
         :param str job_id: jobId (required)
         :param int page_size: Page size. Maximum is 100.
         :param int page_number: Page number
-        :return: FailedRecordingsEntityListing
+        :param bool include_total: If false, cursor will be used to locate the page instead of pageNumber.
+        :param str cursor: Indicates where to resume query results (not required for first page)
+        :return: FailedRecordingEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['job_id', 'page_size', 'page_number']
+        all_params = ['job_id', 'page_size', 'page_number', 'include_total', 'cursor']
         all_params.append('callback')
 
         params = locals()
@@ -1789,6 +1791,10 @@ class RecordingApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'include_total' in params:
+            query_params['includeTotal'] = params['include_total']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
 
         header_params = {}
 
@@ -1817,7 +1823,7 @@ class RecordingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='FailedRecordingsEntityListing',
+                                            response_type='FailedRecordingEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1843,12 +1849,14 @@ class RecordingApi(object):
         :param str state: Filter by state
         :param bool show_only_my_jobs: Show only my jobs
         :param str job_type: Job Type (Can be left empty for both)
+        :param bool include_total: If false, cursor will be used to locate the page instead of pageNumber.
+        :param str cursor: Indicates where to resume query results (not required for first page)
         :return: RecordingJobEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'state', 'show_only_my_jobs', 'job_type']
+        all_params = ['page_size', 'page_number', 'sort_by', 'state', 'show_only_my_jobs', 'job_type', 'include_total', 'cursor']
         all_params.append('callback')
 
         params = locals()
@@ -1879,6 +1887,10 @@ class RecordingApi(object):
             query_params['showOnlyMyJobs'] = params['show_only_my_jobs']
         if 'job_type' in params:
             query_params['jobType'] = params['job_type']
+        if 'include_total' in params:
+            query_params['includeTotal'] = params['include_total']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
 
         header_params = {}
 

@@ -40,13 +40,219 @@ class ParticipantMetrics(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'agent_duration_percentage': 'float',
+            'customer_duration_percentage': 'float',
+            'silence_duration_percentage': 'float',
+            'ivr_duration_percentage': 'float',
+            'acd_duration_percentage': 'float',
+            'overtalk_duration_percentage': 'float',
+            'other_duration_percentage': 'float',
+            'overtalk_count': 'int'
         }
 
         self.attribute_map = {
-            
+            'agent_duration_percentage': 'agentDurationPercentage',
+            'customer_duration_percentage': 'customerDurationPercentage',
+            'silence_duration_percentage': 'silenceDurationPercentage',
+            'ivr_duration_percentage': 'ivrDurationPercentage',
+            'acd_duration_percentage': 'acdDurationPercentage',
+            'overtalk_duration_percentage': 'overtalkDurationPercentage',
+            'other_duration_percentage': 'otherDurationPercentage',
+            'overtalk_count': 'overtalkCount'
         }
 
+        self._agent_duration_percentage = None
+        self._customer_duration_percentage = None
+        self._silence_duration_percentage = None
+        self._ivr_duration_percentage = None
+        self._acd_duration_percentage = None
+        self._overtalk_duration_percentage = None
+        self._other_duration_percentage = None
+        self._overtalk_count = None
+
+    @property
+    def agent_duration_percentage(self):
+        """
+        Gets the agent_duration_percentage of this ParticipantMetrics.
+        Percentage of Agent duration in the conversation
+
+        :return: The agent_duration_percentage of this ParticipantMetrics.
+        :rtype: float
+        """
+        return self._agent_duration_percentage
+
+    @agent_duration_percentage.setter
+    def agent_duration_percentage(self, agent_duration_percentage):
+        """
+        Sets the agent_duration_percentage of this ParticipantMetrics.
+        Percentage of Agent duration in the conversation
+
+        :param agent_duration_percentage: The agent_duration_percentage of this ParticipantMetrics.
+        :type: float
+        """
+        
+        self._agent_duration_percentage = agent_duration_percentage
+
+    @property
+    def customer_duration_percentage(self):
+        """
+        Gets the customer_duration_percentage of this ParticipantMetrics.
+        Percentage of Customer duration in the conversation
+
+        :return: The customer_duration_percentage of this ParticipantMetrics.
+        :rtype: float
+        """
+        return self._customer_duration_percentage
+
+    @customer_duration_percentage.setter
+    def customer_duration_percentage(self, customer_duration_percentage):
+        """
+        Sets the customer_duration_percentage of this ParticipantMetrics.
+        Percentage of Customer duration in the conversation
+
+        :param customer_duration_percentage: The customer_duration_percentage of this ParticipantMetrics.
+        :type: float
+        """
+        
+        self._customer_duration_percentage = customer_duration_percentage
+
+    @property
+    def silence_duration_percentage(self):
+        """
+        Gets the silence_duration_percentage of this ParticipantMetrics.
+        Percentage of Silence duration in the conversation
+
+        :return: The silence_duration_percentage of this ParticipantMetrics.
+        :rtype: float
+        """
+        return self._silence_duration_percentage
+
+    @silence_duration_percentage.setter
+    def silence_duration_percentage(self, silence_duration_percentage):
+        """
+        Sets the silence_duration_percentage of this ParticipantMetrics.
+        Percentage of Silence duration in the conversation
+
+        :param silence_duration_percentage: The silence_duration_percentage of this ParticipantMetrics.
+        :type: float
+        """
+        
+        self._silence_duration_percentage = silence_duration_percentage
+
+    @property
+    def ivr_duration_percentage(self):
+        """
+        Gets the ivr_duration_percentage of this ParticipantMetrics.
+        Percentage of IVR duration in the conversation
+
+        :return: The ivr_duration_percentage of this ParticipantMetrics.
+        :rtype: float
+        """
+        return self._ivr_duration_percentage
+
+    @ivr_duration_percentage.setter
+    def ivr_duration_percentage(self, ivr_duration_percentage):
+        """
+        Sets the ivr_duration_percentage of this ParticipantMetrics.
+        Percentage of IVR duration in the conversation
+
+        :param ivr_duration_percentage: The ivr_duration_percentage of this ParticipantMetrics.
+        :type: float
+        """
+        
+        self._ivr_duration_percentage = ivr_duration_percentage
+
+    @property
+    def acd_duration_percentage(self):
+        """
+        Gets the acd_duration_percentage of this ParticipantMetrics.
+        Percentage of ACD duration in the conversation
+
+        :return: The acd_duration_percentage of this ParticipantMetrics.
+        :rtype: float
+        """
+        return self._acd_duration_percentage
+
+    @acd_duration_percentage.setter
+    def acd_duration_percentage(self, acd_duration_percentage):
+        """
+        Sets the acd_duration_percentage of this ParticipantMetrics.
+        Percentage of ACD duration in the conversation
+
+        :param acd_duration_percentage: The acd_duration_percentage of this ParticipantMetrics.
+        :type: float
+        """
+        
+        self._acd_duration_percentage = acd_duration_percentage
+
+    @property
+    def overtalk_duration_percentage(self):
+        """
+        Gets the overtalk_duration_percentage of this ParticipantMetrics.
+        Percentage of Overtalk duration in the conversation
+
+        :return: The overtalk_duration_percentage of this ParticipantMetrics.
+        :rtype: float
+        """
+        return self._overtalk_duration_percentage
+
+    @overtalk_duration_percentage.setter
+    def overtalk_duration_percentage(self, overtalk_duration_percentage):
+        """
+        Sets the overtalk_duration_percentage of this ParticipantMetrics.
+        Percentage of Overtalk duration in the conversation
+
+        :param overtalk_duration_percentage: The overtalk_duration_percentage of this ParticipantMetrics.
+        :type: float
+        """
+        
+        self._overtalk_duration_percentage = overtalk_duration_percentage
+
+    @property
+    def other_duration_percentage(self):
+        """
+        Gets the other_duration_percentage of this ParticipantMetrics.
+        Percentage of Other events duration in the conversation
+
+        :return: The other_duration_percentage of this ParticipantMetrics.
+        :rtype: float
+        """
+        return self._other_duration_percentage
+
+    @other_duration_percentage.setter
+    def other_duration_percentage(self, other_duration_percentage):
+        """
+        Sets the other_duration_percentage of this ParticipantMetrics.
+        Percentage of Other events duration in the conversation
+
+        :param other_duration_percentage: The other_duration_percentage of this ParticipantMetrics.
+        :type: float
+        """
+        
+        self._other_duration_percentage = other_duration_percentage
+
+    @property
+    def overtalk_count(self):
+        """
+        Gets the overtalk_count of this ParticipantMetrics.
+        Number of Overtalks in the conversation
+
+        :return: The overtalk_count of this ParticipantMetrics.
+        :rtype: int
+        """
+        return self._overtalk_count
+
+    @overtalk_count.setter
+    def overtalk_count(self, overtalk_count):
+        """
+        Sets the overtalk_count of this ParticipantMetrics.
+        Number of Overtalks in the conversation
+
+        :param overtalk_count: The overtalk_count of this ParticipantMetrics.
+        :type: int
+        """
+        
+        self._overtalk_count = overtalk_count
 
     def to_dict(self):
         """

@@ -161,7 +161,7 @@ class RoutePathRequest(object):
     def source_planning_group(self):
         """
         Gets the source_planning_group of this RoutePathRequest.
-        The planning group from which to copy route paths
+        The planning group from which to take route paths. This property is only needed if a route path already exists in another planning group.Note that taking a route path from another planning group will modify the other planning group
 
         :return: The source_planning_group of this RoutePathRequest.
         :rtype: SourcePlanningGroupRequest
@@ -172,7 +172,7 @@ class RoutePathRequest(object):
     def source_planning_group(self, source_planning_group):
         """
         Sets the source_planning_group of this RoutePathRequest.
-        The planning group from which to copy route paths
+        The planning group from which to take route paths. This property is only needed if a route path already exists in another planning group.Note that taking a route path from another planning group will modify the other planning group
 
         :param source_planning_group: The source_planning_group of this RoutePathRequest.
         :type: SourcePlanningGroupRequest

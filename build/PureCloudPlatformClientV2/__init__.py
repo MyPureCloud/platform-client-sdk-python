@@ -1113,7 +1113,7 @@ from .models.facet_key_attribute import FacetKeyAttribute
 from .models.facet_statistics import FacetStatistics
 from .models.facet_term import FacetTerm
 from .models.failed_object import FailedObject
-from .models.failed_recordings_entity_listing import FailedRecordingsEntityListing
+from .models.failed_recording_entity_listing import FailedRecordingEntityListing
 from .models.fax_document import FaxDocument
 from .models.fax_document_entity_listing import FaxDocumentEntityListing
 from .models.fax_send_request import FaxSendRequest
@@ -1535,6 +1535,7 @@ from .models.messaging_sticker import MessagingSticker
 from .models.messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .models.messaging_template import MessagingTemplate
 from .models.messaging_template_request import MessagingTemplateRequest
+from .models.messenger_position_settings import MessengerPositionSettings
 from .models.messenger_settings import MessengerSettings
 from .models.messenger_styles import MessengerStyles
 from .models.meta_data import MetaData
@@ -1746,6 +1747,7 @@ from .models.post_text_message import PostTextMessage
 from .models.post_text_request import PostTextRequest
 from .models.post_text_response import PostTextResponse
 from .models.prediction_results import PredictionResults
+from .models.predictive_routing import PredictiveRouting
 from .models.predictor import Predictor
 from .models.predictor_listing import PredictorListing
 from .models.predictor_schedule import PredictorSchedule

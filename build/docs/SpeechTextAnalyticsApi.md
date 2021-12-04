@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_programs_mappings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_mappings) | Get the list of Speech &amp; Text Analytics programs mappings to queues and flows|
 |[**get_speechandtextanalytics_programs_publishjob**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_publishjob) | Get a Speech &amp; Text Analytics publish programs job by id|
 |[**get_speechandtextanalytics_programs_unpublished**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_unpublished) | Get the list of Speech &amp; Text Analytics unpublished programs|
+|[**get_speechandtextanalytics_sentiment_dialects**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_sentiment_dialects) | Get the list of Speech &amp; Text Analytics sentiment supported dialects|
 |[**get_speechandtextanalytics_sentimentfeedback**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_sentimentfeedback) | Get the list of Speech &amp; Text Analytics SentimentFeedback|
 |[**get_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_settings) | Get Speech And Text Analytics Settings|
 |[**get_speechandtextanalytics_topic**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topic) | Get a Speech &amp; Text Analytics topic by id|
@@ -756,6 +757,52 @@ except ApiException as e:
 ### Return type
 
 [**UnpublishedProgramsEntityListing**](UnpublishedProgramsEntityListing.html)
+
+<a name="get_speechandtextanalytics_sentiment_dialects"></a>
+
+## [**EntityListing**](EntityListing.html) get_speechandtextanalytics_sentiment_dialects()
+
+
+
+Get the list of Speech & Text Analytics sentiment supported dialects
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/sentiment/dialects 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+
+try:
+    # Get the list of Speech & Text Analytics sentiment supported dialects
+    api_response = api_instance.get_speechandtextanalytics_sentiment_dialects()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_sentiment_dialects: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**EntityListing**](EntityListing.html)
 
 <a name="get_speechandtextanalytics_sentimentfeedback"></a>
 

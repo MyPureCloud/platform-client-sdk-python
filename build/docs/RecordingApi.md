@@ -1156,7 +1156,7 @@ except ApiException as e:
 
 <a name="get_recording_job_failedrecordings"></a>
 
-## [**FailedRecordingsEntityListing**](FailedRecordingsEntityListing.html) get_recording_job_failedrecordings(job_id, page_size=page_size, page_number=page_number)
+## [**FailedRecordingEntityListing**](FailedRecordingEntityListing.html) get_recording_job_failedrecordings(job_id, page_size=page_size, page_number=page_number, include_total=include_total, cursor=cursor)
 
 
 
@@ -1186,10 +1186,12 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 job_id = 'job_id_example' # str | jobId
 page_size = 25 # int | Page size. Maximum is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+include_total = true # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
 
 try:
     # Get IDs of recordings that the bulk job failed for
-    api_response = api_instance.get_recording_job_failedrecordings(job_id, page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_recording_job_failedrecordings(job_id, page_size=page_size, page_number=page_number, include_total=include_total, cursor=cursor)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->get_recording_job_failedrecordings: %s\n" % e)
@@ -1203,15 +1205,17 @@ except ApiException as e:
 | **job_id** | **str**| jobId |  |
 | **page_size** | **int**| Page size. Maximum is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **include_total** | **bool**| If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
+| **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FailedRecordingsEntityListing**](FailedRecordingsEntityListing.html)
+[**FailedRecordingEntityListing**](FailedRecordingEntityListing.html)
 
 <a name="get_recording_jobs"></a>
 
-## [**RecordingJobEntityListing**](RecordingJobEntityListing.html) get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type)
+## [**RecordingJobEntityListing**](RecordingJobEntityListing.html) get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type, include_total=include_total, cursor=cursor)
 
 
 
@@ -1244,10 +1248,12 @@ sort_by = 'userId' # str | Sort by (optional) (default to userId)
 state = 'state_example' # str | Filter by state (optional)
 show_only_my_jobs = true # bool | Show only my jobs (optional)
 job_type = 'job_type_example' # str | Job Type (Can be left empty for both) (optional)
+include_total = true # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
 
 try:
     # Get the status of all jobs within the user's organization
-    api_response = api_instance.get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type)
+    api_response = api_instance.get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type, include_total=include_total, cursor=cursor)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->get_recording_jobs: %s\n" % e)
@@ -1264,6 +1270,8 @@ except ApiException as e:
 | **state** | **str**| Filter by state | [optional] <br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED |
 | **show_only_my_jobs** | **bool**| Show only my jobs | [optional]  |
 | **job_type** | **str**| Job Type (Can be left empty for both) | [optional] <br />**Values**: DELETE, EXPORT |
+| **include_total** | **bool**| If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
+| **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

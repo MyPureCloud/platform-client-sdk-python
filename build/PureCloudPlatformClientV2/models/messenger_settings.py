@@ -43,20 +43,23 @@ class MessengerSettings(object):
             'enabled': 'bool',
             'styles': 'MessengerStyles',
             'launcher_button': 'LauncherButtonSettings',
-            'file_upload': 'FileUploadSettings'
+            'file_upload': 'FileUploadSettings',
+            'position': 'MessengerPositionSettings'
         }
 
         self.attribute_map = {
             'enabled': 'enabled',
             'styles': 'styles',
             'launcher_button': 'launcherButton',
-            'file_upload': 'fileUpload'
+            'file_upload': 'fileUpload',
+            'position': 'position'
         }
 
         self._enabled = None
         self._styles = None
         self._launcher_button = None
         self._file_upload = None
+        self._position = None
 
     @property
     def enabled(self):
@@ -149,6 +152,29 @@ class MessengerSettings(object):
         """
         
         self._file_upload = file_upload
+
+    @property
+    def position(self):
+        """
+        Gets the position of this MessengerSettings.
+        The position settings for messenger
+
+        :return: The position of this MessengerSettings.
+        :rtype: MessengerPositionSettings
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """
+        Sets the position of this MessengerSettings.
+        The position settings for messenger
+
+        :param position: The position of this MessengerSettings.
+        :type: MessengerPositionSettings
+        """
+        
+        self._position = position
 
     def to_dict(self):
         """

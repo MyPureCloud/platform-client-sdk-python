@@ -43,20 +43,23 @@ class ConversationMetrics(object):
             'conversation': 'AddressableEntityRef',
             'sentiment_score': 'float',
             'sentiment_trend': 'float',
-            'sentiment_trend_class': 'str'
+            'sentiment_trend_class': 'str',
+            'participant_metrics': 'ParticipantMetrics'
         }
 
         self.attribute_map = {
             'conversation': 'conversation',
             'sentiment_score': 'sentimentScore',
             'sentiment_trend': 'sentimentTrend',
-            'sentiment_trend_class': 'sentimentTrendClass'
+            'sentiment_trend_class': 'sentimentTrendClass',
+            'participant_metrics': 'participantMetrics'
         }
 
         self._conversation = None
         self._sentiment_score = None
         self._sentiment_trend = None
         self._sentiment_trend_class = None
+        self._participant_metrics = None
 
     @property
     def conversation(self):
@@ -153,6 +156,29 @@ class ConversationMetrics(object):
             self._sentiment_trend_class = "outdated_sdk_version"
         else:
             self._sentiment_trend_class = sentiment_trend_class
+
+    @property
+    def participant_metrics(self):
+        """
+        Gets the participant_metrics of this ConversationMetrics.
+        The Participant Metrics
+
+        :return: The participant_metrics of this ConversationMetrics.
+        :rtype: ParticipantMetrics
+        """
+        return self._participant_metrics
+
+    @participant_metrics.setter
+    def participant_metrics(self, participant_metrics):
+        """
+        Sets the participant_metrics of this ConversationMetrics.
+        The Participant Metrics
+
+        :param participant_metrics: The participant_metrics of this ConversationMetrics.
+        :type: ParticipantMetrics
+        """
+        
+        self._participant_metrics = participant_metrics
 
     def to_dict(self):
         """

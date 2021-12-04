@@ -42,6 +42,11 @@ class DraftTopics(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'miner': 'Miner',
+            'conversation_count': 'int',
+            'conversation_percent': 'float',
+            'utterance_count': 'int',
+            'phrase_count': 'int',
             'phrases': 'list[str]',
             'self_uri': 'str'
         }
@@ -49,12 +54,22 @@ class DraftTopics(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'miner': 'miner',
+            'conversation_count': 'conversationCount',
+            'conversation_percent': 'conversationPercent',
+            'utterance_count': 'utteranceCount',
+            'phrase_count': 'phraseCount',
             'phrases': 'phrases',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._miner = None
+        self._conversation_count = None
+        self._conversation_percent = None
+        self._utterance_count = None
+        self._phrase_count = None
         self._phrases = None
         self._self_uri = None
 
@@ -85,7 +100,7 @@ class DraftTopics(object):
     def name(self):
         """
         Gets the name of this DraftTopics.
-        Name/Label for a topic.
+        Topic name.
 
         :return: The name of this DraftTopics.
         :rtype: str
@@ -96,13 +111,128 @@ class DraftTopics(object):
     def name(self, name):
         """
         Sets the name of this DraftTopics.
-        Name/Label for a topic.
+        Topic name.
 
         :param name: The name of this DraftTopics.
         :type: str
         """
         
         self._name = name
+
+    @property
+    def miner(self):
+        """
+        Gets the miner of this DraftTopics.
+        The miner to which the topic belongs.
+
+        :return: The miner of this DraftTopics.
+        :rtype: Miner
+        """
+        return self._miner
+
+    @miner.setter
+    def miner(self, miner):
+        """
+        Sets the miner of this DraftTopics.
+        The miner to which the topic belongs.
+
+        :param miner: The miner of this DraftTopics.
+        :type: Miner
+        """
+        
+        self._miner = miner
+
+    @property
+    def conversation_count(self):
+        """
+        Gets the conversation_count of this DraftTopics.
+        Number of conversations where a topic has occurred.
+
+        :return: The conversation_count of this DraftTopics.
+        :rtype: int
+        """
+        return self._conversation_count
+
+    @conversation_count.setter
+    def conversation_count(self, conversation_count):
+        """
+        Sets the conversation_count of this DraftTopics.
+        Number of conversations where a topic has occurred.
+
+        :param conversation_count: The conversation_count of this DraftTopics.
+        :type: int
+        """
+        
+        self._conversation_count = conversation_count
+
+    @property
+    def conversation_percent(self):
+        """
+        Gets the conversation_percent of this DraftTopics.
+        Percentage of conversations where a topic has occurred.
+
+        :return: The conversation_percent of this DraftTopics.
+        :rtype: float
+        """
+        return self._conversation_percent
+
+    @conversation_percent.setter
+    def conversation_percent(self, conversation_percent):
+        """
+        Sets the conversation_percent of this DraftTopics.
+        Percentage of conversations where a topic has occurred.
+
+        :param conversation_percent: The conversation_percent of this DraftTopics.
+        :type: float
+        """
+        
+        self._conversation_percent = conversation_percent
+
+    @property
+    def utterance_count(self):
+        """
+        Gets the utterance_count of this DraftTopics.
+        Number of unique utterances where a topic has occurred.
+
+        :return: The utterance_count of this DraftTopics.
+        :rtype: int
+        """
+        return self._utterance_count
+
+    @utterance_count.setter
+    def utterance_count(self, utterance_count):
+        """
+        Sets the utterance_count of this DraftTopics.
+        Number of unique utterances where a topic has occurred.
+
+        :param utterance_count: The utterance_count of this DraftTopics.
+        :type: int
+        """
+        
+        self._utterance_count = utterance_count
+
+    @property
+    def phrase_count(self):
+        """
+        Gets the phrase_count of this DraftTopics.
+        Number of unique phrases (sub-utterances) where a topic has occurred.
+
+        :return: The phrase_count of this DraftTopics.
+        :rtype: int
+        """
+        return self._phrase_count
+
+    @phrase_count.setter
+    def phrase_count(self, phrase_count):
+        """
+        Sets the phrase_count of this DraftTopics.
+        Number of unique phrases (sub-utterances) where a topic has occurred.
+
+        :param phrase_count: The phrase_count of this DraftTopics.
+        :type: int
+        """
+        
+        self._phrase_count = phrase_count
 
     @property
     def phrases(self):
