@@ -56,7 +56,7 @@ class ArchitectDependencyTrackingBuildNotificationClient(object):
     def id(self):
         """
         Gets the id of this ArchitectDependencyTrackingBuildNotificationClient.
-
+        The ID of the client.
 
         :return: The id of this ArchitectDependencyTrackingBuildNotificationClient.
         :rtype: str
@@ -67,7 +67,7 @@ class ArchitectDependencyTrackingBuildNotificationClient(object):
     def id(self, id):
         """
         Sets the id of this ArchitectDependencyTrackingBuildNotificationClient.
-
+        The ID of the client.
 
         :param id: The id of this ArchitectDependencyTrackingBuildNotificationClient.
         :type: str
@@ -79,7 +79,7 @@ class ArchitectDependencyTrackingBuildNotificationClient(object):
     def name(self):
         """
         Gets the name of this ArchitectDependencyTrackingBuildNotificationClient.
-
+        The name of the client, if available.
 
         :return: The name of this ArchitectDependencyTrackingBuildNotificationClient.
         :rtype: str
@@ -90,7 +90,7 @@ class ArchitectDependencyTrackingBuildNotificationClient(object):
     def name(self, name):
         """
         Sets the name of this ArchitectDependencyTrackingBuildNotificationClient.
-
+        The name of the client, if available.
 
         :param name: The name of this ArchitectDependencyTrackingBuildNotificationClient.
         :type: str

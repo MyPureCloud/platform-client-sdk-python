@@ -42,7 +42,7 @@ class MemberGroup(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'Division',
+            'division': 'WritableDivision',
             'type': 'str',
             'member_count': 'int',
             'self_uri': 'str'
@@ -117,7 +117,7 @@ class MemberGroup(object):
         The division to which this entity belongs.
 
         :return: The division of this MemberGroup.
-        :rtype: Division
+        :rtype: WritableDivision
         """
         return self._division
 
@@ -128,7 +128,7 @@ class MemberGroup(object):
         The division to which this entity belongs.
 
         :param division: The division of this MemberGroup.
-        :type: Division
+        :type: WritableDivision
         """
         
         self._division = division

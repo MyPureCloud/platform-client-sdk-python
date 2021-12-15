@@ -44,8 +44,7 @@ class DialerContactlistfilterConfigChangeRange(object):
             'max': 'str',
             'min_inclusive': 'bool',
             'max_inclusive': 'bool',
-            'in_set': 'list[str]',
-            'additional_properties': 'object'
+            'in_set': 'list[str]'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class DialerContactlistfilterConfigChangeRange(object):
             'max': 'max',
             'min_inclusive': 'minInclusive',
             'max_inclusive': 'maxInclusive',
-            'in_set': 'inSet',
-            'additional_properties': 'additionalProperties'
+            'in_set': 'inSet'
         }
 
         self._min = None
@@ -62,13 +60,12 @@ class DialerContactlistfilterConfigChangeRange(object):
         self._min_inclusive = None
         self._max_inclusive = None
         self._in_set = None
-        self._additional_properties = None
 
     @property
     def min(self):
         """
         Gets the min of this DialerContactlistfilterConfigChangeRange.
-
+        Minimum end of the range
 
         :return: The min of this DialerContactlistfilterConfigChangeRange.
         :rtype: str
@@ -79,7 +76,7 @@ class DialerContactlistfilterConfigChangeRange(object):
     def min(self, min):
         """
         Sets the min of this DialerContactlistfilterConfigChangeRange.
-
+        Minimum end of the range
 
         :param min: The min of this DialerContactlistfilterConfigChangeRange.
         :type: str
@@ -91,7 +88,7 @@ class DialerContactlistfilterConfigChangeRange(object):
     def max(self):
         """
         Gets the max of this DialerContactlistfilterConfigChangeRange.
-
+        Maximum end of the range
 
         :return: The max of this DialerContactlistfilterConfigChangeRange.
         :rtype: str
@@ -102,7 +99,7 @@ class DialerContactlistfilterConfigChangeRange(object):
     def max(self, max):
         """
         Sets the max of this DialerContactlistfilterConfigChangeRange.
-
+        Maximum end of the range
 
         :param max: The max of this DialerContactlistfilterConfigChangeRange.
         :type: str
@@ -114,7 +111,7 @@ class DialerContactlistfilterConfigChangeRange(object):
     def min_inclusive(self):
         """
         Gets the min_inclusive of this DialerContactlistfilterConfigChangeRange.
-
+        Whether or not to include the minimum in the range
 
         :return: The min_inclusive of this DialerContactlistfilterConfigChangeRange.
         :rtype: bool
@@ -125,7 +122,7 @@ class DialerContactlistfilterConfigChangeRange(object):
     def min_inclusive(self, min_inclusive):
         """
         Sets the min_inclusive of this DialerContactlistfilterConfigChangeRange.
-
+        Whether or not to include the minimum in the range
 
         :param min_inclusive: The min_inclusive of this DialerContactlistfilterConfigChangeRange.
         :type: bool
@@ -137,7 +134,7 @@ class DialerContactlistfilterConfigChangeRange(object):
     def max_inclusive(self):
         """
         Gets the max_inclusive of this DialerContactlistfilterConfigChangeRange.
-
+        Whether or not to include the maximum in the range
 
         :return: The max_inclusive of this DialerContactlistfilterConfigChangeRange.
         :rtype: bool
@@ -148,7 +145,7 @@ class DialerContactlistfilterConfigChangeRange(object):
     def max_inclusive(self, max_inclusive):
         """
         Sets the max_inclusive of this DialerContactlistfilterConfigChangeRange.
-
+        Whether or not to include the maximum in the range
 
         :param max_inclusive: The max_inclusive of this DialerContactlistfilterConfigChangeRange.
         :type: bool
@@ -160,7 +157,7 @@ class DialerContactlistfilterConfigChangeRange(object):
     def in_set(self):
         """
         Gets the in_set of this DialerContactlistfilterConfigChangeRange.
-
+        Elements that apply to the IN operator
 
         :return: The in_set of this DialerContactlistfilterConfigChangeRange.
         :rtype: list[str]
@@ -171,36 +168,13 @@ class DialerContactlistfilterConfigChangeRange(object):
     def in_set(self, in_set):
         """
         Sets the in_set of this DialerContactlistfilterConfigChangeRange.
-
+        Elements that apply to the IN operator
 
         :param in_set: The in_set of this DialerContactlistfilterConfigChangeRange.
         :type: list[str]
         """
         
         self._in_set = in_set
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerContactlistfilterConfigChangeRange.
-
-
-        :return: The additional_properties of this DialerContactlistfilterConfigChangeRange.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerContactlistfilterConfigChangeRange.
-
-
-        :param additional_properties: The additional_properties of this DialerContactlistfilterConfigChangeRange.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

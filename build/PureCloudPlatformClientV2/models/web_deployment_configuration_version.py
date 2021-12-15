@@ -47,6 +47,7 @@ class WebDeploymentConfigurationVersion(object):
             'languages': 'list[str]',
             'default_language': 'str',
             'messenger': 'MessengerSettings',
+            'support_center': 'SupportCenterSettings',
             'cobrowse': 'CobrowseSettings',
             'journey_events': 'JourneyEventsSettings',
             'authentication_settings': 'AuthenticationSettings',
@@ -68,6 +69,7 @@ class WebDeploymentConfigurationVersion(object):
             'languages': 'languages',
             'default_language': 'defaultLanguage',
             'messenger': 'messenger',
+            'support_center': 'supportCenter',
             'cobrowse': 'cobrowse',
             'journey_events': 'journeyEvents',
             'authentication_settings': 'authenticationSettings',
@@ -88,6 +90,7 @@ class WebDeploymentConfigurationVersion(object):
         self._languages = None
         self._default_language = None
         self._messenger = None
+        self._support_center = None
         self._cobrowse = None
         self._journey_events = None
         self._authentication_settings = None
@@ -260,6 +263,29 @@ class WebDeploymentConfigurationVersion(object):
         """
         
         self._messenger = messenger
+
+    @property
+    def support_center(self):
+        """
+        Gets the support_center of this WebDeploymentConfigurationVersion.
+        The settings for support center
+
+        :return: The support_center of this WebDeploymentConfigurationVersion.
+        :rtype: SupportCenterSettings
+        """
+        return self._support_center
+
+    @support_center.setter
+    def support_center(self, support_center):
+        """
+        Sets the support_center of this WebDeploymentConfigurationVersion.
+        The settings for support center
+
+        :param support_center: The support_center of this WebDeploymentConfigurationVersion.
+        :type: SupportCenterSettings
+        """
+        
+        self._support_center = support_center
 
     @property
     def cobrowse(self):

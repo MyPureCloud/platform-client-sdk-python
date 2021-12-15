@@ -44,8 +44,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
             'name_raw': 'str',
             'address_normalized': 'str',
             'address_raw': 'str',
-            'address_displayable': 'str',
-            'additional_properties': 'object'
+            'address_displayable': 'str'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
             'name_raw': 'nameRaw',
             'address_normalized': 'addressNormalized',
             'address_raw': 'addressRaw',
-            'address_displayable': 'addressDisplayable',
-            'additional_properties': 'additionalProperties'
+            'address_displayable': 'addressDisplayable'
         }
 
         self._name = None
@@ -62,13 +60,12 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
         self._address_normalized = None
         self._address_raw = None
         self._address_displayable = None
-        self._additional_properties = None
 
     @property
     def name(self):
         """
         Gets the name of this QueueConversationSocialExpressionEventTopicAddress.
-
+        This will be nameRaw if present, or a locality lookup of the address field otherwise.
 
         :return: The name of this QueueConversationSocialExpressionEventTopicAddress.
         :rtype: str
@@ -79,7 +76,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
     def name(self, name):
         """
         Sets the name of this QueueConversationSocialExpressionEventTopicAddress.
-
+        This will be nameRaw if present, or a locality lookup of the address field otherwise.
 
         :param name: The name of this QueueConversationSocialExpressionEventTopicAddress.
         :type: str
@@ -91,7 +88,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
     def name_raw(self):
         """
         Gets the name_raw of this QueueConversationSocialExpressionEventTopicAddress.
-
+        The name as close to the bits on the wire as possible.
 
         :return: The name_raw of this QueueConversationSocialExpressionEventTopicAddress.
         :rtype: str
@@ -102,7 +99,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
     def name_raw(self, name_raw):
         """
         Sets the name_raw of this QueueConversationSocialExpressionEventTopicAddress.
-
+        The name as close to the bits on the wire as possible.
 
         :param name_raw: The name_raw of this QueueConversationSocialExpressionEventTopicAddress.
         :type: str
@@ -114,7 +111,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
     def address_normalized(self):
         """
         Gets the address_normalized of this QueueConversationSocialExpressionEventTopicAddress.
-
+        The normalized address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
 
         :return: The address_normalized of this QueueConversationSocialExpressionEventTopicAddress.
         :rtype: str
@@ -125,7 +122,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
     def address_normalized(self, address_normalized):
         """
         Sets the address_normalized of this QueueConversationSocialExpressionEventTopicAddress.
-
+        The normalized address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
 
         :param address_normalized: The address_normalized of this QueueConversationSocialExpressionEventTopicAddress.
         :type: str
@@ -137,7 +134,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
     def address_raw(self):
         """
         Gets the address_raw of this QueueConversationSocialExpressionEventTopicAddress.
-
+        The address as close to the bits on the wire as possible.
 
         :return: The address_raw of this QueueConversationSocialExpressionEventTopicAddress.
         :rtype: str
@@ -148,7 +145,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
     def address_raw(self, address_raw):
         """
         Sets the address_raw of this QueueConversationSocialExpressionEventTopicAddress.
-
+        The address as close to the bits on the wire as possible.
 
         :param address_raw: The address_raw of this QueueConversationSocialExpressionEventTopicAddress.
         :type: str
@@ -160,7 +157,7 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
     def address_displayable(self):
         """
         Gets the address_displayable of this QueueConversationSocialExpressionEventTopicAddress.
-
+        The displayable address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
 
         :return: The address_displayable of this QueueConversationSocialExpressionEventTopicAddress.
         :rtype: str
@@ -171,36 +168,13 @@ class QueueConversationSocialExpressionEventTopicAddress(object):
     def address_displayable(self, address_displayable):
         """
         Sets the address_displayable of this QueueConversationSocialExpressionEventTopicAddress.
-
+        The displayable address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
 
         :param address_displayable: The address_displayable of this QueueConversationSocialExpressionEventTopicAddress.
         :type: str
         """
         
         self._address_displayable = address_displayable
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationSocialExpressionEventTopicAddress.
-
-
-        :return: The additional_properties of this QueueConversationSocialExpressionEventTopicAddress.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationSocialExpressionEventTopicAddress.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationSocialExpressionEventTopicAddress.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

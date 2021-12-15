@@ -65,7 +65,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def queue(self):
         """
         Gets the queue of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The queue of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :rtype: QueueConversationScreenShareEventTopicUriReference
@@ -76,7 +76,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def queue(self, queue):
         """
         Sets the queue of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param queue: The queue of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :type: QueueConversationScreenShareEventTopicUriReference
@@ -88,7 +88,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def language(self):
         """
         Gets the language of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The language of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :rtype: QueueConversationScreenShareEventTopicUriReference
@@ -99,7 +99,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def language(self, language):
         """
         Sets the language of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param language: The language of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :type: QueueConversationScreenShareEventTopicUriReference
@@ -111,7 +111,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def priority(self):
         """
         Gets the priority of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :return: The priority of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :rtype: int
@@ -122,7 +122,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def priority(self, priority):
         """
         Sets the priority of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :param priority: The priority of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :type: int
@@ -134,7 +134,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def skills(self):
         """
         Gets the skills of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :return: The skills of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :rtype: list[QueueConversationScreenShareEventTopicUriReference]
@@ -145,7 +145,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def skills(self, skills):
         """
         Sets the skills of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :param skills: The skills of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :type: list[QueueConversationScreenShareEventTopicUriReference]
@@ -157,7 +157,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def scored_agents(self):
         """
         Gets the scored_agents of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :return: The scored_agents of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :rtype: list[QueueConversationScreenShareEventTopicScoredAgent]
@@ -168,7 +168,7 @@ class QueueConversationScreenShareEventTopicConversationRoutingData(object):
     def scored_agents(self, scored_agents):
         """
         Sets the scored_agents of this QueueConversationScreenShareEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :param scored_agents: The scored_agents of this QueueConversationScreenShareEventTopicConversationRoutingData.
         :type: list[QueueConversationScreenShareEventTopicScoredAgent]

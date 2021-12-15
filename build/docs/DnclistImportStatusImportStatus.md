@@ -7,12 +7,11 @@ title: DnclistImportStatusImportStatus
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **import_state** | **str** |  | [optional] |
-| **total_records** | **int** |  | [optional] |
-| **completed_records** | **int** |  | [optional] |
-| **percentage_complete** | **int** |  | [optional] |
-| **failure_reason** | **str** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **import_state** | **str** | current status of the import | [optional] |
+| **total_records** | **int** | total number of records to be imported | [optional] |
+| **completed_records** | **int** | number of records finished importing | [optional] |
+| **percentage_complete** | **int** | percentage of records finished importing | [optional] |
+| **failure_reason** | **str** | if the import has failed, the reason for the failure | [optional] |
 {: class="table table-striped"}
 
 

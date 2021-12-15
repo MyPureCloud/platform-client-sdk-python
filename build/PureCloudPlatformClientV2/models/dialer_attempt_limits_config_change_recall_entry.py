@@ -41,25 +41,22 @@ class DialerAttemptLimitsConfigChangeRecallEntry(object):
         """
         self.swagger_types = {
             'nbr_attempts': 'int',
-            'minutes_between_attempts': 'int',
-            'additional_properties': 'object'
+            'minutes_between_attempts': 'int'
         }
 
         self.attribute_map = {
             'nbr_attempts': 'nbrAttempts',
-            'minutes_between_attempts': 'minutesBetweenAttempts',
-            'additional_properties': 'additionalProperties'
+            'minutes_between_attempts': 'minutesBetweenAttempts'
         }
 
         self._nbr_attempts = None
         self._minutes_between_attempts = None
-        self._additional_properties = None
 
     @property
     def nbr_attempts(self):
         """
         Gets the nbr_attempts of this DialerAttemptLimitsConfigChangeRecallEntry.
-
+        The number of recall attempts to make
 
         :return: The nbr_attempts of this DialerAttemptLimitsConfigChangeRecallEntry.
         :rtype: int
@@ -70,7 +67,7 @@ class DialerAttemptLimitsConfigChangeRecallEntry(object):
     def nbr_attempts(self, nbr_attempts):
         """
         Sets the nbr_attempts of this DialerAttemptLimitsConfigChangeRecallEntry.
-
+        The number of recall attempts to make
 
         :param nbr_attempts: The nbr_attempts of this DialerAttemptLimitsConfigChangeRecallEntry.
         :type: int
@@ -82,7 +79,7 @@ class DialerAttemptLimitsConfigChangeRecallEntry(object):
     def minutes_between_attempts(self):
         """
         Gets the minutes_between_attempts of this DialerAttemptLimitsConfigChangeRecallEntry.
-
+        How long to wait between recall attempts
 
         :return: The minutes_between_attempts of this DialerAttemptLimitsConfigChangeRecallEntry.
         :rtype: int
@@ -93,36 +90,13 @@ class DialerAttemptLimitsConfigChangeRecallEntry(object):
     def minutes_between_attempts(self, minutes_between_attempts):
         """
         Sets the minutes_between_attempts of this DialerAttemptLimitsConfigChangeRecallEntry.
-
+        How long to wait between recall attempts
 
         :param minutes_between_attempts: The minutes_between_attempts of this DialerAttemptLimitsConfigChangeRecallEntry.
         :type: int
         """
         
         self._minutes_between_attempts = minutes_between_attempts
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerAttemptLimitsConfigChangeRecallEntry.
-
-
-        :return: The additional_properties of this DialerAttemptLimitsConfigChangeRecallEntry.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerAttemptLimitsConfigChangeRecallEntry.
-
-
-        :param additional_properties: The additional_properties of this DialerAttemptLimitsConfigChangeRecallEntry.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

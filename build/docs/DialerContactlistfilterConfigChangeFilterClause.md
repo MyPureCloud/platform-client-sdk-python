@@ -7,9 +7,8 @@ title: DialerContactlistfilterConfigChangeFilterClause
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **filter_type** | **str** |  | [optional] |
-| **predicates** | [**list[DialerContactlistfilterConfigChangeFilterPredicate]**](DialerContactlistfilterConfigChangeFilterPredicate.html) |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **filter_type** | **str** | Contact list filter type | [optional] |
+| **predicates** | [**list[DialerContactlistfilterConfigChangeFilterPredicate]**](DialerContactlistfilterConfigChangeFilterPredicate.html) | The list of predicates in that clause | [optional] |
 {: class="table table-striped"}
 
 

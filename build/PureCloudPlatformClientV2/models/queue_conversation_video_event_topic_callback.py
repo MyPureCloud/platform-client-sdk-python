@@ -64,8 +64,7 @@ class QueueConversationVideoEventTopicCallback(object):
             'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
             'caller_id': 'str',
-            'caller_id_name': 'str',
-            'additional_properties': 'object'
+            'caller_id_name': 'str'
         }
 
         self.attribute_map = {
@@ -93,8 +92,7 @@ class QueueConversationVideoEventTopicCallback(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'caller_id': 'callerId',
-            'caller_id_name': 'callerIdName',
-            'additional_properties': 'additionalProperties'
+            'caller_id_name': 'callerIdName'
         }
 
         self._state = None
@@ -122,13 +120,12 @@ class QueueConversationVideoEventTopicCallback(object):
         self._after_call_work_required = None
         self._caller_id = None
         self._caller_id_name = None
-        self._additional_properties = None
 
     @property
     def state(self):
         """
         Gets the state of this QueueConversationVideoEventTopicCallback.
-
+        The connection state of this communication.
 
         :return: The state of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -139,12 +136,12 @@ class QueueConversationVideoEventTopicCallback(object):
     def state(self, state):
         """
         Sets the state of this QueueConversationVideoEventTopicCallback.
-
+        The connection state of this communication.
 
         :param state: The state of this QueueConversationVideoEventTopicCallback.
         :type: str
         """
-        allowed_values = ["ALERTING", "DIALING", "CONTACTING", "OFFERING", "CONNECTED", "DISCONNECTED", "TERMINATED", "SCHEDULED", "UPLOADING", "NONE"]
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "scheduled", "uploading", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -155,7 +152,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def id(self):
         """
         Gets the id of this QueueConversationVideoEventTopicCallback.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -166,7 +163,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationVideoEventTopicCallback.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this QueueConversationVideoEventTopicCallback.
         :type: str
@@ -178,7 +175,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def direction(self):
         """
         Gets the direction of this QueueConversationVideoEventTopicCallback.
-
+        The direction of the call
 
         :return: The direction of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -189,12 +186,12 @@ class QueueConversationVideoEventTopicCallback(object):
     def direction(self, direction):
         """
         Sets the direction of this QueueConversationVideoEventTopicCallback.
-
+        The direction of the call
 
         :param direction: The direction of this QueueConversationVideoEventTopicCallback.
         :type: str
         """
-        allowed_values = ["INBOUND", "OUTBOUND"]
+        allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
             self._direction = "outdated_sdk_version"
@@ -205,7 +202,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def held(self):
         """
         Gets the held of this QueueConversationVideoEventTopicCallback.
-
+        True if this call is held and the person on this side hears silence.
 
         :return: The held of this QueueConversationVideoEventTopicCallback.
         :rtype: bool
@@ -216,7 +213,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def held(self, held):
         """
         Sets the held of this QueueConversationVideoEventTopicCallback.
-
+        True if this call is held and the person on this side hears silence.
 
         :param held: The held of this QueueConversationVideoEventTopicCallback.
         :type: bool
@@ -228,7 +225,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this QueueConversationVideoEventTopicCallback.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :return: The disconnect_type of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -239,12 +236,12 @@ class QueueConversationVideoEventTopicCallback(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this QueueConversationVideoEventTopicCallback.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :param disconnect_type: The disconnect_type of this QueueConversationVideoEventTopicCallback.
         :type: str
         """
-        allowed_values = ["ENDPOINT", "CLIENT", "SYSTEM", "TIMEOUT", "TRANSFER", "TRANSFER_CONFERENCE", "TRANSFER_CONSULT", "TRANSFER_NOANSWER", "TRANSFER_NOTAVAILABLE", "TRANSFER_FORWARD", "TRANSPORT_FAILURE", "ERROR", "PEER", "OTHER", "SPAM", "UNCALLABLE"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.noanswer", "transfer.notavailable", "transfer.forward", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -255,7 +252,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def start_hold_time(self):
         """
         Gets the start_hold_time of this QueueConversationVideoEventTopicCallback.
-
+        The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold.
 
         :return: The start_hold_time of this QueueConversationVideoEventTopicCallback.
         :rtype: datetime
@@ -266,7 +263,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def start_hold_time(self, start_hold_time):
         """
         Sets the start_hold_time of this QueueConversationVideoEventTopicCallback.
-
+        The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold.
 
         :param start_hold_time: The start_hold_time of this QueueConversationVideoEventTopicCallback.
         :type: datetime
@@ -324,7 +321,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def callback_numbers(self):
         """
         Gets the callback_numbers of this QueueConversationVideoEventTopicCallback.
-
+        The phone number(s) to use to place the callback.
 
         :return: The callback_numbers of this QueueConversationVideoEventTopicCallback.
         :rtype: list[str]
@@ -335,7 +332,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def callback_numbers(self, callback_numbers):
         """
         Sets the callback_numbers of this QueueConversationVideoEventTopicCallback.
-
+        The phone number(s) to use to place the callback.
 
         :param callback_numbers: The callback_numbers of this QueueConversationVideoEventTopicCallback.
         :type: list[str]
@@ -347,7 +344,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def callback_user_name(self):
         """
         Gets the callback_user_name of this QueueConversationVideoEventTopicCallback.
-
+        The name of the user requesting a callback.
 
         :return: The callback_user_name of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -358,7 +355,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def callback_user_name(self, callback_user_name):
         """
         Sets the callback_user_name of this QueueConversationVideoEventTopicCallback.
-
+        The name of the user requesting a callback.
 
         :param callback_user_name: The callback_user_name of this QueueConversationVideoEventTopicCallback.
         :type: str
@@ -370,7 +367,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def script_id(self):
         """
         Gets the script_id of this QueueConversationVideoEventTopicCallback.
-
+        The UUID of the script to use.
 
         :return: The script_id of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -381,7 +378,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this QueueConversationVideoEventTopicCallback.
-
+        The UUID of the script to use.
 
         :param script_id: The script_id of this QueueConversationVideoEventTopicCallback.
         :type: str
@@ -393,7 +390,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def peer_id(self):
         """
         Gets the peer_id of this QueueConversationVideoEventTopicCallback.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :return: The peer_id of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -404,7 +401,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this QueueConversationVideoEventTopicCallback.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :param peer_id: The peer_id of this QueueConversationVideoEventTopicCallback.
         :type: str
@@ -416,7 +413,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def external_campaign(self):
         """
         Gets the external_campaign of this QueueConversationVideoEventTopicCallback.
-
+        True if the call for the callback uses external dialing.
 
         :return: The external_campaign of this QueueConversationVideoEventTopicCallback.
         :rtype: bool
@@ -427,7 +424,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def external_campaign(self, external_campaign):
         """
         Sets the external_campaign of this QueueConversationVideoEventTopicCallback.
-
+        True if the call for the callback uses external dialing.
 
         :param external_campaign: The external_campaign of this QueueConversationVideoEventTopicCallback.
         :type: bool
@@ -439,7 +436,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def skip_enabled(self):
         """
         Gets the skip_enabled of this QueueConversationVideoEventTopicCallback.
-
+        True if the ability to skip a callback should be enabled.
 
         :return: The skip_enabled of this QueueConversationVideoEventTopicCallback.
         :rtype: bool
@@ -450,7 +447,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def skip_enabled(self, skip_enabled):
         """
         Sets the skip_enabled of this QueueConversationVideoEventTopicCallback.
-
+        True if the ability to skip a callback should be enabled.
 
         :param skip_enabled: The skip_enabled of this QueueConversationVideoEventTopicCallback.
         :type: bool
@@ -462,7 +459,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def provider(self):
         """
         Gets the provider of this QueueConversationVideoEventTopicCallback.
-
+        The source provider of the callback.
 
         :return: The provider of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -473,7 +470,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def provider(self, provider):
         """
         Sets the provider of this QueueConversationVideoEventTopicCallback.
-
+        The source provider of the callback.
 
         :param provider: The provider of this QueueConversationVideoEventTopicCallback.
         :type: str
@@ -485,7 +482,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def timeout_seconds(self):
         """
         Gets the timeout_seconds of this QueueConversationVideoEventTopicCallback.
-
+        The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.
 
         :return: The timeout_seconds of this QueueConversationVideoEventTopicCallback.
         :rtype: int
@@ -496,7 +493,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def timeout_seconds(self, timeout_seconds):
         """
         Sets the timeout_seconds of this QueueConversationVideoEventTopicCallback.
-
+        The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.
 
         :param timeout_seconds: The timeout_seconds of this QueueConversationVideoEventTopicCallback.
         :type: int
@@ -508,7 +505,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def connected_time(self):
         """
         Gets the connected_time of this QueueConversationVideoEventTopicCallback.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :return: The connected_time of this QueueConversationVideoEventTopicCallback.
         :rtype: datetime
@@ -519,7 +516,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this QueueConversationVideoEventTopicCallback.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :param connected_time: The connected_time of this QueueConversationVideoEventTopicCallback.
         :type: datetime
@@ -531,7 +528,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this QueueConversationVideoEventTopicCallback.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :return: The disconnected_time of this QueueConversationVideoEventTopicCallback.
         :rtype: datetime
@@ -542,7 +539,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this QueueConversationVideoEventTopicCallback.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :param disconnected_time: The disconnected_time of this QueueConversationVideoEventTopicCallback.
         :type: datetime
@@ -554,7 +551,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def callback_scheduled_time(self):
         """
         Gets the callback_scheduled_time of this QueueConversationVideoEventTopicCallback.
-
+        The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately.
 
         :return: The callback_scheduled_time of this QueueConversationVideoEventTopicCallback.
         :rtype: datetime
@@ -565,7 +562,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def callback_scheduled_time(self, callback_scheduled_time):
         """
         Sets the callback_scheduled_time of this QueueConversationVideoEventTopicCallback.
-
+        The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately.
 
         :param callback_scheduled_time: The callback_scheduled_time of this QueueConversationVideoEventTopicCallback.
         :type: datetime
@@ -577,7 +574,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def automated_callback_config_id(self):
         """
         Gets the automated_callback_config_id of this QueueConversationVideoEventTopicCallback.
-
+        The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.
 
         :return: The automated_callback_config_id of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -588,7 +585,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def automated_callback_config_id(self, automated_callback_config_id):
         """
         Sets the automated_callback_config_id of this QueueConversationVideoEventTopicCallback.
-
+        The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.
 
         :param automated_callback_config_id: The automated_callback_config_id of this QueueConversationVideoEventTopicCallback.
         :type: str
@@ -600,7 +597,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def wrapup(self):
         """
         Gets the wrapup of this QueueConversationVideoEventTopicCallback.
-
+        Call wrap up or disposition data.
 
         :return: The wrapup of this QueueConversationVideoEventTopicCallback.
         :rtype: QueueConversationVideoEventTopicWrapup
@@ -611,7 +608,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def wrapup(self, wrapup):
         """
         Sets the wrapup of this QueueConversationVideoEventTopicCallback.
-
+        Call wrap up or disposition data.
 
         :param wrapup: The wrapup of this QueueConversationVideoEventTopicCallback.
         :type: QueueConversationVideoEventTopicWrapup
@@ -623,7 +620,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def after_call_work(self):
         """
         Gets the after_call_work of this QueueConversationVideoEventTopicCallback.
-
+        A communication's after-call work data.
 
         :return: The after_call_work of this QueueConversationVideoEventTopicCallback.
         :rtype: QueueConversationVideoEventTopicAfterCallWork
@@ -634,7 +631,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def after_call_work(self, after_call_work):
         """
         Sets the after_call_work of this QueueConversationVideoEventTopicCallback.
-
+        A communication's after-call work data.
 
         :param after_call_work: The after_call_work of this QueueConversationVideoEventTopicCallback.
         :type: QueueConversationVideoEventTopicAfterCallWork
@@ -646,7 +643,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def after_call_work_required(self):
         """
         Gets the after_call_work_required of this QueueConversationVideoEventTopicCallback.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :return: The after_call_work_required of this QueueConversationVideoEventTopicCallback.
         :rtype: bool
@@ -657,7 +654,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def after_call_work_required(self, after_call_work_required):
         """
         Sets the after_call_work_required of this QueueConversationVideoEventTopicCallback.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :param after_call_work_required: The after_call_work_required of this QueueConversationVideoEventTopicCallback.
         :type: bool
@@ -669,7 +666,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def caller_id(self):
         """
         Gets the caller_id of this QueueConversationVideoEventTopicCallback.
-
+        The phone number displayed to recipients of the phone call. The value should conform to the E164 format.
 
         :return: The caller_id of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -680,7 +677,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def caller_id(self, caller_id):
         """
         Sets the caller_id of this QueueConversationVideoEventTopicCallback.
-
+        The phone number displayed to recipients of the phone call. The value should conform to the E164 format.
 
         :param caller_id: The caller_id of this QueueConversationVideoEventTopicCallback.
         :type: str
@@ -692,7 +689,7 @@ class QueueConversationVideoEventTopicCallback(object):
     def caller_id_name(self):
         """
         Gets the caller_id_name of this QueueConversationVideoEventTopicCallback.
-
+        The name displayed to recipients of the phone call.
 
         :return: The caller_id_name of this QueueConversationVideoEventTopicCallback.
         :rtype: str
@@ -703,36 +700,13 @@ class QueueConversationVideoEventTopicCallback(object):
     def caller_id_name(self, caller_id_name):
         """
         Sets the caller_id_name of this QueueConversationVideoEventTopicCallback.
-
+        The name displayed to recipients of the phone call.
 
         :param caller_id_name: The caller_id_name of this QueueConversationVideoEventTopicCallback.
         :type: str
         """
         
         self._caller_id_name = caller_id_name
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationVideoEventTopicCallback.
-
-
-        :return: The additional_properties of this QueueConversationVideoEventTopicCallback.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationVideoEventTopicCallback.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationVideoEventTopicCallback.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

@@ -40,11 +40,6 @@ class DialerDnclistConfigChangeDncList(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'name': 'str',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
-            'version': 'int',
             'import_status': 'DialerDnclistConfigChangeImportStatus',
             'size': 'int',
             'dnc_source_type': 'str',
@@ -53,15 +48,14 @@ class DialerDnclistConfigChangeDncList(object):
             'license_id': 'str',
             'contact_method': 'str',
             'division': 'DialerDnclistConfigChangeUriReference',
-            'additional_properties': 'object'
+            'id': 'str',
+            'name': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'version': 'int'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'name': 'name',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
-            'version': 'version',
             'import_status': 'importStatus',
             'size': 'size',
             'dnc_source_type': 'dncSourceType',
@@ -70,14 +64,13 @@ class DialerDnclistConfigChangeDncList(object):
             'license_id': 'licenseId',
             'contact_method': 'contactMethod',
             'division': 'division',
-            'additional_properties': 'additionalProperties'
+            'id': 'id',
+            'name': 'name',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'version': 'version'
         }
 
-        self._id = None
-        self._name = None
-        self._date_created = None
-        self._date_modified = None
-        self._version = None
         self._import_status = None
         self._size = None
         self._dnc_source_type = None
@@ -86,122 +79,11 @@ class DialerDnclistConfigChangeDncList(object):
         self._license_id = None
         self._contact_method = None
         self._division = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerDnclistConfigChangeDncList.
-
-
-        :return: The id of this DialerDnclistConfigChangeDncList.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerDnclistConfigChangeDncList.
-
-
-        :param id: The id of this DialerDnclistConfigChangeDncList.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerDnclistConfigChangeDncList.
-
-
-        :return: The name of this DialerDnclistConfigChangeDncList.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerDnclistConfigChangeDncList.
-
-
-        :param name: The name of this DialerDnclistConfigChangeDncList.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerDnclistConfigChangeDncList.
-
-
-        :return: The date_created of this DialerDnclistConfigChangeDncList.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerDnclistConfigChangeDncList.
-
-
-        :param date_created: The date_created of this DialerDnclistConfigChangeDncList.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerDnclistConfigChangeDncList.
-
-
-        :return: The date_modified of this DialerDnclistConfigChangeDncList.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerDnclistConfigChangeDncList.
-
-
-        :param date_modified: The date_modified of this DialerDnclistConfigChangeDncList.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerDnclistConfigChangeDncList.
-
-
-        :return: The version of this DialerDnclistConfigChangeDncList.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerDnclistConfigChangeDncList.
-
-
-        :param version: The version of this DialerDnclistConfigChangeDncList.
-        :type: int
-        """
-        
-        self._version = version
+        self._id = None
+        self._name = None
+        self._date_created = None
+        self._date_modified = None
+        self._version = None
 
     @property
     def import_status(self):
@@ -230,7 +112,7 @@ class DialerDnclistConfigChangeDncList(object):
     def size(self):
         """
         Gets the size of this DialerDnclistConfigChangeDncList.
-
+        the number of phone numbers in the do not call list
 
         :return: The size of this DialerDnclistConfigChangeDncList.
         :rtype: int
@@ -241,7 +123,7 @@ class DialerDnclistConfigChangeDncList(object):
     def size(self, size):
         """
         Sets the size of this DialerDnclistConfigChangeDncList.
-
+        the number of phone numbers in the do not call list
 
         :param size: The size of this DialerDnclistConfigChangeDncList.
         :type: int
@@ -253,7 +135,7 @@ class DialerDnclistConfigChangeDncList(object):
     def dnc_source_type(self):
         """
         Gets the dnc_source_type of this DialerDnclistConfigChangeDncList.
-
+        the type of dnc list being created, rds (csv file), gryphon, or dnc.com
 
         :return: The dnc_source_type of this DialerDnclistConfigChangeDncList.
         :rtype: str
@@ -264,12 +146,12 @@ class DialerDnclistConfigChangeDncList(object):
     def dnc_source_type(self, dnc_source_type):
         """
         Sets the dnc_source_type of this DialerDnclistConfigChangeDncList.
-
+        the type of dnc list being created, rds (csv file), gryphon, or dnc.com
 
         :param dnc_source_type: The dnc_source_type of this DialerDnclistConfigChangeDncList.
         :type: str
         """
-        allowed_values = ["RDS", "DNC_COM", "GRYPHON"]
+        allowed_values = ["rds", "dnc.com", "gryphon"]
         if dnc_source_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dnc_source_type -> " + dnc_source_type)
             self._dnc_source_type = "outdated_sdk_version"
@@ -280,7 +162,7 @@ class DialerDnclistConfigChangeDncList(object):
     def login_id(self):
         """
         Gets the login_id of this DialerDnclistConfigChangeDncList.
-
+        the loginId if the dncSourceType is dnc.com
 
         :return: The login_id of this DialerDnclistConfigChangeDncList.
         :rtype: str
@@ -291,7 +173,7 @@ class DialerDnclistConfigChangeDncList(object):
     def login_id(self, login_id):
         """
         Sets the login_id of this DialerDnclistConfigChangeDncList.
-
+        the loginId if the dncSourceType is dnc.com
 
         :param login_id: The login_id of this DialerDnclistConfigChangeDncList.
         :type: str
@@ -303,7 +185,7 @@ class DialerDnclistConfigChangeDncList(object):
     def dnc_codes(self):
         """
         Gets the dnc_codes of this DialerDnclistConfigChangeDncList.
-
+        the list of dnc.com codes to be treated as DNC
 
         :return: The dnc_codes of this DialerDnclistConfigChangeDncList.
         :rtype: list[str]
@@ -314,7 +196,7 @@ class DialerDnclistConfigChangeDncList(object):
     def dnc_codes(self, dnc_codes):
         """
         Sets the dnc_codes of this DialerDnclistConfigChangeDncList.
-
+        the list of dnc.com codes to be treated as DNC
 
         :param dnc_codes: The dnc_codes of this DialerDnclistConfigChangeDncList.
         :type: list[str]
@@ -326,7 +208,7 @@ class DialerDnclistConfigChangeDncList(object):
     def license_id(self):
         """
         Gets the license_id of this DialerDnclistConfigChangeDncList.
-
+        the license number if the dncSourceType is gryphon
 
         :return: The license_id of this DialerDnclistConfigChangeDncList.
         :rtype: str
@@ -337,7 +219,7 @@ class DialerDnclistConfigChangeDncList(object):
     def license_id(self, license_id):
         """
         Sets the license_id of this DialerDnclistConfigChangeDncList.
-
+        the license number if the dncSourceType is gryphon
 
         :param license_id: The license_id of this DialerDnclistConfigChangeDncList.
         :type: str
@@ -396,27 +278,119 @@ class DialerDnclistConfigChangeDncList(object):
         self._division = division
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerDnclistConfigChangeDncList.
+        Gets the id of this DialerDnclistConfigChangeDncList.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerDnclistConfigChangeDncList.
-        :rtype: object
+        :return: The id of this DialerDnclistConfigChangeDncList.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerDnclistConfigChangeDncList.
+        Sets the id of this DialerDnclistConfigChangeDncList.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerDnclistConfigChangeDncList.
-        :type: object
+        :param id: The id of this DialerDnclistConfigChangeDncList.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerDnclistConfigChangeDncList.
+        The UI-visible name of the object
+
+        :return: The name of this DialerDnclistConfigChangeDncList.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerDnclistConfigChangeDncList.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerDnclistConfigChangeDncList.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerDnclistConfigChangeDncList.
+        Creation time of the entity
+
+        :return: The date_created of this DialerDnclistConfigChangeDncList.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerDnclistConfigChangeDncList.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerDnclistConfigChangeDncList.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerDnclistConfigChangeDncList.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerDnclistConfigChangeDncList.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerDnclistConfigChangeDncList.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerDnclistConfigChangeDncList.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerDnclistConfigChangeDncList.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerDnclistConfigChangeDncList.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerDnclistConfigChangeDncList.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerDnclistConfigChangeDncList.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

@@ -62,7 +62,7 @@ class ArchitectFlowOutcomeNotificationFlowOutcomeNotification(object):
     def id(self):
         """
         Gets the id of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
-
+        The flow outcome ID
 
         :return: The id of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
         :rtype: str
@@ -73,7 +73,7 @@ class ArchitectFlowOutcomeNotificationFlowOutcomeNotification(object):
     def id(self, id):
         """
         Sets the id of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
-
+        The flow outcome ID
 
         :param id: The id of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
         :type: str
@@ -85,7 +85,7 @@ class ArchitectFlowOutcomeNotificationFlowOutcomeNotification(object):
     def name(self):
         """
         Gets the name of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
-
+        The flow outcome name
 
         :return: The name of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
         :rtype: str
@@ -96,7 +96,7 @@ class ArchitectFlowOutcomeNotificationFlowOutcomeNotification(object):
     def name(self, name):
         """
         Sets the name of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
-
+        The flow outcome name
 
         :param name: The name of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
         :type: str
@@ -108,7 +108,7 @@ class ArchitectFlowOutcomeNotificationFlowOutcomeNotification(object):
     def description(self):
         """
         Gets the description of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
-
+        The flow outcome description
 
         :return: The description of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
         :rtype: str
@@ -119,7 +119,7 @@ class ArchitectFlowOutcomeNotificationFlowOutcomeNotification(object):
     def description(self, description):
         """
         Sets the description of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
-
+        The flow outcome description
 
         :param description: The description of this ArchitectFlowOutcomeNotificationFlowOutcomeNotification.
         :type: str

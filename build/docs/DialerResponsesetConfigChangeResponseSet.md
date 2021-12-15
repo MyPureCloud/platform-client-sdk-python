@@ -7,14 +7,13 @@ title: DialerResponsesetConfigChangeResponseSet
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **date_created** | **datetime** |  | [optional] |
-| **date_modified** | **datetime** |  | [optional] |
-| **version** | **int** |  | [optional] |
-| **responses** | [**dict(str, DialerResponsesetConfigChangeReaction)**](DialerResponsesetConfigChangeReaction.html) |  | [optional] |
-| **beep_detection_enabled** | **bool** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **responses** | [**dict(str, DialerResponsesetConfigChangeReaction)**](DialerResponsesetConfigChangeReaction.html) | Map of disposition identifiers to reactions. For example: {\&quot;disposition.classification.callable.person\&quot;: {\&quot;reactionType\&quot;: \&quot;transfer\&quot;}} | [optional] |
+| **beep_detection_enabled** | **bool** | When beep detection is enabled, answering machine detection will wait for the beep before transferring the call | [optional] |
+| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **name** | **str** | The UI-visible name of the object | [optional] |
+| **date_created** | **datetime** | Creation time of the entity | [optional] |
+| **date_modified** | **datetime** | Last modified time of the entity | [optional] |
+| **version** | **int** | Required for updates, must match the version number of the most recent update | [optional] |
 {: class="table table-striped"}
 
 

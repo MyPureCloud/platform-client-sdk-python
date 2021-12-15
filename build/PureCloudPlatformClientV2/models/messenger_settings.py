@@ -44,6 +44,7 @@ class MessengerSettings(object):
             'styles': 'MessengerStyles',
             'launcher_button': 'LauncherButtonSettings',
             'file_upload': 'FileUploadSettings',
+            'apps': 'MessengerApps',
             'position': 'MessengerPositionSettings'
         }
 
@@ -52,6 +53,7 @@ class MessengerSettings(object):
             'styles': 'styles',
             'launcher_button': 'launcherButton',
             'file_upload': 'fileUpload',
+            'apps': 'apps',
             'position': 'position'
         }
 
@@ -59,6 +61,7 @@ class MessengerSettings(object):
         self._styles = None
         self._launcher_button = None
         self._file_upload = None
+        self._apps = None
         self._position = None
 
     @property
@@ -152,6 +155,29 @@ class MessengerSettings(object):
         """
         
         self._file_upload = file_upload
+
+    @property
+    def apps(self):
+        """
+        Gets the apps of this MessengerSettings.
+        The apps embedded in the messenger
+
+        :return: The apps of this MessengerSettings.
+        :rtype: MessengerApps
+        """
+        return self._apps
+
+    @apps.setter
+    def apps(self, apps):
+        """
+        Sets the apps of this MessengerSettings.
+        The apps embedded in the messenger
+
+        :param apps: The apps of this MessengerSettings.
+        :type: MessengerApps
+        """
+        
+        self._apps = apps
 
     @property
     def position(self):

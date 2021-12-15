@@ -45,9 +45,11 @@ class AnalyticsConversationWithoutAttributes(object):
             'conversation_start': 'datetime',
             'division_ids': 'list[str]',
             'external_tag': 'str',
+            'knowledge_base_ids': 'list[str]',
             'media_stats_min_conversation_mos': 'float',
             'media_stats_min_conversation_r_factor': 'float',
             'originating_direction': 'str',
+            'self_served': 'bool',
             'evaluations': 'list[AnalyticsEvaluation]',
             'surveys': 'list[AnalyticsSurvey]',
             'resolutions': 'list[AnalyticsResolution]',
@@ -60,9 +62,11 @@ class AnalyticsConversationWithoutAttributes(object):
             'conversation_start': 'conversationStart',
             'division_ids': 'divisionIds',
             'external_tag': 'externalTag',
+            'knowledge_base_ids': 'knowledgeBaseIds',
             'media_stats_min_conversation_mos': 'mediaStatsMinConversationMos',
             'media_stats_min_conversation_r_factor': 'mediaStatsMinConversationRFactor',
             'originating_direction': 'originatingDirection',
+            'self_served': 'selfServed',
             'evaluations': 'evaluations',
             'surveys': 'surveys',
             'resolutions': 'resolutions',
@@ -74,9 +78,11 @@ class AnalyticsConversationWithoutAttributes(object):
         self._conversation_start = None
         self._division_ids = None
         self._external_tag = None
+        self._knowledge_base_ids = None
         self._media_stats_min_conversation_mos = None
         self._media_stats_min_conversation_r_factor = None
         self._originating_direction = None
+        self._self_served = None
         self._evaluations = None
         self._surveys = None
         self._resolutions = None
@@ -198,6 +204,29 @@ class AnalyticsConversationWithoutAttributes(object):
         self._external_tag = external_tag
 
     @property
+    def knowledge_base_ids(self):
+        """
+        Gets the knowledge_base_ids of this AnalyticsConversationWithoutAttributes.
+        The unique identifier(s) of the knowledge base(s) used
+
+        :return: The knowledge_base_ids of this AnalyticsConversationWithoutAttributes.
+        :rtype: list[str]
+        """
+        return self._knowledge_base_ids
+
+    @knowledge_base_ids.setter
+    def knowledge_base_ids(self, knowledge_base_ids):
+        """
+        Sets the knowledge_base_ids of this AnalyticsConversationWithoutAttributes.
+        The unique identifier(s) of the knowledge base(s) used
+
+        :param knowledge_base_ids: The knowledge_base_ids of this AnalyticsConversationWithoutAttributes.
+        :type: list[str]
+        """
+        
+        self._knowledge_base_ids = knowledge_base_ids
+
+    @property
     def media_stats_min_conversation_mos(self):
         """
         Gets the media_stats_min_conversation_mos of this AnalyticsConversationWithoutAttributes.
@@ -269,6 +298,29 @@ class AnalyticsConversationWithoutAttributes(object):
             self._originating_direction = "outdated_sdk_version"
         else:
             self._originating_direction = originating_direction
+
+    @property
+    def self_served(self):
+        """
+        Gets the self_served of this AnalyticsConversationWithoutAttributes.
+        Indicates whether all flow sessions were self serviced
+
+        :return: The self_served of this AnalyticsConversationWithoutAttributes.
+        :rtype: bool
+        """
+        return self._self_served
+
+    @self_served.setter
+    def self_served(self, self_served):
+        """
+        Sets the self_served of this AnalyticsConversationWithoutAttributes.
+        Indicates whether all flow sessions were self serviced
+
+        :param self_served: The self_served of this AnalyticsConversationWithoutAttributes.
+        :type: bool
+        """
+        
+        self._self_served = self_served
 
     @property
     def evaluations(self):

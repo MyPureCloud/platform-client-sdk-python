@@ -7,7 +7,7 @@ title: OutboundMessagingMessagingCampaignConfigChangeResponseRef
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
+| **id** | **str** | The unique response id | [optional] |
 {: class="table table-striped"}
 
 

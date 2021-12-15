@@ -56,7 +56,7 @@ class ConversationScreenShareEventTopicJourneyAction(object):
     def id(self):
         """
         Gets the id of this ConversationScreenShareEventTopicJourneyAction.
-
+        The ID of an action from the Journey System (an action is spawned from an actionMap)
 
         :return: The id of this ConversationScreenShareEventTopicJourneyAction.
         :rtype: str
@@ -67,7 +67,7 @@ class ConversationScreenShareEventTopicJourneyAction(object):
     def id(self, id):
         """
         Sets the id of this ConversationScreenShareEventTopicJourneyAction.
-
+        The ID of an action from the Journey System (an action is spawned from an actionMap)
 
         :param id: The id of this ConversationScreenShareEventTopicJourneyAction.
         :type: str

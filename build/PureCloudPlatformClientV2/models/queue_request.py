@@ -60,6 +60,7 @@ class QueueRequest(object):
             'email_in_queue_flow': 'DomainEntityRef',
             'message_in_queue_flow': 'DomainEntityRef',
             'whisper_prompt': 'DomainEntityRef',
+            'on_hold_prompt': 'DomainEntityRef',
             'auto_answer_only': 'bool',
             'enable_transcription': 'bool',
             'enable_manual_assignment': 'bool',
@@ -92,6 +93,7 @@ class QueueRequest(object):
             'email_in_queue_flow': 'emailInQueueFlow',
             'message_in_queue_flow': 'messageInQueueFlow',
             'whisper_prompt': 'whisperPrompt',
+            'on_hold_prompt': 'onHoldPrompt',
             'auto_answer_only': 'autoAnswerOnly',
             'enable_transcription': 'enableTranscription',
             'enable_manual_assignment': 'enableManualAssignment',
@@ -123,6 +125,7 @@ class QueueRequest(object):
         self._email_in_queue_flow = None
         self._message_in_queue_flow = None
         self._whisper_prompt = None
+        self._on_hold_prompt = None
         self._auto_answer_only = None
         self._enable_transcription = None
         self._enable_manual_assignment = None
@@ -596,6 +599,29 @@ class QueueRequest(object):
         """
         
         self._whisper_prompt = whisper_prompt
+
+    @property
+    def on_hold_prompt(self):
+        """
+        Gets the on_hold_prompt of this QueueRequest.
+        The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
+
+        :return: The on_hold_prompt of this QueueRequest.
+        :rtype: DomainEntityRef
+        """
+        return self._on_hold_prompt
+
+    @on_hold_prompt.setter
+    def on_hold_prompt(self, on_hold_prompt):
+        """
+        Sets the on_hold_prompt of this QueueRequest.
+        The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
+
+        :param on_hold_prompt: The on_hold_prompt of this QueueRequest.
+        :type: DomainEntityRef
+        """
+        
+        self._on_hold_prompt = on_hold_prompt
 
     @property
     def auto_answer_only(self):

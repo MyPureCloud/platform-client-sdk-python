@@ -44,8 +44,7 @@ class ConversationCallbackEventTopicDialerPreview(object):
             'contact_id': 'str',
             'contact_list_id': 'str',
             'campaign_id': 'str',
-            'phone_number_columns': 'list[ConversationCallbackEventTopicPhoneNumberColumn]',
-            'additional_properties': 'object'
+            'phone_number_columns': 'list[ConversationCallbackEventTopicPhoneNumberColumn]'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class ConversationCallbackEventTopicDialerPreview(object):
             'contact_id': 'contactId',
             'contact_list_id': 'contactListId',
             'campaign_id': 'campaignId',
-            'phone_number_columns': 'phoneNumberColumns',
-            'additional_properties': 'additionalProperties'
+            'phone_number_columns': 'phoneNumberColumns'
         }
 
         self._id = None
@@ -62,7 +60,6 @@ class ConversationCallbackEventTopicDialerPreview(object):
         self._contact_list_id = None
         self._campaign_id = None
         self._phone_number_columns = None
-        self._additional_properties = None
 
     @property
     def id(self):
@@ -91,7 +88,7 @@ class ConversationCallbackEventTopicDialerPreview(object):
     def contact_id(self):
         """
         Gets the contact_id of this ConversationCallbackEventTopicDialerPreview.
-
+        The contact associated with this preview data pop
 
         :return: The contact_id of this ConversationCallbackEventTopicDialerPreview.
         :rtype: str
@@ -102,7 +99,7 @@ class ConversationCallbackEventTopicDialerPreview(object):
     def contact_id(self, contact_id):
         """
         Sets the contact_id of this ConversationCallbackEventTopicDialerPreview.
-
+        The contact associated with this preview data pop
 
         :param contact_id: The contact_id of this ConversationCallbackEventTopicDialerPreview.
         :type: str
@@ -114,7 +111,7 @@ class ConversationCallbackEventTopicDialerPreview(object):
     def contact_list_id(self):
         """
         Gets the contact_list_id of this ConversationCallbackEventTopicDialerPreview.
-
+        The contactList associated with this preview data pop.
 
         :return: The contact_list_id of this ConversationCallbackEventTopicDialerPreview.
         :rtype: str
@@ -125,7 +122,7 @@ class ConversationCallbackEventTopicDialerPreview(object):
     def contact_list_id(self, contact_list_id):
         """
         Sets the contact_list_id of this ConversationCallbackEventTopicDialerPreview.
-
+        The contactList associated with this preview data pop.
 
         :param contact_list_id: The contact_list_id of this ConversationCallbackEventTopicDialerPreview.
         :type: str
@@ -137,7 +134,7 @@ class ConversationCallbackEventTopicDialerPreview(object):
     def campaign_id(self):
         """
         Gets the campaign_id of this ConversationCallbackEventTopicDialerPreview.
-
+        The campaignId associated with this preview data pop.
 
         :return: The campaign_id of this ConversationCallbackEventTopicDialerPreview.
         :rtype: str
@@ -148,7 +145,7 @@ class ConversationCallbackEventTopicDialerPreview(object):
     def campaign_id(self, campaign_id):
         """
         Sets the campaign_id of this ConversationCallbackEventTopicDialerPreview.
-
+        The campaignId associated with this preview data pop.
 
         :param campaign_id: The campaign_id of this ConversationCallbackEventTopicDialerPreview.
         :type: str
@@ -160,7 +157,7 @@ class ConversationCallbackEventTopicDialerPreview(object):
     def phone_number_columns(self):
         """
         Gets the phone_number_columns of this ConversationCallbackEventTopicDialerPreview.
-
+        The phone number columns associated with this campaign
 
         :return: The phone_number_columns of this ConversationCallbackEventTopicDialerPreview.
         :rtype: list[ConversationCallbackEventTopicPhoneNumberColumn]
@@ -171,36 +168,13 @@ class ConversationCallbackEventTopicDialerPreview(object):
     def phone_number_columns(self, phone_number_columns):
         """
         Sets the phone_number_columns of this ConversationCallbackEventTopicDialerPreview.
-
+        The phone number columns associated with this campaign
 
         :param phone_number_columns: The phone_number_columns of this ConversationCallbackEventTopicDialerPreview.
         :type: list[ConversationCallbackEventTopicPhoneNumberColumn]
         """
         
         self._phone_number_columns = phone_number_columns
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationCallbackEventTopicDialerPreview.
-
-
-        :return: The additional_properties of this ConversationCallbackEventTopicDialerPreview.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationCallbackEventTopicDialerPreview.
-
-
-        :param additional_properties: The additional_properties of this ConversationCallbackEventTopicDialerPreview.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

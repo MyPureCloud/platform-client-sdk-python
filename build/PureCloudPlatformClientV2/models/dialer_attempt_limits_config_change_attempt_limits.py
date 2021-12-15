@@ -40,162 +40,44 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'name': 'str',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
-            'version': 'int',
             'max_attempts_per_contact': 'int',
             'max_attempts_per_number': 'int',
             'time_zone_id': 'str',
             'reset_period': 'str',
             'recall_entries': 'dict(str, DialerAttemptLimitsConfigChangeRecallEntry)',
             'breadth_first_recalls': 'bool',
-            'additional_properties': 'object'
+            'id': 'str',
+            'name': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'version': 'int'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'name': 'name',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
-            'version': 'version',
             'max_attempts_per_contact': 'maxAttemptsPerContact',
             'max_attempts_per_number': 'maxAttemptsPerNumber',
             'time_zone_id': 'timeZoneId',
             'reset_period': 'resetPeriod',
             'recall_entries': 'recallEntries',
             'breadth_first_recalls': 'breadthFirstRecalls',
-            'additional_properties': 'additionalProperties'
+            'id': 'id',
+            'name': 'name',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'version': 'version'
         }
 
-        self._id = None
-        self._name = None
-        self._date_created = None
-        self._date_modified = None
-        self._version = None
         self._max_attempts_per_contact = None
         self._max_attempts_per_number = None
         self._time_zone_id = None
         self._reset_period = None
         self._recall_entries = None
         self._breadth_first_recalls = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :return: The id of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :param id: The id of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :return: The name of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :param name: The name of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :return: The date_created of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :param date_created: The date_created of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :return: The date_modified of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :param date_modified: The date_modified of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :return: The version of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
-
-        :param version: The version of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :type: int
-        """
-        
-        self._version = version
+        self._id = None
+        self._name = None
+        self._date_created = None
+        self._date_modified = None
+        self._version = None
 
     @property
     def max_attempts_per_contact(self):
@@ -247,7 +129,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
     def time_zone_id(self):
         """
         Gets the time_zone_id of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
+        The timezone is necessary to define when \"today\" starts and ends
 
         :return: The time_zone_id of this DialerAttemptLimitsConfigChangeAttemptLimits.
         :rtype: str
@@ -258,7 +140,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
     def time_zone_id(self, time_zone_id):
         """
         Sets the time_zone_id of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
+        The timezone is necessary to define when \"today\" starts and ends
 
         :param time_zone_id: The time_zone_id of this DialerAttemptLimitsConfigChangeAttemptLimits.
         :type: str
@@ -270,7 +152,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
     def reset_period(self):
         """
         Gets the reset_period of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
+        After how long the number of attempts will be set back to 0
 
         :return: The reset_period of this DialerAttemptLimitsConfigChangeAttemptLimits.
         :rtype: str
@@ -281,7 +163,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
     def reset_period(self, reset_period):
         """
         Sets the reset_period of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
+        After how long the number of attempts will be set back to 0
 
         :param reset_period: The reset_period of this DialerAttemptLimitsConfigChangeAttemptLimits.
         :type: str
@@ -297,7 +179,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
     def recall_entries(self):
         """
         Gets the recall_entries of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
+        Configuration for recall attempts
 
         :return: The recall_entries of this DialerAttemptLimitsConfigChangeAttemptLimits.
         :rtype: dict(str, DialerAttemptLimitsConfigChangeRecallEntry)
@@ -308,7 +190,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
     def recall_entries(self, recall_entries):
         """
         Sets the recall_entries of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
+        Configuration for recall attempts
 
         :param recall_entries: The recall_entries of this DialerAttemptLimitsConfigChangeAttemptLimits.
         :type: dict(str, DialerAttemptLimitsConfigChangeRecallEntry)
@@ -320,7 +202,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
     def breadth_first_recalls(self):
         """
         Gets the breadth_first_recalls of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
+        Whether recalls are performed before considering other numbers (true) or after (false)
 
         :return: The breadth_first_recalls of this DialerAttemptLimitsConfigChangeAttemptLimits.
         :rtype: bool
@@ -331,7 +213,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
     def breadth_first_recalls(self, breadth_first_recalls):
         """
         Sets the breadth_first_recalls of this DialerAttemptLimitsConfigChangeAttemptLimits.
-
+        Whether recalls are performed before considering other numbers (true) or after (false)
 
         :param breadth_first_recalls: The breadth_first_recalls of this DialerAttemptLimitsConfigChangeAttemptLimits.
         :type: bool
@@ -340,27 +222,119 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         self._breadth_first_recalls = breadth_first_recalls
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        Gets the id of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :rtype: object
+        :return: The id of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        Sets the id of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerAttemptLimitsConfigChangeAttemptLimits.
-        :type: object
+        :param id: The id of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        The UI-visible name of the object
+
+        :return: The name of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        Creation time of the entity
+
+        :return: The date_created of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

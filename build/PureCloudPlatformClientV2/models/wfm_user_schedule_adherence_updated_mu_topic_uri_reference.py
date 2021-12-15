@@ -56,7 +56,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUriReference(object):
     def id(self):
         """
         Gets the id of this WfmUserScheduleAdherenceUpdatedMuTopicUriReference.
-
+        The ID of the resource
 
         :return: The id of this WfmUserScheduleAdherenceUpdatedMuTopicUriReference.
         :rtype: str
@@ -67,7 +67,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUriReference(object):
     def id(self, id):
         """
         Sets the id of this WfmUserScheduleAdherenceUpdatedMuTopicUriReference.
-
+        The ID of the resource
 
         :param id: The id of this WfmUserScheduleAdherenceUpdatedMuTopicUriReference.
         :type: str
@@ -79,7 +79,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUriReference(object):
     def name(self):
         """
         Gets the name of this WfmUserScheduleAdherenceUpdatedMuTopicUriReference.
-
+        The name of the resource
 
         :return: The name of this WfmUserScheduleAdherenceUpdatedMuTopicUriReference.
         :rtype: str
@@ -90,7 +90,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUriReference(object):
     def name(self, name):
         """
         Sets the name of this WfmUserScheduleAdherenceUpdatedMuTopicUriReference.
-
+        The name of the resource
 
         :param name: The name of this WfmUserScheduleAdherenceUpdatedMuTopicUriReference.
         :type: str

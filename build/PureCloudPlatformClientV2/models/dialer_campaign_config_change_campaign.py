@@ -40,11 +40,6 @@ class DialerCampaignConfigChangeCampaign(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'name': 'str',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
-            'version': 'int',
             'contact_list': 'DialerCampaignConfigChangeUriReference',
             'queue': 'DialerCampaignConfigChangeUriReference',
             'dialing_mode': 'str',
@@ -73,15 +68,14 @@ class DialerCampaignConfigChangeCampaign(object):
             'contact_list_filters': 'list[DialerCampaignConfigChangeUriReference]',
             'division': 'DialerCampaignConfigChangeUriReference',
             'agent_owned_column': 'str',
-            'additional_properties': 'object'
+            'id': 'str',
+            'name': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'version': 'int'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'name': 'name',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
-            'version': 'version',
             'contact_list': 'contactList',
             'queue': 'queue',
             'dialing_mode': 'dialingMode',
@@ -110,14 +104,13 @@ class DialerCampaignConfigChangeCampaign(object):
             'contact_list_filters': 'contactListFilters',
             'division': 'division',
             'agent_owned_column': 'agentOwnedColumn',
-            'additional_properties': 'additionalProperties'
+            'id': 'id',
+            'name': 'name',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'version': 'version'
         }
 
-        self._id = None
-        self._name = None
-        self._date_created = None
-        self._date_modified = None
-        self._version = None
         self._contact_list = None
         self._queue = None
         self._dialing_mode = None
@@ -146,122 +139,11 @@ class DialerCampaignConfigChangeCampaign(object):
         self._contact_list_filters = None
         self._division = None
         self._agent_owned_column = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerCampaignConfigChangeCampaign.
-
-
-        :return: The id of this DialerCampaignConfigChangeCampaign.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerCampaignConfigChangeCampaign.
-
-
-        :param id: The id of this DialerCampaignConfigChangeCampaign.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerCampaignConfigChangeCampaign.
-
-
-        :return: The name of this DialerCampaignConfigChangeCampaign.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerCampaignConfigChangeCampaign.
-
-
-        :param name: The name of this DialerCampaignConfigChangeCampaign.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerCampaignConfigChangeCampaign.
-
-
-        :return: The date_created of this DialerCampaignConfigChangeCampaign.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerCampaignConfigChangeCampaign.
-
-
-        :param date_created: The date_created of this DialerCampaignConfigChangeCampaign.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerCampaignConfigChangeCampaign.
-
-
-        :return: The date_modified of this DialerCampaignConfigChangeCampaign.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerCampaignConfigChangeCampaign.
-
-
-        :param date_modified: The date_modified of this DialerCampaignConfigChangeCampaign.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerCampaignConfigChangeCampaign.
-
-
-        :return: The version of this DialerCampaignConfigChangeCampaign.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerCampaignConfigChangeCampaign.
-
-
-        :param version: The version of this DialerCampaignConfigChangeCampaign.
-        :type: int
-        """
-        
-        self._version = version
+        self._id = None
+        self._name = None
+        self._date_created = None
+        self._date_modified = None
+        self._version = None
 
     @property
     def contact_list(self):
@@ -290,7 +172,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def queue(self):
         """
         Gets the queue of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :return: The queue of this DialerCampaignConfigChangeCampaign.
         :rtype: DialerCampaignConfigChangeUriReference
@@ -301,7 +183,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def queue(self, queue):
         """
         Sets the queue of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :param queue: The queue of this DialerCampaignConfigChangeCampaign.
         :type: DialerCampaignConfigChangeUriReference
@@ -313,7 +195,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def dialing_mode(self):
         """
         Gets the dialing_mode of this DialerCampaignConfigChangeCampaign.
-
+        dialing mode of the campaign
 
         :return: The dialing_mode of this DialerCampaignConfigChangeCampaign.
         :rtype: str
@@ -324,12 +206,12 @@ class DialerCampaignConfigChangeCampaign(object):
     def dialing_mode(self, dialing_mode):
         """
         Sets the dialing_mode of this DialerCampaignConfigChangeCampaign.
-
+        dialing mode of the campaign
 
         :param dialing_mode: The dialing_mode of this DialerCampaignConfigChangeCampaign.
         :type: str
         """
-        allowed_values = ["AGENTLESS", "EXTERNAL", "PREVIEW", "POWER", "PREDICTIVE", "PROGRESSIVE"]
+        allowed_values = ["agentless", "external", "preview", "power", "predictive", "progressive"]
         if dialing_mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dialing_mode -> " + dialing_mode)
             self._dialing_mode = "outdated_sdk_version"
@@ -340,7 +222,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def script(self):
         """
         Gets the script of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :return: The script of this DialerCampaignConfigChangeCampaign.
         :rtype: DialerCampaignConfigChangeUriReference
@@ -351,7 +233,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def script(self, script):
         """
         Sets the script of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :param script: The script of this DialerCampaignConfigChangeCampaign.
         :type: DialerCampaignConfigChangeUriReference
@@ -363,7 +245,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def edge_group(self):
         """
         Gets the edge_group of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :return: The edge_group of this DialerCampaignConfigChangeCampaign.
         :rtype: DialerCampaignConfigChangeUriReference
@@ -374,7 +256,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def edge_group(self, edge_group):
         """
         Sets the edge_group of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :param edge_group: The edge_group of this DialerCampaignConfigChangeCampaign.
         :type: DialerCampaignConfigChangeUriReference
@@ -386,7 +268,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def site(self):
         """
         Gets the site of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :return: The site of this DialerCampaignConfigChangeCampaign.
         :rtype: DialerCampaignConfigChangeUriReference
@@ -397,7 +279,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def site(self, site):
         """
         Sets the site of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :param site: The site of this DialerCampaignConfigChangeCampaign.
         :type: DialerCampaignConfigChangeUriReference
@@ -425,7 +307,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :param campaign_status: The campaign_status of this DialerCampaignConfigChangeCampaign.
         :type: str
         """
-        allowed_values = ["ON", "OFF", "COMPLETE", "STOPPING", "INVALID"]
+        allowed_values = ["on", "off", "complete", "stopping", "invalid"]
         if campaign_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for campaign_status -> " + campaign_status)
             self._campaign_status = "outdated_sdk_version"
@@ -436,7 +318,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def phone_columns(self):
         """
         Gets the phone_columns of this DialerCampaignConfigChangeCampaign.
-
+        the contact list phone columns to be called for the campaign
 
         :return: The phone_columns of this DialerCampaignConfigChangeCampaign.
         :rtype: list[DialerCampaignConfigChangePhoneColumn]
@@ -447,7 +329,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def phone_columns(self, phone_columns):
         """
         Sets the phone_columns of this DialerCampaignConfigChangeCampaign.
-
+        the contact list phone columns to be called for the campaign
 
         :param phone_columns: The phone_columns of this DialerCampaignConfigChangeCampaign.
         :type: list[DialerCampaignConfigChangePhoneColumn]
@@ -459,7 +341,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def abandon_rate(self):
         """
         Gets the abandon_rate of this DialerCampaignConfigChangeCampaign.
-
+        the targeted abandon rate percentage
 
         :return: The abandon_rate of this DialerCampaignConfigChangeCampaign.
         :rtype: float
@@ -470,7 +352,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def abandon_rate(self, abandon_rate):
         """
         Sets the abandon_rate of this DialerCampaignConfigChangeCampaign.
-
+        the targeted abandon rate percentage
 
         :param abandon_rate: The abandon_rate of this DialerCampaignConfigChangeCampaign.
         :type: float
@@ -482,7 +364,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def dnc_lists(self):
         """
         Gets the dnc_lists of this DialerCampaignConfigChangeCampaign.
-
+        identifiers of the do not call lists
 
         :return: The dnc_lists of this DialerCampaignConfigChangeCampaign.
         :rtype: list[DialerCampaignConfigChangeUriReference]
@@ -493,7 +375,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def dnc_lists(self, dnc_lists):
         """
         Sets the dnc_lists of this DialerCampaignConfigChangeCampaign.
-
+        identifiers of the do not call lists
 
         :param dnc_lists: The dnc_lists of this DialerCampaignConfigChangeCampaign.
         :type: list[DialerCampaignConfigChangeUriReference]
@@ -505,7 +387,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def callable_time_set(self):
         """
         Gets the callable_time_set of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :return: The callable_time_set of this DialerCampaignConfigChangeCampaign.
         :rtype: DialerCampaignConfigChangeUriReference
@@ -516,7 +398,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def callable_time_set(self, callable_time_set):
         """
         Sets the callable_time_set of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :param callable_time_set: The callable_time_set of this DialerCampaignConfigChangeCampaign.
         :type: DialerCampaignConfigChangeUriReference
@@ -528,7 +410,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def call_analysis_response_set(self):
         """
         Gets the call_analysis_response_set of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :return: The call_analysis_response_set of this DialerCampaignConfigChangeCampaign.
         :rtype: DialerCampaignConfigChangeUriReference
@@ -539,7 +421,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def call_analysis_response_set(self, call_analysis_response_set):
         """
         Sets the call_analysis_response_set of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :param call_analysis_response_set: The call_analysis_response_set of this DialerCampaignConfigChangeCampaign.
         :type: DialerCampaignConfigChangeUriReference
@@ -551,7 +433,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def caller_name(self):
         """
         Gets the caller_name of this DialerCampaignConfigChangeCampaign.
-
+        caller id name to be displayed on the outbound call
 
         :return: The caller_name of this DialerCampaignConfigChangeCampaign.
         :rtype: str
@@ -562,7 +444,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def caller_name(self, caller_name):
         """
         Sets the caller_name of this DialerCampaignConfigChangeCampaign.
-
+        caller id name to be displayed on the outbound call
 
         :param caller_name: The caller_name of this DialerCampaignConfigChangeCampaign.
         :type: str
@@ -574,7 +456,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def caller_address(self):
         """
         Gets the caller_address of this DialerCampaignConfigChangeCampaign.
-
+        caller id phone number to be displayed on the outbound call
 
         :return: The caller_address of this DialerCampaignConfigChangeCampaign.
         :rtype: str
@@ -585,7 +467,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def caller_address(self, caller_address):
         """
         Sets the caller_address of this DialerCampaignConfigChangeCampaign.
-
+        caller id phone number to be displayed on the outbound call
 
         :param caller_address: The caller_address of this DialerCampaignConfigChangeCampaign.
         :type: str
@@ -597,7 +479,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def outbound_line_count(self):
         """
         Gets the outbound_line_count of this DialerCampaignConfigChangeCampaign.
-
+        for agentless campaigns, the number of outbound lines to be concurrently dialed
 
         :return: The outbound_line_count of this DialerCampaignConfigChangeCampaign.
         :rtype: int
@@ -608,7 +490,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def outbound_line_count(self, outbound_line_count):
         """
         Sets the outbound_line_count of this DialerCampaignConfigChangeCampaign.
-
+        for agentless campaigns, the number of outbound lines to be concurrently dialed
 
         :param outbound_line_count: The outbound_line_count of this DialerCampaignConfigChangeCampaign.
         :type: int
@@ -620,7 +502,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def errors(self):
         """
         Gets the errors of this DialerCampaignConfigChangeCampaign.
-
+        a list of current error conditions associated with the campaign
 
         :return: The errors of this DialerCampaignConfigChangeCampaign.
         :rtype: list[DialerCampaignConfigChangeRestErrorDetail]
@@ -631,7 +513,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def errors(self, errors):
         """
         Sets the errors of this DialerCampaignConfigChangeCampaign.
-
+        a list of current error conditions associated with the campaign
 
         :param errors: The errors of this DialerCampaignConfigChangeCampaign.
         :type: list[DialerCampaignConfigChangeRestErrorDetail]
@@ -643,7 +525,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def rule_sets(self):
         """
         Gets the rule_sets of this DialerCampaignConfigChangeCampaign.
-
+        identifiers of the rule sets
 
         :return: The rule_sets of this DialerCampaignConfigChangeCampaign.
         :rtype: list[DialerCampaignConfigChangeUriReference]
@@ -654,7 +536,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def rule_sets(self, rule_sets):
         """
         Sets the rule_sets of this DialerCampaignConfigChangeCampaign.
-
+        identifiers of the rule sets
 
         :param rule_sets: The rule_sets of this DialerCampaignConfigChangeCampaign.
         :type: list[DialerCampaignConfigChangeUriReference]
@@ -666,7 +548,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def skip_preview_disabled(self):
         """
         Gets the skip_preview_disabled of this DialerCampaignConfigChangeCampaign.
-
+        for preview campaigns, indicator of whether the agent can skip a preview without placing a call
 
         :return: The skip_preview_disabled of this DialerCampaignConfigChangeCampaign.
         :rtype: bool
@@ -677,7 +559,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def skip_preview_disabled(self, skip_preview_disabled):
         """
         Sets the skip_preview_disabled of this DialerCampaignConfigChangeCampaign.
-
+        for preview campaigns, indicator of whether the agent can skip a preview without placing a call
 
         :param skip_preview_disabled: The skip_preview_disabled of this DialerCampaignConfigChangeCampaign.
         :type: bool
@@ -689,7 +571,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def preview_time_out_seconds(self):
         """
         Gets the preview_time_out_seconds of this DialerCampaignConfigChangeCampaign.
-
+        for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
 
         :return: The preview_time_out_seconds of this DialerCampaignConfigChangeCampaign.
         :rtype: int
@@ -700,7 +582,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def preview_time_out_seconds(self, preview_time_out_seconds):
         """
         Sets the preview_time_out_seconds of this DialerCampaignConfigChangeCampaign.
-
+        for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
 
         :param preview_time_out_seconds: The preview_time_out_seconds of this DialerCampaignConfigChangeCampaign.
         :type: int
@@ -712,7 +594,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def single_number_preview(self):
         """
         Gets the single_number_preview of this DialerCampaignConfigChangeCampaign.
-
+        for preview campaigns with multiple phone columns, indicator if one (true) or multiple (false) phone numbers will be available to call for each preview
 
         :return: The single_number_preview of this DialerCampaignConfigChangeCampaign.
         :rtype: bool
@@ -723,7 +605,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def single_number_preview(self, single_number_preview):
         """
         Sets the single_number_preview of this DialerCampaignConfigChangeCampaign.
-
+        for preview campaigns with multiple phone columns, indicator if one (true) or multiple (false) phone numbers will be available to call for each preview
 
         :param single_number_preview: The single_number_preview of this DialerCampaignConfigChangeCampaign.
         :type: bool
@@ -758,7 +640,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def contact_sorts(self):
         """
         Gets the contact_sorts of this DialerCampaignConfigChangeCampaign.
-
+        List of contact sort objects.
 
         :return: The contact_sorts of this DialerCampaignConfigChangeCampaign.
         :rtype: list[DialerCampaignConfigChangeContactSort]
@@ -769,7 +651,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def contact_sorts(self, contact_sorts):
         """
         Sets the contact_sorts of this DialerCampaignConfigChangeCampaign.
-
+        List of contact sort objects.
 
         :param contact_sorts: The contact_sorts of this DialerCampaignConfigChangeCampaign.
         :type: list[DialerCampaignConfigChangeContactSort]
@@ -781,7 +663,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def no_answer_timeout(self):
         """
         Gets the no_answer_timeout of this DialerCampaignConfigChangeCampaign.
-
+        for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
 
         :return: The no_answer_timeout of this DialerCampaignConfigChangeCampaign.
         :rtype: int
@@ -792,7 +674,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def no_answer_timeout(self, no_answer_timeout):
         """
         Sets the no_answer_timeout of this DialerCampaignConfigChangeCampaign.
-
+        for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
 
         :param no_answer_timeout: The no_answer_timeout of this DialerCampaignConfigChangeCampaign.
         :type: int
@@ -804,7 +686,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def call_analysis_language(self):
         """
         Gets the call_analysis_language of this DialerCampaignConfigChangeCampaign.
-
+        The language the edge will use to analyze the call
 
         :return: The call_analysis_language of this DialerCampaignConfigChangeCampaign.
         :rtype: str
@@ -815,7 +697,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def call_analysis_language(self, call_analysis_language):
         """
         Sets the call_analysis_language of this DialerCampaignConfigChangeCampaign.
-
+        The language the edge will use to analyze the call
 
         :param call_analysis_language: The call_analysis_language of this DialerCampaignConfigChangeCampaign.
         :type: str
@@ -827,7 +709,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def priority(self):
         """
         Gets the priority of this DialerCampaignConfigChangeCampaign.
-
+        The priority of this campaign relative to other campaigns
 
         :return: The priority of this DialerCampaignConfigChangeCampaign.
         :rtype: int
@@ -838,7 +720,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def priority(self, priority):
         """
         Sets the priority of this DialerCampaignConfigChangeCampaign.
-
+        The priority of this campaign relative to other campaigns
 
         :param priority: The priority of this DialerCampaignConfigChangeCampaign.
         :type: int
@@ -850,7 +732,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def contact_list_filters(self):
         """
         Gets the contact_list_filters of this DialerCampaignConfigChangeCampaign.
-
+        List of contact filters
 
         :return: The contact_list_filters of this DialerCampaignConfigChangeCampaign.
         :rtype: list[DialerCampaignConfigChangeUriReference]
@@ -861,7 +743,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def contact_list_filters(self, contact_list_filters):
         """
         Sets the contact_list_filters of this DialerCampaignConfigChangeCampaign.
-
+        List of contact filters
 
         :param contact_list_filters: The contact_list_filters of this DialerCampaignConfigChangeCampaign.
         :type: list[DialerCampaignConfigChangeUriReference]
@@ -873,7 +755,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def division(self):
         """
         Gets the division of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :return: The division of this DialerCampaignConfigChangeCampaign.
         :rtype: DialerCampaignConfigChangeUriReference
@@ -884,7 +766,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def division(self, division):
         """
         Sets the division of this DialerCampaignConfigChangeCampaign.
-
+        A UriReference for a resource
 
         :param division: The division of this DialerCampaignConfigChangeCampaign.
         :type: DialerCampaignConfigChangeUriReference
@@ -896,7 +778,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def agent_owned_column(self):
         """
         Gets the agent_owned_column of this DialerCampaignConfigChangeCampaign.
-
+        For Preview Campaigns. Name of the contact column in the contact list containing the userIds of agents to assign specific contact records to.
 
         :return: The agent_owned_column of this DialerCampaignConfigChangeCampaign.
         :rtype: str
@@ -907,7 +789,7 @@ class DialerCampaignConfigChangeCampaign(object):
     def agent_owned_column(self, agent_owned_column):
         """
         Sets the agent_owned_column of this DialerCampaignConfigChangeCampaign.
-
+        For Preview Campaigns. Name of the contact column in the contact list containing the userIds of agents to assign specific contact records to.
 
         :param agent_owned_column: The agent_owned_column of this DialerCampaignConfigChangeCampaign.
         :type: str
@@ -916,27 +798,119 @@ class DialerCampaignConfigChangeCampaign(object):
         self._agent_owned_column = agent_owned_column
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerCampaignConfigChangeCampaign.
+        Gets the id of this DialerCampaignConfigChangeCampaign.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerCampaignConfigChangeCampaign.
-        :rtype: object
+        :return: The id of this DialerCampaignConfigChangeCampaign.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerCampaignConfigChangeCampaign.
+        Sets the id of this DialerCampaignConfigChangeCampaign.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerCampaignConfigChangeCampaign.
-        :type: object
+        :param id: The id of this DialerCampaignConfigChangeCampaign.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerCampaignConfigChangeCampaign.
+        The UI-visible name of the object
+
+        :return: The name of this DialerCampaignConfigChangeCampaign.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerCampaignConfigChangeCampaign.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerCampaignConfigChangeCampaign.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerCampaignConfigChangeCampaign.
+        Creation time of the entity
+
+        :return: The date_created of this DialerCampaignConfigChangeCampaign.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerCampaignConfigChangeCampaign.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerCampaignConfigChangeCampaign.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerCampaignConfigChangeCampaign.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerCampaignConfigChangeCampaign.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerCampaignConfigChangeCampaign.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerCampaignConfigChangeCampaign.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerCampaignConfigChangeCampaign.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerCampaignConfigChangeCampaign.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerCampaignConfigChangeCampaign.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerCampaignConfigChangeCampaign.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

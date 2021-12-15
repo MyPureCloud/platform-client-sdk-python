@@ -40,11 +40,6 @@ class DialerContactlistConfigChangeContactList(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'name': 'str',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
-            'version': 'int',
             'column_names': 'list[str]',
             'phone_columns': 'list[DialerContactlistConfigChangeContactPhoneNumberColumn]',
             'email_columns': 'list[DialerContactlistConfigChangeEmailColumn]',
@@ -56,15 +51,14 @@ class DialerContactlistConfigChangeContactList(object):
             'automatic_time_zone_mapping': 'bool',
             'zip_code_column_name': 'str',
             'division': 'DialerContactlistConfigChangeUriReference',
-            'additional_properties': 'object'
+            'id': 'str',
+            'name': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'version': 'int'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'name': 'name',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
-            'version': 'version',
             'column_names': 'columnNames',
             'phone_columns': 'phoneColumns',
             'email_columns': 'emailColumns',
@@ -76,14 +70,13 @@ class DialerContactlistConfigChangeContactList(object):
             'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
             'zip_code_column_name': 'zipCodeColumnName',
             'division': 'division',
-            'additional_properties': 'additionalProperties'
+            'id': 'id',
+            'name': 'name',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'version': 'version'
         }
 
-        self._id = None
-        self._name = None
-        self._date_created = None
-        self._date_modified = None
-        self._version = None
         self._column_names = None
         self._phone_columns = None
         self._email_columns = None
@@ -95,128 +88,17 @@ class DialerContactlistConfigChangeContactList(object):
         self._automatic_time_zone_mapping = None
         self._zip_code_column_name = None
         self._division = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerContactlistConfigChangeContactList.
-
-
-        :return: The id of this DialerContactlistConfigChangeContactList.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerContactlistConfigChangeContactList.
-
-
-        :param id: The id of this DialerContactlistConfigChangeContactList.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerContactlistConfigChangeContactList.
-
-
-        :return: The name of this DialerContactlistConfigChangeContactList.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerContactlistConfigChangeContactList.
-
-
-        :param name: The name of this DialerContactlistConfigChangeContactList.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerContactlistConfigChangeContactList.
-
-
-        :return: The date_created of this DialerContactlistConfigChangeContactList.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerContactlistConfigChangeContactList.
-
-
-        :param date_created: The date_created of this DialerContactlistConfigChangeContactList.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerContactlistConfigChangeContactList.
-
-
-        :return: The date_modified of this DialerContactlistConfigChangeContactList.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerContactlistConfigChangeContactList.
-
-
-        :param date_modified: The date_modified of this DialerContactlistConfigChangeContactList.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerContactlistConfigChangeContactList.
-
-
-        :return: The version of this DialerContactlistConfigChangeContactList.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerContactlistConfigChangeContactList.
-
-
-        :param version: The version of this DialerContactlistConfigChangeContactList.
-        :type: int
-        """
-        
-        self._version = version
+        self._id = None
+        self._name = None
+        self._date_created = None
+        self._date_modified = None
+        self._version = None
 
     @property
     def column_names(self):
         """
         Gets the column_names of this DialerContactlistConfigChangeContactList.
-
+        the contact column names
 
         :return: The column_names of this DialerContactlistConfigChangeContactList.
         :rtype: list[str]
@@ -227,7 +109,7 @@ class DialerContactlistConfigChangeContactList(object):
     def column_names(self, column_names):
         """
         Sets the column_names of this DialerContactlistConfigChangeContactList.
-
+        the contact column names
 
         :param column_names: The column_names of this DialerContactlistConfigChangeContactList.
         :type: list[str]
@@ -239,7 +121,7 @@ class DialerContactlistConfigChangeContactList(object):
     def phone_columns(self):
         """
         Gets the phone_columns of this DialerContactlistConfigChangeContactList.
-
+        the columns containing phone numbers
 
         :return: The phone_columns of this DialerContactlistConfigChangeContactList.
         :rtype: list[DialerContactlistConfigChangeContactPhoneNumberColumn]
@@ -250,7 +132,7 @@ class DialerContactlistConfigChangeContactList(object):
     def phone_columns(self, phone_columns):
         """
         Sets the phone_columns of this DialerContactlistConfigChangeContactList.
-
+        the columns containing phone numbers
 
         :param phone_columns: The phone_columns of this DialerContactlistConfigChangeContactList.
         :type: list[DialerContactlistConfigChangeContactPhoneNumberColumn]
@@ -262,7 +144,7 @@ class DialerContactlistConfigChangeContactList(object):
     def email_columns(self):
         """
         Gets the email_columns of this DialerContactlistConfigChangeContactList.
-
+        the columns containing email addresses
 
         :return: The email_columns of this DialerContactlistConfigChangeContactList.
         :rtype: list[DialerContactlistConfigChangeEmailColumn]
@@ -273,7 +155,7 @@ class DialerContactlistConfigChangeContactList(object):
     def email_columns(self, email_columns):
         """
         Sets the email_columns of this DialerContactlistConfigChangeContactList.
-
+        the columns containing email addresses
 
         :param email_columns: The email_columns of this DialerContactlistConfigChangeContactList.
         :type: list[DialerContactlistConfigChangeEmailColumn]
@@ -308,7 +190,7 @@ class DialerContactlistConfigChangeContactList(object):
     def preview_mode_column_name(self):
         """
         Gets the preview_mode_column_name of this DialerContactlistConfigChangeContactList.
-
+        the name of the column that holds the indicators for contacts that are to be dialed in preview mode only
 
         :return: The preview_mode_column_name of this DialerContactlistConfigChangeContactList.
         :rtype: str
@@ -319,7 +201,7 @@ class DialerContactlistConfigChangeContactList(object):
     def preview_mode_column_name(self, preview_mode_column_name):
         """
         Sets the preview_mode_column_name of this DialerContactlistConfigChangeContactList.
-
+        the name of the column that holds the indicators for contacts that are to be dialed in preview mode only
 
         :param preview_mode_column_name: The preview_mode_column_name of this DialerContactlistConfigChangeContactList.
         :type: str
@@ -331,7 +213,7 @@ class DialerContactlistConfigChangeContactList(object):
     def preview_mode_accepted_values(self):
         """
         Gets the preview_mode_accepted_values of this DialerContactlistConfigChangeContactList.
-
+        list of user-defined values indicating the contact is to be dialed in preview mode only
 
         :return: The preview_mode_accepted_values of this DialerContactlistConfigChangeContactList.
         :rtype: list[str]
@@ -342,7 +224,7 @@ class DialerContactlistConfigChangeContactList(object):
     def preview_mode_accepted_values(self, preview_mode_accepted_values):
         """
         Sets the preview_mode_accepted_values of this DialerContactlistConfigChangeContactList.
-
+        list of user-defined values indicating the contact is to be dialed in preview mode only
 
         :param preview_mode_accepted_values: The preview_mode_accepted_values of this DialerContactlistConfigChangeContactList.
         :type: list[str]
@@ -354,7 +236,7 @@ class DialerContactlistConfigChangeContactList(object):
     def size(self):
         """
         Gets the size of this DialerContactlistConfigChangeContactList.
-
+        the number of contacts in the contact list
 
         :return: The size of this DialerContactlistConfigChangeContactList.
         :rtype: int
@@ -365,7 +247,7 @@ class DialerContactlistConfigChangeContactList(object):
     def size(self, size):
         """
         Sets the size of this DialerContactlistConfigChangeContactList.
-
+        the number of contacts in the contact list
 
         :param size: The size of this DialerContactlistConfigChangeContactList.
         :type: int
@@ -400,7 +282,7 @@ class DialerContactlistConfigChangeContactList(object):
     def automatic_time_zone_mapping(self):
         """
         Gets the automatic_time_zone_mapping of this DialerContactlistConfigChangeContactList.
-
+        whether or not automatic time zone mapping is enabled on the list
 
         :return: The automatic_time_zone_mapping of this DialerContactlistConfigChangeContactList.
         :rtype: bool
@@ -411,7 +293,7 @@ class DialerContactlistConfigChangeContactList(object):
     def automatic_time_zone_mapping(self, automatic_time_zone_mapping):
         """
         Sets the automatic_time_zone_mapping of this DialerContactlistConfigChangeContactList.
-
+        whether or not automatic time zone mapping is enabled on the list
 
         :param automatic_time_zone_mapping: The automatic_time_zone_mapping of this DialerContactlistConfigChangeContactList.
         :type: bool
@@ -423,7 +305,7 @@ class DialerContactlistConfigChangeContactList(object):
     def zip_code_column_name(self):
         """
         Gets the zip_code_column_name of this DialerContactlistConfigChangeContactList.
-
+        zip code column from the contact list to be used optionally with automatic time zone mapping
 
         :return: The zip_code_column_name of this DialerContactlistConfigChangeContactList.
         :rtype: str
@@ -434,7 +316,7 @@ class DialerContactlistConfigChangeContactList(object):
     def zip_code_column_name(self, zip_code_column_name):
         """
         Sets the zip_code_column_name of this DialerContactlistConfigChangeContactList.
-
+        zip code column from the contact list to be used optionally with automatic time zone mapping
 
         :param zip_code_column_name: The zip_code_column_name of this DialerContactlistConfigChangeContactList.
         :type: str
@@ -446,7 +328,7 @@ class DialerContactlistConfigChangeContactList(object):
     def division(self):
         """
         Gets the division of this DialerContactlistConfigChangeContactList.
-
+        A UriReference for a resource
 
         :return: The division of this DialerContactlistConfigChangeContactList.
         :rtype: DialerContactlistConfigChangeUriReference
@@ -457,7 +339,7 @@ class DialerContactlistConfigChangeContactList(object):
     def division(self, division):
         """
         Sets the division of this DialerContactlistConfigChangeContactList.
-
+        A UriReference for a resource
 
         :param division: The division of this DialerContactlistConfigChangeContactList.
         :type: DialerContactlistConfigChangeUriReference
@@ -466,27 +348,119 @@ class DialerContactlistConfigChangeContactList(object):
         self._division = division
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerContactlistConfigChangeContactList.
+        Gets the id of this DialerContactlistConfigChangeContactList.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerContactlistConfigChangeContactList.
-        :rtype: object
+        :return: The id of this DialerContactlistConfigChangeContactList.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerContactlistConfigChangeContactList.
+        Sets the id of this DialerContactlistConfigChangeContactList.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerContactlistConfigChangeContactList.
-        :type: object
+        :param id: The id of this DialerContactlistConfigChangeContactList.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerContactlistConfigChangeContactList.
+        The UI-visible name of the object
+
+        :return: The name of this DialerContactlistConfigChangeContactList.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerContactlistConfigChangeContactList.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerContactlistConfigChangeContactList.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerContactlistConfigChangeContactList.
+        Creation time of the entity
+
+        :return: The date_created of this DialerContactlistConfigChangeContactList.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerContactlistConfigChangeContactList.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerContactlistConfigChangeContactList.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerContactlistConfigChangeContactList.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerContactlistConfigChangeContactList.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerContactlistConfigChangeContactList.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerContactlistConfigChangeContactList.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerContactlistConfigChangeContactList.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerContactlistConfigChangeContactList.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerContactlistConfigChangeContactList.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerContactlistConfigChangeContactList.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

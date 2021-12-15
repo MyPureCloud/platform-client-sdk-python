@@ -53,7 +53,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef(object):
     def phone_number(self):
         """
         Gets the phone_number of this OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef.
-
+        The unique phone number
 
         :return: The phone_number of this OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef.
         :rtype: str
@@ -64,7 +64,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef(object):
     def phone_number(self, phone_number):
         """
         Sets the phone_number of this OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef.
-
+        The unique phone number
 
         :param phone_number: The phone_number of this OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef.
         :type: str

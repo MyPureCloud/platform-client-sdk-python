@@ -56,7 +56,7 @@ class ConversationVideoEventTopicScoredAgent(object):
     def agent(self):
         """
         Gets the agent of this ConversationVideoEventTopicScoredAgent.
-
+        A UriReference for a resource
 
         :return: The agent of this ConversationVideoEventTopicScoredAgent.
         :rtype: ConversationVideoEventTopicUriReference
@@ -67,7 +67,7 @@ class ConversationVideoEventTopicScoredAgent(object):
     def agent(self, agent):
         """
         Sets the agent of this ConversationVideoEventTopicScoredAgent.
-
+        A UriReference for a resource
 
         :param agent: The agent of this ConversationVideoEventTopicScoredAgent.
         :type: ConversationVideoEventTopicUriReference
@@ -79,7 +79,7 @@ class ConversationVideoEventTopicScoredAgent(object):
     def score(self):
         """
         Gets the score of this ConversationVideoEventTopicScoredAgent.
-
+        Agent's score for the current conversation, from 0 - 100, higher being better
 
         :return: The score of this ConversationVideoEventTopicScoredAgent.
         :rtype: int
@@ -90,7 +90,7 @@ class ConversationVideoEventTopicScoredAgent(object):
     def score(self, score):
         """
         Sets the score of this ConversationVideoEventTopicScoredAgent.
-
+        Agent's score for the current conversation, from 0 - 100, higher being better
 
         :param score: The score of this ConversationVideoEventTopicScoredAgent.
         :type: int

@@ -46,8 +46,8 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
             'created_date': 'datetime',
             'customer_id': 'str',
             'customer_id_type': 'str',
-            'event_type': 'str',
             'session': 'JourneyOutcomeEventsNotificationSession',
+            'event_type': 'str',
             'outcome_achieved_event': 'JourneyOutcomeEventsNotificationOutcomeAchievedMessage',
             'outcome_attribution_event_message': 'JourneyOutcomeEventsNotificationOutcomeAttributionMessage'
         }
@@ -59,8 +59,8 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
             'created_date': 'createdDate',
             'customer_id': 'customerId',
             'customer_id_type': 'customerIdType',
-            'event_type': 'eventType',
             'session': 'session',
+            'event_type': 'eventType',
             'outcome_achieved_event': 'outcomeAchievedEvent',
             'outcome_attribution_event_message': 'outcomeAttributionEventMessage'
         }
@@ -71,8 +71,8 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         self._created_date = None
         self._customer_id = None
         self._customer_id_type = None
-        self._event_type = None
         self._session = None
+        self._event_type = None
         self._outcome_achieved_event = None
         self._outcome_attribution_event_message = None
 
@@ -215,33 +215,6 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         self._customer_id_type = customer_id_type
 
     @property
-    def event_type(self):
-        """
-        Gets the event_type of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
-
-
-        :return: The event_type of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
-        :rtype: str
-        """
-        return self._event_type
-
-    @event_type.setter
-    def event_type(self, event_type):
-        """
-        Sets the event_type of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
-
-
-        :param event_type: The event_type of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
-        :type: str
-        """
-        allowed_values = ["WebEvent", "WebActionEvent", "OutcomeAchievedEvent", "BlockedWebActionOfferEvent", "OutcomeAttributionEvent"]
-        if event_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for event_type -> " + event_type)
-            self._event_type = "outdated_sdk_version"
-        else:
-            self._event_type = event_type
-
-    @property
     def session(self):
         """
         Gets the session of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
@@ -263,6 +236,33 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         """
         
         self._session = session
+
+    @property
+    def event_type(self):
+        """
+        Gets the event_type of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
+
+
+        :return: The event_type of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
+        :rtype: str
+        """
+        return self._event_type
+
+    @event_type.setter
+    def event_type(self, event_type):
+        """
+        Sets the event_type of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
+
+
+        :param event_type: The event_type of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
+        :type: str
+        """
+        allowed_values = ["OutcomeAchievedEvent", "OutcomeAttributionEvent"]
+        if event_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for event_type -> " + event_type)
+            self._event_type = "outdated_sdk_version"
+        else:
+            self._event_type = event_type
 
     @property
     def outcome_achieved_event(self):

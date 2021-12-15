@@ -62,7 +62,7 @@ class ArchitectPromptNotificationPromptNotification(object):
     def id(self):
         """
         Gets the id of this ArchitectPromptNotificationPromptNotification.
-
+        The prompt ID
 
         :return: The id of this ArchitectPromptNotificationPromptNotification.
         :rtype: str
@@ -73,7 +73,7 @@ class ArchitectPromptNotificationPromptNotification(object):
     def id(self, id):
         """
         Sets the id of this ArchitectPromptNotificationPromptNotification.
-
+        The prompt ID
 
         :param id: The id of this ArchitectPromptNotificationPromptNotification.
         :type: str
@@ -85,7 +85,7 @@ class ArchitectPromptNotificationPromptNotification(object):
     def name(self):
         """
         Gets the name of this ArchitectPromptNotificationPromptNotification.
-
+        The prompt name
 
         :return: The name of this ArchitectPromptNotificationPromptNotification.
         :rtype: str
@@ -96,7 +96,7 @@ class ArchitectPromptNotificationPromptNotification(object):
     def name(self, name):
         """
         Sets the name of this ArchitectPromptNotificationPromptNotification.
-
+        The prompt name
 
         :param name: The name of this ArchitectPromptNotificationPromptNotification.
         :type: str
@@ -108,7 +108,7 @@ class ArchitectPromptNotificationPromptNotification(object):
     def description(self):
         """
         Gets the description of this ArchitectPromptNotificationPromptNotification.
-
+        The prompt description
 
         :return: The description of this ArchitectPromptNotificationPromptNotification.
         :rtype: str
@@ -119,7 +119,7 @@ class ArchitectPromptNotificationPromptNotification(object):
     def description(self, description):
         """
         Sets the description of this ArchitectPromptNotificationPromptNotification.
-
+        The prompt description
 
         :param description: The description of this ArchitectPromptNotificationPromptNotification.
         :type: str

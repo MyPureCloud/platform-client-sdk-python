@@ -44,8 +44,7 @@ class QueueConversationEmailEventTopicWrapup(object):
             'notes': 'str',
             'tags': 'list[str]',
             'duration_seconds': 'int',
-            'end_time': 'datetime',
-            'additional_properties': 'object'
+            'end_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class QueueConversationEmailEventTopicWrapup(object):
             'notes': 'notes',
             'tags': 'tags',
             'duration_seconds': 'durationSeconds',
-            'end_time': 'endTime',
-            'additional_properties': 'additionalProperties'
+            'end_time': 'endTime'
         }
 
         self._code = None
@@ -62,13 +60,12 @@ class QueueConversationEmailEventTopicWrapup(object):
         self._tags = None
         self._duration_seconds = None
         self._end_time = None
-        self._additional_properties = None
 
     @property
     def code(self):
         """
         Gets the code of this QueueConversationEmailEventTopicWrapup.
-
+        The user configured wrap up code name.
 
         :return: The code of this QueueConversationEmailEventTopicWrapup.
         :rtype: str
@@ -79,7 +76,7 @@ class QueueConversationEmailEventTopicWrapup(object):
     def code(self, code):
         """
         Sets the code of this QueueConversationEmailEventTopicWrapup.
-
+        The user configured wrap up code name.
 
         :param code: The code of this QueueConversationEmailEventTopicWrapup.
         :type: str
@@ -91,7 +88,7 @@ class QueueConversationEmailEventTopicWrapup(object):
     def notes(self):
         """
         Gets the notes of this QueueConversationEmailEventTopicWrapup.
-
+        Text entered by the agent to describe the call or disposition.
 
         :return: The notes of this QueueConversationEmailEventTopicWrapup.
         :rtype: str
@@ -102,7 +99,7 @@ class QueueConversationEmailEventTopicWrapup(object):
     def notes(self, notes):
         """
         Sets the notes of this QueueConversationEmailEventTopicWrapup.
-
+        Text entered by the agent to describe the call or disposition.
 
         :param notes: The notes of this QueueConversationEmailEventTopicWrapup.
         :type: str
@@ -114,7 +111,7 @@ class QueueConversationEmailEventTopicWrapup(object):
     def tags(self):
         """
         Gets the tags of this QueueConversationEmailEventTopicWrapup.
-
+        List of tags selected by the agent to describe the call or disposition.
 
         :return: The tags of this QueueConversationEmailEventTopicWrapup.
         :rtype: list[str]
@@ -125,7 +122,7 @@ class QueueConversationEmailEventTopicWrapup(object):
     def tags(self, tags):
         """
         Sets the tags of this QueueConversationEmailEventTopicWrapup.
-
+        List of tags selected by the agent to describe the call or disposition.
 
         :param tags: The tags of this QueueConversationEmailEventTopicWrapup.
         :type: list[str]
@@ -137,7 +134,7 @@ class QueueConversationEmailEventTopicWrapup(object):
     def duration_seconds(self):
         """
         Gets the duration_seconds of this QueueConversationEmailEventTopicWrapup.
-
+        The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally
 
         :return: The duration_seconds of this QueueConversationEmailEventTopicWrapup.
         :rtype: int
@@ -148,7 +145,7 @@ class QueueConversationEmailEventTopicWrapup(object):
     def duration_seconds(self, duration_seconds):
         """
         Sets the duration_seconds of this QueueConversationEmailEventTopicWrapup.
-
+        The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally
 
         :param duration_seconds: The duration_seconds of this QueueConversationEmailEventTopicWrapup.
         :type: int
@@ -160,7 +157,7 @@ class QueueConversationEmailEventTopicWrapup(object):
     def end_time(self):
         """
         Gets the end_time of this QueueConversationEmailEventTopicWrapup.
-
+        The timestamp when the wrapup was finished.
 
         :return: The end_time of this QueueConversationEmailEventTopicWrapup.
         :rtype: datetime
@@ -171,36 +168,13 @@ class QueueConversationEmailEventTopicWrapup(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this QueueConversationEmailEventTopicWrapup.
-
+        The timestamp when the wrapup was finished.
 
         :param end_time: The end_time of this QueueConversationEmailEventTopicWrapup.
         :type: datetime
         """
         
         self._end_time = end_time
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationEmailEventTopicWrapup.
-
-
-        :return: The additional_properties of this QueueConversationEmailEventTopicWrapup.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationEmailEventTopicWrapup.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationEmailEventTopicWrapup.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

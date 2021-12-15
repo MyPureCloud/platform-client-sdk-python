@@ -7,9 +7,9 @@ title: QueueConversationEventTopicAfterCallWork
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **state** | **str** |  | [optional] |
-| **start_time** | **datetime** |  | [optional] |
-| **end_time** | **datetime** |  | [optional] |
+| **state** | **str** | The communication&#39;s after-call work state. | [optional] |
+| **start_time** | **datetime** | The timestamp when this communication started after-call work in the cloud clock. | [optional] |
+| **end_time** | **datetime** | The timestamp when this communication ended after-call work in the cloud clock. | [optional] |
 {: class="table table-striped"}
 
 

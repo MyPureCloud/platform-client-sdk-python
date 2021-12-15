@@ -59,7 +59,7 @@ class QueueConversationEventTopicAfterCallWork(object):
     def state(self):
         """
         Gets the state of this QueueConversationEventTopicAfterCallWork.
-
+        The communication's after-call work state.
 
         :return: The state of this QueueConversationEventTopicAfterCallWork.
         :rtype: str
@@ -70,12 +70,12 @@ class QueueConversationEventTopicAfterCallWork(object):
     def state(self, state):
         """
         Sets the state of this QueueConversationEventTopicAfterCallWork.
-
+        The communication's after-call work state.
 
         :param state: The state of this QueueConversationEventTopicAfterCallWork.
         :type: str
         """
-        allowed_values = ["UNKNOWN", "SKIPPED", "PENDING", "COMPLETE", "NOT_APPLICABLE"]
+        allowed_values = ["unknown", "skipped", "pending", "complete", "notApplicable"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -86,7 +86,7 @@ class QueueConversationEventTopicAfterCallWork(object):
     def start_time(self):
         """
         Gets the start_time of this QueueConversationEventTopicAfterCallWork.
-
+        The timestamp when this communication started after-call work in the cloud clock.
 
         :return: The start_time of this QueueConversationEventTopicAfterCallWork.
         :rtype: datetime
@@ -97,7 +97,7 @@ class QueueConversationEventTopicAfterCallWork(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this QueueConversationEventTopicAfterCallWork.
-
+        The timestamp when this communication started after-call work in the cloud clock.
 
         :param start_time: The start_time of this QueueConversationEventTopicAfterCallWork.
         :type: datetime
@@ -109,7 +109,7 @@ class QueueConversationEventTopicAfterCallWork(object):
     def end_time(self):
         """
         Gets the end_time of this QueueConversationEventTopicAfterCallWork.
-
+        The timestamp when this communication ended after-call work in the cloud clock.
 
         :return: The end_time of this QueueConversationEventTopicAfterCallWork.
         :rtype: datetime
@@ -120,7 +120,7 @@ class QueueConversationEventTopicAfterCallWork(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this QueueConversationEventTopicAfterCallWork.
-
+        The timestamp when this communication ended after-call work in the cloud clock.
 
         :param end_time: The end_time of this QueueConversationEventTopicAfterCallWork.
         :type: datetime

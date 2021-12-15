@@ -48,6 +48,7 @@ class ComparisonPeriod(object):
             'kpi_total_off': 'int',
             'interaction_count_on': 'int',
             'interaction_count_off': 'int',
+            'kpi_results': 'list[KpiResult]',
             'self_uri': 'str'
         }
 
@@ -60,6 +61,7 @@ class ComparisonPeriod(object):
             'kpi_total_off': 'kpiTotalOff',
             'interaction_count_on': 'interactionCountOn',
             'interaction_count_off': 'interactionCountOff',
+            'kpi_results': 'kpiResults',
             'self_uri': 'selfUri'
         }
 
@@ -71,6 +73,7 @@ class ComparisonPeriod(object):
         self._kpi_total_off = None
         self._interaction_count_on = None
         self._interaction_count_off = None
+        self._kpi_results = None
         self._self_uri = None
 
     @property
@@ -256,6 +259,29 @@ class ComparisonPeriod(object):
         """
         
         self._interaction_count_off = interaction_count_off
+
+    @property
+    def kpi_results(self):
+        """
+        Gets the kpi_results of this ComparisonPeriod.
+        KPI results for each metric
+
+        :return: The kpi_results of this ComparisonPeriod.
+        :rtype: list[KpiResult]
+        """
+        return self._kpi_results
+
+    @kpi_results.setter
+    def kpi_results(self, kpi_results):
+        """
+        Sets the kpi_results of this ComparisonPeriod.
+        KPI results for each metric
+
+        :param kpi_results: The kpi_results of this ComparisonPeriod.
+        :type: list[KpiResult]
+        """
+        
+        self._kpi_results = kpi_results
 
     @property
     def self_uri(self):

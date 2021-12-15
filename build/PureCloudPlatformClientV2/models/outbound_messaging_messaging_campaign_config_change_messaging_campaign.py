@@ -40,12 +40,6 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'division': 'OutboundMessagingMessagingCampaignConfigChangeUriReference',
-            'name': 'str',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
-            'version': 'int',
             'campaign_status': 'str',
             'callable_time_set': 'OutboundMessagingMessagingCampaignConfigChangeUriReference',
             'contact_list': 'OutboundMessagingMessagingCampaignConfigChangeUriReference',
@@ -56,16 +50,16 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
             'messages_per_minute': 'int',
             'sms_config': 'OutboundMessagingMessagingCampaignConfigChangeSmsConfig',
             'email_config': 'OutboundMessagingMessagingCampaignConfigChangeEmailConfig',
-            'errors': 'list[OutboundMessagingMessagingCampaignConfigChangeErrorDetail]'
+            'errors': 'list[OutboundMessagingMessagingCampaignConfigChangeErrorDetail]',
+            'id': 'str',
+            'division': 'OutboundMessagingMessagingCampaignConfigChangeUriReference',
+            'name': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'version': 'int'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'division': 'division',
-            'name': 'name',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
-            'version': 'version',
             'campaign_status': 'campaignStatus',
             'callable_time_set': 'callableTimeSet',
             'contact_list': 'contactList',
@@ -76,15 +70,15 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
             'messages_per_minute': 'messagesPerMinute',
             'sms_config': 'smsConfig',
             'email_config': 'emailConfig',
-            'errors': 'errors'
+            'errors': 'errors',
+            'id': 'id',
+            'division': 'division',
+            'name': 'name',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'version': 'version'
         }
 
-        self._id = None
-        self._division = None
-        self._name = None
-        self._date_created = None
-        self._date_modified = None
-        self._version = None
         self._campaign_status = None
         self._callable_time_set = None
         self._contact_list = None
@@ -96,144 +90,12 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         self._sms_config = None
         self._email_config = None
         self._errors = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :return: The id of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :param id: The id of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def division(self):
-        """
-        Gets the division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :return: The division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :rtype: OutboundMessagingMessagingCampaignConfigChangeUriReference
-        """
-        return self._division
-
-    @division.setter
-    def division(self, division):
-        """
-        Sets the division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :param division: The division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
-        """
-        
-        self._division = division
-
-    @property
-    def name(self):
-        """
-        Gets the name of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :return: The name of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :param name: The name of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :return: The date_created of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :param date_created: The date_created of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :return: The date_modified of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :param date_modified: The date_modified of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :return: The version of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
-
-        :param version: The version of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :type: int
-        """
-        
-        self._version = version
+        self._id = None
+        self._division = None
+        self._name = None
+        self._date_created = None
+        self._date_modified = None
+        self._version = None
 
     @property
     def campaign_status(self):
@@ -255,7 +117,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :param campaign_status: The campaign_status of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :type: str
         """
-        allowed_values = ["ON", "OFF", "COMPLETE", "STOPPING", "INVALID"]
+        allowed_values = ["on", "off", "complete", "stopping", "invalid"]
         if campaign_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for campaign_status -> " + campaign_status)
             self._campaign_status = "outdated_sdk_version"
@@ -289,7 +151,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def contact_list(self):
         """
         Gets the contact_list of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        A UriReference for a resource
 
         :return: The contact_list of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :rtype: OutboundMessagingMessagingCampaignConfigChangeUriReference
@@ -300,7 +162,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def contact_list(self, contact_list):
         """
         Sets the contact_list of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        A UriReference for a resource
 
         :param contact_list: The contact_list of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
@@ -312,7 +174,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def dnc_lists(self):
         """
         Gets the dnc_lists of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        The dnc lists to check before sending a message for this messaging campaign.
 
         :return: The dnc_lists of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :rtype: list[OutboundMessagingMessagingCampaignConfigChangeUriReference]
@@ -323,7 +185,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def dnc_lists(self, dnc_lists):
         """
         Sets the dnc_lists of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        The dnc lists to check before sending a message for this messaging campaign.
 
         :param dnc_lists: The dnc_lists of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :type: list[OutboundMessagingMessagingCampaignConfigChangeUriReference]
@@ -335,7 +197,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def contact_list_filters(self):
         """
         Gets the contact_list_filters of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        The contact list filters to check before sending a message for this messaging campaign.
 
         :return: The contact_list_filters of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :rtype: list[OutboundMessagingMessagingCampaignConfigChangeUriReference]
@@ -346,7 +208,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def contact_list_filters(self, contact_list_filters):
         """
         Sets the contact_list_filters of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        The contact list filters to check before sending a message for this messaging campaign.
 
         :param contact_list_filters: The contact_list_filters of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :type: list[OutboundMessagingMessagingCampaignConfigChangeUriReference]
@@ -358,7 +220,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def always_running(self):
         """
         Gets the always_running of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        Whether this messaging campaign is always running.
 
         :return: The always_running of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :rtype: bool
@@ -369,7 +231,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def always_running(self, always_running):
         """
         Sets the always_running of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        Whether this messaging campaign is always running.
 
         :param always_running: The always_running of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :type: bool
@@ -381,7 +243,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def contact_sorts(self):
         """
         Gets the contact_sorts of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        The order in which to sort contacts for dialing, based on up to four columns.
 
         :return: The contact_sorts of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :rtype: list[OutboundMessagingMessagingCampaignConfigChangeContactSort]
@@ -392,7 +254,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def contact_sorts(self, contact_sorts):
         """
         Sets the contact_sorts of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        The order in which to sort contacts for dialing, based on up to four columns.
 
         :param contact_sorts: The contact_sorts of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :type: list[OutboundMessagingMessagingCampaignConfigChangeContactSort]
@@ -404,7 +266,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def messages_per_minute(self):
         """
         Gets the messages_per_minute of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        How many messages this messaging campaign will send per minute.
 
         :return: The messages_per_minute of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :rtype: int
@@ -415,7 +277,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def messages_per_minute(self, messages_per_minute):
         """
         Sets the messages_per_minute of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        How many messages this messaging campaign will send per minute.
 
         :param messages_per_minute: The messages_per_minute of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :type: int
@@ -473,7 +335,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def errors(self):
         """
         Gets the errors of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        A list of current error conditions associated with this messaging campaign
 
         :return: The errors of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :rtype: list[OutboundMessagingMessagingCampaignConfigChangeErrorDetail]
@@ -484,13 +346,151 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     def errors(self, errors):
         """
         Sets the errors of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-
+        A list of current error conditions associated with this messaging campaign
 
         :param errors: The errors of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
         :type: list[OutboundMessagingMessagingCampaignConfigChangeErrorDetail]
         """
         
         self._errors = errors
+
+    @property
+    def id(self):
+        """
+        Gets the id of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        The globally unique identifier for the object.
+
+        :return: The id of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        The globally unique identifier for the object.
+
+        :param id: The id of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: str
+        """
+        
+        self._id = id
+
+    @property
+    def division(self):
+        """
+        Gets the division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        A UriReference for a resource
+
+        :return: The division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: OutboundMessagingMessagingCampaignConfigChangeUriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        A UriReference for a resource
+
+        :param division: The division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
+        """
+        
+        self._division = division
+
+    @property
+    def name(self):
+        """
+        Gets the name of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        The UI-visible name of the object
+
+        :return: The name of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        The UI-visible name of the object
+
+        :param name: The name of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        Creation time of the entity
+
+        :return: The date_created of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        Creation time of the entity
+
+        :param date_created: The date_created of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        Last modified time of the entity
+
+        :return: The date_modified of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

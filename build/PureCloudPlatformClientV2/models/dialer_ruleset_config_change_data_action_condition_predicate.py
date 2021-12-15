@@ -44,8 +44,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
             'output_operator': 'str',
             'comparison_value': 'str',
             'output_field_missing_resolution': 'bool',
-            'inverted': 'bool',
-            'additional_properties': 'object'
+            'inverted': 'bool'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
             'output_operator': 'outputOperator',
             'comparison_value': 'comparisonValue',
             'output_field_missing_resolution': 'outputFieldMissingResolution',
-            'inverted': 'inverted',
-            'additional_properties': 'additionalProperties'
+            'inverted': 'inverted'
         }
 
         self._output_field = None
@@ -62,13 +60,12 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         self._comparison_value = None
         self._output_field_missing_resolution = None
         self._inverted = None
-        self._additional_properties = None
 
     @property
     def output_field(self):
         """
         Gets the output_field of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        The name of an output field from the data action's output to use for this condition
 
         :return: The output_field of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :rtype: str
@@ -79,7 +76,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
     def output_field(self, output_field):
         """
         Sets the output_field of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        The name of an output field from the data action's output to use for this condition
 
         :param output_field: The output_field of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :type: str
@@ -91,7 +88,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
     def output_operator(self):
         """
         Gets the output_operator of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        The operation with which to evaluate this condition
 
         :return: The output_operator of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :rtype: str
@@ -102,7 +99,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
     def output_operator(self, output_operator):
         """
         Sets the output_operator of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        The operation with which to evaluate this condition
 
         :param output_operator: The output_operator of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :type: str
@@ -118,7 +115,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
     def comparison_value(self):
         """
         Gets the comparison_value of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        The value to compare against for this condition
 
         :return: The comparison_value of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :rtype: str
@@ -129,7 +126,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
     def comparison_value(self, comparison_value):
         """
         Sets the comparison_value of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        The value to compare against for this condition
 
         :param comparison_value: The comparison_value of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :type: str
@@ -141,7 +138,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
     def output_field_missing_resolution(self):
         """
         Gets the output_field_missing_resolution of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        The result of this predicate if the requested output field is missing from the data action's result
 
         :return: The output_field_missing_resolution of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :rtype: bool
@@ -152,7 +149,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
     def output_field_missing_resolution(self, output_field_missing_resolution):
         """
         Sets the output_field_missing_resolution of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        The result of this predicate if the requested output field is missing from the data action's result
 
         :param output_field_missing_resolution: The output_field_missing_resolution of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :type: bool
@@ -164,7 +161,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
     def inverted(self):
         """
         Gets the inverted of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        If true, inverts the result of evaluating this Predicate. Default is false.
 
         :return: The inverted of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :rtype: bool
@@ -175,36 +172,13 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
     def inverted(self, inverted):
         """
         Sets the inverted of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
+        If true, inverts the result of evaluating this Predicate. Default is false.
 
         :param inverted: The inverted of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :type: bool
         """
         
         self._inverted = inverted
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
-
-        :return: The additional_properties of this DialerRulesetConfigChangeDataActionConditionPredicate.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerRulesetConfigChangeDataActionConditionPredicate.
-
-
-        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeDataActionConditionPredicate.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

@@ -56,7 +56,7 @@ class OutboundMessagingMessagingCampaignConfigChangeErrorDetail(object):
     def error(self):
         """
         Gets the error of this OutboundMessagingMessagingCampaignConfigChangeErrorDetail.
-
+        The name of the error code.
 
         :return: The error of this OutboundMessagingMessagingCampaignConfigChangeErrorDetail.
         :rtype: str
@@ -67,7 +67,7 @@ class OutboundMessagingMessagingCampaignConfigChangeErrorDetail(object):
     def error(self, error):
         """
         Sets the error of this OutboundMessagingMessagingCampaignConfigChangeErrorDetail.
-
+        The name of the error code.
 
         :param error: The error of this OutboundMessagingMessagingCampaignConfigChangeErrorDetail.
         :type: str
@@ -79,7 +79,7 @@ class OutboundMessagingMessagingCampaignConfigChangeErrorDetail(object):
     def details(self):
         """
         Gets the details of this OutboundMessagingMessagingCampaignConfigChangeErrorDetail.
-
+        The additional information regarding the error message.
 
         :return: The details of this OutboundMessagingMessagingCampaignConfigChangeErrorDetail.
         :rtype: str
@@ -90,7 +90,7 @@ class OutboundMessagingMessagingCampaignConfigChangeErrorDetail(object):
     def details(self, details):
         """
         Sets the details of this OutboundMessagingMessagingCampaignConfigChangeErrorDetail.
-
+        The additional information regarding the error message.
 
         :param details: The details of this OutboundMessagingMessagingCampaignConfigChangeErrorDetail.
         :type: str

@@ -230,6 +230,8 @@ from .models.bot_connector_bot_version import BotConnectorBotVersion
 from .models.bot_connector_bot_version_summary_entity_listing import BotConnectorBotVersionSummaryEntityListing
 from .models.bot_intent import BotIntent
 from .models.bot_list import BotList
+from .models.bot_search_response import BotSearchResponse
+from .models.bot_search_response_entity_listing import BotSearchResponseEntityListing
 from .models.bot_slot import BotSlot
 from .models.bot_summary import BotSummary
 from .models.bot_version_summary import BotVersionSummary
@@ -1370,6 +1372,7 @@ from .models.klaxon_interaction_stats_alerts_topic_interaction_stat_alert import
 from .models.klaxon_interaction_stats_alerts_topic_notification_user import KlaxonInteractionStatsAlertsTopicNotificationUser
 from .models.klaxon_interaction_stats_rules_topic_interaction_stat_rule import KlaxonInteractionStatsRulesTopicInteractionStatRule
 from .models.klaxon_interaction_stats_rules_topic_notification_user import KlaxonInteractionStatsRulesTopicNotificationUser
+from .models.knowledge import Knowledge
 from .models.knowledge_base import KnowledgeBase
 from .models.knowledge_base_listing import KnowledgeBaseListing
 from .models.knowledge_category import KnowledgeCategory
@@ -1383,6 +1386,7 @@ from .models.knowledge_search_document import KnowledgeSearchDocument
 from .models.knowledge_search_request import KnowledgeSearchRequest
 from .models.knowledge_search_response import KnowledgeSearchResponse
 from .models.knowledge_training import KnowledgeTraining
+from .models.kpi_result import KpiResult
 from .models.language import Language
 from .models.language_entity_listing import LanguageEntityListing
 from .models.language_override import LanguageOverride
@@ -1535,6 +1539,7 @@ from .models.messaging_sticker import MessagingSticker
 from .models.messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .models.messaging_template import MessagingTemplate
 from .models.messaging_template_request import MessagingTemplateRequest
+from .models.messenger_apps import MessengerApps
 from .models.messenger_position_settings import MessengerPositionSettings
 from .models.messenger_settings import MessengerSettings
 from .models.messenger_styles import MessengerStyles
@@ -2027,6 +2032,7 @@ from .models.recording_archive_restore_topic_media_result import RecordingArchiv
 from .models.recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
 from .models.recording_button_component import RecordingButtonComponent
 from .models.recording_content_actions import RecordingContentActions
+from .models.recording_content_story import RecordingContentStory
 from .models.recording_email_message import RecordingEmailMessage
 from .models.recording_event_media_result import RecordingEventMediaResult
 from .models.recording_event_recording import RecordingEventRecording
@@ -2300,6 +2306,7 @@ from .models.subscriber_response import SubscriberResponse
 from .models.subscription_overview_usage import SubscriptionOverviewUsage
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
+from .models.support_center_settings import SupportCenterSettings
 from .models.supported_content_reference import SupportedContentReference
 from .models.supported_language import SupportedLanguage
 from .models.survey import Survey

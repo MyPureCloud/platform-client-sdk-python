@@ -60,8 +60,7 @@ class QueueConversationVideoEventTopicEmail(object):
             'spam': 'bool',
             'wrapup': 'QueueConversationVideoEventTopicWrapup',
             'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
-            'after_call_work_required': 'bool',
-            'additional_properties': 'object'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -85,8 +84,7 @@ class QueueConversationVideoEventTopicEmail(object):
             'spam': 'spam',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'additional_properties': 'additionalProperties'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._id = None
@@ -110,13 +108,12 @@ class QueueConversationVideoEventTopicEmail(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._additional_properties = None
 
     @property
     def id(self):
         """
         Gets the id of this QueueConversationVideoEventTopicEmail.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -127,7 +124,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationVideoEventTopicEmail.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this QueueConversationVideoEventTopicEmail.
         :type: str
@@ -139,7 +136,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def state(self):
         """
         Gets the state of this QueueConversationVideoEventTopicEmail.
-
+        The connection state of this communication.
 
         :return: The state of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -150,12 +147,12 @@ class QueueConversationVideoEventTopicEmail(object):
     def state(self, state):
         """
         Sets the state of this QueueConversationVideoEventTopicEmail.
-
+        The connection state of this communication.
 
         :param state: The state of this QueueConversationVideoEventTopicEmail.
         :type: str
         """
-        allowed_values = ["ALERTING", "CONNECTED", "DISCONNECTED", "NONE", "TRANSMITTING"]
+        allowed_values = ["alerting", "connected", "disconnected", "none", "transmitting"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -166,7 +163,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def held(self):
         """
         Gets the held of this QueueConversationVideoEventTopicEmail.
-
+        True if this call is held and the person on this side hears silence.
 
         :return: The held of this QueueConversationVideoEventTopicEmail.
         :rtype: bool
@@ -177,7 +174,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def held(self, held):
         """
         Sets the held of this QueueConversationVideoEventTopicEmail.
-
+        True if this call is held and the person on this side hears silence.
 
         :param held: The held of this QueueConversationVideoEventTopicEmail.
         :type: bool
@@ -189,7 +186,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def auto_generated(self):
         """
         Gets the auto_generated of this QueueConversationVideoEventTopicEmail.
-
+        Indicates that the email was auto-generated like an Out of Office reply.
 
         :return: The auto_generated of this QueueConversationVideoEventTopicEmail.
         :rtype: bool
@@ -200,7 +197,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def auto_generated(self, auto_generated):
         """
         Sets the auto_generated of this QueueConversationVideoEventTopicEmail.
-
+        Indicates that the email was auto-generated like an Out of Office reply.
 
         :param auto_generated: The auto_generated of this QueueConversationVideoEventTopicEmail.
         :type: bool
@@ -212,7 +209,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def subject(self):
         """
         Gets the subject of this QueueConversationVideoEventTopicEmail.
-
+        The subject for the initial email that started this conversation.
 
         :return: The subject of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -223,7 +220,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def subject(self, subject):
         """
         Sets the subject of this QueueConversationVideoEventTopicEmail.
-
+        The subject for the initial email that started this conversation.
 
         :param subject: The subject of this QueueConversationVideoEventTopicEmail.
         :type: str
@@ -235,7 +232,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def provider(self):
         """
         Gets the provider of this QueueConversationVideoEventTopicEmail.
-
+        The source provider of the email.
 
         :return: The provider of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -246,7 +243,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def provider(self, provider):
         """
         Sets the provider of this QueueConversationVideoEventTopicEmail.
-
+        The source provider of the email.
 
         :param provider: The provider of this QueueConversationVideoEventTopicEmail.
         :type: str
@@ -258,7 +255,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def script_id(self):
         """
         Gets the script_id of this QueueConversationVideoEventTopicEmail.
-
+        The UUID of the script to use.
 
         :return: The script_id of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -269,7 +266,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this QueueConversationVideoEventTopicEmail.
-
+        The UUID of the script to use.
 
         :param script_id: The script_id of this QueueConversationVideoEventTopicEmail.
         :type: str
@@ -281,7 +278,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def peer_id(self):
         """
         Gets the peer_id of this QueueConversationVideoEventTopicEmail.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :return: The peer_id of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -292,7 +289,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this QueueConversationVideoEventTopicEmail.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :param peer_id: The peer_id of this QueueConversationVideoEventTopicEmail.
         :type: str
@@ -304,7 +301,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def messages_sent(self):
         """
         Gets the messages_sent of this QueueConversationVideoEventTopicEmail.
-
+        The number of email messages sent by this participant.
 
         :return: The messages_sent of this QueueConversationVideoEventTopicEmail.
         :rtype: int
@@ -315,7 +312,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def messages_sent(self, messages_sent):
         """
         Sets the messages_sent of this QueueConversationVideoEventTopicEmail.
-
+        The number of email messages sent by this participant.
 
         :param messages_sent: The messages_sent of this QueueConversationVideoEventTopicEmail.
         :type: int
@@ -327,7 +324,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def error_info(self):
         """
         Gets the error_info of this QueueConversationVideoEventTopicEmail.
-
+        Detailed information about an error response.
 
         :return: The error_info of this QueueConversationVideoEventTopicEmail.
         :rtype: QueueConversationVideoEventTopicErrorDetails
@@ -338,7 +335,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def error_info(self, error_info):
         """
         Sets the error_info of this QueueConversationVideoEventTopicEmail.
-
+        Detailed information about an error response.
 
         :param error_info: The error_info of this QueueConversationVideoEventTopicEmail.
         :type: QueueConversationVideoEventTopicErrorDetails
@@ -350,7 +347,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this QueueConversationVideoEventTopicEmail.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :return: The disconnect_type of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -361,12 +358,12 @@ class QueueConversationVideoEventTopicEmail(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this QueueConversationVideoEventTopicEmail.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :param disconnect_type: The disconnect_type of this QueueConversationVideoEventTopicEmail.
         :type: str
         """
-        allowed_values = ["ENDPOINT", "CLIENT", "SYSTEM", "TIMEOUT", "TRANSFER", "TRANSFER_CONFERENCE", "TRANSFER_CONSULT", "TRANSFER_FORWARD", "TRANSFER_NOANSWER", "TRANSFER_NOTAVAILABLE", "TRANSPORT_FAILURE", "ERROR", "PEER", "OTHER", "SPAM", "UNCALLABLE"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -377,7 +374,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def start_hold_time(self):
         """
         Gets the start_hold_time of this QueueConversationVideoEventTopicEmail.
-
+        The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.
 
         :return: The start_hold_time of this QueueConversationVideoEventTopicEmail.
         :rtype: datetime
@@ -388,7 +385,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def start_hold_time(self, start_hold_time):
         """
         Sets the start_hold_time of this QueueConversationVideoEventTopicEmail.
-
+        The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.
 
         :param start_hold_time: The start_hold_time of this QueueConversationVideoEventTopicEmail.
         :type: datetime
@@ -400,7 +397,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def connected_time(self):
         """
         Gets the connected_time of this QueueConversationVideoEventTopicEmail.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :return: The connected_time of this QueueConversationVideoEventTopicEmail.
         :rtype: datetime
@@ -411,7 +408,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this QueueConversationVideoEventTopicEmail.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :param connected_time: The connected_time of this QueueConversationVideoEventTopicEmail.
         :type: datetime
@@ -423,7 +420,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this QueueConversationVideoEventTopicEmail.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :return: The disconnected_time of this QueueConversationVideoEventTopicEmail.
         :rtype: datetime
@@ -434,7 +431,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this QueueConversationVideoEventTopicEmail.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :param disconnected_time: The disconnected_time of this QueueConversationVideoEventTopicEmail.
         :type: datetime
@@ -446,7 +443,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def message_id(self):
         """
         Gets the message_id of this QueueConversationVideoEventTopicEmail.
-
+        A globally unique identifier for the stored content of this communication.
 
         :return: The message_id of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -457,7 +454,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def message_id(self, message_id):
         """
         Sets the message_id of this QueueConversationVideoEventTopicEmail.
-
+        A globally unique identifier for the stored content of this communication.
 
         :param message_id: The message_id of this QueueConversationVideoEventTopicEmail.
         :type: str
@@ -469,7 +466,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def direction(self):
         """
         Gets the direction of this QueueConversationVideoEventTopicEmail.
-
+        Whether a call is inbound or outbound.
 
         :return: The direction of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -480,12 +477,12 @@ class QueueConversationVideoEventTopicEmail(object):
     def direction(self, direction):
         """
         Sets the direction of this QueueConversationVideoEventTopicEmail.
-
+        Whether a call is inbound or outbound.
 
         :param direction: The direction of this QueueConversationVideoEventTopicEmail.
         :type: str
         """
-        allowed_values = ["OUTBOUND", "INBOUND"]
+        allowed_values = ["outbound", "inbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
             self._direction = "outdated_sdk_version"
@@ -496,7 +493,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def draft_attachments(self):
         """
         Gets the draft_attachments of this QueueConversationVideoEventTopicEmail.
-
+        A list of uploaded attachments on the email draft.
 
         :return: The draft_attachments of this QueueConversationVideoEventTopicEmail.
         :rtype: list[QueueConversationVideoEventTopicAttachment]
@@ -507,7 +504,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def draft_attachments(self, draft_attachments):
         """
         Sets the draft_attachments of this QueueConversationVideoEventTopicEmail.
-
+        A list of uploaded attachments on the email draft.
 
         :param draft_attachments: The draft_attachments of this QueueConversationVideoEventTopicEmail.
         :type: list[QueueConversationVideoEventTopicAttachment]
@@ -519,7 +516,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def spam(self):
         """
         Gets the spam of this QueueConversationVideoEventTopicEmail.
-
+        Indicates if the inbound email was marked as spam.
 
         :return: The spam of this QueueConversationVideoEventTopicEmail.
         :rtype: bool
@@ -530,7 +527,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def spam(self, spam):
         """
         Sets the spam of this QueueConversationVideoEventTopicEmail.
-
+        Indicates if the inbound email was marked as spam.
 
         :param spam: The spam of this QueueConversationVideoEventTopicEmail.
         :type: bool
@@ -542,7 +539,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def wrapup(self):
         """
         Gets the wrapup of this QueueConversationVideoEventTopicEmail.
-
+        Call wrap up or disposition data.
 
         :return: The wrapup of this QueueConversationVideoEventTopicEmail.
         :rtype: QueueConversationVideoEventTopicWrapup
@@ -553,7 +550,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def wrapup(self, wrapup):
         """
         Sets the wrapup of this QueueConversationVideoEventTopicEmail.
-
+        Call wrap up or disposition data.
 
         :param wrapup: The wrapup of this QueueConversationVideoEventTopicEmail.
         :type: QueueConversationVideoEventTopicWrapup
@@ -565,7 +562,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def after_call_work(self):
         """
         Gets the after_call_work of this QueueConversationVideoEventTopicEmail.
-
+        A communication's after-call work data.
 
         :return: The after_call_work of this QueueConversationVideoEventTopicEmail.
         :rtype: QueueConversationVideoEventTopicAfterCallWork
@@ -576,7 +573,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def after_call_work(self, after_call_work):
         """
         Sets the after_call_work of this QueueConversationVideoEventTopicEmail.
-
+        A communication's after-call work data.
 
         :param after_call_work: The after_call_work of this QueueConversationVideoEventTopicEmail.
         :type: QueueConversationVideoEventTopicAfterCallWork
@@ -588,7 +585,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def after_call_work_required(self):
         """
         Gets the after_call_work_required of this QueueConversationVideoEventTopicEmail.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :return: The after_call_work_required of this QueueConversationVideoEventTopicEmail.
         :rtype: bool
@@ -599,36 +596,13 @@ class QueueConversationVideoEventTopicEmail(object):
     def after_call_work_required(self, after_call_work_required):
         """
         Sets the after_call_work_required of this QueueConversationVideoEventTopicEmail.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :param after_call_work_required: The after_call_work_required of this QueueConversationVideoEventTopicEmail.
         :type: bool
         """
         
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationVideoEventTopicEmail.
-
-
-        :return: The additional_properties of this QueueConversationVideoEventTopicEmail.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationVideoEventTopicEmail.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationVideoEventTopicEmail.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

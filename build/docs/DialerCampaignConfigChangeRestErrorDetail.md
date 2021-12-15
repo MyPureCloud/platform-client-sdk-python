@@ -7,9 +7,8 @@ title: DialerCampaignConfigChangeRestErrorDetail
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **error** | **str** |  | [optional] |
-| **details** | **str** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **error** | **str** | name of the error | [optional] |
+| **details** | **str** | additional information regarding the error | [optional] |
 {: class="table table-striped"}
 
 

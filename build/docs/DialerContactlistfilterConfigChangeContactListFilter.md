@@ -7,16 +7,15 @@ title: DialerContactlistfilterConfigChangeContactListFilter
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **date_created** | **datetime** |  | [optional] |
-| **date_modified** | **datetime** |  | [optional] |
-| **version** | **int** |  | [optional] |
 | **contact_list** | [**DialerContactlistfilterConfigChangeUriReference**](DialerContactlistfilterConfigChangeUriReference.html) |  | [optional] |
-| **contact_list_columns** | **list[str]** |  | [optional] |
+| **contact_list_columns** | **list[str]** | The list of contact list columns | [optional] |
 | **clauses** | [**list[DialerContactlistfilterConfigChangeFilterClause]**](DialerContactlistfilterConfigChangeFilterClause.html) |  | [optional] |
-| **filter_type** | **str** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **filter_type** | **str** | Contact list filter type | [optional] |
+| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **name** | **str** | The UI-visible name of the object | [optional] |
+| **date_created** | **datetime** | Creation time of the entity | [optional] |
+| **date_modified** | **datetime** | Last modified time of the entity | [optional] |
+| **version** | **int** | Required for updates, must match the version number of the most recent update | [optional] |
 {: class="table table-striped"}
 
 

@@ -42,27 +42,24 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
         self.swagger_types = {
             'column_name': 'str',
             'type': 'str',
-            'callable_time_column': 'str',
-            'additional_properties': 'object'
+            'callable_time_column': 'str'
         }
 
         self.attribute_map = {
             'column_name': 'columnName',
             'type': 'type',
-            'callable_time_column': 'callableTimeColumn',
-            'additional_properties': 'additionalProperties'
+            'callable_time_column': 'callableTimeColumn'
         }
 
         self._column_name = None
         self._type = None
         self._callable_time_column = None
-        self._additional_properties = None
 
     @property
     def column_name(self):
         """
         Gets the column_name of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-
+        name of the phone column
 
         :return: The column_name of this DialerContactlistConfigChangeContactPhoneNumberColumn.
         :rtype: str
@@ -73,7 +70,7 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
     def column_name(self, column_name):
         """
         Sets the column_name of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-
+        name of the phone column
 
         :param column_name: The column_name of this DialerContactlistConfigChangeContactPhoneNumberColumn.
         :type: str
@@ -85,7 +82,7 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
     def type(self):
         """
         Gets the type of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-
+        type of the phone column, for example, 'cell' or 'home'
 
         :return: The type of this DialerContactlistConfigChangeContactPhoneNumberColumn.
         :rtype: str
@@ -96,7 +93,7 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
     def type(self, type):
         """
         Sets the type of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-
+        type of the phone column, for example, 'cell' or 'home'
 
         :param type: The type of this DialerContactlistConfigChangeContactPhoneNumberColumn.
         :type: str
@@ -108,7 +105,7 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
     def callable_time_column(self):
         """
         Gets the callable_time_column of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-
+        name of the column indicating the timezone to be considered for determining callable times
 
         :return: The callable_time_column of this DialerContactlistConfigChangeContactPhoneNumberColumn.
         :rtype: str
@@ -119,36 +116,13 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
     def callable_time_column(self, callable_time_column):
         """
         Sets the callable_time_column of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-
+        name of the column indicating the timezone to be considered for determining callable times
 
         :param callable_time_column: The callable_time_column of this DialerContactlistConfigChangeContactPhoneNumberColumn.
         :type: str
         """
         
         self._callable_time_column = callable_time_column
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-
-
-        :return: The additional_properties of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-
-
-        :param additional_properties: The additional_properties of this DialerContactlistConfigChangeContactPhoneNumberColumn.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

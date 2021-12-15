@@ -74,7 +74,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def direction(self):
         """
         Gets the direction of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        The fax direction, either \"send\" or \"receive\".
 
         :return: The direction of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :rtype: str
@@ -85,7 +85,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def direction(self, direction):
         """
         Sets the direction of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        The fax direction, either \"send\" or \"receive\".
 
         :param direction: The direction of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :type: str
@@ -97,7 +97,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def expected_pages(self):
         """
         Gets the expected_pages of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Total number of expected pages, if known.
 
         :return: The expected_pages of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :rtype: int
@@ -108,7 +108,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def expected_pages(self, expected_pages):
         """
         Sets the expected_pages of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Total number of expected pages, if known.
 
         :param expected_pages: The expected_pages of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :type: int
@@ -120,7 +120,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def active_page(self):
         """
         Gets the active_page of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Active page of the transmission.
 
         :return: The active_page of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :rtype: int
@@ -131,7 +131,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def active_page(self, active_page):
         """
         Sets the active_page of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Active page of the transmission.
 
         :param active_page: The active_page of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :type: int
@@ -143,7 +143,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def lines_transmitted(self):
         """
         Gets the lines_transmitted of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Number of lines that have completed transmission.
 
         :return: The lines_transmitted of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :rtype: int
@@ -154,7 +154,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def lines_transmitted(self, lines_transmitted):
         """
         Sets the lines_transmitted of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Number of lines that have completed transmission.
 
         :param lines_transmitted: The lines_transmitted of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :type: int
@@ -166,7 +166,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def bytes_transmitted(self):
         """
         Gets the bytes_transmitted of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Number of bytes that have competed transmission.
 
         :return: The bytes_transmitted of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :rtype: int
@@ -177,7 +177,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def bytes_transmitted(self, bytes_transmitted):
         """
         Sets the bytes_transmitted of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Number of bytes that have competed transmission.
 
         :param bytes_transmitted: The bytes_transmitted of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :type: int
@@ -189,7 +189,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def baud_rate(self):
         """
         Gets the baud_rate of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Current signaling rate of transmission, baud rate.
 
         :return: The baud_rate of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :rtype: int
@@ -200,7 +200,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def baud_rate(self, baud_rate):
         """
         Sets the baud_rate of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Current signaling rate of transmission, baud rate.
 
         :param baud_rate: The baud_rate of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :type: int
@@ -212,7 +212,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def page_errors(self):
         """
         Gets the page_errors of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Number of page errors.
 
         :return: The page_errors of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :rtype: int
@@ -223,7 +223,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def page_errors(self, page_errors):
         """
         Sets the page_errors of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Number of page errors.
 
         :param page_errors: The page_errors of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :type: int
@@ -235,7 +235,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def line_errors(self):
         """
         Gets the line_errors of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Number of line errors.
 
         :return: The line_errors of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :rtype: int
@@ -246,7 +246,7 @@ class QueueConversationSocialExpressionEventTopicFaxStatus(object):
     def line_errors(self, line_errors):
         """
         Sets the line_errors of this QueueConversationSocialExpressionEventTopicFaxStatus.
-
+        Number of line errors.
 
         :param line_errors: The line_errors of this QueueConversationSocialExpressionEventTopicFaxStatus.
         :type: int

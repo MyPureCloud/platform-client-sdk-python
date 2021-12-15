@@ -41,25 +41,22 @@ class DialerContactlistfilterConfigChangeFilterClause(object):
         """
         self.swagger_types = {
             'filter_type': 'str',
-            'predicates': 'list[DialerContactlistfilterConfigChangeFilterPredicate]',
-            'additional_properties': 'object'
+            'predicates': 'list[DialerContactlistfilterConfigChangeFilterPredicate]'
         }
 
         self.attribute_map = {
             'filter_type': 'filterType',
-            'predicates': 'predicates',
-            'additional_properties': 'additionalProperties'
+            'predicates': 'predicates'
         }
 
         self._filter_type = None
         self._predicates = None
-        self._additional_properties = None
 
     @property
     def filter_type(self):
         """
         Gets the filter_type of this DialerContactlistfilterConfigChangeFilterClause.
-
+        Contact list filter type
 
         :return: The filter_type of this DialerContactlistfilterConfigChangeFilterClause.
         :rtype: str
@@ -70,7 +67,7 @@ class DialerContactlistfilterConfigChangeFilterClause(object):
     def filter_type(self, filter_type):
         """
         Sets the filter_type of this DialerContactlistfilterConfigChangeFilterClause.
-
+        Contact list filter type
 
         :param filter_type: The filter_type of this DialerContactlistfilterConfigChangeFilterClause.
         :type: str
@@ -86,7 +83,7 @@ class DialerContactlistfilterConfigChangeFilterClause(object):
     def predicates(self):
         """
         Gets the predicates of this DialerContactlistfilterConfigChangeFilterClause.
-
+        The list of predicates in that clause
 
         :return: The predicates of this DialerContactlistfilterConfigChangeFilterClause.
         :rtype: list[DialerContactlistfilterConfigChangeFilterPredicate]
@@ -97,36 +94,13 @@ class DialerContactlistfilterConfigChangeFilterClause(object):
     def predicates(self, predicates):
         """
         Sets the predicates of this DialerContactlistfilterConfigChangeFilterClause.
-
+        The list of predicates in that clause
 
         :param predicates: The predicates of this DialerContactlistfilterConfigChangeFilterClause.
         :type: list[DialerContactlistfilterConfigChangeFilterPredicate]
         """
         
         self._predicates = predicates
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerContactlistfilterConfigChangeFilterClause.
-
-
-        :return: The additional_properties of this DialerContactlistfilterConfigChangeFilterClause.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerContactlistfilterConfigChangeFilterClause.
-
-
-        :param additional_properties: The additional_properties of this DialerContactlistfilterConfigChangeFilterClause.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

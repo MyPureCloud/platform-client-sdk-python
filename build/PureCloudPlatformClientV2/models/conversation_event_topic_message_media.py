@@ -65,7 +65,7 @@ class ConversationEventTopicMessageMedia(object):
     def url(self):
         """
         Gets the url of this ConversationEventTopicMessageMedia.
-
+        The location of the media, useful for retrieving it
 
         :return: The url of this ConversationEventTopicMessageMedia.
         :rtype: str
@@ -76,7 +76,7 @@ class ConversationEventTopicMessageMedia(object):
     def url(self, url):
         """
         Sets the url of this ConversationEventTopicMessageMedia.
-
+        The location of the media, useful for retrieving it
 
         :param url: The url of this ConversationEventTopicMessageMedia.
         :type: str
@@ -88,7 +88,7 @@ class ConversationEventTopicMessageMedia(object):
     def media_type(self):
         """
         Gets the media_type of this ConversationEventTopicMessageMedia.
-
+        The optional internet media type of the the media object.  If null then the media type should be dictated by the url
 
         :return: The media_type of this ConversationEventTopicMessageMedia.
         :rtype: str
@@ -99,7 +99,7 @@ class ConversationEventTopicMessageMedia(object):
     def media_type(self, media_type):
         """
         Sets the media_type of this ConversationEventTopicMessageMedia.
-
+        The optional internet media type of the the media object.  If null then the media type should be dictated by the url
 
         :param media_type: The media_type of this ConversationEventTopicMessageMedia.
         :type: str
@@ -111,7 +111,7 @@ class ConversationEventTopicMessageMedia(object):
     def content_length_bytes(self):
         """
         Gets the content_length_bytes of this ConversationEventTopicMessageMedia.
-
+        The optional content length of the the media object, in bytes.
 
         :return: The content_length_bytes of this ConversationEventTopicMessageMedia.
         :rtype: int
@@ -122,7 +122,7 @@ class ConversationEventTopicMessageMedia(object):
     def content_length_bytes(self, content_length_bytes):
         """
         Sets the content_length_bytes of this ConversationEventTopicMessageMedia.
-
+        The optional content length of the the media object, in bytes.
 
         :param content_length_bytes: The content_length_bytes of this ConversationEventTopicMessageMedia.
         :type: int
@@ -134,7 +134,7 @@ class ConversationEventTopicMessageMedia(object):
     def name(self):
         """
         Gets the name of this ConversationEventTopicMessageMedia.
-
+        The optional name of the the media object.
 
         :return: The name of this ConversationEventTopicMessageMedia.
         :rtype: str
@@ -145,7 +145,7 @@ class ConversationEventTopicMessageMedia(object):
     def name(self, name):
         """
         Sets the name of this ConversationEventTopicMessageMedia.
-
+        The optional name of the the media object.
 
         :param name: The name of this ConversationEventTopicMessageMedia.
         :type: str
@@ -157,7 +157,7 @@ class ConversationEventTopicMessageMedia(object):
     def id(self):
         """
         Gets the id of this ConversationEventTopicMessageMedia.
-
+        The optional id of the the media object.
 
         :return: The id of this ConversationEventTopicMessageMedia.
         :rtype: str
@@ -168,7 +168,7 @@ class ConversationEventTopicMessageMedia(object):
     def id(self, id):
         """
         Sets the id of this ConversationEventTopicMessageMedia.
-
+        The optional id of the the media object.
 
         :param id: The id of this ConversationEventTopicMessageMedia.
         :type: str

@@ -40,153 +40,35 @@ class DialerRulesetConfigChangeRuleSet(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'contact_list': 'DialerRulesetConfigChangeUriReference',
+            'queue': 'DialerRulesetConfigChangeUriReference',
+            'rules': 'list[DialerRulesetConfigChangeRule]',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'version': 'int',
-            'contact_list': 'DialerRulesetConfigChangeUriReference',
-            'queue': 'DialerRulesetConfigChangeUriReference',
-            'rules': 'list[DialerRulesetConfigChangeRule]',
-            'additional_properties': 'object'
+            'version': 'int'
         }
 
         self.attribute_map = {
+            'contact_list': 'contactList',
+            'queue': 'queue',
+            'rules': 'rules',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'version': 'version',
-            'contact_list': 'contactList',
-            'queue': 'queue',
-            'rules': 'rules',
-            'additional_properties': 'additionalProperties'
+            'version': 'version'
         }
 
+        self._contact_list = None
+        self._queue = None
+        self._rules = None
         self._id = None
         self._name = None
         self._date_created = None
         self._date_modified = None
         self._version = None
-        self._contact_list = None
-        self._queue = None
-        self._rules = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerRulesetConfigChangeRuleSet.
-
-
-        :return: The id of this DialerRulesetConfigChangeRuleSet.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerRulesetConfigChangeRuleSet.
-
-
-        :param id: The id of this DialerRulesetConfigChangeRuleSet.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerRulesetConfigChangeRuleSet.
-
-
-        :return: The name of this DialerRulesetConfigChangeRuleSet.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerRulesetConfigChangeRuleSet.
-
-
-        :param name: The name of this DialerRulesetConfigChangeRuleSet.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerRulesetConfigChangeRuleSet.
-
-
-        :return: The date_created of this DialerRulesetConfigChangeRuleSet.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerRulesetConfigChangeRuleSet.
-
-
-        :param date_created: The date_created of this DialerRulesetConfigChangeRuleSet.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerRulesetConfigChangeRuleSet.
-
-
-        :return: The date_modified of this DialerRulesetConfigChangeRuleSet.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerRulesetConfigChangeRuleSet.
-
-
-        :param date_modified: The date_modified of this DialerRulesetConfigChangeRuleSet.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerRulesetConfigChangeRuleSet.
-
-
-        :return: The version of this DialerRulesetConfigChangeRuleSet.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerRulesetConfigChangeRuleSet.
-
-
-        :param version: The version of this DialerRulesetConfigChangeRuleSet.
-        :type: int
-        """
-        
-        self._version = version
 
     @property
     def contact_list(self):
@@ -215,7 +97,7 @@ class DialerRulesetConfigChangeRuleSet(object):
     def queue(self):
         """
         Gets the queue of this DialerRulesetConfigChangeRuleSet.
-
+        A UriReference for a resource
 
         :return: The queue of this DialerRulesetConfigChangeRuleSet.
         :rtype: DialerRulesetConfigChangeUriReference
@@ -226,7 +108,7 @@ class DialerRulesetConfigChangeRuleSet(object):
     def queue(self, queue):
         """
         Sets the queue of this DialerRulesetConfigChangeRuleSet.
-
+        A UriReference for a resource
 
         :param queue: The queue of this DialerRulesetConfigChangeRuleSet.
         :type: DialerRulesetConfigChangeUriReference
@@ -258,27 +140,119 @@ class DialerRulesetConfigChangeRuleSet(object):
         self._rules = rules
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerRulesetConfigChangeRuleSet.
+        Gets the id of this DialerRulesetConfigChangeRuleSet.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerRulesetConfigChangeRuleSet.
-        :rtype: object
+        :return: The id of this DialerRulesetConfigChangeRuleSet.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerRulesetConfigChangeRuleSet.
+        Sets the id of this DialerRulesetConfigChangeRuleSet.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeRuleSet.
-        :type: object
+        :param id: The id of this DialerRulesetConfigChangeRuleSet.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerRulesetConfigChangeRuleSet.
+        The UI-visible name of the object
+
+        :return: The name of this DialerRulesetConfigChangeRuleSet.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerRulesetConfigChangeRuleSet.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerRulesetConfigChangeRuleSet.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerRulesetConfigChangeRuleSet.
+        Creation time of the entity
+
+        :return: The date_created of this DialerRulesetConfigChangeRuleSet.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerRulesetConfigChangeRuleSet.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerRulesetConfigChangeRuleSet.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerRulesetConfigChangeRuleSet.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerRulesetConfigChangeRuleSet.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerRulesetConfigChangeRuleSet.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerRulesetConfigChangeRuleSet.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerRulesetConfigChangeRuleSet.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerRulesetConfigChangeRuleSet.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerRulesetConfigChangeRuleSet.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerRulesetConfigChangeRuleSet.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

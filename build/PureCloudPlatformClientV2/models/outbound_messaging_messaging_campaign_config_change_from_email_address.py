@@ -59,7 +59,7 @@ class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(object):
     def friendly_name(self):
         """
         Gets the friendly_name of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
-
+        The friendly name of the email address.
 
         :return: The friendly_name of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
         :rtype: str
@@ -70,7 +70,7 @@ class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(object):
     def friendly_name(self, friendly_name):
         """
         Sets the friendly_name of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
-
+        The friendly name of the email address.
 
         :param friendly_name: The friendly_name of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
         :type: str
@@ -82,7 +82,7 @@ class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(object):
     def local_part(self):
         """
         Gets the local_part of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
-
+        The local part of the email address.
 
         :return: The local_part of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
         :rtype: str
@@ -93,7 +93,7 @@ class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(object):
     def local_part(self, local_part):
         """
         Sets the local_part of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
-
+        The local part of the email address.
 
         :param local_part: The local_part of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
         :type: str
@@ -105,7 +105,7 @@ class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(object):
     def domain(self):
         """
         Gets the domain of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
-
+        A UriReference for a resource
 
         :return: The domain of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
         :rtype: OutboundMessagingMessagingCampaignConfigChangeUriReference
@@ -116,7 +116,7 @@ class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(object):
     def domain(self, domain):
         """
         Sets the domain of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
-
+        A UriReference for a resource
 
         :param domain: The domain of this OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress.
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference

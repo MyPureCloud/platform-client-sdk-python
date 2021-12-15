@@ -40,159 +40,41 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'intervals': 'list[DialerCampaignScheduleConfigChangeScheduleInterval]',
+            'time_zone': 'str',
+            'campaign': 'DialerCampaignScheduleConfigChangeUriReference',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'version': 'int',
-            'intervals': 'list[DialerCampaignScheduleConfigChangeScheduleInterval]',
-            'time_zone': 'str',
-            'campaign': 'DialerCampaignScheduleConfigChangeUriReference',
-            'additional_properties': 'object'
+            'version': 'int'
         }
 
         self.attribute_map = {
+            'intervals': 'intervals',
+            'time_zone': 'timeZone',
+            'campaign': 'campaign',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'version': 'version',
-            'intervals': 'intervals',
-            'time_zone': 'timeZone',
-            'campaign': 'campaign',
-            'additional_properties': 'additionalProperties'
+            'version': 'version'
         }
 
+        self._intervals = None
+        self._time_zone = None
+        self._campaign = None
         self._id = None
         self._name = None
         self._date_created = None
         self._date_modified = None
         self._version = None
-        self._intervals = None
-        self._time_zone = None
-        self._campaign = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :return: The id of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :param id: The id of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :return: The name of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :param name: The name of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :return: The date_created of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :param date_created: The date_created of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :return: The date_modified of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :param date_modified: The date_modified of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :return: The version of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
-
-        :param version: The version of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :type: int
-        """
-        
-        self._version = version
 
     @property
     def intervals(self):
         """
         Gets the intervals of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
+        a list of start and end times
 
         :return: The intervals of this DialerCampaignScheduleConfigChangeCampaignSchedule.
         :rtype: list[DialerCampaignScheduleConfigChangeScheduleInterval]
@@ -203,7 +85,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
     def intervals(self, intervals):
         """
         Sets the intervals of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
+        a list of start and end times
 
         :param intervals: The intervals of this DialerCampaignScheduleConfigChangeCampaignSchedule.
         :type: list[DialerCampaignScheduleConfigChangeScheduleInterval]
@@ -215,7 +97,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
     def time_zone(self):
         """
         Gets the time_zone of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
+        time zone identifier to be applied to the intervals; for example Africa/Abidjan
 
         :return: The time_zone of this DialerCampaignScheduleConfigChangeCampaignSchedule.
         :rtype: str
@@ -226,7 +108,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-
+        time zone identifier to be applied to the intervals; for example Africa/Abidjan
 
         :param time_zone: The time_zone of this DialerCampaignScheduleConfigChangeCampaignSchedule.
         :type: str
@@ -258,27 +140,119 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         self._campaign = campaign
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        Gets the id of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :rtype: object
+        :return: The id of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        Sets the id of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerCampaignScheduleConfigChangeCampaignSchedule.
-        :type: object
+        :param id: The id of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        The UI-visible name of the object
+
+        :return: The name of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        Creation time of the entity
+
+        :return: The date_created of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

@@ -56,7 +56,7 @@ class QueueConversationEventTopicVoicemail(object):
     def id(self):
         """
         Gets the id of this QueueConversationEventTopicVoicemail.
-
+        The voicemail id
 
         :return: The id of this QueueConversationEventTopicVoicemail.
         :rtype: str
@@ -67,7 +67,7 @@ class QueueConversationEventTopicVoicemail(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationEventTopicVoicemail.
-
+        The voicemail id
 
         :param id: The id of this QueueConversationEventTopicVoicemail.
         :type: str
@@ -79,7 +79,7 @@ class QueueConversationEventTopicVoicemail(object):
     def upload_status(self):
         """
         Gets the upload_status of this QueueConversationEventTopicVoicemail.
-
+        current state of the voicemail upload
 
         :return: The upload_status of this QueueConversationEventTopicVoicemail.
         :rtype: str
@@ -90,12 +90,12 @@ class QueueConversationEventTopicVoicemail(object):
     def upload_status(self, upload_status):
         """
         Sets the upload_status of this QueueConversationEventTopicVoicemail.
-
+        current state of the voicemail upload
 
         :param upload_status: The upload_status of this QueueConversationEventTopicVoicemail.
         :type: str
         """
-        allowed_values = ["PENDING", "COMPLETE", "FAILED", "TIMEOUT", "NONE"]
+        allowed_values = ["pending", "complete", "failed", "timeout", "none"]
         if upload_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for upload_status -> " + upload_status)
             self._upload_status = "outdated_sdk_version"

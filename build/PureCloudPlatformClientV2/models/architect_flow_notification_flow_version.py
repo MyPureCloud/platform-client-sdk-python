@@ -53,7 +53,7 @@ class ArchitectFlowNotificationFlowVersion(object):
     def id(self):
         """
         Gets the id of this ArchitectFlowNotificationFlowVersion.
-
+        The version ID
 
         :return: The id of this ArchitectFlowNotificationFlowVersion.
         :rtype: str
@@ -64,7 +64,7 @@ class ArchitectFlowNotificationFlowVersion(object):
     def id(self, id):
         """
         Sets the id of this ArchitectFlowNotificationFlowVersion.
-
+        The version ID
 
         :param id: The id of this ArchitectFlowNotificationFlowVersion.
         :type: str

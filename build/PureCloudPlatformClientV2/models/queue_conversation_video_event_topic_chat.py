@@ -55,8 +55,7 @@ class QueueConversationVideoEventTopicChat(object):
             'journey_context': 'QueueConversationVideoEventTopicJourneyContext',
             'wrapup': 'QueueConversationVideoEventTopicWrapup',
             'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
-            'after_call_work_required': 'bool',
-            'additional_properties': 'object'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -75,8 +74,7 @@ class QueueConversationVideoEventTopicChat(object):
             'journey_context': 'journeyContext',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'additional_properties': 'additionalProperties'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -95,13 +93,12 @@ class QueueConversationVideoEventTopicChat(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._additional_properties = None
 
     @property
     def state(self):
         """
         Gets the state of this QueueConversationVideoEventTopicChat.
-
+        The connection state of this communication.
 
         :return: The state of this QueueConversationVideoEventTopicChat.
         :rtype: str
@@ -112,12 +109,12 @@ class QueueConversationVideoEventTopicChat(object):
     def state(self, state):
         """
         Sets the state of this QueueConversationVideoEventTopicChat.
-
+        The connection state of this communication.
 
         :param state: The state of this QueueConversationVideoEventTopicChat.
         :type: str
         """
-        allowed_values = ["ALERTING", "DIALING", "CONTACTING", "OFFERING", "CONNECTED", "DISCONNECTED", "TERMINATED", "NONE"]
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -128,7 +125,7 @@ class QueueConversationVideoEventTopicChat(object):
     def id(self):
         """
         Gets the id of this QueueConversationVideoEventTopicChat.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this QueueConversationVideoEventTopicChat.
         :rtype: str
@@ -139,7 +136,7 @@ class QueueConversationVideoEventTopicChat(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationVideoEventTopicChat.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this QueueConversationVideoEventTopicChat.
         :type: str
@@ -151,7 +148,7 @@ class QueueConversationVideoEventTopicChat(object):
     def provider(self):
         """
         Gets the provider of this QueueConversationVideoEventTopicChat.
-
+        The source provider of the chat.
 
         :return: The provider of this QueueConversationVideoEventTopicChat.
         :rtype: str
@@ -162,7 +159,7 @@ class QueueConversationVideoEventTopicChat(object):
     def provider(self, provider):
         """
         Sets the provider of this QueueConversationVideoEventTopicChat.
-
+        The source provider of the chat.
 
         :param provider: The provider of this QueueConversationVideoEventTopicChat.
         :type: str
@@ -174,7 +171,7 @@ class QueueConversationVideoEventTopicChat(object):
     def script_id(self):
         """
         Gets the script_id of this QueueConversationVideoEventTopicChat.
-
+        The UUID of the script to use.
 
         :return: The script_id of this QueueConversationVideoEventTopicChat.
         :rtype: str
@@ -185,7 +182,7 @@ class QueueConversationVideoEventTopicChat(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this QueueConversationVideoEventTopicChat.
-
+        The UUID of the script to use.
 
         :param script_id: The script_id of this QueueConversationVideoEventTopicChat.
         :type: str
@@ -197,7 +194,7 @@ class QueueConversationVideoEventTopicChat(object):
     def peer_id(self):
         """
         Gets the peer_id of this QueueConversationVideoEventTopicChat.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :return: The peer_id of this QueueConversationVideoEventTopicChat.
         :rtype: str
@@ -208,7 +205,7 @@ class QueueConversationVideoEventTopicChat(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this QueueConversationVideoEventTopicChat.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :param peer_id: The peer_id of this QueueConversationVideoEventTopicChat.
         :type: str
@@ -220,7 +217,7 @@ class QueueConversationVideoEventTopicChat(object):
     def room_id(self):
         """
         Gets the room_id of this QueueConversationVideoEventTopicChat.
-
+        The room id for the chat.
 
         :return: The room_id of this QueueConversationVideoEventTopicChat.
         :rtype: str
@@ -231,7 +228,7 @@ class QueueConversationVideoEventTopicChat(object):
     def room_id(self, room_id):
         """
         Sets the room_id of this QueueConversationVideoEventTopicChat.
-
+        The room id for the chat.
 
         :param room_id: The room_id of this QueueConversationVideoEventTopicChat.
         :type: str
@@ -243,7 +240,7 @@ class QueueConversationVideoEventTopicChat(object):
     def avatar_image_url(self):
         """
         Gets the avatar_image_url of this QueueConversationVideoEventTopicChat.
-
+        The avatar for the chat (if available).
 
         :return: The avatar_image_url of this QueueConversationVideoEventTopicChat.
         :rtype: str
@@ -254,7 +251,7 @@ class QueueConversationVideoEventTopicChat(object):
     def avatar_image_url(self, avatar_image_url):
         """
         Sets the avatar_image_url of this QueueConversationVideoEventTopicChat.
-
+        The avatar for the chat (if available).
 
         :param avatar_image_url: The avatar_image_url of this QueueConversationVideoEventTopicChat.
         :type: str
@@ -266,7 +263,7 @@ class QueueConversationVideoEventTopicChat(object):
     def held(self):
         """
         Gets the held of this QueueConversationVideoEventTopicChat.
-
+        True if this call is held and the person on this side hears silence.
 
         :return: The held of this QueueConversationVideoEventTopicChat.
         :rtype: bool
@@ -277,7 +274,7 @@ class QueueConversationVideoEventTopicChat(object):
     def held(self, held):
         """
         Sets the held of this QueueConversationVideoEventTopicChat.
-
+        True if this call is held and the person on this side hears silence.
 
         :param held: The held of this QueueConversationVideoEventTopicChat.
         :type: bool
@@ -289,7 +286,7 @@ class QueueConversationVideoEventTopicChat(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this QueueConversationVideoEventTopicChat.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :return: The disconnect_type of this QueueConversationVideoEventTopicChat.
         :rtype: str
@@ -300,12 +297,12 @@ class QueueConversationVideoEventTopicChat(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this QueueConversationVideoEventTopicChat.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :param disconnect_type: The disconnect_type of this QueueConversationVideoEventTopicChat.
         :type: str
         """
-        allowed_values = ["ENDPOINT", "CLIENT", "SYSTEM", "TIMEOUT", "TRANSFER", "TRANSFER_CONFERENCE", "TRANSFER_CONSULT", "TRANSFER_NOANSWER", "TRANSFER_NOTAVAILABLE", "TRANSFER_FORWARD", "TRANSPORT_FAILURE", "ERROR", "PEER", "OTHER", "SPAM", "UNCALLABLE"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.noanswer", "transfer.notavailable", "transfer.forward", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -316,7 +313,7 @@ class QueueConversationVideoEventTopicChat(object):
     def start_hold_time(self):
         """
         Gets the start_hold_time of this QueueConversationVideoEventTopicChat.
-
+        The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
 
         :return: The start_hold_time of this QueueConversationVideoEventTopicChat.
         :rtype: datetime
@@ -327,7 +324,7 @@ class QueueConversationVideoEventTopicChat(object):
     def start_hold_time(self, start_hold_time):
         """
         Sets the start_hold_time of this QueueConversationVideoEventTopicChat.
-
+        The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
 
         :param start_hold_time: The start_hold_time of this QueueConversationVideoEventTopicChat.
         :type: datetime
@@ -339,7 +336,7 @@ class QueueConversationVideoEventTopicChat(object):
     def connected_time(self):
         """
         Gets the connected_time of this QueueConversationVideoEventTopicChat.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :return: The connected_time of this QueueConversationVideoEventTopicChat.
         :rtype: datetime
@@ -350,7 +347,7 @@ class QueueConversationVideoEventTopicChat(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this QueueConversationVideoEventTopicChat.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :param connected_time: The connected_time of this QueueConversationVideoEventTopicChat.
         :type: datetime
@@ -362,7 +359,7 @@ class QueueConversationVideoEventTopicChat(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this QueueConversationVideoEventTopicChat.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :return: The disconnected_time of this QueueConversationVideoEventTopicChat.
         :rtype: datetime
@@ -373,7 +370,7 @@ class QueueConversationVideoEventTopicChat(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this QueueConversationVideoEventTopicChat.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :param disconnected_time: The disconnected_time of this QueueConversationVideoEventTopicChat.
         :type: datetime
@@ -408,7 +405,7 @@ class QueueConversationVideoEventTopicChat(object):
     def wrapup(self):
         """
         Gets the wrapup of this QueueConversationVideoEventTopicChat.
-
+        Call wrap up or disposition data.
 
         :return: The wrapup of this QueueConversationVideoEventTopicChat.
         :rtype: QueueConversationVideoEventTopicWrapup
@@ -419,7 +416,7 @@ class QueueConversationVideoEventTopicChat(object):
     def wrapup(self, wrapup):
         """
         Sets the wrapup of this QueueConversationVideoEventTopicChat.
-
+        Call wrap up or disposition data.
 
         :param wrapup: The wrapup of this QueueConversationVideoEventTopicChat.
         :type: QueueConversationVideoEventTopicWrapup
@@ -431,7 +428,7 @@ class QueueConversationVideoEventTopicChat(object):
     def after_call_work(self):
         """
         Gets the after_call_work of this QueueConversationVideoEventTopicChat.
-
+        A communication's after-call work data.
 
         :return: The after_call_work of this QueueConversationVideoEventTopicChat.
         :rtype: QueueConversationVideoEventTopicAfterCallWork
@@ -442,7 +439,7 @@ class QueueConversationVideoEventTopicChat(object):
     def after_call_work(self, after_call_work):
         """
         Sets the after_call_work of this QueueConversationVideoEventTopicChat.
-
+        A communication's after-call work data.
 
         :param after_call_work: The after_call_work of this QueueConversationVideoEventTopicChat.
         :type: QueueConversationVideoEventTopicAfterCallWork
@@ -454,7 +451,7 @@ class QueueConversationVideoEventTopicChat(object):
     def after_call_work_required(self):
         """
         Gets the after_call_work_required of this QueueConversationVideoEventTopicChat.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :return: The after_call_work_required of this QueueConversationVideoEventTopicChat.
         :rtype: bool
@@ -465,36 +462,13 @@ class QueueConversationVideoEventTopicChat(object):
     def after_call_work_required(self, after_call_work_required):
         """
         Sets the after_call_work_required of this QueueConversationVideoEventTopicChat.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :param after_call_work_required: The after_call_work_required of this QueueConversationVideoEventTopicChat.
         :type: bool
         """
         
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationVideoEventTopicChat.
-
-
-        :return: The additional_properties of this QueueConversationVideoEventTopicChat.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationVideoEventTopicChat.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationVideoEventTopicChat.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

@@ -43,29 +43,26 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
             'id': 'str',
             'parameters': 'dict(str, str)',
             'action_type': 'str',
-            'campaign_rule_action_entities': 'DialerCampaignRuleConfigChangeCampaignRuleActionEntities',
-            'additional_properties': 'object'
+            'campaign_rule_action_entities': 'DialerCampaignRuleConfigChangeCampaignRuleActionEntities'
         }
 
         self.attribute_map = {
             'id': 'id',
             'parameters': 'parameters',
             'action_type': 'actionType',
-            'campaign_rule_action_entities': 'campaignRuleActionEntities',
-            'additional_properties': 'additionalProperties'
+            'campaign_rule_action_entities': 'campaignRuleActionEntities'
         }
 
         self._id = None
         self._parameters = None
         self._action_type = None
         self._campaign_rule_action_entities = None
-        self._additional_properties = None
 
     @property
     def id(self):
         """
         Gets the id of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-
+        The globally unique identifier for the action
 
         :return: The id of this DialerCampaignRuleConfigChangeCampaignRuleAction.
         :rtype: str
@@ -76,7 +73,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
     def id(self, id):
         """
         Sets the id of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-
+        The globally unique identifier for the action
 
         :param id: The id of this DialerCampaignRuleConfigChangeCampaignRuleAction.
         :type: str
@@ -88,7 +85,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
     def parameters(self):
         """
         Gets the parameters of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-
+        The parameters to match this action
 
         :return: The parameters of this DialerCampaignRuleConfigChangeCampaignRuleAction.
         :rtype: dict(str, str)
@@ -99,7 +96,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-
+        The parameters to match this action
 
         :param parameters: The parameters of this DialerCampaignRuleConfigChangeCampaignRuleAction.
         :type: dict(str, str)
@@ -111,7 +108,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
     def action_type(self):
         """
         Gets the action_type of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-
+        The type of this action
 
         :return: The action_type of this DialerCampaignRuleConfigChangeCampaignRuleAction.
         :rtype: str
@@ -122,12 +119,12 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
     def action_type(self, action_type):
         """
         Sets the action_type of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-
+        The type of this action
 
         :param action_type: The action_type of this DialerCampaignRuleConfigChangeCampaignRuleAction.
         :type: str
         """
-        allowed_values = ["TURN_ON_CAMPAIGN", "TURN_OFF_CAMPAIGN", "TURN_ON_SEQUENCE", "TURN_OFF_SEQUENCE", "SET_CAMPAIGN_PRIORITY", "RECYCLE_CAMPAIGN"]
+        allowed_values = ["turnOnCampaign", "turnOffCampaign", "turnOnSequence", "turnOffSequence", "setCampaignPriority", "recycleCampaign"]
         if action_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_type -> " + action_type)
             self._action_type = "outdated_sdk_version"
@@ -156,29 +153,6 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
         """
         
         self._campaign_rule_action_entities = campaign_rule_action_entities
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-
-
-        :return: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-
-
-        :param additional_properties: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

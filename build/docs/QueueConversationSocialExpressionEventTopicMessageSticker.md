@@ -7,8 +7,8 @@ title: QueueConversationSocialExpressionEventTopicMessageSticker
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **url** | **str** |  | [optional] |
-| **id** | **str** |  | [optional] |
+| **url** | **str** | The location of the sticker, useful for retrieving it | [optional] |
+| **id** | **str** | The unique id of the the sticker object. | [optional] |
 {: class="table table-striped"}
 
 

@@ -57,8 +57,7 @@ class ConversationEventTopicSocialExpression(object):
             'disconnected_time': 'datetime',
             'wrapup': 'ConversationEventTopicWrapup',
             'after_call_work': 'ConversationEventTopicAfterCallWork',
-            'after_call_work_required': 'bool',
-            'additional_properties': 'object'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -79,8 +78,7 @@ class ConversationEventTopicSocialExpression(object):
             'disconnected_time': 'disconnectedTime',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'additional_properties': 'additionalProperties'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -101,13 +99,12 @@ class ConversationEventTopicSocialExpression(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._additional_properties = None
 
     @property
     def state(self):
         """
         Gets the state of this ConversationEventTopicSocialExpression.
-
+        The connection state of this communication.
 
         :return: The state of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -118,12 +115,12 @@ class ConversationEventTopicSocialExpression(object):
     def state(self, state):
         """
         Sets the state of this ConversationEventTopicSocialExpression.
-
+        The connection state of this communication.
 
         :param state: The state of this ConversationEventTopicSocialExpression.
         :type: str
         """
-        allowed_values = ["ALERTING", "DIALING", "CONTACTING", "OFFERING", "CONNECTED", "DISCONNECTED", "TERMINATED", "NONE"]
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -134,7 +131,7 @@ class ConversationEventTopicSocialExpression(object):
     def id(self):
         """
         Gets the id of this ConversationEventTopicSocialExpression.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -145,7 +142,7 @@ class ConversationEventTopicSocialExpression(object):
     def id(self, id):
         """
         Sets the id of this ConversationEventTopicSocialExpression.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this ConversationEventTopicSocialExpression.
         :type: str
@@ -157,7 +154,7 @@ class ConversationEventTopicSocialExpression(object):
     def social_media_id(self):
         """
         Gets the social_media_id of this ConversationEventTopicSocialExpression.
-
+        A globally unique identifier for the social media.
 
         :return: The social_media_id of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -168,7 +165,7 @@ class ConversationEventTopicSocialExpression(object):
     def social_media_id(self, social_media_id):
         """
         Sets the social_media_id of this ConversationEventTopicSocialExpression.
-
+        A globally unique identifier for the social media.
 
         :param social_media_id: The social_media_id of this ConversationEventTopicSocialExpression.
         :type: str
@@ -180,7 +177,7 @@ class ConversationEventTopicSocialExpression(object):
     def social_media_hub(self):
         """
         Gets the social_media_hub of this ConversationEventTopicSocialExpression.
-
+        The social network of the communication
 
         :return: The social_media_hub of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -191,7 +188,7 @@ class ConversationEventTopicSocialExpression(object):
     def social_media_hub(self, social_media_hub):
         """
         Sets the social_media_hub of this ConversationEventTopicSocialExpression.
-
+        The social network of the communication
 
         :param social_media_hub: The social_media_hub of this ConversationEventTopicSocialExpression.
         :type: str
@@ -203,7 +200,7 @@ class ConversationEventTopicSocialExpression(object):
     def social_user_name(self):
         """
         Gets the social_user_name of this ConversationEventTopicSocialExpression.
-
+        The social media user name of the communication
 
         :return: The social_user_name of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -214,7 +211,7 @@ class ConversationEventTopicSocialExpression(object):
     def social_user_name(self, social_user_name):
         """
         Sets the social_user_name of this ConversationEventTopicSocialExpression.
-
+        The social media user name of the communication
 
         :param social_user_name: The social_user_name of this ConversationEventTopicSocialExpression.
         :type: str
@@ -226,7 +223,7 @@ class ConversationEventTopicSocialExpression(object):
     def preview_text(self):
         """
         Gets the preview_text of this ConversationEventTopicSocialExpression.
-
+        The text preview of the communication contents
 
         :return: The preview_text of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -237,7 +234,7 @@ class ConversationEventTopicSocialExpression(object):
     def preview_text(self, preview_text):
         """
         Sets the preview_text of this ConversationEventTopicSocialExpression.
-
+        The text preview of the communication contents
 
         :param preview_text: The preview_text of this ConversationEventTopicSocialExpression.
         :type: str
@@ -249,7 +246,7 @@ class ConversationEventTopicSocialExpression(object):
     def recording_id(self):
         """
         Gets the recording_id of this ConversationEventTopicSocialExpression.
-
+        A globally unique identifier for the recording associated with this chat.
 
         :return: The recording_id of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -260,7 +257,7 @@ class ConversationEventTopicSocialExpression(object):
     def recording_id(self, recording_id):
         """
         Sets the recording_id of this ConversationEventTopicSocialExpression.
-
+        A globally unique identifier for the recording associated with this chat.
 
         :param recording_id: The recording_id of this ConversationEventTopicSocialExpression.
         :type: str
@@ -272,7 +269,7 @@ class ConversationEventTopicSocialExpression(object):
     def held(self):
         """
         Gets the held of this ConversationEventTopicSocialExpression.
-
+        True if this call is held and the person on this side hears silence.
 
         :return: The held of this ConversationEventTopicSocialExpression.
         :rtype: bool
@@ -283,7 +280,7 @@ class ConversationEventTopicSocialExpression(object):
     def held(self, held):
         """
         Sets the held of this ConversationEventTopicSocialExpression.
-
+        True if this call is held and the person on this side hears silence.
 
         :param held: The held of this ConversationEventTopicSocialExpression.
         :type: bool
@@ -295,7 +292,7 @@ class ConversationEventTopicSocialExpression(object):
     def provider(self):
         """
         Gets the provider of this ConversationEventTopicSocialExpression.
-
+        The source provider of the social expression.
 
         :return: The provider of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -306,7 +303,7 @@ class ConversationEventTopicSocialExpression(object):
     def provider(self, provider):
         """
         Sets the provider of this ConversationEventTopicSocialExpression.
-
+        The source provider of the social expression.
 
         :param provider: The provider of this ConversationEventTopicSocialExpression.
         :type: str
@@ -318,7 +315,7 @@ class ConversationEventTopicSocialExpression(object):
     def script_id(self):
         """
         Gets the script_id of this ConversationEventTopicSocialExpression.
-
+        The UUID of the script to use.
 
         :return: The script_id of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -329,7 +326,7 @@ class ConversationEventTopicSocialExpression(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this ConversationEventTopicSocialExpression.
-
+        The UUID of the script to use.
 
         :param script_id: The script_id of this ConversationEventTopicSocialExpression.
         :type: str
@@ -341,7 +338,7 @@ class ConversationEventTopicSocialExpression(object):
     def peer_id(self):
         """
         Gets the peer_id of this ConversationEventTopicSocialExpression.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :return: The peer_id of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -352,7 +349,7 @@ class ConversationEventTopicSocialExpression(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this ConversationEventTopicSocialExpression.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :param peer_id: The peer_id of this ConversationEventTopicSocialExpression.
         :type: str
@@ -364,7 +361,7 @@ class ConversationEventTopicSocialExpression(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this ConversationEventTopicSocialExpression.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :return: The disconnect_type of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -375,12 +372,12 @@ class ConversationEventTopicSocialExpression(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this ConversationEventTopicSocialExpression.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :param disconnect_type: The disconnect_type of this ConversationEventTopicSocialExpression.
         :type: str
         """
-        allowed_values = ["ENDPOINT", "CLIENT", "SYSTEM", "TIMEOUT", "TRANSFER", "TRANSFER_CONFERENCE", "TRANSFER_CONSULT", "TRANSFER_FORWARD", "TRANSFER_NOANSWER", "TRANSFER_NOTAVAILABLE", "TRANSPORT_FAILURE", "ERROR", "PEER", "OTHER", "SPAM", "UNCALLABLE"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -391,7 +388,7 @@ class ConversationEventTopicSocialExpression(object):
     def start_hold_time(self):
         """
         Gets the start_hold_time of this ConversationEventTopicSocialExpression.
-
+        The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
 
         :return: The start_hold_time of this ConversationEventTopicSocialExpression.
         :rtype: datetime
@@ -402,7 +399,7 @@ class ConversationEventTopicSocialExpression(object):
     def start_hold_time(self, start_hold_time):
         """
         Sets the start_hold_time of this ConversationEventTopicSocialExpression.
-
+        The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
 
         :param start_hold_time: The start_hold_time of this ConversationEventTopicSocialExpression.
         :type: datetime
@@ -414,7 +411,7 @@ class ConversationEventTopicSocialExpression(object):
     def connected_time(self):
         """
         Gets the connected_time of this ConversationEventTopicSocialExpression.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :return: The connected_time of this ConversationEventTopicSocialExpression.
         :rtype: datetime
@@ -425,7 +422,7 @@ class ConversationEventTopicSocialExpression(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this ConversationEventTopicSocialExpression.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :param connected_time: The connected_time of this ConversationEventTopicSocialExpression.
         :type: datetime
@@ -437,7 +434,7 @@ class ConversationEventTopicSocialExpression(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this ConversationEventTopicSocialExpression.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :return: The disconnected_time of this ConversationEventTopicSocialExpression.
         :rtype: datetime
@@ -448,7 +445,7 @@ class ConversationEventTopicSocialExpression(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this ConversationEventTopicSocialExpression.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :param disconnected_time: The disconnected_time of this ConversationEventTopicSocialExpression.
         :type: datetime
@@ -460,7 +457,7 @@ class ConversationEventTopicSocialExpression(object):
     def wrapup(self):
         """
         Gets the wrapup of this ConversationEventTopicSocialExpression.
-
+        Call wrap up or disposition data.
 
         :return: The wrapup of this ConversationEventTopicSocialExpression.
         :rtype: ConversationEventTopicWrapup
@@ -471,7 +468,7 @@ class ConversationEventTopicSocialExpression(object):
     def wrapup(self, wrapup):
         """
         Sets the wrapup of this ConversationEventTopicSocialExpression.
-
+        Call wrap up or disposition data.
 
         :param wrapup: The wrapup of this ConversationEventTopicSocialExpression.
         :type: ConversationEventTopicWrapup
@@ -483,7 +480,7 @@ class ConversationEventTopicSocialExpression(object):
     def after_call_work(self):
         """
         Gets the after_call_work of this ConversationEventTopicSocialExpression.
-
+        A communication's after-call work data.
 
         :return: The after_call_work of this ConversationEventTopicSocialExpression.
         :rtype: ConversationEventTopicAfterCallWork
@@ -494,7 +491,7 @@ class ConversationEventTopicSocialExpression(object):
     def after_call_work(self, after_call_work):
         """
         Sets the after_call_work of this ConversationEventTopicSocialExpression.
-
+        A communication's after-call work data.
 
         :param after_call_work: The after_call_work of this ConversationEventTopicSocialExpression.
         :type: ConversationEventTopicAfterCallWork
@@ -506,7 +503,7 @@ class ConversationEventTopicSocialExpression(object):
     def after_call_work_required(self):
         """
         Gets the after_call_work_required of this ConversationEventTopicSocialExpression.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :return: The after_call_work_required of this ConversationEventTopicSocialExpression.
         :rtype: bool
@@ -517,36 +514,13 @@ class ConversationEventTopicSocialExpression(object):
     def after_call_work_required(self, after_call_work_required):
         """
         Sets the after_call_work_required of this ConversationEventTopicSocialExpression.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :param after_call_work_required: The after_call_work_required of this ConversationEventTopicSocialExpression.
         :type: bool
         """
         
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationEventTopicSocialExpression.
-
-
-        :return: The additional_properties of this ConversationEventTopicSocialExpression.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationEventTopicSocialExpression.
-
-
-        :param additional_properties: The additional_properties of this ConversationEventTopicSocialExpression.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

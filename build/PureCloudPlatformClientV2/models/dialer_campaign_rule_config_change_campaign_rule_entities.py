@@ -56,7 +56,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleEntities(object):
     def campaigns(self):
         """
         Gets the campaigns of this DialerCampaignRuleConfigChangeCampaignRuleEntities.
-
+        A list of campaignIds to act on
 
         :return: The campaigns of this DialerCampaignRuleConfigChangeCampaignRuleEntities.
         :rtype: list[DialerCampaignRuleConfigChangeUriReference]
@@ -67,7 +67,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleEntities(object):
     def campaigns(self, campaigns):
         """
         Sets the campaigns of this DialerCampaignRuleConfigChangeCampaignRuleEntities.
-
+        A list of campaignIds to act on
 
         :param campaigns: The campaigns of this DialerCampaignRuleConfigChangeCampaignRuleEntities.
         :type: list[DialerCampaignRuleConfigChangeUriReference]
@@ -79,7 +79,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleEntities(object):
     def sequences(self):
         """
         Gets the sequences of this DialerCampaignRuleConfigChangeCampaignRuleEntities.
-
+        A list of sequenceIds to act on
 
         :return: The sequences of this DialerCampaignRuleConfigChangeCampaignRuleEntities.
         :rtype: list[DialerCampaignRuleConfigChangeUriReference]
@@ -90,7 +90,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleEntities(object):
     def sequences(self, sequences):
         """
         Sets the sequences of this DialerCampaignRuleConfigChangeCampaignRuleEntities.
-
+        A list of sequenceIds to act on
 
         :param sequences: The sequences of this DialerCampaignRuleConfigChangeCampaignRuleEntities.
         :type: list[DialerCampaignRuleConfigChangeUriReference]

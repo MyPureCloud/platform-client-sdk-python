@@ -7,9 +7,8 @@ title: DialerAttemptLimitsConfigChangeRecallEntry
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **nbr_attempts** | **int** |  | [optional] |
-| **minutes_between_attempts** | **int** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **nbr_attempts** | **int** | The number of recall attempts to make | [optional] |
+| **minutes_between_attempts** | **int** | How long to wait between recall attempts | [optional] |
 {: class="table table-striped"}
 
 

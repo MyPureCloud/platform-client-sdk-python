@@ -7,12 +7,11 @@ title: QueueConversationVideoEventTopicAttachment
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **attachment_id** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **content_uri** | **str** |  | [optional] |
-| **content_type** | **str** |  | [optional] |
-| **content_length** | **int** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **attachment_id** | **str** | The unique identifier for the attachment. | [optional] |
+| **name** | **str** | The name of the attachment. | [optional] |
+| **content_uri** | **str** | The content uri of the attachment. If set, this is commonly a public api download location. | [optional] |
+| **content_type** | **str** | The type of file the attachment is. | [optional] |
+| **content_length** | **int** | The length of the attachment file. | [optional] |
 {: class="table table-striped"}
 
 

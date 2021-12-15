@@ -40,159 +40,41 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'name': 'str',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
-            'version': 'int',
             'campaign_rule_entities': 'DialerCampaignRuleConfigChangeCampaignRuleEntities',
             'campaign_rule_conditions': 'list[DialerCampaignRuleConfigChangeCampaignRuleCondition]',
             'campaign_rule_actions': 'list[DialerCampaignRuleConfigChangeCampaignRuleAction]',
             'match_any_conditions': 'bool',
             'enabled': 'bool',
-            'additional_properties': 'object'
+            'id': 'str',
+            'name': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'version': 'int'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'name': 'name',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
-            'version': 'version',
             'campaign_rule_entities': 'campaignRuleEntities',
             'campaign_rule_conditions': 'campaignRuleConditions',
             'campaign_rule_actions': 'campaignRuleActions',
             'match_any_conditions': 'matchAnyConditions',
             'enabled': 'enabled',
-            'additional_properties': 'additionalProperties'
+            'id': 'id',
+            'name': 'name',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'version': 'version'
         }
 
-        self._id = None
-        self._name = None
-        self._date_created = None
-        self._date_modified = None
-        self._version = None
         self._campaign_rule_entities = None
         self._campaign_rule_conditions = None
         self._campaign_rule_actions = None
         self._match_any_conditions = None
         self._enabled = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :return: The id of this DialerCampaignRuleConfigChangeCampaignRule.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :param id: The id of this DialerCampaignRuleConfigChangeCampaignRule.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :return: The name of this DialerCampaignRuleConfigChangeCampaignRule.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :param name: The name of this DialerCampaignRuleConfigChangeCampaignRule.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :return: The date_created of this DialerCampaignRuleConfigChangeCampaignRule.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :param date_created: The date_created of this DialerCampaignRuleConfigChangeCampaignRule.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :return: The date_modified of this DialerCampaignRuleConfigChangeCampaignRule.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :param date_modified: The date_modified of this DialerCampaignRuleConfigChangeCampaignRule.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :return: The version of this DialerCampaignRuleConfigChangeCampaignRule.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :param version: The version of this DialerCampaignRuleConfigChangeCampaignRule.
-        :type: int
-        """
-        
-        self._version = version
+        self._id = None
+        self._name = None
+        self._date_created = None
+        self._date_modified = None
+        self._version = None
 
     @property
     def campaign_rule_entities(self):
@@ -221,7 +103,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
     def campaign_rule_conditions(self):
         """
         Gets the campaign_rule_conditions of this DialerCampaignRuleConfigChangeCampaignRule.
-
+        The list of conditions that will trigger this Campaign Rule
 
         :return: The campaign_rule_conditions of this DialerCampaignRuleConfigChangeCampaignRule.
         :rtype: list[DialerCampaignRuleConfigChangeCampaignRuleCondition]
@@ -232,7 +114,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
     def campaign_rule_conditions(self, campaign_rule_conditions):
         """
         Sets the campaign_rule_conditions of this DialerCampaignRuleConfigChangeCampaignRule.
-
+        The list of conditions that will trigger this Campaign Rule
 
         :param campaign_rule_conditions: The campaign_rule_conditions of this DialerCampaignRuleConfigChangeCampaignRule.
         :type: list[DialerCampaignRuleConfigChangeCampaignRuleCondition]
@@ -244,7 +126,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
     def campaign_rule_actions(self):
         """
         Gets the campaign_rule_actions of this DialerCampaignRuleConfigChangeCampaignRule.
-
+        The list of actions that will be taken when this Campaign Rule's conditions are met
 
         :return: The campaign_rule_actions of this DialerCampaignRuleConfigChangeCampaignRule.
         :rtype: list[DialerCampaignRuleConfigChangeCampaignRuleAction]
@@ -255,7 +137,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
     def campaign_rule_actions(self, campaign_rule_actions):
         """
         Sets the campaign_rule_actions of this DialerCampaignRuleConfigChangeCampaignRule.
-
+        The list of actions that will be taken when this Campaign Rule's conditions are met
 
         :param campaign_rule_actions: The campaign_rule_actions of this DialerCampaignRuleConfigChangeCampaignRule.
         :type: list[DialerCampaignRuleConfigChangeCampaignRuleAction]
@@ -267,7 +149,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
     def match_any_conditions(self):
         """
         Gets the match_any_conditions of this DialerCampaignRuleConfigChangeCampaignRule.
-
+        Whether this Campaign Rule should match any conditions (inclusive OR) or match all conditions (ALL)
 
         :return: The match_any_conditions of this DialerCampaignRuleConfigChangeCampaignRule.
         :rtype: bool
@@ -278,7 +160,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
     def match_any_conditions(self, match_any_conditions):
         """
         Sets the match_any_conditions of this DialerCampaignRuleConfigChangeCampaignRule.
-
+        Whether this Campaign Rule should match any conditions (inclusive OR) or match all conditions (ALL)
 
         :param match_any_conditions: The match_any_conditions of this DialerCampaignRuleConfigChangeCampaignRule.
         :type: bool
@@ -290,7 +172,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
     def enabled(self):
         """
         Gets the enabled of this DialerCampaignRuleConfigChangeCampaignRule.
-
+        Whether this campaign rule is enabled
 
         :return: The enabled of this DialerCampaignRuleConfigChangeCampaignRule.
         :rtype: bool
@@ -301,7 +183,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this DialerCampaignRuleConfigChangeCampaignRule.
-
+        Whether this campaign rule is enabled
 
         :param enabled: The enabled of this DialerCampaignRuleConfigChangeCampaignRule.
         :type: bool
@@ -310,27 +192,119 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         self._enabled = enabled
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
+        Gets the id of this DialerCampaignRuleConfigChangeCampaignRule.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
-        :rtype: object
+        :return: The id of this DialerCampaignRuleConfigChangeCampaignRule.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
+        Sets the id of this DialerCampaignRuleConfigChangeCampaignRule.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
-        :type: object
+        :param id: The id of this DialerCampaignRuleConfigChangeCampaignRule.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerCampaignRuleConfigChangeCampaignRule.
+        The UI-visible name of the object
+
+        :return: The name of this DialerCampaignRuleConfigChangeCampaignRule.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerCampaignRuleConfigChangeCampaignRule.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerCampaignRuleConfigChangeCampaignRule.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerCampaignRuleConfigChangeCampaignRule.
+        Creation time of the entity
+
+        :return: The date_created of this DialerCampaignRuleConfigChangeCampaignRule.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerCampaignRuleConfigChangeCampaignRule.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerCampaignRuleConfigChangeCampaignRule.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerCampaignRuleConfigChangeCampaignRule.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerCampaignRuleConfigChangeCampaignRule.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerCampaignRuleConfigChangeCampaignRule.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerCampaignRuleConfigChangeCampaignRule.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerCampaignRuleConfigChangeCampaignRule.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerCampaignRuleConfigChangeCampaignRule.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerCampaignRuleConfigChangeCampaignRule.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerCampaignRuleConfigChangeCampaignRule.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

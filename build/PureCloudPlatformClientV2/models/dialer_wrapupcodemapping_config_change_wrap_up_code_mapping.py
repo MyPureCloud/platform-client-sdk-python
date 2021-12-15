@@ -71,7 +71,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def id(self):
         """
         Gets the id of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        The globally unique identifier for the object.
 
         :return: The id of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :rtype: str
@@ -82,7 +82,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def id(self, id):
         """
         Sets the id of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        The globally unique identifier for the object.
 
         :param id: The id of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :type: str
@@ -94,7 +94,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def name(self):
         """
         Gets the name of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        The UI-visible name of the object
 
         :return: The name of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :rtype: str
@@ -105,7 +105,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def name(self, name):
         """
         Sets the name of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        The UI-visible name of the object
 
         :param name: The name of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :type: str
@@ -117,7 +117,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def date_created(self):
         """
         Gets the date_created of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        Creation time of the entity
 
         :return: The date_created of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :rtype: datetime
@@ -128,7 +128,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        Creation time of the entity
 
         :param date_created: The date_created of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :type: datetime
@@ -140,7 +140,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def date_modified(self):
         """
         Gets the date_modified of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        Last modified time of the entity
 
         :return: The date_modified of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :rtype: datetime
@@ -151,7 +151,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        Last modified time of the entity
 
         :param date_modified: The date_modified of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :type: datetime
@@ -163,7 +163,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def version(self):
         """
         Gets the version of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        Required for updates, must match the version number of the most recent update
 
         :return: The version of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :rtype: int
@@ -174,7 +174,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
     def version(self, version):
         """
         Sets the version of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
-
+        Required for updates, must match the version number of the most recent update
 
         :param version: The version of this DialerWrapupcodemappingConfigChangeWrapUpCodeMapping.
         :type: int

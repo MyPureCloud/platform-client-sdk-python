@@ -56,7 +56,7 @@ class ConversationMessageEventTopicJourneyAction(object):
     def id(self):
         """
         Gets the id of this ConversationMessageEventTopicJourneyAction.
-
+        The ID of an action from the Journey System (an action is spawned from an actionMap)
 
         :return: The id of this ConversationMessageEventTopicJourneyAction.
         :rtype: str
@@ -67,7 +67,7 @@ class ConversationMessageEventTopicJourneyAction(object):
     def id(self, id):
         """
         Sets the id of this ConversationMessageEventTopicJourneyAction.
-
+        The ID of an action from the Journey System (an action is spawned from an actionMap)
 
         :param id: The id of this ConversationMessageEventTopicJourneyAction.
         :type: str

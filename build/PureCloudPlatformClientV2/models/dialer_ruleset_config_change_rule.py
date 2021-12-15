@@ -40,38 +40,58 @@ class DialerRulesetConfigChangeRule(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'conditions': 'list[DialerRulesetConfigChangeCondition]',
             'id': 'str',
             'name': 'str',
             'order': 'int',
             'category': 'str',
-            'actions': 'list[DialerRulesetConfigChangeAction]',
-            'conditions': 'list[DialerRulesetConfigChangeCondition]',
-            'additional_properties': 'object'
+            'actions': 'list[DialerRulesetConfigChangeAction]'
         }
 
         self.attribute_map = {
+            'conditions': 'conditions',
             'id': 'id',
             'name': 'name',
             'order': 'order',
             'category': 'category',
-            'actions': 'actions',
-            'conditions': 'conditions',
-            'additional_properties': 'additionalProperties'
+            'actions': 'actions'
         }
 
+        self._conditions = None
         self._id = None
         self._name = None
         self._order = None
         self._category = None
         self._actions = None
-        self._conditions = None
-        self._additional_properties = None
+
+    @property
+    def conditions(self):
+        """
+        Gets the conditions of this DialerRulesetConfigChangeRule.
+        The list of rule conditions; all must evaluate to true to trigger the rule actions
+
+        :return: The conditions of this DialerRulesetConfigChangeRule.
+        :rtype: list[DialerRulesetConfigChangeCondition]
+        """
+        return self._conditions
+
+    @conditions.setter
+    def conditions(self, conditions):
+        """
+        Sets the conditions of this DialerRulesetConfigChangeRule.
+        The list of rule conditions; all must evaluate to true to trigger the rule actions
+
+        :param conditions: The conditions of this DialerRulesetConfigChangeRule.
+        :type: list[DialerRulesetConfigChangeCondition]
+        """
+        
+        self._conditions = conditions
 
     @property
     def id(self):
         """
         Gets the id of this DialerRulesetConfigChangeRule.
-
+        The identifier of the rule
 
         :return: The id of this DialerRulesetConfigChangeRule.
         :rtype: str
@@ -82,7 +102,7 @@ class DialerRulesetConfigChangeRule(object):
     def id(self, id):
         """
         Sets the id of this DialerRulesetConfigChangeRule.
-
+        The identifier of the rule
 
         :param id: The id of this DialerRulesetConfigChangeRule.
         :type: str
@@ -94,7 +114,7 @@ class DialerRulesetConfigChangeRule(object):
     def name(self):
         """
         Gets the name of this DialerRulesetConfigChangeRule.
-
+        The name of the rule
 
         :return: The name of this DialerRulesetConfigChangeRule.
         :rtype: str
@@ -105,7 +125,7 @@ class DialerRulesetConfigChangeRule(object):
     def name(self, name):
         """
         Sets the name of this DialerRulesetConfigChangeRule.
-
+        The name of the rule
 
         :param name: The name of this DialerRulesetConfigChangeRule.
         :type: str
@@ -117,7 +137,7 @@ class DialerRulesetConfigChangeRule(object):
     def order(self):
         """
         Gets the order of this DialerRulesetConfigChangeRule.
-
+        The ranked order of the rule; rules are processed from lowest number to highest
 
         :return: The order of this DialerRulesetConfigChangeRule.
         :rtype: int
@@ -128,7 +148,7 @@ class DialerRulesetConfigChangeRule(object):
     def order(self, order):
         """
         Sets the order of this DialerRulesetConfigChangeRule.
-
+        The ranked order of the rule; rules are processed from lowest number to highest
 
         :param order: The order of this DialerRulesetConfigChangeRule.
         :type: int
@@ -140,7 +160,7 @@ class DialerRulesetConfigChangeRule(object):
     def category(self):
         """
         Gets the category of this DialerRulesetConfigChangeRule.
-
+        The category of the rule
 
         :return: The category of this DialerRulesetConfigChangeRule.
         :rtype: str
@@ -151,7 +171,7 @@ class DialerRulesetConfigChangeRule(object):
     def category(self, category):
         """
         Sets the category of this DialerRulesetConfigChangeRule.
-
+        The category of the rule
 
         :param category: The category of this DialerRulesetConfigChangeRule.
         :type: str
@@ -167,7 +187,7 @@ class DialerRulesetConfigChangeRule(object):
     def actions(self):
         """
         Gets the actions of this DialerRulesetConfigChangeRule.
-
+        The list of rule actions to be taken if the conditions are true
 
         :return: The actions of this DialerRulesetConfigChangeRule.
         :rtype: list[DialerRulesetConfigChangeAction]
@@ -178,59 +198,13 @@ class DialerRulesetConfigChangeRule(object):
     def actions(self, actions):
         """
         Sets the actions of this DialerRulesetConfigChangeRule.
-
+        The list of rule actions to be taken if the conditions are true
 
         :param actions: The actions of this DialerRulesetConfigChangeRule.
         :type: list[DialerRulesetConfigChangeAction]
         """
         
         self._actions = actions
-
-    @property
-    def conditions(self):
-        """
-        Gets the conditions of this DialerRulesetConfigChangeRule.
-
-
-        :return: The conditions of this DialerRulesetConfigChangeRule.
-        :rtype: list[DialerRulesetConfigChangeCondition]
-        """
-        return self._conditions
-
-    @conditions.setter
-    def conditions(self, conditions):
-        """
-        Sets the conditions of this DialerRulesetConfigChangeRule.
-
-
-        :param conditions: The conditions of this DialerRulesetConfigChangeRule.
-        :type: list[DialerRulesetConfigChangeCondition]
-        """
-        
-        self._conditions = conditions
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerRulesetConfigChangeRule.
-
-
-        :return: The additional_properties of this DialerRulesetConfigChangeRule.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerRulesetConfigChangeRule.
-
-
-        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeRule.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

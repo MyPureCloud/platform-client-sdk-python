@@ -59,7 +59,7 @@ class ArchitectFlowNotificationUser(object):
     def id(self):
         """
         Gets the id of this ArchitectFlowNotificationUser.
-
+        The ID of the user.
 
         :return: The id of this ArchitectFlowNotificationUser.
         :rtype: str
@@ -70,7 +70,7 @@ class ArchitectFlowNotificationUser(object):
     def id(self, id):
         """
         Sets the id of this ArchitectFlowNotificationUser.
-
+        The ID of the user.
 
         :param id: The id of this ArchitectFlowNotificationUser.
         :type: str
@@ -82,7 +82,7 @@ class ArchitectFlowNotificationUser(object):
     def name(self):
         """
         Gets the name of this ArchitectFlowNotificationUser.
-
+        The name of the user, if available.
 
         :return: The name of this ArchitectFlowNotificationUser.
         :rtype: str
@@ -93,7 +93,7 @@ class ArchitectFlowNotificationUser(object):
     def name(self, name):
         """
         Sets the name of this ArchitectFlowNotificationUser.
-
+        The name of the user, if available.
 
         :param name: The name of this ArchitectFlowNotificationUser.
         :type: str

@@ -65,8 +65,7 @@ class ConversationEventTopicCall(object):
             'wrapup': 'ConversationEventTopicWrapup',
             'after_call_work': 'ConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
-            'agent_assistant_id': 'str',
-            'additional_properties': 'object'
+            'agent_assistant_id': 'str'
         }
 
         self.attribute_map = {
@@ -95,8 +94,7 @@ class ConversationEventTopicCall(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'agent_assistant_id': 'agentAssistantId',
-            'additional_properties': 'additionalProperties'
+            'agent_assistant_id': 'agentAssistantId'
         }
 
         self._id = None
@@ -125,13 +123,12 @@ class ConversationEventTopicCall(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
-        self._additional_properties = None
 
     @property
     def id(self):
         """
         Gets the id of this ConversationEventTopicCall.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this ConversationEventTopicCall.
         :rtype: str
@@ -142,7 +139,7 @@ class ConversationEventTopicCall(object):
     def id(self, id):
         """
         Sets the id of this ConversationEventTopicCall.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this ConversationEventTopicCall.
         :type: str
@@ -154,7 +151,7 @@ class ConversationEventTopicCall(object):
     def state(self):
         """
         Gets the state of this ConversationEventTopicCall.
-
+        The connection state of this communication.
 
         :return: The state of this ConversationEventTopicCall.
         :rtype: str
@@ -165,12 +162,12 @@ class ConversationEventTopicCall(object):
     def state(self, state):
         """
         Sets the state of this ConversationEventTopicCall.
-
+        The connection state of this communication.
 
         :param state: The state of this ConversationEventTopicCall.
         :type: str
         """
-        allowed_values = ["ALERTING", "DIALING", "CONTACTING", "OFFERING", "CONNECTED", "DISCONNECTED", "TERMINATED", "UPLOADING", "CONVERTING", "TRANSMITTING", "NONE"]
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "uploading", "converting", "transmitting", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -181,7 +178,7 @@ class ConversationEventTopicCall(object):
     def recording(self):
         """
         Gets the recording of this ConversationEventTopicCall.
-
+        True if this call is being recorded.
 
         :return: The recording of this ConversationEventTopicCall.
         :rtype: bool
@@ -192,7 +189,7 @@ class ConversationEventTopicCall(object):
     def recording(self, recording):
         """
         Sets the recording of this ConversationEventTopicCall.
-
+        True if this call is being recorded.
 
         :param recording: The recording of this ConversationEventTopicCall.
         :type: bool
@@ -204,7 +201,7 @@ class ConversationEventTopicCall(object):
     def recording_state(self):
         """
         Gets the recording_state of this ConversationEventTopicCall.
-
+        State of recording on this call.
 
         :return: The recording_state of this ConversationEventTopicCall.
         :rtype: str
@@ -215,12 +212,12 @@ class ConversationEventTopicCall(object):
     def recording_state(self, recording_state):
         """
         Sets the recording_state of this ConversationEventTopicCall.
-
+        State of recording on this call.
 
         :param recording_state: The recording_state of this ConversationEventTopicCall.
         :type: str
         """
-        allowed_values = ["NONE", "ACTIVE", "PAUSED"]
+        allowed_values = ["none", "active", "paused"]
         if recording_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for recording_state -> " + recording_state)
             self._recording_state = "outdated_sdk_version"
@@ -231,7 +228,7 @@ class ConversationEventTopicCall(object):
     def muted(self):
         """
         Gets the muted of this ConversationEventTopicCall.
-
+        True if this call is muted so that remote participants can't hear any audio from this end.
 
         :return: The muted of this ConversationEventTopicCall.
         :rtype: bool
@@ -242,7 +239,7 @@ class ConversationEventTopicCall(object):
     def muted(self, muted):
         """
         Sets the muted of this ConversationEventTopicCall.
-
+        True if this call is muted so that remote participants can't hear any audio from this end.
 
         :param muted: The muted of this ConversationEventTopicCall.
         :type: bool
@@ -254,7 +251,7 @@ class ConversationEventTopicCall(object):
     def confined(self):
         """
         Gets the confined of this ConversationEventTopicCall.
-
+        True if this call is held and the person on this side hears hold music.
 
         :return: The confined of this ConversationEventTopicCall.
         :rtype: bool
@@ -265,7 +262,7 @@ class ConversationEventTopicCall(object):
     def confined(self, confined):
         """
         Sets the confined of this ConversationEventTopicCall.
-
+        True if this call is held and the person on this side hears hold music.
 
         :param confined: The confined of this ConversationEventTopicCall.
         :type: bool
@@ -277,7 +274,7 @@ class ConversationEventTopicCall(object):
     def held(self):
         """
         Gets the held of this ConversationEventTopicCall.
-
+        True if this call is held and the person on this side hears silence.
 
         :return: The held of this ConversationEventTopicCall.
         :rtype: bool
@@ -288,7 +285,7 @@ class ConversationEventTopicCall(object):
     def held(self, held):
         """
         Sets the held of this ConversationEventTopicCall.
-
+        True if this call is held and the person on this side hears silence.
 
         :param held: The held of this ConversationEventTopicCall.
         :type: bool
@@ -323,7 +320,7 @@ class ConversationEventTopicCall(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this ConversationEventTopicCall.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :return: The disconnect_type of this ConversationEventTopicCall.
         :rtype: str
@@ -334,12 +331,12 @@ class ConversationEventTopicCall(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this ConversationEventTopicCall.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :param disconnect_type: The disconnect_type of this ConversationEventTopicCall.
         :type: str
         """
-        allowed_values = ["ENDPOINT", "CLIENT", "SYSTEM", "TIMEOUT", "TRANSFER", "TRANSFER_CONFERENCE", "TRANSFER_CONSULT", "TRANSFER_FORWARD", "TRANSFER_NOANSWER", "TRANSFER_NOTAVAILABLE", "TRANSPORT_FAILURE", "ERROR", "PEER", "OTHER", "SPAM", "UNCALLABLE"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -350,7 +347,7 @@ class ConversationEventTopicCall(object):
     def start_hold_time(self):
         """
         Gets the start_hold_time of this ConversationEventTopicCall.
-
+        The timestamp the call was placed on hold in the cloud clock if the call is currently on hold.
 
         :return: The start_hold_time of this ConversationEventTopicCall.
         :rtype: datetime
@@ -361,7 +358,7 @@ class ConversationEventTopicCall(object):
     def start_hold_time(self, start_hold_time):
         """
         Sets the start_hold_time of this ConversationEventTopicCall.
-
+        The timestamp the call was placed on hold in the cloud clock if the call is currently on hold.
 
         :param start_hold_time: The start_hold_time of this ConversationEventTopicCall.
         :type: datetime
@@ -373,7 +370,7 @@ class ConversationEventTopicCall(object):
     def direction(self):
         """
         Gets the direction of this ConversationEventTopicCall.
-
+        Whether a call is inbound or outbound.
 
         :return: The direction of this ConversationEventTopicCall.
         :rtype: str
@@ -384,12 +381,12 @@ class ConversationEventTopicCall(object):
     def direction(self, direction):
         """
         Sets the direction of this ConversationEventTopicCall.
-
+        Whether a call is inbound or outbound.
 
         :param direction: The direction of this ConversationEventTopicCall.
         :type: str
         """
-        allowed_values = ["OUTBOUND", "INBOUND"]
+        allowed_values = ["outbound", "inbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
             self._direction = "outdated_sdk_version"
@@ -400,7 +397,7 @@ class ConversationEventTopicCall(object):
     def document_id(self):
         """
         Gets the document_id of this ConversationEventTopicCall.
-
+        If call is a fax of a document in content management, the id of the document in content management.
 
         :return: The document_id of this ConversationEventTopicCall.
         :rtype: str
@@ -411,7 +408,7 @@ class ConversationEventTopicCall(object):
     def document_id(self, document_id):
         """
         Sets the document_id of this ConversationEventTopicCall.
-
+        If call is a fax of a document in content management, the id of the document in content management.
 
         :param document_id: The document_id of this ConversationEventTopicCall.
         :type: str
@@ -446,7 +443,7 @@ class ConversationEventTopicCall(object):
     def other(self):
         """
         Gets the other of this ConversationEventTopicCall.
-
+        Address and name data for a call endpoint.
 
         :return: The other of this ConversationEventTopicCall.
         :rtype: ConversationEventTopicAddress
@@ -457,7 +454,7 @@ class ConversationEventTopicCall(object):
     def other(self, other):
         """
         Sets the other of this ConversationEventTopicCall.
-
+        Address and name data for a call endpoint.
 
         :param other: The other of this ConversationEventTopicCall.
         :type: ConversationEventTopicAddress
@@ -469,7 +466,7 @@ class ConversationEventTopicCall(object):
     def provider(self):
         """
         Gets the provider of this ConversationEventTopicCall.
-
+        The source provider of the call.
 
         :return: The provider of this ConversationEventTopicCall.
         :rtype: str
@@ -480,7 +477,7 @@ class ConversationEventTopicCall(object):
     def provider(self, provider):
         """
         Sets the provider of this ConversationEventTopicCall.
-
+        The source provider of the call.
 
         :param provider: The provider of this ConversationEventTopicCall.
         :type: str
@@ -492,7 +489,7 @@ class ConversationEventTopicCall(object):
     def script_id(self):
         """
         Gets the script_id of this ConversationEventTopicCall.
-
+        The UUID of the script to use.
 
         :return: The script_id of this ConversationEventTopicCall.
         :rtype: str
@@ -503,7 +500,7 @@ class ConversationEventTopicCall(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this ConversationEventTopicCall.
-
+        The UUID of the script to use.
 
         :param script_id: The script_id of this ConversationEventTopicCall.
         :type: str
@@ -515,7 +512,7 @@ class ConversationEventTopicCall(object):
     def peer_id(self):
         """
         Gets the peer_id of this ConversationEventTopicCall.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :return: The peer_id of this ConversationEventTopicCall.
         :rtype: str
@@ -526,7 +523,7 @@ class ConversationEventTopicCall(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this ConversationEventTopicCall.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :param peer_id: The peer_id of this ConversationEventTopicCall.
         :type: str
@@ -538,7 +535,7 @@ class ConversationEventTopicCall(object):
     def connected_time(self):
         """
         Gets the connected_time of this ConversationEventTopicCall.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :return: The connected_time of this ConversationEventTopicCall.
         :rtype: datetime
@@ -549,7 +546,7 @@ class ConversationEventTopicCall(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this ConversationEventTopicCall.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :param connected_time: The connected_time of this ConversationEventTopicCall.
         :type: datetime
@@ -561,7 +558,7 @@ class ConversationEventTopicCall(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this ConversationEventTopicCall.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :return: The disconnected_time of this ConversationEventTopicCall.
         :rtype: datetime
@@ -572,7 +569,7 @@ class ConversationEventTopicCall(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this ConversationEventTopicCall.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :param disconnected_time: The disconnected_time of this ConversationEventTopicCall.
         :type: datetime
@@ -584,7 +581,7 @@ class ConversationEventTopicCall(object):
     def disconnect_reasons(self):
         """
         Gets the disconnect_reasons of this ConversationEventTopicCall.
-
+        List of reasons that this call was disconnected. This will be set once the call disconnects.
 
         :return: The disconnect_reasons of this ConversationEventTopicCall.
         :rtype: list[ConversationEventTopicDisconnectReason]
@@ -595,7 +592,7 @@ class ConversationEventTopicCall(object):
     def disconnect_reasons(self, disconnect_reasons):
         """
         Sets the disconnect_reasons of this ConversationEventTopicCall.
-
+        List of reasons that this call was disconnected. This will be set once the call disconnects.
 
         :param disconnect_reasons: The disconnect_reasons of this ConversationEventTopicCall.
         :type: list[ConversationEventTopicDisconnectReason]
@@ -630,7 +627,7 @@ class ConversationEventTopicCall(object):
     def uui_data(self):
         """
         Gets the uui_data of this ConversationEventTopicCall.
-
+        User to User Information (UUI) data managed by SIP session application.
 
         :return: The uui_data of this ConversationEventTopicCall.
         :rtype: str
@@ -641,7 +638,7 @@ class ConversationEventTopicCall(object):
     def uui_data(self, uui_data):
         """
         Sets the uui_data of this ConversationEventTopicCall.
-
+        User to User Information (UUI) data managed by SIP session application.
 
         :param uui_data: The uui_data of this ConversationEventTopicCall.
         :type: str
@@ -653,7 +650,7 @@ class ConversationEventTopicCall(object):
     def wrapup(self):
         """
         Gets the wrapup of this ConversationEventTopicCall.
-
+        Call wrap up or disposition data.
 
         :return: The wrapup of this ConversationEventTopicCall.
         :rtype: ConversationEventTopicWrapup
@@ -664,7 +661,7 @@ class ConversationEventTopicCall(object):
     def wrapup(self, wrapup):
         """
         Sets the wrapup of this ConversationEventTopicCall.
-
+        Call wrap up or disposition data.
 
         :param wrapup: The wrapup of this ConversationEventTopicCall.
         :type: ConversationEventTopicWrapup
@@ -699,7 +696,7 @@ class ConversationEventTopicCall(object):
     def after_call_work_required(self):
         """
         Gets the after_call_work_required of this ConversationEventTopicCall.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :return: The after_call_work_required of this ConversationEventTopicCall.
         :rtype: bool
@@ -710,7 +707,7 @@ class ConversationEventTopicCall(object):
     def after_call_work_required(self, after_call_work_required):
         """
         Sets the after_call_work_required of this ConversationEventTopicCall.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :param after_call_work_required: The after_call_work_required of this ConversationEventTopicCall.
         :type: bool
@@ -722,7 +719,7 @@ class ConversationEventTopicCall(object):
     def agent_assistant_id(self):
         """
         Gets the agent_assistant_id of this ConversationEventTopicCall.
-
+        UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
 
         :return: The agent_assistant_id of this ConversationEventTopicCall.
         :rtype: str
@@ -733,36 +730,13 @@ class ConversationEventTopicCall(object):
     def agent_assistant_id(self, agent_assistant_id):
         """
         Sets the agent_assistant_id of this ConversationEventTopicCall.
-
+        UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
 
         :param agent_assistant_id: The agent_assistant_id of this ConversationEventTopicCall.
         :type: str
         """
         
         self._agent_assistant_id = agent_assistant_id
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationEventTopicCall.
-
-
-        :return: The additional_properties of this ConversationEventTopicCall.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationEventTopicCall.
-
-
-        :param additional_properties: The additional_properties of this ConversationEventTopicCall.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

@@ -56,7 +56,7 @@ class UserRoutingStatusRoutingStatus(object):
     def status(self):
         """
         Gets the status of this UserRoutingStatusRoutingStatus.
-
+        Indicates the Routing State of the agent.
 
         :return: The status of this UserRoutingStatusRoutingStatus.
         :rtype: str
@@ -67,7 +67,7 @@ class UserRoutingStatusRoutingStatus(object):
     def status(self, status):
         """
         Sets the status of this UserRoutingStatusRoutingStatus.
-
+        Indicates the Routing State of the agent.
 
         :param status: The status of this UserRoutingStatusRoutingStatus.
         :type: str
@@ -83,7 +83,7 @@ class UserRoutingStatusRoutingStatus(object):
     def start_time(self):
         """
         Gets the start_time of this UserRoutingStatusRoutingStatus.
-
+        The timestamp when the agent went into this state.
 
         :return: The start_time of this UserRoutingStatusRoutingStatus.
         :rtype: datetime
@@ -94,7 +94,7 @@ class UserRoutingStatusRoutingStatus(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this UserRoutingStatusRoutingStatus.
-
+        The timestamp when the agent went into this state.
 
         :param start_time: The start_time of this UserRoutingStatusRoutingStatus.
         :type: datetime

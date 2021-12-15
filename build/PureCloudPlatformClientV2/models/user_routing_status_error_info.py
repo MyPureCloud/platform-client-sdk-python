@@ -68,7 +68,7 @@ class UserRoutingStatusErrorInfo(object):
     def error_code(self):
         """
         Gets the error_code of this UserRoutingStatusErrorInfo.
-
+        A code unique to this error. Typically prefixed with the service that originated the error. For example CONFIG_USER_NOT_FOUND
 
         :return: The error_code of this UserRoutingStatusErrorInfo.
         :rtype: str
@@ -79,7 +79,7 @@ class UserRoutingStatusErrorInfo(object):
     def error_code(self, error_code):
         """
         Sets the error_code of this UserRoutingStatusErrorInfo.
-
+        A code unique to this error. Typically prefixed with the service that originated the error. For example CONFIG_USER_NOT_FOUND
 
         :param error_code: The error_code of this UserRoutingStatusErrorInfo.
         :type: str
@@ -91,7 +91,7 @@ class UserRoutingStatusErrorInfo(object):
     def status(self):
         """
         Gets the status of this UserRoutingStatusErrorInfo.
-
+        The HTTP status code for this message. If left blank the status code from the HTTP response is used.
 
         :return: The status of this UserRoutingStatusErrorInfo.
         :rtype: int
@@ -102,7 +102,7 @@ class UserRoutingStatusErrorInfo(object):
     def status(self, status):
         """
         Sets the status of this UserRoutingStatusErrorInfo.
-
+        The HTTP status code for this message. If left blank the status code from the HTTP response is used.
 
         :param status: The status of this UserRoutingStatusErrorInfo.
         :type: int
@@ -114,7 +114,7 @@ class UserRoutingStatusErrorInfo(object):
     def correlation_id(self):
         """
         Gets the correlation_id of this UserRoutingStatusErrorInfo.
-
+        The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.
 
         :return: The correlation_id of this UserRoutingStatusErrorInfo.
         :rtype: str
@@ -125,7 +125,7 @@ class UserRoutingStatusErrorInfo(object):
     def correlation_id(self, correlation_id):
         """
         Sets the correlation_id of this UserRoutingStatusErrorInfo.
-
+        The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.
 
         :param correlation_id: The correlation_id of this UserRoutingStatusErrorInfo.
         :type: str
@@ -137,7 +137,7 @@ class UserRoutingStatusErrorInfo(object):
     def user_message(self):
         """
         Gets the user_message of this UserRoutingStatusErrorInfo.
-
+        A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id
 
         :return: The user_message of this UserRoutingStatusErrorInfo.
         :rtype: str
@@ -148,7 +148,7 @@ class UserRoutingStatusErrorInfo(object):
     def user_message(self, user_message):
         """
         Sets the user_message of this UserRoutingStatusErrorInfo.
-
+        A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id
 
         :param user_message: The user_message of this UserRoutingStatusErrorInfo.
         :type: str
@@ -160,7 +160,7 @@ class UserRoutingStatusErrorInfo(object):
     def user_params_message(self):
         """
         Gets the user_params_message of this UserRoutingStatusErrorInfo.
-
+        This is the same as userMessage except it uses template fields for variable replacement. For instance: 'User {username} was not found'
 
         :return: The user_params_message of this UserRoutingStatusErrorInfo.
         :rtype: str
@@ -171,7 +171,7 @@ class UserRoutingStatusErrorInfo(object):
     def user_params_message(self, user_params_message):
         """
         Sets the user_params_message of this UserRoutingStatusErrorInfo.
-
+        This is the same as userMessage except it uses template fields for variable replacement. For instance: 'User {username} was not found'
 
         :param user_params_message: The user_params_message of this UserRoutingStatusErrorInfo.
         :type: str
@@ -183,7 +183,7 @@ class UserRoutingStatusErrorInfo(object):
     def user_params(self):
         """
         Gets the user_params of this UserRoutingStatusErrorInfo.
-
+        Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'chuck.pulfer'
 
         :return: The user_params of this UserRoutingStatusErrorInfo.
         :rtype: list[UserRoutingStatusUserParam]
@@ -194,7 +194,7 @@ class UserRoutingStatusErrorInfo(object):
     def user_params(self, user_params):
         """
         Sets the user_params of this UserRoutingStatusErrorInfo.
-
+        Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'chuck.pulfer'
 
         :param user_params: The user_params of this UserRoutingStatusErrorInfo.
         :type: list[UserRoutingStatusUserParam]

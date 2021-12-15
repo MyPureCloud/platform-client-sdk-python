@@ -9,7 +9,6 @@ title: DnclistDownloadReadyExportUri
 |------------ | ------------- | ------------- | -------------|
 | **uri** | **str** |  | [optional] |
 | **export_timestamp** | **str** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 
 

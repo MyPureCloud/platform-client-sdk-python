@@ -65,7 +65,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def queue(self):
         """
         Gets the queue of this QueueConversationChatEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The queue of this QueueConversationChatEventTopicConversationRoutingData.
         :rtype: QueueConversationChatEventTopicUriReference
@@ -76,7 +76,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def queue(self, queue):
         """
         Sets the queue of this QueueConversationChatEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param queue: The queue of this QueueConversationChatEventTopicConversationRoutingData.
         :type: QueueConversationChatEventTopicUriReference
@@ -88,7 +88,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def language(self):
         """
         Gets the language of this QueueConversationChatEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The language of this QueueConversationChatEventTopicConversationRoutingData.
         :rtype: QueueConversationChatEventTopicUriReference
@@ -99,7 +99,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def language(self, language):
         """
         Sets the language of this QueueConversationChatEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param language: The language of this QueueConversationChatEventTopicConversationRoutingData.
         :type: QueueConversationChatEventTopicUriReference
@@ -111,7 +111,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def priority(self):
         """
         Gets the priority of this QueueConversationChatEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :return: The priority of this QueueConversationChatEventTopicConversationRoutingData.
         :rtype: int
@@ -122,7 +122,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def priority(self, priority):
         """
         Sets the priority of this QueueConversationChatEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :param priority: The priority of this QueueConversationChatEventTopicConversationRoutingData.
         :type: int
@@ -134,7 +134,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def skills(self):
         """
         Gets the skills of this QueueConversationChatEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :return: The skills of this QueueConversationChatEventTopicConversationRoutingData.
         :rtype: list[QueueConversationChatEventTopicUriReference]
@@ -145,7 +145,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def skills(self, skills):
         """
         Sets the skills of this QueueConversationChatEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :param skills: The skills of this QueueConversationChatEventTopicConversationRoutingData.
         :type: list[QueueConversationChatEventTopicUriReference]
@@ -157,7 +157,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def scored_agents(self):
         """
         Gets the scored_agents of this QueueConversationChatEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :return: The scored_agents of this QueueConversationChatEventTopicConversationRoutingData.
         :rtype: list[QueueConversationChatEventTopicScoredAgent]
@@ -168,7 +168,7 @@ class QueueConversationChatEventTopicConversationRoutingData(object):
     def scored_agents(self, scored_agents):
         """
         Sets the scored_agents of this QueueConversationChatEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :param scored_agents: The scored_agents of this QueueConversationChatEventTopicConversationRoutingData.
         :type: list[QueueConversationChatEventTopicScoredAgent]

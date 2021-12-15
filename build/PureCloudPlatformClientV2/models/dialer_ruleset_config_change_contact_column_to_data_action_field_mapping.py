@@ -41,25 +41,22 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
         """
         self.swagger_types = {
             'contact_column_name': 'str',
-            'data_action_field': 'str',
-            'additional_properties': 'object'
+            'data_action_field': 'str'
         }
 
         self.attribute_map = {
             'contact_column_name': 'contactColumnName',
-            'data_action_field': 'dataActionField',
-            'additional_properties': 'additionalProperties'
+            'data_action_field': 'dataActionField'
         }
 
         self._contact_column_name = None
         self._data_action_field = None
-        self._additional_properties = None
 
     @property
     def contact_column_name(self):
         """
         Gets the contact_column_name of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-
+        The name of a contact column whose data will be passed to the data action
 
         :return: The contact_column_name of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
         :rtype: str
@@ -70,7 +67,7 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
     def contact_column_name(self, contact_column_name):
         """
         Sets the contact_column_name of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-
+        The name of a contact column whose data will be passed to the data action
 
         :param contact_column_name: The contact_column_name of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
         :type: str
@@ -82,7 +79,7 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
     def data_action_field(self):
         """
         Gets the data_action_field of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-
+        The name of an output field from the data action that the contact column data will be passed to
 
         :return: The data_action_field of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
         :rtype: str
@@ -93,36 +90,13 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
     def data_action_field(self, data_action_field):
         """
         Sets the data_action_field of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-
+        The name of an output field from the data action that the contact column data will be passed to
 
         :param data_action_field: The data_action_field of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
         :type: str
         """
         
         self._data_action_field = data_action_field
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-
-
-        :return: The additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-
-
-        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

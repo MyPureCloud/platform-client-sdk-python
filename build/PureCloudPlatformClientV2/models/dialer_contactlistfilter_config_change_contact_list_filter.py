@@ -40,156 +40,38 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'name': 'str',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
-            'version': 'int',
             'contact_list': 'DialerContactlistfilterConfigChangeUriReference',
             'contact_list_columns': 'list[str]',
             'clauses': 'list[DialerContactlistfilterConfigChangeFilterClause]',
             'filter_type': 'str',
-            'additional_properties': 'object'
+            'id': 'str',
+            'name': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'version': 'int'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'name': 'name',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
-            'version': 'version',
             'contact_list': 'contactList',
             'contact_list_columns': 'contactListColumns',
             'clauses': 'clauses',
             'filter_type': 'filterType',
-            'additional_properties': 'additionalProperties'
+            'id': 'id',
+            'name': 'name',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'version': 'version'
         }
 
+        self._contact_list = None
+        self._contact_list_columns = None
+        self._clauses = None
+        self._filter_type = None
         self._id = None
         self._name = None
         self._date_created = None
         self._date_modified = None
         self._version = None
-        self._contact_list = None
-        self._contact_list_columns = None
-        self._clauses = None
-        self._filter_type = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :return: The id of this DialerContactlistfilterConfigChangeContactListFilter.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :param id: The id of this DialerContactlistfilterConfigChangeContactListFilter.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :return: The name of this DialerContactlistfilterConfigChangeContactListFilter.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :param name: The name of this DialerContactlistfilterConfigChangeContactListFilter.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :return: The date_created of this DialerContactlistfilterConfigChangeContactListFilter.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :param date_created: The date_created of this DialerContactlistfilterConfigChangeContactListFilter.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :return: The date_modified of this DialerContactlistfilterConfigChangeContactListFilter.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :param date_modified: The date_modified of this DialerContactlistfilterConfigChangeContactListFilter.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :return: The version of this DialerContactlistfilterConfigChangeContactListFilter.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerContactlistfilterConfigChangeContactListFilter.
-
-
-        :param version: The version of this DialerContactlistfilterConfigChangeContactListFilter.
-        :type: int
-        """
-        
-        self._version = version
 
     @property
     def contact_list(self):
@@ -218,7 +100,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
     def contact_list_columns(self):
         """
         Gets the contact_list_columns of this DialerContactlistfilterConfigChangeContactListFilter.
-
+        The list of contact list columns
 
         :return: The contact_list_columns of this DialerContactlistfilterConfigChangeContactListFilter.
         :rtype: list[str]
@@ -229,7 +111,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
     def contact_list_columns(self, contact_list_columns):
         """
         Sets the contact_list_columns of this DialerContactlistfilterConfigChangeContactListFilter.
-
+        The list of contact list columns
 
         :param contact_list_columns: The contact_list_columns of this DialerContactlistfilterConfigChangeContactListFilter.
         :type: list[str]
@@ -264,7 +146,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
     def filter_type(self):
         """
         Gets the filter_type of this DialerContactlistfilterConfigChangeContactListFilter.
-
+        Contact list filter type
 
         :return: The filter_type of this DialerContactlistfilterConfigChangeContactListFilter.
         :rtype: str
@@ -275,7 +157,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
     def filter_type(self, filter_type):
         """
         Sets the filter_type of this DialerContactlistfilterConfigChangeContactListFilter.
-
+        Contact list filter type
 
         :param filter_type: The filter_type of this DialerContactlistfilterConfigChangeContactListFilter.
         :type: str
@@ -288,27 +170,119 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
             self._filter_type = filter_type
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+        Gets the id of this DialerContactlistfilterConfigChangeContactListFilter.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
-        :rtype: object
+        :return: The id of this DialerContactlistfilterConfigChangeContactListFilter.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+        Sets the id of this DialerContactlistfilterConfigChangeContactListFilter.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
-        :type: object
+        :param id: The id of this DialerContactlistfilterConfigChangeContactListFilter.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerContactlistfilterConfigChangeContactListFilter.
+        The UI-visible name of the object
+
+        :return: The name of this DialerContactlistfilterConfigChangeContactListFilter.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerContactlistfilterConfigChangeContactListFilter.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerContactlistfilterConfigChangeContactListFilter.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerContactlistfilterConfigChangeContactListFilter.
+        Creation time of the entity
+
+        :return: The date_created of this DialerContactlistfilterConfigChangeContactListFilter.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerContactlistfilterConfigChangeContactListFilter.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerContactlistfilterConfigChangeContactListFilter.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerContactlistfilterConfigChangeContactListFilter.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerContactlistfilterConfigChangeContactListFilter.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerContactlistfilterConfigChangeContactListFilter.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerContactlistfilterConfigChangeContactListFilter.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerContactlistfilterConfigChangeContactListFilter.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerContactlistfilterConfigChangeContactListFilter.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerContactlistfilterConfigChangeContactListFilter.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerContactlistfilterConfigChangeContactListFilter.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

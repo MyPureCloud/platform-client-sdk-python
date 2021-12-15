@@ -62,8 +62,7 @@ class QueueConversationEventTopicMessage(object):
             'wrapup': 'QueueConversationEventTopicWrapup',
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
-            'agent_assistant_id': 'str',
-            'additional_properties': 'object'
+            'agent_assistant_id': 'str'
         }
 
         self.attribute_map = {
@@ -89,8 +88,7 @@ class QueueConversationEventTopicMessage(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'agent_assistant_id': 'agentAssistantId',
-            'additional_properties': 'additionalProperties'
+            'agent_assistant_id': 'agentAssistantId'
         }
 
         self._id = None
@@ -116,13 +114,12 @@ class QueueConversationEventTopicMessage(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
-        self._additional_properties = None
 
     @property
     def id(self):
         """
         Gets the id of this QueueConversationEventTopicMessage.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -133,7 +130,7 @@ class QueueConversationEventTopicMessage(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationEventTopicMessage.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this QueueConversationEventTopicMessage.
         :type: str
@@ -145,7 +142,7 @@ class QueueConversationEventTopicMessage(object):
     def state(self):
         """
         Gets the state of this QueueConversationEventTopicMessage.
-
+        The connection state of this communication.
 
         :return: The state of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -156,12 +153,12 @@ class QueueConversationEventTopicMessage(object):
     def state(self, state):
         """
         Sets the state of this QueueConversationEventTopicMessage.
-
+        The connection state of this communication.
 
         :param state: The state of this QueueConversationEventTopicMessage.
         :type: str
         """
-        allowed_values = ["ALERTING", "CONNECTED", "DISCONNECTED"]
+        allowed_values = ["alerting", "connected", "disconnected"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -172,7 +169,7 @@ class QueueConversationEventTopicMessage(object):
     def held(self):
         """
         Gets the held of this QueueConversationEventTopicMessage.
-
+        True if this call is held and the person on this side hears silence.
 
         :return: The held of this QueueConversationEventTopicMessage.
         :rtype: bool
@@ -183,7 +180,7 @@ class QueueConversationEventTopicMessage(object):
     def held(self, held):
         """
         Sets the held of this QueueConversationEventTopicMessage.
-
+        True if this call is held and the person on this side hears silence.
 
         :param held: The held of this QueueConversationEventTopicMessage.
         :type: bool
@@ -195,7 +192,7 @@ class QueueConversationEventTopicMessage(object):
     def error_info(self):
         """
         Gets the error_info of this QueueConversationEventTopicMessage.
-
+        Detailed information about an error response.
 
         :return: The error_info of this QueueConversationEventTopicMessage.
         :rtype: QueueConversationEventTopicErrorDetails
@@ -206,7 +203,7 @@ class QueueConversationEventTopicMessage(object):
     def error_info(self, error_info):
         """
         Sets the error_info of this QueueConversationEventTopicMessage.
-
+        Detailed information about an error response.
 
         :param error_info: The error_info of this QueueConversationEventTopicMessage.
         :type: QueueConversationEventTopicErrorDetails
@@ -218,7 +215,7 @@ class QueueConversationEventTopicMessage(object):
     def provider(self):
         """
         Gets the provider of this QueueConversationEventTopicMessage.
-
+        The source provider of the email.
 
         :return: The provider of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -229,7 +226,7 @@ class QueueConversationEventTopicMessage(object):
     def provider(self, provider):
         """
         Sets the provider of this QueueConversationEventTopicMessage.
-
+        The source provider of the email.
 
         :param provider: The provider of this QueueConversationEventTopicMessage.
         :type: str
@@ -241,7 +238,7 @@ class QueueConversationEventTopicMessage(object):
     def script_id(self):
         """
         Gets the script_id of this QueueConversationEventTopicMessage.
-
+        The UUID of the script to use.
 
         :return: The script_id of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -252,7 +249,7 @@ class QueueConversationEventTopicMessage(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this QueueConversationEventTopicMessage.
-
+        The UUID of the script to use.
 
         :param script_id: The script_id of this QueueConversationEventTopicMessage.
         :type: str
@@ -264,7 +261,7 @@ class QueueConversationEventTopicMessage(object):
     def peer_id(self):
         """
         Gets the peer_id of this QueueConversationEventTopicMessage.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :return: The peer_id of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -275,7 +272,7 @@ class QueueConversationEventTopicMessage(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this QueueConversationEventTopicMessage.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :param peer_id: The peer_id of this QueueConversationEventTopicMessage.
         :type: str
@@ -287,7 +284,7 @@ class QueueConversationEventTopicMessage(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this QueueConversationEventTopicMessage.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :return: The disconnect_type of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -298,12 +295,12 @@ class QueueConversationEventTopicMessage(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this QueueConversationEventTopicMessage.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :param disconnect_type: The disconnect_type of this QueueConversationEventTopicMessage.
         :type: str
         """
-        allowed_values = ["ENDPOINT", "CLIENT", "SYSTEM", "TIMEOUT", "TRANSFER", "TRANSFER_CONFERENCE", "TRANSFER_CONSULT", "TRANSFER_FORWARD", "TRANSFER_NOANSWER", "TRANSFER_NOTAVAILABLE", "TRANSPORT_FAILURE", "ERROR", "PEER", "OTHER", "SPAM", "UNCALLABLE"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -314,7 +311,7 @@ class QueueConversationEventTopicMessage(object):
     def start_hold_time(self):
         """
         Gets the start_hold_time of this QueueConversationEventTopicMessage.
-
+        The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.
 
         :return: The start_hold_time of this QueueConversationEventTopicMessage.
         :rtype: datetime
@@ -325,7 +322,7 @@ class QueueConversationEventTopicMessage(object):
     def start_hold_time(self, start_hold_time):
         """
         Sets the start_hold_time of this QueueConversationEventTopicMessage.
-
+        The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.
 
         :param start_hold_time: The start_hold_time of this QueueConversationEventTopicMessage.
         :type: datetime
@@ -337,7 +334,7 @@ class QueueConversationEventTopicMessage(object):
     def connected_time(self):
         """
         Gets the connected_time of this QueueConversationEventTopicMessage.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :return: The connected_time of this QueueConversationEventTopicMessage.
         :rtype: datetime
@@ -348,7 +345,7 @@ class QueueConversationEventTopicMessage(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this QueueConversationEventTopicMessage.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :param connected_time: The connected_time of this QueueConversationEventTopicMessage.
         :type: datetime
@@ -360,7 +357,7 @@ class QueueConversationEventTopicMessage(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this QueueConversationEventTopicMessage.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :return: The disconnected_time of this QueueConversationEventTopicMessage.
         :rtype: datetime
@@ -371,7 +368,7 @@ class QueueConversationEventTopicMessage(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this QueueConversationEventTopicMessage.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :param disconnected_time: The disconnected_time of this QueueConversationEventTopicMessage.
         :type: datetime
@@ -383,7 +380,7 @@ class QueueConversationEventTopicMessage(object):
     def to_address(self):
         """
         Gets the to_address of this QueueConversationEventTopicMessage.
-
+        Address and name data for a call endpoint.
 
         :return: The to_address of this QueueConversationEventTopicMessage.
         :rtype: QueueConversationEventTopicAddress
@@ -394,7 +391,7 @@ class QueueConversationEventTopicMessage(object):
     def to_address(self, to_address):
         """
         Sets the to_address of this QueueConversationEventTopicMessage.
-
+        Address and name data for a call endpoint.
 
         :param to_address: The to_address of this QueueConversationEventTopicMessage.
         :type: QueueConversationEventTopicAddress
@@ -406,7 +403,7 @@ class QueueConversationEventTopicMessage(object):
     def from_address(self):
         """
         Gets the from_address of this QueueConversationEventTopicMessage.
-
+        Address and name data for a call endpoint.
 
         :return: The from_address of this QueueConversationEventTopicMessage.
         :rtype: QueueConversationEventTopicAddress
@@ -417,7 +414,7 @@ class QueueConversationEventTopicMessage(object):
     def from_address(self, from_address):
         """
         Sets the from_address of this QueueConversationEventTopicMessage.
-
+        Address and name data for a call endpoint.
 
         :param from_address: The from_address of this QueueConversationEventTopicMessage.
         :type: QueueConversationEventTopicAddress
@@ -429,7 +426,7 @@ class QueueConversationEventTopicMessage(object):
     def messages(self):
         """
         Gets the messages of this QueueConversationEventTopicMessage.
-
+        The messages sent on this communication channel.
 
         :return: The messages of this QueueConversationEventTopicMessage.
         :rtype: list[QueueConversationEventTopicMessageDetails]
@@ -440,7 +437,7 @@ class QueueConversationEventTopicMessage(object):
     def messages(self, messages):
         """
         Sets the messages of this QueueConversationEventTopicMessage.
-
+        The messages sent on this communication channel.
 
         :param messages: The messages of this QueueConversationEventTopicMessage.
         :type: list[QueueConversationEventTopicMessageDetails]
@@ -452,7 +449,7 @@ class QueueConversationEventTopicMessage(object):
     def messages_transcript_uri(self):
         """
         Gets the messages_transcript_uri of this QueueConversationEventTopicMessage.
-
+        the messages transcript file uri.
 
         :return: The messages_transcript_uri of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -463,7 +460,7 @@ class QueueConversationEventTopicMessage(object):
     def messages_transcript_uri(self, messages_transcript_uri):
         """
         Sets the messages_transcript_uri of this QueueConversationEventTopicMessage.
-
+        the messages transcript file uri.
 
         :param messages_transcript_uri: The messages_transcript_uri of this QueueConversationEventTopicMessage.
         :type: str
@@ -475,7 +472,7 @@ class QueueConversationEventTopicMessage(object):
     def type(self):
         """
         Gets the type of this QueueConversationEventTopicMessage.
-
+        Indicates the type of message platform from which the message originated.
 
         :return: The type of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -486,12 +483,12 @@ class QueueConversationEventTopicMessage(object):
     def type(self, type):
         """
         Sets the type of this QueueConversationEventTopicMessage.
-
+        Indicates the type of message platform from which the message originated.
 
         :param type: The type of this QueueConversationEventTopicMessage.
         :type: str
         """
-        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "VIBER", "WECHAT", "WHATSAPP", "TELEGRAM", "KAKAO", "WEBMESSAGING", "OPEN", "INSTAGRAM"]
+        allowed_values = ["unknown", "sms", "twitter", "facebook", "line", "viber", "wechat", "whatsapp", "telegram", "kakao", "webmessaging", "open", "instagram"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -502,7 +499,7 @@ class QueueConversationEventTopicMessage(object):
     def recipient_country(self):
         """
         Gets the recipient_country of this QueueConversationEventTopicMessage.
-
+        Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
 
         :return: The recipient_country of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -513,7 +510,7 @@ class QueueConversationEventTopicMessage(object):
     def recipient_country(self, recipient_country):
         """
         Sets the recipient_country of this QueueConversationEventTopicMessage.
-
+        Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
 
         :param recipient_country: The recipient_country of this QueueConversationEventTopicMessage.
         :type: str
@@ -525,7 +522,7 @@ class QueueConversationEventTopicMessage(object):
     def recipient_type(self):
         """
         Gets the recipient_type of this QueueConversationEventTopicMessage.
-
+        The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
 
         :return: The recipient_type of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -536,7 +533,7 @@ class QueueConversationEventTopicMessage(object):
     def recipient_type(self, recipient_type):
         """
         Sets the recipient_type of this QueueConversationEventTopicMessage.
-
+        The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
 
         :param recipient_type: The recipient_type of this QueueConversationEventTopicMessage.
         :type: str
@@ -548,7 +545,7 @@ class QueueConversationEventTopicMessage(object):
     def journey_context(self):
         """
         Gets the journey_context of this QueueConversationEventTopicMessage.
-
+        A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
 
         :return: The journey_context of this QueueConversationEventTopicMessage.
         :rtype: QueueConversationEventTopicJourneyContext
@@ -559,7 +556,7 @@ class QueueConversationEventTopicMessage(object):
     def journey_context(self, journey_context):
         """
         Sets the journey_context of this QueueConversationEventTopicMessage.
-
+        A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
 
         :param journey_context: The journey_context of this QueueConversationEventTopicMessage.
         :type: QueueConversationEventTopicJourneyContext
@@ -571,7 +568,7 @@ class QueueConversationEventTopicMessage(object):
     def wrapup(self):
         """
         Gets the wrapup of this QueueConversationEventTopicMessage.
-
+        Call wrap up or disposition data.
 
         :return: The wrapup of this QueueConversationEventTopicMessage.
         :rtype: QueueConversationEventTopicWrapup
@@ -582,7 +579,7 @@ class QueueConversationEventTopicMessage(object):
     def wrapup(self, wrapup):
         """
         Sets the wrapup of this QueueConversationEventTopicMessage.
-
+        Call wrap up or disposition data.
 
         :param wrapup: The wrapup of this QueueConversationEventTopicMessage.
         :type: QueueConversationEventTopicWrapup
@@ -594,7 +591,7 @@ class QueueConversationEventTopicMessage(object):
     def after_call_work(self):
         """
         Gets the after_call_work of this QueueConversationEventTopicMessage.
-
+        A communication's after-call work data.
 
         :return: The after_call_work of this QueueConversationEventTopicMessage.
         :rtype: QueueConversationEventTopicAfterCallWork
@@ -605,7 +602,7 @@ class QueueConversationEventTopicMessage(object):
     def after_call_work(self, after_call_work):
         """
         Sets the after_call_work of this QueueConversationEventTopicMessage.
-
+        A communication's after-call work data.
 
         :param after_call_work: The after_call_work of this QueueConversationEventTopicMessage.
         :type: QueueConversationEventTopicAfterCallWork
@@ -617,7 +614,7 @@ class QueueConversationEventTopicMessage(object):
     def after_call_work_required(self):
         """
         Gets the after_call_work_required of this QueueConversationEventTopicMessage.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :return: The after_call_work_required of this QueueConversationEventTopicMessage.
         :rtype: bool
@@ -628,7 +625,7 @@ class QueueConversationEventTopicMessage(object):
     def after_call_work_required(self, after_call_work_required):
         """
         Sets the after_call_work_required of this QueueConversationEventTopicMessage.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :param after_call_work_required: The after_call_work_required of this QueueConversationEventTopicMessage.
         :type: bool
@@ -640,7 +637,7 @@ class QueueConversationEventTopicMessage(object):
     def agent_assistant_id(self):
         """
         Gets the agent_assistant_id of this QueueConversationEventTopicMessage.
-
+        UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
 
         :return: The agent_assistant_id of this QueueConversationEventTopicMessage.
         :rtype: str
@@ -651,36 +648,13 @@ class QueueConversationEventTopicMessage(object):
     def agent_assistant_id(self, agent_assistant_id):
         """
         Sets the agent_assistant_id of this QueueConversationEventTopicMessage.
-
+        UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
 
         :param agent_assistant_id: The agent_assistant_id of this QueueConversationEventTopicMessage.
         :type: str
         """
         
         self._agent_assistant_id = agent_assistant_id
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationEventTopicMessage.
-
-
-        :return: The additional_properties of this QueueConversationEventTopicMessage.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationEventTopicMessage.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationEventTopicMessage.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

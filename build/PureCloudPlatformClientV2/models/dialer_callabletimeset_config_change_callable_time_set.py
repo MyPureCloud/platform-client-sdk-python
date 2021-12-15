@@ -40,38 +40,58 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'callable_times': 'list[DialerCallabletimesetConfigChangeCallableTime]',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'version': 'int',
-            'callable_times': 'list[DialerCallabletimesetConfigChangeCallableTime]',
-            'additional_properties': 'object'
+            'version': 'int'
         }
 
         self.attribute_map = {
+            'callable_times': 'callableTimes',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'version': 'version',
-            'callable_times': 'callableTimes',
-            'additional_properties': 'additionalProperties'
+            'version': 'version'
         }
 
+        self._callable_times = None
         self._id = None
         self._name = None
         self._date_created = None
         self._date_modified = None
         self._version = None
-        self._callable_times = None
-        self._additional_properties = None
+
+    @property
+    def callable_times(self):
+        """
+        Gets the callable_times of this DialerCallabletimesetConfigChangeCallableTimeSet.
+        The list of callable times
+
+        :return: The callable_times of this DialerCallabletimesetConfigChangeCallableTimeSet.
+        :rtype: list[DialerCallabletimesetConfigChangeCallableTime]
+        """
+        return self._callable_times
+
+    @callable_times.setter
+    def callable_times(self, callable_times):
+        """
+        Sets the callable_times of this DialerCallabletimesetConfigChangeCallableTimeSet.
+        The list of callable times
+
+        :param callable_times: The callable_times of this DialerCallabletimesetConfigChangeCallableTimeSet.
+        :type: list[DialerCallabletimesetConfigChangeCallableTime]
+        """
+        
+        self._callable_times = callable_times
 
     @property
     def id(self):
         """
         Gets the id of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        The globally unique identifier for the object.
 
         :return: The id of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :rtype: str
@@ -82,7 +102,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
     def id(self, id):
         """
         Sets the id of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        The globally unique identifier for the object.
 
         :param id: The id of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :type: str
@@ -94,7 +114,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
     def name(self):
         """
         Gets the name of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        The UI-visible name of the object
 
         :return: The name of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :rtype: str
@@ -105,7 +125,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
     def name(self, name):
         """
         Sets the name of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        The UI-visible name of the object
 
         :param name: The name of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :type: str
@@ -117,7 +137,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
     def date_created(self):
         """
         Gets the date_created of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        Creation time of the entity
 
         :return: The date_created of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :rtype: datetime
@@ -128,7 +148,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        Creation time of the entity
 
         :param date_created: The date_created of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :type: datetime
@@ -140,7 +160,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
     def date_modified(self):
         """
         Gets the date_modified of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        Last modified time of the entity
 
         :return: The date_modified of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :rtype: datetime
@@ -151,7 +171,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        Last modified time of the entity
 
         :param date_modified: The date_modified of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :type: datetime
@@ -163,7 +183,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
     def version(self):
         """
         Gets the version of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        Required for updates, must match the version number of the most recent update
 
         :return: The version of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :rtype: int
@@ -174,59 +194,13 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
     def version(self, version):
         """
         Sets the version of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
+        Required for updates, must match the version number of the most recent update
 
         :param version: The version of this DialerCallabletimesetConfigChangeCallableTimeSet.
         :type: int
         """
         
         self._version = version
-
-    @property
-    def callable_times(self):
-        """
-        Gets the callable_times of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
-
-        :return: The callable_times of this DialerCallabletimesetConfigChangeCallableTimeSet.
-        :rtype: list[DialerCallabletimesetConfigChangeCallableTime]
-        """
-        return self._callable_times
-
-    @callable_times.setter
-    def callable_times(self, callable_times):
-        """
-        Sets the callable_times of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
-
-        :param callable_times: The callable_times of this DialerCallabletimesetConfigChangeCallableTimeSet.
-        :type: list[DialerCallabletimesetConfigChangeCallableTime]
-        """
-        
-        self._callable_times = callable_times
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
-
-        :return: The additional_properties of this DialerCallabletimesetConfigChangeCallableTimeSet.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerCallabletimesetConfigChangeCallableTimeSet.
-
-
-        :param additional_properties: The additional_properties of this DialerCallabletimesetConfigChangeCallableTimeSet.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

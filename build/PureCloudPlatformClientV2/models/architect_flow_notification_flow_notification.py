@@ -74,7 +74,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def id(self):
         """
         Gets the id of this ArchitectFlowNotificationFlowNotification.
-
+        The flow ID
 
         :return: The id of this ArchitectFlowNotificationFlowNotification.
         :rtype: str
@@ -85,7 +85,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def id(self, id):
         """
         Sets the id of this ArchitectFlowNotificationFlowNotification.
-
+        The flow ID
 
         :param id: The id of this ArchitectFlowNotificationFlowNotification.
         :type: str
@@ -97,7 +97,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def name(self):
         """
         Gets the name of this ArchitectFlowNotificationFlowNotification.
-
+        The flow name
 
         :return: The name of this ArchitectFlowNotificationFlowNotification.
         :rtype: str
@@ -108,7 +108,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def name(self, name):
         """
         Sets the name of this ArchitectFlowNotificationFlowNotification.
-
+        The flow name
 
         :param name: The name of this ArchitectFlowNotificationFlowNotification.
         :type: str
@@ -120,7 +120,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def description(self):
         """
         Gets the description of this ArchitectFlowNotificationFlowNotification.
-
+        The flow description
 
         :return: The description of this ArchitectFlowNotificationFlowNotification.
         :rtype: str
@@ -131,7 +131,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def description(self, description):
         """
         Sets the description of this ArchitectFlowNotificationFlowNotification.
-
+        The flow description
 
         :param description: The description of this ArchitectFlowNotificationFlowNotification.
         :type: str
@@ -143,7 +143,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def deleted(self):
         """
         Gets the deleted of this ArchitectFlowNotificationFlowNotification.
-
+        The flow deleted state
 
         :return: The deleted of this ArchitectFlowNotificationFlowNotification.
         :rtype: bool
@@ -154,7 +154,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def deleted(self, deleted):
         """
         Sets the deleted of this ArchitectFlowNotificationFlowNotification.
-
+        The flow deleted state
 
         :param deleted: The deleted of this ArchitectFlowNotificationFlowNotification.
         :type: bool
@@ -189,7 +189,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def saved_version(self):
         """
         Gets the saved_version of this ArchitectFlowNotificationFlowNotification.
-
+        A bare-bones flow version object
 
         :return: The saved_version of this ArchitectFlowNotificationFlowNotification.
         :rtype: ArchitectFlowNotificationFlowVersion
@@ -200,7 +200,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def saved_version(self, saved_version):
         """
         Sets the saved_version of this ArchitectFlowNotificationFlowNotification.
-
+        A bare-bones flow version object
 
         :param saved_version: The saved_version of this ArchitectFlowNotificationFlowNotification.
         :type: ArchitectFlowNotificationFlowVersion
@@ -212,7 +212,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def published_version(self):
         """
         Gets the published_version of this ArchitectFlowNotificationFlowNotification.
-
+        A bare-bones flow version object
 
         :return: The published_version of this ArchitectFlowNotificationFlowNotification.
         :rtype: ArchitectFlowNotificationFlowVersion
@@ -223,7 +223,7 @@ class ArchitectFlowNotificationFlowNotification(object):
     def published_version(self, published_version):
         """
         Sets the published_version of this ArchitectFlowNotificationFlowNotification.
-
+        A bare-bones flow version object
 
         :param published_version: The published_version of this ArchitectFlowNotificationFlowNotification.
         :type: ArchitectFlowNotificationFlowVersion

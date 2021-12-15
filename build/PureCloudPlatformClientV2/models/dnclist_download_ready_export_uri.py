@@ -41,19 +41,16 @@ class DnclistDownloadReadyExportUri(object):
         """
         self.swagger_types = {
             'uri': 'str',
-            'export_timestamp': 'str',
-            'additional_properties': 'object'
+            'export_timestamp': 'str'
         }
 
         self.attribute_map = {
             'uri': 'uri',
-            'export_timestamp': 'exportTimestamp',
-            'additional_properties': 'additionalProperties'
+            'export_timestamp': 'exportTimestamp'
         }
 
         self._uri = None
         self._export_timestamp = None
-        self._additional_properties = None
 
     @property
     def uri(self):
@@ -100,29 +97,6 @@ class DnclistDownloadReadyExportUri(object):
         """
         
         self._export_timestamp = export_timestamp
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DnclistDownloadReadyExportUri.
-
-
-        :return: The additional_properties of this DnclistDownloadReadyExportUri.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DnclistDownloadReadyExportUri.
-
-
-        :param additional_properties: The additional_properties of this DnclistDownloadReadyExportUri.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

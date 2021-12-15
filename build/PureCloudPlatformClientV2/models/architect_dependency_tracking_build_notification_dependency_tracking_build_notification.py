@@ -62,7 +62,7 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
     def status(self):
         """
         Gets the status of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
-
+        The organization's new dependency tracking build status
 
         :return: The status of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
         :rtype: str
@@ -73,7 +73,7 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
     def status(self, status):
         """
         Sets the status of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
-
+        The organization's new dependency tracking build status
 
         :param status: The status of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
         :type: str
@@ -131,7 +131,7 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
     def start_time(self):
         """
         Gets the start_time of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
-
+        The time the last build started, in ISO 8601 format
 
         :return: The start_time of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
         :rtype: datetime
@@ -142,7 +142,7 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
     def start_time(self, start_time):
         """
         Sets the start_time of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
-
+        The time the last build started, in ISO 8601 format
 
         :param start_time: The start_time of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
         :type: datetime

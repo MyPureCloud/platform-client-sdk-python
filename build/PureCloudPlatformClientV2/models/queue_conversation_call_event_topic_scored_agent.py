@@ -56,7 +56,7 @@ class QueueConversationCallEventTopicScoredAgent(object):
     def agent(self):
         """
         Gets the agent of this QueueConversationCallEventTopicScoredAgent.
-
+        A UriReference for a resource
 
         :return: The agent of this QueueConversationCallEventTopicScoredAgent.
         :rtype: QueueConversationCallEventTopicUriReference
@@ -67,7 +67,7 @@ class QueueConversationCallEventTopicScoredAgent(object):
     def agent(self, agent):
         """
         Sets the agent of this QueueConversationCallEventTopicScoredAgent.
-
+        A UriReference for a resource
 
         :param agent: The agent of this QueueConversationCallEventTopicScoredAgent.
         :type: QueueConversationCallEventTopicUriReference
@@ -79,7 +79,7 @@ class QueueConversationCallEventTopicScoredAgent(object):
     def score(self):
         """
         Gets the score of this QueueConversationCallEventTopicScoredAgent.
-
+        Agent's score for the current conversation, from 0 - 100, higher being better
 
         :return: The score of this QueueConversationCallEventTopicScoredAgent.
         :rtype: int
@@ -90,7 +90,7 @@ class QueueConversationCallEventTopicScoredAgent(object):
     def score(self, score):
         """
         Sets the score of this QueueConversationCallEventTopicScoredAgent.
-
+        Agent's score for the current conversation, from 0 - 100, higher being better
 
         :param score: The score of this QueueConversationCallEventTopicScoredAgent.
         :type: int

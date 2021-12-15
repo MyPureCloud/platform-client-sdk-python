@@ -41,19 +41,16 @@ class UserRoutingStatusUserParam(object):
         """
         self.swagger_types = {
             'key': 'str',
-            'value': 'str',
-            'additional_properties': 'object'
+            'value': 'str'
         }
 
         self.attribute_map = {
             'key': 'key',
-            'value': 'value',
-            'additional_properties': 'additionalProperties'
+            'value': 'value'
         }
 
         self._key = None
         self._value = None
-        self._additional_properties = None
 
     @property
     def key(self):
@@ -100,29 +97,6 @@ class UserRoutingStatusUserParam(object):
         """
         
         self._value = value
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this UserRoutingStatusUserParam.
-
-
-        :return: The additional_properties of this UserRoutingStatusUserParam.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this UserRoutingStatusUserParam.
-
-
-        :param additional_properties: The additional_properties of this UserRoutingStatusUserParam.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

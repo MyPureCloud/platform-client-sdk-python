@@ -56,7 +56,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlot(object):
     def earliest_callable_time(self):
         """
         Gets the earliest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlot.
-
+        The earliest time to dial a contact
 
         :return: The earliest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlot.
         :rtype: str
@@ -67,7 +67,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlot(object):
     def earliest_callable_time(self, earliest_callable_time):
         """
         Sets the earliest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlot.
-
+        The earliest time to dial a contact
 
         :param earliest_callable_time: The earliest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlot.
         :type: str
@@ -79,7 +79,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlot(object):
     def latest_callable_time(self):
         """
         Gets the latest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlot.
-
+        The latest time to dial a contact
 
         :return: The latest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlot.
         :rtype: str
@@ -90,7 +90,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlot(object):
     def latest_callable_time(self, latest_callable_time):
         """
         Sets the latest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlot.
-
+        The latest time to dial a contact
 
         :param latest_callable_time: The latest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlot.
         :type: str

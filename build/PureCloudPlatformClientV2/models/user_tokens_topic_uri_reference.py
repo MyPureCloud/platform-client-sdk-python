@@ -56,7 +56,7 @@ class UserTokensTopicUriReference(object):
     def id(self):
         """
         Gets the id of this UserTokensTopicUriReference.
-
+        The ID of the resource
 
         :return: The id of this UserTokensTopicUriReference.
         :rtype: str
@@ -67,7 +67,7 @@ class UserTokensTopicUriReference(object):
     def id(self, id):
         """
         Sets the id of this UserTokensTopicUriReference.
-
+        The ID of the resource
 
         :param id: The id of this UserTokensTopicUriReference.
         :type: str
@@ -79,7 +79,7 @@ class UserTokensTopicUriReference(object):
     def name(self):
         """
         Gets the name of this UserTokensTopicUriReference.
-
+        The name of the resource
 
         :return: The name of this UserTokensTopicUriReference.
         :rtype: str
@@ -90,7 +90,7 @@ class UserTokensTopicUriReference(object):
     def name(self, name):
         """
         Sets the name of this UserTokensTopicUriReference.
-
+        The name of the resource
 
         :param name: The name of this UserTokensTopicUriReference.
         :type: str

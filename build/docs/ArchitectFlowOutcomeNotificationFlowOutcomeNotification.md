@@ -7,9 +7,9 @@ title: ArchitectFlowOutcomeNotificationFlowOutcomeNotification
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **description** | **str** |  | [optional] |
+| **id** | **str** | The flow outcome ID | [optional] |
+| **name** | **str** | The flow outcome name | [optional] |
+| **description** | **str** | The flow outcome description | [optional] |
 | **current_operation** | [**ArchitectFlowOutcomeNotificationArchitectOperation**](ArchitectFlowOutcomeNotificationArchitectOperation.html) |  | [optional] |
 {: class="table table-striped"}
 

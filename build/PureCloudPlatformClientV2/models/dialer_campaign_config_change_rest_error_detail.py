@@ -41,25 +41,22 @@ class DialerCampaignConfigChangeRestErrorDetail(object):
         """
         self.swagger_types = {
             'error': 'str',
-            'details': 'str',
-            'additional_properties': 'object'
+            'details': 'str'
         }
 
         self.attribute_map = {
             'error': 'error',
-            'details': 'details',
-            'additional_properties': 'additionalProperties'
+            'details': 'details'
         }
 
         self._error = None
         self._details = None
-        self._additional_properties = None
 
     @property
     def error(self):
         """
         Gets the error of this DialerCampaignConfigChangeRestErrorDetail.
-
+        name of the error
 
         :return: The error of this DialerCampaignConfigChangeRestErrorDetail.
         :rtype: str
@@ -70,7 +67,7 @@ class DialerCampaignConfigChangeRestErrorDetail(object):
     def error(self, error):
         """
         Sets the error of this DialerCampaignConfigChangeRestErrorDetail.
-
+        name of the error
 
         :param error: The error of this DialerCampaignConfigChangeRestErrorDetail.
         :type: str
@@ -82,7 +79,7 @@ class DialerCampaignConfigChangeRestErrorDetail(object):
     def details(self):
         """
         Gets the details of this DialerCampaignConfigChangeRestErrorDetail.
-
+        additional information regarding the error
 
         :return: The details of this DialerCampaignConfigChangeRestErrorDetail.
         :rtype: str
@@ -93,36 +90,13 @@ class DialerCampaignConfigChangeRestErrorDetail(object):
     def details(self, details):
         """
         Sets the details of this DialerCampaignConfigChangeRestErrorDetail.
-
+        additional information regarding the error
 
         :param details: The details of this DialerCampaignConfigChangeRestErrorDetail.
         :type: str
         """
         
         self._details = details
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerCampaignConfigChangeRestErrorDetail.
-
-
-        :return: The additional_properties of this DialerCampaignConfigChangeRestErrorDetail.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerCampaignConfigChangeRestErrorDetail.
-
-
-        :param additional_properties: The additional_properties of this DialerCampaignConfigChangeRestErrorDetail.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

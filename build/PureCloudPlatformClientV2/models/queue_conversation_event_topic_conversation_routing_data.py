@@ -88,7 +88,7 @@ class QueueConversationEventTopicConversationRoutingData(object):
     def language(self):
         """
         Gets the language of this QueueConversationEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The language of this QueueConversationEventTopicConversationRoutingData.
         :rtype: QueueConversationEventTopicUriReference
@@ -99,7 +99,7 @@ class QueueConversationEventTopicConversationRoutingData(object):
     def language(self, language):
         """
         Sets the language of this QueueConversationEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param language: The language of this QueueConversationEventTopicConversationRoutingData.
         :type: QueueConversationEventTopicUriReference
@@ -111,7 +111,7 @@ class QueueConversationEventTopicConversationRoutingData(object):
     def priority(self):
         """
         Gets the priority of this QueueConversationEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :return: The priority of this QueueConversationEventTopicConversationRoutingData.
         :rtype: int
@@ -122,7 +122,7 @@ class QueueConversationEventTopicConversationRoutingData(object):
     def priority(self, priority):
         """
         Sets the priority of this QueueConversationEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :param priority: The priority of this QueueConversationEventTopicConversationRoutingData.
         :type: int
@@ -134,7 +134,7 @@ class QueueConversationEventTopicConversationRoutingData(object):
     def skills(self):
         """
         Gets the skills of this QueueConversationEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :return: The skills of this QueueConversationEventTopicConversationRoutingData.
         :rtype: list[QueueConversationEventTopicUriReference]
@@ -145,7 +145,7 @@ class QueueConversationEventTopicConversationRoutingData(object):
     def skills(self, skills):
         """
         Sets the skills of this QueueConversationEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :param skills: The skills of this QueueConversationEventTopicConversationRoutingData.
         :type: list[QueueConversationEventTopicUriReference]
@@ -157,7 +157,7 @@ class QueueConversationEventTopicConversationRoutingData(object):
     def scored_agents(self):
         """
         Gets the scored_agents of this QueueConversationEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :return: The scored_agents of this QueueConversationEventTopicConversationRoutingData.
         :rtype: list[QueueConversationEventTopicScoredAgent]
@@ -168,7 +168,7 @@ class QueueConversationEventTopicConversationRoutingData(object):
     def scored_agents(self, scored_agents):
         """
         Sets the scored_agents of this QueueConversationEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :param scored_agents: The scored_agents of this QueueConversationEventTopicConversationRoutingData.
         :type: list[QueueConversationEventTopicScoredAgent]

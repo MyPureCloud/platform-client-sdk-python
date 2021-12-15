@@ -68,7 +68,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def prompt_id(self):
         """
         Gets the prompt_id of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Id of the prompt that this notification is for.
 
         :return: The prompt_id of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :rtype: str
@@ -79,7 +79,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def prompt_id(self, prompt_id):
         """
         Sets the prompt_id of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Id of the prompt that this notification is for.
 
         :param prompt_id: The prompt_id of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :type: str
@@ -91,7 +91,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def id(self):
         """
         Gets the id of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Id of the prompt resource that this notification is for.
 
         :return: The id of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :rtype: str
@@ -102,7 +102,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def id(self, id):
         """
         Sets the id of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Id of the prompt resource that this notification is for.
 
         :param id: The id of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :type: str
@@ -114,7 +114,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def language(self):
         """
         Gets the language of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Language resource that this notification is for.
 
         :return: The language of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :rtype: str
@@ -125,7 +125,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def language(self, language):
         """
         Sets the language of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Language resource that this notification is for.
 
         :param language: The language of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :type: str
@@ -137,7 +137,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def media_uri(self):
         """
         Gets the media_uri of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Uri to the file for this system prompt resource.
 
         :return: The media_uri of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :rtype: str
@@ -148,7 +148,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def media_uri(self, media_uri):
         """
         Sets the media_uri of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Uri to the file for this system prompt resource.
 
         :param media_uri: The media_uri of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :type: str
@@ -160,7 +160,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def upload_status(self):
         """
         Gets the upload_status of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Current upload status of the prompt resource (created, uploaded, transcoded, transcodeFailed).
 
         :return: The upload_status of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :rtype: str
@@ -171,7 +171,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def upload_status(self, upload_status):
         """
         Sets the upload_status of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Current upload status of the prompt resource (created, uploaded, transcoded, transcodeFailed).
 
         :param upload_status: The upload_status of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :type: str
@@ -183,7 +183,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def duration_seconds(self):
         """
         Gets the duration_seconds of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Duration (in seconds) for the transcoded audio file.
 
         :return: The duration_seconds of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :rtype: float
@@ -194,7 +194,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
     def duration_seconds(self, duration_seconds):
         """
         Sets the duration_seconds of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
-
+        Duration (in seconds) for the transcoded audio file.
 
         :param duration_seconds: The duration_seconds of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
         :type: float

@@ -65,7 +65,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def queue(self):
         """
         Gets the queue of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The queue of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :rtype: ConversationSocialExpressionEventTopicUriReference
@@ -76,7 +76,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def queue(self, queue):
         """
         Sets the queue of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param queue: The queue of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :type: ConversationSocialExpressionEventTopicUriReference
@@ -88,7 +88,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def language(self):
         """
         Gets the language of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The language of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :rtype: ConversationSocialExpressionEventTopicUriReference
@@ -99,7 +99,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def language(self, language):
         """
         Sets the language of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param language: The language of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :type: ConversationSocialExpressionEventTopicUriReference
@@ -111,7 +111,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def priority(self):
         """
         Gets the priority of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :return: The priority of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :rtype: int
@@ -122,7 +122,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def priority(self, priority):
         """
         Sets the priority of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :param priority: The priority of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :type: int
@@ -134,7 +134,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def skills(self):
         """
         Gets the skills of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :return: The skills of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :rtype: list[ConversationSocialExpressionEventTopicUriReference]
@@ -145,7 +145,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def skills(self, skills):
         """
         Sets the skills of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :param skills: The skills of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :type: list[ConversationSocialExpressionEventTopicUriReference]
@@ -157,7 +157,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def scored_agents(self):
         """
         Gets the scored_agents of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :return: The scored_agents of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :rtype: list[ConversationSocialExpressionEventTopicScoredAgent]
@@ -168,7 +168,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
     def scored_agents(self, scored_agents):
         """
         Sets the scored_agents of this ConversationSocialExpressionEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :param scored_agents: The scored_agents of this ConversationSocialExpressionEventTopicConversationRoutingData.
         :type: list[ConversationSocialExpressionEventTopicScoredAgent]

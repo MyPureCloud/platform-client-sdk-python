@@ -9,8 +9,7 @@ title: OutboundMessagingMessagingCampaignConfigChangeContactSort
 |------------ | ------------- | ------------- | -------------|
 | **field_name** | **str** |  | [optional] |
 | **direction** | **str** |  | [optional] |
-| **numeric** | **bool** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **numeric** | **bool** | Whether that column contains numeric data | [optional] |
 {: class="table table-striped"}
 
 

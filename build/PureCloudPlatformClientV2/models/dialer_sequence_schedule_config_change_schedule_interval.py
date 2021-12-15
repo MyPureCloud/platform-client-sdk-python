@@ -41,25 +41,22 @@ class DialerSequenceScheduleConfigChangeScheduleInterval(object):
         """
         self.swagger_types = {
             'start': 'str',
-            'end': 'str',
-            'additional_properties': 'object'
+            'end': 'str'
         }
 
         self.attribute_map = {
             'start': 'start',
-            'end': 'end',
-            'additional_properties': 'additionalProperties'
+            'end': 'end'
         }
 
         self._start = None
         self._end = None
-        self._additional_properties = None
 
     @property
     def start(self):
         """
         Gets the start of this DialerSequenceScheduleConfigChangeScheduleInterval.
-
+        scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The start of this DialerSequenceScheduleConfigChangeScheduleInterval.
         :rtype: str
@@ -70,7 +67,7 @@ class DialerSequenceScheduleConfigChangeScheduleInterval(object):
     def start(self, start):
         """
         Sets the start of this DialerSequenceScheduleConfigChangeScheduleInterval.
-
+        scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param start: The start of this DialerSequenceScheduleConfigChangeScheduleInterval.
         :type: str
@@ -82,7 +79,7 @@ class DialerSequenceScheduleConfigChangeScheduleInterval(object):
     def end(self):
         """
         Gets the end of this DialerSequenceScheduleConfigChangeScheduleInterval.
-
+        scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The end of this DialerSequenceScheduleConfigChangeScheduleInterval.
         :rtype: str
@@ -93,36 +90,13 @@ class DialerSequenceScheduleConfigChangeScheduleInterval(object):
     def end(self, end):
         """
         Sets the end of this DialerSequenceScheduleConfigChangeScheduleInterval.
-
+        scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param end: The end of this DialerSequenceScheduleConfigChangeScheduleInterval.
         :type: str
         """
         
         self._end = end
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerSequenceScheduleConfigChangeScheduleInterval.
-
-
-        :return: The additional_properties of this DialerSequenceScheduleConfigChangeScheduleInterval.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerSequenceScheduleConfigChangeScheduleInterval.
-
-
-        :param additional_properties: The additional_properties of this DialerSequenceScheduleConfigChangeScheduleInterval.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

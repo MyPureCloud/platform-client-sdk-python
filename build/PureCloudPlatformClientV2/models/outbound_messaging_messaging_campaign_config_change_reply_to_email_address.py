@@ -56,7 +56,7 @@ class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress(object):
     def domain(self):
         """
         Gets the domain of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
-
+        A UriReference for a resource
 
         :return: The domain of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
         :rtype: OutboundMessagingMessagingCampaignConfigChangeUriReference
@@ -67,7 +67,7 @@ class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress(object):
     def domain(self, domain):
         """
         Sets the domain of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
-
+        A UriReference for a resource
 
         :param domain: The domain of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
@@ -79,7 +79,7 @@ class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress(object):
     def route(self):
         """
         Gets the route of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
-
+        A UriReference for a resource
 
         :return: The route of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
         :rtype: OutboundMessagingMessagingCampaignConfigChangeUriReference
@@ -90,7 +90,7 @@ class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress(object):
     def route(self, route):
         """
         Sets the route of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
-
+        A UriReference for a resource
 
         :param route: The route of this OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference

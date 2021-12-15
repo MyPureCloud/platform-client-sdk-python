@@ -45,8 +45,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
             'operator': 'str',
             'value': 'str',
             'range': 'DialerContactlistfilterConfigChangeRange',
-            'inverted': 'bool',
-            'additional_properties': 'object'
+            'inverted': 'bool'
         }
 
         self.attribute_map = {
@@ -55,8 +54,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
             'operator': 'operator',
             'value': 'value',
             'range': 'range',
-            'inverted': 'inverted',
-            'additional_properties': 'additionalProperties'
+            'inverted': 'inverted'
         }
 
         self._column = None
@@ -65,13 +63,12 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
         self._value = None
         self._range = None
         self._inverted = None
-        self._additional_properties = None
 
     @property
     def column(self):
         """
         Gets the column of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        The contact list column
 
         :return: The column of this DialerContactlistfilterConfigChangeFilterPredicate.
         :rtype: str
@@ -82,7 +79,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
     def column(self, column):
         """
         Sets the column of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        The contact list column
 
         :param column: The column of this DialerContactlistfilterConfigChangeFilterPredicate.
         :type: str
@@ -94,7 +91,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
     def column_type(self):
         """
         Gets the column_type of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        Whether a contact column is numeric or alphabetic
 
         :return: The column_type of this DialerContactlistfilterConfigChangeFilterPredicate.
         :rtype: str
@@ -105,12 +102,12 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
     def column_type(self, column_type):
         """
         Sets the column_type of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        Whether a contact column is numeric or alphabetic
 
         :param column_type: The column_type of this DialerContactlistfilterConfigChangeFilterPredicate.
         :type: str
         """
-        allowed_values = ["NUMERIC", "ALPHABETIC"]
+        allowed_values = ["numeric", "alphabetic"]
         if column_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for column_type -> " + column_type)
             self._column_type = "outdated_sdk_version"
@@ -121,7 +118,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
     def operator(self):
         """
         Gets the operator of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        The comparison operator
 
         :return: The operator of this DialerContactlistfilterConfigChangeFilterPredicate.
         :rtype: str
@@ -132,7 +129,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
     def operator(self, operator):
         """
         Sets the operator of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        The comparison operator
 
         :param operator: The operator of this DialerContactlistfilterConfigChangeFilterPredicate.
         :type: str
@@ -148,7 +145,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
     def value(self):
         """
         Gets the value of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        The value the predicate applies to
 
         :return: The value of this DialerContactlistfilterConfigChangeFilterPredicate.
         :rtype: str
@@ -159,7 +156,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
     def value(self, value):
         """
         Sets the value of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        The value the predicate applies to
 
         :param value: The value of this DialerContactlistfilterConfigChangeFilterPredicate.
         :type: str
@@ -194,7 +191,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
     def inverted(self):
         """
         Gets the inverted of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        Whether or not to invert to result of evaluating the predicate
 
         :return: The inverted of this DialerContactlistfilterConfigChangeFilterPredicate.
         :rtype: bool
@@ -205,36 +202,13 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
     def inverted(self, inverted):
         """
         Sets the inverted of this DialerContactlistfilterConfigChangeFilterPredicate.
-
+        Whether or not to invert to result of evaluating the predicate
 
         :param inverted: The inverted of this DialerContactlistfilterConfigChangeFilterPredicate.
         :type: bool
         """
         
         self._inverted = inverted
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerContactlistfilterConfigChangeFilterPredicate.
-
-
-        :return: The additional_properties of this DialerContactlistfilterConfigChangeFilterPredicate.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerContactlistfilterConfigChangeFilterPredicate.
-
-
-        :param additional_properties: The additional_properties of this DialerContactlistfilterConfigChangeFilterPredicate.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

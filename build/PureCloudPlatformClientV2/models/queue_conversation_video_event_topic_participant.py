@@ -75,8 +75,7 @@ class QueueConversationVideoEventTopicParticipant(object):
             'messages': 'list[QueueConversationVideoEventTopicMessage]',
             'screenshares': 'list[QueueConversationVideoEventTopicScreenshare]',
             'social_expressions': 'list[QueueConversationVideoEventTopicSocialExpression]',
-            'videos': 'list[QueueConversationVideoEventTopicVideo]',
-            'additional_properties': 'object'
+            'videos': 'list[QueueConversationVideoEventTopicVideo]'
         }
 
         self.attribute_map = {
@@ -115,8 +114,7 @@ class QueueConversationVideoEventTopicParticipant(object):
             'messages': 'messages',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
-            'videos': 'videos',
-            'additional_properties': 'additionalProperties'
+            'videos': 'videos'
         }
 
         self._id = None
@@ -155,13 +153,12 @@ class QueueConversationVideoEventTopicParticipant(object):
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
-        self._additional_properties = None
 
     @property
     def id(self):
         """
         Gets the id of this QueueConversationVideoEventTopicParticipant.
-
+        A globally unique identifier for this conversation.
 
         :return: The id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -172,7 +169,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationVideoEventTopicParticipant.
-
+        A globally unique identifier for this conversation.
 
         :param id: The id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -184,7 +181,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def connected_time(self):
         """
         Gets the connected_time of this QueueConversationVideoEventTopicParticipant.
-
+        The timestamp when this participant was connected to the conversation in the provider clock.
 
         :return: The connected_time of this QueueConversationVideoEventTopicParticipant.
         :rtype: datetime
@@ -195,7 +192,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this QueueConversationVideoEventTopicParticipant.
-
+        The timestamp when this participant was connected to the conversation in the provider clock.
 
         :param connected_time: The connected_time of this QueueConversationVideoEventTopicParticipant.
         :type: datetime
@@ -207,7 +204,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def end_time(self):
         """
         Gets the end_time of this QueueConversationVideoEventTopicParticipant.
-
+        The timestamp when this participant disconnected from the conversation in the provider clock.
 
         :return: The end_time of this QueueConversationVideoEventTopicParticipant.
         :rtype: datetime
@@ -218,7 +215,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this QueueConversationVideoEventTopicParticipant.
-
+        The timestamp when this participant disconnected from the conversation in the provider clock.
 
         :param end_time: The end_time of this QueueConversationVideoEventTopicParticipant.
         :type: datetime
@@ -230,7 +227,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def user_id(self):
         """
         Gets the user_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant represents a user, then this will be the globally unique identifier for the user.
 
         :return: The user_id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -241,7 +238,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def user_id(self, user_id):
         """
         Sets the user_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant represents a user, then this will be the globally unique identifier for the user.
 
         :param user_id: The user_id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -253,7 +250,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def external_contact_id(self):
         """
         Gets the external_contact_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
 
         :return: The external_contact_id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -264,7 +261,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def external_contact_id(self, external_contact_id):
         """
         Sets the external_contact_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
 
         :param external_contact_id: The external_contact_id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -276,7 +273,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def external_organization_id(self):
         """
         Gets the external_organization_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant represents an external org, then this will be the globally unique identifier for the external org.
 
         :return: The external_organization_id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -287,7 +284,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def external_organization_id(self, external_organization_id):
         """
         Sets the external_organization_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant represents an external org, then this will be the globally unique identifier for the external org.
 
         :param external_organization_id: The external_organization_id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -299,7 +296,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def name(self):
         """
         Gets the name of this QueueConversationVideoEventTopicParticipant.
-
+        A human readable name identifying the participant.
 
         :return: The name of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -310,7 +307,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def name(self, name):
         """
         Sets the name of this QueueConversationVideoEventTopicParticipant.
-
+        A human readable name identifying the participant.
 
         :param name: The name of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -322,7 +319,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def queue_id(self):
         """
         Gets the queue_id of this QueueConversationVideoEventTopicParticipant.
-
+        If present, the queue id that the communication channel came in on.
 
         :return: The queue_id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -333,7 +330,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def queue_id(self, queue_id):
         """
         Sets the queue_id of this QueueConversationVideoEventTopicParticipant.
-
+        If present, the queue id that the communication channel came in on.
 
         :param queue_id: The queue_id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -345,7 +342,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def group_id(self):
         """
         Gets the group_id of this QueueConversationVideoEventTopicParticipant.
-
+        If present, the group id that the participant represents.
 
         :return: The group_id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -356,7 +353,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def group_id(self, group_id):
         """
         Sets the group_id of this QueueConversationVideoEventTopicParticipant.
-
+        If present, the group id that the participant represents.
 
         :param group_id: The group_id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -368,7 +365,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def team_id(self):
         """
         Gets the team_id of this QueueConversationVideoEventTopicParticipant.
-
+        The team id that this participant is a member of when added to the conversation.
 
         :return: The team_id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -379,7 +376,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def team_id(self, team_id):
         """
         Sets the team_id of this QueueConversationVideoEventTopicParticipant.
-
+        The team id that this participant is a member of when added to the conversation.
 
         :param team_id: The team_id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -391,7 +388,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def purpose(self):
         """
         Gets the purpose of this QueueConversationVideoEventTopicParticipant.
-
+        A well known string that specifies the purpose or type of this participant.
 
         :return: The purpose of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -402,7 +399,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def purpose(self, purpose):
         """
         Sets the purpose of this QueueConversationVideoEventTopicParticipant.
-
+        A well known string that specifies the purpose or type of this participant.
 
         :param purpose: The purpose of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -414,7 +411,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def consult_participant_id(self):
         """
         Gets the consult_participant_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.
 
         :return: The consult_participant_id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -425,7 +422,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def consult_participant_id(self, consult_participant_id):
         """
         Sets the consult_participant_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.
 
         :param consult_participant_id: The consult_participant_id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -437,7 +434,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def address(self):
         """
         Gets the address of this QueueConversationVideoEventTopicParticipant.
-
+        The address for the this participant. For a phone call this will be the ANI.
 
         :return: The address of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -448,7 +445,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def address(self, address):
         """
         Sets the address of this QueueConversationVideoEventTopicParticipant.
-
+        The address for the this participant. For a phone call this will be the ANI.
 
         :param address: The address of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -460,7 +457,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def wrapup_required(self):
         """
         Gets the wrapup_required of this QueueConversationVideoEventTopicParticipant.
-
+        True iff this participant is required to enter wrapup for this conversation.
 
         :return: The wrapup_required of this QueueConversationVideoEventTopicParticipant.
         :rtype: bool
@@ -471,7 +468,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def wrapup_required(self, wrapup_required):
         """
         Sets the wrapup_required of this QueueConversationVideoEventTopicParticipant.
-
+        True iff this participant is required to enter wrapup for this conversation.
 
         :param wrapup_required: The wrapup_required of this QueueConversationVideoEventTopicParticipant.
         :type: bool
@@ -483,7 +480,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def wrapup_expected(self):
         """
         Gets the wrapup_expected of this QueueConversationVideoEventTopicParticipant.
-
+        True when a participant is expected to enter a wrapup code once the call connects.
 
         :return: The wrapup_expected of this QueueConversationVideoEventTopicParticipant.
         :rtype: bool
@@ -494,7 +491,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def wrapup_expected(self, wrapup_expected):
         """
         Sets the wrapup_expected of this QueueConversationVideoEventTopicParticipant.
-
+        True when a participant is expected to enter a wrapup code once the call connects.
 
         :param wrapup_expected: The wrapup_expected of this QueueConversationVideoEventTopicParticipant.
         :type: bool
@@ -506,7 +503,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def wrapup_prompt(self):
         """
         Gets the wrapup_prompt of this QueueConversationVideoEventTopicParticipant.
-
+        This field controls how the UI prompts the agent for a wrapup.
 
         :return: The wrapup_prompt of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -517,7 +514,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def wrapup_prompt(self, wrapup_prompt):
         """
         Sets the wrapup_prompt of this QueueConversationVideoEventTopicParticipant.
-
+        This field controls how the UI prompts the agent for a wrapup.
 
         :param wrapup_prompt: The wrapup_prompt of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -529,7 +526,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def wrapup_timeout_ms(self):
         """
         Gets the wrapup_timeout_ms of this QueueConversationVideoEventTopicParticipant.
-
+        Specifies how long a timed ACW session will last.
 
         :return: The wrapup_timeout_ms of this QueueConversationVideoEventTopicParticipant.
         :rtype: int
@@ -540,7 +537,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def wrapup_timeout_ms(self, wrapup_timeout_ms):
         """
         Sets the wrapup_timeout_ms of this QueueConversationVideoEventTopicParticipant.
-
+        Specifies how long a timed ACW session will last.
 
         :param wrapup_timeout_ms: The wrapup_timeout_ms of this QueueConversationVideoEventTopicParticipant.
         :type: int
@@ -575,7 +572,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def start_acw_time(self):
         """
         Gets the start_acw_time of this QueueConversationVideoEventTopicParticipant.
-
+        The timestamp when this participant started after-call work.
 
         :return: The start_acw_time of this QueueConversationVideoEventTopicParticipant.
         :rtype: datetime
@@ -586,7 +583,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def start_acw_time(self, start_acw_time):
         """
         Sets the start_acw_time of this QueueConversationVideoEventTopicParticipant.
-
+        The timestamp when this participant started after-call work.
 
         :param start_acw_time: The start_acw_time of this QueueConversationVideoEventTopicParticipant.
         :type: datetime
@@ -598,7 +595,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def end_acw_time(self):
         """
         Gets the end_acw_time of this QueueConversationVideoEventTopicParticipant.
-
+        The timestamp when this participant ended after-call work.
 
         :return: The end_acw_time of this QueueConversationVideoEventTopicParticipant.
         :rtype: datetime
@@ -609,7 +606,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def end_acw_time(self, end_acw_time):
         """
         Sets the end_acw_time of this QueueConversationVideoEventTopicParticipant.
-
+        The timestamp when this participant ended after-call work.
 
         :param end_acw_time: The end_acw_time of this QueueConversationVideoEventTopicParticipant.
         :type: datetime
@@ -644,7 +641,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def alerting_timeout_ms(self):
         """
         Gets the alerting_timeout_ms of this QueueConversationVideoEventTopicParticipant.
-
+        Specifies how long the agent has to answer an interaction before being marked as not responding.
 
         :return: The alerting_timeout_ms of this QueueConversationVideoEventTopicParticipant.
         :rtype: int
@@ -655,7 +652,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def alerting_timeout_ms(self, alerting_timeout_ms):
         """
         Sets the alerting_timeout_ms of this QueueConversationVideoEventTopicParticipant.
-
+        Specifies how long the agent has to answer an interaction before being marked as not responding.
 
         :param alerting_timeout_ms: The alerting_timeout_ms of this QueueConversationVideoEventTopicParticipant.
         :type: int
@@ -667,7 +664,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def monitored_participant_id(self):
         """
         Gets the monitored_participant_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant is a monitor, then this will be the id of the participant that is being monitored.
 
         :return: The monitored_participant_id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -678,7 +675,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def monitored_participant_id(self, monitored_participant_id):
         """
         Sets the monitored_participant_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant is a monitor, then this will be the id of the participant that is being monitored.
 
         :param monitored_participant_id: The monitored_participant_id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -690,7 +687,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def coached_participant_id(self):
         """
         Gets the coached_participant_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant is a coach, then this will be the id of the participant that is being coached.
 
         :return: The coached_participant_id of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -701,7 +698,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def coached_participant_id(self, coached_participant_id):
         """
         Sets the coached_participant_id of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant is a coach, then this will be the id of the participant that is being coached.
 
         :param coached_participant_id: The coached_participant_id of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -713,7 +710,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def screen_recording_state(self):
         """
         Gets the screen_recording_state of this QueueConversationVideoEventTopicParticipant.
-
+        The current screen recording state for this participant.
 
         :return: The screen_recording_state of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -724,12 +721,12 @@ class QueueConversationVideoEventTopicParticipant(object):
     def screen_recording_state(self, screen_recording_state):
         """
         Sets the screen_recording_state of this QueueConversationVideoEventTopicParticipant.
-
+        The current screen recording state for this participant.
 
         :param screen_recording_state: The screen_recording_state of this QueueConversationVideoEventTopicParticipant.
         :type: str
         """
-        allowed_values = ["REQUESTED", "ACTIVE", "PAUSED", "STOPPED", "ERROR", "TIMEOUT"]
+        allowed_values = ["requested", "active", "paused", "stopped", "error", "timeout"]
         if screen_recording_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for screen_recording_state -> " + screen_recording_state)
             self._screen_recording_state = "outdated_sdk_version"
@@ -740,7 +737,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def flagged_reason(self):
         """
         Gets the flagged_reason of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant has flagged the conversation, the reason code given.
 
         :return: The flagged_reason of this QueueConversationVideoEventTopicParticipant.
         :rtype: str
@@ -751,7 +748,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def flagged_reason(self, flagged_reason):
         """
         Sets the flagged_reason of this QueueConversationVideoEventTopicParticipant.
-
+        If this participant has flagged the conversation, the reason code given.
 
         :param flagged_reason: The flagged_reason of this QueueConversationVideoEventTopicParticipant.
         :type: str
@@ -763,7 +760,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def attributes(self):
         """
         Gets the attributes of this QueueConversationVideoEventTopicParticipant.
-
+        Additional participant attributes
 
         :return: The attributes of this QueueConversationVideoEventTopicParticipant.
         :rtype: dict(str, str)
@@ -774,7 +771,7 @@ class QueueConversationVideoEventTopicParticipant(object):
     def attributes(self, attributes):
         """
         Sets the attributes of this QueueConversationVideoEventTopicParticipant.
-
+        Additional participant attributes
 
         :param attributes: The attributes of this QueueConversationVideoEventTopicParticipant.
         :type: dict(str, str)
@@ -988,29 +985,6 @@ class QueueConversationVideoEventTopicParticipant(object):
         """
         
         self._videos = videos
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationVideoEventTopicParticipant.
-
-
-        :return: The additional_properties of this QueueConversationVideoEventTopicParticipant.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationVideoEventTopicParticipant.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationVideoEventTopicParticipant.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

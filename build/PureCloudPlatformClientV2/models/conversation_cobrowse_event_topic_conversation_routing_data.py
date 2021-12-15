@@ -65,7 +65,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def queue(self):
         """
         Gets the queue of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The queue of this ConversationCobrowseEventTopicConversationRoutingData.
         :rtype: ConversationCobrowseEventTopicUriReference
@@ -76,7 +76,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def queue(self, queue):
         """
         Sets the queue of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param queue: The queue of this ConversationCobrowseEventTopicConversationRoutingData.
         :type: ConversationCobrowseEventTopicUriReference
@@ -88,7 +88,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def language(self):
         """
         Gets the language of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The language of this ConversationCobrowseEventTopicConversationRoutingData.
         :rtype: ConversationCobrowseEventTopicUriReference
@@ -99,7 +99,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def language(self, language):
         """
         Sets the language of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param language: The language of this ConversationCobrowseEventTopicConversationRoutingData.
         :type: ConversationCobrowseEventTopicUriReference
@@ -111,7 +111,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def priority(self):
         """
         Gets the priority of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :return: The priority of this ConversationCobrowseEventTopicConversationRoutingData.
         :rtype: int
@@ -122,7 +122,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def priority(self, priority):
         """
         Sets the priority of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :param priority: The priority of this ConversationCobrowseEventTopicConversationRoutingData.
         :type: int
@@ -134,7 +134,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def skills(self):
         """
         Gets the skills of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :return: The skills of this ConversationCobrowseEventTopicConversationRoutingData.
         :rtype: list[ConversationCobrowseEventTopicUriReference]
@@ -145,7 +145,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def skills(self, skills):
         """
         Sets the skills of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :param skills: The skills of this ConversationCobrowseEventTopicConversationRoutingData.
         :type: list[ConversationCobrowseEventTopicUriReference]
@@ -157,7 +157,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def scored_agents(self):
         """
         Gets the scored_agents of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :return: The scored_agents of this ConversationCobrowseEventTopicConversationRoutingData.
         :rtype: list[ConversationCobrowseEventTopicScoredAgent]
@@ -168,7 +168,7 @@ class ConversationCobrowseEventTopicConversationRoutingData(object):
     def scored_agents(self, scored_agents):
         """
         Sets the scored_agents of this ConversationCobrowseEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :param scored_agents: The scored_agents of this ConversationCobrowseEventTopicConversationRoutingData.
         :type: list[ConversationCobrowseEventTopicScoredAgent]

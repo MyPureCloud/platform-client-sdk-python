@@ -108,7 +108,7 @@ class BotAggregateQueryPredicate(object):
         :param dimension: The dimension of this BotAggregateQueryPredicate.
         :type: str
         """
-        allowed_values = ["botFinalIntent", "botId", "botIntent", "botProduct", "botProvider", "botRecognitionFailureReason", "botResult", "botSessionId", "botSlot", "botVersion", "conversationId", "externalContactId", "lastActionId", "lastInputActionId", "mediaType", "messageType"]
+        allowed_values = ["botFinalIntent", "botId", "botIntent", "botProduct", "botProvider", "botRecognitionFailureReason", "botResult", "botSessionId", "botSlot", "botVersion", "conversationId", "externalContactId", "knowledgeBaseId", "lastActionId", "lastInputActionId", "mediaType", "messageType", "selfServed"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

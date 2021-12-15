@@ -65,7 +65,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def url(self):
         """
         Gets the url of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The location of the media, useful for retrieving it
 
         :return: The url of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :rtype: str
@@ -76,7 +76,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def url(self, url):
         """
         Sets the url of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The location of the media, useful for retrieving it
 
         :param url: The url of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :type: str
@@ -88,7 +88,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def media_type(self):
         """
         Gets the media_type of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The optional internet media type of the the media object.  If null then the media type should be dictated by the url
 
         :return: The media_type of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :rtype: str
@@ -99,7 +99,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def media_type(self, media_type):
         """
         Sets the media_type of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The optional internet media type of the the media object.  If null then the media type should be dictated by the url
 
         :param media_type: The media_type of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :type: str
@@ -111,7 +111,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def content_length_bytes(self):
         """
         Gets the content_length_bytes of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The optional content length of the the media object, in bytes.
 
         :return: The content_length_bytes of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :rtype: int
@@ -122,7 +122,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def content_length_bytes(self, content_length_bytes):
         """
         Sets the content_length_bytes of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The optional content length of the the media object, in bytes.
 
         :param content_length_bytes: The content_length_bytes of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :type: int
@@ -134,7 +134,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def name(self):
         """
         Gets the name of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The optional name of the the media object.
 
         :return: The name of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :rtype: str
@@ -145,7 +145,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def name(self, name):
         """
         Sets the name of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The optional name of the the media object.
 
         :param name: The name of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :type: str
@@ -157,7 +157,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def id(self):
         """
         Gets the id of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The optional id of the the media object.
 
         :return: The id of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :rtype: str
@@ -168,7 +168,7 @@ class QueueConversationSocialExpressionEventTopicMessageMedia(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationSocialExpressionEventTopicMessageMedia.
-
+        The optional id of the the media object.
 
         :param id: The id of this QueueConversationSocialExpressionEventTopicMessageMedia.
         :type: str

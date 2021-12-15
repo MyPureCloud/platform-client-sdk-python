@@ -40,6 +40,7 @@ class DialerRulesetConfigChangeCondition(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'data_action': 'DialerRulesetConfigChangeUriReference',
             'type': 'str',
             'inverted': 'bool',
             'attribute_name': 'str',
@@ -54,12 +55,11 @@ class DialerRulesetConfigChangeCondition(object):
             'call_analysis_result_field': 'str',
             'agent_wrapup_field': 'str',
             'contact_column_to_data_action_field_mappings': 'list[DialerRulesetConfigChangeContactColumnToDataActionFieldMapping]',
-            'predicates': 'list[DialerRulesetConfigChangeDataActionConditionPredicate]',
-            'data_action': 'DialerRulesetConfigChangeUriReference',
-            'additional_properties': 'object'
+            'predicates': 'list[DialerRulesetConfigChangeDataActionConditionPredicate]'
         }
 
         self.attribute_map = {
+            'data_action': 'dataAction',
             'type': 'type',
             'inverted': 'inverted',
             'attribute_name': 'attributeName',
@@ -74,11 +74,10 @@ class DialerRulesetConfigChangeCondition(object):
             'call_analysis_result_field': 'callAnalysisResultField',
             'agent_wrapup_field': 'agentWrapupField',
             'contact_column_to_data_action_field_mappings': 'contactColumnToDataActionFieldMappings',
-            'predicates': 'predicates',
-            'data_action': 'dataAction',
-            'additional_properties': 'additionalProperties'
+            'predicates': 'predicates'
         }
 
+        self._data_action = None
         self._type = None
         self._inverted = None
         self._attribute_name = None
@@ -94,14 +93,35 @@ class DialerRulesetConfigChangeCondition(object):
         self._agent_wrapup_field = None
         self._contact_column_to_data_action_field_mappings = None
         self._predicates = None
-        self._data_action = None
-        self._additional_properties = None
+
+    @property
+    def data_action(self):
+        """
+        Gets the data_action of this DialerRulesetConfigChangeCondition.
+        A UriReference for a resource
+
+        :return: The data_action of this DialerRulesetConfigChangeCondition.
+        :rtype: DialerRulesetConfigChangeUriReference
+        """
+        return self._data_action
+
+    @data_action.setter
+    def data_action(self, data_action):
+        """
+        Sets the data_action of this DialerRulesetConfigChangeCondition.
+        A UriReference for a resource
+
+        :param data_action: The data_action of this DialerRulesetConfigChangeCondition.
+        :type: DialerRulesetConfigChangeUriReference
+        """
+        
+        self._data_action = data_action
 
     @property
     def type(self):
         """
         Gets the type of this DialerRulesetConfigChangeCondition.
-
+        The type of the condition
 
         :return: The type of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -112,7 +132,7 @@ class DialerRulesetConfigChangeCondition(object):
     def type(self, type):
         """
         Sets the type of this DialerRulesetConfigChangeCondition.
-
+        The type of the condition
 
         :param type: The type of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -124,7 +144,7 @@ class DialerRulesetConfigChangeCondition(object):
     def inverted(self):
         """
         Gets the inverted of this DialerRulesetConfigChangeCondition.
-
+        Indicates whether to evaluate for the opposite of the stated condition; default is false
 
         :return: The inverted of this DialerRulesetConfigChangeCondition.
         :rtype: bool
@@ -135,7 +155,7 @@ class DialerRulesetConfigChangeCondition(object):
     def inverted(self, inverted):
         """
         Sets the inverted of this DialerRulesetConfigChangeCondition.
-
+        Indicates whether to evaluate for the opposite of the stated condition; default is false
 
         :param inverted: The inverted of this DialerRulesetConfigChangeCondition.
         :type: bool
@@ -147,7 +167,7 @@ class DialerRulesetConfigChangeCondition(object):
     def attribute_name(self):
         """
         Gets the attribute_name of this DialerRulesetConfigChangeCondition.
-
+        An attribute name associated with the condition (applies only to certain rule conditions)
 
         :return: The attribute_name of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -158,7 +178,7 @@ class DialerRulesetConfigChangeCondition(object):
     def attribute_name(self, attribute_name):
         """
         Sets the attribute_name of this DialerRulesetConfigChangeCondition.
-
+        An attribute name associated with the condition (applies only to certain rule conditions)
 
         :param attribute_name: The attribute_name of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -170,7 +190,7 @@ class DialerRulesetConfigChangeCondition(object):
     def value(self):
         """
         Gets the value of this DialerRulesetConfigChangeCondition.
-
+        A value associated with the condition
 
         :return: The value of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -181,7 +201,7 @@ class DialerRulesetConfigChangeCondition(object):
     def value(self, value):
         """
         Sets the value of this DialerRulesetConfigChangeCondition.
-
+        A value associated with the condition
 
         :param value: The value of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -193,7 +213,7 @@ class DialerRulesetConfigChangeCondition(object):
     def value_type(self):
         """
         Gets the value_type of this DialerRulesetConfigChangeCondition.
-
+        Determines the type of the value associated with the condition
 
         :return: The value_type of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -204,7 +224,7 @@ class DialerRulesetConfigChangeCondition(object):
     def value_type(self, value_type):
         """
         Sets the value_type of this DialerRulesetConfigChangeCondition.
-
+        Determines the type of the value associated with the condition
 
         :param value_type: The value_type of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -220,7 +240,7 @@ class DialerRulesetConfigChangeCondition(object):
     def operator(self):
         """
         Gets the operator of this DialerRulesetConfigChangeCondition.
-
+        An operation type for condition evaluation
 
         :return: The operator of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -231,7 +251,7 @@ class DialerRulesetConfigChangeCondition(object):
     def operator(self, operator):
         """
         Sets the operator of this DialerRulesetConfigChangeCondition.
-
+        An operation type for condition evaluation
 
         :param operator: The operator of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -247,7 +267,7 @@ class DialerRulesetConfigChangeCondition(object):
     def codes(self):
         """
         Gets the codes of this DialerRulesetConfigChangeCondition.
-
+        List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')
 
         :return: The codes of this DialerRulesetConfigChangeCondition.
         :rtype: list[str]
@@ -258,7 +278,7 @@ class DialerRulesetConfigChangeCondition(object):
     def codes(self, codes):
         """
         Sets the codes of this DialerRulesetConfigChangeCondition.
-
+        List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')
 
         :param codes: The codes of this DialerRulesetConfigChangeCondition.
         :type: list[str]
@@ -270,7 +290,7 @@ class DialerRulesetConfigChangeCondition(object):
     def property_type(self):
         """
         Gets the property_type of this DialerRulesetConfigChangeCondition.
-
+        Determines the type of the property associated with the condition
 
         :return: The property_type of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -281,7 +301,7 @@ class DialerRulesetConfigChangeCondition(object):
     def property_type(self, property_type):
         """
         Sets the property_type of this DialerRulesetConfigChangeCondition.
-
+        Determines the type of the property associated with the condition
 
         :param property_type: The property_type of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -297,7 +317,7 @@ class DialerRulesetConfigChangeCondition(object):
     def pcProperty(self):
         """
         Gets the pcProperty of this DialerRulesetConfigChangeCondition.
-
+        A value associated with the property type of this condition
 
         :return: The pcProperty of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -308,7 +328,7 @@ class DialerRulesetConfigChangeCondition(object):
     def pcProperty(self, pcProperty):
         """
         Sets the pcProperty of this DialerRulesetConfigChangeCondition.
-
+        A value associated with the property type of this condition
 
         :param pcProperty: The pcProperty of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -320,7 +340,7 @@ class DialerRulesetConfigChangeCondition(object):
     def data_not_found_resolution(self):
         """
         Gets the data_not_found_resolution of this DialerRulesetConfigChangeCondition.
-
+        The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
 
         :return: The data_not_found_resolution of this DialerRulesetConfigChangeCondition.
         :rtype: bool
@@ -331,7 +351,7 @@ class DialerRulesetConfigChangeCondition(object):
     def data_not_found_resolution(self, data_not_found_resolution):
         """
         Sets the data_not_found_resolution of this DialerRulesetConfigChangeCondition.
-
+        The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
 
         :param data_not_found_resolution: The data_not_found_resolution of this DialerRulesetConfigChangeCondition.
         :type: bool
@@ -343,7 +363,7 @@ class DialerRulesetConfigChangeCondition(object):
     def contact_id_field(self):
         """
         Gets the contact_id_field of this DialerRulesetConfigChangeCondition.
-
+        The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
 
         :return: The contact_id_field of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -354,7 +374,7 @@ class DialerRulesetConfigChangeCondition(object):
     def contact_id_field(self, contact_id_field):
         """
         Sets the contact_id_field of this DialerRulesetConfigChangeCondition.
-
+        The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
 
         :param contact_id_field: The contact_id_field of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -366,7 +386,7 @@ class DialerRulesetConfigChangeCondition(object):
     def call_analysis_result_field(self):
         """
         Gets the call_analysis_result_field of this DialerRulesetConfigChangeCondition.
-
+        The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
 
         :return: The call_analysis_result_field of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -377,7 +397,7 @@ class DialerRulesetConfigChangeCondition(object):
     def call_analysis_result_field(self, call_analysis_result_field):
         """
         Sets the call_analysis_result_field of this DialerRulesetConfigChangeCondition.
-
+        The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
 
         :param call_analysis_result_field: The call_analysis_result_field of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -389,7 +409,7 @@ class DialerRulesetConfigChangeCondition(object):
     def agent_wrapup_field(self):
         """
         Gets the agent_wrapup_field of this DialerRulesetConfigChangeCondition.
-
+        The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
 
         :return: The agent_wrapup_field of this DialerRulesetConfigChangeCondition.
         :rtype: str
@@ -400,7 +420,7 @@ class DialerRulesetConfigChangeCondition(object):
     def agent_wrapup_field(self, agent_wrapup_field):
         """
         Sets the agent_wrapup_field of this DialerRulesetConfigChangeCondition.
-
+        The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
 
         :param agent_wrapup_field: The agent_wrapup_field of this DialerRulesetConfigChangeCondition.
         :type: str
@@ -412,7 +432,7 @@ class DialerRulesetConfigChangeCondition(object):
     def contact_column_to_data_action_field_mappings(self):
         """
         Gets the contact_column_to_data_action_field_mappings of this DialerRulesetConfigChangeCondition.
-
+        A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
 
         :return: The contact_column_to_data_action_field_mappings of this DialerRulesetConfigChangeCondition.
         :rtype: list[DialerRulesetConfigChangeContactColumnToDataActionFieldMapping]
@@ -423,7 +443,7 @@ class DialerRulesetConfigChangeCondition(object):
     def contact_column_to_data_action_field_mappings(self, contact_column_to_data_action_field_mappings):
         """
         Sets the contact_column_to_data_action_field_mappings of this DialerRulesetConfigChangeCondition.
-
+        A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
 
         :param contact_column_to_data_action_field_mappings: The contact_column_to_data_action_field_mappings of this DialerRulesetConfigChangeCondition.
         :type: list[DialerRulesetConfigChangeContactColumnToDataActionFieldMapping]
@@ -435,7 +455,7 @@ class DialerRulesetConfigChangeCondition(object):
     def predicates(self):
         """
         Gets the predicates of this DialerRulesetConfigChangeCondition.
-
+        A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
 
         :return: The predicates of this DialerRulesetConfigChangeCondition.
         :rtype: list[DialerRulesetConfigChangeDataActionConditionPredicate]
@@ -446,59 +466,13 @@ class DialerRulesetConfigChangeCondition(object):
     def predicates(self, predicates):
         """
         Sets the predicates of this DialerRulesetConfigChangeCondition.
-
+        A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
 
         :param predicates: The predicates of this DialerRulesetConfigChangeCondition.
         :type: list[DialerRulesetConfigChangeDataActionConditionPredicate]
         """
         
         self._predicates = predicates
-
-    @property
-    def data_action(self):
-        """
-        Gets the data_action of this DialerRulesetConfigChangeCondition.
-
-
-        :return: The data_action of this DialerRulesetConfigChangeCondition.
-        :rtype: DialerRulesetConfigChangeUriReference
-        """
-        return self._data_action
-
-    @data_action.setter
-    def data_action(self, data_action):
-        """
-        Sets the data_action of this DialerRulesetConfigChangeCondition.
-
-
-        :param data_action: The data_action of this DialerRulesetConfigChangeCondition.
-        :type: DialerRulesetConfigChangeUriReference
-        """
-        
-        self._data_action = data_action
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerRulesetConfigChangeCondition.
-
-
-        :return: The additional_properties of this DialerRulesetConfigChangeCondition.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerRulesetConfigChangeCondition.
-
-
-        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeCondition.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

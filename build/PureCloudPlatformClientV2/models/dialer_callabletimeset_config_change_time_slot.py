@@ -42,27 +42,24 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
         self.swagger_types = {
             'start_time': 'str',
             'stop_time': 'str',
-            'day': 'int',
-            'additional_properties': 'object'
+            'day': 'int'
         }
 
         self.attribute_map = {
             'start_time': 'startTime',
             'stop_time': 'stopTime',
-            'day': 'day',
-            'additional_properties': 'additionalProperties'
+            'day': 'day'
         }
 
         self._start_time = None
         self._stop_time = None
         self._day = None
-        self._additional_properties = None
 
     @property
     def start_time(self):
         """
         Gets the start_time of this DialerCallabletimesetConfigChangeTimeSlot.
-
+        The start time of this time slot
 
         :return: The start_time of this DialerCallabletimesetConfigChangeTimeSlot.
         :rtype: str
@@ -73,7 +70,7 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this DialerCallabletimesetConfigChangeTimeSlot.
-
+        The start time of this time slot
 
         :param start_time: The start_time of this DialerCallabletimesetConfigChangeTimeSlot.
         :type: str
@@ -85,7 +82,7 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
     def stop_time(self):
         """
         Gets the stop_time of this DialerCallabletimesetConfigChangeTimeSlot.
-
+        The stop time of this time slot
 
         :return: The stop_time of this DialerCallabletimesetConfigChangeTimeSlot.
         :rtype: str
@@ -96,7 +93,7 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
     def stop_time(self, stop_time):
         """
         Sets the stop_time of this DialerCallabletimesetConfigChangeTimeSlot.
-
+        The stop time of this time slot
 
         :param stop_time: The stop_time of this DialerCallabletimesetConfigChangeTimeSlot.
         :type: str
@@ -108,7 +105,7 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
     def day(self):
         """
         Gets the day of this DialerCallabletimesetConfigChangeTimeSlot.
-
+        The day this time slot applies
 
         :return: The day of this DialerCallabletimesetConfigChangeTimeSlot.
         :rtype: int
@@ -119,36 +116,13 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
     def day(self, day):
         """
         Sets the day of this DialerCallabletimesetConfigChangeTimeSlot.
-
+        The day this time slot applies
 
         :param day: The day of this DialerCallabletimesetConfigChangeTimeSlot.
         :type: int
         """
         
         self._day = day
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
-
-
-        :return: The additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
-
-
-        :param additional_properties: The additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

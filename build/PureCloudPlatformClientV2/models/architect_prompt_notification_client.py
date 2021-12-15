@@ -56,7 +56,7 @@ class ArchitectPromptNotificationClient(object):
     def id(self):
         """
         Gets the id of this ArchitectPromptNotificationClient.
-
+        The ID of the client.
 
         :return: The id of this ArchitectPromptNotificationClient.
         :rtype: str
@@ -67,7 +67,7 @@ class ArchitectPromptNotificationClient(object):
     def id(self, id):
         """
         Sets the id of this ArchitectPromptNotificationClient.
-
+        The ID of the client.
 
         :param id: The id of this ArchitectPromptNotificationClient.
         :type: str
@@ -79,7 +79,7 @@ class ArchitectPromptNotificationClient(object):
     def name(self):
         """
         Gets the name of this ArchitectPromptNotificationClient.
-
+        The name of the client, if available.
 
         :return: The name of this ArchitectPromptNotificationClient.
         :rtype: str
@@ -90,7 +90,7 @@ class ArchitectPromptNotificationClient(object):
     def name(self, name):
         """
         Sets the name of this ArchitectPromptNotificationClient.
-
+        The name of the client, if available.
 
         :param name: The name of this ArchitectPromptNotificationClient.
         :type: str

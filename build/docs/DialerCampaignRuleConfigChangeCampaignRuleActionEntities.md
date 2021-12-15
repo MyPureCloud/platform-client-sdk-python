@@ -7,10 +7,9 @@ title: DialerCampaignRuleConfigChangeCampaignRuleActionEntities
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **campaigns** | [**list[DialerCampaignRuleConfigChangeUriReference]**](DialerCampaignRuleConfigChangeUriReference.html) |  | [optional] |
-| **sequences** | [**list[DialerCampaignRuleConfigChangeUriReference]**](DialerCampaignRuleConfigChangeUriReference.html) |  | [optional] |
-| **use_triggering_entity** | **bool** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **use_triggering_entity** | **bool** | Whether this action should act on the entity that triggered it | [optional] |
+| **campaigns** | [**list[DialerCampaignRuleConfigChangeUriReference]**](DialerCampaignRuleConfigChangeUriReference.html) | A list of campaignIds to act on | [optional] |
+| **sequences** | [**list[DialerCampaignRuleConfigChangeUriReference]**](DialerCampaignRuleConfigChangeUriReference.html) | A list of sequenceIds to act on | [optional] |
 {: class="table table-striped"}
 
 

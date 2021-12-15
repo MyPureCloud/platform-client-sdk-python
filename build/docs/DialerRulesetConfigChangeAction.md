@@ -7,11 +7,10 @@ title: DialerRulesetConfigChangeAction
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** |  | [optional] |
-| **action_type_name** | **str** |  | [optional] |
-| **update_option** | **str** |  | [optional] |
-| **properties** | **dict(str, str)** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **type** | **str** | Type of the action | [optional] |
+| **action_type_name** | **str** | Identifier of the action | [optional] |
+| **update_option** | **str** | Indicator of the type of update action (applicable only to certain types of actions) | [optional] |
+| **properties** | **dict(str, str)** | Map of key-value pairs pertinent to the action (different actions require different properties) | [optional] |
 {: class="table table-striped"}
 
 

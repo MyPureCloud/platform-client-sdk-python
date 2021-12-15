@@ -42,18 +42,21 @@ class NluInfo(object):
         self.swagger_types = {
             'domain': 'AddressableEntityRef',
             'version': 'NluDomainVersion',
-            'intents': 'list[Intent]'
+            'intents': 'list[Intent]',
+            'engine_version': 'str'
         }
 
         self.attribute_map = {
             'domain': 'domain',
             'version': 'version',
-            'intents': 'intents'
+            'intents': 'intents',
+            'engine_version': 'engineVersion'
         }
 
         self._domain = None
         self._version = None
         self._intents = None
+        self._engine_version = None
 
     @property
     def domain(self):
@@ -123,6 +126,29 @@ class NluInfo(object):
         """
         
         self._intents = intents
+
+    @property
+    def engine_version(self):
+        """
+        Gets the engine_version of this NluInfo.
+
+
+        :return: The engine_version of this NluInfo.
+        :rtype: str
+        """
+        return self._engine_version
+
+    @engine_version.setter
+    def engine_version(self, engine_version):
+        """
+        Sets the engine_version of this NluInfo.
+
+
+        :param engine_version: The engine_version of this NluInfo.
+        :type: str
+        """
+        
+        self._engine_version = engine_version
 
     def to_dict(self):
         """

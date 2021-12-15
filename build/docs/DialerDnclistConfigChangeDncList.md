@@ -7,20 +7,19 @@ title: DialerDnclistConfigChangeDncList
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **date_created** | **datetime** |  | [optional] |
-| **date_modified** | **datetime** |  | [optional] |
-| **version** | **int** |  | [optional] |
 | **import_status** | [**DialerDnclistConfigChangeImportStatus**](DialerDnclistConfigChangeImportStatus.html) |  | [optional] |
-| **size** | **int** |  | [optional] |
-| **dnc_source_type** | **str** |  | [optional] |
-| **login_id** | **str** |  | [optional] |
-| **dnc_codes** | **list[str]** |  | [optional] |
-| **license_id** | **str** |  | [optional] |
+| **size** | **int** | the number of phone numbers in the do not call list | [optional] |
+| **dnc_source_type** | **str** | the type of dnc list being created, rds (csv file), gryphon, or dnc.com | [optional] |
+| **login_id** | **str** | the loginId if the dncSourceType is dnc.com | [optional] |
+| **dnc_codes** | **list[str]** | the list of dnc.com codes to be treated as DNC | [optional] |
+| **license_id** | **str** | the license number if the dncSourceType is gryphon | [optional] |
 | **contact_method** | **str** |  | [optional] |
 | **division** | [**DialerDnclistConfigChangeUriReference**](DialerDnclistConfigChangeUriReference.html) |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **name** | **str** | The UI-visible name of the object | [optional] |
+| **date_created** | **datetime** | Creation time of the entity | [optional] |
+| **date_modified** | **datetime** | Last modified time of the entity | [optional] |
+| **version** | **int** | Required for updates, must match the version number of the most recent update | [optional] |
 {: class="table table-striped"}
 
 

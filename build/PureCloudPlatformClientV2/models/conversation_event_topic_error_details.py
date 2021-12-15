@@ -46,8 +46,7 @@ class ConversationEventTopicErrorDetails(object):
             'message_with_params': 'str',
             'message_params': 'dict(str, str)',
             'context_id': 'str',
-            'uri': 'str',
-            'additional_properties': 'object'
+            'uri': 'str'
         }
 
         self.attribute_map = {
@@ -57,8 +56,7 @@ class ConversationEventTopicErrorDetails(object):
             'message_with_params': 'messageWithParams',
             'message_params': 'messageParams',
             'context_id': 'contextId',
-            'uri': 'uri',
-            'additional_properties': 'additionalProperties'
+            'uri': 'uri'
         }
 
         self._status = None
@@ -68,13 +66,12 @@ class ConversationEventTopicErrorDetails(object):
         self._message_params = None
         self._context_id = None
         self._uri = None
-        self._additional_properties = None
 
     @property
     def status(self):
         """
         Gets the status of this ConversationEventTopicErrorDetails.
-
+        The HTTP status code for this message (400, 401, 403, 404, 500, etc.
 
         :return: The status of this ConversationEventTopicErrorDetails.
         :rtype: int
@@ -85,7 +82,7 @@ class ConversationEventTopicErrorDetails(object):
     def status(self, status):
         """
         Sets the status of this ConversationEventTopicErrorDetails.
-
+        The HTTP status code for this message (400, 401, 403, 404, 500, etc.
 
         :param status: The status of this ConversationEventTopicErrorDetails.
         :type: int
@@ -97,7 +94,7 @@ class ConversationEventTopicErrorDetails(object):
     def code(self):
         """
         Gets the code of this ConversationEventTopicErrorDetails.
-
+        A code unique to this error.
 
         :return: The code of this ConversationEventTopicErrorDetails.
         :rtype: str
@@ -108,7 +105,7 @@ class ConversationEventTopicErrorDetails(object):
     def code(self, code):
         """
         Sets the code of this ConversationEventTopicErrorDetails.
-
+        A code unique to this error.
 
         :param code: The code of this ConversationEventTopicErrorDetails.
         :type: str
@@ -120,7 +117,7 @@ class ConversationEventTopicErrorDetails(object):
     def message(self):
         """
         Gets the message of this ConversationEventTopicErrorDetails.
-
+        Friendly description of this error.
 
         :return: The message of this ConversationEventTopicErrorDetails.
         :rtype: str
@@ -131,7 +128,7 @@ class ConversationEventTopicErrorDetails(object):
     def message(self, message):
         """
         Sets the message of this ConversationEventTopicErrorDetails.
-
+        Friendly description of this error.
 
         :param message: The message of this ConversationEventTopicErrorDetails.
         :type: str
@@ -143,7 +140,7 @@ class ConversationEventTopicErrorDetails(object):
     def message_with_params(self):
         """
         Gets the message_with_params of this ConversationEventTopicErrorDetails.
-
+        This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'
 
         :return: The message_with_params of this ConversationEventTopicErrorDetails.
         :rtype: str
@@ -154,7 +151,7 @@ class ConversationEventTopicErrorDetails(object):
     def message_with_params(self, message_with_params):
         """
         Sets the message_with_params of this ConversationEventTopicErrorDetails.
-
+        This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'
 
         :param message_with_params: The message_with_params of this ConversationEventTopicErrorDetails.
         :type: str
@@ -166,7 +163,7 @@ class ConversationEventTopicErrorDetails(object):
     def message_params(self):
         """
         Gets the message_params of this ConversationEventTopicErrorDetails.
-
+        Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'
 
         :return: The message_params of this ConversationEventTopicErrorDetails.
         :rtype: dict(str, str)
@@ -177,7 +174,7 @@ class ConversationEventTopicErrorDetails(object):
     def message_params(self, message_params):
         """
         Sets the message_params of this ConversationEventTopicErrorDetails.
-
+        Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'
 
         :param message_params: The message_params of this ConversationEventTopicErrorDetails.
         :type: dict(str, str)
@@ -189,7 +186,7 @@ class ConversationEventTopicErrorDetails(object):
     def context_id(self):
         """
         Gets the context_id of this ConversationEventTopicErrorDetails.
-
+        The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.
 
         :return: The context_id of this ConversationEventTopicErrorDetails.
         :rtype: str
@@ -200,7 +197,7 @@ class ConversationEventTopicErrorDetails(object):
     def context_id(self, context_id):
         """
         Sets the context_id of this ConversationEventTopicErrorDetails.
-
+        The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.
 
         :param context_id: The context_id of this ConversationEventTopicErrorDetails.
         :type: str
@@ -230,29 +227,6 @@ class ConversationEventTopicErrorDetails(object):
         """
         
         self._uri = uri
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationEventTopicErrorDetails.
-
-
-        :return: The additional_properties of this ConversationEventTopicErrorDetails.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationEventTopicErrorDetails.
-
-
-        :param additional_properties: The additional_properties of this ConversationEventTopicErrorDetails.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

@@ -56,7 +56,7 @@ class QueueConversationChatEventTopicJourneyCustomerSession(object):
     def id(self):
         """
         Gets the id of this QueueConversationChatEventTopicJourneyCustomerSession.
-
+        An ID of a Customer/User's session within the Journey System at a point-in-time
 
         :return: The id of this QueueConversationChatEventTopicJourneyCustomerSession.
         :rtype: str
@@ -67,7 +67,7 @@ class QueueConversationChatEventTopicJourneyCustomerSession(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationChatEventTopicJourneyCustomerSession.
-
+        An ID of a Customer/User's session within the Journey System at a point-in-time
 
         :param id: The id of this QueueConversationChatEventTopicJourneyCustomerSession.
         :type: str
@@ -79,7 +79,7 @@ class QueueConversationChatEventTopicJourneyCustomerSession(object):
     def type(self):
         """
         Gets the type of this QueueConversationChatEventTopicJourneyCustomerSession.
-
+        The type of the Customer/User's session within the Journey System (e.g. web, app)
 
         :return: The type of this QueueConversationChatEventTopicJourneyCustomerSession.
         :rtype: str
@@ -90,7 +90,7 @@ class QueueConversationChatEventTopicJourneyCustomerSession(object):
     def type(self, type):
         """
         Sets the type of this QueueConversationChatEventTopicJourneyCustomerSession.
-
+        The type of the Customer/User's session within the Journey System (e.g. web, app)
 
         :param type: The type of this QueueConversationChatEventTopicJourneyCustomerSession.
         :type: str

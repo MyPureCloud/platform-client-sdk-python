@@ -60,6 +60,7 @@ class UserQueue(object):
             'email_in_queue_flow': 'DomainEntityRef',
             'message_in_queue_flow': 'DomainEntityRef',
             'whisper_prompt': 'DomainEntityRef',
+            'on_hold_prompt': 'DomainEntityRef',
             'enable_transcription': 'bool',
             'enable_manual_assignment': 'bool',
             'calling_party_name': 'str',
@@ -92,6 +93,7 @@ class UserQueue(object):
             'email_in_queue_flow': 'emailInQueueFlow',
             'message_in_queue_flow': 'messageInQueueFlow',
             'whisper_prompt': 'whisperPrompt',
+            'on_hold_prompt': 'onHoldPrompt',
             'enable_transcription': 'enableTranscription',
             'enable_manual_assignment': 'enableManualAssignment',
             'calling_party_name': 'callingPartyName',
@@ -123,6 +125,7 @@ class UserQueue(object):
         self._email_in_queue_flow = None
         self._message_in_queue_flow = None
         self._whisper_prompt = None
+        self._on_hold_prompt = None
         self._enable_transcription = None
         self._enable_manual_assignment = None
         self._calling_party_name = None
@@ -596,6 +599,29 @@ class UserQueue(object):
         """
         
         self._whisper_prompt = whisper_prompt
+
+    @property
+    def on_hold_prompt(self):
+        """
+        Gets the on_hold_prompt of this UserQueue.
+        The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
+
+        :return: The on_hold_prompt of this UserQueue.
+        :rtype: DomainEntityRef
+        """
+        return self._on_hold_prompt
+
+    @on_hold_prompt.setter
+    def on_hold_prompt(self, on_hold_prompt):
+        """
+        Sets the on_hold_prompt of this UserQueue.
+        The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
+
+        :param on_hold_prompt: The on_hold_prompt of this UserQueue.
+        :type: DomainEntityRef
+        """
+        
+        self._on_hold_prompt = on_hold_prompt
 
     @property
     def enable_transcription(self):

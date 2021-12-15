@@ -56,7 +56,7 @@ class ConversationSocialExpressionEventTopicJourneyActionMap(object):
     def id(self):
         """
         Gets the id of this ConversationSocialExpressionEventTopicJourneyActionMap.
-
+        The ID of the actionMap in the Journey System which triggered this action
 
         :return: The id of this ConversationSocialExpressionEventTopicJourneyActionMap.
         :rtype: str
@@ -67,7 +67,7 @@ class ConversationSocialExpressionEventTopicJourneyActionMap(object):
     def id(self, id):
         """
         Sets the id of this ConversationSocialExpressionEventTopicJourneyActionMap.
-
+        The ID of the actionMap in the Journey System which triggered this action
 
         :param id: The id of this ConversationSocialExpressionEventTopicJourneyActionMap.
         :type: str
@@ -79,7 +79,7 @@ class ConversationSocialExpressionEventTopicJourneyActionMap(object):
     def version(self):
         """
         Gets the version of this ConversationSocialExpressionEventTopicJourneyActionMap.
-
+        The version number of the actionMap in the Journey System at the time this action was triggered
 
         :return: The version of this ConversationSocialExpressionEventTopicJourneyActionMap.
         :rtype: int
@@ -90,7 +90,7 @@ class ConversationSocialExpressionEventTopicJourneyActionMap(object):
     def version(self, version):
         """
         Sets the version of this ConversationSocialExpressionEventTopicJourneyActionMap.
-
+        The version number of the actionMap in the Journey System at the time this action was triggered
 
         :param version: The version of this ConversationSocialExpressionEventTopicJourneyActionMap.
         :type: int

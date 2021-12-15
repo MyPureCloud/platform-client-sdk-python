@@ -59,7 +59,7 @@ class QueueConversationSocialExpressionEventTopicDisconnectReason(object):
     def type(self):
         """
         Gets the type of this QueueConversationSocialExpressionEventTopicDisconnectReason.
-
+        Disconnect reason protocol type.
 
         :return: The type of this QueueConversationSocialExpressionEventTopicDisconnectReason.
         :rtype: str
@@ -70,12 +70,12 @@ class QueueConversationSocialExpressionEventTopicDisconnectReason(object):
     def type(self, type):
         """
         Sets the type of this QueueConversationSocialExpressionEventTopicDisconnectReason.
-
+        Disconnect reason protocol type.
 
         :param type: The type of this QueueConversationSocialExpressionEventTopicDisconnectReason.
         :type: str
         """
-        allowed_values = ["Q_850", "SIP"]
+        allowed_values = ["q850", "sip"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -86,7 +86,7 @@ class QueueConversationSocialExpressionEventTopicDisconnectReason(object):
     def code(self):
         """
         Gets the code of this QueueConversationSocialExpressionEventTopicDisconnectReason.
-
+        Protocol specific reason code. See the Q.850 and SIP specs.
 
         :return: The code of this QueueConversationSocialExpressionEventTopicDisconnectReason.
         :rtype: int
@@ -97,7 +97,7 @@ class QueueConversationSocialExpressionEventTopicDisconnectReason(object):
     def code(self, code):
         """
         Sets the code of this QueueConversationSocialExpressionEventTopicDisconnectReason.
-
+        Protocol specific reason code. See the Q.850 and SIP specs.
 
         :param code: The code of this QueueConversationSocialExpressionEventTopicDisconnectReason.
         :type: int
@@ -109,7 +109,7 @@ class QueueConversationSocialExpressionEventTopicDisconnectReason(object):
     def phrase(self):
         """
         Gets the phrase of this QueueConversationSocialExpressionEventTopicDisconnectReason.
-
+        Human readable English description of the disconnect reason.
 
         :return: The phrase of this QueueConversationSocialExpressionEventTopicDisconnectReason.
         :rtype: str
@@ -120,7 +120,7 @@ class QueueConversationSocialExpressionEventTopicDisconnectReason(object):
     def phrase(self, phrase):
         """
         Sets the phrase of this QueueConversationSocialExpressionEventTopicDisconnectReason.
-
+        Human readable English description of the disconnect reason.
 
         :param phrase: The phrase of this QueueConversationSocialExpressionEventTopicDisconnectReason.
         :type: str

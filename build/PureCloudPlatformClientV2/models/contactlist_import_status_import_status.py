@@ -44,8 +44,7 @@ class ContactlistImportStatusImportStatus(object):
             'total_records': 'int',
             'completed_records': 'int',
             'percentage_complete': 'int',
-            'failure_reason': 'str',
-            'additional_properties': 'object'
+            'failure_reason': 'str'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class ContactlistImportStatusImportStatus(object):
             'total_records': 'totalRecords',
             'completed_records': 'completedRecords',
             'percentage_complete': 'percentageComplete',
-            'failure_reason': 'failureReason',
-            'additional_properties': 'additionalProperties'
+            'failure_reason': 'failureReason'
         }
 
         self._import_state = None
@@ -62,13 +60,12 @@ class ContactlistImportStatusImportStatus(object):
         self._completed_records = None
         self._percentage_complete = None
         self._failure_reason = None
-        self._additional_properties = None
 
     @property
     def import_state(self):
         """
         Gets the import_state of this ContactlistImportStatusImportStatus.
-
+        current status of the import
 
         :return: The import_state of this ContactlistImportStatusImportStatus.
         :rtype: str
@@ -79,7 +76,7 @@ class ContactlistImportStatusImportStatus(object):
     def import_state(self, import_state):
         """
         Sets the import_state of this ContactlistImportStatusImportStatus.
-
+        current status of the import
 
         :param import_state: The import_state of this ContactlistImportStatusImportStatus.
         :type: str
@@ -95,7 +92,7 @@ class ContactlistImportStatusImportStatus(object):
     def total_records(self):
         """
         Gets the total_records of this ContactlistImportStatusImportStatus.
-
+        total number of records to be imported
 
         :return: The total_records of this ContactlistImportStatusImportStatus.
         :rtype: int
@@ -106,7 +103,7 @@ class ContactlistImportStatusImportStatus(object):
     def total_records(self, total_records):
         """
         Sets the total_records of this ContactlistImportStatusImportStatus.
-
+        total number of records to be imported
 
         :param total_records: The total_records of this ContactlistImportStatusImportStatus.
         :type: int
@@ -118,7 +115,7 @@ class ContactlistImportStatusImportStatus(object):
     def completed_records(self):
         """
         Gets the completed_records of this ContactlistImportStatusImportStatus.
-
+        number of records finished importing
 
         :return: The completed_records of this ContactlistImportStatusImportStatus.
         :rtype: int
@@ -129,7 +126,7 @@ class ContactlistImportStatusImportStatus(object):
     def completed_records(self, completed_records):
         """
         Sets the completed_records of this ContactlistImportStatusImportStatus.
-
+        number of records finished importing
 
         :param completed_records: The completed_records of this ContactlistImportStatusImportStatus.
         :type: int
@@ -141,7 +138,7 @@ class ContactlistImportStatusImportStatus(object):
     def percentage_complete(self):
         """
         Gets the percentage_complete of this ContactlistImportStatusImportStatus.
-
+        percentage of records finished importing
 
         :return: The percentage_complete of this ContactlistImportStatusImportStatus.
         :rtype: int
@@ -152,7 +149,7 @@ class ContactlistImportStatusImportStatus(object):
     def percentage_complete(self, percentage_complete):
         """
         Sets the percentage_complete of this ContactlistImportStatusImportStatus.
-
+        percentage of records finished importing
 
         :param percentage_complete: The percentage_complete of this ContactlistImportStatusImportStatus.
         :type: int
@@ -164,7 +161,7 @@ class ContactlistImportStatusImportStatus(object):
     def failure_reason(self):
         """
         Gets the failure_reason of this ContactlistImportStatusImportStatus.
-
+        if the import has failed, the reason for the failure
 
         :return: The failure_reason of this ContactlistImportStatusImportStatus.
         :rtype: str
@@ -175,36 +172,13 @@ class ContactlistImportStatusImportStatus(object):
     def failure_reason(self, failure_reason):
         """
         Sets the failure_reason of this ContactlistImportStatusImportStatus.
-
+        if the import has failed, the reason for the failure
 
         :param failure_reason: The failure_reason of this ContactlistImportStatusImportStatus.
         :type: str
         """
         
         self._failure_reason = failure_reason
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ContactlistImportStatusImportStatus.
-
-
-        :return: The additional_properties of this ContactlistImportStatusImportStatus.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ContactlistImportStatusImportStatus.
-
-
-        :param additional_properties: The additional_properties of this ContactlistImportStatusImportStatus.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

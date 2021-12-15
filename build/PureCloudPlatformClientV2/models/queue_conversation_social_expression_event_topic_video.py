@@ -56,8 +56,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
             'msids': 'list[str]',
             'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
             'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
-            'after_call_work_required': 'bool',
-            'additional_properties': 'object'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -77,8 +76,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
             'msids': 'msids',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'additional_properties': 'additionalProperties'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -98,13 +96,12 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._additional_properties = None
 
     @property
     def state(self):
         """
         Gets the state of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The connection state of this communication.
 
         :return: The state of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: str
@@ -115,12 +112,12 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def state(self, state):
         """
         Sets the state of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The connection state of this communication.
 
         :param state: The state of this QueueConversationSocialExpressionEventTopicVideo.
         :type: str
         """
-        allowed_values = ["ALERTING", "DIALING", "CONTACTING", "OFFERING", "CONNECTED", "DISCONNECTED", "TERMINATED", "NONE"]
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -131,7 +128,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def pcSelf(self):
         """
         Gets the pcSelf of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Address and name data for a call endpoint.
 
         :return: The pcSelf of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: QueueConversationSocialExpressionEventTopicAddress
@@ -142,7 +139,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def pcSelf(self, pcSelf):
         """
         Sets the pcSelf of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Address and name data for a call endpoint.
 
         :param pcSelf: The pcSelf of this QueueConversationSocialExpressionEventTopicVideo.
         :type: QueueConversationSocialExpressionEventTopicAddress
@@ -154,7 +151,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def id(self):
         """
         Gets the id of this QueueConversationSocialExpressionEventTopicVideo.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: str
@@ -165,7 +162,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationSocialExpressionEventTopicVideo.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this QueueConversationSocialExpressionEventTopicVideo.
         :type: str
@@ -177,7 +174,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def context(self):
         """
         Gets the context of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The room id context (xmpp jid) for the conference session.
 
         :return: The context of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: str
@@ -188,7 +185,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def context(self, context):
         """
         Sets the context of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The room id context (xmpp jid) for the conference session.
 
         :param context: The context of this QueueConversationSocialExpressionEventTopicVideo.
         :type: str
@@ -200,7 +197,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def audio_muted(self):
         """
         Gets the audio_muted of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Indicates whether this participant has muted their outgoing audio.
 
         :return: The audio_muted of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: bool
@@ -211,7 +208,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def audio_muted(self, audio_muted):
         """
         Sets the audio_muted of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Indicates whether this participant has muted their outgoing audio.
 
         :param audio_muted: The audio_muted of this QueueConversationSocialExpressionEventTopicVideo.
         :type: bool
@@ -223,7 +220,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def video_muted(self):
         """
         Gets the video_muted of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Indicates whether this participant has muted/paused their outgoing video.
 
         :return: The video_muted of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: bool
@@ -234,7 +231,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def video_muted(self, video_muted):
         """
         Sets the video_muted of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Indicates whether this participant has muted/paused their outgoing video.
 
         :param video_muted: The video_muted of this QueueConversationSocialExpressionEventTopicVideo.
         :type: bool
@@ -246,7 +243,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def sharing_screen(self):
         """
         Gets the sharing_screen of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Indicates whether this participant is sharing their screen to the session.
 
         :return: The sharing_screen of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: bool
@@ -257,7 +254,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def sharing_screen(self, sharing_screen):
         """
         Sets the sharing_screen of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Indicates whether this participant is sharing their screen to the session.
 
         :param sharing_screen: The sharing_screen of this QueueConversationSocialExpressionEventTopicVideo.
         :type: bool
@@ -269,7 +266,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def provider(self):
         """
         Gets the provider of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The media provider controlling the video.
 
         :return: The provider of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: str
@@ -280,7 +277,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def provider(self, provider):
         """
         Sets the provider of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The media provider controlling the video.
 
         :param provider: The provider of this QueueConversationSocialExpressionEventTopicVideo.
         :type: str
@@ -292,7 +289,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def script_id(self):
         """
         Gets the script_id of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The UUID of the script to use.
 
         :return: The script_id of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: str
@@ -303,7 +300,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The UUID of the script to use.
 
         :param script_id: The script_id of this QueueConversationSocialExpressionEventTopicVideo.
         :type: str
@@ -315,7 +312,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def peer_id(self):
         """
         Gets the peer_id of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :return: The peer_id of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: str
@@ -326,7 +323,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :param peer_id: The peer_id of this QueueConversationSocialExpressionEventTopicVideo.
         :type: str
@@ -338,7 +335,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this QueueConversationSocialExpressionEventTopicVideo.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :return: The disconnect_type of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: str
@@ -349,12 +346,12 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this QueueConversationSocialExpressionEventTopicVideo.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :param disconnect_type: The disconnect_type of this QueueConversationSocialExpressionEventTopicVideo.
         :type: str
         """
-        allowed_values = ["ENDPOINT", "CLIENT", "SYSTEM", "TIMEOUT", "TRANSFER", "TRANSFER_CONFERENCE", "TRANSFER_CONSULT", "TRANSFER_FORWARD", "TRANSFER_NOANSWER", "TRANSFER_NOTAVAILABLE", "TRANSPORT_FAILURE", "ERROR", "PEER", "OTHER", "SPAM", "UNCALLABLE"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -365,7 +362,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def connected_time(self):
         """
         Gets the connected_time of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :return: The connected_time of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: datetime
@@ -376,7 +373,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :param connected_time: The connected_time of this QueueConversationSocialExpressionEventTopicVideo.
         :type: datetime
@@ -388,7 +385,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :return: The disconnected_time of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: datetime
@@ -399,7 +396,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this QueueConversationSocialExpressionEventTopicVideo.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :param disconnected_time: The disconnected_time of this QueueConversationSocialExpressionEventTopicVideo.
         :type: datetime
@@ -411,7 +408,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def msids(self):
         """
         Gets the msids of this QueueConversationSocialExpressionEventTopicVideo.
-
+        List of media stream ids
 
         :return: The msids of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: list[str]
@@ -422,7 +419,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def msids(self, msids):
         """
         Sets the msids of this QueueConversationSocialExpressionEventTopicVideo.
-
+        List of media stream ids
 
         :param msids: The msids of this QueueConversationSocialExpressionEventTopicVideo.
         :type: list[str]
@@ -434,7 +431,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def wrapup(self):
         """
         Gets the wrapup of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Call wrap up or disposition data.
 
         :return: The wrapup of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: QueueConversationSocialExpressionEventTopicWrapup
@@ -445,7 +442,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def wrapup(self, wrapup):
         """
         Sets the wrapup of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Call wrap up or disposition data.
 
         :param wrapup: The wrapup of this QueueConversationSocialExpressionEventTopicVideo.
         :type: QueueConversationSocialExpressionEventTopicWrapup
@@ -457,7 +454,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def after_call_work(self):
         """
         Gets the after_call_work of this QueueConversationSocialExpressionEventTopicVideo.
-
+        A communication's after-call work data.
 
         :return: The after_call_work of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: QueueConversationSocialExpressionEventTopicAfterCallWork
@@ -468,7 +465,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def after_call_work(self, after_call_work):
         """
         Sets the after_call_work of this QueueConversationSocialExpressionEventTopicVideo.
-
+        A communication's after-call work data.
 
         :param after_call_work: The after_call_work of this QueueConversationSocialExpressionEventTopicVideo.
         :type: QueueConversationSocialExpressionEventTopicAfterCallWork
@@ -480,7 +477,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def after_call_work_required(self):
         """
         Gets the after_call_work_required of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :return: The after_call_work_required of this QueueConversationSocialExpressionEventTopicVideo.
         :rtype: bool
@@ -491,36 +488,13 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
     def after_call_work_required(self, after_call_work_required):
         """
         Sets the after_call_work_required of this QueueConversationSocialExpressionEventTopicVideo.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :param after_call_work_required: The after_call_work_required of this QueueConversationSocialExpressionEventTopicVideo.
         :type: bool
         """
         
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationSocialExpressionEventTopicVideo.
-
-
-        :return: The additional_properties of this QueueConversationSocialExpressionEventTopicVideo.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationSocialExpressionEventTopicVideo.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationSocialExpressionEventTopicVideo.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

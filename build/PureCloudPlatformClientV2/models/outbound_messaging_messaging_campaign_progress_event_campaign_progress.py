@@ -44,8 +44,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
             'number_of_contacts_called': 'float',
             'number_of_contacts_messaged': 'float',
             'total_number_of_contacts': 'float',
-            'percentage': 'int',
-            'additional_properties': 'object'
+            'percentage': 'int'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
             'number_of_contacts_called': 'numberOfContactsCalled',
             'number_of_contacts_messaged': 'numberOfContactsMessaged',
             'total_number_of_contacts': 'totalNumberOfContacts',
-            'percentage': 'percentage',
-            'additional_properties': 'additionalProperties'
+            'percentage': 'percentage'
         }
 
         self._campaign = None
@@ -62,7 +60,6 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         self._number_of_contacts_messaged = None
         self._total_number_of_contacts = None
         self._percentage = None
-        self._additional_properties = None
 
     @property
     def campaign(self):
@@ -91,7 +88,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
     def number_of_contacts_called(self):
         """
         Gets the number_of_contacts_called of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
+        The number of contacts that have been called so far
 
         :return: The number_of_contacts_called of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
         :rtype: float
@@ -102,7 +99,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
     def number_of_contacts_called(self, number_of_contacts_called):
         """
         Sets the number_of_contacts_called of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
+        The number of contacts that have been called so far
 
         :param number_of_contacts_called: The number_of_contacts_called of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
         :type: float
@@ -114,7 +111,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
     def number_of_contacts_messaged(self):
         """
         Gets the number_of_contacts_messaged of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
+        The number of contacts that have been messaged so far
 
         :return: The number_of_contacts_messaged of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
         :rtype: float
@@ -125,7 +122,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
     def number_of_contacts_messaged(self, number_of_contacts_messaged):
         """
         Sets the number_of_contacts_messaged of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
+        The number of contacts that have been messaged so far
 
         :param number_of_contacts_messaged: The number_of_contacts_messaged of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
         :type: float
@@ -137,7 +134,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
     def total_number_of_contacts(self):
         """
         Gets the total_number_of_contacts of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
+        The total number of contacts in the contact list
 
         :return: The total_number_of_contacts of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
         :rtype: float
@@ -148,7 +145,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
     def total_number_of_contacts(self, total_number_of_contacts):
         """
         Sets the total_number_of_contacts of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
+        The total number of contacts in the contact list
 
         :param total_number_of_contacts: The total_number_of_contacts of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
         :type: float
@@ -160,7 +157,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
     def percentage(self):
         """
         Gets the percentage of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
+        numberOfContactsContacted/totalNumberOfContacts*100
 
         :return: The percentage of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
         :rtype: int
@@ -171,36 +168,13 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
     def percentage(self, percentage):
         """
         Sets the percentage of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
+        numberOfContactsContacted/totalNumberOfContacts*100
 
         :param percentage: The percentage of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
         :type: int
         """
         
         self._percentage = percentage
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
-
-        :return: The additional_properties of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-
-
-        :param additional_properties: The additional_properties of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

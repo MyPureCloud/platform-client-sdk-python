@@ -40,26 +40,49 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'time_zone_id': 'str',
             'earliest_callable_time': 'str',
-            'latest_callable_time': 'str',
-            'time_zone_id': 'str'
+            'latest_callable_time': 'str'
         }
 
         self.attribute_map = {
+            'time_zone_id': 'timeZoneId',
             'earliest_callable_time': 'earliestCallableTime',
-            'latest_callable_time': 'latestCallableTime',
-            'time_zone_id': 'timeZoneId'
+            'latest_callable_time': 'latestCallableTime'
         }
 
+        self._time_zone_id = None
         self._earliest_callable_time = None
         self._latest_callable_time = None
-        self._time_zone_id = None
+
+    @property
+    def time_zone_id(self):
+        """
+        Gets the time_zone_id of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
+        The time zone to use for contacts that cannot be mapped
+
+        :return: The time_zone_id of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
+        :rtype: str
+        """
+        return self._time_zone_id
+
+    @time_zone_id.setter
+    def time_zone_id(self, time_zone_id):
+        """
+        Sets the time_zone_id of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
+        The time zone to use for contacts that cannot be mapped
+
+        :param time_zone_id: The time_zone_id of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
+        :type: str
+        """
+        
+        self._time_zone_id = time_zone_id
 
     @property
     def earliest_callable_time(self):
         """
         Gets the earliest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
-
+        The earliest time to dial a contact
 
         :return: The earliest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
         :rtype: str
@@ -70,7 +93,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone(object):
     def earliest_callable_time(self, earliest_callable_time):
         """
         Sets the earliest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
-
+        The earliest time to dial a contact
 
         :param earliest_callable_time: The earliest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
         :type: str
@@ -82,7 +105,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone(object):
     def latest_callable_time(self):
         """
         Gets the latest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
-
+        The latest time to dial a contact
 
         :return: The latest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
         :rtype: str
@@ -93,36 +116,13 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone(object):
     def latest_callable_time(self, latest_callable_time):
         """
         Sets the latest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
-
+        The latest time to dial a contact
 
         :param latest_callable_time: The latest_callable_time of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
         :type: str
         """
         
         self._latest_callable_time = latest_callable_time
-
-    @property
-    def time_zone_id(self):
-        """
-        Gets the time_zone_id of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
-
-
-        :return: The time_zone_id of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
-        :rtype: str
-        """
-        return self._time_zone_id
-
-    @time_zone_id.setter
-    def time_zone_id(self, time_zone_id):
-        """
-        Sets the time_zone_id of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
-
-
-        :param time_zone_id: The time_zone_id of this DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.
-        :type: str
-        """
-        
-        self._time_zone_id = time_zone_id
 
     def to_dict(self):
         """

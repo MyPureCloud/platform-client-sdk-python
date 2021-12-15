@@ -56,7 +56,7 @@ class ConversationCallbackEventTopicScoredAgent(object):
     def agent(self):
         """
         Gets the agent of this ConversationCallbackEventTopicScoredAgent.
-
+        A UriReference for a resource
 
         :return: The agent of this ConversationCallbackEventTopicScoredAgent.
         :rtype: ConversationCallbackEventTopicUriReference
@@ -67,7 +67,7 @@ class ConversationCallbackEventTopicScoredAgent(object):
     def agent(self, agent):
         """
         Sets the agent of this ConversationCallbackEventTopicScoredAgent.
-
+        A UriReference for a resource
 
         :param agent: The agent of this ConversationCallbackEventTopicScoredAgent.
         :type: ConversationCallbackEventTopicUriReference
@@ -79,7 +79,7 @@ class ConversationCallbackEventTopicScoredAgent(object):
     def score(self):
         """
         Gets the score of this ConversationCallbackEventTopicScoredAgent.
-
+        Agent's score for the current conversation, from 0 - 100, higher being better
 
         :return: The score of this ConversationCallbackEventTopicScoredAgent.
         :rtype: int
@@ -90,7 +90,7 @@ class ConversationCallbackEventTopicScoredAgent(object):
     def score(self, score):
         """
         Sets the score of this ConversationCallbackEventTopicScoredAgent.
-
+        Agent's score for the current conversation, from 0 - 100, higher being better
 
         :param score: The score of this ConversationCallbackEventTopicScoredAgent.
         :type: int

@@ -7,23 +7,22 @@ title: DialerContactlistConfigChangeContactList
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **date_created** | **datetime** |  | [optional] |
-| **date_modified** | **datetime** |  | [optional] |
-| **version** | **int** |  | [optional] |
-| **column_names** | **list[str]** |  | [optional] |
-| **phone_columns** | [**list[DialerContactlistConfigChangeContactPhoneNumberColumn]**](DialerContactlistConfigChangeContactPhoneNumberColumn.html) |  | [optional] |
-| **email_columns** | [**list[DialerContactlistConfigChangeEmailColumn]**](DialerContactlistConfigChangeEmailColumn.html) |  | [optional] |
+| **column_names** | **list[str]** | the contact column names | [optional] |
+| **phone_columns** | [**list[DialerContactlistConfigChangeContactPhoneNumberColumn]**](DialerContactlistConfigChangeContactPhoneNumberColumn.html) | the columns containing phone numbers | [optional] |
+| **email_columns** | [**list[DialerContactlistConfigChangeEmailColumn]**](DialerContactlistConfigChangeEmailColumn.html) | the columns containing email addresses | [optional] |
 | **import_status** | [**DialerContactlistConfigChangeImportStatus**](DialerContactlistConfigChangeImportStatus.html) |  | [optional] |
-| **preview_mode_column_name** | **str** |  | [optional] |
-| **preview_mode_accepted_values** | **list[str]** |  | [optional] |
-| **size** | **int** |  | [optional] |
+| **preview_mode_column_name** | **str** | the name of the column that holds the indicators for contacts that are to be dialed in preview mode only | [optional] |
+| **preview_mode_accepted_values** | **list[str]** | list of user-defined values indicating the contact is to be dialed in preview mode only | [optional] |
+| **size** | **int** | the number of contacts in the contact list | [optional] |
 | **attempt_limits** | [**DialerContactlistConfigChangeUriReference**](DialerContactlistConfigChangeUriReference.html) |  | [optional] |
-| **automatic_time_zone_mapping** | **bool** |  | [optional] |
-| **zip_code_column_name** | **str** |  | [optional] |
-| **division** | [**DialerContactlistConfigChangeUriReference**](DialerContactlistConfigChangeUriReference.html) |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **automatic_time_zone_mapping** | **bool** | whether or not automatic time zone mapping is enabled on the list | [optional] |
+| **zip_code_column_name** | **str** | zip code column from the contact list to be used optionally with automatic time zone mapping | [optional] |
+| **division** | [**DialerContactlistConfigChangeUriReference**](DialerContactlistConfigChangeUriReference.html) | A UriReference for a resource | [optional] |
+| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **name** | **str** | The UI-visible name of the object | [optional] |
+| **date_created** | **datetime** | Creation time of the entity | [optional] |
+| **date_modified** | **datetime** | Last modified time of the entity | [optional] |
+| **version** | **int** | Required for updates, must match the version number of the most recent update | [optional] |
 {: class="table table-striped"}
 
 

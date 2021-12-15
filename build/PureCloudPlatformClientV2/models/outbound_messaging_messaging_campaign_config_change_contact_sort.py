@@ -42,21 +42,18 @@ class OutboundMessagingMessagingCampaignConfigChangeContactSort(object):
         self.swagger_types = {
             'field_name': 'str',
             'direction': 'str',
-            'numeric': 'bool',
-            'additional_properties': 'object'
+            'numeric': 'bool'
         }
 
         self.attribute_map = {
             'field_name': 'fieldName',
             'direction': 'direction',
-            'numeric': 'numeric',
-            'additional_properties': 'additionalProperties'
+            'numeric': 'numeric'
         }
 
         self._field_name = None
         self._direction = None
         self._numeric = None
-        self._additional_properties = None
 
     @property
     def field_name(self):
@@ -112,7 +109,7 @@ class OutboundMessagingMessagingCampaignConfigChangeContactSort(object):
     def numeric(self):
         """
         Gets the numeric of this OutboundMessagingMessagingCampaignConfigChangeContactSort.
-
+        Whether that column contains numeric data
 
         :return: The numeric of this OutboundMessagingMessagingCampaignConfigChangeContactSort.
         :rtype: bool
@@ -123,36 +120,13 @@ class OutboundMessagingMessagingCampaignConfigChangeContactSort(object):
     def numeric(self, numeric):
         """
         Sets the numeric of this OutboundMessagingMessagingCampaignConfigChangeContactSort.
-
+        Whether that column contains numeric data
 
         :param numeric: The numeric of this OutboundMessagingMessagingCampaignConfigChangeContactSort.
         :type: bool
         """
         
         self._numeric = numeric
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this OutboundMessagingMessagingCampaignConfigChangeContactSort.
-
-
-        :return: The additional_properties of this OutboundMessagingMessagingCampaignConfigChangeContactSort.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this OutboundMessagingMessagingCampaignConfigChangeContactSort.
-
-
-        :param additional_properties: The additional_properties of this OutboundMessagingMessagingCampaignConfigChangeContactSort.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

@@ -56,7 +56,7 @@ class QueueConversationChatEventTopicJourneyCustomer(object):
     def id(self):
         """
         Gets the id of this QueueConversationChatEventTopicJourneyCustomer.
-
+        An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloud conversation, this may or may not be mutable.
 
         :return: The id of this QueueConversationChatEventTopicJourneyCustomer.
         :rtype: str
@@ -67,7 +67,7 @@ class QueueConversationChatEventTopicJourneyCustomer(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationChatEventTopicJourneyCustomer.
-
+        An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloud conversation, this may or may not be mutable.
 
         :param id: The id of this QueueConversationChatEventTopicJourneyCustomer.
         :type: str
@@ -79,7 +79,7 @@ class QueueConversationChatEventTopicJourneyCustomer(object):
     def id_type(self):
         """
         Gets the id_type of this QueueConversationChatEventTopicJourneyCustomer.
-
+        The type of the customerId within the Journey System (e.g. cookie).
 
         :return: The id_type of this QueueConversationChatEventTopicJourneyCustomer.
         :rtype: str
@@ -90,7 +90,7 @@ class QueueConversationChatEventTopicJourneyCustomer(object):
     def id_type(self, id_type):
         """
         Sets the id_type of this QueueConversationChatEventTopicJourneyCustomer.
-
+        The type of the customerId within the Journey System (e.g. cookie).
 
         :param id_type: The id_type of this QueueConversationChatEventTopicJourneyCustomer.
         :type: str

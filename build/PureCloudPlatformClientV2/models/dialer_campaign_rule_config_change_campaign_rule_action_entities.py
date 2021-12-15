@@ -40,29 +40,49 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'campaigns': 'list[DialerCampaignRuleConfigChangeUriReference]',
-            'sequences': 'list[DialerCampaignRuleConfigChangeUriReference]',
             'use_triggering_entity': 'bool',
-            'additional_properties': 'object'
+            'campaigns': 'list[DialerCampaignRuleConfigChangeUriReference]',
+            'sequences': 'list[DialerCampaignRuleConfigChangeUriReference]'
         }
 
         self.attribute_map = {
-            'campaigns': 'campaigns',
-            'sequences': 'sequences',
             'use_triggering_entity': 'useTriggeringEntity',
-            'additional_properties': 'additionalProperties'
+            'campaigns': 'campaigns',
+            'sequences': 'sequences'
         }
 
+        self._use_triggering_entity = None
         self._campaigns = None
         self._sequences = None
-        self._use_triggering_entity = None
-        self._additional_properties = None
+
+    @property
+    def use_triggering_entity(self):
+        """
+        Gets the use_triggering_entity of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+        Whether this action should act on the entity that triggered it
+
+        :return: The use_triggering_entity of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+        :rtype: bool
+        """
+        return self._use_triggering_entity
+
+    @use_triggering_entity.setter
+    def use_triggering_entity(self, use_triggering_entity):
+        """
+        Sets the use_triggering_entity of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+        Whether this action should act on the entity that triggered it
+
+        :param use_triggering_entity: The use_triggering_entity of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+        :type: bool
+        """
+        
+        self._use_triggering_entity = use_triggering_entity
 
     @property
     def campaigns(self):
         """
         Gets the campaigns of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-
+        A list of campaignIds to act on
 
         :return: The campaigns of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
         :rtype: list[DialerCampaignRuleConfigChangeUriReference]
@@ -73,7 +93,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
     def campaigns(self, campaigns):
         """
         Sets the campaigns of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-
+        A list of campaignIds to act on
 
         :param campaigns: The campaigns of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
         :type: list[DialerCampaignRuleConfigChangeUriReference]
@@ -85,7 +105,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
     def sequences(self):
         """
         Gets the sequences of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-
+        A list of sequenceIds to act on
 
         :return: The sequences of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
         :rtype: list[DialerCampaignRuleConfigChangeUriReference]
@@ -96,59 +116,13 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
     def sequences(self, sequences):
         """
         Sets the sequences of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-
+        A list of sequenceIds to act on
 
         :param sequences: The sequences of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
         :type: list[DialerCampaignRuleConfigChangeUriReference]
         """
         
         self._sequences = sequences
-
-    @property
-    def use_triggering_entity(self):
-        """
-        Gets the use_triggering_entity of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-
-
-        :return: The use_triggering_entity of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-        :rtype: bool
-        """
-        return self._use_triggering_entity
-
-    @use_triggering_entity.setter
-    def use_triggering_entity(self, use_triggering_entity):
-        """
-        Sets the use_triggering_entity of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-
-
-        :param use_triggering_entity: The use_triggering_entity of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-        :type: bool
-        """
-        
-        self._use_triggering_entity = use_triggering_entity
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-
-
-        :return: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-
-
-        :param additional_properties: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

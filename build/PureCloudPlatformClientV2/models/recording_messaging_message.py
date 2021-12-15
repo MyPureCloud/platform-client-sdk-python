@@ -50,7 +50,8 @@ class RecordingMessagingMessage(object):
             'message_media_attachments': 'list[MessageMediaAttachment]',
             'message_sticker_attachments': 'list[MessageStickerAttachment]',
             'quick_replies': 'list[QuickReply]',
-            'button_response': 'ButtonResponse'
+            'button_response': 'ButtonResponse',
+            'story': 'RecordingContentStory'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class RecordingMessagingMessage(object):
             'message_media_attachments': 'messageMediaAttachments',
             'message_sticker_attachments': 'messageStickerAttachments',
             'quick_replies': 'quickReplies',
-            'button_response': 'buttonResponse'
+            'button_response': 'buttonResponse',
+            'story': 'story'
         }
 
         self._pcFrom = None
@@ -78,6 +80,7 @@ class RecordingMessagingMessage(object):
         self._message_sticker_attachments = None
         self._quick_replies = None
         self._button_response = None
+        self._story = None
 
     @property
     def pcFrom(self):
@@ -331,6 +334,29 @@ class RecordingMessagingMessage(object):
         """
         
         self._button_response = button_response
+
+    @property
+    def story(self):
+        """
+        Gets the story of this RecordingMessagingMessage.
+        Ephemeral story content.
+
+        :return: The story of this RecordingMessagingMessage.
+        :rtype: RecordingContentStory
+        """
+        return self._story
+
+    @story.setter
+    def story(self, story):
+        """
+        Sets the story of this RecordingMessagingMessage.
+        Ephemeral story content.
+
+        :param story: The story of this RecordingMessagingMessage.
+        :type: RecordingContentStory
+        """
+        
+        self._story = story
 
     def to_dict(self):
         """

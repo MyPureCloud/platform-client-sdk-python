@@ -56,7 +56,7 @@ class QueueConversationEventTopicUriReference(object):
     def id(self):
         """
         Gets the id of this QueueConversationEventTopicUriReference.
-
+        The ID of the resource
 
         :return: The id of this QueueConversationEventTopicUriReference.
         :rtype: str
@@ -67,7 +67,7 @@ class QueueConversationEventTopicUriReference(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationEventTopicUriReference.
-
+        The ID of the resource
 
         :param id: The id of this QueueConversationEventTopicUriReference.
         :type: str
@@ -79,7 +79,7 @@ class QueueConversationEventTopicUriReference(object):
     def name(self):
         """
         Gets the name of this QueueConversationEventTopicUriReference.
-
+        The name of the resource
 
         :return: The name of this QueueConversationEventTopicUriReference.
         :rtype: str
@@ -90,7 +90,7 @@ class QueueConversationEventTopicUriReference(object):
     def name(self, name):
         """
         Sets the name of this QueueConversationEventTopicUriReference.
-
+        The name of the resource
 
         :param name: The name of this QueueConversationEventTopicUriReference.
         :type: str

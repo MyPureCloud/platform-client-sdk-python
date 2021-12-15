@@ -56,7 +56,7 @@ class QueueConversationEventTopicMessageSticker(object):
     def url(self):
         """
         Gets the url of this QueueConversationEventTopicMessageSticker.
-
+        The location of the sticker, useful for retrieving it
 
         :return: The url of this QueueConversationEventTopicMessageSticker.
         :rtype: str
@@ -67,7 +67,7 @@ class QueueConversationEventTopicMessageSticker(object):
     def url(self, url):
         """
         Sets the url of this QueueConversationEventTopicMessageSticker.
-
+        The location of the sticker, useful for retrieving it
 
         :param url: The url of this QueueConversationEventTopicMessageSticker.
         :type: str
@@ -79,7 +79,7 @@ class QueueConversationEventTopicMessageSticker(object):
     def id(self):
         """
         Gets the id of this QueueConversationEventTopicMessageSticker.
-
+        The unique id of the the sticker object.
 
         :return: The id of this QueueConversationEventTopicMessageSticker.
         :rtype: str
@@ -90,7 +90,7 @@ class QueueConversationEventTopicMessageSticker(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationEventTopicMessageSticker.
-
+        The unique id of the the sticker object.
 
         :param id: The id of this QueueConversationEventTopicMessageSticker.
         :type: str

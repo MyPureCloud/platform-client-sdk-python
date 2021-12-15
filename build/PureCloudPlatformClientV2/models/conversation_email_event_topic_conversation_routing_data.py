@@ -65,7 +65,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def queue(self):
         """
         Gets the queue of this ConversationEmailEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The queue of this ConversationEmailEventTopicConversationRoutingData.
         :rtype: ConversationEmailEventTopicUriReference
@@ -76,7 +76,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def queue(self, queue):
         """
         Sets the queue of this ConversationEmailEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param queue: The queue of this ConversationEmailEventTopicConversationRoutingData.
         :type: ConversationEmailEventTopicUriReference
@@ -88,7 +88,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def language(self):
         """
         Gets the language of this ConversationEmailEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The language of this ConversationEmailEventTopicConversationRoutingData.
         :rtype: ConversationEmailEventTopicUriReference
@@ -99,7 +99,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def language(self, language):
         """
         Sets the language of this ConversationEmailEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param language: The language of this ConversationEmailEventTopicConversationRoutingData.
         :type: ConversationEmailEventTopicUriReference
@@ -111,7 +111,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def priority(self):
         """
         Gets the priority of this ConversationEmailEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :return: The priority of this ConversationEmailEventTopicConversationRoutingData.
         :rtype: int
@@ -122,7 +122,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def priority(self, priority):
         """
         Sets the priority of this ConversationEmailEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :param priority: The priority of this ConversationEmailEventTopicConversationRoutingData.
         :type: int
@@ -134,7 +134,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def skills(self):
         """
         Gets the skills of this ConversationEmailEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :return: The skills of this ConversationEmailEventTopicConversationRoutingData.
         :rtype: list[ConversationEmailEventTopicUriReference]
@@ -145,7 +145,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def skills(self, skills):
         """
         Sets the skills of this ConversationEmailEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :param skills: The skills of this ConversationEmailEventTopicConversationRoutingData.
         :type: list[ConversationEmailEventTopicUriReference]
@@ -157,7 +157,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def scored_agents(self):
         """
         Gets the scored_agents of this ConversationEmailEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :return: The scored_agents of this ConversationEmailEventTopicConversationRoutingData.
         :rtype: list[ConversationEmailEventTopicScoredAgent]
@@ -168,7 +168,7 @@ class ConversationEmailEventTopicConversationRoutingData(object):
     def scored_agents(self, scored_agents):
         """
         Sets the scored_agents of this ConversationEmailEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :param scored_agents: The scored_agents of this ConversationEmailEventTopicConversationRoutingData.
         :type: list[ConversationEmailEventTopicScoredAgent]

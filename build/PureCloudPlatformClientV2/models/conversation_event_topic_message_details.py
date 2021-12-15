@@ -68,7 +68,7 @@ class ConversationEventTopicMessageDetails(object):
     def message_id(self):
         """
         Gets the message_id of this ConversationEventTopicMessageDetails.
-
+        UUID identifying the message media.
 
         :return: The message_id of this ConversationEventTopicMessageDetails.
         :rtype: str
@@ -79,7 +79,7 @@ class ConversationEventTopicMessageDetails(object):
     def message_id(self, message_id):
         """
         Sets the message_id of this ConversationEventTopicMessageDetails.
-
+        UUID identifying the message media.
 
         :param message_id: The message_id of this ConversationEventTopicMessageDetails.
         :type: str
@@ -91,7 +91,7 @@ class ConversationEventTopicMessageDetails(object):
     def message_time(self):
         """
         Gets the message_time of this ConversationEventTopicMessageDetails.
-
+        The time when the message was sent or received.
 
         :return: The message_time of this ConversationEventTopicMessageDetails.
         :rtype: datetime
@@ -102,7 +102,7 @@ class ConversationEventTopicMessageDetails(object):
     def message_time(self, message_time):
         """
         Sets the message_time of this ConversationEventTopicMessageDetails.
-
+        The time when the message was sent or received.
 
         :param message_time: The message_time of this ConversationEventTopicMessageDetails.
         :type: datetime
@@ -114,7 +114,7 @@ class ConversationEventTopicMessageDetails(object):
     def message_status(self):
         """
         Gets the message_status of this ConversationEventTopicMessageDetails.
-
+        Indicates the delivery status of the message.
 
         :return: The message_status of this ConversationEventTopicMessageDetails.
         :rtype: str
@@ -125,12 +125,12 @@ class ConversationEventTopicMessageDetails(object):
     def message_status(self, message_status):
         """
         Sets the message_status of this ConversationEventTopicMessageDetails.
-
+        Indicates the delivery status of the message.
 
         :param message_status: The message_status of this ConversationEventTopicMessageDetails.
         :type: str
         """
-        allowed_values = ["QUEUED", "SENT", "FAILED", "RECEIVED", "DELIVERY_SUCCESS", "DELIVERY_FAILED", "READ"]
+        allowed_values = ["queued", "sent", "failed", "received", "delivery-success", "delivery-failed", "read"]
         if message_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_status -> " + message_status)
             self._message_status = "outdated_sdk_version"
@@ -141,7 +141,7 @@ class ConversationEventTopicMessageDetails(object):
     def message_segment_count(self):
         """
         Gets the message_segment_count of this ConversationEventTopicMessageDetails.
-
+        The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
 
         :return: The message_segment_count of this ConversationEventTopicMessageDetails.
         :rtype: int
@@ -152,7 +152,7 @@ class ConversationEventTopicMessageDetails(object):
     def message_segment_count(self, message_segment_count):
         """
         Sets the message_segment_count of this ConversationEventTopicMessageDetails.
-
+        The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
 
         :param message_segment_count: The message_segment_count of this ConversationEventTopicMessageDetails.
         :type: int
@@ -164,7 +164,7 @@ class ConversationEventTopicMessageDetails(object):
     def media(self):
         """
         Gets the media of this ConversationEventTopicMessageDetails.
-
+        The media (images, files, etc) associated with this message, if any
 
         :return: The media of this ConversationEventTopicMessageDetails.
         :rtype: list[ConversationEventTopicMessageMedia]
@@ -175,7 +175,7 @@ class ConversationEventTopicMessageDetails(object):
     def media(self, media):
         """
         Sets the media of this ConversationEventTopicMessageDetails.
-
+        The media (images, files, etc) associated with this message, if any
 
         :param media: The media of this ConversationEventTopicMessageDetails.
         :type: list[ConversationEventTopicMessageMedia]
@@ -187,7 +187,7 @@ class ConversationEventTopicMessageDetails(object):
     def stickers(self):
         """
         Gets the stickers of this ConversationEventTopicMessageDetails.
-
+        A list of stickers included in the message
 
         :return: The stickers of this ConversationEventTopicMessageDetails.
         :rtype: list[ConversationEventTopicMessageSticker]
@@ -198,7 +198,7 @@ class ConversationEventTopicMessageDetails(object):
     def stickers(self, stickers):
         """
         Sets the stickers of this ConversationEventTopicMessageDetails.
-
+        A list of stickers included in the message
 
         :param stickers: The stickers of this ConversationEventTopicMessageDetails.
         :type: list[ConversationEventTopicMessageSticker]

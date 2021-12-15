@@ -53,7 +53,7 @@ class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings(object)
     def callable_windows(self):
         """
         Gets the callable_windows of this DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.
-
+        The time intervals to use for automatic time zone mapping
 
         :return: The callable_windows of this DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.
         :rtype: list[DialerOutboundSettingsConfigChangeCallableWindow]
@@ -64,7 +64,7 @@ class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings(object)
     def callable_windows(self, callable_windows):
         """
         Sets the callable_windows of this DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.
-
+        The time intervals to use for automatic time zone mapping
 
         :param callable_windows: The callable_windows of this DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.
         :type: list[DialerOutboundSettingsConfigChangeCallableWindow]

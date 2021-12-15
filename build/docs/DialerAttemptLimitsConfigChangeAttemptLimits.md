@@ -7,18 +7,17 @@ title: DialerAttemptLimitsConfigChangeAttemptLimits
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **date_created** | **datetime** |  | [optional] |
-| **date_modified** | **datetime** |  | [optional] |
-| **version** | **int** |  | [optional] |
 | **max_attempts_per_contact** | **int** |  | [optional] |
 | **max_attempts_per_number** | **int** |  | [optional] |
-| **time_zone_id** | **str** |  | [optional] |
-| **reset_period** | **str** |  | [optional] |
-| **recall_entries** | [**dict(str, DialerAttemptLimitsConfigChangeRecallEntry)**](DialerAttemptLimitsConfigChangeRecallEntry.html) |  | [optional] |
-| **breadth_first_recalls** | **bool** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **time_zone_id** | **str** | The timezone is necessary to define when \&quot;today\&quot; starts and ends | [optional] |
+| **reset_period** | **str** | After how long the number of attempts will be set back to 0 | [optional] |
+| **recall_entries** | [**dict(str, DialerAttemptLimitsConfigChangeRecallEntry)**](DialerAttemptLimitsConfigChangeRecallEntry.html) | Configuration for recall attempts | [optional] |
+| **breadth_first_recalls** | **bool** | Whether recalls are performed before considering other numbers (true) or after (false) | [optional] |
+| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **name** | **str** | The UI-visible name of the object | [optional] |
+| **date_created** | **datetime** | Creation time of the entity | [optional] |
+| **date_modified** | **datetime** | Last modified time of the entity | [optional] |
+| **version** | **int** | Required for updates, must match the version number of the most recent update | [optional] |
 {: class="table table-striped"}
 
 

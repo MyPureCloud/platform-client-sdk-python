@@ -62,7 +62,7 @@ class OutboundMessagingMessagingCampaignConfigChangeEmailConfig(object):
     def email_columns(self):
         """
         Gets the email_columns of this OutboundMessagingMessagingCampaignConfigChangeEmailConfig.
-
+        The Contact List column specifying the email to send to the contact.
 
         :return: The email_columns of this OutboundMessagingMessagingCampaignConfigChangeEmailConfig.
         :rtype: list[str]
@@ -73,7 +73,7 @@ class OutboundMessagingMessagingCampaignConfigChangeEmailConfig(object):
     def email_columns(self, email_columns):
         """
         Sets the email_columns of this OutboundMessagingMessagingCampaignConfigChangeEmailConfig.
-
+        The Contact List column specifying the email to send to the contact.
 
         :param email_columns: The email_columns of this OutboundMessagingMessagingCampaignConfigChangeEmailConfig.
         :type: list[str]
@@ -85,7 +85,7 @@ class OutboundMessagingMessagingCampaignConfigChangeEmailConfig(object):
     def content_template(self):
         """
         Gets the content_template of this OutboundMessagingMessagingCampaignConfigChangeEmailConfig.
-
+        A reference for a Response
 
         :return: The content_template of this OutboundMessagingMessagingCampaignConfigChangeEmailConfig.
         :rtype: OutboundMessagingMessagingCampaignConfigChangeResponseRef
@@ -96,7 +96,7 @@ class OutboundMessagingMessagingCampaignConfigChangeEmailConfig(object):
     def content_template(self, content_template):
         """
         Sets the content_template of this OutboundMessagingMessagingCampaignConfigChangeEmailConfig.
-
+        A reference for a Response
 
         :param content_template: The content_template of this OutboundMessagingMessagingCampaignConfigChangeEmailConfig.
         :type: OutboundMessagingMessagingCampaignConfigChangeResponseRef

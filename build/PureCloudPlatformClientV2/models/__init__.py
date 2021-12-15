@@ -230,6 +230,8 @@ from .bot_connector_bot_version import BotConnectorBotVersion
 from .bot_connector_bot_version_summary_entity_listing import BotConnectorBotVersionSummaryEntityListing
 from .bot_intent import BotIntent
 from .bot_list import BotList
+from .bot_search_response import BotSearchResponse
+from .bot_search_response_entity_listing import BotSearchResponseEntityListing
 from .bot_slot import BotSlot
 from .bot_summary import BotSummary
 from .bot_version_summary import BotVersionSummary
@@ -1370,6 +1372,7 @@ from .klaxon_interaction_stats_alerts_topic_interaction_stat_alert import Klaxon
 from .klaxon_interaction_stats_alerts_topic_notification_user import KlaxonInteractionStatsAlertsTopicNotificationUser
 from .klaxon_interaction_stats_rules_topic_interaction_stat_rule import KlaxonInteractionStatsRulesTopicInteractionStatRule
 from .klaxon_interaction_stats_rules_topic_notification_user import KlaxonInteractionStatsRulesTopicNotificationUser
+from .knowledge import Knowledge
 from .knowledge_base import KnowledgeBase
 from .knowledge_base_listing import KnowledgeBaseListing
 from .knowledge_category import KnowledgeCategory
@@ -1383,6 +1386,7 @@ from .knowledge_search_document import KnowledgeSearchDocument
 from .knowledge_search_request import KnowledgeSearchRequest
 from .knowledge_search_response import KnowledgeSearchResponse
 from .knowledge_training import KnowledgeTraining
+from .kpi_result import KpiResult
 from .language import Language
 from .language_entity_listing import LanguageEntityListing
 from .language_override import LanguageOverride
@@ -1535,6 +1539,7 @@ from .messaging_sticker import MessagingSticker
 from .messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .messaging_template import MessagingTemplate
 from .messaging_template_request import MessagingTemplateRequest
+from .messenger_apps import MessengerApps
 from .messenger_position_settings import MessengerPositionSettings
 from .messenger_settings import MessengerSettings
 from .messenger_styles import MessengerStyles
@@ -2027,6 +2032,7 @@ from .recording_archive_restore_topic_media_result import RecordingArchiveRestor
 from .recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
 from .recording_button_component import RecordingButtonComponent
 from .recording_content_actions import RecordingContentActions
+from .recording_content_story import RecordingContentStory
 from .recording_email_message import RecordingEmailMessage
 from .recording_event_media_result import RecordingEventMediaResult
 from .recording_event_recording import RecordingEventRecording
@@ -2300,6 +2306,7 @@ from .subscriber_response import SubscriberResponse
 from .subscription_overview_usage import SubscriptionOverviewUsage
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
+from .support_center_settings import SupportCenterSettings
 from .supported_content_reference import SupportedContentReference
 from .supported_language import SupportedLanguage
 from .survey import Survey

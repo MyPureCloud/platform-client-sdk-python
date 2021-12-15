@@ -56,7 +56,7 @@ class ConversationCallbackEventTopicJourneyActionMap(object):
     def id(self):
         """
         Gets the id of this ConversationCallbackEventTopicJourneyActionMap.
-
+        The ID of the actionMap in the Journey System which triggered this action
 
         :return: The id of this ConversationCallbackEventTopicJourneyActionMap.
         :rtype: str
@@ -67,7 +67,7 @@ class ConversationCallbackEventTopicJourneyActionMap(object):
     def id(self, id):
         """
         Sets the id of this ConversationCallbackEventTopicJourneyActionMap.
-
+        The ID of the actionMap in the Journey System which triggered this action
 
         :param id: The id of this ConversationCallbackEventTopicJourneyActionMap.
         :type: str
@@ -79,7 +79,7 @@ class ConversationCallbackEventTopicJourneyActionMap(object):
     def version(self):
         """
         Gets the version of this ConversationCallbackEventTopicJourneyActionMap.
-
+        The version number of the actionMap in the Journey System at the time this action was triggered
 
         :return: The version of this ConversationCallbackEventTopicJourneyActionMap.
         :rtype: int
@@ -90,7 +90,7 @@ class ConversationCallbackEventTopicJourneyActionMap(object):
     def version(self, version):
         """
         Sets the version of this ConversationCallbackEventTopicJourneyActionMap.
-
+        The version number of the actionMap in the Journey System at the time this action was triggered
 
         :param version: The version of this ConversationCallbackEventTopicJourneyActionMap.
         :type: int

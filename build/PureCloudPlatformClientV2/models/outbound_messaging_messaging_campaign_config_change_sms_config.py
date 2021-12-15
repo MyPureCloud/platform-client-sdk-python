@@ -62,7 +62,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsConfig(object):
     def message_column(self):
         """
         Gets the message_column of this OutboundMessagingMessagingCampaignConfigChangeSmsConfig.
-
+        The Contact List column specifying the message to send to the contact.
 
         :return: The message_column of this OutboundMessagingMessagingCampaignConfigChangeSmsConfig.
         :rtype: str
@@ -73,7 +73,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsConfig(object):
     def message_column(self, message_column):
         """
         Sets the message_column of this OutboundMessagingMessagingCampaignConfigChangeSmsConfig.
-
+        The Contact List column specifying the message to send to the contact.
 
         :param message_column: The message_column of this OutboundMessagingMessagingCampaignConfigChangeSmsConfig.
         :type: str
@@ -85,7 +85,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsConfig(object):
     def phone_column(self):
         """
         Gets the phone_column of this OutboundMessagingMessagingCampaignConfigChangeSmsConfig.
-
+        The Contact List column specifying the phone number to send a message to.
 
         :return: The phone_column of this OutboundMessagingMessagingCampaignConfigChangeSmsConfig.
         :rtype: str
@@ -96,7 +96,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsConfig(object):
     def phone_column(self, phone_column):
         """
         Sets the phone_column of this OutboundMessagingMessagingCampaignConfigChangeSmsConfig.
-
+        The Contact List column specifying the phone number to send a message to.
 
         :param phone_column: The phone_column of this OutboundMessagingMessagingCampaignConfigChangeSmsConfig.
         :type: str

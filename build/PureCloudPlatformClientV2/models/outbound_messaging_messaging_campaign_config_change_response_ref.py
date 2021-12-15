@@ -53,7 +53,7 @@ class OutboundMessagingMessagingCampaignConfigChangeResponseRef(object):
     def id(self):
         """
         Gets the id of this OutboundMessagingMessagingCampaignConfigChangeResponseRef.
-
+        The unique response id
 
         :return: The id of this OutboundMessagingMessagingCampaignConfigChangeResponseRef.
         :rtype: str
@@ -64,7 +64,7 @@ class OutboundMessagingMessagingCampaignConfigChangeResponseRef(object):
     def id(self, id):
         """
         Sets the id of this OutboundMessagingMessagingCampaignConfigChangeResponseRef.
-
+        The unique response id
 
         :param id: The id of this OutboundMessagingMessagingCampaignConfigChangeResponseRef.
         :type: str

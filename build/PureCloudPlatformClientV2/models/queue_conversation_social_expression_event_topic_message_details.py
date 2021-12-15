@@ -68,7 +68,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def message_id(self):
         """
         Gets the message_id of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        UUID identifying the message media.
 
         :return: The message_id of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :rtype: str
@@ -79,7 +79,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def message_id(self, message_id):
         """
         Sets the message_id of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        UUID identifying the message media.
 
         :param message_id: The message_id of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :type: str
@@ -91,7 +91,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def message_time(self):
         """
         Gets the message_time of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        The time when the message was sent or received.
 
         :return: The message_time of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :rtype: datetime
@@ -102,7 +102,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def message_time(self, message_time):
         """
         Sets the message_time of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        The time when the message was sent or received.
 
         :param message_time: The message_time of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :type: datetime
@@ -114,7 +114,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def message_status(self):
         """
         Gets the message_status of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        Indicates the delivery status of the message.
 
         :return: The message_status of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :rtype: str
@@ -125,12 +125,12 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def message_status(self, message_status):
         """
         Sets the message_status of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        Indicates the delivery status of the message.
 
         :param message_status: The message_status of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :type: str
         """
-        allowed_values = ["QUEUED", "SENT", "FAILED", "RECEIVED", "DELIVERY_SUCCESS", "DELIVERY_FAILED", "READ"]
+        allowed_values = ["queued", "sent", "failed", "received", "delivery-success", "delivery-failed", "read"]
         if message_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_status -> " + message_status)
             self._message_status = "outdated_sdk_version"
@@ -141,7 +141,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def message_segment_count(self):
         """
         Gets the message_segment_count of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
 
         :return: The message_segment_count of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :rtype: int
@@ -152,7 +152,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def message_segment_count(self, message_segment_count):
         """
         Sets the message_segment_count of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
 
         :param message_segment_count: The message_segment_count of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :type: int
@@ -164,7 +164,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def media(self):
         """
         Gets the media of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        The media (images, files, etc) associated with this message, if any
 
         :return: The media of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :rtype: list[QueueConversationSocialExpressionEventTopicMessageMedia]
@@ -175,7 +175,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def media(self, media):
         """
         Sets the media of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        The media (images, files, etc) associated with this message, if any
 
         :param media: The media of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :type: list[QueueConversationSocialExpressionEventTopicMessageMedia]
@@ -187,7 +187,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def stickers(self):
         """
         Gets the stickers of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        A list of stickers included in the message
 
         :return: The stickers of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :rtype: list[QueueConversationSocialExpressionEventTopicMessageSticker]
@@ -198,7 +198,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
     def stickers(self, stickers):
         """
         Sets the stickers of this QueueConversationSocialExpressionEventTopicMessageDetails.
-
+        A list of stickers included in the message
 
         :param stickers: The stickers of this QueueConversationSocialExpressionEventTopicMessageDetails.
         :type: list[QueueConversationSocialExpressionEventTopicMessageSticker]

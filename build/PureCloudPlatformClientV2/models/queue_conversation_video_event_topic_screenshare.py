@@ -53,8 +53,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
             'disconnected_time': 'datetime',
             'wrapup': 'QueueConversationVideoEventTopicWrapup',
             'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
-            'after_call_work_required': 'bool',
-            'additional_properties': 'object'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -71,8 +70,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
             'disconnected_time': 'disconnectedTime',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'additional_properties': 'additionalProperties'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -89,13 +87,12 @@ class QueueConversationVideoEventTopicScreenshare(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._additional_properties = None
 
     @property
     def state(self):
         """
         Gets the state of this QueueConversationVideoEventTopicScreenshare.
-
+        The connection state of this communication.
 
         :return: The state of this QueueConversationVideoEventTopicScreenshare.
         :rtype: str
@@ -106,12 +103,12 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def state(self, state):
         """
         Sets the state of this QueueConversationVideoEventTopicScreenshare.
-
+        The connection state of this communication.
 
         :param state: The state of this QueueConversationVideoEventTopicScreenshare.
         :type: str
         """
-        allowed_values = ["ALERTING", "DIALING", "CONTACTING", "OFFERING", "CONNECTED", "DISCONNECTED", "TERMINATED", "NONE"]
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -122,7 +119,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def pcSelf(self):
         """
         Gets the pcSelf of this QueueConversationVideoEventTopicScreenshare.
-
+        Address and name data for a call endpoint.
 
         :return: The pcSelf of this QueueConversationVideoEventTopicScreenshare.
         :rtype: QueueConversationVideoEventTopicAddress
@@ -133,7 +130,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def pcSelf(self, pcSelf):
         """
         Sets the pcSelf of this QueueConversationVideoEventTopicScreenshare.
-
+        Address and name data for a call endpoint.
 
         :param pcSelf: The pcSelf of this QueueConversationVideoEventTopicScreenshare.
         :type: QueueConversationVideoEventTopicAddress
@@ -145,7 +142,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def id(self):
         """
         Gets the id of this QueueConversationVideoEventTopicScreenshare.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this QueueConversationVideoEventTopicScreenshare.
         :rtype: str
@@ -156,7 +153,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationVideoEventTopicScreenshare.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this QueueConversationVideoEventTopicScreenshare.
         :type: str
@@ -168,7 +165,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def context(self):
         """
         Gets the context of this QueueConversationVideoEventTopicScreenshare.
-
+        The room id context (xmpp jid) for the conference session.
 
         :return: The context of this QueueConversationVideoEventTopicScreenshare.
         :rtype: str
@@ -179,7 +176,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def context(self, context):
         """
         Sets the context of this QueueConversationVideoEventTopicScreenshare.
-
+        The room id context (xmpp jid) for the conference session.
 
         :param context: The context of this QueueConversationVideoEventTopicScreenshare.
         :type: str
@@ -191,7 +188,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def sharing(self):
         """
         Gets the sharing of this QueueConversationVideoEventTopicScreenshare.
-
+        Indicates whether this participant is sharing their screen to the session.
 
         :return: The sharing of this QueueConversationVideoEventTopicScreenshare.
         :rtype: bool
@@ -202,7 +199,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def sharing(self, sharing):
         """
         Sets the sharing of this QueueConversationVideoEventTopicScreenshare.
-
+        Indicates whether this participant is sharing their screen to the session.
 
         :param sharing: The sharing of this QueueConversationVideoEventTopicScreenshare.
         :type: bool
@@ -214,7 +211,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def provider(self):
         """
         Gets the provider of this QueueConversationVideoEventTopicScreenshare.
-
+        The source provider of the screen share.
 
         :return: The provider of this QueueConversationVideoEventTopicScreenshare.
         :rtype: str
@@ -225,7 +222,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def provider(self, provider):
         """
         Sets the provider of this QueueConversationVideoEventTopicScreenshare.
-
+        The source provider of the screen share.
 
         :param provider: The provider of this QueueConversationVideoEventTopicScreenshare.
         :type: str
@@ -237,7 +234,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def script_id(self):
         """
         Gets the script_id of this QueueConversationVideoEventTopicScreenshare.
-
+        The UUID of the script to use.
 
         :return: The script_id of this QueueConversationVideoEventTopicScreenshare.
         :rtype: str
@@ -248,7 +245,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this QueueConversationVideoEventTopicScreenshare.
-
+        The UUID of the script to use.
 
         :param script_id: The script_id of this QueueConversationVideoEventTopicScreenshare.
         :type: str
@@ -260,7 +257,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def peer_id(self):
         """
         Gets the peer_id of this QueueConversationVideoEventTopicScreenshare.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :return: The peer_id of this QueueConversationVideoEventTopicScreenshare.
         :rtype: str
@@ -271,7 +268,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this QueueConversationVideoEventTopicScreenshare.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :param peer_id: The peer_id of this QueueConversationVideoEventTopicScreenshare.
         :type: str
@@ -283,7 +280,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this QueueConversationVideoEventTopicScreenshare.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :return: The disconnect_type of this QueueConversationVideoEventTopicScreenshare.
         :rtype: str
@@ -294,12 +291,12 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this QueueConversationVideoEventTopicScreenshare.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :param disconnect_type: The disconnect_type of this QueueConversationVideoEventTopicScreenshare.
         :type: str
         """
-        allowed_values = ["ENDPOINT", "CLIENT", "SYSTEM", "TIMEOUT", "TRANSFER", "TRANSFER_CONFERENCE", "TRANSFER_CONSULT", "TRANSFER_FORWARD", "TRANSFER_NOANSWER", "TRANSFER_NOTAVAILABLE", "TRANSPORT_FAILURE", "ERROR", "PEER", "OTHER", "SPAM", "UNCALLABLE"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -310,7 +307,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def connected_time(self):
         """
         Gets the connected_time of this QueueConversationVideoEventTopicScreenshare.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :return: The connected_time of this QueueConversationVideoEventTopicScreenshare.
         :rtype: datetime
@@ -321,7 +318,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this QueueConversationVideoEventTopicScreenshare.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :param connected_time: The connected_time of this QueueConversationVideoEventTopicScreenshare.
         :type: datetime
@@ -333,7 +330,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this QueueConversationVideoEventTopicScreenshare.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :return: The disconnected_time of this QueueConversationVideoEventTopicScreenshare.
         :rtype: datetime
@@ -344,7 +341,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this QueueConversationVideoEventTopicScreenshare.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :param disconnected_time: The disconnected_time of this QueueConversationVideoEventTopicScreenshare.
         :type: datetime
@@ -356,7 +353,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def wrapup(self):
         """
         Gets the wrapup of this QueueConversationVideoEventTopicScreenshare.
-
+        Call wrap up or disposition data.
 
         :return: The wrapup of this QueueConversationVideoEventTopicScreenshare.
         :rtype: QueueConversationVideoEventTopicWrapup
@@ -367,7 +364,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def wrapup(self, wrapup):
         """
         Sets the wrapup of this QueueConversationVideoEventTopicScreenshare.
-
+        Call wrap up or disposition data.
 
         :param wrapup: The wrapup of this QueueConversationVideoEventTopicScreenshare.
         :type: QueueConversationVideoEventTopicWrapup
@@ -379,7 +376,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def after_call_work(self):
         """
         Gets the after_call_work of this QueueConversationVideoEventTopicScreenshare.
-
+        A communication's after-call work data.
 
         :return: The after_call_work of this QueueConversationVideoEventTopicScreenshare.
         :rtype: QueueConversationVideoEventTopicAfterCallWork
@@ -390,7 +387,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def after_call_work(self, after_call_work):
         """
         Sets the after_call_work of this QueueConversationVideoEventTopicScreenshare.
-
+        A communication's after-call work data.
 
         :param after_call_work: The after_call_work of this QueueConversationVideoEventTopicScreenshare.
         :type: QueueConversationVideoEventTopicAfterCallWork
@@ -402,7 +399,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def after_call_work_required(self):
         """
         Gets the after_call_work_required of this QueueConversationVideoEventTopicScreenshare.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :return: The after_call_work_required of this QueueConversationVideoEventTopicScreenshare.
         :rtype: bool
@@ -413,36 +410,13 @@ class QueueConversationVideoEventTopicScreenshare(object):
     def after_call_work_required(self, after_call_work_required):
         """
         Sets the after_call_work_required of this QueueConversationVideoEventTopicScreenshare.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :param after_call_work_required: The after_call_work_required of this QueueConversationVideoEventTopicScreenshare.
         :type: bool
         """
         
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationVideoEventTopicScreenshare.
-
-
-        :return: The additional_properties of this QueueConversationVideoEventTopicScreenshare.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationVideoEventTopicScreenshare.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationVideoEventTopicScreenshare.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

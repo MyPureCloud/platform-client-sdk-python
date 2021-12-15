@@ -44,8 +44,7 @@ class QueueConversationVideoEventTopicAttachment(object):
             'name': 'str',
             'content_uri': 'str',
             'content_type': 'str',
-            'content_length': 'int',
-            'additional_properties': 'object'
+            'content_length': 'int'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class QueueConversationVideoEventTopicAttachment(object):
             'name': 'name',
             'content_uri': 'contentUri',
             'content_type': 'contentType',
-            'content_length': 'contentLength',
-            'additional_properties': 'additionalProperties'
+            'content_length': 'contentLength'
         }
 
         self._attachment_id = None
@@ -62,13 +60,12 @@ class QueueConversationVideoEventTopicAttachment(object):
         self._content_uri = None
         self._content_type = None
         self._content_length = None
-        self._additional_properties = None
 
     @property
     def attachment_id(self):
         """
         Gets the attachment_id of this QueueConversationVideoEventTopicAttachment.
-
+        The unique identifier for the attachment.
 
         :return: The attachment_id of this QueueConversationVideoEventTopicAttachment.
         :rtype: str
@@ -79,7 +76,7 @@ class QueueConversationVideoEventTopicAttachment(object):
     def attachment_id(self, attachment_id):
         """
         Sets the attachment_id of this QueueConversationVideoEventTopicAttachment.
-
+        The unique identifier for the attachment.
 
         :param attachment_id: The attachment_id of this QueueConversationVideoEventTopicAttachment.
         :type: str
@@ -91,7 +88,7 @@ class QueueConversationVideoEventTopicAttachment(object):
     def name(self):
         """
         Gets the name of this QueueConversationVideoEventTopicAttachment.
-
+        The name of the attachment.
 
         :return: The name of this QueueConversationVideoEventTopicAttachment.
         :rtype: str
@@ -102,7 +99,7 @@ class QueueConversationVideoEventTopicAttachment(object):
     def name(self, name):
         """
         Sets the name of this QueueConversationVideoEventTopicAttachment.
-
+        The name of the attachment.
 
         :param name: The name of this QueueConversationVideoEventTopicAttachment.
         :type: str
@@ -114,7 +111,7 @@ class QueueConversationVideoEventTopicAttachment(object):
     def content_uri(self):
         """
         Gets the content_uri of this QueueConversationVideoEventTopicAttachment.
-
+        The content uri of the attachment. If set, this is commonly a public api download location.
 
         :return: The content_uri of this QueueConversationVideoEventTopicAttachment.
         :rtype: str
@@ -125,7 +122,7 @@ class QueueConversationVideoEventTopicAttachment(object):
     def content_uri(self, content_uri):
         """
         Sets the content_uri of this QueueConversationVideoEventTopicAttachment.
-
+        The content uri of the attachment. If set, this is commonly a public api download location.
 
         :param content_uri: The content_uri of this QueueConversationVideoEventTopicAttachment.
         :type: str
@@ -137,7 +134,7 @@ class QueueConversationVideoEventTopicAttachment(object):
     def content_type(self):
         """
         Gets the content_type of this QueueConversationVideoEventTopicAttachment.
-
+        The type of file the attachment is.
 
         :return: The content_type of this QueueConversationVideoEventTopicAttachment.
         :rtype: str
@@ -148,7 +145,7 @@ class QueueConversationVideoEventTopicAttachment(object):
     def content_type(self, content_type):
         """
         Sets the content_type of this QueueConversationVideoEventTopicAttachment.
-
+        The type of file the attachment is.
 
         :param content_type: The content_type of this QueueConversationVideoEventTopicAttachment.
         :type: str
@@ -160,7 +157,7 @@ class QueueConversationVideoEventTopicAttachment(object):
     def content_length(self):
         """
         Gets the content_length of this QueueConversationVideoEventTopicAttachment.
-
+        The length of the attachment file.
 
         :return: The content_length of this QueueConversationVideoEventTopicAttachment.
         :rtype: int
@@ -171,36 +168,13 @@ class QueueConversationVideoEventTopicAttachment(object):
     def content_length(self, content_length):
         """
         Sets the content_length of this QueueConversationVideoEventTopicAttachment.
-
+        The length of the attachment file.
 
         :param content_length: The content_length of this QueueConversationVideoEventTopicAttachment.
         :type: int
         """
         
         self._content_length = content_length
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationVideoEventTopicAttachment.
-
-
-        :return: The additional_properties of this QueueConversationVideoEventTopicAttachment.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationVideoEventTopicAttachment.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationVideoEventTopicAttachment.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

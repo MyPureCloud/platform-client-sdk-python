@@ -41,25 +41,22 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
         """
         self.swagger_types = {
             'time_slots': 'list[DialerCallabletimesetConfigChangeTimeSlot]',
-            'time_zone_id': 'str',
-            'additional_properties': 'object'
+            'time_zone_id': 'str'
         }
 
         self.attribute_map = {
             'time_slots': 'timeSlots',
-            'time_zone_id': 'timeZoneId',
-            'additional_properties': 'additionalProperties'
+            'time_zone_id': 'timeZoneId'
         }
 
         self._time_slots = None
         self._time_zone_id = None
-        self._additional_properties = None
 
     @property
     def time_slots(self):
         """
         Gets the time_slots of this DialerCallabletimesetConfigChangeCallableTime.
-
+        The time slots
 
         :return: The time_slots of this DialerCallabletimesetConfigChangeCallableTime.
         :rtype: list[DialerCallabletimesetConfigChangeTimeSlot]
@@ -70,7 +67,7 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
     def time_slots(self, time_slots):
         """
         Sets the time_slots of this DialerCallabletimesetConfigChangeCallableTime.
-
+        The time slots
 
         :param time_slots: The time_slots of this DialerCallabletimesetConfigChangeCallableTime.
         :type: list[DialerCallabletimesetConfigChangeTimeSlot]
@@ -82,7 +79,7 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
     def time_zone_id(self):
         """
         Gets the time_zone_id of this DialerCallabletimesetConfigChangeCallableTime.
-
+        The ISO ID for the timezone
 
         :return: The time_zone_id of this DialerCallabletimesetConfigChangeCallableTime.
         :rtype: str
@@ -93,36 +90,13 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
     def time_zone_id(self, time_zone_id):
         """
         Sets the time_zone_id of this DialerCallabletimesetConfigChangeCallableTime.
-
+        The ISO ID for the timezone
 
         :param time_zone_id: The time_zone_id of this DialerCallabletimesetConfigChangeCallableTime.
         :type: str
         """
         
         self._time_zone_id = time_zone_id
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
-
-
-        :return: The additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
-
-
-        :param additional_properties: The additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

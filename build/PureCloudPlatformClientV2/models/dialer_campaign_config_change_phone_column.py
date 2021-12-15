@@ -41,25 +41,22 @@ class DialerCampaignConfigChangePhoneColumn(object):
         """
         self.swagger_types = {
             'column_name': 'str',
-            'type': 'str',
-            'additional_properties': 'object'
+            'type': 'str'
         }
 
         self.attribute_map = {
             'column_name': 'columnName',
-            'type': 'type',
-            'additional_properties': 'additionalProperties'
+            'type': 'type'
         }
 
         self._column_name = None
         self._type = None
-        self._additional_properties = None
 
     @property
     def column_name(self):
         """
         Gets the column_name of this DialerCampaignConfigChangePhoneColumn.
-
+        The name of the phone column
 
         :return: The column_name of this DialerCampaignConfigChangePhoneColumn.
         :rtype: str
@@ -70,7 +67,7 @@ class DialerCampaignConfigChangePhoneColumn(object):
     def column_name(self, column_name):
         """
         Sets the column_name of this DialerCampaignConfigChangePhoneColumn.
-
+        The name of the phone column
 
         :param column_name: The column_name of this DialerCampaignConfigChangePhoneColumn.
         :type: str
@@ -82,7 +79,7 @@ class DialerCampaignConfigChangePhoneColumn(object):
     def type(self):
         """
         Gets the type of this DialerCampaignConfigChangePhoneColumn.
-
+        The type of the phone column, for example, 'cell' or 'home'
 
         :return: The type of this DialerCampaignConfigChangePhoneColumn.
         :rtype: str
@@ -93,36 +90,13 @@ class DialerCampaignConfigChangePhoneColumn(object):
     def type(self, type):
         """
         Sets the type of this DialerCampaignConfigChangePhoneColumn.
-
+        The type of the phone column, for example, 'cell' or 'home'
 
         :param type: The type of this DialerCampaignConfigChangePhoneColumn.
         :type: str
         """
         
         self._type = type
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerCampaignConfigChangePhoneColumn.
-
-
-        :return: The additional_properties of this DialerCampaignConfigChangePhoneColumn.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerCampaignConfigChangePhoneColumn.
-
-
-        :param additional_properties: The additional_properties of this DialerCampaignConfigChangePhoneColumn.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

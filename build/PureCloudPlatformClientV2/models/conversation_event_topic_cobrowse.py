@@ -57,8 +57,7 @@ class ConversationEventTopicCobrowse(object):
             'disconnected_time': 'datetime',
             'wrapup': 'ConversationEventTopicWrapup',
             'after_call_work': 'ConversationEventTopicAfterCallWork',
-            'after_call_work_required': 'bool',
-            'additional_properties': 'object'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -79,8 +78,7 @@ class ConversationEventTopicCobrowse(object):
             'disconnected_time': 'disconnectedTime',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'additional_properties': 'additionalProperties'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -101,13 +99,12 @@ class ConversationEventTopicCobrowse(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._additional_properties = None
 
     @property
     def state(self):
         """
         Gets the state of this ConversationEventTopicCobrowse.
-
+        The connection state of this communication.
 
         :return: The state of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -118,12 +115,12 @@ class ConversationEventTopicCobrowse(object):
     def state(self, state):
         """
         Sets the state of this ConversationEventTopicCobrowse.
-
+        The connection state of this communication.
 
         :param state: The state of this ConversationEventTopicCobrowse.
         :type: str
         """
-        allowed_values = ["ALERTING", "DIALING", "CONTACTING", "OFFERING", "CONNECTED", "DISCONNECTED", "TERMINATED", "NONE"]
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -134,7 +131,7 @@ class ConversationEventTopicCobrowse(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this ConversationEventTopicCobrowse.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :return: The disconnect_type of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -145,12 +142,12 @@ class ConversationEventTopicCobrowse(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this ConversationEventTopicCobrowse.
-
+        System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
 
         :param disconnect_type: The disconnect_type of this ConversationEventTopicCobrowse.
         :type: str
         """
-        allowed_values = ["ENDPOINT", "CLIENT", "SYSTEM", "TIMEOUT", "TRANSFER", "TRANSFER_CONFERENCE", "TRANSFER_CONSULT", "TRANSFER_FORWARD", "TRANSPORT_FAILURE", "ERROR", "PEER", "OTHER", "SPAM", "UNCALLABLE"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -161,7 +158,7 @@ class ConversationEventTopicCobrowse(object):
     def id(self):
         """
         Gets the id of this ConversationEventTopicCobrowse.
-
+        A globally unique identifier for this communication.
 
         :return: The id of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -172,7 +169,7 @@ class ConversationEventTopicCobrowse(object):
     def id(self, id):
         """
         Sets the id of this ConversationEventTopicCobrowse.
-
+        A globally unique identifier for this communication.
 
         :param id: The id of this ConversationEventTopicCobrowse.
         :type: str
@@ -184,7 +181,7 @@ class ConversationEventTopicCobrowse(object):
     def pcSelf(self):
         """
         Gets the pcSelf of this ConversationEventTopicCobrowse.
-
+        Address and name data for a call endpoint.
 
         :return: The pcSelf of this ConversationEventTopicCobrowse.
         :rtype: ConversationEventTopicAddress
@@ -195,7 +192,7 @@ class ConversationEventTopicCobrowse(object):
     def pcSelf(self, pcSelf):
         """
         Sets the pcSelf of this ConversationEventTopicCobrowse.
-
+        Address and name data for a call endpoint.
 
         :param pcSelf: The pcSelf of this ConversationEventTopicCobrowse.
         :type: ConversationEventTopicAddress
@@ -207,7 +204,7 @@ class ConversationEventTopicCobrowse(object):
     def room_id(self):
         """
         Gets the room_id of this ConversationEventTopicCobrowse.
-
+        The room id for the chat.
 
         :return: The room_id of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -218,7 +215,7 @@ class ConversationEventTopicCobrowse(object):
     def room_id(self, room_id):
         """
         Sets the room_id of this ConversationEventTopicCobrowse.
-
+        The room id for the chat.
 
         :param room_id: The room_id of this ConversationEventTopicCobrowse.
         :type: str
@@ -230,7 +227,7 @@ class ConversationEventTopicCobrowse(object):
     def cobrowse_session_id(self):
         """
         Gets the cobrowse_session_id of this ConversationEventTopicCobrowse.
-
+        The co-browse session ID.
 
         :return: The cobrowse_session_id of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -241,7 +238,7 @@ class ConversationEventTopicCobrowse(object):
     def cobrowse_session_id(self, cobrowse_session_id):
         """
         Sets the cobrowse_session_id of this ConversationEventTopicCobrowse.
-
+        The co-browse session ID.
 
         :param cobrowse_session_id: The cobrowse_session_id of this ConversationEventTopicCobrowse.
         :type: str
@@ -253,7 +250,7 @@ class ConversationEventTopicCobrowse(object):
     def cobrowse_role(self):
         """
         Gets the cobrowse_role of this ConversationEventTopicCobrowse.
-
+        This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer).
 
         :return: The cobrowse_role of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -264,7 +261,7 @@ class ConversationEventTopicCobrowse(object):
     def cobrowse_role(self, cobrowse_role):
         """
         Sets the cobrowse_role of this ConversationEventTopicCobrowse.
-
+        This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer).
 
         :param cobrowse_role: The cobrowse_role of this ConversationEventTopicCobrowse.
         :type: str
@@ -276,7 +273,7 @@ class ConversationEventTopicCobrowse(object):
     def controlling(self):
         """
         Gets the controlling of this ConversationEventTopicCobrowse.
-
+        ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages).
 
         :return: The controlling of this ConversationEventTopicCobrowse.
         :rtype: list[str]
@@ -287,7 +284,7 @@ class ConversationEventTopicCobrowse(object):
     def controlling(self, controlling):
         """
         Sets the controlling of this ConversationEventTopicCobrowse.
-
+        ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages).
 
         :param controlling: The controlling of this ConversationEventTopicCobrowse.
         :type: list[str]
@@ -299,7 +296,7 @@ class ConversationEventTopicCobrowse(object):
     def viewer_url(self):
         """
         Gets the viewer_url of this ConversationEventTopicCobrowse.
-
+        The URL that can be used to open co-browse session in web browser.
 
         :return: The viewer_url of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -310,7 +307,7 @@ class ConversationEventTopicCobrowse(object):
     def viewer_url(self, viewer_url):
         """
         Sets the viewer_url of this ConversationEventTopicCobrowse.
-
+        The URL that can be used to open co-browse session in web browser.
 
         :param viewer_url: The viewer_url of this ConversationEventTopicCobrowse.
         :type: str
@@ -322,7 +319,7 @@ class ConversationEventTopicCobrowse(object):
     def provider(self):
         """
         Gets the provider of this ConversationEventTopicCobrowse.
-
+        The source provider of the co-browse communication.
 
         :return: The provider of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -333,7 +330,7 @@ class ConversationEventTopicCobrowse(object):
     def provider(self, provider):
         """
         Sets the provider of this ConversationEventTopicCobrowse.
-
+        The source provider of the co-browse communication.
 
         :param provider: The provider of this ConversationEventTopicCobrowse.
         :type: str
@@ -345,7 +342,7 @@ class ConversationEventTopicCobrowse(object):
     def script_id(self):
         """
         Gets the script_id of this ConversationEventTopicCobrowse.
-
+        The UUID of the script to use.
 
         :return: The script_id of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -356,7 +353,7 @@ class ConversationEventTopicCobrowse(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this ConversationEventTopicCobrowse.
-
+        The UUID of the script to use.
 
         :param script_id: The script_id of this ConversationEventTopicCobrowse.
         :type: str
@@ -368,7 +365,7 @@ class ConversationEventTopicCobrowse(object):
     def peer_id(self):
         """
         Gets the peer_id of this ConversationEventTopicCobrowse.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :return: The peer_id of this ConversationEventTopicCobrowse.
         :rtype: str
@@ -379,7 +376,7 @@ class ConversationEventTopicCobrowse(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this ConversationEventTopicCobrowse.
-
+        The id of the peer communication corresponding to a matching leg for this communication.
 
         :param peer_id: The peer_id of this ConversationEventTopicCobrowse.
         :type: str
@@ -391,7 +388,7 @@ class ConversationEventTopicCobrowse(object):
     def provider_event_time(self):
         """
         Gets the provider_event_time of this ConversationEventTopicCobrowse.
-
+        The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC).
 
         :return: The provider_event_time of this ConversationEventTopicCobrowse.
         :rtype: datetime
@@ -402,7 +399,7 @@ class ConversationEventTopicCobrowse(object):
     def provider_event_time(self, provider_event_time):
         """
         Sets the provider_event_time of this ConversationEventTopicCobrowse.
-
+        The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC).
 
         :param provider_event_time: The provider_event_time of this ConversationEventTopicCobrowse.
         :type: datetime
@@ -414,7 +411,7 @@ class ConversationEventTopicCobrowse(object):
     def connected_time(self):
         """
         Gets the connected_time of this ConversationEventTopicCobrowse.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :return: The connected_time of this ConversationEventTopicCobrowse.
         :rtype: datetime
@@ -425,7 +422,7 @@ class ConversationEventTopicCobrowse(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this ConversationEventTopicCobrowse.
-
+        The timestamp when this communication was connected in the cloud clock.
 
         :param connected_time: The connected_time of this ConversationEventTopicCobrowse.
         :type: datetime
@@ -437,7 +434,7 @@ class ConversationEventTopicCobrowse(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this ConversationEventTopicCobrowse.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :return: The disconnected_time of this ConversationEventTopicCobrowse.
         :rtype: datetime
@@ -448,7 +445,7 @@ class ConversationEventTopicCobrowse(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this ConversationEventTopicCobrowse.
-
+        The timestamp when this communication disconnected from the conversation in the provider clock.
 
         :param disconnected_time: The disconnected_time of this ConversationEventTopicCobrowse.
         :type: datetime
@@ -460,7 +457,7 @@ class ConversationEventTopicCobrowse(object):
     def wrapup(self):
         """
         Gets the wrapup of this ConversationEventTopicCobrowse.
-
+        Call wrap up or disposition data.
 
         :return: The wrapup of this ConversationEventTopicCobrowse.
         :rtype: ConversationEventTopicWrapup
@@ -471,7 +468,7 @@ class ConversationEventTopicCobrowse(object):
     def wrapup(self, wrapup):
         """
         Sets the wrapup of this ConversationEventTopicCobrowse.
-
+        Call wrap up or disposition data.
 
         :param wrapup: The wrapup of this ConversationEventTopicCobrowse.
         :type: ConversationEventTopicWrapup
@@ -483,7 +480,7 @@ class ConversationEventTopicCobrowse(object):
     def after_call_work(self):
         """
         Gets the after_call_work of this ConversationEventTopicCobrowse.
-
+        A communication's after-call work data.
 
         :return: The after_call_work of this ConversationEventTopicCobrowse.
         :rtype: ConversationEventTopicAfterCallWork
@@ -494,7 +491,7 @@ class ConversationEventTopicCobrowse(object):
     def after_call_work(self, after_call_work):
         """
         Sets the after_call_work of this ConversationEventTopicCobrowse.
-
+        A communication's after-call work data.
 
         :param after_call_work: The after_call_work of this ConversationEventTopicCobrowse.
         :type: ConversationEventTopicAfterCallWork
@@ -506,7 +503,7 @@ class ConversationEventTopicCobrowse(object):
     def after_call_work_required(self):
         """
         Gets the after_call_work_required of this ConversationEventTopicCobrowse.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :return: The after_call_work_required of this ConversationEventTopicCobrowse.
         :rtype: bool
@@ -517,36 +514,13 @@ class ConversationEventTopicCobrowse(object):
     def after_call_work_required(self, after_call_work_required):
         """
         Sets the after_call_work_required of this ConversationEventTopicCobrowse.
-
+        Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
 
         :param after_call_work_required: The after_call_work_required of this ConversationEventTopicCobrowse.
         :type: bool
         """
         
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationEventTopicCobrowse.
-
-
-        :return: The additional_properties of this ConversationEventTopicCobrowse.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationEventTopicCobrowse.
-
-
-        :param additional_properties: The additional_properties of this ConversationEventTopicCobrowse.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

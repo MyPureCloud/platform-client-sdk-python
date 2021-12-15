@@ -40,165 +40,47 @@ class DialerSequenceConfigChangeCampaignSequence(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'name': 'str',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
-            'version': 'int',
             'campaigns': 'list[DialerSequenceConfigChangeUriReference]',
             'current_campaign': 'int',
             'status': 'str',
             'stop_message': 'str',
             'repeat': 'bool',
-            'additional_properties': 'object'
+            'id': 'str',
+            'name': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'version': 'int'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'name': 'name',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
-            'version': 'version',
             'campaigns': 'campaigns',
             'current_campaign': 'currentCampaign',
             'status': 'status',
             'stop_message': 'stopMessage',
             'repeat': 'repeat',
-            'additional_properties': 'additionalProperties'
+            'id': 'id',
+            'name': 'name',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'version': 'version'
         }
 
-        self._id = None
-        self._name = None
-        self._date_created = None
-        self._date_modified = None
-        self._version = None
         self._campaigns = None
         self._current_campaign = None
         self._status = None
         self._stop_message = None
         self._repeat = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :return: The id of this DialerSequenceConfigChangeCampaignSequence.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :param id: The id of this DialerSequenceConfigChangeCampaignSequence.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :return: The name of this DialerSequenceConfigChangeCampaignSequence.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :param name: The name of this DialerSequenceConfigChangeCampaignSequence.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :return: The date_created of this DialerSequenceConfigChangeCampaignSequence.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :param date_created: The date_created of this DialerSequenceConfigChangeCampaignSequence.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :return: The date_modified of this DialerSequenceConfigChangeCampaignSequence.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :param date_modified: The date_modified of this DialerSequenceConfigChangeCampaignSequence.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :return: The version of this DialerSequenceConfigChangeCampaignSequence.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerSequenceConfigChangeCampaignSequence.
-
-
-        :param version: The version of this DialerSequenceConfigChangeCampaignSequence.
-        :type: int
-        """
-        
-        self._version = version
+        self._id = None
+        self._name = None
+        self._date_created = None
+        self._date_modified = None
+        self._version = None
 
     @property
     def campaigns(self):
         """
         Gets the campaigns of this DialerSequenceConfigChangeCampaignSequence.
-
+        the ordered list of campaign identifiers
 
         :return: The campaigns of this DialerSequenceConfigChangeCampaignSequence.
         :rtype: list[DialerSequenceConfigChangeUriReference]
@@ -209,7 +91,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
     def campaigns(self, campaigns):
         """
         Sets the campaigns of this DialerSequenceConfigChangeCampaignSequence.
-
+        the ordered list of campaign identifiers
 
         :param campaigns: The campaigns of this DialerSequenceConfigChangeCampaignSequence.
         :type: list[DialerSequenceConfigChangeUriReference]
@@ -221,7 +103,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
     def current_campaign(self):
         """
         Gets the current_campaign of this DialerSequenceConfigChangeCampaignSequence.
-
+        the zero-based index of the current campaign in the campaigns list
 
         :return: The current_campaign of this DialerSequenceConfigChangeCampaignSequence.
         :rtype: int
@@ -232,7 +114,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
     def current_campaign(self, current_campaign):
         """
         Sets the current_campaign of this DialerSequenceConfigChangeCampaignSequence.
-
+        the zero-based index of the current campaign in the campaigns list
 
         :param current_campaign: The current_campaign of this DialerSequenceConfigChangeCampaignSequence.
         :type: int
@@ -260,7 +142,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :param status: The status of this DialerSequenceConfigChangeCampaignSequence.
         :type: str
         """
-        allowed_values = ["ON", "OFF", "COMPLETE"]
+        allowed_values = ["on", "off", "complete"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
@@ -271,7 +153,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
     def stop_message(self):
         """
         Gets the stop_message of this DialerSequenceConfigChangeCampaignSequence.
-
+        if a sequence has unexpectedly stopped, this message provides the reason
 
         :return: The stop_message of this DialerSequenceConfigChangeCampaignSequence.
         :rtype: str
@@ -282,7 +164,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
     def stop_message(self, stop_message):
         """
         Sets the stop_message of this DialerSequenceConfigChangeCampaignSequence.
-
+        if a sequence has unexpectedly stopped, this message provides the reason
 
         :param stop_message: The stop_message of this DialerSequenceConfigChangeCampaignSequence.
         :type: str
@@ -294,7 +176,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
     def repeat(self):
         """
         Gets the repeat of this DialerSequenceConfigChangeCampaignSequence.
-
+        indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false
 
         :return: The repeat of this DialerSequenceConfigChangeCampaignSequence.
         :rtype: bool
@@ -305,7 +187,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
     def repeat(self, repeat):
         """
         Sets the repeat of this DialerSequenceConfigChangeCampaignSequence.
-
+        indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false
 
         :param repeat: The repeat of this DialerSequenceConfigChangeCampaignSequence.
         :type: bool
@@ -314,27 +196,119 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         self._repeat = repeat
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerSequenceConfigChangeCampaignSequence.
+        Gets the id of this DialerSequenceConfigChangeCampaignSequence.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerSequenceConfigChangeCampaignSequence.
-        :rtype: object
+        :return: The id of this DialerSequenceConfigChangeCampaignSequence.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerSequenceConfigChangeCampaignSequence.
+        Sets the id of this DialerSequenceConfigChangeCampaignSequence.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerSequenceConfigChangeCampaignSequence.
-        :type: object
+        :param id: The id of this DialerSequenceConfigChangeCampaignSequence.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerSequenceConfigChangeCampaignSequence.
+        The UI-visible name of the object
+
+        :return: The name of this DialerSequenceConfigChangeCampaignSequence.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerSequenceConfigChangeCampaignSequence.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerSequenceConfigChangeCampaignSequence.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerSequenceConfigChangeCampaignSequence.
+        Creation time of the entity
+
+        :return: The date_created of this DialerSequenceConfigChangeCampaignSequence.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerSequenceConfigChangeCampaignSequence.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerSequenceConfigChangeCampaignSequence.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerSequenceConfigChangeCampaignSequence.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerSequenceConfigChangeCampaignSequence.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerSequenceConfigChangeCampaignSequence.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerSequenceConfigChangeCampaignSequence.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerSequenceConfigChangeCampaignSequence.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerSequenceConfigChangeCampaignSequence.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerSequenceConfigChangeCampaignSequence.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerSequenceConfigChangeCampaignSequence.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

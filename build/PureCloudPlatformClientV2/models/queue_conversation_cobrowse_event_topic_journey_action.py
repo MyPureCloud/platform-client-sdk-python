@@ -56,7 +56,7 @@ class QueueConversationCobrowseEventTopicJourneyAction(object):
     def id(self):
         """
         Gets the id of this QueueConversationCobrowseEventTopicJourneyAction.
-
+        The ID of an action from the Journey System (an action is spawned from an actionMap)
 
         :return: The id of this QueueConversationCobrowseEventTopicJourneyAction.
         :rtype: str
@@ -67,7 +67,7 @@ class QueueConversationCobrowseEventTopicJourneyAction(object):
     def id(self, id):
         """
         Sets the id of this QueueConversationCobrowseEventTopicJourneyAction.
-
+        The ID of an action from the Journey System (an action is spawned from an actionMap)
 
         :param id: The id of this QueueConversationCobrowseEventTopicJourneyAction.
         :type: str

@@ -88,7 +88,7 @@ class QueueConversationVideoEventTopicConversationRoutingData(object):
     def language(self):
         """
         Gets the language of this QueueConversationVideoEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :return: The language of this QueueConversationVideoEventTopicConversationRoutingData.
         :rtype: QueueConversationVideoEventTopicUriReference
@@ -99,7 +99,7 @@ class QueueConversationVideoEventTopicConversationRoutingData(object):
     def language(self, language):
         """
         Sets the language of this QueueConversationVideoEventTopicConversationRoutingData.
-
+        A UriReference for a resource
 
         :param language: The language of this QueueConversationVideoEventTopicConversationRoutingData.
         :type: QueueConversationVideoEventTopicUriReference
@@ -111,7 +111,7 @@ class QueueConversationVideoEventTopicConversationRoutingData(object):
     def priority(self):
         """
         Gets the priority of this QueueConversationVideoEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :return: The priority of this QueueConversationVideoEventTopicConversationRoutingData.
         :rtype: int
@@ -122,7 +122,7 @@ class QueueConversationVideoEventTopicConversationRoutingData(object):
     def priority(self, priority):
         """
         Sets the priority of this QueueConversationVideoEventTopicConversationRoutingData.
-
+        The priority of the conversation to use for routing decisions
 
         :param priority: The priority of this QueueConversationVideoEventTopicConversationRoutingData.
         :type: int
@@ -134,7 +134,7 @@ class QueueConversationVideoEventTopicConversationRoutingData(object):
     def skills(self):
         """
         Gets the skills of this QueueConversationVideoEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :return: The skills of this QueueConversationVideoEventTopicConversationRoutingData.
         :rtype: list[QueueConversationVideoEventTopicUriReference]
@@ -145,7 +145,7 @@ class QueueConversationVideoEventTopicConversationRoutingData(object):
     def skills(self, skills):
         """
         Sets the skills of this QueueConversationVideoEventTopicConversationRoutingData.
-
+        The skills to use for routing decisions
 
         :param skills: The skills of this QueueConversationVideoEventTopicConversationRoutingData.
         :type: list[QueueConversationVideoEventTopicUriReference]
@@ -157,7 +157,7 @@ class QueueConversationVideoEventTopicConversationRoutingData(object):
     def scored_agents(self):
         """
         Gets the scored_agents of this QueueConversationVideoEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :return: The scored_agents of this QueueConversationVideoEventTopicConversationRoutingData.
         :rtype: list[QueueConversationVideoEventTopicScoredAgent]
@@ -168,7 +168,7 @@ class QueueConversationVideoEventTopicConversationRoutingData(object):
     def scored_agents(self, scored_agents):
         """
         Sets the scored_agents of this QueueConversationVideoEventTopicConversationRoutingData.
-
+        A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
 
         :param scored_agents: The scored_agents of this QueueConversationVideoEventTopicConversationRoutingData.
         :type: list[QueueConversationVideoEventTopicScoredAgent]

@@ -40,159 +40,41 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'intervals': 'list[DialerSequenceScheduleConfigChangeScheduleInterval]',
+            'time_zone': 'str',
+            'sequence': 'DialerSequenceScheduleConfigChangeUriReference',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'version': 'int',
-            'intervals': 'list[DialerSequenceScheduleConfigChangeScheduleInterval]',
-            'time_zone': 'str',
-            'sequence': 'DialerSequenceScheduleConfigChangeUriReference',
-            'additional_properties': 'object'
+            'version': 'int'
         }
 
         self.attribute_map = {
+            'intervals': 'intervals',
+            'time_zone': 'timeZone',
+            'sequence': 'sequence',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'version': 'version',
-            'intervals': 'intervals',
-            'time_zone': 'timeZone',
-            'sequence': 'sequence',
-            'additional_properties': 'additionalProperties'
+            'version': 'version'
         }
 
+        self._intervals = None
+        self._time_zone = None
+        self._sequence = None
         self._id = None
         self._name = None
         self._date_created = None
         self._date_modified = None
         self._version = None
-        self._intervals = None
-        self._time_zone = None
-        self._sequence = None
-        self._additional_properties = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :return: The id of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :param id: The id of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :return: The name of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :param name: The name of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :return: The date_created of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :param date_created: The date_created of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :type: datetime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :return: The date_modified of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :param date_modified: The date_modified of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def version(self):
-        """
-        Gets the version of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :return: The version of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
-
-        :param version: The version of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :type: int
-        """
-        
-        self._version = version
 
     @property
     def intervals(self):
         """
         Gets the intervals of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
+        a list of start and end times
 
         :return: The intervals of this DialerSequenceScheduleConfigChangeSequenceSchedule.
         :rtype: list[DialerSequenceScheduleConfigChangeScheduleInterval]
@@ -203,7 +85,7 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
     def intervals(self, intervals):
         """
         Sets the intervals of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
+        a list of start and end times
 
         :param intervals: The intervals of this DialerSequenceScheduleConfigChangeSequenceSchedule.
         :type: list[DialerSequenceScheduleConfigChangeScheduleInterval]
@@ -215,7 +97,7 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
     def time_zone(self):
         """
         Gets the time_zone of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
+        time zone identifier to be applied to the intervals; for example Africa/Abidjan
 
         :return: The time_zone of this DialerSequenceScheduleConfigChangeSequenceSchedule.
         :rtype: str
@@ -226,7 +108,7 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-
+        time zone identifier to be applied to the intervals; for example Africa/Abidjan
 
         :param time_zone: The time_zone of this DialerSequenceScheduleConfigChangeSequenceSchedule.
         :type: str
@@ -258,27 +140,119 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
         self._sequence = sequence
 
     @property
-    def additional_properties(self):
+    def id(self):
         """
-        Gets the additional_properties of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        Gets the id of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        The globally unique identifier for the object.
 
-
-        :return: The additional_properties of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :rtype: object
+        :return: The id of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :rtype: str
         """
-        return self._additional_properties
+        return self._id
 
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
+    @id.setter
+    def id(self, id):
         """
-        Sets the additional_properties of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        Sets the id of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        The globally unique identifier for the object.
 
-
-        :param additional_properties: The additional_properties of this DialerSequenceScheduleConfigChangeSequenceSchedule.
-        :type: object
+        :param id: The id of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :type: str
         """
         
-        self._additional_properties = additional_properties
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        The UI-visible name of the object
+
+        :return: The name of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        The UI-visible name of the object
+
+        :param name: The name of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        Creation time of the entity
+
+        :return: The date_created of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        Creation time of the entity
+
+        :param date_created: The date_created of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        Last modified time of the entity
+
+        :return: The date_modified of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        Last modified time of the entity
+
+        :param date_modified: The date_modified of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def version(self):
+        """
+        Gets the version of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        Required for updates, must match the version number of the most recent update
+
+        :return: The version of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        Required for updates, must match the version number of the most recent update
+
+        :param version: The version of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :type: int
+        """
+        
+        self._version = version
 
     def to_dict(self):
         """

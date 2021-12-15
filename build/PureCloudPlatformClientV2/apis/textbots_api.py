@@ -46,6 +46,90 @@ class TextbotsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def get_textbots_bots_search(self, **kwargs):
+        """
+        Find bots using the currently configured friendly name or ID.
+        The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_textbots_bots_search(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] bot_type: Bot types
+        :param str bot_name: Bot name
+        :param list[str] bot_id: Bot IDs
+        :param int page_size: The maximum results to return
+        :return: BotSearchResponseEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bot_type', 'bot_name', 'bot_id', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_textbots_bots_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/textbots/bots/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'bot_type' in params:
+            query_params['botType'] = params['bot_type']
+        if 'bot_name' in params:
+            query_params['botName'] = params['bot_name']
+        if 'bot_id' in params:
+            query_params['botId'] = params['bot_id']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BotSearchResponseEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_textbots_botflows_session_turns(self, session_id, turn_request, **kwargs):
         """
         Issue a bot flow turn event

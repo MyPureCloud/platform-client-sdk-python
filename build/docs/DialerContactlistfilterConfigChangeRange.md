@@ -7,12 +7,11 @@ title: DialerContactlistfilterConfigChangeRange
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **min** | **str** |  | [optional] |
-| **max** | **str** |  | [optional] |
-| **min_inclusive** | **bool** |  | [optional] |
-| **max_inclusive** | **bool** |  | [optional] |
-| **in_set** | **list[str]** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **min** | **str** | Minimum end of the range | [optional] |
+| **max** | **str** | Maximum end of the range | [optional] |
+| **min_inclusive** | **bool** | Whether or not to include the minimum in the range | [optional] |
+| **max_inclusive** | **bool** | Whether or not to include the maximum in the range | [optional] |
+| **in_set** | **list[str]** | Elements that apply to the IN operator | [optional] |
 {: class="table table-striped"}
 
 

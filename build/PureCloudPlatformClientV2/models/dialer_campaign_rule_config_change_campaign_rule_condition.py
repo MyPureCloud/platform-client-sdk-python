@@ -42,27 +42,24 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
         self.swagger_types = {
             'id': 'str',
             'parameters': 'dict(str, str)',
-            'condition_type': 'str',
-            'additional_properties': 'object'
+            'condition_type': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'parameters': 'parameters',
-            'condition_type': 'conditionType',
-            'additional_properties': 'additionalProperties'
+            'condition_type': 'conditionType'
         }
 
         self._id = None
         self._parameters = None
         self._condition_type = None
-        self._additional_properties = None
 
     @property
     def id(self):
         """
         Gets the id of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-
+        The globally unique identifier for the condition
 
         :return: The id of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
         :rtype: str
@@ -73,7 +70,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
     def id(self, id):
         """
         Sets the id of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-
+        The globally unique identifier for the condition
 
         :param id: The id of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
         :type: str
@@ -85,7 +82,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
     def parameters(self):
         """
         Gets the parameters of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-
+        The parameters to match this condition
 
         :return: The parameters of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
         :rtype: dict(str, str)
@@ -96,7 +93,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-
+        The parameters to match this condition
 
         :param parameters: The parameters of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
         :type: dict(str, str)
@@ -108,7 +105,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
     def condition_type(self):
         """
         Gets the condition_type of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-
+        The type of this condition
 
         :return: The condition_type of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
         :rtype: str
@@ -119,40 +116,17 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
     def condition_type(self, condition_type):
         """
         Sets the condition_type of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-
+        The type of this condition
 
         :param condition_type: The condition_type of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
         :type: str
         """
-        allowed_values = ["CAMPAIGN_PROGRESS", "CAMPAIGN_AGENTS"]
+        allowed_values = ["campaignProgress", "campaignAgents"]
         if condition_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for condition_type -> " + condition_type)
             self._condition_type = "outdated_sdk_version"
         else:
             self._condition_type = condition_type
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-
-
-        :return: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-
-
-        :param additional_properties: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

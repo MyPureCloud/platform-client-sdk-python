@@ -42,21 +42,18 @@ class DialerResponsesetConfigChangeReaction(object):
         self.swagger_types = {
             'data': 'str',
             'name': 'str',
-            'reaction_type': 'str',
-            'additional_properties': 'object'
+            'reaction_type': 'str'
         }
 
         self.attribute_map = {
             'data': 'data',
             'name': 'name',
-            'reaction_type': 'reactionType',
-            'additional_properties': 'additionalProperties'
+            'reaction_type': 'reactionType'
         }
 
         self._data = None
         self._name = None
         self._reaction_type = None
-        self._additional_properties = None
 
     @property
     def data(self):
@@ -124,35 +121,12 @@ class DialerResponsesetConfigChangeReaction(object):
         :param reaction_type: The reaction_type of this DialerResponsesetConfigChangeReaction.
         :type: str
         """
-        allowed_values = ["HANGUP", "TRANSFER", "TRANSFER_FLOW", "PLAY_FILE"]
+        allowed_values = ["hangup", "transfer", "transfer_flow", "play_file"]
         if reaction_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reaction_type -> " + reaction_type)
             self._reaction_type = "outdated_sdk_version"
         else:
             self._reaction_type = reaction_type
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this DialerResponsesetConfigChangeReaction.
-
-
-        :return: The additional_properties of this DialerResponsesetConfigChangeReaction.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this DialerResponsesetConfigChangeReaction.
-
-
-        :param additional_properties: The additional_properties of this DialerResponsesetConfigChangeReaction.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

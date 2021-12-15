@@ -7,28 +7,27 @@ title: QueueConversationSocialExpressionEventTopicEmail
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **state** | **str** |  | [optional] |
-| **held** | **bool** |  | [optional] |
-| **auto_generated** | **bool** |  | [optional] |
-| **subject** | **str** |  | [optional] |
-| **provider** | **str** |  | [optional] |
-| **script_id** | **str** |  | [optional] |
-| **peer_id** | **str** |  | [optional] |
-| **messages_sent** | **int** |  | [optional] |
-| **error_info** | [**QueueConversationSocialExpressionEventTopicErrorDetails**](QueueConversationSocialExpressionEventTopicErrorDetails.html) |  | [optional] |
-| **disconnect_type** | **str** |  | [optional] |
-| **start_hold_time** | **datetime** |  | [optional] |
-| **connected_time** | **datetime** |  | [optional] |
-| **disconnected_time** | **datetime** |  | [optional] |
-| **message_id** | **str** |  | [optional] |
-| **direction** | **str** |  | [optional] |
-| **draft_attachments** | [**list[QueueConversationSocialExpressionEventTopicAttachment]**](QueueConversationSocialExpressionEventTopicAttachment.html) |  | [optional] |
-| **spam** | **bool** |  | [optional] |
-| **wrapup** | [**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html) |  | [optional] |
-| **after_call_work** | [**QueueConversationSocialExpressionEventTopicAfterCallWork**](QueueConversationSocialExpressionEventTopicAfterCallWork.html) |  | [optional] |
-| **after_call_work_required** | **bool** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
+| **id** | **str** | A globally unique identifier for this communication. | [optional] |
+| **state** | **str** | The connection state of this communication. | [optional] |
+| **held** | **bool** | True if this call is held and the person on this side hears silence. | [optional] |
+| **auto_generated** | **bool** | Indicates that the email was auto-generated like an Out of Office reply. | [optional] |
+| **subject** | **str** | The subject for the initial email that started this conversation. | [optional] |
+| **provider** | **str** | The source provider of the email. | [optional] |
+| **script_id** | **str** | The UUID of the script to use. | [optional] |
+| **peer_id** | **str** | The id of the peer communication corresponding to a matching leg for this communication. | [optional] |
+| **messages_sent** | **int** | The number of email messages sent by this participant. | [optional] |
+| **error_info** | [**QueueConversationSocialExpressionEventTopicErrorDetails**](QueueConversationSocialExpressionEventTopicErrorDetails.html) | Detailed information about an error response. | [optional] |
+| **disconnect_type** | **str** | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. | [optional] |
+| **start_hold_time** | **datetime** | The timestamp the email was placed on hold in the cloud clock if the email is currently on hold. | [optional] |
+| **connected_time** | **datetime** | The timestamp when this communication was connected in the cloud clock. | [optional] |
+| **disconnected_time** | **datetime** | The timestamp when this communication disconnected from the conversation in the provider clock. | [optional] |
+| **message_id** | **str** | A globally unique identifier for the stored content of this communication. | [optional] |
+| **direction** | **str** | Whether a call is inbound or outbound. | [optional] |
+| **draft_attachments** | [**list[QueueConversationSocialExpressionEventTopicAttachment]**](QueueConversationSocialExpressionEventTopicAttachment.html) | A list of uploaded attachments on the email draft. | [optional] |
+| **spam** | **bool** | Indicates if the inbound email was marked as spam. | [optional] |
+| **wrapup** | [**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html) | Call wrap up or disposition data. | [optional] |
+| **after_call_work** | [**QueueConversationSocialExpressionEventTopicAfterCallWork**](QueueConversationSocialExpressionEventTopicAfterCallWork.html) | A communication&#39;s after-call work data. | [optional] |
+| **after_call_work_required** | **bool** | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. | [optional] |
 {: class="table table-striped"}
 
 
