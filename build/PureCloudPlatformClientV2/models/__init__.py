@@ -30,6 +30,7 @@ from .activation import Activation
 from .active_alert_count import ActiveAlertCount
 from .activity_code import ActivityCode
 from .activity_code_container import ActivityCodeContainer
+from .activity_code_reference import ActivityCodeReference
 from .acw_detail_event_topic_after_call_work_event import AcwDetailEventTopicAfterCallWorkEvent
 from .acw_settings import AcwSettings
 from .add_conversation_request import AddConversationRequest
@@ -143,8 +144,12 @@ from .assessment_listing import AssessmentListing
 from .assessment_question_group_score import AssessmentQuestionGroupScore
 from .assessment_question_score import AssessmentQuestionScore
 from .assessment_scoring_set import AssessmentScoringSet
+from .assign_users import AssignUsers
 from .assigned_segment import AssignedSegment
 from .assigned_wrapup_code import AssignedWrapupCode
+from .assignment import Assignment
+from .assignment_error import AssignmentError
+from .assignment_validation import AssignmentValidation
 from .associated_value_field import AssociatedValueField
 from .async_conversation_query import AsyncConversationQuery
 from .async_forecast_operation_result import AsyncForecastOperationResult
@@ -448,6 +453,7 @@ from .cobrowse_conversation_entity_listing import CobrowseConversationEntityList
 from .cobrowse_media_participant import CobrowseMediaParticipant
 from .cobrowse_settings import CobrowseSettings
 from .cobrowsesession import Cobrowsesession
+from .column_status import ColumnStatus
 from .command_status import CommandStatus
 from .command_status_entity_listing import CommandStatusEntityListing
 from .common_campaign import CommonCampaign
@@ -486,6 +492,7 @@ from .contact_list_filter_range import ContactListFilterRange
 from .contact_listing import ContactListing
 from .contact_phone_number_column import ContactPhoneNumberColumn
 from .contact_sort import ContactSort
+from .contactable_status import ContactableStatus
 from .contactlist_download_ready_export_uri import ContactlistDownloadReadyExportUri
 from .contactlist_import_status_import_status import ContactlistImportStatusImportStatus
 from .content_actions import ContentActions
@@ -990,6 +997,7 @@ from .edge_connection_info import EdgeConnectionInfo
 from .edge_entity_listing import EdgeEntityListing
 from .edge_group import EdgeGroup
 from .edge_group_entity_listing import EdgeGroupEntityListing
+from .edge_id_name_pair import EdgeIdNamePair
 from .edge_interface import EdgeInterface
 from .edge_line import EdgeLine
 from .edge_line_entity_listing import EdgeLineEntityListing
@@ -1088,6 +1096,7 @@ from .event_log import EventLog
 from .event_message import EventMessage
 from .execute_recording_jobs_query import ExecuteRecordingJobsQuery
 from .expansion_criterium import ExpansionCriterium
+from .expired_edge_listing import ExpiredEdgeListing
 from .export_script_request import ExportScriptRequest
 from .export_script_response import ExportScriptResponse
 from .export_uri import ExportUri
@@ -1283,6 +1292,7 @@ from .interaction_stats_rule import InteractionStatsRule
 from .interaction_stats_rule_container import InteractionStatsRuleContainer
 from .intraday_performance_prediction_data import IntradayPerformancePredictionData
 from .intraday_planning_group_request import IntradayPlanningGroupRequest
+from .invalid_assignment import InvalidAssignment
 from .ip_address_authentication import IpAddressAuthentication
 from .ip_address_range import IpAddressRange
 from .ip_address_range_listing import IpAddressRangeListing
@@ -1462,6 +1472,7 @@ from .line_status import LineStatus
 from .line_user_id import LineUserId
 from .list_item_component import ListItemComponent
 from .list_wrapper_interval import ListWrapperInterval
+from .list_wrapper_secondary_presence import ListWrapperSecondaryPresence
 from .list_wrapper_shift_start_variance import ListWrapperShiftStartVariance
 from .listed_program import ListedProgram
 from .listed_topic import ListedTopic
@@ -1509,8 +1520,10 @@ from .media_type import MediaType
 from .media_type_access import MediaTypeAccess
 from .media_types import MediaTypes
 from .media_utilization import MediaUtilization
+from .member import Member
 from .member_entity import MemberEntity
 from .member_group import MemberGroup
+from .member_listing import MemberListing
 from .merge_operation import MergeOperation
 from .message import Message
 from .message_content import MessageContent
@@ -1642,6 +1655,7 @@ from .organization_role_entity_listing import OrganizationRoleEntityListing
 from .orphan_recording import OrphanRecording
 from .orphan_recording_listing import OrphanRecordingListing
 from .orphan_update_request import OrphanUpdateRequest
+from .other_profile_assignment import OtherProfileAssignment
 from .out_of_office import OutOfOffice
 from .out_of_office_event_out_of_office import OutOfOfficeEventOutOfOffice
 from .out_of_office_event_user import OutOfOfficeEventUser
@@ -2197,6 +2211,7 @@ from .search_shift_trade_response import SearchShiftTradeResponse
 from .search_shift_trades_request import SearchShiftTradesRequest
 from .search_shift_trades_response import SearchShiftTradesResponse
 from .search_sort import SearchSort
+from .secondary_presence import SecondaryPresence
 from .section import Section
 from .secure_session import SecureSession
 from .secure_session_entity_listing import SecureSessionEntityListing
@@ -2339,6 +2354,7 @@ from .system_prompt_entity_listing import SystemPromptEntityListing
 from .tag_query_request import TagQueryRequest
 from .tag_value import TagValue
 from .tag_value_entity_listing import TagValueEntityListing
+from .target_performance_profile import TargetPerformanceProfile
 from .team import Team
 from .template_parameter import TemplateParameter
 from .term_attribute import TermAttribute
@@ -2474,6 +2490,10 @@ from .twitter_id import TwitterId
 from .twitter_integration import TwitterIntegration
 from .twitter_integration_entity_listing import TwitterIntegrationEntityListing
 from .twitter_integration_request import TwitterIntegrationRequest
+from .uci10n import UCI10n
+from .uc_icon import UCIcon
+from .uc_integration import UCIntegration
+from .uc_integration_listing import UCIntegrationListing
 from .unpublished_programs_entity_listing import UnpublishedProgramsEntityListing
 from .unread_metric import UnreadMetric
 from .unread_status import UnreadStatus
@@ -2589,6 +2609,7 @@ from .utilization import Utilization
 from .utterance import Utterance
 from .validate_address_request import ValidateAddressRequest
 from .validate_address_response import ValidateAddressResponse
+from .validate_assign_users import ValidateAssignUsers
 from .validate_work_plan_messages import ValidateWorkPlanMessages
 from .validate_work_plan_response import ValidateWorkPlanResponse
 from .validation_limits import ValidationLimits

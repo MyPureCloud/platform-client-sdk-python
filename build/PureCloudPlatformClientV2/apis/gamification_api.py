@@ -778,6 +778,84 @@ class GamificationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_gamification_profile_members(self, performance_profile_id, **kwargs):
+        """
+        Members of a given performance profile
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_profile_members(performance_profile_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str performance_profile_id: Performance Profile Id (required)
+        :return: MemberListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['performance_profile_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_profile_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'performance_profile_id' is set
+        if ('performance_profile_id' not in params) or (params['performance_profile_id'] is None):
+            raise ValueError("Missing the required parameter `performance_profile_id` when calling `get_gamification_profile_members`")
+
+
+        resource_path = '/api/v2/gamification/profiles/{performanceProfileId}/members'.replace('{format}', 'json')
+        path_params = {}
+        if 'performance_profile_id' in params:
+            path_params['performanceProfileId'] = params['performance_profile_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MemberListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_gamification_profile_metric(self, profile_id, metric_id, **kwargs):
         """
         Performance profile gamified metric by id
@@ -3171,6 +3249,264 @@ class GamificationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='PerformanceProfile',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_gamification_profile_members(self, performance_profile_id, body, **kwargs):
+        """
+        Assign members to a given performance profile
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_gamification_profile_members(performance_profile_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str performance_profile_id: Performance Profile Id (required)
+        :param AssignUsers body: assignUsers (required)
+        :return: Assignment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['performance_profile_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_gamification_profile_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'performance_profile_id' is set
+        if ('performance_profile_id' not in params) or (params['performance_profile_id'] is None):
+            raise ValueError("Missing the required parameter `performance_profile_id` when calling `post_gamification_profile_members`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_gamification_profile_members`")
+
+
+        resource_path = '/api/v2/gamification/profiles/{performanceProfileId}/members'.replace('{format}', 'json')
+        path_params = {}
+        if 'performance_profile_id' in params:
+            path_params['performanceProfileId'] = params['performance_profile_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Assignment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_gamification_profile_members_validate(self, performance_profile_id, body, **kwargs):
+        """
+        Validate member assignment
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_gamification_profile_members_validate(performance_profile_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str performance_profile_id: Performance Profile Id (required)
+        :param ValidateAssignUsers body: memberAssignments (required)
+        :return: AssignmentValidation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['performance_profile_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_gamification_profile_members_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'performance_profile_id' is set
+        if ('performance_profile_id' not in params) or (params['performance_profile_id'] is None):
+            raise ValueError("Missing the required parameter `performance_profile_id` when calling `post_gamification_profile_members_validate`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_gamification_profile_members_validate`")
+
+
+        resource_path = '/api/v2/gamification/profiles/{performanceProfileId}/members/validate'.replace('{format}', 'json')
+        path_params = {}
+        if 'performance_profile_id' in params:
+            path_params['performanceProfileId'] = params['performance_profile_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AssignmentValidation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_gamification_profile_metric_link(self, source_profile_id, source_metric_id, body, **kwargs):
+        """
+        Creates a linked metric
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_gamification_profile_metric_link(source_profile_id, source_metric_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_profile_id: Source Performance Profile Id (required)
+        :param str source_metric_id: Source Metric Id (required)
+        :param TargetPerformanceProfile body: linkedMetric (required)
+        :return: Metric
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_profile_id', 'source_metric_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_gamification_profile_metric_link" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_profile_id' is set
+        if ('source_profile_id' not in params) or (params['source_profile_id'] is None):
+            raise ValueError("Missing the required parameter `source_profile_id` when calling `post_gamification_profile_metric_link`")
+        # verify the required parameter 'source_metric_id' is set
+        if ('source_metric_id' not in params) or (params['source_metric_id'] is None):
+            raise ValueError("Missing the required parameter `source_metric_id` when calling `post_gamification_profile_metric_link`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_gamification_profile_metric_link`")
+
+
+        resource_path = '/api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_profile_id' in params:
+            path_params['sourceProfileId'] = params['source_profile_id']
+        if 'source_metric_id' in params:
+            path_params['sourceMetricId'] = params['source_metric_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Metric',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

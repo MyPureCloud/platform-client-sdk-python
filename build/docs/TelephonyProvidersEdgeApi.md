@@ -56,6 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_edgegroup_edgetrunkbase**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroup_edgetrunkbase) | Gets the edge trunk base associated with the edge group|
 |[**get_telephony_providers_edges_edgegroups**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroups) | Get the list of edge groups.|
 |[**get_telephony_providers_edges_edgeversionreport**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgeversionreport) | Get the edge version report.|
+|[**get_telephony_providers_edges_expired**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_expired) | List of edges more than 4 edge versions behind the latest software.|
 |[**get_telephony_providers_edges_extension**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extension) | Get an extension by ID.|
 |[**get_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensionpool) | Get an extension pool by ID|
 |[**get_telephony_providers_edges_extensionpools**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensionpools) | Get a listing of extension pools|
@@ -2665,6 +2666,54 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**EdgeVersionReport**](EdgeVersionReport.html)
+
+<a name="get_telephony_providers_edges_expired"></a>
+
+## [**ExpiredEdgeListing**](ExpiredEdgeListing.html) get_telephony_providers_edges_expired()
+
+
+
+List of edges more than 4 edge versions behind the latest software.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/expired 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* internal:edge:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+
+try:
+    # List of edges more than 4 edge versions behind the latest software.
+    api_response = api_instance.get_telephony_providers_edges_expired()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_expired: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**ExpiredEdgeListing**](ExpiredEdgeListing.html)
 
 <a name="get_telephony_providers_edges_extension"></a>
 

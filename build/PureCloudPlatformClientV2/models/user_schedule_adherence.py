@@ -43,6 +43,7 @@ class UserScheduleAdherence(object):
             'id': 'str',
             'name': 'str',
             'user': 'UserReference',
+            'business_unit': 'BusinessUnit',
             'management_unit': 'ManagementUnit',
             'team': 'Team',
             'scheduled_activity_category': 'str',
@@ -65,6 +66,7 @@ class UserScheduleAdherence(object):
             'id': 'id',
             'name': 'name',
             'user': 'user',
+            'business_unit': 'businessUnit',
             'management_unit': 'managementUnit',
             'team': 'team',
             'scheduled_activity_category': 'scheduledActivityCategory',
@@ -86,6 +88,7 @@ class UserScheduleAdherence(object):
         self._id = None
         self._name = None
         self._user = None
+        self._business_unit = None
         self._management_unit = None
         self._team = None
         self._scheduled_activity_category = None
@@ -171,6 +174,29 @@ class UserScheduleAdherence(object):
         """
         
         self._user = user
+
+    @property
+    def business_unit(self):
+        """
+        Gets the business_unit of this UserScheduleAdherence.
+        The business unit to which this user belongs
+
+        :return: The business_unit of this UserScheduleAdherence.
+        :rtype: BusinessUnit
+        """
+        return self._business_unit
+
+    @business_unit.setter
+    def business_unit(self, business_unit):
+        """
+        Sets the business_unit of this UserScheduleAdherence.
+        The business unit to which this user belongs
+
+        :param business_unit: The business_unit of this UserScheduleAdherence.
+        :type: BusinessUnit
+        """
+        
+        self._business_unit = business_unit
 
     @property
     def management_unit(self):

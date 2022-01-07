@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_botconnector_integration_id_bots**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bots) | Get a list of botConnector bots for this integration|
 |[**get_integrations_botconnector_integration_id_bots_summaries**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bots_summaries) | Get a summary list of botConnector bots for this integration|
 |[**get_integrations_clientapps**](IntegrationsApi.html#get_integrations_clientapps) | List permitted client app integrations for the logged in user|
+|[**get_integrations_clientapps_unifiedcommunications**](IntegrationsApi.html#get_integrations_clientapps_unifiedcommunications) | UC integration client application configuration.|
 |[**get_integrations_credential**](IntegrationsApi.html#get_integrations_credential) | Get a single credential with sensitive fields redacted|
 |[**get_integrations_credentials**](IntegrationsApi.html#get_integrations_credentials) | List multiple sets of credentials|
 |[**get_integrations_credentials_types**](IntegrationsApi.html#get_integrations_credentials_types) | List all credential types|
@@ -1303,6 +1304,67 @@ except ApiException as e:
 ### Return type
 
 [**ClientAppEntityListing**](ClientAppEntityListing.html)
+
+<a name="get_integrations_clientapps_unifiedcommunications"></a>
+
+## [**UCIntegrationListing**](UCIntegrationListing.html) get_integrations_clientapps_unifiedcommunications(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+
+
+
+UC integration client application configuration.
+
+This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+
+Wraps GET /api/v2/integrations/clientapps/unifiedcommunications 
+
+Requires ANY permissions: 
+
+* integration:unifiedCommunications:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+
+try:
+    # UC integration client application configuration.
+    api_response = api_instance.get_integrations_clientapps_unifiedcommunications(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_clientapps_unifiedcommunications: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UCIntegrationListing**](UCIntegrationListing.html)
 
 <a name="get_integrations_credential"></a>
 

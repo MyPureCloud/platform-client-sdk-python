@@ -30,6 +30,7 @@ from .models.activation import Activation
 from .models.active_alert_count import ActiveAlertCount
 from .models.activity_code import ActivityCode
 from .models.activity_code_container import ActivityCodeContainer
+from .models.activity_code_reference import ActivityCodeReference
 from .models.acw_detail_event_topic_after_call_work_event import AcwDetailEventTopicAfterCallWorkEvent
 from .models.acw_settings import AcwSettings
 from .models.add_conversation_request import AddConversationRequest
@@ -143,8 +144,12 @@ from .models.assessment_listing import AssessmentListing
 from .models.assessment_question_group_score import AssessmentQuestionGroupScore
 from .models.assessment_question_score import AssessmentQuestionScore
 from .models.assessment_scoring_set import AssessmentScoringSet
+from .models.assign_users import AssignUsers
 from .models.assigned_segment import AssignedSegment
 from .models.assigned_wrapup_code import AssignedWrapupCode
+from .models.assignment import Assignment
+from .models.assignment_error import AssignmentError
+from .models.assignment_validation import AssignmentValidation
 from .models.associated_value_field import AssociatedValueField
 from .models.async_conversation_query import AsyncConversationQuery
 from .models.async_forecast_operation_result import AsyncForecastOperationResult
@@ -448,6 +453,7 @@ from .models.cobrowse_conversation_entity_listing import CobrowseConversationEnt
 from .models.cobrowse_media_participant import CobrowseMediaParticipant
 from .models.cobrowse_settings import CobrowseSettings
 from .models.cobrowsesession import Cobrowsesession
+from .models.column_status import ColumnStatus
 from .models.command_status import CommandStatus
 from .models.command_status_entity_listing import CommandStatusEntityListing
 from .models.common_campaign import CommonCampaign
@@ -486,6 +492,7 @@ from .models.contact_list_filter_range import ContactListFilterRange
 from .models.contact_listing import ContactListing
 from .models.contact_phone_number_column import ContactPhoneNumberColumn
 from .models.contact_sort import ContactSort
+from .models.contactable_status import ContactableStatus
 from .models.contactlist_download_ready_export_uri import ContactlistDownloadReadyExportUri
 from .models.contactlist_import_status_import_status import ContactlistImportStatusImportStatus
 from .models.content_actions import ContentActions
@@ -990,6 +997,7 @@ from .models.edge_connection_info import EdgeConnectionInfo
 from .models.edge_entity_listing import EdgeEntityListing
 from .models.edge_group import EdgeGroup
 from .models.edge_group_entity_listing import EdgeGroupEntityListing
+from .models.edge_id_name_pair import EdgeIdNamePair
 from .models.edge_interface import EdgeInterface
 from .models.edge_line import EdgeLine
 from .models.edge_line_entity_listing import EdgeLineEntityListing
@@ -1088,6 +1096,7 @@ from .models.event_log import EventLog
 from .models.event_message import EventMessage
 from .models.execute_recording_jobs_query import ExecuteRecordingJobsQuery
 from .models.expansion_criterium import ExpansionCriterium
+from .models.expired_edge_listing import ExpiredEdgeListing
 from .models.export_script_request import ExportScriptRequest
 from .models.export_script_response import ExportScriptResponse
 from .models.export_uri import ExportUri
@@ -1283,6 +1292,7 @@ from .models.interaction_stats_rule import InteractionStatsRule
 from .models.interaction_stats_rule_container import InteractionStatsRuleContainer
 from .models.intraday_performance_prediction_data import IntradayPerformancePredictionData
 from .models.intraday_planning_group_request import IntradayPlanningGroupRequest
+from .models.invalid_assignment import InvalidAssignment
 from .models.ip_address_authentication import IpAddressAuthentication
 from .models.ip_address_range import IpAddressRange
 from .models.ip_address_range_listing import IpAddressRangeListing
@@ -1462,6 +1472,7 @@ from .models.line_status import LineStatus
 from .models.line_user_id import LineUserId
 from .models.list_item_component import ListItemComponent
 from .models.list_wrapper_interval import ListWrapperInterval
+from .models.list_wrapper_secondary_presence import ListWrapperSecondaryPresence
 from .models.list_wrapper_shift_start_variance import ListWrapperShiftStartVariance
 from .models.listed_program import ListedProgram
 from .models.listed_topic import ListedTopic
@@ -1509,8 +1520,10 @@ from .models.media_type import MediaType
 from .models.media_type_access import MediaTypeAccess
 from .models.media_types import MediaTypes
 from .models.media_utilization import MediaUtilization
+from .models.member import Member
 from .models.member_entity import MemberEntity
 from .models.member_group import MemberGroup
+from .models.member_listing import MemberListing
 from .models.merge_operation import MergeOperation
 from .models.message import Message
 from .models.message_content import MessageContent
@@ -1642,6 +1655,7 @@ from .models.organization_role_entity_listing import OrganizationRoleEntityListi
 from .models.orphan_recording import OrphanRecording
 from .models.orphan_recording_listing import OrphanRecordingListing
 from .models.orphan_update_request import OrphanUpdateRequest
+from .models.other_profile_assignment import OtherProfileAssignment
 from .models.out_of_office import OutOfOffice
 from .models.out_of_office_event_out_of_office import OutOfOfficeEventOutOfOffice
 from .models.out_of_office_event_user import OutOfOfficeEventUser
@@ -2197,6 +2211,7 @@ from .models.search_shift_trade_response import SearchShiftTradeResponse
 from .models.search_shift_trades_request import SearchShiftTradesRequest
 from .models.search_shift_trades_response import SearchShiftTradesResponse
 from .models.search_sort import SearchSort
+from .models.secondary_presence import SecondaryPresence
 from .models.section import Section
 from .models.secure_session import SecureSession
 from .models.secure_session_entity_listing import SecureSessionEntityListing
@@ -2339,6 +2354,7 @@ from .models.system_prompt_entity_listing import SystemPromptEntityListing
 from .models.tag_query_request import TagQueryRequest
 from .models.tag_value import TagValue
 from .models.tag_value_entity_listing import TagValueEntityListing
+from .models.target_performance_profile import TargetPerformanceProfile
 from .models.team import Team
 from .models.template_parameter import TemplateParameter
 from .models.term_attribute import TermAttribute
@@ -2474,6 +2490,10 @@ from .models.twitter_id import TwitterId
 from .models.twitter_integration import TwitterIntegration
 from .models.twitter_integration_entity_listing import TwitterIntegrationEntityListing
 from .models.twitter_integration_request import TwitterIntegrationRequest
+from .models.uci10n import UCI10n
+from .models.uc_icon import UCIcon
+from .models.uc_integration import UCIntegration
+from .models.uc_integration_listing import UCIntegrationListing
 from .models.unpublished_programs_entity_listing import UnpublishedProgramsEntityListing
 from .models.unread_metric import UnreadMetric
 from .models.unread_status import UnreadStatus
@@ -2589,6 +2609,7 @@ from .models.utilization import Utilization
 from .models.utterance import Utterance
 from .models.validate_address_request import ValidateAddressRequest
 from .models.validate_address_response import ValidateAddressResponse
+from .models.validate_assign_users import ValidateAssignUsers
 from .models.validate_work_plan_messages import ValidateWorkPlanMessages
 from .models.validate_work_plan_response import ValidateWorkPlanResponse
 from .models.validation_limits import ValidationLimits

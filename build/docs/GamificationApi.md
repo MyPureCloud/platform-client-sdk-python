@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_gamification_metricdefinitions**](GamificationApi.html#get_gamification_metricdefinitions) | All metric definitions|
 |[**get_gamification_metrics**](GamificationApi.html#get_gamification_metrics) | All gamified metrics for a given profile|
 |[**get_gamification_profile**](GamificationApi.html#get_gamification_profile) | Performance profile by id|
+|[**get_gamification_profile_members**](GamificationApi.html#get_gamification_profile_members) | Members of a given performance profile|
 |[**get_gamification_profile_metric**](GamificationApi.html#get_gamification_profile_metric) | Performance profile gamified metric by id|
 |[**get_gamification_profile_metrics**](GamificationApi.html#get_gamification_profile_metrics) | All gamified metrics for a given performance profile|
 |[**get_gamification_profile_metrics_objectivedetails**](GamificationApi.html#get_gamification_profile_metrics_objectivedetails) | All metrics for a given performance profile with objective details such as order and maxPoints|
@@ -46,6 +47,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_gamification_metrics**](GamificationApi.html#post_gamification_metrics) | Creates a gamified metric with a given metric definition and metric objective|
 |[**post_gamification_profile_activate**](GamificationApi.html#post_gamification_profile_activate) | Activate a performance profile|
 |[**post_gamification_profile_deactivate**](GamificationApi.html#post_gamification_profile_deactivate) | Deactivate a performance profile|
+|[**post_gamification_profile_members**](GamificationApi.html#post_gamification_profile_members) | Assign members to a given performance profile|
+|[**post_gamification_profile_members_validate**](GamificationApi.html#post_gamification_profile_members_validate) | Validate member assignment|
+|[**post_gamification_profile_metric_link**](GamificationApi.html#post_gamification_profile_metric_link) | Creates a linked metric|
 |[**post_gamification_profile_metrics**](GamificationApi.html#post_gamification_profile_metrics) | Creates a gamified metric with a given metric definition and metric objective under in a performance profile|
 |[**post_gamification_profiles**](GamificationApi.html#post_gamification_profiles) | Create a new custom performance profile|
 |[**put_gamification_metric**](GamificationApi.html#put_gamification_metric) | Updates a metric|
@@ -530,6 +534,57 @@ except ApiException as e:
 ### Return type
 
 [**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="get_gamification_profile_members"></a>
+
+## [**MemberListing**](MemberListing.html) get_gamification_profile_members(performance_profile_id)
+
+
+
+Members of a given performance profile
+
+
+
+Wraps GET /api/v2/gamification/profiles/{performanceProfileId}/members 
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+
+try:
+    # Members of a given performance profile
+    api_response = api_instance.get_gamification_profile_members(performance_profile_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_profile_members: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **performance_profile_id** | **str**| Performance Profile Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MemberListing**](MemberListing.html)
 
 <a name="get_gamification_profile_metric"></a>
 
@@ -2074,6 +2129,167 @@ except ApiException as e:
 ### Return type
 
 [**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="post_gamification_profile_members"></a>
+
+## [**Assignment**](Assignment.html) post_gamification_profile_members(performance_profile_id, body)
+
+
+
+Assign members to a given performance profile
+
+
+
+Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members 
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+body = PureCloudPlatformClientV2.AssignUsers() # AssignUsers | assignUsers
+
+try:
+    # Assign members to a given performance profile
+    api_response = api_instance.post_gamification_profile_members(performance_profile_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profile_members: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **performance_profile_id** | **str**| Performance Profile Id |  |
+| **body** | [**AssignUsers**](AssignUsers.html)| assignUsers |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Assignment**](Assignment.html)
+
+<a name="post_gamification_profile_members_validate"></a>
+
+## [**AssignmentValidation**](AssignmentValidation.html) post_gamification_profile_members_validate(performance_profile_id, body)
+
+
+
+Validate member assignment
+
+
+
+Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members/validate 
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+body = PureCloudPlatformClientV2.ValidateAssignUsers() # ValidateAssignUsers | memberAssignments
+
+try:
+    # Validate member assignment
+    api_response = api_instance.post_gamification_profile_members_validate(performance_profile_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profile_members_validate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **performance_profile_id** | **str**| Performance Profile Id |  |
+| **body** | [**ValidateAssignUsers**](ValidateAssignUsers.html)| memberAssignments |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignmentValidation**](AssignmentValidation.html)
+
+<a name="post_gamification_profile_metric_link"></a>
+
+## [**Metric**](Metric.html) post_gamification_profile_metric_link(source_profile_id, source_metric_id, body)
+
+
+
+Creates a linked metric
+
+
+
+Wraps POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link 
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+source_profile_id = 'source_profile_id_example' # str | Source Performance Profile Id
+source_metric_id = 'source_metric_id_example' # str | Source Metric Id
+body = PureCloudPlatformClientV2.TargetPerformanceProfile() # TargetPerformanceProfile | linkedMetric
+
+try:
+    # Creates a linked metric
+    api_response = api_instance.post_gamification_profile_metric_link(source_profile_id, source_metric_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profile_metric_link: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_profile_id** | **str**| Source Performance Profile Id |  |
+| **source_metric_id** | **str**| Source Metric Id |  |
+| **body** | [**TargetPerformanceProfile**](TargetPerformanceProfile.html)| linkedMetric |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Metric**](Metric.html)
 
 <a name="post_gamification_profile_metrics"></a>
 

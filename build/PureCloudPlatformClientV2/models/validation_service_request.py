@@ -41,18 +41,15 @@ class ValidationServiceRequest(object):
         """
         self.swagger_types = {
             'date_import_ended': 'datetime',
-            'file_url': 'str',
             'upload_key': 'str'
         }
 
         self.attribute_map = {
             'date_import_ended': 'dateImportEnded',
-            'file_url': 'fileUrl',
             'upload_key': 'uploadKey'
         }
 
         self._date_import_ended = None
-        self._file_url = None
         self._upload_key = None
 
     @property
@@ -77,29 +74,6 @@ class ValidationServiceRequest(object):
         """
         
         self._date_import_ended = date_import_ended
-
-    @property
-    def file_url(self):
-        """
-        Gets the file_url of this ValidationServiceRequest.
-        File URL is deprecated, please use upload key
-
-        :return: The file_url of this ValidationServiceRequest.
-        :rtype: str
-        """
-        return self._file_url
-
-    @file_url.setter
-    def file_url(self, file_url):
-        """
-        Sets the file_url of this ValidationServiceRequest.
-        File URL is deprecated, please use upload key
-
-        :param file_url: The file_url of this ValidationServiceRequest.
-        :type: str
-        """
-        
-        self._file_url = file_url
 
     @property
     def upload_key(self):

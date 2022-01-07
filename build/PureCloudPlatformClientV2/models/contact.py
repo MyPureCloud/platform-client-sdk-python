@@ -160,7 +160,7 @@ class Contact(object):
         :param type: The type of this Contact.
         :type: str
         """
-        allowed_values = ["PRIMARY", "WORK", "WORK2", "WORK3", "WORK4", "HOME", "MOBILE", "MAIN"]
+        allowed_values = ["PRIMARY", "WORK", "WORK2", "WORK3", "WORK4", "HOME", "MOBILE", "MAIN", "OTHER"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

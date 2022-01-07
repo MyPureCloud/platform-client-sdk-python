@@ -177,7 +177,8 @@ class ViewFilter(object):
             'journey_url_not_contains_any_conditions': 'list[str]',
             'journey_url_contains_all_conditions': 'list[str]',
             'journey_url_not_contains_all_conditions': 'list[str]',
-            'flow_milestone_ids': 'list[str]'
+            'flow_milestone_ids': 'list[str]',
+            'is_assessment_passed': 'bool'
         }
 
         self.attribute_map = {
@@ -318,7 +319,8 @@ class ViewFilter(object):
             'journey_url_not_contains_any_conditions': 'journeyUrlNotContainsAnyConditions',
             'journey_url_contains_all_conditions': 'journeyUrlContainsAllConditions',
             'journey_url_not_contains_all_conditions': 'journeyUrlNotContainsAllConditions',
-            'flow_milestone_ids': 'flowMilestoneIds'
+            'flow_milestone_ids': 'flowMilestoneIds',
+            'is_assessment_passed': 'isAssessmentPassed'
         }
 
         self._media_types = None
@@ -459,6 +461,7 @@ class ViewFilter(object):
         self._journey_url_contains_all_conditions = None
         self._journey_url_not_contains_all_conditions = None
         self._flow_milestone_ids = None
+        self._is_assessment_passed = None
 
     @property
     def media_types(self):
@@ -3633,6 +3636,29 @@ class ViewFilter(object):
         """
         
         self._flow_milestone_ids = flow_milestone_ids
+
+    @property
+    def is_assessment_passed(self):
+        """
+        Gets the is_assessment_passed of this ViewFilter.
+        Filter to indicate if Agent passed assessment or not
+
+        :return: The is_assessment_passed of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_assessment_passed
+
+    @is_assessment_passed.setter
+    def is_assessment_passed(self, is_assessment_passed):
+        """
+        Sets the is_assessment_passed of this ViewFilter.
+        Filter to indicate if Agent passed assessment or not
+
+        :param is_assessment_passed: The is_assessment_passed of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_assessment_passed = is_assessment_passed
 
     def to_dict(self):
         """

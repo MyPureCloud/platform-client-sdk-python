@@ -42,18 +42,24 @@ class WfmVersionedEntityMetadata(object):
         self.swagger_types = {
             'version': 'int',
             'modified_by': 'UserReference',
-            'date_modified': 'datetime'
+            'date_modified': 'datetime',
+            'created_by': 'UserReference',
+            'date_created': 'datetime'
         }
 
         self.attribute_map = {
             'version': 'version',
             'modified_by': 'modifiedBy',
-            'date_modified': 'dateModified'
+            'date_modified': 'dateModified',
+            'created_by': 'createdBy',
+            'date_created': 'dateCreated'
         }
 
         self._version = None
         self._modified_by = None
         self._date_modified = None
+        self._created_by = None
+        self._date_created = None
 
     @property
     def version(self):
@@ -123,6 +129,52 @@ class WfmVersionedEntityMetadata(object):
         """
         
         self._date_modified = date_modified
+
+    @property
+    def created_by(self):
+        """
+        Gets the created_by of this WfmVersionedEntityMetadata.
+        The user who created the associated entity, if available
+
+        :return: The created_by of this WfmVersionedEntityMetadata.
+        :rtype: UserReference
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """
+        Sets the created_by of this WfmVersionedEntityMetadata.
+        The user who created the associated entity, if available
+
+        :param created_by: The created_by of this WfmVersionedEntityMetadata.
+        :type: UserReference
+        """
+        
+        self._created_by = created_by
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this WfmVersionedEntityMetadata.
+        The date the associated entity was created, if available. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this WfmVersionedEntityMetadata.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this WfmVersionedEntityMetadata.
+        The date the associated entity was created, if available. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this WfmVersionedEntityMetadata.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
 
     def to_dict(self):
         """
