@@ -42,18 +42,21 @@ class RoutingConversationAttributesResponse(object):
         self.swagger_types = {
             'priority': 'int',
             'skills': 'list[RoutingSkill]',
-            'language': 'Language'
+            'language': 'Language',
+            'scored_agents': 'list[ScoredAgent]'
         }
 
         self.attribute_map = {
             'priority': 'priority',
             'skills': 'skills',
-            'language': 'language'
+            'language': 'language',
+            'scored_agents': 'scoredAgents'
         }
 
         self._priority = None
         self._skills = None
         self._language = None
+        self._scored_agents = None
 
     @property
     def priority(self):
@@ -123,6 +126,29 @@ class RoutingConversationAttributesResponse(object):
         """
         
         self._language = language
+
+    @property
+    def scored_agents(self):
+        """
+        Gets the scored_agents of this RoutingConversationAttributesResponse.
+        Current scored agents on in-queue conversation
+
+        :return: The scored_agents of this RoutingConversationAttributesResponse.
+        :rtype: list[ScoredAgent]
+        """
+        return self._scored_agents
+
+    @scored_agents.setter
+    def scored_agents(self, scored_agents):
+        """
+        Sets the scored_agents of this RoutingConversationAttributesResponse.
+        Current scored agents on in-queue conversation
+
+        :param scored_agents: The scored_agents of this RoutingConversationAttributesResponse.
+        :type: list[ScoredAgent]
+        """
+        
+        self._scored_agents = scored_agents
 
     def to_dict(self):
         """

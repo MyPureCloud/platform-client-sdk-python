@@ -67,6 +67,7 @@ class AnalyticsSession(object):
             'dnis': 'str',
             'edge_id': 'str',
             'eligible_agent_counts': 'list[int]',
+            'extended_delivery_status': 'str',
             'flow_in_type': 'str',
             'flow_out_type': 'str',
             'journey_action_id': 'str',
@@ -143,6 +144,7 @@ class AnalyticsSession(object):
             'dnis': 'dnis',
             'edge_id': 'edgeId',
             'eligible_agent_counts': 'eligibleAgentCounts',
+            'extended_delivery_status': 'extendedDeliveryStatus',
             'flow_in_type': 'flowInType',
             'flow_out_type': 'flowOutType',
             'journey_action_id': 'journeyActionId',
@@ -218,6 +220,7 @@ class AnalyticsSession(object):
         self._dnis = None
         self._edge_id = None
         self._eligible_agent_counts = None
+        self._extended_delivery_status = None
         self._flow_in_type = None
         self._flow_out_type = None
         self._journey_action_id = None
@@ -893,6 +896,29 @@ class AnalyticsSession(object):
         """
         
         self._eligible_agent_counts = eligible_agent_counts
+
+    @property
+    def extended_delivery_status(self):
+        """
+        Gets the extended_delivery_status of this AnalyticsSession.
+        Extended email delivery status
+
+        :return: The extended_delivery_status of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._extended_delivery_status
+
+    @extended_delivery_status.setter
+    def extended_delivery_status(self, extended_delivery_status):
+        """
+        Sets the extended_delivery_status of this AnalyticsSession.
+        Extended email delivery status
+
+        :param extended_delivery_status: The extended_delivery_status of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._extended_delivery_status = extended_delivery_status
 
     @property
     def flow_in_type(self):

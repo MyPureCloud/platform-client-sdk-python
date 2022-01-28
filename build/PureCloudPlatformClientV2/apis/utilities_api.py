@@ -120,7 +120,7 @@ class UtilitiesApi(object):
 
     def get_ipranges(self, **kwargs):
         """
-        Get public ip address ranges for PureCloud
+        Get public ip address ranges for Genesys Cloud
         
 
         This method makes a synchronous HTTP request by default. To make an

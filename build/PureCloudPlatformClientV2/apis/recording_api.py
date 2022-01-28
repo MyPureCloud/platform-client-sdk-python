@@ -621,11 +621,11 @@ class RecordingApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: Conversation ID (required)
         :param str recording_id: Recording ID (required)
-        :param str format_id: The desired media format.
-        :param str email_format_id: The desired media format when downloading an email recording.
-        :param str chat_format_id: The desired media format when downloading a chat recording.
-        :param str message_format_id: The desired media format when downloading a message recording.
-        :param bool download: requesting a download format of the recording
+        :param str format_id: The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE
+        :param str email_format_id: The desired media format when downloading an email recording. Valid values:EML,NONE
+        :param str chat_format_id: The desired media format when downloading a chat recording. Valid values:ZIP,NONE 
+        :param str message_format_id: The desired media format when downloading a message recording. Valid values:ZIP,NONE
+        :param bool download: requesting a download format of the recording. Valid values:true,false
         :param str file_name: the name of the downloaded fileName
         :param str locale: The locale for the requested file when downloading, as an ISO 639-1 code
         :return: Recording
@@ -885,7 +885,7 @@ class RecordingApi(object):
 
     def get_conversation_recordingmetadata(self, conversation_id, **kwargs):
         """
-        Get recording metadata for a conversation. Does not return playable media.
+        Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1062,7 +1062,7 @@ class RecordingApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: Conversation ID (required)
         :param int max_wait_ms: The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
-        :param str format_id: The desired media format
+        :param str format_id: The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
         :return: list[Recording]
                  If the method is called asynchronously,
                  returns the request thread.

@@ -2936,7 +2936,7 @@ except ApiException as e:
 
 <a name="get_routing_sms_phonenumbers"></a>
 
-## [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html) get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, page_size=page_size, page_number=page_number)
+## [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html) get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language)
 
 
 
@@ -2964,14 +2964,18 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 phone_number = 'phone_number_example' # str | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. (optional)
-phone_number_type = 'phone_number_type_example' # str | Filter on phone number type (optional)
-phone_number_status = 'phone_number_status_example' # str | Filter on phone number status (optional)
+phone_number_type = ['phone_number_type_example'] # list[str] | Filter on phone number type (optional)
+phone_number_status = ['phone_number_status_example'] # list[str] | Filter on phone number status (optional)
+country_code = ['country_code_example'] # list[str] | Filter on country code (optional)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'sort_by_example' # str | Optional field to sort results (optional)
+sort_order = 'sort_order_example' # str | Sort order (optional)
+language = 'en-US' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional) (default to en-US)
 
 try:
     # Get a list of provisioned phone numbers.
-    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_sms_phonenumbers: %s\n" % e)
@@ -2983,10 +2987,14 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **phone_number** | **str**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional]  |
-| **phone_number_type** | **str**| Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode |
-| **phone_number_status** | **str**| Filter on phone number status | [optional] <br />**Values**: active, invalid, porting |
+| **phone_number_type** | [**list[str]**](str.html)| Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode |
+| **phone_number_status** | [**list[str]**](str.html)| Filter on phone number status | [optional] <br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation |
+| **country_code** | [**list[str]**](str.html)| Filter on country code | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Optional field to sort results | [optional] <br />**Values**: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice |
+| **sort_order** | **str**| Sort order | [optional] <br />**Values**: ascending, descending |
+| **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to en-US] |
 {: class="table table-striped"}
 
 ### Return type

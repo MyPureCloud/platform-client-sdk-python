@@ -44,6 +44,8 @@ class Objective(object):
             'template_id': 'str',
             'zones': 'list[ObjectiveZone]',
             'enabled': 'bool',
+            'topics': 'list[AddressableEntityRef]',
+            'topic_ids_filter_type': 'str',
             'date_start': 'date'
         }
 
@@ -52,6 +54,8 @@ class Objective(object):
             'template_id': 'templateId',
             'zones': 'zones',
             'enabled': 'enabled',
+            'topics': 'topics',
+            'topic_ids_filter_type': 'topicIdsFilterType',
             'date_start': 'dateStart'
         }
 
@@ -59,6 +63,8 @@ class Objective(object):
         self._template_id = None
         self._zones = None
         self._enabled = None
+        self._topics = None
+        self._topic_ids_filter_type = None
         self._date_start = None
 
     @property
@@ -152,6 +158,56 @@ class Objective(object):
         """
         
         self._enabled = enabled
+
+    @property
+    def topics(self):
+        """
+        Gets the topics of this Objective.
+        A list of topic ids for detected topic metrics
+
+        :return: The topics of this Objective.
+        :rtype: list[AddressableEntityRef]
+        """
+        return self._topics
+
+    @topics.setter
+    def topics(self, topics):
+        """
+        Sets the topics of this Objective.
+        A list of topic ids for detected topic metrics
+
+        :param topics: The topics of this Objective.
+        :type: list[AddressableEntityRef]
+        """
+        
+        self._topics = topics
+
+    @property
+    def topic_ids_filter_type(self):
+        """
+        Gets the topic_ids_filter_type of this Objective.
+        A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
+
+        :return: The topic_ids_filter_type of this Objective.
+        :rtype: str
+        """
+        return self._topic_ids_filter_type
+
+    @topic_ids_filter_type.setter
+    def topic_ids_filter_type(self, topic_ids_filter_type):
+        """
+        Sets the topic_ids_filter_type of this Objective.
+        A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
+
+        :param topic_ids_filter_type: The topic_ids_filter_type of this Objective.
+        :type: str
+        """
+        allowed_values = ["and", "or"]
+        if topic_ids_filter_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for topic_ids_filter_type -> " + topic_ids_filter_type)
+            self._topic_ids_filter_type = "outdated_sdk_version"
+        else:
+            self._topic_ids_filter_type = topic_ids_filter_type
 
     @property
     def date_start(self):

@@ -44,6 +44,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
             'management_unit_id': 'str',
             'team': 'WfmUserScheduleAdherenceUpdatedMuTopicUriReference',
             'scheduled_activity_category': 'str',
+            'scheduled_activity_code': 'WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference',
             'system_presence': 'str',
             'organization_secondary_presence_id': 'str',
             'routing_status': 'str',
@@ -63,6 +64,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
             'management_unit_id': 'managementUnitId',
             'team': 'team',
             'scheduled_activity_category': 'scheduledActivityCategory',
+            'scheduled_activity_code': 'scheduledActivityCode',
             'system_presence': 'systemPresence',
             'organization_secondary_presence_id': 'organizationSecondaryPresenceId',
             'routing_status': 'routingStatus',
@@ -81,6 +83,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         self._management_unit_id = None
         self._team = None
         self._scheduled_activity_category = None
+        self._scheduled_activity_code = None
         self._system_presence = None
         self._organization_secondary_presence_id = None
         self._routing_status = None
@@ -185,6 +188,29 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         """
         
         self._scheduled_activity_category = scheduled_activity_category
+
+    @property
+    def scheduled_activity_code(self):
+        """
+        Gets the scheduled_activity_code of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The scheduled_activity_code of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+        :rtype: WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference
+        """
+        return self._scheduled_activity_code
+
+    @scheduled_activity_code.setter
+    def scheduled_activity_code(self, scheduled_activity_code):
+        """
+        Sets the scheduled_activity_code of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+
+
+        :param scheduled_activity_code: The scheduled_activity_code of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+        :type: WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference
+        """
+        
+        self._scheduled_activity_code = scheduled_activity_code
 
     @property
     def system_presence(self):

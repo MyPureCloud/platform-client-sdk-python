@@ -42,6 +42,7 @@ class AnalyticsConversationWithoutAttributes(object):
         self.swagger_types = {
             'conversation_end': 'datetime',
             'conversation_id': 'str',
+            'conversation_initiator': 'str',
             'conversation_start': 'datetime',
             'division_ids': 'list[str]',
             'external_tag': 'str',
@@ -59,6 +60,7 @@ class AnalyticsConversationWithoutAttributes(object):
         self.attribute_map = {
             'conversation_end': 'conversationEnd',
             'conversation_id': 'conversationId',
+            'conversation_initiator': 'conversationInitiator',
             'conversation_start': 'conversationStart',
             'division_ids': 'divisionIds',
             'external_tag': 'externalTag',
@@ -75,6 +77,7 @@ class AnalyticsConversationWithoutAttributes(object):
 
         self._conversation_end = None
         self._conversation_id = None
+        self._conversation_initiator = None
         self._conversation_start = None
         self._division_ids = None
         self._external_tag = None
@@ -133,6 +136,33 @@ class AnalyticsConversationWithoutAttributes(object):
         """
         
         self._conversation_id = conversation_id
+
+    @property
+    def conversation_initiator(self):
+        """
+        Gets the conversation_initiator of this AnalyticsConversationWithoutAttributes.
+        Indicates the participant purpose of the participant initiating a message conversation
+
+        :return: The conversation_initiator of this AnalyticsConversationWithoutAttributes.
+        :rtype: str
+        """
+        return self._conversation_initiator
+
+    @conversation_initiator.setter
+    def conversation_initiator(self, conversation_initiator):
+        """
+        Sets the conversation_initiator of this AnalyticsConversationWithoutAttributes.
+        Indicates the participant purpose of the participant initiating a message conversation
+
+        :param conversation_initiator: The conversation_initiator of this AnalyticsConversationWithoutAttributes.
+        :type: str
+        """
+        allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
+        if conversation_initiator.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for conversation_initiator -> " + conversation_initiator)
+            self._conversation_initiator = "outdated_sdk_version"
+        else:
+            self._conversation_initiator = conversation_initiator
 
     @property
     def conversation_start(self):

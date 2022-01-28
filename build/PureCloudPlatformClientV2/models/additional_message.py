@@ -62,7 +62,7 @@ class AdditionalMessage(object):
     def text_body(self):
         """
         Gets the text_body of this AdditionalMessage.
-        The body of the text message.
+        The body of the text message.  Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.
 
         :return: The text_body of this AdditionalMessage.
         :rtype: str
@@ -73,7 +73,7 @@ class AdditionalMessage(object):
     def text_body(self, text_body):
         """
         Sets the text_body of this AdditionalMessage.
-        The body of the text message.
+        The body of the text message.  Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.
 
         :param text_body: The text_body of this AdditionalMessage.
         :type: str

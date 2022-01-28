@@ -4385,16 +4385,20 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str phone_number: Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
-        :param str phone_number_type: Filter on phone number type
-        :param str phone_number_status: Filter on phone number status
+        :param list[str] phone_number_type: Filter on phone number type
+        :param list[str] phone_number_status: Filter on phone number status
+        :param list[str] country_code: Filter on country code
         :param int page_size: Page size
         :param int page_number: Page number
+        :param str sort_by: Optional field to sort results
+        :param str sort_order: Sort order
+        :param str language: A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
         :return: SmsPhoneNumberEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['phone_number', 'phone_number_type', 'phone_number_status', 'page_size', 'page_number']
+        all_params = ['phone_number', 'phone_number_type', 'phone_number_status', 'country_code', 'page_size', 'page_number', 'sort_by', 'sort_order', 'language']
         all_params.append('callback')
 
         params = locals()
@@ -4419,10 +4423,18 @@ class RoutingApi(object):
             query_params['phoneNumberType'] = params['phone_number_type']
         if 'phone_number_status' in params:
             query_params['phoneNumberStatus'] = params['phone_number_status']
+        if 'country_code' in params:
+            query_params['countryCode'] = params['country_code']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'language' in params:
+            query_params['language'] = params['language']
 
         header_params = {}
 

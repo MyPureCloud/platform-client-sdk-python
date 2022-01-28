@@ -40,14 +40,41 @@ class FailedRecordingEntityListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[RecordingJobFailedRecording]'
+            'entities': 'list[RecordingJobFailedRecording]',
+            'page_size': 'int',
+            'page_number': 'int',
+            'total': 'int',
+            'first_uri': 'str',
+            'self_uri': 'str',
+            'next_uri': 'str',
+            'previous_uri': 'str',
+            'last_uri': 'str',
+            'page_count': 'int'
         }
 
         self.attribute_map = {
-            'entities': 'entities'
+            'entities': 'entities',
+            'page_size': 'pageSize',
+            'page_number': 'pageNumber',
+            'total': 'total',
+            'first_uri': 'firstUri',
+            'self_uri': 'selfUri',
+            'next_uri': 'nextUri',
+            'previous_uri': 'previousUri',
+            'last_uri': 'lastUri',
+            'page_count': 'pageCount'
         }
 
         self._entities = None
+        self._page_size = None
+        self._page_number = None
+        self._total = None
+        self._first_uri = None
+        self._self_uri = None
+        self._next_uri = None
+        self._previous_uri = None
+        self._last_uri = None
+        self._page_count = None
 
     @property
     def entities(self):
@@ -71,6 +98,213 @@ class FailedRecordingEntityListing(object):
         """
         
         self._entities = entities
+
+    @property
+    def page_size(self):
+        """
+        Gets the page_size of this FailedRecordingEntityListing.
+
+
+        :return: The page_size of this FailedRecordingEntityListing.
+        :rtype: int
+        """
+        return self._page_size
+
+    @page_size.setter
+    def page_size(self, page_size):
+        """
+        Sets the page_size of this FailedRecordingEntityListing.
+
+
+        :param page_size: The page_size of this FailedRecordingEntityListing.
+        :type: int
+        """
+        
+        self._page_size = page_size
+
+    @property
+    def page_number(self):
+        """
+        Gets the page_number of this FailedRecordingEntityListing.
+
+
+        :return: The page_number of this FailedRecordingEntityListing.
+        :rtype: int
+        """
+        return self._page_number
+
+    @page_number.setter
+    def page_number(self, page_number):
+        """
+        Sets the page_number of this FailedRecordingEntityListing.
+
+
+        :param page_number: The page_number of this FailedRecordingEntityListing.
+        :type: int
+        """
+        
+        self._page_number = page_number
+
+    @property
+    def total(self):
+        """
+        Gets the total of this FailedRecordingEntityListing.
+
+
+        :return: The total of this FailedRecordingEntityListing.
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total):
+        """
+        Sets the total of this FailedRecordingEntityListing.
+
+
+        :param total: The total of this FailedRecordingEntityListing.
+        :type: int
+        """
+        
+        self._total = total
+
+    @property
+    def first_uri(self):
+        """
+        Gets the first_uri of this FailedRecordingEntityListing.
+
+
+        :return: The first_uri of this FailedRecordingEntityListing.
+        :rtype: str
+        """
+        return self._first_uri
+
+    @first_uri.setter
+    def first_uri(self, first_uri):
+        """
+        Sets the first_uri of this FailedRecordingEntityListing.
+
+
+        :param first_uri: The first_uri of this FailedRecordingEntityListing.
+        :type: str
+        """
+        
+        self._first_uri = first_uri
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this FailedRecordingEntityListing.
+
+
+        :return: The self_uri of this FailedRecordingEntityListing.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this FailedRecordingEntityListing.
+
+
+        :param self_uri: The self_uri of this FailedRecordingEntityListing.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
+
+    @property
+    def next_uri(self):
+        """
+        Gets the next_uri of this FailedRecordingEntityListing.
+
+
+        :return: The next_uri of this FailedRecordingEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri):
+        """
+        Sets the next_uri of this FailedRecordingEntityListing.
+
+
+        :param next_uri: The next_uri of this FailedRecordingEntityListing.
+        :type: str
+        """
+        
+        self._next_uri = next_uri
+
+    @property
+    def previous_uri(self):
+        """
+        Gets the previous_uri of this FailedRecordingEntityListing.
+
+
+        :return: The previous_uri of this FailedRecordingEntityListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri):
+        """
+        Sets the previous_uri of this FailedRecordingEntityListing.
+
+
+        :param previous_uri: The previous_uri of this FailedRecordingEntityListing.
+        :type: str
+        """
+        
+        self._previous_uri = previous_uri
+
+    @property
+    def last_uri(self):
+        """
+        Gets the last_uri of this FailedRecordingEntityListing.
+
+
+        :return: The last_uri of this FailedRecordingEntityListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri):
+        """
+        Sets the last_uri of this FailedRecordingEntityListing.
+
+
+        :param last_uri: The last_uri of this FailedRecordingEntityListing.
+        :type: str
+        """
+        
+        self._last_uri = last_uri
+
+    @property
+    def page_count(self):
+        """
+        Gets the page_count of this FailedRecordingEntityListing.
+
+
+        :return: The page_count of this FailedRecordingEntityListing.
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """
+        Sets the page_count of this FailedRecordingEntityListing.
+
+
+        :param page_count: The page_count of this FailedRecordingEntityListing.
+        :type: int
+        """
+        
+        self._page_count = page_count
 
     def to_dict(self):
         """

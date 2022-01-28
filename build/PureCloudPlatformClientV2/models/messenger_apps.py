@@ -40,14 +40,40 @@ class MessengerApps(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'conversations': 'ConversationAppSettings',
             'knowledge': 'Knowledge'
         }
 
         self.attribute_map = {
+            'conversations': 'conversations',
             'knowledge': 'knowledge'
         }
 
+        self._conversations = None
         self._knowledge = None
+
+    @property
+    def conversations(self):
+        """
+        Gets the conversations of this MessengerApps.
+        The conversation settings that handles chats within the messenger
+
+        :return: The conversations of this MessengerApps.
+        :rtype: ConversationAppSettings
+        """
+        return self._conversations
+
+    @conversations.setter
+    def conversations(self, conversations):
+        """
+        Sets the conversations of this MessengerApps.
+        The conversation settings that handles chats within the messenger
+
+        :param conversations: The conversations of this MessengerApps.
+        :type: ConversationAppSettings
+        """
+        
+        self._conversations = conversations
 
     @property
     def knowledge(self):

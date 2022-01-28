@@ -55,6 +55,9 @@ class CoachingAppointmentResponse(object):
             'conversations': 'list[ConversationReference]',
             'documents': 'list[DocumentReference]',
             'is_overdue': 'bool',
+            'wfm_schedule': 'WfmScheduleReference',
+            'date_completed': 'datetime',
+            'external_links': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -74,6 +77,9 @@ class CoachingAppointmentResponse(object):
             'conversations': 'conversations',
             'documents': 'documents',
             'is_overdue': 'isOverdue',
+            'wfm_schedule': 'wfmSchedule',
+            'date_completed': 'dateCompleted',
+            'external_links': 'externalLinks',
             'self_uri': 'selfUri'
         }
 
@@ -92,6 +98,9 @@ class CoachingAppointmentResponse(object):
         self._conversations = None
         self._documents = None
         self._is_overdue = None
+        self._wfm_schedule = None
+        self._date_completed = None
+        self._external_links = None
         self._self_uri = None
 
     @property
@@ -442,6 +451,75 @@ class CoachingAppointmentResponse(object):
         """
         
         self._is_overdue = is_overdue
+
+    @property
+    def wfm_schedule(self):
+        """
+        Gets the wfm_schedule of this CoachingAppointmentResponse.
+        The Workforce Management schedule the appointment is associated with.
+
+        :return: The wfm_schedule of this CoachingAppointmentResponse.
+        :rtype: WfmScheduleReference
+        """
+        return self._wfm_schedule
+
+    @wfm_schedule.setter
+    def wfm_schedule(self, wfm_schedule):
+        """
+        Sets the wfm_schedule of this CoachingAppointmentResponse.
+        The Workforce Management schedule the appointment is associated with.
+
+        :param wfm_schedule: The wfm_schedule of this CoachingAppointmentResponse.
+        :type: WfmScheduleReference
+        """
+        
+        self._wfm_schedule = wfm_schedule
+
+    @property
+    def date_completed(self):
+        """
+        Gets the date_completed of this CoachingAppointmentResponse.
+        The date/time the coaching appointment was set to completed status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_completed of this CoachingAppointmentResponse.
+        :rtype: datetime
+        """
+        return self._date_completed
+
+    @date_completed.setter
+    def date_completed(self, date_completed):
+        """
+        Sets the date_completed of this CoachingAppointmentResponse.
+        The date/time the coaching appointment was set to completed status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_completed: The date_completed of this CoachingAppointmentResponse.
+        :type: datetime
+        """
+        
+        self._date_completed = date_completed
+
+    @property
+    def external_links(self):
+        """
+        Gets the external_links of this CoachingAppointmentResponse.
+        The list of external links related to the appointment
+
+        :return: The external_links of this CoachingAppointmentResponse.
+        :rtype: list[str]
+        """
+        return self._external_links
+
+    @external_links.setter
+    def external_links(self, external_links):
+        """
+        Sets the external_links of this CoachingAppointmentResponse.
+        The list of external links related to the appointment
+
+        :param external_links: The external_links of this CoachingAppointmentResponse.
+        :type: list[str]
+        """
+        
+        self._external_links = external_links
 
     @property
     def self_uri(self):

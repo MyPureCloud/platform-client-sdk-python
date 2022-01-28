@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_recording**](RecordingApi.html#get_conversation_recording) | Gets a specific recording.|
 |[**get_conversation_recording_annotation**](RecordingApi.html#get_conversation_recording_annotation) | Get annotation|
 |[**get_conversation_recording_annotations**](RecordingApi.html#get_conversation_recording_annotations) | Get annotations for recording|
-|[**get_conversation_recordingmetadata**](RecordingApi.html#get_conversation_recordingmetadata) | Get recording metadata for a conversation. Does not return playable media.|
+|[**get_conversation_recordingmetadata**](RecordingApi.html#get_conversation_recordingmetadata) | Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.|
 |[**get_conversation_recordingmetadata_recording_id**](RecordingApi.html#get_conversation_recordingmetadata_recording_id) | Get metadata for a specific recording. Does not return playable media.|
 |[**get_conversation_recordings**](RecordingApi.html#get_conversation_recordings) | Get all of a Conversation&#39;s Recordings.|
 |[**get_orphanrecording**](RecordingApi.html#get_orphanrecording) | Gets a single orphan recording|
@@ -434,6 +434,7 @@ Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}
 Requires ANY permissions: 
 
 * recording:recording:view
+* recording:recordingSegment:view
 
 ### Example
 
@@ -450,11 +451,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 recording_id = 'recording_id_example' # str | Recording ID
-format_id = 'WEBM' # str | The desired media format. (optional) (default to WEBM)
-email_format_id = 'EML' # str | The desired media format when downloading an email recording. (optional) (default to EML)
-chat_format_id = 'ZIP' # str | The desired media format when downloading a chat recording. (optional) (default to ZIP)
-message_format_id = 'ZIP' # str | The desired media format when downloading a message recording. (optional) (default to ZIP)
-download = false # bool | requesting a download format of the recording (optional) (default to false)
+format_id = 'WEBM' # str | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE (optional) (default to WEBM)
+email_format_id = 'EML' # str | The desired media format when downloading an email recording. Valid values:EML,NONE (optional) (default to EML)
+chat_format_id = 'ZIP' # str | The desired media format when downloading a chat recording. Valid values:ZIP,NONE  (optional) (default to ZIP)
+message_format_id = 'ZIP' # str | The desired media format when downloading a message recording. Valid values:ZIP,NONE (optional) (default to ZIP)
+download = false # bool | requesting a download format of the recording. Valid values:true,false (optional) (default to false)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
 locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
 
@@ -473,11 +474,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
-| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-| **email_format_id** | **str**| The desired media format when downloading an email recording. | [optional] [default to EML]<br />**Values**: EML, NONE |
-| **chat_format_id** | **str**| The desired media format when downloading a chat recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
-| **message_format_id** | **str**| The desired media format when downloading a message recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
-| **download** | **bool**| requesting a download format of the recording | [optional] [default to false] |
+| **format_id** | **str**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **email_format_id** | **str**| The desired media format when downloading an email recording. Valid values:EML,NONE | [optional] [default to EML]<br />**Values**: EML, NONE |
+| **chat_format_id** | **str**| The desired media format when downloading a chat recording. Valid values:ZIP,NONE  | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
+| **message_format_id** | **str**| The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
+| **download** | **bool**| requesting a download format of the recording. Valid values:true,false | [optional] [default to false] |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 | **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
 {: class="table table-striped"}
@@ -600,14 +601,16 @@ except ApiException as e:
 
 
 
-Get recording metadata for a conversation. Does not return playable media.
+Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:recording:view
+* recording:recordingSegment:view
 
 ### Example
 
@@ -625,7 +628,7 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 
 try:
-    # Get recording metadata for a conversation. Does not return playable media.
+    # Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
     api_response = api_instance.get_conversation_recordingmetadata(conversation_id)
     pprint(api_response)
 except ApiException as e:
@@ -659,6 +662,7 @@ Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}
 Requires ANY permissions: 
 
 * recording:recording:view
+* recording:recordingSegment:view
 
 ### Example
 
@@ -709,9 +713,10 @@ Get all of a Conversation's Recordings.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * recording:recording:view
+* recording:recordingSegment:view
 
 ### Example
 
@@ -728,7 +733,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 max_wait_ms = 5000 # int | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional) (default to 5000)
-format_id = 'WEBM' # str | The desired media format (optional) (default to WEBM)
+format_id = 'WEBM' # str | The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional) (default to WEBM)
 
 try:
     # Get all of a Conversation's Recordings.
@@ -745,7 +750,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **max_wait_ms** | **int**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
-| **format_id** | **str**| The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **format_id** | **str**| The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -2486,6 +2491,8 @@ Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annota
 Requires ANY permissions: 
 
 * recording:annotation:edit
+* recording:recording:view
+* recording:recordingSegment:view
 
 ### Example
 

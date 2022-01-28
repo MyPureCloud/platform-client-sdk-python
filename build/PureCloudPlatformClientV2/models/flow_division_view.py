@@ -44,8 +44,10 @@ class FlowDivisionView(object):
             'name': 'str',
             'division': 'WritableDivision',
             'type': 'str',
+            'description': 'str',
             'input_schema': 'JsonSchemaDocument',
             'output_schema': 'JsonSchemaDocument',
+            'supported_languages': 'list[SupportedLanguage]',
             'published_version': 'FlowVersion',
             'debug_version': 'FlowVersion',
             'self_uri': 'str'
@@ -56,8 +58,10 @@ class FlowDivisionView(object):
             'name': 'name',
             'division': 'division',
             'type': 'type',
+            'description': 'description',
             'input_schema': 'inputSchema',
             'output_schema': 'outputSchema',
+            'supported_languages': 'supportedLanguages',
             'published_version': 'publishedVersion',
             'debug_version': 'debugVersion',
             'self_uri': 'selfUri'
@@ -67,8 +71,10 @@ class FlowDivisionView(object):
         self._name = None
         self._division = None
         self._type = None
+        self._description = None
         self._input_schema = None
         self._output_schema = None
+        self._supported_languages = None
         self._published_version = None
         self._debug_version = None
         self._self_uri = None
@@ -170,6 +176,29 @@ class FlowDivisionView(object):
             self._type = type
 
     @property
+    def description(self):
+        """
+        Gets the description of this FlowDivisionView.
+        the flow description
+
+        :return: The description of this FlowDivisionView.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this FlowDivisionView.
+        the flow description
+
+        :param description: The description of this FlowDivisionView.
+        :type: str
+        """
+        
+        self._description = description
+
+    @property
     def input_schema(self):
         """
         Gets the input_schema of this FlowDivisionView.
@@ -214,6 +243,29 @@ class FlowDivisionView(object):
         """
         
         self._output_schema = output_schema
+
+    @property
+    def supported_languages(self):
+        """
+        Gets the supported_languages of this FlowDivisionView.
+        List of supported languages for the published version of the flow.
+
+        :return: The supported_languages of this FlowDivisionView.
+        :rtype: list[SupportedLanguage]
+        """
+        return self._supported_languages
+
+    @supported_languages.setter
+    def supported_languages(self, supported_languages):
+        """
+        Sets the supported_languages of this FlowDivisionView.
+        List of supported languages for the published version of the flow.
+
+        :param supported_languages: The supported_languages of this FlowDivisionView.
+        :type: list[SupportedLanguage]
+        """
+        
+        self._supported_languages = supported_languages
 
     @property
     def published_version(self):

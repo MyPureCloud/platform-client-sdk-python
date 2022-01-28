@@ -40,7 +40,7 @@ class ScoredAgent(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'agent': 'AddressableEntityRef',
+            'agent': 'DomainEntityRef',
             'score': 'int'
         }
 
@@ -59,7 +59,7 @@ class ScoredAgent(object):
         The agent
 
         :return: The agent of this ScoredAgent.
-        :rtype: AddressableEntityRef
+        :rtype: DomainEntityRef
         """
         return self._agent
 
@@ -70,7 +70,7 @@ class ScoredAgent(object):
         The agent
 
         :param agent: The agent of this ScoredAgent.
-        :type: AddressableEntityRef
+        :type: DomainEntityRef
         """
         
         self._agent = agent

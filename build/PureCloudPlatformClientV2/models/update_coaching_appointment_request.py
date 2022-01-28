@@ -46,7 +46,9 @@ class UpdateCoachingAppointmentRequest(object):
             'length_in_minutes': 'int',
             'conversation_ids': 'list[str]',
             'document_ids': 'list[str]',
-            'status': 'str'
+            'status': 'str',
+            'wfm_schedule': 'WfmScheduleReference',
+            'external_links': 'list[str]'
         }
 
         self.attribute_map = {
@@ -56,7 +58,9 @@ class UpdateCoachingAppointmentRequest(object):
             'length_in_minutes': 'lengthInMinutes',
             'conversation_ids': 'conversationIds',
             'document_ids': 'documentIds',
-            'status': 'status'
+            'status': 'status',
+            'wfm_schedule': 'wfmSchedule',
+            'external_links': 'externalLinks'
         }
 
         self._name = None
@@ -66,6 +70,8 @@ class UpdateCoachingAppointmentRequest(object):
         self._conversation_ids = None
         self._document_ids = None
         self._status = None
+        self._wfm_schedule = None
+        self._external_links = None
 
     @property
     def name(self):
@@ -231,6 +237,52 @@ class UpdateCoachingAppointmentRequest(object):
             self._status = "outdated_sdk_version"
         else:
             self._status = status
+
+    @property
+    def wfm_schedule(self):
+        """
+        Gets the wfm_schedule of this UpdateCoachingAppointmentRequest.
+        The Workforce Management schedule the appointment is associated with.
+
+        :return: The wfm_schedule of this UpdateCoachingAppointmentRequest.
+        :rtype: WfmScheduleReference
+        """
+        return self._wfm_schedule
+
+    @wfm_schedule.setter
+    def wfm_schedule(self, wfm_schedule):
+        """
+        Sets the wfm_schedule of this UpdateCoachingAppointmentRequest.
+        The Workforce Management schedule the appointment is associated with.
+
+        :param wfm_schedule: The wfm_schedule of this UpdateCoachingAppointmentRequest.
+        :type: WfmScheduleReference
+        """
+        
+        self._wfm_schedule = wfm_schedule
+
+    @property
+    def external_links(self):
+        """
+        Gets the external_links of this UpdateCoachingAppointmentRequest.
+        The list of external links related to the appointment
+
+        :return: The external_links of this UpdateCoachingAppointmentRequest.
+        :rtype: list[str]
+        """
+        return self._external_links
+
+    @external_links.setter
+    def external_links(self, external_links):
+        """
+        Sets the external_links of this UpdateCoachingAppointmentRequest.
+        The list of external links related to the appointment
+
+        :param external_links: The external_links of this UpdateCoachingAppointmentRequest.
+        :type: list[str]
+        """
+        
+        self._external_links = external_links
 
     def to_dict(self):
         """

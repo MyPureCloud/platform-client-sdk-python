@@ -60,6 +60,10 @@ class SmsPhoneNumber(object):
             'address_id': 'SmsAddress',
             'short_code_billing_type': 'str',
             'provisioning_status': 'SmsProvisioningStatus',
+            'country': 'str',
+            'supports_sms': 'bool',
+            'supports_mms': 'bool',
+            'supports_voice': 'bool',
             'self_uri': 'str'
         }
 
@@ -84,6 +88,10 @@ class SmsPhoneNumber(object):
             'address_id': 'addressId',
             'short_code_billing_type': 'shortCodeBillingType',
             'provisioning_status': 'provisioningStatus',
+            'country': 'country',
+            'supports_sms': 'supportsSms',
+            'supports_mms': 'supportsMms',
+            'supports_voice': 'supportsVoice',
             'self_uri': 'selfUri'
         }
 
@@ -107,6 +115,10 @@ class SmsPhoneNumber(object):
         self._address_id = None
         self._short_code_billing_type = None
         self._provisioning_status = None
+        self._country = None
+        self._supports_sms = None
+        self._supports_mms = None
+        self._supports_voice = None
         self._self_uri = None
 
     @property
@@ -584,6 +596,98 @@ class SmsPhoneNumber(object):
         """
         
         self._provisioning_status = provisioning_status
+
+    @property
+    def country(self):
+        """
+        Gets the country of this SmsPhoneNumber.
+        Localized country name for the country code this phone number belongs too
+
+        :return: The country of this SmsPhoneNumber.
+        :rtype: str
+        """
+        return self._country
+
+    @country.setter
+    def country(self, country):
+        """
+        Sets the country of this SmsPhoneNumber.
+        Localized country name for the country code this phone number belongs too
+
+        :param country: The country of this SmsPhoneNumber.
+        :type: str
+        """
+        
+        self._country = country
+
+    @property
+    def supports_sms(self):
+        """
+        Gets the supports_sms of this SmsPhoneNumber.
+        Set to true if this phone number has the capability to support SMS
+
+        :return: The supports_sms of this SmsPhoneNumber.
+        :rtype: bool
+        """
+        return self._supports_sms
+
+    @supports_sms.setter
+    def supports_sms(self, supports_sms):
+        """
+        Sets the supports_sms of this SmsPhoneNumber.
+        Set to true if this phone number has the capability to support SMS
+
+        :param supports_sms: The supports_sms of this SmsPhoneNumber.
+        :type: bool
+        """
+        
+        self._supports_sms = supports_sms
+
+    @property
+    def supports_mms(self):
+        """
+        Gets the supports_mms of this SmsPhoneNumber.
+        Set to true if this phone number has the capability to support MMS
+
+        :return: The supports_mms of this SmsPhoneNumber.
+        :rtype: bool
+        """
+        return self._supports_mms
+
+    @supports_mms.setter
+    def supports_mms(self, supports_mms):
+        """
+        Sets the supports_mms of this SmsPhoneNumber.
+        Set to true if this phone number has the capability to support MMS
+
+        :param supports_mms: The supports_mms of this SmsPhoneNumber.
+        :type: bool
+        """
+        
+        self._supports_mms = supports_mms
+
+    @property
+    def supports_voice(self):
+        """
+        Gets the supports_voice of this SmsPhoneNumber.
+        Set to true if this phone number has the capability to support voice
+
+        :return: The supports_voice of this SmsPhoneNumber.
+        :rtype: bool
+        """
+        return self._supports_voice
+
+    @supports_voice.setter
+    def supports_voice(self, supports_voice):
+        """
+        Sets the supports_voice of this SmsPhoneNumber.
+        Set to true if this phone number has the capability to support voice
+
+        :param supports_voice: The supports_voice of this SmsPhoneNumber.
+        :type: bool
+        """
+        
+        self._supports_voice = supports_voice
 
     @property
     def self_uri(self):

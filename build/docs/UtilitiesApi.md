@@ -9,7 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**get_date**](UtilitiesApi.html#get_date) | Get the current system date/time|
-|[**get_ipranges**](UtilitiesApi.html#get_ipranges) | Get public ip address ranges for PureCloud|
+|[**get_ipranges**](UtilitiesApi.html#get_ipranges) | Get public ip address ranges for Genesys Cloud|
 |[**get_timezones**](UtilitiesApi.html#get_timezones) | Get time zones list|
 |[**post_certificate_details**](UtilitiesApi.html#post_certificate_details) | Returns the information about an X509 PEM encoded certificate or certificate chain.|
 {: class="table table-striped"}
@@ -66,7 +66,7 @@ This endpoint does not need any parameters.
 
 
 
-Get public ip address ranges for PureCloud
+Get public ip address ranges for Genesys Cloud
 
 
 
@@ -90,7 +90,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UtilitiesApi()
 
 try:
-    # Get public ip address ranges for PureCloud
+    # Get public ip address ranges for Genesys Cloud
     api_response = api_instance.get_ipranges()
     pprint(api_response)
 except ApiException as e:

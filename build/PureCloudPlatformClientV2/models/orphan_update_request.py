@@ -42,17 +42,23 @@ class OrphanUpdateRequest(object):
         self.swagger_types = {
             'archive_date': 'datetime',
             'delete_date': 'datetime',
+            'export_date': 'datetime',
+            'integration_id': 'str',
             'conversation_id': 'str'
         }
 
         self.attribute_map = {
             'archive_date': 'archiveDate',
             'delete_date': 'deleteDate',
+            'export_date': 'exportDate',
+            'integration_id': 'integrationId',
             'conversation_id': 'conversationId'
         }
 
         self._archive_date = None
         self._delete_date = None
+        self._export_date = None
+        self._integration_id = None
         self._conversation_id = None
 
     @property
@@ -82,7 +88,7 @@ class OrphanUpdateRequest(object):
     def delete_date(self):
         """
         Gets the delete_date of this OrphanUpdateRequest.
-        The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The orphan recording's delete date. Must be greater than archiveDate and exportDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The delete_date of this OrphanUpdateRequest.
         :rtype: datetime
@@ -93,13 +99,59 @@ class OrphanUpdateRequest(object):
     def delete_date(self, delete_date):
         """
         Sets the delete_date of this OrphanUpdateRequest.
-        The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The orphan recording's delete date. Must be greater than archiveDate and exportDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param delete_date: The delete_date of this OrphanUpdateRequest.
         :type: datetime
         """
         
         self._delete_date = delete_date
+
+    @property
+    def export_date(self):
+        """
+        Gets the export_date of this OrphanUpdateRequest.
+        The orphan recording's export date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The export_date of this OrphanUpdateRequest.
+        :rtype: datetime
+        """
+        return self._export_date
+
+    @export_date.setter
+    def export_date(self, export_date):
+        """
+        Sets the export_date of this OrphanUpdateRequest.
+        The orphan recording's export date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param export_date: The export_date of this OrphanUpdateRequest.
+        :type: datetime
+        """
+        
+        self._export_date = export_date
+
+    @property
+    def integration_id(self):
+        """
+        Gets the integration_id of this OrphanUpdateRequest.
+        IntegrationId to access AWS S3 bucket for export. This field is required if exportDate is set.
+
+        :return: The integration_id of this OrphanUpdateRequest.
+        :rtype: str
+        """
+        return self._integration_id
+
+    @integration_id.setter
+    def integration_id(self, integration_id):
+        """
+        Sets the integration_id of this OrphanUpdateRequest.
+        IntegrationId to access AWS S3 bucket for export. This field is required if exportDate is set.
+
+        :param integration_id: The integration_id of this OrphanUpdateRequest.
+        :type: str
+        """
+        
+        self._integration_id = integration_id
 
     @property
     def conversation_id(self):

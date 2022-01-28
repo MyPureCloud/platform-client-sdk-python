@@ -267,7 +267,7 @@ class DevelopmentActivity(object):
         :param status: The status of this DevelopmentActivity.
         :type: str
         """
-        allowed_values = ["Planned", "InProgress", "Completed", "InvalidSchedule"]
+        allowed_values = ["Planned", "InProgress", "Completed", "InvalidSchedule", "NotCompleted"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"

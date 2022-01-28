@@ -3034,7 +3034,7 @@ class GamificationApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Metric body: Metric (required)
+        :param CreateMetric body: Metric (required)
         :return: Metric
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3527,7 +3527,7 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str profile_id: Performance Profile Id (required)
-        :param Metric body: Metric (required)
+        :param CreateMetric body: Metric (required)
         :return: Metric
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3689,7 +3689,7 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str metric_id: metric Id (required)
-        :param Metric body: Metric (required)
+        :param CreateMetric body: Metric (required)
         :param str performance_profile_id: The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
         :return: Metric
                  If the method is called asynchronously,
@@ -3858,7 +3858,7 @@ class GamificationApi(object):
             for asynchronous request. (optional)
         :param str profile_id: Performance Profile Id (required)
         :param str metric_id: Metric Id (required)
-        :param Metric body: Metric (required)
+        :param CreateMetric body: Metric (required)
         :return: Metric
                  If the method is called asynchronously,
                  returns the request thread.

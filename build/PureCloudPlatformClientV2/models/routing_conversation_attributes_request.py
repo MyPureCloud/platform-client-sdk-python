@@ -42,18 +42,21 @@ class RoutingConversationAttributesRequest(object):
         self.swagger_types = {
             'priority': 'int',
             'skill_ids': 'list[str]',
-            'language_id': 'str'
+            'language_id': 'str',
+            'request_scored_agents': 'list[RequestScoredAgent]'
         }
 
         self.attribute_map = {
             'priority': 'priority',
             'skill_ids': 'skillIds',
-            'language_id': 'languageId'
+            'language_id': 'languageId',
+            'request_scored_agents': 'requestScoredAgents'
         }
 
         self._priority = None
         self._skill_ids = None
         self._language_id = None
+        self._request_scored_agents = None
 
     @property
     def priority(self):
@@ -130,6 +133,29 @@ class RoutingConversationAttributesRequest(object):
         """
         
         self._language_id = language_id
+
+    @property
+    def request_scored_agents(self):
+        """
+        Gets the request_scored_agents of this RoutingConversationAttributesRequest.
+
+
+        :return: The request_scored_agents of this RoutingConversationAttributesRequest.
+        :rtype: list[RequestScoredAgent]
+        """
+        return self._request_scored_agents
+
+    @request_scored_agents.setter
+    def request_scored_agents(self, request_scored_agents):
+        """
+        Sets the request_scored_agents of this RoutingConversationAttributesRequest.
+
+
+        :param request_scored_agents: The request_scored_agents of this RoutingConversationAttributesRequest.
+        :type: list[RequestScoredAgent]
+        """
+        
+        self._request_scored_agents = request_scored_agents
 
     def to_dict(self):
         """

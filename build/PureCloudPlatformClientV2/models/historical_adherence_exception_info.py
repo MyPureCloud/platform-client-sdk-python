@@ -123,7 +123,7 @@ class HistoricalAdherenceExceptionInfo(object):
     def scheduled_activity_code_id(self):
         """
         Gets the scheduled_activity_code_id of this HistoricalAdherenceExceptionInfo.
-        The ID of the scheduled activity for this user
+        The ID of the scheduled activity code for this user
 
         :return: The scheduled_activity_code_id of this HistoricalAdherenceExceptionInfo.
         :rtype: str
@@ -134,7 +134,7 @@ class HistoricalAdherenceExceptionInfo(object):
     def scheduled_activity_code_id(self, scheduled_activity_code_id):
         """
         Sets the scheduled_activity_code_id of this HistoricalAdherenceExceptionInfo.
-        The ID of the scheduled activity for this user
+        The ID of the scheduled activity code for this user
 
         :param scheduled_activity_code_id: The scheduled_activity_code_id of this HistoricalAdherenceExceptionInfo.
         :type: str
@@ -277,7 +277,7 @@ class HistoricalAdherenceExceptionInfo(object):
     def secondary_presence_lookup_id(self):
         """
         Gets the secondary_presence_lookup_id of this HistoricalAdherenceExceptionInfo.
-        The lookup ID used to retrieve secondary status from map of lookup ID to corresponding secondary presence ID
+        The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
 
         :return: The secondary_presence_lookup_id of this HistoricalAdherenceExceptionInfo.
         :rtype: str
@@ -288,7 +288,7 @@ class HistoricalAdherenceExceptionInfo(object):
     def secondary_presence_lookup_id(self, secondary_presence_lookup_id):
         """
         Sets the secondary_presence_lookup_id of this HistoricalAdherenceExceptionInfo.
-        The lookup ID used to retrieve secondary status from map of lookup ID to corresponding secondary presence ID
+        The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
 
         :param secondary_presence_lookup_id: The secondary_presence_lookup_id of this HistoricalAdherenceExceptionInfo.
         :type: str

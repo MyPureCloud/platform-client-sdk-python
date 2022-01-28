@@ -55,10 +55,10 @@ class HistoryListing(object):
             'system': 'bool',
             'started': 'datetime',
             'completed': 'datetime',
-            'entities': 'list[HistoryEntry]',
-            'page_number': 'int',
             'page_size': 'int',
+            'page_number': 'int',
             'total': 'int',
+            'entities': 'list[HistoryEntry]',
             'page_count': 'int'
         }
 
@@ -78,10 +78,10 @@ class HistoryListing(object):
             'system': 'system',
             'started': 'started',
             'completed': 'completed',
-            'entities': 'entities',
-            'page_number': 'pageNumber',
             'page_size': 'pageSize',
+            'page_number': 'pageNumber',
             'total': 'total',
+            'entities': 'entities',
             'page_count': 'pageCount'
         }
 
@@ -100,10 +100,10 @@ class HistoryListing(object):
         self._system = None
         self._started = None
         self._completed = None
-        self._entities = None
-        self._page_number = None
         self._page_size = None
+        self._page_number = None
         self._total = None
+        self._entities = None
         self._page_count = None
 
     @property
@@ -460,27 +460,27 @@ class HistoryListing(object):
         self._completed = completed
 
     @property
-    def entities(self):
+    def page_size(self):
         """
-        Gets the entities of this HistoryListing.
+        Gets the page_size of this HistoryListing.
 
 
-        :return: The entities of this HistoryListing.
-        :rtype: list[HistoryEntry]
+        :return: The page_size of this HistoryListing.
+        :rtype: int
         """
-        return self._entities
+        return self._page_size
 
-    @entities.setter
-    def entities(self, entities):
+    @page_size.setter
+    def page_size(self, page_size):
         """
-        Sets the entities of this HistoryListing.
+        Sets the page_size of this HistoryListing.
 
 
-        :param entities: The entities of this HistoryListing.
-        :type: list[HistoryEntry]
+        :param page_size: The page_size of this HistoryListing.
+        :type: int
         """
         
-        self._entities = entities
+        self._page_size = page_size
 
     @property
     def page_number(self):
@@ -506,29 +506,6 @@ class HistoryListing(object):
         self._page_number = page_number
 
     @property
-    def page_size(self):
-        """
-        Gets the page_size of this HistoryListing.
-
-
-        :return: The page_size of this HistoryListing.
-        :rtype: int
-        """
-        return self._page_size
-
-    @page_size.setter
-    def page_size(self, page_size):
-        """
-        Sets the page_size of this HistoryListing.
-
-
-        :param page_size: The page_size of this HistoryListing.
-        :type: int
-        """
-        
-        self._page_size = page_size
-
-    @property
     def total(self):
         """
         Gets the total of this HistoryListing.
@@ -550,6 +527,29 @@ class HistoryListing(object):
         """
         
         self._total = total
+
+    @property
+    def entities(self):
+        """
+        Gets the entities of this HistoryListing.
+
+
+        :return: The entities of this HistoryListing.
+        :rtype: list[HistoryEntry]
+        """
+        return self._entities
+
+    @entities.setter
+    def entities(self, entities):
+        """
+        Sets the entities of this HistoryListing.
+
+
+        :param entities: The entities of this HistoryListing.
+        :type: list[HistoryEntry]
+        """
+        
+        self._entities = entities
 
     @property
     def page_count(self):

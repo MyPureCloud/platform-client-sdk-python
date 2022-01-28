@@ -45,6 +45,7 @@ class WebMessagingMessage(object):
             'type': 'str',
             'text': 'str',
             'content': 'list[WebMessagingContent]',
+            'events': 'list[WebMessagingEvent]',
             'direction': 'str',
             'originating_entity': 'str'
         }
@@ -55,6 +56,7 @@ class WebMessagingMessage(object):
             'type': 'type',
             'text': 'text',
             'content': 'content',
+            'events': 'events',
             'direction': 'direction',
             'originating_entity': 'originatingEntity'
         }
@@ -64,6 +66,7 @@ class WebMessagingMessage(object):
         self._type = None
         self._text = None
         self._content = None
+        self._events = None
         self._direction = None
         self._originating_entity = None
 
@@ -133,7 +136,7 @@ class WebMessagingMessage(object):
         :param type: The type of this WebMessagingMessage.
         :type: str
         """
-        allowed_values = ["Text", "Structured", "Receipt"]
+        allowed_values = ["Text", "Structured", "Receipt", "Event"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -185,6 +188,29 @@ class WebMessagingMessage(object):
         """
         
         self._content = content
+
+    @property
+    def events(self):
+        """
+        Gets the events of this WebMessagingMessage.
+        List of event elements.
+
+        :return: The events of this WebMessagingMessage.
+        :rtype: list[WebMessagingEvent]
+        """
+        return self._events
+
+    @events.setter
+    def events(self, events):
+        """
+        Sets the events of this WebMessagingMessage.
+        List of event elements.
+
+        :param events: The events of this WebMessagingMessage.
+        :type: list[WebMessagingEvent]
+        """
+        
+        self._events = events
 
     @property
     def direction(self):

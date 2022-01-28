@@ -40,17 +40,14 @@ class DraftRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'intents': 'list[DraftIntents]',
-            'topic': 'list[DraftTopics]'
+            'intents': 'list[DraftIntents]'
         }
 
         self.attribute_map = {
-            'intents': 'intents',
-            'topic': 'topic'
+            'intents': 'intents'
         }
 
         self._intents = None
-        self._topic = None
 
     @property
     def intents(self):
@@ -74,29 +71,6 @@ class DraftRequest(object):
         """
         
         self._intents = intents
-
-    @property
-    def topic(self):
-        """
-        Gets the topic of this DraftRequest.
-
-
-        :return: The topic of this DraftRequest.
-        :rtype: list[DraftTopics]
-        """
-        return self._topic
-
-    @topic.setter
-    def topic(self, topic):
-        """
-        Sets the topic of this DraftRequest.
-
-
-        :param topic: The topic of this DraftRequest.
-        :type: list[DraftTopics]
-        """
-        
-        self._topic = topic
 
     def to_dict(self):
         """

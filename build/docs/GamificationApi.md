@@ -2006,7 +2006,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-body = PureCloudPlatformClientV2.Metric() # Metric | Metric
+body = PureCloudPlatformClientV2.CreateMetric() # CreateMetric | Metric
 
 try:
     # Creates a gamified metric with a given metric definition and metric objective
@@ -2021,7 +2021,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Metric**](Metric.html)| Metric |  |
+| **body** | [**CreateMetric**](CreateMetric.html)| Metric |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2321,7 +2321,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 profile_id = 'profile_id_example' # str | Performance Profile Id
-body = PureCloudPlatformClientV2.Metric() # Metric | Metric
+body = PureCloudPlatformClientV2.CreateMetric() # CreateMetric | Metric
 
 try:
     # Creates a gamified metric with a given metric definition and metric objective under in a performance profile
@@ -2337,7 +2337,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **profile_id** | **str**| Performance Profile Id |  |
-| **body** | [**Metric**](Metric.html)| Metric |  |
+| **body** | [**CreateMetric**](CreateMetric.html)| Metric |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2425,7 +2425,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 metric_id = 'metric_id_example' # str | metric Id
-body = PureCloudPlatformClientV2.Metric() # Metric | Metric
+body = PureCloudPlatformClientV2.CreateMetric() # CreateMetric | Metric
 performance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
 
 try:
@@ -2442,7 +2442,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **metric_id** | **str**| metric Id |  |
-| **body** | [**Metric**](Metric.html)| Metric |  |
+| **body** | [**CreateMetric**](CreateMetric.html)| Metric |  |
 | **performance_profile_id** | **str**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
 {: class="table table-striped"}
 
@@ -2534,7 +2534,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 profile_id = 'profile_id_example' # str | Performance Profile Id
 metric_id = 'metric_id_example' # str | Metric Id
-body = PureCloudPlatformClientV2.Metric() # Metric | Metric
+body = PureCloudPlatformClientV2.CreateMetric() # CreateMetric | Metric
 
 try:
     # Updates a metric in performance profile
@@ -2551,7 +2551,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **profile_id** | **str**| Performance Profile Id |  |
 | **metric_id** | **str**| Metric Id |  |
-| **body** | [**Metric**](Metric.html)| Metric |  |
+| **body** | [**CreateMetric**](CreateMetric.html)| Metric |  |
 {: class="table table-striped"}
 
 ### Return type

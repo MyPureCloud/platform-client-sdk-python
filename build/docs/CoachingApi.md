@@ -351,7 +351,7 @@ except ApiException as e:
 
 <a name="get_coaching_appointments"></a>
 
-## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
+## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue, interval_condition=interval_condition)
 
 
 
@@ -388,10 +388,11 @@ sort_order = 'sort_order_example' # str | Sort (by due date) either Asc or Desc 
 relationships = ['relationships_example'] # list[str] | Relationships to filter by (optional)
 completion_interval = 'completion_interval_example' # str | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 overdue = 'overdue_example' # str | Overdue status to filter by (optional)
+interval_condition = 'interval_condition_example' # str | Filter condition for interval (optional)
 
 try:
     # Get appointments for users and optional date range
-    api_response = api_instance.get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
+    api_response = api_instance.get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue, interval_condition=interval_condition)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CoachingApi->get_coaching_appointments: %s\n" % e)
@@ -412,6 +413,7 @@ except ApiException as e:
 | **relationships** | [**list[str]**](str.html)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 | **completion_interval** | **str**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **overdue** | **str**| Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
+| **interval_condition** | **str**| Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
 {: class="table table-striped"}
 
 ### Return type
@@ -420,7 +422,7 @@ except ApiException as e:
 
 <a name="get_coaching_appointments_me"></a>
 
-## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
+## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue, interval_condition=interval_condition)
 
 
 
@@ -455,10 +457,11 @@ sort_order = 'sort_order_example' # str | Sort (by due date) either Asc or Desc 
 relationships = ['relationships_example'] # list[str] | Relationships to filter by (optional)
 completion_interval = 'completion_interval_example' # str | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 overdue = 'overdue_example' # str | Overdue status to filter by (optional)
+interval_condition = 'interval_condition_example' # str | Filter condition for interval (optional)
 
 try:
     # Get my appointments for a given date range
-    api_response = api_instance.get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
+    api_response = api_instance.get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue, interval_condition=interval_condition)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CoachingApi->get_coaching_appointments_me: %s\n" % e)
@@ -478,6 +481,7 @@ except ApiException as e:
 | **relationships** | [**list[str]**](str.html)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 | **completion_interval** | **str**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **overdue** | **str**| Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
+| **interval_condition** | **str**| Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
 {: class="table table-striped"}
 
 ### Return type

@@ -563,12 +563,13 @@ class CoachingApi(object):
         :param list[str] relationships: Relationships to filter by
         :param str completion_interval: Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str overdue: Overdue status to filter by
+        :param str interval_condition: Filter condition for interval
         :return: CoachingAppointmentResponseList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_ids', 'interval', 'page_number', 'page_size', 'statuses', 'facilitator_ids', 'sort_order', 'relationships', 'completion_interval', 'overdue']
+        all_params = ['user_ids', 'interval', 'page_number', 'page_size', 'statuses', 'facilitator_ids', 'sort_order', 'relationships', 'completion_interval', 'overdue', 'interval_condition']
         all_params.append('callback')
 
         params = locals()
@@ -610,6 +611,8 @@ class CoachingApi(object):
             query_params['completionInterval'] = params['completion_interval']
         if 'overdue' in params:
             query_params['overdue'] = params['overdue']
+        if 'interval_condition' in params:
+            query_params['intervalCondition'] = params['interval_condition']
 
         header_params = {}
 
@@ -667,12 +670,13 @@ class CoachingApi(object):
         :param list[str] relationships: Relationships to filter by
         :param str completion_interval: Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str overdue: Overdue status to filter by
+        :param str interval_condition: Filter condition for interval
         :return: CoachingAppointmentResponseList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['interval', 'page_number', 'page_size', 'statuses', 'facilitator_ids', 'sort_order', 'relationships', 'completion_interval', 'overdue']
+        all_params = ['interval', 'page_number', 'page_size', 'statuses', 'facilitator_ids', 'sort_order', 'relationships', 'completion_interval', 'overdue', 'interval_condition']
         all_params.append('callback')
 
         params = locals()
@@ -709,6 +713,8 @@ class CoachingApi(object):
             query_params['completionInterval'] = params['completion_interval']
         if 'overdue' in params:
             query_params['overdue'] = params['overdue']
+        if 'interval_condition' in params:
+            query_params['intervalCondition'] = params['interval_condition']
 
         header_params = {}
 
