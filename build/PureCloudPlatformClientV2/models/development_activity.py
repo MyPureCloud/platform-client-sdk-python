@@ -44,6 +44,8 @@ class DevelopmentActivity(object):
             'date_completed': 'datetime',
             'created_by': 'UserReference',
             'date_created': 'datetime',
+            'percentage_score': 'float',
+            'is_passed': 'bool',
             'self_uri': 'str',
             'name': 'str',
             'type': 'str',
@@ -59,6 +61,8 @@ class DevelopmentActivity(object):
             'date_completed': 'dateCompleted',
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
+            'percentage_score': 'percentageScore',
+            'is_passed': 'isPassed',
             'self_uri': 'selfUri',
             'name': 'name',
             'type': 'type',
@@ -73,6 +77,8 @@ class DevelopmentActivity(object):
         self._date_completed = None
         self._created_by = None
         self._date_created = None
+        self._percentage_score = None
+        self._is_passed = None
         self._self_uri = None
         self._name = None
         self._type = None
@@ -173,6 +179,52 @@ class DevelopmentActivity(object):
         """
         
         self._date_created = date_created
+
+    @property
+    def percentage_score(self):
+        """
+        Gets the percentage_score of this DevelopmentActivity.
+        The user's percentage score for this activity
+
+        :return: The percentage_score of this DevelopmentActivity.
+        :rtype: float
+        """
+        return self._percentage_score
+
+    @percentage_score.setter
+    def percentage_score(self, percentage_score):
+        """
+        Sets the percentage_score of this DevelopmentActivity.
+        The user's percentage score for this activity
+
+        :param percentage_score: The percentage_score of this DevelopmentActivity.
+        :type: float
+        """
+        
+        self._percentage_score = percentage_score
+
+    @property
+    def is_passed(self):
+        """
+        Gets the is_passed of this DevelopmentActivity.
+        True if the activity was passed
+
+        :return: The is_passed of this DevelopmentActivity.
+        :rtype: bool
+        """
+        return self._is_passed
+
+    @is_passed.setter
+    def is_passed(self, is_passed):
+        """
+        Sets the is_passed of this DevelopmentActivity.
+        True if the activity was passed
+
+        :param is_passed: The is_passed of this DevelopmentActivity.
+        :type: bool
+        """
+        
+        self._is_passed = is_passed
 
     @property
     def self_uri(self):

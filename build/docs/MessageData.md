@@ -19,6 +19,8 @@ title: MessageData
 | **status** | **str** | The status of the message. | |
 | **media** | [**list[MessageMedia]**](MessageMedia.html) | The media details associated to a message. | [optional] |
 | **stickers** | [**list[MessageSticker]**](MessageSticker.html) | The sticker details associated to a message. | [optional] |
+| **normalized_message** | [**ConversationNormalizedMessage**](ConversationNormalizedMessage.html) | The message into normalized format | [optional] |
+| **normalized_receipts** | [**list[ConversationNormalizedMessage]**](ConversationNormalizedMessage.html) | The delivery event associated with this message in normalized format, if the message direction was outbound | [optional] |
 | **created_by** | [**User**](User.html) | User who sent this message. | [optional] |
 | **conversation_id** | **str** | The id of the conversation of this message. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |

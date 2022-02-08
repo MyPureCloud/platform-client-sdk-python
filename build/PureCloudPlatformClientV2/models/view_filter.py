@@ -54,6 +54,7 @@ class ViewFilter(object):
             'filter_queues_by_user_ids': 'list[str]',
             'filter_users_by_queue_ids': 'list[str]',
             'user_ids': 'list[str]',
+            'management_unit_ids': 'list[str]',
             'address_tos': 'list[str]',
             'address_froms': 'list[str]',
             'outbound_campaign_ids': 'list[str]',
@@ -196,6 +197,7 @@ class ViewFilter(object):
             'filter_queues_by_user_ids': 'filterQueuesByUserIds',
             'filter_users_by_queue_ids': 'filterUsersByQueueIds',
             'user_ids': 'userIds',
+            'management_unit_ids': 'managementUnitIds',
             'address_tos': 'addressTos',
             'address_froms': 'addressFroms',
             'outbound_campaign_ids': 'outboundCampaignIds',
@@ -337,6 +339,7 @@ class ViewFilter(object):
         self._filter_queues_by_user_ids = None
         self._filter_users_by_queue_ids = None
         self._user_ids = None
+        self._management_unit_ids = None
         self._address_tos = None
         self._address_froms = None
         self._outbound_campaign_ids = None
@@ -784,6 +787,29 @@ class ViewFilter(object):
         """
         
         self._user_ids = user_ids
+
+    @property
+    def management_unit_ids(self):
+        """
+        Gets the management_unit_ids of this ViewFilter.
+        The management unit ids are used to filter the view
+
+        :return: The management_unit_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._management_unit_ids
+
+    @management_unit_ids.setter
+    def management_unit_ids(self, management_unit_ids):
+        """
+        Sets the management_unit_ids of this ViewFilter.
+        The management unit ids are used to filter the view
+
+        :param management_unit_ids: The management_unit_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._management_unit_ids = management_unit_ids
 
     @property
     def address_tos(self):

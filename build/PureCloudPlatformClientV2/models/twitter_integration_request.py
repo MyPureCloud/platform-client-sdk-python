@@ -42,6 +42,7 @@ class TwitterIntegrationRequest(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'supported_content': 'SupportedContentReference',
             'access_token_key': 'str',
             'access_token_secret': 'str',
             'consumer_key': 'str',
@@ -54,6 +55,7 @@ class TwitterIntegrationRequest(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'supported_content': 'supportedContent',
             'access_token_key': 'accessTokenKey',
             'access_token_secret': 'accessTokenSecret',
             'consumer_key': 'consumerKey',
@@ -65,6 +67,7 @@ class TwitterIntegrationRequest(object):
 
         self._id = None
         self._name = None
+        self._supported_content = None
         self._access_token_key = None
         self._access_token_secret = None
         self._consumer_key = None
@@ -118,6 +121,29 @@ class TwitterIntegrationRequest(object):
         """
         
         self._name = name
+
+    @property
+    def supported_content(self):
+        """
+        Gets the supported_content of this TwitterIntegrationRequest.
+        Defines the SupportedContent profile configured for an integration
+
+        :return: The supported_content of this TwitterIntegrationRequest.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content):
+        """
+        Sets the supported_content of this TwitterIntegrationRequest.
+        Defines the SupportedContent profile configured for an integration
+
+        :param supported_content: The supported_content of this TwitterIntegrationRequest.
+        :type: SupportedContentReference
+        """
+        
+        self._supported_content = supported_content
 
     @property
     def access_token_key(self):

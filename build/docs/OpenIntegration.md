@@ -9,6 +9,7 @@ title: OpenIntegration
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | A unique Integration Id. | |
 | **name** | **str** | The name of the Open messaging integration. | |
+| **supported_content** | [**SupportedContentReference**](SupportedContentReference.html) | Defines the SupportedContent profile configured for an integration | [optional] |
 | **outbound_notification_webhook_url** | **str** | The outbound notification webhook URL for the Open messaging integration. | |
 | **outbound_notification_webhook_signature_secret_token** | **str** | The outbound notification webhook signature secret token. | |
 | **webhook_headers** | **dict(str, str)** | The user specified headers for the Open messaging integration. | [optional] |

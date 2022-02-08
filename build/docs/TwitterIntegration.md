@@ -9,6 +9,7 @@ title: TwitterIntegration
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | A unique Integration Id | |
 | **name** | **str** | The name of the Twitter Integration | |
+| **supported_content** | [**SupportedContentReference**](SupportedContentReference.html) | Defines the SupportedContent profile configured for an integration | [optional] |
 | **access_token_key** | **str** | The Access Token Key from Twitter messenger | |
 | **consumer_key** | **str** | The Consumer Key from Twitter messenger | |
 | **username** | **str** | The Username from Twitter | [optional] |

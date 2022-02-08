@@ -1557,7 +1557,6 @@ from .messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .messaging_template import MessagingTemplate
 from .messaging_template_request import MessagingTemplateRequest
 from .messenger_apps import MessengerApps
-from .messenger_position_settings import MessengerPositionSettings
 from .messenger_settings import MessengerSettings
 from .messenger_styles import MessengerStyles
 from .meta_data import MetaData
@@ -1763,6 +1762,7 @@ from .policy_entity_listing import PolicyEntityListing
 from .policy_error_message import PolicyErrorMessage
 from .policy_errors import PolicyErrors
 from .policy_update import PolicyUpdate
+from .position_settings import PositionSettings
 from .post_action_input import PostActionInput
 from .post_input_contract import PostInputContract
 from .post_output_contract import PostOutputContract
@@ -2327,6 +2327,8 @@ from .subscription_overview_usage import SubscriptionOverviewUsage
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
 from .support_center_settings import SupportCenterSettings
+from .supported_content import SupportedContent
+from .supported_content_listing import SupportedContentListing
 from .supported_content_reference import SupportedContentReference
 from .supported_language import SupportedLanguage
 from .survey import Survey

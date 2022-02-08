@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_speechandtextanalytics_topic**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_topic) | Delete a Speech &amp; Text Analytics topic by id|
 |[**get_speechandtextanalytics_conversation**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation) | Get Speech and Text Analytics for a specific conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturl**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation_communication_transcripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation|
-|[**get_speechandtextanalytics_dialects**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_dialects) | Get list of supported Speech &amp; Text Analytics dialects|
 |[**get_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program) | Get a Speech &amp; Text Analytics program by id|
 |[**get_speechandtextanalytics_program_mappings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program_mappings) | Get Speech &amp; Text Analytics program mappings to queues and flows by id|
 |[**get_speechandtextanalytics_programs**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs) | Get the list of Speech &amp; Text Analytics programs|
@@ -345,52 +344,6 @@ except ApiException as e:
 ### Return type
 
 [**TranscriptUrl**](TranscriptUrl.html)
-
-<a name="get_speechandtextanalytics_dialects"></a>
-
-## list[object]** get_speechandtextanalytics_dialects()
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get list of supported Speech & Text Analytics dialects
-
-This api has been deprecated. Use api/v2/topics/dialects instead
-
-Wraps GET /api/v2/speechandtextanalytics/dialects 
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
-
-try:
-    # Get list of supported Speech & Text Analytics dialects
-    api_response = api_instance.get_speechandtextanalytics_dialects()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_dialects: %s\n" % e)
-```
-
-### Parameters
-
-This endpoint does not need any parameters.
-
-
-### Return type
-
-**list[object]**
 
 <a name="get_speechandtextanalytics_program"></a>
 

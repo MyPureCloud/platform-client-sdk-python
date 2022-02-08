@@ -42,6 +42,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'supported_content': 'SupportedContentReference',
             'action': 'str',
             'authentication_method': 'str',
             'confirmation_code': 'str',
@@ -51,6 +52,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'supported_content': 'supportedContent',
             'action': 'action',
             'authentication_method': 'authenticationMethod',
             'confirmation_code': 'confirmationCode',
@@ -59,6 +61,7 @@ class WhatsAppIntegrationUpdateRequest(object):
 
         self._id = None
         self._name = None
+        self._supported_content = None
         self._action = None
         self._authentication_method = None
         self._confirmation_code = None
@@ -109,6 +112,29 @@ class WhatsAppIntegrationUpdateRequest(object):
         """
         
         self._name = name
+
+    @property
+    def supported_content(self):
+        """
+        Gets the supported_content of this WhatsAppIntegrationUpdateRequest.
+        Defines the SupportedContent profile configured for an integration
+
+        :return: The supported_content of this WhatsAppIntegrationUpdateRequest.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content):
+        """
+        Sets the supported_content of this WhatsAppIntegrationUpdateRequest.
+        Defines the SupportedContent profile configured for an integration
+
+        :param supported_content: The supported_content of this WhatsAppIntegrationUpdateRequest.
+        :type: SupportedContentReference
+        """
+        
+        self._supported_content = supported_content
 
     @property
     def action(self):

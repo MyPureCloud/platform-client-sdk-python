@@ -42,6 +42,7 @@ class MessagingIntegration(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'supported_content': 'SupportedContentReference',
             'status': 'str',
             'messenger_type': 'str',
             'recipient': 'DomainEntityRef',
@@ -56,6 +57,7 @@ class MessagingIntegration(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'supported_content': 'supportedContent',
             'status': 'status',
             'messenger_type': 'messengerType',
             'recipient': 'recipient',
@@ -69,6 +71,7 @@ class MessagingIntegration(object):
 
         self._id = None
         self._name = None
+        self._supported_content = None
         self._status = None
         self._messenger_type = None
         self._recipient = None
@@ -124,6 +127,29 @@ class MessagingIntegration(object):
         """
         
         self._name = name
+
+    @property
+    def supported_content(self):
+        """
+        Gets the supported_content of this MessagingIntegration.
+        Defines the SupportedContent profile configured for an integration
+
+        :return: The supported_content of this MessagingIntegration.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content):
+        """
+        Sets the supported_content of this MessagingIntegration.
+        Defines the SupportedContent profile configured for an integration
+
+        :param supported_content: The supported_content of this MessagingIntegration.
+        :type: SupportedContentReference
+        """
+        
+        self._supported_content = supported_content
 
     @property
     def status(self):

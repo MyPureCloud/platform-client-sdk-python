@@ -1557,7 +1557,6 @@ from .models.messaging_sticker_entity_listing import MessagingStickerEntityListi
 from .models.messaging_template import MessagingTemplate
 from .models.messaging_template_request import MessagingTemplateRequest
 from .models.messenger_apps import MessengerApps
-from .models.messenger_position_settings import MessengerPositionSettings
 from .models.messenger_settings import MessengerSettings
 from .models.messenger_styles import MessengerStyles
 from .models.meta_data import MetaData
@@ -1763,6 +1762,7 @@ from .models.policy_entity_listing import PolicyEntityListing
 from .models.policy_error_message import PolicyErrorMessage
 from .models.policy_errors import PolicyErrors
 from .models.policy_update import PolicyUpdate
+from .models.position_settings import PositionSettings
 from .models.post_action_input import PostActionInput
 from .models.post_input_contract import PostInputContract
 from .models.post_output_contract import PostOutputContract
@@ -2327,6 +2327,8 @@ from .models.subscription_overview_usage import SubscriptionOverviewUsage
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
 from .models.support_center_settings import SupportCenterSettings
+from .models.supported_content import SupportedContent
+from .models.supported_content_listing import SupportedContentListing
 from .models.supported_content_reference import SupportedContentReference
 from .models.supported_language import SupportedLanguage
 from .models.survey import Survey
@@ -2896,6 +2898,7 @@ from .apis.languages_api import LanguagesApi
 from .apis.learning_api import LearningApi
 from .apis.license_api import LicenseApi
 from .apis.locations_api import LocationsApi
+from .apis.messaging_api import MessagingApi
 from .apis.mobile_devices_api import MobileDevicesApi
 from .apis.notifications_api import NotificationsApi
 from .apis.o_auth_api import OAuthApi

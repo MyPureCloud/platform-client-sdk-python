@@ -42,6 +42,7 @@ class FacebookIntegrationRequest(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'supported_content': 'SupportedContentReference',
             'page_access_token': 'str',
             'user_access_token': 'str',
             'page_id': 'str',
@@ -53,6 +54,7 @@ class FacebookIntegrationRequest(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'supported_content': 'supportedContent',
             'page_access_token': 'pageAccessToken',
             'user_access_token': 'userAccessToken',
             'page_id': 'pageId',
@@ -63,6 +65,7 @@ class FacebookIntegrationRequest(object):
 
         self._id = None
         self._name = None
+        self._supported_content = None
         self._page_access_token = None
         self._user_access_token = None
         self._page_id = None
@@ -115,6 +118,29 @@ class FacebookIntegrationRequest(object):
         """
         
         self._name = name
+
+    @property
+    def supported_content(self):
+        """
+        Gets the supported_content of this FacebookIntegrationRequest.
+        Defines the SupportedContent profile configured for an integration
+
+        :return: The supported_content of this FacebookIntegrationRequest.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content):
+        """
+        Sets the supported_content of this FacebookIntegrationRequest.
+        Defines the SupportedContent profile configured for an integration
+
+        :param supported_content: The supported_content of this FacebookIntegrationRequest.
+        :type: SupportedContentReference
+        """
+        
+        self._supported_content = supported_content
 
     @property
     def page_access_token(self):

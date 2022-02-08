@@ -47,6 +47,7 @@ class WebDeploymentConfigurationVersion(object):
             'languages': 'list[str]',
             'default_language': 'str',
             'messenger': 'MessengerSettings',
+            'position': 'PositionSettings',
             'support_center': 'SupportCenterSettings',
             'cobrowse': 'CobrowseSettings',
             'journey_events': 'JourneyEventsSettings',
@@ -69,6 +70,7 @@ class WebDeploymentConfigurationVersion(object):
             'languages': 'languages',
             'default_language': 'defaultLanguage',
             'messenger': 'messenger',
+            'position': 'position',
             'support_center': 'supportCenter',
             'cobrowse': 'cobrowse',
             'journey_events': 'journeyEvents',
@@ -90,6 +92,7 @@ class WebDeploymentConfigurationVersion(object):
         self._languages = None
         self._default_language = None
         self._messenger = None
+        self._position = None
         self._support_center = None
         self._cobrowse = None
         self._journey_events = None
@@ -263,6 +266,29 @@ class WebDeploymentConfigurationVersion(object):
         """
         
         self._messenger = messenger
+
+    @property
+    def position(self):
+        """
+        Gets the position of this WebDeploymentConfigurationVersion.
+        The settings for position
+
+        :return: The position of this WebDeploymentConfigurationVersion.
+        :rtype: PositionSettings
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """
+        Sets the position of this WebDeploymentConfigurationVersion.
+        The settings for position
+
+        :param position: The position of this WebDeploymentConfigurationVersion.
+        :type: PositionSettings
+        """
+        
+        self._position = position
 
     @property
     def support_center(self):

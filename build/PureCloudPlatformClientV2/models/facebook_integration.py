@@ -42,6 +42,7 @@ class FacebookIntegration(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'supported_content': 'SupportedContentReference',
             'app_id': 'str',
             'page_id': 'str',
             'page_name': 'str',
@@ -61,6 +62,7 @@ class FacebookIntegration(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'supported_content': 'supportedContent',
             'app_id': 'appId',
             'page_id': 'pageId',
             'page_name': 'pageName',
@@ -79,6 +81,7 @@ class FacebookIntegration(object):
 
         self._id = None
         self._name = None
+        self._supported_content = None
         self._app_id = None
         self._page_id = None
         self._page_name = None
@@ -139,6 +142,29 @@ class FacebookIntegration(object):
         """
         
         self._name = name
+
+    @property
+    def supported_content(self):
+        """
+        Gets the supported_content of this FacebookIntegration.
+        Defines the SupportedContent profile configured for an integration
+
+        :return: The supported_content of this FacebookIntegration.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content):
+        """
+        Sets the supported_content of this FacebookIntegration.
+        Defines the SupportedContent profile configured for an integration
+
+        :param supported_content: The supported_content of this FacebookIntegration.
+        :type: SupportedContentReference
+        """
+        
+        self._supported_content = supported_content
 
     @property
     def app_id(self):

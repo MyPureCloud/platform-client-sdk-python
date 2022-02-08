@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
 |[**delete_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_twitter_integration_id) | Delete a Twitter messaging integration|
 |[**delete_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_whatsapp_integration_id) | Delete a WhatsApp messaging integration|
+|[**delete_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#delete_conversations_messaging_supportedcontent_supported_content_id) | Delete a supported content profile|
 |[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
 |[**get_analytics_conversations_details**](ConversationsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_analytics_conversations_details_job**](ConversationsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
@@ -76,6 +77,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#get_conversations_messaging_integrations_whatsapp) | Get a list of WhatsApp Integrations|
 |[**get_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_whatsapp_integration_id) | Get a WhatsApp messaging integration|
 |[**get_conversations_messaging_sticker**](ConversationsApi.html#get_conversations_messaging_sticker) | Get a list of Messaging Stickers|
+|[**get_conversations_messaging_supportedcontent**](ConversationsApi.html#get_conversations_messaging_supportedcontent) | Get a list of Supported Content profiles|
+|[**get_conversations_messaging_supportedcontent_default**](ConversationsApi.html#get_conversations_messaging_supportedcontent_default) | Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.|
+|[**get_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#get_conversations_messaging_supportedcontent_supported_content_id) | Get a supported content profile|
 |[**get_conversations_messaging_threadingtimeline**](ConversationsApi.html#get_conversations_messaging_threadingtimeline) | Get conversation threading window timeline for each messaging type|
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
@@ -108,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
 |[**patch_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_twitter_integration_id) | Update Twitter messaging integration|
 |[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update or activate a WhatsApp messaging integration.|
+|[**patch_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#patch_conversations_messaging_supportedcontent_supported_content_id) | Update a supported content profile|
 |[**post_analytics_conversation_details_properties**](ConversationsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
 |[**post_analytics_conversations_aggregates_query**](ConversationsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](ConversationsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
@@ -150,11 +155,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messaging_integrations_open**](ConversationsApi.html#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
 |[**post_conversations_messaging_integrations_twitter**](ConversationsApi.html#post_conversations_messaging_integrations_twitter) | Create a Twitter Integration|
 |[**post_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp) | Create a WhatsApp Integration|
+|[**post_conversations_messaging_supportedcontent**](ConversationsApi.html#post_conversations_messaging_supportedcontent) | Create a Supported Content profile|
 |[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
 |[**put_conversation_tags**](ConversationsApi.html#put_conversation_tags) | Update the tags on a conversation.|
 |[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
 |[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
 |[**put_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#put_conversations_messaging_integrations_line_integration_id) | Update a LINE messenger integration|
+|[**put_conversations_messaging_supportedcontent_default**](ConversationsApi.html#put_conversations_messaging_supportedcontent_default) | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.|
 |[**put_conversations_messaging_threadingtimeline**](ConversationsApi.html#put_conversations_messaging_threadingtimeline) | Update conversation threading window timeline for each messaging type|
 {: class="table table-striped"}
 
@@ -666,6 +673,56 @@ except ApiException as e:
 
 [**WhatsAppIntegration**](WhatsAppIntegration.html)
 
+<a name="delete_conversations_messaging_supportedcontent_supported_content_id"></a>
+
+##  delete_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
+
+
+
+Delete a supported content profile
+
+
+
+Wraps DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} 
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+supported_content_id = 'supported_content_id_example' # str | Supported Content ID
+
+try:
+    # Delete a supported content profile
+    api_instance.delete_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_supportedcontent_supported_content_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **supported_content_id** | **str**| Supported Content ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="get_analytics_conversation_details"></a>
 
 ## [**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html) get_analytics_conversation_details(conversation_id)
@@ -681,6 +738,7 @@ Wraps GET /api/v2/analytics/conversations/{conversationId}/details
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example
 
@@ -732,6 +790,7 @@ Wraps GET /api/v2/analytics/conversations/details
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example
 
@@ -3683,6 +3742,157 @@ except ApiException as e:
 
 [**MessagingStickerEntityListing**](MessagingStickerEntityListing.html)
 
+<a name="get_conversations_messaging_supportedcontent"></a>
+
+## [**SupportedContentListing**](SupportedContentListing.html) get_conversations_messaging_supportedcontent(page_size=page_size, page_number=page_number)
+
+
+
+Get a list of Supported Content profiles
+
+
+
+Wraps GET /api/v2/conversations/messaging/supportedcontent 
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of Supported Content profiles
+    api_response = api_instance.get_conversations_messaging_supportedcontent(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_supportedcontent: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SupportedContentListing**](SupportedContentListing.html)
+
+<a name="get_conversations_messaging_supportedcontent_default"></a>
+
+## [**SupportedContent**](SupportedContent.html) get_conversations_messaging_supportedcontent_default()
+
+
+
+Get the organization's default supported content profile that will be used as the default when creating an integration.
+
+When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+
+Wraps GET /api/v2/conversations/messaging/supportedcontent/default 
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get the organization's default supported content profile that will be used as the default when creating an integration.
+    api_response = api_instance.get_conversations_messaging_supportedcontent_default()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_supportedcontent_default: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**SupportedContent**](SupportedContent.html)
+
+<a name="get_conversations_messaging_supportedcontent_supported_content_id"></a>
+
+## [**SupportedContent**](SupportedContent.html) get_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
+
+
+
+Get a supported content profile
+
+
+
+Wraps GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} 
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+supported_content_id = 'supported_content_id_example' # str | Supported Content ID
+
+try:
+    # Get a supported content profile
+    api_response = api_instance.get_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_supportedcontent_supported_content_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **supported_content_id** | **str**| Supported Content ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SupportedContent**](SupportedContent.html)
+
 <a name="get_conversations_messaging_threadingtimeline"></a>
 
 ## [**ConversationThreadingWindow**](ConversationThreadingWindow.html) get_conversations_messaging_threadingtimeline()
@@ -5391,6 +5601,59 @@ except ApiException as e:
 ### Return type
 
 [**WhatsAppIntegration**](WhatsAppIntegration.html)
+
+<a name="patch_conversations_messaging_supportedcontent_supported_content_id"></a>
+
+## [**SupportedContent**](SupportedContent.html) patch_conversations_messaging_supportedcontent_supported_content_id(supported_content_id, body)
+
+
+
+Update a supported content profile
+
+
+
+Wraps PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} 
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+supported_content_id = 'supported_content_id_example' # str | Supported Content ID
+body = PureCloudPlatformClientV2.SupportedContent() # SupportedContent | SupportedContent
+
+try:
+    # Update a supported content profile
+    api_response = api_instance.patch_conversations_messaging_supportedcontent_supported_content_id(supported_content_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_messaging_supportedcontent_supported_content_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **supported_content_id** | **str**| Supported Content ID |  |
+| **body** | [**SupportedContent**](SupportedContent.html)| SupportedContent |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SupportedContent**](SupportedContent.html)
 
 <a name="post_analytics_conversation_details_properties"></a>
 
@@ -7595,6 +7858,57 @@ except ApiException as e:
 
 [**WhatsAppIntegration**](WhatsAppIntegration.html)
 
+<a name="post_conversations_messaging_supportedcontent"></a>
+
+## [**SupportedContent**](SupportedContent.html) post_conversations_messaging_supportedcontent(body)
+
+
+
+Create a Supported Content profile
+
+
+
+Wraps POST /api/v2/conversations/messaging/supportedcontent 
+
+Requires ANY permissions: 
+
+* messaging:supportedContent:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.SupportedContent() # SupportedContent | SupportedContent
+
+try:
+    # Create a Supported Content profile
+    api_response = api_instance.post_conversations_messaging_supportedcontent(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_messaging_supportedcontent: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SupportedContent**](SupportedContent.html)| SupportedContent |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SupportedContent**](SupportedContent.html)
+
 <a name="put_conversation_participant_flaggedreason"></a>
 
 ##  put_conversation_participant_flaggedreason(conversation_id, participant_id)
@@ -7859,6 +8173,57 @@ except ApiException as e:
 ### Return type
 
 [**LineIntegration**](LineIntegration.html)
+
+<a name="put_conversations_messaging_supportedcontent_default"></a>
+
+## [**SupportedContent**](SupportedContent.html) put_conversations_messaging_supportedcontent_default(body)
+
+
+
+Set the organization's default supported content profile that may be assigned to an integration when it is created.
+
+When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+
+Wraps PUT /api/v2/conversations/messaging/supportedcontent/default 
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.SupportedContentReference() # SupportedContentReference | SupportedContent
+
+try:
+    # Set the organization's default supported content profile that may be assigned to an integration when it is created.
+    api_response = api_instance.put_conversations_messaging_supportedcontent_default(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_messaging_supportedcontent_default: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SupportedContentReference**](SupportedContentReference.html)| SupportedContent |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SupportedContent**](SupportedContent.html)
 
 <a name="put_conversations_messaging_threadingtimeline"></a>
 

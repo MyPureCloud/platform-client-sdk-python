@@ -42,6 +42,7 @@ class OpenIntegration(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'supported_content': 'SupportedContentReference',
             'outbound_notification_webhook_url': 'str',
             'outbound_notification_webhook_signature_secret_token': 'str',
             'webhook_headers': 'dict(str, str)',
@@ -59,6 +60,7 @@ class OpenIntegration(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'supported_content': 'supportedContent',
             'outbound_notification_webhook_url': 'outboundNotificationWebhookUrl',
             'outbound_notification_webhook_signature_secret_token': 'outboundNotificationWebhookSignatureSecretToken',
             'webhook_headers': 'webhookHeaders',
@@ -75,6 +77,7 @@ class OpenIntegration(object):
 
         self._id = None
         self._name = None
+        self._supported_content = None
         self._outbound_notification_webhook_url = None
         self._outbound_notification_webhook_signature_secret_token = None
         self._webhook_headers = None
@@ -133,6 +136,29 @@ class OpenIntegration(object):
         """
         
         self._name = name
+
+    @property
+    def supported_content(self):
+        """
+        Gets the supported_content of this OpenIntegration.
+        Defines the SupportedContent profile configured for an integration
+
+        :return: The supported_content of this OpenIntegration.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content):
+        """
+        Sets the supported_content of this OpenIntegration.
+        Defines the SupportedContent profile configured for an integration
+
+        :param supported_content: The supported_content of this OpenIntegration.
+        :type: SupportedContentReference
+        """
+        
+        self._supported_content = supported_content
 
     @property
     def outbound_notification_webhook_url(self):

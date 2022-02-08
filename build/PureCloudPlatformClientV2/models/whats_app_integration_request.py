@@ -42,6 +42,7 @@ class WhatsAppIntegrationRequest(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'supported_content': 'SupportedContentReference',
             'phone_number': 'str',
             'waba_certificate': 'str',
             'self_uri': 'str'
@@ -50,6 +51,7 @@ class WhatsAppIntegrationRequest(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'supported_content': 'supportedContent',
             'phone_number': 'phoneNumber',
             'waba_certificate': 'wabaCertificate',
             'self_uri': 'selfUri'
@@ -57,6 +59,7 @@ class WhatsAppIntegrationRequest(object):
 
         self._id = None
         self._name = None
+        self._supported_content = None
         self._phone_number = None
         self._waba_certificate = None
         self._self_uri = None
@@ -106,6 +109,29 @@ class WhatsAppIntegrationRequest(object):
         """
         
         self._name = name
+
+    @property
+    def supported_content(self):
+        """
+        Gets the supported_content of this WhatsAppIntegrationRequest.
+        Defines the SupportedContent profile configured for an integration
+
+        :return: The supported_content of this WhatsAppIntegrationRequest.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content):
+        """
+        Sets the supported_content of this WhatsAppIntegrationRequest.
+        Defines the SupportedContent profile configured for an integration
+
+        :param supported_content: The supported_content of this WhatsAppIntegrationRequest.
+        :type: SupportedContentReference
+        """
+        
+        self._supported_content = supported_content
 
     @property
     def phone_number(self):

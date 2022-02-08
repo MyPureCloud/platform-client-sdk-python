@@ -42,6 +42,7 @@ class LineIntegration(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'supported_content': 'SupportedContentReference',
             'channel_id': 'str',
             'webhook_uri': 'str',
             'status': 'str',
@@ -59,6 +60,7 @@ class LineIntegration(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'supported_content': 'supportedContent',
             'channel_id': 'channelId',
             'webhook_uri': 'webhookUri',
             'status': 'status',
@@ -75,6 +77,7 @@ class LineIntegration(object):
 
         self._id = None
         self._name = None
+        self._supported_content = None
         self._channel_id = None
         self._webhook_uri = None
         self._status = None
@@ -133,6 +136,29 @@ class LineIntegration(object):
         """
         
         self._name = name
+
+    @property
+    def supported_content(self):
+        """
+        Gets the supported_content of this LineIntegration.
+        Defines the SupportedContent profile configured for an integration
+
+        :return: The supported_content of this LineIntegration.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content):
+        """
+        Sets the supported_content of this LineIntegration.
+        Defines the SupportedContent profile configured for an integration
+
+        :param supported_content: The supported_content of this LineIntegration.
+        :type: SupportedContentReference
+        """
+        
+        self._supported_content = supported_content
 
     @property
     def channel_id(self):

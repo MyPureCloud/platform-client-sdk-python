@@ -52,6 +52,8 @@ class MessageData(object):
             'status': 'str',
             'media': 'list[MessageMedia]',
             'stickers': 'list[MessageSticker]',
+            'normalized_message': 'ConversationNormalizedMessage',
+            'normalized_receipts': 'list[ConversationNormalizedMessage]',
             'created_by': 'User',
             'conversation_id': 'str',
             'self_uri': 'str'
@@ -70,6 +72,8 @@ class MessageData(object):
             'status': 'status',
             'media': 'media',
             'stickers': 'stickers',
+            'normalized_message': 'normalizedMessage',
+            'normalized_receipts': 'normalizedReceipts',
             'created_by': 'createdBy',
             'conversation_id': 'conversationId',
             'self_uri': 'selfUri'
@@ -87,6 +91,8 @@ class MessageData(object):
         self._status = None
         self._media = None
         self._stickers = None
+        self._normalized_message = None
+        self._normalized_receipts = None
         self._created_by = None
         self._conversation_id = None
         self._self_uri = None
@@ -378,6 +384,52 @@ class MessageData(object):
         """
         
         self._stickers = stickers
+
+    @property
+    def normalized_message(self):
+        """
+        Gets the normalized_message of this MessageData.
+        The message into normalized format
+
+        :return: The normalized_message of this MessageData.
+        :rtype: ConversationNormalizedMessage
+        """
+        return self._normalized_message
+
+    @normalized_message.setter
+    def normalized_message(self, normalized_message):
+        """
+        Sets the normalized_message of this MessageData.
+        The message into normalized format
+
+        :param normalized_message: The normalized_message of this MessageData.
+        :type: ConversationNormalizedMessage
+        """
+        
+        self._normalized_message = normalized_message
+
+    @property
+    def normalized_receipts(self):
+        """
+        Gets the normalized_receipts of this MessageData.
+        The delivery event associated with this message in normalized format, if the message direction was outbound
+
+        :return: The normalized_receipts of this MessageData.
+        :rtype: list[ConversationNormalizedMessage]
+        """
+        return self._normalized_receipts
+
+    @normalized_receipts.setter
+    def normalized_receipts(self, normalized_receipts):
+        """
+        Sets the normalized_receipts of this MessageData.
+        The delivery event associated with this message in normalized format, if the message direction was outbound
+
+        :param normalized_receipts: The normalized_receipts of this MessageData.
+        :type: list[ConversationNormalizedMessage]
+        """
+        
+        self._normalized_receipts = normalized_receipts
 
     @property
     def created_by(self):
