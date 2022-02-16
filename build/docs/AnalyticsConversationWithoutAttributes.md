@@ -11,6 +11,7 @@ title: AnalyticsConversationWithoutAttributes
 | **conversation_id** | **str** | Unique identifier for the conversation | [optional] |
 | **conversation_initiator** | **str** | Indicates the participant purpose of the participant initiating a message conversation | [optional] |
 | **conversation_start** | **datetime** | The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **customer_participation** | **bool** | Indicates a messaging conversation in which the customer participated by sending at least one message | [optional] |
 | **division_ids** | **list[str]** | Identifier(s) of division(s) associated with a conversation | [optional] |
 | **external_tag** | **str** | External tag for the conversation | [optional] |
 | **knowledge_base_ids** | **list[str]** | The unique identifier(s) of the knowledge base(s) used | [optional] |

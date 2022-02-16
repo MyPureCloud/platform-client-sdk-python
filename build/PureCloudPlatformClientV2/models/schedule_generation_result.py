@@ -43,20 +43,23 @@ class ScheduleGenerationResult(object):
             'failed': 'bool',
             'run_id': 'str',
             'message_count': 'int',
-            'messages': 'list[ScheduleGenerationMessage]'
+            'messages': 'list[ScheduleGenerationMessage]',
+            'message_severities': 'list[SchedulerMessageTypeSeverity]'
         }
 
         self.attribute_map = {
             'failed': 'failed',
             'run_id': 'runId',
             'message_count': 'messageCount',
-            'messages': 'messages'
+            'messages': 'messages',
+            'message_severities': 'messageSeverities'
         }
 
         self._failed = None
         self._run_id = None
         self._message_count = None
         self._messages = None
+        self._message_severities = None
 
     @property
     def failed(self):
@@ -149,6 +152,29 @@ class ScheduleGenerationResult(object):
         """
         
         self._messages = messages
+
+    @property
+    def message_severities(self):
+        """
+        Gets the message_severities of this ScheduleGenerationResult.
+        The list of messages by severity in this schedule generation run
+
+        :return: The message_severities of this ScheduleGenerationResult.
+        :rtype: list[SchedulerMessageTypeSeverity]
+        """
+        return self._message_severities
+
+    @message_severities.setter
+    def message_severities(self, message_severities):
+        """
+        Sets the message_severities of this ScheduleGenerationResult.
+        The list of messages by severity in this schedule generation run
+
+        :param message_severities: The message_severities of this ScheduleGenerationResult.
+        :type: list[SchedulerMessageTypeSeverity]
+        """
+        
+        self._message_severities = message_severities
 
     def to_dict(self):
         """

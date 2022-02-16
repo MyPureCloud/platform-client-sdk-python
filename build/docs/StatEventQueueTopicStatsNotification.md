@@ -8,7 +8,7 @@ title: StatEventQueueTopicStatsNotification
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **group** | **dict(str, str)** |  | [optional] |
-| **data** | [**list[StatEventQueueTopicDatum]**](StatEventQueueTopicDatum.html) |  | [optional] |
+| **data** | [**list[StatEventQueueTopicIntervalMetrics]**](StatEventQueueTopicIntervalMetrics.html) |  | [optional] |
 {: class="table table-striped"}
 
 

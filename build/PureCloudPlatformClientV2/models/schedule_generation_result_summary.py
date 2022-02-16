@@ -42,18 +42,21 @@ class ScheduleGenerationResultSummary(object):
         self.swagger_types = {
             'failed': 'bool',
             'run_id': 'str',
-            'message_count': 'int'
+            'message_count': 'int',
+            'message_severity_counts': 'list[SchedulerMessageSeverityCount]'
         }
 
         self.attribute_map = {
             'failed': 'failed',
             'run_id': 'runId',
-            'message_count': 'messageCount'
+            'message_count': 'messageCount',
+            'message_severity_counts': 'messageSeverityCounts'
         }
 
         self._failed = None
         self._run_id = None
         self._message_count = None
+        self._message_severity_counts = None
 
     @property
     def failed(self):
@@ -123,6 +126,29 @@ class ScheduleGenerationResultSummary(object):
         """
         
         self._message_count = message_count
+
+    @property
+    def message_severity_counts(self):
+        """
+        Gets the message_severity_counts of this ScheduleGenerationResultSummary.
+        The list of schedule generation message counts by severity for this schedule generation run
+
+        :return: The message_severity_counts of this ScheduleGenerationResultSummary.
+        :rtype: list[SchedulerMessageSeverityCount]
+        """
+        return self._message_severity_counts
+
+    @message_severity_counts.setter
+    def message_severity_counts(self, message_severity_counts):
+        """
+        Sets the message_severity_counts of this ScheduleGenerationResultSummary.
+        The list of schedule generation message counts by severity for this schedule generation run
+
+        :param message_severity_counts: The message_severity_counts of this ScheduleGenerationResultSummary.
+        :type: list[SchedulerMessageSeverityCount]
+        """
+        
+        self._message_severity_counts = message_severity_counts
 
     def to_dict(self):
         """

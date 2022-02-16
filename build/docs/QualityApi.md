@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_forms_evaluation**](QualityApi.html#get_quality_forms_evaluation) | Get an evaluation form|
 |[**get_quality_forms_evaluation_versions**](QualityApi.html#get_quality_forms_evaluation_versions) | Gets all the revisions for a specific evaluation.|
 |[**get_quality_forms_evaluations**](QualityApi.html#get_quality_forms_evaluations) | Get the list of evaluation forms|
+|[**get_quality_forms_evaluations_bulk_contexts**](QualityApi.html#get_quality_forms_evaluations_bulk_contexts) | Retrieve a list of the latest published evaluation form versions by context ids|
 |[**get_quality_forms_survey**](QualityApi.html#get_quality_forms_survey) | Get a survey form|
 |[**get_quality_forms_survey_versions**](QualityApi.html#get_quality_forms_survey_versions) | Gets all the revisions for a specific survey.|
 |[**get_quality_forms_surveys**](QualityApi.html#get_quality_forms_surveys) | Get the list of survey forms|
@@ -47,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_quality_calibrations**](QualityApi.html#post_quality_calibrations) | Create a calibration|
 |[**post_quality_conversation_evaluations**](QualityApi.html#post_quality_conversation_evaluations) | Create an evaluation|
 |[**post_quality_conversations_audits_query**](QualityApi.html#post_quality_conversations_audits_query) | Create audit query execution|
+|[**post_quality_evaluations_aggregates_query_me**](QualityApi.html#post_quality_evaluations_aggregates_query_me) | Query for evaluation aggregates for the current user|
 |[**post_quality_evaluations_scoring**](QualityApi.html#post_quality_evaluations_scoring) | Score evaluation|
 |[**post_quality_forms**](QualityApi.html#post_quality_forms) | Create an evaluation form.|
 |[**post_quality_forms_evaluations**](QualityApi.html#post_quality_forms_evaluations) | Create an evaluation form.|
@@ -1232,6 +1234,57 @@ except ApiException as e:
 
 [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
 
+<a name="get_quality_forms_evaluations_bulk_contexts"></a>
+
+## [**list[EvaluationForm]**](EvaluationForm.html) get_quality_forms_evaluations_bulk_contexts(context_id)
+
+
+
+Retrieve a list of the latest published evaluation form versions by context ids
+
+
+
+Wraps GET /api/v2/quality/forms/evaluations/bulk/contexts 
+
+Requires ALL permissions: 
+
+* quality:evaluationForm:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+context_id = ['context_id_example'] # list[str] | A comma-delimited list of valid evaluation form context ids
+
+try:
+    # Retrieve a list of the latest published evaluation form versions by context ids
+    api_response = api_instance.get_quality_forms_evaluations_bulk_contexts(context_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_forms_evaluations_bulk_contexts: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **context_id** | [**list[str]**](str.html)| A comma-delimited list of valid evaluation form context ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[EvaluationForm]**](EvaluationForm.html)
+
 <a name="get_quality_forms_survey"></a>
 
 ## [**SurveyForm**](SurveyForm.html) get_quality_forms_survey(form_id)
@@ -2242,6 +2295,56 @@ except ApiException as e:
 ### Return type
 
 [**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html)
+
+<a name="post_quality_evaluations_aggregates_query_me"></a>
+
+## [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html) post_quality_evaluations_aggregates_query_me(body)
+
+
+
+Query for evaluation aggregates for the current user
+
+
+
+Wraps POST /api/v2/quality/evaluations/aggregates/query/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.EvaluationAggregationQueryMe() # EvaluationAggregationQueryMe | query
+
+try:
+    # Query for evaluation aggregates for the current user
+    api_response = api_instance.post_quality_evaluations_aggregates_query_me(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->post_quality_evaluations_aggregates_query_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EvaluationAggregationQueryMe**](EvaluationAggregationQueryMe.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
 
 <a name="post_quality_evaluations_scoring"></a>
 

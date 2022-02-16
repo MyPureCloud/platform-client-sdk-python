@@ -41,7 +41,7 @@ class StatEventFlowTopicStatsNotification(object):
         """
         self.swagger_types = {
             'group': 'dict(str, str)',
-            'data': 'list[StatEventFlowTopicDatum]'
+            'data': 'list[StatEventFlowTopicIntervalMetrics]'
         }
 
         self.attribute_map = {
@@ -82,7 +82,7 @@ class StatEventFlowTopicStatsNotification(object):
 
 
         :return: The data of this StatEventFlowTopicStatsNotification.
-        :rtype: list[StatEventFlowTopicDatum]
+        :rtype: list[StatEventFlowTopicIntervalMetrics]
         """
         return self._data
 
@@ -93,7 +93,7 @@ class StatEventFlowTopicStatsNotification(object):
 
 
         :param data: The data of this StatEventFlowTopicStatsNotification.
-        :type: list[StatEventFlowTopicDatum]
+        :type: list[StatEventFlowTopicIntervalMetrics]
         """
         
         self._data = data

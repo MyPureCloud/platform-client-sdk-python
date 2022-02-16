@@ -12,6 +12,8 @@ title: CreateObjective
 | **zones** | [**list[ObjectiveZone]**](ObjectiveZone.html) | Objective zone specifies min,max points and values for the associated metric | [optional] |
 | **enabled** | **bool** | A flag for whether this objective is enabled for the related metric | [optional] |
 | **topic_ids** | **list[str]** | A list of topic ids for detected topic metrics | [optional] |
+| **media_types** | **list[str]** | A list of media types for the metric | [optional] |
+| **queue_ids** | **list[str]** | A list of queue ids for the metric | [optional] |
 | **topic_ids_filter_type** | **str** | A filter type for topic Ids. It&#39;s only used for objectives with topicIds. Default filter behavior is \&quot;or\&quot;. | [optional] |
 | **date_start** | **date** | start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] |
 {: class="table table-striped"}

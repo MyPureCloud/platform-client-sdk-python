@@ -44,6 +44,7 @@ class AnalyticsConversationWithoutAttributes(object):
             'conversation_id': 'str',
             'conversation_initiator': 'str',
             'conversation_start': 'datetime',
+            'customer_participation': 'bool',
             'division_ids': 'list[str]',
             'external_tag': 'str',
             'knowledge_base_ids': 'list[str]',
@@ -62,6 +63,7 @@ class AnalyticsConversationWithoutAttributes(object):
             'conversation_id': 'conversationId',
             'conversation_initiator': 'conversationInitiator',
             'conversation_start': 'conversationStart',
+            'customer_participation': 'customerParticipation',
             'division_ids': 'divisionIds',
             'external_tag': 'externalTag',
             'knowledge_base_ids': 'knowledgeBaseIds',
@@ -79,6 +81,7 @@ class AnalyticsConversationWithoutAttributes(object):
         self._conversation_id = None
         self._conversation_initiator = None
         self._conversation_start = None
+        self._customer_participation = None
         self._division_ids = None
         self._external_tag = None
         self._knowledge_base_ids = None
@@ -186,6 +189,29 @@ class AnalyticsConversationWithoutAttributes(object):
         """
         
         self._conversation_start = conversation_start
+
+    @property
+    def customer_participation(self):
+        """
+        Gets the customer_participation of this AnalyticsConversationWithoutAttributes.
+        Indicates a messaging conversation in which the customer participated by sending at least one message
+
+        :return: The customer_participation of this AnalyticsConversationWithoutAttributes.
+        :rtype: bool
+        """
+        return self._customer_participation
+
+    @customer_participation.setter
+    def customer_participation(self, customer_participation):
+        """
+        Sets the customer_participation of this AnalyticsConversationWithoutAttributes.
+        Indicates a messaging conversation in which the customer participated by sending at least one message
+
+        :param customer_participation: The customer_participation of this AnalyticsConversationWithoutAttributes.
+        :type: bool
+        """
+        
+        self._customer_participation = customer_participation
 
     @property
     def division_ids(self):

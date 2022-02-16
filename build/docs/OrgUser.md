@@ -26,6 +26,7 @@ title: OrgUser
 | **employer_info** | [**EmployerInfo**](EmployerInfo.html) |  | [optional] |
 | **routing_status** | [**RoutingStatus**](RoutingStatus.html) | ACD routing status | [optional] |
 | **presence** | [**UserPresence**](UserPresence.html) | Active presence | [optional] |
+| **integration_presence** | [**UserPresence**](UserPresence.html) | Integration presence | [optional] |
 | **conversation_summary** | [**UserConversationSummary**](UserConversationSummary.html) | Summary of conversion statistics for conversation types. | [optional] |
 | **out_of_office** | [**OutOfOffice**](OutOfOffice.html) | Determine if out of office is enabled | [optional] |
 | **geolocation** | [**Geolocation**](Geolocation.html) | Current geolocation position | [optional] |

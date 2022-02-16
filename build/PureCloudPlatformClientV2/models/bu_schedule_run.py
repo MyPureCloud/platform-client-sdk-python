@@ -54,6 +54,7 @@ class BuScheduleRun(object):
             'scheduling_canceled_by': 'UserReference',
             'scheduling_completed_time': 'datetime',
             'message_count': 'int',
+            'message_severity_counts': 'list[SchedulerMessageSeverityCount]',
             'rescheduling_options': 'ReschedulingOptionsRunResponse',
             'rescheduling_result_expiration': 'datetime',
             'self_uri': 'str'
@@ -74,6 +75,7 @@ class BuScheduleRun(object):
             'scheduling_canceled_by': 'schedulingCanceledBy',
             'scheduling_completed_time': 'schedulingCompletedTime',
             'message_count': 'messageCount',
+            'message_severity_counts': 'messageSeverityCounts',
             'rescheduling_options': 'reschedulingOptions',
             'rescheduling_result_expiration': 'reschedulingResultExpiration',
             'self_uri': 'selfUri'
@@ -93,6 +95,7 @@ class BuScheduleRun(object):
         self._scheduling_canceled_by = None
         self._scheduling_completed_time = None
         self._message_count = None
+        self._message_severity_counts = None
         self._rescheduling_options = None
         self._rescheduling_result_expiration = None
         self._self_uri = None
@@ -422,6 +425,29 @@ class BuScheduleRun(object):
         """
         
         self._message_count = message_count
+
+    @property
+    def message_severity_counts(self):
+        """
+        Gets the message_severity_counts of this BuScheduleRun.
+        The list of schedule generation message counts by severity for this schedule generation run
+
+        :return: The message_severity_counts of this BuScheduleRun.
+        :rtype: list[SchedulerMessageSeverityCount]
+        """
+        return self._message_severity_counts
+
+    @message_severity_counts.setter
+    def message_severity_counts(self, message_severity_counts):
+        """
+        Sets the message_severity_counts of this BuScheduleRun.
+        The list of schedule generation message counts by severity for this schedule generation run
+
+        :param message_severity_counts: The message_severity_counts of this BuScheduleRun.
+        :type: list[SchedulerMessageSeverityCount]
+        """
+        
+        self._message_severity_counts = message_severity_counts
 
     @property
     def rescheduling_options(self):

@@ -82,7 +82,7 @@ class ForecastPlanningGroupData(object):
     def offered_per_interval(self):
         """
         Gets the offered_per_interval of this ForecastPlanningGroupData.
-        Forecast offered counts per interval for this week of the forecast
+        Forecast offered counts per 15 minute interval for this week of the forecast
 
         :return: The offered_per_interval of this ForecastPlanningGroupData.
         :rtype: list[float]
@@ -93,7 +93,7 @@ class ForecastPlanningGroupData(object):
     def offered_per_interval(self, offered_per_interval):
         """
         Sets the offered_per_interval of this ForecastPlanningGroupData.
-        Forecast offered counts per interval for this week of the forecast
+        Forecast offered counts per 15 minute interval for this week of the forecast
 
         :param offered_per_interval: The offered_per_interval of this ForecastPlanningGroupData.
         :type: list[float]
@@ -105,7 +105,7 @@ class ForecastPlanningGroupData(object):
     def average_handle_time_seconds_per_interval(self):
         """
         Gets the average_handle_time_seconds_per_interval of this ForecastPlanningGroupData.
-        Forecast average handle time per interval in seconds
+        Forecast average handle time per 15 minute interval in seconds
 
         :return: The average_handle_time_seconds_per_interval of this ForecastPlanningGroupData.
         :rtype: list[float]
@@ -116,7 +116,7 @@ class ForecastPlanningGroupData(object):
     def average_handle_time_seconds_per_interval(self, average_handle_time_seconds_per_interval):
         """
         Sets the average_handle_time_seconds_per_interval of this ForecastPlanningGroupData.
-        Forecast average handle time per interval in seconds
+        Forecast average handle time per 15 minute interval in seconds
 
         :param average_handle_time_seconds_per_interval: The average_handle_time_seconds_per_interval of this ForecastPlanningGroupData.
         :type: list[float]

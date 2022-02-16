@@ -904,7 +904,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
 | **intent_id** | **str**| The ID of the intent to be retrieved. |  |
-| **expand** | **str**| Option to fetch utterances | [optional]  |
+| **expand** | **str**| Option to fetch utterances | [optional] <br />**Values**: phrases, utterances |
 {: class="table table-striped"}
 
 ### Return type
@@ -957,7 +957,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
-| **expand** | **str**| Option to fetch utterances. | [optional]  |
+| **expand** | **str**| Option to fetch utterances. | [optional] <br />**Values**: phrases, utterances |
 {: class="table table-striped"}
 
 ### Return type

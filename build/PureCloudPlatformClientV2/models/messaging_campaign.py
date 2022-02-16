@@ -53,6 +53,7 @@ class MessagingCampaign(object):
             'always_running': 'bool',
             'contact_sorts': 'list[ContactSort]',
             'messages_per_minute': 'int',
+            'contact_list_filters': 'list[DomainEntityRef]',
             'errors': 'list[RestErrorDetail]',
             'sms_config': 'SmsConfig',
             'self_uri': 'str'
@@ -72,6 +73,7 @@ class MessagingCampaign(object):
             'always_running': 'alwaysRunning',
             'contact_sorts': 'contactSorts',
             'messages_per_minute': 'messagesPerMinute',
+            'contact_list_filters': 'contactListFilters',
             'errors': 'errors',
             'sms_config': 'smsConfig',
             'self_uri': 'selfUri'
@@ -90,6 +92,7 @@ class MessagingCampaign(object):
         self._always_running = None
         self._contact_sorts = None
         self._messages_per_minute = None
+        self._contact_list_filters = None
         self._errors = None
         self._sms_config = None
         self._self_uri = None
@@ -396,6 +399,29 @@ class MessagingCampaign(object):
         """
         
         self._messages_per_minute = messages_per_minute
+
+    @property
+    def contact_list_filters(self):
+        """
+        Gets the contact_list_filters of this MessagingCampaign.
+        The contact list filter to check before sending a message for this messaging campaign.
+
+        :return: The contact_list_filters of this MessagingCampaign.
+        :rtype: list[DomainEntityRef]
+        """
+        return self._contact_list_filters
+
+    @contact_list_filters.setter
+    def contact_list_filters(self, contact_list_filters):
+        """
+        Sets the contact_list_filters of this MessagingCampaign.
+        The contact list filter to check before sending a message for this messaging campaign.
+
+        :param contact_list_filters: The contact_list_filters of this MessagingCampaign.
+        :type: list[DomainEntityRef]
+        """
+        
+        self._contact_list_filters = contact_list_filters
 
     @property
     def errors(self):

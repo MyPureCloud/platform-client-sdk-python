@@ -13,6 +13,7 @@ title: EmailMediaPolicyConditions
 | **wrapup_codes** | [**list[WrapupCode]**](WrapupCode.html) |  | [optional] |
 | **languages** | [**list[Language]**](Language.html) |  | [optional] |
 | **time_allowed** | [**TimeAllowed**](TimeAllowed.html) |  | [optional] |
+| **customer_participation** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

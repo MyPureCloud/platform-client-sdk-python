@@ -41,15 +41,18 @@ class ConversationChannel(object):
         """
         self.swagger_types = {
             'type': 'str',
+            'message_type': 'str',
             'platform': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
+            'message_type': 'messageType',
             'platform': 'platform'
         }
 
         self._type = None
+        self._message_type = None
         self._platform = None
 
     @property
@@ -72,7 +75,7 @@ class ConversationChannel(object):
         :param type: The type of this ConversationChannel.
         :type: str
         """
-        allowed_values = ["Unknown", "Call", "Callback", "Email", "GenericObject", "Messaging", "Social", "Webchat"]
+        allowed_values = ["Unknown", "Call", "Callback", "Email", "GenericObject", "Messaging", "Social", "Webchat", "Voice", "Chat", "Cobrowse", "Video", "Screenshare", "Message"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -80,10 +83,37 @@ class ConversationChannel(object):
             self._type = type
 
     @property
+    def message_type(self):
+        """
+        Gets the message_type of this ConversationChannel.
+        Message type for messaging conversations.
+
+        :return: The message_type of this ConversationChannel.
+        :rtype: str
+        """
+        return self._message_type
+
+    @message_type.setter
+    def message_type(self, message_type):
+        """
+        Sets the message_type of this ConversationChannel.
+        Message type for messaging conversations.
+
+        :param message_type: The message_type of this ConversationChannel.
+        :type: str
+        """
+        allowed_values = ["Unknown", "Sms", "Twitter", "Facebook", "Line", "WhatsApp", "WebMessaging", "Open", "Instagram"]
+        if message_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for message_type -> " + message_type)
+            self._message_type = "outdated_sdk_version"
+        else:
+            self._message_type = message_type
+
+    @property
     def platform(self):
         """
         Gets the platform of this ConversationChannel.
-        The platform used to deliver media for the conversation for a given channel (e.g. Twitter, Messenger, PureCloud Edge).
+        The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email).
 
         :return: The platform of this ConversationChannel.
         :rtype: str
@@ -94,7 +124,7 @@ class ConversationChannel(object):
     def platform(self, platform):
         """
         Sets the platform of this ConversationChannel.
-        The platform used to deliver media for the conversation for a given channel (e.g. Twitter, Messenger, PureCloud Edge).
+        The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email).
 
         :param platform: The platform of this ConversationChannel.
         :type: str

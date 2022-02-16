@@ -1828,6 +1828,84 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_quality_forms_evaluations_bulk_contexts(self, context_id, **kwargs):
+        """
+        Retrieve a list of the latest published evaluation form versions by context ids
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_forms_evaluations_bulk_contexts(context_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] context_id: A comma-delimited list of valid evaluation form context ids (required)
+        :return: list[EvaluationForm]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['context_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_forms_evaluations_bulk_contexts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'context_id' is set
+        if ('context_id' not in params) or (params['context_id'] is None):
+            raise ValueError("Missing the required parameter `context_id` when calling `get_quality_forms_evaluations_bulk_contexts`")
+
+
+        resource_path = '/api/v2/quality/forms/evaluations/bulk/contexts'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'context_id' in params:
+            query_params['contextId'] = params['context_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[EvaluationForm]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_quality_forms_survey(self, form_id, **kwargs):
         """
         Get a survey form
@@ -3369,6 +3447,84 @@ class QualityApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='QualityAuditQueryExecutionStatusResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_quality_evaluations_aggregates_query_me(self, body, **kwargs):
+        """
+        Query for evaluation aggregates for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_quality_evaluations_aggregates_query_me(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param EvaluationAggregationQueryMe body: query (required)
+        :return: EvaluationAggregateQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_quality_evaluations_aggregates_query_me" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_quality_evaluations_aggregates_query_me`")
+
+
+        resource_path = '/api/v2/quality/evaluations/aggregates/query/me'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EvaluationAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

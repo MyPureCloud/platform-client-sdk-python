@@ -72,6 +72,8 @@ class Session(object):
             'conversation_channels': 'list[ConversationChannel]',
             'originating_direction': 'str',
             'conversation_subject': 'str',
+            'last_user_disconnect_type': 'str',
+            'last_acd_outcome': 'str',
             'authenticated': 'bool',
             'self_uri': 'str',
             'created_date': 'datetime',
@@ -115,6 +117,8 @@ class Session(object):
             'conversation_channels': 'conversationChannels',
             'originating_direction': 'originatingDirection',
             'conversation_subject': 'conversationSubject',
+            'last_user_disconnect_type': 'lastUserDisconnectType',
+            'last_acd_outcome': 'lastAcdOutcome',
             'authenticated': 'authenticated',
             'self_uri': 'selfUri',
             'created_date': 'createdDate',
@@ -157,6 +161,8 @@ class Session(object):
         self._conversation_channels = None
         self._originating_direction = None
         self._conversation_subject = None
+        self._last_user_disconnect_type = None
+        self._last_acd_outcome = None
         self._authenticated = None
         self._self_uri = None
         self._created_date = None
@@ -876,7 +882,7 @@ class Session(object):
         :param originating_direction: The originating_direction of this Session.
         :type: str
         """
-        allowed_values = ["Inbound", "Outbound"]
+        allowed_values = ["Unknown", "Inbound", "Outbound"]
         if originating_direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for originating_direction -> " + originating_direction)
             self._originating_direction = "outdated_sdk_version"
@@ -905,6 +911,60 @@ class Session(object):
         """
         
         self._conversation_subject = conversation_subject
+
+    @property
+    def last_user_disconnect_type(self):
+        """
+        Gets the last_user_disconnect_type of this Session.
+        Disconnect reason for the last user connected to the conversation.
+
+        :return: The last_user_disconnect_type of this Session.
+        :rtype: str
+        """
+        return self._last_user_disconnect_type
+
+    @last_user_disconnect_type.setter
+    def last_user_disconnect_type(self, last_user_disconnect_type):
+        """
+        Sets the last_user_disconnect_type of this Session.
+        Disconnect reason for the last user connected to the conversation.
+
+        :param last_user_disconnect_type: The last_user_disconnect_type of this Session.
+        :type: str
+        """
+        allowed_values = ["Unknown", "Endpoint", "Client", "System", "Transfer", "Error", "Peer", "Other", "Spam", "Timeout", "TransportFailure", "ConferenceTransfer", "ConsultTransfer", "ForwardTransfer", "NoAnswerTransfer", "NotAvailableTransfer", "Uncallable"]
+        if last_user_disconnect_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for last_user_disconnect_type -> " + last_user_disconnect_type)
+            self._last_user_disconnect_type = "outdated_sdk_version"
+        else:
+            self._last_user_disconnect_type = last_user_disconnect_type
+
+    @property
+    def last_acd_outcome(self):
+        """
+        Gets the last_acd_outcome of this Session.
+        Last ACD outcome for the conversation.
+
+        :return: The last_acd_outcome of this Session.
+        :rtype: str
+        """
+        return self._last_acd_outcome
+
+    @last_acd_outcome.setter
+    def last_acd_outcome(self, last_acd_outcome):
+        """
+        Sets the last_acd_outcome of this Session.
+        Last ACD outcome for the conversation.
+
+        :param last_acd_outcome: The last_acd_outcome of this Session.
+        :type: str
+        """
+        allowed_values = ["Unknown", "Abandon", "Answered", "FlowOut"]
+        if last_acd_outcome.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for last_acd_outcome -> " + last_acd_outcome)
+            self._last_acd_outcome = "outdated_sdk_version"
+        else:
+            self._last_acd_outcome = last_acd_outcome
 
     @property
     def authenticated(self):

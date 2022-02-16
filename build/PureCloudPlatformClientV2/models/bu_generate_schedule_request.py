@@ -42,18 +42,21 @@ class BuGenerateScheduleRequest(object):
         self.swagger_types = {
             'description': 'str',
             'short_term_forecast': 'BuShortTermForecastReference',
-            'week_count': 'int'
+            'week_count': 'int',
+            'options': 'SchedulingOptionsRequest'
         }
 
         self.attribute_map = {
             'description': 'description',
             'short_term_forecast': 'shortTermForecast',
-            'week_count': 'weekCount'
+            'week_count': 'weekCount',
+            'options': 'options'
         }
 
         self._description = None
         self._short_term_forecast = None
         self._week_count = None
+        self._options = None
 
     @property
     def description(self):
@@ -123,6 +126,29 @@ class BuGenerateScheduleRequest(object):
         """
         
         self._week_count = week_count
+
+    @property
+    def options(self):
+        """
+        Gets the options of this BuGenerateScheduleRequest.
+        Additional scheduling options
+
+        :return: The options of this BuGenerateScheduleRequest.
+        :rtype: SchedulingOptionsRequest
+        """
+        return self._options
+
+    @options.setter
+    def options(self, options):
+        """
+        Sets the options of this BuGenerateScheduleRequest.
+        Additional scheduling options
+
+        :param options: The options of this BuGenerateScheduleRequest.
+        :type: SchedulingOptionsRequest
+        """
+        
+        self._options = options
 
     def to_dict(self):
         """

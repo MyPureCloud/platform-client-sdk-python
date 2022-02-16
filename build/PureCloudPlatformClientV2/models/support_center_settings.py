@@ -40,14 +40,17 @@ class SupportCenterSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'enabled': 'bool'
+            'enabled': 'bool',
+            'knowledge_base': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
-            'enabled': 'enabled'
+            'enabled': 'enabled',
+            'knowledge_base': 'knowledgeBase'
         }
 
         self._enabled = None
+        self._knowledge_base = None
 
     @property
     def enabled(self):
@@ -71,6 +74,29 @@ class SupportCenterSettings(object):
         """
         
         self._enabled = enabled
+
+    @property
+    def knowledge_base(self):
+        """
+        Gets the knowledge_base of this SupportCenterSettings.
+        The knowledge base for support center
+
+        :return: The knowledge_base of this SupportCenterSettings.
+        :rtype: AddressableEntityRef
+        """
+        return self._knowledge_base
+
+    @knowledge_base.setter
+    def knowledge_base(self, knowledge_base):
+        """
+        Sets the knowledge_base of this SupportCenterSettings.
+        The knowledge base for support center
+
+        :param knowledge_base: The knowledge_base of this SupportCenterSettings.
+        :type: AddressableEntityRef
+        """
+        
+        self._knowledge_base = knowledge_base
 
     def to_dict(self):
         """

@@ -44,6 +44,8 @@ class Objective(object):
             'template_id': 'str',
             'zones': 'list[ObjectiveZone]',
             'enabled': 'bool',
+            'media_types': 'list[str]',
+            'queues': 'list[AddressableEntityRef]',
             'topics': 'list[AddressableEntityRef]',
             'topic_ids_filter_type': 'str',
             'date_start': 'date'
@@ -54,6 +56,8 @@ class Objective(object):
             'template_id': 'templateId',
             'zones': 'zones',
             'enabled': 'enabled',
+            'media_types': 'mediaTypes',
+            'queues': 'queues',
             'topics': 'topics',
             'topic_ids_filter_type': 'topicIdsFilterType',
             'date_start': 'dateStart'
@@ -63,6 +67,8 @@ class Objective(object):
         self._template_id = None
         self._zones = None
         self._enabled = None
+        self._media_types = None
+        self._queues = None
         self._topics = None
         self._topic_ids_filter_type = None
         self._date_start = None
@@ -158,6 +164,52 @@ class Objective(object):
         """
         
         self._enabled = enabled
+
+    @property
+    def media_types(self):
+        """
+        Gets the media_types of this Objective.
+        A list of media types for the metric
+
+        :return: The media_types of this Objective.
+        :rtype: list[str]
+        """
+        return self._media_types
+
+    @media_types.setter
+    def media_types(self, media_types):
+        """
+        Sets the media_types of this Objective.
+        A list of media types for the metric
+
+        :param media_types: The media_types of this Objective.
+        :type: list[str]
+        """
+        
+        self._media_types = media_types
+
+    @property
+    def queues(self):
+        """
+        Gets the queues of this Objective.
+        A list of queues for the metric
+
+        :return: The queues of this Objective.
+        :rtype: list[AddressableEntityRef]
+        """
+        return self._queues
+
+    @queues.setter
+    def queues(self, queues):
+        """
+        Sets the queues of this Objective.
+        A list of queues for the metric
+
+        :param queues: The queues of this Objective.
+        :type: list[AddressableEntityRef]
+        """
+        
+        self._queues = queues
 
     @property
     def topics(self):

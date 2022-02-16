@@ -45,6 +45,8 @@ class CreateObjective(object):
             'zones': 'list[ObjectiveZone]',
             'enabled': 'bool',
             'topic_ids': 'list[str]',
+            'media_types': 'list[str]',
+            'queue_ids': 'list[str]',
             'topic_ids_filter_type': 'str',
             'date_start': 'date'
         }
@@ -55,6 +57,8 @@ class CreateObjective(object):
             'zones': 'zones',
             'enabled': 'enabled',
             'topic_ids': 'topicIds',
+            'media_types': 'mediaTypes',
+            'queue_ids': 'queueIds',
             'topic_ids_filter_type': 'topicIdsFilterType',
             'date_start': 'dateStart'
         }
@@ -64,6 +68,8 @@ class CreateObjective(object):
         self._zones = None
         self._enabled = None
         self._topic_ids = None
+        self._media_types = None
+        self._queue_ids = None
         self._topic_ids_filter_type = None
         self._date_start = None
 
@@ -181,6 +187,52 @@ class CreateObjective(object):
         """
         
         self._topic_ids = topic_ids
+
+    @property
+    def media_types(self):
+        """
+        Gets the media_types of this CreateObjective.
+        A list of media types for the metric
+
+        :return: The media_types of this CreateObjective.
+        :rtype: list[str]
+        """
+        return self._media_types
+
+    @media_types.setter
+    def media_types(self, media_types):
+        """
+        Sets the media_types of this CreateObjective.
+        A list of media types for the metric
+
+        :param media_types: The media_types of this CreateObjective.
+        :type: list[str]
+        """
+        
+        self._media_types = media_types
+
+    @property
+    def queue_ids(self):
+        """
+        Gets the queue_ids of this CreateObjective.
+        A list of queue ids for the metric
+
+        :return: The queue_ids of this CreateObjective.
+        :rtype: list[str]
+        """
+        return self._queue_ids
+
+    @queue_ids.setter
+    def queue_ids(self, queue_ids):
+        """
+        Sets the queue_ids of this CreateObjective.
+        A list of queue ids for the metric
+
+        :param queue_ids: The queue_ids of this CreateObjective.
+        :type: list[str]
+        """
+        
+        self._queue_ids = queue_ids
 
     @property
     def topic_ids_filter_type(self):

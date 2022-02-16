@@ -42,18 +42,21 @@ class SmsConfig(object):
         self.swagger_types = {
             'message_column': 'str',
             'phone_column': 'str',
-            'sender_sms_phone_number': 'SmsPhoneNumberRef'
+            'sender_sms_phone_number': 'SmsPhoneNumberRef',
+            'content_template': 'DomainEntityRef'
         }
 
         self.attribute_map = {
             'message_column': 'messageColumn',
             'phone_column': 'phoneColumn',
-            'sender_sms_phone_number': 'senderSmsPhoneNumber'
+            'sender_sms_phone_number': 'senderSmsPhoneNumber',
+            'content_template': 'contentTemplate'
         }
 
         self._message_column = None
         self._phone_column = None
         self._sender_sms_phone_number = None
+        self._content_template = None
 
     @property
     def message_column(self):
@@ -123,6 +126,29 @@ class SmsConfig(object):
         """
         
         self._sender_sms_phone_number = sender_sms_phone_number
+
+    @property
+    def content_template(self):
+        """
+        Gets the content_template of this SmsConfig.
+        The content template used to formulate the message to send to the contact.
+
+        :return: The content_template of this SmsConfig.
+        :rtype: DomainEntityRef
+        """
+        return self._content_template
+
+    @content_template.setter
+    def content_template(self, content_template):
+        """
+        Sets the content_template of this SmsConfig.
+        The content template used to formulate the message to send to the contact.
+
+        :param content_template: The content_template of this SmsConfig.
+        :type: DomainEntityRef
+        """
+        
+        self._content_template = content_template
 
     def to_dict(self):
         """

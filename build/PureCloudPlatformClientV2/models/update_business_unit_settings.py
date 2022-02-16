@@ -43,6 +43,7 @@ class UpdateBusinessUnitSettings(object):
             'start_day_of_week': 'str',
             'time_zone': 'str',
             'short_term_forecasting': 'BuShortTermForecastingSettings',
+            'scheduling': 'BuSchedulingSettings',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
@@ -50,12 +51,14 @@ class UpdateBusinessUnitSettings(object):
             'start_day_of_week': 'startDayOfWeek',
             'time_zone': 'timeZone',
             'short_term_forecasting': 'shortTermForecasting',
+            'scheduling': 'scheduling',
             'metadata': 'metadata'
         }
 
         self._start_day_of_week = None
         self._time_zone = None
         self._short_term_forecasting = None
+        self._scheduling = None
         self._metadata = None
 
     @property
@@ -130,6 +133,29 @@ class UpdateBusinessUnitSettings(object):
         """
         
         self._short_term_forecasting = short_term_forecasting
+
+    @property
+    def scheduling(self):
+        """
+        Gets the scheduling of this UpdateBusinessUnitSettings.
+        Scheduling settings
+
+        :return: The scheduling of this UpdateBusinessUnitSettings.
+        :rtype: BuSchedulingSettings
+        """
+        return self._scheduling
+
+    @scheduling.setter
+    def scheduling(self, scheduling):
+        """
+        Sets the scheduling of this UpdateBusinessUnitSettings.
+        Scheduling settings
+
+        :param scheduling: The scheduling of this UpdateBusinessUnitSettings.
+        :type: BuSchedulingSettings
+        """
+        
+        self._scheduling = scheduling
 
     @property
     def metadata(self):

@@ -40,6 +40,7 @@ class WorkdayValuesMetricItem(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'metric': 'AddressableEntityRef',
             'metric_definition': 'DomainEntityRef',
             'average': 'float',
             'unit_type': 'str',
@@ -47,22 +48,47 @@ class WorkdayValuesMetricItem(object):
         }
 
         self.attribute_map = {
+            'metric': 'metric',
             'metric_definition': 'metricDefinition',
             'average': 'average',
             'unit_type': 'unitType',
             'trend': 'trend'
         }
 
+        self._metric = None
         self._metric_definition = None
         self._average = None
         self._unit_type = None
         self._trend = None
 
     @property
+    def metric(self):
+        """
+        Gets the metric of this WorkdayValuesMetricItem.
+        Gamification metric for the average and the trend
+
+        :return: The metric of this WorkdayValuesMetricItem.
+        :rtype: AddressableEntityRef
+        """
+        return self._metric
+
+    @metric.setter
+    def metric(self, metric):
+        """
+        Sets the metric of this WorkdayValuesMetricItem.
+        Gamification metric for the average and the trend
+
+        :param metric: The metric of this WorkdayValuesMetricItem.
+        :type: AddressableEntityRef
+        """
+        
+        self._metric = metric
+
+    @property
     def metric_definition(self):
         """
         Gets the metric_definition of this WorkdayValuesMetricItem.
-        Gamification metric for the average and the trend
+        Gamification metric definition for the average and the trend
 
         :return: The metric_definition of this WorkdayValuesMetricItem.
         :rtype: DomainEntityRef
@@ -73,7 +99,7 @@ class WorkdayValuesMetricItem(object):
     def metric_definition(self, metric_definition):
         """
         Sets the metric_definition of this WorkdayValuesMetricItem.
-        Gamification metric for the average and the trend
+        Gamification metric definition for the average and the trend
 
         :param metric_definition: The metric_definition of this WorkdayValuesMetricItem.
         :type: DomainEntityRef

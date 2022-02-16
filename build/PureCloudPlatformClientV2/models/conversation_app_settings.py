@@ -41,16 +41,19 @@ class ConversationAppSettings(object):
         """
         self.swagger_types = {
             'show_agent_typing_indicator': 'bool',
-            'show_user_typing_indicator': 'bool'
+            'show_user_typing_indicator': 'bool',
+            'auto_start_type': 'str'
         }
 
         self.attribute_map = {
             'show_agent_typing_indicator': 'showAgentTypingIndicator',
-            'show_user_typing_indicator': 'showUserTypingIndicator'
+            'show_user_typing_indicator': 'showUserTypingIndicator',
+            'auto_start_type': 'autoStartType'
         }
 
         self._show_agent_typing_indicator = None
         self._show_user_typing_indicator = None
+        self._auto_start_type = None
 
     @property
     def show_agent_typing_indicator(self):
@@ -97,6 +100,33 @@ class ConversationAppSettings(object):
         """
         
         self._show_user_typing_indicator = show_user_typing_indicator
+
+    @property
+    def auto_start_type(self):
+        """
+        Gets the auto_start_type of this ConversationAppSettings.
+        The auto start type for the messenger conversation
+
+        :return: The auto_start_type of this ConversationAppSettings.
+        :rtype: str
+        """
+        return self._auto_start_type
+
+    @auto_start_type.setter
+    def auto_start_type(self, auto_start_type):
+        """
+        Sets the auto_start_type of this ConversationAppSettings.
+        The auto start type for the messenger conversation
+
+        :param auto_start_type: The auto_start_type of this ConversationAppSettings.
+        :type: str
+        """
+        allowed_values = ["Standard", "Automatic"]
+        if auto_start_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for auto_start_type -> " + auto_start_type)
+            self._auto_start_type = "outdated_sdk_version"
+        else:
+            self._auto_start_type = auto_start_type
 
     def to_dict(self):
         """

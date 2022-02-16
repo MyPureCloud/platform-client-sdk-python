@@ -8,7 +8,7 @@ title: StatEventUserTopicStatsNotification
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **group** | **dict(str, str)** |  | [optional] |
-| **data** | [**list[StatEventUserTopicDatum]**](StatEventUserTopicDatum.html) |  | [optional] |
+| **data** | [**list[StatEventUserTopicIntervalMetrics]**](StatEventUserTopicIntervalMetrics.html) |  | [optional] |
 {: class="table table-striped"}
 
 

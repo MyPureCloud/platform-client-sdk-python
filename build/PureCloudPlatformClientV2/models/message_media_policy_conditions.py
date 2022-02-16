@@ -45,7 +45,8 @@ class MessageMediaPolicyConditions(object):
             'for_queues': 'list[Queue]',
             'wrapup_codes': 'list[WrapupCode]',
             'languages': 'list[Language]',
-            'time_allowed': 'TimeAllowed'
+            'time_allowed': 'TimeAllowed',
+            'customer_participation': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class MessageMediaPolicyConditions(object):
             'for_queues': 'forQueues',
             'wrapup_codes': 'wrapupCodes',
             'languages': 'languages',
-            'time_allowed': 'timeAllowed'
+            'time_allowed': 'timeAllowed',
+            'customer_participation': 'customerParticipation'
         }
 
         self._for_users = None
@@ -63,6 +65,7 @@ class MessageMediaPolicyConditions(object):
         self._wrapup_codes = None
         self._languages = None
         self._time_allowed = None
+        self._customer_participation = None
 
     @property
     def for_users(self):
@@ -201,6 +204,33 @@ class MessageMediaPolicyConditions(object):
         """
         
         self._time_allowed = time_allowed
+
+    @property
+    def customer_participation(self):
+        """
+        Gets the customer_participation of this MessageMediaPolicyConditions.
+
+
+        :return: The customer_participation of this MessageMediaPolicyConditions.
+        :rtype: str
+        """
+        return self._customer_participation
+
+    @customer_participation.setter
+    def customer_participation(self, customer_participation):
+        """
+        Sets the customer_participation of this MessageMediaPolicyConditions.
+
+
+        :param customer_participation: The customer_participation of this MessageMediaPolicyConditions.
+        :type: str
+        """
+        allowed_values = ["YES", "NO"]
+        if customer_participation.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for customer_participation -> " + customer_participation)
+            self._customer_participation = "outdated_sdk_version"
+        else:
+            self._customer_participation = customer_participation
 
     def to_dict(self):
         """

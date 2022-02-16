@@ -2848,7 +2848,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'startNumber' # str | Sort by (optional) (default to startNumber)
+sort_by = 'sort_by_example' # str | Sort by (optional)
 number = 'number_example' # str | Number (optional)
 
 try:
@@ -2866,7 +2866,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to startNumber] |
+| **sort_by** | **str**| Sort by | [optional]  |
 | **number** | **str**| Number | [optional]  |
 {: class="table table-striped"}
 

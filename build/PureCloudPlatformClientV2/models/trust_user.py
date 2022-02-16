@@ -59,6 +59,7 @@ class TrustUser(object):
             'employer_info': 'EmployerInfo',
             'routing_status': 'RoutingStatus',
             'presence': 'UserPresence',
+            'integration_presence': 'UserPresence',
             'conversation_summary': 'UserConversationSummary',
             'out_of_office': 'OutOfOffice',
             'geolocation': 'Geolocation',
@@ -97,6 +98,7 @@ class TrustUser(object):
             'employer_info': 'employerInfo',
             'routing_status': 'routingStatus',
             'presence': 'presence',
+            'integration_presence': 'integrationPresence',
             'conversation_summary': 'conversationSummary',
             'out_of_office': 'outOfOffice',
             'geolocation': 'geolocation',
@@ -134,6 +136,7 @@ class TrustUser(object):
         self._employer_info = None
         self._routing_status = None
         self._presence = None
+        self._integration_presence = None
         self._conversation_summary = None
         self._out_of_office = None
         self._geolocation = None
@@ -591,6 +594,29 @@ class TrustUser(object):
         """
         
         self._presence = presence
+
+    @property
+    def integration_presence(self):
+        """
+        Gets the integration_presence of this TrustUser.
+        Integration presence
+
+        :return: The integration_presence of this TrustUser.
+        :rtype: UserPresence
+        """
+        return self._integration_presence
+
+    @integration_presence.setter
+    def integration_presence(self, integration_presence):
+        """
+        Sets the integration_presence of this TrustUser.
+        Integration presence
+
+        :param integration_presence: The integration_presence of this TrustUser.
+        :type: UserPresence
+        """
+        
+        self._integration_presence = integration_presence
 
     @property
     def conversation_summary(self):

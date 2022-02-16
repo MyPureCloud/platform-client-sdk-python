@@ -8,7 +8,7 @@ title: StatEventCampaignTopicStatsNotification
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **group** | **dict(str, str)** |  | [optional] |
-| **data** | [**list[StatEventCampaignTopicDatum]**](StatEventCampaignTopicDatum.html) |  | [optional] |
+| **data** | [**list[StatEventCampaignTopicIntervalMetrics]**](StatEventCampaignTopicIntervalMetrics.html) |  | [optional] |
 {: class="table table-striped"}
 
 

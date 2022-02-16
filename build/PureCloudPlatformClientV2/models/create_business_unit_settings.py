@@ -42,18 +42,21 @@ class CreateBusinessUnitSettings(object):
         self.swagger_types = {
             'start_day_of_week': 'str',
             'time_zone': 'str',
-            'short_term_forecasting': 'BuShortTermForecastingSettings'
+            'short_term_forecasting': 'BuShortTermForecastingSettings',
+            'scheduling': 'BuSchedulingSettings'
         }
 
         self.attribute_map = {
             'start_day_of_week': 'startDayOfWeek',
             'time_zone': 'timeZone',
-            'short_term_forecasting': 'shortTermForecasting'
+            'short_term_forecasting': 'shortTermForecasting',
+            'scheduling': 'scheduling'
         }
 
         self._start_day_of_week = None
         self._time_zone = None
         self._short_term_forecasting = None
+        self._scheduling = None
 
     @property
     def start_day_of_week(self):
@@ -127,6 +130,29 @@ class CreateBusinessUnitSettings(object):
         """
         
         self._short_term_forecasting = short_term_forecasting
+
+    @property
+    def scheduling(self):
+        """
+        Gets the scheduling of this CreateBusinessUnitSettings.
+        Scheduling settings
+
+        :return: The scheduling of this CreateBusinessUnitSettings.
+        :rtype: BuSchedulingSettings
+        """
+        return self._scheduling
+
+    @scheduling.setter
+    def scheduling(self, scheduling):
+        """
+        Sets the scheduling of this CreateBusinessUnitSettings.
+        Scheduling settings
+
+        :param scheduling: The scheduling of this CreateBusinessUnitSettings.
+        :type: BuSchedulingSettings
+        """
+        
+        self._scheduling = scheduling
 
     def to_dict(self):
         """
