@@ -44,6 +44,7 @@ class SurveyQuestionScore(object):
             'answer_id': 'str',
             'score': 'int',
             'marked_na': 'bool',
+            'assisted_answer_id': 'str',
             'nps_score': 'int',
             'nps_text_answer': 'str',
             'free_text_answer': 'str'
@@ -54,6 +55,7 @@ class SurveyQuestionScore(object):
             'answer_id': 'answerId',
             'score': 'score',
             'marked_na': 'markedNA',
+            'assisted_answer_id': 'assistedAnswerId',
             'nps_score': 'npsScore',
             'nps_text_answer': 'npsTextAnswer',
             'free_text_answer': 'freeTextAnswer'
@@ -63,6 +65,7 @@ class SurveyQuestionScore(object):
         self._answer_id = None
         self._score = None
         self._marked_na = None
+        self._assisted_answer_id = None
         self._nps_score = None
         self._nps_text_answer = None
         self._free_text_answer = None
@@ -158,6 +161,29 @@ class SurveyQuestionScore(object):
         """
         
         self._marked_na = marked_na
+
+    @property
+    def assisted_answer_id(self):
+        """
+        Gets the assisted_answer_id of this SurveyQuestionScore.
+        AnswerId found with evaluation assistance conditions
+
+        :return: The assisted_answer_id of this SurveyQuestionScore.
+        :rtype: str
+        """
+        return self._assisted_answer_id
+
+    @assisted_answer_id.setter
+    def assisted_answer_id(self, assisted_answer_id):
+        """
+        Sets the assisted_answer_id of this SurveyQuestionScore.
+        AnswerId found with evaluation assistance conditions
+
+        :param assisted_answer_id: The assisted_answer_id of this SurveyQuestionScore.
+        :type: str
+        """
+        
+        self._assisted_answer_id = assisted_answer_id
 
     @property
     def nps_score(self):

@@ -40,14 +40,17 @@ class AutomaticTimeZoneMappingSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'callable_windows': 'list[CallableWindow]'
+            'callable_windows': 'list[CallableWindow]',
+            'supported_countries': 'list[str]'
         }
 
         self.attribute_map = {
-            'callable_windows': 'callableWindows'
+            'callable_windows': 'callableWindows',
+            'supported_countries': 'supportedCountries'
         }
 
         self._callable_windows = None
+        self._supported_countries = None
 
     @property
     def callable_windows(self):
@@ -71,6 +74,29 @@ class AutomaticTimeZoneMappingSettings(object):
         """
         
         self._callable_windows = callable_windows
+
+    @property
+    def supported_countries(self):
+        """
+        Gets the supported_countries of this AutomaticTimeZoneMappingSettings.
+        The countries that are supported for automatic time zone mapping.
+
+        :return: The supported_countries of this AutomaticTimeZoneMappingSettings.
+        :rtype: list[str]
+        """
+        return self._supported_countries
+
+    @supported_countries.setter
+    def supported_countries(self, supported_countries):
+        """
+        Sets the supported_countries of this AutomaticTimeZoneMappingSettings.
+        The countries that are supported for automatic time zone mapping.
+
+        :param supported_countries: The supported_countries of this AutomaticTimeZoneMappingSettings.
+        :type: list[str]
+        """
+        
+        self._supported_countries = supported_countries
 
     def to_dict(self):
         """

@@ -2109,7 +2109,7 @@ except ApiException as e:
 
 <a name="get_routing_queue_users"></a>
 
-## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) get_routing_queue_users(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
+## [**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html) get_routing_queue_users(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -2179,7 +2179,7 @@ except ApiException as e:
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html)
 
 <a name="get_routing_queue_wrapupcodes"></a>
 
@@ -3763,7 +3763,7 @@ void (empty response body)
 
 <a name="patch_routing_queue_users"></a>
 
-## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) patch_routing_queue_users(queue_id, body)
+## [**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html) patch_routing_queue_users(queue_id, body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -3813,7 +3813,7 @@ except ApiException as e:
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html)
 
 <a name="patch_routing_settings_contactcenter"></a>
 

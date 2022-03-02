@@ -202,7 +202,7 @@ class WebDeploymentConfigurationVersion(object):
     def languages(self):
         """
         Gets the languages of this WebDeploymentConfigurationVersion.
-        A list of languages supported on the configuration
+        A list of languages supported on the configuration required if the messenger is enabled
 
         :return: The languages of this WebDeploymentConfigurationVersion.
         :rtype: list[str]
@@ -213,7 +213,7 @@ class WebDeploymentConfigurationVersion(object):
     def languages(self, languages):
         """
         Sets the languages of this WebDeploymentConfigurationVersion.
-        A list of languages supported on the configuration
+        A list of languages supported on the configuration required if the messenger is enabled
 
         :param languages: The languages of this WebDeploymentConfigurationVersion.
         :type: list[str]
@@ -225,7 +225,7 @@ class WebDeploymentConfigurationVersion(object):
     def default_language(self):
         """
         Gets the default_language of this WebDeploymentConfigurationVersion.
-        The default language to use for the configuration
+        The default language to use for the configuration required if the messenger is enabled
 
         :return: The default_language of this WebDeploymentConfigurationVersion.
         :rtype: str
@@ -236,7 +236,7 @@ class WebDeploymentConfigurationVersion(object):
     def default_language(self, default_language):
         """
         Sets the default_language of this WebDeploymentConfigurationVersion.
-        The default language to use for the configuration
+        The default language to use for the configuration required if the messenger is enabled
 
         :param default_language: The default_language of this WebDeploymentConfigurationVersion.
         :type: str

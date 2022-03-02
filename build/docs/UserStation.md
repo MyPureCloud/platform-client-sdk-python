@@ -14,6 +14,7 @@ title: UserStation
 | **associated_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **default_user** | [**User**](User.html) |  | [optional] |
 | **provider_info** | **dict(str, str)** | Provider-specific info for this station, e.g. { \&quot;edgeGroupId\&quot;: \&quot;ffe7b15c-a9cc-4f4c-88f5-781327819a49\&quot; } | [optional] |
+| **web_rtc_call_appearances** | **int** | The number of call appearances on the station. | [optional] |
 {: class="table table-striped"}
 
 

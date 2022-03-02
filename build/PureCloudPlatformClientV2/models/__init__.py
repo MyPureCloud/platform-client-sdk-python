@@ -151,6 +151,7 @@ from .assigned_wrapup_code import AssignedWrapupCode
 from .assignment import Assignment
 from .assignment_error import AssignmentError
 from .assignment_validation import AssignmentValidation
+from .assistance_condition import AssistanceCondition
 from .associated_value_field import AssociatedValueField
 from .async_conversation_query import AsyncConversationQuery
 from .async_forecast_operation_result import AsyncForecastOperationResult
@@ -659,6 +660,7 @@ from .conversation_event_topic_uri_reference import ConversationEventTopicUriRef
 from .conversation_event_topic_video import ConversationEventTopicVideo
 from .conversation_event_topic_voicemail import ConversationEventTopicVoicemail
 from .conversation_event_topic_wrapup import ConversationEventTopicWrapup
+from .conversation_event_typing import ConversationEventTyping
 from .conversation_message_content import ConversationMessageContent
 from .conversation_message_event import ConversationMessageEvent
 from .conversation_message_event_topic_conversation_routing_data import ConversationMessageEventTopicConversationRoutingData
@@ -1006,7 +1008,6 @@ from .edge_connection_info import EdgeConnectionInfo
 from .edge_entity_listing import EdgeEntityListing
 from .edge_group import EdgeGroup
 from .edge_group_entity_listing import EdgeGroupEntityListing
-from .edge_id_name_pair import EdgeIdNamePair
 from .edge_interface import EdgeInterface
 from .edge_line import EdgeLine
 from .edge_line_entity_listing import EdgeLineEntityListing
@@ -1447,6 +1448,7 @@ from .learning_module import LearningModule
 from .learning_module_inform_step import LearningModuleInformStep
 from .learning_module_inform_step_request import LearningModuleInformStepRequest
 from .learning_module_publish_response import LearningModulePublishResponse
+from .learning_module_reassign_summary import LearningModuleReassignSummary
 from .learning_module_request import LearningModuleRequest
 from .learning_module_rule import LearningModuleRule
 from .learning_module_rule_parts import LearningModuleRuleParts
@@ -2032,6 +2034,7 @@ from .queue_email_address import QueueEmailAddress
 from .queue_entity_listing import QueueEntityListing
 from .queue_member import QueueMember
 from .queue_member_entity_listing import QueueMemberEntityListing
+from .queue_member_entity_listing_v1 import QueueMemberEntityListingV1
 from .queue_messaging_addresses import QueueMessagingAddresses
 from .queue_observation_data_container import QueueObservationDataContainer
 from .queue_observation_query import QueueObservationQuery
@@ -2424,6 +2427,7 @@ from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token_info import TokenInfo
 from .token_info_cloned_user import TokenInfoClonedUser
 from .topic import Topic
+from .topic_duration import TopicDuration
 from .topic_job import TopicJob
 from .topic_job_request import TopicJobRequest
 from .topic_request import TopicRequest
@@ -2440,6 +2444,7 @@ from .transcript_conversation_detail_search_criteria import TranscriptConversati
 from .transcript_conversation_detail_search_request import TranscriptConversationDetailSearchRequest
 from .transcript_search_criteria import TranscriptSearchCriteria
 from .transcript_search_request import TranscriptSearchRequest
+from .transcript_topic import TranscriptTopic
 from .transcript_topics import TranscriptTopics
 from .transcript_url import TranscriptUrl
 from .transcription_settings import TranscriptionSettings

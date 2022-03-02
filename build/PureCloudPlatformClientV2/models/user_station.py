@@ -46,7 +46,8 @@ class UserStation(object):
             'associated_user': 'User',
             'associated_date': 'datetime',
             'default_user': 'User',
-            'provider_info': 'dict(str, str)'
+            'provider_info': 'dict(str, str)',
+            'web_rtc_call_appearances': 'int'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class UserStation(object):
             'associated_user': 'associatedUser',
             'associated_date': 'associatedDate',
             'default_user': 'defaultUser',
-            'provider_info': 'providerInfo'
+            'provider_info': 'providerInfo',
+            'web_rtc_call_appearances': 'webRtcCallAppearances'
         }
 
         self._id = None
@@ -66,6 +68,7 @@ class UserStation(object):
         self._associated_date = None
         self._default_user = None
         self._provider_info = None
+        self._web_rtc_call_appearances = None
 
     @property
     def id(self):
@@ -227,6 +230,29 @@ class UserStation(object):
         """
         
         self._provider_info = provider_info
+
+    @property
+    def web_rtc_call_appearances(self):
+        """
+        Gets the web_rtc_call_appearances of this UserStation.
+        The number of call appearances on the station.
+
+        :return: The web_rtc_call_appearances of this UserStation.
+        :rtype: int
+        """
+        return self._web_rtc_call_appearances
+
+    @web_rtc_call_appearances.setter
+    def web_rtc_call_appearances(self, web_rtc_call_appearances):
+        """
+        Sets the web_rtc_call_appearances of this UserStation.
+        The number of call appearances on the station.
+
+        :param web_rtc_call_appearances: The web_rtc_call_appearances of this UserStation.
+        :type: int
+        """
+        
+        self._web_rtc_call_appearances = web_rtc_call_appearances
 
     def to_dict(self):
         """

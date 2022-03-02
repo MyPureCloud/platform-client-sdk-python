@@ -628,12 +628,13 @@ class RecordingApi(object):
         :param bool download: requesting a download format of the recording. Valid values:true,false
         :param str file_name: the name of the downloaded fileName
         :param str locale: The locale for the requested file when downloading, as an ISO 639-1 code
+        :param list[str] media_formats: All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
         :return: Recording
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'recording_id', 'format_id', 'email_format_id', 'chat_format_id', 'message_format_id', 'download', 'file_name', 'locale']
+        all_params = ['conversation_id', 'recording_id', 'format_id', 'email_format_id', 'chat_format_id', 'message_format_id', 'download', 'file_name', 'locale', 'media_formats']
         all_params.append('callback')
 
         params = locals()
@@ -676,6 +677,8 @@ class RecordingApi(object):
             query_params['fileName'] = params['file_name']
         if 'locale' in params:
             query_params['locale'] = params['locale']
+        if 'media_formats' in params:
+            query_params['mediaFormats'] = params['media_formats']
 
         header_params = {}
 
@@ -1062,13 +1065,14 @@ class RecordingApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: Conversation ID (required)
         :param int max_wait_ms: The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
-        :param str format_id: The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
+        :param str format_id: The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
+        :param list[str] media_formats: All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
         :return: list[Recording]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'max_wait_ms', 'format_id']
+        all_params = ['conversation_id', 'max_wait_ms', 'format_id', 'media_formats']
         all_params.append('callback')
 
         params = locals()
@@ -1096,6 +1100,8 @@ class RecordingApi(object):
             query_params['maxWaitMs'] = params['max_wait_ms']
         if 'format_id' in params:
             query_params['formatId'] = params['format_id']
+        if 'media_formats' in params:
+            query_params['mediaFormats'] = params['media_formats']
 
         header_params = {}
 
@@ -1230,12 +1236,13 @@ class RecordingApi(object):
         :param bool download: requesting a download format of the recording
         :param str file_name: the name of the downloaded fileName
         :param str locale: The locale for the requested file when downloading, as an ISO 639-1 code
+        :param list[str] media_formats: All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
         :return: Recording
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['orphan_id', 'format_id', 'email_format_id', 'chat_format_id', 'message_format_id', 'download', 'file_name', 'locale']
+        all_params = ['orphan_id', 'format_id', 'email_format_id', 'chat_format_id', 'message_format_id', 'download', 'file_name', 'locale', 'media_formats']
         all_params.append('callback')
 
         params = locals()
@@ -1273,6 +1280,8 @@ class RecordingApi(object):
             query_params['fileName'] = params['file_name']
         if 'locale' in params:
             query_params['locale'] = params['locale']
+        if 'media_formats' in params:
+            query_params['mediaFormats'] = params['media_formats']
 
         header_params = {}
 

@@ -44,6 +44,7 @@ class EvaluationQuestionScore(object):
             'answer_id': 'str',
             'score': 'int',
             'marked_na': 'bool',
+            'assisted_answer_id': 'str',
             'failed_kill_question': 'bool',
             'comments': 'str'
         }
@@ -53,6 +54,7 @@ class EvaluationQuestionScore(object):
             'answer_id': 'answerId',
             'score': 'score',
             'marked_na': 'markedNA',
+            'assisted_answer_id': 'assistedAnswerId',
             'failed_kill_question': 'failedKillQuestion',
             'comments': 'comments'
         }
@@ -61,6 +63,7 @@ class EvaluationQuestionScore(object):
         self._answer_id = None
         self._score = None
         self._marked_na = None
+        self._assisted_answer_id = None
         self._failed_kill_question = None
         self._comments = None
 
@@ -155,6 +158,29 @@ class EvaluationQuestionScore(object):
         """
         
         self._marked_na = marked_na
+
+    @property
+    def assisted_answer_id(self):
+        """
+        Gets the assisted_answer_id of this EvaluationQuestionScore.
+        AnswerId found with evaluation assistance conditions
+
+        :return: The assisted_answer_id of this EvaluationQuestionScore.
+        :rtype: str
+        """
+        return self._assisted_answer_id
+
+    @assisted_answer_id.setter
+    def assisted_answer_id(self, assisted_answer_id):
+        """
+        Sets the assisted_answer_id of this EvaluationQuestionScore.
+        AnswerId found with evaluation assistance conditions
+
+        :param assisted_answer_id: The assisted_answer_id of this EvaluationQuestionScore.
+        :type: str
+        """
+        
+        self._assisted_answer_id = assisted_answer_id
 
     @property
     def failed_kill_question(self):

@@ -3611,12 +3611,13 @@ class GamificationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param CreatePerformanceProfile body: performanceProfile (required)
+        :param bool copy_metrics: Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile.
         :return: GetProfilesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']
+        all_params = ['body', 'copy_metrics']
         all_params.append('callback')
 
         params = locals()
@@ -3638,6 +3639,8 @@ class GamificationApi(object):
         path_params = {}
 
         query_params = {}
+        if 'copy_metrics' in params:
+            query_params['copyMetrics'] = params['copy_metrics']
 
         header_params = {}
 

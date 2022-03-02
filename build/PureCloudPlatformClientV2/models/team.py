@@ -44,6 +44,7 @@ class Team(object):
             'name': 'str',
             'division': 'WritableDivision',
             'description': 'str',
+            'date_created': 'datetime',
             'date_modified': 'datetime',
             'member_count': 'int',
             'self_uri': 'str'
@@ -54,6 +55,7 @@ class Team(object):
             'name': 'name',
             'division': 'division',
             'description': 'description',
+            'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'member_count': 'memberCount',
             'self_uri': 'selfUri'
@@ -63,6 +65,7 @@ class Team(object):
         self._name = None
         self._division = None
         self._description = None
+        self._date_created = None
         self._date_modified = None
         self._member_count = None
         self._self_uri = None
@@ -158,6 +161,29 @@ class Team(object):
         """
         
         self._description = description
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this Team.
+        Last modified datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this Team.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this Team.
+        Last modified datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this Team.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
 
     @property
     def date_modified(self):

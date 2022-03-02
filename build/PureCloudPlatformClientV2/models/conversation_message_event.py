@@ -41,16 +41,19 @@ class ConversationMessageEvent(object):
         """
         self.swagger_types = {
             'event_type': 'str',
-            'co_browse': 'ConversationEventCoBrowse'
+            'co_browse': 'ConversationEventCoBrowse',
+            'typing': 'ConversationEventTyping'
         }
 
         self.attribute_map = {
             'event_type': 'eventType',
-            'co_browse': 'coBrowse'
+            'co_browse': 'coBrowse',
+            'typing': 'typing'
         }
 
         self._event_type = None
         self._co_browse = None
+        self._typing = None
 
     @property
     def event_type(self):
@@ -72,7 +75,7 @@ class ConversationMessageEvent(object):
         :param event_type: The event_type of this ConversationMessageEvent.
         :type: str
         """
-        allowed_values = ["CoBrowse"]
+        allowed_values = ["CoBrowse", "Typing"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
@@ -101,6 +104,29 @@ class ConversationMessageEvent(object):
         """
         
         self._co_browse = co_browse
+
+    @property
+    def typing(self):
+        """
+        Gets the typing of this ConversationMessageEvent.
+        Typing event.
+
+        :return: The typing of this ConversationMessageEvent.
+        :rtype: ConversationEventTyping
+        """
+        return self._typing
+
+    @typing.setter
+    def typing(self, typing):
+        """
+        Sets the typing of this ConversationMessageEvent.
+        Typing event.
+
+        :param typing: The typing of this ConversationMessageEvent.
+        :type: ConversationEventTyping
+        """
+        
+        self._typing = typing
 
     def to_dict(self):
         """

@@ -46,7 +46,8 @@ class EvaluationScoringSet(object):
             'question_group_scores': 'list[EvaluationQuestionGroupScore]',
             'any_failed_kill_questions': 'bool',
             'comments': 'str',
-            'agent_comments': 'str'
+            'agent_comments': 'str',
+            'transcript_topics': 'list[TranscriptTopic]'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class EvaluationScoringSet(object):
             'question_group_scores': 'questionGroupScores',
             'any_failed_kill_questions': 'anyFailedKillQuestions',
             'comments': 'comments',
-            'agent_comments': 'agentComments'
+            'agent_comments': 'agentComments',
+            'transcript_topics': 'transcriptTopics'
         }
 
         self._total_score = None
@@ -66,6 +68,7 @@ class EvaluationScoringSet(object):
         self._any_failed_kill_questions = None
         self._comments = None
         self._agent_comments = None
+        self._transcript_topics = None
 
     @property
     def total_score(self):
@@ -227,6 +230,29 @@ class EvaluationScoringSet(object):
         """
         
         self._agent_comments = agent_comments
+
+    @property
+    def transcript_topics(self):
+        """
+        Gets the transcript_topics of this EvaluationScoringSet.
+        List of topics found within the conversation's transcripts
+
+        :return: The transcript_topics of this EvaluationScoringSet.
+        :rtype: list[TranscriptTopic]
+        """
+        return self._transcript_topics
+
+    @transcript_topics.setter
+    def transcript_topics(self, transcript_topics):
+        """
+        Sets the transcript_topics of this EvaluationScoringSet.
+        List of topics found within the conversation's transcripts
+
+        :param transcript_topics: The transcript_topics of this EvaluationScoringSet.
+        :type: list[TranscriptTopic]
+        """
+        
+        self._transcript_topics = transcript_topics
 
     def to_dict(self):
         """

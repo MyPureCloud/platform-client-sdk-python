@@ -2346,7 +2346,7 @@ except ApiException as e:
 
 <a name="post_gamification_profiles"></a>
 
-## [**GetProfilesResponse**](GetProfilesResponse.html) post_gamification_profiles(body)
+## [**GetProfilesResponse**](GetProfilesResponse.html) post_gamification_profiles(body, copy_metrics=copy_metrics)
 
 
 
@@ -2374,10 +2374,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 body = PureCloudPlatformClientV2.CreatePerformanceProfile() # CreatePerformanceProfile | performanceProfile
+copy_metrics = true # bool | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (optional) (default to true)
 
 try:
     # Create a new custom performance profile
-    api_response = api_instance.post_gamification_profiles(body)
+    api_response = api_instance.post_gamification_profiles(body, copy_metrics=copy_metrics)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->post_gamification_profiles: %s\n" % e)
@@ -2389,6 +2390,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**CreatePerformanceProfile**](CreatePerformanceProfile.html)| performanceProfile |  |
+| **copy_metrics** | **bool**| Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type

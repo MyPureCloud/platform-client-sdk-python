@@ -11,8 +11,8 @@ title: WebDeploymentConfigurationVersion
 | **name** | **str** | The configuration version name | |
 | **version** | **str** | The version of the configuration | [optional] |
 | **description** | **str** | The description of the configuration | [optional] |
-| **languages** | **list[str]** | A list of languages supported on the configuration | [optional] |
-| **default_language** | **str** | The default language to use for the configuration | [optional] |
+| **languages** | **list[str]** | A list of languages supported on the configuration required if the messenger is enabled | [optional] |
+| **default_language** | **str** | The default language to use for the configuration required if the messenger is enabled | [optional] |
 | **messenger** | [**MessengerSettings**](MessengerSettings.html) | The settings for messenger | [optional] |
 | **position** | [**PositionSettings**](PositionSettings.html) | The settings for position | [optional] |
 | **support_center** | [**SupportCenterSettings**](SupportCenterSettings.html) | The settings for support center | [optional] |

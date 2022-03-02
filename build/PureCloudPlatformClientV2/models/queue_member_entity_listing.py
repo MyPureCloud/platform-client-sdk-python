@@ -41,40 +41,31 @@ class QueueMemberEntityListing(object):
         """
         self.swagger_types = {
             'entities': 'list[QueueMember]',
-            'page_size': 'int',
             'page_number': 'int',
-            'total': 'int',
+            'page_size': 'int',
             'first_uri': 'str',
             'self_uri': 'str',
             'next_uri': 'str',
-            'previous_uri': 'str',
-            'last_uri': 'str',
-            'page_count': 'int'
+            'previous_uri': 'str'
         }
 
         self.attribute_map = {
             'entities': 'entities',
-            'page_size': 'pageSize',
             'page_number': 'pageNumber',
-            'total': 'total',
+            'page_size': 'pageSize',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
             'next_uri': 'nextUri',
-            'previous_uri': 'previousUri',
-            'last_uri': 'lastUri',
-            'page_count': 'pageCount'
+            'previous_uri': 'previousUri'
         }
 
         self._entities = None
-        self._page_size = None
         self._page_number = None
-        self._total = None
+        self._page_size = None
         self._first_uri = None
         self._self_uri = None
         self._next_uri = None
         self._previous_uri = None
-        self._last_uri = None
-        self._page_count = None
 
     @property
     def entities(self):
@@ -100,29 +91,6 @@ class QueueMemberEntityListing(object):
         self._entities = entities
 
     @property
-    def page_size(self):
-        """
-        Gets the page_size of this QueueMemberEntityListing.
-
-
-        :return: The page_size of this QueueMemberEntityListing.
-        :rtype: int
-        """
-        return self._page_size
-
-    @page_size.setter
-    def page_size(self, page_size):
-        """
-        Sets the page_size of this QueueMemberEntityListing.
-
-
-        :param page_size: The page_size of this QueueMemberEntityListing.
-        :type: int
-        """
-        
-        self._page_size = page_size
-
-    @property
     def page_number(self):
         """
         Gets the page_number of this QueueMemberEntityListing.
@@ -146,27 +114,27 @@ class QueueMemberEntityListing(object):
         self._page_number = page_number
 
     @property
-    def total(self):
+    def page_size(self):
         """
-        Gets the total of this QueueMemberEntityListing.
+        Gets the page_size of this QueueMemberEntityListing.
 
 
-        :return: The total of this QueueMemberEntityListing.
+        :return: The page_size of this QueueMemberEntityListing.
         :rtype: int
         """
-        return self._total
+        return self._page_size
 
-    @total.setter
-    def total(self, total):
+    @page_size.setter
+    def page_size(self, page_size):
         """
-        Sets the total of this QueueMemberEntityListing.
+        Sets the page_size of this QueueMemberEntityListing.
 
 
-        :param total: The total of this QueueMemberEntityListing.
+        :param page_size: The page_size of this QueueMemberEntityListing.
         :type: int
         """
         
-        self._total = total
+        self._page_size = page_size
 
     @property
     def first_uri(self):
@@ -259,52 +227,6 @@ class QueueMemberEntityListing(object):
         """
         
         self._previous_uri = previous_uri
-
-    @property
-    def last_uri(self):
-        """
-        Gets the last_uri of this QueueMemberEntityListing.
-
-
-        :return: The last_uri of this QueueMemberEntityListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri):
-        """
-        Sets the last_uri of this QueueMemberEntityListing.
-
-
-        :param last_uri: The last_uri of this QueueMemberEntityListing.
-        :type: str
-        """
-        
-        self._last_uri = last_uri
-
-    @property
-    def page_count(self):
-        """
-        Gets the page_count of this QueueMemberEntityListing.
-
-
-        :return: The page_count of this QueueMemberEntityListing.
-        :rtype: int
-        """
-        return self._page_count
-
-    @page_count.setter
-    def page_count(self, page_count):
-        """
-        Sets the page_count of this QueueMemberEntityListing.
-
-
-        :param page_count: The page_count of this QueueMemberEntityListing.
-        :type: int
-        """
-        
-        self._page_count = page_count
 
     def to_dict(self):
         """

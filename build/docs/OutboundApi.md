@@ -4903,7 +4903,7 @@ except ApiException as e:
 
 <a name="post_outbound_dnclist_phonenumbers"></a>
 
-##  post_outbound_dnclist_phonenumbers(dnc_list_id, body)
+##  post_outbound_dnclist_phonenumbers(dnc_list_id, body, expiration_date_time=expiration_date_time)
 
 
 
@@ -4932,10 +4932,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 dnc_list_id = 'dnc_list_id_example' # str | DncList ID
 body = [PureCloudPlatformClientV2.list[str]()] # list[str] | DNC Phone Numbers
+expiration_date_time = 'expiration_date_time_example' # str | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format (optional)
 
 try:
     # Add phone numbers to a DNC list.
-    api_instance.post_outbound_dnclist_phonenumbers(dnc_list_id, body)
+    api_instance.post_outbound_dnclist_phonenumbers(dnc_list_id, body, expiration_date_time=expiration_date_time)
 except ApiException as e:
     print("Exception when calling OutboundApi->post_outbound_dnclist_phonenumbers: %s\n" % e)
 ```
@@ -4947,6 +4948,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
 | **body** | **list[str]**| DNC Phone Numbers |  |
+| **expiration_date_time** | **str**| Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

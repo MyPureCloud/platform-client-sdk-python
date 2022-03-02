@@ -42,18 +42,21 @@ class AnswerOption(object):
         self.swagger_types = {
             'id': 'str',
             'text': 'str',
-            'value': 'int'
+            'value': 'int',
+            'assistance_conditions': 'list[AssistanceCondition]'
         }
 
         self.attribute_map = {
             'id': 'id',
             'text': 'text',
-            'value': 'value'
+            'value': 'value',
+            'assistance_conditions': 'assistanceConditions'
         }
 
         self._id = None
         self._text = None
         self._value = None
+        self._assistance_conditions = None
 
     @property
     def id(self):
@@ -123,6 +126,29 @@ class AnswerOption(object):
         """
         
         self._value = value
+
+    @property
+    def assistance_conditions(self):
+        """
+        Gets the assistance_conditions of this AnswerOption.
+
+
+        :return: The assistance_conditions of this AnswerOption.
+        :rtype: list[AssistanceCondition]
+        """
+        return self._assistance_conditions
+
+    @assistance_conditions.setter
+    def assistance_conditions(self, assistance_conditions):
+        """
+        Sets the assistance_conditions of this AnswerOption.
+
+
+        :param assistance_conditions: The assistance_conditions of this AnswerOption.
+        :type: list[AssistanceCondition]
+        """
+        
+        self._assistance_conditions = assistance_conditions
 
     def to_dict(self):
         """

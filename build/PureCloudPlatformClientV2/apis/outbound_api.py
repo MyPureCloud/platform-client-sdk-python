@@ -7332,12 +7332,13 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param str dnc_list_id: DncList ID (required)
         :param list[str] body: DNC Phone Numbers (required)
+        :param str expiration_date_time: Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['dnc_list_id', 'body']
+        all_params = ['dnc_list_id', 'body', 'expiration_date_time']
         all_params.append('callback')
 
         params = locals()
@@ -7364,6 +7365,8 @@ class OutboundApi(object):
             path_params['dncListId'] = params['dnc_list_id']
 
         query_params = {}
+        if 'expiration_date_time' in params:
+            query_params['expirationDateTime'] = params['expiration_date_time']
 
         header_params = {}
 

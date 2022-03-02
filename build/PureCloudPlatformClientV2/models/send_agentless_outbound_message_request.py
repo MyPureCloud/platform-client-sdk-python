@@ -114,7 +114,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address_messenger_type(self):
         """
         Gets the to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
-        The recipient messaging address messenger type. Currently SMS and Open are the only supported types. WhatsApp will be supported in a future release
+        The recipient messaging address messenger type.
 
         :return: The to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
         :rtype: str
@@ -125,12 +125,12 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address_messenger_type(self, to_address_messenger_type):
         """
         Sets the to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
-        The recipient messaging address messenger type. Currently SMS and Open are the only supported types. WhatsApp will be supported in a future release
+        The recipient messaging address messenger type.
 
         :param to_address_messenger_type: The to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
         :type: str
         """
-        allowed_values = ["sms", "facebook", "twitter", "line", "whatsapp", "webmessaging", "instagram", "open"]
+        allowed_values = ["sms", "whatsapp", "open"]
         if to_address_messenger_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for to_address_messenger_type -> " + to_address_messenger_type)
             self._to_address_messenger_type = "outdated_sdk_version"

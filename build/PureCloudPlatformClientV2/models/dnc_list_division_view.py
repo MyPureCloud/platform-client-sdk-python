@@ -45,6 +45,7 @@ class DncListDivisionView(object):
             'division': 'Division',
             'import_status': 'ImportStatus',
             'size': 'int',
+            'dnc_source_type': 'str',
             'self_uri': 'str'
         }
 
@@ -54,6 +55,7 @@ class DncListDivisionView(object):
             'division': 'division',
             'import_status': 'importStatus',
             'size': 'size',
+            'dnc_source_type': 'dncSourceType',
             'self_uri': 'selfUri'
         }
 
@@ -62,6 +64,7 @@ class DncListDivisionView(object):
         self._division = None
         self._import_status = None
         self._size = None
+        self._dnc_source_type = None
         self._self_uri = None
 
     @property
@@ -178,6 +181,33 @@ class DncListDivisionView(object):
         """
         
         self._size = size
+
+    @property
+    def dnc_source_type(self):
+        """
+        Gets the dnc_source_type of this DncListDivisionView.
+        The type of the DncList.
+
+        :return: The dnc_source_type of this DncListDivisionView.
+        :rtype: str
+        """
+        return self._dnc_source_type
+
+    @dnc_source_type.setter
+    def dnc_source_type(self, dnc_source_type):
+        """
+        Sets the dnc_source_type of this DncListDivisionView.
+        The type of the DncList.
+
+        :param dnc_source_type: The dnc_source_type of this DncListDivisionView.
+        :type: str
+        """
+        allowed_values = ["rds", "dnc.com", "gryphon"]
+        if dnc_source_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for dnc_source_type -> " + dnc_source_type)
+            self._dnc_source_type = "outdated_sdk_version"
+        else:
+            self._dnc_source_type = dnc_source_type
 
     @property
     def self_uri(self):

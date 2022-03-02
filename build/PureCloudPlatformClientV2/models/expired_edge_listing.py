@@ -40,7 +40,7 @@ class ExpiredEdgeListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[EdgeIdNamePair]'
+            'entities': 'list[DomainEntityRef]'
         }
 
         self.attribute_map = {
@@ -56,7 +56,7 @@ class ExpiredEdgeListing(object):
 
 
         :return: The entities of this ExpiredEdgeListing.
-        :rtype: list[EdgeIdNamePair]
+        :rtype: list[DomainEntityRef]
         """
         return self._entities
 
@@ -67,7 +67,7 @@ class ExpiredEdgeListing(object):
 
 
         :param entities: The entities of this ExpiredEdgeListing.
-        :type: list[EdgeIdNamePair]
+        :type: list[DomainEntityRef]
         """
         
         self._entities = entities

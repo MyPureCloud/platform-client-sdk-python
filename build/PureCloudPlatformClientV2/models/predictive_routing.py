@@ -40,13 +40,37 @@ class PredictiveRouting(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'respect_skills': 'bool'
         }
 
         self.attribute_map = {
-            
+            'respect_skills': 'respectSkills'
         }
 
+        self._respect_skills = None
+
+    @property
+    def respect_skills(self):
+        """
+        Gets the respect_skills of this PredictiveRouting.
+        A switch used to determine if agent skills will be considered.
+
+        :return: The respect_skills of this PredictiveRouting.
+        :rtype: bool
+        """
+        return self._respect_skills
+
+    @respect_skills.setter
+    def respect_skills(self, respect_skills):
+        """
+        Sets the respect_skills of this PredictiveRouting.
+        A switch used to determine if agent skills will be considered.
+
+        :param respect_skills: The respect_skills of this PredictiveRouting.
+        :type: bool
+        """
+        
+        self._respect_skills = respect_skills
 
     def to_dict(self):
         """

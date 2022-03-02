@@ -435,8 +435,9 @@ Fetch user licenses in a batch.
 
 Wraps POST /api/v2/license/users 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* authorization:grant:add
 
 ### Example
 

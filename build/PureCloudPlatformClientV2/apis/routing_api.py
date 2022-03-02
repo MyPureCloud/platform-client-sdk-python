@@ -3142,7 +3142,7 @@ class RoutingApi(object):
         :param list[str] languages: Filter by language
         :param list[str] routing_status: Filter by routing status
         :param list[str] presence: Filter by presence
-        :return: QueueMemberEntityListing
+        :return: QueueMemberEntityListingV1
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3221,7 +3221,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='QueueMemberEntityListing',
+                                            response_type='QueueMemberEntityListingV1',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5661,7 +5661,7 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
         :param list[QueueMember] body: Queue Members (required)
-        :return: QueueMemberEntityListing
+        :return: QueueMemberEntityListingV1
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5723,7 +5723,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='QueueMemberEntityListing',
+                                            response_type='QueueMemberEntityListingV1',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

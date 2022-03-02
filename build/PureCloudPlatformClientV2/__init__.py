@@ -151,6 +151,7 @@ from .models.assigned_wrapup_code import AssignedWrapupCode
 from .models.assignment import Assignment
 from .models.assignment_error import AssignmentError
 from .models.assignment_validation import AssignmentValidation
+from .models.assistance_condition import AssistanceCondition
 from .models.associated_value_field import AssociatedValueField
 from .models.async_conversation_query import AsyncConversationQuery
 from .models.async_forecast_operation_result import AsyncForecastOperationResult
@@ -659,6 +660,7 @@ from .models.conversation_event_topic_uri_reference import ConversationEventTopi
 from .models.conversation_event_topic_video import ConversationEventTopicVideo
 from .models.conversation_event_topic_voicemail import ConversationEventTopicVoicemail
 from .models.conversation_event_topic_wrapup import ConversationEventTopicWrapup
+from .models.conversation_event_typing import ConversationEventTyping
 from .models.conversation_message_content import ConversationMessageContent
 from .models.conversation_message_event import ConversationMessageEvent
 from .models.conversation_message_event_topic_conversation_routing_data import ConversationMessageEventTopicConversationRoutingData
@@ -1006,7 +1008,6 @@ from .models.edge_connection_info import EdgeConnectionInfo
 from .models.edge_entity_listing import EdgeEntityListing
 from .models.edge_group import EdgeGroup
 from .models.edge_group_entity_listing import EdgeGroupEntityListing
-from .models.edge_id_name_pair import EdgeIdNamePair
 from .models.edge_interface import EdgeInterface
 from .models.edge_line import EdgeLine
 from .models.edge_line_entity_listing import EdgeLineEntityListing
@@ -1447,6 +1448,7 @@ from .models.learning_module import LearningModule
 from .models.learning_module_inform_step import LearningModuleInformStep
 from .models.learning_module_inform_step_request import LearningModuleInformStepRequest
 from .models.learning_module_publish_response import LearningModulePublishResponse
+from .models.learning_module_reassign_summary import LearningModuleReassignSummary
 from .models.learning_module_request import LearningModuleRequest
 from .models.learning_module_rule import LearningModuleRule
 from .models.learning_module_rule_parts import LearningModuleRuleParts
@@ -2032,6 +2034,7 @@ from .models.queue_email_address import QueueEmailAddress
 from .models.queue_entity_listing import QueueEntityListing
 from .models.queue_member import QueueMember
 from .models.queue_member_entity_listing import QueueMemberEntityListing
+from .models.queue_member_entity_listing_v1 import QueueMemberEntityListingV1
 from .models.queue_messaging_addresses import QueueMessagingAddresses
 from .models.queue_observation_data_container import QueueObservationDataContainer
 from .models.queue_observation_query import QueueObservationQuery
@@ -2424,6 +2427,7 @@ from .models.time_zone_mapping_preview import TimeZoneMappingPreview
 from .models.token_info import TokenInfo
 from .models.token_info_cloned_user import TokenInfoClonedUser
 from .models.topic import Topic
+from .models.topic_duration import TopicDuration
 from .models.topic_job import TopicJob
 from .models.topic_job_request import TopicJobRequest
 from .models.topic_request import TopicRequest
@@ -2440,6 +2444,7 @@ from .models.transcript_conversation_detail_search_criteria import TranscriptCon
 from .models.transcript_conversation_detail_search_request import TranscriptConversationDetailSearchRequest
 from .models.transcript_search_criteria import TranscriptSearchCriteria
 from .models.transcript_search_request import TranscriptSearchRequest
+from .models.transcript_topic import TranscriptTopic
 from .models.transcript_topics import TranscriptTopics
 from .models.transcript_url import TranscriptUrl
 from .models.transcription_settings import TranscriptionSettings

@@ -421,7 +421,7 @@ void (empty response body)
 
 <a name="get_conversation_recording"></a>
 
-## [**Recording**](Recording.html) get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
+## [**Recording**](Recording.html) get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
 
 
 
@@ -458,10 +458,11 @@ message_format_id = 'ZIP' # str | The desired media format when downloading a me
 download = false # bool | requesting a download format of the recording. Valid values:true,false (optional) (default to false)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
 locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
+media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 (optional)
 
 try:
     # Gets a specific recording.
-    api_response = api_instance.get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
+    api_response = api_instance.get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->get_conversation_recording: %s\n" % e)
@@ -481,6 +482,7 @@ except ApiException as e:
 | **download** | **bool**| requesting a download format of the recording. Valid values:true,false | [optional] [default to false] |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 | **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
+| **media_formats** | [**list[str]**](str.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -703,7 +705,7 @@ except ApiException as e:
 
 <a name="get_conversation_recordings"></a>
 
-## [**list[Recording]**](Recording.html) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id)
+## [**list[Recording]**](Recording.html) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats)
 
 
 
@@ -733,11 +735,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 max_wait_ms = 5000 # int | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional) (default to 5000)
-format_id = 'WEBM' # str | The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional) (default to WEBM)
+format_id = 'WEBM' # str | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional) (default to WEBM)
+media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. (optional)
 
 try:
     # Get all of a Conversation's Recordings.
-    api_response = api_instance.get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id)
+    api_response = api_instance.get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->get_conversation_recordings: %s\n" % e)
@@ -750,7 +753,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **max_wait_ms** | **int**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
-| **format_id** | **str**| The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **format_id** | **str**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **media_formats** | [**list[str]**](str.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -810,7 +814,7 @@ except ApiException as e:
 
 <a name="get_orphanrecording_media"></a>
 
-## [**Recording**](Recording.html) get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
+## [**Recording**](Recording.html) get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
 
 
 
@@ -845,10 +849,11 @@ message_format_id = 'ZIP' # str | The desired media format when downloading a me
 download = false # bool | requesting a download format of the recording (optional) (default to false)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
 locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
+media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 (optional)
 
 try:
     # Gets the media of a single orphan recording
-    api_response = api_instance.get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
+    api_response = api_instance.get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->get_orphanrecording_media: %s\n" % e)
@@ -867,6 +872,7 @@ except ApiException as e:
 | **download** | **bool**| requesting a download format of the recording | [optional] [default to false] |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 | **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
+| **media_formats** | [**list[str]**](str.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
