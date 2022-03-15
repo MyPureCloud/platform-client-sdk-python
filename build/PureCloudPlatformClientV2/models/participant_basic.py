@@ -84,7 +84,8 @@ class ParticipantBasic(object):
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
             'start_acw_time': 'datetime',
-            'end_acw_time': 'datetime'
+            'end_acw_time': 'datetime',
+            'barged_participant_id': 'str'
         }
 
         self.attribute_map = {
@@ -132,7 +133,8 @@ class ParticipantBasic(object):
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
             'start_acw_time': 'startAcwTime',
-            'end_acw_time': 'endAcwTime'
+            'end_acw_time': 'endAcwTime',
+            'barged_participant_id': 'bargedParticipantId'
         }
 
         self._id = None
@@ -180,6 +182,7 @@ class ParticipantBasic(object):
         self._flagged_reason = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._barged_participant_id = None
 
     @property
     def id(self):
@@ -1227,6 +1230,29 @@ class ParticipantBasic(object):
         """
         
         self._end_acw_time = end_acw_time
+
+    @property
+    def barged_participant_id(self):
+        """
+        Gets the barged_participant_id of this ParticipantBasic.
+        If this participant barged in a participant's call, then this will be the id of the targeted participant.
+
+        :return: The barged_participant_id of this ParticipantBasic.
+        :rtype: str
+        """
+        return self._barged_participant_id
+
+    @barged_participant_id.setter
+    def barged_participant_id(self, barged_participant_id):
+        """
+        Sets the barged_participant_id of this ParticipantBasic.
+        If this participant barged in a participant's call, then this will be the id of the targeted participant.
+
+        :param barged_participant_id: The barged_participant_id of this ParticipantBasic.
+        :type: str
+        """
+        
+        self._barged_participant_id = barged_participant_id
 
     def to_dict(self):
         """

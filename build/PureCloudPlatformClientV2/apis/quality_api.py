@@ -147,7 +147,7 @@ class QualityApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
         :param str evaluation_id: evaluationId (required)
-        :param str expand: evaluatorId
+        :param str expand: evaluatorId, evaluationForm
         :return: Evaluation
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4255,7 +4255,7 @@ class QualityApi(object):
         :param str conversation_id: conversationId (required)
         :param str evaluation_id: evaluationId (required)
         :param Evaluation body: evaluation (required)
-        :param str expand: evaluatorId
+        :param str expand: evaluatorId, evaluationForm
         :return: Evaluation
                  If the method is called asynchronously,
                  returns the request thread.

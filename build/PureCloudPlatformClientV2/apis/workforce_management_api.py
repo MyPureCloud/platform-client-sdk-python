@@ -5890,7 +5890,7 @@ class WorkforceManagementApi(object):
     def get_workforcemanagement_notifications(self, **kwargs):
         """
         Get a list of notifications for the current user
-        
+        Notifications are only initially sent if you have the relevant Notify and Edit permissions
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

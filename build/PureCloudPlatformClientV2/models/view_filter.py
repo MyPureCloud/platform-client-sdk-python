@@ -179,7 +179,10 @@ class ViewFilter(object):
             'journey_url_contains_all_conditions': 'list[str]',
             'journey_url_not_contains_all_conditions': 'list[str]',
             'flow_milestone_ids': 'list[str]',
-            'is_assessment_passed': 'bool'
+            'is_assessment_passed': 'bool',
+            'conversation_initiator': 'str',
+            'has_customer_participated': 'bool',
+            'is_acd_interaction': 'bool'
         }
 
         self.attribute_map = {
@@ -322,7 +325,10 @@ class ViewFilter(object):
             'journey_url_contains_all_conditions': 'journeyUrlContainsAllConditions',
             'journey_url_not_contains_all_conditions': 'journeyUrlNotContainsAllConditions',
             'flow_milestone_ids': 'flowMilestoneIds',
-            'is_assessment_passed': 'isAssessmentPassed'
+            'is_assessment_passed': 'isAssessmentPassed',
+            'conversation_initiator': 'conversationInitiator',
+            'has_customer_participated': 'hasCustomerParticipated',
+            'is_acd_interaction': 'isAcdInteraction'
         }
 
         self._media_types = None
@@ -465,6 +471,9 @@ class ViewFilter(object):
         self._journey_url_not_contains_all_conditions = None
         self._flow_milestone_ids = None
         self._is_assessment_passed = None
+        self._conversation_initiator = None
+        self._has_customer_participated = None
+        self._is_acd_interaction = None
 
     @property
     def media_types(self):
@@ -3685,6 +3694,75 @@ class ViewFilter(object):
         """
         
         self._is_assessment_passed = is_assessment_passed
+
+    @property
+    def conversation_initiator(self):
+        """
+        Gets the conversation_initiator of this ViewFilter.
+        Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation
+
+        :return: The conversation_initiator of this ViewFilter.
+        :rtype: str
+        """
+        return self._conversation_initiator
+
+    @conversation_initiator.setter
+    def conversation_initiator(self, conversation_initiator):
+        """
+        Sets the conversation_initiator of this ViewFilter.
+        Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation
+
+        :param conversation_initiator: The conversation_initiator of this ViewFilter.
+        :type: str
+        """
+        
+        self._conversation_initiator = conversation_initiator
+
+    @property
+    def has_customer_participated(self):
+        """
+        Gets the has_customer_participated of this ViewFilter.
+        Indicates if the customer has participated in an initiated conversation
+
+        :return: The has_customer_participated of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_customer_participated
+
+    @has_customer_participated.setter
+    def has_customer_participated(self, has_customer_participated):
+        """
+        Sets the has_customer_participated of this ViewFilter.
+        Indicates if the customer has participated in an initiated conversation
+
+        :param has_customer_participated: The has_customer_participated of this ViewFilter.
+        :type: bool
+        """
+        
+        self._has_customer_participated = has_customer_participated
+
+    @property
+    def is_acd_interaction(self):
+        """
+        Gets the is_acd_interaction of this ViewFilter.
+        Filter to indicate if interaction was ACD or non-ACD
+
+        :return: The is_acd_interaction of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_acd_interaction
+
+    @is_acd_interaction.setter
+    def is_acd_interaction(self, is_acd_interaction):
+        """
+        Sets the is_acd_interaction of this ViewFilter.
+        Filter to indicate if interaction was ACD or non-ACD
+
+        :param is_acd_interaction: The is_acd_interaction of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_acd_interaction = is_acd_interaction
 
     def to_dict(self):
         """

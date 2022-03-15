@@ -26,6 +26,7 @@ title: AcwDetailEventTopicAfterCallWorkEvent
 | **user_id** | **str** |  | [optional] |
 | **queue_id** | **str** |  | [optional] |
 | **wrapup_code** | **str** |  | [optional] |
+| **wrapup_notes** | **str** |  | [optional] |
 | **wrapup_duration_ms** | **int** |  | [optional] |
 {: class="table table-striped"}
 

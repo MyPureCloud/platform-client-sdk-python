@@ -149,7 +149,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.QualityApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 evaluation_id = 'evaluation_id_example' # str | evaluationId
-expand = 'expand_example' # str | evaluatorId (optional)
+expand = 'expand_example' # str | evaluatorId, evaluationForm (optional)
 
 try:
     # Delete an evaluation
@@ -166,7 +166,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **evaluation_id** | **str**| evaluationId |  |
-| **expand** | **str**| evaluatorId | [optional]  |
+| **expand** | **str**| evaluatorId, evaluationForm | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2839,7 +2839,7 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 evaluation_id = 'evaluation_id_example' # str | evaluationId
 body = PureCloudPlatformClientV2.Evaluation() # Evaluation | evaluation
-expand = 'expand_example' # str | evaluatorId (optional)
+expand = 'expand_example' # str | evaluatorId, evaluationForm (optional)
 
 try:
     # Update an evaluation
@@ -2857,7 +2857,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **evaluation_id** | **str**| evaluationId |  |
 | **body** | [**Evaluation**](Evaluation.html)| evaluation |  |
-| **expand** | **str**| evaluatorId | [optional]  |
+| **expand** | **str**| evaluatorId, evaluationForm | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

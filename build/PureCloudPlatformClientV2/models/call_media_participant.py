@@ -84,8 +84,10 @@ class CallMediaParticipant(object):
             'fax_status': 'FaxStatus',
             'monitored_participant_id': 'str',
             'coached_participant_id': 'str',
+            'barged_participant_id': 'str',
             'consult_participant_id': 'str',
-            'uui_data': 'str'
+            'uui_data': 'str',
+            'barged_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -133,8 +135,10 @@ class CallMediaParticipant(object):
             'fax_status': 'faxStatus',
             'monitored_participant_id': 'monitoredParticipantId',
             'coached_participant_id': 'coachedParticipantId',
+            'barged_participant_id': 'bargedParticipantId',
             'consult_participant_id': 'consultParticipantId',
-            'uui_data': 'uuiData'
+            'uui_data': 'uuiData',
+            'barged_time': 'bargedTime'
         }
 
         self._id = None
@@ -181,8 +185,10 @@ class CallMediaParticipant(object):
         self._fax_status = None
         self._monitored_participant_id = None
         self._coached_participant_id = None
+        self._barged_participant_id = None
         self._consult_participant_id = None
         self._uui_data = None
+        self._barged_time = None
 
     @property
     def id(self):
@@ -1217,6 +1223,29 @@ class CallMediaParticipant(object):
         self._coached_participant_id = coached_participant_id
 
     @property
+    def barged_participant_id(self):
+        """
+        Gets the barged_participant_id of this CallMediaParticipant.
+        If this participant barged in a participant's call, then this will be the id of the targeted participant.
+
+        :return: The barged_participant_id of this CallMediaParticipant.
+        :rtype: str
+        """
+        return self._barged_participant_id
+
+    @barged_participant_id.setter
+    def barged_participant_id(self, barged_participant_id):
+        """
+        Sets the barged_participant_id of this CallMediaParticipant.
+        If this participant barged in a participant's call, then this will be the id of the targeted participant.
+
+        :param barged_participant_id: The barged_participant_id of this CallMediaParticipant.
+        :type: str
+        """
+        
+        self._barged_participant_id = barged_participant_id
+
+    @property
     def consult_participant_id(self):
         """
         Gets the consult_participant_id of this CallMediaParticipant.
@@ -1261,6 +1290,29 @@ class CallMediaParticipant(object):
         """
         
         self._uui_data = uui_data
+
+    @property
+    def barged_time(self):
+        """
+        Gets the barged_time of this CallMediaParticipant.
+        The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The barged_time of this CallMediaParticipant.
+        :rtype: datetime
+        """
+        return self._barged_time
+
+    @barged_time.setter
+    def barged_time(self, barged_time):
+        """
+        Sets the barged_time of this CallMediaParticipant.
+        The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param barged_time: The barged_time of this CallMediaParticipant.
+        :type: datetime
+        """
+        
+        self._barged_time = barged_time
 
     def to_dict(self):
         """

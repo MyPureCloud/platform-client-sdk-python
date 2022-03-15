@@ -40,13 +40,145 @@ class DataActionConditionPredicate(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'output_field': 'str',
+            'output_operator': 'str',
+            'comparison_value': 'str',
+            'inverted': 'bool',
+            'output_field_missing_resolution': 'bool'
         }
 
         self.attribute_map = {
-            
+            'output_field': 'outputField',
+            'output_operator': 'outputOperator',
+            'comparison_value': 'comparisonValue',
+            'inverted': 'inverted',
+            'output_field_missing_resolution': 'outputFieldMissingResolution'
         }
 
+        self._output_field = None
+        self._output_operator = None
+        self._comparison_value = None
+        self._inverted = None
+        self._output_field_missing_resolution = None
+
+    @property
+    def output_field(self):
+        """
+        Gets the output_field of this DataActionConditionPredicate.
+        The name of an output field from the data action's output to use for this condition
+
+        :return: The output_field of this DataActionConditionPredicate.
+        :rtype: str
+        """
+        return self._output_field
+
+    @output_field.setter
+    def output_field(self, output_field):
+        """
+        Sets the output_field of this DataActionConditionPredicate.
+        The name of an output field from the data action's output to use for this condition
+
+        :param output_field: The output_field of this DataActionConditionPredicate.
+        :type: str
+        """
+        
+        self._output_field = output_field
+
+    @property
+    def output_operator(self):
+        """
+        Gets the output_operator of this DataActionConditionPredicate.
+        The operation with which to evaluate this condition
+
+        :return: The output_operator of this DataActionConditionPredicate.
+        :rtype: str
+        """
+        return self._output_operator
+
+    @output_operator.setter
+    def output_operator(self, output_operator):
+        """
+        Sets the output_operator of this DataActionConditionPredicate.
+        The operation with which to evaluate this condition
+
+        :param output_operator: The output_operator of this DataActionConditionPredicate.
+        :type: str
+        """
+        allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER"]
+        if output_operator.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for output_operator -> " + output_operator)
+            self._output_operator = "outdated_sdk_version"
+        else:
+            self._output_operator = output_operator
+
+    @property
+    def comparison_value(self):
+        """
+        Gets the comparison_value of this DataActionConditionPredicate.
+        The value to compare against for this condition
+
+        :return: The comparison_value of this DataActionConditionPredicate.
+        :rtype: str
+        """
+        return self._comparison_value
+
+    @comparison_value.setter
+    def comparison_value(self, comparison_value):
+        """
+        Sets the comparison_value of this DataActionConditionPredicate.
+        The value to compare against for this condition
+
+        :param comparison_value: The comparison_value of this DataActionConditionPredicate.
+        :type: str
+        """
+        
+        self._comparison_value = comparison_value
+
+    @property
+    def inverted(self):
+        """
+        Gets the inverted of this DataActionConditionPredicate.
+        If true, inverts the result of evaluating this Predicate. Default is false.
+
+        :return: The inverted of this DataActionConditionPredicate.
+        :rtype: bool
+        """
+        return self._inverted
+
+    @inverted.setter
+    def inverted(self, inverted):
+        """
+        Sets the inverted of this DataActionConditionPredicate.
+        If true, inverts the result of evaluating this Predicate. Default is false.
+
+        :param inverted: The inverted of this DataActionConditionPredicate.
+        :type: bool
+        """
+        
+        self._inverted = inverted
+
+    @property
+    def output_field_missing_resolution(self):
+        """
+        Gets the output_field_missing_resolution of this DataActionConditionPredicate.
+        The result of this predicate if the requested output field is missing from the data action's result
+
+        :return: The output_field_missing_resolution of this DataActionConditionPredicate.
+        :rtype: bool
+        """
+        return self._output_field_missing_resolution
+
+    @output_field_missing_resolution.setter
+    def output_field_missing_resolution(self, output_field_missing_resolution):
+        """
+        Sets the output_field_missing_resolution of this DataActionConditionPredicate.
+        The result of this predicate if the requested output field is missing from the data action's result
+
+        :param output_field_missing_resolution: The output_field_missing_resolution of this DataActionConditionPredicate.
+        :type: bool
+        """
+        
+        self._output_field_missing_resolution = output_field_missing_resolution
 
     def to_dict(self):
         """

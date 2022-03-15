@@ -48,7 +48,14 @@ class Condition(object):
             'operator': 'str',
             'codes': 'list[str]',
             'pcProperty': 'str',
-            'property_type': 'str'
+            'property_type': 'str',
+            'data_action': 'DomainEntityRef',
+            'data_not_found_resolution': 'bool',
+            'contact_id_field': 'str',
+            'call_analysis_result_field': 'str',
+            'agent_wrapup_field': 'str',
+            'contact_column_to_data_action_field_mappings': 'list[ContactColumnToDataActionFieldMapping]',
+            'predicates': 'list[DataActionConditionPredicate]'
         }
 
         self.attribute_map = {
@@ -60,7 +67,14 @@ class Condition(object):
             'operator': 'operator',
             'codes': 'codes',
             'pcProperty': 'property',
-            'property_type': 'propertyType'
+            'property_type': 'propertyType',
+            'data_action': 'dataAction',
+            'data_not_found_resolution': 'dataNotFoundResolution',
+            'contact_id_field': 'contactIdField',
+            'call_analysis_result_field': 'callAnalysisResultField',
+            'agent_wrapup_field': 'agentWrapupField',
+            'contact_column_to_data_action_field_mappings': 'contactColumnToDataActionFieldMappings',
+            'predicates': 'predicates'
         }
 
         self._type = None
@@ -72,6 +86,13 @@ class Condition(object):
         self._codes = None
         self._pcProperty = None
         self._property_type = None
+        self._data_action = None
+        self._data_not_found_resolution = None
+        self._contact_id_field = None
+        self._call_analysis_result_field = None
+        self._agent_wrapup_field = None
+        self._contact_column_to_data_action_field_mappings = None
+        self._predicates = None
 
     @property
     def type(self):
@@ -295,6 +316,167 @@ class Condition(object):
             self._property_type = "outdated_sdk_version"
         else:
             self._property_type = property_type
+
+    @property
+    def data_action(self):
+        """
+        Gets the data_action of this Condition.
+        The Data Action to use for this condition. Required for a dataActionCondition.
+
+        :return: The data_action of this Condition.
+        :rtype: DomainEntityRef
+        """
+        return self._data_action
+
+    @data_action.setter
+    def data_action(self, data_action):
+        """
+        Sets the data_action of this Condition.
+        The Data Action to use for this condition. Required for a dataActionCondition.
+
+        :param data_action: The data_action of this Condition.
+        :type: DomainEntityRef
+        """
+        
+        self._data_action = data_action
+
+    @property
+    def data_not_found_resolution(self):
+        """
+        Gets the data_not_found_resolution of this Condition.
+        The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
+
+        :return: The data_not_found_resolution of this Condition.
+        :rtype: bool
+        """
+        return self._data_not_found_resolution
+
+    @data_not_found_resolution.setter
+    def data_not_found_resolution(self, data_not_found_resolution):
+        """
+        Sets the data_not_found_resolution of this Condition.
+        The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
+
+        :param data_not_found_resolution: The data_not_found_resolution of this Condition.
+        :type: bool
+        """
+        
+        self._data_not_found_resolution = data_not_found_resolution
+
+    @property
+    def contact_id_field(self):
+        """
+        Gets the contact_id_field of this Condition.
+        The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
+
+        :return: The contact_id_field of this Condition.
+        :rtype: str
+        """
+        return self._contact_id_field
+
+    @contact_id_field.setter
+    def contact_id_field(self, contact_id_field):
+        """
+        Sets the contact_id_field of this Condition.
+        The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
+
+        :param contact_id_field: The contact_id_field of this Condition.
+        :type: str
+        """
+        
+        self._contact_id_field = contact_id_field
+
+    @property
+    def call_analysis_result_field(self):
+        """
+        Gets the call_analysis_result_field of this Condition.
+        The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
+
+        :return: The call_analysis_result_field of this Condition.
+        :rtype: str
+        """
+        return self._call_analysis_result_field
+
+    @call_analysis_result_field.setter
+    def call_analysis_result_field(self, call_analysis_result_field):
+        """
+        Sets the call_analysis_result_field of this Condition.
+        The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
+
+        :param call_analysis_result_field: The call_analysis_result_field of this Condition.
+        :type: str
+        """
+        
+        self._call_analysis_result_field = call_analysis_result_field
+
+    @property
+    def agent_wrapup_field(self):
+        """
+        Gets the agent_wrapup_field of this Condition.
+        The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
+
+        :return: The agent_wrapup_field of this Condition.
+        :rtype: str
+        """
+        return self._agent_wrapup_field
+
+    @agent_wrapup_field.setter
+    def agent_wrapup_field(self, agent_wrapup_field):
+        """
+        Sets the agent_wrapup_field of this Condition.
+        The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
+
+        :param agent_wrapup_field: The agent_wrapup_field of this Condition.
+        :type: str
+        """
+        
+        self._agent_wrapup_field = agent_wrapup_field
+
+    @property
+    def contact_column_to_data_action_field_mappings(self):
+        """
+        Gets the contact_column_to_data_action_field_mappings of this Condition.
+        A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
+
+        :return: The contact_column_to_data_action_field_mappings of this Condition.
+        :rtype: list[ContactColumnToDataActionFieldMapping]
+        """
+        return self._contact_column_to_data_action_field_mappings
+
+    @contact_column_to_data_action_field_mappings.setter
+    def contact_column_to_data_action_field_mappings(self, contact_column_to_data_action_field_mappings):
+        """
+        Sets the contact_column_to_data_action_field_mappings of this Condition.
+        A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
+
+        :param contact_column_to_data_action_field_mappings: The contact_column_to_data_action_field_mappings of this Condition.
+        :type: list[ContactColumnToDataActionFieldMapping]
+        """
+        
+        self._contact_column_to_data_action_field_mappings = contact_column_to_data_action_field_mappings
+
+    @property
+    def predicates(self):
+        """
+        Gets the predicates of this Condition.
+        A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
+
+        :return: The predicates of this Condition.
+        :rtype: list[DataActionConditionPredicate]
+        """
+        return self._predicates
+
+    @predicates.setter
+    def predicates(self, predicates):
+        """
+        Sets the predicates of this Condition.
+        A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
+
+        :param predicates: The predicates of this Condition.
+        :type: list[DataActionConditionPredicate]
+        """
+        
+        self._predicates = predicates
 
     def to_dict(self):
         """

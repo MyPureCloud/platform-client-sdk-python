@@ -48,6 +48,7 @@ class DncList(object):
             'import_status': 'ImportStatus',
             'size': 'int',
             'dnc_source_type': 'str',
+            'contact_method': 'str',
             'login_id': 'str',
             'dnc_codes': 'list[str]',
             'license_id': 'str',
@@ -64,6 +65,7 @@ class DncList(object):
             'import_status': 'importStatus',
             'size': 'size',
             'dnc_source_type': 'dncSourceType',
+            'contact_method': 'contactMethod',
             'login_id': 'loginId',
             'dnc_codes': 'dncCodes',
             'license_id': 'licenseId',
@@ -79,6 +81,7 @@ class DncList(object):
         self._import_status = None
         self._size = None
         self._dnc_source_type = None
+        self._contact_method = None
         self._login_id = None
         self._dnc_codes = None
         self._license_id = None
@@ -272,6 +275,33 @@ class DncList(object):
             self._dnc_source_type = "outdated_sdk_version"
         else:
             self._dnc_source_type = dnc_source_type
+
+    @property
+    def contact_method(self):
+        """
+        Gets the contact_method of this DncList.
+        The contact method. Required if dncSourceType is rds.
+
+        :return: The contact_method of this DncList.
+        :rtype: str
+        """
+        return self._contact_method
+
+    @contact_method.setter
+    def contact_method(self, contact_method):
+        """
+        Sets the contact_method of this DncList.
+        The contact method. Required if dncSourceType is rds.
+
+        :param contact_method: The contact_method of this DncList.
+        :type: str
+        """
+        allowed_values = ["Email", "Phone"]
+        if contact_method.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for contact_method -> " + contact_method)
+            self._contact_method = "outdated_sdk_version"
+        else:
+            self._contact_method = contact_method
 
     @property
     def login_id(self):

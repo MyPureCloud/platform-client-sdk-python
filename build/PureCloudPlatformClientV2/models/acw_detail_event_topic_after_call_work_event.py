@@ -59,6 +59,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
             'user_id': 'str',
             'queue_id': 'str',
             'wrapup_code': 'str',
+            'wrapup_notes': 'str',
             'wrapup_duration_ms': 'int'
         }
 
@@ -82,6 +83,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
             'user_id': 'userId',
             'queue_id': 'queueId',
             'wrapup_code': 'wrapupCode',
+            'wrapup_notes': 'wrapupNotes',
             'wrapup_duration_ms': 'wrapupDurationMs'
         }
 
@@ -104,6 +106,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         self._user_id = None
         self._queue_id = None
         self._wrapup_code = None
+        self._wrapup_notes = None
         self._wrapup_duration_ms = None
 
     @property
@@ -554,6 +557,29 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         """
         
         self._wrapup_code = wrapup_code
+
+    @property
+    def wrapup_notes(self):
+        """
+        Gets the wrapup_notes of this AcwDetailEventTopicAfterCallWorkEvent.
+
+
+        :return: The wrapup_notes of this AcwDetailEventTopicAfterCallWorkEvent.
+        :rtype: str
+        """
+        return self._wrapup_notes
+
+    @wrapup_notes.setter
+    def wrapup_notes(self, wrapup_notes):
+        """
+        Sets the wrapup_notes of this AcwDetailEventTopicAfterCallWorkEvent.
+
+
+        :param wrapup_notes: The wrapup_notes of this AcwDetailEventTopicAfterCallWorkEvent.
+        :type: str
+        """
+        
+        self._wrapup_notes = wrapup_notes
 
     @property
     def wrapup_duration_ms(self):

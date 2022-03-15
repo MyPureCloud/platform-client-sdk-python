@@ -163,7 +163,7 @@ class OpenIntegrationRequest(object):
     def outbound_notification_webhook_signature_secret_token(self):
         """
         Gets the outbound_notification_webhook_signature_secret_token of this OpenIntegrationRequest.
-        The outbound notification webhook signature secret token.
+        The outbound notification webhook signature secret token. This token must be longer than 15 characters.
 
         :return: The outbound_notification_webhook_signature_secret_token of this OpenIntegrationRequest.
         :rtype: str
@@ -174,7 +174,7 @@ class OpenIntegrationRequest(object):
     def outbound_notification_webhook_signature_secret_token(self, outbound_notification_webhook_signature_secret_token):
         """
         Sets the outbound_notification_webhook_signature_secret_token of this OpenIntegrationRequest.
-        The outbound notification webhook signature secret token.
+        The outbound notification webhook signature secret token. This token must be longer than 15 characters.
 
         :param outbound_notification_webhook_signature_secret_token: The outbound_notification_webhook_signature_secret_token of this OpenIntegrationRequest.
         :type: str

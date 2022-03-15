@@ -46,6 +46,7 @@ class ResponseSet(object):
             'date_modified': 'datetime',
             'version': 'int',
             'responses': 'dict(str, Reaction)',
+            'beep_detection_enabled': 'bool',
             'self_uri': 'str'
         }
 
@@ -56,6 +57,7 @@ class ResponseSet(object):
             'date_modified': 'dateModified',
             'version': 'version',
             'responses': 'responses',
+            'beep_detection_enabled': 'beepDetectionEnabled',
             'self_uri': 'selfUri'
         }
 
@@ -65,6 +67,7 @@ class ResponseSet(object):
         self._date_modified = None
         self._version = None
         self._responses = None
+        self._beep_detection_enabled = None
         self._self_uri = None
 
     @property
@@ -204,6 +207,29 @@ class ResponseSet(object):
         """
         
         self._responses = responses
+
+    @property
+    def beep_detection_enabled(self):
+        """
+        Gets the beep_detection_enabled of this ResponseSet.
+        Whether to enable answering machine beep detection
+
+        :return: The beep_detection_enabled of this ResponseSet.
+        :rtype: bool
+        """
+        return self._beep_detection_enabled
+
+    @beep_detection_enabled.setter
+    def beep_detection_enabled(self, beep_detection_enabled):
+        """
+        Sets the beep_detection_enabled of this ResponseSet.
+        Whether to enable answering machine beep detection
+
+        :param beep_detection_enabled: The beep_detection_enabled of this ResponseSet.
+        :type: bool
+        """
+        
+        self._beep_detection_enabled = beep_detection_enabled
 
     @property
     def self_uri(self):

@@ -56,6 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_email_messages_draft**](ConversationsApi.html#get_conversations_email_messages_draft) | Get conversation draft reply|
 |[**get_conversations_email_participant_wrapup**](ConversationsApi.html#get_conversations_email_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_email_participant_wrapupcodes**](ConversationsApi.html#get_conversations_email_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversations_email_settings**](ConversationsApi.html#get_conversations_email_settings) | Get emails settings for a given conversation|
 |[**get_conversations_emails**](ConversationsApi.html#get_conversations_emails) | Get active email conversations for the logged in user|
 |[**get_conversations_message**](ConversationsApi.html#get_conversations_message) | Get message conversation|
 |[**get_conversations_message_communication_messages_media_media_id**](ConversationsApi.html#get_conversations_message_communication_messages_media_media_id) | Get media|
@@ -2622,6 +2623,56 @@ except ApiException as e:
 ### Return type
 
 [**list[WrapupCode]**](WrapupCode.html)
+
+<a name="get_conversations_email_settings"></a>
+
+## [**EmailsSettings**](EmailsSettings.html) get_conversations_email_settings(conversation_id)
+
+
+
+Get emails settings for a given conversation
+
+
+
+Wraps GET /api/v2/conversations/emails/{conversationId}/settings 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+
+try:
+    # Get emails settings for a given conversation
+    api_response = api_instance.get_conversations_email_settings(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_email_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailsSettings**](EmailsSettings.html)
 
 <a name="get_conversations_emails"></a>
 

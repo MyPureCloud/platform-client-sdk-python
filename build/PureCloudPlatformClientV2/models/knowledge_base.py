@@ -152,7 +152,7 @@ class KnowledgeBase(object):
     def core_language(self):
         """
         Gets the core_language of this KnowledgeBase.
-        Core language for knowledge base in which initial content must be created first
+        Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently, however the new DX knowledge will support all these language codes
 
         :return: The core_language of this KnowledgeBase.
         :rtype: str
@@ -163,12 +163,12 @@ class KnowledgeBase(object):
     def core_language(self, core_language):
         """
         Sets the core_language of this KnowledgeBase.
-        Core language for knowledge base in which initial content must be created first
+        Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently, however the new DX knowledge will support all these language codes
 
         :param core_language: The core_language of this KnowledgeBase.
         :type: str
         """
-        allowed_values = ["en-US", "en-UK", "en-AU", "de-DE"]
+        allowed_values = ["en-US", "en-UK", "en-AU", "de-DE", "es-US", "es-ES", "fr-FR", "pt-BR", "nl-NL", "it-IT"]
         if core_language.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for core_language -> " + core_language)
             self._core_language = "outdated_sdk_version"

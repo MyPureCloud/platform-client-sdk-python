@@ -46,6 +46,7 @@ class DncListDivisionView(object):
             'import_status': 'ImportStatus',
             'size': 'int',
             'dnc_source_type': 'str',
+            'contact_method': 'str',
             'self_uri': 'str'
         }
 
@@ -56,6 +57,7 @@ class DncListDivisionView(object):
             'import_status': 'importStatus',
             'size': 'size',
             'dnc_source_type': 'dncSourceType',
+            'contact_method': 'contactMethod',
             'self_uri': 'selfUri'
         }
 
@@ -65,6 +67,7 @@ class DncListDivisionView(object):
         self._import_status = None
         self._size = None
         self._dnc_source_type = None
+        self._contact_method = None
         self._self_uri = None
 
     @property
@@ -208,6 +211,33 @@ class DncListDivisionView(object):
             self._dnc_source_type = "outdated_sdk_version"
         else:
             self._dnc_source_type = dnc_source_type
+
+    @property
+    def contact_method(self):
+        """
+        Gets the contact_method of this DncListDivisionView.
+        The contact method. Required if dncSourceType is rds.
+
+        :return: The contact_method of this DncListDivisionView.
+        :rtype: str
+        """
+        return self._contact_method
+
+    @contact_method.setter
+    def contact_method(self, contact_method):
+        """
+        Sets the contact_method of this DncListDivisionView.
+        The contact method. Required if dncSourceType is rds.
+
+        :param contact_method: The contact_method of this DncListDivisionView.
+        :type: str
+        """
+        allowed_values = ["Email", "Phone"]
+        if contact_method.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for contact_method -> " + contact_method)
+            self._contact_method = "outdated_sdk_version"
+        else:
+            self._contact_method = contact_method
 
     @property
     def self_uri(self):

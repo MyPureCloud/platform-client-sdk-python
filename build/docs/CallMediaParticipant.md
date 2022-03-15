@@ -51,8 +51,10 @@ title: CallMediaParticipant
 | **fax_status** | [**FaxStatus**](FaxStatus.html) | Extra fax information if the call is a fax. | [optional] |
 | **monitored_participant_id** | **str** | The ID of the participant being monitored when performing a call monitor. | [optional] |
 | **coached_participant_id** | **str** | The ID of the participant being coached when performing a call coach. | [optional] |
+| **barged_participant_id** | **str** | If this participant barged in a participant&#39;s call, then this will be the id of the targeted participant. | [optional] |
 | **consult_participant_id** | **str** | The ID of the consult transfer target participant when performing a consult transfer. | [optional] |
 | **uui_data** | **str** | User-to-User information which maps to a SIP header field defined in RFC7433. UUI data is used in the Public Switched Telephone Network (PSTN) for use cases described in RFC6567. | [optional] |
+| **barged_time** | **datetime** | The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 {: class="table table-striped"}
 
 

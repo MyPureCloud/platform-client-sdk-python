@@ -57,6 +57,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'conversation_initiator': 'str',
             'converted_from': 'str',
             'converted_to': 'str',
+            'customer_participation': 'bool',
             'delivery_status': 'str',
             'destination_addresses': 'list[str]',
             'direction': 'str',
@@ -138,6 +139,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'conversation_initiator': 'conversationInitiator',
             'converted_from': 'convertedFrom',
             'converted_to': 'convertedTo',
+            'customer_participation': 'customerParticipation',
             'delivery_status': 'deliveryStatus',
             'destination_addresses': 'destinationAddresses',
             'direction': 'direction',
@@ -218,6 +220,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         self._conversation_initiator = None
         self._converted_from = None
         self._converted_to = None
+        self._customer_participation = None
         self._delivery_status = None
         self._destination_addresses = None
         self._direction = None
@@ -626,8 +629,12 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param conversation_initiator: The conversation_initiator of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        
-        self._conversation_initiator = conversation_initiator
+        allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
+        if conversation_initiator.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for conversation_initiator -> " + conversation_initiator)
+            self._conversation_initiator = "outdated_sdk_version"
+        else:
+            self._conversation_initiator = conversation_initiator
 
     @property
     def converted_from(self):
@@ -676,6 +683,29 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         self._converted_to = converted_to
 
     @property
+    def customer_participation(self):
+        """
+        Gets the customer_participation of this ConversationMetricsTopicConversationMetricRecord.
+        Indicates a messaging conversation in which the customer participated by sending at least one message
+
+        :return: The customer_participation of this ConversationMetricsTopicConversationMetricRecord.
+        :rtype: bool
+        """
+        return self._customer_participation
+
+    @customer_participation.setter
+    def customer_participation(self, customer_participation):
+        """
+        Sets the customer_participation of this ConversationMetricsTopicConversationMetricRecord.
+        Indicates a messaging conversation in which the customer participated by sending at least one message
+
+        :param customer_participation: The customer_participation of this ConversationMetricsTopicConversationMetricRecord.
+        :type: bool
+        """
+        
+        self._customer_participation = customer_participation
+
+    @property
     def delivery_status(self):
         """
         Gets the delivery_status of this ConversationMetricsTopicConversationMetricRecord.
@@ -695,8 +725,12 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param delivery_status: The delivery_status of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        
-        self._delivery_status = delivery_status
+        allowed_values = ["DeliveryFailed", "DeliverySuccess", "Failed", "Queued", "Read", "Received", "Sent"]
+        if delivery_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for delivery_status -> " + delivery_status)
+            self._delivery_status = "outdated_sdk_version"
+        else:
+            self._delivery_status = delivery_status
 
     @property
     def destination_addresses(self):
@@ -741,8 +775,12 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param direction: The direction of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        
-        self._direction = direction
+        allowed_values = ["inbound", "outbound"]
+        if direction.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for direction -> " + direction)
+            self._direction = "outdated_sdk_version"
+        else:
+            self._direction = direction
 
     @property
     def disconnect_type(self):
@@ -764,8 +802,12 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param disconnect_type: The disconnect_type of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        
-        self._disconnect_type = disconnect_type
+        allowed_values = ["client", "conferenceTransfer", "consultTransfer", "endpoint", "error", "forwardTransfer", "noAnswerTransfer", "notAvailableTransfer", "other", "peer", "spam", "system", "timeout", "transfer", "transportFailure", "uncallable"]
+        if disconnect_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for disconnect_type -> " + disconnect_type)
+            self._disconnect_type = "outdated_sdk_version"
+        else:
+            self._disconnect_type = disconnect_type
 
     @property
     def division_ids(self):
@@ -1017,8 +1059,12 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param flagged_reason: The flagged_reason of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        
-        self._flagged_reason = flagged_reason
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for flagged_reason -> " + flagged_reason)
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def flow_in_type(self):
@@ -1339,8 +1385,12 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param media_type: The media_type of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        
-        self._media_type = media_type
+        allowed_values = ["callback", "chat", "cobrowse", "email", "message", "screenshare", "unknown", "video", "voice"]
+        if media_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for media_type -> " + media_type)
+            self._media_type = "outdated_sdk_version"
+        else:
+            self._media_type = media_type
 
     @property
     def message_type(self):
@@ -1385,8 +1435,12 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param originating_direction: The originating_direction of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        
-        self._originating_direction = originating_direction
+        allowed_values = ["inbound", "outbound"]
+        if originating_direction.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for originating_direction -> " + originating_direction)
+            self._originating_direction = "outdated_sdk_version"
+        else:
+            self._originating_direction = originating_direction
 
     @property
     def outbound_campaign_id(self):
@@ -1546,8 +1600,12 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param purpose: The purpose of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        
-        self._purpose = purpose
+        allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
+        if purpose.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for purpose -> " + purpose)
+            self._purpose = "outdated_sdk_version"
+        else:
+            self._purpose = purpose
 
     @property
     def queue_id(self):
@@ -1960,7 +2018,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param used_routing: The used_routing of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        allowed_values = ["Bullseye", "Last", "Manual", "Predictive", "Preferred", "Standard"]
+        allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"

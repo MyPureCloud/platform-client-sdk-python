@@ -46,6 +46,7 @@ class EncryptionKey(object):
             'keydata_summary': 'str',
             'user': 'User',
             'local_encryption_configuration': 'LocalEncryptionConfiguration',
+            'key_configuration_type': 'str',
             'self_uri': 'str'
         }
 
@@ -56,6 +57,7 @@ class EncryptionKey(object):
             'keydata_summary': 'keydataSummary',
             'user': 'user',
             'local_encryption_configuration': 'localEncryptionConfiguration',
+            'key_configuration_type': 'keyConfigurationType',
             'self_uri': 'selfUri'
         }
 
@@ -65,6 +67,7 @@ class EncryptionKey(object):
         self._keydata_summary = None
         self._user = None
         self._local_encryption_configuration = None
+        self._key_configuration_type = None
         self._self_uri = None
 
     @property
@@ -204,6 +207,33 @@ class EncryptionKey(object):
         """
         
         self._local_encryption_configuration = local_encryption_configuration
+
+    @property
+    def key_configuration_type(self):
+        """
+        Gets the key_configuration_type of this EncryptionKey.
+        Key type used in this configuration
+
+        :return: The key_configuration_type of this EncryptionKey.
+        :rtype: str
+        """
+        return self._key_configuration_type
+
+    @key_configuration_type.setter
+    def key_configuration_type(self, key_configuration_type):
+        """
+        Sets the key_configuration_type of this EncryptionKey.
+        Key type used in this configuration
+
+        :param key_configuration_type: The key_configuration_type of this EncryptionKey.
+        :type: str
+        """
+        allowed_values = ["KmsSymmetric", "LocalKeyManager", "Native", "None"]
+        if key_configuration_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for key_configuration_type -> " + key_configuration_type)
+            self._key_configuration_type = "outdated_sdk_version"
+        else:
+            self._key_configuration_type = key_configuration_type
 
     @property
     def self_uri(self):

@@ -254,7 +254,7 @@ except ApiException as e:
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **user_id** | [**list[str]**](str.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
 | **types** | [**list[str]**](str.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
-| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed |
+| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
 | **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
 
@@ -330,7 +330,7 @@ except ApiException as e:
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **types** | [**list[str]**](str.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
-| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed |
+| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
 | **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
 

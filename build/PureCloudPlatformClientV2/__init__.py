@@ -478,10 +478,12 @@ from .models.consumed_resources_entity_listing import ConsumedResourcesEntityLis
 from .models.consuming_resources_entity_listing import ConsumingResourcesEntityListing
 from .models.contact import Contact
 from .models.contact_address import ContactAddress
+from .models.contact_addressable_entity_ref import ContactAddressableEntityRef
 from .models.contact_callback_request import ContactCallbackRequest
 from .models.contact_center_settings import ContactCenterSettings
 from .models.contact_column_time_zone import ContactColumnTimeZone
 from .models.contact_column_to_data_action_field_mapping import ContactColumnToDataActionFieldMapping
+from .models.contact_detail_event_topic_contact_update_event import ContactDetailEventTopicContactUpdateEvent
 from .models.contact_list import ContactList
 from .models.contact_list_division_view import ContactListDivisionView
 from .models.contact_list_division_view_listing import ContactListDivisionViewListing
@@ -1056,6 +1058,7 @@ from .models.email_media_policy_conditions import EmailMediaPolicyConditions
 from .models.email_message import EmailMessage
 from .models.email_message_listing import EmailMessageListing
 from .models.email_setup import EmailSetup
+from .models.emails_settings import EmailsSettings
 from .models.embedded_integration import EmbeddedIntegration
 from .models.emergency_call_flow import EmergencyCallFlow
 from .models.emergency_group import EmergencyGroup
@@ -1169,6 +1172,9 @@ from .models.flow_end_detail_event_topic_flow_end_event import FlowEndDetailEven
 from .models.flow_entity_listing import FlowEntityListing
 from .models.flow_execution_launch_request import FlowExecutionLaunchRequest
 from .models.flow_execution_launch_response import FlowExecutionLaunchResponse
+from .models.flow_metrics_topic_conversation_metric_record import FlowMetricsTopicConversationMetricRecord
+from .models.flow_metrics_topic_conversation_proposed_agent import FlowMetricsTopicConversationProposedAgent
+from .models.flow_metrics_topic_conversation_scored_agent import FlowMetricsTopicConversationScoredAgent
 from .models.flow_milestone import FlowMilestone
 from .models.flow_milestone_division_view import FlowMilestoneDivisionView
 from .models.flow_milestone_division_view_entity_listing import FlowMilestoneDivisionViewEntityListing
@@ -2876,6 +2882,7 @@ from .models.wrap_up_code_reference import WrapUpCodeReference
 from .models.wrapup import Wrapup
 from .models.wrapup_code import WrapupCode
 from .models.wrapup_code_entity_listing import WrapupCodeEntityListing
+from .models.wrapup_detail_event_topic_wrapup_event import WrapupDetailEventTopicWrapupEvent
 from .models.writable_dialer_contact import WritableDialerContact
 from .models.writable_division import WritableDivision
 from .models.writable_entity import WritableEntity

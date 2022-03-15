@@ -2346,7 +2346,7 @@ except ApiException as e:
 
 <a name="post_gamification_profiles"></a>
 
-## [**GetProfilesResponse**](GetProfilesResponse.html) post_gamification_profiles(body, copy_metrics=copy_metrics)
+## [**PerformanceProfile**](PerformanceProfile.html) post_gamification_profiles(body, copy_metrics=copy_metrics)
 
 
 
@@ -2395,7 +2395,7 @@ except ApiException as e:
 
 ### Return type
 
-[**GetProfilesResponse**](GetProfilesResponse.html)
+[**PerformanceProfile**](PerformanceProfile.html)
 
 <a name="put_gamification_metric"></a>
 

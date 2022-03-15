@@ -40,13 +40,63 @@ class ContactColumnToDataActionFieldMapping(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'contact_column_name': 'str',
+            'data_action_field': 'str'
         }
 
         self.attribute_map = {
-            
+            'contact_column_name': 'contactColumnName',
+            'data_action_field': 'dataActionField'
         }
 
+        self._contact_column_name = None
+        self._data_action_field = None
+
+    @property
+    def contact_column_name(self):
+        """
+        Gets the contact_column_name of this ContactColumnToDataActionFieldMapping.
+        The name of a contact column whose data will be passed to the data action
+
+        :return: The contact_column_name of this ContactColumnToDataActionFieldMapping.
+        :rtype: str
+        """
+        return self._contact_column_name
+
+    @contact_column_name.setter
+    def contact_column_name(self, contact_column_name):
+        """
+        Sets the contact_column_name of this ContactColumnToDataActionFieldMapping.
+        The name of a contact column whose data will be passed to the data action
+
+        :param contact_column_name: The contact_column_name of this ContactColumnToDataActionFieldMapping.
+        :type: str
+        """
+        
+        self._contact_column_name = contact_column_name
+
+    @property
+    def data_action_field(self):
+        """
+        Gets the data_action_field of this ContactColumnToDataActionFieldMapping.
+        The name of an input field from the data action that the contact column data will be passed to
+
+        :return: The data_action_field of this ContactColumnToDataActionFieldMapping.
+        :rtype: str
+        """
+        return self._data_action_field
+
+    @data_action_field.setter
+    def data_action_field(self, data_action_field):
+        """
+        Sets the data_action_field of this ContactColumnToDataActionFieldMapping.
+        The name of an input field from the data action that the contact column data will be passed to
+
+        :param data_action_field: The data_action_field of this ContactColumnToDataActionFieldMapping.
+        :type: str
+        """
+        
+        self._data_action_field = data_action_field
 
     def to_dict(self):
         """
