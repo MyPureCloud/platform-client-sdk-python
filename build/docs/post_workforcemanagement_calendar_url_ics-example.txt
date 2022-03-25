@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostWorkforcemanagementCalendarUrlIcsRequest()
+language = 'en-US' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar (optional) (default to en-US)
+
+try:
+    # Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+    api_response = api_instance.post_workforcemanagement_calendar_url_ics(language=language)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostWorkforcemanagementCalendarUrlIcsRequest->post_workforcemanagement_calendar_url_ics: %s\n" % e)

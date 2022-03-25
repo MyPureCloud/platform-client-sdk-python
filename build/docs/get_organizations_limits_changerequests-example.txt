@@ -1,0 +1,22 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetOrganizationsLimitsChangerequestsRequest()
+after = 789 # int | Timestamp indicating the date to begin after when searching for requests. (optional)
+before = 789 # int | Timestamp indicating the date to end before when searching for requests. (optional)
+status = 'status_example' # str | Status of the request to be filtered by (optional)
+page_size = 25 # int | Page Size (optional) (default to 25)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+
+try:
+    # Get the available limit change requests
+    api_response = api_instance.get_organizations_limits_changerequests(after=after, before=before, status=status, page_size=page_size, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetOrganizationsLimitsChangerequestsRequest->get_organizations_limits_changerequests: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetQualityFormsSurveysBulkContextsRequest()
+context_id = ['context_id_example'] # list[str] | A comma-delimited list of valid survey form context ids
+published = true # bool | If true, the latest published version will be included. If false, only the unpublished version will be included. (optional) (default to true)
+
+try:
+    # Retrieve a list of the latest form versions by context ids
+    api_response = api_instance.get_quality_forms_surveys_bulk_contexts(context_id, published=published)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetQualityFormsSurveysBulkContextsRequest->get_quality_forms_surveys_bulk_contexts: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchAnalyticsReportingSettingsRequest()
+body = PureCloudPlatformClientV2.AnalyticsReportingSettings() # AnalyticsReportingSettings | AnalyticsReportingSettingsRequest
+
+try:
+    # Patch AnalyticsReportingSettings values for an organization
+    api_response = api_instance.patch_analytics_reporting_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchAnalyticsReportingSettingsRequest->patch_analytics_reporting_settings: %s\n" % e)

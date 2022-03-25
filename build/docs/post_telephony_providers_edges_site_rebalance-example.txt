@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostTelephonyProvidersEdgesSiteRebalanceRequest()
+site_id = 'site_id_example' # str | Site ID
+
+try:
+    # Triggers the rebalance operation.
+    api_instance.post_telephony_providers_edges_site_rebalance(site_id)
+except ApiException as e:
+    print("Exception when calling PostTelephonyProvidersEdgesSiteRebalanceRequest->post_telephony_providers_edges_site_rebalance: %s\n" % e)

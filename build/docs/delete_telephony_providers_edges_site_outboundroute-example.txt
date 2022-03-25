@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest()
+site_id = 'site_id_example' # str | Site ID
+outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
+
+try:
+    # Delete Outbound Route
+    api_instance.delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
+except ApiException as e:
+    print("Exception when calling DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest->delete_telephony_providers_edges_site_outboundroute: %s\n" % e)

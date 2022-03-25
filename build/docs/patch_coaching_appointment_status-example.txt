@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchCoachingAppointmentStatusRequest()
+appointment_id = 'appointment_id_example' # str | The ID of the coaching appointment.
+body = PureCloudPlatformClientV2.CoachingAppointmentStatusRequest() # CoachingAppointmentStatusRequest | Updated status of the coaching appointment
+
+try:
+    # Update the status of a coaching appointment
+    api_response = api_instance.patch_coaching_appointment_status(appointment_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchCoachingAppointmentStatusRequest->patch_coaching_appointment_status: %s\n" % e)

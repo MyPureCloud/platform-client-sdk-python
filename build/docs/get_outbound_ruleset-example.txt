@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetOutboundRulesetRequest()
+rule_set_id = 'rule_set_id_example' # str | Rule Set ID
+
+try:
+    # Get a Rule Set by ID.
+    api_response = api_instance.get_outbound_ruleset(rule_set_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetOutboundRulesetRequest->get_outbound_ruleset: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostTelephonyProvidersEdgeLogsJobUploadRequest()
+edge_id = 'edge_id_example' # str | Edge ID
+job_id = 'job_id_example' # str | Job ID
+body = PureCloudPlatformClientV2.EdgeLogsJobUploadRequest() # EdgeLogsJobUploadRequest | Log upload request
+
+try:
+    # Request that the specified fileIds be uploaded from the Edge.
+    api_instance.post_telephony_providers_edge_logs_job_upload(edge_id, job_id, body)
+except ApiException as e:
+    print("Exception when calling PostTelephonyProvidersEdgeLogsJobUploadRequest->post_telephony_providers_edge_logs_job_upload: %s\n" % e)

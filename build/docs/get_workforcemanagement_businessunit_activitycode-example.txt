@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetWorkforcemanagementBusinessunitActivitycodeRequest()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+activity_code_id = 'activity_code_id_example' # str | The ID of the activity code to fetch
+
+try:
+    # Get an activity code
+    api_response = api_instance.get_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetWorkforcemanagementBusinessunitActivitycodeRequest->get_workforcemanagement_businessunit_activitycode: %s\n" % e)

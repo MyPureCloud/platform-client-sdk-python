@@ -1,0 +1,21 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetQualityPublishedformsEvaluationsRequest()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+only_latest_per_context = false # bool | onlyLatestPerContext (optional) (default to false)
+
+try:
+    # Get the published evaluation forms.
+    api_response = api_instance.get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetQualityPublishedformsEvaluationsRequest->get_quality_publishedforms_evaluations: %s\n" % e)

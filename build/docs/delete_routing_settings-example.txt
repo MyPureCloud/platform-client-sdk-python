@@ -1,0 +1,16 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteRoutingSettingsRequest()
+
+try:
+    # Delete an organization's routing settings
+    api_instance.delete_routing_settings()
+except ApiException as e:
+    print("Exception when calling DeleteRoutingSettingsRequest->delete_routing_settings: %s\n" % e)

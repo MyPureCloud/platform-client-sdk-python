@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutIntegrationsBotconnectorIntegrationIdBotsRequest()
+integration_id = 'integration_id_example' # str | The integration ID for this group of bots
+bot_list = PureCloudPlatformClientV2.BotList() # BotList | 
+
+try:
+    # Set a list of botConnector bots plus versions for this integration
+    api_instance.put_integrations_botconnector_integration_id_bots(integration_id, bot_list)
+except ApiException as e:
+    print("Exception when calling PutIntegrationsBotconnectorIntegrationIdBotsRequest->put_integrations_botconnector_integration_id_bots: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchCoachingNotificationRequest()
+notification_id = 'notification_id_example' # str | The ID of the notification.
+body = PureCloudPlatformClientV2.CoachingNotification() # CoachingNotification | Change the read state of a notification
+
+try:
+    # Update an existing notification.
+    api_response = api_instance.patch_coaching_notification(notification_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchCoachingNotificationRequest->patch_coaching_notification: %s\n" % e)

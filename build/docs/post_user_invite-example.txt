@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostUserInviteRequest()
+user_id = 'user_id_example' # str | User ID
+force = false # bool | Resend the invitation even if one is already outstanding (optional) (default to false)
+
+try:
+    # Send an activation email to the user
+    api_instance.post_user_invite(user_id, force=force)
+except ApiException as e:
+    print("Exception when calling PostUserInviteRequest->post_user_invite: %s\n" % e)

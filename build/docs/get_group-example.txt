@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetGroupRequest()
+group_id = 'group_id_example' # str | Group ID
+
+try:
+    # Get group
+    api_response = api_instance.get_group(group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetGroupRequest->get_group: %s\n" % e)

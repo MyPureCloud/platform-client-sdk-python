@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostAuthorizationSubjectDivisionRoleRequest()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+division_id = 'division_id_example' # str | the id of the division to which to make the grant
+role_id = 'role_id_example' # str | the id of the role to grant
+subject_type = 'PC_USER' # str | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (optional) (default to PC_USER)
+
+try:
+    # Make a grant of a role in a division
+    api_instance.post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
+except ApiException as e:
+    print("Exception when calling PostAuthorizationSubjectDivisionRoleRequest->post_authorization_subject_division_role: %s\n" % e)

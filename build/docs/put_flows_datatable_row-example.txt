@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutFlowsDatatableRowRequest()
+datatable_id = 'datatable_id_example' # str | id of datatable
+row_id = 'row_id_example' # str | the key for the row
+body = NULL # object | datatable row (optional)
+
+try:
+    # Update a row entry
+    api_response = api_instance.put_flows_datatable_row(datatable_id, row_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutFlowsDatatableRowRequest->put_flows_datatable_row: %s\n" % e)

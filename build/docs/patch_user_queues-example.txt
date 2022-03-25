@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchUserQueuesRequest()
+user_id = 'user_id_example' # str | User ID
+body = [PureCloudPlatformClientV2.UserQueue()] # list[UserQueue] | User Queues
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+
+try:
+    # Join or unjoin a set of queues for a user
+    api_response = api_instance.patch_user_queues(user_id, body, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchUserQueuesRequest->patch_user_queues: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetRoutingQueueMediatypeEstimatedwaittimeRequest()
+queue_id = 'queue_id_example' # str | queueId
+media_type = 'media_type_example' # str | mediaType
+
+try:
+    # Get Estimated Wait Time
+    api_response = api_instance.get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetRoutingQueueMediatypeEstimatedwaittimeRequest->get_routing_queue_mediatype_estimatedwaittime: %s\n" % e)

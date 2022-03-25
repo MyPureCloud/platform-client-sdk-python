@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostRecordingsScreensessionsAcknowledgeRequest()
+body = PureCloudPlatformClientV2.AcknowledgeScreenRecordingRequest() # AcknowledgeScreenRecordingRequest | AcknowledgeScreenRecordingRequest
+
+try:
+    # Acknowledge a screen recording.
+    api_instance.post_recordings_screensessions_acknowledge(body)
+except ApiException as e:
+    print("Exception when calling PostRecordingsScreensessionsAcknowledgeRequest->post_recordings_screensessions_acknowledge: %s\n" % e)

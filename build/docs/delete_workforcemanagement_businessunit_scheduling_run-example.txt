@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteWorkforcemanagementBusinessunitSchedulingRunRequest()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+run_id = 'run_id_example' # str | The ID of the schedule run
+
+try:
+    # Cancel a scheduling run
+    api_instance.delete_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
+except ApiException as e:
+    print("Exception when calling DeleteWorkforcemanagementBusinessunitSchedulingRunRequest->delete_workforcemanagement_businessunit_scheduling_run: %s\n" % e)

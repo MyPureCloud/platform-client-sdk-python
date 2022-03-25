@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteContentmanagementWorkspaceRequest()
+workspace_id = 'workspace_id_example' # str | Workspace ID
+move_children_to_workspace_id = 'move_children_to_workspace_id_example' # str | New location for objects in deleted workspace. (optional)
+
+try:
+    # Delete a workspace
+    api_instance.delete_contentmanagement_workspace(workspace_id, move_children_to_workspace_id=move_children_to_workspace_id)
+except ApiException as e:
+    print("Exception when calling DeleteContentmanagementWorkspaceRequest->delete_contentmanagement_workspace: %s\n" % e)

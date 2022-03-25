@@ -1,0 +1,27 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetUsersDevelopmentActivitiesMeRequest()
+module_id = 'module_id_example' # str | Specifies the ID of the learning module. (optional)
+interval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+completion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+overdue = 'Any' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to Any)
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = 'Desc' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to Desc)
+types = ['types_example'] # list[str] | Specifies the activity types. (optional)
+statuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)
+relationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
+
+try:
+    # Get list of Development Activities for current user
+    api_response = api_instance.get_users_development_activities_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetUsersDevelopmentActivitiesMeRequest->get_users_development_activities_me: %s\n" % e)

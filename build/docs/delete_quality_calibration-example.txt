@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteQualityCalibrationRequest()
+calibration_id = 'calibration_id_example' # str | Calibration ID
+calibrator_id = 'calibrator_id_example' # str | calibratorId
+
+try:
+    # Delete a calibration by id.
+    api_response = api_instance.delete_quality_calibration(calibration_id, calibrator_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DeleteQualityCalibrationRequest->delete_quality_calibration: %s\n" % e)

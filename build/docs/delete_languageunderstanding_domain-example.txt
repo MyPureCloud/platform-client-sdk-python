@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteLanguageunderstandingDomainRequest()
+domain_id = 'domain_id_example' # str | ID of the NLU domain.
+
+try:
+    # Delete an NLU Domain.
+    api_instance.delete_languageunderstanding_domain(domain_id)
+except ApiException as e:
+    print("Exception when calling DeleteLanguageunderstandingDomainRequest->delete_languageunderstanding_domain: %s\n" % e)

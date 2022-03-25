@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetFlowsExecutionRequest()
+flow_execution_id = 'flow_execution_id_example' # str | flow execution ID
+
+try:
+    # Get a flow execution's details. Flow execution details are available for several days after the flow is started.
+    api_response = api_instance.get_flows_execution(flow_execution_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetFlowsExecutionRequest->get_flows_execution: %s\n" % e)

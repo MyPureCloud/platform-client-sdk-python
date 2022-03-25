@@ -1,0 +1,21 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetAuthorizationDivisionspermittedPagedSubjectIdRequest()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Returns which divisions the specified user has the given permission in.
+    api_response = api_instance.get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetAuthorizationDivisionspermittedPagedSubjectIdRequest->get_authorization_divisionspermitted_paged_subject_id: %s\n" % e)

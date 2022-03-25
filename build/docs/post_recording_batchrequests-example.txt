@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostRecordingBatchrequestsRequest()
+body = PureCloudPlatformClientV2.BatchDownloadJobSubmission() # BatchDownloadJobSubmission | Job submission criteria
+
+try:
+    # Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+    api_response = api_instance.post_recording_batchrequests(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostRecordingBatchrequestsRequest->post_recording_batchrequests: %s\n" % e)

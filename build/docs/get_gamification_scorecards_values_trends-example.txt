@@ -1,0 +1,22 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetGamificationScorecardsValuesTrendsRequest()
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+filter_type = 'filter_type_example' # str | Filter type for the query request. If not set, then the request is for the requesting user. (optional)
+reference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
+
+try:
+    # Values trends of the requesting user or group
+    api_response = api_instance.get_gamification_scorecards_values_trends(start_workday, end_workday, filter_type=filter_type, reference_workday=reference_workday, time_zone=time_zone)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetGamificationScorecardsValuesTrendsRequest->get_gamification_scorecards_values_trends: %s\n" % e)

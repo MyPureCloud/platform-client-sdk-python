@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+language_code = 'en-US' # str | Language code, format: iso2-LOCALE
+import_id = 'import_id_example' # str | Import ID
+
+try:
+    # Get import operation report
+    api_response = api_instance.get_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest->get_knowledge_knowledgebase_language_documents_import: %s\n" % e)

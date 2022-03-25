@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetQualityFormsSurveysBulkRequest()
+id = ['id_example'] # list[str] | A comma-delimited list of valid survey form ids
+
+try:
+    # Retrieve a list of survey forms by their ids
+    api_response = api_instance.get_quality_forms_surveys_bulk(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetQualityFormsSurveysBulkRequest->get_quality_forms_surveys_bulk: %s\n" % e)

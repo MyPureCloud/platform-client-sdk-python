@@ -1,0 +1,21 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetWorkforcemanagementBusinessunitWeekSchedulesRequest()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
+include_only_published = true # bool | includeOnlyPublished (optional)
+expand = 'expand_example' # str | expand (optional)
+
+try:
+    # Get the list of week schedules for the specified week
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, include_only_published=include_only_published, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetWorkforcemanagementBusinessunitWeekSchedulesRequest->get_workforcemanagement_businessunit_week_schedules: %s\n" % e)

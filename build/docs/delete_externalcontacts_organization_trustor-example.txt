@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteExternalcontactsOrganizationTrustorRequest()
+external_organization_id = 'external_organization_id_example' # str | External Organization ID
+
+try:
+    # Unlink the Trustor for this External Organization
+    api_instance.delete_externalcontacts_organization_trustor(external_organization_id)
+except ApiException as e:
+    print("Exception when calling DeleteExternalcontactsOrganizationTrustorRequest->delete_externalcontacts_organization_trustor: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutOutboundCallanalysisresponsesetRequest()
+call_analysis_set_id = 'call_analysis_set_id_example' # str | Call Analysis Response Set ID
+body = PureCloudPlatformClientV2.ResponseSet() # ResponseSet | ResponseSet
+
+try:
+    # Update a dialer call analysis response set.
+    api_response = api_instance.put_outbound_callanalysisresponseset(call_analysis_set_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutOutboundCallanalysisresponsesetRequest->put_outbound_callanalysisresponseset: %s\n" % e)

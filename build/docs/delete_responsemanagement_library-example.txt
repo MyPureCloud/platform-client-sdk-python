@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteResponsemanagementLibraryRequest()
+library_id = 'library_id_example' # str | Library ID
+
+try:
+    # Delete an existing response library.
+    api_instance.delete_responsemanagement_library(library_id)
+except ApiException as e:
+    print("Exception when calling DeleteResponsemanagementLibraryRequest->delete_responsemanagement_library: %s\n" % e)

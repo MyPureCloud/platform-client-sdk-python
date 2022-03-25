@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutUserRoutingskillsBulkRequest()
+user_id = 'user_id_example' # str | User ID
+body = [PureCloudPlatformClientV2.UserRoutingSkillPost()] # list[UserRoutingSkillPost] | Skill
+
+try:
+    # Replace all routing skills assigned to a user
+    api_response = api_instance.put_user_routingskills_bulk(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutUserRoutingskillsBulkRequest->put_user_routingskills_bulk: %s\n" % e)

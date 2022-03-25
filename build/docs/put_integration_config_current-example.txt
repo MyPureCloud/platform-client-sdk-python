@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutIntegrationConfigCurrentRequest()
+integration_id = 'integration_id_example' # str | Integration Id
+body = PureCloudPlatformClientV2.IntegrationConfiguration() # IntegrationConfiguration | Integration Configuration (optional)
+
+try:
+    # Update integration configuration.
+    api_response = api_instance.put_integration_config_current(integration_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutIntegrationConfigCurrentRequest->put_integration_config_current: %s\n" % e)

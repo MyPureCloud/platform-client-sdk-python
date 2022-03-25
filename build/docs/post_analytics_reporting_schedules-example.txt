@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostAnalyticsReportingSchedulesRequest()
+body = PureCloudPlatformClientV2.ReportSchedule() # ReportSchedule | ReportSchedule
+
+try:
+    # Create a scheduled report job
+    api_response = api_instance.post_analytics_reporting_schedules(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostAnalyticsReportingSchedulesRequest->post_analytics_reporting_schedules: %s\n" % e)

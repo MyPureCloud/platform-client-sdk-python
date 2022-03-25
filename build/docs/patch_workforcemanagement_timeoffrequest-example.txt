@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchWorkforcemanagementTimeoffrequestRequest()
+time_off_request_id = 'time_off_request_id_example' # str | Time Off Request Id
+body = PureCloudPlatformClientV2.AgentTimeOffRequestPatch() # AgentTimeOffRequestPatch | body (optional)
+
+try:
+    # Update a time off request for the current user
+    api_response = api_instance.patch_workforcemanagement_timeoffrequest(time_off_request_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchWorkforcemanagementTimeoffrequestRequest->patch_workforcemanagement_timeoffrequest: %s\n" % e)

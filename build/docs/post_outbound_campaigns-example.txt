@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostOutboundCampaignsRequest()
+body = PureCloudPlatformClientV2.Campaign() # Campaign | Campaign
+
+try:
+    # Create a campaign.
+    api_response = api_instance.post_outbound_campaigns(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostOutboundCampaignsRequest->post_outbound_campaigns: %s\n" % e)

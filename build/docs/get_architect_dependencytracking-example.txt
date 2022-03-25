@@ -1,0 +1,25 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetArchitectDependencytrackingRequest()
+name = 'name_example' # str | Object name to search for
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+object_type = ['object_type_example'] # list[str] | Object type(s) to search for (optional)
+consumed_resources = true # bool | Include resources each result item consumes (optional)
+consuming_resources = true # bool | Include resources that consume each result item (optional)
+consumed_resource_type = ['consumed_resource_type_example'] # list[str] | Types of consumed resources to return, if consumed resources are requested (optional)
+consuming_resource_type = ['consuming_resource_type_example'] # list[str] | Types of consuming resources to return, if consuming resources are requested (optional)
+
+try:
+    # Get Dependency Tracking objects that have a given display name
+    api_response = api_instance.get_architect_dependencytracking(name, page_number=page_number, page_size=page_size, object_type=object_type, consumed_resources=consumed_resources, consuming_resources=consuming_resources, consumed_resource_type=consumed_resource_type, consuming_resource_type=consuming_resource_type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetArchitectDependencytrackingRequest->get_architect_dependencytracking: %s\n" % e)

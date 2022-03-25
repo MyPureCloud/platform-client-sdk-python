@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutExternalcontactsOrganizationsSchemaRequest()
+schema_id = 'schema_id_example' # str | Schema ID
+body = PureCloudPlatformClientV2.DataSchema() # DataSchema | Data Schema
+
+try:
+    # Update a schema
+    api_response = api_instance.put_externalcontacts_organizations_schema(schema_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutExternalcontactsOrganizationsSchemaRequest->put_externalcontacts_organizations_schema: %s\n" % e)

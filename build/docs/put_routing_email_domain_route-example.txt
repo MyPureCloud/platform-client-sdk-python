@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutRoutingEmailDomainRouteRequest()
+domain_name = 'domain_name_example' # str | email domain
+route_id = 'route_id_example' # str | route ID
+body = PureCloudPlatformClientV2.InboundRoute() # InboundRoute | Route
+
+try:
+    # Update a route
+    api_response = api_instance.put_routing_email_domain_route(domain_name, route_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutRoutingEmailDomainRouteRequest->put_routing_email_domain_route: %s\n" % e)

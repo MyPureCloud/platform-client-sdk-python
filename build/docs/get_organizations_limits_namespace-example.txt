@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetOrganizationsLimitsNamespaceRequest()
+namespace_name = 'namespace_name_example' # str | The namespace to fetch limits for
+
+try:
+    # Get the effective limits in a namespace for an organization
+    api_response = api_instance.get_organizations_limits_namespace(namespace_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetOrganizationsLimitsNamespaceRequest->get_organizations_limits_namespace: %s\n" % e)

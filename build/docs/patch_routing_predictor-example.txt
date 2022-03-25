@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchRoutingPredictorRequest()
+predictor_id = 'predictor_id_example' # str | Predictor ID
+body = PureCloudPlatformClientV2.PatchPredictorRequest() # PatchPredictorRequest |  (optional)
+
+try:
+    # Update single predictor.
+    api_response = api_instance.patch_routing_predictor(predictor_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchRoutingPredictorRequest->patch_routing_predictor: %s\n" % e)

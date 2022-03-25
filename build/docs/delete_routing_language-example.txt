@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteRoutingLanguageRequest()
+language_id = 'language_id_example' # str | Language ID
+
+try:
+    # Delete Language
+    api_instance.delete_routing_language(language_id)
+except ApiException as e:
+    print("Exception when calling DeleteRoutingLanguageRequest->delete_routing_language: %s\n" % e)

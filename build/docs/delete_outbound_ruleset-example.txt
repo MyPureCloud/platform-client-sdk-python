@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteOutboundRulesetRequest()
+rule_set_id = 'rule_set_id_example' # str | Rule Set ID
+
+try:
+    # Delete a Rule Set.
+    api_instance.delete_outbound_ruleset(rule_set_id)
+except ApiException as e:
+    print("Exception when calling DeleteOutboundRulesetRequest->delete_outbound_ruleset: %s\n" % e)

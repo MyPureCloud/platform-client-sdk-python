@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetContentmanagementWorkspaceRequest()
+workspace_id = 'workspace_id_example' # str | Workspace ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+
+try:
+    # Get a workspace.
+    api_response = api_instance.get_contentmanagement_workspace(workspace_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetContentmanagementWorkspaceRequest->get_contentmanagement_workspace: %s\n" % e)

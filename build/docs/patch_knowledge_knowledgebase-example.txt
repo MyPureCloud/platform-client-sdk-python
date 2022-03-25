@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchKnowledgeKnowledgebaseRequest()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.KnowledgeBase() # KnowledgeBase | 
+
+try:
+    # Update knowledge base
+    api_response = api_instance.patch_knowledge_knowledgebase(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchKnowledgeKnowledgebaseRequest->patch_knowledge_knowledgebase: %s\n" % e)

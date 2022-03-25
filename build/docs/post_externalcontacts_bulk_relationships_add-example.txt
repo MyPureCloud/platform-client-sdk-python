@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostExternalcontactsBulkRelationshipsAddRequest()
+body = PureCloudPlatformClientV2.BulkRelationshipsRequest() # BulkRelationshipsRequest | Relationships
+
+try:
+    # Bulk add relationships
+    api_response = api_instance.post_externalcontacts_bulk_relationships_add(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostExternalcontactsBulkRelationshipsAddRequest->post_externalcontacts_bulk_relationships_add: %s\n" % e)

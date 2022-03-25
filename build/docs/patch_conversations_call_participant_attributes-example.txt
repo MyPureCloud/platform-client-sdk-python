@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchConversationsCallParticipantAttributesRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes | Participant attributes
+
+try:
+    # Update the attributes on a conversation participant.
+    api_instance.patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
+except ApiException as e:
+    print("Exception when calling PatchConversationsCallParticipantAttributesRequest->patch_conversations_call_participant_attributes: %s\n" % e)

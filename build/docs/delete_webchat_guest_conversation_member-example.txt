@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Guest Chat JWT
+.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# .configuration.api_key_prefix['Authorization'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = .DeleteWebchatGuestConversationMemberRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+member_id = 'member_id_example' # str | memberId
+
+try:
+    # Remove a member from a chat conversation
+    api_instance.delete_webchat_guest_conversation_member(conversation_id, member_id)
+except ApiException as e:
+    print("Exception when calling DeleteWebchatGuestConversationMemberRequest->delete_webchat_guest_conversation_member: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostUserGreetingsRequest()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.Greeting() # Greeting | The Greeting to create
+
+try:
+    # Creates a Greeting for a User
+    api_response = api_instance.post_user_greetings(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostUserGreetingsRequest->post_user_greetings: %s\n" % e)

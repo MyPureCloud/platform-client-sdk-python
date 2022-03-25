@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutUsersPresencesBulkRequest()
+body = [PureCloudPlatformClientV2.UserPresence()] # list[UserPresence] | List of User presences
+
+try:
+    # Update bulk user Presences
+    api_response = api_instance.put_users_presences_bulk(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutUsersPresencesBulkRequest->put_users_presences_bulk: %s\n" % e)

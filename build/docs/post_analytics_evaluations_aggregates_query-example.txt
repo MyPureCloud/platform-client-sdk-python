@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostAnalyticsEvaluationsAggregatesQueryRequest()
+body = PureCloudPlatformClientV2.EvaluationAggregationQuery() # EvaluationAggregationQuery | query
+
+try:
+    # Query for evaluation aggregates
+    api_response = api_instance.post_analytics_evaluations_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostAnalyticsEvaluationsAggregatesQueryRequest->post_analytics_evaluations_aggregates_query: %s\n" % e)

@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteLearningModuleRequest()
+module_id = 'module_id_example' # str | The ID of the learning module
+
+try:
+    # Delete a learning module
+    api_instance.delete_learning_module(module_id)
+except ApiException as e:
+    print("Exception when calling DeleteLearningModuleRequest->delete_learning_module: %s\n" % e)

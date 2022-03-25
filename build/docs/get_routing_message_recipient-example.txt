@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetRoutingMessageRecipientRequest()
+recipient_id = 'recipient_id_example' # str | Recipient ID
+
+try:
+    # Get a recipient
+    api_response = api_instance.get_routing_message_recipient(recipient_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetRoutingMessageRecipientRequest->get_routing_message_recipient: %s\n" % e)

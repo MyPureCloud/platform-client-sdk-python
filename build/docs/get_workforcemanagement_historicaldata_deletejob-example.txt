@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetWorkforcemanagementHistoricaldataDeletejobRequest()
+
+try:
+    # Retrieves delete job status for historical data imports of the organization
+    api_response = api_instance.get_workforcemanagement_historicaldata_deletejob()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetWorkforcemanagementHistoricaldataDeletejobRequest->get_workforcemanagement_historicaldata_deletejob: %s\n" % e)

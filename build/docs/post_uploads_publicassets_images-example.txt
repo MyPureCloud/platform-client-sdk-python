@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostUploadsPublicassetsImagesRequest()
+body = PureCloudPlatformClientV2.UploadUrlRequest() # UploadUrlRequest | query
+
+try:
+    # Creates presigned url for uploading a public asset image
+    api_response = api_instance.post_uploads_publicassets_images(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostUploadsPublicassetsImagesRequest->post_uploads_publicassets_images: %s\n" % e)

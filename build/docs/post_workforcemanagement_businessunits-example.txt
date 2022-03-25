@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostWorkforcemanagementBusinessunitsRequest()
+body = PureCloudPlatformClientV2.CreateBusinessUnitRequest() # CreateBusinessUnitRequest | body (optional)
+
+try:
+    # Add a new business unit
+    api_response = api_instance.post_workforcemanagement_businessunits(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostWorkforcemanagementBusinessunitsRequest->post_workforcemanagement_businessunits: %s\n" % e)

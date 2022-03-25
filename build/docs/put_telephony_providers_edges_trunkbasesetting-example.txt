@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutTelephonyProvidersEdgesTrunkbasesettingRequest()
+trunk_base_settings_id = 'trunk_base_settings_id_example' # str | Trunk Base ID
+body = PureCloudPlatformClientV2.TrunkBase() # TrunkBase | Trunk base settings
+
+try:
+    # Update a Trunk Base Settings object by ID
+    api_response = api_instance.put_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutTelephonyProvidersEdgesTrunkbasesettingRequest->put_telephony_providers_edges_trunkbasesetting: %s\n" % e)

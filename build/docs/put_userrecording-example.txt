@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutUserrecordingRequest()
+recording_id = 'recording_id_example' # str | User Recording ID
+body = PureCloudPlatformClientV2.UserRecording() # UserRecording | UserRecording
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+
+try:
+    # Update a user recording.
+    api_response = api_instance.put_userrecording(recording_id, body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutUserrecordingRequest->put_userrecording: %s\n" % e)

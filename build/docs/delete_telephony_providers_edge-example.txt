@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteTelephonyProvidersEdgeRequest()
+edge_id = 'edge_id_example' # str | Edge ID
+
+try:
+    # Delete a edge.
+    api_instance.delete_telephony_providers_edge(edge_id)
+except ApiException as e:
+    print("Exception when calling DeleteTelephonyProvidersEdgeRequest->delete_telephony_providers_edge: %s\n" % e)

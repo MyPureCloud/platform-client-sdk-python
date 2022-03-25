@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutExternalcontactsConversationRequest()
+body = PureCloudPlatformClientV2.ConversationAssociation() # ConversationAssociation | ConversationAssociation
+conversation_id = 'conversation_id_example' # str | Conversation ID
+
+try:
+    # Associate/disassociate an external contact with a conversation
+    api_instance.put_externalcontacts_conversation(body, conversation_id)
+except ApiException as e:
+    print("Exception when calling PutExternalcontactsConversationRequest->put_externalcontacts_conversation: %s\n" % e)

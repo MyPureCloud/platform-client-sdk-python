@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetIntegrationsSpeechTtsEngineVoicesRequest()
+engine_id = 'engine_id_example' # str | The engine ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get a list of voices for a TTS engine
+    api_response = api_instance.get_integrations_speech_tts_engine_voices(engine_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetIntegrationsSpeechTtsEngineVoicesRequest->get_integrations_speech_tts_engine_voices: %s\n" % e)

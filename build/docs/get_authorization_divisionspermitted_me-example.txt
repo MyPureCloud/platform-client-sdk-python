@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetAuthorizationDivisionspermittedMeRequest()
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+name = 'name_example' # str | Search term to filter by division name (optional)
+
+try:
+    # Returns which divisions the current user has the given permission in.
+    api_response = api_instance.get_authorization_divisionspermitted_me(permission, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetAuthorizationDivisionspermittedMeRequest->get_authorization_divisionspermitted_me: %s\n" % e)

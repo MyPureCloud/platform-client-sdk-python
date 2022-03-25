@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetWorkforcemanagementBusinessunitSchedulingRunRequest()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+run_id = 'run_id_example' # str | The ID of the schedule run
+
+try:
+    # Get a scheduling run
+    api_response = api_instance.get_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetWorkforcemanagementBusinessunitSchedulingRunRequest->get_workforcemanagement_businessunit_scheduling_run: %s\n" % e)

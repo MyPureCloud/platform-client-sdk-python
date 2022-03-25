@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetOutboundDnclistImportstatusRequest()
+dnc_list_id = 'dnc_list_id_example' # str | DncList ID
+
+try:
+    # Get dialer dncList import status.
+    api_response = api_instance.get_outbound_dnclist_importstatus(dnc_list_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetOutboundDnclistImportstatusRequest->get_outbound_dnclist_importstatus: %s\n" % e)

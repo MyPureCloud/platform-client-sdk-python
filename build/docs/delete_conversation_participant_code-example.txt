@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteConversationParticipantCodeRequest()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+add_communication_code = 'add_communication_code_example' # str | addCommunicationCode
+
+try:
+    # Delete a code used to add a communication to this participant
+    api_instance.delete_conversation_participant_code(conversation_id, participant_id, add_communication_code)
+except ApiException as e:
+    print("Exception when calling DeleteConversationParticipantCodeRequest->delete_conversation_participant_code: %s\n" % e)

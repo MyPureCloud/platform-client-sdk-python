@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutLearningModuleRequest()
+module_id = 'module_id_example' # str | The ID of the learning module
+body = PureCloudPlatformClientV2.LearningModuleRequest() # LearningModuleRequest | The learning module to be updated
+
+try:
+    # Update a learning module
+    api_response = api_instance.put_learning_module(module_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutLearningModuleRequest->put_learning_module: %s\n" % e)

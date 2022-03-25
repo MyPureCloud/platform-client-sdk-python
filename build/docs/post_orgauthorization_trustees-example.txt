@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostOrgauthorizationTrusteesRequest()
+body = PureCloudPlatformClientV2.TrustCreate() # TrustCreate | Trust
+
+try:
+    # Create a new organization authorization trust. This is required to grant other organizations access to your organization.
+    api_response = api_instance.post_orgauthorization_trustees(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostOrgauthorizationTrusteesRequest->post_orgauthorization_trustees: %s\n" % e)

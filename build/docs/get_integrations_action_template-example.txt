@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetIntegrationsActionTemplateRequest()
+action_id = 'action_id_example' # str | actionId
+file_name = 'file_name_example' # str | Name of template file to be retrieved for this action.
+
+try:
+    # Retrieve text of templates for an action based on filename.
+    api_response = api_instance.get_integrations_action_template(action_id, file_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetIntegrationsActionTemplateRequest->get_integrations_action_template: %s\n" % e)

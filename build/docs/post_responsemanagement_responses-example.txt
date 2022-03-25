@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostResponsemanagementResponsesRequest()
+body = PureCloudPlatformClientV2.Response() # Response | Response
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+
+try:
+    # Create a response.
+    api_response = api_instance.post_responsemanagement_responses(body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostResponsemanagementResponsesRequest->post_responsemanagement_responses: %s\n" % e)

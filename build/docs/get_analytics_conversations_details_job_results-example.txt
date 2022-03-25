@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetAnalyticsConversationsDetailsJobResultsRequest()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
+page_size = 56 # int | The desired maximum number of results (optional)
+
+try:
+    # Fetch a page of results for an async query
+    api_response = api_instance.get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetAnalyticsConversationsDetailsJobResultsRequest->get_analytics_conversations_details_job_results: %s\n" % e)

@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteRoutingUserUtilizationRequest()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Delete the user's max utilization settings and revert to the organization-wide default.
+    api_instance.delete_routing_user_utilization(user_id)
+except ApiException as e:
+    print("Exception when calling DeleteRoutingUserUtilizationRequest->delete_routing_user_utilization: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetOauthClientUsageQueryResultRequest()
+execution_id = 'execution_id_example' # str | ID of the query execution
+client_id = 'client_id_example' # str | Client ID
+
+try:
+    # Get the results of a usage query
+    api_response = api_instance.get_oauth_client_usage_query_result(execution_id, client_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetOauthClientUsageQueryResultRequest->get_oauth_client_usage_query_result: %s\n" % e)

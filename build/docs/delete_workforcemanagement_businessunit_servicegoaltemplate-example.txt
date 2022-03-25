@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+service_goal_template_id = 'service_goal_template_id_example' # str | The ID of the service goal template to delete
+
+try:
+    # Delete a service goal template
+    api_instance.delete_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
+except ApiException as e:
+    print("Exception when calling DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest->delete_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e)

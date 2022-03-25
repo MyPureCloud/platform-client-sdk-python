@@ -1,0 +1,22 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | The ID of the forecast
+week_number = 56 # int | The week number to fetch (for multi-week forecasts) (optional)
+force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+
+try:
+    # Get the result of a short term forecast calculation
+    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_data(business_unit_id, week_date_id, forecast_id, week_number=week_number, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest->get_workforcemanagement_businessunit_week_shorttermforecast_data: %s\n" % e)

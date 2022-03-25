@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostLanguageunderstandingMinerUploadsRequest()
+miner_id = 'miner_id_example' # str | Miner ID
+body = PureCloudPlatformClientV2.Empty() # Empty | query
+
+try:
+    # Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+    api_response = api_instance.post_languageunderstanding_miner_uploads(miner_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostLanguageunderstandingMinerUploadsRequest->post_languageunderstanding_miner_uploads: %s\n" % e)

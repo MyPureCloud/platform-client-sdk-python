@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostOutboundConversationDncRequest()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+
+try:
+    # Add phone numbers to a Dialer DNC list.
+    api_instance.post_outbound_conversation_dnc(conversation_id)
+except ApiException as e:
+    print("Exception when calling PostOutboundConversationDncRequest->post_outbound_conversation_dnc: %s\n" % e)

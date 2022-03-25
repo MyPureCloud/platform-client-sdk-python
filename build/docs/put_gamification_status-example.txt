@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutGamificationStatusRequest()
+status = PureCloudPlatformClientV2.GamificationStatus() # GamificationStatus | Gamification status
+
+try:
+    # Update gamification activation status
+    api_response = api_instance.put_gamification_status(status)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutGamificationStatusRequest->put_gamification_status: %s\n" % e)

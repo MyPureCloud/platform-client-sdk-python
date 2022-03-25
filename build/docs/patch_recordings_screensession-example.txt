@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchRecordingsScreensessionRequest()
+recording_session_id = 'recording_session_id_example' # str | Screen recording session ID
+body = PureCloudPlatformClientV2.ScreenRecordingSessionRequest() # ScreenRecordingSessionRequest |  (optional)
+
+try:
+    # Update a screen recording session
+    api_instance.patch_recordings_screensession(recording_session_id, body=body)
+except ApiException as e:
+    print("Exception when calling PatchRecordingsScreensessionRequest->patch_recordings_screensession: %s\n" % e)

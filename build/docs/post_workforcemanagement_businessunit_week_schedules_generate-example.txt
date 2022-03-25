@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.BuGenerateScheduleRequest() # BuGenerateScheduleRequest | body
+
+try:
+    # Generate a schedule
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedules_generate(business_unit_id, week_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest->post_workforcemanagement_businessunit_week_schedules_generate: %s\n" % e)

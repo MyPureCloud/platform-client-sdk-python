@@ -1,0 +1,24 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetScriptsPublishedRequest()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand (optional)
+name = 'name_example' # str | Name filter (optional)
+feature = 'feature_example' # str | Feature filter (optional)
+flow_id = 'flow_id_example' # str | Secure flow id filter (optional)
+script_data_version = 'script_data_version_example' # str | Advanced usage - controls the data version of the script (optional)
+
+try:
+    # Get the published scripts.
+    api_response = api_instance.get_scripts_published(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetScriptsPublishedRequest->get_scripts_published: %s\n" % e)

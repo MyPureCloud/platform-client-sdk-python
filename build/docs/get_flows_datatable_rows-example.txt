@@ -1,0 +1,21 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetFlowsDatatableRowsRequest()
+datatable_id = 'datatable_id_example' # str | id of datatable
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+showbrief = true # bool | If true returns just the key value of the row (optional) (default to true)
+
+try:
+    # Returns the rows for the datatable with the given id
+    api_response = api_instance.get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetFlowsDatatableRowsRequest->get_flows_datatable_rows: %s\n" % e)

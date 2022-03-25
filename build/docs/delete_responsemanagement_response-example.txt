@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteResponsemanagementResponseRequest()
+response_id = 'response_id_example' # str | Response ID
+
+try:
+    # Delete an existing response.
+    api_instance.delete_responsemanagement_response(response_id)
+except ApiException as e:
+    print("Exception when calling DeleteResponsemanagementResponseRequest->delete_responsemanagement_response: %s\n" % e)

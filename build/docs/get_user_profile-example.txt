@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetUserProfileRequest()
+user_id = 'user_id_example' # str | userId
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for a user instead of their default. (optional)
+
+try:
+    # Get user profile
+    api_response = api_instance.get_user_profile(user_id, expand=expand, integration_presence_source=integration_presence_source)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetUserProfileRequest->get_user_profile: %s\n" % e)

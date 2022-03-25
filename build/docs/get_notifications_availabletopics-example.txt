@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetNotificationsAvailabletopicsRequest()
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+include_preview = true # bool | Whether or not to include Preview topics (optional) (default to true)
+
+try:
+    # Get available notification topics.
+    api_response = api_instance.get_notifications_availabletopics(expand=expand, include_preview=include_preview)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetNotificationsAvailabletopicsRequest->get_notifications_availabletopics: %s\n" % e)

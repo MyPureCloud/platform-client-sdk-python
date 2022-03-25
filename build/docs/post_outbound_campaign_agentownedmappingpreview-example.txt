@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostOutboundCampaignAgentownedmappingpreviewRequest()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+
+try:
+    # Initiate request for a preview of how agents will be mapped to this campaign's contact list.
+    api_response = api_instance.post_outbound_campaign_agentownedmappingpreview(campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostOutboundCampaignAgentownedmappingpreviewRequest->post_outbound_campaign_agentownedmappingpreview: %s\n" % e)

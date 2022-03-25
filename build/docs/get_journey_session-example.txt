@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetJourneySessionRequest()
+session_id = 'session_id_example' # str | ID of the session.
+
+try:
+    # Retrieve a single session.
+    api_response = api_instance.get_journey_session(session_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetJourneySessionRequest->get_journey_session: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostTextbotsBotflowsSessionsRequest()
+launch_request = PureCloudPlatformClientV2.TextBotFlowLaunchRequest() # TextBotFlowLaunchRequest | 
+
+try:
+    # Create an execution instance of a bot flow definition.
+    api_response = api_instance.post_textbots_botflows_sessions(launch_request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostTextbotsBotflowsSessionsRequest->post_textbots_botflows_sessions: %s\n" % e)

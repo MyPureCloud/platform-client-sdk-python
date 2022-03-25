@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetExternalcontactsOrganizationRequest()
+external_organization_id = 'external_organization_id_example' # str | External Organization ID
+expand = 'expand_example' # str | which fields, if any, to expand (externalDataSources) (optional)
+include_trustors = true # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
+
+try:
+    # Fetch an external organization
+    api_response = api_instance.get_externalcontacts_organization(external_organization_id, expand=expand, include_trustors=include_trustors)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetExternalcontactsOrganizationRequest->get_externalcontacts_organization: %s\n" % e)

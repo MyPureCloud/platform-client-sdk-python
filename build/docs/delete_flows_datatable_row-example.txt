@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteFlowsDatatableRowRequest()
+datatable_id = 'datatable_id_example' # str | id of datatable
+row_id = 'row_id_example' # str | the key for the row
+
+try:
+    # Delete a row entry
+    api_instance.delete_flows_datatable_row(datatable_id, row_id)
+except ApiException as e:
+    print("Exception when calling DeleteFlowsDatatableRowRequest->delete_flows_datatable_row: %s\n" % e)

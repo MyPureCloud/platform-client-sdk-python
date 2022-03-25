@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteOutboundAttemptlimitRequest()
+attempt_limits_id = 'attempt_limits_id_example' # str | Attempt limits ID
+
+try:
+    # Delete attempt limits
+    api_instance.delete_outbound_attemptlimit(attempt_limits_id)
+except ApiException as e:
+    print("Exception when calling DeleteOutboundAttemptlimitRequest->delete_outbound_attemptlimit: %s\n" % e)

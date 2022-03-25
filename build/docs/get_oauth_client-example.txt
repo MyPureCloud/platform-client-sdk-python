@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetOauthClientRequest()
+client_id = 'client_id_example' # str | Client ID
+
+try:
+    # Get OAuth Client
+    api_response = api_instance.get_oauth_client(client_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetOauthClientRequest->get_oauth_client: %s\n" % e)

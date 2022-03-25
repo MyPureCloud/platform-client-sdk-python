@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetExternalcontactsContactNoteRequest()
+contact_id = 'contact_id_example' # str | ExternalContact Id
+note_id = 'note_id_example' # str | Note Id
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
+
+try:
+    # Fetch a note for an external contact
+    api_response = api_instance.get_externalcontacts_contact_note(contact_id, note_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetExternalcontactsContactNoteRequest->get_externalcontacts_contact_note: %s\n" % e)

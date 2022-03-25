@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutOutboundContactlistContactRequest()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+contact_id = 'contact_id_example' # str | Contact ID
+body = PureCloudPlatformClientV2.DialerContact() # DialerContact | Contact
+
+try:
+    # Update a contact.
+    api_response = api_instance.put_outbound_contactlist_contact(contact_list_id, contact_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutOutboundContactlistContactRequest->put_outbound_contactlist_contact: %s\n" % e)

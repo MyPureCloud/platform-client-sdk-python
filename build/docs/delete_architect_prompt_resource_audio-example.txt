@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteArchitectPromptResourceAudioRequest()
+prompt_id = 'prompt_id_example' # str | Prompt ID
+language_code = 'language_code_example' # str | Language
+
+try:
+    # Delete specified user prompt resource audio
+    api_instance.delete_architect_prompt_resource_audio(prompt_id, language_code)
+except ApiException as e:
+    print("Exception when calling DeleteArchitectPromptResourceAudioRequest->delete_architect_prompt_resource_audio: %s\n" % e)

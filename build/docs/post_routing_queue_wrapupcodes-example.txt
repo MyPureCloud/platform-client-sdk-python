@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostRoutingQueueWrapupcodesRequest()
+queue_id = 'queue_id_example' # str | Queue ID
+body = [PureCloudPlatformClientV2.WrapUpCodeReference()] # list[WrapUpCodeReference] | List of wrapup codes
+
+try:
+    # Add up to 100 wrap-up codes to a queue
+    api_response = api_instance.post_routing_queue_wrapupcodes(queue_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostRoutingQueueWrapupcodesRequest->post_routing_queue_wrapupcodes: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetTelephonyProvidersEdgesSiteNumberplanRequest()
+site_id = 'site_id_example' # str | Site ID
+number_plan_id = 'number_plan_id_example' # str | Number Plan ID
+
+try:
+    # Get a Number Plan by ID.
+    api_response = api_instance.get_telephony_providers_edges_site_numberplan(site_id, number_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetTelephonyProvidersEdgesSiteNumberplanRequest->get_telephony_providers_edges_site_numberplan: %s\n" % e)

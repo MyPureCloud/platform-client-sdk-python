@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchConversationsCobrowsesessionRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
+
+try:
+    # Update a conversation by disconnecting all of the participants
+    api_response = api_instance.patch_conversations_cobrowsesession(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchConversationsCobrowsesessionRequest->patch_conversations_cobrowsesession: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostExternalcontactsBulkNotesRequest()
+body = PureCloudPlatformClientV2.BulkIdsRequest() # BulkIdsRequest | Note ids
+
+try:
+    # Bulk fetch notes
+    api_response = api_instance.post_externalcontacts_bulk_notes(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostExternalcontactsBulkNotesRequest->post_externalcontacts_bulk_notes: %s\n" % e)

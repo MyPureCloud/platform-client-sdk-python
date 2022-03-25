@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutRecordingJobRequest()
+job_id = 'job_id_example' # str | jobId
+body = PureCloudPlatformClientV2.ExecuteRecordingJobsQuery() # ExecuteRecordingJobsQuery | query
+
+try:
+    # Execute the recording bulk job.
+    api_response = api_instance.put_recording_job(job_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutRecordingJobRequest->put_recording_job: %s\n" % e)

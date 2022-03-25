@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetExternalcontactsScanNotesRequest()
+limit = 56 # int | The number of notes per page; must be between 10 and 200, default is 100) (optional)
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+
+try:
+    # Scan for notes using paging
+    api_response = api_instance.get_externalcontacts_scan_notes(limit=limit, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetExternalcontactsScanNotesRequest->get_externalcontacts_scan_notes: %s\n" % e)

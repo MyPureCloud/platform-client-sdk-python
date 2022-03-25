@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetDateRequest()
+
+try:
+    # Get the current system date/time
+    api_response = api_instance.get_date()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetDateRequest->get_date: %s\n" % e)

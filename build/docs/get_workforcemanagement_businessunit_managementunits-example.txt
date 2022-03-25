@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetWorkforcemanagementBusinessunitManagementunitsRequest()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+feature = 'feature_example' # str |  (optional)
+division_id = 'division_id_example' # str |  (optional)
+
+try:
+    # Get all authorized management units in the business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_managementunits(business_unit_id, feature=feature, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetWorkforcemanagementBusinessunitManagementunitsRequest->get_workforcemanagement_businessunit_managementunits: %s\n" % e)

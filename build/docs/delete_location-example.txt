@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteLocationRequest()
+location_id = 'location_id_example' # str | Location ID
+
+try:
+    # Delete a location
+    api_instance.delete_location(location_id)
+except ApiException as e:
+    print("Exception when calling DeleteLocationRequest->delete_location: %s\n" % e)

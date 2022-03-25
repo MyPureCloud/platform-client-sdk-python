@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchJourneyActiontargetRequest()
+action_target_id = 'action_target_id_example' # str | ID of the action target.
+body = PureCloudPlatformClientV2.PatchActionTarget() # PatchActionTarget |  (optional)
+
+try:
+    # Update a single action target.
+    api_response = api_instance.patch_journey_actiontarget(action_target_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchJourneyActiontargetRequest->patch_journey_actiontarget: %s\n" % e)

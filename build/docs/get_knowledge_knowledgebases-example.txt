@@ -1,0 +1,26 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetKnowledgeKnowledgebasesRequest()
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+name = 'name_example' # str | Filter by Name. (optional)
+core_language = 'core_language_example' # str | Filter by core language. (optional)
+published = true # bool | Filter by published status. (optional)
+sort_by = 'sort_by_example' # str | Sort by. (optional)
+sort_order = 'sort_order_example' # str | Sort Order. (optional)
+
+try:
+    # Get knowledge bases
+    api_response = api_instance.get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetKnowledgeKnowledgebasesRequest->get_knowledge_knowledgebases: %s\n" % e)

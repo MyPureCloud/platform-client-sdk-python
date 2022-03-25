@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchQualityFormsSurveyRequest()
+form_id = 'form_id_example' # str | Form ID
+body = PureCloudPlatformClientV2.SurveyForm() # SurveyForm | Survey form
+
+try:
+    # Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+    api_response = api_instance.patch_quality_forms_survey(form_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchQualityFormsSurveyRequest->patch_quality_forms_survey: %s\n" % e)

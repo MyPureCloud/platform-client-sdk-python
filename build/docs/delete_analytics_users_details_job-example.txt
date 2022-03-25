@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteAnalyticsUsersDetailsJobRequest()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request
+    api_instance.delete_analytics_users_details_job(job_id)
+except ApiException as e:
+    print("Exception when calling DeleteAnalyticsUsersDetailsJobRequest->delete_analytics_users_details_job: %s\n" % e)

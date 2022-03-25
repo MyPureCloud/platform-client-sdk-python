@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteQualityFormRequest()
+form_id = 'form_id_example' # str | Form ID
+
+try:
+    # Delete an evaluation form.
+    api_instance.delete_quality_form(form_id)
+except ApiException as e:
+    print("Exception when calling DeleteQualityFormRequest->delete_quality_form: %s\n" % e)

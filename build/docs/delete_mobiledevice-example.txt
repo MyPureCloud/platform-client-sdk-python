@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteMobiledeviceRequest()
+device_id = 'device_id_example' # str | Device ID
+
+try:
+    # Delete device
+    api_instance.delete_mobiledevice(device_id)
+except ApiException as e:
+    print("Exception when calling DeleteMobiledeviceRequest->delete_mobiledevice: %s\n" % e)

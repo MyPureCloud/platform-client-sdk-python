@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostOrgauthorizationTrusteesDefaultRequest()
+assign_default_role = true # bool | Assign Admin role to default pairing with Customer Care (optional)
+auto_expire = true # bool | Automatically expire pairing after 30 days (optional)
+
+try:
+    # Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+    api_response = api_instance.post_orgauthorization_trustees_default(assign_default_role=assign_default_role, auto_expire=auto_expire)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostOrgauthorizationTrusteesDefaultRequest->post_orgauthorization_trustees_default: %s\n" % e)

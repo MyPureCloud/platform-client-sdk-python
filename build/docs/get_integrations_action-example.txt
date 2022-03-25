@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetIntegrationsActionRequest()
+action_id = 'action_id_example' # str | actionId
+expand = 'expand_example' # str | Indicates a field in the response which should be expanded. (optional)
+include_config = false # bool | Return config in response. (optional) (default to false)
+
+try:
+    # Retrieves a single Action matching id.
+    api_response = api_instance.get_integrations_action(action_id, expand=expand, include_config=include_config)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetIntegrationsActionRequest->get_integrations_action: %s\n" % e)

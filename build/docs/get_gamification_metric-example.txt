@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetGamificationMetricRequest()
+metric_id = 'metric_id_example' # str | metric Id
+workday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+performance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
+
+try:
+    # Gamified metric by id
+    api_response = api_instance.get_gamification_metric(metric_id, workday=workday, performance_profile_id=performance_profile_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetGamificationMetricRequest->get_gamification_metric: %s\n" % e)

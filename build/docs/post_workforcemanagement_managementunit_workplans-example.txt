@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostWorkforcemanagementManagementunitWorkplansRequest()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+body = PureCloudPlatformClientV2.CreateWorkPlan() # CreateWorkPlan | body (optional)
+validation_mode = 'validation_mode_example' # str | Allows to create work plan even if the validation result is invalid (optional)
+
+try:
+    # Create a new work plan
+    api_response = api_instance.post_workforcemanagement_managementunit_workplans(management_unit_id, body=body, validation_mode=validation_mode)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostWorkforcemanagementManagementunitWorkplansRequest->post_workforcemanagement_managementunit_workplans: %s\n" % e)

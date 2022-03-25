@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetFlowsOutcomeRequest()
+flow_outcome_id = 'flow_outcome_id_example' # str | flow outcome ID
+
+try:
+    # Get a flow outcome
+    api_response = api_instance.get_flows_outcome(flow_outcome_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetFlowsOutcomeRequest->get_flows_outcome: %s\n" % e)

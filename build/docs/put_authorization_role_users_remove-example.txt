@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutAuthorizationRoleUsersRemoveRequest()
+role_id = 'role_id_example' # str | Role ID
+body = [PureCloudPlatformClientV2.list[str]()] # list[str] | List of user IDs
+
+try:
+    # Removes the users from the role
+    api_response = api_instance.put_authorization_role_users_remove(role_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutAuthorizationRoleUsersRemoveRequest->put_authorization_role_users_remove: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostRoutingQueuesRequest()
+body = PureCloudPlatformClientV2.CreateQueueRequest() # CreateQueueRequest | Queue
+
+try:
+    # Create a queue
+    api_response = api_instance.post_routing_queues(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostRoutingQueuesRequest->post_routing_queues: %s\n" % e)

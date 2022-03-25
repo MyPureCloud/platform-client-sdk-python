@@ -1,0 +1,16 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostArchitectDependencytrackingBuildRequest()
+
+try:
+    # Rebuild Dependency Tracking data for an organization
+    api_instance.post_architect_dependencytracking_build()
+except ApiException as e:
+    print("Exception when calling PostArchitectDependencytrackingBuildRequest->post_architect_dependencytracking_build: %s\n" % e)

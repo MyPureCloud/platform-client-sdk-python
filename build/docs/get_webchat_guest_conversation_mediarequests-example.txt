@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Guest Chat JWT
+.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# .configuration.api_key_prefix['Authorization'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = .GetWebchatGuestConversationMediarequestsRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+
+try:
+    # Get all media requests to the guest in the conversation
+    api_response = api_instance.get_webchat_guest_conversation_mediarequests(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetWebchatGuestConversationMediarequestsRequest->get_webchat_guest_conversation_mediarequests: %s\n" % e)

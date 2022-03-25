@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+service_goal_template_id = 'service_goal_template_id_example' # str | The ID of a service goal template to update
+body = PureCloudPlatformClientV2.UpdateServiceGoalTemplate() # UpdateServiceGoalTemplate | body (optional)
+
+try:
+    # Updates a service goal template
+    api_response = api_instance.patch_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest->patch_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e)

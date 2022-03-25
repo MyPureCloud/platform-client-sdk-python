@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetTelephonyProvidersEdgesPhonesTemplateRequest()
+phone_base_settings_id = 'phone_base_settings_id_example' # str | The id of a Phone Base Settings object upon which to base this Phone
+
+try:
+    # Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
+    api_response = api_instance.get_telephony_providers_edges_phones_template(phone_base_settings_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetTelephonyProvidersEdgesPhonesTemplateRequest->get_telephony_providers_edges_phones_template: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchLearningAssignmentRequest()
+assignment_id = 'assignment_id_example' # str | The ID of Learning Assignment
+body = PureCloudPlatformClientV2.LearningAssignmentUpdate() # LearningAssignmentUpdate | The Learning Assignment to be updated (optional)
+
+try:
+    # Update Learning Assignment
+    api_response = api_instance.patch_learning_assignment(assignment_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchLearningAssignmentRequest->patch_learning_assignment: %s\n" % e)

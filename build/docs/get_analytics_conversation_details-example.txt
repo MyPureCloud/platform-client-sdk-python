@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetAnalyticsConversationDetailsRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+
+try:
+    # Get a conversation by id
+    api_response = api_instance.get_analytics_conversation_details(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetAnalyticsConversationDetailsRequest->get_analytics_conversation_details: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchWorkforcemanagementBusinessunitSchedulingRunRequest()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+run_id = 'run_id_example' # str | The ID of the schedule run
+body = PureCloudPlatformClientV2.PatchBuScheduleRunRequest() # PatchBuScheduleRunRequest | body (optional)
+
+try:
+    # Mark a schedule run as applied
+    api_instance.patch_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id, body=body)
+except ApiException as e:
+    print("Exception when calling PatchWorkforcemanagementBusinessunitSchedulingRunRequest->patch_workforcemanagement_businessunit_scheduling_run: %s\n" % e)

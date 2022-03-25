@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutGamificationProfileMetricRequest()
+profile_id = 'profile_id_example' # str | Performance Profile Id
+metric_id = 'metric_id_example' # str | Metric Id
+body = PureCloudPlatformClientV2.CreateMetric() # CreateMetric | Metric
+
+try:
+    # Updates a metric in performance profile
+    api_response = api_instance.put_gamification_profile_metric(profile_id, metric_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutGamificationProfileMetricRequest->put_gamification_profile_metric: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutConversationsMessagingThreadingtimelineRequest()
+body = PureCloudPlatformClientV2.ConversationThreadingWindow() # ConversationThreadingWindow | ConversationThreadingWindowRequest
+
+try:
+    # Update conversation threading window timeline for each messaging type
+    api_response = api_instance.put_conversations_messaging_threadingtimeline(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutConversationsMessagingThreadingtimelineRequest->put_conversations_messaging_threadingtimeline: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostLanguageunderstandingDomainVersionPublishRequest()
+domain_id = 'domain_id_example' # str | ID of the NLU domain.
+domain_version_id = 'domain_version_id_example' # str | ID of the NLU domain version.
+
+try:
+    # Publish the draft NLU Domain Version.
+    api_response = api_instance.post_languageunderstanding_domain_version_publish(domain_id, domain_version_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostLanguageunderstandingDomainVersionPublishRequest->post_languageunderstanding_domain_version_publish: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetExternalcontactsReversewhitepageslookupRequest()
+lookup_val = 'lookup_val_example' # str | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
+expand = ['expand_example'] # list[str] | which field, if any, to expand (optional)
+
+try:
+    # Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+    api_response = api_instance.get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetExternalcontactsReversewhitepageslookupRequest->get_externalcontacts_reversewhitepageslookup: %s\n" % e)

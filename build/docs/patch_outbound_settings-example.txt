@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchOutboundSettingsRequest()
+body = PureCloudPlatformClientV2.OutboundSettings() # OutboundSettings | outboundSettings
+
+try:
+    # Update the outbound settings for this organization
+    api_instance.patch_outbound_settings(body)
+except ApiException as e:
+    print("Exception when calling PatchOutboundSettingsRequest->patch_outbound_settings: %s\n" % e)

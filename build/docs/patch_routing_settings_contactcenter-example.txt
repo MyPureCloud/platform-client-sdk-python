@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchRoutingSettingsContactcenterRequest()
+body = PureCloudPlatformClientV2.ContactCenterSettings() # ContactCenterSettings | Contact Center Settings
+
+try:
+    # Update Contact Center Settings
+    api_instance.patch_routing_settings_contactcenter(body)
+except ApiException as e:
+    print("Exception when calling PatchRoutingSettingsContactcenterRequest->patch_routing_settings_contactcenter: %s\n" % e)

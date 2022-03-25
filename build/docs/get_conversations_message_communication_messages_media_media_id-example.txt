@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetConversationsMessageCommunicationMessagesMediaMediaIdRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+media_id = 'media_id_example' # str | mediaId
+
+try:
+    # Get media
+    api_response = api_instance.get_conversations_message_communication_messages_media_media_id(conversation_id, communication_id, media_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetConversationsMessageCommunicationMessagesMediaMediaIdRequest->get_conversations_message_communication_messages_media_media_id: %s\n" % e)

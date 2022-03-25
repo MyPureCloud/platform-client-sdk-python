@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetTelephonyProvidersEdgeDiagnosticNslookupRequest()
+edge_id = 'edge_id_example' # str | Edge Id
+
+try:
+    # Get networking-related information from an Edge for a target IP or host.
+    api_response = api_instance.get_telephony_providers_edge_diagnostic_nslookup(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetTelephonyProvidersEdgeDiagnosticNslookupRequest->get_telephony_providers_edge_diagnostic_nslookup: %s\n" % e)

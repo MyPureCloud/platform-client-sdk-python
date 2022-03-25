@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetWorkforcemanagementManagementunitTimeofflimitsRequest()
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+
+try:
+    # Gets a list of time off limit objects under management unit.
+    api_response = api_instance.get_workforcemanagement_managementunit_timeofflimits(management_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetWorkforcemanagementManagementunitTimeofflimitsRequest->get_workforcemanagement_managementunit_timeofflimits: %s\n" % e)

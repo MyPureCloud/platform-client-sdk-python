@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutOutboundSchedulesCampaignRequest()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+body = PureCloudPlatformClientV2.CampaignSchedule() # CampaignSchedule | CampaignSchedule
+
+try:
+    # Update a new campaign schedule.
+    api_response = api_instance.put_outbound_schedules_campaign(campaign_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutOutboundSchedulesCampaignRequest->put_outbound_schedules_campaign: %s\n" % e)

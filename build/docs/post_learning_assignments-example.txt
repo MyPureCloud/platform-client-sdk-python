@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostLearningAssignmentsRequest()
+body = PureCloudPlatformClientV2.LearningAssignmentCreate() # LearningAssignmentCreate | The Learning Assignment to be created (optional)
+
+try:
+    # Create Learning Assignment
+    api_response = api_instance.post_learning_assignments(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostLearningAssignmentsRequest->post_learning_assignments: %s\n" % e)

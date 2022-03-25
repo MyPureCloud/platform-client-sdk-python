@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteArchitectSystempromptResourceRequest()
+prompt_id = 'prompt_id_example' # str | Prompt ID
+language_code = 'language_code_example' # str | Language
+
+try:
+    # Delete a system prompt resource override.
+    api_instance.delete_architect_systemprompt_resource(prompt_id, language_code)
+except ApiException as e:
+    print("Exception when calling DeleteArchitectSystempromptResourceRequest->delete_architect_systemprompt_resource: %s\n" % e)

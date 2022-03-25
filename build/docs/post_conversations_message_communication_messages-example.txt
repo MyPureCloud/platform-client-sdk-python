@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostConversationsMessageCommunicationMessagesRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.AdditionalMessage() # AdditionalMessage | Message
+
+try:
+    # Send message
+    api_response = api_instance.post_conversations_message_communication_messages(conversation_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostConversationsMessageCommunicationMessagesRequest->post_conversations_message_communication_messages: %s\n" % e)

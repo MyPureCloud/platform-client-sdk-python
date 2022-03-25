@@ -1,0 +1,15 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = .PostWebchatGuestConversationsRequest()
+body = PureCloudPlatformClientV2.CreateWebChatConversationRequest() # CreateWebChatConversationRequest | CreateConversationRequest
+
+try:
+    # Create an ACD chat conversation from an external customer.
+    api_response = api_instance.post_webchat_guest_conversations(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostWebchatGuestConversationsRequest->post_webchat_guest_conversations: %s\n" % e)

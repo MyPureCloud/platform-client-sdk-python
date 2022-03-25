@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutRoutingUtilizationRequest()
+body = PureCloudPlatformClientV2.Utilization() # Utilization | utilization
+
+try:
+    # Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+    api_response = api_instance.put_routing_utilization(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutRoutingUtilizationRequest->put_routing_utilization: %s\n" % e)

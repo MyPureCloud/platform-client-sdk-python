@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetLanguageunderstandingMinerDraftsRequest()
+miner_id = 'miner_id_example' # str | Miner ID
+
+try:
+    # Retrieve the list of drafts created.
+    api_response = api_instance.get_languageunderstanding_miner_drafts(miner_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetLanguageunderstandingMinerDraftsRequest->get_languageunderstanding_miner_drafts: %s\n" % e)

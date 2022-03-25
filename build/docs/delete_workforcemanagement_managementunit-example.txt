@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteWorkforcemanagementManagementunitRequest()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+
+try:
+    # Delete management unit
+    api_instance.delete_workforcemanagement_managementunit(management_unit_id)
+except ApiException as e:
+    print("Exception when calling DeleteWorkforcemanagementManagementunitRequest->delete_workforcemanagement_managementunit: %s\n" % e)

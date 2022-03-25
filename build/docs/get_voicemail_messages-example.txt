@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetVoicemailMessagesRequest()
+ids = 'ids_example' # str | An optional comma separated list of VoicemailMessage ids (optional)
+expand = ['expand_example'] # list[str] | If the caller is a known user, which fields, if any, to expand (optional)
+
+try:
+    # List voicemail messages
+    api_response = api_instance.get_voicemail_messages(ids=ids, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetVoicemailMessagesRequest->get_voicemail_messages: %s\n" % e)

@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostWorkforcemanagementManagementunitWeekShifttradesRequest()
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.AddShiftTradeRequest() # AddShiftTradeRequest | body
+
+try:
+    # Adds a shift trade
+    api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostWorkforcemanagementManagementunitWeekShifttradesRequest->post_workforcemanagement_managementunit_week_shifttrades: %s\n" % e)

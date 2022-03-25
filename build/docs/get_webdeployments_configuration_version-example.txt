@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetWebdeploymentsConfigurationVersionRequest()
+configuration_id = 'configuration_id_example' # str | The configuration version ID
+version_id = 'version_id_example' # str | The version of the configuration to get
+
+try:
+    # Get a configuration version
+    api_response = api_instance.get_webdeployments_configuration_version(configuration_id, version_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetWebdeploymentsConfigurationVersionRequest->get_webdeployments_configuration_version: %s\n" % e)

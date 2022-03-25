@@ -1,0 +1,24 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetContentmanagementDocumentAuditsRequest()
+document_id = 'document_id_example' # str | Document ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+transaction_filter = 'transaction_filter_example' # str | Transaction filter (optional)
+level = 'USER' # str | level (optional) (default to USER)
+sort_by = 'sort_by_example' # str | Sort by (optional)
+sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+
+try:
+    # Get a list of audits for a document.
+    api_response = api_instance.get_contentmanagement_document_audits(document_id, page_size=page_size, page_number=page_number, transaction_filter=transaction_filter, level=level, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetContentmanagementDocumentAuditsRequest->get_contentmanagement_document_audits: %s\n" % e)

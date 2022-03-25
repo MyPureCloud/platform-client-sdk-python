@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostWorkforcemanagementHistoricaldataValidateRequest()
+body = PureCloudPlatformClientV2.ValidationServiceRequest() # ValidationServiceRequest | body (optional)
+
+try:
+    # Trigger validation process for historical import
+    api_instance.post_workforcemanagement_historicaldata_validate(body=body)
+except ApiException as e:
+    print("Exception when calling PostWorkforcemanagementHistoricaldataValidateRequest->post_workforcemanagement_historicaldata_validate: %s\n" % e)

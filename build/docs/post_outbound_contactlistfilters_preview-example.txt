@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostOutboundContactlistfiltersPreviewRequest()
+body = PureCloudPlatformClientV2.ContactListFilter() # ContactListFilter | ContactListFilter
+
+try:
+    # Get a preview of the output of a contact list filter
+    api_response = api_instance.post_outbound_contactlistfilters_preview(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostOutboundContactlistfiltersPreviewRequest->post_outbound_contactlistfilters_preview: %s\n" % e)

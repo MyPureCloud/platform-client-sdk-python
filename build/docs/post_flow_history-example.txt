@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostFlowHistoryRequest()
+flow_id = 'flow_id_example' # str | Flow ID
+
+try:
+    # Generate flow history
+    api_response = api_instance.post_flow_history(flow_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostFlowHistoryRequest->post_flow_history: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostContentmanagementQueryRequest()
+body = PureCloudPlatformClientV2.QueryRequest() # QueryRequest | Allows for a filtered query returning facet information
+expand = 'expand_example' # str | Expand some document fields (optional)
+
+try:
+    # Query content
+    api_response = api_instance.post_contentmanagement_query(body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostContentmanagementQueryRequest->post_contentmanagement_query: %s\n" % e)

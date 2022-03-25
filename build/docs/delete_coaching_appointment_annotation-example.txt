@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteCoachingAppointmentAnnotationRequest()
+appointment_id = 'appointment_id_example' # str | The ID of the coaching appointment.
+annotation_id = 'annotation_id_example' # str | The ID of the annotation.
+
+try:
+    # Delete an existing annotation
+    api_instance.delete_coaching_appointment_annotation(appointment_id, annotation_id)
+except ApiException as e:
+    print("Exception when calling DeleteCoachingAppointmentAnnotationRequest->delete_coaching_appointment_annotation: %s\n" % e)

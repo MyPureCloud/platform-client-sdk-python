@@ -1,0 +1,21 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetPresencedefinitionsRequest()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+deleted = 'false' # str | Deleted query can be TRUE, FALSE or ALL (optional) (default to false)
+locale_code = 'locale_code_example' # str | The locale code to fetch for each presence definition. Use ALL to fetch everything. (optional)
+
+try:
+    # Get an Organization's list of Presence Definitions
+    api_response = api_instance.get_presencedefinitions(page_number=page_number, page_size=page_size, deleted=deleted, locale_code=locale_code)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetPresencedefinitionsRequest->get_presencedefinitions: %s\n" % e)

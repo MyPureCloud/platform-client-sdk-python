@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetOrgauthorizationTrustorCloneduserRequest()
+trustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id
+trustee_user_id = 'trustee_user_id_example' # str | Trustee User Id
+
+try:
+    # Get Cloned User
+    api_response = api_instance.get_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetOrgauthorizationTrustorCloneduserRequest->get_orgauthorization_trustor_cloneduser: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetRoutingAssessmentsJobsRequest()
+division_id = ['division_id_example'] # list[str] | Division ID(s) to filter assessment jobs by. (optional)
+
+try:
+    # Retrieve all benefit assessment jobs.
+    api_response = api_instance.get_routing_assessments_jobs(division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetRoutingAssessmentsJobsRequest->get_routing_assessments_jobs: %s\n" % e)

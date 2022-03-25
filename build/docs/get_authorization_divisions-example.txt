@@ -1,0 +1,26 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetAuthorizationDivisionsRequest()
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+object_count = false # bool | Include the count of objects contained in the division (optional) (default to false)
+id = ['id_example'] # list[str] | Optionally request specific divisions by their IDs (optional)
+name = 'name_example' # str | Search term to filter by division name (optional)
+
+try:
+    # Retrieve a list of all divisions defined for the organization
+    api_response = api_instance.get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, id=id, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetAuthorizationDivisionsRequest->get_authorization_divisions: %s\n" % e)

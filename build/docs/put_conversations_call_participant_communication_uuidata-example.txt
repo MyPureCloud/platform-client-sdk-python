@@ -1,0 +1,21 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutConversationsCallParticipantCommunicationUuidataRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.SetUuiDataRequest() # SetUuiDataRequest | UUIData Request
+
+try:
+    # Set uuiData to be sent on future commands.
+    api_response = api_instance.put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PutConversationsCallParticipantCommunicationUuidataRequest->put_conversations_call_participant_communication_uuidata: %s\n" % e)

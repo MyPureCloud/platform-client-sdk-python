@@ -1,0 +1,26 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetOrphanrecordingMediaRequest()
+orphan_id = 'orphan_id_example' # str | Orphan ID
+format_id = 'WEBM' # str | The desired media format. (optional) (default to WEBM)
+email_format_id = 'EML' # str | The desired media format when downloading an email recording. (optional) (default to EML)
+chat_format_id = 'ZIP' # str | The desired media format when downloading a chat recording. (optional) (default to ZIP)
+message_format_id = 'ZIP' # str | The desired media format when downloading a message recording. (optional) (default to ZIP)
+download = false # bool | requesting a download format of the recording (optional) (default to false)
+file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
+locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
+media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 (optional)
+
+try:
+    # Gets the media of a single orphan recording
+    api_response = api_instance.get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetOrphanrecordingMediaRequest->get_orphanrecording_media: %s\n" % e)

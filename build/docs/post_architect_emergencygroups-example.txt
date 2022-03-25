@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostArchitectEmergencygroupsRequest()
+body = PureCloudPlatformClientV2.EmergencyGroup() # EmergencyGroup | 
+
+try:
+    # Creates a new emergency group
+    api_response = api_instance.post_architect_emergencygroups(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostArchitectEmergencygroupsRequest->post_architect_emergencygroups: %s\n" % e)

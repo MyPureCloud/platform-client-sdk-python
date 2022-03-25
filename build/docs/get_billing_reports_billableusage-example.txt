@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetBillingReportsBillableusageRequest()
+start_date = '2013-10-20T19:20:30+01:00' # datetime | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+end_date = '2013-10-20T19:20:30+01:00' # datetime | The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+try:
+    # Get a report of the billable license usages
+    api_response = api_instance.get_billing_reports_billableusage(start_date, end_date)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetBillingReportsBillableusageRequest->get_billing_reports_billableusage: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetScimResourcetypeRequest()
+resource_type = 'resource_type_example' # str | The type of resource. Returned with GET /api/v2/scim/resourcetypes.
+
+try:
+    # Get a resource type
+    api_response = api_instance.get_scim_resourcetype(resource_type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetScimResourcetypeRequest->get_scim_resourcetype: %s\n" % e)

@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostConversationRecordingAnnotationsRequest()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+recording_id = 'recording_id_example' # str | Recording ID
+body = PureCloudPlatformClientV2.Annotation() # Annotation | annotation
+
+try:
+    # Create annotation
+    api_response = api_instance.post_conversation_recording_annotations(conversation_id, recording_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostConversationRecordingAnnotationsRequest->post_conversation_recording_annotations: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteOutboundContactlistContactsRequest()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+contact_ids = ['contact_ids_example'] # list[str] | ContactIds to delete.
+
+try:
+    # Delete contacts from a contact list.
+    api_instance.delete_outbound_contactlist_contacts(contact_list_id, contact_ids)
+except ApiException as e:
+    print("Exception when calling DeleteOutboundContactlistContactsRequest->delete_outbound_contactlist_contacts: %s\n" % e)

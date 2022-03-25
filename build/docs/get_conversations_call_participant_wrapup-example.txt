@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetConversationsCallParticipantWrapupRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
+
+try:
+    # Get the wrap-up for this conversation participant. 
+    api_response = api_instance.get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetConversationsCallParticipantWrapupRequest->get_conversations_call_participant_wrapup: %s\n" % e)

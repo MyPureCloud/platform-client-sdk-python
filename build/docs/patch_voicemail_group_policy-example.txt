@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PatchVoicemailGroupPolicyRequest()
+group_id = 'group_id_example' # str | Group ID
+body = PureCloudPlatformClientV2.VoicemailGroupPolicy() # VoicemailGroupPolicy | The group's voicemail policy
+
+try:
+    # Update a group's voicemail policy
+    api_response = api_instance.patch_voicemail_group_policy(group_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PatchVoicemailGroupPolicyRequest->patch_voicemail_group_policy: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetJourneySessionOutcomescoresRequest()
+session_id = 'session_id_example' # str | ID of the session.
+
+try:
+    # Retrieve latest outcome score associated with a session for all outcomes.
+    api_response = api_instance.get_journey_session_outcomescores(session_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetJourneySessionOutcomescoresRequest->get_journey_session_outcomescores: %s\n" % e)

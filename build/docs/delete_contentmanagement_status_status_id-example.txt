@@ -1,0 +1,17 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .DeleteContentmanagementStatusStatusIdRequest()
+status_id = 'status_id_example' # str | Status ID
+
+try:
+    # Cancel the command for this status
+    api_instance.delete_contentmanagement_status_status_id(status_id)
+except ApiException as e:
+    print("Exception when calling DeleteContentmanagementStatusStatusIdRequest->delete_contentmanagement_status_status_id: %s\n" % e)

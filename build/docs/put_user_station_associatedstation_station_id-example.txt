@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PutUserStationAssociatedstationStationIdRequest()
+user_id = 'user_id_example' # str | User ID
+station_id = 'station_id_example' # str | stationId
+
+try:
+    # Set associated station
+    api_instance.put_user_station_associatedstation_station_id(user_id, station_id)
+except ApiException as e:
+    print("Exception when calling PutUserStationAssociatedstationStationIdRequest->put_user_station_associatedstation_station_id: %s\n" % e)

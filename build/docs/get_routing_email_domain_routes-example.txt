@@ -1,0 +1,21 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetRoutingEmailDomainRoutesRequest()
+domain_name = 'domain_name_example' # str | email domain
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+pattern = 'pattern_example' # str | Filter routes by the route's pattern property (optional)
+
+try:
+    # Get routes
+    api_response = api_instance.get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetRoutingEmailDomainRoutesRequest->get_routing_email_domain_routes: %s\n" % e)

@@ -1,0 +1,18 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostLanguageunderstandingDomainsRequest()
+body = PureCloudPlatformClientV2.NluDomain() # NluDomain | The NLU Domain to create.
+
+try:
+    # Create an NLU Domain.
+    api_response = api_instance.post_languageunderstanding_domains(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostLanguageunderstandingDomainsRequest->post_languageunderstanding_domains: %s\n" % e)

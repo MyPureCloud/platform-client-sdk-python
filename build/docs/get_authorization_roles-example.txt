@@ -1,0 +1,28 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetAuthorizationRolesRequest()
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+name = 'name_example' # str |  (optional)
+permission = ['permission_example'] # list[str] |  (optional)
+default_role_id = ['default_role_id_example'] # list[str] |  (optional)
+user_count = true # bool |  (optional) (default to true)
+id = ['id_example'] # list[str] | id (optional)
+
+try:
+    # Retrieve a list of all roles defined for the organization
+    api_response = api_instance.get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count, id=id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetAuthorizationRolesRequest->get_authorization_roles: %s\n" % e)

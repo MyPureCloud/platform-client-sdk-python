@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .PostConversationsEmailInboundmessagesRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.InboundMessageRequest() # InboundMessageRequest | Send external email reply
+
+try:
+    # Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+    api_response = api_instance.post_conversations_email_inboundmessages(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostConversationsEmailInboundmessagesRequest->post_conversations_email_inboundmessages: %s\n" % e)

@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetConversationsEmailMessageRequest()
+conversation_id = 'conversation_id_example' # str | conversationId
+message_id = 'message_id_example' # str | messageId
+
+try:
+    # Get conversation message
+    api_response = api_instance.get_conversations_email_message(conversation_id, message_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetConversationsEmailMessageRequest->get_conversations_email_message: %s\n" % e)

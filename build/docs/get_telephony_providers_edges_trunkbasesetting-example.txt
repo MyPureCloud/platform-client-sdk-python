@@ -1,0 +1,19 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetTelephonyProvidersEdgesTrunkbasesettingRequest()
+trunk_base_settings_id = 'trunk_base_settings_id_example' # str | Trunk Base ID
+ignore_hidden = true # bool | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
+
+try:
+    # Get a Trunk Base Settings object by ID
+    api_response = api_instance.get_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, ignore_hidden=ignore_hidden)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetTelephonyProvidersEdgesTrunkbasesettingRequest->get_telephony_providers_edges_trunkbasesetting: %s\n" % e)

@@ -1,0 +1,20 @@
+import time
+import 
+from .rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = .GetFlowVersionConfigurationRequest()
+flow_id = 'flow_id_example' # str | Flow ID
+version_id = 'version_id_example' # str | Version ID
+deleted = 'deleted_example' # str | Deleted flows (optional)
+
+try:
+    # Create flow version configuration
+    api_response = api_instance.get_flow_version_configuration(flow_id, version_id, deleted=deleted)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GetFlowVersionConfigurationRequest->get_flow_version_configuration: %s\n" % e)
