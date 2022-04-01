@@ -180,7 +180,7 @@ class ViewFilter(object):
             'journey_url_not_contains_all_conditions': 'list[str]',
             'flow_milestone_ids': 'list[str]',
             'is_assessment_passed': 'bool',
-            'conversation_initiator': 'str',
+            'conversation_initiators': 'list[str]',
             'has_customer_participated': 'bool',
             'is_acd_interaction': 'bool'
         }
@@ -326,7 +326,7 @@ class ViewFilter(object):
             'journey_url_not_contains_all_conditions': 'journeyUrlNotContainsAllConditions',
             'flow_milestone_ids': 'flowMilestoneIds',
             'is_assessment_passed': 'isAssessmentPassed',
-            'conversation_initiator': 'conversationInitiator',
+            'conversation_initiators': 'conversationInitiators',
             'has_customer_participated': 'hasCustomerParticipated',
             'is_acd_interaction': 'isAcdInteraction'
         }
@@ -471,7 +471,7 @@ class ViewFilter(object):
         self._journey_url_not_contains_all_conditions = None
         self._flow_milestone_ids = None
         self._is_assessment_passed = None
-        self._conversation_initiator = None
+        self._conversation_initiators = None
         self._has_customer_participated = None
         self._is_acd_interaction = None
 
@@ -3696,27 +3696,27 @@ class ViewFilter(object):
         self._is_assessment_passed = is_assessment_passed
 
     @property
-    def conversation_initiator(self):
+    def conversation_initiators(self):
         """
-        Gets the conversation_initiator of this ViewFilter.
-        Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation
+        Gets the conversation_initiators of this ViewFilter.
+        The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation
 
-        :return: The conversation_initiator of this ViewFilter.
-        :rtype: str
+        :return: The conversation_initiators of this ViewFilter.
+        :rtype: list[str]
         """
-        return self._conversation_initiator
+        return self._conversation_initiators
 
-    @conversation_initiator.setter
-    def conversation_initiator(self, conversation_initiator):
+    @conversation_initiators.setter
+    def conversation_initiators(self, conversation_initiators):
         """
-        Sets the conversation_initiator of this ViewFilter.
-        Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation
+        Sets the conversation_initiators of this ViewFilter.
+        The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation
 
-        :param conversation_initiator: The conversation_initiator of this ViewFilter.
-        :type: str
+        :param conversation_initiators: The conversation_initiators of this ViewFilter.
+        :type: list[str]
         """
         
-        self._conversation_initiator = conversation_initiator
+        self._conversation_initiators = conversation_initiators
 
     @property
     def has_customer_participated(self):

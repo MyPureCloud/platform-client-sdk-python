@@ -47,6 +47,7 @@ class EncryptionKey(object):
             'user': 'User',
             'local_encryption_configuration': 'LocalEncryptionConfiguration',
             'key_configuration_type': 'str',
+            'kms_key_arn': 'str',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class EncryptionKey(object):
             'user': 'user',
             'local_encryption_configuration': 'localEncryptionConfiguration',
             'key_configuration_type': 'keyConfigurationType',
+            'kms_key_arn': 'kmsKeyArn',
             'self_uri': 'selfUri'
         }
 
@@ -68,6 +70,7 @@ class EncryptionKey(object):
         self._user = None
         self._local_encryption_configuration = None
         self._key_configuration_type = None
+        self._kms_key_arn = None
         self._self_uri = None
 
     @property
@@ -234,6 +237,29 @@ class EncryptionKey(object):
             self._key_configuration_type = "outdated_sdk_version"
         else:
             self._key_configuration_type = key_configuration_type
+
+    @property
+    def kms_key_arn(self):
+        """
+        Gets the kms_key_arn of this EncryptionKey.
+        ARN of internal key to be wrapped by AWS KMS Symmetric key
+
+        :return: The kms_key_arn of this EncryptionKey.
+        :rtype: str
+        """
+        return self._kms_key_arn
+
+    @kms_key_arn.setter
+    def kms_key_arn(self, kms_key_arn):
+        """
+        Sets the kms_key_arn of this EncryptionKey.
+        ARN of internal key to be wrapped by AWS KMS Symmetric key
+
+        :param kms_key_arn: The kms_key_arn of this EncryptionKey.
+        :type: str
+        """
+        
+        self._kms_key_arn = kms_key_arn
 
     @property
     def self_uri(self):

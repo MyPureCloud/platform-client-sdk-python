@@ -41,16 +41,19 @@ class WebMessagingEvent(object):
         """
         self.swagger_types = {
             'event_type': 'str',
-            'co_browse': 'WebMessagingEventCoBrowse'
+            'co_browse': 'WebMessagingEventCoBrowse',
+            'presence': 'WebMessagingEventPresence'
         }
 
         self.attribute_map = {
             'event_type': 'eventType',
-            'co_browse': 'coBrowse'
+            'co_browse': 'coBrowse',
+            'presence': 'presence'
         }
 
         self._event_type = None
         self._co_browse = None
+        self._presence = None
 
     @property
     def event_type(self):
@@ -72,7 +75,7 @@ class WebMessagingEvent(object):
         :param event_type: The event_type of this WebMessagingEvent.
         :type: str
         """
-        allowed_values = ["CoBrowse"]
+        allowed_values = ["CoBrowse", "Presence"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
@@ -101,6 +104,29 @@ class WebMessagingEvent(object):
         """
         
         self._co_browse = co_browse
+
+    @property
+    def presence(self):
+        """
+        Gets the presence of this WebMessagingEvent.
+        Presence event.
+
+        :return: The presence of this WebMessagingEvent.
+        :rtype: WebMessagingEventPresence
+        """
+        return self._presence
+
+    @presence.setter
+    def presence(self, presence):
+        """
+        Sets the presence of this WebMessagingEvent.
+        Presence event.
+
+        :param presence: The presence of this WebMessagingEvent.
+        :type: WebMessagingEventPresence
+        """
+        
+        self._presence = presence
 
     def to_dict(self):
         """

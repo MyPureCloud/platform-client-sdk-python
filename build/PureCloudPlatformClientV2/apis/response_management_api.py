@@ -202,6 +202,84 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_responsemanagement_responseasset(self, response_asset_id, **kwargs):
+        """
+        Delete response asset
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_responsemanagement_responseasset(response_asset_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str response_asset_id: Asset Id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['response_asset_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_responsemanagement_responseasset" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'response_asset_id' is set
+        if ('response_asset_id' not in params) or (params['response_asset_id'] is None):
+            raise ValueError("Missing the required parameter `response_asset_id` when calling `delete_responsemanagement_responseasset`")
+
+
+        resource_path = '/api/v2/responsemanagement/responseassets/{responseAssetId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'response_asset_id' in params:
+            path_params['responseAssetId'] = params['response_asset_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_responsemanagement_libraries(self, **kwargs):
         """
         Gets a list of existing response libraries.
@@ -442,6 +520,162 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_responsemanagement_responseasset(self, response_asset_id, **kwargs):
+        """
+        Get response asset information
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_responsemanagement_responseasset(response_asset_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str response_asset_id: Asset Id (required)
+        :return: ResponseAsset
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['response_asset_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_responsemanagement_responseasset" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'response_asset_id' is set
+        if ('response_asset_id' not in params) or (params['response_asset_id'] is None):
+            raise ValueError("Missing the required parameter `response_asset_id` when calling `get_responsemanagement_responseasset`")
+
+
+        resource_path = '/api/v2/responsemanagement/responseassets/{responseAssetId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'response_asset_id' in params:
+            path_params['responseAssetId'] = params['response_asset_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ResponseAsset',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_responsemanagement_responseassets_status_status_id(self, status_id, **kwargs):
+        """
+        Get response asset upload status
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_responsemanagement_responseassets_status_status_id(status_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str status_id: Status Id (required)
+        :return: ResponseAssetStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['status_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_responsemanagement_responseassets_status_status_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'status_id' is set
+        if ('status_id' not in params) or (params['status_id'] is None):
+            raise ValueError("Missing the required parameter `status_id` when calling `get_responsemanagement_responseassets_status_status_id`")
+
+
+        resource_path = '/api/v2/responsemanagement/responseassets/status/{statusId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'status_id' in params:
+            path_params['statusId'] = params['status_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ResponseAssetStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_responsemanagement_responses(self, library_id, **kwargs):
         """
         Gets a list of existing responses.
@@ -603,6 +837,165 @@ class ResponseManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Library',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_responsemanagement_responseassets_search(self, body, **kwargs):
+        """
+        Search response assets
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_responsemanagement_responseassets_search(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ResponseAssetSearchRequest body: request (required)
+        :param list[str] expand: Which fields, if any, to expand
+        :return: ResponseAssetSearchResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_responsemanagement_responseassets_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_responsemanagement_responseassets_search`")
+
+
+        resource_path = '/api/v2/responsemanagement/responseassets/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ResponseAssetSearchResults',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_responsemanagement_responseassets_uploads(self, body, **kwargs):
+        """
+        Creates pre-signed url for uploading response asset
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_responsemanagement_responseassets_uploads(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreateResponseAssetRequest body: request (required)
+        :return: CreateResponseAssetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_responsemanagement_responseassets_uploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_responsemanagement_responseassets_uploads`")
+
+
+        resource_path = '/api/v2/responsemanagement/responseassets/uploads'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CreateResponseAssetResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -933,6 +1326,90 @@ class ResponseManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Response',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_responsemanagement_responseasset(self, response_asset_id, body, **kwargs):
+        """
+        Update response asset
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_responsemanagement_responseasset(response_asset_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str response_asset_id: Asset Id (required)
+        :param ResponseAssetRequest body: request (required)
+        :return: ResponseAsset
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['response_asset_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_responsemanagement_responseasset" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'response_asset_id' is set
+        if ('response_asset_id' not in params) or (params['response_asset_id'] is None):
+            raise ValueError("Missing the required parameter `response_asset_id` when calling `put_responsemanagement_responseasset`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_responsemanagement_responseasset`")
+
+
+        resource_path = '/api/v2/responsemanagement/responseassets/{responseAssetId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'response_asset_id' in params:
+            path_params['responseAssetId'] = params['response_asset_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ResponseAsset',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

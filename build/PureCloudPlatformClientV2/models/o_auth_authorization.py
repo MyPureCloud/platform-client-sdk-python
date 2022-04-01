@@ -42,35 +42,41 @@ class OAuthAuthorization(object):
         self.swagger_types = {
             'client': 'OAuthClient',
             'scope': 'list[str]',
+            'roles': 'list[str]',
             'resource_owner': 'DomainEntityRef',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'created_by': 'DomainEntityRef',
             'modified_by': 'DomainEntityRef',
             'pending': 'bool',
+            'state': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'client': 'client',
             'scope': 'scope',
+            'roles': 'roles',
             'resource_owner': 'resourceOwner',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'created_by': 'createdBy',
             'modified_by': 'modifiedBy',
             'pending': 'pending',
+            'state': 'state',
             'self_uri': 'selfUri'
         }
 
         self._client = None
         self._scope = None
+        self._roles = None
         self._resource_owner = None
         self._date_created = None
         self._date_modified = None
         self._created_by = None
         self._modified_by = None
         self._pending = None
+        self._state = None
         self._self_uri = None
 
     @property
@@ -118,6 +124,29 @@ class OAuthAuthorization(object):
         """
         
         self._scope = scope
+
+    @property
+    def roles(self):
+        """
+        Gets the roles of this OAuthAuthorization.
+
+
+        :return: The roles of this OAuthAuthorization.
+        :rtype: list[str]
+        """
+        return self._roles
+
+    @roles.setter
+    def roles(self, roles):
+        """
+        Sets the roles of this OAuthAuthorization.
+
+
+        :param roles: The roles of this OAuthAuthorization.
+        :type: list[str]
+        """
+        
+        self._roles = roles
 
     @property
     def resource_owner(self):
@@ -256,6 +285,33 @@ class OAuthAuthorization(object):
         """
         
         self._pending = pending
+
+    @property
+    def state(self):
+        """
+        Gets the state of this OAuthAuthorization.
+
+
+        :return: The state of this OAuthAuthorization.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this OAuthAuthorization.
+
+
+        :param state: The state of this OAuthAuthorization.
+        :type: str
+        """
+        allowed_values = ["Unauthorized", "Requested", "Authorized", "Revoked"]
+        if state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for state -> " + state)
+            self._state = "outdated_sdk_version"
+        else:
+            self._state = state
 
     @property
     def self_uri(self):

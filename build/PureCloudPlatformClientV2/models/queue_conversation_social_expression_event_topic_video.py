@@ -47,6 +47,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
             'audio_muted': 'bool',
             'video_muted': 'bool',
             'sharing_screen': 'bool',
+            'peer_count': 'QueueConversationSocialExpressionEventTopicObject',
             'provider': 'str',
             'script_id': 'str',
             'peer_id': 'str',
@@ -67,6 +68,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
             'audio_muted': 'audioMuted',
             'video_muted': 'videoMuted',
             'sharing_screen': 'sharingScreen',
+            'peer_count': 'peerCount',
             'provider': 'provider',
             'script_id': 'scriptId',
             'peer_id': 'peerId',
@@ -86,6 +88,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
         self._audio_muted = None
         self._video_muted = None
         self._sharing_screen = None
+        self._peer_count = None
         self._provider = None
         self._script_id = None
         self._peer_id = None
@@ -261,6 +264,29 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
         """
         
         self._sharing_screen = sharing_screen
+
+    @property
+    def peer_count(self):
+        """
+        Gets the peer_count of this QueueConversationSocialExpressionEventTopicVideo.
+        The number of peer participants from the perspective of the participant in the conference.
+
+        :return: The peer_count of this QueueConversationSocialExpressionEventTopicVideo.
+        :rtype: QueueConversationSocialExpressionEventTopicObject
+        """
+        return self._peer_count
+
+    @peer_count.setter
+    def peer_count(self, peer_count):
+        """
+        Sets the peer_count of this QueueConversationSocialExpressionEventTopicVideo.
+        The number of peer participants from the perspective of the participant in the conference.
+
+        :param peer_count: The peer_count of this QueueConversationSocialExpressionEventTopicVideo.
+        :type: QueueConversationSocialExpressionEventTopicObject
+        """
+        
+        self._peer_count = peer_count
 
     @property
     def provider(self):

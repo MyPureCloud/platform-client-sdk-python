@@ -10,7 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_oauth_client**](OAuthApi.html#delete_oauth_client) | Delete OAuth Client|
 |[**get_oauth_authorization**](OAuthApi.html#get_oauth_authorization) | Get a client that is authorized by the resource owner|
-|[**get_oauth_authorizations**](OAuthApi.html#get_oauth_authorizations) | List clients that are authorized by the resource owner|
+|[**get_oauth_authorizations**](OAuthApi.html#get_oauth_authorizations) | List clients that have been authorized, requested, or revoked by the resource owner|
 |[**get_oauth_client**](OAuthApi.html#get_oauth_client) | Get OAuth Client|
 |[**get_oauth_client_usage_query_result**](OAuthApi.html#get_oauth_client_usage_query_result) | Get the results of a usage query|
 |[**get_oauth_client_usage_summary**](OAuthApi.html#get_oauth_client_usage_summary) | Get a summary of OAuth client API usage|
@@ -75,7 +75,7 @@ void (empty response body)
 
 <a name="get_oauth_authorization"></a>
 
-## [**OAuthAuthorization**](OAuthAuthorization.html) get_oauth_authorization(client_id)
+## [**OAuthAuthorization**](OAuthAuthorization.html) get_oauth_authorization(client_id, accept_language=accept_language)
 
 
 
@@ -103,10 +103,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
 client_id = 'client_id_example' # str | The ID of client
+accept_language = 'en-us' # str | The language in which to display the client descriptions. (optional) (default to en-us)
 
 try:
     # Get a client that is authorized by the resource owner
-    api_response = api_instance.get_oauth_authorization(client_id)
+    api_response = api_instance.get_oauth_authorization(client_id, accept_language=accept_language)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OAuthApi->get_oauth_authorization: %s\n" % e)
@@ -118,6 +119,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| The ID of client |  |
+| **accept_language** | **str**| The language in which to display the client descriptions. | [optional] [default to en-us] |
 {: class="table table-striped"}
 
 ### Return type
@@ -126,11 +128,11 @@ except ApiException as e:
 
 <a name="get_oauth_authorizations"></a>
 
-## [**OAuthAuthorizationListing**](OAuthAuthorizationListing.html) get_oauth_authorizations()
+## [**OAuthAuthorizationListing**](OAuthAuthorizationListing.html) get_oauth_authorizations(accept_language=accept_language)
 
 
 
-List clients that are authorized by the resource owner
+List clients that have been authorized, requested, or revoked by the resource owner
 
 
 
@@ -153,10 +155,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
+accept_language = 'en-us' # str | The language in which to display the client descriptions. (optional) (default to en-us)
 
 try:
-    # List clients that are authorized by the resource owner
-    api_response = api_instance.get_oauth_authorizations()
+    # List clients that have been authorized, requested, or revoked by the resource owner
+    api_response = api_instance.get_oauth_authorizations(accept_language=accept_language)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OAuthApi->get_oauth_authorizations: %s\n" % e)
@@ -164,8 +167,11 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
 
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **accept_language** | **str**| The language in which to display the client descriptions. | [optional] [default to en-us] |
+{: class="table table-striped"}
 
 ### Return type
 

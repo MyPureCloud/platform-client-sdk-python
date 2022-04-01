@@ -42,18 +42,21 @@ class WebMessagingRecipient(object):
         self.swagger_types = {
             'first_name': 'str',
             'last_name': 'str',
-            'nickname': 'str'
+            'nickname': 'str',
+            'additional_ids': 'list[RecipientAdditionalIdentifier]'
         }
 
         self.attribute_map = {
             'first_name': 'firstName',
             'last_name': 'lastName',
-            'nickname': 'nickname'
+            'nickname': 'nickname',
+            'additional_ids': 'additionalIds'
         }
 
         self._first_name = None
         self._last_name = None
         self._nickname = None
+        self._additional_ids = None
 
     @property
     def first_name(self):
@@ -123,6 +126,29 @@ class WebMessagingRecipient(object):
         """
         
         self._nickname = nickname
+
+    @property
+    def additional_ids(self):
+        """
+        Gets the additional_ids of this WebMessagingRecipient.
+        List of recipient additional identifiers
+
+        :return: The additional_ids of this WebMessagingRecipient.
+        :rtype: list[RecipientAdditionalIdentifier]
+        """
+        return self._additional_ids
+
+    @additional_ids.setter
+    def additional_ids(self, additional_ids):
+        """
+        Sets the additional_ids of this WebMessagingRecipient.
+        List of recipient additional identifiers
+
+        :param additional_ids: The additional_ids of this WebMessagingRecipient.
+        :type: list[RecipientAdditionalIdentifier]
+        """
+        
+        self._additional_ids = additional_ids
 
     def to_dict(self):
         """

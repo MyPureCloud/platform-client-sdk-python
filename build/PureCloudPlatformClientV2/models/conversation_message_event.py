@@ -42,18 +42,21 @@ class ConversationMessageEvent(object):
         self.swagger_types = {
             'event_type': 'str',
             'co_browse': 'ConversationEventCoBrowse',
-            'typing': 'ConversationEventTyping'
+            'typing': 'ConversationEventTyping',
+            'presence': 'ConversationEventPresence'
         }
 
         self.attribute_map = {
             'event_type': 'eventType',
             'co_browse': 'coBrowse',
-            'typing': 'typing'
+            'typing': 'typing',
+            'presence': 'presence'
         }
 
         self._event_type = None
         self._co_browse = None
         self._typing = None
+        self._presence = None
 
     @property
     def event_type(self):
@@ -75,7 +78,7 @@ class ConversationMessageEvent(object):
         :param event_type: The event_type of this ConversationMessageEvent.
         :type: str
         """
-        allowed_values = ["CoBrowse", "Typing"]
+        allowed_values = ["CoBrowse", "Typing", "Presence", "Unknown"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
@@ -127,6 +130,29 @@ class ConversationMessageEvent(object):
         """
         
         self._typing = typing
+
+    @property
+    def presence(self):
+        """
+        Gets the presence of this ConversationMessageEvent.
+        Presence event.
+
+        :return: The presence of this ConversationMessageEvent.
+        :rtype: ConversationEventPresence
+        """
+        return self._presence
+
+    @presence.setter
+    def presence(self, presence):
+        """
+        Sets the presence of this ConversationMessageEvent.
+        Presence event.
+
+        :param presence: The presence of this ConversationMessageEvent.
+        :type: ConversationEventPresence
+        """
+        
+        self._presence = presence
 
     def to_dict(self):
         """

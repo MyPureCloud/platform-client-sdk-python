@@ -140,12 +140,13 @@ class OAuthApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str client_id: The ID of client (required)
+        :param str accept_language: The language in which to display the client descriptions.
         :return: OAuthAuthorization
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['client_id']
+        all_params = ['client_id', 'accept_language']
         all_params.append('callback')
 
         params = locals()
@@ -171,6 +172,8 @@ class OAuthApi(object):
         query_params = {}
 
         header_params = {}
+        if 'accept_language' in params:
+            header_params['Accept-Language'] = params['accept_language']
 
         form_params = []
         local_var_files = {}
@@ -204,7 +207,7 @@ class OAuthApi(object):
 
     def get_oauth_authorizations(self, **kwargs):
         """
-        List clients that are authorized by the resource owner
+        List clients that have been authorized, requested, or revoked by the resource owner
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -217,12 +220,13 @@ class OAuthApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str accept_language: The language in which to display the client descriptions.
         :return: OAuthAuthorizationListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['accept_language']
         all_params.append('callback')
 
         params = locals()
@@ -243,6 +247,8 @@ class OAuthApi(object):
         query_params = {}
 
         header_params = {}
+        if 'accept_language' in params:
+            header_params['Accept-Language'] = params['accept_language']
 
         form_params = []
         local_var_files = {}

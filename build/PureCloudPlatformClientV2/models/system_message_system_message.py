@@ -48,7 +48,7 @@ class SystemMessageSystemMessage(object):
             'oauth_client_id': 'str',
             'reason': 'str',
             'message': 'str',
-            'data': 'object'
+            'data': 'dict(str, SystemMessageObject)'
         }
 
         self.attribute_map = {
@@ -272,7 +272,7 @@ class SystemMessageSystemMessage(object):
 
 
         :return: The data of this SystemMessageSystemMessage.
-        :rtype: object
+        :rtype: dict(str, SystemMessageObject)
         """
         return self._data
 
@@ -283,7 +283,7 @@ class SystemMessageSystemMessage(object):
 
 
         :param data: The data of this SystemMessageSystemMessage.
-        :type: object
+        :type: dict(str, SystemMessageObject)
         """
         
         self._data = data

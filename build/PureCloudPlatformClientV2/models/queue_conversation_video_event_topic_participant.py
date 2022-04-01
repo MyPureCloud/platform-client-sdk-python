@@ -64,6 +64,7 @@ class QueueConversationVideoEventTopicParticipant(object):
             'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
             'coached_participant_id': 'str',
+            'barged_participant_id': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
             'attributes': 'dict(str, str)',
@@ -103,6 +104,7 @@ class QueueConversationVideoEventTopicParticipant(object):
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
             'coached_participant_id': 'coachedParticipantId',
+            'barged_participant_id': 'bargedParticipantId',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
             'attributes': 'attributes',
@@ -141,6 +143,7 @@ class QueueConversationVideoEventTopicParticipant(object):
         self._alerting_timeout_ms = None
         self._monitored_participant_id = None
         self._coached_participant_id = None
+        self._barged_participant_id = None
         self._screen_recording_state = None
         self._flagged_reason = None
         self._attributes = None
@@ -705,6 +708,29 @@ class QueueConversationVideoEventTopicParticipant(object):
         """
         
         self._coached_participant_id = coached_participant_id
+
+    @property
+    def barged_participant_id(self):
+        """
+        Gets the barged_participant_id of this QueueConversationVideoEventTopicParticipant.
+        If this participant created a barge in conference, then this will be the id of the participant that is barged in.
+
+        :return: The barged_participant_id of this QueueConversationVideoEventTopicParticipant.
+        :rtype: str
+        """
+        return self._barged_participant_id
+
+    @barged_participant_id.setter
+    def barged_participant_id(self, barged_participant_id):
+        """
+        Sets the barged_participant_id of this QueueConversationVideoEventTopicParticipant.
+        If this participant created a barge in conference, then this will be the id of the participant that is barged in.
+
+        :param barged_participant_id: The barged_participant_id of this QueueConversationVideoEventTopicParticipant.
+        :type: str
+        """
+        
+        self._barged_participant_id = barged_participant_id
 
     @property
     def screen_recording_state(self):

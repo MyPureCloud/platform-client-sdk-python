@@ -62,6 +62,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
             'disconnect_reasons': 'list[QueueConversationSocialExpressionEventTopicDisconnectReason]',
             'fax_status': 'QueueConversationSocialExpressionEventTopicFaxStatus',
             'uui_data': 'str',
+            'barged_time': 'datetime',
             'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
             'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
@@ -91,6 +92,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
             'disconnect_reasons': 'disconnectReasons',
             'fax_status': 'faxStatus',
             'uui_data': 'uuiData',
+            'barged_time': 'bargedTime',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
@@ -119,6 +121,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
         self._disconnect_reasons = None
         self._fax_status = None
         self._uui_data = None
+        self._barged_time = None
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
@@ -645,6 +648,29 @@ class QueueConversationSocialExpressionEventTopicCall(object):
         """
         
         self._uui_data = uui_data
+
+    @property
+    def barged_time(self):
+        """
+        Gets the barged_time of this QueueConversationSocialExpressionEventTopicCall.
+        The timestamp when this participant was connected to the barge conference in the provider clock.
+
+        :return: The barged_time of this QueueConversationSocialExpressionEventTopicCall.
+        :rtype: datetime
+        """
+        return self._barged_time
+
+    @barged_time.setter
+    def barged_time(self, barged_time):
+        """
+        Sets the barged_time of this QueueConversationSocialExpressionEventTopicCall.
+        The timestamp when this participant was connected to the barge conference in the provider clock.
+
+        :param barged_time: The barged_time of this QueueConversationSocialExpressionEventTopicCall.
+        :type: datetime
+        """
+        
+        self._barged_time = barged_time
 
     @property
     def wrapup(self):

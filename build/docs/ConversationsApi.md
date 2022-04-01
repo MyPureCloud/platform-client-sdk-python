@@ -93,6 +93,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_callback_participant**](ConversationsApi.html#patch_conversations_callback_participant) | Update conversation participant|
 |[**patch_conversations_callback_participant_attributes**](ConversationsApi.html#patch_conversations_callback_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_callback_participant_communication**](ConversationsApi.html#patch_conversations_callback_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_callbacks**](ConversationsApi.html#patch_conversations_callbacks) | Update a scheduled callback|
 |[**patch_conversations_chat**](ConversationsApi.html#patch_conversations_chat) | Update a conversation by disconnecting all of the participants|
 |[**patch_conversations_chat_participant**](ConversationsApi.html#patch_conversations_chat_participant) | Update conversation participant|
 |[**patch_conversations_chat_participant_attributes**](ConversationsApi.html#patch_conversations_chat_participant_attributes) | Update the attributes on a conversation participant.|
@@ -132,6 +133,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_call_participants**](ConversationsApi.html#post_conversations_call_participants) | Add participants to a conversation|
 |[**post_conversations_callback_participant_replace**](ConversationsApi.html#post_conversations_callback_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_callbacks**](ConversationsApi.html#post_conversations_callbacks) | Create a Callback|
+|[**post_conversations_callbacks_bulk_disconnect**](ConversationsApi.html#post_conversations_callbacks_bulk_disconnect) | Disconnect multiple scheduled callbacks|
+|[**post_conversations_callbacks_bulk_update**](ConversationsApi.html#post_conversations_callbacks_bulk_update) | Update multiple scheduled callbacks|
 |[**post_conversations_calls**](ConversationsApi.html#post_conversations_calls) | Create a call conversation|
 |[**post_conversations_chat_communication_messages**](ConversationsApi.html#post_conversations_chat_communication_messages) | Send a message on behalf of a communication in a chat conversation.|
 |[**post_conversations_chat_communication_typing**](ConversationsApi.html#post_conversations_chat_communication_typing) | Send a typing-indicator on behalf of a communication in a chat conversation.|
@@ -4581,6 +4584,57 @@ except ApiException as e:
 
 [**Empty**](Empty.html)
 
+<a name="patch_conversations_callbacks"></a>
+
+## [**PatchCallbackResponse**](PatchCallbackResponse.html) patch_conversations_callbacks(body)
+
+
+
+Update a scheduled callback
+
+
+
+Wraps PATCH /api/v2/conversations/callbacks 
+
+Requires ANY permissions: 
+
+* conversation:callback:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.PatchCallbackRequest() # PatchCallbackRequest | PatchCallbackRequest
+
+try:
+    # Update a scheduled callback
+    api_response = api_instance.patch_conversations_callbacks(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_callbacks: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**PatchCallbackRequest**](PatchCallbackRequest.html)| PatchCallbackRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PatchCallbackResponse**](PatchCallbackResponse.html)
+
 <a name="patch_conversations_chat"></a>
 
 ## [**Conversation**](Conversation.html) patch_conversations_chat(conversation_id, body)
@@ -6659,6 +6713,107 @@ except ApiException as e:
 ### Return type
 
 [**CreateCallbackResponse**](CreateCallbackResponse.html)
+
+<a name="post_conversations_callbacks_bulk_disconnect"></a>
+
+##  post_conversations_callbacks_bulk_disconnect(body)
+
+
+
+Disconnect multiple scheduled callbacks
+
+
+
+Wraps POST /api/v2/conversations/callbacks/bulk/disconnect 
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.BulkCallbackDisconnectRequest() # BulkCallbackDisconnectRequest | BulkCallbackDisconnectRequest
+
+try:
+    # Disconnect multiple scheduled callbacks
+    api_instance.post_conversations_callbacks_bulk_disconnect(body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_callbacks_bulk_disconnect: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkCallbackDisconnectRequest**](BulkCallbackDisconnectRequest.html)| BulkCallbackDisconnectRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_conversations_callbacks_bulk_update"></a>
+
+## [**BulkCallbackPatchResponse**](BulkCallbackPatchResponse.html) post_conversations_callbacks_bulk_update(body)
+
+
+
+Update multiple scheduled callbacks
+
+
+
+Wraps POST /api/v2/conversations/callbacks/bulk/update 
+
+Requires ANY permissions: 
+
+* conversation:callback:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.BulkCallbackPatchRequest() # BulkCallbackPatchRequest | BulkCallbackPatchRequest
+
+try:
+    # Update multiple scheduled callbacks
+    api_response = api_instance.post_conversations_callbacks_bulk_update(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_callbacks_bulk_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkCallbackPatchRequest**](BulkCallbackPatchRequest.html)| BulkCallbackPatchRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkCallbackPatchResponse**](BulkCallbackPatchResponse.html)
 
 <a name="post_conversations_calls"></a>
 

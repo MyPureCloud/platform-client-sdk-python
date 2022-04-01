@@ -84,6 +84,8 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'document_id': 'str',
             'monitored_participant_id': 'str',
             'coached_participant_id': 'str',
+            'barged_participant_id': 'str',
+            'barged_time': 'datetime',
             'consult_participant_id': 'str',
             'fax_status': 'QueueConversationCallEventTopicFaxStatus'
         }
@@ -133,6 +135,8 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'document_id': 'documentId',
             'monitored_participant_id': 'monitoredParticipantId',
             'coached_participant_id': 'coachedParticipantId',
+            'barged_participant_id': 'bargedParticipantId',
+            'barged_time': 'bargedTime',
             'consult_participant_id': 'consultParticipantId',
             'fax_status': 'faxStatus'
         }
@@ -181,6 +185,8 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         self._document_id = None
         self._monitored_participant_id = None
         self._coached_participant_id = None
+        self._barged_participant_id = None
+        self._barged_time = None
         self._consult_participant_id = None
         self._fax_status = None
 
@@ -1215,6 +1221,52 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         """
         
         self._coached_participant_id = coached_participant_id
+
+    @property
+    def barged_participant_id(self):
+        """
+        Gets the barged_participant_id of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The barged_participant_id of this QueueConversationCallEventTopicCallMediaParticipant.
+        :rtype: str
+        """
+        return self._barged_participant_id
+
+    @barged_participant_id.setter
+    def barged_participant_id(self, barged_participant_id):
+        """
+        Sets the barged_participant_id of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :param barged_participant_id: The barged_participant_id of this QueueConversationCallEventTopicCallMediaParticipant.
+        :type: str
+        """
+        
+        self._barged_participant_id = barged_participant_id
+
+    @property
+    def barged_time(self):
+        """
+        Gets the barged_time of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The barged_time of this QueueConversationCallEventTopicCallMediaParticipant.
+        :rtype: datetime
+        """
+        return self._barged_time
+
+    @barged_time.setter
+    def barged_time(self, barged_time):
+        """
+        Sets the barged_time of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :param barged_time: The barged_time of this QueueConversationCallEventTopicCallMediaParticipant.
+        :type: datetime
+        """
+        
+        self._barged_time = barged_time
 
     @property
     def consult_participant_id(self):

@@ -40,17 +40,43 @@ class UserRoutingStatusUserRoutingStatus(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'UserRoutingStatusObject',
             'routing_status': 'UserRoutingStatusRoutingStatus',
             'error_info': 'UserRoutingStatusErrorInfo'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'routing_status': 'routingStatus',
             'error_info': 'errorInfo'
         }
 
+        self._id = None
         self._routing_status = None
         self._error_info = None
+
+    @property
+    def id(self):
+        """
+        Gets the id of this UserRoutingStatusUserRoutingStatus.
+
+
+        :return: The id of this UserRoutingStatusUserRoutingStatus.
+        :rtype: UserRoutingStatusObject
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this UserRoutingStatusUserRoutingStatus.
+
+
+        :param id: The id of this UserRoutingStatusUserRoutingStatus.
+        :type: UserRoutingStatusObject
+        """
+        
+        self._id = id
 
     @property
     def routing_status(self):

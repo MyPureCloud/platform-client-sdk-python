@@ -62,6 +62,7 @@ class QueueConversationEventTopicCall(object):
             'disconnect_reasons': 'list[QueueConversationEventTopicDisconnectReason]',
             'fax_status': 'QueueConversationEventTopicFaxStatus',
             'uui_data': 'str',
+            'barged_time': 'datetime',
             'wrapup': 'QueueConversationEventTopicWrapup',
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
@@ -91,6 +92,7 @@ class QueueConversationEventTopicCall(object):
             'disconnect_reasons': 'disconnectReasons',
             'fax_status': 'faxStatus',
             'uui_data': 'uuiData',
+            'barged_time': 'bargedTime',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
@@ -119,6 +121,7 @@ class QueueConversationEventTopicCall(object):
         self._disconnect_reasons = None
         self._fax_status = None
         self._uui_data = None
+        self._barged_time = None
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
@@ -645,6 +648,29 @@ class QueueConversationEventTopicCall(object):
         """
         
         self._uui_data = uui_data
+
+    @property
+    def barged_time(self):
+        """
+        Gets the barged_time of this QueueConversationEventTopicCall.
+        The timestamp when this participant was connected to the barge conference in the provider clock.
+
+        :return: The barged_time of this QueueConversationEventTopicCall.
+        :rtype: datetime
+        """
+        return self._barged_time
+
+    @barged_time.setter
+    def barged_time(self, barged_time):
+        """
+        Sets the barged_time of this QueueConversationEventTopicCall.
+        The timestamp when this participant was connected to the barge conference in the provider clock.
+
+        :param barged_time: The barged_time of this QueueConversationEventTopicCall.
+        :type: datetime
+        """
+        
+        self._barged_time = barged_time
 
     @property
     def wrapup(self):

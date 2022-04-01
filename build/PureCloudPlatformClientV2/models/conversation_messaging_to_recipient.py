@@ -46,7 +46,8 @@ class ConversationMessagingToRecipient(object):
             'image': 'str',
             'first_name': 'str',
             'last_name': 'str',
-            'email': 'str'
+            'email': 'str',
+            'additional_ids': 'list[ConversationRecipientAdditionalIdentifier]'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class ConversationMessagingToRecipient(object):
             'image': 'image',
             'first_name': 'firstName',
             'last_name': 'lastName',
-            'email': 'email'
+            'email': 'email',
+            'additional_ids': 'additionalIds'
         }
 
         self._nickname = None
@@ -66,6 +68,7 @@ class ConversationMessagingToRecipient(object):
         self._first_name = None
         self._last_name = None
         self._email = None
+        self._additional_ids = None
 
     @property
     def nickname(self):
@@ -231,6 +234,29 @@ class ConversationMessagingToRecipient(object):
         """
         
         self._email = email
+
+    @property
+    def additional_ids(self):
+        """
+        Gets the additional_ids of this ConversationMessagingToRecipient.
+        List of recipient additional identifiers
+
+        :return: The additional_ids of this ConversationMessagingToRecipient.
+        :rtype: list[ConversationRecipientAdditionalIdentifier]
+        """
+        return self._additional_ids
+
+    @additional_ids.setter
+    def additional_ids(self, additional_ids):
+        """
+        Sets the additional_ids of this ConversationMessagingToRecipient.
+        List of recipient additional identifiers
+
+        :param additional_ids: The additional_ids of this ConversationMessagingToRecipient.
+        :type: list[ConversationRecipientAdditionalIdentifier]
+        """
+        
+        self._additional_ids = additional_ids
 
     def to_dict(self):
         """

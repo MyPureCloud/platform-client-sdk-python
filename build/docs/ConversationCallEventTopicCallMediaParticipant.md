@@ -51,6 +51,8 @@ title: ConversationCallEventTopicCallMediaParticipant
 | **document_id** | **str** |  | [optional] |
 | **monitored_participant_id** | **str** |  | [optional] |
 | **coached_participant_id** | **str** |  | [optional] |
+| **barged_participant_id** | **str** |  | [optional] |
+| **barged_time** | **datetime** |  | [optional] |
 | **consult_participant_id** | **str** |  | [optional] |
 | **fax_status** | [**ConversationCallEventTopicFaxStatus**](ConversationCallEventTopicFaxStatus.html) |  | [optional] |
 {: class="table table-striped"}

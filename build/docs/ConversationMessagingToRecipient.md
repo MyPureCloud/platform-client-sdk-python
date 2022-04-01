@@ -14,6 +14,7 @@ title: ConversationMessagingToRecipient
 | **first_name** | **str** | First name of the recipient. | [optional] |
 | **last_name** | **str** | Last name of the recipient. | [optional] |
 | **email** | **str** | E-mail address of the recipient. | [optional] |
+| **additional_ids** | [**list[ConversationRecipientAdditionalIdentifier]**](ConversationRecipientAdditionalIdentifier.html) | List of recipient additional identifiers | [optional] |
 {: class="table table-striped"}
 
 

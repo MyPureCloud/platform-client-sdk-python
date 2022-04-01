@@ -5645,92 +5645,6 @@
     "return": "TagValue",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PutContentmanagementWorkspaceTagvalueRequest()\nworkspace_id = 'workspace_id_example' # str | Workspace ID\ntag_id = 'tag_id_example' # str | Tag ID\nbody = PureCloudPlatformClientV2.TagValue() # TagValue | Workspace\n\ntry:\n    # Update a workspace tag. Will update all documents with the new tag value.\n    api_response = api_instance.put_contentmanagement_workspace_tagvalue(workspace_id, tag_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutContentmanagementWorkspaceTagvalueRequest->put_contentmanagement_workspace_tagvalue: %s\\n\" % e)"
   },
-  "delete_fax_document": {
-    "operationId": "delete_fax_document",
-    "functionName": "delete_fax_document",
-    "signature": "delete_fax_document(document_id)",
-    "parameters": [
-      {
-        "name": "document_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .DeleteFaxDocumentRequest()\ndocument_id = 'document_id_example' # str | Document ID\n\ntry:\n    # Delete a fax document.\n    api_instance.delete_fax_document(document_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteFaxDocumentRequest->delete_fax_document: %s\\n\" % e)"
-  },
-  "get_fax_document": {
-    "operationId": "get_fax_document",
-    "functionName": "get_fax_document",
-    "signature": "get_fax_document(document_id)",
-    "parameters": [
-      {
-        "name": "document_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "return": "FaxDocument",
-    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetFaxDocumentRequest()\ndocument_id = 'document_id_example' # str | Document ID\n\ntry:\n    # Get a document.\n    api_response = api_instance.get_fax_document(document_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFaxDocumentRequest->get_fax_document: %s\\n\" % e)"
-  },
-  "get_fax_document_content": {
-    "operationId": "get_fax_document_content",
-    "functionName": "get_fax_document_content",
-    "signature": "get_fax_document_content(document_id)",
-    "parameters": [
-      {
-        "name": "document_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "return": "DownloadResponse",
-    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetFaxDocumentContentRequest()\ndocument_id = 'document_id_example' # str | Document ID\n\ntry:\n    # Download a fax document.\n    api_response = api_instance.get_fax_document_content(document_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFaxDocumentContentRequest->get_fax_document_content: %s\\n\" % e)"
-  },
-  "get_fax_documents": {
-    "operationId": "get_fax_documents",
-    "functionName": "get_fax_documents",
-    "signature": "get_fax_documents(page_size, page_number)",
-    "parameters": [
-      {
-        "name": "page_size",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "page_number",
-        "type": "int",
-        "required": "false"
-      }
-    ],
-    "return": "FaxDocumentEntityListing",
-    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetFaxDocumentsRequest()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # Get a list of fax documents.\n    api_response = api_instance.get_fax_documents(page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFaxDocumentsRequest->get_fax_documents: %s\\n\" % e)"
-  },
-  "get_fax_summary": {
-    "operationId": "get_fax_summary",
-    "functionName": "get_fax_summary",
-    "signature": "get_fax_summary()",
-    "return": "FaxSummary",
-    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetFaxSummaryRequest()\n\ntry:\n    # Get fax summary\n    api_response = api_instance.get_fax_summary()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFaxSummaryRequest->get_fax_summary: %s\\n\" % e)"
-  },
-  "put_fax_document": {
-    "operationId": "put_fax_document",
-    "functionName": "put_fax_document",
-    "signature": "put_fax_document(document_id, body)",
-    "parameters": [
-      {
-        "name": "document_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "FaxDocument",
-        "required": "true"
-      }
-    ],
-    "return": "FaxDocument",
-    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PutFaxDocumentRequest()\ndocument_id = 'document_id_example' # str | Document ID\nbody = PureCloudPlatformClientV2.FaxDocument() # FaxDocument | Document\n\ntry:\n    # Update a fax document.\n    api_response = api_instance.put_fax_document(document_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutFaxDocumentRequest->put_fax_document: %s\\n\" % e)"
-  },
   "delete_conversation_participant_code": {
     "operationId": "delete_conversation_participant_code",
     "functionName": "delete_conversation_participant_code",
@@ -7197,6 +7111,20 @@
     "return": "Empty",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PatchConversationsCallbackParticipantCommunicationRequest()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant\n\ntry:\n    # Update conversation participant's communication by disconnecting it.\n    api_response = api_instance.patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchConversationsCallbackParticipantCommunicationRequest->patch_conversations_callback_participant_communication: %s\\n\" % e)"
   },
+  "patch_conversations_callbacks": {
+    "operationId": "patch_conversations_callbacks",
+    "functionName": "patch_conversations_callbacks",
+    "signature": "patch_conversations_callbacks(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "PatchCallbackRequest",
+        "required": "true"
+      }
+    ],
+    "return": "PatchCallbackResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PatchConversationsCallbacksRequest()\nbody = PureCloudPlatformClientV2.PatchCallbackRequest() # PatchCallbackRequest | PatchCallbackRequest\n\ntry:\n    # Update a scheduled callback\n    api_response = api_instance.patch_conversations_callbacks(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchConversationsCallbacksRequest->patch_conversations_callbacks: %s\\n\" % e)"
+  },
   "patch_conversations_chat": {
     "operationId": "patch_conversations_chat",
     "functionName": "patch_conversations_chat",
@@ -7951,6 +7879,33 @@
     ],
     "return": "CreateCallbackResponse",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostConversationsCallbacksRequest()\nbody = PureCloudPlatformClientV2.CreateCallbackCommand() # CreateCallbackCommand | Callback\n\ntry:\n    # Create a Callback\n    api_response = api_instance.post_conversations_callbacks(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsCallbacksRequest->post_conversations_callbacks: %s\\n\" % e)"
+  },
+  "post_conversations_callbacks_bulk_disconnect": {
+    "operationId": "post_conversations_callbacks_bulk_disconnect",
+    "functionName": "post_conversations_callbacks_bulk_disconnect",
+    "signature": "post_conversations_callbacks_bulk_disconnect(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "BulkCallbackDisconnectRequest",
+        "required": "true"
+      }
+    ],
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostConversationsCallbacksBulkDisconnectRequest()\nbody = PureCloudPlatformClientV2.BulkCallbackDisconnectRequest() # BulkCallbackDisconnectRequest | BulkCallbackDisconnectRequest\n\ntry:\n    # Disconnect multiple scheduled callbacks\n    api_instance.post_conversations_callbacks_bulk_disconnect(body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsCallbacksBulkDisconnectRequest->post_conversations_callbacks_bulk_disconnect: %s\\n\" % e)"
+  },
+  "post_conversations_callbacks_bulk_update": {
+    "operationId": "post_conversations_callbacks_bulk_update",
+    "functionName": "post_conversations_callbacks_bulk_update",
+    "signature": "post_conversations_callbacks_bulk_update(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "BulkCallbackPatchRequest",
+        "required": "true"
+      }
+    ],
+    "return": "BulkCallbackPatchResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostConversationsCallbacksBulkUpdateRequest()\nbody = PureCloudPlatformClientV2.BulkCallbackPatchRequest() # BulkCallbackPatchRequest | BulkCallbackPatchRequest\n\ntry:\n    # Update multiple scheduled callbacks\n    api_response = api_instance.post_conversations_callbacks_bulk_update(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsCallbacksBulkUpdateRequest->post_conversations_callbacks_bulk_update: %s\\n\" % e)"
   },
   "post_conversations_calls": {
     "operationId": "post_conversations_calls",
@@ -9697,6 +9652,92 @@
     ],
     "return": "Relationship",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PutExternalcontactsRelationshipRequest()\nrelationship_id = 'relationship_id_example' # str | Relationship Id\nbody = PureCloudPlatformClientV2.Relationship() # Relationship | Relationship\n\ntry:\n    # Update a relationship\n    api_response = api_instance.put_externalcontacts_relationship(relationship_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutExternalcontactsRelationshipRequest->put_externalcontacts_relationship: %s\\n\" % e)"
+  },
+  "delete_fax_document": {
+    "operationId": "delete_fax_document",
+    "functionName": "delete_fax_document",
+    "signature": "delete_fax_document(document_id)",
+    "parameters": [
+      {
+        "name": "document_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .DeleteFaxDocumentRequest()\ndocument_id = 'document_id_example' # str | Document ID\n\ntry:\n    # Delete a fax document.\n    api_instance.delete_fax_document(document_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteFaxDocumentRequest->delete_fax_document: %s\\n\" % e)"
+  },
+  "get_fax_document": {
+    "operationId": "get_fax_document",
+    "functionName": "get_fax_document",
+    "signature": "get_fax_document(document_id)",
+    "parameters": [
+      {
+        "name": "document_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "FaxDocument",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetFaxDocumentRequest()\ndocument_id = 'document_id_example' # str | Document ID\n\ntry:\n    # Get a document.\n    api_response = api_instance.get_fax_document(document_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFaxDocumentRequest->get_fax_document: %s\\n\" % e)"
+  },
+  "get_fax_document_content": {
+    "operationId": "get_fax_document_content",
+    "functionName": "get_fax_document_content",
+    "signature": "get_fax_document_content(document_id)",
+    "parameters": [
+      {
+        "name": "document_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "DownloadResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetFaxDocumentContentRequest()\ndocument_id = 'document_id_example' # str | Document ID\n\ntry:\n    # Download a fax document.\n    api_response = api_instance.get_fax_document_content(document_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFaxDocumentContentRequest->get_fax_document_content: %s\\n\" % e)"
+  },
+  "get_fax_documents": {
+    "operationId": "get_fax_documents",
+    "functionName": "get_fax_documents",
+    "signature": "get_fax_documents(page_size, page_number)",
+    "parameters": [
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      }
+    ],
+    "return": "FaxDocumentEntityListing",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetFaxDocumentsRequest()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # Get a list of fax documents.\n    api_response = api_instance.get_fax_documents(page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFaxDocumentsRequest->get_fax_documents: %s\\n\" % e)"
+  },
+  "get_fax_summary": {
+    "operationId": "get_fax_summary",
+    "functionName": "get_fax_summary",
+    "signature": "get_fax_summary()",
+    "return": "FaxSummary",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetFaxSummaryRequest()\n\ntry:\n    # Get fax summary\n    api_response = api_instance.get_fax_summary()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFaxSummaryRequest->get_fax_summary: %s\\n\" % e)"
+  },
+  "put_fax_document": {
+    "operationId": "put_fax_document",
+    "functionName": "put_fax_document",
+    "signature": "put_fax_document(document_id, body)",
+    "parameters": [
+      {
+        "name": "document_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "FaxDocument",
+        "required": "true"
+      }
+    ],
+    "return": "FaxDocument",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PutFaxDocumentRequest()\ndocument_id = 'document_id_example' # str | Document ID\nbody = PureCloudPlatformClientV2.FaxDocument() # FaxDocument | Document\n\ntry:\n    # Update a fax document.\n    api_response = api_instance.put_fax_document(document_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutFaxDocumentRequest->put_fax_document: %s\\n\" % e)"
   },
   "get_gamification_leaderboard": {
     "operationId": "get_gamification_leaderboard",
@@ -15960,23 +16001,35 @@
   "get_oauth_authorization": {
     "operationId": "get_oauth_authorization",
     "functionName": "get_oauth_authorization",
-    "signature": "get_oauth_authorization(client_id)",
+    "signature": "get_oauth_authorization(client_id, accept_language)",
     "parameters": [
       {
         "name": "client_id",
         "type": "str",
         "required": "true"
+      },
+      {
+        "name": "accept_language",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "OAuthAuthorization",
-    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetOauthAuthorizationRequest()\nclient_id = 'client_id_example' # str | The ID of client\n\ntry:\n    # Get a client that is authorized by the resource owner\n    api_response = api_instance.get_oauth_authorization(client_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOauthAuthorizationRequest->get_oauth_authorization: %s\\n\" % e)"
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetOauthAuthorizationRequest()\nclient_id = 'client_id_example' # str | The ID of client\naccept_language = 'en-us' # str | The language in which to display the client descriptions. (optional) (default to en-us)\n\ntry:\n    # Get a client that is authorized by the resource owner\n    api_response = api_instance.get_oauth_authorization(client_id, accept_language=accept_language)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOauthAuthorizationRequest->get_oauth_authorization: %s\\n\" % e)"
   },
   "get_oauth_authorizations": {
     "operationId": "get_oauth_authorizations",
     "functionName": "get_oauth_authorizations",
-    "signature": "get_oauth_authorizations()",
+    "signature": "get_oauth_authorizations(accept_language)",
+    "parameters": [
+      {
+        "name": "accept_language",
+        "type": "str",
+        "required": "false"
+      }
+    ],
     "return": "OAuthAuthorizationListing",
-    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetOauthAuthorizationsRequest()\n\ntry:\n    # List clients that are authorized by the resource owner\n    api_response = api_instance.get_oauth_authorizations()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOauthAuthorizationsRequest->get_oauth_authorizations: %s\\n\" % e)"
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetOauthAuthorizationsRequest()\naccept_language = 'en-us' # str | The language in which to display the client descriptions. (optional) (default to en-us)\n\ntry:\n    # List clients that have been authorized, requested, or revoked by the resource owner\n    api_response = api_instance.get_oauth_authorizations(accept_language=accept_language)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOauthAuthorizationsRequest->get_oauth_authorizations: %s\\n\" % e)"
   },
   "get_oauth_client": {
     "operationId": "get_oauth_client",
@@ -21942,6 +21995,19 @@
     ],
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .DeleteResponsemanagementResponseRequest()\nresponse_id = 'response_id_example' # str | Response ID\n\ntry:\n    # Delete an existing response.\n    api_instance.delete_responsemanagement_response(response_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteResponsemanagementResponseRequest->delete_responsemanagement_response: %s\\n\" % e)"
   },
+  "delete_responsemanagement_responseasset": {
+    "operationId": "delete_responsemanagement_responseasset",
+    "functionName": "delete_responsemanagement_responseasset",
+    "signature": "delete_responsemanagement_responseasset(response_asset_id)",
+    "parameters": [
+      {
+        "name": "response_asset_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .DeleteResponsemanagementResponseassetRequest()\nresponse_asset_id = 'response_asset_id_example' # str | Asset Id\n\ntry:\n    # Delete response asset\n    api_instance.delete_responsemanagement_responseasset(response_asset_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteResponsemanagementResponseassetRequest->delete_responsemanagement_responseasset: %s\\n\" % e)"
+  },
   "get_responsemanagement_libraries": {
     "operationId": "get_responsemanagement_libraries",
     "functionName": "get_responsemanagement_libraries",
@@ -21999,6 +22065,34 @@
     "return": "Response",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetResponsemanagementResponseRequest()\nresponse_id = 'response_id_example' # str | Response ID\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\n\ntry:\n    # Get details about an existing response.\n    api_response = api_instance.get_responsemanagement_response(response_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetResponsemanagementResponseRequest->get_responsemanagement_response: %s\\n\" % e)"
   },
+  "get_responsemanagement_responseasset": {
+    "operationId": "get_responsemanagement_responseasset",
+    "functionName": "get_responsemanagement_responseasset",
+    "signature": "get_responsemanagement_responseasset(response_asset_id)",
+    "parameters": [
+      {
+        "name": "response_asset_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAsset",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetResponsemanagementResponseassetRequest()\nresponse_asset_id = 'response_asset_id_example' # str | Asset Id\n\ntry:\n    # Get response asset information\n    api_response = api_instance.get_responsemanagement_responseasset(response_asset_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetResponsemanagementResponseassetRequest->get_responsemanagement_responseasset: %s\\n\" % e)"
+  },
+  "get_responsemanagement_responseassets_status_status_id": {
+    "operationId": "get_responsemanagement_responseassets_status_status_id",
+    "functionName": "get_responsemanagement_responseassets_status_status_id",
+    "signature": "get_responsemanagement_responseassets_status_status_id(status_id)",
+    "parameters": [
+      {
+        "name": "status_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAssetStatus",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .GetResponsemanagementResponseassetsStatusStatusIdRequest()\nstatus_id = 'status_id_example' # str | Status Id\n\ntry:\n    # Get response asset upload status\n    api_response = api_instance.get_responsemanagement_responseassets_status_status_id(status_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetResponsemanagementResponseassetsStatusStatusIdRequest->get_responsemanagement_responseassets_status_status_id: %s\\n\" % e)"
+  },
   "get_responsemanagement_responses": {
     "operationId": "get_responsemanagement_responses",
     "functionName": "get_responsemanagement_responses",
@@ -22041,6 +22135,39 @@
     ],
     "return": "Library",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostResponsemanagementLibrariesRequest()\nbody = PureCloudPlatformClientV2.Library() # Library | Library\n\ntry:\n    # Create a response library.\n    api_response = api_instance.post_responsemanagement_libraries(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostResponsemanagementLibrariesRequest->post_responsemanagement_libraries: %s\\n\" % e)"
+  },
+  "post_responsemanagement_responseassets_search": {
+    "operationId": "post_responsemanagement_responseassets_search",
+    "functionName": "post_responsemanagement_responseassets_search",
+    "signature": "post_responsemanagement_responseassets_search(body, expand)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ResponseAssetSearchRequest",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "list[str]",
+        "required": "false"
+      }
+    ],
+    "return": "ResponseAssetSearchResults",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostResponsemanagementResponseassetsSearchRequest()\nbody = PureCloudPlatformClientV2.ResponseAssetSearchRequest() # ResponseAssetSearchRequest | request\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Search response assets\n    api_response = api_instance.post_responsemanagement_responseassets_search(body, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostResponsemanagementResponseassetsSearchRequest->post_responsemanagement_responseassets_search: %s\\n\" % e)"
+  },
+  "post_responsemanagement_responseassets_uploads": {
+    "operationId": "post_responsemanagement_responseassets_uploads",
+    "functionName": "post_responsemanagement_responseassets_uploads",
+    "signature": "post_responsemanagement_responseassets_uploads(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "CreateResponseAssetRequest",
+        "required": "true"
+      }
+    ],
+    "return": "CreateResponseAssetResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostResponsemanagementResponseassetsUploadsRequest()\nbody = PureCloudPlatformClientV2.CreateResponseAssetRequest() # CreateResponseAssetRequest | request\n\ntry:\n    # Creates pre-signed url for uploading response asset\n    api_response = api_instance.post_responsemanagement_responseassets_uploads(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostResponsemanagementResponseassetsUploadsRequest->post_responsemanagement_responseassets_uploads: %s\\n\" % e)"
   },
   "post_responsemanagement_responses": {
     "operationId": "post_responsemanagement_responses",
@@ -22117,6 +22244,25 @@
     ],
     "return": "Response",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PutResponsemanagementResponseRequest()\nresponse_id = 'response_id_example' # str | Response ID\nbody = PureCloudPlatformClientV2.Response() # Response | Response\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\n\ntry:\n    # Update an existing response.\n    api_response = api_instance.put_responsemanagement_response(response_id, body, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutResponsemanagementResponseRequest->put_responsemanagement_response: %s\\n\" % e)"
+  },
+  "put_responsemanagement_responseasset": {
+    "operationId": "put_responsemanagement_responseasset",
+    "functionName": "put_responsemanagement_responseasset",
+    "signature": "put_responsemanagement_responseasset(response_asset_id, body)",
+    "parameters": [
+      {
+        "name": "response_asset_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ResponseAssetRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAsset",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PutResponsemanagementResponseassetRequest()\nresponse_asset_id = 'response_asset_id_example' # str | Asset Id\nbody = PureCloudPlatformClientV2.ResponseAssetRequest() # ResponseAssetRequest | request\n\ntry:\n    # Update response asset\n    api_response = api_instance.put_responsemanagement_responseasset(response_asset_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutResponsemanagementResponseassetRequest->put_responsemanagement_responseasset: %s\\n\" % e)"
   },
   "delete_routing_assessment": {
     "operationId": "delete_routing_assessment",
@@ -28751,20 +28897,6 @@
     "return": "UploadUrlResponse",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostUploadsWorkforcemanagementHistoricaldataCsvRequest()\nbody = PureCloudPlatformClientV2.UploadUrlRequest() # UploadUrlRequest | query\n\ntry:\n    # Creates presigned url for uploading WFM historical data file. Requires data in csv format.\n    api_response = api_instance.post_uploads_workforcemanagement_historicaldata_csv(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostUploadsWorkforcemanagementHistoricaldataCsvRequest->post_uploads_workforcemanagement_historicaldata_csv: %s\\n\" % e)"
   },
-  "post_uploads_workforcemanagement_historicaldata_json": {
-    "operationId": "post_uploads_workforcemanagement_historicaldata_json",
-    "functionName": "post_uploads_workforcemanagement_historicaldata_json",
-    "signature": "post_uploads_workforcemanagement_historicaldata_json(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "UploadUrlRequest",
-        "required": "true"
-      }
-    ],
-    "return": "UploadUrlResponse",
-    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostUploadsWorkforcemanagementHistoricaldataJsonRequest()\nbody = PureCloudPlatformClientV2.UploadUrlRequest() # UploadUrlRequest | query\n\ntry:\n    # Creates presigned url for uploading WFM historical data file. Requires data in json format.\n    api_response = api_instance.post_uploads_workforcemanagement_historicaldata_json(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostUploadsWorkforcemanagementHistoricaldataJsonRequest->post_uploads_workforcemanagement_historicaldata_json: %s\\n\" % e)"
-  },
   "get_usage_query_execution_id_results": {
     "operationId": "get_usage_query_execution_id_results",
     "functionName": "get_usage_query_execution_id_results",
@@ -32677,6 +32809,64 @@
     "return": "BuAsyncScheduleRunResponse",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest()\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nweek_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nschedule_id = 'schedule_id_example' # str | The ID of the schedule\nbody = PureCloudPlatformClientV2.BuRescheduleRequest() # BuRescheduleRequest | body\n\ntry:\n    # Start a rescheduling run\n    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_reschedule(business_unit_id, week_id, schedule_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest->post_workforcemanagement_businessunit_week_schedule_reschedule: %s\\n\" % e)"
   },
+  "post_workforcemanagement_businessunit_week_schedule_update": {
+    "operationId": "post_workforcemanagement_businessunit_week_schedule_update",
+    "functionName": "post_workforcemanagement_businessunit_week_schedule_update",
+    "signature": "post_workforcemanagement_businessunit_week_schedule_update(business_unit_id, week_id, schedule_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "week_id",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "schedule_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ProcessScheduleUpdateUploadRequest",
+        "required": "true"
+      }
+    ],
+    "return": "BuAsyncScheduleResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest()\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nweek_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nschedule_id = 'schedule_id_example' # str | The ID of the schedule\nbody = PureCloudPlatformClientV2.ProcessScheduleUpdateUploadRequest() # ProcessScheduleUpdateUploadRequest | body\n\ntry:\n    # Starts processing a schedule update\n    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_update(business_unit_id, week_id, schedule_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest->post_workforcemanagement_businessunit_week_schedule_update: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_week_schedule_update_uploadurl": {
+    "operationId": "post_workforcemanagement_businessunit_week_schedule_update_uploadurl",
+    "functionName": "post_workforcemanagement_businessunit_week_schedule_update_uploadurl",
+    "signature": "post_workforcemanagement_businessunit_week_schedule_update_uploadurl(business_unit_id, week_id, schedule_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "week_id",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "schedule_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UploadUrlRequestBody",
+        "required": "true"
+      }
+    ],
+    "return": "UpdateScheduleUploadResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest()\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nweek_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nschedule_id = 'schedule_id_example' # str | The ID of the schedule\nbody = PureCloudPlatformClientV2.UploadUrlRequestBody() # UploadUrlRequestBody | body\n\ntry:\n    # Creates a signed upload URL for updating a schedule\n    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_update_uploadurl(business_unit_id, week_id, schedule_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest->post_workforcemanagement_businessunit_week_schedule_update_uploadurl: %s\\n\" % e)"
+  },
   "post_workforcemanagement_businessunit_week_schedules": {
     "operationId": "post_workforcemanagement_businessunit_week_schedules",
     "functionName": "post_workforcemanagement_businessunit_week_schedules",
@@ -32724,6 +32914,54 @@
     ],
     "return": "BuAsyncScheduleRunResponse",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest()\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nweek_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.BuGenerateScheduleRequest() # BuGenerateScheduleRequest | body\n\ntry:\n    # Generate a schedule\n    api_response = api_instance.post_workforcemanagement_businessunit_week_schedules_generate(business_unit_id, week_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest->post_workforcemanagement_businessunit_week_schedules_generate: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_week_schedules_import": {
+    "operationId": "post_workforcemanagement_businessunit_week_schedules_import",
+    "functionName": "post_workforcemanagement_businessunit_week_schedules_import",
+    "signature": "post_workforcemanagement_businessunit_week_schedules_import(business_unit_id, week_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "week_id",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "WfmProcessUploadRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleUploadProcessingResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest()\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nweek_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | \n\ntry:\n    # Starts processing a schedule import\n    api_response = api_instance.post_workforcemanagement_businessunit_week_schedules_import(business_unit_id, week_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest->post_workforcemanagement_businessunit_week_schedules_import: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_week_schedules_import_uploadurl": {
+    "operationId": "post_workforcemanagement_businessunit_week_schedules_import_uploadurl",
+    "functionName": "post_workforcemanagement_businessunit_week_schedules_import_uploadurl",
+    "signature": "post_workforcemanagement_businessunit_week_schedules_import_uploadurl(business_unit_id, week_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "week_id",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UploadUrlRequestBody",
+        "required": "true"
+      }
+    ],
+    "return": "ImportScheduleUploadResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest()\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nweek_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.UploadUrlRequestBody() # UploadUrlRequestBody | body\n\ntry:\n    # Creates a signed upload URL for importing a schedule\n    api_response = api_instance.post_workforcemanagement_businessunit_week_schedules_import_uploadurl(business_unit_id, week_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest->post_workforcemanagement_businessunit_week_schedules_import_uploadurl: %s\\n\" % e)"
   },
   "post_workforcemanagement_businessunit_week_shorttermforecast_copy": {
     "operationId": "post_workforcemanagement_businessunit_week_shorttermforecast_copy",
@@ -32787,6 +33025,54 @@
     ],
     "return": "AsyncForecastOperationResult",
     "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest()\nbusiness_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs\nweek_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.GenerateBuForecastRequest() # GenerateBuForecastRequest | \nforce_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)\n\ntry:\n    # Generate a short term forecast\n    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_generate(business_unit_id, week_date_id, body, force_async=force_async)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest->post_workforcemanagement_businessunit_week_shorttermforecasts_generate: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_week_shorttermforecasts_import": {
+    "operationId": "post_workforcemanagement_businessunit_week_shorttermforecasts_import",
+    "functionName": "post_workforcemanagement_businessunit_week_shorttermforecasts_import",
+    "signature": "post_workforcemanagement_businessunit_week_shorttermforecasts_import(business_unit_id, week_date_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "week_date_id",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "WfmProcessUploadRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ImportForecastResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest()\nbusiness_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs\nweek_date_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | \n\ntry:\n    # Starts importing the uploaded short term forecast\n    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_import(business_unit_id, week_date_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest->post_workforcemanagement_businessunit_week_shorttermforecasts_import: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl": {
+    "operationId": "post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl",
+    "functionName": "post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl",
+    "signature": "post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl(business_unit_id, week_date_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "week_date_id",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UploadUrlRequestBody",
+        "required": "true"
+      }
+    ],
+    "return": "ImportForecastUploadResponse",
+    "example": "import time\nimport \nfrom .rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\n.configuration.access_token = 'YOUR_ACCESS_TOKEN'\n\n# create an instance of the API class\napi_instance = .PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest()\nbusiness_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs\nweek_date_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.UploadUrlRequestBody() # UploadUrlRequestBody | body\n\ntry:\n    # Creates a signed upload URL for importing a short term forecast\n    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl(business_unit_id, week_date_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest->post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl: %s\\n\" % e)"
   },
   "post_workforcemanagement_businessunits": {
     "operationId": "post_workforcemanagement_businessunits",

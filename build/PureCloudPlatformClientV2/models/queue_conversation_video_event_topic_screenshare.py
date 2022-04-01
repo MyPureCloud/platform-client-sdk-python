@@ -48,6 +48,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
             'provider': 'str',
             'script_id': 'str',
             'peer_id': 'str',
+            'peer_count': 'QueueConversationVideoEventTopicObject',
             'disconnect_type': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
@@ -65,6 +66,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
             'provider': 'provider',
             'script_id': 'scriptId',
             'peer_id': 'peerId',
+            'peer_count': 'peerCount',
             'disconnect_type': 'disconnectType',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
@@ -81,6 +83,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
         self._provider = None
         self._script_id = None
         self._peer_id = None
+        self._peer_count = None
         self._disconnect_type = None
         self._connected_time = None
         self._disconnected_time = None
@@ -275,6 +278,29 @@ class QueueConversationVideoEventTopicScreenshare(object):
         """
         
         self._peer_id = peer_id
+
+    @property
+    def peer_count(self):
+        """
+        Gets the peer_count of this QueueConversationVideoEventTopicScreenshare.
+
+
+        :return: The peer_count of this QueueConversationVideoEventTopicScreenshare.
+        :rtype: QueueConversationVideoEventTopicObject
+        """
+        return self._peer_count
+
+    @peer_count.setter
+    def peer_count(self, peer_count):
+        """
+        Sets the peer_count of this QueueConversationVideoEventTopicScreenshare.
+
+
+        :param peer_count: The peer_count of this QueueConversationVideoEventTopicScreenshare.
+        :type: QueueConversationVideoEventTopicObject
+        """
+        
+        self._peer_count = peer_count
 
     @property
     def disconnect_type(self):

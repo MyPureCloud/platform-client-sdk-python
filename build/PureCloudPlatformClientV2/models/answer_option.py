@@ -131,7 +131,7 @@ class AnswerOption(object):
     def assistance_conditions(self):
         """
         Gets the assistance_conditions of this AnswerOption.
-
+        List of assistance conditions which are combined together with a logical AND operator. Eg ( assistanceCondtion1 && assistanceCondition2 ) wherein assistanceCondition could be ( EXISTS topic1 || topic2 || ... ) or (NOTEXISTS topic3 || topic4 || ...).
 
         :return: The assistance_conditions of this AnswerOption.
         :rtype: list[AssistanceCondition]
@@ -142,7 +142,7 @@ class AnswerOption(object):
     def assistance_conditions(self, assistance_conditions):
         """
         Sets the assistance_conditions of this AnswerOption.
-
+        List of assistance conditions which are combined together with a logical AND operator. Eg ( assistanceCondtion1 && assistanceCondition2 ) wherein assistanceCondition could be ( EXISTS topic1 || topic2 || ... ) or (NOTEXISTS topic3 || topic4 || ...).
 
         :param assistance_conditions: The assistance_conditions of this AnswerOption.
         :type: list[AssistanceCondition]

@@ -10,15 +10,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_responsemanagement_library**](ResponseManagementApi.html#delete_responsemanagement_library) | Delete an existing response library.|
 |[**delete_responsemanagement_response**](ResponseManagementApi.html#delete_responsemanagement_response) | Delete an existing response.|
+|[**delete_responsemanagement_responseasset**](ResponseManagementApi.html#delete_responsemanagement_responseasset) | Delete response asset|
 |[**get_responsemanagement_libraries**](ResponseManagementApi.html#get_responsemanagement_libraries) | Gets a list of existing response libraries.|
 |[**get_responsemanagement_library**](ResponseManagementApi.html#get_responsemanagement_library) | Get details about an existing response library.|
 |[**get_responsemanagement_response**](ResponseManagementApi.html#get_responsemanagement_response) | Get details about an existing response.|
+|[**get_responsemanagement_responseasset**](ResponseManagementApi.html#get_responsemanagement_responseasset) | Get response asset information|
+|[**get_responsemanagement_responseassets_status_status_id**](ResponseManagementApi.html#get_responsemanagement_responseassets_status_status_id) | Get response asset upload status|
 |[**get_responsemanagement_responses**](ResponseManagementApi.html#get_responsemanagement_responses) | Gets a list of existing responses.|
 |[**post_responsemanagement_libraries**](ResponseManagementApi.html#post_responsemanagement_libraries) | Create a response library.|
+|[**post_responsemanagement_responseassets_search**](ResponseManagementApi.html#post_responsemanagement_responseassets_search) | Search response assets|
+|[**post_responsemanagement_responseassets_uploads**](ResponseManagementApi.html#post_responsemanagement_responseassets_uploads) | Creates pre-signed url for uploading response asset|
 |[**post_responsemanagement_responses**](ResponseManagementApi.html#post_responsemanagement_responses) | Create a response.|
 |[**post_responsemanagement_responses_query**](ResponseManagementApi.html#post_responsemanagement_responses_query) | Query responses|
 |[**put_responsemanagement_library**](ResponseManagementApi.html#put_responsemanagement_library) | Update an existing response library.|
 |[**put_responsemanagement_response**](ResponseManagementApi.html#put_responsemanagement_response) | Update an existing response.|
+|[**put_responsemanagement_responseasset**](ResponseManagementApi.html#put_responsemanagement_responseasset) | Update response asset|
 {: class="table table-striped"}
 
 <a name="delete_responsemanagement_library"></a>
@@ -113,6 +119,56 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **response_id** | **str**| Response ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_responsemanagement_responseasset"></a>
+
+##  delete_responsemanagement_responseasset(response_asset_id)
+
+
+
+Delete response asset
+
+
+
+Wraps DELETE /api/v2/responsemanagement/responseassets/{responseAssetId} 
+
+Requires ANY permissions: 
+
+* responseAssets:asset:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+response_asset_id = 'response_asset_id_example' # str | Asset Id
+
+try:
+    # Delete response asset
+    api_instance.delete_responsemanagement_responseasset(response_asset_id)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->delete_responsemanagement_responseasset: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **response_asset_id** | **str**| Asset Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -275,6 +331,108 @@ except ApiException as e:
 
 [**Response**](Response.html)
 
+<a name="get_responsemanagement_responseasset"></a>
+
+## [**ResponseAsset**](ResponseAsset.html) get_responsemanagement_responseasset(response_asset_id)
+
+
+
+Get response asset information
+
+
+
+Wraps GET /api/v2/responsemanagement/responseassets/{responseAssetId} 
+
+Requires ANY permissions: 
+
+* responseAssets:asset:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+response_asset_id = 'response_asset_id_example' # str | Asset Id
+
+try:
+    # Get response asset information
+    api_response = api_instance.get_responsemanagement_responseasset(response_asset_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->get_responsemanagement_responseasset: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **response_asset_id** | **str**| Asset Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ResponseAsset**](ResponseAsset.html)
+
+<a name="get_responsemanagement_responseassets_status_status_id"></a>
+
+## [**ResponseAssetStatus**](ResponseAssetStatus.html) get_responsemanagement_responseassets_status_status_id(status_id)
+
+
+
+Get response asset upload status
+
+
+
+Wraps GET /api/v2/responsemanagement/responseassets/status/{statusId} 
+
+Requires ANY permissions: 
+
+* responseAssets:asset:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+status_id = 'status_id_example' # str | Status Id
+
+try:
+    # Get response asset upload status
+    api_response = api_instance.get_responsemanagement_responseassets_status_status_id(status_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->get_responsemanagement_responseassets_status_status_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **status_id** | **str**| Status Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ResponseAssetStatus**](ResponseAssetStatus.html)
+
 <a name="get_responsemanagement_responses"></a>
 
 ## [**ResponseEntityListing**](ResponseEntityListing.html) get_responsemanagement_responses(library_id, page_number=page_number, page_size=page_size, expand=expand)
@@ -380,6 +538,110 @@ except ApiException as e:
 ### Return type
 
 [**Library**](Library.html)
+
+<a name="post_responsemanagement_responseassets_search"></a>
+
+## [**ResponseAssetSearchResults**](ResponseAssetSearchResults.html) post_responsemanagement_responseassets_search(body, expand=expand)
+
+
+
+Search response assets
+
+
+
+Wraps POST /api/v2/responsemanagement/responseassets/search 
+
+Requires ALL permissions: 
+
+* responseAssets:asset:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+body = PureCloudPlatformClientV2.ResponseAssetSearchRequest() # ResponseAssetSearchRequest | request
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+
+try:
+    # Search response assets
+    api_response = api_instance.post_responsemanagement_responseassets_search(body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->post_responsemanagement_responseassets_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ResponseAssetSearchRequest**](ResponseAssetSearchRequest.html)| request |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user, division |
+{: class="table table-striped"}
+
+### Return type
+
+[**ResponseAssetSearchResults**](ResponseAssetSearchResults.html)
+
+<a name="post_responsemanagement_responseassets_uploads"></a>
+
+## [**CreateResponseAssetResponse**](CreateResponseAssetResponse.html) post_responsemanagement_responseassets_uploads(body)
+
+
+
+Creates pre-signed url for uploading response asset
+
+
+
+Wraps POST /api/v2/responsemanagement/responseassets/uploads 
+
+Requires ANY permissions: 
+
+* responseAssets:asset:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+body = PureCloudPlatformClientV2.CreateResponseAssetRequest() # CreateResponseAssetRequest | request
+
+try:
+    # Creates pre-signed url for uploading response asset
+    api_response = api_instance.post_responsemanagement_responseassets_uploads(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->post_responsemanagement_responseassets_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateResponseAssetRequest**](CreateResponseAssetRequest.html)| request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CreateResponseAssetResponse**](CreateResponseAssetResponse.html)
 
 <a name="post_responsemanagement_responses"></a>
 
@@ -588,4 +850,57 @@ except ApiException as e:
 ### Return type
 
 [**Response**](Response.html)
+
+<a name="put_responsemanagement_responseasset"></a>
+
+## [**ResponseAsset**](ResponseAsset.html) put_responsemanagement_responseasset(response_asset_id, body)
+
+
+
+Update response asset
+
+
+
+Wraps PUT /api/v2/responsemanagement/responseassets/{responseAssetId} 
+
+Requires ALL permissions: 
+
+* responseAssets:asset:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+response_asset_id = 'response_asset_id_example' # str | Asset Id
+body = PureCloudPlatformClientV2.ResponseAssetRequest() # ResponseAssetRequest | request
+
+try:
+    # Update response asset
+    api_response = api_instance.put_responsemanagement_responseasset(response_asset_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->put_responsemanagement_responseasset: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **response_asset_id** | **str**| Asset Id |  |
+| **body** | [**ResponseAssetRequest**](ResponseAssetRequest.html)| request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ResponseAsset**](ResponseAsset.html)
 

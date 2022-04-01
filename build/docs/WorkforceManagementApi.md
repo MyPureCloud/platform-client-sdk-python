@@ -107,10 +107,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_week_schedule_agentschedules_query**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_agentschedules_query) | Loads agent schedule data from the schedule. Used in combination with the metadata route|
 |[**post_workforcemanagement_businessunit_week_schedule_copy**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_copy) | Copy a schedule|
 |[**post_workforcemanagement_businessunit_week_schedule_reschedule**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_reschedule) | Start a rescheduling run|
+|[**post_workforcemanagement_businessunit_week_schedule_update**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_update) | Starts processing a schedule update|
+|[**post_workforcemanagement_businessunit_week_schedule_update_uploadurl**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_update_uploadurl) | Creates a signed upload URL for updating a schedule|
 |[**post_workforcemanagement_businessunit_week_schedules**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedules) | Create a blank schedule|
 |[**post_workforcemanagement_businessunit_week_schedules_generate**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedules_generate) | Generate a schedule|
+|[**post_workforcemanagement_businessunit_week_schedules_import**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedules_import) | Starts processing a schedule import|
+|[**post_workforcemanagement_businessunit_week_schedules_import_uploadurl**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedules_import_uploadurl) | Creates a signed upload URL for importing a schedule|
 |[**post_workforcemanagement_businessunit_week_shorttermforecast_copy**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecast_copy) | Copy a short term forecast|
 |[**post_workforcemanagement_businessunit_week_shorttermforecasts_generate**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecasts_generate) | Generate a short term forecast|
+|[**post_workforcemanagement_businessunit_week_shorttermforecasts_import**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecasts_import) | Starts importing the uploaded short term forecast|
+|[**post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl) | Creates a signed upload URL for importing a short term forecast|
 |[**post_workforcemanagement_businessunits**](WorkforceManagementApi.html#post_workforcemanagement_businessunits) | Add a new business unit|
 |[**post_workforcemanagement_calendar_url_ics**](WorkforceManagementApi.html#post_workforcemanagement_calendar_url_ics) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned|
 |[**post_workforcemanagement_historicaldata_deletejob**](WorkforceManagementApi.html#post_workforcemanagement_historicaldata_deletejob) | Delete the entries of the historical data imports in the organization|
@@ -5726,6 +5732,120 @@ except ApiException as e:
 
 [**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html)
 
+<a name="post_workforcemanagement_businessunit_week_schedule_update"></a>
+
+## [**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html) post_workforcemanagement_businessunit_week_schedule_update(business_unit_id, week_id, schedule_id, body)
+
+
+
+Starts processing a schedule update
+
+Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update 
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule
+body = PureCloudPlatformClientV2.ProcessScheduleUpdateUploadRequest() # ProcessScheduleUpdateUploadRequest | body
+
+try:
+    # Starts processing a schedule update
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_update(business_unit_id, week_id, schedule_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule |  |
+| **body** | [**ProcessScheduleUpdateUploadRequest**](ProcessScheduleUpdateUploadRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedule_update_uploadurl"></a>
+
+## [**UpdateScheduleUploadResponse**](UpdateScheduleUploadResponse.html) post_workforcemanagement_businessunit_week_schedule_update_uploadurl(business_unit_id, week_id, schedule_id, body)
+
+
+
+Creates a signed upload URL for updating a schedule
+
+Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl 
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule
+body = PureCloudPlatformClientV2.UploadUrlRequestBody() # UploadUrlRequestBody | body
+
+try:
+    # Creates a signed upload URL for updating a schedule
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_update_uploadurl(business_unit_id, week_id, schedule_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_update_uploadurl: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule |  |
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UpdateScheduleUploadResponse**](UpdateScheduleUploadResponse.html)
+
 <a name="post_workforcemanagement_businessunit_week_schedules"></a>
 
 ## [**BuScheduleMetadata**](BuScheduleMetadata.html) post_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, body)
@@ -5835,6 +5955,116 @@ except ApiException as e:
 ### Return type
 
 [**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedules_import"></a>
+
+## [**ScheduleUploadProcessingResponse**](ScheduleUploadProcessingResponse.html) post_workforcemanagement_businessunit_week_schedules_import(business_unit_id, week_id, body)
+
+
+
+Starts processing a schedule import
+
+Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import 
+
+Requires ANY permissions: 
+
+* wfm:schedule:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | 
+
+try:
+    # Starts processing a schedule import
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedules_import(business_unit_id, week_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedules_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleUploadProcessingResponse**](ScheduleUploadProcessingResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedules_import_uploadurl"></a>
+
+## [**ImportScheduleUploadResponse**](ImportScheduleUploadResponse.html) post_workforcemanagement_businessunit_week_schedules_import_uploadurl(business_unit_id, week_id, body)
+
+
+
+Creates a signed upload URL for importing a schedule
+
+Once the upload is complete, call the /import route to start the schedule import process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl 
+
+Requires ANY permissions: 
+
+* wfm:schedule:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.UploadUrlRequestBody() # UploadUrlRequestBody | body
+
+try:
+    # Creates a signed upload URL for importing a schedule
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedules_import_uploadurl(business_unit_id, week_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedules_import_uploadurl: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportScheduleUploadResponse**](ImportScheduleUploadResponse.html)
 
 <a name="post_workforcemanagement_businessunit_week_shorttermforecast_copy"></a>
 
@@ -5951,6 +6181,116 @@ except ApiException as e:
 ### Return type
 
 [**AsyncForecastOperationResult**](AsyncForecastOperationResult.html)
+
+<a name="post_workforcemanagement_businessunit_week_shorttermforecasts_import"></a>
+
+## [**ImportForecastResponse**](ImportForecastResponse.html) post_workforcemanagement_businessunit_week_shorttermforecasts_import(business_unit_id, week_date_id, body)
+
+
+
+Starts importing the uploaded short term forecast
+
+Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | 
+
+try:
+    # Starts importing the uploaded short term forecast
+    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_import(business_unit_id, week_date_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecasts_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportForecastResponse**](ImportForecastResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl"></a>
+
+## [**ImportForecastUploadResponse**](ImportForecastUploadResponse.html) post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl(business_unit_id, week_date_id, body)
+
+
+
+Creates a signed upload URL for importing a short term forecast
+
+Once the upload is complete, call the /import route to start the short term forecast import process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.UploadUrlRequestBody() # UploadUrlRequestBody | body
+
+try:
+    # Creates a signed upload URL for importing a short term forecast
+    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl(business_unit_id, week_date_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportForecastUploadResponse**](ImportForecastUploadResponse.html)
 
 <a name="post_workforcemanagement_businessunits"></a>
 

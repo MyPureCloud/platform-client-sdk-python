@@ -56,7 +56,7 @@ class AssistanceCondition(object):
     def operator(self):
         """
         Gets the operator of this AssistanceCondition.
-
+        The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.
 
         :return: The operator of this AssistanceCondition.
         :rtype: str
@@ -67,7 +67,7 @@ class AssistanceCondition(object):
     def operator(self, operator):
         """
         Sets the operator of this AssistanceCondition.
-
+        The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.
 
         :param operator: The operator of this AssistanceCondition.
         :type: str
@@ -83,7 +83,7 @@ class AssistanceCondition(object):
     def topic_ids(self):
         """
         Gets the topic_ids of this AssistanceCondition.
-
+        List of topicIds within the assistance condition which would be combined together using logical OR operator. Eg ( topicId_1 || topicId_2 ) .
 
         :return: The topic_ids of this AssistanceCondition.
         :rtype: list[str]
@@ -94,7 +94,7 @@ class AssistanceCondition(object):
     def topic_ids(self, topic_ids):
         """
         Sets the topic_ids of this AssistanceCondition.
-
+        List of topicIds within the assistance condition which would be combined together using logical OR operator. Eg ( topicId_1 || topicId_2 ) .
 
         :param topic_ids: The topic_ids of this AssistanceCondition.
         :type: list[str]

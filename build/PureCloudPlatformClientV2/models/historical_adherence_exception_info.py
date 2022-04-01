@@ -46,7 +46,7 @@ class HistoricalAdherenceExceptionInfo(object):
             'scheduled_activity_category': 'str',
             'actual_activity_category': 'str',
             'system_presence': 'str',
-            'routing_status': 'RoutingStatus',
+            'routing_status': 'str',
             'impact': 'str',
             'secondary_presence_lookup_id': 'str'
         }
@@ -230,7 +230,7 @@ class HistoricalAdherenceExceptionInfo(object):
         Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
 
         :return: The routing_status of this HistoricalAdherenceExceptionInfo.
-        :rtype: RoutingStatus
+        :rtype: str
         """
         return self._routing_status
 
@@ -241,10 +241,14 @@ class HistoricalAdherenceExceptionInfo(object):
         Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
 
         :param routing_status: The routing_status of this HistoricalAdherenceExceptionInfo.
-        :type: RoutingStatus
+        :type: str
         """
-        
-        self._routing_status = routing_status
+        allowed_values = ["OFF_QUEUE", "IDLE", "INTERACTING", "NOT_RESPONDING", "COMMUNICATING"]
+        if routing_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for routing_status -> " + routing_status)
+            self._routing_status = "outdated_sdk_version"
+        else:
+            self._routing_status = routing_status
 
     @property
     def impact(self):

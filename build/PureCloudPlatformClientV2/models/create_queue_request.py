@@ -814,7 +814,7 @@ class CreateQueueRequest(object):
     def source_queue_id(self):
         """
         Gets the source_queue_id of this CreateQueueRequest.
-        The id of an existing queue to copy the settings from when creating a new queue.
+        The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue.
 
         :return: The source_queue_id of this CreateQueueRequest.
         :rtype: str
@@ -825,7 +825,7 @@ class CreateQueueRequest(object):
     def source_queue_id(self, source_queue_id):
         """
         Sets the source_queue_id of this CreateQueueRequest.
-        The id of an existing queue to copy the settings from when creating a new queue.
+        The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue.
 
         :param source_queue_id: The source_queue_id of this CreateQueueRequest.
         :type: str
