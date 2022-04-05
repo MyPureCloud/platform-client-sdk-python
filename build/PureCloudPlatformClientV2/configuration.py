@@ -202,7 +202,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 139.0.0".\
+               "SDK Package Version: 139.0.1".\
                format(env=sys.platform, pyversion=sys.version)
 
     def _update_config_from_file(self):
@@ -325,7 +325,7 @@ def _get_config_int(config, section, key):
 
 class ConfigFileEventHandler(FileSystemEventHandler):
     def __init__(self, configuration):
-        super()
+        super(FileSystemEventHandler, self).__init__()
         self.configuration = configuration
         self.config_file_path = self.configuration.config_file_path
 
