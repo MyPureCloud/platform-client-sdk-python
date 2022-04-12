@@ -47,7 +47,9 @@ class ConversationMessageContent(object):
             'quick_reply': 'ConversationContentQuickReply',
             'template': 'ConversationContentNotificationTemplate',
             'button_response': 'ConversationContentButtonResponse',
-            'generic': 'ConversationContentGeneric'
+            'generic': 'ConversationContentGeneric',
+            'card': 'ConversationContentCard',
+            'carousel': 'ConversationContentCarousel'
         }
 
         self.attribute_map = {
@@ -58,7 +60,9 @@ class ConversationMessageContent(object):
             'quick_reply': 'quickReply',
             'template': 'template',
             'button_response': 'buttonResponse',
-            'generic': 'generic'
+            'generic': 'generic',
+            'card': 'card',
+            'carousel': 'carousel'
         }
 
         self._content_type = None
@@ -69,6 +73,8 @@ class ConversationMessageContent(object):
         self._template = None
         self._button_response = None
         self._generic = None
+        self._card = None
+        self._carousel = None
 
     @property
     def content_type(self):
@@ -90,7 +96,7 @@ class ConversationMessageContent(object):
         :param content_type: The content_type of this ConversationMessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "Story", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate"]
+        allowed_values = ["Attachment", "Location", "Story", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate", "Card", "Carousel"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -257,6 +263,52 @@ class ConversationMessageContent(object):
         """
         
         self._generic = generic
+
+    @property
+    def card(self):
+        """
+        Gets the card of this ConversationMessageContent.
+        Card (Generic Template) Object
+
+        :return: The card of this ConversationMessageContent.
+        :rtype: ConversationContentCard
+        """
+        return self._card
+
+    @card.setter
+    def card(self, card):
+        """
+        Sets the card of this ConversationMessageContent.
+        Card (Generic Template) Object
+
+        :param card: The card of this ConversationMessageContent.
+        :type: ConversationContentCard
+        """
+        
+        self._card = card
+
+    @property
+    def carousel(self):
+        """
+        Gets the carousel of this ConversationMessageContent.
+        Carousel (Multiple Generic Template) Object
+
+        :return: The carousel of this ConversationMessageContent.
+        :rtype: ConversationContentCarousel
+        """
+        return self._carousel
+
+    @carousel.setter
+    def carousel(self, carousel):
+        """
+        Sets the carousel of this ConversationMessageContent.
+        Carousel (Multiple Generic Template) Object
+
+        :param carousel: The carousel of this ConversationMessageContent.
+        :type: ConversationContentCarousel
+        """
+        
+        self._carousel = carousel
 
     def to_dict(self):
         """

@@ -40,14 +40,17 @@ class ConversationEventTyping(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'type': 'str'
+            'type': 'str',
+            'duration': 'int'
         }
 
         self.attribute_map = {
-            'type': 'type'
+            'type': 'type',
+            'duration': 'duration'
         }
 
         self._type = None
+        self._duration = None
 
     @property
     def type(self):
@@ -75,6 +78,29 @@ class ConversationEventTyping(object):
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def duration(self):
+        """
+        Gets the duration of this ConversationEventTyping.
+        The duration of the Typing event in milliseconds.
+
+        :return: The duration of this ConversationEventTyping.
+        :rtype: int
+        """
+        return self._duration
+
+    @duration.setter
+    def duration(self, duration):
+        """
+        Sets the duration of this ConversationEventTyping.
+        The duration of the Typing event in milliseconds.
+
+        :param duration: The duration of this ConversationEventTyping.
+        :type: int
+        """
+        
+        self._duration = duration
 
     def to_dict(self):
         """

@@ -44,7 +44,8 @@ class MessengerSettings(object):
             'styles': 'MessengerStyles',
             'launcher_button': 'LauncherButtonSettings',
             'file_upload': 'FileUploadSettings',
-            'apps': 'MessengerApps'
+            'apps': 'MessengerApps',
+            'home_screen': 'MessengerHomeScreen'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class MessengerSettings(object):
             'styles': 'styles',
             'launcher_button': 'launcherButton',
             'file_upload': 'fileUpload',
-            'apps': 'apps'
+            'apps': 'apps',
+            'home_screen': 'homeScreen'
         }
 
         self._enabled = None
@@ -60,6 +62,7 @@ class MessengerSettings(object):
         self._launcher_button = None
         self._file_upload = None
         self._apps = None
+        self._home_screen = None
 
     @property
     def enabled(self):
@@ -175,6 +178,29 @@ class MessengerSettings(object):
         """
         
         self._apps = apps
+
+    @property
+    def home_screen(self):
+        """
+        Gets the home_screen of this MessengerSettings.
+        The homescreen settings for messenger
+
+        :return: The home_screen of this MessengerSettings.
+        :rtype: MessengerHomeScreen
+        """
+        return self._home_screen
+
+    @home_screen.setter
+    def home_screen(self, home_screen):
+        """
+        Sets the home_screen of this MessengerSettings.
+        The homescreen settings for messenger
+
+        :param home_screen: The home_screen of this MessengerSettings.
+        :type: MessengerHomeScreen
+        """
+        
+        self._home_screen = home_screen
 
     def to_dict(self):
         """

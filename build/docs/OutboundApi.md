@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_contactlists**](OutboundApi.html#delete_outbound_contactlists) | Delete multiple contact lists.|
 |[**delete_outbound_dnclist**](OutboundApi.html#delete_outbound_dnclist) | Delete dialer DNC list|
 |[**delete_outbound_messagingcampaign**](OutboundApi.html#delete_outbound_messagingcampaign) | Delete an Outbound Messaging Campaign|
+|[**delete_outbound_messagingcampaign_progress**](OutboundApi.html#delete_outbound_messagingcampaign_progress) | Reset messaging campaign progress and recycle the messaging campaign|
 |[**delete_outbound_ruleset**](OutboundApi.html#delete_outbound_ruleset) | Delete a Rule Set.|
 |[**delete_outbound_schedules_campaign**](OutboundApi.html#delete_outbound_schedules_campaign) | Delete a dialer campaign schedule.|
 |[**delete_outbound_schedules_sequence**](OutboundApi.html#delete_outbound_schedules_sequence) | Delete a dialer sequence schedule.|
@@ -776,6 +777,57 @@ except ApiException as e:
 ### Return type
 
 [**MessagingCampaign**](MessagingCampaign.html)
+
+<a name="delete_outbound_messagingcampaign_progress"></a>
+
+##  delete_outbound_messagingcampaign_progress(messaging_campaign_id)
+
+
+
+Reset messaging campaign progress and recycle the messaging campaign
+
+
+
+Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:edit
+* outbound:emailCampaign:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | The Messaging Campaign ID
+
+try:
+    # Reset messaging campaign progress and recycle the messaging campaign
+    api_instance.delete_outbound_messagingcampaign_progress(messaging_campaign_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_messagingcampaign_progress: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_outbound_ruleset"></a>
 

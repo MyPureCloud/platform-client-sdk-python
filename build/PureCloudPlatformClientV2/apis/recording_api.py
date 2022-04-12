@@ -1514,12 +1514,13 @@ class RecordingApi(object):
         :param bool enabled: checks to see if policy is enabled - use enabled = true or enabled = false
         :param bool summary: provides a less verbose response of policy lists.
         :param bool has_errors: provides a way to fetch all policies with errors or policies that do not have errors
+        :param int delete_days_threshold: provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
         :return: PolicyEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'name', 'enabled', 'summary', 'has_errors']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'name', 'enabled', 'summary', 'has_errors', 'delete_days_threshold']
         all_params.append('callback')
 
         params = locals()
@@ -1558,6 +1559,8 @@ class RecordingApi(object):
             query_params['summary'] = params['summary']
         if 'has_errors' in params:
             query_params['hasErrors'] = params['has_errors']
+        if 'delete_days_threshold' in params:
+            query_params['deleteDaysThreshold'] = params['delete_days_threshold']
 
         header_params = {}
 
@@ -2108,12 +2111,13 @@ class RecordingApi(object):
         :param bool enabled: checks to see if policy is enabled - use enabled = true or enabled = false
         :param bool summary: provides a less verbose response of policy lists.
         :param bool has_errors: provides a way to fetch all policies with errors or policies that do not have errors
+        :param int delete_days_threshold: provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
         :return: PolicyEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'name', 'enabled', 'summary', 'has_errors']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'name', 'enabled', 'summary', 'has_errors', 'delete_days_threshold']
         all_params.append('callback')
 
         params = locals()
@@ -2152,6 +2156,8 @@ class RecordingApi(object):
             query_params['summary'] = params['summary']
         if 'has_errors' in params:
             query_params['hasErrors'] = params['has_errors']
+        if 'delete_days_threshold' in params:
+            query_params['deleteDaysThreshold'] = params['delete_days_threshold']
 
         header_params = {}
 

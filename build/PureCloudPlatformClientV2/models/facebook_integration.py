@@ -43,6 +43,7 @@ class FacebookIntegration(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
+            'messaging_setting': 'MessagingSettingReference',
             'app_id': 'str',
             'page_id': 'str',
             'page_name': 'str',
@@ -63,6 +64,7 @@ class FacebookIntegration(object):
             'id': 'id',
             'name': 'name',
             'supported_content': 'supportedContent',
+            'messaging_setting': 'messagingSetting',
             'app_id': 'appId',
             'page_id': 'pageId',
             'page_name': 'pageName',
@@ -82,6 +84,7 @@ class FacebookIntegration(object):
         self._id = None
         self._name = None
         self._supported_content = None
+        self._messaging_setting = None
         self._app_id = None
         self._page_id = None
         self._page_name = None
@@ -165,6 +168,29 @@ class FacebookIntegration(object):
         """
         
         self._supported_content = supported_content
+
+    @property
+    def messaging_setting(self):
+        """
+        Gets the messaging_setting of this FacebookIntegration.
+
+
+        :return: The messaging_setting of this FacebookIntegration.
+        :rtype: MessagingSettingReference
+        """
+        return self._messaging_setting
+
+    @messaging_setting.setter
+    def messaging_setting(self, messaging_setting):
+        """
+        Sets the messaging_setting of this FacebookIntegration.
+
+
+        :param messaging_setting: The messaging_setting of this FacebookIntegration.
+        :type: MessagingSettingReference
+        """
+        
+        self._messaging_setting = messaging_setting
 
     @property
     def app_id(self):

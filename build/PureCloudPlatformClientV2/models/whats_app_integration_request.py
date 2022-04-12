@@ -43,6 +43,7 @@ class WhatsAppIntegrationRequest(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
+            'messaging_setting': 'MessagingSettingReference',
             'phone_number': 'str',
             'waba_certificate': 'str',
             'self_uri': 'str'
@@ -52,6 +53,7 @@ class WhatsAppIntegrationRequest(object):
             'id': 'id',
             'name': 'name',
             'supported_content': 'supportedContent',
+            'messaging_setting': 'messagingSetting',
             'phone_number': 'phoneNumber',
             'waba_certificate': 'wabaCertificate',
             'self_uri': 'selfUri'
@@ -60,6 +62,7 @@ class WhatsAppIntegrationRequest(object):
         self._id = None
         self._name = None
         self._supported_content = None
+        self._messaging_setting = None
         self._phone_number = None
         self._waba_certificate = None
         self._self_uri = None
@@ -132,6 +135,29 @@ class WhatsAppIntegrationRequest(object):
         """
         
         self._supported_content = supported_content
+
+    @property
+    def messaging_setting(self):
+        """
+        Gets the messaging_setting of this WhatsAppIntegrationRequest.
+
+
+        :return: The messaging_setting of this WhatsAppIntegrationRequest.
+        :rtype: MessagingSettingReference
+        """
+        return self._messaging_setting
+
+    @messaging_setting.setter
+    def messaging_setting(self, messaging_setting):
+        """
+        Sets the messaging_setting of this WhatsAppIntegrationRequest.
+
+
+        :param messaging_setting: The messaging_setting of this WhatsAppIntegrationRequest.
+        :type: MessagingSettingReference
+        """
+        
+        self._messaging_setting = messaging_setting
 
     @property
     def phone_number(self):

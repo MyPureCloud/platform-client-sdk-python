@@ -4216,7 +4216,7 @@ class TelephonyProvidersEdgeApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str sort_by: Sort by
-        :param str number: Number
+        :param str number: Deprecated, filtering by number not supported
         :return: ExtensionPoolEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

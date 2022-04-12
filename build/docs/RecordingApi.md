@@ -996,7 +996,7 @@ except ApiException as e:
 
 <a name="get_recording_crossplatform_mediaretentionpolicies"></a>
 
-## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_crossplatform_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
+## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_crossplatform_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
 
 
 
@@ -1033,10 +1033,11 @@ name = 'name_example' # str | the policy name - used for filtering results in se
 enabled = true # bool | checks to see if policy is enabled - use enabled = true or enabled = false (optional)
 summary = false # bool | provides a less verbose response of policy lists. (optional) (default to false)
 has_errors = true # bool | provides a way to fetch all policies with errors or policies that do not have errors (optional)
+delete_days_threshold = 56 # int | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value (optional)
 
 try:
     # Gets media retention policy list with query options to filter on name and enabled.
-    api_response = api_instance.get_recording_crossplatform_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
+    api_response = api_instance.get_recording_crossplatform_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->get_recording_crossplatform_mediaretentionpolicies: %s\n" % e)
@@ -1057,6 +1058,7 @@ except ApiException as e:
 | **enabled** | **bool**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
 | **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to false] |
 | **has_errors** | **bool**| provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
+| **delete_days_threshold** | **int**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1389,7 +1391,7 @@ This endpoint does not need any parameters.
 
 <a name="get_recording_mediaretentionpolicies"></a>
 
-## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
+## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
 
 
 
@@ -1426,10 +1428,11 @@ name = 'name_example' # str | the policy name - used for filtering results in se
 enabled = true # bool | checks to see if policy is enabled - use enabled = true or enabled = false (optional)
 summary = false # bool | provides a less verbose response of policy lists. (optional) (default to false)
 has_errors = true # bool | provides a way to fetch all policies with errors or policies that do not have errors (optional)
+delete_days_threshold = 56 # int | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value (optional)
 
 try:
     # Gets media retention policy list with query options to filter on name and enabled.
-    api_response = api_instance.get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
+    api_response = api_instance.get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->get_recording_mediaretentionpolicies: %s\n" % e)
@@ -1450,6 +1453,7 @@ except ApiException as e:
 | **enabled** | **bool**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
 | **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to false] |
 | **has_errors** | **bool**| provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
+| **delete_days_threshold** | **int**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

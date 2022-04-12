@@ -43,6 +43,7 @@ class MessagingIntegration(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
+            'messaging_setting': 'MessagingSettingReference',
             'status': 'str',
             'messenger_type': 'str',
             'recipient': 'DomainEntityRef',
@@ -58,6 +59,7 @@ class MessagingIntegration(object):
             'id': 'id',
             'name': 'name',
             'supported_content': 'supportedContent',
+            'messaging_setting': 'messagingSetting',
             'status': 'status',
             'messenger_type': 'messengerType',
             'recipient': 'recipient',
@@ -72,6 +74,7 @@ class MessagingIntegration(object):
         self._id = None
         self._name = None
         self._supported_content = None
+        self._messaging_setting = None
         self._status = None
         self._messenger_type = None
         self._recipient = None
@@ -150,6 +153,29 @@ class MessagingIntegration(object):
         """
         
         self._supported_content = supported_content
+
+    @property
+    def messaging_setting(self):
+        """
+        Gets the messaging_setting of this MessagingIntegration.
+
+
+        :return: The messaging_setting of this MessagingIntegration.
+        :rtype: MessagingSettingReference
+        """
+        return self._messaging_setting
+
+    @messaging_setting.setter
+    def messaging_setting(self, messaging_setting):
+        """
+        Sets the messaging_setting of this MessagingIntegration.
+
+
+        :param messaging_setting: The messaging_setting of this MessagingIntegration.
+        :type: MessagingSettingReference
+        """
+        
+        self._messaging_setting = messaging_setting
 
     @property
     def status(self):

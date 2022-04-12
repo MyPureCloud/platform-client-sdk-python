@@ -37,6 +37,7 @@ title: Recording
 | **recording_file_role** | **str** | Role of the file recording. It can be either customer_experience or adhoc. | [optional] |
 | **recording_error_status** | **str** | Status of a recording that cannot be returned because of an error | [optional] |
 | **original_recording_start_time** | **datetime** | The start time of the full recording, before any segment access restrictions are applied. Null when there is no playable media. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **creation_time** | **datetime** | The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

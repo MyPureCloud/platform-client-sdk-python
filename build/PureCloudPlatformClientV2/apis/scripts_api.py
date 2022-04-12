@@ -316,12 +316,13 @@ class ScriptsApi(object):
         :param str sort_by: SortBy
         :param str sort_order: SortOrder
         :param str script_data_version: Advanced usage - controls the data version of the script
+        :param str division_ids: Filters scripts to requested divisionIds
         :return: ScriptEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'sort_by', 'sort_order', 'script_data_version']
+        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'sort_by', 'sort_order', 'script_data_version', 'division_ids']
         all_params.append('callback')
 
         params = locals()
@@ -358,6 +359,110 @@ class ScriptsApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'script_data_version' in params:
             query_params['scriptDataVersion'] = params['script_data_version']
+        if 'division_ids' in params:
+            query_params['divisionIds'] = params['division_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScriptEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_scripts_divisionviews(self, **kwargs):
+        """
+        Get the metadata for a list of scripts
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_scripts_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str expand: Expand
+        :param str name: Name filter
+        :param str feature: Feature filter
+        :param str flow_id: Secure flow id filter
+        :param str sort_by: SortBy
+        :param str sort_order: SortOrder
+        :param str script_data_version: Advanced usage - controls the data version of the script
+        :param str division_ids: Filters scripts to requested divisionIds
+        :return: ScriptEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'sort_by', 'sort_order', 'script_data_version', 'division_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scripts_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/scripts/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'feature' in params:
+            query_params['feature'] = params['feature']
+        if 'flow_id' in params:
+            query_params['flowId'] = params['flow_id']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
+        if 'division_ids' in params:
+            query_params['divisionIds'] = params['division_ids']
 
         header_params = {}
 
@@ -413,12 +518,13 @@ class ScriptsApi(object):
         :param str feature: Feature filter
         :param str flow_id: Secure flow id filter
         :param str script_data_version: Advanced usage - controls the data version of the script
+        :param str division_ids: Filters scripts to requested divisionIds
         :return: ScriptEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'script_data_version']
+        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'script_data_version', 'division_ids']
         all_params.append('callback')
 
         params = locals()
@@ -451,6 +557,104 @@ class ScriptsApi(object):
             query_params['flowId'] = params['flow_id']
         if 'script_data_version' in params:
             query_params['scriptDataVersion'] = params['script_data_version']
+        if 'division_ids' in params:
+            query_params['divisionIds'] = params['division_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScriptEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_scripts_published_divisionviews(self, **kwargs):
+        """
+        Get the published scripts metadata.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_scripts_published_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str expand: Expand
+        :param str name: Name filter
+        :param str feature: Feature filter
+        :param str flow_id: Secure flow id filter
+        :param str script_data_version: Advanced usage - controls the data version of the script
+        :param str division_ids: Filters scripts to requested divisionIds
+        :return: ScriptEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'script_data_version', 'division_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scripts_published_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/scripts/published/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'feature' in params:
+            query_params['feature'] = params['feature']
+        if 'flow_id' in params:
+            query_params['flowId'] = params['flow_id']
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
+        if 'division_ids' in params:
+            query_params['divisionIds'] = params['division_ids']
 
         header_params = {}
 

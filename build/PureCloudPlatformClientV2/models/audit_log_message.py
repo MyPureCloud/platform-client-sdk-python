@@ -51,6 +51,7 @@ class AuditLogMessage(object):
             'action': 'str',
             'entity': 'DomainEntityRef',
             'entity_type': 'str',
+            'status': 'str',
             'property_changes': 'list[PropertyChange]',
             'context': 'dict(str, str)'
         }
@@ -67,6 +68,7 @@ class AuditLogMessage(object):
             'action': 'action',
             'entity': 'entity',
             'entity_type': 'entityType',
+            'status': 'status',
             'property_changes': 'propertyChanges',
             'context': 'context'
         }
@@ -82,6 +84,7 @@ class AuditLogMessage(object):
         self._action = None
         self._entity = None
         self._entity_type = None
+        self._status = None
         self._property_changes = None
         self._context = None
 
@@ -220,7 +223,7 @@ class AuditLogMessage(object):
         :param service_name: The service_name of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["AnalyticsReporting", "Architect", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Directory", "DynamicSchema", "Gamification", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Learning", "Limits", "Outbound", "PeoplePermissions", "EmployeePerformance", "PredictiveEngagement", "Presence", "Quality", "ResponseManagement", "Routing", "SpeechAndTextAnalytics", "Telephony", "TopicsDefinitions", "Triggers", "ProcessAutomation", "WebDeployments", "Webhooks", "WorkforceManagement", "Messaging", "Supportability", "Callback", "Workitems", "SCIM"]
+        allowed_values = ["AnalyticsReporting", "Architect", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Directory", "DynamicSchema", "Gamification", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Learning", "Limits", "Outbound", "PeoplePermissions", "EmployeePerformance", "PredictiveEngagement", "Presence", "Quality", "ResponseManagement", "Routing", "SpeechAndTextAnalytics", "Telephony", "TopicsDefinitions", "Triggers", "ProcessAutomation", "WebDeployments", "Webhooks", "WorkforceManagement", "Messaging", "Supportability", "Callback", "Workitems", "SCIM", "NumberPurchasing"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"
@@ -349,6 +352,33 @@ class AuditLogMessage(object):
             self._entity_type = "outdated_sdk_version"
         else:
             self._entity_type = entity_type
+
+    @property
+    def status(self):
+        """
+        Gets the status of this AuditLogMessage.
+        Status of the event being audited
+
+        :return: The status of this AuditLogMessage.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this AuditLogMessage.
+        Status of the event being audited
+
+        :param status: The status of this AuditLogMessage.
+        :type: str
+        """
+        allowed_values = ["SUCCESS", "FAILURE", "WARNING"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status -> " + status)
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
 
     @property
     def property_changes(self):

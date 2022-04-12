@@ -43,6 +43,7 @@ class TwitterIntegration(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
+            'messaging_setting': 'MessagingSettingReference',
             'access_token_key': 'str',
             'consumer_key': 'str',
             'username': 'str',
@@ -65,6 +66,7 @@ class TwitterIntegration(object):
             'id': 'id',
             'name': 'name',
             'supported_content': 'supportedContent',
+            'messaging_setting': 'messagingSetting',
             'access_token_key': 'accessTokenKey',
             'consumer_key': 'consumerKey',
             'username': 'username',
@@ -86,6 +88,7 @@ class TwitterIntegration(object):
         self._id = None
         self._name = None
         self._supported_content = None
+        self._messaging_setting = None
         self._access_token_key = None
         self._consumer_key = None
         self._username = None
@@ -171,6 +174,29 @@ class TwitterIntegration(object):
         """
         
         self._supported_content = supported_content
+
+    @property
+    def messaging_setting(self):
+        """
+        Gets the messaging_setting of this TwitterIntegration.
+
+
+        :return: The messaging_setting of this TwitterIntegration.
+        :rtype: MessagingSettingReference
+        """
+        return self._messaging_setting
+
+    @messaging_setting.setter
+    def messaging_setting(self, messaging_setting):
+        """
+        Sets the messaging_setting of this TwitterIntegration.
+
+
+        :param messaging_setting: The messaging_setting of this TwitterIntegration.
+        :type: MessagingSettingReference
+        """
+        
+        self._messaging_setting = messaging_setting
 
     @property
     def access_token_key(self):

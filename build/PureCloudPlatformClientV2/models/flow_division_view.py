@@ -168,7 +168,7 @@ class FlowDivisionView(object):
         :param type: The type of this FlowDivisionView.
         :type: str
         """
-        allowed_values = ["BOT", "COMMONMODULE", "DIGITALBOT", "INBOUNDCALL", "INBOUNDCHAT", "INBOUNDEMAIL", "INBOUNDSHORTMESSAGE", "INQUEUECALL", "INQUEUEEMAIL", "INQUEUESHORTMESSAGE", "OUTBOUNDCALL", "SECURECALL", "SPEECH", "SURVEYINVITE", "VOICEMAIL", "WORKFLOW", "WORKITEM"]
+        allowed_values = ["BOT", "COMMONMODULE", "DIGITALBOT", "INBOUNDCALL", "INBOUNDCHAT", "INBOUNDEMAIL", "INBOUNDSHORTMESSAGE", "INQUEUECALL", "INQUEUEEMAIL", "INQUEUESHORTMESSAGE", "OUTBOUNDCALL", "SECURECALL", "SPEECH", "SURVEYINVITE", "VOICE", "VOICEMAIL", "WORKFLOW", "WORKITEM"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

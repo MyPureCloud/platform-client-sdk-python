@@ -416,7 +416,7 @@ class Queue(object):
     def routing_rules(self):
         """
         Gets the routing_rules of this Queue.
-        The routing rules for the queue, used for routing to known or preferred agents.
+        The routing rules for the queue, used for Preferred Agent Routing.
 
         :return: The routing_rules of this Queue.
         :rtype: list[RoutingRule]
@@ -427,7 +427,7 @@ class Queue(object):
     def routing_rules(self, routing_rules):
         """
         Sets the routing_rules of this Queue.
-        The routing rules for the queue, used for routing to known or preferred agents.
+        The routing rules for the queue, used for Preferred Agent Routing.
 
         :param routing_rules: The routing_rules of this Queue.
         :type: list[RoutingRule]
@@ -439,7 +439,7 @@ class Queue(object):
     def bullseye(self):
         """
         Gets the bullseye of this Queue.
-        The bulls-eye settings for the queue.
+        The bullseye settings for the queue.
 
         :return: The bullseye of this Queue.
         :rtype: Bullseye
@@ -450,7 +450,7 @@ class Queue(object):
     def bullseye(self, bullseye):
         """
         Sets the bullseye of this Queue.
-        The bulls-eye settings for the queue.
+        The bullseye settings for the queue.
 
         :param bullseye: The bullseye of this Queue.
         :type: Bullseye

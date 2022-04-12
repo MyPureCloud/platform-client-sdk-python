@@ -43,6 +43,7 @@ class OpenIntegrationRequest(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
+            'messaging_setting': 'MessagingSettingReference',
             'outbound_notification_webhook_url': 'str',
             'outbound_notification_webhook_signature_secret_token': 'str',
             'webhook_headers': 'dict(str, str)',
@@ -53,6 +54,7 @@ class OpenIntegrationRequest(object):
             'id': 'id',
             'name': 'name',
             'supported_content': 'supportedContent',
+            'messaging_setting': 'messagingSetting',
             'outbound_notification_webhook_url': 'outboundNotificationWebhookUrl',
             'outbound_notification_webhook_signature_secret_token': 'outboundNotificationWebhookSignatureSecretToken',
             'webhook_headers': 'webhookHeaders',
@@ -62,6 +64,7 @@ class OpenIntegrationRequest(object):
         self._id = None
         self._name = None
         self._supported_content = None
+        self._messaging_setting = None
         self._outbound_notification_webhook_url = None
         self._outbound_notification_webhook_signature_secret_token = None
         self._webhook_headers = None
@@ -135,6 +138,29 @@ class OpenIntegrationRequest(object):
         """
         
         self._supported_content = supported_content
+
+    @property
+    def messaging_setting(self):
+        """
+        Gets the messaging_setting of this OpenIntegrationRequest.
+
+
+        :return: The messaging_setting of this OpenIntegrationRequest.
+        :rtype: MessagingSettingReference
+        """
+        return self._messaging_setting
+
+    @messaging_setting.setter
+    def messaging_setting(self, messaging_setting):
+        """
+        Sets the messaging_setting of this OpenIntegrationRequest.
+
+
+        :param messaging_setting: The messaging_setting of this OpenIntegrationRequest.
+        :type: MessagingSettingReference
+        """
+        
+        self._messaging_setting = messaging_setting
 
     @property
     def outbound_notification_webhook_url(self):

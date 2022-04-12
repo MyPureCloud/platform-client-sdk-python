@@ -13,9 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_presencedefinitions**](PresenceApi.html#get_presencedefinitions) | Get an Organization&#39;s list of Presence Definitions|
 |[**get_systempresences**](PresenceApi.html#get_systempresences) | Get the list of SystemPresences|
 |[**get_user_presence**](PresenceApi.html#get_user_presence) | Get a user&#39;s Presence|
-|[**get_user_presences_microsoftteams**](PresenceApi.html#get_user_presences_microsoftteams) | Get a user&#39;s Microsoft Teams presence.|
 |[**get_user_presences_purecloud**](PresenceApi.html#get_user_presences_purecloud) | Get a user&#39;s Genesys Cloud presence.|
-|[**get_user_presences_zoomphone**](PresenceApi.html#get_user_presences_zoomphone) | Get a user&#39;s Zoom Phone presence.|
 |[**patch_user_presence**](PresenceApi.html#patch_user_presence) | Patch a user&#39;s Presence|
 |[**patch_user_presences_purecloud**](PresenceApi.html#patch_user_presences_purecloud) | Patch a Genesys Cloud user&#39;s presence|
 |[**post_presencedefinitions**](PresenceApi.html#post_presencedefinitions) | Create a Presence Definition|
@@ -279,58 +277,6 @@ except ApiException as e:
 
 [**UserPresence**](UserPresence.html)
 
-<a name="get_user_presences_microsoftteams"></a>
-
-## [**PresenceExpand**](PresenceExpand.html) get_user_presences_microsoftteams(user_id)
-
-
-
-Get a user's Microsoft Teams presence.
-
-Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-
-Wraps GET /api/v2/users/{userId}/presences/microsoftteams 
-
-Requires ANY permissions: 
-
-* integration:microsoftTeams:view
-* integrations:integration:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.PresenceApi()
-user_id = 'user_id_example' # str | user Id
-
-try:
-    # Get a user's Microsoft Teams presence.
-    api_response = api_instance.get_user_presences_microsoftteams(user_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PresenceApi->get_user_presences_microsoftteams: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**PresenceExpand**](PresenceExpand.html)
-
 <a name="get_user_presences_purecloud"></a>
 
 ## [**UserPresence**](UserPresence.html) get_user_presences_purecloud(user_id)
@@ -380,58 +326,6 @@ except ApiException as e:
 ### Return type
 
 [**UserPresence**](UserPresence.html)
-
-<a name="get_user_presences_zoomphone"></a>
-
-## [**PresenceExpand**](PresenceExpand.html) get_user_presences_zoomphone(user_id)
-
-
-
-Get a user's Zoom Phone presence.
-
-Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-
-Wraps GET /api/v2/users/{userId}/presences/zoomphone 
-
-Requires ANY permissions: 
-
-* integration:zoomPhone:view
-* integrations:integration:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.PresenceApi()
-user_id = 'user_id_example' # str | user Id
-
-try:
-    # Get a user's Zoom Phone presence.
-    api_response = api_instance.get_user_presences_zoomphone(user_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PresenceApi->get_user_presences_zoomphone: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**PresenceExpand**](PresenceExpand.html)
 
 <a name="patch_user_presence"></a>
 

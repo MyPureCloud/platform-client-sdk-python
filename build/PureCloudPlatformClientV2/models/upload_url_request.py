@@ -85,7 +85,7 @@ class UploadUrlRequest(object):
     def content_md5(self):
         """
         Gets the content_md5 of this UploadUrlRequest.
-        Content MD-5 of the file to upload
+        Content MD5 of the file to upload
 
         :return: The content_md5 of this UploadUrlRequest.
         :rtype: str
@@ -96,7 +96,7 @@ class UploadUrlRequest(object):
     def content_md5(self, content_md5):
         """
         Sets the content_md5 of this UploadUrlRequest.
-        Content MD-5 of the file to upload
+        Content MD5 of the file to upload
 
         :param content_md5: The content_md5 of this UploadUrlRequest.
         :type: str

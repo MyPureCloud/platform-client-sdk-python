@@ -490,7 +490,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
 
@@ -506,7 +506,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
 {: class="table table-striped"}
@@ -640,7 +640,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
 time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time off limit object to delete
 
 try:
@@ -655,7 +655,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit. |  |
 | **time_off_limit_id** | **str**| The ID of the time off limit object to delete |  |
 {: class="table table-striped"}
 
@@ -692,7 +692,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
 time_off_plan_id = 'time_off_plan_id_example' # str | The ID of the time off plan to delete
 
 try:
@@ -707,7 +707,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID. |  |
+| **management_unit_id** | **str**| The ID of the management unit |  |
 | **time_off_plan_id** | **str**| The ID of the time off plan to delete |  |
 {: class="table table-striped"}
 
@@ -1386,7 +1386,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 date = '2013-10-20' # date | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 try:
@@ -1402,7 +1402,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit |  |
+| **business_unit_id** | **str**| The ID of the business unit |  |
 | **date** | **date**| yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
@@ -2160,7 +2160,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
 expand = ['expand_example'] # list[str] |  (optional)
@@ -2178,7 +2178,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
 | **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: planningGroups, generationResults |
@@ -2217,7 +2217,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
 week_number = 56 # int | The week number to fetch (for multi-week forecasts) (optional)
@@ -2236,7 +2236,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
 | **week_number** | **int**| The week number to fetch (for multi-week forecasts) | [optional]  |
@@ -2276,7 +2276,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
 
@@ -2293,7 +2293,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
 {: class="table table-striped"}
@@ -2331,7 +2331,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
 force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
@@ -2349,7 +2349,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
@@ -2390,7 +2390,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
 
@@ -2407,7 +2407,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
 {: class="table table-striped"}
@@ -2446,7 +2446,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = 'week_date_id_example' # str | The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
 
 try:
@@ -2462,7 +2462,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **str**| The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts |  |
 {: class="table table-striped"}
 
@@ -2992,7 +2992,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
 force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
@@ -3008,7 +3008,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit |  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
@@ -3045,7 +3045,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 agent_id = 'agent_id_example' # str | The agent id
 exclude_capabilities = true # bool | Excludes all capabilities of the agent such as queues, languages, and skills (optional)
 
@@ -3062,7 +3062,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **agent_id** | **str**| The agent id |  |
 | **exclude_capabilities** | **bool**| Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
 {: class="table table-striped"}
@@ -3101,7 +3101,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 agent_id = 'agent_id_example' # str | The agent id
 
 try:
@@ -3117,7 +3117,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **agent_id** | **str**| The agent id |  |
 {: class="table table-striped"}
 
@@ -3155,7 +3155,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
     # Gets a summary of all shift trades in the matched state
@@ -3170,7 +3170,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3206,7 +3206,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
     # Gets list of users available for whom you can send direct shift trade requests
@@ -3221,7 +3221,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3257,7 +3257,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
 time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time off limit to fetch
 
 try:
@@ -3273,7 +3273,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit. |  |
 | **time_off_limit_id** | **str**| The ID of the time off limit to fetch |  |
 {: class="table table-striped"}
 
@@ -3311,7 +3311,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
 
 try:
     # Gets a list of time off limit objects under management unit.
@@ -3326,7 +3326,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3362,7 +3362,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
 time_off_plan_id = 'time_off_plan_id_example' # str | The ID of the time off plan to fetch
 
 try:
@@ -3378,7 +3378,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID. |  |
+| **management_unit_id** | **str**| The ID of the management unit |  |
 | **time_off_plan_id** | **str**| The ID of the time off plan to fetch |  |
 {: class="table table-striped"}
 
@@ -3415,7 +3415,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
 
 try:
     # Gets a list of time off plans
@@ -3430,7 +3430,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID. |  |
+| **management_unit_id** | **str**| The ID of the management unit |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3466,7 +3466,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.
 time_off_request_id = 'time_off_request_id_example' # str | Time Off Request Id
 
@@ -3483,7 +3483,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The userId to whom the Time Off Request applies. |  |
 | **time_off_request_id** | **str**| Time Off Request Id |  |
 {: class="table table-striped"}
@@ -3522,7 +3522,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
 user_id = 'user_id_example' # str | The userId to whom the time off request applies.
 time_off_request_id = 'time_off_request_id_example' # str | The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
 
@@ -3539,7 +3539,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit. |  |
 | **user_id** | **str**| The userId to whom the time off request applies. |  |
 | **time_off_request_id** | **str**| The ID of the time off request, which dates and activityCodeId determine limit values to retrieve |  |
 {: class="table table-striped"}
@@ -3577,7 +3577,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.
 recently_reviewed = false # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to false)
 
@@ -3594,7 +3594,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The userId to whom the Time Off Request applies. |  |
 | **recently_reviewed** | **bool**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -3639,7 +3639,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
     # Get users in the management unit
@@ -3654,7 +3654,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3811,7 +3811,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 evaluate_matches = true # bool | Whether to evaluate the matches for violations (optional) (default to true)
 
@@ -3828,7 +3828,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **evaluate_matches** | **bool**| Whether to evaluate the matches for violations | [optional] [default to true] |
 {: class="table table-striped"}
@@ -4343,7 +4343,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-time_off_request_id = 'time_off_request_id_example' # str | Time Off Request Id
+time_off_request_id = 'time_off_request_id_example' # str | The ID of the time off request
 
 try:
     # Get a time off request for the current user
@@ -4358,7 +4358,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **time_off_request_id** | **str**| Time Off Request Id |  |
+| **time_off_request_id** | **str**| The ID of the time off request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4394,7 +4394,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-time_off_request_id = 'time_off_request_id_example' # str | Time Off Request Id
+time_off_request_id = 'time_off_request_id_example' # str | The ID of the time off request
 
 try:
     # Get the daily waitlist positions of a time off request for the current user
@@ -4409,7 +4409,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **time_off_request_id** | **str**| Time Off Request Id |  |
+| **time_off_request_id** | **str**| The ID of the time off request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4822,7 +4822,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
 time_off_limit_id = 'time_off_limit_id_example' # str | The id of time off limit object to update
 body = PureCloudPlatformClientV2.UpdateTimeOffLimitRequest() # UpdateTimeOffLimitRequest | body (optional)
 
@@ -4839,7 +4839,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit. |  |
 | **time_off_limit_id** | **str**| The id of time off limit object to update |  |
 | **body** | [**UpdateTimeOffLimitRequest**](UpdateTimeOffLimitRequest.html)| body | [optional]  |
 {: class="table table-striped"}
@@ -4877,7 +4877,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
 time_off_plan_id = 'time_off_plan_id_example' # str | The ID of the time off plan to update
 body = PureCloudPlatformClientV2.UpdateTimeOffPlanRequest() # UpdateTimeOffPlanRequest | body (optional)
 
@@ -4894,7 +4894,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID. |  |
+| **management_unit_id** | **str**| The ID of the management unit |  |
 | **time_off_plan_id** | **str**| The ID of the time off plan to update |  |
 | **body** | [**UpdateTimeOffPlanRequest**](UpdateTimeOffPlanRequest.html)| body | [optional]  |
 {: class="table table-striped"}
@@ -4932,7 +4932,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The id of the user the requested time off request belongs to
 time_off_request_id = 'time_off_request_id_example' # str | The id of the time off request to update
 body = PureCloudPlatformClientV2.AdminTimeOffRequestPatch() # AdminTimeOffRequestPatch | body (optional)
@@ -4950,7 +4950,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The id of the user the requested time off request belongs to |  |
 | **time_off_request_id** | **str**| The id of the time off request to update |  |
 | **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch.html)| body | [optional]  |
@@ -4989,7 +4989,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.PatchShiftTradeRequest() # PatchShiftTradeRequest | body
 trade_id = 'trade_id_example' # str | The ID of the shift trade to update
@@ -5007,7 +5007,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest.html)| body |  |
 | **trade_id** | **str**| The ID of the shift trade to update |  |
@@ -5158,7 +5158,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-time_off_request_id = 'time_off_request_id_example' # str | Time Off Request Id
+time_off_request_id = 'time_off_request_id_example' # str | The ID of the time off request
 body = PureCloudPlatformClientV2.AgentTimeOffRequestPatch() # AgentTimeOffRequestPatch | body (optional)
 
 try:
@@ -5174,7 +5174,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **time_off_request_id** | **str**| Time Off Request Id |  |
+| **time_off_request_id** | **str**| The ID of the time off request |  |
 | **body** | [**AgentTimeOffRequestPatch**](AgentTimeOffRequestPatch.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -5424,7 +5424,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
 body = PureCloudPlatformClientV2.IntradayPlanningGroupRequest() # IntradayPlanningGroupRequest | body (optional)
 
@@ -5441,7 +5441,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit |  |
+| **business_unit_id** | **str**| The ID of the business unit |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 | **body** | [**IntradayPlanningGroupRequest**](IntradayPlanningGroupRequest.html)| body | [optional]  |
 {: class="table table-striped"}
@@ -6095,7 +6095,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast to copy
 body = PureCloudPlatformClientV2.CopyBuForecastRequest() # CopyBuForecastRequest | body
@@ -6114,7 +6114,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast to copy |  |
 | **body** | [**CopyBuForecastRequest**](CopyBuForecastRequest.html)| body |  |
@@ -6154,7 +6154,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.GenerateBuForecastRequest() # GenerateBuForecastRequest | 
 force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
@@ -6172,7 +6172,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **body** | [**GenerateBuForecastRequest**](GenerateBuForecastRequest.html)|  |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
@@ -6211,7 +6211,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | 
 
@@ -6228,7 +6228,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)|  |  |
 {: class="table table-striped"}
@@ -6266,7 +6266,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.UploadUrlRequestBody() # UploadUrlRequestBody | body
 
@@ -6283,7 +6283,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body |  |
 {: class="table table-striped"}
@@ -6522,7 +6522,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.BuSearchAgentSchedulesRequest() # BuSearchAgentSchedulesRequest | body (optional)
 force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
 force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
@@ -6540,7 +6540,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
@@ -6579,7 +6579,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
 body = PureCloudPlatformClientV2.WfmHistoricalAdherenceQuery() # WfmHistoricalAdherenceQuery | body (optional)
 
 try:
@@ -6595,7 +6595,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit |  |
+| **management_unit_id** | **str**| The ID of the management unit |  |
 | **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -6686,7 +6686,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.UserListScheduleRequestBody() # UserListScheduleRequestBody | body (optional)
 
 try:
@@ -6702,7 +6702,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -6739,7 +6739,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
 body = PureCloudPlatformClientV2.CreateTimeOffLimitRequest() # CreateTimeOffLimitRequest | body (optional)
 
 try:
@@ -6755,7 +6755,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit. |  |
 | **body** | [**CreateTimeOffLimitRequest**](CreateTimeOffLimitRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -6792,7 +6792,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
 body = PureCloudPlatformClientV2.QueryTimeOffLimitValuesRequest() # QueryTimeOffLimitValuesRequest | body (optional)
 
 try:
@@ -6808,7 +6808,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit. |  |
 | **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -6845,7 +6845,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
 body = PureCloudPlatformClientV2.CreateTimeOffPlanRequest() # CreateTimeOffPlanRequest | body (optional)
 
 try:
@@ -6861,7 +6861,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID. |  |
+| **management_unit_id** | **str**| The ID of the management unit |  |
 | **body** | [**CreateTimeOffPlanRequest**](CreateTimeOffPlanRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -6898,7 +6898,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.CreateAdminTimeOffRequest() # CreateAdminTimeOffRequest | body (optional)
 
 try:
@@ -6914,7 +6914,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -6951,7 +6951,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.TimeOffRequestQueryBody() # TimeOffRequestQueryBody | body (optional)
 
 try:
@@ -6967,7 +6967,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -7004,7 +7004,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
 body = PureCloudPlatformClientV2.QueryWaitlistPositionsRequest() # QueryWaitlistPositionsRequest | body (optional)
 
 try:
@@ -7020,7 +7020,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit. |  |
 | **body** | [**QueryWaitlistPositionsRequest**](QueryWaitlistPositionsRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -7057,7 +7057,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.MatchShiftTradeRequest() # MatchShiftTradeRequest | body
 trade_id = 'trade_id_example' # str | The ID of the shift trade to update
@@ -7075,7 +7075,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest.html)| body |  |
 | **trade_id** | **str**| The ID of the shift trade to update |  |
@@ -7114,7 +7114,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.AddShiftTradeRequest() # AddShiftTradeRequest | body
 
@@ -7131,7 +7131,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **body** | [**AddShiftTradeRequest**](AddShiftTradeRequest.html)| body |  |
 {: class="table table-striped"}
@@ -7169,7 +7169,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.SearchShiftTradesRequest() # SearchShiftTradesRequest | body
 
@@ -7186,7 +7186,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **body** | [**SearchShiftTradesRequest**](SearchShiftTradesRequest.html)| body |  |
 {: class="table table-striped"}
@@ -7225,7 +7225,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.BulkShiftTradeStateUpdateRequest() # BulkShiftTradeStateUpdateRequest | body
 force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
@@ -7243,7 +7243,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **body** | [**BulkShiftTradeStateUpdateRequest**](BulkShiftTradeStateUpdateRequest.html)| body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
@@ -7812,7 +7812,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
 time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time off limit object to set values for
 body = PureCloudPlatformClientV2.SetTimeOffLimitValuesRequest() # SetTimeOffLimitValuesRequest | body (optional)
 
@@ -7829,7 +7829,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **management_unit_id** | **str**| The ID of the management unit. |  |
 | **time_off_limit_id** | **str**| The ID of the time off limit object to set values for |  |
 | **body** | [**SetTimeOffLimitValuesRequest**](SetTimeOffLimitValuesRequest.html)| body | [optional]  |
 {: class="table table-striped"}

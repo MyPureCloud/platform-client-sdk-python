@@ -44,11 +44,11 @@ class ExtensionPoolEntityListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
+            'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
             'next_uri': 'str',
             'previous_uri': 'str',
-            'last_uri': 'str',
             'page_count': 'int'
         }
 
@@ -57,11 +57,11 @@ class ExtensionPoolEntityListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
+            'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
-            'last_uri': 'lastUri',
             'page_count': 'pageCount'
         }
 
@@ -69,11 +69,11 @@ class ExtensionPoolEntityListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
+        self._last_uri = None
         self._first_uri = None
         self._self_uri = None
         self._next_uri = None
         self._previous_uri = None
-        self._last_uri = None
         self._page_count = None
 
     @property
@@ -169,6 +169,29 @@ class ExtensionPoolEntityListing(object):
         self._total = total
 
     @property
+    def last_uri(self):
+        """
+        Gets the last_uri of this ExtensionPoolEntityListing.
+
+
+        :return: The last_uri of this ExtensionPoolEntityListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri):
+        """
+        Sets the last_uri of this ExtensionPoolEntityListing.
+
+
+        :param last_uri: The last_uri of this ExtensionPoolEntityListing.
+        :type: str
+        """
+        
+        self._last_uri = last_uri
+
+    @property
     def first_uri(self):
         """
         Gets the first_uri of this ExtensionPoolEntityListing.
@@ -259,29 +282,6 @@ class ExtensionPoolEntityListing(object):
         """
         
         self._previous_uri = previous_uri
-
-    @property
-    def last_uri(self):
-        """
-        Gets the last_uri of this ExtensionPoolEntityListing.
-
-
-        :return: The last_uri of this ExtensionPoolEntityListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri):
-        """
-        Sets the last_uri of this ExtensionPoolEntityListing.
-
-
-        :param last_uri: The last_uri of this ExtensionPoolEntityListing.
-        :type: str
-        """
-        
-        self._last_uri = last_uri
 
     @property
     def page_count(self):

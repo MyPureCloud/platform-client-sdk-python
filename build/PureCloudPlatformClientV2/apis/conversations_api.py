@@ -6192,7 +6192,7 @@ class ConversationsApi(object):
 
     def patch_conversations_call(self, conversation_id, body, **kwargs):
         """
-        Update a conversation by setting it's recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+        Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
         
 
         This method makes a synchronous HTTP request by default. To make an

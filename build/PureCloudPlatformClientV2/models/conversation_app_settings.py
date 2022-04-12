@@ -42,18 +42,21 @@ class ConversationAppSettings(object):
         self.swagger_types = {
             'show_agent_typing_indicator': 'bool',
             'show_user_typing_indicator': 'bool',
-            'auto_start_type': 'str'
+            'auto_start_type': 'str',
+            'auto_start': 'AutoStart'
         }
 
         self.attribute_map = {
             'show_agent_typing_indicator': 'showAgentTypingIndicator',
             'show_user_typing_indicator': 'showUserTypingIndicator',
-            'auto_start_type': 'autoStartType'
+            'auto_start_type': 'autoStartType',
+            'auto_start': 'autoStart'
         }
 
         self._show_agent_typing_indicator = None
         self._show_user_typing_indicator = None
         self._auto_start_type = None
+        self._auto_start = None
 
     @property
     def show_agent_typing_indicator(self):
@@ -105,7 +108,7 @@ class ConversationAppSettings(object):
     def auto_start_type(self):
         """
         Gets the auto_start_type of this ConversationAppSettings.
-        The auto start type for the messenger conversation
+        Deprecated. The auto start type for the messenger conversation
 
         :return: The auto_start_type of this ConversationAppSettings.
         :rtype: str
@@ -116,7 +119,7 @@ class ConversationAppSettings(object):
     def auto_start_type(self, auto_start_type):
         """
         Sets the auto_start_type of this ConversationAppSettings.
-        The auto start type for the messenger conversation
+        Deprecated. The auto start type for the messenger conversation
 
         :param auto_start_type: The auto_start_type of this ConversationAppSettings.
         :type: str
@@ -127,6 +130,29 @@ class ConversationAppSettings(object):
             self._auto_start_type = "outdated_sdk_version"
         else:
             self._auto_start_type = auto_start_type
+
+    @property
+    def auto_start(self):
+        """
+        Gets the auto_start of this ConversationAppSettings.
+        The auto start for the messenger conversation
+
+        :return: The auto_start of this ConversationAppSettings.
+        :rtype: AutoStart
+        """
+        return self._auto_start
+
+    @auto_start.setter
+    def auto_start(self, auto_start):
+        """
+        Sets the auto_start of this ConversationAppSettings.
+        The auto start for the messenger conversation
+
+        :param auto_start: The auto_start of this ConversationAppSettings.
+        :type: AutoStart
+        """
+        
+        self._auto_start = auto_start
 
     def to_dict(self):
         """

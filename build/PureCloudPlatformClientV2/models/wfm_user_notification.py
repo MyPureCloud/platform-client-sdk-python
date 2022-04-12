@@ -46,6 +46,7 @@ class WfmUserNotification(object):
             'type': 'str',
             'shift_trade': 'ShiftTradeNotification',
             'time_off_request': 'TimeOffRequestNotification',
+            'adherence_explanation': 'AdherenceExplanationNotification',
             'marked_as_read': 'bool',
             'agent_notification': 'bool',
             'other_notification_ids_in_group': 'list[str]'
@@ -58,6 +59,7 @@ class WfmUserNotification(object):
             'type': 'type',
             'shift_trade': 'shiftTrade',
             'time_off_request': 'timeOffRequest',
+            'adherence_explanation': 'adherenceExplanation',
             'marked_as_read': 'markedAsRead',
             'agent_notification': 'agentNotification',
             'other_notification_ids_in_group': 'otherNotificationIdsInGroup'
@@ -69,6 +71,7 @@ class WfmUserNotification(object):
         self._type = None
         self._shift_trade = None
         self._time_off_request = None
+        self._adherence_explanation = None
         self._marked_as_read = None
         self._agent_notification = None
         self._other_notification_ids_in_group = None
@@ -162,7 +165,7 @@ class WfmUserNotification(object):
         :param type: The type of this WfmUserNotification.
         :type: str
         """
-        allowed_values = ["ShiftTrade", "TimeOffRequest"]
+        allowed_values = ["AdherenceExplanation", "ShiftTrade", "TimeOffRequest"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -214,6 +217,29 @@ class WfmUserNotification(object):
         """
         
         self._time_off_request = time_off_request
+
+    @property
+    def adherence_explanation(self):
+        """
+        Gets the adherence_explanation of this WfmUserNotification.
+        An adherence explanation notification.  Only set if type == AdherenceExplanation
+
+        :return: The adherence_explanation of this WfmUserNotification.
+        :rtype: AdherenceExplanationNotification
+        """
+        return self._adherence_explanation
+
+    @adherence_explanation.setter
+    def adherence_explanation(self, adherence_explanation):
+        """
+        Sets the adherence_explanation of this WfmUserNotification.
+        An adherence explanation notification.  Only set if type == AdherenceExplanation
+
+        :param adherence_explanation: The adherence_explanation of this WfmUserNotification.
+        :type: AdherenceExplanationNotification
+        """
+        
+        self._adherence_explanation = adherence_explanation
 
     @property
     def marked_as_read(self):

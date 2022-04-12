@@ -42,6 +42,7 @@ class Script(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'version_id': 'str',
             'created_date': 'datetime',
             'modified_date': 'datetime',
@@ -59,6 +60,7 @@ class Script(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'version_id': 'versionId',
             'created_date': 'createdDate',
             'modified_date': 'modifiedDate',
@@ -75,6 +77,7 @@ class Script(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._version_id = None
         self._created_date = None
         self._modified_date = None
@@ -133,6 +136,29 @@ class Script(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this Script.
+        The division to which this entity belongs.
+
+        :return: The division of this Script.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this Script.
+        The division to which this entity belongs.
+
+        :param division: The division of this Script.
+        :type: Division
+        """
+        
+        self._division = division
 
     @property
     def version_id(self):

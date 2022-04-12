@@ -41,16 +41,31 @@ class SupportCenterSettings(object):
         """
         self.swagger_types = {
             'enabled': 'bool',
-            'knowledge_base': 'AddressableEntityRef'
+            'knowledge_base': 'AddressableEntityRef',
+            'custom_messages': 'list[SupportCenterCustomMessage]',
+            'router_type': 'str',
+            'screens': 'list[SupportCenterScreen]',
+            'enabled_categories': 'list[AddressableEntityRef]',
+            'style_setting': 'SupportCenterStyleSetting'
         }
 
         self.attribute_map = {
             'enabled': 'enabled',
-            'knowledge_base': 'knowledgeBase'
+            'knowledge_base': 'knowledgeBase',
+            'custom_messages': 'customMessages',
+            'router_type': 'routerType',
+            'screens': 'screens',
+            'enabled_categories': 'enabledCategories',
+            'style_setting': 'styleSetting'
         }
 
         self._enabled = None
         self._knowledge_base = None
+        self._custom_messages = None
+        self._router_type = None
+        self._screens = None
+        self._enabled_categories = None
+        self._style_setting = None
 
     @property
     def enabled(self):
@@ -97,6 +112,125 @@ class SupportCenterSettings(object):
         """
         
         self._knowledge_base = knowledge_base
+
+    @property
+    def custom_messages(self):
+        """
+        Gets the custom_messages of this SupportCenterSettings.
+        Customizable display texts for support center
+
+        :return: The custom_messages of this SupportCenterSettings.
+        :rtype: list[SupportCenterCustomMessage]
+        """
+        return self._custom_messages
+
+    @custom_messages.setter
+    def custom_messages(self, custom_messages):
+        """
+        Sets the custom_messages of this SupportCenterSettings.
+        Customizable display texts for support center
+
+        :param custom_messages: The custom_messages of this SupportCenterSettings.
+        :type: list[SupportCenterCustomMessage]
+        """
+        
+        self._custom_messages = custom_messages
+
+    @property
+    def router_type(self):
+        """
+        Gets the router_type of this SupportCenterSettings.
+        Router type for support center
+
+        :return: The router_type of this SupportCenterSettings.
+        :rtype: str
+        """
+        return self._router_type
+
+    @router_type.setter
+    def router_type(self, router_type):
+        """
+        Sets the router_type of this SupportCenterSettings.
+        Router type for support center
+
+        :param router_type: The router_type of this SupportCenterSettings.
+        :type: str
+        """
+        allowed_values = ["Hash", "Browser"]
+        if router_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for router_type -> " + router_type)
+            self._router_type = "outdated_sdk_version"
+        else:
+            self._router_type = router_type
+
+    @property
+    def screens(self):
+        """
+        Gets the screens of this SupportCenterSettings.
+        Available screens for the support center with its modules
+
+        :return: The screens of this SupportCenterSettings.
+        :rtype: list[SupportCenterScreen]
+        """
+        return self._screens
+
+    @screens.setter
+    def screens(self, screens):
+        """
+        Sets the screens of this SupportCenterSettings.
+        Available screens for the support center with its modules
+
+        :param screens: The screens of this SupportCenterSettings.
+        :type: list[SupportCenterScreen]
+        """
+        
+        self._screens = screens
+
+    @property
+    def enabled_categories(self):
+        """
+        Gets the enabled_categories of this SupportCenterSettings.
+        Enabled article categories for support center
+
+        :return: The enabled_categories of this SupportCenterSettings.
+        :rtype: list[AddressableEntityRef]
+        """
+        return self._enabled_categories
+
+    @enabled_categories.setter
+    def enabled_categories(self, enabled_categories):
+        """
+        Sets the enabled_categories of this SupportCenterSettings.
+        Enabled article categories for support center
+
+        :param enabled_categories: The enabled_categories of this SupportCenterSettings.
+        :type: list[AddressableEntityRef]
+        """
+        
+        self._enabled_categories = enabled_categories
+
+    @property
+    def style_setting(self):
+        """
+        Gets the style_setting of this SupportCenterSettings.
+        Style attributes for support center
+
+        :return: The style_setting of this SupportCenterSettings.
+        :rtype: SupportCenterStyleSetting
+        """
+        return self._style_setting
+
+    @style_setting.setter
+    def style_setting(self, style_setting):
+        """
+        Sets the style_setting of this SupportCenterSettings.
+        Style attributes for support center
+
+        :param style_setting: The style_setting of this SupportCenterSettings.
+        :type: SupportCenterStyleSetting
+        """
+        
+        self._style_setting = style_setting
 
     def to_dict(self):
         """

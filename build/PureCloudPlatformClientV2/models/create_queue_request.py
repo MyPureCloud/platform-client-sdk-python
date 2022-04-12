@@ -419,7 +419,7 @@ class CreateQueueRequest(object):
     def routing_rules(self):
         """
         Gets the routing_rules of this CreateQueueRequest.
-        The routing rules for the queue, used for routing to known or preferred agents.
+        The routing rules for the queue, used for Preferred Agent Routing.
 
         :return: The routing_rules of this CreateQueueRequest.
         :rtype: list[RoutingRule]
@@ -430,7 +430,7 @@ class CreateQueueRequest(object):
     def routing_rules(self, routing_rules):
         """
         Sets the routing_rules of this CreateQueueRequest.
-        The routing rules for the queue, used for routing to known or preferred agents.
+        The routing rules for the queue, used for Preferred Agent Routing.
 
         :param routing_rules: The routing_rules of this CreateQueueRequest.
         :type: list[RoutingRule]
@@ -442,7 +442,7 @@ class CreateQueueRequest(object):
     def bullseye(self):
         """
         Gets the bullseye of this CreateQueueRequest.
-        The bulls-eye settings for the queue.
+        The bullseye settings for the queue.
 
         :return: The bullseye of this CreateQueueRequest.
         :rtype: Bullseye
@@ -453,7 +453,7 @@ class CreateQueueRequest(object):
     def bullseye(self, bullseye):
         """
         Sets the bullseye of this CreateQueueRequest.
-        The bulls-eye settings for the queue.
+        The bullseye settings for the queue.
 
         :param bullseye: The bullseye of this CreateQueueRequest.
         :type: Bullseye

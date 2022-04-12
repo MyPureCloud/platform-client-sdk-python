@@ -10,6 +10,7 @@ title: TwitterIntegrationRequest
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | The name of the Twitter Integration | |
 | **supported_content** | [**SupportedContentReference**](SupportedContentReference.html) | Defines the SupportedContent profile configured for an integration | [optional] |
+| **messaging_setting** | [**MessagingSettingReference**](MessagingSettingReference.html) |  | [optional] |
 | **access_token_key** | **str** | The Access Token Key from Twitter messenger | |
 | **access_token_secret** | **str** | The Access Token Secret from Twitter messenger | |
 | **consumer_key** | **str** | The Consumer Key from Twitter messenger | |

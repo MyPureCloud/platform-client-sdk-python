@@ -43,6 +43,7 @@ class LineIntegration(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
+            'messaging_setting': 'MessagingSettingReference',
             'channel_id': 'str',
             'webhook_uri': 'str',
             'status': 'str',
@@ -61,6 +62,7 @@ class LineIntegration(object):
             'id': 'id',
             'name': 'name',
             'supported_content': 'supportedContent',
+            'messaging_setting': 'messagingSetting',
             'channel_id': 'channelId',
             'webhook_uri': 'webhookUri',
             'status': 'status',
@@ -78,6 +80,7 @@ class LineIntegration(object):
         self._id = None
         self._name = None
         self._supported_content = None
+        self._messaging_setting = None
         self._channel_id = None
         self._webhook_uri = None
         self._status = None
@@ -159,6 +162,29 @@ class LineIntegration(object):
         """
         
         self._supported_content = supported_content
+
+    @property
+    def messaging_setting(self):
+        """
+        Gets the messaging_setting of this LineIntegration.
+
+
+        :return: The messaging_setting of this LineIntegration.
+        :rtype: MessagingSettingReference
+        """
+        return self._messaging_setting
+
+    @messaging_setting.setter
+    def messaging_setting(self, messaging_setting):
+        """
+        Sets the messaging_setting of this LineIntegration.
+
+
+        :param messaging_setting: The messaging_setting of this LineIntegration.
+        :type: MessagingSettingReference
+        """
+        
+        self._messaging_setting = messaging_setting
 
     @property
     def channel_id(self):

@@ -70,6 +70,7 @@ class Recording(object):
             'recording_file_role': 'str',
             'recording_error_status': 'str',
             'original_recording_start_time': 'datetime',
+            'creation_time': 'datetime',
             'self_uri': 'str'
         }
 
@@ -104,6 +105,7 @@ class Recording(object):
             'recording_file_role': 'recordingFileRole',
             'recording_error_status': 'recordingErrorStatus',
             'original_recording_start_time': 'originalRecordingStartTime',
+            'creation_time': 'creationTime',
             'self_uri': 'selfUri'
         }
 
@@ -137,6 +139,7 @@ class Recording(object):
         self._recording_file_role = None
         self._recording_error_status = None
         self._original_recording_start_time = None
+        self._creation_time = None
         self._self_uri = None
 
     @property
@@ -844,6 +847,29 @@ class Recording(object):
         """
         
         self._original_recording_start_time = original_recording_start_time
+
+    @property
+    def creation_time(self):
+        """
+        Gets the creation_time of this Recording.
+        The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The creation_time of this Recording.
+        :rtype: datetime
+        """
+        return self._creation_time
+
+    @creation_time.setter
+    def creation_time(self, creation_time):
+        """
+        Sets the creation_time of this Recording.
+        The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param creation_time: The creation_time of this Recording.
+        :type: datetime
+        """
+        
+        self._creation_time = creation_time
 
     @property
     def self_uri(self):

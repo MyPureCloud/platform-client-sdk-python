@@ -84,7 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_threadingtimeline**](ConversationsApi.html#get_conversations_messaging_threadingtimeline) | Get conversation threading window timeline for each messaging type|
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
-|[**patch_conversations_call**](ConversationsApi.html#patch_conversations_call) | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
+|[**patch_conversations_call**](ConversationsApi.html#patch_conversations_call) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
 |[**patch_conversations_call_participant**](ConversationsApi.html#patch_conversations_call_participant) | Update conversation participant|
 |[**patch_conversations_call_participant_attributes**](ConversationsApi.html#patch_conversations_call_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_call_participant_communication**](ConversationsApi.html#patch_conversations_call_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
@@ -3787,7 +3787,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **messenger_type** | **str**| Messenger Type |  |
+| **messenger_type** | **str**| Messenger Type | <br />**Values**: line |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -4106,7 +4106,7 @@ void (empty response body)
 
 
 
-Update a conversation by setting it's recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 
 
 
@@ -4133,7 +4133,7 @@ conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
 
 try:
-    # Update a conversation by setting it's recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+    # Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
     api_response = api_instance.patch_conversations_call(conversation_id, body)
     pprint(api_response)
 except ApiException as e:

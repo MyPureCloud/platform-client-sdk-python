@@ -43,6 +43,7 @@ class WhatsAppIntegrationUpdateRequest(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
+            'messaging_setting': 'MessagingSettingReference',
             'action': 'str',
             'authentication_method': 'str',
             'confirmation_code': 'str',
@@ -53,6 +54,7 @@ class WhatsAppIntegrationUpdateRequest(object):
             'id': 'id',
             'name': 'name',
             'supported_content': 'supportedContent',
+            'messaging_setting': 'messagingSetting',
             'action': 'action',
             'authentication_method': 'authenticationMethod',
             'confirmation_code': 'confirmationCode',
@@ -62,6 +64,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         self._id = None
         self._name = None
         self._supported_content = None
+        self._messaging_setting = None
         self._action = None
         self._authentication_method = None
         self._confirmation_code = None
@@ -135,6 +138,29 @@ class WhatsAppIntegrationUpdateRequest(object):
         """
         
         self._supported_content = supported_content
+
+    @property
+    def messaging_setting(self):
+        """
+        Gets the messaging_setting of this WhatsAppIntegrationUpdateRequest.
+
+
+        :return: The messaging_setting of this WhatsAppIntegrationUpdateRequest.
+        :rtype: MessagingSettingReference
+        """
+        return self._messaging_setting
+
+    @messaging_setting.setter
+    def messaging_setting(self, messaging_setting):
+        """
+        Sets the messaging_setting of this WhatsAppIntegrationUpdateRequest.
+
+
+        :param messaging_setting: The messaging_setting of this WhatsAppIntegrationUpdateRequest.
+        :type: MessagingSettingReference
+        """
+        
+        self._messaging_setting = messaging_setting
 
     @property
     def action(self):
