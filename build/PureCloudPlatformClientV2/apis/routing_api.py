@@ -1984,12 +1984,13 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param bool exclude_status: Exclude MX record data
         :return: InboundDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['exclude_status']
         all_params.append('callback')
 
         params = locals()
@@ -2008,6 +2009,8 @@ class RoutingApi(object):
         path_params = {}
 
         query_params = {}
+        if 'exclude_status' in params:
+            query_params['excludeStatus'] = params['exclude_status']
 
         header_params = {}
 

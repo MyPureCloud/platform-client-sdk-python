@@ -30,6 +30,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_recording_job**](RecordingApi.html#get_recording_job) | Get the status of the job associated with the job id.|
 |[**get_recording_job_failedrecordings**](RecordingApi.html#get_recording_job_failedrecordings) | Get IDs of recordings that the bulk job failed for|
 |[**get_recording_jobs**](RecordingApi.html#get_recording_jobs) | Get the status of all jobs within the user&#39;s organization|
+|[**get_recording_keyconfiguration**](RecordingApi.html#get_recording_keyconfiguration) | Get the encryption key configurations|
+|[**get_recording_keyconfigurations**](RecordingApi.html#get_recording_keyconfigurations) | Get a list of key configurations data|
 |[**get_recording_localkeys_setting**](RecordingApi.html#get_recording_localkeys_setting) | Get the local encryption settings|
 |[**get_recording_localkeys_settings**](RecordingApi.html#get_recording_localkeys_settings) | gets a list local key settings data|
 |[**get_recording_mediaretentionpolicies**](RecordingApi.html#get_recording_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
@@ -44,7 +46,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_recording_annotations**](RecordingApi.html#post_conversation_recording_annotations) | Create annotation|
 |[**post_recording_batchrequests**](RecordingApi.html#post_recording_batchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.|
 |[**post_recording_crossplatform_mediaretentionpolicies**](RecordingApi.html#post_recording_crossplatform_mediaretentionpolicies) | Create media retention policy|
-|[**post_recording_jobs**](RecordingApi.html#post_recording_jobs) | Create a recording bulk job|
+|[**post_recording_jobs**](RecordingApi.html#post_recording_jobs) | Create a recording bulk job.|
+|[**post_recording_keyconfigurations**](RecordingApi.html#post_recording_keyconfigurations) | Setup configurations for encryption key creation|
+|[**post_recording_keyconfigurations_validate**](RecordingApi.html#post_recording_keyconfigurations_validate) | Validate encryption key configurations without saving it|
 |[**post_recording_localkeys**](RecordingApi.html#post_recording_localkeys) | create a local recording key|
 |[**post_recording_localkeys_settings**](RecordingApi.html#post_recording_localkeys_settings) | create settings for local key creation|
 |[**post_recording_mediaretentionpolicies**](RecordingApi.html#post_recording_mediaretentionpolicies) | Create media retention policy|
@@ -57,6 +61,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_orphanrecording**](RecordingApi.html#put_orphanrecording) | Updates an orphan recording to a regular recording with retention values|
 |[**put_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#put_recording_crossplatform_mediaretentionpolicy) | Update a media retention policy|
 |[**put_recording_job**](RecordingApi.html#put_recording_job) | Execute the recording bulk job.|
+|[**put_recording_keyconfiguration**](RecordingApi.html#put_recording_keyconfiguration) | Update the encryption key configurations|
 |[**put_recording_localkeys_setting**](RecordingApi.html#put_recording_localkeys_setting) | Update the local encryption settings|
 |[**put_recording_mediaretentionpolicy**](RecordingApi.html#put_recording_mediaretentionpolicy) | Update a media retention policy|
 |[**put_recording_recordingkeys_rotationschedule**](RecordingApi.html#put_recording_recordingkeys_rotationschedule) | Update key rotation schedule|
@@ -1291,6 +1296,104 @@ except ApiException as e:
 
 [**RecordingJobEntityListing**](RecordingJobEntityListing.html)
 
+<a name="get_recording_keyconfiguration"></a>
+
+## [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html) get_recording_keyconfiguration(key_configuration_id)
+
+
+
+Get the encryption key configurations
+
+
+
+Wraps GET /api/v2/recording/keyconfigurations/{keyConfigurationId} 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+key_configuration_id = 'key_configuration_id_example' # str | Key Configurations Id
+
+try:
+    # Get the encryption key configurations
+    api_response = api_instance.get_recording_keyconfiguration(key_configuration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recording_keyconfiguration: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **key_configuration_id** | **str**| Key Configurations Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
+
+<a name="get_recording_keyconfigurations"></a>
+
+## [**RecordingEncryptionConfigurationListing**](RecordingEncryptionConfigurationListing.html) get_recording_keyconfigurations()
+
+
+
+Get a list of key configurations data
+
+
+
+Wraps GET /api/v2/recording/keyconfigurations 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+
+try:
+    # Get a list of key configurations data
+    api_response = api_instance.get_recording_keyconfigurations()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recording_keyconfigurations: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**RecordingEncryptionConfigurationListing**](RecordingEncryptionConfigurationListing.html)
+
 <a name="get_recording_localkeys_setting"></a>
 
 ## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) get_recording_localkeys_setting(settings_id)
@@ -2036,9 +2139,9 @@ except ApiException as e:
 
 
 
-Create a recording bulk job
+Create a recording bulk job.
 
-
+Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
 
 Wraps POST /api/v2/recording/jobs 
 
@@ -2062,7 +2165,7 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 body = PureCloudPlatformClientV2.RecordingJobsQuery() # RecordingJobsQuery | query
 
 try:
-    # Create a recording bulk job
+    # Create a recording bulk job.
     api_response = api_instance.post_recording_jobs(body)
     pprint(api_response)
 except ApiException as e:
@@ -2080,6 +2183,108 @@ except ApiException as e:
 ### Return type
 
 [**RecordingJob**](RecordingJob.html)
+
+<a name="post_recording_keyconfigurations"></a>
+
+## [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html) post_recording_keyconfigurations(body)
+
+
+
+Setup configurations for encryption key creation
+
+
+
+Wraps POST /api/v2/recording/keyconfigurations 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+body = PureCloudPlatformClientV2.RecordingEncryptionConfiguration() # RecordingEncryptionConfiguration | Encryption Configuration
+
+try:
+    # Setup configurations for encryption key creation
+    api_response = api_instance.post_recording_keyconfigurations(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->post_recording_keyconfigurations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)| Encryption Configuration |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
+
+<a name="post_recording_keyconfigurations_validate"></a>
+
+## [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html) post_recording_keyconfigurations_validate(body)
+
+
+
+Validate encryption key configurations without saving it
+
+
+
+Wraps POST /api/v2/recording/keyconfigurations/validate 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+body = PureCloudPlatformClientV2.RecordingEncryptionConfiguration() # RecordingEncryptionConfiguration | Encryption Configuration
+
+try:
+    # Validate encryption key configurations without saving it
+    api_response = api_instance.post_recording_keyconfigurations_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->post_recording_keyconfigurations_validate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)| Encryption Configuration |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
 
 <a name="post_recording_localkeys"></a>
 
@@ -2705,6 +2910,59 @@ except ApiException as e:
 ### Return type
 
 [**RecordingJob**](RecordingJob.html)
+
+<a name="put_recording_keyconfiguration"></a>
+
+## [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html) put_recording_keyconfiguration(key_configuration_id, body)
+
+
+
+Update the encryption key configurations
+
+
+
+Wraps PUT /api/v2/recording/keyconfigurations/{keyConfigurationId} 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+key_configuration_id = 'key_configuration_id_example' # str | Key Configurations Id
+body = PureCloudPlatformClientV2.RecordingEncryptionConfiguration() # RecordingEncryptionConfiguration | Encryption key configuration metadata
+
+try:
+    # Update the encryption key configurations
+    api_response = api_instance.put_recording_keyconfiguration(key_configuration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->put_recording_keyconfiguration: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **key_configuration_id** | **str**| Key Configurations Id |  |
+| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)| Encryption key configuration metadata |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
 
 <a name="put_recording_localkeys_setting"></a>
 

@@ -1225,16 +1225,17 @@ class IntegrationsApi(object):
         :param str previous_page: Previous page token
         :param str sort_by: Root level field name to sort on.
         :param str sort_order: Direction to sort 'sortBy' field.
-        :param str category: Filter by category name
-        :param str name: Filter by action name. Provide full or just the first part of name.
-        :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+        :param str category: Filter by category name.
+        :param str name: Filter by partial or complete action name.
+        :param str ids: Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+        :param str secure: Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
         :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
         :return: ActionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'secure', 'include_auth_actions']
+        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'ids', 'secure', 'include_auth_actions']
         all_params.append('callback')
 
         params = locals()
@@ -1269,6 +1270,8 @@ class IntegrationsApi(object):
             query_params['category'] = params['category']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
         if 'secure' in params:
             query_params['secure'] = params['secure']
         if 'include_auth_actions' in params:
@@ -1420,16 +1423,17 @@ class IntegrationsApi(object):
         :param str previous_page: Previous page token
         :param str sort_by: Root level field name to sort on.
         :param str sort_order: Direction to sort 'sortBy' field.
-        :param str category: Filter by category name
-        :param str name: Filter by action name. Provide full or just the first part of name.
-        :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+        :param str category: Filter by category name.
+        :param str name: Filter by partial or complete action name.
+        :param str ids: Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+        :param str secure: Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
         :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
         :return: ActionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'secure', 'include_auth_actions']
+        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'ids', 'secure', 'include_auth_actions']
         all_params.append('callback')
 
         params = locals()
@@ -1464,6 +1468,8 @@ class IntegrationsApi(object):
             query_params['category'] = params['category']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
         if 'secure' in params:
             query_params['secure'] = params['secure']
         if 'include_auth_actions' in params:

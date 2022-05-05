@@ -45,6 +45,7 @@ class WhatsAppIntegration(object):
             'supported_content': 'SupportedContentReference',
             'messaging_setting': 'MessagingSettingReference',
             'phone_number': 'str',
+            'available_phone_numbers': 'WhatsAppAvailablePhoneNumberDetailsListing',
             'status': 'str',
             'recipient': 'DomainEntityRef',
             'date_created': 'datetime',
@@ -65,6 +66,7 @@ class WhatsAppIntegration(object):
             'supported_content': 'supportedContent',
             'messaging_setting': 'messagingSetting',
             'phone_number': 'phoneNumber',
+            'available_phone_numbers': 'availablePhoneNumbers',
             'status': 'status',
             'recipient': 'recipient',
             'date_created': 'dateCreated',
@@ -84,6 +86,7 @@ class WhatsAppIntegration(object):
         self._supported_content = None
         self._messaging_setting = None
         self._phone_number = None
+        self._available_phone_numbers = None
         self._status = None
         self._recipient = None
         self._date_created = None
@@ -193,7 +196,7 @@ class WhatsAppIntegration(object):
     def phone_number(self):
         """
         Gets the phone_number of this WhatsAppIntegration.
-        The phone number associated to the whatsApp integration.
+        The phone number associated to the WhatsApp integration.
 
         :return: The phone_number of this WhatsAppIntegration.
         :rtype: str
@@ -204,13 +207,36 @@ class WhatsAppIntegration(object):
     def phone_number(self, phone_number):
         """
         Sets the phone_number of this WhatsAppIntegration.
-        The phone number associated to the whatsApp integration.
+        The phone number associated to the WhatsApp integration.
 
         :param phone_number: The phone_number of this WhatsAppIntegration.
         :type: str
         """
         
         self._phone_number = phone_number
+
+    @property
+    def available_phone_numbers(self):
+        """
+        Gets the available_phone_numbers of this WhatsAppIntegration.
+        The list of available WhatsApp phone numbers for this account. Please select one phone number from this list to use with the created integration.
+
+        :return: The available_phone_numbers of this WhatsAppIntegration.
+        :rtype: WhatsAppAvailablePhoneNumberDetailsListing
+        """
+        return self._available_phone_numbers
+
+    @available_phone_numbers.setter
+    def available_phone_numbers(self, available_phone_numbers):
+        """
+        Sets the available_phone_numbers of this WhatsAppIntegration.
+        The list of available WhatsApp phone numbers for this account. Please select one phone number from this list to use with the created integration.
+
+        :param available_phone_numbers: The available_phone_numbers of this WhatsAppIntegration.
+        :type: WhatsAppAvailablePhoneNumberDetailsListing
+        """
+        
+        self._available_phone_numbers = available_phone_numbers
 
     @property
     def status(self):

@@ -40,7 +40,7 @@ class UserRoutingStatusUserRoutingStatus(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'UserRoutingStatusObject',
+            'id': 'str',
             'routing_status': 'UserRoutingStatusRoutingStatus',
             'error_info': 'UserRoutingStatusErrorInfo'
         }
@@ -59,10 +59,10 @@ class UserRoutingStatusUserRoutingStatus(object):
     def id(self):
         """
         Gets the id of this UserRoutingStatusUserRoutingStatus.
-
+        The unique identifier of the user.
 
         :return: The id of this UserRoutingStatusUserRoutingStatus.
-        :rtype: UserRoutingStatusObject
+        :rtype: str
         """
         return self._id
 
@@ -70,10 +70,10 @@ class UserRoutingStatusUserRoutingStatus(object):
     def id(self, id):
         """
         Sets the id of this UserRoutingStatusUserRoutingStatus.
-
+        The unique identifier of the user.
 
         :param id: The id of this UserRoutingStatusUserRoutingStatus.
-        :type: UserRoutingStatusObject
+        :type: str
         """
         
         self._id = id

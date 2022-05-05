@@ -45,7 +45,8 @@ class ConversationMessageEventTopicMessageDetails(object):
             'message_segment_count': 'int',
             'message_status': 'str',
             'media': 'list[ConversationMessageEventTopicMessageMedia]',
-            'stickers': 'list[ConversationMessageEventTopicMessageSticker]'
+            'stickers': 'list[ConversationMessageEventTopicMessageSticker]',
+            'error_info': 'ConversationMessageEventTopicErrorDetails'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class ConversationMessageEventTopicMessageDetails(object):
             'message_segment_count': 'messageSegmentCount',
             'message_status': 'messageStatus',
             'media': 'media',
-            'stickers': 'stickers'
+            'stickers': 'stickers',
+            'error_info': 'errorInfo'
         }
 
         self._message = None
@@ -63,6 +65,7 @@ class ConversationMessageEventTopicMessageDetails(object):
         self._message_status = None
         self._media = None
         self._stickers = None
+        self._error_info = None
 
     @property
     def message(self):
@@ -205,6 +208,29 @@ class ConversationMessageEventTopicMessageDetails(object):
         """
         
         self._stickers = stickers
+
+    @property
+    def error_info(self):
+        """
+        Gets the error_info of this ConversationMessageEventTopicMessageDetails.
+
+
+        :return: The error_info of this ConversationMessageEventTopicMessageDetails.
+        :rtype: ConversationMessageEventTopicErrorDetails
+        """
+        return self._error_info
+
+    @error_info.setter
+    def error_info(self, error_info):
+        """
+        Sets the error_info of this ConversationMessageEventTopicMessageDetails.
+
+
+        :param error_info: The error_info of this ConversationMessageEventTopicMessageDetails.
+        :type: ConversationMessageEventTopicErrorDetails
+        """
+        
+        self._error_info = error_info
 
     def to_dict(self):
         """

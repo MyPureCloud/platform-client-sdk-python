@@ -12,7 +12,7 @@ title: ContentList
 | **title** | **str** | Text to show in the title. | [optional] |
 | **description** | **str** | Text to show in the description. | [optional] |
 | **submit_label** | **str** | Label for Submit button. | [optional] |
-| **actions** | [**ContentActions**](ContentActions.html) | The list actions. | [optional] |
+| **actions** | [**ContentActions**](ContentActions.html) | The list actions (Deprecated). | [optional] |
 | **components** | [**list[ListItemComponent]**](ListItemComponent.html) | An array of component objects. | [optional] |
 {: class="table table-striped"}
 

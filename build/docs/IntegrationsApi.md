@@ -825,7 +825,7 @@ except ApiException as e:
 
 <a name="get_integrations_actions"></a>
 
-## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, secure=secure, include_auth_actions=include_auth_actions)
+## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
 
 
 
@@ -859,14 +859,15 @@ next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 sort_by = 'sort_by_example' # str | Root level field name to sort on. (optional)
 sort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)
-category = 'category_example' # str | Filter by category name (optional)
-name = 'name_example' # str | Filter by action name. Provide full or just the first part of name. (optional)
-secure = 'secure_example' # str | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
+category = 'category_example' # str | Filter by category name. (optional)
+name = 'name_example' # str | Filter by partial or complete action name. (optional)
+ids = 'ids_example' # str | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
+secure = 'secure_example' # str | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
 include_auth_actions = 'false' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to false)
 
 try:
     # Retrieves all actions associated with filters passed in via query param.
-    api_response = api_instance.get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, secure=secure, include_auth_actions=include_auth_actions)
+    api_response = api_instance.get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations_actions: %s\n" % e)
@@ -883,9 +884,10 @@ except ApiException as e:
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **sort_by** | **str**| Root level field name to sort on. | [optional]  |
 | **sort_order** | **str**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
-| **category** | **str**| Filter by category name | [optional]  |
-| **name** | **str**| Filter by action name. Provide full or just the first part of name. | [optional]  |
-| **secure** | **str**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+| **category** | **str**| Filter by category name. | [optional]  |
+| **name** | **str**| Filter by partial or complete action name. | [optional]  |
+| **ids** | **str**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
+| **secure** | **str**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 | **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
@@ -959,7 +961,7 @@ except ApiException as e:
 
 <a name="get_integrations_actions_drafts"></a>
 
-## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, secure=secure, include_auth_actions=include_auth_actions)
+## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
 
 
 
@@ -993,14 +995,15 @@ next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 sort_by = 'sort_by_example' # str | Root level field name to sort on. (optional)
 sort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)
-category = 'category_example' # str | Filter by category name (optional)
-name = 'name_example' # str | Filter by action name. Provide full or just the first part of name. (optional)
-secure = 'secure_example' # str | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
+category = 'category_example' # str | Filter by category name. (optional)
+name = 'name_example' # str | Filter by partial or complete action name. (optional)
+ids = 'ids_example' # str | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
+secure = 'secure_example' # str | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
 include_auth_actions = 'false' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to false)
 
 try:
     # Retrieves all action drafts associated with the filters passed in via query param.
-    api_response = api_instance.get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, secure=secure, include_auth_actions=include_auth_actions)
+    api_response = api_instance.get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations_actions_drafts: %s\n" % e)
@@ -1017,9 +1020,10 @@ except ApiException as e:
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **sort_by** | **str**| Root level field name to sort on. | [optional]  |
 | **sort_order** | **str**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
-| **category** | **str**| Filter by category name | [optional]  |
-| **name** | **str**| Filter by action name. Provide full or just the first part of name. | [optional]  |
-| **secure** | **str**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+| **category** | **str**| Filter by category name. | [optional]  |
+| **name** | **str**| Filter by partial or complete action name. | [optional]  |
+| **ids** | **str**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
+| **secure** | **str**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 | **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 

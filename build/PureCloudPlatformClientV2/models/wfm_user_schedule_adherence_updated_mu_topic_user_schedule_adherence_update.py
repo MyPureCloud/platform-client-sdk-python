@@ -351,7 +351,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :param adherence_state: The adherence_state of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
         :type: str
         """
-        allowed_values = ["InAdherence", "OutOfAdherence", "Unscheduled", "Unknown", "Ignored"]
+        allowed_values = ["InAdherence", "OutOfAdherence", "Unscheduled", "Unknown", "Ignored", "Explained"]
         if adherence_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for adherence_state -> " + adherence_state)
             self._adherence_state = "outdated_sdk_version"

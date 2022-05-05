@@ -113,7 +113,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
 |[**patch_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
 |[**patch_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_twitter_integration_id) | Update Twitter messaging integration|
-|[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update or activate a WhatsApp messaging integration.|
+|[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update or activate a WhatsApp messaging integration|
 |[**patch_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#patch_conversations_messaging_supportedcontent_supported_content_id) | Update a supported content profile|
 |[**post_analytics_conversation_details_properties**](ConversationsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
 |[**post_analytics_conversations_aggregates_query**](ConversationsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
@@ -5660,9 +5660,9 @@ except ApiException as e:
 
 
 
-Update or activate a WhatsApp messaging integration.
+Update or activate a WhatsApp messaging integration
 
-The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 
 Wraps PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
 
@@ -5687,7 +5687,7 @@ integration_id = 'integration_id_example' # str | Integration ID
 body = PureCloudPlatformClientV2.WhatsAppIntegrationUpdateRequest() # WhatsAppIntegrationUpdateRequest | WhatsAppIntegrationUpdateRequest
 
 try:
-    # Update or activate a WhatsApp messaging integration.
+    # Update or activate a WhatsApp messaging integration
     api_response = api_instance.patch_conversations_messaging_integrations_whatsapp_integration_id(integration_id, body)
     pprint(api_response)
 except ApiException as e:

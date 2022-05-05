@@ -11,7 +11,7 @@ title: CardAction
 | **text** | **str** | The response text from the button click. | [optional] |
 | **payload** | **str** | Content of the textback payload after clicking a button. | [optional] |
 | **url** | **str** | The location of the image file associated with action. | [optional] |
-| **selected** | **bool** |  | [optional] |
+| **is_selected** | **bool** | Indicates if the card option is selected by end customer. | [optional] |
 {: class="table table-striped"}
 
 

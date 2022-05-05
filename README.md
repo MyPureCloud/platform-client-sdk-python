@@ -5,11 +5,11 @@ title: Platform API Client SDK - Python
 [![PyPI version](https://badge.fury.io/py/PureCloudPlatformClientV2.svg)](https://badge.fury.io/py/PureCloudPlatformClientV2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-python/blob/master/releaseNotes.md)
 
-Documentation can be found at [https://developer.mypurecloud.com/api/rest/client-libraries/python/](https://developer.mypurecloud.com/api/rest/client-libraries/python/)
+Documentation can be found at [https://developer.genesys.cloud/devapps/sdk/docexplorer/purecloudpython/](https://developer.genesys.cloud/devapps/sdk/docexplorer/purecloudpython/)
 
 ## Install Using pip
 
-```{"language":"python"}
+```bash
 pip install PureCloudPlatformClientV2
 ```
 
@@ -21,7 +21,7 @@ Package info can be found at [https://pypi.python.org/pypi/PureCloudPlatformClie
 
 Import the package in the python script:
 
-```{"language":"python"}
+```python
 import PureCloudPlatformClientV2
 ```
 
@@ -33,9 +33,9 @@ import PureCloudPlatformClientV2
 
 * The app is authenticating as a non-human (e.g. a service, scheduled task, or other non-UI application)
 
-For headless and non-user applications, the [Client Credentials Grant](http://developer.mypurecloud.com/api/rest/authorization/use-client-credentials.html) 
+For headless and non-user applications, the [Client Credentials Grant](https://developer.genesys.cloud/authorization/platform-auth/use-client-credentials) 
 
-```{"language":"python"}
+```python
 apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_client_credentials_token(os.environ['GENESYS_CLOUD_CLIENT_ID'],
                                                                                           os.environ['GENESYS_CLOUD_CLIENT_SECRET'])
 authApi = PureCloudPlatformClientV2.AuthorizationApi(apiclient)
@@ -46,9 +46,9 @@ print(authApi.get_authorization_permissions())
 
 **Use when...**
 
-* The app is authenticating as a human user, the [OAuth2 SAML2 Bearer](https://developer.mypurecloud.com/api/rest/authorization/use-saml2-bearer.html)
+* The app is authenticating as a human user, the [OAuth2 SAML2 Bearer](https://developer.genesys.cloud/authorization/platform-auth/use-saml2-bearer)
 
-```{"language":"python"}
+```python
 apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_saml2bearer_token(os.environ['GENESYS_CLOUD_SAML2BEARER_CLIENT_ID'],
                                                                                    os.environ['GENESYS_CLOUD_SAML2BEARER_CLIENT_SECRET'],
                                                                                    orgName,
@@ -60,11 +60,11 @@ print(usersApi.get_users_me())
 
 ### Authorization Code Grant
 
-* The app is authenticating as a human, the [Authorization Code Grant](https://developer.mypurecloud.com/api/rest/authorization/use-authorization-code.html)
+* The app is authenticating as a human, the [Authorization Code Grant](https://developer.genesys.cloud/authorization/platform-auth/use-authorization-code)
 * The app is served via a web server
 * There is server-side code that will be making API requests
 
-```{"language":"python"}
+```python
 apiclient, auth_token_info = apiclient.get_code_authorization_token(os.environ['GENESYS_CLOUD_CODEAUTH_CLIENT_ID'],
                                                                     os.environ['GENESYS_CLOUD_CODEAUTH_CLIENT_SECRET'],
                                                                     auth_code,
@@ -72,10 +72,9 @@ apiclient, auth_token_info = apiclient.get_code_authorization_token(os.environ['
 usersApi = PureCloudPlatformClientV2.UsersApi(apiclient)
 ```
 
-By default, the SDK will use the refresh token to request a new access token transparently when it expires. If multiple threads are running, 1 thread will request a new token. Other threads will wait a maximum of 10 seconds for the token refresh to complete This time can be overridden with the _refresh_token_wait_time_ field of the _Configuration_ object.  
-If you wish to implement the refresh logic, set _should_refresh_access_token_ to false and store the refresh token from the auth response. The expires_in value can be used to proactively request a new one before it expires:
+By default, the SDK will use the refresh token to request a new access token transparently when it expires. If multiple threads are running, 1 thread will request a new token. Other threads will wait a maximum of 10 seconds for the token refresh to complete This time can be overridden with the _refresh_token_wait_time_ field of the _Configuration_ object. If you wish to implement the refresh logic, set _should_refresh_access_token_ to false and store the refresh token from the auth response. The expires_in value can be used to proactively request a new one before it expires:
 
-```{"language":"python"}
+```python
 refresh_token = auth_token_info["refresh_token"]
 expires_in = auth_token_info["expires_in"]
 PureCloudPlatformClientV2.configuration.should_refresh_access_token = False
@@ -83,7 +82,7 @@ PureCloudPlatformClientV2.configuration.should_refresh_access_token = False
 
 When the access token expires, refresh it using the refresh_code_authorization_token method using the same clientId and clientSecret as used to request it.
 
-```{"language":"python"}
+```python
 apiclient, auth_token_info = apiclient.refresh_code_authorization_token(os.environ['GENESYS_CLOUD_CODEAUTH_CLIENT_ID'],
                                                                         os.environ['GENESYS_CLOUD_CODEAUTH_CLIENT_SECRET'],
                                                                         refresh_token)
@@ -93,7 +92,7 @@ apiclient, auth_token_info = apiclient.refresh_code_authorization_token(os.envir
 
 If connecting to a Genesys Cloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the new base path before constructing any API classes. The new base path should be the base path to the Platform API for your environment.
 
-```{"language":"python"}
+```python
 region = PureCloudPlatformClientV2.PureCloudRegionHosts.us_east_1
 PureCloudPlatformClientV2.configuration.host = region.get_api_host()
 ```
@@ -102,13 +101,13 @@ PureCloudPlatformClientV2.configuration.host = region.get_api_host()
 
 If connecting to a proxy server, set the the address of your proxy server as follows:
 
-```{"language":"python"}
+```python
 PureCloudPlatformClientV2.configuration.proxy = 'YOUR_PROXY_URL'
 ```
 
 If your proxy server requires authentication, set the username and password as follows:
 
-```{"language":"python"}
+```python
 PureCloudPlatformClientV2.configuration.proxy_username = 'YOUR_PROXY_USERNAME'
 PureCloudPlatformClientV2.configuration.proxy_password = 'YOUR_PROXY_PASSWORD'
 ```
@@ -120,12 +119,14 @@ The Python SDK uses `urllib3.ProxyManager` to make requests when `proxy` is prov
 Logging of API requests and responses can be controlled by several parameters on the `configuration`'s `logging` instance.
 
 `PureCloudPlatformClientV2.logger.LogLevel` values:
+
 1. LTrace (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers, Response Headers)
 2. LDebug (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers)
 3. LError (HTTP Method, URL, Request Body, Response Body, HTTP Status Code, Request Headers, Response Headers)
 4. LNone - default
 
 `PureCloudPlatformClientV2.logger.LogFormat` values:
+
 1. JSON
 2. TEXT - default
 
@@ -133,6 +134,7 @@ By default, the request and response bodies are not logged because these can con
 To log to a file, provide a file path to the the `PureCloudPlatformClientV2.configuration.logger.log_file_path` property. SDK users are responsible for the rotation of the log file.
 
 Example logging configuration:
+
 ```python
 PureCloudPlatformClientV2.configuration.logger.log_level = PureCloudPlatformClientV2.logger.LogLevel.LError
 PureCloudPlatformClientV2.configuration.logger.log_request_body = True
@@ -153,6 +155,7 @@ The SDK will take an event-driven approach to monitor for config file changes an
 INI and JSON formats are supported. See below for examples of configuration values in both formats:
 
 INI:
+
 ```ini
 [logging]
 log_level = trace
@@ -170,6 +173,7 @@ host = https://api.mypurecloud.com
 ```
 
 JSON:
+
 ```json
 {
     "logging": {
@@ -200,7 +204,7 @@ There are two steps to making requests:
 
 Example of getting the authenticated user's information:
 
-```{"language":"python"}
+```python
 usersApi = PureCloudPlatformClientV2.UsersApi()
 print(usersApi.get_users_me())
 ```
@@ -209,7 +213,7 @@ print(usersApi.get_users_me())
 
 You can use `to_json()` method on the model to get a raw JSON string of the model.
 
-```{"language":"python"}
+```python
 print(usersApi.get_users_me().to_json())
 ```
 
@@ -227,4 +231,4 @@ The SDK's version is incremented according to the [Semantic Versioning Specifica
 
 This package is intended to be forwards compatible with v2 of Genesys Cloud's Platform API. While the general policy for the API is not to introduce breaking changes, there are certain additions and changes to the API that cause breaking changes for the SDK, often due to the way the API is expressed in its swagger definition. Because of this, the SDK can have a major version bump while the API remains at major version 2. While the SDK is intended to be forward compatible, patches will only be released to the latest version. For these reasons, it is strongly recommended that all applications using this SDK are kept up to date and use the latest version of the SDK.
 
-For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Forum](https://developer.mypurecloud.com/forum/).
+For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Forum](https://developer.genesys.cloud/forum/).

@@ -161,7 +161,7 @@ class RecordingJobsQuery(object):
     def conversation_query(self):
         """
         Gets the conversation_query of this RecordingJobsQuery.
-        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.
+        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability
 
         :return: The conversation_query of this RecordingJobsQuery.
         :rtype: AsyncConversationQuery
@@ -172,7 +172,7 @@ class RecordingJobsQuery(object):
     def conversation_query(self, conversation_query):
         """
         Sets the conversation_query of this RecordingJobsQuery.
-        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.
+        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability
 
         :param conversation_query: The conversation_query of this RecordingJobsQuery.
         :type: AsyncConversationQuery

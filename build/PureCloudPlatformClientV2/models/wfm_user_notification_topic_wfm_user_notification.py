@@ -46,6 +46,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
             'type': 'str',
             'shift_trade': 'WfmUserNotificationTopicShiftTradeNotification',
             'time_off_request': 'WfmUserNotificationTopicTimeOffRequestNotification',
+            'adherence_explanation': 'WfmUserNotificationTopicAdherenceExplanationNotification',
             'agent_notification': 'bool',
             'other_notification_ids_in_group': 'list[str]',
             'marked_as_read': 'bool'
@@ -58,6 +59,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
             'type': 'type',
             'shift_trade': 'shiftTrade',
             'time_off_request': 'timeOffRequest',
+            'adherence_explanation': 'adherenceExplanation',
             'agent_notification': 'agentNotification',
             'other_notification_ids_in_group': 'otherNotificationIdsInGroup',
             'marked_as_read': 'markedAsRead'
@@ -69,6 +71,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         self._type = None
         self._shift_trade = None
         self._time_off_request = None
+        self._adherence_explanation = None
         self._agent_notification = None
         self._other_notification_ids_in_group = None
         self._marked_as_read = None
@@ -162,7 +165,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :param type: The type of this WfmUserNotificationTopicWfmUserNotification.
         :type: str
         """
-        allowed_values = ["ShiftTrade", "TimeOffRequest"]
+        allowed_values = ["ShiftTrade", "TimeOffRequest", "AdherenceExplanation"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -214,6 +217,29 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         """
         
         self._time_off_request = time_off_request
+
+    @property
+    def adherence_explanation(self):
+        """
+        Gets the adherence_explanation of this WfmUserNotificationTopicWfmUserNotification.
+
+
+        :return: The adherence_explanation of this WfmUserNotificationTopicWfmUserNotification.
+        :rtype: WfmUserNotificationTopicAdherenceExplanationNotification
+        """
+        return self._adherence_explanation
+
+    @adherence_explanation.setter
+    def adherence_explanation(self, adherence_explanation):
+        """
+        Sets the adherence_explanation of this WfmUserNotificationTopicWfmUserNotification.
+
+
+        :param adherence_explanation: The adherence_explanation of this WfmUserNotificationTopicWfmUserNotification.
+        :type: WfmUserNotificationTopicAdherenceExplanationNotification
+        """
+        
+        self._adherence_explanation = adherence_explanation
 
     @property
     def agent_notification(self):

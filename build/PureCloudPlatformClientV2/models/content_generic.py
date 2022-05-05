@@ -160,7 +160,7 @@ class ContentGeneric(object):
     def actions(self):
         """
         Gets the actions of this ContentGeneric.
-        Actions to be taken.
+        Actions to be taken (Deprecated).
 
         :return: The actions of this ContentGeneric.
         :rtype: ContentActions
@@ -171,7 +171,7 @@ class ContentGeneric(object):
     def actions(self, actions):
         """
         Sets the actions of this ContentGeneric.
-        Actions to be taken.
+        Actions to be taken (Deprecated).
 
         :param actions: The actions of this ContentGeneric.
         :type: ContentActions

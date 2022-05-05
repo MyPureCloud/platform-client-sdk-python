@@ -42,7 +42,7 @@ class Evaluation(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'conversation': 'Conversation',
+            'conversation': 'ConversationReference',
             'evaluation_form': 'EvaluationForm',
             'evaluator': 'User',
             'agent': 'User',
@@ -174,7 +174,7 @@ class Evaluation(object):
 
 
         :return: The conversation of this Evaluation.
-        :rtype: Conversation
+        :rtype: ConversationReference
         """
         return self._conversation
 
@@ -185,7 +185,7 @@ class Evaluation(object):
 
 
         :param conversation: The conversation of this Evaluation.
-        :type: Conversation
+        :type: ConversationReference
         """
         
         self._conversation = conversation

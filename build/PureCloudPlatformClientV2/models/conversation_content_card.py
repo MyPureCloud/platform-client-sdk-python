@@ -42,27 +42,27 @@ class ConversationContentCard(object):
         self.swagger_types = {
             'title': 'str',
             'description': 'str',
-            'default_action': 'ConversationCardAction',
-            'actions': 'list[ConversationCardAction]',
             'image': 'str',
-            'video': 'str'
+            'video': 'str',
+            'default_action': 'ConversationContentCardAction',
+            'actions': 'list[ConversationContentCardAction]'
         }
 
         self.attribute_map = {
             'title': 'title',
             'description': 'description',
-            'default_action': 'defaultAction',
-            'actions': 'actions',
             'image': 'image',
-            'video': 'video'
+            'video': 'video',
+            'default_action': 'defaultAction',
+            'actions': 'actions'
         }
 
         self._title = None
         self._description = None
-        self._default_action = None
-        self._actions = None
         self._image = None
         self._video = None
+        self._default_action = None
+        self._actions = None
 
     @property
     def title(self):
@@ -111,56 +111,10 @@ class ConversationContentCard(object):
         self._description = description
 
     @property
-    def default_action(self):
-        """
-        Gets the default_action of this ConversationContentCard.
-        Default action to be taken.
-
-        :return: The default_action of this ConversationContentCard.
-        :rtype: ConversationCardAction
-        """
-        return self._default_action
-
-    @default_action.setter
-    def default_action(self, default_action):
-        """
-        Sets the default_action of this ConversationContentCard.
-        Default action to be taken.
-
-        :param default_action: The default_action of this ConversationContentCard.
-        :type: ConversationCardAction
-        """
-        
-        self._default_action = default_action
-
-    @property
-    def actions(self):
-        """
-        Gets the actions of this ConversationContentCard.
-        A List of action objects.
-
-        :return: The actions of this ConversationContentCard.
-        :rtype: list[ConversationCardAction]
-        """
-        return self._actions
-
-    @actions.setter
-    def actions(self, actions):
-        """
-        Sets the actions of this ConversationContentCard.
-        A List of action objects.
-
-        :param actions: The actions of this ConversationContentCard.
-        :type: list[ConversationCardAction]
-        """
-        
-        self._actions = actions
-
-    @property
     def image(self):
         """
         Gets the image of this ConversationContentCard.
-
+        URL of an image.
 
         :return: The image of this ConversationContentCard.
         :rtype: str
@@ -171,7 +125,7 @@ class ConversationContentCard(object):
     def image(self, image):
         """
         Sets the image of this ConversationContentCard.
-
+        URL of an image.
 
         :param image: The image of this ConversationContentCard.
         :type: str
@@ -183,7 +137,7 @@ class ConversationContentCard(object):
     def video(self):
         """
         Gets the video of this ConversationContentCard.
-
+        URL of a video.
 
         :return: The video of this ConversationContentCard.
         :rtype: str
@@ -194,13 +148,59 @@ class ConversationContentCard(object):
     def video(self, video):
         """
         Sets the video of this ConversationContentCard.
-
+        URL of a video.
 
         :param video: The video of this ConversationContentCard.
         :type: str
         """
         
         self._video = video
+
+    @property
+    def default_action(self):
+        """
+        Gets the default_action of this ConversationContentCard.
+        The default button action.
+
+        :return: The default_action of this ConversationContentCard.
+        :rtype: ConversationContentCardAction
+        """
+        return self._default_action
+
+    @default_action.setter
+    def default_action(self, default_action):
+        """
+        Sets the default_action of this ConversationContentCard.
+        The default button action.
+
+        :param default_action: The default_action of this ConversationContentCard.
+        :type: ConversationContentCardAction
+        """
+        
+        self._default_action = default_action
+
+    @property
+    def actions(self):
+        """
+        Gets the actions of this ConversationContentCard.
+        An array of action objects.
+
+        :return: The actions of this ConversationContentCard.
+        :rtype: list[ConversationContentCardAction]
+        """
+        return self._actions
+
+    @actions.setter
+    def actions(self, actions):
+        """
+        Sets the actions of this ConversationContentCard.
+        An array of action objects.
+
+        :param actions: The actions of this ConversationContentCard.
+        :type: list[ConversationContentCardAction]
+        """
+        
+        self._actions = actions
 
     def to_dict(self):
         """

@@ -44,7 +44,7 @@ class Calibration(object):
             'name': 'str',
             'calibrator': 'User',
             'agent': 'User',
-            'conversation': 'Conversation',
+            'conversation': 'ConversationReference',
             'evaluation_form': 'EvaluationForm',
             'context_id': 'str',
             'average_score': 'int',
@@ -193,7 +193,7 @@ class Calibration(object):
 
 
         :return: The conversation of this Calibration.
-        :rtype: Conversation
+        :rtype: ConversationReference
         """
         return self._conversation
 
@@ -204,7 +204,7 @@ class Calibration(object):
 
 
         :param conversation: The conversation of this Calibration.
-        :type: Conversation
+        :type: ConversationReference
         """
         
         self._conversation = conversation

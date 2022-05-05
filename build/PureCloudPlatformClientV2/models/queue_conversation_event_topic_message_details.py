@@ -45,6 +45,7 @@ class QueueConversationEventTopicMessageDetails(object):
             'message_status': 'str',
             'message_segment_count': 'int',
             'media': 'list[QueueConversationEventTopicMessageMedia]',
+            'error_info': 'QueueConversationEventTopicErrorDetails',
             'stickers': 'list[QueueConversationEventTopicMessageSticker]'
         }
 
@@ -54,6 +55,7 @@ class QueueConversationEventTopicMessageDetails(object):
             'message_status': 'messageStatus',
             'message_segment_count': 'messageSegmentCount',
             'media': 'media',
+            'error_info': 'errorInfo',
             'stickers': 'stickers'
         }
 
@@ -62,6 +64,7 @@ class QueueConversationEventTopicMessageDetails(object):
         self._message_status = None
         self._message_segment_count = None
         self._media = None
+        self._error_info = None
         self._stickers = None
 
     @property
@@ -182,6 +185,29 @@ class QueueConversationEventTopicMessageDetails(object):
         """
         
         self._media = media
+
+    @property
+    def error_info(self):
+        """
+        Gets the error_info of this QueueConversationEventTopicMessageDetails.
+        Detailed information about an error response.
+
+        :return: The error_info of this QueueConversationEventTopicMessageDetails.
+        :rtype: QueueConversationEventTopicErrorDetails
+        """
+        return self._error_info
+
+    @error_info.setter
+    def error_info(self, error_info):
+        """
+        Sets the error_info of this QueueConversationEventTopicMessageDetails.
+        Detailed information about an error response.
+
+        :param error_info: The error_info of this QueueConversationEventTopicMessageDetails.
+        :type: QueueConversationEventTopicErrorDetails
+        """
+        
+        self._error_info = error_info
 
     @property
     def stickers(self):

@@ -484,7 +484,7 @@ except ApiException as e:
 
 <a name="get_gamification_profile"></a>
 
-## [**PerformanceProfile**](PerformanceProfile.html) get_gamification_profile(performance_profile_id)
+## [**PerformanceProfile**](PerformanceProfile.html) get_gamification_profile(profile_id)
 
 
 
@@ -492,7 +492,7 @@ Performance profile by id
 
 
 
-Wraps GET /api/v2/gamification/profiles/{performanceProfileId} 
+Wraps GET /api/v2/gamification/profiles/{profileId} 
 
 Requires ANY permissions: 
 
@@ -513,11 +513,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+profile_id = 'profile_id_example' # str | performanceProfileId
 
 try:
     # Performance profile by id
-    api_response = api_instance.get_gamification_profile(performance_profile_id)
+    api_response = api_instance.get_gamification_profile(profile_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_profile: %s\n" % e)
@@ -528,7 +528,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **performance_profile_id** | **str**| Performance Profile Id |  |
+| **profile_id** | **str**| performanceProfileId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2030,7 +2030,7 @@ except ApiException as e:
 
 <a name="post_gamification_profile_activate"></a>
 
-## [**PerformanceProfile**](PerformanceProfile.html) post_gamification_profile_activate(performance_profile_id)
+## [**PerformanceProfile**](PerformanceProfile.html) post_gamification_profile_activate(profile_id)
 
 
 
@@ -2038,7 +2038,7 @@ Activate a performance profile
 
 
 
-Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/activate 
+Wraps POST /api/v2/gamification/profiles/{profileId}/activate 
 
 Requires ANY permissions: 
 
@@ -2057,11 +2057,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+profile_id = 'profile_id_example' # str | performanceProfileId
 
 try:
     # Activate a performance profile
-    api_response = api_instance.post_gamification_profile_activate(performance_profile_id)
+    api_response = api_instance.post_gamification_profile_activate(profile_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->post_gamification_profile_activate: %s\n" % e)
@@ -2072,7 +2072,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **performance_profile_id** | **str**| Performance Profile Id |  |
+| **profile_id** | **str**| performanceProfileId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2081,7 +2081,7 @@ except ApiException as e:
 
 <a name="post_gamification_profile_deactivate"></a>
 
-## [**PerformanceProfile**](PerformanceProfile.html) post_gamification_profile_deactivate(performance_profile_id)
+## [**PerformanceProfile**](PerformanceProfile.html) post_gamification_profile_deactivate(profile_id)
 
 
 
@@ -2089,7 +2089,7 @@ Deactivate a performance profile
 
 
 
-Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/deactivate 
+Wraps POST /api/v2/gamification/profiles/{profileId}/deactivate 
 
 Requires ANY permissions: 
 
@@ -2108,11 +2108,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+profile_id = 'profile_id_example' # str | performanceProfileId
 
 try:
     # Deactivate a performance profile
-    api_response = api_instance.post_gamification_profile_deactivate(performance_profile_id)
+    api_response = api_instance.post_gamification_profile_deactivate(profile_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->post_gamification_profile_deactivate: %s\n" % e)
@@ -2123,7 +2123,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **performance_profile_id** | **str**| Performance Profile Id |  |
+| **profile_id** | **str**| performanceProfileId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2454,7 +2454,7 @@ except ApiException as e:
 
 <a name="put_gamification_profile"></a>
 
-## [**PerformanceProfile**](PerformanceProfile.html) put_gamification_profile(performance_profile_id, body=body)
+## [**PerformanceProfile**](PerformanceProfile.html) put_gamification_profile(profile_id, body=body)
 
 
 
@@ -2462,7 +2462,7 @@ Updates a performance profile
 
 
 
-Wraps PUT /api/v2/gamification/profiles/{performanceProfileId} 
+Wraps PUT /api/v2/gamification/profiles/{profileId} 
 
 Requires ANY permissions: 
 
@@ -2481,12 +2481,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+profile_id = 'profile_id_example' # str | performanceProfileId
 body = PureCloudPlatformClientV2.PerformanceProfile() # PerformanceProfile | performanceProfile (optional)
 
 try:
     # Updates a performance profile
-    api_response = api_instance.put_gamification_profile(performance_profile_id, body=body)
+    api_response = api_instance.put_gamification_profile(profile_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->put_gamification_profile: %s\n" % e)
@@ -2497,7 +2497,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **performance_profile_id** | **str**| Performance Profile Id |  |
+| **profile_id** | **str**| performanceProfileId |  |
 | **body** | [**PerformanceProfile**](PerformanceProfile.html)| performanceProfile | [optional]  |
 {: class="table table-striped"}
 

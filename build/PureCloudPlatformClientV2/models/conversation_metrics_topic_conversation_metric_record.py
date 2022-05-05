@@ -905,7 +905,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
     def extended_delivery_status(self):
         """
         Gets the extended_delivery_status of this ConversationMetricsTopicConversationMetricRecord.
-        Extended email delivery status
+        Extended delivery status
 
         :return: The extended_delivery_status of this ConversationMetricsTopicConversationMetricRecord.
         :rtype: str
@@ -916,7 +916,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
     def extended_delivery_status(self, extended_delivery_status):
         """
         Sets the extended_delivery_status of this ConversationMetricsTopicConversationMetricRecord.
-        Extended email delivery status
+        Extended delivery status
 
         :param extended_delivery_status: The extended_delivery_status of this ConversationMetricsTopicConversationMetricRecord.
         :type: str

@@ -50,7 +50,10 @@ class MessageContent(object):
             'template': 'ContentNotificationTemplate',
             'reactions': 'list[ContentReaction]',
             'mention': 'MessagingRecipient',
-            'postback': 'ContentPostback'
+            'postback': 'ContentPostback',
+            'story': 'ContentStory',
+            'card': 'ContentCard',
+            'carousel': 'ContentCarousel'
         }
 
         self.attribute_map = {
@@ -64,7 +67,10 @@ class MessageContent(object):
             'template': 'template',
             'reactions': 'reactions',
             'mention': 'mention',
-            'postback': 'postback'
+            'postback': 'postback',
+            'story': 'story',
+            'card': 'card',
+            'carousel': 'carousel'
         }
 
         self._content_type = None
@@ -78,12 +84,15 @@ class MessageContent(object):
         self._reactions = None
         self._mention = None
         self._postback = None
+        self._story = None
+        self._card = None
+        self._carousel = None
 
     @property
     def content_type(self):
         """
         Gets the content_type of this MessageContent.
-        Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+        Type of this content element.
 
         :return: The content_type of this MessageContent.
         :rtype: str
@@ -94,12 +103,12 @@ class MessageContent(object):
     def content_type(self, content_type):
         """
         Sets the content_type of this MessageContent.
-        Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+        Type of this content element.
 
         :param content_type: The content_type of this MessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse"]
+        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "Story", "Card", "Carousel"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -202,7 +211,7 @@ class MessageContent(object):
     def generic(self):
         """
         Gets the generic of this MessageContent.
-        Generic content.
+        Generic content (Deprecated).
 
         :return: The generic of this MessageContent.
         :rtype: ContentGeneric
@@ -213,7 +222,7 @@ class MessageContent(object):
     def generic(self, generic):
         """
         Sets the generic of this MessageContent.
-        Generic content.
+        Generic content (Deprecated).
 
         :param generic: The generic of this MessageContent.
         :type: ContentGeneric
@@ -225,7 +234,7 @@ class MessageContent(object):
     def list(self):
         """
         Gets the list of this MessageContent.
-        List content.
+        List content (Deprecated).
 
         :return: The list of this MessageContent.
         :rtype: ContentList
@@ -236,7 +245,7 @@ class MessageContent(object):
     def list(self, list):
         """
         Sets the list of this MessageContent.
-        List content.
+        List content (Deprecated).
 
         :param list: The list of this MessageContent.
         :type: ContentList
@@ -335,6 +344,75 @@ class MessageContent(object):
         """
         
         self._postback = postback
+
+    @property
+    def story(self):
+        """
+        Gets the story of this MessageContent.
+        Ephemeral story content.
+
+        :return: The story of this MessageContent.
+        :rtype: ContentStory
+        """
+        return self._story
+
+    @story.setter
+    def story(self, story):
+        """
+        Sets the story of this MessageContent.
+        Ephemeral story content.
+
+        :param story: The story of this MessageContent.
+        :type: ContentStory
+        """
+        
+        self._story = story
+
+    @property
+    def card(self):
+        """
+        Gets the card of this MessageContent.
+        Card content
+
+        :return: The card of this MessageContent.
+        :rtype: ContentCard
+        """
+        return self._card
+
+    @card.setter
+    def card(self, card):
+        """
+        Sets the card of this MessageContent.
+        Card content
+
+        :param card: The card of this MessageContent.
+        :type: ContentCard
+        """
+        
+        self._card = card
+
+    @property
+    def carousel(self):
+        """
+        Gets the carousel of this MessageContent.
+        Carousel content
+
+        :return: The carousel of this MessageContent.
+        :rtype: ContentCarousel
+        """
+        return self._carousel
+
+    @carousel.setter
+    def carousel(self, carousel):
+        """
+        Sets the carousel of this MessageContent.
+        Carousel content
+
+        :param carousel: The carousel of this MessageContent.
+        :type: ContentCarousel
+        """
+        
+        self._carousel = carousel
 
     def to_dict(self):
         """

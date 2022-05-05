@@ -44,7 +44,7 @@ class CardAction(object):
             'text': 'str',
             'payload': 'str',
             'url': 'str',
-            'selected': 'bool'
+            'is_selected': 'bool'
         }
 
         self.attribute_map = {
@@ -52,14 +52,14 @@ class CardAction(object):
             'text': 'text',
             'payload': 'payload',
             'url': 'url',
-            'selected': 'selected'
+            'is_selected': 'isSelected'
         }
 
         self._type = None
         self._text = None
         self._payload = None
         self._url = None
-        self._selected = None
+        self._is_selected = None
 
     @property
     def type(self):
@@ -158,27 +158,27 @@ class CardAction(object):
         self._url = url
 
     @property
-    def selected(self):
+    def is_selected(self):
         """
-        Gets the selected of this CardAction.
+        Gets the is_selected of this CardAction.
+        Indicates if the card option is selected by end customer.
 
-
-        :return: The selected of this CardAction.
+        :return: The is_selected of this CardAction.
         :rtype: bool
         """
-        return self._selected
+        return self._is_selected
 
-    @selected.setter
-    def selected(self, selected):
+    @is_selected.setter
+    def is_selected(self, is_selected):
         """
-        Sets the selected of this CardAction.
+        Sets the is_selected of this CardAction.
+        Indicates if the card option is selected by end customer.
 
-
-        :param selected: The selected of this CardAction.
+        :param is_selected: The is_selected of this CardAction.
         :type: bool
         """
         
-        self._selected = selected
+        self._is_selected = is_selected
 
     def to_dict(self):
         """

@@ -47,6 +47,7 @@ class WhatsAppIntegrationUpdateRequest(object):
             'action': 'str',
             'authentication_method': 'str',
             'confirmation_code': 'str',
+            'phone_number': 'str',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class WhatsAppIntegrationUpdateRequest(object):
             'action': 'action',
             'authentication_method': 'authenticationMethod',
             'confirmation_code': 'confirmationCode',
+            'phone_number': 'phoneNumber',
             'self_uri': 'selfUri'
         }
 
@@ -68,6 +70,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         self._action = None
         self._authentication_method = None
         self._confirmation_code = None
+        self._phone_number = None
         self._self_uri = None
 
     @property
@@ -238,6 +241,29 @@ class WhatsAppIntegrationUpdateRequest(object):
         """
         
         self._confirmation_code = confirmation_code
+
+    @property
+    def phone_number(self):
+        """
+        Gets the phone_number of this WhatsAppIntegrationUpdateRequest.
+        Phone number to associate with the WhatsApp integration
+
+        :return: The phone_number of this WhatsAppIntegrationUpdateRequest.
+        :rtype: str
+        """
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, phone_number):
+        """
+        Sets the phone_number of this WhatsAppIntegrationUpdateRequest.
+        Phone number to associate with the WhatsApp integration
+
+        :param phone_number: The phone_number of this WhatsAppIntegrationUpdateRequest.
+        :type: str
+        """
+        
+        self._phone_number = phone_number
 
     @property
     def self_uri(self):

@@ -1,7 +1,7 @@
 ---
-title: FlowMetricsTopicConversationScoredAgent
+title: FlowMetricsTopicFlowScoredAgent
 ---
-## FlowMetricsTopicConversationScoredAgent
+## FlowMetricsTopicFlowScoredAgent
 
 ## Properties
 

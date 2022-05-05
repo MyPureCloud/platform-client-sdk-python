@@ -48,15 +48,16 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
             'always_running': 'bool',
             'contact_sorts': 'list[OutboundMessagingMessagingCampaignConfigChangeContactSort]',
             'messages_per_minute': 'int',
+            'rule_sets': 'list[OutboundMessagingMessagingCampaignConfigChangeUriReference]',
             'sms_config': 'OutboundMessagingMessagingCampaignConfigChangeSmsConfig',
             'email_config': 'OutboundMessagingMessagingCampaignConfigChangeEmailConfig',
             'errors': 'list[OutboundMessagingMessagingCampaignConfigChangeErrorDetail]',
             'id': 'str',
-            'division': 'OutboundMessagingMessagingCampaignConfigChangeUriReference',
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'version': 'int'
+            'version': 'int',
+            'division': 'OutboundMessagingMessagingCampaignConfigChangeUriReference'
         }
 
         self.attribute_map = {
@@ -68,15 +69,16 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
             'always_running': 'alwaysRunning',
             'contact_sorts': 'contactSorts',
             'messages_per_minute': 'messagesPerMinute',
+            'rule_sets': 'ruleSets',
             'sms_config': 'smsConfig',
             'email_config': 'emailConfig',
             'errors': 'errors',
             'id': 'id',
-            'division': 'division',
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'version': 'version'
+            'version': 'version',
+            'division': 'division'
         }
 
         self._campaign_status = None
@@ -87,15 +89,16 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         self._always_running = None
         self._contact_sorts = None
         self._messages_per_minute = None
+        self._rule_sets = None
         self._sms_config = None
         self._email_config = None
         self._errors = None
         self._id = None
-        self._division = None
         self._name = None
         self._date_created = None
         self._date_modified = None
         self._version = None
+        self._division = None
 
     @property
     def campaign_status(self):
@@ -286,6 +289,29 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         self._messages_per_minute = messages_per_minute
 
     @property
+    def rule_sets(self):
+        """
+        Gets the rule_sets of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+
+
+        :return: The rule_sets of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: list[OutboundMessagingMessagingCampaignConfigChangeUriReference]
+        """
+        return self._rule_sets
+
+    @rule_sets.setter
+    def rule_sets(self, rule_sets):
+        """
+        Sets the rule_sets of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+
+
+        :param rule_sets: The rule_sets of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: list[OutboundMessagingMessagingCampaignConfigChangeUriReference]
+        """
+        
+        self._rule_sets = rule_sets
+
+    @property
     def sms_config(self):
         """
         Gets the sms_config of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
@@ -378,29 +404,6 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         self._id = id
 
     @property
-    def division(self):
-        """
-        Gets the division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        A UriReference for a resource
-
-        :return: The division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :rtype: OutboundMessagingMessagingCampaignConfigChangeUriReference
-        """
-        return self._division
-
-    @division.setter
-    def division(self, division):
-        """
-        Sets the division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        A UriReference for a resource
-
-        :param division: The division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
-        :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
-        """
-        
-        self._division = division
-
-    @property
     def name(self):
         """
         Gets the name of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
@@ -491,6 +494,29 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         """
         
         self._version = version
+
+    @property
+    def division(self):
+        """
+        Gets the division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        A UriReference for a resource
+
+        :return: The division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: OutboundMessagingMessagingCampaignConfigChangeUriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        A UriReference for a resource
+
+        :param division: The division of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
+        """
+        
+        self._division = division
 
     def to_dict(self):
         """

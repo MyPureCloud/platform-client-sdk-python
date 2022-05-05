@@ -700,7 +700,7 @@ class GamificationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_gamification_profile(self, performance_profile_id, **kwargs):
+    def get_gamification_profile(self, profile_id, **kwargs):
         """
         Performance profile by id
         
@@ -711,17 +711,17 @@ class GamificationApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_gamification_profile(performance_profile_id, callback=callback_function)
+        >>> thread = api.get_gamification_profile(profile_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str performance_profile_id: Performance Profile Id (required)
+        :param str profile_id: performanceProfileId (required)
         :return: PerformanceProfile
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['performance_profile_id']
+        all_params = ['profile_id']
         all_params.append('callback')
 
         params = locals()
@@ -734,15 +734,15 @@ class GamificationApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'performance_profile_id' is set
-        if ('performance_profile_id' not in params) or (params['performance_profile_id'] is None):
-            raise ValueError("Missing the required parameter `performance_profile_id` when calling `get_gamification_profile`")
+        # verify the required parameter 'profile_id' is set
+        if ('profile_id' not in params) or (params['profile_id'] is None):
+            raise ValueError("Missing the required parameter `profile_id` when calling `get_gamification_profile`")
 
 
-        resource_path = '/api/v2/gamification/profiles/{performanceProfileId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/gamification/profiles/{profileId}'.replace('{format}', 'json')
         path_params = {}
-        if 'performance_profile_id' in params:
-            path_params['performanceProfileId'] = params['performance_profile_id']
+        if 'profile_id' in params:
+            path_params['profileId'] = params['profile_id']
 
         query_params = {}
 
@@ -3097,7 +3097,7 @@ class GamificationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_gamification_profile_activate(self, performance_profile_id, **kwargs):
+    def post_gamification_profile_activate(self, profile_id, **kwargs):
         """
         Activate a performance profile
         
@@ -3108,17 +3108,17 @@ class GamificationApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_gamification_profile_activate(performance_profile_id, callback=callback_function)
+        >>> thread = api.post_gamification_profile_activate(profile_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str performance_profile_id: Performance Profile Id (required)
+        :param str profile_id: performanceProfileId (required)
         :return: PerformanceProfile
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['performance_profile_id']
+        all_params = ['profile_id']
         all_params.append('callback')
 
         params = locals()
@@ -3131,15 +3131,15 @@ class GamificationApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'performance_profile_id' is set
-        if ('performance_profile_id' not in params) or (params['performance_profile_id'] is None):
-            raise ValueError("Missing the required parameter `performance_profile_id` when calling `post_gamification_profile_activate`")
+        # verify the required parameter 'profile_id' is set
+        if ('profile_id' not in params) or (params['profile_id'] is None):
+            raise ValueError("Missing the required parameter `profile_id` when calling `post_gamification_profile_activate`")
 
 
-        resource_path = '/api/v2/gamification/profiles/{performanceProfileId}/activate'.replace('{format}', 'json')
+        resource_path = '/api/v2/gamification/profiles/{profileId}/activate'.replace('{format}', 'json')
         path_params = {}
-        if 'performance_profile_id' in params:
-            path_params['performanceProfileId'] = params['performance_profile_id']
+        if 'profile_id' in params:
+            path_params['profileId'] = params['profile_id']
 
         query_params = {}
 
@@ -3175,7 +3175,7 @@ class GamificationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_gamification_profile_deactivate(self, performance_profile_id, **kwargs):
+    def post_gamification_profile_deactivate(self, profile_id, **kwargs):
         """
         Deactivate a performance profile
         
@@ -3186,17 +3186,17 @@ class GamificationApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_gamification_profile_deactivate(performance_profile_id, callback=callback_function)
+        >>> thread = api.post_gamification_profile_deactivate(profile_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str performance_profile_id: Performance Profile Id (required)
+        :param str profile_id: performanceProfileId (required)
         :return: PerformanceProfile
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['performance_profile_id']
+        all_params = ['profile_id']
         all_params.append('callback')
 
         params = locals()
@@ -3209,15 +3209,15 @@ class GamificationApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'performance_profile_id' is set
-        if ('performance_profile_id' not in params) or (params['performance_profile_id'] is None):
-            raise ValueError("Missing the required parameter `performance_profile_id` when calling `post_gamification_profile_deactivate`")
+        # verify the required parameter 'profile_id' is set
+        if ('profile_id' not in params) or (params['profile_id'] is None):
+            raise ValueError("Missing the required parameter `profile_id` when calling `post_gamification_profile_deactivate`")
 
 
-        resource_path = '/api/v2/gamification/profiles/{performanceProfileId}/deactivate'.replace('{format}', 'json')
+        resource_path = '/api/v2/gamification/profiles/{profileId}/deactivate'.replace('{format}', 'json')
         path_params = {}
-        if 'performance_profile_id' in params:
-            path_params['performanceProfileId'] = params['performance_profile_id']
+        if 'profile_id' in params:
+            path_params['profileId'] = params['profile_id']
 
         query_params = {}
 
@@ -3763,7 +3763,7 @@ class GamificationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_gamification_profile(self, performance_profile_id, **kwargs):
+    def put_gamification_profile(self, profile_id, **kwargs):
         """
         Updates a performance profile
         
@@ -3774,18 +3774,18 @@ class GamificationApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_gamification_profile(performance_profile_id, callback=callback_function)
+        >>> thread = api.put_gamification_profile(profile_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str performance_profile_id: Performance Profile Id (required)
+        :param str profile_id: performanceProfileId (required)
         :param PerformanceProfile body: performanceProfile
         :return: PerformanceProfile
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['performance_profile_id', 'body']
+        all_params = ['profile_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3798,15 +3798,15 @@ class GamificationApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'performance_profile_id' is set
-        if ('performance_profile_id' not in params) or (params['performance_profile_id'] is None):
-            raise ValueError("Missing the required parameter `performance_profile_id` when calling `put_gamification_profile`")
+        # verify the required parameter 'profile_id' is set
+        if ('profile_id' not in params) or (params['profile_id'] is None):
+            raise ValueError("Missing the required parameter `profile_id` when calling `put_gamification_profile`")
 
 
-        resource_path = '/api/v2/gamification/profiles/{performanceProfileId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/gamification/profiles/{profileId}'.replace('{format}', 'json')
         path_params = {}
-        if 'performance_profile_id' in params:
-            path_params['performanceProfileId'] = params['performance_profile_id']
+        if 'profile_id' in params:
+            path_params['profileId'] = params['profile_id']
 
         query_params = {}
 

@@ -79,7 +79,7 @@ class ButtonComponent(object):
     def actions(self):
         """
         Gets the actions of this ButtonComponent.
-        The button actions.
+        The button actions (Deprecated).
 
         :return: The actions of this ButtonComponent.
         :rtype: ContentActions
@@ -90,7 +90,7 @@ class ButtonComponent(object):
     def actions(self, actions):
         """
         Sets the actions of this ButtonComponent.
-        The button actions.
+        The button actions (Deprecated).
 
         :param actions: The actions of this ButtonComponent.
         :type: ContentActions

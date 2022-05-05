@@ -1936,6 +1936,156 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_recording_keyconfiguration(self, key_configuration_id, **kwargs):
+        """
+        Get the encryption key configurations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_recording_keyconfiguration(key_configuration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str key_configuration_id: Key Configurations Id (required)
+        :return: RecordingEncryptionConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['key_configuration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_recording_keyconfiguration" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'key_configuration_id' is set
+        if ('key_configuration_id' not in params) or (params['key_configuration_id'] is None):
+            raise ValueError("Missing the required parameter `key_configuration_id` when calling `get_recording_keyconfiguration`")
+
+
+        resource_path = '/api/v2/recording/keyconfigurations/{keyConfigurationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'key_configuration_id' in params:
+            path_params['keyConfigurationId'] = params['key_configuration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RecordingEncryptionConfiguration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_recording_keyconfigurations(self, **kwargs):
+        """
+        Get a list of key configurations data
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_recording_keyconfigurations(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: RecordingEncryptionConfigurationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_recording_keyconfigurations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/recording/keyconfigurations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RecordingEncryptionConfigurationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_recording_localkeys_setting(self, settings_id, **kwargs):
         """
         Get the local encryption settings
@@ -3069,8 +3219,8 @@ class RecordingApi(object):
 
     def post_recording_jobs(self, body, **kwargs):
         """
-        Create a recording bulk job
-        
+        Create a recording bulk job.
+        Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3141,6 +3291,162 @@ class RecordingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='RecordingJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_recording_keyconfigurations(self, body, **kwargs):
+        """
+        Setup configurations for encryption key creation
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_recording_keyconfigurations(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param RecordingEncryptionConfiguration body: Encryption Configuration (required)
+        :return: RecordingEncryptionConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_recording_keyconfigurations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_recording_keyconfigurations`")
+
+
+        resource_path = '/api/v2/recording/keyconfigurations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RecordingEncryptionConfiguration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_recording_keyconfigurations_validate(self, body, **kwargs):
+        """
+        Validate encryption key configurations without saving it
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_recording_keyconfigurations_validate(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param RecordingEncryptionConfiguration body: Encryption Configuration (required)
+        :return: RecordingEncryptionConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_recording_keyconfigurations_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_recording_keyconfigurations_validate`")
+
+
+        resource_path = '/api/v2/recording/keyconfigurations/validate'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RecordingEncryptionConfiguration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4116,6 +4422,90 @@ class RecordingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='RecordingJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_recording_keyconfiguration(self, key_configuration_id, body, **kwargs):
+        """
+        Update the encryption key configurations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_recording_keyconfiguration(key_configuration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str key_configuration_id: Key Configurations Id (required)
+        :param RecordingEncryptionConfiguration body: Encryption key configuration metadata (required)
+        :return: RecordingEncryptionConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['key_configuration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_recording_keyconfiguration" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'key_configuration_id' is set
+        if ('key_configuration_id' not in params) or (params['key_configuration_id'] is None):
+            raise ValueError("Missing the required parameter `key_configuration_id` when calling `put_recording_keyconfiguration`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_recording_keyconfiguration`")
+
+
+        resource_path = '/api/v2/recording/keyconfigurations/{keyConfigurationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'key_configuration_id' in params:
+            path_params['keyConfigurationId'] = params['key_configuration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RecordingEncryptionConfiguration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

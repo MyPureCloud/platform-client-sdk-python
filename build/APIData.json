@@ -7575,7 +7575,7 @@
       }
     ],
     "return": "WhatsAppIntegration",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nintegration_id = 'integration_id_example' # str | Integration ID\nbody = PureCloudPlatformClientV2.WhatsAppIntegrationUpdateRequest() # WhatsAppIntegrationUpdateRequest | WhatsAppIntegrationUpdateRequest\n\ntry:\n    # Update or activate a WhatsApp messaging integration.\n    api_response = api_instance.patch_conversations_messaging_integrations_whatsapp_integration_id(integration_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest->patch_conversations_messaging_integrations_whatsapp_integration_id: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nintegration_id = 'integration_id_example' # str | Integration ID\nbody = PureCloudPlatformClientV2.WhatsAppIntegrationUpdateRequest() # WhatsAppIntegrationUpdateRequest | WhatsAppIntegrationUpdateRequest\n\ntry:\n    # Update or activate a WhatsApp messaging integration\n    api_response = api_instance.patch_conversations_messaging_integrations_whatsapp_integration_id(integration_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest->patch_conversations_messaging_integrations_whatsapp_integration_id: %s\\n\" % e)"
   },
   "patch_conversations_messaging_supportedcontent_supported_content_id": {
     "operationId": "patch_conversations_messaging_supportedcontent_supported_content_id",
@@ -9890,16 +9890,16 @@
   "get_gamification_profile": {
     "operationId": "get_gamification_profile",
     "functionName": "get_gamification_profile",
-    "signature": "get_gamification_profile(performance_profile_id)",
+    "signature": "get_gamification_profile(profile_id)",
     "parameters": [
       {
-        "name": "performance_profile_id",
+        "name": "profile_id",
         "type": "str",
         "required": "true"
       }
     ],
     "return": "PerformanceProfile",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nperformance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id\n\ntry:\n    # Performance profile by id\n    api_response = api_instance.get_gamification_profile(performance_profile_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationProfileRequest->get_gamification_profile: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nprofile_id = 'profile_id_example' # str | performanceProfileId\n\ntry:\n    # Performance profile by id\n    api_response = api_instance.get_gamification_profile(profile_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationProfileRequest->get_gamification_profile: %s\\n\" % e)"
   },
   "get_gamification_profile_members": {
     "operationId": "get_gamification_profile_members",
@@ -10443,30 +10443,30 @@
   "post_gamification_profile_activate": {
     "operationId": "post_gamification_profile_activate",
     "functionName": "post_gamification_profile_activate",
-    "signature": "post_gamification_profile_activate(performance_profile_id)",
+    "signature": "post_gamification_profile_activate(profile_id)",
     "parameters": [
       {
-        "name": "performance_profile_id",
+        "name": "profile_id",
         "type": "str",
         "required": "true"
       }
     ],
     "return": "PerformanceProfile",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nperformance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id\n\ntry:\n    # Activate a performance profile\n    api_response = api_instance.post_gamification_profile_activate(performance_profile_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostGamificationProfileActivateRequest->post_gamification_profile_activate: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nprofile_id = 'profile_id_example' # str | performanceProfileId\n\ntry:\n    # Activate a performance profile\n    api_response = api_instance.post_gamification_profile_activate(profile_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostGamificationProfileActivateRequest->post_gamification_profile_activate: %s\\n\" % e)"
   },
   "post_gamification_profile_deactivate": {
     "operationId": "post_gamification_profile_deactivate",
     "functionName": "post_gamification_profile_deactivate",
-    "signature": "post_gamification_profile_deactivate(performance_profile_id)",
+    "signature": "post_gamification_profile_deactivate(profile_id)",
     "parameters": [
       {
-        "name": "performance_profile_id",
+        "name": "profile_id",
         "type": "str",
         "required": "true"
       }
     ],
     "return": "PerformanceProfile",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nperformance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id\n\ntry:\n    # Deactivate a performance profile\n    api_response = api_instance.post_gamification_profile_deactivate(performance_profile_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostGamificationProfileDeactivateRequest->post_gamification_profile_deactivate: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nprofile_id = 'profile_id_example' # str | performanceProfileId\n\ntry:\n    # Deactivate a performance profile\n    api_response = api_instance.post_gamification_profile_deactivate(profile_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostGamificationProfileDeactivateRequest->post_gamification_profile_deactivate: %s\\n\" % e)"
   },
   "post_gamification_profile_members": {
     "operationId": "post_gamification_profile_members",
@@ -10595,10 +10595,10 @@
   "put_gamification_profile": {
     "operationId": "put_gamification_profile",
     "functionName": "put_gamification_profile",
-    "signature": "put_gamification_profile(performance_profile_id, body)",
+    "signature": "put_gamification_profile(profile_id, body)",
     "parameters": [
       {
-        "name": "performance_profile_id",
+        "name": "profile_id",
         "type": "str",
         "required": "true"
       },
@@ -10609,7 +10609,7 @@
       }
     ],
     "return": "PerformanceProfile",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nperformance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id\nbody = PureCloudPlatformClientV2.PerformanceProfile() # PerformanceProfile | performanceProfile (optional)\n\ntry:\n    # Updates a performance profile\n    api_response = api_instance.put_gamification_profile(performance_profile_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutGamificationProfileRequest->put_gamification_profile: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nprofile_id = 'profile_id_example' # str | performanceProfileId\nbody = PureCloudPlatformClientV2.PerformanceProfile() # PerformanceProfile | performanceProfile (optional)\n\ntry:\n    # Updates a performance profile\n    api_response = api_instance.put_gamification_profile(profile_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutGamificationProfileRequest->put_gamification_profile: %s\\n\" % e)"
   },
   "put_gamification_profile_metric": {
     "operationId": "put_gamification_profile_metric",
@@ -11936,7 +11936,7 @@
   "get_integrations_actions": {
     "operationId": "get_integrations_actions",
     "functionName": "get_integrations_actions",
-    "signature": "get_integrations_actions(page_size, page_number, next_page, previous_page, sort_by, sort_order, category, name, secure, include_auth_actions)",
+    "signature": "get_integrations_actions(page_size, page_number, next_page, previous_page, sort_by, sort_order, category, name, ids, secure, include_auth_actions)",
     "parameters": [
       {
         "name": "page_size",
@@ -11979,6 +11979,11 @@
         "required": "false"
       },
       {
+        "name": "ids",
+        "type": "str",
+        "required": "false"
+      },
+      {
         "name": "secure",
         "type": "str",
         "required": "false"
@@ -11990,7 +11995,7 @@
       }
     ],
     "return": "ActionEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nsort_by = 'sort_by_example' # str | Root level field name to sort on. (optional)\nsort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)\ncategory = 'category_example' # str | Filter by category name (optional)\nname = 'name_example' # str | Filter by action name. Provide full or just the first part of name. (optional)\nsecure = 'secure_example' # str | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)\ninclude_auth_actions = 'false' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to false)\n\ntry:\n    # Retrieves all actions associated with filters passed in via query param.\n    api_response = api_instance.get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, secure=secure, include_auth_actions=include_auth_actions)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetIntegrationsActionsRequest->get_integrations_actions: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nsort_by = 'sort_by_example' # str | Root level field name to sort on. (optional)\nsort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)\ncategory = 'category_example' # str | Filter by category name. (optional)\nname = 'name_example' # str | Filter by partial or complete action name. (optional)\nids = 'ids_example' # str | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)\nsecure = 'secure_example' # str | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)\ninclude_auth_actions = 'false' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to false)\n\ntry:\n    # Retrieves all actions associated with filters passed in via query param.\n    api_response = api_instance.get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetIntegrationsActionsRequest->get_integrations_actions: %s\\n\" % e)"
   },
   "get_integrations_actions_categories": {
     "operationId": "get_integrations_actions_categories",
@@ -12039,7 +12044,7 @@
   "get_integrations_actions_drafts": {
     "operationId": "get_integrations_actions_drafts",
     "functionName": "get_integrations_actions_drafts",
-    "signature": "get_integrations_actions_drafts(page_size, page_number, next_page, previous_page, sort_by, sort_order, category, name, secure, include_auth_actions)",
+    "signature": "get_integrations_actions_drafts(page_size, page_number, next_page, previous_page, sort_by, sort_order, category, name, ids, secure, include_auth_actions)",
     "parameters": [
       {
         "name": "page_size",
@@ -12082,6 +12087,11 @@
         "required": "false"
       },
       {
+        "name": "ids",
+        "type": "str",
+        "required": "false"
+      },
+      {
         "name": "secure",
         "type": "str",
         "required": "false"
@@ -12093,7 +12103,7 @@
       }
     ],
     "return": "ActionEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nsort_by = 'sort_by_example' # str | Root level field name to sort on. (optional)\nsort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)\ncategory = 'category_example' # str | Filter by category name (optional)\nname = 'name_example' # str | Filter by action name. Provide full or just the first part of name. (optional)\nsecure = 'secure_example' # str | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)\ninclude_auth_actions = 'false' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to false)\n\ntry:\n    # Retrieves all action drafts associated with the filters passed in via query param.\n    api_response = api_instance.get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, secure=secure, include_auth_actions=include_auth_actions)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetIntegrationsActionsDraftsRequest->get_integrations_actions_drafts: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nsort_by = 'sort_by_example' # str | Root level field name to sort on. (optional)\nsort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)\ncategory = 'category_example' # str | Filter by category name. (optional)\nname = 'name_example' # str | Filter by partial or complete action name. (optional)\nids = 'ids_example' # str | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)\nsecure = 'secure_example' # str | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)\ninclude_auth_actions = 'false' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to false)\n\ntry:\n    # Retrieves all action drafts associated with the filters passed in via query param.\n    api_response = api_instance.get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetIntegrationsActionsDraftsRequest->get_integrations_actions_drafts: %s\\n\" % e)"
   },
   "get_integrations_botconnector_integration_id_bot": {
     "operationId": "get_integrations_botconnector_integration_id_bot",
@@ -21401,6 +21411,27 @@
     "return": "RecordingJobEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_by = 'userId' # str | Sort by (optional) (default to userId)\nstate = 'state_example' # str | Filter by state (optional)\nshow_only_my_jobs = true # bool | Show only my jobs (optional)\njob_type = 'job_type_example' # str | Job Type (Can be left empty for both) (optional)\ninclude_total = true # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)\ncursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)\n\ntry:\n    # Get the status of all jobs within the user's organization\n    api_response = api_instance.get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type, include_total=include_total, cursor=cursor)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRecordingJobsRequest->get_recording_jobs: %s\\n\" % e)"
   },
+  "get_recording_keyconfiguration": {
+    "operationId": "get_recording_keyconfiguration",
+    "functionName": "get_recording_keyconfiguration",
+    "signature": "get_recording_keyconfiguration(key_configuration_id)",
+    "parameters": [
+      {
+        "name": "key_configuration_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingEncryptionConfiguration",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nkey_configuration_id = 'key_configuration_id_example' # str | Key Configurations Id\n\ntry:\n    # Get the encryption key configurations\n    api_response = api_instance.get_recording_keyconfiguration(key_configuration_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRecordingKeyconfigurationRequest->get_recording_keyconfiguration: %s\\n\" % e)"
+  },
+  "get_recording_keyconfigurations": {
+    "operationId": "get_recording_keyconfigurations",
+    "functionName": "get_recording_keyconfigurations",
+    "signature": "get_recording_keyconfigurations()",
+    "return": "RecordingEncryptionConfigurationListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\n\ntry:\n    # Get a list of key configurations data\n    api_response = api_instance.get_recording_keyconfigurations()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRecordingKeyconfigurationsRequest->get_recording_keyconfigurations: %s\\n\" % e)"
+  },
   "get_recording_localkeys_setting": {
     "operationId": "get_recording_localkeys_setting",
     "functionName": "get_recording_localkeys_setting",
@@ -21679,7 +21710,35 @@
       }
     ],
     "return": "RecordingJob",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nbody = PureCloudPlatformClientV2.RecordingJobsQuery() # RecordingJobsQuery | query\n\ntry:\n    # Create a recording bulk job\n    api_response = api_instance.post_recording_jobs(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostRecordingJobsRequest->post_recording_jobs: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nbody = PureCloudPlatformClientV2.RecordingJobsQuery() # RecordingJobsQuery | query\n\ntry:\n    # Create a recording bulk job.\n    api_response = api_instance.post_recording_jobs(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostRecordingJobsRequest->post_recording_jobs: %s\\n\" % e)"
+  },
+  "post_recording_keyconfigurations": {
+    "operationId": "post_recording_keyconfigurations",
+    "functionName": "post_recording_keyconfigurations",
+    "signature": "post_recording_keyconfigurations(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "RecordingEncryptionConfiguration",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingEncryptionConfiguration",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nbody = PureCloudPlatformClientV2.RecordingEncryptionConfiguration() # RecordingEncryptionConfiguration | Encryption Configuration\n\ntry:\n    # Setup configurations for encryption key creation\n    api_response = api_instance.post_recording_keyconfigurations(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostRecordingKeyconfigurationsRequest->post_recording_keyconfigurations: %s\\n\" % e)"
+  },
+  "post_recording_keyconfigurations_validate": {
+    "operationId": "post_recording_keyconfigurations_validate",
+    "functionName": "post_recording_keyconfigurations_validate",
+    "signature": "post_recording_keyconfigurations_validate(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "RecordingEncryptionConfiguration",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingEncryptionConfiguration",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nbody = PureCloudPlatformClientV2.RecordingEncryptionConfiguration() # RecordingEncryptionConfiguration | Encryption Configuration\n\ntry:\n    # Validate encryption key configurations without saving it\n    api_response = api_instance.post_recording_keyconfigurations_validate(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostRecordingKeyconfigurationsValidateRequest->post_recording_keyconfigurations_validate: %s\\n\" % e)"
   },
   "post_recording_localkeys": {
     "operationId": "post_recording_localkeys",
@@ -21879,6 +21938,25 @@
     ],
     "return": "RecordingJob",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\njob_id = 'job_id_example' # str | jobId\nbody = PureCloudPlatformClientV2.ExecuteRecordingJobsQuery() # ExecuteRecordingJobsQuery | query\n\ntry:\n    # Execute the recording bulk job.\n    api_response = api_instance.put_recording_job(job_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutRecordingJobRequest->put_recording_job: %s\\n\" % e)"
+  },
+  "put_recording_keyconfiguration": {
+    "operationId": "put_recording_keyconfiguration",
+    "functionName": "put_recording_keyconfiguration",
+    "signature": "put_recording_keyconfiguration(key_configuration_id, body)",
+    "parameters": [
+      {
+        "name": "key_configuration_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "RecordingEncryptionConfiguration",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingEncryptionConfiguration",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nkey_configuration_id = 'key_configuration_id_example' # str | Key Configurations Id\nbody = PureCloudPlatformClientV2.RecordingEncryptionConfiguration() # RecordingEncryptionConfiguration | Encryption key configuration metadata\n\ntry:\n    # Update the encryption key configurations\n    api_response = api_instance.put_recording_keyconfiguration(key_configuration_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutRecordingKeyconfigurationRequest->put_recording_keyconfiguration: %s\\n\" % e)"
   },
   "put_recording_localkeys_setting": {
     "operationId": "put_recording_localkeys_setting",
@@ -22258,6 +22336,642 @@
     ],
     "return": "ResponseAsset",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ResponseManagementApi()\nresponse_asset_id = 'response_asset_id_example' # str | Asset Id\nbody = PureCloudPlatformClientV2.ResponseAssetRequest() # ResponseAssetRequest | request\n\ntry:\n    # Update response asset\n    api_response = api_instance.put_responsemanagement_responseasset(response_asset_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutResponsemanagementResponseassetRequest->put_responsemanagement_responseasset: %s\\n\" % e)"
+  },
+  "delete_scim_user": {
+    "operationId": "delete_scim_user",
+    "functionName": "delete_scim_user",
+    "signature": "delete_scim_user(user_id, if_match)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "Empty",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Delete a user\n    api_response = api_instance.delete_scim_user(user_id, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteScimUserRequest->delete_scim_user: %s\\n\" % e)"
+  },
+  "delete_scim_v2_user": {
+    "operationId": "delete_scim_v2_user",
+    "functionName": "delete_scim_v2_user",
+    "signature": "delete_scim_v2_user(user_id, if_match)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "Empty",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Delete a user\n    api_response = api_instance.delete_scim_v2_user(user_id, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteScimV2UserRequest->delete_scim_v2_user: %s\\n\" % e)"
+  },
+  "get_scim_group": {
+    "operationId": "get_scim_group",
+    "functionName": "get_scim_group",
+    "signature": "get_scim_group(group_id, attributes, excluded_attributes, if_none_match)",
+    "parameters": [
+      {
+        "name": "group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "excluded_attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "if_none_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)\n\ntry:\n    # Get a group\n    api_response = api_instance.get_scim_group(group_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimGroupRequest->get_scim_group: %s\\n\" % e)"
+  },
+  "get_scim_groups": {
+    "operationId": "get_scim_groups",
+    "functionName": "get_scim_groups",
+    "signature": "get_scim_groups(start_index, count, attributes, excluded_attributes, filter)",
+    "parameters": [
+      {
+        "name": "start_index",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "count",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "excluded_attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "filter",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimGroupListResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nstart_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)\ncount = 25 # int | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\". (optional) (default to 25)\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nfilter = 'displayName eq groupName' # str | Filters results. If nothing is specified, returns all groups. Examples of valid values: \\\"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\\\", \\\"displayname eq Sales\\\". (optional)\n\ntry:\n    # Get a list of groups\n    api_response = api_instance.get_scim_groups(start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes, filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimGroupsRequest->get_scim_groups: %s\\n\" % e)"
+  },
+  "get_scim_resourcetype": {
+    "operationId": "get_scim_resourcetype",
+    "functionName": "get_scim_resourcetype",
+    "signature": "get_scim_resourcetype(resource_type)",
+    "parameters": [
+      {
+        "name": "resource_type",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ScimConfigResourceType",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nresource_type = 'resource_type_example' # str | The type of resource. Returned with GET /api/v2/scim/resourcetypes.\n\ntry:\n    # Get a resource type\n    api_response = api_instance.get_scim_resourcetype(resource_type)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimResourcetypeRequest->get_scim_resourcetype: %s\\n\" % e)"
+  },
+  "get_scim_resourcetypes": {
+    "operationId": "get_scim_resourcetypes",
+    "functionName": "get_scim_resourcetypes",
+    "signature": "get_scim_resourcetypes()",
+    "return": "ScimConfigResourceTypesListResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\n\ntry:\n    # Get a list of resource types\n    api_response = api_instance.get_scim_resourcetypes()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimResourcetypesRequest->get_scim_resourcetypes: %s\\n\" % e)"
+  },
+  "get_scim_schema": {
+    "operationId": "get_scim_schema",
+    "functionName": "get_scim_schema",
+    "signature": "get_scim_schema(schema_id)",
+    "parameters": [
+      {
+        "name": "schema_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ScimV2SchemaDefinition",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nschema_id = 'schema_id_example' # str | The ID of a schema. Returned with GET /api/v2/scim/schemas.\n\ntry:\n    # Get a SCIM schema\n    api_response = api_instance.get_scim_schema(schema_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimSchemaRequest->get_scim_schema: %s\\n\" % e)"
+  },
+  "get_scim_schemas": {
+    "operationId": "get_scim_schemas",
+    "functionName": "get_scim_schemas",
+    "signature": "get_scim_schemas(filter)",
+    "parameters": [
+      {
+        "name": "filter",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2SchemaListResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nfilter = 'displayName eq groupName' # str | Filtered results are invalid and return 403 Unauthorized. (optional)\n\ntry:\n    # Get a list of SCIM schemas\n    api_response = api_instance.get_scim_schemas(filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimSchemasRequest->get_scim_schemas: %s\\n\" % e)"
+  },
+  "get_scim_serviceproviderconfig": {
+    "operationId": "get_scim_serviceproviderconfig",
+    "functionName": "get_scim_serviceproviderconfig",
+    "signature": "get_scim_serviceproviderconfig(if_none_match)",
+    "parameters": [
+      {
+        "name": "if_none_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimServiceProviderConfig",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/serviceproviderconfig. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)\n\ntry:\n    # Get a service provider's configuration\n    api_response = api_instance.get_scim_serviceproviderconfig(if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimServiceproviderconfigRequest->get_scim_serviceproviderconfig: %s\\n\" % e)"
+  },
+  "get_scim_user": {
+    "operationId": "get_scim_user",
+    "functionName": "get_scim_user",
+    "signature": "get_scim_user(user_id, attributes, excluded_attributes, if_none_match)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "excluded_attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "if_none_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)\n\ntry:\n    # Get a user\n    api_response = api_instance.get_scim_user(user_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimUserRequest->get_scim_user: %s\\n\" % e)"
+  },
+  "get_scim_users": {
+    "operationId": "get_scim_users",
+    "functionName": "get_scim_users",
+    "signature": "get_scim_users(start_index, count, attributes, excluded_attributes, filter)",
+    "parameters": [
+      {
+        "name": "start_index",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "count",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "excluded_attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "filter",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimUserListResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nstart_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)\ncount = 25 # int | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\". (optional) (default to 25)\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nfilter = 'filter_example' # str | Filters results. If nothing is specified, returns all active users. Examples of valid values: \\\"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\\\", \\\"userName eq search@sample.org\\\", \\\"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\\\", \\\"email eq search@sample.org\\\", \\\"division eq divisionName\\\", \\\"externalId eq 167844\\\", \\\"active eq false\\\", \\\"employeeNumber eq 9876543210\\\". (optional)\n\ntry:\n    # Get a list of users\n    api_response = api_instance.get_scim_users(start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes, filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimUsersRequest->get_scim_users: %s\\n\" % e)"
+  },
+  "get_scim_v2_group": {
+    "operationId": "get_scim_v2_group",
+    "functionName": "get_scim_v2_group",
+    "signature": "get_scim_v2_group(group_id, attributes, excluded_attributes, if_none_match)",
+    "parameters": [
+      {
+        "name": "group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "excluded_attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "if_none_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)\n\ntry:\n    # Get a group\n    api_response = api_instance.get_scim_v2_group(group_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2GroupRequest->get_scim_v2_group: %s\\n\" % e)"
+  },
+  "get_scim_v2_groups": {
+    "operationId": "get_scim_v2_groups",
+    "functionName": "get_scim_v2_groups",
+    "signature": "get_scim_v2_groups(filter, start_index, count, attributes, excluded_attributes)",
+    "parameters": [
+      {
+        "name": "filter",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "start_index",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "count",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "excluded_attributes",
+        "type": "list[str]",
+        "required": "false"
+      }
+    ],
+    "return": "ScimGroupListResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nfilter = 'displayName eq groupName' # str | Filters results. If nothing is specified, returns all groups. Examples of valid values: \\\"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\\\", \\\"displayname eq Sales\\\".\nstart_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)\ncount = 25 # int | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\". (optional) (default to 25)\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\n\ntry:\n    # Get a list of groups\n    api_response = api_instance.get_scim_v2_groups(filter, start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2GroupsRequest->get_scim_v2_groups: %s\\n\" % e)"
+  },
+  "get_scim_v2_resourcetype": {
+    "operationId": "get_scim_v2_resourcetype",
+    "functionName": "get_scim_v2_resourcetype",
+    "signature": "get_scim_v2_resourcetype(resource_type)",
+    "parameters": [
+      {
+        "name": "resource_type",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ScimConfigResourceType",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nresource_type = 'resource_type_example' # str | The type of resource. Returned with GET /api/v2/scim/v2/resourcetypes.\n\ntry:\n    # Get a resource type\n    api_response = api_instance.get_scim_v2_resourcetype(resource_type)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2ResourcetypeRequest->get_scim_v2_resourcetype: %s\\n\" % e)"
+  },
+  "get_scim_v2_resourcetypes": {
+    "operationId": "get_scim_v2_resourcetypes",
+    "functionName": "get_scim_v2_resourcetypes",
+    "signature": "get_scim_v2_resourcetypes()",
+    "return": "ScimConfigResourceTypesListResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\n\ntry:\n    # Get a list of resource types\n    api_response = api_instance.get_scim_v2_resourcetypes()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2ResourcetypesRequest->get_scim_v2_resourcetypes: %s\\n\" % e)"
+  },
+  "get_scim_v2_schema": {
+    "operationId": "get_scim_v2_schema",
+    "functionName": "get_scim_v2_schema",
+    "signature": "get_scim_v2_schema(schema_id)",
+    "parameters": [
+      {
+        "name": "schema_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ScimV2SchemaDefinition",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nschema_id = 'schema_id_example' # str | The ID of a schema. Returned with GET /api/v2/scim/v2/schemas.\n\ntry:\n    # Get a SCIM schema\n    api_response = api_instance.get_scim_v2_schema(schema_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2SchemaRequest->get_scim_v2_schema: %s\\n\" % e)"
+  },
+  "get_scim_v2_schemas": {
+    "operationId": "get_scim_v2_schemas",
+    "functionName": "get_scim_v2_schemas",
+    "signature": "get_scim_v2_schemas(filter)",
+    "parameters": [
+      {
+        "name": "filter",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2SchemaListResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nfilter = 'displayName eq groupName' # str | Filtered results are invalid and return 403 Unauthorized. (optional)\n\ntry:\n    # Get a list of SCIM schemas\n    api_response = api_instance.get_scim_v2_schemas(filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2SchemasRequest->get_scim_v2_schemas: %s\\n\" % e)"
+  },
+  "get_scim_v2_serviceproviderconfig": {
+    "operationId": "get_scim_v2_serviceproviderconfig",
+    "functionName": "get_scim_v2_serviceproviderconfig",
+    "signature": "get_scim_v2_serviceproviderconfig(if_none_match)",
+    "parameters": [
+      {
+        "name": "if_none_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimServiceProviderConfig",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)\n\ntry:\n    # Get a service provider's configuration\n    api_response = api_instance.get_scim_v2_serviceproviderconfig(if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2ServiceproviderconfigRequest->get_scim_v2_serviceproviderconfig: %s\\n\" % e)"
+  },
+  "get_scim_v2_user": {
+    "operationId": "get_scim_v2_user",
+    "functionName": "get_scim_v2_user",
+    "signature": "get_scim_v2_user(user_id, attributes, excluded_attributes, if_none_match)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "excluded_attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "if_none_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)\n\ntry:\n    # Get a user\n    api_response = api_instance.get_scim_v2_user(user_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2UserRequest->get_scim_v2_user: %s\\n\" % e)"
+  },
+  "get_scim_v2_users": {
+    "operationId": "get_scim_v2_users",
+    "functionName": "get_scim_v2_users",
+    "signature": "get_scim_v2_users(start_index, count, attributes, excluded_attributes, filter)",
+    "parameters": [
+      {
+        "name": "start_index",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "count",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "excluded_attributes",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "filter",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimUserListResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nstart_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)\ncount = 25 # int | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\". (optional) (default to 25)\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nfilter = 'filter_example' # str | Filters results. If nothing is specified, returns all active users. Examples of valid values: \\\"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\\\", \\\"userName eq search@sample.org\\\", \\\"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\\\", \\\"email eq search@sample.org\\\", \\\"division eq divisionName\\\", \\\"externalId eq 167844\\\", \\\"active eq false\\\", \\\"employeeNumber eq 9876543210\\\". (optional)\n\ntry:\n    # Get a list of users\n    api_response = api_instance.get_scim_v2_users(start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes, filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2UsersRequest->get_scim_v2_users: %s\\n\" % e)"
+  },
+  "patch_scim_group": {
+    "operationId": "patch_scim_group",
+    "functionName": "patch_scim_group",
+    "signature": "patch_scim_group(group_id, body, if_match)",
+    "parameters": [
+      {
+        "name": "group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScimV2PatchRequest",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.\nbody = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a group.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Modify a group\n    api_response = api_instance.patch_scim_group(group_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchScimGroupRequest->patch_scim_group: %s\\n\" % e)"
+  },
+  "patch_scim_user": {
+    "operationId": "patch_scim_user",
+    "functionName": "patch_scim_user",
+    "signature": "patch_scim_user(user_id, body, if_match)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScimV2PatchRequest",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.\nbody = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a user.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Modify a user\n    api_response = api_instance.patch_scim_user(user_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchScimUserRequest->patch_scim_user: %s\\n\" % e)"
+  },
+  "patch_scim_v2_group": {
+    "operationId": "patch_scim_v2_group",
+    "functionName": "patch_scim_v2_group",
+    "signature": "patch_scim_v2_group(group_id, body, if_match)",
+    "parameters": [
+      {
+        "name": "group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScimV2PatchRequest",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nbody = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a group.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Modify a group\n    api_response = api_instance.patch_scim_v2_group(group_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchScimV2GroupRequest->patch_scim_v2_group: %s\\n\" % e)"
+  },
+  "patch_scim_v2_user": {
+    "operationId": "patch_scim_v2_user",
+    "functionName": "patch_scim_v2_user",
+    "signature": "patch_scim_v2_user(user_id, body, if_match)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScimV2PatchRequest",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nbody = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a user.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Modify a user\n    api_response = api_instance.patch_scim_v2_user(user_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchScimV2UserRequest->patch_scim_v2_user: %s\\n\" % e)"
+  },
+  "post_scim_users": {
+    "operationId": "post_scim_users",
+    "functionName": "post_scim_users",
+    "signature": "post_scim_users(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ScimV2CreateUser",
+        "required": "true"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nbody = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | The information used to create a user.\n\ntry:\n    # Create a user\n    api_response = api_instance.post_scim_users(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostScimUsersRequest->post_scim_users: %s\\n\" % e)"
+  },
+  "post_scim_v2_users": {
+    "operationId": "post_scim_v2_users",
+    "functionName": "post_scim_v2_users",
+    "signature": "post_scim_v2_users(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ScimV2CreateUser",
+        "required": "true"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nbody = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | The information used to create a user.\n\ntry:\n    # Create a user\n    api_response = api_instance.post_scim_v2_users(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostScimV2UsersRequest->post_scim_v2_users: %s\\n\" % e)"
+  },
+  "put_scim_group": {
+    "operationId": "put_scim_group",
+    "functionName": "put_scim_group",
+    "signature": "put_scim_group(group_id, body, if_match)",
+    "parameters": [
+      {
+        "name": "group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScimV2Group",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.\nbody = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | The information used to replace a group.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Replace a group\n    api_response = api_instance.put_scim_group(group_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutScimGroupRequest->put_scim_group: %s\\n\" % e)"
+  },
+  "put_scim_user": {
+    "operationId": "put_scim_user",
+    "functionName": "put_scim_user",
+    "signature": "put_scim_user(user_id, body, if_match)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScimV2User",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.\nbody = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | The information used to replace a user.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Replace a user\n    api_response = api_instance.put_scim_user(user_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutScimUserRequest->put_scim_user: %s\\n\" % e)"
+  },
+  "put_scim_v2_group": {
+    "operationId": "put_scim_v2_group",
+    "functionName": "put_scim_v2_group",
+    "signature": "put_scim_v2_group(group_id, body, if_match)",
+    "parameters": [
+      {
+        "name": "group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScimV2Group",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nbody = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | The information used to replace a group.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Replace a group\n    api_response = api_instance.put_scim_v2_group(group_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutScimV2GroupRequest->put_scim_v2_group: %s\\n\" % e)"
+  },
+  "put_scim_v2_user": {
+    "operationId": "put_scim_v2_user",
+    "functionName": "put_scim_v2_user",
+    "signature": "put_scim_v2_user(user_id, body, if_match)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScimV2User",
+        "required": "true"
+      },
+      {
+        "name": "if_match",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nbody = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | The information used to replace a user.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Replace a user\n    api_response = api_instance.put_scim_v2_user(user_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutScimV2UserRequest->put_scim_v2_user: %s\\n\" % e)"
   },
   "delete_routing_assessment": {
     "operationId": "delete_routing_assessment",
@@ -22647,9 +23361,16 @@
   "get_routing_email_domains": {
     "operationId": "get_routing_email_domains",
     "functionName": "get_routing_email_domains",
-    "signature": "get_routing_email_domains()",
+    "signature": "get_routing_email_domains(exclude_status)",
+    "parameters": [
+      {
+        "name": "exclude_status",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
     "return": "InboundDomainEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\n\ntry:\n    # Get domains\n    api_response = api_instance.get_routing_email_domains()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingEmailDomainsRequest->get_routing_email_domains: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nexclude_status = false # bool | Exclude MX record data (optional) (default to false)\n\ntry:\n    # Get domains\n    api_response = api_instance.get_routing_email_domains(exclude_status=exclude_status)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingEmailDomainsRequest->get_routing_email_domains: %s\\n\" % e)"
   },
   "get_routing_email_setup": {
     "operationId": "get_routing_email_setup",
@@ -24320,642 +25041,6 @@
     ],
     "return": "UserSkillEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi()\nuser_id = 'user_id_example' # str | User ID\nbody = [PureCloudPlatformClientV2.UserRoutingSkillPost()] # list[UserRoutingSkillPost] | Skill\n\ntry:\n    # Replace all routing skills assigned to a user\n    api_response = api_instance.put_user_routingskills_bulk(user_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutUserRoutingskillsBulkRequest->put_user_routingskills_bulk: %s\\n\" % e)"
-  },
-  "delete_scim_user": {
-    "operationId": "delete_scim_user",
-    "functionName": "delete_scim_user",
-    "signature": "delete_scim_user(user_id, if_match)",
-    "parameters": [
-      {
-        "name": "user_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "Empty",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Delete a user\n    api_response = api_instance.delete_scim_user(user_id, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteScimUserRequest->delete_scim_user: %s\\n\" % e)"
-  },
-  "delete_scim_v2_user": {
-    "operationId": "delete_scim_v2_user",
-    "functionName": "delete_scim_v2_user",
-    "signature": "delete_scim_v2_user(user_id, if_match)",
-    "parameters": [
-      {
-        "name": "user_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "Empty",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Delete a user\n    api_response = api_instance.delete_scim_v2_user(user_id, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteScimV2UserRequest->delete_scim_v2_user: %s\\n\" % e)"
-  },
-  "get_scim_group": {
-    "operationId": "get_scim_group",
-    "functionName": "get_scim_group",
-    "signature": "get_scim_group(group_id, attributes, excluded_attributes, if_none_match)",
-    "parameters": [
-      {
-        "name": "group_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "excluded_attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "if_none_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)\n\ntry:\n    # Get a group\n    api_response = api_instance.get_scim_group(group_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimGroupRequest->get_scim_group: %s\\n\" % e)"
-  },
-  "get_scim_groups": {
-    "operationId": "get_scim_groups",
-    "functionName": "get_scim_groups",
-    "signature": "get_scim_groups(start_index, count, attributes, excluded_attributes, filter)",
-    "parameters": [
-      {
-        "name": "start_index",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "count",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "excluded_attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "filter",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimGroupListResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nstart_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)\ncount = 25 # int | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\". (optional) (default to 25)\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nfilter = 'displayName eq groupName' # str | Filters results. If nothing is specified, returns all groups. Examples of valid values: \\\"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\\\", \\\"displayname eq Sales\\\". (optional)\n\ntry:\n    # Get a list of groups\n    api_response = api_instance.get_scim_groups(start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes, filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimGroupsRequest->get_scim_groups: %s\\n\" % e)"
-  },
-  "get_scim_resourcetype": {
-    "operationId": "get_scim_resourcetype",
-    "functionName": "get_scim_resourcetype",
-    "signature": "get_scim_resourcetype(resource_type)",
-    "parameters": [
-      {
-        "name": "resource_type",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "return": "ScimConfigResourceType",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nresource_type = 'resource_type_example' # str | The type of resource. Returned with GET /api/v2/scim/resourcetypes.\n\ntry:\n    # Get a resource type\n    api_response = api_instance.get_scim_resourcetype(resource_type)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimResourcetypeRequest->get_scim_resourcetype: %s\\n\" % e)"
-  },
-  "get_scim_resourcetypes": {
-    "operationId": "get_scim_resourcetypes",
-    "functionName": "get_scim_resourcetypes",
-    "signature": "get_scim_resourcetypes()",
-    "return": "ScimConfigResourceTypesListResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\n\ntry:\n    # Get a list of resource types\n    api_response = api_instance.get_scim_resourcetypes()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimResourcetypesRequest->get_scim_resourcetypes: %s\\n\" % e)"
-  },
-  "get_scim_schema": {
-    "operationId": "get_scim_schema",
-    "functionName": "get_scim_schema",
-    "signature": "get_scim_schema(schema_id)",
-    "parameters": [
-      {
-        "name": "schema_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "return": "ScimV2SchemaDefinition",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nschema_id = 'schema_id_example' # str | The ID of a schema. Returned with GET /api/v2/scim/schemas.\n\ntry:\n    # Get a SCIM schema\n    api_response = api_instance.get_scim_schema(schema_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimSchemaRequest->get_scim_schema: %s\\n\" % e)"
-  },
-  "get_scim_schemas": {
-    "operationId": "get_scim_schemas",
-    "functionName": "get_scim_schemas",
-    "signature": "get_scim_schemas(filter)",
-    "parameters": [
-      {
-        "name": "filter",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2SchemaListResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nfilter = 'displayName eq groupName' # str | Filtered results are invalid and return 403 Unauthorized. (optional)\n\ntry:\n    # Get a list of SCIM schemas\n    api_response = api_instance.get_scim_schemas(filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimSchemasRequest->get_scim_schemas: %s\\n\" % e)"
-  },
-  "get_scim_serviceproviderconfig": {
-    "operationId": "get_scim_serviceproviderconfig",
-    "functionName": "get_scim_serviceproviderconfig",
-    "signature": "get_scim_serviceproviderconfig(if_none_match)",
-    "parameters": [
-      {
-        "name": "if_none_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimServiceProviderConfig",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/serviceproviderconfig. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)\n\ntry:\n    # Get a service provider's configuration\n    api_response = api_instance.get_scim_serviceproviderconfig(if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimServiceproviderconfigRequest->get_scim_serviceproviderconfig: %s\\n\" % e)"
-  },
-  "get_scim_user": {
-    "operationId": "get_scim_user",
-    "functionName": "get_scim_user",
-    "signature": "get_scim_user(user_id, attributes, excluded_attributes, if_none_match)",
-    "parameters": [
-      {
-        "name": "user_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "excluded_attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "if_none_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)\n\ntry:\n    # Get a user\n    api_response = api_instance.get_scim_user(user_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimUserRequest->get_scim_user: %s\\n\" % e)"
-  },
-  "get_scim_users": {
-    "operationId": "get_scim_users",
-    "functionName": "get_scim_users",
-    "signature": "get_scim_users(start_index, count, attributes, excluded_attributes, filter)",
-    "parameters": [
-      {
-        "name": "start_index",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "count",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "excluded_attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "filter",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimUserListResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nstart_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)\ncount = 25 # int | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\". (optional) (default to 25)\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nfilter = 'filter_example' # str | Filters results. If nothing is specified, returns all active users. Examples of valid values: \\\"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\\\", \\\"userName eq search@sample.org\\\", \\\"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\\\", \\\"email eq search@sample.org\\\", \\\"division eq divisionName\\\", \\\"externalId eq 167844\\\", \\\"active eq false\\\", \\\"employeeNumber eq 9876543210\\\". (optional)\n\ntry:\n    # Get a list of users\n    api_response = api_instance.get_scim_users(start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes, filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimUsersRequest->get_scim_users: %s\\n\" % e)"
-  },
-  "get_scim_v2_group": {
-    "operationId": "get_scim_v2_group",
-    "functionName": "get_scim_v2_group",
-    "signature": "get_scim_v2_group(group_id, attributes, excluded_attributes, if_none_match)",
-    "parameters": [
-      {
-        "name": "group_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "excluded_attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "if_none_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)\n\ntry:\n    # Get a group\n    api_response = api_instance.get_scim_v2_group(group_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2GroupRequest->get_scim_v2_group: %s\\n\" % e)"
-  },
-  "get_scim_v2_groups": {
-    "operationId": "get_scim_v2_groups",
-    "functionName": "get_scim_v2_groups",
-    "signature": "get_scim_v2_groups(filter, start_index, count, attributes, excluded_attributes)",
-    "parameters": [
-      {
-        "name": "filter",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "start_index",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "count",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "excluded_attributes",
-        "type": "list[str]",
-        "required": "false"
-      }
-    ],
-    "return": "ScimGroupListResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nfilter = 'displayName eq groupName' # str | Filters results. If nothing is specified, returns all groups. Examples of valid values: \\\"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\\\", \\\"displayname eq Sales\\\".\nstart_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)\ncount = 25 # int | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\". (optional) (default to 25)\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\n\ntry:\n    # Get a list of groups\n    api_response = api_instance.get_scim_v2_groups(filter, start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2GroupsRequest->get_scim_v2_groups: %s\\n\" % e)"
-  },
-  "get_scim_v2_resourcetype": {
-    "operationId": "get_scim_v2_resourcetype",
-    "functionName": "get_scim_v2_resourcetype",
-    "signature": "get_scim_v2_resourcetype(resource_type)",
-    "parameters": [
-      {
-        "name": "resource_type",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "return": "ScimConfigResourceType",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nresource_type = 'resource_type_example' # str | The type of resource. Returned with GET /api/v2/scim/v2/resourcetypes.\n\ntry:\n    # Get a resource type\n    api_response = api_instance.get_scim_v2_resourcetype(resource_type)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2ResourcetypeRequest->get_scim_v2_resourcetype: %s\\n\" % e)"
-  },
-  "get_scim_v2_resourcetypes": {
-    "operationId": "get_scim_v2_resourcetypes",
-    "functionName": "get_scim_v2_resourcetypes",
-    "signature": "get_scim_v2_resourcetypes()",
-    "return": "ScimConfigResourceTypesListResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\n\ntry:\n    # Get a list of resource types\n    api_response = api_instance.get_scim_v2_resourcetypes()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2ResourcetypesRequest->get_scim_v2_resourcetypes: %s\\n\" % e)"
-  },
-  "get_scim_v2_schema": {
-    "operationId": "get_scim_v2_schema",
-    "functionName": "get_scim_v2_schema",
-    "signature": "get_scim_v2_schema(schema_id)",
-    "parameters": [
-      {
-        "name": "schema_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "return": "ScimV2SchemaDefinition",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nschema_id = 'schema_id_example' # str | The ID of a schema. Returned with GET /api/v2/scim/v2/schemas.\n\ntry:\n    # Get a SCIM schema\n    api_response = api_instance.get_scim_v2_schema(schema_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2SchemaRequest->get_scim_v2_schema: %s\\n\" % e)"
-  },
-  "get_scim_v2_schemas": {
-    "operationId": "get_scim_v2_schemas",
-    "functionName": "get_scim_v2_schemas",
-    "signature": "get_scim_v2_schemas(filter)",
-    "parameters": [
-      {
-        "name": "filter",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2SchemaListResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nfilter = 'displayName eq groupName' # str | Filtered results are invalid and return 403 Unauthorized. (optional)\n\ntry:\n    # Get a list of SCIM schemas\n    api_response = api_instance.get_scim_v2_schemas(filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2SchemasRequest->get_scim_v2_schemas: %s\\n\" % e)"
-  },
-  "get_scim_v2_serviceproviderconfig": {
-    "operationId": "get_scim_v2_serviceproviderconfig",
-    "functionName": "get_scim_v2_serviceproviderconfig",
-    "signature": "get_scim_v2_serviceproviderconfig(if_none_match)",
-    "parameters": [
-      {
-        "name": "if_none_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimServiceProviderConfig",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)\n\ntry:\n    # Get a service provider's configuration\n    api_response = api_instance.get_scim_v2_serviceproviderconfig(if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2ServiceproviderconfigRequest->get_scim_v2_serviceproviderconfig: %s\\n\" % e)"
-  },
-  "get_scim_v2_user": {
-    "operationId": "get_scim_v2_user",
-    "functionName": "get_scim_v2_user",
-    "signature": "get_scim_v2_user(user_id, attributes, excluded_attributes, if_none_match)",
-    "parameters": [
-      {
-        "name": "user_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "excluded_attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "if_none_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nif_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)\n\ntry:\n    # Get a user\n    api_response = api_instance.get_scim_v2_user(user_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2UserRequest->get_scim_v2_user: %s\\n\" % e)"
-  },
-  "get_scim_v2_users": {
-    "operationId": "get_scim_v2_users",
-    "functionName": "get_scim_v2_users",
-    "signature": "get_scim_v2_users(start_index, count, attributes, excluded_attributes, filter)",
-    "parameters": [
-      {
-        "name": "start_index",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "count",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "excluded_attributes",
-        "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "filter",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimUserListResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nstart_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)\ncount = 25 # int | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\". (optional) (default to 25)\nattributes = ['attributes_example'] # list[str] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nexcluded_attributes = ['excluded_attributes_example'] # list[str] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes. (optional)\nfilter = 'filter_example' # str | Filters results. If nothing is specified, returns all active users. Examples of valid values: \\\"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\\\", \\\"userName eq search@sample.org\\\", \\\"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\\\", \\\"email eq search@sample.org\\\", \\\"division eq divisionName\\\", \\\"externalId eq 167844\\\", \\\"active eq false\\\", \\\"employeeNumber eq 9876543210\\\". (optional)\n\ntry:\n    # Get a list of users\n    api_response = api_instance.get_scim_v2_users(start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes, filter=filter)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetScimV2UsersRequest->get_scim_v2_users: %s\\n\" % e)"
-  },
-  "patch_scim_group": {
-    "operationId": "patch_scim_group",
-    "functionName": "patch_scim_group",
-    "signature": "patch_scim_group(group_id, body, if_match)",
-    "parameters": [
-      {
-        "name": "group_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "ScimV2PatchRequest",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.\nbody = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a group.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Modify a group\n    api_response = api_instance.patch_scim_group(group_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchScimGroupRequest->patch_scim_group: %s\\n\" % e)"
-  },
-  "patch_scim_user": {
-    "operationId": "patch_scim_user",
-    "functionName": "patch_scim_user",
-    "signature": "patch_scim_user(user_id, body, if_match)",
-    "parameters": [
-      {
-        "name": "user_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "ScimV2PatchRequest",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.\nbody = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a user.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Modify a user\n    api_response = api_instance.patch_scim_user(user_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchScimUserRequest->patch_scim_user: %s\\n\" % e)"
-  },
-  "patch_scim_v2_group": {
-    "operationId": "patch_scim_v2_group",
-    "functionName": "patch_scim_v2_group",
-    "signature": "patch_scim_v2_group(group_id, body, if_match)",
-    "parameters": [
-      {
-        "name": "group_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "ScimV2PatchRequest",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nbody = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a group.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Modify a group\n    api_response = api_instance.patch_scim_v2_group(group_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchScimV2GroupRequest->patch_scim_v2_group: %s\\n\" % e)"
-  },
-  "patch_scim_v2_user": {
-    "operationId": "patch_scim_v2_user",
-    "functionName": "patch_scim_v2_user",
-    "signature": "patch_scim_v2_user(user_id, body, if_match)",
-    "parameters": [
-      {
-        "name": "user_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "ScimV2PatchRequest",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nbody = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a user.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Modify a user\n    api_response = api_instance.patch_scim_v2_user(user_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchScimV2UserRequest->patch_scim_v2_user: %s\\n\" % e)"
-  },
-  "post_scim_users": {
-    "operationId": "post_scim_users",
-    "functionName": "post_scim_users",
-    "signature": "post_scim_users(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "ScimV2CreateUser",
-        "required": "true"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nbody = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | The information used to create a user.\n\ntry:\n    # Create a user\n    api_response = api_instance.post_scim_users(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostScimUsersRequest->post_scim_users: %s\\n\" % e)"
-  },
-  "post_scim_v2_users": {
-    "operationId": "post_scim_v2_users",
-    "functionName": "post_scim_v2_users",
-    "signature": "post_scim_v2_users(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "ScimV2CreateUser",
-        "required": "true"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nbody = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | The information used to create a user.\n\ntry:\n    # Create a user\n    api_response = api_instance.post_scim_v2_users(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostScimV2UsersRequest->post_scim_v2_users: %s\\n\" % e)"
-  },
-  "put_scim_group": {
-    "operationId": "put_scim_group",
-    "functionName": "put_scim_group",
-    "signature": "put_scim_group(group_id, body, if_match)",
-    "parameters": [
-      {
-        "name": "group_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "ScimV2Group",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.\nbody = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | The information used to replace a group.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Replace a group\n    api_response = api_instance.put_scim_group(group_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutScimGroupRequest->put_scim_group: %s\\n\" % e)"
-  },
-  "put_scim_user": {
-    "operationId": "put_scim_user",
-    "functionName": "put_scim_user",
-    "signature": "put_scim_user(user_id, body, if_match)",
-    "parameters": [
-      {
-        "name": "user_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "ScimV2User",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.\nbody = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | The information used to replace a user.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Replace a user\n    api_response = api_instance.put_scim_user(user_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutScimUserRequest->put_scim_user: %s\\n\" % e)"
-  },
-  "put_scim_v2_group": {
-    "operationId": "put_scim_v2_group",
-    "functionName": "put_scim_v2_group",
-    "signature": "put_scim_v2_group(group_id, body, if_match)",
-    "parameters": [
-      {
-        "name": "group_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "ScimV2Group",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\ngroup_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nbody = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | The information used to replace a group.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Replace a group\n    api_response = api_instance.put_scim_v2_group(group_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutScimV2GroupRequest->put_scim_v2_group: %s\\n\" % e)"
-  },
-  "put_scim_v2_user": {
-    "operationId": "put_scim_v2_user",
-    "functionName": "put_scim_v2_user",
-    "signature": "put_scim_v2_user(user_id, body, if_match)",
-    "parameters": [
-      {
-        "name": "user_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "ScimV2User",
-        "required": "true"
-      },
-      {
-        "name": "if_match",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SCIMApi()\nuser_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nbody = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | The information used to replace a user.\nif_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\". (optional)\n\ntry:\n    # Replace a user\n    api_response = api_instance.put_scim_v2_user(user_id, body, if_match=if_match)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutScimV2UserRequest->put_scim_v2_user: %s\\n\" % e)"
   },
   "get_script": {
     "operationId": "get_script",

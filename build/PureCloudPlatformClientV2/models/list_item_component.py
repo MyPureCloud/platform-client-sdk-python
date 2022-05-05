@@ -213,7 +213,7 @@ class ListItemComponent(object):
     def actions(self):
         """
         Gets the actions of this ListItemComponent.
-        The list item actions.
+        The list item actions (Deprecated).
 
         :return: The actions of this ListItemComponent.
         :rtype: ContentActions
@@ -224,7 +224,7 @@ class ListItemComponent(object):
     def actions(self, actions):
         """
         Sets the actions of this ListItemComponent.
-        The list item actions.
+        The list item actions (Deprecated).
 
         :param actions: The actions of this ListItemComponent.
         :type: ContentActions

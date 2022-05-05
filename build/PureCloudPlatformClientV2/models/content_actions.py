@@ -105,7 +105,7 @@ class ContentActions(object):
     def textback(self):
         """
         Gets the textback of this ContentActions.
-        Text to be sent back in reply when the item is selected.
+        Text to be returned as the payload from a ButtonResponse when a button is clicked. The textback and title are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
 
         :return: The textback of this ContentActions.
         :rtype: str
@@ -116,7 +116,7 @@ class ContentActions(object):
     def textback(self, textback):
         """
         Sets the textback of this ContentActions.
-        Text to be sent back in reply when the item is selected.
+        Text to be returned as the payload from a ButtonResponse when a button is clicked. The textback and title are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
 
         :param textback: The textback of this ContentActions.
         :type: str

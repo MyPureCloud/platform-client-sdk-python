@@ -42,6 +42,8 @@ class AdherenceExplanationNotification(object):
         self.swagger_types = {
             'id': 'str',
             'agent': 'UserReference',
+            'management_unit': 'ManagementUnitReference',
+            'business_unit': 'BusinessUnitReference',
             'start_date': 'datetime',
             'length_minutes': 'int',
             'status': 'str',
@@ -53,6 +55,8 @@ class AdherenceExplanationNotification(object):
         self.attribute_map = {
             'id': 'id',
             'agent': 'agent',
+            'management_unit': 'managementUnit',
+            'business_unit': 'businessUnit',
             'start_date': 'startDate',
             'length_minutes': 'lengthMinutes',
             'status': 'status',
@@ -63,6 +67,8 @@ class AdherenceExplanationNotification(object):
 
         self._id = None
         self._agent = None
+        self._management_unit = None
+        self._business_unit = None
         self._start_date = None
         self._length_minutes = None
         self._status = None
@@ -115,6 +121,52 @@ class AdherenceExplanationNotification(object):
         """
         
         self._agent = agent
+
+    @property
+    def management_unit(self):
+        """
+        Gets the management_unit of this AdherenceExplanationNotification.
+        The management unit to which the agent belonged at the time the adherence explanation was submitted
+
+        :return: The management_unit of this AdherenceExplanationNotification.
+        :rtype: ManagementUnitReference
+        """
+        return self._management_unit
+
+    @management_unit.setter
+    def management_unit(self, management_unit):
+        """
+        Sets the management_unit of this AdherenceExplanationNotification.
+        The management unit to which the agent belonged at the time the adherence explanation was submitted
+
+        :param management_unit: The management_unit of this AdherenceExplanationNotification.
+        :type: ManagementUnitReference
+        """
+        
+        self._management_unit = management_unit
+
+    @property
+    def business_unit(self):
+        """
+        Gets the business_unit of this AdherenceExplanationNotification.
+        The business unit to which the agent belonged at the time the adherence explanation was submitted
+
+        :return: The business_unit of this AdherenceExplanationNotification.
+        :rtype: BusinessUnitReference
+        """
+        return self._business_unit
+
+    @business_unit.setter
+    def business_unit(self, business_unit):
+        """
+        Sets the business_unit of this AdherenceExplanationNotification.
+        The business unit to which the agent belonged at the time the adherence explanation was submitted
+
+        :param business_unit: The business_unit of this AdherenceExplanationNotification.
+        :type: BusinessUnitReference
+        """
+        
+        self._business_unit = business_unit
 
     @property
     def start_date(self):

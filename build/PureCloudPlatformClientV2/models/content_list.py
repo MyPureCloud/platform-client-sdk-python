@@ -190,7 +190,7 @@ class ContentList(object):
     def actions(self):
         """
         Gets the actions of this ContentList.
-        The list actions.
+        The list actions (Deprecated).
 
         :return: The actions of this ContentList.
         :rtype: ContentActions
@@ -201,7 +201,7 @@ class ContentList(object):
     def actions(self, actions):
         """
         Sets the actions of this ContentList.
-        The list actions.
+        The list actions (Deprecated).
 
         :param actions: The actions of this ContentList.
         :type: ContentActions
