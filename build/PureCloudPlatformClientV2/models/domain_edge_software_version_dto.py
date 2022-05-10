@@ -45,8 +45,8 @@ class DomainEdgeSoftwareVersionDto(object):
             'edge_version': 'str',
             'publish_date': 'datetime',
             'edge_uri': 'str',
-            'latest_release': 'bool',
             'current': 'bool',
+            'latest_release': 'bool',
             'self_uri': 'str'
         }
 
@@ -56,8 +56,8 @@ class DomainEdgeSoftwareVersionDto(object):
             'edge_version': 'edgeVersion',
             'publish_date': 'publishDate',
             'edge_uri': 'edgeUri',
-            'latest_release': 'latestRelease',
             'current': 'current',
+            'latest_release': 'latestRelease',
             'self_uri': 'selfUri'
         }
 
@@ -66,8 +66,8 @@ class DomainEdgeSoftwareVersionDto(object):
         self._edge_version = None
         self._publish_date = None
         self._edge_uri = None
-        self._latest_release = None
         self._current = None
+        self._latest_release = None
         self._self_uri = None
 
     @property
@@ -186,29 +186,6 @@ class DomainEdgeSoftwareVersionDto(object):
         self._edge_uri = edge_uri
 
     @property
-    def latest_release(self):
-        """
-        Gets the latest_release of this DomainEdgeSoftwareVersionDto.
-
-
-        :return: The latest_release of this DomainEdgeSoftwareVersionDto.
-        :rtype: bool
-        """
-        return self._latest_release
-
-    @latest_release.setter
-    def latest_release(self, latest_release):
-        """
-        Sets the latest_release of this DomainEdgeSoftwareVersionDto.
-
-
-        :param latest_release: The latest_release of this DomainEdgeSoftwareVersionDto.
-        :type: bool
-        """
-        
-        self._latest_release = latest_release
-
-    @property
     def current(self):
         """
         Gets the current of this DomainEdgeSoftwareVersionDto.
@@ -230,6 +207,29 @@ class DomainEdgeSoftwareVersionDto(object):
         """
         
         self._current = current
+
+    @property
+    def latest_release(self):
+        """
+        Gets the latest_release of this DomainEdgeSoftwareVersionDto.
+
+
+        :return: The latest_release of this DomainEdgeSoftwareVersionDto.
+        :rtype: bool
+        """
+        return self._latest_release
+
+    @latest_release.setter
+    def latest_release(self, latest_release):
+        """
+        Sets the latest_release of this DomainEdgeSoftwareVersionDto.
+
+
+        :param latest_release: The latest_release of this DomainEdgeSoftwareVersionDto.
+        :type: bool
+        """
+        
+        self._latest_release = latest_release
 
     @property
     def self_uri(self):

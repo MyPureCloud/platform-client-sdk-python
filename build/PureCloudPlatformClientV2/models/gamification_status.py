@@ -42,18 +42,21 @@ class GamificationStatus(object):
         self.swagger_types = {
             'is_active': 'bool',
             'date_start': 'date',
-            'automatic_user_assignment': 'bool'
+            'automatic_user_assignment': 'bool',
+            'date_start_personal_best': 'date'
         }
 
         self.attribute_map = {
             'is_active': 'isActive',
             'date_start': 'dateStart',
-            'automatic_user_assignment': 'automaticUserAssignment'
+            'automatic_user_assignment': 'automaticUserAssignment',
+            'date_start_personal_best': 'dateStartPersonalBest'
         }
 
         self._is_active = None
         self._date_start = None
         self._automatic_user_assignment = None
+        self._date_start_personal_best = None
 
     @property
     def is_active(self):
@@ -123,6 +126,29 @@ class GamificationStatus(object):
         """
         
         self._automatic_user_assignment = automatic_user_assignment
+
+    @property
+    def date_start_personal_best(self):
+        """
+        Gets the date_start_personal_best of this GamificationStatus.
+        Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :return: The date_start_personal_best of this GamificationStatus.
+        :rtype: date
+        """
+        return self._date_start_personal_best
+
+    @date_start_personal_best.setter
+    def date_start_personal_best(self, date_start_personal_best):
+        """
+        Sets the date_start_personal_best of this GamificationStatus.
+        Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :param date_start_personal_best: The date_start_personal_best of this GamificationStatus.
+        :type: date
+        """
+        
+        self._date_start_personal_best = date_start_personal_best
 
     def to_dict(self):
         """

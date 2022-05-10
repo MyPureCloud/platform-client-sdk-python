@@ -45,7 +45,8 @@ class LearningModuleRequest(object):
             'completion_time_in_days': 'int',
             'inform_steps': 'list[LearningModuleInformStepRequest]',
             'type': 'str',
-            'assessment_form': 'AssessmentForm'
+            'assessment_form': 'AssessmentForm',
+            'cover_art': 'LearningModuleCoverArtRequest'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class LearningModuleRequest(object):
             'completion_time_in_days': 'completionTimeInDays',
             'inform_steps': 'informSteps',
             'type': 'type',
-            'assessment_form': 'assessmentForm'
+            'assessment_form': 'assessmentForm',
+            'cover_art': 'coverArt'
         }
 
         self._name = None
@@ -63,6 +65,7 @@ class LearningModuleRequest(object):
         self._inform_steps = None
         self._type = None
         self._assessment_form = None
+        self._cover_art = None
 
     @property
     def name(self):
@@ -205,6 +208,29 @@ class LearningModuleRequest(object):
         """
         
         self._assessment_form = assessment_form
+
+    @property
+    def cover_art(self):
+        """
+        Gets the cover_art of this LearningModuleRequest.
+        The cover art for the learning module
+
+        :return: The cover_art of this LearningModuleRequest.
+        :rtype: LearningModuleCoverArtRequest
+        """
+        return self._cover_art
+
+    @cover_art.setter
+    def cover_art(self, cover_art):
+        """
+        Sets the cover_art of this LearningModuleRequest.
+        The cover art for the learning module
+
+        :param cover_art: The cover_art of this LearningModuleRequest.
+        :type: LearningModuleCoverArtRequest
+        """
+        
+        self._cover_art = cover_art
 
     def to_dict(self):
         """

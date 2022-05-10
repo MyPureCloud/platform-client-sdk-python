@@ -176,7 +176,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assignment_id** | **str**| The ID of Learning Assignment |  |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response | [optional] <br />**Values**: module, assessment, assessmentForm |
+| **expand** | [**list[str]**](str.html)| Fields to expand in response | [optional] <br />**Values**: module, assessment, assessmentForm, module.coverArt |
 {: class="table table-striped"}
 
 ### Return type
@@ -384,7 +384,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm |
+| **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
 {: class="table table-striped"}
 
 ### Return type
@@ -490,7 +490,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
 | **version_id** | **str**| The version of learning module |  |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm |
+| **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
 {: class="table table-striped"}
 
 ### Return type

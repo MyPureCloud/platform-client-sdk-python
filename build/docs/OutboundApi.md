@@ -24,6 +24,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_messagingcampaign_progress**](OutboundApi.html#delete_outbound_messagingcampaign_progress) | Reset messaging campaign progress and recycle the messaging campaign|
 |[**delete_outbound_ruleset**](OutboundApi.html#delete_outbound_ruleset) | Delete a Rule Set.|
 |[**delete_outbound_schedules_campaign**](OutboundApi.html#delete_outbound_schedules_campaign) | Delete a dialer campaign schedule.|
+|[**delete_outbound_schedules_emailcampaign**](OutboundApi.html#delete_outbound_schedules_emailcampaign) | Delete an email campaign schedule.|
+|[**delete_outbound_schedules_messagingcampaign**](OutboundApi.html#delete_outbound_schedules_messagingcampaign) | Delete a messaging campaign schedule.|
 |[**delete_outbound_schedules_sequence**](OutboundApi.html#delete_outbound_schedules_sequence) | Delete a dialer sequence schedule.|
 |[**delete_outbound_sequence**](OutboundApi.html#delete_outbound_sequence) | Delete a dialer campaign sequence.|
 |[**get_outbound_attemptlimit**](OutboundApi.html#get_outbound_attemptlimit) | Get attempt limits|
@@ -72,6 +74,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_rulesets**](OutboundApi.html#get_outbound_rulesets) | Query a list of Rule Sets.|
 |[**get_outbound_schedules_campaign**](OutboundApi.html#get_outbound_schedules_campaign) | Get a dialer campaign schedule.|
 |[**get_outbound_schedules_campaigns**](OutboundApi.html#get_outbound_schedules_campaigns) | Query for a list of dialer campaign schedules.|
+|[**get_outbound_schedules_emailcampaign**](OutboundApi.html#get_outbound_schedules_emailcampaign) | Get an email campaign schedule.|
+|[**get_outbound_schedules_emailcampaigns**](OutboundApi.html#get_outbound_schedules_emailcampaigns) | Query for a list of email campaign schedules.|
+|[**get_outbound_schedules_messagingcampaign**](OutboundApi.html#get_outbound_schedules_messagingcampaign) | Get a messaging campaign schedule.|
+|[**get_outbound_schedules_messagingcampaigns**](OutboundApi.html#get_outbound_schedules_messagingcampaigns) | Query for a list of messaging campaign schedules.|
 |[**get_outbound_schedules_sequence**](OutboundApi.html#get_outbound_schedules_sequence) | Get a dialer sequence schedule.|
 |[**get_outbound_schedules_sequences**](OutboundApi.html#get_outbound_schedules_sequences) | Query for a list of dialer sequence schedules.|
 |[**get_outbound_sequence**](OutboundApi.html#get_outbound_sequence) | Get a dialer campaign sequence.|
@@ -116,6 +122,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_outbound_messagingcampaign**](OutboundApi.html#put_outbound_messagingcampaign) | Update an Outbound Messaging Campaign|
 |[**put_outbound_ruleset**](OutboundApi.html#put_outbound_ruleset) | Update a Rule Set.|
 |[**put_outbound_schedules_campaign**](OutboundApi.html#put_outbound_schedules_campaign) | Update a new campaign schedule.|
+|[**put_outbound_schedules_emailcampaign**](OutboundApi.html#put_outbound_schedules_emailcampaign) | Update an email campaign schedule.|
+|[**put_outbound_schedules_messagingcampaign**](OutboundApi.html#put_outbound_schedules_messagingcampaign) | Update a new messaging campaign schedule.|
 |[**put_outbound_schedules_sequence**](OutboundApi.html#put_outbound_schedules_sequence) | Update a new sequence schedule.|
 |[**put_outbound_sequence**](OutboundApi.html#put_outbound_sequence) | Update a new campaign sequence.|
 |[**put_outbound_wrapupcodemappings**](OutboundApi.html#put_outbound_wrapupcodemappings) | Update the Dialer wrap up code mapping.|
@@ -923,6 +931,106 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **campaign_id** | **str**| Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_schedules_emailcampaign"></a>
+
+##  delete_outbound_schedules_emailcampaign(email_campaign_id)
+
+
+
+Delete an email campaign schedule.
+
+
+
+Wraps DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} 
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+email_campaign_id = 'email_campaign_id_example' # str | Email Campaign ID
+
+try:
+    # Delete an email campaign schedule.
+    api_instance.delete_outbound_schedules_emailcampaign(email_campaign_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_schedules_emailcampaign: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **email_campaign_id** | **str**| Email Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_schedules_messagingcampaign"></a>
+
+##  delete_outbound_schedules_messagingcampaign(messaging_campaign_id)
+
+
+
+Delete a messaging campaign schedule.
+
+
+
+Wraps DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | Messaging Campaign ID
+
+try:
+    # Delete a messaging campaign schedule.
+    api_instance.delete_outbound_schedules_messagingcampaign(messaging_campaign_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_schedules_messagingcampaign: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| Messaging Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3656,6 +3764,202 @@ This endpoint does not need any parameters.
 
 [**list[CampaignSchedule]**](CampaignSchedule.html)
 
+<a name="get_outbound_schedules_emailcampaign"></a>
+
+## [**EmailCampaignSchedule**](EmailCampaignSchedule.html) get_outbound_schedules_emailcampaign(email_campaign_id)
+
+
+
+Get an email campaign schedule.
+
+
+
+Wraps GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} 
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+email_campaign_id = 'email_campaign_id_example' # str | Email Campaign ID
+
+try:
+    # Get an email campaign schedule.
+    api_response = api_instance.get_outbound_schedules_emailcampaign(email_campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_schedules_emailcampaign: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **email_campaign_id** | **str**| Email Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailCampaignSchedule**](EmailCampaignSchedule.html)
+
+<a name="get_outbound_schedules_emailcampaigns"></a>
+
+## [**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html) get_outbound_schedules_emailcampaigns()
+
+
+
+Query for a list of email campaign schedules.
+
+
+
+Wraps GET /api/v2/outbound/schedules/emailcampaigns 
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+
+try:
+    # Query for a list of email campaign schedules.
+    api_response = api_instance.get_outbound_schedules_emailcampaigns()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_schedules_emailcampaigns: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html)
+
+<a name="get_outbound_schedules_messagingcampaign"></a>
+
+## [**MessagingCampaignSchedule**](MessagingCampaignSchedule.html) get_outbound_schedules_messagingcampaign(messaging_campaign_id)
+
+
+
+Get a messaging campaign schedule.
+
+
+
+Wraps GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | Messaging Campaign ID
+
+try:
+    # Get a messaging campaign schedule.
+    api_response = api_instance.get_outbound_schedules_messagingcampaign(messaging_campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_schedules_messagingcampaign: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)
+
+<a name="get_outbound_schedules_messagingcampaigns"></a>
+
+## [**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html) get_outbound_schedules_messagingcampaigns()
+
+
+
+Query for a list of messaging campaign schedules.
+
+
+
+Wraps GET /api/v2/outbound/schedules/messagingcampaigns 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+
+try:
+    # Query for a list of messaging campaign schedules.
+    api_response = api_instance.get_outbound_schedules_messagingcampaigns()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_schedules_messagingcampaigns: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html)
+
 <a name="get_outbound_schedules_sequence"></a>
 
 ## [**SequenceSchedule**](SequenceSchedule.html) get_outbound_schedules_sequence(sequence_id)
@@ -5956,6 +6260,112 @@ except ApiException as e:
 ### Return type
 
 [**CampaignSchedule**](CampaignSchedule.html)
+
+<a name="put_outbound_schedules_emailcampaign"></a>
+
+## [**EmailCampaignSchedule**](EmailCampaignSchedule.html) put_outbound_schedules_emailcampaign(email_campaign_id, body)
+
+
+
+Update an email campaign schedule.
+
+
+
+Wraps PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} 
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+email_campaign_id = 'email_campaign_id_example' # str | Email Campaign ID
+body = PureCloudPlatformClientV2.EmailCampaignSchedule() # EmailCampaignSchedule | EmailCampaignSchedule
+
+try:
+    # Update an email campaign schedule.
+    api_response = api_instance.put_outbound_schedules_emailcampaign(email_campaign_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->put_outbound_schedules_emailcampaign: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **email_campaign_id** | **str**| Email Campaign ID |  |
+| **body** | [**EmailCampaignSchedule**](EmailCampaignSchedule.html)| EmailCampaignSchedule |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailCampaignSchedule**](EmailCampaignSchedule.html)
+
+<a name="put_outbound_schedules_messagingcampaign"></a>
+
+## [**MessagingCampaignSchedule**](MessagingCampaignSchedule.html) put_outbound_schedules_messagingcampaign(messaging_campaign_id, body)
+
+
+
+Update a new messaging campaign schedule.
+
+
+
+Wraps PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | Messaging Campaign ID
+body = PureCloudPlatformClientV2.MessagingCampaignSchedule() # MessagingCampaignSchedule | MessagingCampaignSchedule
+
+try:
+    # Update a new messaging campaign schedule.
+    api_response = api_instance.put_outbound_schedules_messagingcampaign(messaging_campaign_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->put_outbound_schedules_messagingcampaign: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| Messaging Campaign ID |  |
+| **body** | [**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)| MessagingCampaignSchedule |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)
 
 <a name="put_outbound_schedules_sequence"></a>
 

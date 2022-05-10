@@ -1306,6 +1306,162 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_outbound_schedules_emailcampaign(self, email_campaign_id, **kwargs):
+        """
+        Delete an email campaign schedule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_schedules_emailcampaign(email_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str email_campaign_id: Email Campaign ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['email_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_schedules_emailcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'email_campaign_id' is set
+        if ('email_campaign_id' not in params) or (params['email_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `email_campaign_id` when calling `delete_outbound_schedules_emailcampaign`")
+
+
+        resource_path = '/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'email_campaign_id' in params:
+            path_params['emailCampaignId'] = params['email_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_outbound_schedules_messagingcampaign(self, messaging_campaign_id, **kwargs):
+        """
+        Delete a messaging campaign schedule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_schedules_messagingcampaign(messaging_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str messaging_campaign_id: Messaging Campaign ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['messaging_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_schedules_messagingcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'messaging_campaign_id' is set
+        if ('messaging_campaign_id' not in params) or (params['messaging_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `messaging_campaign_id` when calling `delete_outbound_schedules_messagingcampaign`")
+
+
+        resource_path = '/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'messaging_campaign_id' in params:
+            path_params['messagingCampaignId'] = params['messaging_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_outbound_schedules_sequence(self, sequence_id, **kwargs):
         """
         Delete a dialer sequence schedule.
@@ -5404,6 +5560,306 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_outbound_schedules_emailcampaign(self, email_campaign_id, **kwargs):
+        """
+        Get an email campaign schedule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_schedules_emailcampaign(email_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str email_campaign_id: Email Campaign ID (required)
+        :return: EmailCampaignSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['email_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_schedules_emailcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'email_campaign_id' is set
+        if ('email_campaign_id' not in params) or (params['email_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `email_campaign_id` when calling `get_outbound_schedules_emailcampaign`")
+
+
+        resource_path = '/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'email_campaign_id' in params:
+            path_params['emailCampaignId'] = params['email_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmailCampaignSchedule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_schedules_emailcampaigns(self, **kwargs):
+        """
+        Query for a list of email campaign schedules.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_schedules_emailcampaigns(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: MessagingCampaignScheduleEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_schedules_emailcampaigns" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/schedules/emailcampaigns'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaignScheduleEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_schedules_messagingcampaign(self, messaging_campaign_id, **kwargs):
+        """
+        Get a messaging campaign schedule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_schedules_messagingcampaign(messaging_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str messaging_campaign_id: Messaging Campaign ID (required)
+        :return: MessagingCampaignSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['messaging_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_schedules_messagingcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'messaging_campaign_id' is set
+        if ('messaging_campaign_id' not in params) or (params['messaging_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `messaging_campaign_id` when calling `get_outbound_schedules_messagingcampaign`")
+
+
+        resource_path = '/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'messaging_campaign_id' in params:
+            path_params['messagingCampaignId'] = params['messaging_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaignSchedule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_schedules_messagingcampaigns(self, **kwargs):
+        """
+        Query for a list of messaging campaign schedules.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_schedules_messagingcampaigns(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: MessagingCampaignScheduleEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_schedules_messagingcampaigns" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/schedules/messagingcampaigns'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaignScheduleEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_outbound_schedules_sequence(self, sequence_id, **kwargs):
         """
         Get a dialer sequence schedule.
@@ -8970,6 +9426,174 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CampaignSchedule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_outbound_schedules_emailcampaign(self, email_campaign_id, body, **kwargs):
+        """
+        Update an email campaign schedule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_outbound_schedules_emailcampaign(email_campaign_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str email_campaign_id: Email Campaign ID (required)
+        :param EmailCampaignSchedule body: EmailCampaignSchedule (required)
+        :return: EmailCampaignSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['email_campaign_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_outbound_schedules_emailcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'email_campaign_id' is set
+        if ('email_campaign_id' not in params) or (params['email_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `email_campaign_id` when calling `put_outbound_schedules_emailcampaign`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_outbound_schedules_emailcampaign`")
+
+
+        resource_path = '/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'email_campaign_id' in params:
+            path_params['emailCampaignId'] = params['email_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmailCampaignSchedule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_outbound_schedules_messagingcampaign(self, messaging_campaign_id, body, **kwargs):
+        """
+        Update a new messaging campaign schedule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_outbound_schedules_messagingcampaign(messaging_campaign_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str messaging_campaign_id: Messaging Campaign ID (required)
+        :param MessagingCampaignSchedule body: MessagingCampaignSchedule (required)
+        :return: MessagingCampaignSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['messaging_campaign_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_outbound_schedules_messagingcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'messaging_campaign_id' is set
+        if ('messaging_campaign_id' not in params) or (params['messaging_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `messaging_campaign_id` when calling `put_outbound_schedules_messagingcampaign`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_outbound_schedules_messagingcampaign`")
+
+
+        resource_path = '/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'messaging_campaign_id' in params:
+            path_params['messagingCampaignId'] = params['messaging_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaignSchedule',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

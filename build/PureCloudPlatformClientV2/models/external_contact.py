@@ -66,6 +66,10 @@ class ExternalContact(object):
             'schema': 'DataSchema',
             'custom_fields': 'dict(str, object)',
             'external_data_sources': 'list[ExternalDataSource]',
+            'type': 'str',
+            'canonical_contact': 'ContactAddressableEntityRef',
+            'merge_set': 'list[ContactAddressableEntityRef]',
+            'merge_operation': 'MergeOperation',
             'self_uri': 'str'
         }
 
@@ -96,6 +100,10 @@ class ExternalContact(object):
             'schema': 'schema',
             'custom_fields': 'customFields',
             'external_data_sources': 'externalDataSources',
+            'type': 'type',
+            'canonical_contact': 'canonicalContact',
+            'merge_set': 'mergeSet',
+            'merge_operation': 'mergeOperation',
             'self_uri': 'selfUri'
         }
 
@@ -125,6 +133,10 @@ class ExternalContact(object):
         self._schema = None
         self._custom_fields = None
         self._external_data_sources = None
+        self._type = None
+        self._canonical_contact = None
+        self._merge_set = None
+        self._merge_operation = None
         self._self_uri = None
 
     @property
@@ -724,6 +736,102 @@ class ExternalContact(object):
         """
         
         self._external_data_sources = external_data_sources
+
+    @property
+    def type(self):
+        """
+        Gets the type of this ExternalContact.
+        The type of contact
+
+        :return: The type of this ExternalContact.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this ExternalContact.
+        The type of contact
+
+        :param type: The type of this ExternalContact.
+        :type: str
+        """
+        allowed_values = ["Ephemeral", "Identified", "Curated"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def canonical_contact(self):
+        """
+        Gets the canonical_contact of this ExternalContact.
+        The contact at the head of the merge tree. If null, this contact is not a part of any merge.
+
+        :return: The canonical_contact of this ExternalContact.
+        :rtype: ContactAddressableEntityRef
+        """
+        return self._canonical_contact
+
+    @canonical_contact.setter
+    def canonical_contact(self, canonical_contact):
+        """
+        Sets the canonical_contact of this ExternalContact.
+        The contact at the head of the merge tree. If null, this contact is not a part of any merge.
+
+        :param canonical_contact: The canonical_contact of this ExternalContact.
+        :type: ContactAddressableEntityRef
+        """
+        
+        self._canonical_contact = canonical_contact
+
+    @property
+    def merge_set(self):
+        """
+        Gets the merge_set of this ExternalContact.
+        The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge.
+
+        :return: The merge_set of this ExternalContact.
+        :rtype: list[ContactAddressableEntityRef]
+        """
+        return self._merge_set
+
+    @merge_set.setter
+    def merge_set(self, merge_set):
+        """
+        Sets the merge_set of this ExternalContact.
+        The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge.
+
+        :param merge_set: The merge_set of this ExternalContact.
+        :type: list[ContactAddressableEntityRef]
+        """
+        
+        self._merge_set = merge_set
+
+    @property
+    def merge_operation(self):
+        """
+        Gets the merge_operation of this ExternalContact.
+        Information about the merge history of this contact. If null, this contact is not a part of any merge.
+
+        :return: The merge_operation of this ExternalContact.
+        :rtype: MergeOperation
+        """
+        return self._merge_operation
+
+    @merge_operation.setter
+    def merge_operation(self, merge_operation):
+        """
+        Sets the merge_operation of this ExternalContact.
+        Information about the merge history of this contact. If null, this contact is not a part of any merge.
+
+        :param merge_operation: The merge_operation of this ExternalContact.
+        :type: MergeOperation
+        """
+        
+        self._merge_operation = merge_operation
 
     @property
     def self_uri(self):

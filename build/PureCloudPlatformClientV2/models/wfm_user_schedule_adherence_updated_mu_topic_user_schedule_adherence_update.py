@@ -52,6 +52,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
             'is_out_of_office': 'bool',
             'adherence_state': 'str',
             'impact': 'str',
+            'adherence_explanation': 'WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation',
             'adherence_change_time': 'datetime',
             'presence_update_time': 'datetime',
             'active_queues': 'list[WfmUserScheduleAdherenceUpdatedMuTopicQueueReference]',
@@ -72,6 +73,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
             'is_out_of_office': 'isOutOfOffice',
             'adherence_state': 'adherenceState',
             'impact': 'impact',
+            'adherence_explanation': 'adherenceExplanation',
             'adherence_change_time': 'adherenceChangeTime',
             'presence_update_time': 'presenceUpdateTime',
             'active_queues': 'activeQueues',
@@ -91,6 +93,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         self._is_out_of_office = None
         self._adherence_state = None
         self._impact = None
+        self._adherence_explanation = None
         self._adherence_change_time = None
         self._presence_update_time = None
         self._active_queues = None
@@ -380,6 +383,29 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         """
         
         self._impact = impact
+
+    @property
+    def adherence_explanation(self):
+        """
+        Gets the adherence_explanation of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The adherence_explanation of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+        :rtype: WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation
+        """
+        return self._adherence_explanation
+
+    @adherence_explanation.setter
+    def adherence_explanation(self, adherence_explanation):
+        """
+        Sets the adherence_explanation of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+
+
+        :param adherence_explanation: The adherence_explanation of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+        :type: WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation
+        """
+        
+        self._adherence_explanation = adherence_explanation
 
     @property
     def adherence_change_time(self):

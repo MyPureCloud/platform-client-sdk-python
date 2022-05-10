@@ -58,7 +58,8 @@ class LearningModule(object):
             'type': 'str',
             'inform_steps': 'list[LearningModuleInformStep]',
             'assessment_form': 'AssessmentForm',
-            'summary_data': 'LearningModuleSummary'
+            'summary_data': 'LearningModuleSummary',
+            'cover_art': 'LearningModuleCoverArtResponse'
         }
 
         self.attribute_map = {
@@ -80,7 +81,8 @@ class LearningModule(object):
             'type': 'type',
             'inform_steps': 'informSteps',
             'assessment_form': 'assessmentForm',
-            'summary_data': 'summaryData'
+            'summary_data': 'summaryData',
+            'cover_art': 'coverArt'
         }
 
         self._id = None
@@ -102,6 +104,7 @@ class LearningModule(object):
         self._inform_steps = None
         self._assessment_form = None
         self._summary_data = None
+        self._cover_art = None
 
     @property
     def id(self):
@@ -547,6 +550,29 @@ class LearningModule(object):
         """
         
         self._summary_data = summary_data
+
+    @property
+    def cover_art(self):
+        """
+        Gets the cover_art of this LearningModule.
+        The cover art for the learning module
+
+        :return: The cover_art of this LearningModule.
+        :rtype: LearningModuleCoverArtResponse
+        """
+        return self._cover_art
+
+    @cover_art.setter
+    def cover_art(self, cover_art):
+        """
+        Sets the cover_art of this LearningModule.
+        The cover art for the learning module
+
+        :param cover_art: The cover_art of this LearningModule.
+        :type: LearningModuleCoverArtResponse
+        """
+        
+        self._cover_art = cover_art
 
     def to_dict(self):
         """

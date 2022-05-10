@@ -479,7 +479,7 @@ class UserScheduleAdherence(object):
     def presence_update_time(self):
         """
         Gets the presence_update_time of this UserScheduleAdherence.
-        Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Time when presence was last updated. Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The presence_update_time of this UserScheduleAdherence.
         :rtype: datetime
@@ -490,7 +490,7 @@ class UserScheduleAdherence(object):
     def presence_update_time(self, presence_update_time):
         """
         Sets the presence_update_time of this UserScheduleAdherence.
-        Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Time when presence was last updated. Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param presence_update_time: The presence_update_time of this UserScheduleAdherence.
         :type: datetime

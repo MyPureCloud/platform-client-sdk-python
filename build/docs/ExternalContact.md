@@ -33,6 +33,10 @@ title: ExternalContact
 | **schema** | [**DataSchema**](DataSchema.html) | The schema defining custom fields for this contact | [optional] |
 | **custom_fields** | **dict(str, object)** | Custom fields defined in the schema referenced by schemaId and schemaVersion. | [optional] |
 | **external_data_sources** | [**list[ExternalDataSource]**](ExternalDataSource.html) | Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param. | [optional] |
+| **type** | **str** | The type of contact | [optional] |
+| **canonical_contact** | [**ContactAddressableEntityRef**](ContactAddressableEntityRef.html) | The contact at the head of the merge tree. If null, this contact is not a part of any merge. | [optional] |
+| **merge_set** | [**list[ContactAddressableEntityRef]**](ContactAddressableEntityRef.html) | The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge. | [optional] |
+| **merge_operation** | [**MergeOperation**](MergeOperation.html) | Information about the merge history of this contact. If null, this contact is not a part of any merge. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

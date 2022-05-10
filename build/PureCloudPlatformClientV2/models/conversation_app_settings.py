@@ -43,20 +43,23 @@ class ConversationAppSettings(object):
             'show_agent_typing_indicator': 'bool',
             'show_user_typing_indicator': 'bool',
             'auto_start_type': 'str',
-            'auto_start': 'AutoStart'
+            'auto_start': 'AutoStart',
+            'markdown': 'Markdown'
         }
 
         self.attribute_map = {
             'show_agent_typing_indicator': 'showAgentTypingIndicator',
             'show_user_typing_indicator': 'showUserTypingIndicator',
             'auto_start_type': 'autoStartType',
-            'auto_start': 'autoStart'
+            'auto_start': 'autoStart',
+            'markdown': 'markdown'
         }
 
         self._show_agent_typing_indicator = None
         self._show_user_typing_indicator = None
         self._auto_start_type = None
         self._auto_start = None
+        self._markdown = None
 
     @property
     def show_agent_typing_indicator(self):
@@ -153,6 +156,29 @@ class ConversationAppSettings(object):
         """
         
         self._auto_start = auto_start
+
+    @property
+    def markdown(self):
+        """
+        Gets the markdown of this ConversationAppSettings.
+        The markdown for the messenger app
+
+        :return: The markdown of this ConversationAppSettings.
+        :rtype: Markdown
+        """
+        return self._markdown
+
+    @markdown.setter
+    def markdown(self, markdown):
+        """
+        Sets the markdown of this ConversationAppSettings.
+        The markdown for the messenger app
+
+        :param markdown: The markdown of this ConversationAppSettings.
+        :type: Markdown
+        """
+        
+        self._markdown = markdown
 
     def to_dict(self):
         """

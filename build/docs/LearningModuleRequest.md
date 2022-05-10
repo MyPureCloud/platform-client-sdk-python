@@ -13,6 +13,7 @@ title: LearningModuleRequest
 | **inform_steps** | [**list[LearningModuleInformStepRequest]**](LearningModuleInformStepRequest.html) | The list of inform steps in a learning module | [optional] |
 | **type** | **str** | The type for the learning module | [optional] |
 | **assessment_form** | [**AssessmentForm**](AssessmentForm.html) | The assessment form for learning module | [optional] |
+| **cover_art** | [**LearningModuleCoverArtRequest**](LearningModuleCoverArtRequest.html) | The cover art for the learning module | [optional] |
 {: class="table table-striped"}
 
 

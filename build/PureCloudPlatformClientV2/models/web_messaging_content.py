@@ -44,7 +44,9 @@ class WebMessagingContent(object):
             'attachment': 'WebMessagingAttachment',
             'quick_reply': 'WebMessagingQuickReply',
             'button_response': 'WebMessagingButtonResponse',
-            'generic': 'WebMessagingGeneric'
+            'generic': 'WebMessagingGeneric',
+            'card': 'ContentCard',
+            'carousel': 'ContentCarousel'
         }
 
         self.attribute_map = {
@@ -52,7 +54,9 @@ class WebMessagingContent(object):
             'attachment': 'attachment',
             'quick_reply': 'quickReply',
             'button_response': 'buttonResponse',
-            'generic': 'generic'
+            'generic': 'generic',
+            'card': 'card',
+            'carousel': 'carousel'
         }
 
         self._content_type = None
@@ -60,6 +64,8 @@ class WebMessagingContent(object):
         self._quick_reply = None
         self._button_response = None
         self._generic = None
+        self._card = None
+        self._carousel = None
 
     @property
     def content_type(self):
@@ -81,7 +87,7 @@ class WebMessagingContent(object):
         :param content_type: The content_type of this WebMessagingContent.
         :type: str
         """
-        allowed_values = ["Attachment", "QuickReply", "ButtonResponse", "GenericTemplate"]
+        allowed_values = ["Attachment", "QuickReply", "ButtonResponse", "GenericTemplate", "Card", "Carousel"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -179,6 +185,52 @@ class WebMessagingContent(object):
         """
         
         self._generic = generic
+
+    @property
+    def card(self):
+        """
+        Gets the card of this WebMessagingContent.
+        Card content
+
+        :return: The card of this WebMessagingContent.
+        :rtype: ContentCard
+        """
+        return self._card
+
+    @card.setter
+    def card(self, card):
+        """
+        Sets the card of this WebMessagingContent.
+        Card content
+
+        :param card: The card of this WebMessagingContent.
+        :type: ContentCard
+        """
+        
+        self._card = card
+
+    @property
+    def carousel(self):
+        """
+        Gets the carousel of this WebMessagingContent.
+        Carousel content
+
+        :return: The carousel of this WebMessagingContent.
+        :rtype: ContentCarousel
+        """
+        return self._carousel
+
+    @carousel.setter
+    def carousel(self, carousel):
+        """
+        Sets the carousel of this WebMessagingContent.
+        Carousel content
+
+        :param carousel: The carousel of this WebMessagingContent.
+        :type: ContentCarousel
+        """
+        
+        self._carousel = carousel
 
     def to_dict(self):
         """

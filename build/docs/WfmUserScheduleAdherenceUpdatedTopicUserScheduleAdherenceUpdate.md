@@ -19,6 +19,7 @@ title: WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate
 | **is_out_of_office** | **bool** |  | [optional] |
 | **adherence_state** | **str** |  | [optional] |
 | **impact** | **str** |  | [optional] |
+| **adherence_explanation** | [**WfmUserScheduleAdherenceUpdatedTopicRealTimeAdherenceExplanation**](WfmUserScheduleAdherenceUpdatedTopicRealTimeAdherenceExplanation.html) |  | [optional] |
 | **adherence_change_time** | **datetime** |  | [optional] |
 | **presence_update_time** | **datetime** |  | [optional] |
 | **active_queues** | [**list[WfmUserScheduleAdherenceUpdatedTopicQueueReference]**](WfmUserScheduleAdherenceUpdatedTopicQueueReference.html) |  | [optional] |
