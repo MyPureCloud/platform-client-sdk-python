@@ -79,6 +79,7 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
         :type: int
         """
         
+
         self._event_time = event_time
 
     @property
@@ -102,6 +103,7 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -125,6 +127,7 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
         :type: str
         """
         
+
         self._participant_id = participant_id
 
     @property
@@ -148,6 +151,7 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     def to_dict(self):

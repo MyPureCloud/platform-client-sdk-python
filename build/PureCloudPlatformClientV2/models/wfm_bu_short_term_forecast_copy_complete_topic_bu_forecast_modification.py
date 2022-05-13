@@ -127,6 +127,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification(object):
         :type: int
         """
         
+
         self._start_interval_index = start_interval_index
 
     @property
@@ -150,6 +151,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification(object):
         :type: int
         """
         
+
         self._end_interval_index = end_interval_index
 
     @property
@@ -227,6 +229,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification(object):
         :type: float
         """
         
+
         self._value = value
 
     @property
@@ -250,6 +253,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification(object):
         :type: list[WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue]
         """
         
+
         self._values = values
 
     @property
@@ -273,6 +277,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -296,6 +301,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification(object):
         :type: str
         """
         
+
         self._granularity = granularity
 
     @property
@@ -319,6 +325,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification(object):
         :type: str
         """
         
+
         self._display_granularity = display_granularity
 
     @property
@@ -342,6 +349,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification(object):
         :type: list[str]
         """
         
+
         self._planning_group_ids = planning_group_ids
 
     def to_dict(self):

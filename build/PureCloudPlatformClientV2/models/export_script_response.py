@@ -70,6 +70,7 @@ class ExportScriptResponse(object):
         :type: str
         """
         
+
         self._url = url
 
     def to_dict(self):

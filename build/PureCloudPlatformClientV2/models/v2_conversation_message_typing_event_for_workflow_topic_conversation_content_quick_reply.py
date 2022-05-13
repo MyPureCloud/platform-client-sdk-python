@@ -79,6 +79,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickRe
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -102,6 +103,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickRe
         :type: str
         """
         
+
         self._payload = payload
 
     @property
@@ -125,6 +127,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickRe
         :type: str
         """
         
+
         self._image = image
 
     @property

@@ -85,6 +85,7 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResu
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResu
         :type: WfmBulkShiftTradeStateUpdateNotificationTopicUserReference
         """
         
+
         self._reviewed_by = reviewed_by
 
     @property
@@ -158,6 +160,7 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResu
         :type: datetime
         """
         
+
         self._reviewed_date = reviewed_date
 
     @property
@@ -208,6 +211,7 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResu
         :type: WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

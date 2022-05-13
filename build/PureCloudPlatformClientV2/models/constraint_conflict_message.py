@@ -73,6 +73,7 @@ class ConstraintConflictMessage(object):
         :type: WorkPlanConstraintConflictMessage
         """
         
+
         self._message = message
 
     @property
@@ -96,6 +97,7 @@ class ConstraintConflictMessage(object):
         :type: list[WorkPlanConstraintMessage]
         """
         
+
         self._conflicted_constraint_messages = conflicted_constraint_messages
 
     def to_dict(self):

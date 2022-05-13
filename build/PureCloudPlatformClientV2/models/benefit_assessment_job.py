@@ -82,6 +82,7 @@ class BenefitAssessmentJob(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class BenefitAssessmentJob(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -155,6 +157,7 @@ class BenefitAssessmentJob(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -178,6 +181,7 @@ class BenefitAssessmentJob(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

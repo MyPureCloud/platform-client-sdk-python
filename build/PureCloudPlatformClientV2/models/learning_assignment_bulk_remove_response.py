@@ -73,6 +73,7 @@ class LearningAssignmentBulkRemoveResponse(object):
         :type: list[LearningAssignmentEntity]
         """
         
+
         self._entities = entities
 
     @property
@@ -96,6 +97,7 @@ class LearningAssignmentBulkRemoveResponse(object):
         :type: list[DisallowedEntityLearningAssignmentReference]
         """
         
+
         self._disallowed_entities = disallowed_entities
 
     def to_dict(self):

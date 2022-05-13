@@ -82,6 +82,10 @@ class BuImportAgentScheduleUploadSchema(object):
         :type: str
         """
         
+        if not user_id:
+            raise ValueError("Invalid value for `user_id`, must not be `None`")
+
+
         self._user_id = user_id
 
     @property
@@ -105,6 +109,7 @@ class BuImportAgentScheduleUploadSchema(object):
         :type: ValueWrapperString
         """
         
+
         self._work_plan_id = work_plan_id
 
     @property
@@ -128,6 +133,7 @@ class BuImportAgentScheduleUploadSchema(object):
         :type: ListWrapperString
         """
         
+
         self._work_plan_ids_per_week = work_plan_ids_per_week
 
     @property
@@ -151,6 +157,7 @@ class BuImportAgentScheduleUploadSchema(object):
         :type: list[BuAgentScheduleShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -174,6 +181,7 @@ class BuImportAgentScheduleUploadSchema(object):
         :type: list[BuFullDayTimeOffMarker]
         """
         
+
         self._full_day_time_off_markers = full_day_time_off_markers
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class InboundDomainPatchRequest(object):
         :type: MailFromResult
         """
         
+
         self._mail_from_settings = mail_from_settings
 
     @property
@@ -96,6 +97,7 @@ class InboundDomainPatchRequest(object):
         :type: DomainEntityRef
         """
         
+
         self._custom_smtp_server = custom_smtp_server
 
     def to_dict(self):

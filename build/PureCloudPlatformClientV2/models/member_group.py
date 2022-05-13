@@ -85,6 +85,7 @@ class MemberGroup(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class MemberGroup(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class MemberGroup(object):
         :type: WritableDivision
         """
         
+
         self._division = division
 
     @property
@@ -181,6 +184,7 @@ class MemberGroup(object):
         :type: int
         """
         
+
         self._member_count = member_count
 
     @property
@@ -204,6 +208,7 @@ class MemberGroup(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

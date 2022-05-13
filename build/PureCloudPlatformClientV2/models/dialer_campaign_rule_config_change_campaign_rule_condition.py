@@ -76,6 +76,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
         :type: dict(str, str)
         """
         
+
         self._parameters = parameters
 
     @property

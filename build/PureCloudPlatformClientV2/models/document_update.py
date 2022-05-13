@@ -94,6 +94,7 @@ class DocumentUpdate(object):
         :type: int
         """
         
+
         self._change_number = change_number
 
     @property
@@ -117,6 +118,10 @@ class DocumentUpdate(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -140,6 +145,7 @@ class DocumentUpdate(object):
         :type: bool
         """
         
+
         self._read = read
 
     @property
@@ -163,6 +169,7 @@ class DocumentUpdate(object):
         :type: list[str]
         """
         
+
         self._add_tags = add_tags
 
     @property
@@ -186,6 +193,7 @@ class DocumentUpdate(object):
         :type: list[str]
         """
         
+
         self._remove_tags = remove_tags
 
     @property
@@ -209,6 +217,7 @@ class DocumentUpdate(object):
         :type: list[str]
         """
         
+
         self._add_tag_ids = add_tag_ids
 
     @property
@@ -232,6 +241,7 @@ class DocumentUpdate(object):
         :type: list[str]
         """
         
+
         self._remove_tag_ids = remove_tag_ids
 
     @property
@@ -255,6 +265,7 @@ class DocumentUpdate(object):
         :type: list[DocumentAttribute]
         """
         
+
         self._update_attributes = update_attributes
 
     @property
@@ -278,6 +289,7 @@ class DocumentUpdate(object):
         :type: list[str]
         """
         
+
         self._remove_attributes = remove_attributes
 
     def to_dict(self):

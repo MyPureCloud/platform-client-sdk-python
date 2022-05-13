@@ -103,6 +103,7 @@ class BuAsyncScheduleRunResponse(object):
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -126,6 +127,7 @@ class BuAsyncScheduleRunResponse(object):
         :type: BuScheduleRun
         """
         
+
         self._result = result
 
     def to_dict(self):

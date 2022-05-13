@@ -85,6 +85,10 @@ class CreateTimeOffPlanRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -108,6 +112,7 @@ class CreateTimeOffPlanRequest(object):
         :type: list[str]
         """
         
+
         self._activity_code_ids = activity_code_ids
 
     @property
@@ -131,6 +136,7 @@ class CreateTimeOffPlanRequest(object):
         :type: list[str]
         """
         
+
         self._time_off_limit_ids = time_off_limit_ids
 
     @property
@@ -181,6 +187,7 @@ class CreateTimeOffPlanRequest(object):
         :type: int
         """
         
+
         self._days_before_start_to_expire_from_waitlist = days_before_start_to_expire_from_waitlist
 
     @property
@@ -204,6 +211,10 @@ class CreateTimeOffPlanRequest(object):
         :type: bool
         """
         
+        if not active:
+            raise ValueError("Invalid value for `active`, must not be `None`")
+
+
         self._active = active
 
     def to_dict(self):

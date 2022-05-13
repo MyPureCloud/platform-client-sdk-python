@@ -116,7 +116,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.JourneyApi()
 action_template_id = 'action_template_id_example' # str | ID of the action template.
-hard_delete = true # bool | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional)
+hard_delete = True # bool | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional)
 
 try:
     # Delete a single action template.
@@ -342,8 +342,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
-| **filter_field** | **str**| Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional]  |
+| **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional]  |
+| **filter_field** | **str**| Field to filter by (e.g. filterField&#x3D;weight or filterField&#x3D;action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional]  |
 | **filter_value** | **str**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional]  |
 | **action_map_ids** | [**list[str]**](str.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
 | **query_fields** | [**list[str]**](str.html)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
@@ -561,7 +561,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). | [optional]  |
+| **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;name,-createdDate). | [optional]  |
 | **media_type** | **str**| Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction |
 | **state** | **str**| Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
 | **query_fields** | [**list[str]**](str.html)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
@@ -674,7 +674,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
+| **sort_by** | **str**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional]  |
 | **outcome_ids** | [**list[str]**](str.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
 | **query_fields** | [**list[str]**](str.html)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
 | **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
@@ -767,7 +767,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 sort_by = 'sort_by_example' # str | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-is_active = true # bool | Determines whether or not to show only active segments. (optional)
+is_active = True # bool | Determines whether or not to show only active segments. (optional)
 segment_ids = ['segment_ids_example'] # list[str] | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. (optional)
 query_fields = ['query_fields_example'] # list[str] | Segment field(s) to query on. Requires 'queryValue' to also be set. (optional)
 query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
@@ -785,7 +785,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **sort_by** | **str**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
+| **sort_by** | **str**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **is_active** | **bool**| Determines whether or not to show only active segments. | [optional]  |

@@ -73,6 +73,7 @@ class CallableWindow(object):
         :type: AtzmTimeSlot
         """
         
+
         self._mapped = mapped
 
     @property
@@ -96,6 +97,7 @@ class CallableWindow(object):
         :type: AtzmTimeSlotWithTimeZone
         """
         
+
         self._unmapped = unmapped
 
     def to_dict(self):

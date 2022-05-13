@@ -88,6 +88,7 @@ class TestMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,10 @@ class TestMessage(object):
         :type: list[EmailAddress]
         """
         
+        if not to:
+            raise ValueError("Invalid value for `to`, must not be `None`")
+
+
         self._to = to
 
     @property
@@ -134,6 +139,10 @@ class TestMessage(object):
         :type: EmailAddress
         """
         
+        if not pcFrom:
+            raise ValueError("Invalid value for `pcFrom`, must not be `None`")
+
+
         self._pcFrom = pcFrom
 
     @property
@@ -157,6 +166,7 @@ class TestMessage(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -180,6 +190,10 @@ class TestMessage(object):
         :type: str
         """
         
+        if not text_body:
+            raise ValueError("Invalid value for `text_body`, must not be `None`")
+
+
         self._text_body = text_body
 
     @property
@@ -203,6 +217,7 @@ class TestMessage(object):
         :type: str
         """
         
+
         self._html_body = html_body
 
     @property
@@ -226,6 +241,7 @@ class TestMessage(object):
         :type: datetime
         """
         
+
         self._time = time
 
     def to_dict(self):

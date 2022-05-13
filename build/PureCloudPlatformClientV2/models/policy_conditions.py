@@ -91,6 +91,7 @@ class PolicyConditions(object):
         :type: list[User]
         """
         
+
         self._for_users = for_users
 
     @property
@@ -114,6 +115,7 @@ class PolicyConditions(object):
         :type: list[str]
         """
         
+
         self._directions = directions
 
     @property
@@ -137,6 +139,7 @@ class PolicyConditions(object):
         :type: list[str]
         """
         
+
         self._date_ranges = date_ranges
 
     @property
@@ -160,6 +163,7 @@ class PolicyConditions(object):
         :type: list[str]
         """
         
+
         self._media_types = media_types
 
     @property
@@ -183,6 +187,7 @@ class PolicyConditions(object):
         :type: list[Queue]
         """
         
+
         self._for_queues = for_queues
 
     @property
@@ -206,6 +211,7 @@ class PolicyConditions(object):
         :type: DurationCondition
         """
         
+
         self._duration = duration
 
     @property
@@ -229,6 +235,7 @@ class PolicyConditions(object):
         :type: list[WrapupCode]
         """
         
+
         self._wrapup_codes = wrapup_codes
 
     @property
@@ -252,6 +259,7 @@ class PolicyConditions(object):
         :type: TimeAllowed
         """
         
+
         self._time_allowed = time_allowed
 
     def to_dict(self):

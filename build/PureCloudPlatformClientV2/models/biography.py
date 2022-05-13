@@ -82,6 +82,7 @@ class Biography(object):
         :type: str
         """
         
+
         self._biography = biography
 
     @property
@@ -105,6 +106,7 @@ class Biography(object):
         :type: list[str]
         """
         
+
         self._interests = interests
 
     @property
@@ -128,6 +130,7 @@ class Biography(object):
         :type: list[str]
         """
         
+
         self._hobbies = hobbies
 
     @property
@@ -151,6 +154,7 @@ class Biography(object):
         :type: str
         """
         
+
         self._spouse = spouse
 
     @property
@@ -174,6 +178,7 @@ class Biography(object):
         :type: list[Education]
         """
         
+
         self._education = education
 
     def to_dict(self):

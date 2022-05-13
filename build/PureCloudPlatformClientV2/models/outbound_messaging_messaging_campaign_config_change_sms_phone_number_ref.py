@@ -70,6 +70,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef(object):
         :type: str
         """
         
+
         self._phone_number = phone_number
 
     def to_dict(self):

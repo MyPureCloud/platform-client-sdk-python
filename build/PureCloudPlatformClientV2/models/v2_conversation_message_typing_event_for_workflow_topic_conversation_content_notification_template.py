@@ -82,6 +82,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotific
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotific
         :type: str
         """
         
+
         self._language = language
 
     @property
@@ -128,6 +130,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotific
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader
         """
         
+
         self._header = header
 
     @property
@@ -151,6 +154,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotific
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody
         """
         
+
         self._body = body
 
     @property
@@ -174,6 +178,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotific
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateFooter
         """
         
+
         self._footer = footer
 
     def to_dict(self):

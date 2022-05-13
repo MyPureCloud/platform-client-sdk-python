@@ -73,6 +73,7 @@ class MessagingTemplateRequest(object):
         :type: str
         """
         
+
         self._response_id = response_id
 
     @property
@@ -96,6 +97,7 @@ class MessagingTemplateRequest(object):
         :type: list[TemplateParameter]
         """
         
+
         self._parameters = parameters
 
     def to_dict(self):

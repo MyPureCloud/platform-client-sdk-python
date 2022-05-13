@@ -94,6 +94,7 @@ class TimeOffPlan(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class TimeOffPlan(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class TimeOffPlan(object):
         :type: list[str]
         """
         
+
         self._activity_code_ids = activity_code_ids
 
     @property
@@ -163,6 +166,7 @@ class TimeOffPlan(object):
         :type: list[TimeOffLimitReference]
         """
         
+
         self._time_off_limits = time_off_limits
 
     @property
@@ -213,6 +217,7 @@ class TimeOffPlan(object):
         :type: int
         """
         
+
         self._days_before_start_to_expire_from_waitlist = days_before_start_to_expire_from_waitlist
 
     @property
@@ -236,6 +241,7 @@ class TimeOffPlan(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property
@@ -259,6 +265,7 @@ class TimeOffPlan(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -282,6 +289,7 @@ class TimeOffPlan(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

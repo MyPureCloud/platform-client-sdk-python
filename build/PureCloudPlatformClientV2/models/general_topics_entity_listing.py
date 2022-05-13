@@ -70,6 +70,7 @@ class GeneralTopicsEntityListing(object):
         :type: list[GeneralTopic]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

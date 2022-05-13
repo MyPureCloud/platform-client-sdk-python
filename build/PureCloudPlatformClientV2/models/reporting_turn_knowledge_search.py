@@ -76,6 +76,7 @@ class ReportingTurnKnowledgeSearch(object):
         :type: str
         """
         
+
         self._search_id = search_id
 
     @property
@@ -99,6 +100,7 @@ class ReportingTurnKnowledgeSearch(object):
         :type: list[ReportingTurnKnowledgeDocument]
         """
         
+
         self._documents = documents
 
     @property
@@ -122,6 +124,7 @@ class ReportingTurnKnowledgeSearch(object):
         :type: str
         """
         
+
         self._query = query
 
     def to_dict(self):

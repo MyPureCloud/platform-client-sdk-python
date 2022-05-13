@@ -76,6 +76,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
         :type: bool
         """
         
+
         self._use_triggering_entity = use_triggering_entity
 
     @property
@@ -99,6 +100,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
         :type: list[DialerCampaignRuleConfigChangeUriReference]
         """
         
+
         self._campaigns = campaigns
 
     @property
@@ -122,6 +124,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
         :type: list[DialerCampaignRuleConfigChangeUriReference]
         """
         
+
         self._sequences = sequences
 
     def to_dict(self):

@@ -4582,7 +4582,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_surveys_scorable(self, body, customer_survey_url, **kwargs):
+    def put_quality_surveys_scorable(self, customer_survey_url, body, **kwargs):
         """
         Update a survey as an end-customer, for the purposes of scoring it.
         
@@ -4593,18 +4593,18 @@ class QualityApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_quality_surveys_scorable(body, customer_survey_url, callback=callback_function)
+        >>> thread = api.put_quality_surveys_scorable(customer_survey_url, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ScorableSurvey body: survey (required)
         :param str customer_survey_url: customerSurveyUrl (required)
+        :param ScorableSurvey body: survey (required)
         :return: ScorableSurvey
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'customer_survey_url']
+        all_params = ['customer_survey_url', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4617,12 +4617,12 @@ class QualityApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `put_quality_surveys_scorable`")
         # verify the required parameter 'customer_survey_url' is set
         if ('customer_survey_url' not in params) or (params['customer_survey_url'] is None):
             raise ValueError("Missing the required parameter `customer_survey_url` when calling `put_quality_surveys_scorable`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_quality_surveys_scorable`")
 
 
         resource_path = '/api/v2/quality/surveys/scorable'.replace('{format}', 'json')

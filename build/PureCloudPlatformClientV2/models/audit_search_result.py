@@ -85,6 +85,7 @@ class AuditSearchResult(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -108,6 +109,7 @@ class AuditSearchResult(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -131,6 +133,7 @@ class AuditSearchResult(object):
         :type: int
         """
         
+
         self._total = total
 
     @property
@@ -154,6 +157,7 @@ class AuditSearchResult(object):
         :type: int
         """
         
+
         self._page_count = page_count
 
     @property
@@ -177,6 +181,7 @@ class AuditSearchResult(object):
         :type: list[FacetInfo]
         """
         
+
         self._facet_info = facet_info
 
     @property
@@ -200,6 +205,7 @@ class AuditSearchResult(object):
         :type: list[AuditMessage]
         """
         
+
         self._audit_messages = audit_messages
 
     def to_dict(self):

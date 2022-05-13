@@ -97,6 +97,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         :type: float
         """
         
+
         self._percent_complete = percent_complete
 
     @property
@@ -143,6 +145,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         :type: bool
         """
         
+
         self._intraday_rescheduling = intraday_rescheduling
 
     @property
@@ -193,6 +196,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     @property
@@ -216,6 +220,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         :type: WfmBuScheduleRunTopicBuScheduleReference
         """
         
+
         self._schedule = schedule
 
     @property
@@ -239,6 +244,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         :type: WfmBuScheduleRunTopicUserReference
         """
         
+
         self._scheduling_canceled_by = scheduling_canceled_by
 
     @property
@@ -262,6 +268,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         :type: str
         """
         
+
         self._scheduling_completed_time = scheduling_completed_time
 
     @property
@@ -285,6 +292,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         :type: int
         """
         
+
         self._message_count = message_count
 
     @property
@@ -308,6 +316,7 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         :type: list[WfmBuScheduleRunTopicSchedulerMessageSeverityCount]
         """
         
+
         self._message_severity_counts = message_severity_counts
 
     def to_dict(self):

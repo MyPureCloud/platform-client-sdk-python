@@ -70,6 +70,7 @@ class ParticipantAttributes(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     def to_dict(self):

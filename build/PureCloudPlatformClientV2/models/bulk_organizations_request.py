@@ -70,6 +70,7 @@ class BulkOrganizationsRequest(object):
         :type: list[ExternalOrganization]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

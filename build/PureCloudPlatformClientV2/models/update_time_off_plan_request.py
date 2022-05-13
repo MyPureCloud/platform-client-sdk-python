@@ -88,6 +88,7 @@ class UpdateTimeOffPlanRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -111,6 +112,7 @@ class UpdateTimeOffPlanRequest(object):
         :type: SetWrapperString
         """
         
+
         self._activity_code_ids = activity_code_ids
 
     @property
@@ -134,6 +136,7 @@ class UpdateTimeOffPlanRequest(object):
         :type: SetWrapperString
         """
         
+
         self._time_off_limit_ids = time_off_limit_ids
 
     @property
@@ -184,6 +187,7 @@ class UpdateTimeOffPlanRequest(object):
         :type: int
         """
         
+
         self._days_before_start_to_expire_from_waitlist = days_before_start_to_expire_from_waitlist
 
     @property
@@ -207,6 +211,7 @@ class UpdateTimeOffPlanRequest(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property
@@ -230,6 +235,10 @@ class UpdateTimeOffPlanRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

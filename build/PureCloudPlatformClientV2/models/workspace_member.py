@@ -94,6 +94,7 @@ class WorkspaceMember(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class WorkspaceMember(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class WorkspaceMember(object):
         :type: DomainEntityRef
         """
         
+
         self._workspace = workspace
 
     @property
@@ -190,6 +193,7 @@ class WorkspaceMember(object):
         :type: DomainEntityRef
         """
         
+
         self._member = member
 
     @property
@@ -213,6 +217,7 @@ class WorkspaceMember(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -236,6 +241,7 @@ class WorkspaceMember(object):
         :type: Group
         """
         
+
         self._group = group
 
     @property
@@ -259,6 +265,7 @@ class WorkspaceMember(object):
         :type: SecurityProfile
         """
         
+
         self._security_profile = security_profile
 
     @property
@@ -282,6 +289,7 @@ class WorkspaceMember(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

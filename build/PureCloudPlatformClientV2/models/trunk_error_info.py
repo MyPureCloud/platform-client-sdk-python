@@ -76,6 +76,7 @@ class TrunkErrorInfo(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -99,6 +100,7 @@ class TrunkErrorInfo(object):
         :type: str
         """
         
+
         self._code = code
 
     @property
@@ -122,6 +124,7 @@ class TrunkErrorInfo(object):
         :type: TrunkErrorInfoDetails
         """
         
+
         self._details = details
 
     def to_dict(self):

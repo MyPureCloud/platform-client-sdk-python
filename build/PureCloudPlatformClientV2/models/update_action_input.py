@@ -79,6 +79,7 @@ class UpdateActionInput(object):
         :type: str
         """
         
+
         self._category = category
 
     @property
@@ -102,6 +103,7 @@ class UpdateActionInput(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -125,6 +127,7 @@ class UpdateActionInput(object):
         :type: ActionConfig
         """
         
+
         self._config = config
 
     @property
@@ -148,6 +151,10 @@ class UpdateActionInput(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     def to_dict(self):

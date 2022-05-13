@@ -79,6 +79,7 @@ class FieldConfigs(object):
         :type: FieldConfig
         """
         
+
         self._org = org
 
     @property
@@ -102,6 +103,7 @@ class FieldConfigs(object):
         :type: FieldConfig
         """
         
+
         self._person = person
 
     @property
@@ -125,6 +127,7 @@ class FieldConfigs(object):
         :type: FieldConfig
         """
         
+
         self._group = group
 
     @property
@@ -148,6 +151,7 @@ class FieldConfigs(object):
         :type: FieldConfig
         """
         
+
         self._external_contact = external_contact
 
     def to_dict(self):

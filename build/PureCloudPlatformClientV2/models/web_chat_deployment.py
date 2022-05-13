@@ -97,6 +97,7 @@ class WebChatDeployment(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class WebChatDeployment(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class WebChatDeployment(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -166,6 +169,7 @@ class WebChatDeployment(object):
         :type: bool
         """
         
+
         self._authentication_required = authentication_required
 
     @property
@@ -189,6 +193,7 @@ class WebChatDeployment(object):
         :type: str
         """
         
+
         self._authentication_url = authentication_url
 
     @property
@@ -212,6 +217,7 @@ class WebChatDeployment(object):
         :type: bool
         """
         
+
         self._disabled = disabled
 
     @property
@@ -235,6 +241,7 @@ class WebChatDeployment(object):
         :type: WebChatConfig
         """
         
+
         self._web_chat_config = web_chat_config
 
     @property
@@ -258,6 +265,7 @@ class WebChatDeployment(object):
         :type: list[str]
         """
         
+
         self._allowed_domains = allowed_domains
 
     @property
@@ -281,6 +289,7 @@ class WebChatDeployment(object):
         :type: DomainEntityRef
         """
         
+
         self._flow = flow
 
     @property
@@ -304,6 +313,7 @@ class WebChatDeployment(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

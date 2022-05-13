@@ -100,6 +100,7 @@ class AgentActivityChangedTopicRoutingStatus(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     def to_dict(self):

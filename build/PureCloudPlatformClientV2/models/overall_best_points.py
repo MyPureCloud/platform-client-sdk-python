@@ -76,6 +76,7 @@ class OverallBestPoints(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -99,6 +100,7 @@ class OverallBestPoints(object):
         :type: list[OverallBestPointsItem]
         """
         
+
         self._best_points = best_points
 
     @property
@@ -122,6 +124,7 @@ class OverallBestPoints(object):
         :type: AddressableEntityRef
         """
         
+
         self._performance_profile = performance_profile
 
     def to_dict(self):

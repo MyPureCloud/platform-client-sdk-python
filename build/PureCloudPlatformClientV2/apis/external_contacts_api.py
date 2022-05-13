@@ -4648,7 +4648,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_externalcontacts_conversation(self, body, conversation_id, **kwargs):
+    def put_externalcontacts_conversation(self, conversation_id, body, **kwargs):
         """
         Associate/disassociate an external contact with a conversation
         To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
@@ -4659,18 +4659,18 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_externalcontacts_conversation(body, conversation_id, callback=callback_function)
+        >>> thread = api.put_externalcontacts_conversation(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ConversationAssociation body: ConversationAssociation (required)
         :param str conversation_id: Conversation ID (required)
+        :param ConversationAssociation body: ConversationAssociation (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'conversation_id']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4683,12 +4683,12 @@ class ExternalContactsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_conversation`")
         # verify the required parameter 'conversation_id' is set
         if ('conversation_id' not in params) or (params['conversation_id'] is None):
             raise ValueError("Missing the required parameter `conversation_id` when calling `put_externalcontacts_conversation`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_conversation`")
 
 
         resource_path = '/api/v2/externalcontacts/conversations/{conversationId}'.replace('{format}', 'json')

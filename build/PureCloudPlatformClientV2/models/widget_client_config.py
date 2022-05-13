@@ -41,9 +41,9 @@ class WidgetClientConfig(object):
         """
         self.swagger_types = {
             'v1': 'WidgetClientConfigV1',
-            'v2': 'WidgetClientConfigV2',
+            'v2': 'object',
             'v1_http': 'WidgetClientConfigV1Http',
-            'third_party': 'WidgetClientConfigThirdParty'
+            'third_party': 'object'
         }
 
         self.attribute_map = {
@@ -79,6 +79,7 @@ class WidgetClientConfig(object):
         :type: WidgetClientConfigV1
         """
         
+
         self._v1 = v1
 
     @property
@@ -88,7 +89,7 @@ class WidgetClientConfig(object):
 
 
         :return: The v2 of this WidgetClientConfig.
-        :rtype: WidgetClientConfigV2
+        :rtype: object
         """
         return self._v2
 
@@ -99,9 +100,10 @@ class WidgetClientConfig(object):
 
 
         :param v2: The v2 of this WidgetClientConfig.
-        :type: WidgetClientConfigV2
+        :type: object
         """
         
+
         self._v2 = v2
 
     @property
@@ -125,6 +127,7 @@ class WidgetClientConfig(object):
         :type: WidgetClientConfigV1Http
         """
         
+
         self._v1_http = v1_http
 
     @property
@@ -134,7 +137,7 @@ class WidgetClientConfig(object):
 
 
         :return: The third_party of this WidgetClientConfig.
-        :rtype: WidgetClientConfigThirdParty
+        :rtype: object
         """
         return self._third_party
 
@@ -145,9 +148,10 @@ class WidgetClientConfig(object):
 
 
         :param third_party: The third_party of this WidgetClientConfig.
-        :type: WidgetClientConfigThirdParty
+        :type: object
         """
         
+
         self._third_party = third_party
 
     def to_dict(self):

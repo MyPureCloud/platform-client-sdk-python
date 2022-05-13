@@ -73,6 +73,7 @@ class WeekShiftTradeResponse(object):
         :type: ShiftTradeResponse
         """
         
+
         self._trade = trade
 
     @property
@@ -96,6 +97,7 @@ class WeekShiftTradeResponse(object):
         :type: ShiftTradeMatchReviewResponse
         """
         
+
         self._match_review = match_review
 
     def to_dict(self):

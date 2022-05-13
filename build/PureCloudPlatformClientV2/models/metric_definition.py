@@ -94,6 +94,7 @@ class MetricDefinition(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class MetricDefinition(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -167,6 +169,7 @@ class MetricDefinition(object):
         :type: str
         """
         
+
         self._short_name = short_name
 
     @property
@@ -190,6 +193,7 @@ class MetricDefinition(object):
         :type: list[str]
         """
         
+
         self._dividend_metrics = dividend_metrics
 
     @property
@@ -213,6 +217,7 @@ class MetricDefinition(object):
         :type: list[str]
         """
         
+
         self._divisor_metrics = divisor_metrics
 
     @property
@@ -236,6 +241,7 @@ class MetricDefinition(object):
         :type: DefaultObjective
         """
         
+
         self._default_objective = default_objective
 
     @property
@@ -259,6 +265,7 @@ class MetricDefinition(object):
         :type: str
         """
         
+
         self._lock_template_id = lock_template_id
 
     @property
@@ -282,6 +289,7 @@ class MetricDefinition(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

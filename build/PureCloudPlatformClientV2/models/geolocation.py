@@ -100,6 +100,7 @@ class Geolocation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class Geolocation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class Geolocation(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -169,6 +172,7 @@ class Geolocation(object):
         :type: bool
         """
         
+
         self._primary = primary
 
     @property
@@ -192,6 +196,7 @@ class Geolocation(object):
         :type: float
         """
         
+
         self._latitude = latitude
 
     @property
@@ -215,6 +220,7 @@ class Geolocation(object):
         :type: float
         """
         
+
         self._longitude = longitude
 
     @property
@@ -238,6 +244,7 @@ class Geolocation(object):
         :type: str
         """
         
+
         self._country = country
 
     @property
@@ -261,6 +268,7 @@ class Geolocation(object):
         :type: str
         """
         
+
         self._region = region
 
     @property
@@ -284,6 +292,7 @@ class Geolocation(object):
         :type: str
         """
         
+
         self._city = city
 
     @property
@@ -307,6 +316,7 @@ class Geolocation(object):
         :type: list[LocationDefinition]
         """
         
+
         self._locations = locations
 
     @property
@@ -330,6 +340,7 @@ class Geolocation(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

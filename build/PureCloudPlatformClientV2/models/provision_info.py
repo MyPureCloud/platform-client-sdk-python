@@ -76,6 +76,7 @@ class ProvisionInfo(object):
         :type: datetime
         """
         
+
         self._time = time
 
     @property
@@ -99,6 +100,7 @@ class ProvisionInfo(object):
         :type: str
         """
         
+
         self._source = source
 
     @property
@@ -122,6 +124,7 @@ class ProvisionInfo(object):
         :type: str
         """
         
+
         self._error_info = error_info
 
     def to_dict(self):

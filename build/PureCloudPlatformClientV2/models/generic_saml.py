@@ -109,6 +109,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -155,6 +157,7 @@ class GenericSAML(object):
         :type: bool
         """
         
+
         self._disabled = disabled
 
     @property
@@ -178,6 +181,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._issuer_uri = issuer_uri
 
     @property
@@ -201,6 +205,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._sso_target_uri = sso_target_uri
 
     @property
@@ -224,6 +229,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._slo_uri = slo_uri
 
     @property
@@ -247,6 +253,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._slo_binding = slo_binding
 
     @property
@@ -270,6 +277,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._relying_party_identifier = relying_party_identifier
 
     @property
@@ -293,6 +301,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._certificate = certificate
 
     @property
@@ -316,6 +325,7 @@ class GenericSAML(object):
         :type: list[str]
         """
         
+
         self._certificates = certificates
 
     @property
@@ -339,6 +349,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._logo_image_data = logo_image_data
 
     @property
@@ -362,6 +373,7 @@ class GenericSAML(object):
         :type: bool
         """
         
+
         self._endpoint_compression = endpoint_compression
 
     @property
@@ -412,6 +424,7 @@ class GenericSAML(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

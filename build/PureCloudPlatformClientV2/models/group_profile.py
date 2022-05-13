@@ -85,6 +85,7 @@ class GroupProfile(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class GroupProfile(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -158,6 +160,7 @@ class GroupProfile(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -181,6 +184,10 @@ class GroupProfile(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -204,6 +211,7 @@ class GroupProfile(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

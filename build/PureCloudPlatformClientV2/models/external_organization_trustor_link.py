@@ -79,6 +79,7 @@ class ExternalOrganizationTrustorLink(object):
         :type: str
         """
         
+
         self._external_organization_id = external_organization_id
 
     @property
@@ -102,6 +103,7 @@ class ExternalOrganizationTrustorLink(object):
         :type: str
         """
         
+
         self._trustor_org_id = trustor_org_id
 
     @property
@@ -125,6 +127,7 @@ class ExternalOrganizationTrustorLink(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -148,6 +151,7 @@ class ExternalOrganizationTrustorLink(object):
         :type: str
         """
         
+
         self._external_organization_uri = external_organization_uri
 
     def to_dict(self):

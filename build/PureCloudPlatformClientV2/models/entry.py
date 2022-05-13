@@ -73,6 +73,7 @@ class Entry(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -96,6 +97,7 @@ class Entry(object):
         :type: int
         """
         
+
         self._count = count
 
     def to_dict(self):

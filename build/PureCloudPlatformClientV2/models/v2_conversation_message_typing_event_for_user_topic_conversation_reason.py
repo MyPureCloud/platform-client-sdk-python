@@ -100,6 +100,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationReason(object):
         :type: str
         """
         
+
         self._message = message
 
     def to_dict(self):

@@ -100,6 +100,7 @@ class CampaignSequence(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class CampaignSequence(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class CampaignSequence(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -169,6 +172,7 @@ class CampaignSequence(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -192,6 +196,7 @@ class CampaignSequence(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -215,6 +220,10 @@ class CampaignSequence(object):
         :type: list[DomainEntityRef]
         """
         
+        if not campaigns:
+            raise ValueError("Invalid value for `campaigns`, must not be `None`")
+
+
         self._campaigns = campaigns
 
     @property
@@ -238,6 +247,10 @@ class CampaignSequence(object):
         :type: int
         """
         
+        if not current_campaign:
+            raise ValueError("Invalid value for `current_campaign`, must not be `None`")
+
+
         self._current_campaign = current_campaign
 
     @property
@@ -288,6 +301,7 @@ class CampaignSequence(object):
         :type: str
         """
         
+
         self._stop_message = stop_message
 
     @property
@@ -311,6 +325,7 @@ class CampaignSequence(object):
         :type: bool
         """
         
+
         self._repeat = repeat
 
     @property
@@ -334,6 +349,7 @@ class CampaignSequence(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

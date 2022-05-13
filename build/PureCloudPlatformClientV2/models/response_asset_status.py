@@ -79,6 +79,7 @@ class ResponseAssetStatus(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class ResponseAssetStatus(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -152,6 +154,7 @@ class ResponseAssetStatus(object):
         :type: str
         """
         
+
         self._error_message = error_message
 
     def to_dict(self):

@@ -115,6 +115,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: str
         """
         
+
         self._event_name = event_name
 
     @property
@@ -138,6 +139,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: int
         """
         
+
         self._total_event_count = total_event_count
 
     @property
@@ -161,6 +163,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: int
         """
         
+
         self._total_pageview_count = total_pageview_count
 
     @property
@@ -184,6 +187,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: str
         """
         
+
         self._user_agent_string = user_agent_string
 
     @property
@@ -207,6 +211,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: str
         """
         
+
         self._ip_address = ip_address
 
     @property
@@ -230,6 +235,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: str
         """
         
+
         self._ip_organization = ip_organization
 
     @property
@@ -253,6 +259,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: str
         """
         
+
         self._search_query = search_query
 
     @property
@@ -276,6 +283,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: bool
         """
         
+
         self._authenticated = authenticated
 
     @property
@@ -299,6 +307,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: JourneyWebEventsNotificationBrowser
         """
         
+
         self._browser = browser
 
     @property
@@ -322,6 +331,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: JourneyWebEventsNotificationDevice
         """
         
+
         self._device = device
 
     @property
@@ -345,6 +355,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: JourneyWebEventsNotificationGeoLocation
         """
         
+
         self._geolocation = geolocation
 
     @property
@@ -368,6 +379,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: JourneyWebEventsNotificationMktCampaign
         """
         
+
         self._mkt_campaign = mkt_campaign
 
     @property
@@ -391,6 +403,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: JourneyWebEventsNotificationPage
         """
         
+
         self._page = page
 
     @property
@@ -414,6 +427,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: JourneyWebEventsNotificationReferrer
         """
         
+
         self._referrer = referrer
 
     @property
@@ -437,6 +451,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: dict(str, JourneyWebEventsNotificationCustomEventAttribute)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -460,6 +475,7 @@ class JourneyWebEventsNotificationWebMessage(object):
         :type: dict(str, JourneyWebEventsNotificationCustomEventAttribute)
         """
         
+
         self._traits = traits
 
     def to_dict(self):

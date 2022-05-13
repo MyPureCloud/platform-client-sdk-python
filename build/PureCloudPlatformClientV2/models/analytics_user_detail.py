@@ -76,6 +76,7 @@ class AnalyticsUserDetail(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -99,6 +100,7 @@ class AnalyticsUserDetail(object):
         :type: list[AnalyticsUserPresenceRecord]
         """
         
+
         self._primary_presence = primary_presence
 
     @property
@@ -122,6 +124,7 @@ class AnalyticsUserDetail(object):
         :type: list[AnalyticsRoutingStatusRecord]
         """
         
+
         self._routing_status = routing_status
 
     def to_dict(self):

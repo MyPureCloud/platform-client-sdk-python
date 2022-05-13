@@ -142,6 +142,7 @@ class SmsPhoneNumber(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -165,6 +166,7 @@ class SmsPhoneNumber(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -188,6 +190,10 @@ class SmsPhoneNumber(object):
         :type: str
         """
         
+        if not phone_number:
+            raise ValueError("Invalid value for `phone_number`, must not be `None`")
+
+
         self._phone_number = phone_number
 
     @property
@@ -238,6 +244,7 @@ class SmsPhoneNumber(object):
         :type: bool
         """
         
+
         self._provisioned_through_pure_cloud = provisioned_through_pure_cloud
 
     @property
@@ -288,6 +295,7 @@ class SmsPhoneNumber(object):
         :type: list[str]
         """
         
+
         self._capabilities = capabilities
 
     @property
@@ -311,6 +319,7 @@ class SmsPhoneNumber(object):
         :type: str
         """
         
+
         self._country_code = country_code
 
     @property
@@ -334,6 +343,7 @@ class SmsPhoneNumber(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -357,6 +367,7 @@ class SmsPhoneNumber(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -380,6 +391,7 @@ class SmsPhoneNumber(object):
         :type: User
         """
         
+
         self._created_by = created_by
 
     @property
@@ -403,6 +415,7 @@ class SmsPhoneNumber(object):
         :type: User
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -426,6 +439,10 @@ class SmsPhoneNumber(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -449,6 +466,7 @@ class SmsPhoneNumber(object):
         :type: datetime
         """
         
+
         self._purchase_date = purchase_date
 
     @property
@@ -472,6 +490,7 @@ class SmsPhoneNumber(object):
         :type: datetime
         """
         
+
         self._cancellation_date = cancellation_date
 
     @property
@@ -495,6 +514,7 @@ class SmsPhoneNumber(object):
         :type: datetime
         """
         
+
         self._renewal_date = renewal_date
 
     @property
@@ -545,6 +565,7 @@ class SmsPhoneNumber(object):
         :type: SmsAddress
         """
         
+
         self._address_id = address_id
 
     @property
@@ -595,6 +616,7 @@ class SmsPhoneNumber(object):
         :type: SmsProvisioningStatus
         """
         
+
         self._provisioning_status = provisioning_status
 
     @property
@@ -618,6 +640,7 @@ class SmsPhoneNumber(object):
         :type: str
         """
         
+
         self._country = country
 
     @property
@@ -641,6 +664,7 @@ class SmsPhoneNumber(object):
         :type: bool
         """
         
+
         self._supports_sms = supports_sms
 
     @property
@@ -664,6 +688,7 @@ class SmsPhoneNumber(object):
         :type: bool
         """
         
+
         self._supports_mms = supports_mms
 
     @property
@@ -687,6 +712,7 @@ class SmsPhoneNumber(object):
         :type: bool
         """
         
+
         self._supports_voice = supports_voice
 
     @property
@@ -710,6 +736,7 @@ class SmsPhoneNumber(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

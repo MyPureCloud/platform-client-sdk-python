@@ -70,6 +70,7 @@ class WfmUserEntityListing(object):
         :type: list[User]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

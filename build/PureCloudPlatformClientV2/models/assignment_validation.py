@@ -79,6 +79,7 @@ class AssignmentValidation(object):
         :type: list[UserReference]
         """
         
+
         self._members_not_assigned = members_not_assigned
 
     @property
@@ -102,6 +103,7 @@ class AssignmentValidation(object):
         :type: list[UserReference]
         """
         
+
         self._members_already_assigned = members_already_assigned
 
     @property
@@ -125,6 +127,7 @@ class AssignmentValidation(object):
         :type: list[OtherProfileAssignment]
         """
         
+
         self._members_already_assigned_to_other = members_already_assigned_to_other
 
     @property
@@ -148,6 +151,7 @@ class AssignmentValidation(object):
         :type: list[InvalidAssignment]
         """
         
+
         self._invalid_member_assignments = invalid_member_assignments
 
     def to_dict(self):

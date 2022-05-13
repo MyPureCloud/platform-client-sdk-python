@@ -73,6 +73,7 @@ class TrunkMetricsTopicTrunkMetricsCalls(object):
         :type: int
         """
         
+
         self._inbound_call_count = inbound_call_count
 
     @property
@@ -96,6 +97,7 @@ class TrunkMetricsTopicTrunkMetricsCalls(object):
         :type: int
         """
         
+
         self._outbound_call_count = outbound_call_count
 
     def to_dict(self):

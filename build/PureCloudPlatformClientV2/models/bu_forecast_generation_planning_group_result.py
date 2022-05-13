@@ -73,6 +73,7 @@ class BuForecastGenerationPlanningGroupResult(object):
         :type: str
         """
         
+
         self._planning_group_id = planning_group_id
 
     @property
@@ -96,6 +97,7 @@ class BuForecastGenerationPlanningGroupResult(object):
         :type: list[BuForecastTimeSeriesResult]
         """
         
+
         self._metric_results = metric_results
 
     def to_dict(self):

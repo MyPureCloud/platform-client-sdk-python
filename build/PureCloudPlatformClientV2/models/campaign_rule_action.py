@@ -79,6 +79,7 @@ class CampaignRuleAction(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class CampaignRuleAction(object):
         :type: CampaignRuleParameters
         """
         
+
         self._parameters = parameters
 
     @property
@@ -152,6 +154,10 @@ class CampaignRuleAction(object):
         :type: CampaignRuleActionEntities
         """
         
+        if not campaign_rule_action_entities:
+            raise ValueError("Invalid value for `campaign_rule_action_entities`, must not be `None`")
+
+
         self._campaign_rule_action_entities = campaign_rule_action_entities
 
     def to_dict(self):

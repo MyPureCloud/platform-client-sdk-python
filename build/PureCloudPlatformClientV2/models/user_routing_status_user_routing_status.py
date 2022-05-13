@@ -76,6 +76,7 @@ class UserRoutingStatusUserRoutingStatus(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class UserRoutingStatusUserRoutingStatus(object):
         :type: UserRoutingStatusRoutingStatus
         """
         
+
         self._routing_status = routing_status
 
     @property
@@ -122,6 +124,7 @@ class UserRoutingStatusUserRoutingStatus(object):
         :type: UserRoutingStatusErrorInfo
         """
         
+
         self._error_info = error_info
 
     def to_dict(self):

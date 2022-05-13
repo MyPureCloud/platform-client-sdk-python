@@ -109,6 +109,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -155,6 +157,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -178,6 +181,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -201,6 +205,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: ContentManagementWorkspaceDocumentsTopicWorkspaceData
         """
         
+
         self._workspace = workspace
 
     @property
@@ -224,6 +229,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: ContentManagementWorkspaceDocumentsTopicUserData
         """
         
+
         self._created_by = created_by
 
     @property
@@ -247,6 +253,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: str
         """
         
+
         self._content_type = content_type
 
     @property
@@ -270,6 +277,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: int
         """
         
+
         self._content_length = content_length
 
     @property
@@ -293,6 +301,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: str
         """
         
+
         self._filename = filename
 
     @property
@@ -316,6 +325,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: int
         """
         
+
         self._change_number = change_number
 
     @property
@@ -339,6 +349,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: datetime
         """
         
+
         self._date_uploaded = date_uploaded
 
     @property
@@ -362,6 +373,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: ContentManagementWorkspaceDocumentsTopicUserData
         """
         
+
         self._uploaded_by = uploaded_by
 
     @property
@@ -385,6 +397,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: ContentManagementWorkspaceDocumentsTopicLockData
         """
         
+
         self._lock_info = lock_info
 
     @property
@@ -408,6 +421,7 @@ class ContentManagementWorkspaceDocumentsTopicDocumentDataV2(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

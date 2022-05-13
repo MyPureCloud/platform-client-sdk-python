@@ -76,6 +76,10 @@ class JourneyContext(object):
         :type: JourneyCustomer
         """
         
+        if not customer:
+            raise ValueError("Invalid value for `customer`, must not be `None`")
+
+
         self._customer = customer
 
     @property
@@ -99,6 +103,7 @@ class JourneyContext(object):
         :type: JourneyCustomerSession
         """
         
+
         self._customer_session = customer_session
 
     @property
@@ -122,6 +127,7 @@ class JourneyContext(object):
         :type: JourneyAction
         """
         
+
         self._triggering_action = triggering_action
 
     def to_dict(self):

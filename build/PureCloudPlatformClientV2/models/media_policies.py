@@ -79,6 +79,7 @@ class MediaPolicies(object):
         :type: CallMediaPolicy
         """
         
+
         self._call_policy = call_policy
 
     @property
@@ -102,6 +103,7 @@ class MediaPolicies(object):
         :type: ChatMediaPolicy
         """
         
+
         self._chat_policy = chat_policy
 
     @property
@@ -125,6 +127,7 @@ class MediaPolicies(object):
         :type: EmailMediaPolicy
         """
         
+
         self._email_policy = email_policy
 
     @property
@@ -148,6 +151,7 @@ class MediaPolicies(object):
         :type: MessageMediaPolicy
         """
         
+
         self._message_policy = message_policy
 
     def to_dict(self):

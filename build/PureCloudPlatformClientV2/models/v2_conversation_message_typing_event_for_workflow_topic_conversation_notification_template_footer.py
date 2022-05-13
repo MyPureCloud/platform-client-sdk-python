@@ -70,6 +70,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTe
         :type: str
         """
         
+
         self._text = text
 
     def to_dict(self):

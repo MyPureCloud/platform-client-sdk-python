@@ -187,6 +187,7 @@ class MessageMediaParticipant(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -210,6 +211,7 @@ class MessageMediaParticipant(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -233,6 +235,7 @@ class MessageMediaParticipant(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -256,6 +259,7 @@ class MessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -279,6 +283,7 @@ class MessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -302,6 +307,7 @@ class MessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -325,6 +331,7 @@ class MessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -348,6 +355,7 @@ class MessageMediaParticipant(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -452,6 +460,7 @@ class MessageMediaParticipant(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -475,6 +484,7 @@ class MessageMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_required = wrapup_required
 
     @property
@@ -498,6 +508,7 @@ class MessageMediaParticipant(object):
         :type: str
         """
         
+
         self._wrapup_prompt = wrapup_prompt
 
     @property
@@ -521,6 +532,7 @@ class MessageMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._user = user
 
     @property
@@ -544,6 +556,7 @@ class MessageMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._queue = queue
 
     @property
@@ -567,6 +580,7 @@ class MessageMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._team = team
 
     @property
@@ -590,6 +604,7 @@ class MessageMediaParticipant(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -613,6 +628,7 @@ class MessageMediaParticipant(object):
         :type: ErrorInfo
         """
         
+
         self._error_info = error_info
 
     @property
@@ -636,6 +652,7 @@ class MessageMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._script = script
 
     @property
@@ -659,6 +676,7 @@ class MessageMediaParticipant(object):
         :type: int
         """
         
+
         self._wrapup_timeout_ms = wrapup_timeout_ms
 
     @property
@@ -682,6 +700,7 @@ class MessageMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_skipped = wrapup_skipped
 
     @property
@@ -705,6 +724,7 @@ class MessageMediaParticipant(object):
         :type: int
         """
         
+
         self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
@@ -728,6 +748,7 @@ class MessageMediaParticipant(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -751,6 +772,7 @@ class MessageMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -774,6 +796,7 @@ class MessageMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._external_organization = external_organization
 
     @property
@@ -797,6 +820,7 @@ class MessageMediaParticipant(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -820,6 +844,7 @@ class MessageMediaParticipant(object):
         :type: str
         """
         
+
         self._peer = peer
 
     @property
@@ -870,6 +895,7 @@ class MessageMediaParticipant(object):
         :type: JourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -893,6 +919,7 @@ class MessageMediaParticipant(object):
         :type: ConversationRoutingData
         """
         
+
         self._conversation_routing_data = conversation_routing_data
 
     @property
@@ -916,6 +943,7 @@ class MessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_acw_time = start_acw_time
 
     @property
@@ -939,6 +967,7 @@ class MessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_acw_time = end_acw_time
 
     @property
@@ -962,6 +991,7 @@ class MessageMediaParticipant(object):
         :type: Address
         """
         
+
         self._to_address = to_address
 
     @property
@@ -985,6 +1015,7 @@ class MessageMediaParticipant(object):
         :type: Address
         """
         
+
         self._from_address = from_address
 
     @property
@@ -1008,6 +1039,7 @@ class MessageMediaParticipant(object):
         :type: list[MessageDetails]
         """
         
+
         self._messages = messages
 
     @property
@@ -1058,6 +1090,7 @@ class MessageMediaParticipant(object):
         :type: str
         """
         
+
         self._recipient_country = recipient_country
 
     @property
@@ -1081,6 +1114,7 @@ class MessageMediaParticipant(object):
         :type: str
         """
         
+
         self._recipient_type = recipient_type
 
     @property
@@ -1104,6 +1138,7 @@ class MessageMediaParticipant(object):
         :type: bool
         """
         
+
         self._authenticated = authenticated
 
     def to_dict(self):

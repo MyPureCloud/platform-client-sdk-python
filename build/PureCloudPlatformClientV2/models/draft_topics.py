@@ -94,6 +94,10 @@ class DraftTopics(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -117,6 +121,7 @@ class DraftTopics(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +145,7 @@ class DraftTopics(object):
         :type: Miner
         """
         
+
         self._miner = miner
 
     @property
@@ -163,6 +169,7 @@ class DraftTopics(object):
         :type: int
         """
         
+
         self._conversation_count = conversation_count
 
     @property
@@ -186,6 +193,7 @@ class DraftTopics(object):
         :type: float
         """
         
+
         self._conversation_percent = conversation_percent
 
     @property
@@ -209,6 +217,7 @@ class DraftTopics(object):
         :type: int
         """
         
+
         self._utterance_count = utterance_count
 
     @property
@@ -232,6 +241,7 @@ class DraftTopics(object):
         :type: int
         """
         
+
         self._phrase_count = phrase_count
 
     @property
@@ -255,6 +265,10 @@ class DraftTopics(object):
         :type: list[str]
         """
         
+        if not phrases:
+            raise ValueError("Invalid value for `phrases`, must not be `None`")
+
+
         self._phrases = phrases
 
     @property
@@ -278,6 +292,7 @@ class DraftTopics(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

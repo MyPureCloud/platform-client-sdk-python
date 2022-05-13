@@ -76,6 +76,10 @@ class NamedEntityTypeMechanism(object):
         :type: list[NamedEntityTypeItem]
         """
         
+        if not items:
+            raise ValueError("Invalid value for `items`, must not be `None`")
+
+
         self._items = items
 
     @property
@@ -99,6 +103,7 @@ class NamedEntityTypeMechanism(object):
         :type: bool
         """
         
+
         self._restricted = restricted
 
     @property

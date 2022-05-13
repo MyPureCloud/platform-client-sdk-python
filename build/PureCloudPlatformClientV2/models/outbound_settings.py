@@ -103,6 +103,7 @@ class OutboundSettings(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class OutboundSettings(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -149,6 +151,7 @@ class OutboundSettings(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -172,6 +175,7 @@ class OutboundSettings(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -195,6 +199,7 @@ class OutboundSettings(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -218,6 +223,7 @@ class OutboundSettings(object):
         :type: int
         """
         
+
         self._max_calls_per_agent = max_calls_per_agent
 
     @property
@@ -241,6 +247,7 @@ class OutboundSettings(object):
         :type: int
         """
         
+
         self._max_configurable_calls_per_agent = max_configurable_calls_per_agent
 
     @property
@@ -264,6 +271,7 @@ class OutboundSettings(object):
         :type: float
         """
         
+
         self._max_line_utilization = max_line_utilization
 
     @property
@@ -287,6 +295,7 @@ class OutboundSettings(object):
         :type: float
         """
         
+
         self._abandon_seconds = abandon_seconds
 
     @property
@@ -337,6 +346,7 @@ class OutboundSettings(object):
         :type: AutomaticTimeZoneMappingSettings
         """
         
+
         self._automatic_time_zone_mapping = automatic_time_zone_mapping
 
     @property
@@ -360,6 +370,7 @@ class OutboundSettings(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -115,6 +115,7 @@ class WorkPlanActivity(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -138,6 +139,7 @@ class WorkPlanActivity(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -161,6 +163,7 @@ class WorkPlanActivity(object):
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property
@@ -184,6 +187,7 @@ class WorkPlanActivity(object):
         :type: bool
         """
         
+
         self._start_time_is_relative_to_shift_start = start_time_is_relative_to_shift_start
 
     @property
@@ -207,6 +211,7 @@ class WorkPlanActivity(object):
         :type: bool
         """
         
+
         self._flexible_start_time = flexible_start_time
 
     @property
@@ -230,6 +235,7 @@ class WorkPlanActivity(object):
         :type: int
         """
         
+
         self._earliest_start_time_minutes = earliest_start_time_minutes
 
     @property
@@ -253,6 +259,7 @@ class WorkPlanActivity(object):
         :type: int
         """
         
+
         self._latest_start_time_minutes = latest_start_time_minutes
 
     @property
@@ -276,6 +283,7 @@ class WorkPlanActivity(object):
         :type: int
         """
         
+
         self._exact_start_time_minutes = exact_start_time_minutes
 
     @property
@@ -299,6 +307,7 @@ class WorkPlanActivity(object):
         :type: int
         """
         
+
         self._start_time_increment_minutes = start_time_increment_minutes
 
     @property
@@ -322,6 +331,7 @@ class WorkPlanActivity(object):
         :type: bool
         """
         
+
         self._counts_as_paid_time = counts_as_paid_time
 
     @property
@@ -345,6 +355,7 @@ class WorkPlanActivity(object):
         :type: bool
         """
         
+
         self._counts_as_contiguous_work_time = counts_as_contiguous_work_time
 
     @property
@@ -368,6 +379,7 @@ class WorkPlanActivity(object):
         :type: int
         """
         
+
         self._minimum_length_from_shift_start_minutes = minimum_length_from_shift_start_minutes
 
     @property
@@ -391,6 +403,7 @@ class WorkPlanActivity(object):
         :type: int
         """
         
+
         self._minimum_length_from_shift_end_minutes = minimum_length_from_shift_end_minutes
 
     @property
@@ -414,6 +427,7 @@ class WorkPlanActivity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -437,6 +451,7 @@ class WorkPlanActivity(object):
         :type: bool
         """
         
+
         self._delete = delete
 
     @property
@@ -460,6 +475,7 @@ class WorkPlanActivity(object):
         :type: str
         """
         
+
         self._validation_id = validation_id
 
     def to_dict(self):

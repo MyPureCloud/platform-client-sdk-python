@@ -73,6 +73,7 @@ class DialerOutboundSettingsConfigChangeCallableWindow(object):
         :type: DialerOutboundSettingsConfigChangeAtzmTimeSlot
         """
         
+
         self._mapped = mapped
 
     @property
@@ -96,6 +97,7 @@ class DialerOutboundSettingsConfigChangeCallableWindow(object):
         :type: DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone
         """
         
+
         self._unmapped = unmapped
 
     def to_dict(self):

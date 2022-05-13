@@ -70,6 +70,7 @@ class IntegrationConfigurationInfo(object):
         :type: IntegrationConfiguration
         """
         
+
         self._current = current
 
     def to_dict(self):

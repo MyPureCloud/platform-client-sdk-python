@@ -118,6 +118,7 @@ class ReportSchedule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,7 @@ class ReportSchedule(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -164,6 +166,10 @@ class ReportSchedule(object):
         :type: str
         """
         
+        if not quartz_cron_expression:
+            raise ValueError("Invalid value for `quartz_cron_expression`, must not be `None`")
+
+
         self._quartz_cron_expression = quartz_cron_expression
 
     @property
@@ -187,6 +193,7 @@ class ReportSchedule(object):
         :type: datetime
         """
         
+
         self._next_fire_time = next_fire_time
 
     @property
@@ -210,6 +217,7 @@ class ReportSchedule(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -233,6 +241,7 @@ class ReportSchedule(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -256,6 +265,7 @@ class ReportSchedule(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -279,6 +289,7 @@ class ReportSchedule(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -302,6 +313,7 @@ class ReportSchedule(object):
         :type: str
         """
         
+
         self._time_period = time_period
 
     @property
@@ -325,6 +337,10 @@ class ReportSchedule(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -348,6 +364,7 @@ class ReportSchedule(object):
         :type: str
         """
         
+
         self._report_format = report_format
 
     @property
@@ -371,6 +388,7 @@ class ReportSchedule(object):
         :type: str
         """
         
+
         self._locale = locale
 
     @property
@@ -394,6 +412,7 @@ class ReportSchedule(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -417,6 +436,10 @@ class ReportSchedule(object):
         :type: str
         """
         
+        if not report_id:
+            raise ValueError("Invalid value for `report_id`, must not be `None`")
+
+
         self._report_id = report_id
 
     @property
@@ -440,6 +463,7 @@ class ReportSchedule(object):
         :type: dict(str, object)
         """
         
+
         self._parameters = parameters
 
     @property
@@ -463,6 +487,7 @@ class ReportSchedule(object):
         :type: ReportRunEntry
         """
         
+
         self._last_run = last_run
 
     @property
@@ -486,6 +511,7 @@ class ReportSchedule(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

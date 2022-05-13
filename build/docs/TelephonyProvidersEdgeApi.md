@@ -254,7 +254,7 @@ Cancels any in-progress update for this edge.
 
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -500,6 +500,8 @@ void (empty response body)
 Delete Outbound Route
 
 This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
+
+
 
 Wraps DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
 
@@ -805,7 +807,7 @@ Lists available schema categories (Deprecated)
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -857,7 +859,7 @@ List schemas of a specific category (Deprecated)
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -911,7 +913,7 @@ List schemas of a specific category (Deprecated)
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -967,7 +969,7 @@ Get a json schema (Deprecated)
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1021,7 +1023,7 @@ Get metadata for a schema (Deprecated)
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1499,6 +1501,8 @@ Get edge logical interfaces.
 
 Retrieve a list of all configured logical interfaces from a specific edge.
 
+
+
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces 
 
 Requires ANY permissions: 
@@ -1655,6 +1659,8 @@ except ApiException as e:
 Get edge physical interface.
 
 Retrieve a physical interface from a specific edge.
+
+
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId} 
 
@@ -1813,7 +1819,7 @@ Gets software update status information about any edge.
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1863,7 +1869,7 @@ Gets all the available software versions for this edge.
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1911,6 +1917,8 @@ Get the list of available trunks for the given Edge.
 
 Trunks are created by assigning trunk base settings to an Edge or Edge Group.
 
+
+
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/trunks 
 
 Requires ANY permissions: 
@@ -1933,8 +1941,8 @@ api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 edge_id = 'edge_id_example' # str | Edge ID
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | Value by which to sort (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 trunk_base_id = 'trunk_base_id_example' # str | Filter by Trunk Base Ids (optional)
 trunk_type = 'trunk_type_example' # str | Filter by a Trunk type (optional)
 
@@ -1954,8 +1962,8 @@ except ApiException as e:
 | **edge_id** | **str**| Edge ID |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **trunk_base_id** | **str**| Filter by Trunk Base Ids | [optional]  |
 | **trunk_type** | **str**| Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
@@ -1998,8 +2006,8 @@ page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
 site_id = 'site_id_example' # str | Filter by site.id (optional)
 edge_group_id = 'edge_group_id_example' # str | Filter by edgeGroup.id (optional)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-managed = true # bool | Filter by managed (optional)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+managed = True # bool | Filter by managed (optional)
 
 try:
     # Get the list of edges.
@@ -2019,7 +2027,7 @@ except ApiException as e:
 | **name** | **str**| Name | [optional]  |
 | **site_id** | **str**| Filter by site.id | [optional]  |
 | **edge_group_id** | **str**| Filter by edgeGroup.id | [optional]  |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
 | **managed** | **bool**| Filter by managed | [optional]  |
 {: class="table table-striped"}
 
@@ -2039,7 +2047,7 @@ Get the list of available languages.
 
 Wraps GET /api/v2/telephony/providers/edges/availablelanguages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2304,7 +2312,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'number' # str | Sort by (optional) (default to number)
+sort_by = ''number'' # str | Sort by (optional) (default to 'number')
 id = ['id_example'] # list[str] | Filter by a specific list of ID's (optional)
 
 try:
@@ -2322,7 +2330,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to number] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;number&#39;] |
 | **id** | [**list[str]**](str.html)| Filter by a specific list of ID&#39;s | [optional]  |
 {: class="table table-striped"}
 
@@ -2364,7 +2372,7 @@ id = ['id_example'] # list[str] | Filter by a specific list of DID Pools.  If th
 number_match = 'number_match_example' # str | A number to filter the results by. (optional)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 
 try:
     # Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
@@ -2384,7 +2392,7 @@ except ApiException as e:
 | **number_match** | **str**| A number to filter the results by. | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Sort order | [optional] [default to ascending] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2422,8 +2430,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'number' # str | Sort by (optional) (default to number)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''number'' # str | Sort by (optional) (default to 'number')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 phone_number = 'phone_number_example' # str | Filter by phoneNumber (optional)
 owner_id = 'owner_id_example' # str | Filter by the owner of a phone number (optional)
 did_pool_id = 'did_pool_id_example' # str | Filter by the DID Pool assignment (optional)
@@ -2444,8 +2452,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to number] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;number&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **phone_number** | **str**| Filter by phoneNumber | [optional]  |
 | **owner_id** | **str**| Filter by the owner of a phone number | [optional]  |
 | **did_pool_id** | **str**| Filter by the DID Pool assignment | [optional]  |
@@ -2594,8 +2602,8 @@ api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-managed = true # bool | Filter by managed (optional)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+managed = True # bool | Filter by managed (optional)
 
 try:
     # Get the list of edge groups.
@@ -2613,7 +2621,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
 | **managed** | **bool**| Filter by managed | [optional]  |
 {: class="table table-striped"}
 
@@ -2631,9 +2639,11 @@ Get the edge version report.
 
 The report will not have consistent data about the edge version(s) until all edges have been reset.
 
+
+
 Wraps GET /api/v2/telephony/providers/edges/edgeversionreport 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2905,8 +2915,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'number' # str | Sort by (optional) (default to number)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''number'' # str | Sort by (optional) (default to 'number')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 number = 'number_example' # str | Filter by number (optional)
 
 try:
@@ -2924,8 +2934,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to number] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;number&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **number** | **str**| Filter by number | [optional]  |
 {: class="table table-striped"}
 
@@ -3066,8 +3076,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | Value by which to sort (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
 
 try:
@@ -3085,8 +3095,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties |
 {: class="table table-striped"}
 
@@ -3126,7 +3136,7 @@ api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
-sort_by = 'name' # str | Value by which to sort (optional) (default to name)
+sort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')
 expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
 
 try:
@@ -3145,7 +3155,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to &#39;name&#39;] |
 | **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser |
 {: class="table table-striped"}
 
@@ -3213,6 +3223,8 @@ except ApiException as e:
 Get edge logical interfaces.
 
 Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
+
+
 
 Wraps GET /api/v2/telephony/providers/edges/logicalinterfaces 
 
@@ -3318,6 +3330,8 @@ Get outbound route
 
 This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
+
+
 Wraps GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
 
 Requires ANY permissions: 
@@ -3393,7 +3407,7 @@ page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
 site_id = 'site_id_example' # str | Filter by site.id (optional)
 external_trunk_bases_ids = 'external_trunk_bases_ids_example' # str | Filter by externalTrunkBases.ids (optional)
-sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 
 try:
     # Get outbound routes
@@ -3413,7 +3427,7 @@ except ApiException as e:
 | **name** | **str**| Name | [optional]  |
 | **site_id** | **str**| Filter by site.id | [optional]  |
 | **external_trunk_bases_ids** | **str**| Filter by externalTrunkBases.ids | [optional]  |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3553,8 +3567,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | Value by which to sort (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
 name = 'name_example' # str | Name (optional)
 
@@ -3573,8 +3587,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, lines |
 | **name** | **str**| Name | [optional]  |
 {: class="table table-striped"}
@@ -3718,8 +3732,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | The field to sort by (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | The field to sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 site_id = 'site_id_example' # str | Filter by site.id (optional)
 web_rtc_user_id = 'web_rtc_user_id_example' # str | Filter by webRtcUser.id (optional)
 phone_base_settings_id = 'phone_base_settings_id_example' # str | Filter by phoneBaseSettings.id (optional)
@@ -3749,8 +3763,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| The field to sort by | [optional] [default to name]<br />**Values**: name, status.operationalStatus, secondaryStatus.operationalStatus |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| The field to sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, status.operationalStatus, secondaryStatus.operationalStatus |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **site_id** | **str**| Filter by site.id | [optional]  |
 | **web_rtc_user_id** | **str**| Filter by webRtcUser.id | [optional]  |
 | **phone_base_settings_id** | **str**| Filter by phoneBaseSettings.id | [optional]  |
@@ -3830,6 +3844,8 @@ except ApiException as e:
 Get physical interfaces for edges.
 
 Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+
+
 
 Wraps GET /api/v2/telephony/providers/edges/physicalinterfaces 
 
@@ -4168,7 +4184,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
 external_trunk_bases_ids = 'external_trunk_bases_ids_example' # str | externalTrunkBases.ids (optional)
-sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 
 try:
     # Get outbound routes
@@ -4188,7 +4204,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
 | **external_trunk_bases_ids** | **str**| externalTrunkBases.ids | [optional]  |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4207,7 +4223,7 @@ Get the list of Sites.
 
 Wraps GET /api/v2/telephony/providers/edges/sites 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4225,11 +4241,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 name = 'name_example' # str | Name (optional)
 location_id = 'location_id_example' # str | Location Id (optional)
-managed = true # bool | Filter by managed (optional)
+managed = True # bool | Filter by managed (optional)
 
 try:
     # Get the list of Sites.
@@ -4246,8 +4262,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **name** | **str**| Name | [optional]  |
 | **location_id** | **str**| Location Id | [optional]  |
 | **managed** | **bool**| Filter by managed | [optional]  |
@@ -4269,7 +4285,7 @@ Get a list of Edge-compatible time zones
 
 Wraps GET /api/v2/telephony/providers/edges/timezones 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4421,6 +4437,8 @@ Get a Trunk Base Settings object by ID
 
 Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 
+
+
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId} 
 
 Requires ANY permissions: 
@@ -4441,7 +4459,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 trunk_base_settings_id = 'trunk_base_settings_id_example' # str | Trunk Base ID
-ignore_hidden = true # bool | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
+ignore_hidden = True # bool | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
 
 try:
     # Get a Trunk Base Settings object by ID
@@ -4474,6 +4492,8 @@ Get Trunk Base Settings listing
 
 Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 
+
+
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings 
 
 Requires ANY permissions: 
@@ -4495,11 +4515,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | Value by which to sort (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
-recording_enabled = true # bool | Filter trunks by recording enabled (optional)
-ignore_hidden = true # bool | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
-managed = true # bool | Filter by managed (optional)
+sort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
+recording_enabled = True # bool | Filter trunks by recording enabled (optional)
+ignore_hidden = True # bool | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
+managed = True # bool | Filter by managed (optional)
 expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
 name = 'name_example' # str | Name of the TrunkBase to filter by (optional)
 
@@ -4518,8 +4538,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **recording_enabled** | **bool**| Filter trunks by recording enabled | [optional]  |
 | **ignore_hidden** | **bool**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional]  |
 | **managed** | **bool**| Filter by managed | [optional]  |
@@ -4647,6 +4667,8 @@ Get the list of available trunks.
 
 Trunks are created by assigning trunk base settings to an Edge or Edge Group.
 
+
+
 Wraps GET /api/v2/telephony/providers/edges/trunks 
 
 Requires ANY permissions: 
@@ -4668,8 +4690,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | Value by which to sort (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 edge_id = 'edge_id_example' # str | Filter by Edge Ids (optional)
 trunk_base_id = 'trunk_base_id_example' # str | Filter by Trunk Base Ids (optional)
 trunk_type = 'trunk_type_example' # str | Filter by a Trunk type (optional)
@@ -4689,8 +4711,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **edge_id** | **str**| Filter by Edge Ids | [optional]  |
 | **trunk_base_id** | **str**| Filter by Trunk Base Ids | [optional]  |
 | **trunk_type** | **str**| Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
@@ -5025,6 +5047,8 @@ Create an edge logical interface.
 
 Create
 
+
+
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces 
 
 Requires ANY permissions: 
@@ -5240,7 +5264,7 @@ Starts a software update for this edge.
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5447,7 +5471,7 @@ Validates a street address
 
 Wraps POST /api/v2/telephony/providers/edges/addressvalidation 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5698,6 +5722,8 @@ except ApiException as e:
 Create outbound rule
 
 This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
+
+
 
 Wraps POST /api/v2/telephony/providers/edges/outboundroutes 
 
@@ -6692,6 +6718,8 @@ except ApiException as e:
 Update outbound route
 
 This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
+
+
 
 Wraps PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
 

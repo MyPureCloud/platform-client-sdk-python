@@ -73,6 +73,7 @@ class WorkdayPointsTrendItem(object):
         :type: date
         """
         
+
         self._date_workday = date_workday
 
     @property
@@ -96,6 +97,7 @@ class WorkdayPointsTrendItem(object):
         :type: float
         """
         
+
         self._points = points
 
     def to_dict(self):

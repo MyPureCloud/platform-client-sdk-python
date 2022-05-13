@@ -70,6 +70,7 @@ class FlowDiagnosticInfo(object):
         :type: int
         """
         
+
         self._last_action_id = last_action_id
 
     def to_dict(self):

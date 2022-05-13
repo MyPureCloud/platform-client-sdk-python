@@ -76,6 +76,7 @@ class EdgeMetricsMemory(object):
         :type: float
         """
         
+
         self._available_bytes = available_bytes
 
     @property
@@ -99,6 +100,7 @@ class EdgeMetricsMemory(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -122,6 +124,7 @@ class EdgeMetricsMemory(object):
         :type: float
         """
         
+
         self._total_bytes = total_bytes
 
     def to_dict(self):

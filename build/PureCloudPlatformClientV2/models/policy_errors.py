@@ -70,6 +70,7 @@ class PolicyErrors(object):
         :type: list[PolicyErrorMessage]
         """
         
+
         self._policy_error_messages = policy_error_messages
 
     def to_dict(self):

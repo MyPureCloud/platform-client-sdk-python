@@ -85,6 +85,10 @@ class AsyncUserDetailsQuery(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -108,6 +112,7 @@ class AsyncUserDetailsQuery(object):
         :type: list[UserDetailQueryFilter]
         """
         
+
         self._user_filters = user_filters
 
     @property
@@ -131,6 +136,7 @@ class AsyncUserDetailsQuery(object):
         :type: list[PresenceDetailQueryFilter]
         """
         
+
         self._presence_filters = presence_filters
 
     @property
@@ -154,6 +160,7 @@ class AsyncUserDetailsQuery(object):
         :type: list[RoutingStatusDetailQueryFilter]
         """
         
+
         self._routing_status_filters = routing_status_filters
 
     @property
@@ -204,6 +211,7 @@ class AsyncUserDetailsQuery(object):
         :type: int
         """
         
+
         self._limit = limit
 
     def to_dict(self):

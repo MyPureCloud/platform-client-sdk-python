@@ -85,6 +85,7 @@ class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification(object):
         :type: WfmAgentScheduleUpdateTopicUserReference
         """
         
+
         self._user = user
 
     @property
@@ -108,6 +109,7 @@ class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -131,6 +133,7 @@ class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -154,6 +157,7 @@ class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification(object):
         :type: list[WfmAgentScheduleUpdateTopicWfmScheduleShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -177,6 +181,7 @@ class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification(object):
         :type: list[WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker]
         """
         
+
         self._full_day_time_off_markers = full_day_time_off_markers
 
     @property
@@ -200,6 +205,7 @@ class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification(object):
         :type: list[WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate]
         """
         
+
         self._updates = updates
 
     def to_dict(self):

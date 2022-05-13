@@ -76,6 +76,7 @@ class AnalyticsProperty(object):
         :type: str
         """
         
+
         self._pcProperty = pcProperty
 
     @property
@@ -126,6 +127,7 @@ class AnalyticsProperty(object):
         :type: str
         """
         
+
         self._value = value
 
     def to_dict(self):

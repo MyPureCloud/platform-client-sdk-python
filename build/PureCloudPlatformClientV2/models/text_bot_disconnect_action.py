@@ -106,6 +106,7 @@ class TextBotDisconnectAction(object):
         :type: str
         """
         
+
         self._reason_extended_info = reason_extended_info
 
     @property
@@ -129,6 +130,7 @@ class TextBotDisconnectAction(object):
         :type: TextBotFlowLocation
         """
         
+
         self._flow_location = flow_location
 
     @property
@@ -152,6 +154,7 @@ class TextBotDisconnectAction(object):
         :type: list[TextBotFlowOutcome]
         """
         
+
         self._flow_outcomes = flow_outcomes
 
     def to_dict(self):

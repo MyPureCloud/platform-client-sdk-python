@@ -48,7 +48,7 @@ class ConversationEventTopicScreenshare(object):
             'provider': 'str',
             'script_id': 'str',
             'peer_id': 'str',
-            'peer_count': 'ConversationEventTopicObject',
+            'peer_count': 'object',
             'disconnect_type': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
@@ -139,6 +139,7 @@ class ConversationEventTopicScreenshare(object):
         :type: ConversationEventTopicAddress
         """
         
+
         self._pcSelf = pcSelf
 
     @property
@@ -162,6 +163,7 @@ class ConversationEventTopicScreenshare(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -185,6 +187,7 @@ class ConversationEventTopicScreenshare(object):
         :type: str
         """
         
+
         self._context = context
 
     @property
@@ -208,6 +211,7 @@ class ConversationEventTopicScreenshare(object):
         :type: bool
         """
         
+
         self._sharing = sharing
 
     @property
@@ -231,6 +235,7 @@ class ConversationEventTopicScreenshare(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -254,6 +259,7 @@ class ConversationEventTopicScreenshare(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -277,16 +283,17 @@ class ConversationEventTopicScreenshare(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
     def peer_count(self):
         """
         Gets the peer_count of this ConversationEventTopicScreenshare.
-
+        The number of peer participants from the perspective of the participant in the conference.
 
         :return: The peer_count of this ConversationEventTopicScreenshare.
-        :rtype: ConversationEventTopicObject
+        :rtype: object
         """
         return self._peer_count
 
@@ -294,12 +301,13 @@ class ConversationEventTopicScreenshare(object):
     def peer_count(self, peer_count):
         """
         Sets the peer_count of this ConversationEventTopicScreenshare.
-
+        The number of peer participants from the perspective of the participant in the conference.
 
         :param peer_count: The peer_count of this ConversationEventTopicScreenshare.
-        :type: ConversationEventTopicObject
+        :type: object
         """
         
+
         self._peer_count = peer_count
 
     @property
@@ -350,6 +358,7 @@ class ConversationEventTopicScreenshare(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -373,6 +382,7 @@ class ConversationEventTopicScreenshare(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -396,6 +406,7 @@ class ConversationEventTopicScreenshare(object):
         :type: ConversationEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -419,6 +430,7 @@ class ConversationEventTopicScreenshare(object):
         :type: ConversationEventTopicAfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -442,6 +454,7 @@ class ConversationEventTopicScreenshare(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

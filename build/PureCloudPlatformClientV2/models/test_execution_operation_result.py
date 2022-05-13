@@ -82,6 +82,7 @@ class TestExecutionOperationResult(object):
         :type: int
         """
         
+
         self._step = step
 
     @property
@@ -105,6 +106,7 @@ class TestExecutionOperationResult(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class TestExecutionOperationResult(object):
         :type: bool
         """
         
+
         self._success = success
 
     @property
@@ -151,6 +154,7 @@ class TestExecutionOperationResult(object):
         :type: object
         """
         
+
         self._result = result
 
     @property
@@ -174,6 +178,7 @@ class TestExecutionOperationResult(object):
         :type: ErrorBody
         """
         
+
         self._error = error
 
     def to_dict(self):

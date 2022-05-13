@@ -100,6 +100,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationEventTyping(object
         :type: int
         """
         
+
         self._duration = duration
 
     def to_dict(self):

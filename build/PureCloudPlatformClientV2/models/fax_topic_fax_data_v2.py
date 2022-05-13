@@ -118,6 +118,7 @@ class FaxTopicFaxDataV2(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,7 @@ class FaxTopicFaxDataV2(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -164,6 +166,7 @@ class FaxTopicFaxDataV2(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -187,6 +190,7 @@ class FaxTopicFaxDataV2(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -210,6 +214,7 @@ class FaxTopicFaxDataV2(object):
         :type: FaxTopicWorkspaceData
         """
         
+
         self._workspace = workspace
 
     @property
@@ -233,6 +238,7 @@ class FaxTopicFaxDataV2(object):
         :type: FaxTopicUserData
         """
         
+
         self._created_by = created_by
 
     @property
@@ -256,6 +262,7 @@ class FaxTopicFaxDataV2(object):
         :type: str
         """
         
+
         self._content_type = content_type
 
     @property
@@ -279,6 +286,7 @@ class FaxTopicFaxDataV2(object):
         :type: int
         """
         
+
         self._content_length = content_length
 
     @property
@@ -302,6 +310,7 @@ class FaxTopicFaxDataV2(object):
         :type: str
         """
         
+
         self._filename = filename
 
     @property
@@ -325,6 +334,7 @@ class FaxTopicFaxDataV2(object):
         :type: int
         """
         
+
         self._change_number = change_number
 
     @property
@@ -348,6 +358,7 @@ class FaxTopicFaxDataV2(object):
         :type: datetime
         """
         
+
         self._date_uploaded = date_uploaded
 
     @property
@@ -371,6 +382,7 @@ class FaxTopicFaxDataV2(object):
         :type: FaxTopicUserData
         """
         
+
         self._uploaded_by = uploaded_by
 
     @property
@@ -394,6 +406,7 @@ class FaxTopicFaxDataV2(object):
         :type: FaxTopicLockData
         """
         
+
         self._lock_info = lock_info
 
     @property
@@ -417,6 +430,7 @@ class FaxTopicFaxDataV2(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -440,6 +454,7 @@ class FaxTopicFaxDataV2(object):
         :type: str
         """
         
+
         self._caller_address = caller_address
 
     @property
@@ -463,6 +478,7 @@ class FaxTopicFaxDataV2(object):
         :type: str
         """
         
+
         self._receiver_address = receiver_address
 
     @property
@@ -486,6 +502,7 @@ class FaxTopicFaxDataV2(object):
         :type: bool
         """
         
+
         self._read = read
 
     def to_dict(self):

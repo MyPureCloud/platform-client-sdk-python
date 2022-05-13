@@ -82,6 +82,10 @@ class CreatePredictorRequest(object):
         :type: list[str]
         """
         
+        if not queue_ids:
+            raise ValueError("Invalid value for `queue_ids`, must not be `None`")
+
+
         self._queue_ids = queue_ids
 
     @property
@@ -105,6 +109,10 @@ class CreatePredictorRequest(object):
         :type: str
         """
         
+        if not kpi:
+            raise ValueError("Invalid value for `kpi`, must not be `None`")
+
+
         self._kpi = kpi
 
     @property
@@ -128,6 +136,7 @@ class CreatePredictorRequest(object):
         :type: int
         """
         
+
         self._routing_timeout_seconds = routing_timeout_seconds
 
     @property
@@ -151,6 +160,7 @@ class CreatePredictorRequest(object):
         :type: PredictorSchedule
         """
         
+
         self._schedule = schedule
 
     @property
@@ -174,6 +184,7 @@ class CreatePredictorRequest(object):
         :type: PredictorWorkloadBalancing
         """
         
+
         self._workload_balancing_config = workload_balancing_config
 
     def to_dict(self):

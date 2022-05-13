@@ -91,6 +91,10 @@ class TopicRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -114,6 +118,7 @@ class TopicRequest(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -164,6 +169,7 @@ class TopicRequest(object):
         :type: list[str]
         """
         
+
         self._program_ids = program_ids
 
     @property
@@ -187,6 +193,7 @@ class TopicRequest(object):
         :type: list[str]
         """
         
+
         self._tags = tags
 
     @property
@@ -210,6 +217,10 @@ class TopicRequest(object):
         :type: str
         """
         
+        if not dialect:
+            raise ValueError("Invalid value for `dialect`, must not be `None`")
+
+
         self._dialect = dialect
 
     @property
@@ -260,6 +271,7 @@ class TopicRequest(object):
         :type: list[Phrase]
         """
         
+
         self._phrases = phrases
 
     def to_dict(self):

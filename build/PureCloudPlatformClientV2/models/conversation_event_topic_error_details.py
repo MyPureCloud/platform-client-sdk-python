@@ -88,6 +88,7 @@ class ConversationEventTopicErrorDetails(object):
         :type: int
         """
         
+
         self._status = status
 
     @property
@@ -111,6 +112,7 @@ class ConversationEventTopicErrorDetails(object):
         :type: str
         """
         
+
         self._code = code
 
     @property
@@ -134,6 +136,7 @@ class ConversationEventTopicErrorDetails(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -157,6 +160,7 @@ class ConversationEventTopicErrorDetails(object):
         :type: str
         """
         
+
         self._message_with_params = message_with_params
 
     @property
@@ -180,6 +184,7 @@ class ConversationEventTopicErrorDetails(object):
         :type: dict(str, str)
         """
         
+
         self._message_params = message_params
 
     @property
@@ -203,6 +208,7 @@ class ConversationEventTopicErrorDetails(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     @property
@@ -226,6 +232,7 @@ class ConversationEventTopicErrorDetails(object):
         :type: str
         """
         
+
         self._uri = uri
 
     def to_dict(self):

@@ -70,6 +70,10 @@ class TextBotTextModeConstraints(object):
         :type: list[str]
         """
         
+        if not language_preferences:
+            raise ValueError("Invalid value for `language_preferences`, must not be `None`")
+
+
         self._language_preferences = language_preferences
 
     def to_dict(self):

@@ -109,6 +109,7 @@ class AnalyticsQueryAggregation(object):
         :type: str
         """
         
+
         self._dimension = dimension
 
     @property
@@ -132,6 +133,7 @@ class AnalyticsQueryAggregation(object):
         :type: str
         """
         
+
         self._metric = metric
 
     @property
@@ -155,6 +157,7 @@ class AnalyticsQueryAggregation(object):
         :type: int
         """
         
+
         self._size = size
 
     @property
@@ -178,6 +181,7 @@ class AnalyticsQueryAggregation(object):
         :type: list[AggregationRange]
         """
         
+
         self._ranges = ranges
 
     def to_dict(self):

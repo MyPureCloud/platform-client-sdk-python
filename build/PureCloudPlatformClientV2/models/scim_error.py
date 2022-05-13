@@ -79,6 +79,7 @@ class ScimError(object):
         :type: list[str]
         """
         
+
         self._schemas = schemas
 
     @property
@@ -102,6 +103,7 @@ class ScimError(object):
         :type: str
         """
         
+
         self._status = status
 
     @property
@@ -152,6 +154,7 @@ class ScimError(object):
         :type: str
         """
         
+
         self._detail = detail
 
     def to_dict(self):

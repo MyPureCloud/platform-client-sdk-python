@@ -73,6 +73,7 @@ class UserAvailableTimes(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -96,6 +97,7 @@ class UserAvailableTimes(object):
         :type: list[AvailableTime]
         """
         
+
         self._available_times = available_times
 
     def to_dict(self):

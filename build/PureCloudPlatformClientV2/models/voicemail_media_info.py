@@ -79,6 +79,7 @@ class VoicemailMediaInfo(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class VoicemailMediaInfo(object):
         :type: str
         """
         
+
         self._media_file_uri = media_file_uri
 
     @property
@@ -125,6 +127,7 @@ class VoicemailMediaInfo(object):
         :type: str
         """
         
+
         self._media_image_uri = media_image_uri
 
     @property
@@ -148,6 +151,7 @@ class VoicemailMediaInfo(object):
         :type: list[float]
         """
         
+
         self._waveform_data = waveform_data
 
     def to_dict(self):

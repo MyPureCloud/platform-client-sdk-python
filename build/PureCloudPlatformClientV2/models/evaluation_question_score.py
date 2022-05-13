@@ -88,6 +88,7 @@ class EvaluationQuestionScore(object):
         :type: str
         """
         
+
         self._question_id = question_id
 
     @property
@@ -111,6 +112,7 @@ class EvaluationQuestionScore(object):
         :type: str
         """
         
+
         self._answer_id = answer_id
 
     @property
@@ -134,6 +136,7 @@ class EvaluationQuestionScore(object):
         :type: int
         """
         
+
         self._score = score
 
     @property
@@ -157,6 +160,7 @@ class EvaluationQuestionScore(object):
         :type: bool
         """
         
+
         self._marked_na = marked_na
 
     @property
@@ -180,6 +184,7 @@ class EvaluationQuestionScore(object):
         :type: str
         """
         
+
         self._assisted_answer_id = assisted_answer_id
 
     @property
@@ -203,6 +208,7 @@ class EvaluationQuestionScore(object):
         :type: bool
         """
         
+
         self._failed_kill_question = failed_kill_question
 
     @property
@@ -226,6 +232,7 @@ class EvaluationQuestionScore(object):
         :type: str
         """
         
+
         self._comments = comments
 
     def to_dict(self):

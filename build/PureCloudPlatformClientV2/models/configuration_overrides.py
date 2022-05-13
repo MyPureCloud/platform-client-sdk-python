@@ -70,6 +70,7 @@ class ConfigurationOverrides(object):
         :type: bool
         """
         
+
         self._priority = priority
 
     def to_dict(self):

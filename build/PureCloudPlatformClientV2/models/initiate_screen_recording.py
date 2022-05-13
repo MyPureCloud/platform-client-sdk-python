@@ -76,6 +76,7 @@ class InitiateScreenRecording(object):
         :type: bool
         """
         
+
         self._record_acw = record_acw
 
     @property
@@ -99,6 +100,7 @@ class InitiateScreenRecording(object):
         :type: ArchiveRetention
         """
         
+
         self._archive_retention = archive_retention
 
     @property
@@ -122,6 +124,7 @@ class InitiateScreenRecording(object):
         :type: DeleteRetention
         """
         
+
         self._delete_retention = delete_retention
 
     def to_dict(self):

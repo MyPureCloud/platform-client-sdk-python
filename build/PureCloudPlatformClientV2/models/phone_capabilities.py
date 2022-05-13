@@ -94,6 +94,7 @@ class PhoneCapabilities(object):
         :type: bool
         """
         
+
         self._provisions = provisions
 
     @property
@@ -117,6 +118,7 @@ class PhoneCapabilities(object):
         :type: bool
         """
         
+
         self._registers = registers
 
     @property
@@ -140,6 +142,7 @@ class PhoneCapabilities(object):
         :type: bool
         """
         
+
         self._dual_registers = dual_registers
 
     @property
@@ -163,6 +166,7 @@ class PhoneCapabilities(object):
         :type: str
         """
         
+
         self._hardware_id_type = hardware_id_type
 
     @property
@@ -186,6 +190,7 @@ class PhoneCapabilities(object):
         :type: bool
         """
         
+
         self._allow_reboot = allow_reboot
 
     @property
@@ -209,6 +214,7 @@ class PhoneCapabilities(object):
         :type: bool
         """
         
+
         self._no_rebalance = no_rebalance
 
     @property
@@ -232,6 +238,7 @@ class PhoneCapabilities(object):
         :type: bool
         """
         
+
         self._no_cloud_provisioning = no_cloud_provisioning
 
     @property
@@ -255,6 +262,7 @@ class PhoneCapabilities(object):
         :type: list[str]
         """
         
+
         self._media_codecs = media_codecs
 
     @property
@@ -278,6 +286,7 @@ class PhoneCapabilities(object):
         :type: bool
         """
         
+
         self._cdm = cdm
 
     def to_dict(self):

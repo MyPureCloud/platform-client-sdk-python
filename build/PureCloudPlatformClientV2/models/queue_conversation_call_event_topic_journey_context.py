@@ -76,6 +76,7 @@ class QueueConversationCallEventTopicJourneyContext(object):
         :type: QueueConversationCallEventTopicJourneyCustomer
         """
         
+
         self._customer = customer
 
     @property
@@ -99,6 +100,7 @@ class QueueConversationCallEventTopicJourneyContext(object):
         :type: QueueConversationCallEventTopicJourneyCustomerSession
         """
         
+
         self._customer_session = customer_session
 
     @property
@@ -122,6 +124,7 @@ class QueueConversationCallEventTopicJourneyContext(object):
         :type: QueueConversationCallEventTopicJourneyAction
         """
         
+
         self._triggering_action = triggering_action
 
     def to_dict(self):

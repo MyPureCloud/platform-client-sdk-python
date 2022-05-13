@@ -70,6 +70,7 @@ class Actions(object):
         :type: list[SkillsToRemove]
         """
         
+
         self._skills_to_remove = skills_to_remove
 
     def to_dict(self):

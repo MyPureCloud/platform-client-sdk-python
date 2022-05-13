@@ -70,6 +70,7 @@ class BulkContactsRequest(object):
         :type: list[ExternalContact]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

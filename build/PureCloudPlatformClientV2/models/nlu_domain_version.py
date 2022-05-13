@@ -112,6 +112,7 @@ class NluDomainVersion(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class NluDomainVersion(object):
         :type: NluDomain
         """
         
+
         self._domain = domain
 
     @property
@@ -158,6 +160,7 @@ class NluDomainVersion(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -181,6 +184,10 @@ class NluDomainVersion(object):
         :type: str
         """
         
+        if not language:
+            raise ValueError("Invalid value for `language`, must not be `None`")
+
+
         self._language = language
 
     @property
@@ -204,6 +211,7 @@ class NluDomainVersion(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -227,6 +235,7 @@ class NluDomainVersion(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -250,6 +259,7 @@ class NluDomainVersion(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -273,6 +283,7 @@ class NluDomainVersion(object):
         :type: datetime
         """
         
+
         self._date_trained = date_trained
 
     @property
@@ -296,6 +307,7 @@ class NluDomainVersion(object):
         :type: datetime
         """
         
+
         self._date_published = date_published
 
     @property
@@ -373,6 +385,7 @@ class NluDomainVersion(object):
         :type: list[IntentDefinition]
         """
         
+
         self._intents = intents
 
     @property
@@ -396,6 +409,7 @@ class NluDomainVersion(object):
         :type: list[NamedEntityTypeDefinition]
         """
         
+
         self._entity_types = entity_types
 
     @property
@@ -419,6 +433,7 @@ class NluDomainVersion(object):
         :type: list[NamedEntityDefinition]
         """
         
+
         self._entities = entities
 
     @property
@@ -442,6 +457,7 @@ class NluDomainVersion(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

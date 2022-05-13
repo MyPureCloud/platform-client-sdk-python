@@ -91,6 +91,7 @@ class JourneyWebEventsNotificationDevice(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -114,6 +115,7 @@ class JourneyWebEventsNotificationDevice(object):
         :type: bool
         """
         
+
         self._is_mobile = is_mobile
 
     @property
@@ -137,6 +139,7 @@ class JourneyWebEventsNotificationDevice(object):
         :type: int
         """
         
+
         self._screen_height = screen_height
 
     @property
@@ -160,6 +163,7 @@ class JourneyWebEventsNotificationDevice(object):
         :type: int
         """
         
+
         self._screen_width = screen_width
 
     @property
@@ -183,6 +187,7 @@ class JourneyWebEventsNotificationDevice(object):
         :type: str
         """
         
+
         self._fingerprint = fingerprint
 
     @property
@@ -206,6 +211,7 @@ class JourneyWebEventsNotificationDevice(object):
         :type: str
         """
         
+
         self._os_family = os_family
 
     @property
@@ -229,6 +235,7 @@ class JourneyWebEventsNotificationDevice(object):
         :type: str
         """
         
+
         self._os_version = os_version
 
     @property

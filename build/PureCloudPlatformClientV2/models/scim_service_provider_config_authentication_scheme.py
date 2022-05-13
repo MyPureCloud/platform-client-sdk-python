@@ -85,6 +85,10 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -108,6 +112,10 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
         :type: str
         """
         
+        if not description:
+            raise ValueError("Invalid value for `description`, must not be `None`")
+
+
         self._description = description
 
     @property
@@ -131,6 +139,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
         :type: str
         """
         
+
         self._spec_uri = spec_uri
 
     @property
@@ -154,6 +163,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
         :type: str
         """
         
+
         self._documentation_uri = documentation_uri
 
     @property
@@ -204,6 +214,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
         :type: bool
         """
         
+
         self._primary = primary
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class RecordingArchiveRestoreTopicMediaResult(object):
         :type: str
         """
         
+
         self._channel_id = channel_id
 
     @property
@@ -102,6 +103,7 @@ class RecordingArchiveRestoreTopicMediaResult(object):
         :type: str
         """
         
+
         self._wave_uri = wave_uri
 
     @property
@@ -125,6 +127,7 @@ class RecordingArchiveRestoreTopicMediaResult(object):
         :type: str
         """
         
+
         self._media_uri = media_uri
 
     @property
@@ -148,6 +151,7 @@ class RecordingArchiveRestoreTopicMediaResult(object):
         :type: list[float]
         """
         
+
         self._waveform_data = waveform_data
 
     def to_dict(self):

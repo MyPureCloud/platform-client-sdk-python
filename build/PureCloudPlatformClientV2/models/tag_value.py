@@ -82,6 +82,7 @@ class TagValue(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,10 @@ class TagValue(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -128,6 +133,7 @@ class TagValue(object):
         :type: bool
         """
         
+
         self._in_use = in_use
 
     @property
@@ -151,6 +157,7 @@ class TagValue(object):
         :type: list[str]
         """
         
+
         self._acl = acl
 
     @property
@@ -174,6 +181,7 @@ class TagValue(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

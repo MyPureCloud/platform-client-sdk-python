@@ -100,6 +100,7 @@ class CoachingNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class CoachingNotification(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class CoachingNotification(object):
         :type: bool
         """
         
+
         self._marked_as_read = marked_as_read
 
     @property
@@ -223,6 +226,7 @@ class CoachingNotification(object):
         :type: datetime
         """
         
+
         self._date_start = date_start
 
     @property
@@ -246,6 +250,7 @@ class CoachingNotification(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -296,6 +301,7 @@ class CoachingNotification(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -319,6 +325,7 @@ class CoachingNotification(object):
         :type: CoachingAppointmentResponse
         """
         
+
         self._appointment = appointment
 
     @property
@@ -342,6 +349,7 @@ class CoachingNotification(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

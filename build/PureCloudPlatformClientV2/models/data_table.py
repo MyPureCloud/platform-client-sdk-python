@@ -85,6 +85,7 @@ class DataTable(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class DataTable(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class DataTable(object):
         :type: WritableDivision
         """
         
+
         self._division = division
 
     @property
@@ -154,6 +157,7 @@ class DataTable(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -177,6 +181,7 @@ class DataTable(object):
         :type: JsonSchemaDocument
         """
         
+
         self._schema = schema
 
     @property
@@ -200,6 +205,7 @@ class DataTable(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

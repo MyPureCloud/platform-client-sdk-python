@@ -73,6 +73,7 @@ class OrgWhitelistSettings(object):
         :type: bool
         """
         
+
         self._enable_whitelist = enable_whitelist
 
     @property
@@ -96,6 +97,7 @@ class OrgWhitelistSettings(object):
         :type: list[str]
         """
         
+
         self._domain_whitelist = domain_whitelist
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class FacetStatistics(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -111,6 +112,7 @@ class FacetStatistics(object):
         :type: float
         """
         
+
         self._min = min
 
     @property
@@ -134,6 +136,7 @@ class FacetStatistics(object):
         :type: float
         """
         
+
         self._max = max
 
     @property
@@ -157,6 +160,7 @@ class FacetStatistics(object):
         :type: float
         """
         
+
         self._mean = mean
 
     @property
@@ -180,6 +184,7 @@ class FacetStatistics(object):
         :type: float
         """
         
+
         self._std_deviation = std_deviation
 
     @property
@@ -203,6 +208,7 @@ class FacetStatistics(object):
         :type: datetime
         """
         
+
         self._date_min = date_min
 
     @property
@@ -226,6 +232,7 @@ class FacetStatistics(object):
         :type: datetime
         """
         
+
         self._date_max = date_max
 
     def to_dict(self):

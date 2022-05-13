@@ -136,6 +136,10 @@ class WorkPlanShift(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -159,6 +163,7 @@ class WorkPlanShift(object):
         :type: SetWrapperDayOfWeek
         """
         
+
         self._days = days
 
     @property
@@ -182,6 +187,7 @@ class WorkPlanShift(object):
         :type: bool
         """
         
+
         self._flexible_start_time = flexible_start_time
 
     @property
@@ -205,6 +211,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._exact_start_time_minutes_from_midnight = exact_start_time_minutes_from_midnight
 
     @property
@@ -228,6 +235,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._earliest_start_time_minutes_from_midnight = earliest_start_time_minutes_from_midnight
 
     @property
@@ -251,6 +259,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._latest_start_time_minutes_from_midnight = latest_start_time_minutes_from_midnight
 
     @property
@@ -274,6 +283,7 @@ class WorkPlanShift(object):
         :type: bool
         """
         
+
         self._constrain_stop_time = constrain_stop_time
 
     @property
@@ -297,6 +307,7 @@ class WorkPlanShift(object):
         :type: bool
         """
         
+
         self._constrain_latest_stop_time = constrain_latest_stop_time
 
     @property
@@ -320,6 +331,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._latest_stop_time_minutes_from_midnight = latest_stop_time_minutes_from_midnight
 
     @property
@@ -343,6 +355,7 @@ class WorkPlanShift(object):
         :type: bool
         """
         
+
         self._constrain_earliest_stop_time = constrain_earliest_stop_time
 
     @property
@@ -366,6 +379,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._earliest_stop_time_minutes_from_midnight = earliest_stop_time_minutes_from_midnight
 
     @property
@@ -389,6 +403,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._start_increment_minutes = start_increment_minutes
 
     @property
@@ -412,6 +427,7 @@ class WorkPlanShift(object):
         :type: bool
         """
         
+
         self._flexible_paid_time = flexible_paid_time
 
     @property
@@ -435,6 +451,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._exact_paid_time_minutes = exact_paid_time_minutes
 
     @property
@@ -458,6 +475,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._minimum_paid_time_minutes = minimum_paid_time_minutes
 
     @property
@@ -481,6 +499,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._maximum_paid_time_minutes = maximum_paid_time_minutes
 
     @property
@@ -504,6 +523,7 @@ class WorkPlanShift(object):
         :type: bool
         """
         
+
         self._constrain_contiguous_work_time = constrain_contiguous_work_time
 
     @property
@@ -527,6 +547,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._minimum_contiguous_work_time_minutes = minimum_contiguous_work_time_minutes
 
     @property
@@ -550,6 +571,7 @@ class WorkPlanShift(object):
         :type: int
         """
         
+
         self._maximum_contiguous_work_time_minutes = maximum_contiguous_work_time_minutes
 
     @property
@@ -573,6 +595,7 @@ class WorkPlanShift(object):
         :type: list[WorkPlanActivity]
         """
         
+
         self._activities = activities
 
     @property
@@ -596,6 +619,7 @@ class WorkPlanShift(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -619,6 +643,7 @@ class WorkPlanShift(object):
         :type: bool
         """
         
+
         self._delete = delete
 
     @property
@@ -642,6 +667,7 @@ class WorkPlanShift(object):
         :type: str
         """
         
+
         self._validation_id = validation_id
 
     def to_dict(self):

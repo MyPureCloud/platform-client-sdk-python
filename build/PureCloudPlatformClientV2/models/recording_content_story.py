@@ -103,6 +103,7 @@ class RecordingContentStory(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -126,6 +127,7 @@ class RecordingContentStory(object):
         :type: str
         """
         
+
         self._reply_to_id = reply_to_id
 
     def to_dict(self):

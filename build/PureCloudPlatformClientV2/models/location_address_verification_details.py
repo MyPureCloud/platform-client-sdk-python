@@ -106,6 +106,7 @@ class LocationAddressVerificationDetails(object):
         :type: datetime
         """
         
+
         self._date_finished = date_finished
 
     @property
@@ -129,6 +130,7 @@ class LocationAddressVerificationDetails(object):
         :type: datetime
         """
         
+
         self._date_started = date_started
 
     @property
@@ -152,6 +154,7 @@ class LocationAddressVerificationDetails(object):
         :type: str
         """
         
+
         self._service = service
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class Category(object):
         :type: str
         """
         
+
         self._name = name
 
     def to_dict(self):

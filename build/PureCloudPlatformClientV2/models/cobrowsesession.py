@@ -148,6 +148,7 @@ class Cobrowsesession(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -198,6 +199,7 @@ class Cobrowsesession(object):
         :type: Address
         """
         
+
         self._pcSelf = pcSelf
 
     @property
@@ -221,6 +223,7 @@ class Cobrowsesession(object):
         :type: str
         """
         
+
         self._cobrowse_session_id = cobrowse_session_id
 
     @property
@@ -244,6 +247,7 @@ class Cobrowsesession(object):
         :type: str
         """
         
+
         self._cobrowse_role = cobrowse_role
 
     @property
@@ -267,6 +271,7 @@ class Cobrowsesession(object):
         :type: list[str]
         """
         
+
         self._controlling = controlling
 
     @property
@@ -290,6 +295,7 @@ class Cobrowsesession(object):
         :type: str
         """
         
+
         self._viewer_url = viewer_url
 
     @property
@@ -313,6 +319,7 @@ class Cobrowsesession(object):
         :type: datetime
         """
         
+
         self._provider_event_time = provider_event_time
 
     @property
@@ -336,6 +343,7 @@ class Cobrowsesession(object):
         :type: datetime
         """
         
+
         self._start_alerting_time = start_alerting_time
 
     @property
@@ -359,6 +367,7 @@ class Cobrowsesession(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -382,6 +391,7 @@ class Cobrowsesession(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -405,6 +415,7 @@ class Cobrowsesession(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -428,6 +439,7 @@ class Cobrowsesession(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -451,6 +463,7 @@ class Cobrowsesession(object):
         :type: list[Segment]
         """
         
+
         self._segments = segments
 
     @property
@@ -474,6 +487,7 @@ class Cobrowsesession(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -497,6 +511,7 @@ class Cobrowsesession(object):
         :type: AfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -520,6 +535,7 @@ class Cobrowsesession(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

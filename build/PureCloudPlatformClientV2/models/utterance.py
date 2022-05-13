@@ -70,6 +70,7 @@ class Utterance(object):
         :type: str
         """
         
+
         self._utterance_text = utterance_text
 
     def to_dict(self):

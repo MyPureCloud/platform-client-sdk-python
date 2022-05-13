@@ -91,6 +91,7 @@ class MessageMediaData(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class MessageMediaData(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class MessageMediaData(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -160,6 +163,7 @@ class MessageMediaData(object):
         :type: str
         """
         
+
         self._media_type = media_type
 
     @property
@@ -183,6 +187,7 @@ class MessageMediaData(object):
         :type: int
         """
         
+
         self._content_length_bytes = content_length_bytes
 
     @property
@@ -206,6 +211,7 @@ class MessageMediaData(object):
         :type: str
         """
         
+
         self._upload_url = upload_url
 
     @property
@@ -256,6 +262,7 @@ class MessageMediaData(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

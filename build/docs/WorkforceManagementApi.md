@@ -158,6 +158,8 @@ Delete business unit
 
 A business unit cannot be deleted if it contains one or more management units
 
+
+
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId} 
 
 Requires ANY permissions: 
@@ -470,6 +472,8 @@ except ApiException as e:
 Delete a short term forecast
 
 Must not be tied to any schedules
+
+
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} 
 
@@ -1090,6 +1094,8 @@ Get business unit
 
 Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
 
+
+
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId} 
 
 Requires ANY permissions: 
@@ -1422,7 +1428,7 @@ Get all authorized management units in the business unit
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1990,7 +1996,7 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 schedule_id = 'schedule_id_example' # str | The ID of the schedule
-force_download = true # bool | Whether to force the result to come via download url.  For testing purposes only (optional)
+force_download = True # bool | Whether to force the result to come via download url.  For testing purposes only (optional)
 
 try:
     # Get the headcount forecast by planning group for the schedule
@@ -2083,6 +2089,8 @@ Get the list of week schedules for the specified week
 
 Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
+
+
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules 
 
 Requires ANY permissions: 
@@ -2105,7 +2113,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
-include_only_published = true # bool | includeOnlyPublished (optional)
+include_only_published = True # bool | includeOnlyPublished (optional)
 expand = 'expand_example' # str | expand (optional)
 
 try:
@@ -2198,6 +2206,8 @@ Get the result of a short term forecast calculation
 
 Includes modifications unless you pass the doNotApplyModifications query parameter
 
+
+
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data 
 
 Requires ANY permissions: 
@@ -2221,7 +2231,7 @@ business_unit_id = 'business_unit_id_example' # str | The ID of the business uni
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
 week_number = 56 # int | The week number to fetch (for multi-week forecasts) (optional)
-force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
     # Get the result of a short term forecast calculation
@@ -2312,6 +2322,8 @@ Get the result of a long term forecast calculation
 
 Includes modifications unless you pass the doNotApplyModifications query parameter
 
+
+
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata 
 
 Requires ANY permissions: 
@@ -2334,7 +2346,7 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
-force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
     # Get the result of a long term forecast calculation
@@ -2426,6 +2438,8 @@ Get short term forecasts
 
 Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
+
+
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts 
 
 Requires ANY permissions: 
@@ -2482,7 +2496,7 @@ Get business units
 
 Wraps GET /api/v2/workforcemanagement/businessunits 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2585,7 +2599,7 @@ Get ics formatted calendar based on shareable link
 
 Wraps GET /api/v2/workforcemanagement/calendar/data/ics 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2771,6 +2785,8 @@ This endpoint does not need any parameters.
 Get management unit
 
 settings.shortTermForecasting is deprecated and now lives on the business unit
+
+
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId} 
 
@@ -2993,7 +3009,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
-force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
     # Get a list of user schedule adherence records for the requested management unit
@@ -3047,7 +3063,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 agent_id = 'agent_id_example' # str | The agent id
-exclude_capabilities = true # bool | Excludes all capabilities of the agent such as queues, languages, and skills (optional)
+exclude_capabilities = True # bool | Excludes all capabilities of the agent such as queues, languages, and skills (optional)
 
 try:
     # Get data for agent in the management unit
@@ -3238,6 +3254,8 @@ Gets a time off limit object
 
 Returns properties of time off limit object, but not daily values.
 
+
+
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} 
 
 Requires ANY permissions: 
@@ -3290,6 +3308,8 @@ except ApiException as e:
 Gets a list of time off limit objects under management unit.
 
 Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+
+
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits 
 
@@ -3579,7 +3599,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.
-recently_reviewed = false # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to false)
+recently_reviewed = False # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to False)
 
 try:
     # Get a list of time off requests for a given user
@@ -3596,7 +3616,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The userId to whom the Time Off Request applies. |  |
-| **recently_reviewed** | **bool**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
+| **recently_reviewed** | **bool**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3695,7 +3715,7 @@ management_unit_id = 'management_unit_id_example' # str | The ID of the manageme
 week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format.
 schedule_id = 'schedule_id_example' # str | The ID of the schedule to fetch
 expand = 'expand_example' # str | Which fields, if any, to expand (optional)
-force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
     # Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
@@ -3753,7 +3773,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format.
-include_only_published = true # bool | Return only published schedules (optional)
+include_only_published = True # bool | Return only published schedules (optional)
 earliest_week_date = 'earliest_week_date_example' # str | The start date of the earliest week to query in yyyy-MM-dd format (optional)
 latest_week_date = 'latest_week_date_example' # str | The start date of the latest week to query in yyyy-MM-dd format (optional)
 
@@ -3813,7 +3833,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-evaluate_matches = true # bool | Whether to evaluate the matches for violations (optional) (default to true)
+evaluate_matches = True # bool | Whether to evaluate the matches for violations (optional) (default to True)
 
 try:
     # Gets all the shift trades for a given week
@@ -3830,7 +3850,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **evaluate_matches** | **bool**| Whether to evaluate the matches for violations | [optional] [default to true] |
+| **evaluate_matches** | **bool**| Whether to evaluate the matches for violations | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4011,6 +4031,8 @@ Get work plans
 
 \"expand=details\" is deprecated
 
+
+
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans 
 
 Requires ANY permissions: 
@@ -4070,7 +4092,7 @@ Get management units
 
 Wraps GET /api/v2/workforcemanagement/managementunits 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4177,9 +4199,11 @@ Get a list of notifications for the current user
 
 Notifications are only initially sent if you have the relevant Notify and Edit permissions
 
+
+
 Wraps GET /api/v2/workforcemanagement/notifications 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4446,7 +4470,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-recently_reviewed = false # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to false)
+recently_reviewed = False # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to False)
 
 try:
     # Get a list of time off requests for the current user
@@ -4461,7 +4485,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **recently_reviewed** | **bool**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
+| **recently_reviewed** | **bool**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4803,6 +4827,8 @@ Updates a time off limit object.
 
 Updates time off limit object properties, but not daily values.
 
+
+
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} 
 
 Requires ANY permissions: 
@@ -4962,7 +4988,7 @@ except ApiException as e:
 
 <a name="patch_workforcemanagement_managementunit_week_shifttrade"></a>
 
-## [**ShiftTradeResponse**](ShiftTradeResponse.html) patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, body, trade_id)
+## [**ShiftTradeResponse**](ShiftTradeResponse.html) patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, trade_id, body)
 
 
 
@@ -4991,12 +5017,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-body = PureCloudPlatformClientV2.PatchShiftTradeRequest() # PatchShiftTradeRequest | body
 trade_id = 'trade_id_example' # str | The ID of the shift trade to update
+body = PureCloudPlatformClientV2.PatchShiftTradeRequest() # PatchShiftTradeRequest | body
 
 try:
     # Updates a shift trade. This route can only be called by the initiating agent
-    api_response = api_instance.patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, body, trade_id)
+    api_response = api_instance.patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, trade_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_week_shifttrade: %s\n" % e)
@@ -5009,8 +5035,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest.html)| body |  |
 | **trade_id** | **str**| The ID of the shift trade to update |  |
+| **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest.html)| body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5019,7 +5045,7 @@ except ApiException as e:
 
 <a name="patch_workforcemanagement_managementunit_workplan"></a>
 
-## [**WorkPlan**](WorkPlan.html) patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, body=body, validation_mode=validation_mode)
+## [**WorkPlan**](WorkPlan.html) patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, validation_mode=validation_mode, body=body)
 
 
 
@@ -5048,12 +5074,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 work_plan_id = 'work_plan_id_example' # str | The ID of the work plan to update
-body = PureCloudPlatformClientV2.WorkPlan() # WorkPlan | body (optional)
 validation_mode = 'validation_mode_example' # str | Allows to update work plan even if validation result is invalid (optional)
+body = PureCloudPlatformClientV2.WorkPlan() # WorkPlan | body (optional)
 
 try:
     # Update a work plan
-    api_response = api_instance.patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, body=body, validation_mode=validation_mode)
+    api_response = api_instance.patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, validation_mode=validation_mode, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_workplan: %s\n" % e)
@@ -5066,8 +5092,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_id** | **str**| The ID of the work plan to update |  |
-| **body** | [**WorkPlan**](WorkPlan.html)| body | [optional]  |
 | **validation_mode** | **str**| Allows to update work plan even if validation result is invalid | [optional] <br />**Values**: Ignore |
+| **body** | [**WorkPlan**](WorkPlan.html)| body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5339,7 +5365,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_businessunit_agentschedules_search"></a>
 
-## [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html) post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, body=body, force_async=force_async, force_download_service=force_download_service)
+## [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html) post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, force_async=force_async, force_download_service=force_download_service, body=body)
 
 
 
@@ -5368,13 +5394,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 body = PureCloudPlatformClientV2.BuSearchAgentSchedulesRequest() # BuSearchAgentSchedulesRequest | body (optional)
-force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
     # Search published schedules
-    api_response = api_instance.post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, body=body, force_async=force_async, force_download_service=force_download_service)
+    api_response = api_instance.post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, force_async=force_async, force_download_service=force_download_service, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_agentschedules_search: %s\n" % e)
@@ -5386,9 +5412,9 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5425,7 +5451,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
-force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
 body = PureCloudPlatformClientV2.IntradayPlanningGroupRequest() # IntradayPlanningGroupRequest | body (optional)
 
 try:
@@ -5590,8 +5616,8 @@ business_unit_id = 'business_unit_id_example' # str | The ID of the business uni
 week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 schedule_id = 'schedule_id_example' # str | The ID of the schedule
 body = PureCloudPlatformClientV2.BuQueryAgentSchedulesRequest() # BuQueryAgentSchedulesRequest | body
-force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
     # Loads agent schedule data from the schedule. Used in combination with the metadata route
@@ -5742,6 +5768,8 @@ Starts processing a schedule update
 
 Call after uploading the schedule data to the url supplied by the /update/uploadurl route
 
+
+
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update 
 
 Requires ANY permissions: 
@@ -5798,6 +5826,8 @@ except ApiException as e:
 Creates a signed upload URL for updating a schedule
 
 Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+
+
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl 
 
@@ -5966,6 +5996,8 @@ Starts processing a schedule import
 
 Call after uploading the schedule data to the url supplied by the /import/uploadurl route
 
+
+
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import 
 
 Requires ANY permissions: 
@@ -6020,6 +6052,8 @@ except ApiException as e:
 Creates a signed upload URL for importing a schedule
 
 Once the upload is complete, call the /import route to start the schedule import process
+
+
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl 
 
@@ -6099,7 +6133,7 @@ business_unit_id = 'business_unit_id_example' # str | The ID of the business uni
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast to copy
 body = PureCloudPlatformClientV2.CopyBuForecastRequest() # CopyBuForecastRequest | body
-force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
 
 try:
     # Copy a short term forecast
@@ -6157,7 +6191,7 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.GenerateBuForecastRequest() # GenerateBuForecastRequest | 
-force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
 
 try:
     # Generate a short term forecast
@@ -6191,6 +6225,8 @@ except ApiException as e:
 Starts importing the uploaded short term forecast
 
 Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+
+
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import 
 
@@ -6247,6 +6283,8 @@ Creates a signed upload URL for importing a short term forecast
 
 Once the upload is complete, call the /import route to start the short term forecast import process
 
+
+
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl 
 
 Requires ANY permissions: 
@@ -6301,6 +6339,8 @@ except ApiException as e:
 Add a new business unit
 
 It may take a minute or two for a new business unit to be available for api operations
+
+
 
 Wraps POST /api/v2/workforcemanagement/businessunits 
 
@@ -6373,7 +6413,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-language = 'en-US' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar (optional) (default to en-US)
+language = ''en-US'' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar (optional) (default to 'en-US')
 
 try:
     # Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
@@ -6388,7 +6428,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to en-US] |
+| **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to &#39;en-US&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -6494,7 +6534,7 @@ void (empty response body)
 
 <a name="post_workforcemanagement_managementunit_agentschedules_search"></a>
 
-## [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html) post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, body=body, force_async=force_async, force_download_service=force_download_service)
+## [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html) post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, force_async=force_async, force_download_service=force_download_service, body=body)
 
 
 
@@ -6523,13 +6563,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 body = PureCloudPlatformClientV2.BuSearchAgentSchedulesRequest() # BuSearchAgentSchedulesRequest | body (optional)
-force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
     # Query published schedules for given given time range for set of users
-    api_response = api_instance.post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, body=body, force_async=force_async, force_download_service=force_download_service)
+    api_response = api_instance.post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, force_async=force_async, force_download_service=force_download_service, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_agentschedules_search: %s\n" % e)
@@ -6541,9 +6581,9 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6559,6 +6599,8 @@ except ApiException as e:
 Request a historical adherence report
 
 The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+
+
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery 
 
@@ -6612,6 +6654,8 @@ except ApiException as e:
 Move the requested management unit to a new business unit
 
 Returns status 200 if the management unit is already in the requested business unit
+
+
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move 
 
@@ -6719,6 +6763,8 @@ except ApiException as e:
 Creates a new time off limit object under management unit.
 
 Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+
+
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits 
 
@@ -6932,6 +6978,8 @@ Fetches time off requests matching the conditions specified in the request body
 
 Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
 
+
+
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query 
 
 Requires ANY permissions: 
@@ -7030,7 +7078,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_week_shifttrade_match"></a>
 
-## [**MatchShiftTradeResponse**](MatchShiftTradeResponse.html) post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, body, trade_id)
+## [**MatchShiftTradeResponse**](MatchShiftTradeResponse.html) post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, trade_id, body)
 
 
 
@@ -7059,12 +7107,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-body = PureCloudPlatformClientV2.MatchShiftTradeRequest() # MatchShiftTradeRequest | body
 trade_id = 'trade_id_example' # str | The ID of the shift trade to update
+body = PureCloudPlatformClientV2.MatchShiftTradeRequest() # MatchShiftTradeRequest | body
 
 try:
     # Matches a shift trade. This route can only be called by the receiving agent
-    api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, body, trade_id)
+    api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, trade_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrade_match: %s\n" % e)
@@ -7077,8 +7125,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest.html)| body |  |
 | **trade_id** | **str**| The ID of the shift trade to update |  |
+| **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest.html)| body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7205,6 +7253,8 @@ Updates the state of a batch of shift trades
 
 Admin functionality is not supported with \"mine\".
 
+
+
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk 
 
 Requires ANY permissions: 
@@ -7228,7 +7278,7 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.BulkShiftTradeStateUpdateRequest() # BulkShiftTradeStateUpdateRequest | body
-force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
 
 try:
     # Updates the state of a batch of shift trades
@@ -7310,7 +7360,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_workplan_validate"></a>
 
-## [**ValidateWorkPlanResponse**](ValidateWorkPlanResponse.html) post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, body=body, expand=expand)
+## [**ValidateWorkPlanResponse**](ValidateWorkPlanResponse.html) post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, expand=expand, body=body)
 
 
 
@@ -7340,12 +7390,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 work_plan_id = 'work_plan_id_example' # str | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
-body = PureCloudPlatformClientV2.WorkPlanValidationRequest() # WorkPlanValidationRequest | body (optional)
 expand = ['expand_example'] # list[str] |  (optional)
+body = PureCloudPlatformClientV2.WorkPlanValidationRequest() # WorkPlanValidationRequest | body (optional)
 
 try:
     # Validate Work Plan
-    api_response = api_instance.post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, body=body, expand=expand)
+    api_response = api_instance.post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, expand=expand, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplan_validate: %s\n" % e)
@@ -7358,8 +7408,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_id** | **str**| The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. |  |
-| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest.html)| body | [optional]  |
 | **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: messages |
+| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7476,7 +7526,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_workplans"></a>
 
-## [**WorkPlan**](WorkPlan.html) post_workforcemanagement_managementunit_workplans(management_unit_id, body=body, validation_mode=validation_mode)
+## [**WorkPlan**](WorkPlan.html) post_workforcemanagement_managementunit_workplans(management_unit_id, validation_mode=validation_mode, body=body)
 
 
 
@@ -7504,12 +7554,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-body = PureCloudPlatformClientV2.CreateWorkPlan() # CreateWorkPlan | body (optional)
 validation_mode = 'validation_mode_example' # str | Allows to create work plan even if the validation result is invalid (optional)
+body = PureCloudPlatformClientV2.CreateWorkPlan() # CreateWorkPlan | body (optional)
 
 try:
     # Create a new work plan
-    api_response = api_instance.post_workforcemanagement_managementunit_workplans(management_unit_id, body=body, validation_mode=validation_mode)
+    api_response = api_instance.post_workforcemanagement_managementunit_workplans(management_unit_id, validation_mode=validation_mode, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplans: %s\n" % e)
@@ -7521,8 +7571,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **body** | [**CreateWorkPlan**](CreateWorkPlan.html)| body | [optional]  |
 | **validation_mode** | **str**| Allows to create work plan even if the validation result is invalid | [optional] <br />**Values**: Ignore |
+| **body** | [**CreateWorkPlan**](CreateWorkPlan.html)| body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7538,6 +7588,8 @@ except ApiException as e:
 Add a management unit
 
 It may take a minute or two for a new management unit to be available for api operations
+
+
 
 Wraps POST /api/v2/workforcemanagement/managementunits 
 
@@ -7592,7 +7644,7 @@ Mark a list of notifications as read or unread
 
 Wraps POST /api/v2/workforcemanagement/notifications/update 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -7792,6 +7844,8 @@ except ApiException as e:
 Sets daily values for a date range of time off limit object
 
 Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+
+
 
 Wraps PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values 
 

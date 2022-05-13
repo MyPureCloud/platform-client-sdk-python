@@ -115,6 +115,7 @@ class CalibrationCreate(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class CalibrationCreate(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -161,6 +163,7 @@ class CalibrationCreate(object):
         :type: User
         """
         
+
         self._calibrator = calibrator
 
     @property
@@ -184,6 +187,7 @@ class CalibrationCreate(object):
         :type: User
         """
         
+
         self._agent = agent
 
     @property
@@ -207,6 +211,10 @@ class CalibrationCreate(object):
         :type: ConversationReference
         """
         
+        if not conversation:
+            raise ValueError("Invalid value for `conversation`, must not be `None`")
+
+
         self._conversation = conversation
 
     @property
@@ -230,6 +238,7 @@ class CalibrationCreate(object):
         :type: EvaluationForm
         """
         
+
         self._evaluation_form = evaluation_form
 
     @property
@@ -253,6 +262,7 @@ class CalibrationCreate(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     @property
@@ -276,6 +286,7 @@ class CalibrationCreate(object):
         :type: int
         """
         
+
         self._average_score = average_score
 
     @property
@@ -299,6 +310,7 @@ class CalibrationCreate(object):
         :type: int
         """
         
+
         self._high_score = high_score
 
     @property
@@ -322,6 +334,7 @@ class CalibrationCreate(object):
         :type: int
         """
         
+
         self._low_score = low_score
 
     @property
@@ -345,6 +358,7 @@ class CalibrationCreate(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -368,6 +382,7 @@ class CalibrationCreate(object):
         :type: list[Evaluation]
         """
         
+
         self._evaluations = evaluations
 
     @property
@@ -391,6 +406,7 @@ class CalibrationCreate(object):
         :type: list[User]
         """
         
+
         self._evaluators = evaluators
 
     @property
@@ -414,6 +430,7 @@ class CalibrationCreate(object):
         :type: Evaluation
         """
         
+
         self._scoring_index = scoring_index
 
     @property
@@ -437,6 +454,7 @@ class CalibrationCreate(object):
         :type: User
         """
         
+
         self._expert_evaluator = expert_evaluator
 
     @property
@@ -460,6 +478,7 @@ class CalibrationCreate(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

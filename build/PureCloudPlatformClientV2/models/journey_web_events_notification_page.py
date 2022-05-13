@@ -97,6 +97,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -120,6 +121,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -143,6 +145,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: str
         """
         
+
         self._domain = domain
 
     @property
@@ -166,6 +169,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: str
         """
         
+
         self._fragment = fragment
 
     @property
@@ -189,6 +193,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: str
         """
         
+
         self._hostname = hostname
 
     @property
@@ -212,6 +217,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: str
         """
         
+
         self._keywords = keywords
 
     @property
@@ -235,6 +241,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: str
         """
         
+
         self._lang = lang
 
     @property
@@ -258,6 +265,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: str
         """
         
+
         self._pathname = pathname
 
     @property
@@ -281,6 +289,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: str
         """
         
+
         self._query_string = query_string
 
     @property
@@ -304,6 +313,7 @@ class JourneyWebEventsNotificationPage(object):
         :type: list[str]
         """
         
+
         self._breadcrumb = breadcrumb
 
     def to_dict(self):

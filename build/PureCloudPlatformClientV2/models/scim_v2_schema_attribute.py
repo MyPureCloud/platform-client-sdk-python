@@ -103,6 +103,7 @@ class ScimV2SchemaAttribute(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -153,6 +154,7 @@ class ScimV2SchemaAttribute(object):
         :type: list[ScimV2SchemaAttribute]
         """
         
+
         self._sub_attributes = sub_attributes
 
     @property
@@ -176,6 +178,7 @@ class ScimV2SchemaAttribute(object):
         :type: bool
         """
         
+
         self._multi_valued = multi_valued
 
     @property
@@ -199,6 +202,7 @@ class ScimV2SchemaAttribute(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -222,6 +226,7 @@ class ScimV2SchemaAttribute(object):
         :type: bool
         """
         
+
         self._required = required
 
     @property
@@ -245,6 +250,7 @@ class ScimV2SchemaAttribute(object):
         :type: list[str]
         """
         
+
         self._canonical_values = canonical_values
 
     @property
@@ -268,6 +274,7 @@ class ScimV2SchemaAttribute(object):
         :type: bool
         """
         
+
         self._case_exact = case_exact
 
     @property
@@ -372,6 +379,7 @@ class ScimV2SchemaAttribute(object):
         :type: list[str]
         """
         
+
         self._reference_types = reference_types
 
     def to_dict(self):

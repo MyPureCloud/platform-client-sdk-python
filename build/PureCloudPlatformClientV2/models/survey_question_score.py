@@ -91,6 +91,7 @@ class SurveyQuestionScore(object):
         :type: str
         """
         
+
         self._question_id = question_id
 
     @property
@@ -114,6 +115,7 @@ class SurveyQuestionScore(object):
         :type: str
         """
         
+
         self._answer_id = answer_id
 
     @property
@@ -137,6 +139,7 @@ class SurveyQuestionScore(object):
         :type: int
         """
         
+
         self._score = score
 
     @property
@@ -160,6 +163,7 @@ class SurveyQuestionScore(object):
         :type: bool
         """
         
+
         self._marked_na = marked_na
 
     @property
@@ -183,6 +187,7 @@ class SurveyQuestionScore(object):
         :type: str
         """
         
+
         self._assisted_answer_id = assisted_answer_id
 
     @property
@@ -206,6 +211,7 @@ class SurveyQuestionScore(object):
         :type: int
         """
         
+
         self._nps_score = nps_score
 
     @property
@@ -229,6 +235,7 @@ class SurveyQuestionScore(object):
         :type: str
         """
         
+
         self._nps_text_answer = nps_text_answer
 
     @property
@@ -252,6 +259,7 @@ class SurveyQuestionScore(object):
         :type: str
         """
         
+
         self._free_text_answer = free_text_answer
 
     def to_dict(self):

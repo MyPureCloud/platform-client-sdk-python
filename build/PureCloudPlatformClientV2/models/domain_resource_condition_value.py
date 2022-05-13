@@ -79,6 +79,7 @@ class DomainResourceConditionValue(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -102,6 +103,7 @@ class DomainResourceConditionValue(object):
         :type: Queue
         """
         
+
         self._queue = queue
 
     @property
@@ -125,6 +127,7 @@ class DomainResourceConditionValue(object):
         :type: str
         """
         
+
         self._value = value
 
     @property

@@ -103,6 +103,7 @@ class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification(o
         :type: WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast
         """
         
+
         self._result = result
 
     @property
@@ -126,6 +127,7 @@ class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification(o
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     def to_dict(self):

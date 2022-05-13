@@ -82,6 +82,7 @@ class ActionMapAction(object):
         :type: ActionMapActionTemplate
         """
         
+
         self._action_template = action_template
 
     @property
@@ -132,6 +133,7 @@ class ActionMapAction(object):
         :type: ArchitectFlowFields
         """
         
+
         self._architect_flow_fields = architect_flow_fields
 
     @property
@@ -155,6 +157,7 @@ class ActionMapAction(object):
         :type: WebMessagingOfferFields
         """
         
+
         self._web_messaging_offer_fields = web_messaging_offer_fields
 
     @property
@@ -178,6 +181,7 @@ class ActionMapAction(object):
         :type: OpenActionFields
         """
         
+
         self._open_action_fields = open_action_fields
 
     def to_dict(self):

@@ -109,6 +109,7 @@ class EdgeLogsJob(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,10 @@ class EdgeLogsJob(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -155,6 +160,7 @@ class EdgeLogsJob(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -178,6 +184,7 @@ class EdgeLogsJob(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -201,6 +208,7 @@ class EdgeLogsJob(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -224,6 +232,7 @@ class EdgeLogsJob(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -247,6 +256,7 @@ class EdgeLogsJob(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -270,6 +280,7 @@ class EdgeLogsJob(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -293,6 +304,7 @@ class EdgeLogsJob(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -343,6 +355,7 @@ class EdgeLogsJob(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -366,6 +379,7 @@ class EdgeLogsJob(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -389,6 +403,7 @@ class EdgeLogsJob(object):
         :type: list[EdgeLogsJobFile]
         """
         
+
         self._files = files
 
     @property
@@ -412,6 +427,7 @@ class EdgeLogsJob(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResu
         :type: list[WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

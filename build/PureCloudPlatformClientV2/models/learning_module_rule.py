@@ -79,6 +79,7 @@ class LearningModuleRule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,10 @@ class LearningModuleRule(object):
         :type: bool
         """
         
+        if not is_active:
+            raise ValueError("Invalid value for `is_active`, must not be `None`")
+
+
         self._is_active = is_active
 
     @property
@@ -125,6 +130,10 @@ class LearningModuleRule(object):
         :type: list[LearningModuleRuleParts]
         """
         
+        if not parts:
+            raise ValueError("Invalid value for `parts`, must not be `None`")
+
+
         self._parts = parts
 
     @property
@@ -148,6 +157,7 @@ class LearningModuleRule(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

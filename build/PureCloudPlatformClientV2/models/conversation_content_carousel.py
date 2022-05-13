@@ -70,6 +70,7 @@ class ConversationContentCarousel(object):
         :type: list[ConversationContentCard]
         """
         
+
         self._cards = cards
 
     def to_dict(self):

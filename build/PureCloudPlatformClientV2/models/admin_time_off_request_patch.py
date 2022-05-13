@@ -115,6 +115,7 @@ class AdminTimeOffRequestPatch(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -138,6 +139,7 @@ class AdminTimeOffRequestPatch(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -161,6 +163,7 @@ class AdminTimeOffRequestPatch(object):
         :type: list[str]
         """
         
+
         self._full_day_management_unit_dates = full_day_management_unit_dates
 
     @property
@@ -184,6 +187,7 @@ class AdminTimeOffRequestPatch(object):
         :type: list[datetime]
         """
         
+
         self._partial_day_start_date_times = partial_day_start_date_times
 
     @property
@@ -207,6 +211,7 @@ class AdminTimeOffRequestPatch(object):
         :type: int
         """
         
+
         self._daily_duration_minutes = daily_duration_minutes
 
     @property
@@ -230,6 +235,10 @@ class AdminTimeOffRequestPatch(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

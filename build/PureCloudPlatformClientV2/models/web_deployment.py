@@ -106,6 +106,7 @@ class WebDeployment(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,10 @@ class WebDeployment(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -152,6 +157,7 @@ class WebDeployment(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -175,6 +181,10 @@ class WebDeployment(object):
         :type: WebDeploymentConfigurationVersionEntityRef
         """
         
+        if not configuration:
+            raise ValueError("Invalid value for `configuration`, must not be `None`")
+
+
         self._configuration = configuration
 
     @property
@@ -198,6 +208,7 @@ class WebDeployment(object):
         :type: bool
         """
         
+
         self._allow_all_domains = allow_all_domains
 
     @property
@@ -221,6 +232,7 @@ class WebDeployment(object):
         :type: list[str]
         """
         
+
         self._allowed_domains = allowed_domains
 
     @property
@@ -244,6 +256,7 @@ class WebDeployment(object):
         :type: str
         """
         
+
         self._snippet = snippet
 
     @property
@@ -267,6 +280,7 @@ class WebDeployment(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -290,6 +304,7 @@ class WebDeployment(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -313,6 +328,7 @@ class WebDeployment(object):
         :type: AddressableEntityRef
         """
         
+
         self._last_modified_user = last_modified_user
 
     @property
@@ -336,6 +352,7 @@ class WebDeployment(object):
         :type: DomainEntityRef
         """
         
+
         self._flow = flow
 
     @property
@@ -386,6 +403,7 @@ class WebDeployment(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

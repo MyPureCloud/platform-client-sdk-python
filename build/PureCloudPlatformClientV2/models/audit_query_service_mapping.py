@@ -70,6 +70,7 @@ class AuditQueryServiceMapping(object):
         :type: list[AuditQueryService]
         """
         
+
         self._services = services
 
     def to_dict(self):

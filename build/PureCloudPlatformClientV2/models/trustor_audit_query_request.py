@@ -88,6 +88,10 @@ class TrustorAuditQueryRequest(object):
         :type: str
         """
         
+        if not trustor_organization_id:
+            raise ValueError("Invalid value for `trustor_organization_id`, must not be `None`")
+
+
         self._trustor_organization_id = trustor_organization_id
 
     @property
@@ -111,6 +115,10 @@ class TrustorAuditQueryRequest(object):
         :type: list[str]
         """
         
+        if not trustee_user_ids:
+            raise ValueError("Invalid value for `trustee_user_ids`, must not be `None`")
+
+
         self._trustee_user_ids = trustee_user_ids
 
     @property
@@ -134,6 +142,7 @@ class TrustorAuditQueryRequest(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -157,6 +166,7 @@ class TrustorAuditQueryRequest(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -180,6 +190,7 @@ class TrustorAuditQueryRequest(object):
         :type: str
         """
         
+
         self._query_phrase = query_phrase
 
     @property
@@ -203,6 +214,7 @@ class TrustorAuditQueryRequest(object):
         :type: list[Facet]
         """
         
+
         self._facets = facets
 
     @property
@@ -226,6 +238,7 @@ class TrustorAuditQueryRequest(object):
         :type: list[Filter]
         """
         
+
         self._filters = filters
 
     def to_dict(self):

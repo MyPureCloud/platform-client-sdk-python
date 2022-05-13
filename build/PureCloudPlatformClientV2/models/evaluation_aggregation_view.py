@@ -106,6 +106,10 @@ class EvaluationAggregationView(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -156,6 +160,7 @@ class EvaluationAggregationView(object):
         :type: AggregationRange
         """
         
+
         self._range = range
 
     def to_dict(self):

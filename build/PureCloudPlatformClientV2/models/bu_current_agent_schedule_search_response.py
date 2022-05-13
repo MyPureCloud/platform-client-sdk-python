@@ -85,6 +85,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
         :type: list[BuAgentScheduleSearchResponse]
         """
         
+
         self._agent_schedules = agent_schedules
 
     @property
@@ -108,6 +109,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
         :type: str
         """
         
+
         self._business_unit_time_zone = business_unit_time_zone
 
     @property
@@ -131,6 +133,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
         :type: list[BuAgentSchedulePublishedScheduleReference]
         """
         
+
         self._published_schedules = published_schedules
 
     @property
@@ -154,6 +157,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -177,6 +181,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -200,6 +205,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
         :type: list[BuAgentScheduleUpdate]
         """
         
+
         self._updates = updates
 
     def to_dict(self):

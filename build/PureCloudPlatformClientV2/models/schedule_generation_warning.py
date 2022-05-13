@@ -91,6 +91,7 @@ class ScheduleGenerationWarning(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -114,6 +115,7 @@ class ScheduleGenerationWarning(object):
         :type: bool
         """
         
+
         self._user_not_licensed = user_not_licensed
 
     @property
@@ -137,6 +139,7 @@ class ScheduleGenerationWarning(object):
         :type: bool
         """
         
+
         self._unable_to_meet_max_days = unable_to_meet_max_days
 
     @property
@@ -160,6 +163,7 @@ class ScheduleGenerationWarning(object):
         :type: list[str]
         """
         
+
         self._unable_to_schedule_required_days = unable_to_schedule_required_days
 
     @property
@@ -183,6 +187,7 @@ class ScheduleGenerationWarning(object):
         :type: bool
         """
         
+
         self._unable_to_meet_min_paid_for_the_week = unable_to_meet_min_paid_for_the_week
 
     @property
@@ -206,6 +211,7 @@ class ScheduleGenerationWarning(object):
         :type: bool
         """
         
+
         self._unable_to_meet_max_paid_for_the_week = unable_to_meet_max_paid_for_the_week
 
     @property
@@ -229,6 +235,7 @@ class ScheduleGenerationWarning(object):
         :type: list[str]
         """
         
+
         self._no_need_days = no_need_days
 
     @property
@@ -252,6 +259,7 @@ class ScheduleGenerationWarning(object):
         :type: bool
         """
         
+
         self._shifts_too_close_together = shifts_too_close_together
 
     def to_dict(self):

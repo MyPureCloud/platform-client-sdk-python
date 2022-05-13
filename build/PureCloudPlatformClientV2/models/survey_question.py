@@ -94,6 +94,7 @@ class SurveyQuestion(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class SurveyQuestion(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -140,6 +142,7 @@ class SurveyQuestion(object):
         :type: str
         """
         
+
         self._help_text = help_text
 
     @property
@@ -190,6 +193,7 @@ class SurveyQuestion(object):
         :type: bool
         """
         
+
         self._na_enabled = na_enabled
 
     @property
@@ -213,6 +217,7 @@ class SurveyQuestion(object):
         :type: VisibilityCondition
         """
         
+
         self._visibility_condition = visibility_condition
 
     @property
@@ -236,6 +241,7 @@ class SurveyQuestion(object):
         :type: list[AnswerOption]
         """
         
+
         self._answer_options = answer_options
 
     @property
@@ -259,6 +265,7 @@ class SurveyQuestion(object):
         :type: int
         """
         
+
         self._max_response_characters = max_response_characters
 
     @property
@@ -282,6 +289,7 @@ class SurveyQuestion(object):
         :type: str
         """
         
+
         self._explanation_prompt = explanation_prompt
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue(o
         :type: int
         """
         
+
         self._interval_index = interval_index
 
     @property
@@ -96,6 +97,7 @@ class WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue(o
         :type: float
         """
         
+
         self._value = value
 
     def to_dict(self):

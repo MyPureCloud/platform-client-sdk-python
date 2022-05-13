@@ -94,6 +94,7 @@ class CoachingAnnotation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class CoachingAnnotation(object):
         :type: UserReference
         """
         
+
         self._created_by = created_by
 
     @property
@@ -140,6 +142,7 @@ class CoachingAnnotation(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -163,6 +166,7 @@ class CoachingAnnotation(object):
         :type: UserReference
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -186,6 +190,7 @@ class CoachingAnnotation(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -209,6 +214,10 @@ class CoachingAnnotation(object):
         :type: str
         """
         
+        if not text:
+            raise ValueError("Invalid value for `text`, must not be `None`")
+
+
         self._text = text
 
     @property
@@ -232,6 +241,7 @@ class CoachingAnnotation(object):
         :type: bool
         """
         
+
         self._is_deleted = is_deleted
 
     @property
@@ -282,6 +292,7 @@ class CoachingAnnotation(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

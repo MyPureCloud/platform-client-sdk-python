@@ -73,6 +73,7 @@ class BatchDownloadRequest(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -96,6 +97,7 @@ class BatchDownloadRequest(object):
         :type: str
         """
         
+
         self._recording_id = recording_id
 
     def to_dict(self):

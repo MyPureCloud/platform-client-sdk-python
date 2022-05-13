@@ -100,6 +100,7 @@ class BuAgentScheduleUpdate(object):
         :type: list[datetime]
         """
         
+
         self._shift_start_dates = shift_start_dates
 
     def to_dict(self):

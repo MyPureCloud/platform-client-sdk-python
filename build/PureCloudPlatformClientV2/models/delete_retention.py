@@ -70,6 +70,7 @@ class DeleteRetention(object):
         :type: int
         """
         
+
         self._days = days
 
     def to_dict(self):

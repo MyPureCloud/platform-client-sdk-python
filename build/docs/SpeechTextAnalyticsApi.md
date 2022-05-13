@@ -73,7 +73,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
 program_id = 'program_id_example' # str | The id of the program
-force_delete = false # bool | Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (optional) (default to false)
+force_delete = False # bool | Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (optional) (default to False)
 
 try:
     # Delete a Speech & Text Analytics program by id
@@ -88,7 +88,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **program_id** | **str**| The id of the program |  |
-| **force_delete** | **bool**| Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. | [optional] [default to false] |
+| **force_delete** | **bool**| Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. | [optional] [default to False]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -723,7 +723,7 @@ Get the list of Speech & Text Analytics sentiment supported dialects
 
 Wraps GET /api/v2/speechandtextanalytics/sentiment/dialects 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -981,7 +981,7 @@ Get list of supported Speech & Text Analytics topics dialects
 
 Wraps GET /api/v2/speechandtextanalytics/topics/dialects 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

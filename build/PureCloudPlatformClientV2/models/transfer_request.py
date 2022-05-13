@@ -82,6 +82,7 @@ class TransferRequest(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -105,6 +106,7 @@ class TransferRequest(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -128,6 +130,7 @@ class TransferRequest(object):
         :type: str
         """
         
+
         self._user_name = user_name
 
     @property
@@ -151,6 +154,7 @@ class TransferRequest(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -174,6 +178,7 @@ class TransferRequest(object):
         :type: bool
         """
         
+
         self._voicemail = voicemail
 
     def to_dict(self):

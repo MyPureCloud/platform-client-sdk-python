@@ -88,6 +88,7 @@ class ListItemComponent(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class ListItemComponent(object):
         :type: str
         """
         
+
         self._rmid = rmid
 
     @property
@@ -161,6 +163,7 @@ class ListItemComponent(object):
         :type: str
         """
         
+
         self._image = image
 
     @property
@@ -184,6 +187,7 @@ class ListItemComponent(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -207,6 +211,7 @@ class ListItemComponent(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -230,6 +235,7 @@ class ListItemComponent(object):
         :type: ContentActions
         """
         
+
         self._actions = actions
 
     def to_dict(self):

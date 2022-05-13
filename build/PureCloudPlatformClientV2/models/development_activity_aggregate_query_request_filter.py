@@ -100,6 +100,10 @@ class DevelopmentActivityAggregateQueryRequestFilter(object):
         :type: list[DevelopmentActivityAggregateQueryRequestClause]
         """
         
+        if not clauses:
+            raise ValueError("Invalid value for `clauses`, must not be `None`")
+
+
         self._clauses = clauses
 
     def to_dict(self):

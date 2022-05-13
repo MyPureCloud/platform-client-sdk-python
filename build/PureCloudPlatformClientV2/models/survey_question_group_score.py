@@ -82,6 +82,7 @@ class SurveyQuestionGroupScore(object):
         :type: str
         """
         
+
         self._question_group_id = question_group_id
 
     @property
@@ -105,6 +106,7 @@ class SurveyQuestionGroupScore(object):
         :type: float
         """
         
+
         self._total_score = total_score
 
     @property
@@ -128,6 +130,7 @@ class SurveyQuestionGroupScore(object):
         :type: float
         """
         
+
         self._max_total_score = max_total_score
 
     @property
@@ -151,6 +154,7 @@ class SurveyQuestionGroupScore(object):
         :type: bool
         """
         
+
         self._marked_na = marked_na
 
     @property
@@ -174,6 +178,7 @@ class SurveyQuestionGroupScore(object):
         :type: list[SurveyQuestionScore]
         """
         
+
         self._question_scores = question_scores
 
     def to_dict(self):

@@ -112,6 +112,7 @@ class ScimV2User(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class ScimV2User(object):
         :type: list[str]
         """
         
+
         self._schemas = schemas
 
     @property
@@ -158,6 +160,7 @@ class ScimV2User(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property
@@ -181,6 +184,7 @@ class ScimV2User(object):
         :type: str
         """
         
+
         self._user_name = user_name
 
     @property
@@ -204,6 +208,7 @@ class ScimV2User(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     @property
@@ -227,6 +232,7 @@ class ScimV2User(object):
         :type: str
         """
         
+
         self._password = password
 
     @property
@@ -250,6 +256,7 @@ class ScimV2User(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -273,6 +280,7 @@ class ScimV2User(object):
         :type: list[ScimPhoneNumber]
         """
         
+
         self._phone_numbers = phone_numbers
 
     @property
@@ -296,6 +304,7 @@ class ScimV2User(object):
         :type: list[ScimEmail]
         """
         
+
         self._emails = emails
 
     @property
@@ -319,6 +328,7 @@ class ScimV2User(object):
         :type: str
         """
         
+
         self._external_id = external_id
 
     @property
@@ -342,6 +352,7 @@ class ScimV2User(object):
         :type: list[ScimV2GroupReference]
         """
         
+
         self._groups = groups
 
     @property
@@ -365,6 +376,7 @@ class ScimV2User(object):
         :type: list[ScimUserRole]
         """
         
+
         self._roles = roles
 
     @property
@@ -388,6 +400,7 @@ class ScimV2User(object):
         :type: ScimV2EnterpriseUser
         """
         
+
         self._urnietfparamsscimschemasextensionenterprise2_0_user = urnietfparamsscimschemasextensionenterprise2_0_user
 
     @property
@@ -411,6 +424,7 @@ class ScimV2User(object):
         :type: ScimUserExtensions
         """
         
+
         self._urnietfparamsscimschemasextensiongenesyspurecloud2_0_user = urnietfparamsscimschemasextensiongenesyspurecloud2_0_user
 
     @property
@@ -434,6 +448,7 @@ class ScimV2User(object):
         :type: ScimMetadata
         """
         
+
         self._meta = meta
 
     def to_dict(self):

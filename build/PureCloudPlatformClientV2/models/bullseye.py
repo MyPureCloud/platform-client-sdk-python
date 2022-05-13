@@ -70,6 +70,7 @@ class Bullseye(object):
         :type: list[Ring]
         """
         
+
         self._rings = rings
 
     def to_dict(self):

@@ -94,6 +94,7 @@ class LineIntegrationRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,10 @@ class LineIntegrationRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -140,6 +145,7 @@ class LineIntegrationRequest(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -163,6 +169,7 @@ class LineIntegrationRequest(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -186,6 +193,7 @@ class LineIntegrationRequest(object):
         :type: str
         """
         
+
         self._channel_id = channel_id
 
     @property
@@ -209,6 +217,7 @@ class LineIntegrationRequest(object):
         :type: str
         """
         
+
         self._channel_secret = channel_secret
 
     @property
@@ -232,6 +241,7 @@ class LineIntegrationRequest(object):
         :type: str
         """
         
+
         self._switcher_secret = switcher_secret
 
     @property
@@ -255,6 +265,7 @@ class LineIntegrationRequest(object):
         :type: str
         """
         
+
         self._service_code = service_code
 
     @property
@@ -278,6 +289,7 @@ class LineIntegrationRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

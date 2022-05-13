@@ -103,6 +103,7 @@ class RoutingRule(object):
         :type: int
         """
         
+
         self._threshold = threshold
 
     @property
@@ -126,6 +127,7 @@ class RoutingRule(object):
         :type: float
         """
         
+
         self._wait_seconds = wait_seconds
 
     def to_dict(self):

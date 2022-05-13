@@ -26,7 +26,7 @@ Get the current system date/time
 
 Wraps GET /api/v2/date 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -72,7 +72,7 @@ Get public ip address ranges for Genesys Cloud
 
 Wraps GET /api/v2/ipranges 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -118,7 +118,7 @@ Get time zones list
 
 Wraps GET /api/v2/timezones 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -170,7 +170,7 @@ Returns the information about an X509 PEM encoded certificate or certificate cha
 
 Wraps POST /api/v2/certificate/details 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

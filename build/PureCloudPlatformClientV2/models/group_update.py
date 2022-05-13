@@ -100,6 +100,7 @@ class GroupUpdate(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class GroupUpdate(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class GroupUpdate(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -196,6 +199,10 @@ class GroupUpdate(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -219,6 +226,7 @@ class GroupUpdate(object):
         :type: list[UserImage]
         """
         
+
         self._images = images
 
     @property
@@ -242,6 +250,7 @@ class GroupUpdate(object):
         :type: list[GroupContact]
         """
         
+
         self._addresses = addresses
 
     @property
@@ -265,6 +274,7 @@ class GroupUpdate(object):
         :type: bool
         """
         
+
         self._rules_visible = rules_visible
 
     @property
@@ -315,6 +325,7 @@ class GroupUpdate(object):
         :type: list[str]
         """
         
+
         self._owner_ids = owner_ids
 
     @property
@@ -338,6 +349,7 @@ class GroupUpdate(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

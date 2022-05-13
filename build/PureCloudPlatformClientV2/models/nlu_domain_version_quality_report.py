@@ -76,6 +76,10 @@ class NluDomainVersionQualityReport(object):
         :type: NluDomainVersion
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -99,6 +103,10 @@ class NluDomainVersionQualityReport(object):
         :type: list[NluConfusionMatrixRow]
         """
         
+        if not confusion_matrix:
+            raise ValueError("Invalid value for `confusion_matrix`, must not be `None`")
+
+
         self._confusion_matrix = confusion_matrix
 
     @property
@@ -122,6 +130,10 @@ class NluDomainVersionQualityReport(object):
         :type: NluQualityReportSummary
         """
         
+        if not summary:
+            raise ValueError("Invalid value for `summary`, must not be `None`")
+
+
         self._summary = summary
 
     def to_dict(self):

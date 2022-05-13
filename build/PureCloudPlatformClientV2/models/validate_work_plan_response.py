@@ -76,6 +76,7 @@ class ValidateWorkPlanResponse(object):
         :type: WorkPlanReference
         """
         
+
         self._work_plan = work_plan
 
     @property
@@ -99,6 +100,7 @@ class ValidateWorkPlanResponse(object):
         :type: bool
         """
         
+
         self._valid = valid
 
     @property
@@ -122,6 +124,7 @@ class ValidateWorkPlanResponse(object):
         :type: ValidateWorkPlanMessages
         """
         
+
         self._messages = messages
 
     def to_dict(self):

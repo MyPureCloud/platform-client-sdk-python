@@ -79,6 +79,7 @@ class MessageInfo(object):
         :type: str
         """
         
+
         self._localizable_message_code = localizable_message_code
 
     @property
@@ -102,6 +103,7 @@ class MessageInfo(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -125,6 +127,7 @@ class MessageInfo(object):
         :type: str
         """
         
+
         self._message_with_params = message_with_params
 
     @property
@@ -148,6 +151,7 @@ class MessageInfo(object):
         :type: dict(str, str)
         """
         
+
         self._message_params = message_params
 
     def to_dict(self):

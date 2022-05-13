@@ -88,6 +88,10 @@ class LearningModuleRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -111,6 +115,7 @@ class LearningModuleRequest(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -134,6 +139,10 @@ class LearningModuleRequest(object):
         :type: int
         """
         
+        if not completion_time_in_days:
+            raise ValueError("Invalid value for `completion_time_in_days`, must not be `None`")
+
+
         self._completion_time_in_days = completion_time_in_days
 
     @property
@@ -157,6 +166,7 @@ class LearningModuleRequest(object):
         :type: list[LearningModuleInformStepRequest]
         """
         
+
         self._inform_steps = inform_steps
 
     @property
@@ -207,6 +217,7 @@ class LearningModuleRequest(object):
         :type: AssessmentForm
         """
         
+
         self._assessment_form = assessment_form
 
     @property
@@ -230,6 +241,7 @@ class LearningModuleRequest(object):
         :type: LearningModuleCoverArtRequest
         """
         
+
         self._cover_art = cover_art
 
     def to_dict(self):

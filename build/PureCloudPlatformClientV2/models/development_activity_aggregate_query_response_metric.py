@@ -100,6 +100,7 @@ class DevelopmentActivityAggregateQueryResponseMetric(object):
         :type: DevelopmentActivityAggregateQueryResponseStatistics
         """
         
+
         self._stats = stats
 
     def to_dict(self):

@@ -175,6 +175,7 @@ class DialerAction(object):
         :type: dict(str, str)
         """
         
+
         self._properties = properties
 
     @property
@@ -198,6 +199,7 @@ class DialerAction(object):
         :type: DomainEntityRef
         """
         
+
         self._data_action = data_action
 
     @property
@@ -221,6 +223,7 @@ class DialerAction(object):
         :type: list[ContactColumnToDataActionFieldMapping]
         """
         
+
         self._contact_column_to_data_action_field_mappings = contact_column_to_data_action_field_mappings
 
     @property
@@ -244,6 +247,7 @@ class DialerAction(object):
         :type: str
         """
         
+
         self._contact_id_field = contact_id_field
 
     @property
@@ -267,6 +271,7 @@ class DialerAction(object):
         :type: str
         """
         
+
         self._call_analysis_result_field = call_analysis_result_field
 
     @property
@@ -290,6 +295,7 @@ class DialerAction(object):
         :type: str
         """
         
+
         self._agent_wrapup_field = agent_wrapup_field
 
     def to_dict(self):

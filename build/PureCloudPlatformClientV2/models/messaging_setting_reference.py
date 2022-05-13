@@ -97,6 +97,10 @@ class MessagingSettingReference(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -120,6 +124,7 @@ class MessagingSettingReference(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +148,7 @@ class MessagingSettingReference(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -166,6 +172,7 @@ class MessagingSettingReference(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -189,6 +196,7 @@ class MessagingSettingReference(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -212,6 +220,7 @@ class MessagingSettingReference(object):
         :type: str
         """
         
+
         self._version = version
 
     @property
@@ -235,6 +244,7 @@ class MessagingSettingReference(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -258,6 +268,7 @@ class MessagingSettingReference(object):
         :type: DomainEntityRef
         """
         
+
         self._updated_by = updated_by
 
     @property
@@ -281,6 +292,7 @@ class MessagingSettingReference(object):
         :type: ContentSetting
         """
         
+
         self._content = content
 
     @property
@@ -304,6 +316,7 @@ class MessagingSettingReference(object):
         :type: EventSetting
         """
         
+
         self._event = event
 
     def to_dict(self):

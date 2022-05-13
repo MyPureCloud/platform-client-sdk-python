@@ -73,6 +73,10 @@ class PatchCallbackResponse(object):
         :type: DomainEntityRef
         """
         
+        if not conversation:
+            raise ValueError("Invalid value for `conversation`, must not be `None`")
+
+
         self._conversation = conversation
 
     @property
@@ -96,6 +100,10 @@ class PatchCallbackResponse(object):
         :type: list[CallbackIdentifier]
         """
         
+        if not callback_identifiers:
+            raise ValueError("Invalid value for `callback_identifiers`, must not be `None`")
+
+
         self._callback_identifiers = callback_identifiers
 
     def to_dict(self):

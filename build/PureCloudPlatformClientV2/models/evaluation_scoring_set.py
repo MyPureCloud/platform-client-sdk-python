@@ -91,6 +91,7 @@ class EvaluationScoringSet(object):
         :type: float
         """
         
+
         self._total_score = total_score
 
     @property
@@ -114,6 +115,7 @@ class EvaluationScoringSet(object):
         :type: float
         """
         
+
         self._total_critical_score = total_critical_score
 
     @property
@@ -137,6 +139,7 @@ class EvaluationScoringSet(object):
         :type: float
         """
         
+
         self._total_non_critical_score = total_non_critical_score
 
     @property
@@ -160,6 +163,7 @@ class EvaluationScoringSet(object):
         :type: list[EvaluationQuestionGroupScore]
         """
         
+
         self._question_group_scores = question_group_scores
 
     @property
@@ -183,6 +187,7 @@ class EvaluationScoringSet(object):
         :type: bool
         """
         
+
         self._any_failed_kill_questions = any_failed_kill_questions
 
     @property
@@ -206,6 +211,7 @@ class EvaluationScoringSet(object):
         :type: str
         """
         
+
         self._comments = comments
 
     @property
@@ -229,6 +235,7 @@ class EvaluationScoringSet(object):
         :type: str
         """
         
+
         self._agent_comments = agent_comments
 
     @property
@@ -252,6 +259,7 @@ class EvaluationScoringSet(object):
         :type: list[TranscriptTopic]
         """
         
+
         self._transcript_topics = transcript_topics
 
     def to_dict(self):

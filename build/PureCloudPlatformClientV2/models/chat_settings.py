@@ -70,6 +70,7 @@ class ChatSettings(object):
         :type: int
         """
         
+
         self._message_retention_period_days = message_retention_period_days
 
     def to_dict(self):

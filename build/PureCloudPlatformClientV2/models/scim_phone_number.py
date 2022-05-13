@@ -76,6 +76,7 @@ class ScimPhoneNumber(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -126,6 +127,7 @@ class ScimPhoneNumber(object):
         :type: bool
         """
         
+
         self._primary = primary
 
     def to_dict(self):

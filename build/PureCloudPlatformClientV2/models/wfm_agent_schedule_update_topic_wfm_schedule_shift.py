@@ -85,6 +85,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleShift(object):
         :type: str
         """
         
+
         self._week_date = week_date
 
     @property
@@ -108,6 +109,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleShift(object):
         :type: str
         """
         
+
         self._week_schedule_id = week_schedule_id
 
     @property
@@ -131,6 +133,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleShift(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -154,6 +157,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleShift(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -177,6 +181,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleShift(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -200,6 +205,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleShift(object):
         :type: list[WfmAgentScheduleUpdateTopicWfmScheduleActivity]
         """
         
+
         self._activities = activities
 
     def to_dict(self):

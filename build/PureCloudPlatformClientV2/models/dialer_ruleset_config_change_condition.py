@@ -115,6 +115,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: DialerRulesetConfigChangeUriReference
         """
         
+
         self._data_action = data_action
 
     @property
@@ -138,6 +139,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -161,6 +163,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: bool
         """
         
+
         self._inverted = inverted
 
     @property
@@ -184,6 +187,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: str
         """
         
+
         self._attribute_name = attribute_name
 
     @property
@@ -207,6 +211,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -284,6 +289,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: list[str]
         """
         
+
         self._codes = codes
 
     @property
@@ -334,6 +340,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: str
         """
         
+
         self._pcProperty = pcProperty
 
     @property
@@ -357,6 +364,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: bool
         """
         
+
         self._data_not_found_resolution = data_not_found_resolution
 
     @property
@@ -380,6 +388,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: str
         """
         
+
         self._contact_id_field = contact_id_field
 
     @property
@@ -403,6 +412,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: str
         """
         
+
         self._call_analysis_result_field = call_analysis_result_field
 
     @property
@@ -426,6 +436,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: str
         """
         
+
         self._agent_wrapup_field = agent_wrapup_field
 
     @property
@@ -449,6 +460,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: list[DialerRulesetConfigChangeContactColumnToDataActionFieldMapping]
         """
         
+
         self._contact_column_to_data_action_field_mappings = contact_column_to_data_action_field_mappings
 
     @property
@@ -472,6 +484,7 @@ class DialerRulesetConfigChangeCondition(object):
         :type: list[DialerRulesetConfigChangeDataActionConditionPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class EvaluationAggregateQueryResponse(object):
         :type: list[EvaluationAggregateDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

@@ -148,6 +148,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
         """
         
+
         self._callable_time_set = callable_time_set
 
     @property
@@ -171,6 +172,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
         """
         
+
         self._contact_list = contact_list
 
     @property
@@ -194,6 +196,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: list[OutboundMessagingMessagingCampaignConfigChangeUriReference]
         """
         
+
         self._dnc_lists = dnc_lists
 
     @property
@@ -217,6 +220,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: list[OutboundMessagingMessagingCampaignConfigChangeUriReference]
         """
         
+
         self._contact_list_filters = contact_list_filters
 
     @property
@@ -240,6 +244,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: bool
         """
         
+
         self._always_running = always_running
 
     @property
@@ -263,6 +268,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: list[OutboundMessagingMessagingCampaignConfigChangeContactSort]
         """
         
+
         self._contact_sorts = contact_sorts
 
     @property
@@ -286,6 +292,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: int
         """
         
+
         self._messages_per_minute = messages_per_minute
 
     @property
@@ -309,6 +316,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: list[OutboundMessagingMessagingCampaignConfigChangeUriReference]
         """
         
+
         self._rule_sets = rule_sets
 
     @property
@@ -332,6 +340,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeSmsConfig
         """
         
+
         self._sms_config = sms_config
 
     @property
@@ -355,6 +364,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeEmailConfig
         """
         
+
         self._email_config = email_config
 
     @property
@@ -378,6 +388,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: list[OutboundMessagingMessagingCampaignConfigChangeErrorDetail]
         """
         
+
         self._errors = errors
 
     @property
@@ -401,6 +412,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -424,6 +436,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -447,6 +460,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -470,6 +484,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -493,6 +508,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -516,6 +532,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
         """
         
+
         self._division = division
 
     def to_dict(self):

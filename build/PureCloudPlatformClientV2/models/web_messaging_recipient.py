@@ -79,6 +79,7 @@ class WebMessagingRecipient(object):
         :type: str
         """
         
+
         self._first_name = first_name
 
     @property
@@ -102,6 +103,7 @@ class WebMessagingRecipient(object):
         :type: str
         """
         
+
         self._last_name = last_name
 
     @property
@@ -125,6 +127,7 @@ class WebMessagingRecipient(object):
         :type: str
         """
         
+
         self._nickname = nickname
 
     @property
@@ -148,6 +151,7 @@ class WebMessagingRecipient(object):
         :type: list[RecipientAdditionalIdentifier]
         """
         
+
         self._additional_ids = additional_ids
 
     def to_dict(self):

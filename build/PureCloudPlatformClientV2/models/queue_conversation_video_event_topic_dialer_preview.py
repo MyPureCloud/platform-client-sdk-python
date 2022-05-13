@@ -82,6 +82,7 @@ class QueueConversationVideoEventTopicDialerPreview(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class QueueConversationVideoEventTopicDialerPreview(object):
         :type: str
         """
         
+
         self._contact_id = contact_id
 
     @property
@@ -128,6 +130,7 @@ class QueueConversationVideoEventTopicDialerPreview(object):
         :type: str
         """
         
+
         self._contact_list_id = contact_list_id
 
     @property
@@ -151,6 +154,7 @@ class QueueConversationVideoEventTopicDialerPreview(object):
         :type: str
         """
         
+
         self._campaign_id = campaign_id
 
     @property
@@ -174,6 +178,7 @@ class QueueConversationVideoEventTopicDialerPreview(object):
         :type: list[QueueConversationVideoEventTopicPhoneNumberColumn]
         """
         
+
         self._phone_number_columns = phone_number_columns
 
     def to_dict(self):

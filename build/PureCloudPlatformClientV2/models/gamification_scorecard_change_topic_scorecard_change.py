@@ -85,6 +85,7 @@ class GamificationScorecardChangeTopicScorecardChange(object):
         :type: str
         """
         
+
         self._workday = workday
 
     @property
@@ -108,6 +109,7 @@ class GamificationScorecardChangeTopicScorecardChange(object):
         :type: str
         """
         
+
         self._division_id = division_id
 
     @property
@@ -131,6 +133,7 @@ class GamificationScorecardChangeTopicScorecardChange(object):
         :type: str
         """
         
+
         self._team_id = team_id
 
     @property
@@ -154,6 +157,7 @@ class GamificationScorecardChangeTopicScorecardChange(object):
         :type: str
         """
         
+
         self._performance_profile_id = performance_profile_id
 
     @property
@@ -177,6 +181,7 @@ class GamificationScorecardChangeTopicScorecardChange(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -200,6 +205,7 @@ class GamificationScorecardChangeTopicScorecardChange(object):
         :type: list[GamificationScorecardChangeTopicPerformanceMetric]
         """
         
+
         self._performance_metrics = performance_metrics
 
     def to_dict(self):

@@ -100,6 +100,7 @@ class KnowledgeBase(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class KnowledgeBase(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class KnowledgeBase(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -196,6 +199,7 @@ class KnowledgeBase(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -219,6 +223,7 @@ class KnowledgeBase(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -242,6 +247,7 @@ class KnowledgeBase(object):
         :type: int
         """
         
+
         self._faq_count = faq_count
 
     @property
@@ -265,6 +271,7 @@ class KnowledgeBase(object):
         :type: datetime
         """
         
+
         self._date_document_last_modified = date_document_last_modified
 
     @property
@@ -288,6 +295,7 @@ class KnowledgeBase(object):
         :type: int
         """
         
+
         self._article_count = article_count
 
     @property
@@ -311,6 +319,7 @@ class KnowledgeBase(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -334,6 +343,7 @@ class KnowledgeBase(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -124,6 +124,7 @@ class OutboundRoute(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -147,6 +148,10 @@ class OutboundRoute(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -170,6 +175,7 @@ class OutboundRoute(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -193,6 +199,7 @@ class OutboundRoute(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -216,6 +223,7 @@ class OutboundRoute(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -239,6 +247,7 @@ class OutboundRoute(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -262,6 +271,7 @@ class OutboundRoute(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -285,6 +295,7 @@ class OutboundRoute(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -308,6 +319,7 @@ class OutboundRoute(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -358,6 +370,7 @@ class OutboundRoute(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -381,6 +394,7 @@ class OutboundRoute(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -404,6 +418,10 @@ class OutboundRoute(object):
         :type: list[str]
         """
         
+        if not classification_types:
+            raise ValueError("Invalid value for `classification_types`, must not be `None`")
+
+
         self._classification_types = classification_types
 
     @property
@@ -427,6 +445,7 @@ class OutboundRoute(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -477,6 +496,7 @@ class OutboundRoute(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._external_trunk_bases = external_trunk_bases
 
     @property
@@ -500,6 +520,7 @@ class OutboundRoute(object):
         :type: Site
         """
         
+
         self._site = site
 
     @property
@@ -523,6 +544,7 @@ class OutboundRoute(object):
         :type: bool
         """
         
+
         self._managed = managed
 
     @property
@@ -546,6 +568,7 @@ class OutboundRoute(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -79,6 +79,10 @@ class LexSlot(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -102,6 +106,7 @@ class LexSlot(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -125,6 +130,10 @@ class LexSlot(object):
         :type: str
         """
         
+        if not type:
+            raise ValueError("Invalid value for `type`, must not be `None`")
+
+
         self._type = type
 
     @property
@@ -148,6 +157,7 @@ class LexSlot(object):
         :type: int
         """
         
+
         self._priority = priority
 
     def to_dict(self):

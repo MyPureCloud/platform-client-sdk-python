@@ -91,6 +91,7 @@ class WebMessagingAttachment(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,7 @@ class WebMessagingAttachment(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -164,6 +166,7 @@ class WebMessagingAttachment(object):
         :type: str
         """
         
+
         self._mime = mime
 
     @property
@@ -187,6 +190,7 @@ class WebMessagingAttachment(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -210,6 +214,7 @@ class WebMessagingAttachment(object):
         :type: str
         """
         
+
         self._sha256 = sha256
 
     @property
@@ -233,6 +238,7 @@ class WebMessagingAttachment(object):
         :type: str
         """
         
+
         self._filename = filename
 
     @property
@@ -256,6 +262,7 @@ class WebMessagingAttachment(object):
         :type: int
         """
         
+
         self._file_size = file_size
 
     def to_dict(self):

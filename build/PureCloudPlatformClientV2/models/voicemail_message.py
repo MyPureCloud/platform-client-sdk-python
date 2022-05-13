@@ -127,6 +127,7 @@ class VoicemailMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -150,6 +151,7 @@ class VoicemailMessage(object):
         :type: Conversation
         """
         
+
         self._conversation = conversation
 
     @property
@@ -173,6 +175,7 @@ class VoicemailMessage(object):
         :type: bool
         """
         
+
         self._read = read
 
     @property
@@ -196,6 +199,7 @@ class VoicemailMessage(object):
         :type: int
         """
         
+
         self._audio_recording_duration_seconds = audio_recording_duration_seconds
 
     @property
@@ -219,6 +223,7 @@ class VoicemailMessage(object):
         :type: int
         """
         
+
         self._audio_recording_size_bytes = audio_recording_size_bytes
 
     @property
@@ -242,6 +247,7 @@ class VoicemailMessage(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -265,6 +271,7 @@ class VoicemailMessage(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -288,6 +295,7 @@ class VoicemailMessage(object):
         :type: datetime
         """
         
+
         self._deleted_date = deleted_date
 
     @property
@@ -311,6 +319,7 @@ class VoicemailMessage(object):
         :type: str
         """
         
+
         self._caller_address = caller_address
 
     @property
@@ -334,6 +343,7 @@ class VoicemailMessage(object):
         :type: str
         """
         
+
         self._caller_name = caller_name
 
     @property
@@ -357,6 +367,7 @@ class VoicemailMessage(object):
         :type: User
         """
         
+
         self._caller_user = caller_user
 
     @property
@@ -380,6 +391,7 @@ class VoicemailMessage(object):
         :type: bool
         """
         
+
         self._deleted = deleted
 
     @property
@@ -403,6 +415,7 @@ class VoicemailMessage(object):
         :type: str
         """
         
+
         self._note = note
 
     @property
@@ -426,6 +439,7 @@ class VoicemailMessage(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -449,6 +463,7 @@ class VoicemailMessage(object):
         :type: Group
         """
         
+
         self._group = group
 
     @property
@@ -472,6 +487,7 @@ class VoicemailMessage(object):
         :type: Queue
         """
         
+
         self._queue = queue
 
     @property
@@ -495,6 +511,7 @@ class VoicemailMessage(object):
         :type: VoicemailCopyRecord
         """
         
+
         self._copied_from = copied_from
 
     @property
@@ -518,6 +535,7 @@ class VoicemailMessage(object):
         :type: list[VoicemailCopyRecord]
         """
         
+
         self._copied_to = copied_to
 
     @property
@@ -541,6 +559,7 @@ class VoicemailMessage(object):
         :type: VoicemailRetentionPolicy
         """
         
+
         self._delete_retention_policy = delete_retention_policy
 
     @property
@@ -564,6 +583,7 @@ class VoicemailMessage(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -76,6 +76,7 @@ class ReportingTurnKnowledge(object):
         :type: str
         """
         
+
         self._knowledge_base_id = knowledge_base_id
 
     @property
@@ -99,6 +100,7 @@ class ReportingTurnKnowledge(object):
         :type: ReportingTurnKnowledgeFeedback
         """
         
+
         self._feedback = feedback
 
     @property
@@ -122,6 +124,7 @@ class ReportingTurnKnowledge(object):
         :type: ReportingTurnKnowledgeSearch
         """
         
+
         self._search = search
 
     def to_dict(self):

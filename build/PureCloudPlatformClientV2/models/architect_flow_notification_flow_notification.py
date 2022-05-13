@@ -91,6 +91,7 @@ class ArchitectFlowNotificationFlowNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class ArchitectFlowNotificationFlowNotification(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class ArchitectFlowNotificationFlowNotification(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -160,6 +163,7 @@ class ArchitectFlowNotificationFlowNotification(object):
         :type: bool
         """
         
+
         self._deleted = deleted
 
     @property
@@ -183,6 +187,7 @@ class ArchitectFlowNotificationFlowNotification(object):
         :type: ArchitectFlowNotificationFlowVersion
         """
         
+
         self._checked_in_version = checked_in_version
 
     @property
@@ -206,6 +211,7 @@ class ArchitectFlowNotificationFlowNotification(object):
         :type: ArchitectFlowNotificationFlowVersion
         """
         
+
         self._saved_version = saved_version
 
     @property
@@ -229,6 +235,7 @@ class ArchitectFlowNotificationFlowNotification(object):
         :type: ArchitectFlowNotificationFlowVersion
         """
         
+
         self._published_version = published_version
 
     @property
@@ -252,6 +259,7 @@ class ArchitectFlowNotificationFlowNotification(object):
         :type: ArchitectFlowNotificationArchitectOperation
         """
         
+
         self._current_operation = current_operation
 
     def to_dict(self):

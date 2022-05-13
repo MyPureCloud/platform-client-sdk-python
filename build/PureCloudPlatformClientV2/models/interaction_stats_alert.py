@@ -118,6 +118,7 @@ class InteractionStatsAlert(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,10 @@ class InteractionStatsAlert(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -191,6 +196,10 @@ class InteractionStatsAlert(object):
         :type: str
         """
         
+        if not dimension_value:
+            raise ValueError("Invalid value for `dimension_value`, must not be `None`")
+
+
         self._dimension_value = dimension_value
 
     @property
@@ -322,6 +331,10 @@ class InteractionStatsAlert(object):
         :type: float
         """
         
+        if not value:
+            raise ValueError("Invalid value for `value`, must not be `None`")
+
+
         self._value = value
 
     @property
@@ -345,6 +358,10 @@ class InteractionStatsAlert(object):
         :type: str
         """
         
+        if not rule_id:
+            raise ValueError("Invalid value for `rule_id`, must not be `None`")
+
+
         self._rule_id = rule_id
 
     @property
@@ -368,6 +385,10 @@ class InteractionStatsAlert(object):
         :type: bool
         """
         
+        if not unread:
+            raise ValueError("Invalid value for `unread`, must not be `None`")
+
+
         self._unread = unread
 
     @property
@@ -391,6 +412,10 @@ class InteractionStatsAlert(object):
         :type: datetime
         """
         
+        if not start_date:
+            raise ValueError("Invalid value for `start_date`, must not be `None`")
+
+
         self._start_date = start_date
 
     @property
@@ -414,6 +439,7 @@ class InteractionStatsAlert(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -437,6 +463,10 @@ class InteractionStatsAlert(object):
         :type: list[User]
         """
         
+        if not notification_users:
+            raise ValueError("Invalid value for `notification_users`, must not be `None`")
+
+
         self._notification_users = notification_users
 
     @property
@@ -460,6 +490,10 @@ class InteractionStatsAlert(object):
         :type: list[str]
         """
         
+        if not alert_types:
+            raise ValueError("Invalid value for `alert_types`, must not be `None`")
+
+
         self._alert_types = alert_types
 
     @property
@@ -483,6 +517,7 @@ class InteractionStatsAlert(object):
         :type: str
         """
         
+
         self._rule_uri = rule_uri
 
     @property
@@ -506,6 +541,7 @@ class InteractionStatsAlert(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -85,6 +85,10 @@ class AuditRealtimeQueryRequest(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -135,6 +139,7 @@ class AuditRealtimeQueryRequest(object):
         :type: list[AuditQueryFilter]
         """
         
+
         self._filters = filters
 
     @property
@@ -158,6 +163,7 @@ class AuditRealtimeQueryRequest(object):
         :type: list[AuditQuerySort]
         """
         
+
         self._sort = sort
 
     @property
@@ -181,6 +187,7 @@ class AuditRealtimeQueryRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -204,6 +211,7 @@ class AuditRealtimeQueryRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     def to_dict(self):

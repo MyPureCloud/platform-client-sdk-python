@@ -79,6 +79,7 @@ class CalibrationAssignment(object):
         :type: User
         """
         
+
         self._calibrator = calibrator
 
     @property
@@ -102,6 +103,7 @@ class CalibrationAssignment(object):
         :type: list[User]
         """
         
+
         self._evaluators = evaluators
 
     @property
@@ -125,6 +127,7 @@ class CalibrationAssignment(object):
         :type: EvaluationForm
         """
         
+
         self._evaluation_form = evaluation_form
 
     @property
@@ -148,6 +151,7 @@ class CalibrationAssignment(object):
         :type: User
         """
         
+
         self._expert_evaluator = expert_evaluator
 
     def to_dict(self):

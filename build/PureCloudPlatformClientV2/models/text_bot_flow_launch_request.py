@@ -82,6 +82,10 @@ class TextBotFlowLaunchRequest(object):
         :type: TextBotFlow
         """
         
+        if not flow:
+            raise ValueError("Invalid value for `flow`, must not be `None`")
+
+
         self._flow = flow
 
     @property
@@ -105,6 +109,10 @@ class TextBotFlowLaunchRequest(object):
         :type: str
         """
         
+        if not external_session_id:
+            raise ValueError("Invalid value for `external_session_id`, must not be `None`")
+
+
         self._external_session_id = external_session_id
 
     @property
@@ -128,6 +136,7 @@ class TextBotFlowLaunchRequest(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -151,6 +160,7 @@ class TextBotFlowLaunchRequest(object):
         :type: TextBotInputOutputData
         """
         
+
         self._input_data = input_data
 
     @property
@@ -174,6 +184,10 @@ class TextBotFlowLaunchRequest(object):
         :type: TextBotChannel
         """
         
+        if not channel:
+            raise ValueError("Invalid value for `channel`, must not be `None`")
+
+
         self._channel = channel
 
     def to_dict(self):

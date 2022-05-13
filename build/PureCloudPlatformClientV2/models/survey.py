@@ -100,6 +100,7 @@ class Survey(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class Survey(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class Survey(object):
         :type: Conversation
         """
         
+
         self._conversation = conversation
 
     @property
@@ -169,6 +172,7 @@ class Survey(object):
         :type: SurveyForm
         """
         
+
         self._survey_form = survey_form
 
     @property
@@ -192,6 +196,7 @@ class Survey(object):
         :type: DomainEntityRef
         """
         
+
         self._agent = agent
 
     @property
@@ -242,6 +247,7 @@ class Survey(object):
         :type: QueueReference
         """
         
+
         self._queue = queue
 
     @property
@@ -265,6 +271,7 @@ class Survey(object):
         :type: SurveyScoringSet
         """
         
+
         self._answers = answers
 
     @property
@@ -288,6 +295,7 @@ class Survey(object):
         :type: datetime
         """
         
+
         self._completed_date = completed_date
 
     @property
@@ -311,6 +319,7 @@ class Survey(object):
         :type: SurveyErrorDetails
         """
         
+
         self._survey_error_details = survey_error_details
 
     @property
@@ -334,6 +343,7 @@ class Survey(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

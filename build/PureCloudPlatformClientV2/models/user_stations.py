@@ -79,6 +79,7 @@ class UserStations(object):
         :type: UserStation
         """
         
+
         self._associated_station = associated_station
 
     @property
@@ -102,6 +103,7 @@ class UserStations(object):
         :type: UserStation
         """
         
+
         self._effective_station = effective_station
 
     @property
@@ -125,6 +127,7 @@ class UserStations(object):
         :type: UserStation
         """
         
+
         self._default_station = default_station
 
     @property
@@ -148,6 +151,7 @@ class UserStations(object):
         :type: UserStation
         """
         
+
         self._last_associated_station = last_associated_station
 
     def to_dict(self):

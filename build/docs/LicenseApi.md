@@ -229,9 +229,11 @@ Get a page of users and their licenses
 
 Retrieve a page of users in an organization along with the licenses they possess.
 
+
+
 Wraps GET /api/v2/license/users 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -283,7 +285,7 @@ Get a list of licenses inferred based on a list of roleIds
 
 Wraps POST /api/v2/license/infer 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -299,7 +301,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LicenseApi()
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | The roleIds to use while inferring licenses (optional)
+body = ['body_example'] # list[str] | The roleIds to use while inferring licenses (optional)
 
 try:
     # Get a list of licenses inferred based on a list of roleIds
@@ -314,7 +316,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | **list[str]**| The roleIds to use while inferring licenses | [optional]  |
+| **body** | [**list[str]**](str.html)| The roleIds to use while inferring licenses | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -425,7 +427,7 @@ except ApiException as e:
 
 <a name="post_license_users"></a>
 
-## [**dict(str, object)**](dict.html) post_license_users(body=body)
+## dict(str, object)** post_license_users(body=body)
 
 
 
@@ -452,7 +454,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LicenseApi()
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | The user IDs to fetch. (optional)
+body = ['body_example'] # list[str] | The user IDs to fetch. (optional)
 
 try:
     # Fetch user licenses in a batch.
@@ -467,10 +469,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | **list[str]**| The user IDs to fetch. | [optional]  |
+| **body** | [**list[str]**](str.html)| The user IDs to fetch. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**dict(str, object)**](dict.html)
+**dict(str, object)**
 

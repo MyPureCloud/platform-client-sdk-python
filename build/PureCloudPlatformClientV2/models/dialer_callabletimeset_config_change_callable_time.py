@@ -73,6 +73,7 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
         :type: list[DialerCallabletimesetConfigChangeTimeSlot]
         """
         
+
         self._time_slots = time_slots
 
     @property
@@ -96,6 +97,7 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
         :type: str
         """
         
+
         self._time_zone_id = time_zone_id
 
     def to_dict(self):

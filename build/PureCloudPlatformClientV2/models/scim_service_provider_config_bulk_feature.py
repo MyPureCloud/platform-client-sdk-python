@@ -76,6 +76,7 @@ class ScimServiceProviderConfigBulkFeature(object):
         :type: bool
         """
         
+
         self._supported = supported
 
     @property
@@ -99,6 +100,7 @@ class ScimServiceProviderConfigBulkFeature(object):
         :type: int
         """
         
+
         self._max_operations = max_operations
 
     @property
@@ -122,6 +124,7 @@ class ScimServiceProviderConfigBulkFeature(object):
         :type: int
         """
         
+
         self._max_payload_size = max_payload_size
 
     def to_dict(self):

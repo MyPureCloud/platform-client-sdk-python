@@ -73,6 +73,7 @@ class FileUploadMode(object):
         :type: list[str]
         """
         
+
         self._file_types = file_types
 
     @property
@@ -96,6 +97,7 @@ class FileUploadMode(object):
         :type: int
         """
         
+
         self._max_file_size_kb = max_file_size_kb
 
     def to_dict(self):

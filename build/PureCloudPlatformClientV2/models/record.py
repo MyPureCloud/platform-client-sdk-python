@@ -76,6 +76,10 @@ class Record(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -99,6 +103,10 @@ class Record(object):
         :type: str
         """
         
+        if not type:
+            raise ValueError("Invalid value for `type`, must not be `None`")
+
+
         self._type = type
 
     @property
@@ -122,6 +130,10 @@ class Record(object):
         :type: str
         """
         
+        if not value:
+            raise ValueError("Invalid value for `value`, must not be `None`")
+
+
         self._value = value
 
     def to_dict(self):

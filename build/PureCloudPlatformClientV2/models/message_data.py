@@ -118,6 +118,7 @@ class MessageData(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,7 @@ class MessageData(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -164,6 +166,7 @@ class MessageData(object):
         :type: str
         """
         
+
         self._provider_message_id = provider_message_id
 
     @property
@@ -187,6 +190,10 @@ class MessageData(object):
         :type: datetime
         """
         
+        if not timestamp:
+            raise ValueError("Invalid value for `timestamp`, must not be `None`")
+
+
         self._timestamp = timestamp
 
     @property
@@ -210,6 +217,7 @@ class MessageData(object):
         :type: str
         """
         
+
         self._from_address = from_address
 
     @property
@@ -233,6 +241,7 @@ class MessageData(object):
         :type: str
         """
         
+
         self._to_address = to_address
 
     @property
@@ -310,6 +319,10 @@ class MessageData(object):
         :type: str
         """
         
+        if not text_body:
+            raise ValueError("Invalid value for `text_body`, must not be `None`")
+
+
         self._text_body = text_body
 
     @property
@@ -360,6 +373,7 @@ class MessageData(object):
         :type: list[MessageMedia]
         """
         
+
         self._media = media
 
     @property
@@ -383,6 +397,7 @@ class MessageData(object):
         :type: list[MessageSticker]
         """
         
+
         self._stickers = stickers
 
     @property
@@ -406,6 +421,7 @@ class MessageData(object):
         :type: ConversationNormalizedMessage
         """
         
+
         self._normalized_message = normalized_message
 
     @property
@@ -429,6 +445,7 @@ class MessageData(object):
         :type: list[ConversationNormalizedMessage]
         """
         
+
         self._normalized_receipts = normalized_receipts
 
     @property
@@ -452,6 +469,7 @@ class MessageData(object):
         :type: User
         """
         
+
         self._created_by = created_by
 
     @property
@@ -475,6 +493,7 @@ class MessageData(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -498,6 +517,7 @@ class MessageData(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

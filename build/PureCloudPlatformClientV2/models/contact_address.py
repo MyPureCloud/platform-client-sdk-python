@@ -85,6 +85,7 @@ class ContactAddress(object):
         :type: str
         """
         
+
         self._address1 = address1
 
     @property
@@ -108,6 +109,7 @@ class ContactAddress(object):
         :type: str
         """
         
+
         self._address2 = address2
 
     @property
@@ -131,6 +133,7 @@ class ContactAddress(object):
         :type: str
         """
         
+
         self._city = city
 
     @property
@@ -154,6 +157,7 @@ class ContactAddress(object):
         :type: str
         """
         
+
         self._state = state
 
     @property
@@ -177,6 +181,7 @@ class ContactAddress(object):
         :type: str
         """
         
+
         self._postal_code = postal_code
 
     @property
@@ -200,6 +205,7 @@ class ContactAddress(object):
         :type: str
         """
         
+
         self._country_code = country_code
 
     def to_dict(self):

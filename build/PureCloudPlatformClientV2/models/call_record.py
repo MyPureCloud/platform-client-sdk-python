@@ -73,6 +73,7 @@ class CallRecord(object):
         :type: datetime
         """
         
+
         self._last_attempt = last_attempt
 
     @property
@@ -96,6 +97,7 @@ class CallRecord(object):
         :type: str
         """
         
+
         self._last_result = last_result
 
     def to_dict(self):

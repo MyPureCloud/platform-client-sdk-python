@@ -103,6 +103,7 @@ class DomainOrganizationRoleCreate(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,10 @@ class DomainOrganizationRoleCreate(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -149,6 +154,7 @@ class DomainOrganizationRoleCreate(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -172,6 +178,7 @@ class DomainOrganizationRoleCreate(object):
         :type: str
         """
         
+
         self._default_role_id = default_role_id
 
     @property
@@ -195,6 +202,7 @@ class DomainOrganizationRoleCreate(object):
         :type: list[str]
         """
         
+
         self._permissions = permissions
 
     @property
@@ -218,6 +226,7 @@ class DomainOrganizationRoleCreate(object):
         :type: list[str]
         """
         
+
         self._unused_permissions = unused_permissions
 
     @property
@@ -241,6 +250,7 @@ class DomainOrganizationRoleCreate(object):
         :type: list[DomainPermissionPolicy]
         """
         
+
         self._permission_policies = permission_policies
 
     @property
@@ -264,6 +274,7 @@ class DomainOrganizationRoleCreate(object):
         :type: int
         """
         
+
         self._user_count = user_count
 
     @property
@@ -287,6 +298,7 @@ class DomainOrganizationRoleCreate(object):
         :type: bool
         """
         
+
         self._role_needs_update = role_needs_update
 
     @property
@@ -310,6 +322,7 @@ class DomainOrganizationRoleCreate(object):
         :type: bool
         """
         
+
         self._base = base
 
     @property
@@ -333,6 +346,7 @@ class DomainOrganizationRoleCreate(object):
         :type: bool
         """
         
+
         self._default = default
 
     @property
@@ -356,6 +370,7 @@ class DomainOrganizationRoleCreate(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

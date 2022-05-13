@@ -70,6 +70,7 @@ class ConversationAggregateQueryResponse(object):
         :type: list[ConversationAggregateDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

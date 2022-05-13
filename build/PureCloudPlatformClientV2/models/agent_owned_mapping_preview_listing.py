@@ -70,6 +70,7 @@ class AgentOwnedMappingPreviewListing(object):
         :type: list[AgentOwnedMappingPreview]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

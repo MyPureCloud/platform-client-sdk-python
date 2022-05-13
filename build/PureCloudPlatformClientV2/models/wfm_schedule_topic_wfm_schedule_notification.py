@@ -109,6 +109,7 @@ class WfmScheduleTopicWfmScheduleNotification(object):
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -132,6 +133,7 @@ class WfmScheduleTopicWfmScheduleNotification(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     @property
@@ -155,6 +157,7 @@ class WfmScheduleTopicWfmScheduleNotification(object):
         :type: int
         """
         
+
         self._percent_complete = percent_complete
 
     @property

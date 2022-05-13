@@ -100,6 +100,7 @@ class OpenMessageContent(object):
         :type: ContentAttachment
         """
         
+
         self._attachment = attachment
 
     def to_dict(self):

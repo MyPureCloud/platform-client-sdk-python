@@ -91,6 +91,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayResult(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -114,6 +115,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayResult(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -137,6 +139,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayResult(object):
         :type: int
         """
         
+
         self._interval_length_minutes = interval_length_minutes
 
     @property
@@ -160,6 +163,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayResult(object):
         :type: list[WfmBuIntradayDataUpdateTopicBuIntradayDataGroup]
         """
         
+
         self._intraday_data_groupings = intraday_data_groupings
 
     @property
@@ -183,6 +187,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayResult(object):
         :type: list[str]
         """
         
+
         self._categories = categories
 
     @property
@@ -206,6 +211,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayResult(object):
         :type: str
         """
         
+
         self._no_data_reason = no_data_reason
 
     @property
@@ -229,6 +235,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayResult(object):
         :type: WfmBuIntradayDataUpdateTopicBuScheduleReference
         """
         
+
         self._schedule = schedule
 
     @property
@@ -252,6 +259,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayResult(object):
         :type: WfmBuIntradayDataUpdateTopicBuShortTermForecastReference
         """
         
+
         self._short_term_forecast = short_term_forecast
 
     def to_dict(self):

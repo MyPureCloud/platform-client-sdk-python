@@ -100,6 +100,7 @@ class ResourcePermissionPolicy(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class ResourcePermissionPolicy(object):
         :type: str
         """
         
+
         self._domain = domain
 
     @property
@@ -146,6 +148,7 @@ class ResourcePermissionPolicy(object):
         :type: str
         """
         
+
         self._entity_name = entity_name
 
     @property
@@ -169,6 +172,7 @@ class ResourcePermissionPolicy(object):
         :type: str
         """
         
+
         self._policy_name = policy_name
 
     @property
@@ -192,6 +196,7 @@ class ResourcePermissionPolicy(object):
         :type: str
         """
         
+
         self._policy_description = policy_description
 
     @property
@@ -215,6 +220,7 @@ class ResourcePermissionPolicy(object):
         :type: str
         """
         
+
         self._action_set_key = action_set_key
 
     @property
@@ -238,6 +244,7 @@ class ResourcePermissionPolicy(object):
         :type: bool
         """
         
+
         self._allow_conditions = allow_conditions
 
     @property
@@ -261,6 +268,7 @@ class ResourcePermissionPolicy(object):
         :type: ResourceConditionNode
         """
         
+
         self._resource_condition_node = resource_condition_node
 
     @property
@@ -284,6 +292,7 @@ class ResourcePermissionPolicy(object):
         :type: list[str]
         """
         
+
         self._named_resources = named_resources
 
     @property
@@ -307,6 +316,7 @@ class ResourcePermissionPolicy(object):
         :type: str
         """
         
+
         self._resource_condition = resource_condition
 
     @property
@@ -330,6 +340,7 @@ class ResourcePermissionPolicy(object):
         :type: list[str]
         """
         
+
         self._action_set = action_set
 
     def to_dict(self):

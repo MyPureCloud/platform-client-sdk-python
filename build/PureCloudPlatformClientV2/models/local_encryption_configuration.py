@@ -85,6 +85,7 @@ class LocalEncryptionConfiguration(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class LocalEncryptionConfiguration(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,10 @@ class LocalEncryptionConfiguration(object):
         :type: str
         """
         
+        if not url:
+            raise ValueError("Invalid value for `url`, must not be `None`")
+
+
         self._url = url
 
     @property
@@ -154,6 +160,10 @@ class LocalEncryptionConfiguration(object):
         :type: str
         """
         
+        if not api_id:
+            raise ValueError("Invalid value for `api_id`, must not be `None`")
+
+
         self._api_id = api_id
 
     @property
@@ -177,6 +187,10 @@ class LocalEncryptionConfiguration(object):
         :type: str
         """
         
+        if not api_key:
+            raise ValueError("Invalid value for `api_key`, must not be `None`")
+
+
         self._api_key = api_key
 
     @property
@@ -200,6 +214,7 @@ class LocalEncryptionConfiguration(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

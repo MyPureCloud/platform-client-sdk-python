@@ -79,6 +79,7 @@ class QueueConversationScreenShareEventTopicScreenShareConversation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class QueueConversationScreenShareEventTopicScreenShareConversation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -125,6 +127,7 @@ class QueueConversationScreenShareEventTopicScreenShareConversation(object):
         :type: list[QueueConversationScreenShareEventTopicScreenShareMediaParticipant]
         """
         
+
         self._participants = participants
 
     @property
@@ -148,6 +151,7 @@ class QueueConversationScreenShareEventTopicScreenShareConversation(object):
         :type: list[str]
         """
         
+
         self._other_media_uris = other_media_uris
 
     def to_dict(self):

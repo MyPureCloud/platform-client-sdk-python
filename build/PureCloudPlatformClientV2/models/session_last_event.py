@@ -76,6 +76,7 @@ class SessionLastEvent(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class SessionLastEvent(object):
         :type: str
         """
         
+
         self._event_name = event_name
 
     @property
@@ -122,6 +124,7 @@ class SessionLastEvent(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     def to_dict(self):

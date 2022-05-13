@@ -76,6 +76,7 @@ class DetectedIntent(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -99,6 +100,7 @@ class DetectedIntent(object):
         :type: float
         """
         
+
         self._probability = probability
 
     @property
@@ -122,6 +124,7 @@ class DetectedIntent(object):
         :type: list[DetectedNamedEntity]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

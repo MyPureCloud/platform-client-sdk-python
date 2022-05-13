@@ -76,6 +76,10 @@ class CopyVoicemailMessage(object):
         :type: str
         """
         
+        if not voicemail_message_id:
+            raise ValueError("Invalid value for `voicemail_message_id`, must not be `None`")
+
+
         self._voicemail_message_id = voicemail_message_id
 
     @property
@@ -99,6 +103,7 @@ class CopyVoicemailMessage(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -122,6 +127,7 @@ class CopyVoicemailMessage(object):
         :type: str
         """
         
+
         self._group_id = group_id
 
     def to_dict(self):

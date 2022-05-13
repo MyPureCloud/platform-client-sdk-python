@@ -100,6 +100,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: int
         """
         
+
         self._max_attempts_per_contact = max_attempts_per_contact
 
     @property
@@ -123,6 +124,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: int
         """
         
+
         self._max_attempts_per_number = max_attempts_per_number
 
     @property
@@ -146,6 +148,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: str
         """
         
+
         self._time_zone_id = time_zone_id
 
     @property
@@ -196,6 +199,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: dict(str, DialerAttemptLimitsConfigChangeRecallEntry)
         """
         
+
         self._recall_entries = recall_entries
 
     @property
@@ -219,6 +223,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: bool
         """
         
+
         self._breadth_first_recalls = breadth_first_recalls
 
     @property
@@ -242,6 +247,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -265,6 +271,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -288,6 +295,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -311,6 +319,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -334,6 +343,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

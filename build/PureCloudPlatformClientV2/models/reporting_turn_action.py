@@ -79,6 +79,7 @@ class ReportingTurnAction(object):
         :type: str
         """
         
+
         self._action_id = action_id
 
     @property
@@ -102,6 +103,7 @@ class ReportingTurnAction(object):
         :type: str
         """
         
+
         self._action_name = action_name
 
     @property
@@ -125,6 +127,7 @@ class ReportingTurnAction(object):
         :type: int
         """
         
+
         self._action_number = action_number
 
     @property

@@ -148,6 +148,7 @@ class Video(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -171,6 +172,7 @@ class Video(object):
         :type: str
         """
         
+
         self._context = context
 
     @property
@@ -194,6 +196,7 @@ class Video(object):
         :type: bool
         """
         
+
         self._audio_muted = audio_muted
 
     @property
@@ -217,6 +220,7 @@ class Video(object):
         :type: bool
         """
         
+
         self._video_muted = video_muted
 
     @property
@@ -240,6 +244,7 @@ class Video(object):
         :type: bool
         """
         
+
         self._sharing_screen = sharing_screen
 
     @property
@@ -263,6 +268,7 @@ class Video(object):
         :type: int
         """
         
+
         self._peer_count = peer_count
 
     @property
@@ -313,6 +319,7 @@ class Video(object):
         :type: datetime
         """
         
+
         self._start_alerting_time = start_alerting_time
 
     @property
@@ -336,6 +343,7 @@ class Video(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -359,6 +367,7 @@ class Video(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -382,6 +391,7 @@ class Video(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -405,6 +415,7 @@ class Video(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -428,6 +439,7 @@ class Video(object):
         :type: list[str]
         """
         
+
         self._msids = msids
 
     @property
@@ -451,6 +463,7 @@ class Video(object):
         :type: Address
         """
         
+
         self._pcSelf = pcSelf
 
     @property
@@ -474,6 +487,7 @@ class Video(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -497,6 +511,7 @@ class Video(object):
         :type: AfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -520,6 +535,7 @@ class Video(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

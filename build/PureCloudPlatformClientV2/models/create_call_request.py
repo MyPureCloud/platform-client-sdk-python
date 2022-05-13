@@ -106,6 +106,7 @@ class CreateCallRequest(object):
         :type: str
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -129,6 +130,7 @@ class CreateCallRequest(object):
         :type: str
         """
         
+
         self._caller_id = caller_id
 
     @property
@@ -152,6 +154,7 @@ class CreateCallRequest(object):
         :type: str
         """
         
+
         self._caller_id_name = caller_id_name
 
     @property
@@ -175,6 +178,7 @@ class CreateCallRequest(object):
         :type: str
         """
         
+
         self._call_from_queue_id = call_from_queue_id
 
     @property
@@ -198,6 +202,7 @@ class CreateCallRequest(object):
         :type: str
         """
         
+
         self._call_queue_id = call_queue_id
 
     @property
@@ -221,6 +226,7 @@ class CreateCallRequest(object):
         :type: str
         """
         
+
         self._call_user_id = call_user_id
 
     @property
@@ -244,6 +250,7 @@ class CreateCallRequest(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -267,6 +274,7 @@ class CreateCallRequest(object):
         :type: str
         """
         
+
         self._language_id = language_id
 
     @property
@@ -290,6 +298,7 @@ class CreateCallRequest(object):
         :type: list[str]
         """
         
+
         self._routing_skills_ids = routing_skills_ids
 
     @property
@@ -313,6 +322,7 @@ class CreateCallRequest(object):
         :type: list[str]
         """
         
+
         self._conversation_ids = conversation_ids
 
     @property
@@ -336,6 +346,7 @@ class CreateCallRequest(object):
         :type: list[Destination]
         """
         
+
         self._participants = participants
 
     @property
@@ -359,6 +370,7 @@ class CreateCallRequest(object):
         :type: str
         """
         
+
         self._uui_data = uui_data
 
     @property
@@ -382,6 +394,7 @@ class CreateCallRequest(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     def to_dict(self):

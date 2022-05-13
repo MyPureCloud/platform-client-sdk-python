@@ -85,6 +85,7 @@ class WorkdayPointsTrend(object):
         :type: date
         """
         
+
         self._date_start_workday = date_start_workday
 
     @property
@@ -108,6 +109,7 @@ class WorkdayPointsTrend(object):
         :type: date
         """
         
+
         self._date_end_workday = date_end_workday
 
     @property
@@ -131,6 +133,7 @@ class WorkdayPointsTrend(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -181,6 +184,7 @@ class WorkdayPointsTrend(object):
         :type: float
         """
         
+
         self._average_points = average_points
 
     @property
@@ -204,6 +208,7 @@ class WorkdayPointsTrend(object):
         :type: list[WorkdayPointsTrendItem]
         """
         
+
         self._trend = trend
 
     def to_dict(self):

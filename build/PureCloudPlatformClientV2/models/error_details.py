@@ -91,6 +91,7 @@ class ErrorDetails(object):
         :type: int
         """
         
+
         self._status = status
 
     @property
@@ -114,6 +115,7 @@ class ErrorDetails(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -137,6 +139,7 @@ class ErrorDetails(object):
         :type: str
         """
         
+
         self._message_with_params = message_with_params
 
     @property
@@ -160,6 +163,7 @@ class ErrorDetails(object):
         :type: dict(str, str)
         """
         
+
         self._message_params = message_params
 
     @property
@@ -183,6 +187,7 @@ class ErrorDetails(object):
         :type: str
         """
         
+
         self._code = code
 
     @property
@@ -206,6 +211,7 @@ class ErrorDetails(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     @property
@@ -229,6 +235,7 @@ class ErrorDetails(object):
         :type: ErrorDetails
         """
         
+
         self._nested = nested
 
     @property
@@ -252,6 +259,7 @@ class ErrorDetails(object):
         :type: str
         """
         
+
         self._details = details
 
     def to_dict(self):

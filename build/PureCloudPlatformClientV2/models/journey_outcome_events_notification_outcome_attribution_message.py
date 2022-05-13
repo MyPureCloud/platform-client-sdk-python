@@ -76,6 +76,7 @@ class JourneyOutcomeEventsNotificationOutcomeAttributionMessage(object):
         :type: JourneyOutcomeEventsNotificationOutcome
         """
         
+
         self._outcome = outcome
 
     @property
@@ -99,6 +100,7 @@ class JourneyOutcomeEventsNotificationOutcomeAttributionMessage(object):
         :type: list[JourneyOutcomeEventsNotificationOutcomeTouchpoint]
         """
         
+
         self._outcome_touchpoints = outcome_touchpoints
 
     @property
@@ -122,6 +124,7 @@ class JourneyOutcomeEventsNotificationOutcomeAttributionMessage(object):
         :type: list[JourneyOutcomeEventsNotificationSegment]
         """
         
+
         self._segment_assignments = segment_assignments
 
     def to_dict(self):

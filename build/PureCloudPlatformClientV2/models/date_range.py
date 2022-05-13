@@ -73,6 +73,7 @@ class DateRange(object):
         :type: str
         """
         
+
         self._start_date = start_date
 
     @property
@@ -96,6 +97,7 @@ class DateRange(object):
         :type: str
         """
         
+
         self._end_date = end_date
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class ScimServiceProviderConfigFilterFeature(object):
         :type: bool
         """
         
+
         self._supported = supported
 
     @property
@@ -96,6 +97,7 @@ class ScimServiceProviderConfigFilterFeature(object):
         :type: int
         """
         
+
         self._max_results = max_results
 
     def to_dict(self):

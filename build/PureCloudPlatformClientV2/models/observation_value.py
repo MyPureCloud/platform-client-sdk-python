@@ -124,6 +124,10 @@ class ObservationValue(object):
         :type: datetime
         """
         
+        if not observation_date:
+            raise ValueError("Invalid value for `observation_date`, must not be `None`")
+
+
         self._observation_date = observation_date
 
     @property
@@ -147,6 +151,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -170,6 +175,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -193,6 +199,7 @@ class ObservationValue(object):
         :type: list[str]
         """
         
+
         self._requested_routing_skill_ids = requested_routing_skill_ids
 
     @property
@@ -216,6 +223,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._requested_language_id = requested_language_id
 
     @property
@@ -239,6 +247,7 @@ class ObservationValue(object):
         :type: int
         """
         
+
         self._routing_priority = routing_priority
 
     @property
@@ -262,6 +271,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._participant_name = participant_name
 
     @property
@@ -285,6 +295,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -335,6 +346,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._converted_from = converted_from
 
     @property
@@ -358,6 +370,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._converted_to = converted_to
 
     @property
@@ -381,6 +394,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._address_from = address_from
 
     @property
@@ -404,6 +418,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._address_to = address_to
 
     @property
@@ -427,6 +442,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -450,6 +466,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -473,6 +490,7 @@ class ObservationValue(object):
         :type: str
         """
         
+
         self._team_id = team_id
 
     @property
@@ -496,6 +514,7 @@ class ObservationValue(object):
         :type: list[str]
         """
         
+
         self._requested_routings = requested_routings
 
     @property
@@ -546,6 +565,7 @@ class ObservationValue(object):
         :type: list[AnalyticsScoredAgent]
         """
         
+
         self._scored_agents = scored_agents
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class ConversationMessageEventTopicWrapup(object):
         :type: str
         """
         
+
         self._code = code
 
     @property
@@ -105,6 +106,7 @@ class ConversationMessageEventTopicWrapup(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -128,6 +130,7 @@ class ConversationMessageEventTopicWrapup(object):
         :type: list[str]
         """
         
+
         self._tags = tags
 
     @property
@@ -151,6 +154,7 @@ class ConversationMessageEventTopicWrapup(object):
         :type: int
         """
         
+
         self._duration_seconds = duration_seconds
 
     @property
@@ -174,6 +178,7 @@ class ConversationMessageEventTopicWrapup(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     def to_dict(self):

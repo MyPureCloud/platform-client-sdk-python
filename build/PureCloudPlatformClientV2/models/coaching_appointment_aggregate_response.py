@@ -70,6 +70,7 @@ class CoachingAppointmentAggregateResponse(object):
         :type: list[QueryResponseGroupedData]
         """
         
+
         self._results = results
 
     def to_dict(self):

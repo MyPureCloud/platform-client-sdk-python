@@ -82,6 +82,7 @@ class Card(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -105,6 +106,7 @@ class Card(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -128,6 +130,7 @@ class Card(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -151,6 +154,7 @@ class Card(object):
         :type: CardAction
         """
         
+
         self._default_action = default_action
 
     @property
@@ -174,6 +178,7 @@ class Card(object):
         :type: list[CardAction]
         """
         
+
         self._actions = actions
 
     def to_dict(self):

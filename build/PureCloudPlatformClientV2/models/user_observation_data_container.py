@@ -73,6 +73,7 @@ class UserObservationDataContainer(object):
         :type: dict(str, str)
         """
         
+
         self._group = group
 
     @property
@@ -96,6 +97,7 @@ class UserObservationDataContainer(object):
         :type: list[ObservationMetricData]
         """
         
+
         self._data = data
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class AdherenceSettings(object):
         :type: int
         """
         
+
         self._severe_alert_threshold_minutes = severe_alert_threshold_minutes
 
     @property
@@ -108,6 +109,7 @@ class AdherenceSettings(object):
         :type: int
         """
         
+
         self._adherence_target_percent = adherence_target_percent
 
     @property
@@ -131,6 +133,7 @@ class AdherenceSettings(object):
         :type: int
         """
         
+
         self._adherence_exception_threshold_seconds = adherence_exception_threshold_seconds
 
     @property
@@ -154,6 +157,7 @@ class AdherenceSettings(object):
         :type: bool
         """
         
+
         self._non_on_queue_activities_equivalent = non_on_queue_activities_equivalent
 
     @property
@@ -177,6 +181,7 @@ class AdherenceSettings(object):
         :type: bool
         """
         
+
         self._track_on_queue_activity = track_on_queue_activity
 
     @property
@@ -200,6 +205,7 @@ class AdherenceSettings(object):
         :type: IgnoredActivityCategories
         """
         
+
         self._ignored_activity_categories = ignored_activity_categories
 
     def to_dict(self):

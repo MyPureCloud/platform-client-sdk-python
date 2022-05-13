@@ -112,6 +112,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -158,6 +160,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._default_language = default_language
 
     @property
@@ -181,6 +184,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._default_country_code = default_country_code
 
     @property
@@ -204,6 +208,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._third_party_org_name = third_party_org_name
 
     @property
@@ -227,6 +232,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._third_party_uri = third_party_uri
 
     @property
@@ -250,6 +256,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._domain = domain
 
     @property
@@ -273,6 +280,10 @@ class Organization(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -323,6 +334,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._default_site_id = default_site_id
 
     @property
@@ -346,6 +358,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._support_uri = support_uri
 
     @property
@@ -369,6 +382,7 @@ class Organization(object):
         :type: bool
         """
         
+
         self._voicemail_enabled = voicemail_enabled
 
     @property
@@ -419,6 +433,7 @@ class Organization(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -442,6 +457,7 @@ class Organization(object):
         :type: dict(str, bool)
         """
         
+
         self._features = features
 
     def to_dict(self):

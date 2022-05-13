@@ -109,6 +109,7 @@ class CardAction(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -132,6 +133,7 @@ class CardAction(object):
         :type: str
         """
         
+
         self._payload = payload
 
     @property
@@ -155,6 +157,7 @@ class CardAction(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -178,6 +181,7 @@ class CardAction(object):
         :type: bool
         """
         
+
         self._is_selected = is_selected
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class KnowledgeSearchResponse(object):
         :type: str
         """
         
+
         self._search_id = search_id
 
     @property
@@ -108,6 +109,7 @@ class KnowledgeSearchResponse(object):
         :type: int
         """
         
+
         self._total = total
 
     @property
@@ -131,6 +133,7 @@ class KnowledgeSearchResponse(object):
         :type: int
         """
         
+
         self._page_count = page_count
 
     @property
@@ -154,6 +157,7 @@ class KnowledgeSearchResponse(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -177,6 +181,7 @@ class KnowledgeSearchResponse(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -200,6 +205,7 @@ class KnowledgeSearchResponse(object):
         :type: list[KnowledgeSearchDocument]
         """
         
+
         self._results = results
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class ReportingTurnKnowledgeDocument(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class ReportingTurnKnowledgeDocument(object):
         :type: str
         """
         
+
         self._question = question
 
     @property
@@ -125,6 +127,7 @@ class ReportingTurnKnowledgeDocument(object):
         :type: str
         """
         
+
         self._answer = answer
 
     @property
@@ -148,6 +151,7 @@ class ReportingTurnKnowledgeDocument(object):
         :type: float
         """
         
+
         self._confidence = confidence
 
     def to_dict(self):

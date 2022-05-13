@@ -70,6 +70,7 @@ class ServerDate(object):
         :type: datetime
         """
         
+
         self._current_date = current_date
 
     def to_dict(self):

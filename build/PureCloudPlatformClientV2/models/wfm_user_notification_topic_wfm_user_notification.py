@@ -97,6 +97,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :type: str
         """
         
+
         self._mutable_group_id = mutable_group_id
 
     @property
@@ -143,6 +145,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :type: datetime
         """
         
+
         self._timestamp = timestamp
 
     @property
@@ -193,6 +196,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :type: WfmUserNotificationTopicShiftTradeNotification
         """
         
+
         self._shift_trade = shift_trade
 
     @property
@@ -216,6 +220,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :type: WfmUserNotificationTopicTimeOffRequestNotification
         """
         
+
         self._time_off_request = time_off_request
 
     @property
@@ -239,6 +244,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :type: WfmUserNotificationTopicAdherenceExplanationNotification
         """
         
+
         self._adherence_explanation = adherence_explanation
 
     @property
@@ -262,6 +268,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :type: bool
         """
         
+
         self._agent_notification = agent_notification
 
     @property
@@ -285,6 +292,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :type: list[str]
         """
         
+
         self._other_notification_ids_in_group = other_notification_ids_in_group
 
     @property
@@ -308,6 +316,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :type: bool
         """
         
+
         self._marked_as_read = marked_as_read
 
     def to_dict(self):

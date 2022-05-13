@@ -70,6 +70,7 @@ class BuForecastGenerationResult(object):
         :type: list[BuForecastGenerationPlanningGroupResult]
         """
         
+
         self._planning_group_results = planning_group_results
 
     def to_dict(self):

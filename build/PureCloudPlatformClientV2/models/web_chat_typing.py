@@ -79,6 +79,10 @@ class WebChatTyping(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -102,6 +106,10 @@ class WebChatTyping(object):
         :type: WebChatConversation
         """
         
+        if not conversation:
+            raise ValueError("Invalid value for `conversation`, must not be `None`")
+
+
         self._conversation = conversation
 
     @property
@@ -125,6 +133,10 @@ class WebChatTyping(object):
         :type: WebChatMemberInfo
         """
         
+        if not sender:
+            raise ValueError("Invalid value for `sender`, must not be `None`")
+
+
         self._sender = sender
 
     @property
@@ -148,6 +160,10 @@ class WebChatTyping(object):
         :type: datetime
         """
         
+        if not timestamp:
+            raise ValueError("Invalid value for `timestamp`, must not be `None`")
+
+
         self._timestamp = timestamp
 
     def to_dict(self):

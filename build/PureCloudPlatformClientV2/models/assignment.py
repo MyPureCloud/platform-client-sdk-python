@@ -76,6 +76,7 @@ class Assignment(object):
         :type: list[UserReference]
         """
         
+
         self._assigned_members = assigned_members
 
     @property
@@ -99,6 +100,7 @@ class Assignment(object):
         :type: list[UserReference]
         """
         
+
         self._removed_members = removed_members
 
     @property
@@ -122,6 +124,7 @@ class Assignment(object):
         :type: list[AssignmentError]
         """
         
+
         self._assignment_errors = assignment_errors
 
     def to_dict(self):

@@ -79,6 +79,10 @@ class CreateServiceGoalTemplate(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -102,6 +106,7 @@ class CreateServiceGoalTemplate(object):
         :type: BuServiceLevel
         """
         
+
         self._service_level = service_level
 
     @property
@@ -125,6 +130,7 @@ class CreateServiceGoalTemplate(object):
         :type: BuAverageSpeedOfAnswer
         """
         
+
         self._average_speed_of_answer = average_speed_of_answer
 
     @property
@@ -148,6 +154,7 @@ class CreateServiceGoalTemplate(object):
         :type: BuAbandonRate
         """
         
+
         self._abandon_rate = abandon_rate
 
     def to_dict(self):

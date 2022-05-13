@@ -82,6 +82,7 @@ class RequestConfig(object):
         :type: str
         """
         
+
         self._request_url_template = request_url_template
 
     @property
@@ -105,6 +106,7 @@ class RequestConfig(object):
         :type: str
         """
         
+
         self._request_template = request_template
 
     @property
@@ -128,6 +130,7 @@ class RequestConfig(object):
         :type: str
         """
         
+
         self._request_template_uri = request_template_uri
 
     @property
@@ -151,6 +154,7 @@ class RequestConfig(object):
         :type: str
         """
         
+
         self._request_type = request_type
 
     @property
@@ -174,6 +178,7 @@ class RequestConfig(object):
         :type: dict(str, str)
         """
         
+
         self._headers = headers
 
     def to_dict(self):

@@ -73,6 +73,10 @@ class ChangeMyPasswordRequest(object):
         :type: str
         """
         
+        if not new_password:
+            raise ValueError("Invalid value for `new_password`, must not be `None`")
+
+
         self._new_password = new_password
 
     @property
@@ -96,6 +100,10 @@ class ChangeMyPasswordRequest(object):
         :type: str
         """
         
+        if not old_password:
+            raise ValueError("Invalid value for `old_password`, must not be `None`")
+
+
         self._old_password = old_password
 
     def to_dict(self):

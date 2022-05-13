@@ -76,6 +76,7 @@ class UserStationChangeTopicUserStation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class UserStationChangeTopicUserStation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -122,6 +124,7 @@ class UserStationChangeTopicUserStation(object):
         :type: UserStationChangeTopicUser
         """
         
+
         self._associated_user = associated_user
 
     def to_dict(self):

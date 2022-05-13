@@ -97,6 +97,7 @@ class RecordingEmailMessage(object):
         :type: str
         """
         
+
         self._html_body = html_body
 
     @property
@@ -120,6 +121,7 @@ class RecordingEmailMessage(object):
         :type: str
         """
         
+
         self._text_body = text_body
 
     @property
@@ -143,6 +145,7 @@ class RecordingEmailMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -166,6 +169,7 @@ class RecordingEmailMessage(object):
         :type: list[EmailAddress]
         """
         
+
         self._to = to
 
     @property
@@ -189,6 +193,7 @@ class RecordingEmailMessage(object):
         :type: list[EmailAddress]
         """
         
+
         self._cc = cc
 
     @property
@@ -212,6 +217,7 @@ class RecordingEmailMessage(object):
         :type: list[EmailAddress]
         """
         
+
         self._bcc = bcc
 
     @property
@@ -235,6 +241,7 @@ class RecordingEmailMessage(object):
         :type: EmailAddress
         """
         
+
         self._pcFrom = pcFrom
 
     @property
@@ -258,6 +265,7 @@ class RecordingEmailMessage(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -281,6 +289,7 @@ class RecordingEmailMessage(object):
         :type: list[EmailAttachment]
         """
         
+
         self._attachments = attachments
 
     @property
@@ -304,6 +313,7 @@ class RecordingEmailMessage(object):
         :type: datetime
         """
         
+
         self._time = time
 
     def to_dict(self):

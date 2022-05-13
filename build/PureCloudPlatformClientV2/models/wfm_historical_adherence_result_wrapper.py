@@ -76,6 +76,7 @@ class WfmHistoricalAdherenceResultWrapper(object):
         :type: str
         """
         
+
         self._entity_id = entity_id
 
     @property
@@ -99,6 +100,7 @@ class WfmHistoricalAdherenceResultWrapper(object):
         :type: list[HistoricalAdherenceQueryResult]
         """
         
+
         self._data = data
 
     @property
@@ -122,6 +124,7 @@ class WfmHistoricalAdherenceResultWrapper(object):
         :type: dict(str, str)
         """
         
+
         self._lookup_id_to_secondary_presence_id = lookup_id_to_secondary_presence_id
 
     def to_dict(self):

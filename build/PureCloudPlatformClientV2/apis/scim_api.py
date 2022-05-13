@@ -110,7 +110,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -191,7 +191,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -278,7 +278,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -365,7 +365,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -443,7 +443,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -515,7 +515,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -593,7 +593,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -668,7 +668,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -743,7 +743,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -830,7 +830,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -917,7 +917,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -1004,7 +1004,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -1094,7 +1094,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -1172,7 +1172,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -1244,7 +1244,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -1322,7 +1322,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -1397,7 +1397,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -1472,7 +1472,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -1559,7 +1559,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']
@@ -1646,7 +1646,7 @@ class SCIMApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/scim+json', 'application/json'])
+            select_header_content_type(['application/json'])
 
         # Authentication setting
         auth_settings = ['PureCloud OAuth']

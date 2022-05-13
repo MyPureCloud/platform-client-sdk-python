@@ -23,7 +23,7 @@ Get the messages for a web messaging session.
 
 Wraps GET /api/v2/webmessaging/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

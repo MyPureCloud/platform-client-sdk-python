@@ -79,6 +79,7 @@ class AggregationResultEntry(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -102,6 +103,7 @@ class AggregationResultEntry(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -125,6 +127,7 @@ class AggregationResultEntry(object):
         :type: float
         """
         
+
         self._gte = gte
 
     @property
@@ -148,6 +151,7 @@ class AggregationResultEntry(object):
         :type: float
         """
         
+
         self._lt = lt
 
     def to_dict(self):

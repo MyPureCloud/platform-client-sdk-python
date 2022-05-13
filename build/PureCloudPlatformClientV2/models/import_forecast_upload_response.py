@@ -79,6 +79,7 @@ class ImportForecastUploadResponse(object):
         :type: str
         """
         
+
         self._upload_key = upload_key
 
     @property
@@ -102,6 +103,7 @@ class ImportForecastUploadResponse(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -125,6 +127,7 @@ class ImportForecastUploadResponse(object):
         :type: dict(str, str)
         """
         
+
         self._headers = headers
 
     @property
@@ -148,6 +151,7 @@ class ImportForecastUploadResponse(object):
         :type: BuImportShortTermForecastSchema
         """
         
+
         self._upload_body_schema = upload_body_schema
 
     def to_dict(self):

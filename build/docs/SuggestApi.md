@@ -45,7 +45,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.SuggestApi()
 q64 = 'q64_example' # str | q64
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
-profile = true # bool | profile (optional) (default to true)
+profile = True # bool | profile (optional) (default to True)
 
 try:
     # Search using the q64 value returned from a previous search.
@@ -62,7 +62,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
-| **profile** | **bool**| profile | [optional] [default to true] |
+| **profile** | **bool**| profile | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type
@@ -100,7 +100,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.SuggestApi()
 q64 = 'q64_example' # str | q64
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
-profile = true # bool | profile (optional) (default to true)
+profile = True # bool | profile (optional) (default to True)
 
 try:
     # Suggest resources using the q64 value returned from a previous suggest query.
@@ -117,7 +117,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
-| **profile** | **bool**| profile | [optional] [default to true] |
+| **profile** | **bool**| profile | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type
@@ -154,7 +154,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SuggestApi()
 body = PureCloudPlatformClientV2.SearchRequest() # SearchRequest | Search request options
-profile = true # bool | profile (optional) (default to true)
+profile = True # bool | profile (optional) (default to True)
 
 try:
     # Search resources.
@@ -170,7 +170,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**SearchRequest**](SearchRequest.html)| Search request options |  |
-| **profile** | **bool**| profile | [optional] [default to true] |
+| **profile** | **bool**| profile | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type
@@ -207,7 +207,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SuggestApi()
 body = PureCloudPlatformClientV2.SuggestSearchRequest() # SuggestSearchRequest | Search request options
-profile = true # bool | profile (optional) (default to true)
+profile = True # bool | profile (optional) (default to True)
 
 try:
     # Suggest resources.
@@ -223,7 +223,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options |  |
-| **profile** | **bool**| profile | [optional] [default to true] |
+| **profile** | **bool**| profile | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type

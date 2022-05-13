@@ -82,6 +82,7 @@ class LearningModuleReassignSummary(object):
         :type: int
         """
         
+
         self._total_reassigned = total_reassigned
 
     @property
@@ -105,6 +106,7 @@ class LearningModuleReassignSummary(object):
         :type: int
         """
         
+
         self._completed_count = completed_count
 
     @property
@@ -128,6 +130,7 @@ class LearningModuleReassignSummary(object):
         :type: int
         """
         
+
         self._in_progress_count = in_progress_count
 
     @property
@@ -151,6 +154,7 @@ class LearningModuleReassignSummary(object):
         :type: int
         """
         
+
         self._assigned_count = assigned_count
 
     @property
@@ -174,6 +178,7 @@ class LearningModuleReassignSummary(object):
         :type: int
         """
         
+
         self._not_completed_count = not_completed_count
 
     def to_dict(self):

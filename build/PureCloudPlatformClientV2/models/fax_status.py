@@ -91,6 +91,7 @@ class FaxStatus(object):
         :type: str
         """
         
+
         self._direction = direction
 
     @property
@@ -114,6 +115,7 @@ class FaxStatus(object):
         :type: int
         """
         
+
         self._expected_pages = expected_pages
 
     @property
@@ -137,6 +139,7 @@ class FaxStatus(object):
         :type: int
         """
         
+
         self._active_page = active_page
 
     @property
@@ -160,6 +163,7 @@ class FaxStatus(object):
         :type: int
         """
         
+
         self._lines_transmitted = lines_transmitted
 
     @property
@@ -183,6 +187,7 @@ class FaxStatus(object):
         :type: int
         """
         
+
         self._bytes_transmitted = bytes_transmitted
 
     @property
@@ -206,6 +211,7 @@ class FaxStatus(object):
         :type: int
         """
         
+
         self._baud_rate = baud_rate
 
     @property
@@ -229,6 +235,7 @@ class FaxStatus(object):
         :type: int
         """
         
+
         self._page_errors = page_errors
 
     @property
@@ -252,6 +259,7 @@ class FaxStatus(object):
         :type: int
         """
         
+
         self._line_errors = line_errors
 
     def to_dict(self):

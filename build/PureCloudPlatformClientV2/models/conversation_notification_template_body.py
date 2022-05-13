@@ -73,6 +73,7 @@ class ConversationNotificationTemplateBody(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -96,6 +97,10 @@ class ConversationNotificationTemplateBody(object):
         :type: list[ConversationNotificationTemplateParameter]
         """
         
+        if not parameters:
+            raise ValueError("Invalid value for `parameters`, must not be `None`")
+
+
         self._parameters = parameters
 
     def to_dict(self):

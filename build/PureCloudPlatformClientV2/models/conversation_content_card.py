@@ -85,6 +85,10 @@ class ConversationContentCard(object):
         :type: str
         """
         
+        if not title:
+            raise ValueError("Invalid value for `title`, must not be `None`")
+
+
         self._title = title
 
     @property
@@ -108,6 +112,7 @@ class ConversationContentCard(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -131,6 +136,7 @@ class ConversationContentCard(object):
         :type: str
         """
         
+
         self._image = image
 
     @property
@@ -154,6 +160,7 @@ class ConversationContentCard(object):
         :type: str
         """
         
+
         self._video = video
 
     @property
@@ -177,6 +184,7 @@ class ConversationContentCard(object):
         :type: ConversationContentCardAction
         """
         
+
         self._default_action = default_action
 
     @property
@@ -200,6 +208,10 @@ class ConversationContentCard(object):
         :type: list[ConversationContentCardAction]
         """
         
+        if not actions:
+            raise ValueError("Invalid value for `actions`, must not be `None`")
+
+
         self._actions = actions
 
     def to_dict(self):

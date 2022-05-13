@@ -109,6 +109,7 @@ class UpdateBusinessUnitSettings(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -132,6 +133,7 @@ class UpdateBusinessUnitSettings(object):
         :type: BuShortTermForecastingSettings
         """
         
+
         self._short_term_forecasting = short_term_forecasting
 
     @property
@@ -155,6 +157,7 @@ class UpdateBusinessUnitSettings(object):
         :type: BuSchedulingSettings
         """
         
+
         self._scheduling = scheduling
 
     @property
@@ -178,6 +181,10 @@ class UpdateBusinessUnitSettings(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

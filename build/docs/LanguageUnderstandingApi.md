@@ -386,10 +386,10 @@ intent_name = 'intent_name_example' # str | The top intent name to retrieve feed
 assessment = 'assessment_example' # str | The top assessment to retrieve feedback for. (optional)
 date_start = '2013-10-20' # date | Begin of time window as ISO-8601 date. (optional)
 date_end = '2013-10-20' # date | End of time window as ISO-8601 date. (optional)
-include_deleted = true # bool | Whether to include soft-deleted items in the result. (optional)
+include_deleted = True # bool | Whether to include soft-deleted items in the result. (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-enable_cursor_pagination = false # bool | Enable Cursor Pagination (optional) (default to false)
+enable_cursor_pagination = False # bool | Enable Cursor Pagination (optional) (default to False)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)
 fields = ['fields_example'] # list[str] | Fields and properties to get, comma-separated (optional)
 
@@ -414,8 +414,8 @@ except ApiException as e:
 | **include_deleted** | **bool**| Whether to include soft-deleted items in the result. | [optional]  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **enable_cursor_pagination** | **bool**| Enable Cursor Pagination | [optional] [default to false] |
-| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true | [optional]  |
+| **enable_cursor_pagination** | **bool**| Enable Cursor Pagination | [optional] [default to False] |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination&#x3D;true | [optional]  |
 | **fields** | [**list[str]**](str.html)| Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
 {: class="table table-striped"}
 
@@ -511,7 +511,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
 domain_id = 'domain_id_example' # str | ID of the NLU domain.
 domain_version_id = 'domain_version_id_example' # str | ID of the NLU domain version.
-include_utterances = true # bool | Whether utterances for intent definition should be included when marshalling response. (optional)
+include_utterances = True # bool | Whether utterances for intent definition should be included when marshalling response. (optional)
 
 try:
     # Find an NLU Domain Version.
@@ -620,7 +620,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
 domain_id = 'domain_id_example' # str | ID of the NLU domain.
-include_utterances = true # bool | Whether utterances for intent definition should be included when marshalling response. (optional)
+include_utterances = True # bool | Whether utterances for intent definition should be included when marshalling response. (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 

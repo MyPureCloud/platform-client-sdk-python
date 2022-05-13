@@ -103,6 +103,7 @@ class SurveyForm(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,10 @@ class SurveyForm(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -149,6 +154,7 @@ class SurveyForm(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -172,6 +178,7 @@ class SurveyForm(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -195,6 +202,7 @@ class SurveyForm(object):
         :type: bool
         """
         
+
         self._disabled = disabled
 
     @property
@@ -218,6 +226,10 @@ class SurveyForm(object):
         :type: str
         """
         
+        if not context_id:
+            raise ValueError("Invalid value for `context_id`, must not be `None`")
+
+
         self._context_id = context_id
 
     @property
@@ -241,6 +253,10 @@ class SurveyForm(object):
         :type: str
         """
         
+        if not language:
+            raise ValueError("Invalid value for `language`, must not be `None`")
+
+
         self._language = language
 
     @property
@@ -264,6 +280,7 @@ class SurveyForm(object):
         :type: str
         """
         
+
         self._header = header
 
     @property
@@ -287,6 +304,7 @@ class SurveyForm(object):
         :type: str
         """
         
+
         self._footer = footer
 
     @property
@@ -310,6 +328,10 @@ class SurveyForm(object):
         :type: list[SurveyQuestionGroup]
         """
         
+        if not question_groups:
+            raise ValueError("Invalid value for `question_groups`, must not be `None`")
+
+
         self._question_groups = question_groups
 
     @property
@@ -333,6 +355,7 @@ class SurveyForm(object):
         :type: DomainEntityListingSurveyForm
         """
         
+
         self._published_versions = published_versions
 
     @property
@@ -356,6 +379,7 @@ class SurveyForm(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -106,6 +106,10 @@ class CreateBusinessUnitSettings(object):
         :type: str
         """
         
+        if not time_zone:
+            raise ValueError("Invalid value for `time_zone`, must not be `None`")
+
+
         self._time_zone = time_zone
 
     @property
@@ -129,6 +133,7 @@ class CreateBusinessUnitSettings(object):
         :type: BuShortTermForecastingSettings
         """
         
+
         self._short_term_forecasting = short_term_forecasting
 
     @property
@@ -152,6 +157,7 @@ class CreateBusinessUnitSettings(object):
         :type: BuSchedulingSettings
         """
         
+
         self._scheduling = scheduling
 
     def to_dict(self):

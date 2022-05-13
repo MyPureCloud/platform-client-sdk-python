@@ -73,6 +73,7 @@ class AmazonLexRequest(object):
         :type: dict(str, str)
         """
         
+
         self._request_attributes = request_attributes
 
     @property
@@ -96,6 +97,7 @@ class AmazonLexRequest(object):
         :type: dict(str, str)
         """
         
+
         self._session_attributes = session_attributes
 
     def to_dict(self):

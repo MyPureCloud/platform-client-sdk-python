@@ -115,6 +115,10 @@ class TimeOffRequest(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -138,6 +142,10 @@ class TimeOffRequest(object):
         :type: UserReference
         """
         
+        if not user:
+            raise ValueError("Invalid value for `user`, must not be `None`")
+
+
         self._user = user
 
     @property
@@ -161,6 +169,7 @@ class TimeOffRequest(object):
         :type: bool
         """
         
+
         self._is_full_day_request = is_full_day_request
 
     @property
@@ -184,6 +193,7 @@ class TimeOffRequest(object):
         :type: bool
         """
         
+
         self._marked_as_read = marked_as_read
 
     @property
@@ -207,6 +217,7 @@ class TimeOffRequest(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -257,6 +268,7 @@ class TimeOffRequest(object):
         :type: list[datetime]
         """
         
+
         self._partial_day_start_date_times = partial_day_start_date_times
 
     @property
@@ -280,6 +292,7 @@ class TimeOffRequest(object):
         :type: list[str]
         """
         
+
         self._full_day_management_unit_dates = full_day_management_unit_dates
 
     @property
@@ -303,6 +316,7 @@ class TimeOffRequest(object):
         :type: int
         """
         
+
         self._daily_duration_minutes = daily_duration_minutes
 
     @property
@@ -326,6 +340,7 @@ class TimeOffRequest(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -349,6 +364,7 @@ class TimeOffRequest(object):
         :type: UserReference
         """
         
+
         self._submitted_by = submitted_by
 
     @property
@@ -372,6 +388,7 @@ class TimeOffRequest(object):
         :type: datetime
         """
         
+
         self._submitted_date = submitted_date
 
     @property
@@ -395,6 +412,7 @@ class TimeOffRequest(object):
         :type: UserReference
         """
         
+
         self._reviewed_by = reviewed_by
 
     @property
@@ -418,6 +436,7 @@ class TimeOffRequest(object):
         :type: datetime
         """
         
+
         self._reviewed_date = reviewed_date
 
     @property
@@ -441,6 +460,7 @@ class TimeOffRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -464,6 +484,7 @@ class TimeOffRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

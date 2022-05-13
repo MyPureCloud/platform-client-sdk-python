@@ -73,6 +73,7 @@ class QueueConversationEventTopicVoicemail(object):
         :type: str
         """
         
+
         self._id = id
 
     @property

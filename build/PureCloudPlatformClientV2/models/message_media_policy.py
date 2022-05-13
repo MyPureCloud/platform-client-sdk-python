@@ -73,6 +73,7 @@ class MessageMediaPolicy(object):
         :type: PolicyActions
         """
         
+
         self._actions = actions
 
     @property
@@ -96,6 +97,7 @@ class MessageMediaPolicy(object):
         :type: MessageMediaPolicyConditions
         """
         
+
         self._conditions = conditions
 
     def to_dict(self):

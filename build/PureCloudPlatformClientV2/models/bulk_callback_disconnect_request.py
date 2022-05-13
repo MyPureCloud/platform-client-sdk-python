@@ -70,6 +70,10 @@ class BulkCallbackDisconnectRequest(object):
         :type: list[CallbackDisconnectIdentifier]
         """
         
+        if not callback_disconnect_identifiers:
+            raise ValueError("Invalid value for `callback_disconnect_identifiers`, must not be `None`")
+
+
         self._callback_disconnect_identifiers = callback_disconnect_identifiers
 
     def to_dict(self):

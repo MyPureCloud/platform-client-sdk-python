@@ -94,6 +94,7 @@ class BuRescheduleRequest(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -117,6 +118,7 @@ class BuRescheduleRequest(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -140,6 +142,7 @@ class BuRescheduleRequest(object):
         :type: list[str]
         """
         
+
         self._agent_ids = agent_ids
 
     @property
@@ -163,6 +166,7 @@ class BuRescheduleRequest(object):
         :type: list[str]
         """
         
+
         self._activity_code_ids = activity_code_ids
 
     @property
@@ -186,6 +190,10 @@ class BuRescheduleRequest(object):
         :type: list[str]
         """
         
+        if not management_unit_ids:
+            raise ValueError("Invalid value for `management_unit_ids`, must not be `None`")
+
+
         self._management_unit_ids = management_unit_ids
 
     @property
@@ -209,6 +217,10 @@ class BuRescheduleRequest(object):
         :type: bool
         """
         
+        if not do_not_change_weekly_paid_time:
+            raise ValueError("Invalid value for `do_not_change_weekly_paid_time`, must not be `None`")
+
+
         self._do_not_change_weekly_paid_time = do_not_change_weekly_paid_time
 
     @property
@@ -232,6 +244,10 @@ class BuRescheduleRequest(object):
         :type: bool
         """
         
+        if not do_not_change_daily_paid_time:
+            raise ValueError("Invalid value for `do_not_change_daily_paid_time`, must not be `None`")
+
+
         self._do_not_change_daily_paid_time = do_not_change_daily_paid_time
 
     @property
@@ -255,6 +271,10 @@ class BuRescheduleRequest(object):
         :type: bool
         """
         
+        if not do_not_change_shift_start_times:
+            raise ValueError("Invalid value for `do_not_change_shift_start_times`, must not be `None`")
+
+
         self._do_not_change_shift_start_times = do_not_change_shift_start_times
 
     @property
@@ -278,6 +298,10 @@ class BuRescheduleRequest(object):
         :type: bool
         """
         
+        if not do_not_change_manually_edited_shifts:
+            raise ValueError("Invalid value for `do_not_change_manually_edited_shifts`, must not be `None`")
+
+
         self._do_not_change_manually_edited_shifts = do_not_change_manually_edited_shifts
 
     def to_dict(self):

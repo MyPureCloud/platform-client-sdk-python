@@ -70,6 +70,7 @@ class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings(object)
         :type: list[DialerOutboundSettingsConfigChangeCallableWindow]
         """
         
+
         self._callable_windows = callable_windows
 
     def to_dict(self):

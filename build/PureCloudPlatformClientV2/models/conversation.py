@@ -106,6 +106,7 @@ class Conversation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class Conversation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -152,6 +154,7 @@ class Conversation(object):
         :type: str
         """
         
+
         self._external_tag = external_tag
 
     @property
@@ -175,6 +178,10 @@ class Conversation(object):
         :type: datetime
         """
         
+        if not start_time:
+            raise ValueError("Invalid value for `start_time`, must not be `None`")
+
+
         self._start_time = start_time
 
     @property
@@ -198,6 +205,7 @@ class Conversation(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -221,6 +229,7 @@ class Conversation(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -244,6 +253,10 @@ class Conversation(object):
         :type: list[Participant]
         """
         
+        if not participants:
+            raise ValueError("Invalid value for `participants`, must not be `None`")
+
+
         self._participants = participants
 
     @property
@@ -267,6 +280,7 @@ class Conversation(object):
         :type: list[str]
         """
         
+
         self._conversation_ids = conversation_ids
 
     @property
@@ -290,6 +304,7 @@ class Conversation(object):
         :type: int
         """
         
+
         self._max_participants = max_participants
 
     @property
@@ -367,6 +382,7 @@ class Conversation(object):
         :type: list[ConversationDivisionMembership]
         """
         
+
         self._divisions = divisions
 
     @property
@@ -390,6 +406,7 @@ class Conversation(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

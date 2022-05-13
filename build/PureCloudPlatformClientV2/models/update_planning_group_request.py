@@ -79,6 +79,7 @@ class UpdatePlanningGroupRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -102,6 +103,7 @@ class UpdatePlanningGroupRequest(object):
         :type: SetWrapperRoutePathRequest
         """
         
+
         self._route_paths = route_paths
 
     @property
@@ -125,6 +127,7 @@ class UpdatePlanningGroupRequest(object):
         :type: str
         """
         
+
         self._service_goal_template_id = service_goal_template_id
 
     @property
@@ -148,6 +151,10 @@ class UpdatePlanningGroupRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

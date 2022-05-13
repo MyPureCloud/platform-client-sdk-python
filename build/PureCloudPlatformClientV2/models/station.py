@@ -112,6 +112,7 @@ class Station(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class Station(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -158,6 +160,7 @@ class Station(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -208,6 +211,7 @@ class Station(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -231,6 +235,7 @@ class Station(object):
         :type: str
         """
         
+
         self._web_rtc_user_id = web_rtc_user_id
 
     @property
@@ -254,6 +259,7 @@ class Station(object):
         :type: DomainEntityRef
         """
         
+
         self._primary_edge = primary_edge
 
     @property
@@ -277,6 +283,7 @@ class Station(object):
         :type: DomainEntityRef
         """
         
+
         self._secondary_edge = secondary_edge
 
     @property
@@ -300,6 +307,7 @@ class Station(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -323,6 +331,7 @@ class Station(object):
         :type: str
         """
         
+
         self._line_appearance_id = line_appearance_id
 
     @property
@@ -346,6 +355,7 @@ class Station(object):
         :type: int
         """
         
+
         self._web_rtc_media_dscp = web_rtc_media_dscp
 
     @property
@@ -369,6 +379,7 @@ class Station(object):
         :type: bool
         """
         
+
         self._web_rtc_persistent_enabled = web_rtc_persistent_enabled
 
     @property
@@ -392,6 +403,7 @@ class Station(object):
         :type: bool
         """
         
+
         self._web_rtc_force_turn = web_rtc_force_turn
 
     @property
@@ -415,6 +427,7 @@ class Station(object):
         :type: int
         """
         
+
         self._web_rtc_call_appearances = web_rtc_call_appearances
 
     @property
@@ -438,6 +451,7 @@ class Station(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

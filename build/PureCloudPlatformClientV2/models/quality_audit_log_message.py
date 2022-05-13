@@ -115,6 +115,7 @@ class QualityAuditLogMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class QualityAuditLogMessage(object):
         :type: str
         """
         
+
         self._user_home_org_id = user_home_org_id
 
     @property
@@ -161,6 +163,7 @@ class QualityAuditLogMessage(object):
         :type: str
         """
         
+
         self._user_trustee_org_id = user_trustee_org_id
 
     @property
@@ -184,6 +187,7 @@ class QualityAuditLogMessage(object):
         :type: DomainEntityRef
         """
         
+
         self._user = user
 
     @property
@@ -207,6 +211,7 @@ class QualityAuditLogMessage(object):
         :type: AddressableEntityRef
         """
         
+
         self._client = client
 
     @property
@@ -230,6 +235,7 @@ class QualityAuditLogMessage(object):
         :type: list[str]
         """
         
+
         self._remote_ips = remote_ips
 
     @property
@@ -334,6 +340,7 @@ class QualityAuditLogMessage(object):
         :type: datetime
         """
         
+
         self._event_date = event_date
 
     @property
@@ -357,6 +364,7 @@ class QualityAuditLogMessage(object):
         :type: MessageInfo
         """
         
+
         self._message_info = message_info
 
     @property
@@ -407,6 +415,7 @@ class QualityAuditLogMessage(object):
         :type: DomainEntityRef
         """
         
+
         self._entity = entity
 
     @property
@@ -457,6 +466,7 @@ class QualityAuditLogMessage(object):
         :type: list[PropertyChange]
         """
         
+
         self._property_changes = property_changes
 
     @property
@@ -480,6 +490,7 @@ class QualityAuditLogMessage(object):
         :type: dict(str, str)
         """
         
+
         self._context = context
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class MediaTypes(object):
         :type: MediaTypeAccess
         """
         
+
         self._allow = allow
 
     def to_dict(self):

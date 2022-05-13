@@ -124,6 +124,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: int
         """
         
+
         self._event_time = event_time
 
     @property
@@ -147,6 +148,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -170,6 +172,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._participant_id = participant_id
 
     @property
@@ -193,6 +196,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -270,6 +274,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -320,6 +325,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -343,6 +349,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -366,6 +373,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._address_to = address_to
 
     @property
@@ -389,6 +397,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._address_from = address_from
 
     @property
@@ -412,6 +421,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -489,6 +499,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._flow_id = flow_id
 
     @property
@@ -512,6 +523,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._division_id = division_id
 
     @property
@@ -535,6 +547,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: str
         """
         
+
         self._flow_version = flow_version
 
     @property
@@ -558,6 +571,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :type: int
         """
         
+
         self._connected_duration_ms = connected_duration_ms
 
     def to_dict(self):

@@ -100,6 +100,7 @@ class ShiftTradeMatchViolation(object):
         :type: dict(str, str)
         """
         
+
         self._params = params
 
     def to_dict(self):

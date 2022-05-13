@@ -91,6 +91,7 @@ class LearningAssessment(object):
         :type: str
         """
         
+
         self._assessment_id = assessment_id
 
     @property
@@ -114,6 +115,7 @@ class LearningAssessment(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     @property
@@ -137,6 +139,7 @@ class LearningAssessment(object):
         :type: str
         """
         
+
         self._assessment_form_id = assessment_form_id
 
     @property
@@ -187,6 +190,7 @@ class LearningAssessment(object):
         :type: AssessmentScoringSet
         """
         
+
         self._answers = answers
 
     @property
@@ -210,6 +214,7 @@ class LearningAssessment(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -233,6 +238,7 @@ class LearningAssessment(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -256,6 +262,7 @@ class LearningAssessment(object):
         :type: datetime
         """
         
+
         self._date_submitted = date_submitted
 
     def to_dict(self):

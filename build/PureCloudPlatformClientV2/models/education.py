@@ -82,6 +82,7 @@ class Education(object):
         :type: str
         """
         
+
         self._school = school
 
     @property
@@ -105,6 +106,7 @@ class Education(object):
         :type: str
         """
         
+
         self._field_of_study = field_of_study
 
     @property
@@ -128,6 +130,7 @@ class Education(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -151,6 +154,7 @@ class Education(object):
         :type: date
         """
         
+
         self._date_start = date_start
 
     @property
@@ -174,6 +178,7 @@ class Education(object):
         :type: date
         """
         
+
         self._date_end = date_end
 
     def to_dict(self):

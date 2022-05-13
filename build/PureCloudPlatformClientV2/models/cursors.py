@@ -73,6 +73,7 @@ class Cursors(object):
         :type: str
         """
         
+
         self._before = before
 
     @property
@@ -96,6 +97,7 @@ class Cursors(object):
         :type: str
         """
         
+
         self._after = after
 
     def to_dict(self):

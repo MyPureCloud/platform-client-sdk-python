@@ -112,6 +112,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._ending_language = ending_language
 
     @property
@@ -135,6 +136,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._entry_reason = entry_reason
 
     @property
@@ -185,6 +187,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._exit_reason = exit_reason
 
     @property
@@ -208,6 +211,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._flow_id = flow_id
 
     @property
@@ -231,6 +235,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._flow_name = flow_name
 
     @property
@@ -281,6 +286,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._flow_version = flow_version
 
     @property
@@ -304,6 +310,7 @@ class AnalyticsFlow(object):
         :type: bool
         """
         
+
         self._issued_callback = issued_callback
 
     @property
@@ -327,6 +334,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._recognition_failure_reason = recognition_failure_reason
 
     @property
@@ -350,6 +358,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._starting_language = starting_language
 
     @property
@@ -373,6 +382,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._transfer_target_address = transfer_target_address
 
     @property
@@ -396,6 +406,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._transfer_target_name = transfer_target_name
 
     @property
@@ -419,6 +430,7 @@ class AnalyticsFlow(object):
         :type: str
         """
         
+
         self._transfer_type = transfer_type
 
     @property
@@ -442,6 +454,7 @@ class AnalyticsFlow(object):
         :type: list[AnalyticsFlowOutcome]
         """
         
+
         self._outcomes = outcomes
 
     def to_dict(self):

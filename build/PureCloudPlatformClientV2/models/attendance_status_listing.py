@@ -70,6 +70,7 @@ class AttendanceStatusListing(object):
         :type: list[AttendanceStatus]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

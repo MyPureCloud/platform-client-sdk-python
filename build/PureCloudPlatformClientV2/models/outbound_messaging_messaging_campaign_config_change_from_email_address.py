@@ -76,6 +76,7 @@ class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(object):
         :type: str
         """
         
+
         self._friendly_name = friendly_name
 
     @property
@@ -99,6 +100,7 @@ class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(object):
         :type: str
         """
         
+
         self._local_part = local_part
 
     @property
@@ -122,6 +124,7 @@ class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
         """
         
+
         self._domain = domain
 
     def to_dict(self):

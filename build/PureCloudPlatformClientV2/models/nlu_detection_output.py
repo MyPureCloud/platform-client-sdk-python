@@ -73,6 +73,7 @@ class NluDetectionOutput(object):
         :type: list[DetectedIntent]
         """
         
+
         self._intents = intents
 
     @property
@@ -96,6 +97,7 @@ class NluDetectionOutput(object):
         :type: list[DetectedDialogAct]
         """
         
+
         self._dialog_acts = dialog_acts
 
     def to_dict(self):

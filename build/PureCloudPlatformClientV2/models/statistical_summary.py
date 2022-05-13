@@ -100,6 +100,7 @@ class StatisticalSummary(object):
         :type: float
         """
         
+
         self._max = max
 
     @property
@@ -123,6 +124,7 @@ class StatisticalSummary(object):
         :type: float
         """
         
+
         self._min = min
 
     @property
@@ -146,6 +148,7 @@ class StatisticalSummary(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -169,6 +172,7 @@ class StatisticalSummary(object):
         :type: int
         """
         
+
         self._count_negative = count_negative
 
     @property
@@ -192,6 +196,7 @@ class StatisticalSummary(object):
         :type: int
         """
         
+
         self._count_positive = count_positive
 
     @property
@@ -215,6 +220,7 @@ class StatisticalSummary(object):
         :type: float
         """
         
+
         self._sum = sum
 
     @property
@@ -238,6 +244,7 @@ class StatisticalSummary(object):
         :type: float
         """
         
+
         self._current = current
 
     @property
@@ -261,6 +268,7 @@ class StatisticalSummary(object):
         :type: float
         """
         
+
         self._ratio = ratio
 
     @property
@@ -284,6 +292,7 @@ class StatisticalSummary(object):
         :type: float
         """
         
+
         self._numerator = numerator
 
     @property
@@ -307,6 +316,7 @@ class StatisticalSummary(object):
         :type: float
         """
         
+
         self._denominator = denominator
 
     @property
@@ -330,6 +340,7 @@ class StatisticalSummary(object):
         :type: float
         """
         
+
         self._target = target
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class InboundDomain(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class InboundDomain(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -161,6 +163,7 @@ class InboundDomain(object):
         :type: bool
         """
         
+
         self._sub_domain = sub_domain
 
     @property
@@ -184,6 +187,7 @@ class InboundDomain(object):
         :type: MailFromResult
         """
         
+
         self._mail_from_settings = mail_from_settings
 
     @property
@@ -207,6 +211,7 @@ class InboundDomain(object):
         :type: DomainEntityRef
         """
         
+
         self._custom_smtp_server = custom_smtp_server
 
     @property
@@ -230,6 +235,7 @@ class InboundDomain(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

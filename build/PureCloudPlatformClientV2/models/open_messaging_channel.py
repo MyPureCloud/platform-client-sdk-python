@@ -47,7 +47,7 @@ class OpenMessagingChannel(object):
             'to': 'OpenMessagingToRecipient',
             'pcFrom': 'OpenMessagingFromRecipient',
             'time': 'datetime',
-            'metadata': 'ChannelMetadata'
+            'metadata': 'object'
         }
 
         self.attribute_map = {
@@ -91,6 +91,7 @@ class OpenMessagingChannel(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -168,6 +169,10 @@ class OpenMessagingChannel(object):
         :type: str
         """
         
+        if not message_id:
+            raise ValueError("Invalid value for `message_id`, must not be `None`")
+
+
         self._message_id = message_id
 
     @property
@@ -191,6 +196,10 @@ class OpenMessagingChannel(object):
         :type: OpenMessagingToRecipient
         """
         
+        if not to:
+            raise ValueError("Invalid value for `to`, must not be `None`")
+
+
         self._to = to
 
     @property
@@ -214,6 +223,10 @@ class OpenMessagingChannel(object):
         :type: OpenMessagingFromRecipient
         """
         
+        if not pcFrom:
+            raise ValueError("Invalid value for `pcFrom`, must not be `None`")
+
+
         self._pcFrom = pcFrom
 
     @property
@@ -237,6 +250,10 @@ class OpenMessagingChannel(object):
         :type: datetime
         """
         
+        if not time:
+            raise ValueError("Invalid value for `time`, must not be `None`")
+
+
         self._time = time
 
     @property
@@ -246,7 +263,7 @@ class OpenMessagingChannel(object):
         Information about the channel.
 
         :return: The metadata of this OpenMessagingChannel.
-        :rtype: ChannelMetadata
+        :rtype: object
         """
         return self._metadata
 
@@ -257,9 +274,10 @@ class OpenMessagingChannel(object):
         Information about the channel.
 
         :param metadata: The metadata of this OpenMessagingChannel.
-        :type: ChannelMetadata
+        :type: object
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

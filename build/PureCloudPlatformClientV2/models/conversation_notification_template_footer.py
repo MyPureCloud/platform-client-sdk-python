@@ -70,6 +70,7 @@ class ConversationNotificationTemplateFooter(object):
         :type: str
         """
         
+
         self._text = text
 
     def to_dict(self):

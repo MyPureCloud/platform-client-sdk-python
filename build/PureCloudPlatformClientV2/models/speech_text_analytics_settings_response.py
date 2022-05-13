@@ -73,6 +73,7 @@ class SpeechTextAnalyticsSettingsResponse(object):
         :type: AddressableEntityRef
         """
         
+
         self._default_program = default_program
 
     @property
@@ -96,6 +97,7 @@ class SpeechTextAnalyticsSettingsResponse(object):
         :type: list[str]
         """
         
+
         self._expected_dialects = expected_dialects
 
     def to_dict(self):

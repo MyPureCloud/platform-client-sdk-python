@@ -76,6 +76,7 @@ class CallToAction(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -99,6 +100,10 @@ class CallToAction(object):
         :type: str
         """
         
+        if not url:
+            raise ValueError("Invalid value for `url`, must not be `None`")
+
+
         self._url = url
 
     @property

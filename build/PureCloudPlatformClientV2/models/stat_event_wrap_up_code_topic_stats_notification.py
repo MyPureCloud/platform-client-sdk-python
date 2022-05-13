@@ -73,6 +73,7 @@ class StatEventWrapUpCodeTopicStatsNotification(object):
         :type: dict(str, str)
         """
         
+
         self._group = group
 
     @property
@@ -96,6 +97,7 @@ class StatEventWrapUpCodeTopicStatsNotification(object):
         :type: list[StatEventWrapUpCodeTopicIntervalMetrics]
         """
         
+
         self._data = data
 
     def to_dict(self):

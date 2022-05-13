@@ -124,6 +124,7 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -147,6 +148,10 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -170,6 +175,7 @@ class EdgeLogsJobFile(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -193,6 +199,7 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -216,6 +223,7 @@ class EdgeLogsJobFile(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -239,6 +247,7 @@ class EdgeLogsJobFile(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -262,6 +271,7 @@ class EdgeLogsJobFile(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -285,6 +295,7 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -308,6 +319,7 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -358,6 +370,7 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -381,6 +394,7 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -404,6 +418,7 @@ class EdgeLogsJobFile(object):
         :type: datetime
         """
         
+
         self._time_created = time_created
 
     @property
@@ -427,6 +442,7 @@ class EdgeLogsJobFile(object):
         :type: datetime
         """
         
+
         self._time_modified = time_modified
 
     @property
@@ -450,6 +466,7 @@ class EdgeLogsJobFile(object):
         :type: float
         """
         
+
         self._size_bytes = size_bytes
 
     @property
@@ -500,6 +517,7 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+
         self._edge_path = edge_path
 
     @property
@@ -523,6 +541,7 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+
         self._download_id = download_id
 
     @property
@@ -546,6 +565,7 @@ class EdgeLogsJobFile(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

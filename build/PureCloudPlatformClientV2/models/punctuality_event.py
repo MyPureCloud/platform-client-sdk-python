@@ -97,6 +97,7 @@ class PunctualityEvent(object):
         :type: datetime
         """
         
+
         self._date_schedule_start = date_schedule_start
 
     @property
@@ -120,6 +121,7 @@ class PunctualityEvent(object):
         :type: datetime
         """
         
+
         self._date_start = date_start
 
     @property
@@ -143,6 +145,7 @@ class PunctualityEvent(object):
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property
@@ -166,6 +169,7 @@ class PunctualityEvent(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -189,6 +193,7 @@ class PunctualityEvent(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -212,6 +217,7 @@ class PunctualityEvent(object):
         :type: str
         """
         
+
         self._activity_code = activity_code
 
     @property
@@ -235,6 +241,7 @@ class PunctualityEvent(object):
         :type: str
         """
         
+
         self._category = category
 
     @property
@@ -258,6 +265,7 @@ class PunctualityEvent(object):
         :type: int
         """
         
+
         self._points = points
 
     @property
@@ -281,6 +289,7 @@ class PunctualityEvent(object):
         :type: float
         """
         
+
         self._delta = delta
 
     @property
@@ -304,6 +313,7 @@ class PunctualityEvent(object):
         :type: bool
         """
         
+
         self._bullseye = bullseye
 
     def to_dict(self):

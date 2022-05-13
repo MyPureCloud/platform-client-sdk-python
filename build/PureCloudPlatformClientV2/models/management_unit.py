@@ -103,6 +103,7 @@ class ManagementUnit(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class ManagementUnit(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -149,6 +151,7 @@ class ManagementUnit(object):
         :type: BusinessUnitReference
         """
         
+
         self._business_unit = business_unit
 
     @property
@@ -199,6 +202,7 @@ class ManagementUnit(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -222,6 +226,7 @@ class ManagementUnit(object):
         :type: ManagementUnitSettingsResponse
         """
         
+
         self._settings = settings
 
     @property
@@ -245,6 +250,7 @@ class ManagementUnit(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -268,6 +274,7 @@ class ManagementUnit(object):
         :type: DivisionReference
         """
         
+
         self._division = division
 
     @property
@@ -291,6 +298,7 @@ class ManagementUnit(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -314,6 +322,7 @@ class ManagementUnit(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -337,6 +346,7 @@ class ManagementUnit(object):
         :type: UserReference
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -360,6 +370,7 @@ class ManagementUnit(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

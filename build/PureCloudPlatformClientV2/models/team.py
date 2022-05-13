@@ -91,6 +91,7 @@ class Team(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,10 @@ class Team(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -137,6 +142,7 @@ class Team(object):
         :type: WritableDivision
         """
         
+
         self._division = division
 
     @property
@@ -160,6 +166,7 @@ class Team(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -183,6 +190,7 @@ class Team(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -206,6 +214,7 @@ class Team(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -229,6 +238,7 @@ class Team(object):
         :type: int
         """
         
+
         self._member_count = member_count
 
     @property
@@ -252,6 +262,7 @@ class Team(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

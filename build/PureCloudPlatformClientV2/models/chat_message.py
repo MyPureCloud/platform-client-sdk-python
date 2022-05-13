@@ -103,6 +103,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._body = body
 
     @property
@@ -126,6 +127,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -149,6 +151,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._to = to
 
     @property
@@ -172,6 +175,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._pcFrom = pcFrom
 
     @property
@@ -195,6 +199,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._utc = utc
 
     @property
@@ -218,6 +223,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._chat = chat
 
     @property
@@ -241,6 +247,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -264,6 +271,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -314,6 +322,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._sender_communication_id = sender_communication_id
 
     @property
@@ -337,6 +346,7 @@ class ChatMessage(object):
         :type: str
         """
         
+
         self._participant_purpose = participant_purpose
 
     @property
@@ -360,6 +370,7 @@ class ChatMessage(object):
         :type: ChatMessageUser
         """
         
+
         self._user = user
 
     def to_dict(self):

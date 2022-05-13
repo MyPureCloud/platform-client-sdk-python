@@ -97,6 +97,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :type: list[DialerSequenceConfigChangeUriReference]
         """
         
+
         self._campaigns = campaigns
 
     @property
@@ -120,6 +121,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :type: int
         """
         
+
         self._current_campaign = current_campaign
 
     @property
@@ -170,6 +172,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :type: str
         """
         
+
         self._stop_message = stop_message
 
     @property
@@ -193,6 +196,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :type: bool
         """
         
+
         self._repeat = repeat
 
     @property
@@ -216,6 +220,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -239,6 +244,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -262,6 +268,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -285,6 +292,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -308,6 +316,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

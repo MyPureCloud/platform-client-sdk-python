@@ -70,6 +70,7 @@ class TimeOffLimitListing(object):
         :type: list[TimeOffLimit]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

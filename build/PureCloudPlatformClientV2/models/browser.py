@@ -100,6 +100,10 @@ class Browser(object):
         :type: str
         """
         
+        if not family:
+            raise ValueError("Invalid value for `family`, must not be `None`")
+
+
         self._family = family
 
     @property
@@ -123,6 +127,10 @@ class Browser(object):
         :type: str
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -146,6 +154,7 @@ class Browser(object):
         :type: str
         """
         
+
         self._lang = lang
 
     @property
@@ -169,6 +178,7 @@ class Browser(object):
         :type: str
         """
         
+
         self._fingerprint = fingerprint
 
     @property
@@ -192,6 +202,7 @@ class Browser(object):
         :type: bool
         """
         
+
         self._is_mobile = is_mobile
 
     @property
@@ -215,6 +226,7 @@ class Browser(object):
         :type: int
         """
         
+
         self._view_height = view_height
 
     @property
@@ -238,6 +250,7 @@ class Browser(object):
         :type: int
         """
         
+
         self._view_width = view_width
 
     @property
@@ -261,6 +274,7 @@ class Browser(object):
         :type: bool
         """
         
+
         self._features_flash = features_flash
 
     @property
@@ -284,6 +298,7 @@ class Browser(object):
         :type: bool
         """
         
+
         self._features_java = features_java
 
     @property
@@ -307,6 +322,7 @@ class Browser(object):
         :type: bool
         """
         
+
         self._features_pdf = features_pdf
 
     @property
@@ -330,6 +346,7 @@ class Browser(object):
         :type: bool
         """
         
+
         self._features_webrtc = features_webrtc
 
     def to_dict(self):

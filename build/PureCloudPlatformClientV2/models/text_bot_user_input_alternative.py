@@ -70,6 +70,10 @@ class TextBotUserInputAlternative(object):
         :type: TextBotTranscript
         """
         
+        if not transcript:
+            raise ValueError("Invalid value for `transcript`, must not be `None`")
+
+
         self._transcript = transcript
 
     def to_dict(self):

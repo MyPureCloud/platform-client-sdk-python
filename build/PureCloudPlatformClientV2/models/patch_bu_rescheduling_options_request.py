@@ -70,6 +70,7 @@ class PatchBuReschedulingOptionsRequest(object):
         :type: list[PatchBuReschedulingOptionsManagementUnitRequest]
         """
         
+
         self._management_units = management_units
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class MessagingTemplate(object):
         :type: WhatsAppDefinition
         """
         
+
         self._whats_app = whats_app
 
     def to_dict(self):

@@ -24,6 +24,8 @@ Find bots using the currently configured friendly name or ID.
 
 The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
 
+
+
 Wraps GET /api/v2/textbots/bots/search 
 
 Requires ANY permissions: 
@@ -81,6 +83,8 @@ Issue a bot flow turn event
 
 Send a turn event to an executing bot flow and produce the next action to take.
 
+
+
 Wraps POST /api/v2/textbots/botflows/sessions/{sessionId}/turns 
 
 Requires ANY permissions: 
@@ -134,6 +138,8 @@ Create an execution instance of a bot flow definition.
 
 The launch is asynchronous; use the returned instance ID to post turns to it using 'POST /api/v2/textbots/botflows/sessions/{sessionId}/turns'.
 
+
+
 Wraps POST /api/v2/textbots/botflows/sessions 
 
 Requires ANY permissions: 
@@ -184,6 +190,8 @@ except ApiException as e:
 Send an intent to a bot to start a dialog/interact with it via text
 
 This will either start a bot with the given id or relay a communication to an existing bot session.
+
+
 
 Wraps POST /api/v2/textbots/bots/execute 
 

@@ -100,6 +100,7 @@ class PerformanceProfile(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,10 @@ class PerformanceProfile(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -146,6 +151,7 @@ class PerformanceProfile(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -169,6 +175,10 @@ class PerformanceProfile(object):
         :type: str
         """
         
+        if not description:
+            raise ValueError("Invalid value for `description`, must not be `None`")
+
+
         self._description = description
 
     @property
@@ -192,6 +202,10 @@ class PerformanceProfile(object):
         :type: list[str]
         """
         
+        if not metric_orders:
+            raise ValueError("Invalid value for `metric_orders`, must not be `None`")
+
+
         self._metric_orders = metric_orders
 
     @property
@@ -215,6 +229,7 @@ class PerformanceProfile(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -238,6 +253,7 @@ class PerformanceProfile(object):
         :type: list[ReportingInterval]
         """
         
+
         self._reporting_intervals = reporting_intervals
 
     @property
@@ -261,6 +277,7 @@ class PerformanceProfile(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property
@@ -284,6 +301,7 @@ class PerformanceProfile(object):
         :type: int
         """
         
+
         self._member_count = member_count
 
     @property
@@ -307,6 +325,7 @@ class PerformanceProfile(object):
         :type: int
         """
         
+
         self._max_leaderboard_rank_size = max_leaderboard_rank_size
 
     @property
@@ -330,6 +349,7 @@ class PerformanceProfile(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

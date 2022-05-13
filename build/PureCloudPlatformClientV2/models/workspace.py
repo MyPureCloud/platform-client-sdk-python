@@ -103,6 +103,7 @@ class Workspace(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,10 @@ class Workspace(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -176,6 +181,7 @@ class Workspace(object):
         :type: bool
         """
         
+
         self._is_current_user_workspace = is_current_user_workspace
 
     @property
@@ -199,6 +205,7 @@ class Workspace(object):
         :type: DomainEntityRef
         """
         
+
         self._user = user
 
     @property
@@ -222,6 +229,7 @@ class Workspace(object):
         :type: str
         """
         
+
         self._bucket = bucket
 
     @property
@@ -245,6 +253,7 @@ class Workspace(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -268,6 +277,7 @@ class Workspace(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -291,6 +301,7 @@ class Workspace(object):
         :type: WorkspaceSummary
         """
         
+
         self._summary = summary
 
     @property
@@ -314,6 +325,7 @@ class Workspace(object):
         :type: list[str]
         """
         
+
         self._acl = acl
 
     @property
@@ -337,6 +349,7 @@ class Workspace(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -360,6 +373,7 @@ class Workspace(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

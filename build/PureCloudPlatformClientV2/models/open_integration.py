@@ -115,6 +115,10 @@ class OpenIntegration(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -138,6 +142,10 @@ class OpenIntegration(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -161,6 +169,7 @@ class OpenIntegration(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -184,6 +193,7 @@ class OpenIntegration(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -207,6 +217,10 @@ class OpenIntegration(object):
         :type: str
         """
         
+        if not outbound_notification_webhook_url:
+            raise ValueError("Invalid value for `outbound_notification_webhook_url`, must not be `None`")
+
+
         self._outbound_notification_webhook_url = outbound_notification_webhook_url
 
     @property
@@ -230,6 +244,10 @@ class OpenIntegration(object):
         :type: str
         """
         
+        if not outbound_notification_webhook_signature_secret_token:
+            raise ValueError("Invalid value for `outbound_notification_webhook_signature_secret_token`, must not be `None`")
+
+
         self._outbound_notification_webhook_signature_secret_token = outbound_notification_webhook_signature_secret_token
 
     @property
@@ -253,6 +271,7 @@ class OpenIntegration(object):
         :type: dict(str, str)
         """
         
+
         self._webhook_headers = webhook_headers
 
     @property
@@ -276,6 +295,7 @@ class OpenIntegration(object):
         :type: str
         """
         
+
         self._status = status
 
     @property
@@ -299,6 +319,7 @@ class OpenIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._recipient = recipient
 
     @property
@@ -322,6 +343,7 @@ class OpenIntegration(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -345,6 +367,7 @@ class OpenIntegration(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -368,6 +391,7 @@ class OpenIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -391,6 +415,7 @@ class OpenIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -441,6 +466,7 @@ class OpenIntegration(object):
         :type: ErrorBody
         """
         
+
         self._create_error = create_error
 
     @property
@@ -464,6 +490,7 @@ class OpenIntegration(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

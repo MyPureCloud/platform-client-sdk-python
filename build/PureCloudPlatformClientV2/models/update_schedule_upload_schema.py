@@ -85,6 +85,7 @@ class UpdateScheduleUploadSchema(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -108,6 +109,7 @@ class UpdateScheduleUploadSchema(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -131,6 +133,7 @@ class UpdateScheduleUploadSchema(object):
         :type: BuShortTermForecastReference
         """
         
+
         self._short_term_forecast = short_term_forecast
 
     @property
@@ -154,6 +157,7 @@ class UpdateScheduleUploadSchema(object):
         :type: BuHeadcountForecast
         """
         
+
         self._headcount_forecast = headcount_forecast
 
     @property
@@ -177,6 +181,7 @@ class UpdateScheduleUploadSchema(object):
         :type: list[BuUpdateAgentScheduleUploadSchema]
         """
         
+
         self._agent_schedules = agent_schedules
 
     @property
@@ -200,6 +205,10 @@ class UpdateScheduleUploadSchema(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

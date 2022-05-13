@@ -79,6 +79,7 @@ class SingleWorkdayAveragePoints(object):
         :type: date
         """
         
+
         self._date_workday = date_workday
 
     @property
@@ -102,6 +103,7 @@ class SingleWorkdayAveragePoints(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -125,6 +127,7 @@ class SingleWorkdayAveragePoints(object):
         :type: float
         """
         
+
         self._average_points = average_points
 
     @property
@@ -148,6 +151,7 @@ class SingleWorkdayAveragePoints(object):
         :type: AddressableEntityRef
         """
         
+
         self._performance_profile = performance_profile
 
     def to_dict(self):

@@ -9,7 +9,7 @@ title: AgentManagementUnitReference
 |------------ | ------------- | ------------- | -------------|
 | **user** | [**UserReference**](UserReference.html) | The user (agent) for whom the management unit was requested | [optional] |
 | **management_unit** | [**ManagementUnitReference**](ManagementUnitReference.html) | The management to which the user (agent) belongs | [optional] |
-| **business_unit** | [**BusinessUnitReference**](BusinessUnitReference.html) | The business unit to which the user (agent) belongs. Populate with expand=businessUnit | [optional] |
+| **business_unit** | [**BusinessUnitReference**](BusinessUnitReference.html) | The business unit to which the user (agent) belongs. Populate with expand&#x3D;businessUnit | [optional] |
 {: class="table table-striped"}
 
 

@@ -73,6 +73,10 @@ class BuGetCurrentAgentScheduleRequest(object):
         :type: datetime
         """
         
+        if not start_date:
+            raise ValueError("Invalid value for `start_date`, must not be `None`")
+
+
         self._start_date = start_date
 
     @property
@@ -96,6 +100,10 @@ class BuGetCurrentAgentScheduleRequest(object):
         :type: datetime
         """
         
+        if not end_date:
+            raise ValueError("Invalid value for `end_date`, must not be `None`")
+
+
         self._end_date = end_date
 
     def to_dict(self):

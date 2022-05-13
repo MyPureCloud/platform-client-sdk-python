@@ -85,6 +85,7 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+
         self._background_color = background_color
 
     @property
@@ -108,6 +109,7 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+
         self._primary_color = primary_color
 
     @property
@@ -131,6 +133,7 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+
         self._primary_color_dark = primary_color_dark
 
     @property
@@ -154,6 +157,7 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+
         self._primary_color_light = primary_color_light
 
     @property
@@ -177,6 +181,7 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+
         self._text_color = text_color
 
     @property
@@ -200,6 +205,7 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+
         self._font_family = font_family
 
     def to_dict(self):

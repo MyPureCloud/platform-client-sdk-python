@@ -73,6 +73,7 @@ class SelectedColumns(object):
         :type: int
         """
         
+
         self._column_order = column_order
 
     @property
@@ -96,6 +97,7 @@ class SelectedColumns(object):
         :type: str
         """
         
+
         self._column_name = column_name
 
     def to_dict(self):

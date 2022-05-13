@@ -82,6 +82,7 @@ class Location(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class Location(object):
         :type: str
         """
         
+
         self._floorplan_id = floorplan_id
 
     @property
@@ -128,6 +130,7 @@ class Location(object):
         :type: dict(str, float)
         """
         
+
         self._coordinates = coordinates
 
     @property
@@ -151,6 +154,7 @@ class Location(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -174,6 +178,7 @@ class Location(object):
         :type: LocationDefinition
         """
         
+
         self._location_definition = location_definition
 
     def to_dict(self):

@@ -70,6 +70,10 @@ class PostInputContract(object):
         :type: JsonSchemaDocument
         """
         
+        if not input_schema:
+            raise ValueError("Invalid value for `input_schema`, must not be `None`")
+
+
         self._input_schema = input_schema
 
     def to_dict(self):

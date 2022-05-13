@@ -163,6 +163,7 @@ class Recording(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -186,6 +187,7 @@ class Recording(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -209,6 +211,7 @@ class Recording(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -232,6 +235,7 @@ class Recording(object):
         :type: str
         """
         
+
         self._path = path
 
     @property
@@ -255,6 +259,7 @@ class Recording(object):
         :type: str
         """
         
+
         self._start_time = start_time
 
     @property
@@ -278,6 +283,7 @@ class Recording(object):
         :type: str
         """
         
+
         self._end_time = end_time
 
     @property
@@ -301,6 +307,7 @@ class Recording(object):
         :type: str
         """
         
+
         self._media = media
 
     @property
@@ -324,6 +331,7 @@ class Recording(object):
         :type: list[Annotation]
         """
         
+
         self._annotations = annotations
 
     @property
@@ -347,6 +355,7 @@ class Recording(object):
         :type: list[ChatMessage]
         """
         
+
         self._transcript = transcript
 
     @property
@@ -370,6 +379,7 @@ class Recording(object):
         :type: list[RecordingEmailMessage]
         """
         
+
         self._email_transcript = email_transcript
 
     @property
@@ -393,6 +403,7 @@ class Recording(object):
         :type: list[RecordingMessagingMessage]
         """
         
+
         self._messaging_transcript = messaging_transcript
 
     @property
@@ -443,6 +454,7 @@ class Recording(object):
         :type: datetime
         """
         
+
         self._restore_expiration_time = restore_expiration_time
 
     @property
@@ -466,6 +478,7 @@ class Recording(object):
         :type: dict(str, MediaResult)
         """
         
+
         self._media_uris = media_uris
 
     @property
@@ -489,6 +502,7 @@ class Recording(object):
         :type: int
         """
         
+
         self._estimated_transcode_time_ms = estimated_transcode_time_ms
 
     @property
@@ -512,6 +526,7 @@ class Recording(object):
         :type: int
         """
         
+
         self._actual_transcode_time_ms = actual_transcode_time_ms
 
     @property
@@ -535,6 +550,7 @@ class Recording(object):
         :type: datetime
         """
         
+
         self._archive_date = archive_date
 
     @property
@@ -585,6 +601,7 @@ class Recording(object):
         :type: datetime
         """
         
+
         self._delete_date = delete_date
 
     @property
@@ -608,6 +625,7 @@ class Recording(object):
         :type: datetime
         """
         
+
         self._export_date = export_date
 
     @property
@@ -631,6 +649,7 @@ class Recording(object):
         :type: datetime
         """
         
+
         self._exported_date = exported_date
 
     @property
@@ -654,6 +673,7 @@ class Recording(object):
         :type: int
         """
         
+
         self._output_duration_ms = output_duration_ms
 
     @property
@@ -677,6 +697,7 @@ class Recording(object):
         :type: int
         """
         
+
         self._output_size_in_bytes = output_size_in_bytes
 
     @property
@@ -700,6 +721,7 @@ class Recording(object):
         :type: int
         """
         
+
         self._max_allowed_restorations_for_org = max_allowed_restorations_for_org
 
     @property
@@ -723,6 +745,7 @@ class Recording(object):
         :type: int
         """
         
+
         self._remaining_restorations_allowed_for_org = remaining_restorations_allowed_for_org
 
     @property
@@ -746,6 +769,7 @@ class Recording(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -769,6 +793,7 @@ class Recording(object):
         :type: list[User]
         """
         
+
         self._users = users
 
     @property
@@ -846,6 +871,7 @@ class Recording(object):
         :type: datetime
         """
         
+
         self._original_recording_start_time = original_recording_start_time
 
     @property
@@ -869,6 +895,7 @@ class Recording(object):
         :type: datetime
         """
         
+
         self._creation_time = creation_time
 
     @property
@@ -892,6 +919,7 @@ class Recording(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

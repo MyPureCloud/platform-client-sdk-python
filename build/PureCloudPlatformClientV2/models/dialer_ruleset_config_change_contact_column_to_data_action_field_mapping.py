@@ -73,6 +73,7 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
         :type: str
         """
         
+
         self._contact_column_name = contact_column_name
 
     @property
@@ -96,6 +97,7 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
         :type: str
         """
         
+
         self._data_action_field = data_action_field
 
     def to_dict(self):

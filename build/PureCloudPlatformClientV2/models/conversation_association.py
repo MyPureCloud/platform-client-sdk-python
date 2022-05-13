@@ -79,6 +79,7 @@ class ConversationAssociation(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     @property
@@ -102,6 +103,10 @@ class ConversationAssociation(object):
         :type: str
         """
         
+        if not conversation_id:
+            raise ValueError("Invalid value for `conversation_id`, must not be `None`")
+
+
         self._conversation_id = conversation_id
 
     @property
@@ -125,6 +130,10 @@ class ConversationAssociation(object):
         :type: str
         """
         
+        if not communication_id:
+            raise ValueError("Invalid value for `communication_id`, must not be `None`")
+
+
         self._communication_id = communication_id
 
     @property

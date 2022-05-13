@@ -73,6 +73,7 @@ class Limit(object):
         :type: str
         """
         
+
         self._key = key
 
     @property
@@ -96,6 +97,7 @@ class Limit(object):
         :type: float
         """
         
+
         self._value = value
 
     def to_dict(self):

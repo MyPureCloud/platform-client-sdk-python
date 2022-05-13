@@ -70,6 +70,7 @@ class SMSAvailablePhoneNumberEntityListing(object):
         :type: list[SmsAvailablePhoneNumber]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

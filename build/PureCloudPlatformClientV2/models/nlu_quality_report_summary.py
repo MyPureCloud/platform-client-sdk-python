@@ -70,6 +70,10 @@ class NluQualityReportSummary(object):
         :type: list[NluQualityReportSummaryMetric]
         """
         
+        if not metrics:
+            raise ValueError("Invalid value for `metrics`, must not be `None`")
+
+
         self._metrics = metrics
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class ReportingTurnIntentSlot(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -102,6 +103,7 @@ class ReportingTurnIntentSlot(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -125,6 +127,7 @@ class ReportingTurnIntentSlot(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -148,6 +151,7 @@ class ReportingTurnIntentSlot(object):
         :type: float
         """
         
+
         self._confidence = confidence
 
     def to_dict(self):

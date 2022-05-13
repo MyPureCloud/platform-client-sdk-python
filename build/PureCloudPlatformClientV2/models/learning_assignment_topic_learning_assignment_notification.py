@@ -100,6 +100,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: LearningAssignmentTopicUserReference
         """
         
+
         self._user = user
 
     @property
@@ -146,6 +148,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: LearningAssignmentTopicLearningModuleReference
         """
         
+
         self._module = module
 
     @property
@@ -169,6 +172,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -219,6 +223,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: datetime
         """
         
+
         self._date_recommended_for_completion = date_recommended_for_completion
 
     @property
@@ -242,6 +247,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: LearningAssignmentTopicUserReference
         """
         
+
         self._created_by = created_by
 
     @property
@@ -265,6 +271,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -288,6 +295,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: LearningAssignmentTopicUserReference
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -311,6 +319,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -334,6 +343,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         :type: bool
         """
         
+
         self._is_overdue = is_overdue
 
     def to_dict(self):

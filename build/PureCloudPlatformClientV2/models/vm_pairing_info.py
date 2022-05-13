@@ -79,6 +79,7 @@ class VmPairingInfo(object):
         :type: MetaData
         """
         
+
         self._meta_data = meta_data
 
     @property
@@ -102,6 +103,7 @@ class VmPairingInfo(object):
         :type: str
         """
         
+
         self._edge_id = edge_id
 
     @property
@@ -125,6 +127,7 @@ class VmPairingInfo(object):
         :type: str
         """
         
+
         self._auth_token = auth_token
 
     @property
@@ -148,6 +151,7 @@ class VmPairingInfo(object):
         :type: str
         """
         
+
         self._org_id = org_id
 
     def to_dict(self):

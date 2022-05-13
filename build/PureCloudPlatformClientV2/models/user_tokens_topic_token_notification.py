@@ -88,6 +88,7 @@ class UserTokensTopicTokenNotification(object):
         :type: UserTokensTopicUriReference
         """
         
+
         self._user = user
 
     @property
@@ -111,6 +112,7 @@ class UserTokensTopicTokenNotification(object):
         :type: str
         """
         
+
         self._ip_address = ip_address
 
     @property
@@ -134,6 +136,7 @@ class UserTokensTopicTokenNotification(object):
         :type: str
         """
         
+
         self._date_created = date_created
 
     @property
@@ -157,6 +160,7 @@ class UserTokensTopicTokenNotification(object):
         :type: str
         """
         
+
         self._token_expiration_date = token_expiration_date
 
     @property
@@ -180,6 +184,7 @@ class UserTokensTopicTokenNotification(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -203,6 +208,7 @@ class UserTokensTopicTokenNotification(object):
         :type: str
         """
         
+
         self._client_id = client_id
 
     @property
@@ -226,6 +232,7 @@ class UserTokensTopicTokenNotification(object):
         :type: str
         """
         
+
         self._token_hash = token_hash
 
     def to_dict(self):

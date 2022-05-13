@@ -109,6 +109,7 @@ class DevelopmentActivity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class DevelopmentActivity(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -155,6 +157,7 @@ class DevelopmentActivity(object):
         :type: UserReference
         """
         
+
         self._created_by = created_by
 
     @property
@@ -178,6 +181,7 @@ class DevelopmentActivity(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -201,6 +205,7 @@ class DevelopmentActivity(object):
         :type: float
         """
         
+
         self._percentage_score = percentage_score
 
     @property
@@ -224,6 +229,7 @@ class DevelopmentActivity(object):
         :type: bool
         """
         
+
         self._is_passed = is_passed
 
     @property
@@ -247,6 +253,7 @@ class DevelopmentActivity(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -270,6 +277,7 @@ class DevelopmentActivity(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -347,6 +355,7 @@ class DevelopmentActivity(object):
         :type: datetime
         """
         
+
         self._date_due = date_due
 
     @property
@@ -370,6 +379,7 @@ class DevelopmentActivity(object):
         :type: UserReference
         """
         
+
         self._facilitator = facilitator
 
     @property
@@ -393,6 +403,7 @@ class DevelopmentActivity(object):
         :type: list[UserReference]
         """
         
+
         self._attendees = attendees
 
     @property
@@ -416,6 +427,7 @@ class DevelopmentActivity(object):
         :type: bool
         """
         
+
         self._is_overdue = is_overdue
 
     def to_dict(self):

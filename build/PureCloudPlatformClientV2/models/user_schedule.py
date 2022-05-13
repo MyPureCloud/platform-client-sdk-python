@@ -82,6 +82,7 @@ class UserSchedule(object):
         :type: list[UserScheduleShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -105,6 +106,7 @@ class UserSchedule(object):
         :type: list[UserScheduleFullDayTimeOffMarker]
         """
         
+
         self._full_day_time_off_markers = full_day_time_off_markers
 
     @property
@@ -128,6 +130,7 @@ class UserSchedule(object):
         :type: bool
         """
         
+
         self._delete = delete
 
     @property
@@ -151,6 +154,10 @@ class UserSchedule(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     @property
@@ -174,6 +181,7 @@ class UserSchedule(object):
         :type: str
         """
         
+
         self._work_plan_id = work_plan_id
 
     def to_dict(self):

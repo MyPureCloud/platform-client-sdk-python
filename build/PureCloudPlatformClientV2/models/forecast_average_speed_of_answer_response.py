@@ -70,6 +70,7 @@ class ForecastAverageSpeedOfAnswerResponse(object):
         :type: int
         """
         
+
         self._seconds = seconds
 
     def to_dict(self):

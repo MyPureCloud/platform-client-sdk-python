@@ -100,6 +100,7 @@ class WfmIntradayDataUpdateTopicIntradayMetric(object):
         :type: str
         """
         
+
         self._version = version
 
     def to_dict(self):

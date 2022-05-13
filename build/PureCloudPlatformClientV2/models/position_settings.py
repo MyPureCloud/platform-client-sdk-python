@@ -103,6 +103,7 @@ class PositionSettings(object):
         :type: int
         """
         
+
         self._side_space = side_space
 
     @property
@@ -126,6 +127,7 @@ class PositionSettings(object):
         :type: int
         """
         
+
         self._bottom_space = bottom_space
 
     def to_dict(self):

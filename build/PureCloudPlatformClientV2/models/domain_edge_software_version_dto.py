@@ -91,6 +91,7 @@ class DomainEdgeSoftwareVersionDto(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class DomainEdgeSoftwareVersionDto(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class DomainEdgeSoftwareVersionDto(object):
         :type: str
         """
         
+
         self._edge_version = edge_version
 
     @property
@@ -160,6 +163,7 @@ class DomainEdgeSoftwareVersionDto(object):
         :type: datetime
         """
         
+
         self._publish_date = publish_date
 
     @property
@@ -183,6 +187,7 @@ class DomainEdgeSoftwareVersionDto(object):
         :type: str
         """
         
+
         self._edge_uri = edge_uri
 
     @property
@@ -206,6 +211,7 @@ class DomainEdgeSoftwareVersionDto(object):
         :type: bool
         """
         
+
         self._current = current
 
     @property
@@ -229,6 +235,7 @@ class DomainEdgeSoftwareVersionDto(object):
         :type: bool
         """
         
+
         self._latest_release = latest_release
 
     @property
@@ -252,6 +259,7 @@ class DomainEdgeSoftwareVersionDto(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

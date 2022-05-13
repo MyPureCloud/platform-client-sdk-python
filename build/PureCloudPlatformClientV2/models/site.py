@@ -148,6 +148,7 @@ class Site(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -171,6 +172,10 @@ class Site(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -194,6 +199,7 @@ class Site(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -217,6 +223,7 @@ class Site(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -240,6 +247,7 @@ class Site(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -263,6 +271,7 @@ class Site(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -286,6 +295,7 @@ class Site(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -309,6 +319,7 @@ class Site(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -332,6 +343,7 @@ class Site(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -382,6 +394,7 @@ class Site(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -405,6 +418,7 @@ class Site(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -428,6 +442,7 @@ class Site(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._primary_sites = primary_sites
 
     @property
@@ -451,6 +466,7 @@ class Site(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._secondary_sites = secondary_sites
 
     @property
@@ -474,6 +490,7 @@ class Site(object):
         :type: list[Edge]
         """
         
+
         self._primary_edges = primary_edges
 
     @property
@@ -497,6 +514,7 @@ class Site(object):
         :type: list[Edge]
         """
         
+
         self._secondary_edges = secondary_edges
 
     @property
@@ -520,6 +538,7 @@ class Site(object):
         :type: list[Contact]
         """
         
+
         self._addresses = addresses
 
     @property
@@ -543,6 +562,7 @@ class Site(object):
         :type: list[Edge]
         """
         
+
         self._edges = edges
 
     @property
@@ -566,6 +586,7 @@ class Site(object):
         :type: EdgeAutoUpdateConfig
         """
         
+
         self._edge_auto_update_config = edge_auto_update_config
 
     @property
@@ -589,6 +610,7 @@ class Site(object):
         :type: bool
         """
         
+
         self._media_regions_use_latency_based = media_regions_use_latency_based
 
     @property
@@ -612,6 +634,10 @@ class Site(object):
         :type: LocationDefinition
         """
         
+        if not location:
+            raise ValueError("Invalid value for `location`, must not be `None`")
+
+
         self._location = location
 
     @property
@@ -635,6 +661,7 @@ class Site(object):
         :type: bool
         """
         
+
         self._managed = managed
 
     @property
@@ -658,6 +685,7 @@ class Site(object):
         :type: NTPSettings
         """
         
+
         self._ntp_settings = ntp_settings
 
     @property
@@ -708,6 +736,7 @@ class Site(object):
         :type: bool
         """
         
+
         self._core_site = core_site
 
     @property
@@ -731,6 +760,7 @@ class Site(object):
         :type: list[SiteConnection]
         """
         
+
         self._site_connections = site_connections
 
     @property
@@ -754,6 +784,7 @@ class Site(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -76,6 +76,7 @@ class ScimUserExtensions(object):
         :type: list[ScimUserRoutingSkill]
         """
         
+
         self._routing_skills = routing_skills
 
     @property
@@ -99,6 +100,7 @@ class ScimUserExtensions(object):
         :type: list[ScimUserRoutingLanguage]
         """
         
+
         self._routing_languages = routing_languages
 
     @property
@@ -122,6 +124,7 @@ class ScimUserExtensions(object):
         :type: list[ScimGenesysUserExternalId]
         """
         
+
         self._external_ids = external_ids
 
     def to_dict(self):

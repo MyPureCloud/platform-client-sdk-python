@@ -106,6 +106,7 @@ class ConversationNotificationTemplateHeader(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -129,6 +130,7 @@ class ConversationNotificationTemplateHeader(object):
         :type: ConversationContentAttachment
         """
         
+
         self._media = media
 
     @property
@@ -152,6 +154,7 @@ class ConversationNotificationTemplateHeader(object):
         :type: list[ConversationNotificationTemplateParameter]
         """
         
+
         self._parameters = parameters
 
     def to_dict(self):

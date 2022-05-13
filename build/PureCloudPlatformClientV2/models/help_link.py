@@ -76,6 +76,7 @@ class HelpLink(object):
         :type: str
         """
         
+
         self._uri = uri
 
     @property
@@ -99,6 +100,7 @@ class HelpLink(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -122,6 +124,7 @@ class HelpLink(object):
         :type: str
         """
         
+
         self._description = description
 
     def to_dict(self):

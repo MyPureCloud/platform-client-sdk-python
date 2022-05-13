@@ -124,6 +124,7 @@ class CoachingAppointmentResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -147,6 +148,7 @@ class CoachingAppointmentResponse(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -170,6 +172,7 @@ class CoachingAppointmentResponse(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -193,6 +196,7 @@ class CoachingAppointmentResponse(object):
         :type: datetime
         """
         
+
         self._date_start = date_start
 
     @property
@@ -216,6 +220,7 @@ class CoachingAppointmentResponse(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -266,6 +271,7 @@ class CoachingAppointmentResponse(object):
         :type: UserReference
         """
         
+
         self._facilitator = facilitator
 
     @property
@@ -289,6 +295,7 @@ class CoachingAppointmentResponse(object):
         :type: list[UserReference]
         """
         
+
         self._attendees = attendees
 
     @property
@@ -312,6 +319,7 @@ class CoachingAppointmentResponse(object):
         :type: UserReference
         """
         
+
         self._created_by = created_by
 
     @property
@@ -335,6 +343,7 @@ class CoachingAppointmentResponse(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -358,6 +367,7 @@ class CoachingAppointmentResponse(object):
         :type: UserReference
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -381,6 +391,7 @@ class CoachingAppointmentResponse(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -404,6 +415,7 @@ class CoachingAppointmentResponse(object):
         :type: list[ConversationReference]
         """
         
+
         self._conversations = conversations
 
     @property
@@ -427,6 +439,7 @@ class CoachingAppointmentResponse(object):
         :type: list[DocumentReference]
         """
         
+
         self._documents = documents
 
     @property
@@ -450,6 +463,7 @@ class CoachingAppointmentResponse(object):
         :type: bool
         """
         
+
         self._is_overdue = is_overdue
 
     @property
@@ -473,6 +487,7 @@ class CoachingAppointmentResponse(object):
         :type: WfmScheduleReference
         """
         
+
         self._wfm_schedule = wfm_schedule
 
     @property
@@ -496,6 +511,7 @@ class CoachingAppointmentResponse(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -519,6 +535,7 @@ class CoachingAppointmentResponse(object):
         :type: list[str]
         """
         
+
         self._external_links = external_links
 
     @property
@@ -542,6 +559,7 @@ class CoachingAppointmentResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

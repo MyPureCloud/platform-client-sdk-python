@@ -73,6 +73,7 @@ class ActionConfig(object):
         :type: RequestConfig
         """
         
+
         self._request = request
 
     @property
@@ -96,6 +97,7 @@ class ActionConfig(object):
         :type: ResponseConfig
         """
         
+
         self._response = response
 
     def to_dict(self):

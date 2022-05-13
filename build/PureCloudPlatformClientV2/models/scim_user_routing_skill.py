@@ -73,6 +73,10 @@ class ScimUserRoutingSkill(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -96,6 +100,7 @@ class ScimUserRoutingSkill(object):
         :type: float
         """
         
+
         self._proficiency = proficiency
 
     def to_dict(self):

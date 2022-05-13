@@ -142,6 +142,7 @@ class Condition(object):
         :type: bool
         """
         
+
         self._inverted = inverted
 
     @property
@@ -165,6 +166,7 @@ class Condition(object):
         :type: str
         """
         
+
         self._attribute_name = attribute_name
 
     @property
@@ -188,6 +190,7 @@ class Condition(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -265,6 +268,7 @@ class Condition(object):
         :type: list[str]
         """
         
+
         self._codes = codes
 
     @property
@@ -288,6 +292,7 @@ class Condition(object):
         :type: str
         """
         
+
         self._pcProperty = pcProperty
 
     @property
@@ -338,6 +343,7 @@ class Condition(object):
         :type: DomainEntityRef
         """
         
+
         self._data_action = data_action
 
     @property
@@ -361,6 +367,7 @@ class Condition(object):
         :type: bool
         """
         
+
         self._data_not_found_resolution = data_not_found_resolution
 
     @property
@@ -384,6 +391,7 @@ class Condition(object):
         :type: str
         """
         
+
         self._contact_id_field = contact_id_field
 
     @property
@@ -407,6 +415,7 @@ class Condition(object):
         :type: str
         """
         
+
         self._call_analysis_result_field = call_analysis_result_field
 
     @property
@@ -430,6 +439,7 @@ class Condition(object):
         :type: str
         """
         
+
         self._agent_wrapup_field = agent_wrapup_field
 
     @property
@@ -453,6 +463,7 @@ class Condition(object):
         :type: list[ContactColumnToDataActionFieldMapping]
         """
         
+
         self._contact_column_to_data_action_field_mappings = contact_column_to_data_action_field_mappings
 
     @property
@@ -476,6 +487,7 @@ class Condition(object):
         :type: list[DataActionConditionPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

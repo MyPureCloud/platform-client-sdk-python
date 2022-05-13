@@ -97,6 +97,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: DialerCampaignRuleConfigChangeCampaignRuleEntities
         """
         
+
         self._campaign_rule_entities = campaign_rule_entities
 
     @property
@@ -120,6 +121,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: list[DialerCampaignRuleConfigChangeCampaignRuleCondition]
         """
         
+
         self._campaign_rule_conditions = campaign_rule_conditions
 
     @property
@@ -143,6 +145,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: list[DialerCampaignRuleConfigChangeCampaignRuleAction]
         """
         
+
         self._campaign_rule_actions = campaign_rule_actions
 
     @property
@@ -166,6 +169,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: bool
         """
         
+
         self._match_any_conditions = match_any_conditions
 
     @property
@@ -189,6 +193,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -212,6 +217,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -235,6 +241,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -258,6 +265,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -281,6 +289,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -304,6 +313,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

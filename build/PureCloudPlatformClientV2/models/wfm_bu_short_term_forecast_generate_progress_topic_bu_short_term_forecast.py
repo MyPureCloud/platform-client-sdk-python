@@ -106,6 +106,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: str
         """
         
+
         self._week_date = week_date
 
     @property
@@ -179,6 +181,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -202,6 +205,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: bool
         """
         
+
         self._legacy = legacy
 
     @property
@@ -225,6 +229,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: datetime
         """
         
+
         self._reference_start_date = reference_start_date
 
     @property
@@ -248,6 +253,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: list[WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer]
         """
         
+
         self._source_days = source_days
 
     @property
@@ -271,6 +277,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: list[WfmBuShortTermForecastGenerateProgressTopicBuForecastModification]
         """
         
+
         self._modifications = modifications
 
     @property
@@ -294,6 +301,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -317,6 +325,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: int
         """
         
+
         self._planning_groups_version = planning_groups_version
 
     @property
@@ -340,6 +349,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     @property
@@ -363,6 +373,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -386,6 +397,7 @@ class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(object):
         :type: bool
         """
         
+
         self._can_use_for_scheduling = can_use_for_scheduling
 
     def to_dict(self):

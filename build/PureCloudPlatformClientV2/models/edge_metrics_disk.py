@@ -76,6 +76,7 @@ class EdgeMetricsDisk(object):
         :type: float
         """
         
+
         self._available_bytes = available_bytes
 
     @property
@@ -99,6 +100,7 @@ class EdgeMetricsDisk(object):
         :type: str
         """
         
+
         self._partition_name = partition_name
 
     @property
@@ -122,6 +124,7 @@ class EdgeMetricsDisk(object):
         :type: float
         """
         
+
         self._total_bytes = total_bytes
 
     def to_dict(self):

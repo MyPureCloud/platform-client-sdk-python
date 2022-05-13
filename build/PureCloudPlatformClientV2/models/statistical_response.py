@@ -76,6 +76,7 @@ class StatisticalResponse(object):
         :type: str
         """
         
+
         self._interval = interval
 
     @property
@@ -99,6 +100,7 @@ class StatisticalResponse(object):
         :type: list[AggregateMetricData]
         """
         
+
         self._metrics = metrics
 
     @property
@@ -122,6 +124,7 @@ class StatisticalResponse(object):
         :type: list[AggregateViewData]
         """
         
+
         self._views = views
 
     def to_dict(self):

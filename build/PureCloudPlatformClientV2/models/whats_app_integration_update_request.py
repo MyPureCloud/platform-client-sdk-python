@@ -94,6 +94,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -163,6 +166,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -240,6 +244,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._confirmation_code = confirmation_code
 
     @property
@@ -263,6 +268,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -286,6 +292,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

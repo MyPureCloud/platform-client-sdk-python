@@ -91,6 +91,10 @@ class LocationCreateDefinition(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -114,6 +118,7 @@ class LocationCreateDefinition(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -164,6 +169,7 @@ class LocationCreateDefinition(object):
         :type: list[str]
         """
         
+
         self._path = path
 
     @property
@@ -187,6 +193,7 @@ class LocationCreateDefinition(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -210,6 +217,7 @@ class LocationCreateDefinition(object):
         :type: str
         """
         
+
         self._contact_user = contact_user
 
     @property
@@ -233,6 +241,7 @@ class LocationCreateDefinition(object):
         :type: LocationEmergencyNumber
         """
         
+
         self._emergency_number = emergency_number
 
     @property
@@ -256,6 +265,7 @@ class LocationCreateDefinition(object):
         :type: LocationAddress
         """
         
+
         self._address = address
 
     def to_dict(self):

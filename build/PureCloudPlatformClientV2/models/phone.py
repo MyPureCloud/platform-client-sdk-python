@@ -145,6 +145,7 @@ class Phone(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -168,6 +169,10 @@ class Phone(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -191,6 +196,7 @@ class Phone(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -214,6 +220,7 @@ class Phone(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -237,6 +244,7 @@ class Phone(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -260,6 +268,7 @@ class Phone(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -283,6 +292,7 @@ class Phone(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -306,6 +316,7 @@ class Phone(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -329,6 +340,7 @@ class Phone(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -379,6 +391,7 @@ class Phone(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -402,6 +415,7 @@ class Phone(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -425,6 +439,10 @@ class Phone(object):
         :type: DomainEntityRef
         """
         
+        if not site:
+            raise ValueError("Invalid value for `site`, must not be `None`")
+
+
         self._site = site
 
     @property
@@ -448,6 +466,10 @@ class Phone(object):
         :type: DomainEntityRef
         """
         
+        if not phone_base_settings:
+            raise ValueError("Invalid value for `phone_base_settings`, must not be `None`")
+
+
         self._phone_base_settings = phone_base_settings
 
     @property
@@ -471,6 +493,7 @@ class Phone(object):
         :type: DomainEntityRef
         """
         
+
         self._line_base_settings = line_base_settings
 
     @property
@@ -494,6 +517,7 @@ class Phone(object):
         :type: DomainEntityRef
         """
         
+
         self._phone_meta_base = phone_meta_base
 
     @property
@@ -517,6 +541,10 @@ class Phone(object):
         :type: list[Line]
         """
         
+        if not lines:
+            raise ValueError("Invalid value for `lines`, must not be `None`")
+
+
         self._lines = lines
 
     @property
@@ -540,6 +568,7 @@ class Phone(object):
         :type: PhoneStatus
         """
         
+
         self._status = status
 
     @property
@@ -563,6 +592,7 @@ class Phone(object):
         :type: PhoneStatus
         """
         
+
         self._secondary_status = secondary_status
 
     @property
@@ -586,6 +616,7 @@ class Phone(object):
         :type: UserAgentInfo
         """
         
+
         self._user_agent_info = user_agent_info
 
     @property
@@ -609,6 +640,7 @@ class Phone(object):
         :type: dict(str, object)
         """
         
+
         self._properties = properties
 
     @property
@@ -632,6 +664,7 @@ class Phone(object):
         :type: PhoneCapabilities
         """
         
+
         self._capabilities = capabilities
 
     @property
@@ -655,6 +688,7 @@ class Phone(object):
         :type: DomainEntityRef
         """
         
+
         self._web_rtc_user = web_rtc_user
 
     @property
@@ -678,6 +712,7 @@ class Phone(object):
         :type: Edge
         """
         
+
         self._primary_edge = primary_edge
 
     @property
@@ -701,6 +736,7 @@ class Phone(object):
         :type: Edge
         """
         
+
         self._secondary_edge = secondary_edge
 
     @property
@@ -724,6 +760,7 @@ class Phone(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

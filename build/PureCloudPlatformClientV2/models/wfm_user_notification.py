@@ -97,6 +97,10 @@ class WfmUserNotification(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -120,6 +124,10 @@ class WfmUserNotification(object):
         :type: str
         """
         
+        if not mutable_group_id:
+            raise ValueError("Invalid value for `mutable_group_id`, must not be `None`")
+
+
         self._mutable_group_id = mutable_group_id
 
     @property
@@ -143,6 +151,7 @@ class WfmUserNotification(object):
         :type: datetime
         """
         
+
         self._timestamp = timestamp
 
     @property
@@ -193,6 +202,7 @@ class WfmUserNotification(object):
         :type: ShiftTradeNotification
         """
         
+
         self._shift_trade = shift_trade
 
     @property
@@ -216,6 +226,7 @@ class WfmUserNotification(object):
         :type: TimeOffRequestNotification
         """
         
+
         self._time_off_request = time_off_request
 
     @property
@@ -239,6 +250,7 @@ class WfmUserNotification(object):
         :type: AdherenceExplanationNotification
         """
         
+
         self._adherence_explanation = adherence_explanation
 
     @property
@@ -262,6 +274,10 @@ class WfmUserNotification(object):
         :type: bool
         """
         
+        if not marked_as_read:
+            raise ValueError("Invalid value for `marked_as_read`, must not be `None`")
+
+
         self._marked_as_read = marked_as_read
 
     @property
@@ -285,6 +301,7 @@ class WfmUserNotification(object):
         :type: bool
         """
         
+
         self._agent_notification = agent_notification
 
     @property
@@ -308,6 +325,7 @@ class WfmUserNotification(object):
         :type: list[str]
         """
         
+
         self._other_notification_ids_in_group = other_notification_ids_in_group
 
     def to_dict(self):

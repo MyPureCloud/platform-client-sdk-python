@@ -79,6 +79,7 @@ class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation(objec
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation(objec
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -125,6 +127,7 @@ class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation(objec
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property

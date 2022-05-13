@@ -127,6 +127,7 @@ class BuForecastModification(object):
         :type: int
         """
         
+
         self._start_interval_index = start_interval_index
 
     @property
@@ -150,6 +151,7 @@ class BuForecastModification(object):
         :type: int
         """
         
+
         self._end_interval_index = end_interval_index
 
     @property
@@ -227,6 +229,7 @@ class BuForecastModification(object):
         :type: float
         """
         
+
         self._value = value
 
     @property
@@ -250,6 +253,7 @@ class BuForecastModification(object):
         :type: list[WfmForecastModificationIntervalOffsetValue]
         """
         
+
         self._values = values
 
     @property
@@ -273,6 +277,10 @@ class BuForecastModification(object):
         :type: str
         """
         
+        if not display_granularity:
+            raise ValueError("Invalid value for `display_granularity`, must not be `None`")
+
+
         self._display_granularity = display_granularity
 
     @property
@@ -296,6 +304,7 @@ class BuForecastModification(object):
         :type: str
         """
         
+
         self._granularity = granularity
 
     @property
@@ -319,6 +328,10 @@ class BuForecastModification(object):
         :type: bool
         """
         
+        if not enabled:
+            raise ValueError("Invalid value for `enabled`, must not be `None`")
+
+
         self._enabled = enabled
 
     @property
@@ -342,6 +355,7 @@ class BuForecastModification(object):
         :type: list[str]
         """
         
+
         self._planning_group_ids = planning_group_ids
 
     def to_dict(self):

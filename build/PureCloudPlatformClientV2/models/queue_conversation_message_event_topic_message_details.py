@@ -88,6 +88,7 @@ class QueueConversationMessageEventTopicMessageDetails(object):
         :type: QueueConversationMessageEventTopicUriReference
         """
         
+
         self._message = message
 
     @property
@@ -111,6 +112,7 @@ class QueueConversationMessageEventTopicMessageDetails(object):
         :type: datetime
         """
         
+
         self._message_time = message_time
 
     @property
@@ -134,6 +136,7 @@ class QueueConversationMessageEventTopicMessageDetails(object):
         :type: int
         """
         
+
         self._message_segment_count = message_segment_count
 
     @property
@@ -184,6 +187,7 @@ class QueueConversationMessageEventTopicMessageDetails(object):
         :type: list[QueueConversationMessageEventTopicMessageMedia]
         """
         
+
         self._media = media
 
     @property
@@ -207,6 +211,7 @@ class QueueConversationMessageEventTopicMessageDetails(object):
         :type: list[QueueConversationMessageEventTopicMessageSticker]
         """
         
+
         self._stickers = stickers
 
     @property
@@ -230,6 +235,7 @@ class QueueConversationMessageEventTopicMessageDetails(object):
         :type: QueueConversationMessageEventTopicErrorDetails
         """
         
+
         self._error_info = error_info
 
     def to_dict(self):

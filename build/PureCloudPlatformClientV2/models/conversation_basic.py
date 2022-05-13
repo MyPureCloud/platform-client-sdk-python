@@ -91,6 +91,7 @@ class ConversationBasic(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class ConversationBasic(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class ConversationBasic(object):
         :type: str
         """
         
+
         self._external_tag = external_tag
 
     @property
@@ -160,6 +163,10 @@ class ConversationBasic(object):
         :type: datetime
         """
         
+        if not start_time:
+            raise ValueError("Invalid value for `start_time`, must not be `None`")
+
+
         self._start_time = start_time
 
     @property
@@ -183,6 +190,7 @@ class ConversationBasic(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -206,6 +214,7 @@ class ConversationBasic(object):
         :type: list[ConversationDivisionMembership]
         """
         
+
         self._divisions = divisions
 
     @property
@@ -229,6 +238,7 @@ class ConversationBasic(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -252,6 +262,7 @@ class ConversationBasic(object):
         :type: list[ParticipantBasic]
         """
         
+
         self._participants = participants
 
     def to_dict(self):

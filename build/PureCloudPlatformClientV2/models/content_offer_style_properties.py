@@ -76,6 +76,7 @@ class ContentOfferStyleProperties(object):
         :type: str
         """
         
+
         self._padding = padding
 
     @property
@@ -99,6 +100,7 @@ class ContentOfferStyleProperties(object):
         :type: str
         """
         
+
         self._color = color
 
     @property
@@ -122,6 +124,7 @@ class ContentOfferStyleProperties(object):
         :type: str
         """
         
+
         self._background_color = background_color
 
     def to_dict(self):

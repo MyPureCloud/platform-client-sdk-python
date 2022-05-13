@@ -88,6 +88,10 @@ class RoutingData(object):
         :type: str
         """
         
+        if not queue_id:
+            raise ValueError("Invalid value for `queue_id`, must not be `None`")
+
+
         self._queue_id = queue_id
 
     @property
@@ -111,6 +115,7 @@ class RoutingData(object):
         :type: str
         """
         
+
         self._language_id = language_id
 
     @property
@@ -134,6 +139,7 @@ class RoutingData(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -157,6 +163,7 @@ class RoutingData(object):
         :type: list[str]
         """
         
+
         self._skill_ids = skill_ids
 
     @property
@@ -180,6 +187,7 @@ class RoutingData(object):
         :type: list[str]
         """
         
+
         self._preferred_agent_ids = preferred_agent_ids
 
     @property
@@ -203,6 +211,7 @@ class RoutingData(object):
         :type: list[ScoredAgent]
         """
         
+
         self._scored_agents = scored_agents
 
     @property
@@ -226,6 +235,7 @@ class RoutingData(object):
         :type: list[str]
         """
         
+
         self._routing_flags = routing_flags
 
     def to_dict(self):

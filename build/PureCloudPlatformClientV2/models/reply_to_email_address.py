@@ -73,6 +73,10 @@ class ReplyToEmailAddress(object):
         :type: DomainEntityRef
         """
         
+        if not domain:
+            raise ValueError("Invalid value for `domain`, must not be `None`")
+
+
         self._domain = domain
 
     @property
@@ -96,6 +100,10 @@ class ReplyToEmailAddress(object):
         :type: DomainEntityRef
         """
         
+        if not route:
+            raise ValueError("Invalid value for `route`, must not be `None`")
+
+
         self._route = route
 
     def to_dict(self):

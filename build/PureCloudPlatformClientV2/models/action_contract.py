@@ -73,6 +73,7 @@ class ActionContract(object):
         :type: ActionOutput
         """
         
+
         self._output = output
 
     @property
@@ -96,6 +97,7 @@ class ActionContract(object):
         :type: ActionInput
         """
         
+
         self._input = input
 
     def to_dict(self):

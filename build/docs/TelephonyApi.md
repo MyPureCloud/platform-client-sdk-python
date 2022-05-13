@@ -23,6 +23,8 @@ Fetch SIP metadata
 
 Fetch SIP metadata that matches a given parameter. If exactMatch is passed as a parameter only sip records that have exactly that value will be returned. For example, some records contain conversationId but not all relevant records for that call may contain the conversationId so only a partial view of the call will be reflected
 
+
+
 Wraps GET /api/v2/telephony/siptraces 
 
 Requires ALL permissions: 

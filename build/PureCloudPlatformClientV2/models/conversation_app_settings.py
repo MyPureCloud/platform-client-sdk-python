@@ -82,6 +82,7 @@ class ConversationAppSettings(object):
         :type: bool
         """
         
+
         self._show_agent_typing_indicator = show_agent_typing_indicator
 
     @property
@@ -105,6 +106,7 @@ class ConversationAppSettings(object):
         :type: bool
         """
         
+
         self._show_user_typing_indicator = show_user_typing_indicator
 
     @property
@@ -155,6 +157,7 @@ class ConversationAppSettings(object):
         :type: AutoStart
         """
         
+
         self._auto_start = auto_start
 
     @property
@@ -178,6 +181,7 @@ class ConversationAppSettings(object):
         :type: Markdown
         """
         
+
         self._markdown = markdown
 
     def to_dict(self):

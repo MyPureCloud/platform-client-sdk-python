@@ -73,6 +73,10 @@ class ShrinkageOverride(object):
         :type: int
         """
         
+        if not interval_index:
+            raise ValueError("Invalid value for `interval_index`, must not be `None`")
+
+
         self._interval_index = interval_index
 
     @property
@@ -96,6 +100,7 @@ class ShrinkageOverride(object):
         :type: float
         """
         
+
         self._shrinkage_percent = shrinkage_percent
 
     def to_dict(self):

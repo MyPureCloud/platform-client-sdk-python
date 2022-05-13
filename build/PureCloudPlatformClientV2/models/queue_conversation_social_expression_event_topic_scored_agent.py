@@ -73,6 +73,7 @@ class QueueConversationSocialExpressionEventTopicScoredAgent(object):
         :type: QueueConversationSocialExpressionEventTopicUriReference
         """
         
+
         self._agent = agent
 
     @property
@@ -96,6 +97,7 @@ class QueueConversationSocialExpressionEventTopicScoredAgent(object):
         :type: int
         """
         
+
         self._score = score
 
     def to_dict(self):

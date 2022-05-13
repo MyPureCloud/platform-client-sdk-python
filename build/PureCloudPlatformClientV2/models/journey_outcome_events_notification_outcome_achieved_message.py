@@ -97,6 +97,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyOutcomeEventsNotificationOutcome
         """
         
+
         self._outcome = outcome
 
     @property
@@ -120,6 +121,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyOutcomeEventsNotificationBrowser
         """
         
+
         self._browser = browser
 
     @property
@@ -143,6 +145,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: datetime
         """
         
+
         self._visit_created_date = visit_created_date
 
     @property
@@ -166,6 +169,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: str
         """
         
+
         self._ip_address = ip_address
 
     @property
@@ -189,6 +193,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: str
         """
         
+
         self._ip_organization = ip_organization
 
     @property
@@ -212,6 +217,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: str
         """
         
+
         self._user_agent_string = user_agent_string
 
     @property
@@ -235,6 +241,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyOutcomeEventsNotificationDevice
         """
         
+
         self._device = device
 
     @property
@@ -258,6 +265,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyOutcomeEventsNotificationGeoLocation
         """
         
+
         self._geolocation = geolocation
 
     @property
@@ -281,6 +289,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyOutcomeEventsNotificationMktCampaign
         """
         
+
         self._mkt_campaign = mkt_campaign
 
     @property
@@ -304,6 +313,7 @@ class JourneyOutcomeEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyOutcomeEventsNotificationReferrer
         """
         
+
         self._visit_referrer = visit_referrer
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class SessionSegmentAssignment(object):
         :type: AssignedSegment
         """
         
+
         self._segment = segment
 
     @property
@@ -96,6 +97,7 @@ class SessionSegmentAssignment(object):
         :type: datetime
         """
         
+
         self._assigned_date = assigned_date
 
     def to_dict(self):

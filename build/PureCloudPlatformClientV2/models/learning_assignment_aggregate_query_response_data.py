@@ -73,6 +73,7 @@ class LearningAssignmentAggregateQueryResponseData(object):
         :type: str
         """
         
+
         self._interval = interval
 
     @property
@@ -96,6 +97,7 @@ class LearningAssignmentAggregateQueryResponseData(object):
         :type: list[LearningAssignmentAggregateQueryResponseMetric]
         """
         
+
         self._metrics = metrics
 
     def to_dict(self):

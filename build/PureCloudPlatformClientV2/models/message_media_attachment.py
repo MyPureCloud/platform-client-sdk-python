@@ -82,6 +82,7 @@ class MessageMediaAttachment(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -132,6 +133,7 @@ class MessageMediaAttachment(object):
         :type: int
         """
         
+
         self._content_length = content_length
 
     @property
@@ -155,6 +157,7 @@ class MessageMediaAttachment(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -178,6 +181,7 @@ class MessageMediaAttachment(object):
         :type: str
         """
         
+
         self._id = id
 
     def to_dict(self):

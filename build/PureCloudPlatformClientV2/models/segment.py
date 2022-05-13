@@ -82,6 +82,10 @@ class Segment(object):
         :type: datetime
         """
         
+        if not start_time:
+            raise ValueError("Invalid value for `start_time`, must not be `None`")
+
+
         self._start_time = start_time
 
     @property
@@ -105,6 +109,10 @@ class Segment(object):
         :type: datetime
         """
         
+        if not end_time:
+            raise ValueError("Invalid value for `end_time`, must not be `None`")
+
+
         self._end_time = end_time
 
     @property
@@ -128,6 +136,7 @@ class Segment(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -151,6 +160,7 @@ class Segment(object):
         :type: str
         """
         
+
         self._how_ended = how_ended
 
     @property
@@ -174,6 +184,7 @@ class Segment(object):
         :type: str
         """
         
+
         self._disconnect_type = disconnect_type
 
     def to_dict(self):

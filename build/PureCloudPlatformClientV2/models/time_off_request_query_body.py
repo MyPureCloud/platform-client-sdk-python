@@ -76,6 +76,7 @@ class TimeOffRequestQueryBody(object):
         :type: list[str]
         """
         
+
         self._user_ids = user_ids
 
     @property
@@ -99,6 +100,7 @@ class TimeOffRequestQueryBody(object):
         :type: list[str]
         """
         
+
         self._statuses = statuses
 
     @property
@@ -122,6 +124,7 @@ class TimeOffRequestQueryBody(object):
         :type: DateRange
         """
         
+
         self._date_range = date_range
 
     def to_dict(self):

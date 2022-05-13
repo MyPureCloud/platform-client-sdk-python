@@ -76,6 +76,7 @@ class FacetKeyAttribute(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class FacetKeyAttribute(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -122,6 +124,7 @@ class FacetKeyAttribute(object):
         :type: int
         """
         
+
         self._count = count
 
     def to_dict(self):

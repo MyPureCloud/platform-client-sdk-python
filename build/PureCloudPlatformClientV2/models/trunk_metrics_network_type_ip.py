@@ -73,6 +73,7 @@ class TrunkMetricsNetworkTypeIp(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -96,6 +97,7 @@ class TrunkMetricsNetworkTypeIp(object):
         :type: TrunkErrorInfo
         """
         
+
         self._error_info = error_info
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class MediaParticipantRequest(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -138,6 +139,7 @@ class MediaParticipantRequest(object):
         :type: bool
         """
         
+
         self._recording = recording
 
     @property
@@ -161,6 +163,7 @@ class MediaParticipantRequest(object):
         :type: bool
         """
         
+
         self._muted = muted
 
     @property
@@ -184,6 +187,7 @@ class MediaParticipantRequest(object):
         :type: bool
         """
         
+
         self._confined = confined
 
     @property
@@ -207,6 +211,7 @@ class MediaParticipantRequest(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -230,6 +235,7 @@ class MediaParticipantRequest(object):
         :type: bool
         """
         
+
         self._wrapup_skipped = wrapup_skipped
 
     def to_dict(self):

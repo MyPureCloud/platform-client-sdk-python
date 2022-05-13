@@ -46,6 +46,8 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
             'to': 'V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient',
             'pcFrom': 'V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient',
             'time': 'datetime',
+            'date_modified': 'datetime',
+            'date_deleted': 'datetime',
             'metadata': 'V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata'
         }
 
@@ -56,6 +58,8 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
             'to': 'to',
             'pcFrom': 'from',
             'time': 'time',
+            'date_modified': 'dateModified',
+            'date_deleted': 'dateDeleted',
             'metadata': 'metadata'
         }
 
@@ -65,6 +69,8 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
         self._to = None
         self._pcFrom = None
         self._time = None
+        self._date_modified = None
+        self._date_deleted = None
         self._metadata = None
 
     @property
@@ -88,6 +94,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +145,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
         :type: str
         """
         
+
         self._message_id = message_id
 
     @property
@@ -161,6 +169,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
         :type: V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient
         """
         
+
         self._to = to
 
     @property
@@ -184,6 +193,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
         :type: V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient
         """
         
+
         self._pcFrom = pcFrom
 
     @property
@@ -207,7 +217,56 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
         :type: datetime
         """
         
+
         self._time = time
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.
+
+
+        :return: The date_modified of this V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.
+
+
+        :param date_modified: The date_modified of this V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.
+        :type: datetime
+        """
+        
+
+        self._date_modified = date_modified
+
+    @property
+    def date_deleted(self):
+        """
+        Gets the date_deleted of this V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.
+
+
+        :return: The date_deleted of this V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.
+        :rtype: datetime
+        """
+        return self._date_deleted
+
+    @date_deleted.setter
+    def date_deleted(self, date_deleted):
+        """
+        Sets the date_deleted of this V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.
+
+
+        :param date_deleted: The date_deleted of this V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.
+        :type: datetime
+        """
+        
+
+        self._date_deleted = date_deleted
 
     @property
     def metadata(self):
@@ -230,6 +289,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
         :type: V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

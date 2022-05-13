@@ -106,6 +106,7 @@ class WfmBuScheduleTopicBuScheduleNotification(object):
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -156,6 +157,7 @@ class WfmBuScheduleTopicBuScheduleNotification(object):
         :type: WfmBuScheduleTopicBuScheduleMetadata
         """
         
+
         self._result = result
 
     def to_dict(self):

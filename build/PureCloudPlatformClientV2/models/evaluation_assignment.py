@@ -73,6 +73,7 @@ class EvaluationAssignment(object):
         :type: EvaluationForm
         """
         
+
         self._evaluation_form = evaluation_form
 
     @property
@@ -96,6 +97,7 @@ class EvaluationAssignment(object):
         :type: User
         """
         
+
         self._user = user
 
     def to_dict(self):

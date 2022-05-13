@@ -112,6 +112,7 @@ class OverallBestPointsItem(object):
         :type: list[UserReference]
         """
         
+
         self._users = users
 
     @property
@@ -135,6 +136,7 @@ class OverallBestPointsItem(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -158,6 +160,7 @@ class OverallBestPointsItem(object):
         :type: int
         """
         
+
         self._points = points
 
     @property
@@ -181,6 +184,7 @@ class OverallBestPointsItem(object):
         :type: date
         """
         
+
         self._date_start_workday = date_start_workday
 
     @property
@@ -204,6 +208,7 @@ class OverallBestPointsItem(object):
         :type: date
         """
         
+
         self._date_end_workday = date_end_workday
 
     def to_dict(self):

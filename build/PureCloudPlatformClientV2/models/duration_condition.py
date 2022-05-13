@@ -106,6 +106,7 @@ class DurationCondition(object):
         :type: str
         """
         
+
         self._duration_operator = duration_operator
 
     @property
@@ -129,6 +130,7 @@ class DurationCondition(object):
         :type: str
         """
         
+
         self._duration_range = duration_range
 
     @property

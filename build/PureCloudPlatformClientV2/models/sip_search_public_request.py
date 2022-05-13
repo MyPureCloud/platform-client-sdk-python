@@ -97,6 +97,7 @@ class SIPSearchPublicRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class SIPSearchPublicRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class SIPSearchPublicRequest(object):
         :type: str
         """
         
+
         self._call_id = call_id
 
     @property
@@ -166,6 +169,7 @@ class SIPSearchPublicRequest(object):
         :type: str
         """
         
+
         self._to_user = to_user
 
     @property
@@ -189,6 +193,7 @@ class SIPSearchPublicRequest(object):
         :type: str
         """
         
+
         self._from_user = from_user
 
     @property
@@ -212,6 +217,7 @@ class SIPSearchPublicRequest(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -235,6 +241,7 @@ class SIPSearchPublicRequest(object):
         :type: str
         """
         
+
         self._participant_id = participant_id
 
     @property
@@ -258,6 +265,10 @@ class SIPSearchPublicRequest(object):
         :type: datetime
         """
         
+        if not date_start:
+            raise ValueError("Invalid value for `date_start`, must not be `None`")
+
+
         self._date_start = date_start
 
     @property
@@ -281,6 +292,10 @@ class SIPSearchPublicRequest(object):
         :type: datetime
         """
         
+        if not date_end:
+            raise ValueError("Invalid value for `date_end`, must not be `None`")
+
+
         self._date_end = date_end
 
     @property
@@ -304,6 +319,7 @@ class SIPSearchPublicRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

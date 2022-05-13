@@ -76,6 +76,7 @@ class UserTimeOffRequestReference(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,10 @@ class UserTimeOffRequestReference(object):
         :type: UserReference
         """
         
+        if not user:
+            raise ValueError("Invalid value for `user`, must not be `None`")
+
+
         self._user = user
 
     @property
@@ -122,6 +127,7 @@ class UserTimeOffRequestReference(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

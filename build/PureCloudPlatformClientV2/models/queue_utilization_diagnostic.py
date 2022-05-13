@@ -94,6 +94,7 @@ class QueueUtilizationDiagnostic(object):
         :type: DomainEntityRef
         """
         
+
         self._queue = queue
 
     @property
@@ -117,6 +118,7 @@ class QueueUtilizationDiagnostic(object):
         :type: int
         """
         
+
         self._users_in_queue = users_in_queue
 
     @property
@@ -140,6 +142,7 @@ class QueueUtilizationDiagnostic(object):
         :type: int
         """
         
+
         self._active_users_in_queue = active_users_in_queue
 
     @property
@@ -163,6 +166,7 @@ class QueueUtilizationDiagnostic(object):
         :type: int
         """
         
+
         self._users_on_queue = users_on_queue
 
     @property
@@ -186,6 +190,7 @@ class QueueUtilizationDiagnostic(object):
         :type: int
         """
         
+
         self._users_not_utilized = users_not_utilized
 
     @property
@@ -209,6 +214,7 @@ class QueueUtilizationDiagnostic(object):
         :type: int
         """
         
+
         self._users_on_queue_with_station = users_on_queue_with_station
 
     @property
@@ -232,6 +238,7 @@ class QueueUtilizationDiagnostic(object):
         :type: int
         """
         
+
         self._users_on_a_campaign_call = users_on_a_campaign_call
 
     @property
@@ -255,6 +262,7 @@ class QueueUtilizationDiagnostic(object):
         :type: int
         """
         
+
         self._users_on_different_edge_group = users_on_different_edge_group
 
     @property
@@ -278,6 +286,7 @@ class QueueUtilizationDiagnostic(object):
         :type: int
         """
         
+
         self._users_on_a_non_campaign_call = users_on_a_non_campaign_call
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class CreateWebChatConversationResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class CreateWebChatConversationResponse(object):
         :type: str
         """
         
+
         self._jwt = jwt
 
     @property
@@ -125,6 +127,7 @@ class CreateWebChatConversationResponse(object):
         :type: str
         """
         
+
         self._event_stream_uri = event_stream_uri
 
     @property
@@ -148,6 +151,7 @@ class CreateWebChatConversationResponse(object):
         :type: WebChatMemberInfo
         """
         
+
         self._member = member
 
     def to_dict(self):

@@ -76,6 +76,10 @@ class FromEmailAddress(object):
         :type: DomainEntityRef
         """
         
+        if not domain:
+            raise ValueError("Invalid value for `domain`, must not be `None`")
+
+
         self._domain = domain
 
     @property
@@ -99,6 +103,7 @@ class FromEmailAddress(object):
         :type: str
         """
         
+
         self._friendly_name = friendly_name
 
     @property
@@ -122,6 +127,7 @@ class FromEmailAddress(object):
         :type: str
         """
         
+
         self._local_part = local_part
 
     def to_dict(self):

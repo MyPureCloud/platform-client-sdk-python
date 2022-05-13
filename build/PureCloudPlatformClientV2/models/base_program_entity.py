@@ -76,6 +76,7 @@ class BaseProgramEntity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class BaseProgramEntity(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -122,6 +124,7 @@ class BaseProgramEntity(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

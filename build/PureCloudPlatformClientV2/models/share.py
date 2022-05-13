@@ -100,6 +100,7 @@ class Share(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class Share(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -173,6 +175,7 @@ class Share(object):
         :type: DomainEntityRef
         """
         
+
         self._shared_entity = shared_entity
 
     @property
@@ -223,6 +226,7 @@ class Share(object):
         :type: DomainEntityRef
         """
         
+
         self._member = member
 
     @property
@@ -246,6 +250,7 @@ class Share(object):
         :type: DomainEntityRef
         """
         
+
         self._shared_by = shared_by
 
     @property
@@ -269,6 +274,7 @@ class Share(object):
         :type: DomainEntityRef
         """
         
+
         self._workspace = workspace
 
     @property
@@ -292,6 +298,7 @@ class Share(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -315,6 +322,7 @@ class Share(object):
         :type: Group
         """
         
+
         self._group = group
 
     @property
@@ -338,6 +346,7 @@ class Share(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

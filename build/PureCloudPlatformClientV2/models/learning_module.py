@@ -127,6 +127,7 @@ class LearningModule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -150,6 +151,10 @@ class LearningModule(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -173,6 +178,7 @@ class LearningModule(object):
         :type: UserReference
         """
         
+
         self._created_by = created_by
 
     @property
@@ -196,6 +202,7 @@ class LearningModule(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -219,6 +226,7 @@ class LearningModule(object):
         :type: UserReference
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -242,6 +250,7 @@ class LearningModule(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -265,6 +274,7 @@ class LearningModule(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -288,6 +298,7 @@ class LearningModule(object):
         :type: str
         """
         
+
         self._external_id = external_id
 
     @property
@@ -338,6 +349,7 @@ class LearningModule(object):
         :type: LearningModuleRule
         """
         
+
         self._rule = rule
 
     @property
@@ -361,6 +373,7 @@ class LearningModule(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -384,6 +397,7 @@ class LearningModule(object):
         :type: bool
         """
         
+
         self._is_archived = is_archived
 
     @property
@@ -407,6 +421,7 @@ class LearningModule(object):
         :type: bool
         """
         
+
         self._is_published = is_published
 
     @property
@@ -430,6 +445,7 @@ class LearningModule(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -453,6 +469,10 @@ class LearningModule(object):
         :type: int
         """
         
+        if not completion_time_in_days:
+            raise ValueError("Invalid value for `completion_time_in_days`, must not be `None`")
+
+
         self._completion_time_in_days = completion_time_in_days
 
     @property
@@ -503,6 +523,7 @@ class LearningModule(object):
         :type: list[LearningModuleInformStep]
         """
         
+
         self._inform_steps = inform_steps
 
     @property
@@ -526,6 +547,7 @@ class LearningModule(object):
         :type: AssessmentForm
         """
         
+
         self._assessment_form = assessment_form
 
     @property
@@ -549,6 +571,7 @@ class LearningModule(object):
         :type: LearningModuleSummary
         """
         
+
         self._summary_data = summary_data
 
     @property
@@ -572,6 +595,7 @@ class LearningModule(object):
         :type: LearningModuleCoverArtResponse
         """
         
+
         self._cover_art = cover_art
 
     def to_dict(self):

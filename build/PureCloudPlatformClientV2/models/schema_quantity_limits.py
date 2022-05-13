@@ -109,6 +109,7 @@ class SchemaQuantityLimits(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class SchemaQuantityLimits(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -155,6 +157,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._min_field_name_characters = min_field_name_characters
 
     @property
@@ -178,6 +181,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._max_field_name_characters = max_field_name_characters
 
     @property
@@ -201,6 +205,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._min_field_description_characters = min_field_description_characters
 
     @property
@@ -224,6 +229,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._max_field_description_characters = max_field_description_characters
 
     @property
@@ -247,6 +253,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._min_schema_name_characters = min_schema_name_characters
 
     @property
@@ -270,6 +277,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._max_schema_name_characters = max_schema_name_characters
 
     @property
@@ -293,6 +301,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._min_schema_description_characters = min_schema_description_characters
 
     @property
@@ -316,6 +325,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._max_schema_description_characters = max_schema_description_characters
 
     @property
@@ -339,6 +349,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._max_number_of_schemas_per_org = max_number_of_schemas_per_org
 
     @property
@@ -362,6 +373,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._max_number_of_fields_per_schema = max_number_of_fields_per_schema
 
     @property
@@ -385,6 +397,7 @@ class SchemaQuantityLimits(object):
         :type: int
         """
         
+
         self._max_number_of_fields_per_org = max_number_of_fields_per_org
 
     @property
@@ -408,6 +421,7 @@ class SchemaQuantityLimits(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

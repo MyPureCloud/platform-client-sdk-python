@@ -73,6 +73,7 @@ class AvailableTranslations(object):
         :type: list[str]
         """
         
+
         self._org_specific = org_specific
 
     @property
@@ -96,6 +97,7 @@ class AvailableTranslations(object):
         :type: list[str]
         """
         
+
         self._builtin = builtin
 
     def to_dict(self):

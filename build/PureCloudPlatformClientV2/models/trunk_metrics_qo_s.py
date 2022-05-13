@@ -70,6 +70,10 @@ class TrunkMetricsQoS(object):
         :type: int
         """
         
+        if not mismatch_count:
+            raise ValueError("Invalid value for `mismatch_count`, must not be `None`")
+
+
         self._mismatch_count = mismatch_count
 
     def to_dict(self):

@@ -85,6 +85,10 @@ class EvaluationAggregationQueryMe(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -108,6 +112,7 @@ class EvaluationAggregationQueryMe(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -131,6 +136,7 @@ class EvaluationAggregationQueryMe(object):
         :type: list[str]
         """
         
+
         self._group_by = group_by
 
     @property
@@ -154,6 +160,10 @@ class EvaluationAggregationQueryMe(object):
         :type: list[str]
         """
         
+        if not metrics:
+            raise ValueError("Invalid value for `metrics`, must not be `None`")
+
+
         self._metrics = metrics
 
     @property
@@ -204,6 +214,7 @@ class EvaluationAggregationQueryMe(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     def to_dict(self):

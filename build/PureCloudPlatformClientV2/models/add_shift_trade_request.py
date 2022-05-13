@@ -82,6 +82,10 @@ class AddShiftTradeRequest(object):
         :type: str
         """
         
+        if not schedule_id:
+            raise ValueError("Invalid value for `schedule_id`, must not be `None`")
+
+
         self._schedule_id = schedule_id
 
     @property
@@ -105,6 +109,10 @@ class AddShiftTradeRequest(object):
         :type: str
         """
         
+        if not initiating_shift_id:
+            raise ValueError("Invalid value for `initiating_shift_id`, must not be `None`")
+
+
         self._initiating_shift_id = initiating_shift_id
 
     @property
@@ -128,6 +136,7 @@ class AddShiftTradeRequest(object):
         :type: str
         """
         
+
         self._receiving_user_id = receiving_user_id
 
     @property
@@ -151,6 +160,7 @@ class AddShiftTradeRequest(object):
         :type: datetime
         """
         
+
         self._expiration = expiration
 
     @property
@@ -174,6 +184,7 @@ class AddShiftTradeRequest(object):
         :type: list[str]
         """
         
+
         self._acceptable_intervals = acceptable_intervals
 
     def to_dict(self):

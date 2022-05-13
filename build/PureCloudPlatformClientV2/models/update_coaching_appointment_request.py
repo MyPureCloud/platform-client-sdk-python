@@ -94,6 +94,7 @@ class UpdateCoachingAppointmentRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -117,6 +118,7 @@ class UpdateCoachingAppointmentRequest(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -140,6 +142,7 @@ class UpdateCoachingAppointmentRequest(object):
         :type: datetime
         """
         
+
         self._date_start = date_start
 
     @property
@@ -163,6 +166,7 @@ class UpdateCoachingAppointmentRequest(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -186,6 +190,7 @@ class UpdateCoachingAppointmentRequest(object):
         :type: list[str]
         """
         
+
         self._conversation_ids = conversation_ids
 
     @property
@@ -209,6 +214,7 @@ class UpdateCoachingAppointmentRequest(object):
         :type: list[str]
         """
         
+
         self._document_ids = document_ids
 
     @property
@@ -259,6 +265,7 @@ class UpdateCoachingAppointmentRequest(object):
         :type: WfmScheduleReference
         """
         
+
         self._wfm_schedule = wfm_schedule
 
     @property
@@ -282,6 +289,7 @@ class UpdateCoachingAppointmentRequest(object):
         :type: list[str]
         """
         
+
         self._external_links = external_links
 
     def to_dict(self):

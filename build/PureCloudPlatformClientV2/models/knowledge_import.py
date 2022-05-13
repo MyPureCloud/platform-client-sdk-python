@@ -103,6 +103,7 @@ class KnowledgeImport(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class KnowledgeImport(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -149,6 +151,10 @@ class KnowledgeImport(object):
         :type: str
         """
         
+        if not upload_key:
+            raise ValueError("Invalid value for `upload_key`, must not be `None`")
+
+
         self._upload_key = upload_key
 
     @property
@@ -199,6 +205,7 @@ class KnowledgeImport(object):
         :type: bool
         """
         
+
         self._ignore_headers = ignore_headers
 
     @property
@@ -249,6 +256,7 @@ class KnowledgeImport(object):
         :type: ImportReport
         """
         
+
         self._report = report
 
     @property
@@ -272,6 +280,7 @@ class KnowledgeImport(object):
         :type: KnowledgeBase
         """
         
+
         self._knowledge_base = knowledge_base
 
     @property
@@ -322,6 +331,7 @@ class KnowledgeImport(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -345,6 +355,7 @@ class KnowledgeImport(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -368,6 +379,7 @@ class KnowledgeImport(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

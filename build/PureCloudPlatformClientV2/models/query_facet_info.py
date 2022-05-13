@@ -73,6 +73,7 @@ class QueryFacetInfo(object):
         :type: list[FacetKeyAttribute]
         """
         
+
         self._attributes = attributes
 
     @property
@@ -96,6 +97,7 @@ class QueryFacetInfo(object):
         :type: list[FacetEntry]
         """
         
+
         self._facets = facets
 
     def to_dict(self):

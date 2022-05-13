@@ -85,6 +85,7 @@ class NluFeedbackResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class NluFeedbackResponse(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -131,6 +133,7 @@ class NluFeedbackResponse(object):
         :type: list[IntentFeedback]
         """
         
+
         self._intents = intents
 
     @property
@@ -154,6 +157,7 @@ class NluFeedbackResponse(object):
         :type: NluDomainVersion
         """
         
+
         self._version = version
 
     @property
@@ -177,6 +181,7 @@ class NluFeedbackResponse(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -200,6 +205,7 @@ class NluFeedbackResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

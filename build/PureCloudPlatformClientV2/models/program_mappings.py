@@ -82,6 +82,7 @@ class ProgramMappings(object):
         :type: BaseProgramEntity
         """
         
+
         self._program = program
 
     @property
@@ -105,6 +106,7 @@ class ProgramMappings(object):
         :type: list[AddressableEntityRef]
         """
         
+
         self._queues = queues
 
     @property
@@ -128,6 +130,7 @@ class ProgramMappings(object):
         :type: list[AddressableEntityRef]
         """
         
+
         self._flows = flows
 
     @property
@@ -151,6 +154,7 @@ class ProgramMappings(object):
         :type: AddressableEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -174,6 +178,7 @@ class ProgramMappings(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     def to_dict(self):

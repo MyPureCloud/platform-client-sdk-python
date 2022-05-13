@@ -73,6 +73,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentExternalLink(object):
         :type: str
         """
         
+
         self._external_link = external_link
 
     @property

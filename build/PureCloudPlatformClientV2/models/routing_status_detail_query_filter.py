@@ -103,6 +103,7 @@ class RoutingStatusDetailQueryFilter(object):
         :type: list[RoutingStatusDetailQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class RoutingStatusDetailQueryFilter(object):
         :type: list[RoutingStatusDetailQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

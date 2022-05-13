@@ -79,6 +79,10 @@ class IntentDefinition(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -102,6 +106,7 @@ class IntentDefinition(object):
         :type: list[NamedEntityTypeBinding]
         """
         
+
         self._entity_type_bindings = entity_type_bindings
 
     @property
@@ -125,6 +130,7 @@ class IntentDefinition(object):
         :type: list[str]
         """
         
+
         self._entity_name_references = entity_name_references
 
     @property
@@ -148,6 +154,10 @@ class IntentDefinition(object):
         :type: list[NluUtterance]
         """
         
+        if not utterances:
+            raise ValueError("Invalid value for `utterances`, must not be `None`")
+
+
         self._utterances = utterances
 
     def to_dict(self):

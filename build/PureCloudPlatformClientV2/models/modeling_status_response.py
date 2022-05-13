@@ -79,6 +79,7 @@ class ModelingStatusResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class ModelingStatusResponse(object):
         :type: list[ModelingProcessingError]
         """
         
+
         self._error_details = error_details
 
     @property
@@ -152,6 +154,7 @@ class ModelingStatusResponse(object):
         :type: str
         """
         
+
         self._modeling_result_uri = modeling_result_uri
 
     def to_dict(self):

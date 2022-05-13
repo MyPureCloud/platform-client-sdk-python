@@ -91,6 +91,7 @@ class Page(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class Page(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class Page(object):
         :type: str
         """
         
+
         self._version_id = version_id
 
     @property
@@ -160,6 +163,7 @@ class Page(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -183,6 +187,7 @@ class Page(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -206,6 +211,7 @@ class Page(object):
         :type: dict(str, object)
         """
         
+
         self._root_container = root_container
 
     @property
@@ -229,6 +235,7 @@ class Page(object):
         :type: dict(str, object)
         """
         
+
         self._properties = properties
 
     @property
@@ -252,6 +259,7 @@ class Page(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

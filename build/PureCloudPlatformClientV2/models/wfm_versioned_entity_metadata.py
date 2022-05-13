@@ -82,6 +82,10 @@ class WfmVersionedEntityMetadata(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -105,6 +109,7 @@ class WfmVersionedEntityMetadata(object):
         :type: UserReference
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -128,6 +133,7 @@ class WfmVersionedEntityMetadata(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -151,6 +157,7 @@ class WfmVersionedEntityMetadata(object):
         :type: UserReference
         """
         
+
         self._created_by = created_by
 
     @property
@@ -174,6 +181,7 @@ class WfmVersionedEntityMetadata(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     def to_dict(self):

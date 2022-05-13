@@ -85,6 +85,7 @@ class UpdateWorkPlanRotationRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -108,6 +109,7 @@ class UpdateWorkPlanRotationRequest(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -131,6 +133,7 @@ class UpdateWorkPlanRotationRequest(object):
         :type: DateRangeWithOptionalEnd
         """
         
+
         self._date_range = date_range
 
     @property
@@ -154,6 +157,7 @@ class UpdateWorkPlanRotationRequest(object):
         :type: list[UpdateWorkPlanRotationAgentRequest]
         """
         
+
         self._agents = agents
 
     @property
@@ -177,6 +181,7 @@ class UpdateWorkPlanRotationRequest(object):
         :type: WorkPlanPatternRequest
         """
         
+
         self._pattern = pattern
 
     @property
@@ -200,6 +205,10 @@ class UpdateWorkPlanRotationRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

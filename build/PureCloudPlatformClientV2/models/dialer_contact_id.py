@@ -73,6 +73,7 @@ class DialerContactId(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class DialerContactId(object):
         :type: str
         """
         
+
         self._contact_list_id = contact_list_id
 
     def to_dict(self):

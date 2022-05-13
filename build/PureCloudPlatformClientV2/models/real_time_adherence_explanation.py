@@ -82,6 +82,7 @@ class RealTimeAdherenceExplanation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class RealTimeAdherenceExplanation(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -128,6 +130,7 @@ class RealTimeAdherenceExplanation(object):
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property
@@ -178,6 +181,7 @@ class RealTimeAdherenceExplanation(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class ReverseWhitepagesLookupResult(object):
         :type: list[ExternalContact]
         """
         
+
         self._contacts = contacts
 
     @property
@@ -96,6 +97,7 @@ class ReverseWhitepagesLookupResult(object):
         :type: list[ExternalOrganization]
         """
         
+
         self._external_organizations = external_organizations
 
     def to_dict(self):

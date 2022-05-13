@@ -91,6 +91,7 @@ class OutOfOffice(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class OutOfOffice(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class OutOfOffice(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -160,6 +163,7 @@ class OutOfOffice(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -183,6 +187,7 @@ class OutOfOffice(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -206,6 +211,7 @@ class OutOfOffice(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property
@@ -229,6 +235,7 @@ class OutOfOffice(object):
         :type: bool
         """
         
+
         self._indefinite = indefinite
 
     @property
@@ -252,6 +259,7 @@ class OutOfOffice(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

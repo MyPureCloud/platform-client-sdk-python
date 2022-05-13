@@ -85,6 +85,7 @@ class ScorableSurvey(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class ScorableSurvey(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class ScorableSurvey(object):
         :type: SurveyForm
         """
         
+
         self._survey_form = survey_form
 
     @property
@@ -181,6 +184,7 @@ class ScorableSurvey(object):
         :type: SurveyScoringSet
         """
         
+
         self._answers = answers
 
     @property
@@ -204,6 +208,7 @@ class ScorableSurvey(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

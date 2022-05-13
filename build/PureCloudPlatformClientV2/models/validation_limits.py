@@ -85,6 +85,7 @@ class ValidationLimits(object):
         :type: MinLength
         """
         
+
         self._min_length = min_length
 
     @property
@@ -108,6 +109,7 @@ class ValidationLimits(object):
         :type: MaxLength
         """
         
+
         self._max_length = max_length
 
     @property
@@ -131,6 +133,7 @@ class ValidationLimits(object):
         :type: MinLength
         """
         
+
         self._min_items = min_items
 
     @property
@@ -154,6 +157,7 @@ class ValidationLimits(object):
         :type: MaxLength
         """
         
+
         self._max_items = max_items
 
     @property
@@ -177,6 +181,7 @@ class ValidationLimits(object):
         :type: MinLength
         """
         
+
         self._minimum = minimum
 
     @property
@@ -200,6 +205,7 @@ class ValidationLimits(object):
         :type: MaxLength
         """
         
+
         self._maximum = maximum
 
     def to_dict(self):

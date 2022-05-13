@@ -115,6 +115,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -161,6 +163,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: str
         """
         
+
         self._rule_id = rule_id
 
     @property
@@ -211,6 +214,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: str
         """
         
+
         self._dimension_value = dimension_value
 
     @property
@@ -234,6 +238,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: str
         """
         
+
         self._dimension_value_name = dimension_value_name
 
     @property
@@ -365,6 +370,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: float
         """
         
+
         self._value = value
 
     @property
@@ -388,6 +394,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: bool
         """
         
+
         self._unread = unread
 
     @property
@@ -411,6 +418,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -434,6 +442,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -457,6 +466,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: list[KlaxonInteractionStatsAlertsTopicNotificationUser]
         """
         
+
         self._notification_users = notification_users
 
     @property
@@ -480,6 +490,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :type: list[str]
         """
         
+
         self._alert_types = alert_types
 
     def to_dict(self):

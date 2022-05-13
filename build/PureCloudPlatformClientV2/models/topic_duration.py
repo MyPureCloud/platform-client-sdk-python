@@ -70,6 +70,7 @@ class TopicDuration(object):
         :type: int
         """
         
+
         self._total_milliseconds = total_milliseconds
 
     def to_dict(self):

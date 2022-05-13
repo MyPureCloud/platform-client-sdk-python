@@ -79,6 +79,10 @@ class EdgeAutoUpdateConfig(object):
         :type: str
         """
         
+        if not time_zone:
+            raise ValueError("Invalid value for `time_zone`, must not be `None`")
+
+
         self._time_zone = time_zone
 
     @property
@@ -102,6 +106,10 @@ class EdgeAutoUpdateConfig(object):
         :type: str
         """
         
+        if not rrule:
+            raise ValueError("Invalid value for `rrule`, must not be `None`")
+
+
         self._rrule = rrule
 
     @property
@@ -125,6 +133,10 @@ class EdgeAutoUpdateConfig(object):
         :type: LocalDateTime
         """
         
+        if not start:
+            raise ValueError("Invalid value for `start`, must not be `None`")
+
+
         self._start = start
 
     @property
@@ -148,6 +160,10 @@ class EdgeAutoUpdateConfig(object):
         :type: LocalDateTime
         """
         
+        if not end:
+            raise ValueError("Invalid value for `end`, must not be `None`")
+
+
         self._end = end
 
     def to_dict(self):

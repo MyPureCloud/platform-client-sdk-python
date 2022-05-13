@@ -100,6 +100,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: list[str]
         """
         
+
         self._codecs = codecs
 
     @property
@@ -123,6 +124,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: int
         """
         
+
         self._discarded_packets = discarded_packets
 
     @property
@@ -146,6 +148,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: int
         """
         
+
         self._duplicate_packets = duplicate_packets
 
     @property
@@ -169,6 +172,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: datetime
         """
         
+
         self._event_time = event_time
 
     @property
@@ -192,6 +196,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: int
         """
         
+
         self._invalid_packets = invalid_packets
 
     @property
@@ -215,6 +220,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: int
         """
         
+
         self._max_latency_ms = max_latency_ms
 
     @property
@@ -238,6 +244,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: float
         """
         
+
         self._min_mos = min_mos
 
     @property
@@ -261,6 +268,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: float
         """
         
+
         self._min_r_factor = min_r_factor
 
     @property
@@ -284,6 +292,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: int
         """
         
+
         self._overrun_packets = overrun_packets
 
     @property
@@ -307,6 +316,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: int
         """
         
+
         self._received_packets = received_packets
 
     @property
@@ -330,6 +340,7 @@ class AnalyticsMediaEndpointStat(object):
         :type: int
         """
         
+
         self._underrun_packets = underrun_packets
 
     def to_dict(self):

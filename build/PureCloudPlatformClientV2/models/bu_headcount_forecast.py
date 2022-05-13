@@ -73,6 +73,7 @@ class BuHeadcountForecast(object):
         :type: list[BuPlanningGroupHeadcountForecast]
         """
         
+
         self._entities = entities
 
     @property
@@ -96,6 +97,7 @@ class BuHeadcountForecast(object):
         :type: datetime
         """
         
+
         self._reference_start_date = reference_start_date
 
     def to_dict(self):

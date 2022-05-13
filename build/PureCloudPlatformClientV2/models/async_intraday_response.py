@@ -103,6 +103,7 @@ class AsyncIntradayResponse(object):
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -126,6 +127,7 @@ class AsyncIntradayResponse(object):
         :type: BuIntradayResponse
         """
         
+
         self._result = result
 
     def to_dict(self):

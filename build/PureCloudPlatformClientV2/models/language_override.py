@@ -76,6 +76,10 @@ class LanguageOverride(object):
         :type: str
         """
         
+        if not language:
+            raise ValueError("Invalid value for `language`, must not be `None`")
+
+
         self._language = language
 
     @property
@@ -99,6 +103,10 @@ class LanguageOverride(object):
         :type: str
         """
         
+        if not engine:
+            raise ValueError("Invalid value for `engine`, must not be `None`")
+
+
         self._engine = engine
 
     @property
@@ -122,6 +130,10 @@ class LanguageOverride(object):
         :type: str
         """
         
+        if not voice:
+            raise ValueError("Invalid value for `voice`, must not be `None`")
+
+
         self._voice = voice
 
     def to_dict(self):

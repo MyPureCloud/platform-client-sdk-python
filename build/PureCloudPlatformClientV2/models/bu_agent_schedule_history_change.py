@@ -79,6 +79,7 @@ class BuAgentScheduleHistoryChange(object):
         :type: BuAgentScheduleHistoryChangeMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -102,6 +103,7 @@ class BuAgentScheduleHistoryChange(object):
         :type: list[BuAgentScheduleShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -125,6 +127,7 @@ class BuAgentScheduleHistoryChange(object):
         :type: list[BuFullDayTimeOffMarker]
         """
         
+
         self._full_day_time_off_markers = full_day_time_off_markers
 
     @property
@@ -148,6 +151,7 @@ class BuAgentScheduleHistoryChange(object):
         :type: BuAgentScheduleHistoryDeletedChange
         """
         
+
         self._deletes = deletes
 
     def to_dict(self):

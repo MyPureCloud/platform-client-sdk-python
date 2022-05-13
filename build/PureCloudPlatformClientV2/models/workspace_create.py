@@ -76,6 +76,10 @@ class WorkspaceCreate(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -99,6 +103,7 @@ class WorkspaceCreate(object):
         :type: str
         """
         
+
         self._bucket = bucket
 
     @property
@@ -122,6 +127,7 @@ class WorkspaceCreate(object):
         :type: str
         """
         
+
         self._description = description
 
     def to_dict(self):

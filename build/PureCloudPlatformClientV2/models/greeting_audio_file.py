@@ -76,6 +76,7 @@ class GreetingAudioFile(object):
         :type: int
         """
         
+
         self._duration_milliseconds = duration_milliseconds
 
     @property
@@ -99,6 +100,7 @@ class GreetingAudioFile(object):
         :type: int
         """
         
+
         self._size_bytes = size_bytes
 
     @property
@@ -122,6 +124,7 @@ class GreetingAudioFile(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

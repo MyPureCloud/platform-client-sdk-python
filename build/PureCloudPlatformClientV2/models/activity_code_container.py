@@ -73,6 +73,7 @@ class ActivityCodeContainer(object):
         :type: dict(str, ActivityCode)
         """
         
+
         self._activity_codes = activity_codes
 
     @property
@@ -96,6 +97,10 @@ class ActivityCodeContainer(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

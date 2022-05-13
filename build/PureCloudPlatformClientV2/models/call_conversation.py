@@ -88,6 +88,7 @@ class CallConversation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class CallConversation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class CallConversation(object):
         :type: list[CallMediaParticipant]
         """
         
+
         self._participants = participants
 
     @property
@@ -157,6 +160,7 @@ class CallConversation(object):
         :type: list[str]
         """
         
+
         self._other_media_uris = other_media_uris
 
     @property
@@ -207,6 +211,7 @@ class CallConversation(object):
         :type: int
         """
         
+
         self._max_participants = max_participants
 
     @property
@@ -230,6 +235,7 @@ class CallConversation(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

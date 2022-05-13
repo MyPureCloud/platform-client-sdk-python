@@ -94,6 +94,7 @@ class SmsAddressProvision(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,10 @@ class SmsAddressProvision(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -140,6 +145,10 @@ class SmsAddressProvision(object):
         :type: str
         """
         
+        if not street:
+            raise ValueError("Invalid value for `street`, must not be `None`")
+
+
         self._street = street
 
     @property
@@ -163,6 +172,10 @@ class SmsAddressProvision(object):
         :type: str
         """
         
+        if not city:
+            raise ValueError("Invalid value for `city`, must not be `None`")
+
+
         self._city = city
 
     @property
@@ -186,6 +199,10 @@ class SmsAddressProvision(object):
         :type: str
         """
         
+        if not region:
+            raise ValueError("Invalid value for `region`, must not be `None`")
+
+
         self._region = region
 
     @property
@@ -209,6 +226,10 @@ class SmsAddressProvision(object):
         :type: str
         """
         
+        if not postal_code:
+            raise ValueError("Invalid value for `postal_code`, must not be `None`")
+
+
         self._postal_code = postal_code
 
     @property
@@ -232,6 +253,10 @@ class SmsAddressProvision(object):
         :type: str
         """
         
+        if not country_code:
+            raise ValueError("Invalid value for `country_code`, must not be `None`")
+
+
         self._country_code = country_code
 
     @property
@@ -255,6 +280,7 @@ class SmsAddressProvision(object):
         :type: bool
         """
         
+
         self._auto_correct_address = auto_correct_address
 
     @property
@@ -278,6 +304,7 @@ class SmsAddressProvision(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

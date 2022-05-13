@@ -70,6 +70,7 @@ class SurveyAggregateQueryResponse(object):
         :type: list[SurveyAggregateDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class EdgeMetricsProcessor(object):
         :type: float
         """
         
+
         self._active_time_pct = active_time_pct
 
     @property
@@ -105,6 +106,7 @@ class EdgeMetricsProcessor(object):
         :type: str
         """
         
+
         self._cpu_id = cpu_id
 
     @property
@@ -128,6 +130,7 @@ class EdgeMetricsProcessor(object):
         :type: float
         """
         
+
         self._idle_time_pct = idle_time_pct
 
     @property
@@ -151,6 +154,7 @@ class EdgeMetricsProcessor(object):
         :type: float
         """
         
+
         self._privileged_time_pct = privileged_time_pct
 
     @property
@@ -174,6 +178,7 @@ class EdgeMetricsProcessor(object):
         :type: float
         """
         
+
         self._user_time_pct = user_time_pct
 
     def to_dict(self):

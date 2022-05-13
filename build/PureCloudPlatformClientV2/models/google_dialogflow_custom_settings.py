@@ -79,6 +79,7 @@ class GoogleDialogflowCustomSettings(object):
         :type: str
         """
         
+
         self._environment = environment
 
     @property
@@ -102,6 +103,7 @@ class GoogleDialogflowCustomSettings(object):
         :type: str
         """
         
+
         self._event_name = event_name
 
     @property
@@ -125,6 +127,7 @@ class GoogleDialogflowCustomSettings(object):
         :type: dict(str, str)
         """
         
+
         self._webhook_query_parameters = webhook_query_parameters
 
     @property
@@ -148,6 +151,7 @@ class GoogleDialogflowCustomSettings(object):
         :type: dict(str, str)
         """
         
+
         self._event_input_parameters = event_input_parameters
 
     def to_dict(self):

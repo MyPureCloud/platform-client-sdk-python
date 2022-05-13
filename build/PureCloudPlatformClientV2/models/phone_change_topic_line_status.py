@@ -82,6 +82,7 @@ class PhoneChangeTopicLineStatus(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class PhoneChangeTopicLineStatus(object):
         :type: bool
         """
         
+
         self._reachable = reachable
 
     @property
@@ -128,6 +130,7 @@ class PhoneChangeTopicLineStatus(object):
         :type: str
         """
         
+
         self._address_of_record = address_of_record
 
     @property
@@ -151,6 +154,7 @@ class PhoneChangeTopicLineStatus(object):
         :type: list[str]
         """
         
+
         self._contact_addresses = contact_addresses
 
     @property
@@ -174,6 +178,7 @@ class PhoneChangeTopicLineStatus(object):
         :type: datetime
         """
         
+
         self._reachable_state_time = reachable_state_time
 
     def to_dict(self):

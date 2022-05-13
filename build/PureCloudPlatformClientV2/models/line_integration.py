@@ -115,6 +115,10 @@ class LineIntegration(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -138,6 +142,10 @@ class LineIntegration(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -161,6 +169,7 @@ class LineIntegration(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -184,6 +193,7 @@ class LineIntegration(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -207,6 +217,10 @@ class LineIntegration(object):
         :type: str
         """
         
+        if not channel_id:
+            raise ValueError("Invalid value for `channel_id`, must not be `None`")
+
+
         self._channel_id = channel_id
 
     @property
@@ -230,6 +244,10 @@ class LineIntegration(object):
         :type: str
         """
         
+        if not webhook_uri:
+            raise ValueError("Invalid value for `webhook_uri`, must not be `None`")
+
+
         self._webhook_uri = webhook_uri
 
     @property
@@ -253,6 +271,7 @@ class LineIntegration(object):
         :type: str
         """
         
+
         self._status = status
 
     @property
@@ -276,6 +295,7 @@ class LineIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._recipient = recipient
 
     @property
@@ -299,6 +319,7 @@ class LineIntegration(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -322,6 +343,7 @@ class LineIntegration(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -345,6 +367,7 @@ class LineIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -368,6 +391,7 @@ class LineIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -391,6 +415,10 @@ class LineIntegration(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -441,6 +469,7 @@ class LineIntegration(object):
         :type: ErrorBody
         """
         
+
         self._create_error = create_error
 
     @property
@@ -464,6 +493,7 @@ class LineIntegration(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

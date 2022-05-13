@@ -88,6 +88,7 @@ class UserProfile(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class UserProfile(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -161,6 +163,7 @@ class UserProfile(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -184,6 +187,10 @@ class UserProfile(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -207,6 +214,7 @@ class UserProfile(object):
         :type: UserExpands
         """
         
+
         self._expands = expands
 
     @property
@@ -230,6 +238,7 @@ class UserProfile(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

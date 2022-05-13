@@ -41,6 +41,10 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         """
         self.swagger_types = {
             'request_id': 'str',
+            'date_import_started': 'datetime',
+            'date_import_ended': 'datetime',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
             'status': 'str',
             'error': 'str',
             'active': 'bool',
@@ -49,6 +53,10 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
 
         self.attribute_map = {
             'request_id': 'requestId',
+            'date_import_started': 'dateImportStarted',
+            'date_import_ended': 'dateImportEnded',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
             'status': 'status',
             'error': 'error',
             'active': 'active',
@@ -56,6 +64,10 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         }
 
         self._request_id = None
+        self._date_import_started = None
+        self._date_import_ended = None
+        self._date_created = None
+        self._date_modified = None
         self._status = None
         self._error = None
         self._active = None
@@ -82,7 +94,104 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         :type: str
         """
         
+
         self._request_id = request_id
+
+    @property
+    def date_import_started(self):
+        """
+        Gets the date_import_started of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :return: The date_import_started of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :rtype: datetime
+        """
+        return self._date_import_started
+
+    @date_import_started.setter
+    def date_import_started(self, date_import_started):
+        """
+        Sets the date_import_started of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :param date_import_started: The date_import_started of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :type: datetime
+        """
+        
+
+        self._date_import_started = date_import_started
+
+    @property
+    def date_import_ended(self):
+        """
+        Gets the date_import_ended of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :return: The date_import_ended of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :rtype: datetime
+        """
+        return self._date_import_ended
+
+    @date_import_ended.setter
+    def date_import_ended(self, date_import_ended):
+        """
+        Sets the date_import_ended of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :param date_import_ended: The date_import_ended of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :type: datetime
+        """
+        
+
+        self._date_import_ended = date_import_ended
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :return: The date_created of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :param date_created: The date_created of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :return: The date_modified of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :param date_modified: The date_modified of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :type: datetime
+        """
+        
+
+        self._date_modified = date_modified
 
     @property
     def status(self):
@@ -132,6 +241,7 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         :type: str
         """
         
+
         self._error = error
 
     @property
@@ -155,6 +265,7 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         :type: bool
         """
         
+
         self._active = active
 
     @property

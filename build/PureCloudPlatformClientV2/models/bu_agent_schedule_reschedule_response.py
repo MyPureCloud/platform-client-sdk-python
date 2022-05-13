@@ -82,6 +82,7 @@ class BuAgentScheduleRescheduleResponse(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -105,6 +106,7 @@ class BuAgentScheduleRescheduleResponse(object):
         :type: list[BuAgentScheduleShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -128,6 +130,7 @@ class BuAgentScheduleRescheduleResponse(object):
         :type: list[BuFullDayTimeOffMarker]
         """
         
+
         self._full_day_time_off_markers = full_day_time_off_markers
 
     @property
@@ -151,6 +154,7 @@ class BuAgentScheduleRescheduleResponse(object):
         :type: WorkPlanReference
         """
         
+
         self._work_plan = work_plan
 
     @property
@@ -174,6 +178,7 @@ class BuAgentScheduleRescheduleResponse(object):
         :type: list[WorkPlanReference]
         """
         
+
         self._work_plans_per_week = work_plans_per_week
 
     def to_dict(self):

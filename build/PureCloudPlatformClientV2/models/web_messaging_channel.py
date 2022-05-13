@@ -79,6 +79,7 @@ class WebMessagingChannel(object):
         :type: WebMessagingRecipient
         """
         
+
         self._pcFrom = pcFrom
 
     @property
@@ -102,6 +103,7 @@ class WebMessagingChannel(object):
         :type: WebMessagingRecipient
         """
         
+
         self._to = to
 
     @property
@@ -125,6 +127,7 @@ class WebMessagingChannel(object):
         :type: datetime
         """
         
+
         self._time = time
 
     @property
@@ -148,6 +151,7 @@ class WebMessagingChannel(object):
         :type: str
         """
         
+
         self._message_id = message_id
 
     def to_dict(self):

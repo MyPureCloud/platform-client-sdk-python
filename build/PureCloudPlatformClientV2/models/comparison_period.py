@@ -97,6 +97,7 @@ class ComparisonPeriod(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class ComparisonPeriod(object):
         :type: str
         """
         
+
         self._kpi = kpi
 
     @property
@@ -143,6 +145,7 @@ class ComparisonPeriod(object):
         :type: datetime
         """
         
+
         self._date_started = date_started
 
     @property
@@ -166,6 +169,7 @@ class ComparisonPeriod(object):
         :type: datetime
         """
         
+
         self._date_ended = date_ended
 
     @property
@@ -189,6 +193,7 @@ class ComparisonPeriod(object):
         :type: int
         """
         
+
         self._kpi_total_on = kpi_total_on
 
     @property
@@ -212,6 +217,7 @@ class ComparisonPeriod(object):
         :type: int
         """
         
+
         self._kpi_total_off = kpi_total_off
 
     @property
@@ -235,6 +241,7 @@ class ComparisonPeriod(object):
         :type: int
         """
         
+
         self._interaction_count_on = interaction_count_on
 
     @property
@@ -258,6 +265,7 @@ class ComparisonPeriod(object):
         :type: int
         """
         
+
         self._interaction_count_off = interaction_count_off
 
     @property
@@ -281,6 +289,7 @@ class ComparisonPeriod(object):
         :type: list[KpiResult]
         """
         
+
         self._kpi_results = kpi_results
 
     @property
@@ -304,6 +313,7 @@ class ComparisonPeriod(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

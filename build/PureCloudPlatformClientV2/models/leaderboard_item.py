@@ -76,6 +76,7 @@ class LeaderboardItem(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -99,6 +100,7 @@ class LeaderboardItem(object):
         :type: int
         """
         
+
         self._rank = rank
 
     @property
@@ -122,6 +124,7 @@ class LeaderboardItem(object):
         :type: int
         """
         
+
         self._points = points
 
     def to_dict(self):

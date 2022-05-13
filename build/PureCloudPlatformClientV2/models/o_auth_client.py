@@ -118,6 +118,7 @@ class OAuthClient(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,10 @@ class OAuthClient(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -164,6 +169,7 @@ class OAuthClient(object):
         :type: int
         """
         
+
         self._access_token_validity_seconds = access_token_validity_seconds
 
     @property
@@ -187,6 +193,7 @@ class OAuthClient(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -210,6 +217,7 @@ class OAuthClient(object):
         :type: list[str]
         """
         
+
         self._registered_redirect_uri = registered_redirect_uri
 
     @property
@@ -233,6 +241,7 @@ class OAuthClient(object):
         :type: str
         """
         
+
         self._secret = secret
 
     @property
@@ -256,6 +265,7 @@ class OAuthClient(object):
         :type: list[str]
         """
         
+
         self._role_ids = role_ids
 
     @property
@@ -279,6 +289,7 @@ class OAuthClient(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -302,6 +313,7 @@ class OAuthClient(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -325,6 +337,7 @@ class OAuthClient(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -348,6 +361,7 @@ class OAuthClient(object):
         :type: DomainEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -398,6 +412,7 @@ class OAuthClient(object):
         :type: list[str]
         """
         
+
         self._scope = scope
 
     @property
@@ -421,6 +436,7 @@ class OAuthClient(object):
         :type: list[RoleDivision]
         """
         
+
         self._role_divisions = role_divisions
 
     @property
@@ -471,6 +487,7 @@ class OAuthClient(object):
         :type: datetime
         """
         
+
         self._date_to_delete = date_to_delete
 
     @property
@@ -494,6 +511,7 @@ class OAuthClient(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

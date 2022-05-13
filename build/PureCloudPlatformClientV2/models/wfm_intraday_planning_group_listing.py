@@ -73,6 +73,7 @@ class WfmIntradayPlanningGroupListing(object):
         :type: list[ForecastPlanningGroupResponse]
         """
         
+
         self._entities = entities
 
     @property

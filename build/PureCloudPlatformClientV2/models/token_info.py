@@ -82,6 +82,7 @@ class TokenInfo(object):
         :type: NamedEntity
         """
         
+
         self._organization = organization
 
     @property
@@ -105,6 +106,7 @@ class TokenInfo(object):
         :type: NamedEntity
         """
         
+
         self._home_organization = home_organization
 
     @property
@@ -128,6 +130,7 @@ class TokenInfo(object):
         :type: list[str]
         """
         
+
         self._authorized_scope = authorized_scope
 
     @property
@@ -151,6 +154,7 @@ class TokenInfo(object):
         :type: TokenInfoClonedUser
         """
         
+
         self._cloned_user = cloned_user
 
     @property
@@ -174,6 +178,7 @@ class TokenInfo(object):
         :type: OrgOAuthClient
         """
         
+
         self._o_auth_client = o_auth_client
 
     def to_dict(self):

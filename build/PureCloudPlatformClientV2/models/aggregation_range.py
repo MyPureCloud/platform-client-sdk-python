@@ -73,6 +73,7 @@ class AggregationRange(object):
         :type: float
         """
         
+
         self._gte = gte
 
     @property
@@ -96,6 +97,7 @@ class AggregationRange(object):
         :type: float
         """
         
+
         self._lt = lt
 
     def to_dict(self):

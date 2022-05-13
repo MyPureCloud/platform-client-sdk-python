@@ -94,6 +94,7 @@ class WfmUserNotificationTopicAdherenceExplanationNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class WfmUserNotificationTopicAdherenceExplanationNotification(object):
         :type: WfmUserNotificationTopicUserReference
         """
         
+
         self._agent = agent
 
     @property
@@ -140,6 +142,7 @@ class WfmUserNotificationTopicAdherenceExplanationNotification(object):
         :type: WfmUserNotificationTopicManagementUnit
         """
         
+
         self._management_unit = management_unit
 
     @property
@@ -163,6 +166,7 @@ class WfmUserNotificationTopicAdherenceExplanationNotification(object):
         :type: WfmUserNotificationTopicBusinessUnit
         """
         
+
         self._business_unit = business_unit
 
     @property
@@ -186,6 +190,7 @@ class WfmUserNotificationTopicAdherenceExplanationNotification(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -209,6 +214,7 @@ class WfmUserNotificationTopicAdherenceExplanationNotification(object):
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property
@@ -286,6 +292,7 @@ class WfmUserNotificationTopicAdherenceExplanationNotification(object):
         :type: str
         """
         
+
         self._notes = notes
 
     def to_dict(self):

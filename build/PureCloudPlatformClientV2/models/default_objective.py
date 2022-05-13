@@ -91,6 +91,7 @@ class DefaultObjective(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class DefaultObjective(object):
         :type: str
         """
         
+
         self._template_id = template_id
 
     @property
@@ -137,6 +139,7 @@ class DefaultObjective(object):
         :type: list[ObjectiveZone]
         """
         
+
         self._zones = zones
 
     @property
@@ -160,6 +163,7 @@ class DefaultObjective(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -183,6 +187,7 @@ class DefaultObjective(object):
         :type: list[str]
         """
         
+
         self._media_types = media_types
 
     @property
@@ -206,6 +211,7 @@ class DefaultObjective(object):
         :type: list[AddressableEntityRef]
         """
         
+
         self._queues = queues
 
     @property
@@ -229,6 +235,7 @@ class DefaultObjective(object):
         :type: list[AddressableEntityRef]
         """
         
+
         self._topics = topics
 
     @property

@@ -73,6 +73,7 @@ class UserConversationsEventMediaSummaryDetail(object):
         :type: int
         """
         
+
         self._active = active
 
     @property
@@ -96,6 +97,7 @@ class UserConversationsEventMediaSummaryDetail(object):
         :type: int
         """
         
+
         self._acw = acw
 
     def to_dict(self):

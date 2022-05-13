@@ -70,6 +70,7 @@ class BulkUpdateShiftTradeStateResult(object):
         :type: list[BulkUpdateShiftTradeStateResultItem]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

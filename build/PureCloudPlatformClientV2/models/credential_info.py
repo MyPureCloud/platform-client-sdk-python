@@ -85,6 +85,7 @@ class CredentialInfo(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class CredentialInfo(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class CredentialInfo(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -154,6 +157,7 @@ class CredentialInfo(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -177,6 +181,7 @@ class CredentialInfo(object):
         :type: CredentialType
         """
         
+
         self._type = type
 
     @property
@@ -200,6 +205,7 @@ class CredentialInfo(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

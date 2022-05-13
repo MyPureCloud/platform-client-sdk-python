@@ -100,6 +100,7 @@ class CampaignRule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,10 @@ class CampaignRule(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -146,6 +151,7 @@ class CampaignRule(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -169,6 +175,7 @@ class CampaignRule(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -192,6 +199,7 @@ class CampaignRule(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -215,6 +223,10 @@ class CampaignRule(object):
         :type: CampaignRuleEntities
         """
         
+        if not campaign_rule_entities:
+            raise ValueError("Invalid value for `campaign_rule_entities`, must not be `None`")
+
+
         self._campaign_rule_entities = campaign_rule_entities
 
     @property
@@ -238,6 +250,10 @@ class CampaignRule(object):
         :type: list[CampaignRuleCondition]
         """
         
+        if not campaign_rule_conditions:
+            raise ValueError("Invalid value for `campaign_rule_conditions`, must not be `None`")
+
+
         self._campaign_rule_conditions = campaign_rule_conditions
 
     @property
@@ -261,6 +277,10 @@ class CampaignRule(object):
         :type: list[CampaignRuleAction]
         """
         
+        if not campaign_rule_actions:
+            raise ValueError("Invalid value for `campaign_rule_actions`, must not be `None`")
+
+
         self._campaign_rule_actions = campaign_rule_actions
 
     @property
@@ -284,6 +304,7 @@ class CampaignRule(object):
         :type: bool
         """
         
+
         self._match_any_conditions = match_any_conditions
 
     @property
@@ -307,6 +328,7 @@ class CampaignRule(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -330,6 +352,7 @@ class CampaignRule(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

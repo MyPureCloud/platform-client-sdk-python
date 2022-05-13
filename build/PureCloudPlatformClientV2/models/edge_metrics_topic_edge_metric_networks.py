@@ -82,6 +82,7 @@ class EdgeMetricsTopicEdgeMetricNetworks(object):
         :type: str
         """
         
+
         self._ifname = ifname
 
     @property
@@ -105,6 +106,7 @@ class EdgeMetricsTopicEdgeMetricNetworks(object):
         :type: int
         """
         
+
         self._sent_bytes_per_sec = sent_bytes_per_sec
 
     @property
@@ -128,6 +130,7 @@ class EdgeMetricsTopicEdgeMetricNetworks(object):
         :type: int
         """
         
+
         self._received_bytes_per_sec = received_bytes_per_sec
 
     @property
@@ -151,6 +154,7 @@ class EdgeMetricsTopicEdgeMetricNetworks(object):
         :type: int
         """
         
+
         self._bandwidth_bits_per_sec = bandwidth_bits_per_sec
 
     @property
@@ -174,6 +178,7 @@ class EdgeMetricsTopicEdgeMetricNetworks(object):
         :type: float
         """
         
+
         self._utilization_pct = utilization_pct
 
     def to_dict(self):

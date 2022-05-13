@@ -103,6 +103,7 @@ class PureEngage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class PureEngage(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -149,6 +151,7 @@ class PureEngage(object):
         :type: bool
         """
         
+
         self._disabled = disabled
 
     @property
@@ -172,6 +175,7 @@ class PureEngage(object):
         :type: str
         """
         
+
         self._issuer_uri = issuer_uri
 
     @property
@@ -195,6 +199,7 @@ class PureEngage(object):
         :type: str
         """
         
+
         self._sso_target_uri = sso_target_uri
 
     @property
@@ -218,6 +223,7 @@ class PureEngage(object):
         :type: str
         """
         
+
         self._slo_uri = slo_uri
 
     @property
@@ -241,6 +247,7 @@ class PureEngage(object):
         :type: str
         """
         
+
         self._slo_binding = slo_binding
 
     @property
@@ -264,6 +271,7 @@ class PureEngage(object):
         :type: str
         """
         
+
         self._relying_party_identifier = relying_party_identifier
 
     @property
@@ -287,6 +295,7 @@ class PureEngage(object):
         :type: str
         """
         
+
         self._certificate = certificate
 
     @property
@@ -310,6 +319,7 @@ class PureEngage(object):
         :type: list[str]
         """
         
+
         self._certificates = certificates
 
     @property
@@ -333,6 +343,7 @@ class PureEngage(object):
         :type: bool
         """
         
+
         self._auto_provision_users = auto_provision_users
 
     @property
@@ -356,6 +367,7 @@ class PureEngage(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

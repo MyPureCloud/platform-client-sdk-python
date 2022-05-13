@@ -94,6 +94,7 @@ class HistoricalAdherenceQueryResult(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -117,6 +118,7 @@ class HistoricalAdherenceQueryResult(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -140,6 +142,7 @@ class HistoricalAdherenceQueryResult(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -163,6 +166,7 @@ class HistoricalAdherenceQueryResult(object):
         :type: float
         """
         
+
         self._adherence_percentage = adherence_percentage
 
     @property
@@ -186,6 +190,7 @@ class HistoricalAdherenceQueryResult(object):
         :type: float
         """
         
+
         self._conformance_percentage = conformance_percentage
 
     @property
@@ -236,6 +241,7 @@ class HistoricalAdherenceQueryResult(object):
         :type: list[HistoricalAdherenceExceptionInfo]
         """
         
+
         self._exception_info = exception_info
 
     @property
@@ -259,6 +265,7 @@ class HistoricalAdherenceQueryResult(object):
         :type: list[HistoricalAdherenceDayMetrics]
         """
         
+
         self._day_metrics = day_metrics
 
     @property
@@ -282,6 +289,7 @@ class HistoricalAdherenceQueryResult(object):
         :type: list[HistoricalAdherenceActuals]
         """
         
+
         self._actuals = actuals
 
     def to_dict(self):

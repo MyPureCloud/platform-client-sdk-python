@@ -70,6 +70,7 @@ class AvailableTopicEntityListing(object):
         :type: list[AvailableTopic]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

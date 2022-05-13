@@ -94,6 +94,7 @@ class CallForwarding(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class CallForwarding(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class CallForwarding(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -163,6 +166,7 @@ class CallForwarding(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -186,6 +190,7 @@ class CallForwarding(object):
         :type: str
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -209,6 +214,7 @@ class CallForwarding(object):
         :type: list[CallRoute]
         """
         
+
         self._calls = calls
 
     @property
@@ -259,6 +265,7 @@ class CallForwarding(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -282,6 +289,7 @@ class CallForwarding(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

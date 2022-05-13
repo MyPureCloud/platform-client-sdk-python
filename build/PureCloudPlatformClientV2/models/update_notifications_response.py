@@ -70,6 +70,7 @@ class UpdateNotificationsResponse(object):
         :type: list[UpdateNotificationResponse]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

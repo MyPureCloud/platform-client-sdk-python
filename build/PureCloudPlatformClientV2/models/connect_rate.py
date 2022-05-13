@@ -76,6 +76,7 @@ class ConnectRate(object):
         :type: int
         """
         
+
         self._attempts = attempts
 
     @property
@@ -99,6 +100,7 @@ class ConnectRate(object):
         :type: int
         """
         
+
         self._connects = connects
 
     @property
@@ -122,6 +124,7 @@ class ConnectRate(object):
         :type: float
         """
         
+
         self._connect_ratio = connect_ratio
 
     def to_dict(self):

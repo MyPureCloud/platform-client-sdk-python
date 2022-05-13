@@ -82,6 +82,7 @@ class ConversationEventTopicAddress(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -105,6 +106,7 @@ class ConversationEventTopicAddress(object):
         :type: str
         """
         
+
         self._name_raw = name_raw
 
     @property
@@ -128,6 +130,7 @@ class ConversationEventTopicAddress(object):
         :type: str
         """
         
+
         self._address_normalized = address_normalized
 
     @property
@@ -151,6 +154,7 @@ class ConversationEventTopicAddress(object):
         :type: str
         """
         
+
         self._address_raw = address_raw
 
     @property
@@ -174,6 +178,7 @@ class ConversationEventTopicAddress(object):
         :type: str
         """
         
+
         self._address_displayable = address_displayable
 
     def to_dict(self):

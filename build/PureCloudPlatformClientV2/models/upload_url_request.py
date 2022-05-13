@@ -79,6 +79,7 @@ class UploadUrlRequest(object):
         :type: str
         """
         
+
         self._file_name = file_name
 
     @property
@@ -102,6 +103,7 @@ class UploadUrlRequest(object):
         :type: str
         """
         
+
         self._content_md5 = content_md5
 
     @property
@@ -125,6 +127,7 @@ class UploadUrlRequest(object):
         :type: int
         """
         
+
         self._signed_url_timeout_seconds = signed_url_timeout_seconds
 
     @property

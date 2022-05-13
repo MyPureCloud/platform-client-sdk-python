@@ -82,6 +82,7 @@ class WfmBuScheduleTopicBuManagementUnitScheduleSummary(object):
         :type: WfmBuScheduleTopicManagementUnit
         """
         
+
         self._management_unit = management_unit
 
     @property
@@ -105,6 +106,7 @@ class WfmBuScheduleTopicBuManagementUnitScheduleSummary(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -128,6 +130,7 @@ class WfmBuScheduleTopicBuManagementUnitScheduleSummary(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -151,6 +154,7 @@ class WfmBuScheduleTopicBuManagementUnitScheduleSummary(object):
         :type: list[WfmBuScheduleTopicUserReference]
         """
         
+
         self._agents = agents
 
     @property
@@ -174,6 +178,7 @@ class WfmBuScheduleTopicBuManagementUnitScheduleSummary(object):
         :type: int
         """
         
+
         self._agent_count = agent_count
 
     def to_dict(self):

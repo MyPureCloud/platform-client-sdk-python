@@ -82,6 +82,7 @@ class Credential(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class Credential(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,10 @@ class Credential(object):
         :type: CredentialType
         """
         
+        if not type:
+            raise ValueError("Invalid value for `type`, must not be `None`")
+
+
         self._type = type
 
     @property
@@ -151,6 +157,7 @@ class Credential(object):
         :type: dict(str, str)
         """
         
+
         self._credential_fields = credential_fields
 
     @property
@@ -174,6 +181,7 @@ class Credential(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

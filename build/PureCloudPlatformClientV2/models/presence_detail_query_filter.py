@@ -103,6 +103,7 @@ class PresenceDetailQueryFilter(object):
         :type: list[PresenceDetailQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class PresenceDetailQueryFilter(object):
         :type: list[PresenceDetailQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

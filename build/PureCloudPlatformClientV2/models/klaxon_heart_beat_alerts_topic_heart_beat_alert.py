@@ -97,6 +97,7 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :type: str
         """
         
+
         self._sender_id = sender_id
 
     @property
@@ -166,6 +169,7 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :type: float
         """
         
+
         self._heart_beat_timeout_in_minutes = heart_beat_timeout_in_minutes
 
     @property
@@ -189,6 +193,7 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :type: str
         """
         
+
         self._rule_id = rule_id
 
     @property
@@ -212,6 +217,7 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -235,6 +241,7 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -258,6 +265,7 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :type: list[KlaxonHeartBeatAlertsTopicNotificationUser]
         """
         
+
         self._notification_users = notification_users
 
     @property
@@ -281,6 +289,7 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :type: list[str]
         """
         
+
         self._alert_types = alert_types
 
     @property

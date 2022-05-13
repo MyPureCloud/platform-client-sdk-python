@@ -91,6 +91,7 @@ class QueueMember(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class QueueMember(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class QueueMember(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -160,6 +163,7 @@ class QueueMember(object):
         :type: int
         """
         
+
         self._ring_number = ring_number
 
     @property
@@ -183,6 +187,7 @@ class QueueMember(object):
         :type: bool
         """
         
+
         self._joined = joined
 
     @property
@@ -206,6 +211,7 @@ class QueueMember(object):
         :type: str
         """
         
+
         self._member_by = member_by
 
     @property
@@ -229,6 +235,7 @@ class QueueMember(object):
         :type: RoutingStatus
         """
         
+
         self._routing_status = routing_status
 
     @property
@@ -252,6 +259,7 @@ class QueueMember(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

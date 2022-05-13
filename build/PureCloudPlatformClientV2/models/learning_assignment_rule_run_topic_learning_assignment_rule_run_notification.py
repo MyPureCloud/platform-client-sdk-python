@@ -73,6 +73,7 @@ class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification(object
         :type: list[LearningAssignmentRuleRunTopicLearningAssignmentsCreated]
         """
         
+
         self._entities = entities
 
     @property
@@ -96,6 +97,7 @@ class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification(object
         :type: int
         """
         
+
         self._total = total
 
     def to_dict(self):

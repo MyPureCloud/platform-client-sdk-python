@@ -88,6 +88,7 @@ class UserScheduleShift(object):
         :type: WeekScheduleReference
         """
         
+
         self._week_schedule = week_schedule
 
     @property
@@ -111,6 +112,7 @@ class UserScheduleShift(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -134,6 +136,7 @@ class UserScheduleShift(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -157,6 +160,7 @@ class UserScheduleShift(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -180,6 +184,7 @@ class UserScheduleShift(object):
         :type: list[UserScheduleActivity]
         """
         
+
         self._activities = activities
 
     @property
@@ -203,6 +208,7 @@ class UserScheduleShift(object):
         :type: bool
         """
         
+
         self._delete = delete
 
     @property
@@ -226,6 +232,7 @@ class UserScheduleShift(object):
         :type: bool
         """
         
+
         self._manually_edited = manually_edited
 
     def to_dict(self):

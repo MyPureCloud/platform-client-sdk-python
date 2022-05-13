@@ -103,6 +103,7 @@ class WebMessagingEvent(object):
         :type: WebMessagingEventCoBrowse
         """
         
+
         self._co_browse = co_browse
 
     @property
@@ -126,6 +127,7 @@ class WebMessagingEvent(object):
         :type: WebMessagingEventPresence
         """
         
+
         self._presence = presence
 
     def to_dict(self):

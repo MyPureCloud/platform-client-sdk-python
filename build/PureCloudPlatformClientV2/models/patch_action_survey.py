@@ -70,6 +70,10 @@ class PatchActionSurvey(object):
         :type: list[PatchSurveyQuestion]
         """
         
+        if not questions:
+            raise ValueError("Invalid value for `questions`, must not be `None`")
+
+
         self._questions = questions
 
     def to_dict(self):

@@ -94,6 +94,7 @@ class ClientApp(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class ClientApp(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class ClientApp(object):
         :type: IntegrationType
         """
         
+
         self._integration_type = integration_type
 
     @property
@@ -163,6 +166,7 @@ class ClientApp(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -213,6 +217,7 @@ class ClientApp(object):
         :type: ClientAppConfigurationInfo
         """
         
+
         self._config = config
 
     @property
@@ -236,6 +241,7 @@ class ClientApp(object):
         :type: IntegrationStatusInfo
         """
         
+
         self._reported_state = reported_state
 
     @property
@@ -259,6 +265,7 @@ class ClientApp(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -282,6 +289,7 @@ class ClientApp(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

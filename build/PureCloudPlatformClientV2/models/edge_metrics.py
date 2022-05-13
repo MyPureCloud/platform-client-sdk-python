@@ -91,6 +91,7 @@ class EdgeMetrics(object):
         :type: DomainEntityRef
         """
         
+
         self._edge = edge
 
     @property
@@ -114,6 +115,7 @@ class EdgeMetrics(object):
         :type: datetime
         """
         
+
         self._event_time = event_time
 
     @property
@@ -137,6 +139,7 @@ class EdgeMetrics(object):
         :type: int
         """
         
+
         self._up_time_msec = up_time_msec
 
     @property
@@ -160,6 +163,7 @@ class EdgeMetrics(object):
         :type: list[EdgeMetricsProcessor]
         """
         
+
         self._processors = processors
 
     @property
@@ -183,6 +187,7 @@ class EdgeMetrics(object):
         :type: list[EdgeMetricsMemory]
         """
         
+
         self._memory = memory
 
     @property
@@ -206,6 +211,7 @@ class EdgeMetrics(object):
         :type: list[EdgeMetricsDisk]
         """
         
+
         self._disks = disks
 
     @property
@@ -229,6 +235,7 @@ class EdgeMetrics(object):
         :type: list[EdgeMetricsSubsystem]
         """
         
+
         self._subsystems = subsystems
 
     @property
@@ -252,6 +259,7 @@ class EdgeMetrics(object):
         :type: list[EdgeMetricsNetwork]
         """
         
+
         self._networks = networks
 
     def to_dict(self):

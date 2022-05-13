@@ -70,6 +70,10 @@ class ContextPattern(object):
         :type: list[EntityTypeCriteria]
         """
         
+        if not criteria:
+            raise ValueError("Invalid value for `criteria`, must not be `None`")
+
+
         self._criteria = criteria
 
     def to_dict(self):

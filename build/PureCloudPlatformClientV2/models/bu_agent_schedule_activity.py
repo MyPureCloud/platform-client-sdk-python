@@ -91,6 +91,7 @@ class BuAgentScheduleActivity(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -114,6 +115,7 @@ class BuAgentScheduleActivity(object):
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property
@@ -137,6 +139,7 @@ class BuAgentScheduleActivity(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -160,6 +163,7 @@ class BuAgentScheduleActivity(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -183,6 +187,7 @@ class BuAgentScheduleActivity(object):
         :type: bool
         """
         
+
         self._paid = paid
 
     @property
@@ -206,6 +211,7 @@ class BuAgentScheduleActivity(object):
         :type: str
         """
         
+
         self._time_off_request_id = time_off_request_id
 
     @property
@@ -229,6 +235,7 @@ class BuAgentScheduleActivity(object):
         :type: str
         """
         
+
         self._external_activity_id = external_activity_id
 
     @property

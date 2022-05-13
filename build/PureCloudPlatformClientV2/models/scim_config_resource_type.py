@@ -91,6 +91,7 @@ class ScimConfigResourceType(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class ScimConfigResourceType(object):
         :type: list[str]
         """
         
+
         self._schemas = schemas
 
     @property
@@ -137,6 +139,7 @@ class ScimConfigResourceType(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -160,6 +163,7 @@ class ScimConfigResourceType(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -183,6 +187,7 @@ class ScimConfigResourceType(object):
         :type: str
         """
         
+
         self._schema = schema
 
     @property
@@ -206,6 +211,7 @@ class ScimConfigResourceType(object):
         :type: list[ScimConfigResourceTypeSchemaExtension]
         """
         
+
         self._schema_extensions = schema_extensions
 
     @property
@@ -229,6 +235,7 @@ class ScimConfigResourceType(object):
         :type: str
         """
         
+
         self._endpoint = endpoint
 
     @property
@@ -252,6 +259,7 @@ class ScimConfigResourceType(object):
         :type: ScimMetadata
         """
         
+
         self._meta = meta
 
     def to_dict(self):

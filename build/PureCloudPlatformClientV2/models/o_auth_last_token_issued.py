@@ -70,6 +70,7 @@ class OAuthLastTokenIssued(object):
         :type: datetime
         """
         
+
         self._date_issued = date_issued
 
     def to_dict(self):

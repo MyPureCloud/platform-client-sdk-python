@@ -76,6 +76,10 @@ class GenerateBuForecastRequest(object):
         :type: str
         """
         
+        if not description:
+            raise ValueError("Invalid value for `description`, must not be `None`")
+
+
         self._description = description
 
     @property
@@ -99,6 +103,7 @@ class GenerateBuForecastRequest(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     @property
@@ -122,6 +127,7 @@ class GenerateBuForecastRequest(object):
         :type: bool
         """
         
+
         self._can_use_for_scheduling = can_use_for_scheduling
 
     def to_dict(self):

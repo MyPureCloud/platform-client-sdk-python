@@ -85,6 +85,7 @@ class BuAgentScheduleShift(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class BuAgentScheduleShift(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -131,6 +133,7 @@ class BuAgentScheduleShift(object):
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property
@@ -154,6 +157,7 @@ class BuAgentScheduleShift(object):
         :type: list[BuAgentScheduleActivity]
         """
         
+
         self._activities = activities
 
     @property
@@ -177,6 +181,7 @@ class BuAgentScheduleShift(object):
         :type: bool
         """
         
+
         self._manually_edited = manually_edited
 
     @property
@@ -200,6 +205,7 @@ class BuAgentScheduleShift(object):
         :type: BuScheduleReference
         """
         
+
         self._schedule = schedule
 
     def to_dict(self):

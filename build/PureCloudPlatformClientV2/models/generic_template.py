@@ -82,6 +82,7 @@ class GenericTemplate(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -105,6 +106,7 @@ class GenericTemplate(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -128,6 +130,7 @@ class GenericTemplate(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -151,6 +154,7 @@ class GenericTemplate(object):
         :type: list[RecordingButtonComponent]
         """
         
+
         self._components = components
 
     @property
@@ -174,6 +178,7 @@ class GenericTemplate(object):
         :type: RecordingContentActions
         """
         
+
         self._actions = actions
 
     def to_dict(self):

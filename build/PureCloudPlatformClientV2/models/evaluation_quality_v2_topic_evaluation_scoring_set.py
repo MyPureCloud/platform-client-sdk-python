@@ -73,6 +73,7 @@ class EvaluationQualityV2TopicEvaluationScoringSet(object):
         :type: int
         """
         
+
         self._total_score = total_score
 
     @property
@@ -96,6 +97,7 @@ class EvaluationQualityV2TopicEvaluationScoringSet(object):
         :type: int
         """
         
+
         self._total_critical_score = total_critical_score
 
     def to_dict(self):

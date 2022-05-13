@@ -166,6 +166,7 @@ class WorkPlanListItemResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -189,6 +190,7 @@ class WorkPlanListItemResponse(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -212,6 +214,7 @@ class WorkPlanListItemResponse(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -235,6 +238,7 @@ class WorkPlanListItemResponse(object):
         :type: bool
         """
         
+
         self._valid = valid
 
     @property
@@ -258,6 +262,7 @@ class WorkPlanListItemResponse(object):
         :type: bool
         """
         
+
         self._constrain_weekly_paid_time = constrain_weekly_paid_time
 
     @property
@@ -281,6 +286,7 @@ class WorkPlanListItemResponse(object):
         :type: bool
         """
         
+
         self._flexible_weekly_paid_time = flexible_weekly_paid_time
 
     @property
@@ -304,6 +310,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._weekly_exact_paid_minutes = weekly_exact_paid_minutes
 
     @property
@@ -327,6 +334,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._weekly_minimum_paid_minutes = weekly_minimum_paid_minutes
 
     @property
@@ -350,6 +358,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._weekly_maximum_paid_minutes = weekly_maximum_paid_minutes
 
     @property
@@ -373,6 +382,7 @@ class WorkPlanListItemResponse(object):
         :type: bool
         """
         
+
         self._constrain_paid_time_granularity = constrain_paid_time_granularity
 
     @property
@@ -396,6 +406,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._paid_time_granularity_minutes = paid_time_granularity_minutes
 
     @property
@@ -419,6 +430,7 @@ class WorkPlanListItemResponse(object):
         :type: bool
         """
         
+
         self._constrain_minimum_time_between_shifts = constrain_minimum_time_between_shifts
 
     @property
@@ -442,6 +454,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._minimum_time_between_shifts_minutes = minimum_time_between_shifts_minutes
 
     @property
@@ -465,6 +478,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._maximum_days = maximum_days
 
     @property
@@ -488,6 +502,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._minimum_consecutive_non_working_minutes_per_week = minimum_consecutive_non_working_minutes_per_week
 
     @property
@@ -511,6 +526,7 @@ class WorkPlanListItemResponse(object):
         :type: bool
         """
         
+
         self._constrain_maximum_consecutive_working_weekends = constrain_maximum_consecutive_working_weekends
 
     @property
@@ -534,6 +550,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._maximum_consecutive_working_weekends = maximum_consecutive_working_weekends
 
     @property
@@ -557,6 +574,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._minimum_working_days_per_week = minimum_working_days_per_week
 
     @property
@@ -580,6 +598,7 @@ class WorkPlanListItemResponse(object):
         :type: bool
         """
         
+
         self._constrain_maximum_consecutive_working_days = constrain_maximum_consecutive_working_days
 
     @property
@@ -603,6 +622,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._maximum_consecutive_working_days = maximum_consecutive_working_days
 
     @property
@@ -626,6 +646,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._minimum_shift_start_distance_minutes = minimum_shift_start_distance_minutes
 
     @property
@@ -649,6 +670,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._minimum_days_off_per_planning_period = minimum_days_off_per_planning_period
 
     @property
@@ -672,6 +694,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._maximum_days_off_per_planning_period = maximum_days_off_per_planning_period
 
     @property
@@ -695,6 +718,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._minimum_paid_minutes_per_planning_period = minimum_paid_minutes_per_planning_period
 
     @property
@@ -718,6 +742,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._maximum_paid_minutes_per_planning_period = maximum_paid_minutes_per_planning_period
 
     @property
@@ -741,6 +766,7 @@ class WorkPlanListItemResponse(object):
         :type: SetWrapperDayOfWeek
         """
         
+
         self._optional_days = optional_days
 
     @property
@@ -791,6 +817,7 @@ class WorkPlanListItemResponse(object):
         :type: ListWrapperShiftStartVariance
         """
         
+
         self._shift_start_variances = shift_start_variances
 
     @property
@@ -814,6 +841,7 @@ class WorkPlanListItemResponse(object):
         :type: list[WorkPlanShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -837,6 +865,7 @@ class WorkPlanListItemResponse(object):
         :type: list[DeletableUserReference]
         """
         
+
         self._agents = agents
 
     @property
@@ -860,6 +889,7 @@ class WorkPlanListItemResponse(object):
         :type: int
         """
         
+
         self._agent_count = agent_count
 
     @property
@@ -883,6 +913,10 @@ class WorkPlanListItemResponse(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     @property
@@ -906,6 +940,7 @@ class WorkPlanListItemResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

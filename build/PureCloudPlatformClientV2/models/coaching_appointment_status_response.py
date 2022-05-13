@@ -79,6 +79,7 @@ class CoachingAppointmentStatusResponse(object):
         :type: CoachingAppointmentReference
         """
         
+
         self._appointment = appointment
 
     @property
@@ -102,6 +103,7 @@ class CoachingAppointmentStatusResponse(object):
         :type: UserReference
         """
         
+
         self._created_by = created_by
 
     @property
@@ -125,6 +127,7 @@ class CoachingAppointmentStatusResponse(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property

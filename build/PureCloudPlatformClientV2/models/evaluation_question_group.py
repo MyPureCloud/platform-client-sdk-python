@@ -97,6 +97,7 @@ class EvaluationQuestionGroup(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class EvaluationQuestionGroup(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class EvaluationQuestionGroup(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -166,6 +169,7 @@ class EvaluationQuestionGroup(object):
         :type: bool
         """
         
+
         self._default_answers_to_highest = default_answers_to_highest
 
     @property
@@ -189,6 +193,7 @@ class EvaluationQuestionGroup(object):
         :type: bool
         """
         
+
         self._default_answers_to_na = default_answers_to_na
 
     @property
@@ -212,6 +217,7 @@ class EvaluationQuestionGroup(object):
         :type: bool
         """
         
+
         self._na_enabled = na_enabled
 
     @property
@@ -235,6 +241,7 @@ class EvaluationQuestionGroup(object):
         :type: float
         """
         
+
         self._weight = weight
 
     @property
@@ -258,6 +265,7 @@ class EvaluationQuestionGroup(object):
         :type: bool
         """
         
+
         self._manual_weight = manual_weight
 
     @property
@@ -281,6 +289,7 @@ class EvaluationQuestionGroup(object):
         :type: list[EvaluationQuestion]
         """
         
+
         self._questions = questions
 
     @property
@@ -304,6 +313,7 @@ class EvaluationQuestionGroup(object):
         :type: VisibilityCondition
         """
         
+
         self._visibility_condition = visibility_condition
 
     def to_dict(self):

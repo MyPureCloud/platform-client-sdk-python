@@ -103,6 +103,7 @@ class ScimV2GroupReference(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -126,6 +127,7 @@ class ScimV2GroupReference(object):
         :type: str
         """
         
+
         self._ref = ref
 
     def to_dict(self):

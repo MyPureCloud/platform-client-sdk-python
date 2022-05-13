@@ -289,6 +289,7 @@ class AnalyticsSession(object):
         :type: list[str]
         """
         
+
         self._active_skill_ids = active_skill_ids
 
     @property
@@ -312,6 +313,7 @@ class AnalyticsSession(object):
         :type: bool
         """
         
+
         self._acw_skipped = acw_skipped
 
     @property
@@ -335,6 +337,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._address_from = address_from
 
     @property
@@ -358,6 +361,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._address_other = address_other
 
     @property
@@ -381,6 +385,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._address_self = address_self
 
     @property
@@ -404,6 +409,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._address_to = address_to
 
     @property
@@ -427,6 +433,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._agent_assistant_id = agent_assistant_id
 
     @property
@@ -450,6 +457,7 @@ class AnalyticsSession(object):
         :type: int
         """
         
+
         self._agent_bullseye_ring = agent_bullseye_ring
 
     @property
@@ -473,6 +481,7 @@ class AnalyticsSession(object):
         :type: bool
         """
         
+
         self._agent_owned = agent_owned
 
     @property
@@ -496,6 +505,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -519,6 +529,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._assigner_id = assigner_id
 
     @property
@@ -542,6 +553,7 @@ class AnalyticsSession(object):
         :type: bool
         """
         
+
         self._authenticated = authenticated
 
     @property
@@ -565,6 +577,7 @@ class AnalyticsSession(object):
         :type: list[str]
         """
         
+
         self._callback_numbers = callback_numbers
 
     @property
@@ -588,6 +601,7 @@ class AnalyticsSession(object):
         :type: datetime
         """
         
+
         self._callback_scheduled_time = callback_scheduled_time
 
     @property
@@ -611,6 +625,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._callback_user_name = callback_user_name
 
     @property
@@ -634,6 +649,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._coached_participant_id = coached_participant_id
 
     @property
@@ -657,6 +673,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._cobrowse_role = cobrowse_role
 
     @property
@@ -680,6 +697,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._cobrowse_room_id = cobrowse_room_id
 
     @property
@@ -730,6 +748,7 @@ class AnalyticsSession(object):
         :type: datetime
         """
         
+
         self._delivery_status_change_date = delivery_status_change_date
 
     @property
@@ -753,6 +772,7 @@ class AnalyticsSession(object):
         :type: list[str]
         """
         
+
         self._destination_addresses = destination_addresses
 
     @property
@@ -803,6 +823,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._disposition_analyzer = disposition_analyzer
 
     @property
@@ -826,6 +847,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._disposition_name = disposition_name
 
     @property
@@ -849,6 +871,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -872,6 +895,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._edge_id = edge_id
 
     @property
@@ -895,6 +919,7 @@ class AnalyticsSession(object):
         :type: list[int]
         """
         
+
         self._eligible_agent_counts = eligible_agent_counts
 
     @property
@@ -918,6 +943,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._extended_delivery_status = extended_delivery_status
 
     @property
@@ -941,6 +967,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._flow_in_type = flow_in_type
 
     @property
@@ -964,6 +991,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._flow_out_type = flow_out_type
 
     @property
@@ -987,6 +1015,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._journey_action_id = journey_action_id
 
     @property
@@ -1010,6 +1039,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._journey_action_map_id = journey_action_map_id
 
     @property
@@ -1033,6 +1063,7 @@ class AnalyticsSession(object):
         :type: int
         """
         
+
         self._journey_action_map_version = journey_action_map_version
 
     @property
@@ -1056,6 +1087,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._journey_customer_id = journey_customer_id
 
     @property
@@ -1079,6 +1111,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._journey_customer_id_type = journey_customer_id_type
 
     @property
@@ -1102,6 +1135,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._journey_customer_session_id = journey_customer_session_id
 
     @property
@@ -1125,6 +1159,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._journey_customer_session_id_type = journey_customer_session_id_type
 
     @property
@@ -1148,6 +1183,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._media_bridge_id = media_bridge_id
 
     @property
@@ -1171,6 +1207,7 @@ class AnalyticsSession(object):
         :type: int
         """
         
+
         self._media_count = media_count
 
     @property
@@ -1221,6 +1258,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._message_type = message_type
 
     @property
@@ -1244,6 +1282,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._monitored_participant_id = monitored_participant_id
 
     @property
@@ -1267,6 +1306,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._outbound_campaign_id = outbound_campaign_id
 
     @property
@@ -1290,6 +1330,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._outbound_contact_id = outbound_contact_id
 
     @property
@@ -1313,6 +1354,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._outbound_contact_list_id = outbound_contact_list_id
 
     @property
@@ -1336,6 +1378,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -1359,6 +1402,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._protocol_call_id = protocol_call_id
 
     @property
@@ -1382,6 +1426,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -1405,6 +1450,7 @@ class AnalyticsSession(object):
         :type: bool
         """
         
+
         self._recording = recording
 
     @property
@@ -1428,6 +1474,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._remote = remote
 
     @property
@@ -1451,6 +1498,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._remote_name_displayable = remote_name_displayable
 
     @property
@@ -1474,6 +1522,7 @@ class AnalyticsSession(object):
         :type: list[str]
         """
         
+
         self._removed_skill_ids = removed_skill_ids
 
     @property
@@ -1497,6 +1546,7 @@ class AnalyticsSession(object):
         :type: list[str]
         """
         
+
         self._requested_routings = requested_routings
 
     @property
@@ -1520,6 +1570,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._room_id = room_id
 
     @property
@@ -1543,6 +1594,7 @@ class AnalyticsSession(object):
         :type: int
         """
         
+
         self._routing_ring = routing_ring
 
     @property
@@ -1566,6 +1618,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._screen_share_address_self = screen_share_address_self
 
     @property
@@ -1589,6 +1642,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._screen_share_room_id = screen_share_room_id
 
     @property
@@ -1612,6 +1666,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -1635,6 +1690,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._selected_agent_id = selected_agent_id
 
     @property
@@ -1658,6 +1714,7 @@ class AnalyticsSession(object):
         :type: int
         """
         
+
         self._selected_agent_rank = selected_agent_rank
 
     @property
@@ -1681,6 +1738,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._session_dnis = session_dnis
 
     @property
@@ -1704,6 +1762,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -1727,6 +1786,7 @@ class AnalyticsSession(object):
         :type: bool
         """
         
+
         self._sharing_screen = sharing_screen
 
     @property
@@ -1750,6 +1810,7 @@ class AnalyticsSession(object):
         :type: bool
         """
         
+
         self._skip_enabled = skip_enabled
 
     @property
@@ -1773,6 +1834,7 @@ class AnalyticsSession(object):
         :type: int
         """
         
+
         self._timeout_seconds = timeout_seconds
 
     @property
@@ -1823,6 +1885,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._video_address_self = video_address_self
 
     @property
@@ -1846,6 +1909,7 @@ class AnalyticsSession(object):
         :type: str
         """
         
+
         self._video_room_id = video_room_id
 
     @property
@@ -1869,6 +1933,7 @@ class AnalyticsSession(object):
         :type: list[int]
         """
         
+
         self._waiting_interaction_counts = waiting_interaction_counts
 
     @property
@@ -1892,6 +1957,7 @@ class AnalyticsSession(object):
         :type: list[AnalyticsProposedAgent]
         """
         
+
         self._proposed_agents = proposed_agents
 
     @property
@@ -1915,6 +1981,7 @@ class AnalyticsSession(object):
         :type: list[AnalyticsMediaEndpointStat]
         """
         
+
         self._media_endpoint_stats = media_endpoint_stats
 
     @property
@@ -1938,6 +2005,7 @@ class AnalyticsSession(object):
         :type: AnalyticsFlow
         """
         
+
         self._flow = flow
 
     @property
@@ -1961,6 +2029,7 @@ class AnalyticsSession(object):
         :type: list[AnalyticsSessionMetric]
         """
         
+
         self._metrics = metrics
 
     @property
@@ -1984,6 +2053,7 @@ class AnalyticsSession(object):
         :type: list[AnalyticsConversationSegment]
         """
         
+
         self._segments = segments
 
     def to_dict(self):

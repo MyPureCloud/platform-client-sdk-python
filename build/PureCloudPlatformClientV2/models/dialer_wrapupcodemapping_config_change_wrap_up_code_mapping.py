@@ -88,6 +88,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -157,6 +160,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -180,6 +184,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -203,6 +208,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
         :type: list[str]
         """
         
+
         self._default_set = default_set
 
     @property
@@ -226,6 +232,7 @@ class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(object):
         :type: dict(str, list[str])
         """
         
+
         self._mapping = mapping
 
     def to_dict(self):

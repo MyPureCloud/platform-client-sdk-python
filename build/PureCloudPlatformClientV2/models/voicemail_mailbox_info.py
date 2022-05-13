@@ -85,6 +85,7 @@ class VoicemailMailboxInfo(object):
         :type: int
         """
         
+
         self._usage_size_bytes = usage_size_bytes
 
     @property
@@ -108,6 +109,7 @@ class VoicemailMailboxInfo(object):
         :type: int
         """
         
+
         self._total_count = total_count
 
     @property
@@ -131,6 +133,7 @@ class VoicemailMailboxInfo(object):
         :type: int
         """
         
+
         self._unread_count = unread_count
 
     @property
@@ -154,6 +157,7 @@ class VoicemailMailboxInfo(object):
         :type: int
         """
         
+
         self._deleted_count = deleted_count
 
     @property
@@ -177,6 +181,7 @@ class VoicemailMailboxInfo(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -200,6 +205,7 @@ class VoicemailMailboxInfo(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class BulkResponseResultRelationshipEntity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class BulkResponseResultRelationshipEntity(object):
         :type: bool
         """
         
+
         self._success = success
 
     @property
@@ -125,6 +127,7 @@ class BulkResponseResultRelationshipEntity(object):
         :type: Relationship
         """
         
+
         self._entity = entity
 
     @property
@@ -148,6 +151,7 @@ class BulkResponseResultRelationshipEntity(object):
         :type: BulkErrorEntity
         """
         
+
         self._error = error
 
     def to_dict(self):

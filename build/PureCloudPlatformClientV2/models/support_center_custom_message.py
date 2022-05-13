@@ -73,6 +73,7 @@ class SupportCenterCustomMessage(object):
         :type: str
         """
         
+
         self._default_value = default_value
 
     @property

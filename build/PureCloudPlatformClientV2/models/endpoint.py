@@ -124,6 +124,7 @@ class Endpoint(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -147,6 +148,10 @@ class Endpoint(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -170,6 +175,7 @@ class Endpoint(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -193,6 +199,7 @@ class Endpoint(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -216,6 +223,7 @@ class Endpoint(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -239,6 +247,7 @@ class Endpoint(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -262,6 +271,7 @@ class Endpoint(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -285,6 +295,7 @@ class Endpoint(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -308,6 +319,7 @@ class Endpoint(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -358,6 +370,7 @@ class Endpoint(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -381,6 +394,7 @@ class Endpoint(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -404,6 +418,7 @@ class Endpoint(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -427,6 +442,7 @@ class Endpoint(object):
         :type: dict(str, object)
         """
         
+
         self._properties = properties
 
     @property
@@ -450,6 +466,10 @@ class Endpoint(object):
         :type: DomainEntityRef
         """
         
+        if not schema:
+            raise ValueError("Invalid value for `schema`, must not be `None`")
+
+
         self._schema = schema
 
     @property
@@ -473,6 +493,7 @@ class Endpoint(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -496,6 +517,7 @@ class Endpoint(object):
         :type: DomainEntityRef
         """
         
+
         self._site = site
 
     @property
@@ -519,6 +541,7 @@ class Endpoint(object):
         :type: list[str]
         """
         
+
         self._dids = dids
 
     @property
@@ -542,6 +565,7 @@ class Endpoint(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

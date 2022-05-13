@@ -70,6 +70,7 @@ class Usage(object):
         :type: list[UsageItem]
         """
         
+
         self._types = types
 
     def to_dict(self):

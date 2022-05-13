@@ -97,6 +97,7 @@ class JourneyEventsSettings(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -120,6 +121,7 @@ class JourneyEventsSettings(object):
         :type: list[str]
         """
         
+
         self._excluded_query_parameters = excluded_query_parameters
 
     @property
@@ -143,6 +145,7 @@ class JourneyEventsSettings(object):
         :type: bool
         """
         
+
         self._should_keep_url_fragment = should_keep_url_fragment
 
     @property
@@ -166,6 +169,7 @@ class JourneyEventsSettings(object):
         :type: list[str]
         """
         
+
         self._search_query_parameters = search_query_parameters
 
     @property
@@ -216,6 +220,7 @@ class JourneyEventsSettings(object):
         :type: list[SelectorEventTrigger]
         """
         
+
         self._click_events = click_events
 
     @property
@@ -239,6 +244,7 @@ class JourneyEventsSettings(object):
         :type: list[FormsTrackTrigger]
         """
         
+
         self._forms_track_events = forms_track_events
 
     @property
@@ -262,6 +268,7 @@ class JourneyEventsSettings(object):
         :type: list[IdleEventTrigger]
         """
         
+
         self._idle_events = idle_events
 
     @property
@@ -285,6 +292,7 @@ class JourneyEventsSettings(object):
         :type: list[SelectorEventTrigger]
         """
         
+
         self._in_viewport_events = in_viewport_events
 
     @property
@@ -308,6 +316,7 @@ class JourneyEventsSettings(object):
         :type: list[ScrollPercentageEventTrigger]
         """
         
+
         self._scroll_depth_events = scroll_depth_events
 
     def to_dict(self):

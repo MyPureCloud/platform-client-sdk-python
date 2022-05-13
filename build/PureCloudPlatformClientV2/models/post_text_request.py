@@ -109,6 +109,10 @@ class PostTextRequest(object):
         :type: str
         """
         
+        if not bot_id:
+            raise ValueError("Invalid value for `bot_id`, must not be `None`")
+
+
         self._bot_id = bot_id
 
     @property
@@ -132,6 +136,7 @@ class PostTextRequest(object):
         :type: str
         """
         
+
         self._bot_alias = bot_alias
 
     @property
@@ -155,6 +160,10 @@ class PostTextRequest(object):
         :type: str
         """
         
+        if not integration_id:
+            raise ValueError("Invalid value for `integration_id`, must not be `None`")
+
+
         self._integration_id = integration_id
 
     @property
@@ -178,6 +187,10 @@ class PostTextRequest(object):
         :type: str
         """
         
+        if not bot_session_id:
+            raise ValueError("Invalid value for `bot_session_id`, must not be `None`")
+
+
         self._bot_session_id = bot_session_id
 
     @property
@@ -201,6 +214,10 @@ class PostTextRequest(object):
         :type: PostTextMessage
         """
         
+        if not post_text_message:
+            raise ValueError("Invalid value for `post_text_message`, must not be `None`")
+
+
         self._post_text_message = post_text_message
 
     @property
@@ -224,6 +241,7 @@ class PostTextRequest(object):
         :type: str
         """
         
+
         self._language_code = language_code
 
     @property
@@ -247,6 +265,7 @@ class PostTextRequest(object):
         :type: int
         """
         
+
         self._bot_session_timeout_minutes = bot_session_timeout_minutes
 
     @property
@@ -270,6 +289,7 @@ class PostTextRequest(object):
         :type: list[str]
         """
         
+
         self._bot_channels = bot_channels
 
     @property
@@ -293,6 +313,7 @@ class PostTextRequest(object):
         :type: str
         """
         
+
         self._bot_correlation_id = bot_correlation_id
 
     @property
@@ -343,6 +364,7 @@ class PostTextRequest(object):
         :type: AmazonLexRequest
         """
         
+
         self._amazon_lex_request = amazon_lex_request
 
     @property
@@ -366,6 +388,7 @@ class PostTextRequest(object):
         :type: GoogleDialogflowCustomSettings
         """
         
+
         self._google_dialogflow = google_dialogflow
 
     @property
@@ -389,6 +412,7 @@ class PostTextRequest(object):
         :type: GenesysBotConnector
         """
         
+
         self._genesys_bot_connector = genesys_bot_connector
 
     @property
@@ -412,6 +436,7 @@ class PostTextRequest(object):
         :type: NuanceMixDlgSettings
         """
         
+
         self._nuance_mix_dlg = nuance_mix_dlg
 
     def to_dict(self):

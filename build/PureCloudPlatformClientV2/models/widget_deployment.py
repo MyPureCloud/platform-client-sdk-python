@@ -97,6 +97,7 @@ class WidgetDeployment(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class WidgetDeployment(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class WidgetDeployment(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -166,6 +169,7 @@ class WidgetDeployment(object):
         :type: bool
         """
         
+
         self._authentication_required = authentication_required
 
     @property
@@ -189,6 +193,7 @@ class WidgetDeployment(object):
         :type: bool
         """
         
+
         self._disabled = disabled
 
     @property
@@ -212,6 +217,7 @@ class WidgetDeployment(object):
         :type: DomainEntityRef
         """
         
+
         self._flow = flow
 
     @property
@@ -235,6 +241,7 @@ class WidgetDeployment(object):
         :type: list[str]
         """
         
+
         self._allowed_domains = allowed_domains
 
     @property
@@ -285,6 +292,7 @@ class WidgetDeployment(object):
         :type: WidgetClientConfig
         """
         
+
         self._client_config = client_config
 
     @property
@@ -308,6 +316,7 @@ class WidgetDeployment(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

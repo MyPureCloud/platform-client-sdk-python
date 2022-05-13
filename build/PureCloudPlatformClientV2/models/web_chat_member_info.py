@@ -106,6 +106,7 @@ class WebChatMemberInfo(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class WebChatMemberInfo(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     @property
@@ -152,6 +154,7 @@ class WebChatMemberInfo(object):
         :type: str
         """
         
+
         self._first_name = first_name
 
     @property
@@ -175,6 +178,7 @@ class WebChatMemberInfo(object):
         :type: str
         """
         
+
         self._last_name = last_name
 
     @property
@@ -198,6 +202,7 @@ class WebChatMemberInfo(object):
         :type: str
         """
         
+
         self._email = email
 
     @property
@@ -221,6 +226,7 @@ class WebChatMemberInfo(object):
         :type: str
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -244,6 +250,7 @@ class WebChatMemberInfo(object):
         :type: str
         """
         
+
         self._avatar_image_url = avatar_image_url
 
     @property
@@ -294,6 +301,7 @@ class WebChatMemberInfo(object):
         :type: datetime
         """
         
+
         self._join_date = join_date
 
     @property
@@ -317,6 +325,7 @@ class WebChatMemberInfo(object):
         :type: datetime
         """
         
+
         self._leave_date = leave_date
 
     @property
@@ -340,6 +349,7 @@ class WebChatMemberInfo(object):
         :type: bool
         """
         
+
         self._authenticated_guest = authenticated_guest
 
     @property
@@ -363,6 +373,7 @@ class WebChatMemberInfo(object):
         :type: dict(str, str)
         """
         
+
         self._custom_fields = custom_fields
 
     @property

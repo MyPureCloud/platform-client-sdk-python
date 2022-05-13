@@ -73,6 +73,7 @@ class ReschedulingManagementUnitResponse(object):
         :type: ManagementUnitReference
         """
         
+
         self._management_unit = management_unit
 
     @property
@@ -96,6 +97,7 @@ class ReschedulingManagementUnitResponse(object):
         :type: bool
         """
         
+
         self._applied = applied
 
     def to_dict(self):

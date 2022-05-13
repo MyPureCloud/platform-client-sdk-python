@@ -100,6 +100,7 @@ class AuditQueryService(object):
         :type: list[AuditQueryEntity]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

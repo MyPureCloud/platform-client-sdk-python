@@ -85,6 +85,7 @@ class MessengerSettings(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -108,6 +109,7 @@ class MessengerSettings(object):
         :type: MessengerStyles
         """
         
+
         self._styles = styles
 
     @property
@@ -131,6 +133,7 @@ class MessengerSettings(object):
         :type: LauncherButtonSettings
         """
         
+
         self._launcher_button = launcher_button
 
     @property
@@ -154,6 +157,7 @@ class MessengerSettings(object):
         :type: FileUploadSettings
         """
         
+
         self._file_upload = file_upload
 
     @property
@@ -177,6 +181,7 @@ class MessengerSettings(object):
         :type: MessengerApps
         """
         
+
         self._apps = apps
 
     @property
@@ -200,6 +205,7 @@ class MessengerSettings(object):
         :type: MessengerHomeScreen
         """
         
+
         self._home_screen = home_screen
 
     def to_dict(self):

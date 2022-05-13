@@ -76,6 +76,7 @@ class AgentTimeOffRequestPatch(object):
         :type: bool
         """
         
+
         self._marked_as_read = marked_as_read
 
     @property
@@ -126,6 +127,7 @@ class AgentTimeOffRequestPatch(object):
         :type: str
         """
         
+
         self._notes = notes
 
     def to_dict(self):

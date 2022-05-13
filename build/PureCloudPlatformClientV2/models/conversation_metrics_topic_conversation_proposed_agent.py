@@ -73,6 +73,7 @@ class ConversationMetricsTopicConversationProposedAgent(object):
         :type: int
         """
         
+
         self._agent_rank = agent_rank
 
     @property
@@ -96,6 +97,7 @@ class ConversationMetricsTopicConversationProposedAgent(object):
         :type: str
         """
         
+
         self._proposed_agent_id = proposed_agent_id
 
     def to_dict(self):

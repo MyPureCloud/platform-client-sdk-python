@@ -73,6 +73,10 @@ class NamedEntityTypeItem(object):
         :type: str
         """
         
+        if not value:
+            raise ValueError("Invalid value for `value`, must not be `None`")
+
+
         self._value = value
 
     @property
@@ -96,6 +100,7 @@ class NamedEntityTypeItem(object):
         :type: list[str]
         """
         
+
         self._synonyms = synonyms
 
     def to_dict(self):

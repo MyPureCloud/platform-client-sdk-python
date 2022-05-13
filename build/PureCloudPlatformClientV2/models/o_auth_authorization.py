@@ -100,6 +100,7 @@ class OAuthAuthorization(object):
         :type: OAuthClient
         """
         
+
         self._client = client
 
     @property
@@ -123,6 +124,7 @@ class OAuthAuthorization(object):
         :type: list[str]
         """
         
+
         self._scope = scope
 
     @property
@@ -146,6 +148,7 @@ class OAuthAuthorization(object):
         :type: list[str]
         """
         
+
         self._roles = roles
 
     @property
@@ -169,6 +172,7 @@ class OAuthAuthorization(object):
         :type: DomainEntityRef
         """
         
+
         self._resource_owner = resource_owner
 
     @property
@@ -192,6 +196,7 @@ class OAuthAuthorization(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -215,6 +220,7 @@ class OAuthAuthorization(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -238,6 +244,7 @@ class OAuthAuthorization(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -261,6 +268,7 @@ class OAuthAuthorization(object):
         :type: DomainEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -284,6 +292,7 @@ class OAuthAuthorization(object):
         :type: bool
         """
         
+
         self._pending = pending
 
     @property
@@ -334,6 +343,7 @@ class OAuthAuthorization(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

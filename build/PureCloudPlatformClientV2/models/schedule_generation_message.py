@@ -100,6 +100,7 @@ class ScheduleGenerationMessage(object):
         :type: list[SchedulerMessageArgument]
         """
         
+
         self._arguments = arguments
 
     def to_dict(self):

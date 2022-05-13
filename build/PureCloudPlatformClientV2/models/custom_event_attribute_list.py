@@ -73,6 +73,10 @@ class CustomEventAttributeList(object):
         :type: str
         """
         
+        if not data_type:
+            raise ValueError("Invalid value for `data_type`, must not be `None`")
+
+
         self._data_type = data_type
 
     @property
@@ -96,6 +100,10 @@ class CustomEventAttributeList(object):
         :type: list[str]
         """
         
+        if not values:
+            raise ValueError("Invalid value for `values`, must not be `None`")
+
+
         self._values = values
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class ColumnStatus(object):
         :type: bool
         """
         
+
         self._contactable = contactable
 
     def to_dict(self):

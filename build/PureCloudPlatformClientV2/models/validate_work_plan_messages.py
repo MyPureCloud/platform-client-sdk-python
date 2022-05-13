@@ -73,6 +73,7 @@ class ValidateWorkPlanMessages(object):
         :type: list[WorkPlanConfigurationViolationMessage]
         """
         
+
         self._violation_messages = violation_messages
 
     @property
@@ -96,6 +97,7 @@ class ValidateWorkPlanMessages(object):
         :type: ConstraintConflictMessage
         """
         
+
         self._constraint_conflict_message = constraint_conflict_message
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class AnalyticsUserPresenceRecord(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -102,6 +103,7 @@ class AnalyticsUserPresenceRecord(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -152,6 +154,7 @@ class AnalyticsUserPresenceRecord(object):
         :type: str
         """
         
+
         self._organization_presence_id = organization_presence_id
 
     def to_dict(self):

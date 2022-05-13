@@ -49,7 +49,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ObjectsApi()
 division_id = 'division_id_example' # str | Division ID
-force = false # bool | Force delete this division as well as the grants and objects associated with it (optional) (default to false)
+force = False # bool | Force delete this division as well as the grants and objects associated with it (optional) (default to False)
 
 try:
     # Delete a division.
@@ -64,7 +64,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **force** | **bool**| Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
+| **force** | **bool**| Force delete this division as well as the grants and objects associated with it | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -83,7 +83,7 @@ Returns an authorization division.
 
 Wraps GET /api/v2/authorization/divisions/{divisionId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -100,7 +100,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ObjectsApi()
 division_id = 'division_id_example' # str | Division ID
-object_count = false # bool | Get count of objects in this division, grouped by type (optional) (default to false)
+object_count = False # bool | Get count of objects in this division, grouped by type (optional) (default to False)
 
 try:
     # Returns an authorization division.
@@ -116,7 +116,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **object_count** | **bool**| Get count of objects in this division, grouped by type | [optional] [default to false] |
+| **object_count** | **bool**| Get count of objects in this division, grouped by type | [optional] [default to False]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -133,9 +133,11 @@ Retrieve a list of all divisions defined for the organization
 
 Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
 
+
+
 Wraps GET /api/v2/authorization/divisions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -157,7 +159,7 @@ sort_by = 'sort_by_example' # str | variable name requested to sort by (optional
 expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
-object_count = false # bool | Include the count of objects contained in the division (optional) (default to false)
+object_count = False # bool | Include the count of objects contained in the division (optional) (default to False)
 id = ['id_example'] # list[str] | Optionally request specific divisions by their IDs (optional)
 name = 'name_example' # str | Search term to filter by division name (optional)
 
@@ -180,7 +182,7 @@ except ApiException as e:
 | **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
-| **object_count** | **bool**| Include the count of objects contained in the division | [optional] [default to false] |
+| **object_count** | **bool**| Include the count of objects contained in the division | [optional] [default to False] |
 | **id** | [**list[str]**](str.html)| Optionally request specific divisions by their IDs | [optional]  |
 | **name** | **str**| Search term to filter by division name | [optional]  |
 {: class="table table-striped"}
@@ -199,9 +201,11 @@ Retrieve the home division for the organization.
 
 Will not include object counts.
 
+
+
 Wraps GET /api/v2/authorization/divisions/home 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -247,7 +251,7 @@ Returns the maximum allowed number of divisions.
 
 Wraps GET /api/v2/authorization/divisions/limit 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -291,9 +295,11 @@ Assign a list of objects to a division
 
 Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
 
+
+
 Wraps POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -311,7 +317,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ObjectsApi()
 division_id = 'division_id_example' # str | Division ID
 object_type = 'object_type_example' # str | The type of the objects. Must be one of the valid object types
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Object Id List
+body = ['body_example'] # list[str] | Object Id List
 
 try:
     # Assign a list of objects to a division
@@ -327,7 +333,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
 | **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
-| **body** | **list[str]**| Object Id List |  |
+| **body** | [**list[str]**](str.html)| Object Id List |  |
 {: class="table table-striped"}
 
 ### Return type

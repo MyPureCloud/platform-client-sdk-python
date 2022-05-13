@@ -88,6 +88,7 @@ class FacebookIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class FacebookIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class FacebookIntegrationUpdateRequest(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -157,6 +160,7 @@ class FacebookIntegrationUpdateRequest(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -180,6 +184,7 @@ class FacebookIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._page_access_token = page_access_token
 
     @property
@@ -203,6 +208,7 @@ class FacebookIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._user_access_token = user_access_token
 
     @property
@@ -226,6 +232,7 @@ class FacebookIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

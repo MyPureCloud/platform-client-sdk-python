@@ -79,6 +79,7 @@ class CallableContactsDiagnostic(object):
         :type: DomainEntityRef
         """
         
+
         self._attempt_limits = attempt_limits
 
     @property
@@ -102,6 +103,7 @@ class CallableContactsDiagnostic(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._dnc_lists = dnc_lists
 
     @property
@@ -125,6 +127,7 @@ class CallableContactsDiagnostic(object):
         :type: DomainEntityRef
         """
         
+
         self._callable_time_set = callable_time_set
 
     @property
@@ -148,6 +151,7 @@ class CallableContactsDiagnostic(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._rule_sets = rule_sets
 
     def to_dict(self):

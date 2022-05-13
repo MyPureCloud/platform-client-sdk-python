@@ -82,6 +82,7 @@ class FlowMilestone(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,10 @@ class FlowMilestone(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -128,6 +133,7 @@ class FlowMilestone(object):
         :type: WritableDivision
         """
         
+
         self._division = division
 
     @property
@@ -151,6 +157,7 @@ class FlowMilestone(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -174,6 +181,7 @@ class FlowMilestone(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

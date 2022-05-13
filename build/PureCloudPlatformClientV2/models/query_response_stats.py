@@ -70,6 +70,7 @@ class QueryResponseStats(object):
         :type: int
         """
         
+
         self._count = count
 
     def to_dict(self):

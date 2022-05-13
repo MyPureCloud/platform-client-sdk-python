@@ -100,6 +100,7 @@ class WeekSchedule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class WeekSchedule(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -146,6 +148,7 @@ class WeekSchedule(object):
         :type: str
         """
         
+
         self._week_date = week_date
 
     @property
@@ -169,6 +172,7 @@ class WeekSchedule(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -192,6 +196,7 @@ class WeekSchedule(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -215,6 +220,7 @@ class WeekSchedule(object):
         :type: WeekScheduleGenerationResult
         """
         
+
         self._generation_results = generation_results
 
     @property
@@ -238,6 +244,7 @@ class WeekSchedule(object):
         :type: ShortTermForecastReference
         """
         
+
         self._short_term_forecast = short_term_forecast
 
     @property
@@ -261,6 +268,7 @@ class WeekSchedule(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -284,6 +292,7 @@ class WeekSchedule(object):
         :type: dict(str, UserSchedule)
         """
         
+
         self._user_schedules = user_schedules
 
     @property
@@ -307,6 +316,7 @@ class WeekSchedule(object):
         :type: HeadcountForecast
         """
         
+
         self._headcount_forecast = headcount_forecast
 
     @property
@@ -330,6 +340,7 @@ class WeekSchedule(object):
         :type: int
         """
         
+
         self._agent_schedules_version = agent_schedules_version
 
     def to_dict(self):

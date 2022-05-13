@@ -103,6 +103,7 @@ class UserObservationQueryFilter(object):
         :type: list[UserObservationQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class UserObservationQueryFilter(object):
         :type: list[UserObservationQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

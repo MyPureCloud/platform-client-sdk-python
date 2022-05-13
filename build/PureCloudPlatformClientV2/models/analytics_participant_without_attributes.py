@@ -94,6 +94,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     @property
@@ -117,6 +118,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         :type: str
         """
         
+
         self._external_organization_id = external_organization_id
 
     @property
@@ -167,6 +169,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         :type: str
         """
         
+
         self._participant_id = participant_id
 
     @property
@@ -190,6 +193,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         :type: str
         """
         
+
         self._participant_name = participant_name
 
     @property
@@ -240,6 +244,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         :type: str
         """
         
+
         self._team_id = team_id
 
     @property
@@ -263,6 +268,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -286,6 +292,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         :type: list[AnalyticsSession]
         """
         
+
         self._sessions = sessions
 
     def to_dict(self):

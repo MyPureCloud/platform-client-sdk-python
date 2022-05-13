@@ -76,6 +76,7 @@ class RecordingContentActions(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -99,6 +100,7 @@ class RecordingContentActions(object):
         :type: str
         """
         
+
         self._url_target = url_target
 
     @property
@@ -122,6 +124,7 @@ class RecordingContentActions(object):
         :type: str
         """
         
+
         self._textback = textback
 
     def to_dict(self):

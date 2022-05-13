@@ -73,6 +73,7 @@ class ConversationMessageEventTopicJourneyAction(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class ConversationMessageEventTopicJourneyAction(object):
         :type: ConversationMessageEventTopicJourneyActionMap
         """
         
+
         self._action_map = action_map
 
     def to_dict(self):

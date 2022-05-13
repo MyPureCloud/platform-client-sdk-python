@@ -88,6 +88,7 @@ class PolicyErrorMessage(object):
         :type: int
         """
         
+
         self._status_code = status_code
 
     @property
@@ -111,6 +112,7 @@ class PolicyErrorMessage(object):
         :type: object
         """
         
+
         self._user_message = user_message
 
     @property
@@ -134,6 +136,7 @@ class PolicyErrorMessage(object):
         :type: str
         """
         
+
         self._user_params_message = user_params_message
 
     @property
@@ -157,6 +160,7 @@ class PolicyErrorMessage(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -180,6 +184,7 @@ class PolicyErrorMessage(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -203,6 +208,7 @@ class PolicyErrorMessage(object):
         :type: list[UserParam]
         """
         
+
         self._user_params = user_params
 
     @property
@@ -226,6 +232,7 @@ class PolicyErrorMessage(object):
         :type: datetime
         """
         
+
         self._insert_date = insert_date
 
     def to_dict(self):

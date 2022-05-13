@@ -76,6 +76,7 @@ class AgentActivityChangedTopicPresence(object):
         :type: AgentActivityChangedTopicOrganizationPresence
         """
         
+
         self._presence_definition = presence_definition
 
     @property
@@ -99,6 +100,7 @@ class AgentActivityChangedTopicPresence(object):
         :type: str
         """
         
+
         self._presence_message = presence_message
 
     @property
@@ -122,6 +124,7 @@ class AgentActivityChangedTopicPresence(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

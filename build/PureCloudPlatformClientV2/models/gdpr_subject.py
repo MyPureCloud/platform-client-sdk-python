@@ -97,6 +97,7 @@ class GDPRSubject(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -120,6 +121,7 @@ class GDPRSubject(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -143,6 +145,7 @@ class GDPRSubject(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     @property
@@ -166,6 +169,7 @@ class GDPRSubject(object):
         :type: DialerContactId
         """
         
+
         self._dialer_contact_id = dialer_contact_id
 
     @property
@@ -189,6 +193,7 @@ class GDPRSubject(object):
         :type: GDPRJourneyCustomer
         """
         
+
         self._journey_customer = journey_customer
 
     @property
@@ -212,6 +217,7 @@ class GDPRSubject(object):
         :type: SocialHandle
         """
         
+
         self._social_handle = social_handle
 
     @property
@@ -235,6 +241,7 @@ class GDPRSubject(object):
         :type: str
         """
         
+
         self._external_id = external_id
 
     @property
@@ -258,6 +265,7 @@ class GDPRSubject(object):
         :type: list[str]
         """
         
+
         self._addresses = addresses
 
     @property
@@ -281,6 +289,7 @@ class GDPRSubject(object):
         :type: list[str]
         """
         
+
         self._phone_numbers = phone_numbers
 
     @property
@@ -304,6 +313,7 @@ class GDPRSubject(object):
         :type: list[str]
         """
         
+
         self._email_addresses = email_addresses
 
     def to_dict(self):

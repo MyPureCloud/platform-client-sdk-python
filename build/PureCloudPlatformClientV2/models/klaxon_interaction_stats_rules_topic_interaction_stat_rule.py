@@ -109,6 +109,7 @@ class KlaxonInteractionStatsRulesTopicInteractionStatRule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class KlaxonInteractionStatsRulesTopicInteractionStatRule(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -182,6 +184,7 @@ class KlaxonInteractionStatsRulesTopicInteractionStatRule(object):
         :type: str
         """
         
+
         self._dimension_value = dimension_value
 
     @property
@@ -205,6 +208,7 @@ class KlaxonInteractionStatsRulesTopicInteractionStatRule(object):
         :type: str
         """
         
+
         self._dimension_value_name = dimension_value_name
 
     @property
@@ -336,6 +340,7 @@ class KlaxonInteractionStatsRulesTopicInteractionStatRule(object):
         :type: float
         """
         
+
         self._value = value
 
     @property
@@ -359,6 +364,7 @@ class KlaxonInteractionStatsRulesTopicInteractionStatRule(object):
         :type: bool
         """
         
+
         self._in_alarm = in_alarm
 
     @property
@@ -382,6 +388,7 @@ class KlaxonInteractionStatsRulesTopicInteractionStatRule(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -405,6 +412,7 @@ class KlaxonInteractionStatsRulesTopicInteractionStatRule(object):
         :type: list[KlaxonInteractionStatsRulesTopicNotificationUser]
         """
         
+
         self._notification_users = notification_users
 
     @property
@@ -428,6 +436,7 @@ class KlaxonInteractionStatsRulesTopicInteractionStatRule(object):
         :type: list[str]
         """
         
+
         self._alert_types = alert_types
 
     def to_dict(self):

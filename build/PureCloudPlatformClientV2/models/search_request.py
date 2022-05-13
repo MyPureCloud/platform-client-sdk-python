@@ -124,6 +124,7 @@ class SearchRequest(object):
         :type: str
         """
         
+
         self._sort_by = sort_by
 
     @property
@@ -147,6 +148,7 @@ class SearchRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -170,6 +172,7 @@ class SearchRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -193,6 +196,7 @@ class SearchRequest(object):
         :type: list[SearchSort]
         """
         
+
         self._sort = sort
 
     @property
@@ -216,6 +220,7 @@ class SearchRequest(object):
         :type: list[str]
         """
         
+
         self._return_fields = return_fields
 
     @property
@@ -239,6 +244,7 @@ class SearchRequest(object):
         :type: list[str]
         """
         
+
         self._expand = expand
 
     @property
@@ -262,6 +268,10 @@ class SearchRequest(object):
         :type: list[str]
         """
         
+        if not types:
+            raise ValueError("Invalid value for `types`, must not be `None`")
+
+
         self._types = types
 
     @property
@@ -285,6 +295,7 @@ class SearchRequest(object):
         :type: list[SearchCriteria]
         """
         
+
         self._query = query
 
     @property
@@ -308,6 +319,7 @@ class SearchRequest(object):
         :type: list[SearchAggregation]
         """
         
+
         self._aggregations = aggregations
 
     def to_dict(self):

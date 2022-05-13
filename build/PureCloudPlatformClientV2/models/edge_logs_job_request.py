@@ -76,6 +76,7 @@ class EdgeLogsJobRequest(object):
         :type: str
         """
         
+
         self._path = path
 
     @property
@@ -99,6 +100,7 @@ class EdgeLogsJobRequest(object):
         :type: str
         """
         
+
         self._query = query
 
     @property
@@ -122,6 +124,7 @@ class EdgeLogsJobRequest(object):
         :type: bool
         """
         
+
         self._recurse = recurse
 
     def to_dict(self):

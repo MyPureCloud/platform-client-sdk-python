@@ -76,6 +76,7 @@ class IpAddressRange(object):
         :type: str
         """
         
+
         self._cidr = cidr
 
     @property
@@ -126,6 +127,7 @@ class IpAddressRange(object):
         :type: str
         """
         
+
         self._region = region
 
     def to_dict(self):

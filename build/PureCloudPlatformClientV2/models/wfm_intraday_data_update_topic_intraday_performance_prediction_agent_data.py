@@ -70,6 +70,7 @@ class WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData(object):
         :type: float
         """
         
+
         self._interacting_time_seconds = interacting_time_seconds
 
     def to_dict(self):

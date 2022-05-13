@@ -73,6 +73,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalAgentData(object):
         :type: float
         """
         
+
         self._on_queue_time_seconds = on_queue_time_seconds
 
     @property
@@ -96,6 +97,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalAgentData(object):
         :type: float
         """
         
+
         self._interacting_time_seconds = interacting_time_seconds
 
     def to_dict(self):

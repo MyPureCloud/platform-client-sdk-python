@@ -70,6 +70,7 @@ class WfmBuShortTermForecastGenerateProgressTopicUserReference(object):
         :type: str
         """
         
+
         self._id = id
 
     def to_dict(self):

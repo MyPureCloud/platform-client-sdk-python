@@ -103,6 +103,7 @@ class ScreenRecordingSessionRequest(object):
         :type: datetime
         """
         
+
         self._archive_date = archive_date
 
     @property
@@ -126,6 +127,7 @@ class ScreenRecordingSessionRequest(object):
         :type: datetime
         """
         
+
         self._delete_date = delete_date
 
     def to_dict(self):

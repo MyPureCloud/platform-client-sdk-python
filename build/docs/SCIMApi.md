@@ -42,7 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_scim_user"></a>
 
-## [**Empty**](Empty.html) delete_scim_user(user_id, if_match=if_match)
+## Empty** delete_scim_user(user_id, if_match=if_match)
 
 
 
@@ -91,11 +91,11 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_scim_v2_user"></a>
 
-## [**Empty**](Empty.html) delete_scim_v2_user(user_id, if_match=if_match)
+## Empty** delete_scim_v2_user(user_id, if_match=if_match)
 
 
 
@@ -144,7 +144,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="get_scim_group"></a>
 
@@ -274,7 +274,7 @@ Get a resource type
 
 Wraps GET /api/v2/scim/resourcetypes/{resourceType} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -324,7 +324,7 @@ Get a list of resource types
 
 Wraps GET /api/v2/scim/resourcetypes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -370,7 +370,7 @@ Get a SCIM schema
 
 Wraps GET /api/v2/scim/schemas/{schemaId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -420,7 +420,7 @@ Get a list of SCIM schemas
 
 Wraps GET /api/v2/scim/schemas 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -470,7 +470,7 @@ Get a service provider's configuration
 
 Wraps GET /api/v2/scim/serviceproviderconfig 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -520,7 +520,7 @@ Get a user
 
 Wraps GET /api/v2/scim/users/{userId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -574,9 +574,11 @@ Get a list of users
 
 To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
+
+
 Wraps GET /api/v2/scim/users 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -750,7 +752,7 @@ Get a resource type
 
 Wraps GET /api/v2/scim/v2/resourcetypes/{resourceType} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -800,7 +802,7 @@ Get a list of resource types
 
 Wraps GET /api/v2/scim/v2/resourcetypes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -846,7 +848,7 @@ Get a SCIM schema
 
 Wraps GET /api/v2/scim/v2/schemas/{schemaId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -896,7 +898,7 @@ Get a list of SCIM schemas
 
 Wraps GET /api/v2/scim/v2/schemas 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -946,7 +948,7 @@ Get a service provider's configuration
 
 Wraps GET /api/v2/scim/v2/serviceproviderconfig 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -996,7 +998,7 @@ Get a user
 
 Wraps GET /api/v2/scim/v2/users/{userId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1050,9 +1052,11 @@ Get a list of users
 
 To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
+
+
 Wraps GET /api/v2/scim/v2/users 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

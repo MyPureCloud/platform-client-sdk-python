@@ -79,6 +79,7 @@ class ScheduleGenerationResultSummary(object):
         :type: bool
         """
         
+
         self._failed = failed
 
     @property
@@ -102,6 +103,7 @@ class ScheduleGenerationResultSummary(object):
         :type: str
         """
         
+
         self._run_id = run_id
 
     @property
@@ -125,6 +127,7 @@ class ScheduleGenerationResultSummary(object):
         :type: int
         """
         
+
         self._message_count = message_count
 
     @property
@@ -148,6 +151,7 @@ class ScheduleGenerationResultSummary(object):
         :type: list[SchedulerMessageSeverityCount]
         """
         
+
         self._message_severity_counts = message_severity_counts
 
     def to_dict(self):

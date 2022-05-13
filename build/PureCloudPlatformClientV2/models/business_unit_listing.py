@@ -70,6 +70,7 @@ class BusinessUnitListing(object):
         :type: list[BusinessUnitListItem]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

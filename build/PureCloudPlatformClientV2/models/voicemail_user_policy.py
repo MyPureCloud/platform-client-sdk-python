@@ -82,6 +82,7 @@ class VoicemailUserPolicy(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -105,6 +106,7 @@ class VoicemailUserPolicy(object):
         :type: int
         """
         
+
         self._alert_timeout_seconds = alert_timeout_seconds
 
     @property
@@ -128,6 +130,7 @@ class VoicemailUserPolicy(object):
         :type: str
         """
         
+
         self._pin = pin
 
     @property
@@ -151,6 +154,7 @@ class VoicemailUserPolicy(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -174,6 +178,7 @@ class VoicemailUserPolicy(object):
         :type: bool
         """
         
+
         self._send_email_notifications = send_email_notifications
 
     def to_dict(self):

@@ -73,6 +73,10 @@ class IntegrationExport(object):
         :type: DomainEntityRef
         """
         
+        if not integration:
+            raise ValueError("Invalid value for `integration`, must not be `None`")
+
+
         self._integration = integration
 
     @property
@@ -96,6 +100,7 @@ class IntegrationExport(object):
         :type: bool
         """
         
+
         self._should_export_screen_recordings = should_export_screen_recordings
 
     def to_dict(self):

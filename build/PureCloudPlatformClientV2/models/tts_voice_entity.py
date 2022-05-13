@@ -88,6 +88,7 @@ class TtsVoiceEntity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class TtsVoiceEntity(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,10 @@ class TtsVoiceEntity(object):
         :type: str
         """
         
+        if not gender:
+            raise ValueError("Invalid value for `gender`, must not be `None`")
+
+
         self._gender = gender
 
     @property
@@ -157,6 +163,10 @@ class TtsVoiceEntity(object):
         :type: str
         """
         
+        if not language:
+            raise ValueError("Invalid value for `language`, must not be `None`")
+
+
         self._language = language
 
     @property
@@ -180,6 +190,10 @@ class TtsVoiceEntity(object):
         :type: TtsEngineEntity
         """
         
+        if not engine:
+            raise ValueError("Invalid value for `engine`, must not be `None`")
+
+
         self._engine = engine
 
     @property
@@ -203,6 +217,7 @@ class TtsVoiceEntity(object):
         :type: bool
         """
         
+
         self._is_default = is_default
 
     @property
@@ -226,6 +241,7 @@ class TtsVoiceEntity(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class ProgramsEntityListing(object):
         :type: list[ListedProgram]
         """
         
+
         self._entities = entities
 
     @property
@@ -105,6 +106,7 @@ class ProgramsEntityListing(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -128,6 +130,7 @@ class ProgramsEntityListing(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -151,6 +154,7 @@ class ProgramsEntityListing(object):
         :type: str
         """
         
+
         self._next_uri = next_uri
 
     @property
@@ -174,6 +178,7 @@ class ProgramsEntityListing(object):
         :type: int
         """
         
+
         self._page_count = page_count
 
     def to_dict(self):

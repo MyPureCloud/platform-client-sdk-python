@@ -76,6 +76,7 @@ class FaxSummary(object):
         :type: int
         """
         
+
         self._read_count = read_count
 
     @property
@@ -99,6 +100,7 @@ class FaxSummary(object):
         :type: int
         """
         
+
         self._unread_count = unread_count
 
     @property
@@ -122,6 +124,7 @@ class FaxSummary(object):
         :type: int
         """
         
+
         self._total_count = total_count
 
     def to_dict(self):

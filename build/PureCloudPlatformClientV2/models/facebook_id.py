@@ -73,6 +73,7 @@ class FacebookId(object):
         :type: list[FacebookScopedId]
         """
         
+
         self._ids = ids
 
     @property
@@ -96,6 +97,7 @@ class FacebookId(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     def to_dict(self):

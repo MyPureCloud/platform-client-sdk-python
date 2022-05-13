@@ -100,6 +100,7 @@ class ExpansionCriterium(object):
         :type: float
         """
         
+
         self._threshold = threshold
 
     def to_dict(self):

@@ -97,6 +97,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: str
         """
         
+
         self._country = country
 
     @property
@@ -120,6 +121,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: str
         """
         
+
         self._country_name = country_name
 
     @property
@@ -143,6 +145,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: float
         """
         
+
         self._latitude = latitude
 
     @property
@@ -166,6 +169,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: float
         """
         
+
         self._longitude = longitude
 
     @property
@@ -189,6 +193,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: str
         """
         
+
         self._locality = locality
 
     @property
@@ -212,6 +217,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: str
         """
         
+
         self._postal_code = postal_code
 
     @property
@@ -235,6 +241,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: str
         """
         
+
         self._region = region
 
     @property
@@ -258,6 +265,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: str
         """
         
+
         self._region_name = region_name
 
     @property
@@ -281,6 +289,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: str
         """
         
+
         self._timezone = timezone
 
     @property
@@ -304,6 +313,7 @@ class JourneyOutcomeEventsNotificationGeoLocation(object):
         :type: str
         """
         
+
         self._source = source
 
     def to_dict(self):

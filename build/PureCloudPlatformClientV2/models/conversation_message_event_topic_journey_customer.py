@@ -73,6 +73,7 @@ class ConversationMessageEventTopicJourneyCustomer(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class ConversationMessageEventTopicJourneyCustomer(object):
         :type: str
         """
         
+
         self._id_type = id_type
 
     def to_dict(self):

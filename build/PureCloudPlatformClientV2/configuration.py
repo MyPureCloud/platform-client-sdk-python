@@ -174,6 +174,13 @@ class Configuration(object):
         """
 
         return {
+            'Guest Chat JWT':
+                {
+                    'type': 'api_key',
+                    'in': 'header',
+                    'key': 'Authorization',
+                    'value': self.get_api_key_with_prefix('Authorization')
+                },
 
             'PureCloud OAuth':
                 {
@@ -181,13 +188,6 @@ class Configuration(object):
                     'in': 'header',
                     'key': 'Authorization',
                     'value': 'Bearer ' + self.access_token if access_token is None or access_token == "" else 'Bearer ' + access_token
-                },
-            'Guest Chat JWT':
-                {
-                    'type': 'api_key',
-                    'in': 'header',
-                    'key': 'Authorization',
-                    'value': self.get_api_key_with_prefix('Authorization')
                 },
 
         }
@@ -202,7 +202,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 141.1.0".\
+               "SDK Package Version: 142.0.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def _update_config_from_file(self):

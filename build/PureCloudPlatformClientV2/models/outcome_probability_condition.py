@@ -76,6 +76,10 @@ class OutcomeProbabilityCondition(object):
         :type: str
         """
         
+        if not outcome_id:
+            raise ValueError("Invalid value for `outcome_id`, must not be `None`")
+
+
         self._outcome_id = outcome_id
 
     @property
@@ -99,6 +103,10 @@ class OutcomeProbabilityCondition(object):
         :type: float
         """
         
+        if not maximum_probability:
+            raise ValueError("Invalid value for `maximum_probability`, must not be `None`")
+
+
         self._maximum_probability = maximum_probability
 
     @property
@@ -122,6 +130,7 @@ class OutcomeProbabilityCondition(object):
         :type: float
         """
         
+
         self._probability = probability
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class StationSettings(object):
         :type: FreeSeatingConfiguration
         """
         
+
         self._free_seating_configuration = free_seating_configuration
 
     def to_dict(self):

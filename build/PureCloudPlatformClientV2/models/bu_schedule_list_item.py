@@ -94,6 +94,7 @@ class BuScheduleListItem(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class BuScheduleListItem(object):
         :type: date
         """
         
+
         self._week_date = week_date
 
     @property
@@ -140,6 +142,7 @@ class BuScheduleListItem(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     @property
@@ -163,6 +166,7 @@ class BuScheduleListItem(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -186,6 +190,7 @@ class BuScheduleListItem(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -209,6 +214,7 @@ class BuScheduleListItem(object):
         :type: BuShortTermForecastReference
         """
         
+
         self._short_term_forecast = short_term_forecast
 
     @property
@@ -232,6 +238,7 @@ class BuScheduleListItem(object):
         :type: ScheduleGenerationResultSummary
         """
         
+
         self._generation_results = generation_results
 
     @property
@@ -255,6 +262,7 @@ class BuScheduleListItem(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -278,6 +286,7 @@ class BuScheduleListItem(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

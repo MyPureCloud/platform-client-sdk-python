@@ -103,6 +103,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessageEvent(objec
         :type: V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse
         """
         
+
         self._co_browse = co_browse
 
     @property
@@ -126,6 +127,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessageEvent(objec
         :type: V2ConversationMessageTypingEventForUserTopicConversationEventTyping
         """
         
+
         self._typing = typing
 
     def to_dict(self):

@@ -42,7 +42,7 @@ class BulkResponseResultVoidEntity(object):
         self.swagger_types = {
             'id': 'str',
             'success': 'bool',
-            'entity': 'Void',
+            'entity': 'object',
             'error': 'BulkErrorEntity'
         }
 
@@ -79,6 +79,7 @@ class BulkResponseResultVoidEntity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class BulkResponseResultVoidEntity(object):
         :type: bool
         """
         
+
         self._success = success
 
     @property
@@ -111,7 +113,7 @@ class BulkResponseResultVoidEntity(object):
 
 
         :return: The entity of this BulkResponseResultVoidEntity.
-        :rtype: Void
+        :rtype: object
         """
         return self._entity
 
@@ -122,9 +124,10 @@ class BulkResponseResultVoidEntity(object):
 
 
         :param entity: The entity of this BulkResponseResultVoidEntity.
-        :type: Void
+        :type: object
         """
         
+
         self._entity = entity
 
     @property
@@ -148,6 +151,7 @@ class BulkResponseResultVoidEntity(object):
         :type: BulkErrorEntity
         """
         
+
         self._error = error
 
     def to_dict(self):

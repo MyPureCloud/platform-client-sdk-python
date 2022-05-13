@@ -79,6 +79,7 @@ class ContentPositionProperties(object):
         :type: str
         """
         
+
         self._top = top
 
     @property
@@ -102,6 +103,7 @@ class ContentPositionProperties(object):
         :type: str
         """
         
+
         self._bottom = bottom
 
     @property
@@ -125,6 +127,7 @@ class ContentPositionProperties(object):
         :type: str
         """
         
+
         self._left = left
 
     @property
@@ -148,6 +151,7 @@ class ContentPositionProperties(object):
         :type: str
         """
         
+
         self._right = right
 
     def to_dict(self):

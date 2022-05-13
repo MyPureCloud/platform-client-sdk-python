@@ -70,6 +70,7 @@ class LearningAssignmentEntity(object):
         :type: str
         """
         
+
         self._assignment_id = assignment_id
 
     def to_dict(self):

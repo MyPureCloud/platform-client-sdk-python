@@ -70,6 +70,7 @@ class Digits(object):
         :type: str
         """
         
+
         self._digits = digits
 
     def to_dict(self):

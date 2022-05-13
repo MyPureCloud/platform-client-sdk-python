@@ -94,6 +94,7 @@ class WorkdayValuesTrend(object):
         :type: date
         """
         
+
         self._date_start_workday = date_start_workday
 
     @property
@@ -117,6 +118,7 @@ class WorkdayValuesTrend(object):
         :type: date
         """
         
+
         self._date_end_workday = date_end_workday
 
     @property
@@ -140,6 +142,7 @@ class WorkdayValuesTrend(object):
         :type: date
         """
         
+
         self._date_reference_workday = date_reference_workday
 
     @property
@@ -163,6 +166,7 @@ class WorkdayValuesTrend(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -186,6 +190,7 @@ class WorkdayValuesTrend(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -209,6 +214,7 @@ class WorkdayValuesTrend(object):
         :type: str
         """
         
+
         self._timezone = timezone
 
     @property
@@ -232,6 +238,7 @@ class WorkdayValuesTrend(object):
         :type: list[WorkdayValuesMetricItem]
         """
         
+
         self._results = results
 
     @property
@@ -255,6 +262,7 @@ class WorkdayValuesTrend(object):
         :type: AddressableEntityRef
         """
         
+
         self._performance_profile = performance_profile
 
     @property
@@ -278,6 +286,7 @@ class WorkdayValuesTrend(object):
         :type: AddressableEntityRef
         """
         
+
         self._metric = metric
 
     def to_dict(self):

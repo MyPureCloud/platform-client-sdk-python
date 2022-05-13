@@ -73,6 +73,7 @@ class BuForecastResultResponse(object):
         :type: BuForecastResult
         """
         
+
         self._result = result
 
     @property
@@ -96,6 +97,7 @@ class BuForecastResultResponse(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     def to_dict(self):

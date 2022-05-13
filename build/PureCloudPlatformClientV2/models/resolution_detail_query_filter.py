@@ -103,6 +103,7 @@ class ResolutionDetailQueryFilter(object):
         :type: list[ResolutionDetailQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class ResolutionDetailQueryFilter(object):
         :type: list[ResolutionDetailQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

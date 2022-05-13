@@ -97,6 +97,7 @@ class KnowledgeTraining(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class KnowledgeTraining(object):
         :type: datetime
         """
         
+
         self._date_triggered = date_triggered
 
     @property
@@ -143,6 +145,7 @@ class KnowledgeTraining(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -193,6 +196,7 @@ class KnowledgeTraining(object):
         :type: str
         """
         
+
         self._language_code = language_code
 
     @property
@@ -216,6 +220,7 @@ class KnowledgeTraining(object):
         :type: KnowledgeBase
         """
         
+
         self._knowledge_base = knowledge_base
 
     @property
@@ -239,6 +244,7 @@ class KnowledgeTraining(object):
         :type: str
         """
         
+
         self._error_message = error_message
 
     @property
@@ -289,6 +295,7 @@ class KnowledgeTraining(object):
         :type: datetime
         """
         
+
         self._date_promoted = date_promoted
 
     @property
@@ -312,6 +319,7 @@ class KnowledgeTraining(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

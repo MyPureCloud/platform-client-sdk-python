@@ -73,6 +73,7 @@ class PatchCloseButtonStyleProperties(object):
         :type: str
         """
         
+
         self._color = color
 
     @property
@@ -96,6 +97,7 @@ class PatchCloseButtonStyleProperties(object):
         :type: float
         """
         
+
         self._opacity = opacity
 
     def to_dict(self):

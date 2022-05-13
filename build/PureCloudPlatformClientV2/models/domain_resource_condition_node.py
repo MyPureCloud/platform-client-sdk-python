@@ -82,6 +82,7 @@ class DomainResourceConditionNode(object):
         :type: str
         """
         
+
         self._variable_name = variable_name
 
     @property
@@ -132,6 +133,7 @@ class DomainResourceConditionNode(object):
         :type: list[DomainResourceConditionValue]
         """
         
+
         self._operands = operands
 
     @property
@@ -182,6 +184,7 @@ class DomainResourceConditionNode(object):
         :type: list[DomainResourceConditionNode]
         """
         
+
         self._terms = terms
 
     def to_dict(self):

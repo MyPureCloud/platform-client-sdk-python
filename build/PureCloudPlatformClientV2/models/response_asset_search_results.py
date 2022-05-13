@@ -82,6 +82,7 @@ class ResponseAssetSearchResults(object):
         :type: int
         """
         
+
         self._total = total
 
     @property
@@ -105,6 +106,7 @@ class ResponseAssetSearchResults(object):
         :type: int
         """
         
+
         self._page_count = page_count
 
     @property
@@ -128,6 +130,7 @@ class ResponseAssetSearchResults(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -151,6 +154,7 @@ class ResponseAssetSearchResults(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -174,6 +178,7 @@ class ResponseAssetSearchResults(object):
         :type: list[ResponseAsset]
         """
         
+
         self._results = results
 
     def to_dict(self):

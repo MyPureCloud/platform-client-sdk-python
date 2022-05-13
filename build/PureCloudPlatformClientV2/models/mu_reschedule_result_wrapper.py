@@ -70,6 +70,7 @@ class MuRescheduleResultWrapper(object):
         :type: list[BuAgentScheduleRescheduleResponse]
         """
         
+
         self._agent_schedules = agent_schedules
 
     def to_dict(self):

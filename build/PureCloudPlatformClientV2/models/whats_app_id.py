@@ -73,6 +73,7 @@ class WhatsAppId(object):
         :type: PhoneNumber
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -96,6 +97,7 @@ class WhatsAppId(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     def to_dict(self):

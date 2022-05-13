@@ -103,6 +103,7 @@ class KnowledgeDocument(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class KnowledgeDocument(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -203,6 +205,7 @@ class KnowledgeDocument(object):
         :type: DocumentFaq
         """
         
+
         self._faq = faq
 
     @property
@@ -226,6 +229,7 @@ class KnowledgeDocument(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -249,6 +253,7 @@ class KnowledgeDocument(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -272,6 +277,7 @@ class KnowledgeDocument(object):
         :type: list[KnowledgeCategory]
         """
         
+
         self._categories = categories
 
     @property
@@ -295,6 +301,7 @@ class KnowledgeDocument(object):
         :type: KnowledgeBase
         """
         
+
         self._knowledge_base = knowledge_base
 
     @property
@@ -318,6 +325,7 @@ class KnowledgeDocument(object):
         :type: str
         """
         
+
         self._external_url = external_url
 
     @property
@@ -341,6 +349,7 @@ class KnowledgeDocument(object):
         :type: DocumentArticle
         """
         
+
         self._article = article
 
     @property
@@ -364,6 +373,7 @@ class KnowledgeDocument(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

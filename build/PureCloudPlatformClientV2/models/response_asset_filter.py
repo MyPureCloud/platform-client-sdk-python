@@ -85,6 +85,7 @@ class ResponseAssetFilter(object):
         :type: str
         """
         
+
         self._end_value = end_value
 
     @property
@@ -108,6 +109,7 @@ class ResponseAssetFilter(object):
         :type: list[str]
         """
         
+
         self._values = values
 
     @property
@@ -131,6 +133,7 @@ class ResponseAssetFilter(object):
         :type: str
         """
         
+
         self._start_value = start_value
 
     @property
@@ -154,6 +157,7 @@ class ResponseAssetFilter(object):
         :type: list[str]
         """
         
+
         self._fields = fields
 
     @property
@@ -177,6 +181,7 @@ class ResponseAssetFilter(object):
         :type: str
         """
         
+
         self._value = value
 
     @property

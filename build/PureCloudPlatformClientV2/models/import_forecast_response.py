@@ -103,6 +103,7 @@ class ImportForecastResponse(object):
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -126,6 +127,7 @@ class ImportForecastResponse(object):
         :type: BuShortTermForecast
         """
         
+
         self._result = result
 
     def to_dict(self):

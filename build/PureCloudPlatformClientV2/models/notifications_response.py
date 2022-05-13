@@ -70,6 +70,7 @@ class NotificationsResponse(object):
         :type: list[WfmUserNotification]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

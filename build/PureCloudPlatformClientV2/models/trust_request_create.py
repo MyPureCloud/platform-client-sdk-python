@@ -73,6 +73,7 @@ class TrustRequestCreate(object):
         :type: list[str]
         """
         
+
         self._user_ids = user_ids
 
     @property
@@ -96,6 +97,7 @@ class TrustRequestCreate(object):
         :type: list[str]
         """
         
+
         self._group_ids = group_ids
 
     def to_dict(self):

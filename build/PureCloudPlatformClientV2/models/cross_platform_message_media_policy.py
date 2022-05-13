@@ -73,6 +73,7 @@ class CrossPlatformMessageMediaPolicy(object):
         :type: CrossPlatformPolicyActions
         """
         
+
         self._actions = actions
 
     @property
@@ -96,6 +97,7 @@ class CrossPlatformMessageMediaPolicy(object):
         :type: MessageMediaPolicyConditions
         """
         
+
         self._conditions = conditions
 
     def to_dict(self):

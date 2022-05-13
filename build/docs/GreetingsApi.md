@@ -38,7 +38,7 @@ Deletes a Greeting with the given GreetingId
 
 Wraps DELETE /api/v2/greetings/{greetingId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -87,7 +87,7 @@ Get a Greeting with the given GreetingId
 
 Wraps GET /api/v2/greetings/{greetingId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -137,7 +137,7 @@ Get media playback URI for this greeting
 
 Wraps GET /api/v2/greetings/{greetingId}/media 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -154,7 +154,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GreetingsApi()
 greeting_id = 'greeting_id_example' # str | Greeting ID
-format_id = 'WAV' # str | The desired media format. (optional) (default to WAV)
+format_id = ''WAV'' # str | The desired media format. (optional) (default to 'WAV')
 
 try:
     # Get media playback URI for this greeting
@@ -170,7 +170,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **greeting_id** | **str**| Greeting ID |  |
-| **format_id** | **str**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **format_id** | **str**| The desired media format. | [optional] [default to &#39;WAV&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -189,7 +189,7 @@ Gets an Organization's Greetings
 
 Wraps GET /api/v2/greetings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -241,7 +241,7 @@ Get an Organization's DefaultGreetingList
 
 Wraps GET /api/v2/greetings/defaults 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -287,7 +287,7 @@ Get a list of the Group's Greetings
 
 Wraps GET /api/v2/groups/{groupId}/greetings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -341,7 +341,7 @@ Grabs the list of Default Greetings given a Group's ID
 
 Wraps GET /api/v2/groups/{groupId}/greetings/defaults 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -391,7 +391,7 @@ Get a list of the User's Greetings
 
 Wraps GET /api/v2/users/{userId}/greetings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -445,7 +445,7 @@ Grabs the list of Default Greetings given a User's ID
 
 Wraps GET /api/v2/users/{userId}/greetings/defaults 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -495,7 +495,7 @@ Create a Greeting for an Organization
 
 Wraps POST /api/v2/greetings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -545,7 +545,7 @@ Creates a Greeting for a Group
 
 Wraps POST /api/v2/groups/{groupId}/greetings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -597,7 +597,7 @@ Creates a Greeting for a User
 
 Wraps POST /api/v2/users/{userId}/greetings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -649,7 +649,7 @@ Updates the Greeting with the given GreetingId
 
 Wraps PUT /api/v2/greetings/{greetingId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -701,7 +701,7 @@ Update an Organization's DefaultGreetingList
 
 Wraps PUT /api/v2/greetings/defaults 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -751,7 +751,7 @@ Updates the DefaultGreetingList of the specified Group
 
 Wraps PUT /api/v2/groups/{groupId}/greetings/defaults 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -803,7 +803,7 @@ Updates the DefaultGreetingList of the specified User
 
 Wraps PUT /api/v2/users/{userId}/greetings/defaults 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

@@ -91,6 +91,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromR
         :type: str
         """
         
+
         self._nickname = nickname
 
     @property
@@ -114,6 +115,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromR
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -164,6 +166,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromR
         :type: str
         """
         
+
         self._image = image
 
     @property
@@ -187,6 +190,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromR
         :type: str
         """
         
+
         self._first_name = first_name
 
     @property
@@ -210,6 +214,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromR
         :type: str
         """
         
+
         self._last_name = last_name
 
     @property
@@ -233,6 +238,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromR
         :type: str
         """
         
+
         self._email = email
 
     @property
@@ -256,6 +262,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromR
         :type: list[V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier]
         """
         
+
         self._additional_ids = additional_ids
 
     def to_dict(self):

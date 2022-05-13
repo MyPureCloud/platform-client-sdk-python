@@ -112,6 +112,7 @@ class Topic(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class Topic(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -158,6 +160,7 @@ class Topic(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -181,6 +184,7 @@ class Topic(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -231,6 +235,7 @@ class Topic(object):
         :type: list[BaseProgramEntity]
         """
         
+
         self._programs = programs
 
     @property
@@ -254,6 +259,7 @@ class Topic(object):
         :type: list[str]
         """
         
+
         self._tags = tags
 
     @property
@@ -277,6 +283,7 @@ class Topic(object):
         :type: str
         """
         
+
         self._dialect = dialect
 
     @property
@@ -327,6 +334,7 @@ class Topic(object):
         :type: list[Phrase]
         """
         
+
         self._phrases = phrases
 
     @property
@@ -350,6 +358,7 @@ class Topic(object):
         :type: AddressableEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -373,6 +382,7 @@ class Topic(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -396,6 +406,7 @@ class Topic(object):
         :type: AddressableEntityRef
         """
         
+
         self._published_by = published_by
 
     @property
@@ -419,6 +430,7 @@ class Topic(object):
         :type: datetime
         """
         
+
         self._date_published = date_published
 
     @property
@@ -442,6 +454,7 @@ class Topic(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -97,6 +97,7 @@ class DependencyObject(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class DependencyObject(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class DependencyObject(object):
         :type: str
         """
         
+
         self._version = version
 
     @property
@@ -193,6 +196,7 @@ class DependencyObject(object):
         :type: bool
         """
         
+
         self._deleted = deleted
 
     @property
@@ -216,6 +220,7 @@ class DependencyObject(object):
         :type: bool
         """
         
+
         self._updated = updated
 
     @property
@@ -239,6 +244,7 @@ class DependencyObject(object):
         :type: bool
         """
         
+
         self._state_unknown = state_unknown
 
     @property
@@ -262,6 +268,7 @@ class DependencyObject(object):
         :type: list[Dependency]
         """
         
+
         self._consumed_resources = consumed_resources
 
     @property
@@ -285,6 +292,7 @@ class DependencyObject(object):
         :type: list[Dependency]
         """
         
+
         self._consuming_resources = consuming_resources
 
     @property
@@ -308,6 +316,7 @@ class DependencyObject(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class ScreenRecordingSession(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class ScreenRecordingSession(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class ScreenRecordingSession(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -157,6 +160,7 @@ class ScreenRecordingSession(object):
         :type: str
         """
         
+
         self._communication_id = communication_id
 
     @property
@@ -180,6 +184,7 @@ class ScreenRecordingSession(object):
         :type: Conversation
         """
         
+
         self._conversation = conversation
 
     @property
@@ -203,6 +208,7 @@ class ScreenRecordingSession(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -226,6 +232,7 @@ class ScreenRecordingSession(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

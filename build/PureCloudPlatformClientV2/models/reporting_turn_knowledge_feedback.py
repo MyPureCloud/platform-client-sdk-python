@@ -76,6 +76,7 @@ class ReportingTurnKnowledgeFeedback(object):
         :type: str
         """
         
+
         self._search_id = search_id
 
     @property
@@ -99,6 +100,7 @@ class ReportingTurnKnowledgeFeedback(object):
         :type: int
         """
         
+
         self._rating = rating
 
     @property
@@ -122,6 +124,7 @@ class ReportingTurnKnowledgeFeedback(object):
         :type: list[ReportingTurnKnowledgeDocument]
         """
         
+
         self._documents = documents
 
     def to_dict(self):

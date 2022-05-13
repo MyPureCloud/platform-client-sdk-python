@@ -70,6 +70,7 @@ class SearchShiftTradesResponse(object):
         :type: list[SearchShiftTradeResponse]
         """
         
+
         self._trades = trades
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class BulkResult(object):
         :type: BulkError
         """
         
+
         self._error = error
 
     @property
@@ -96,6 +97,7 @@ class BulkResult(object):
         :type: object
         """
         
+
         self._entity = entity
 
     def to_dict(self):

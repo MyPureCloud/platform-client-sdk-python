@@ -154,6 +154,7 @@ class SocialExpression(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -177,6 +178,7 @@ class SocialExpression(object):
         :type: str
         """
         
+
         self._social_media_id = social_media_id
 
     @property
@@ -200,6 +202,7 @@ class SocialExpression(object):
         :type: str
         """
         
+
         self._social_media_hub = social_media_hub
 
     @property
@@ -223,6 +226,7 @@ class SocialExpression(object):
         :type: str
         """
         
+
         self._social_user_name = social_user_name
 
     @property
@@ -246,6 +250,7 @@ class SocialExpression(object):
         :type: str
         """
         
+
         self._preview_text = preview_text
 
     @property
@@ -269,6 +274,7 @@ class SocialExpression(object):
         :type: str
         """
         
+
         self._recording_id = recording_id
 
     @property
@@ -292,6 +298,7 @@ class SocialExpression(object):
         :type: list[Segment]
         """
         
+
         self._segments = segments
 
     @property
@@ -315,6 +322,7 @@ class SocialExpression(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -365,6 +373,7 @@ class SocialExpression(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -388,6 +397,7 @@ class SocialExpression(object):
         :type: datetime
         """
         
+
         self._start_alerting_time = start_alerting_time
 
     @property
@@ -411,6 +421,7 @@ class SocialExpression(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -434,6 +445,7 @@ class SocialExpression(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -457,6 +469,7 @@ class SocialExpression(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -480,6 +493,7 @@ class SocialExpression(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -503,6 +517,7 @@ class SocialExpression(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -526,6 +541,7 @@ class SocialExpression(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -549,6 +565,7 @@ class SocialExpression(object):
         :type: AfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -572,6 +589,7 @@ class SocialExpression(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

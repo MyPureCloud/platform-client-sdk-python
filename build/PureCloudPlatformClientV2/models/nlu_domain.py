@@ -94,6 +94,7 @@ class NluDomain(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,10 @@ class NluDomain(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -140,6 +145,7 @@ class NluDomain(object):
         :type: str
         """
         
+
         self._language = language
 
     @property
@@ -163,6 +169,7 @@ class NluDomain(object):
         :type: NluDomainVersion
         """
         
+
         self._draft_version = draft_version
 
     @property
@@ -186,6 +193,7 @@ class NluDomain(object):
         :type: NluDomainVersion
         """
         
+
         self._last_published_version = last_published_version
 
     @property
@@ -209,6 +217,7 @@ class NluDomain(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -232,6 +241,7 @@ class NluDomain(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -255,6 +265,7 @@ class NluDomain(object):
         :type: str
         """
         
+
         self._engine_version = engine_version
 
     @property
@@ -278,6 +289,7 @@ class NluDomain(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

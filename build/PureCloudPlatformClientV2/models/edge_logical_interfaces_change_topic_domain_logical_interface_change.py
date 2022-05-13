@@ -73,6 +73,7 @@ class EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange(object):
         :type: EdgeLogicalInterfacesChangeTopicErrorInfo
         """
         
+
         self._error_info = error_info
 
     def to_dict(self):

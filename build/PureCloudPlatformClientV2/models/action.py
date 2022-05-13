@@ -94,6 +94,7 @@ class Action(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class Action(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class Action(object):
         :type: str
         """
         
+
         self._integration_id = integration_id
 
     @property
@@ -163,6 +166,7 @@ class Action(object):
         :type: str
         """
         
+
         self._category = category
 
     @property
@@ -186,6 +190,7 @@ class Action(object):
         :type: ActionContract
         """
         
+
         self._contract = contract
 
     @property
@@ -209,6 +214,7 @@ class Action(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -232,6 +238,7 @@ class Action(object):
         :type: bool
         """
         
+
         self._secure = secure
 
     @property
@@ -255,6 +262,7 @@ class Action(object):
         :type: ActionConfig
         """
         
+
         self._config = config
 
     @property
@@ -278,6 +286,7 @@ class Action(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -97,6 +97,7 @@ class ConversationQuery(object):
         :type: list[ConversationDetailQueryFilter]
         """
         
+
         self._conversation_filters = conversation_filters
 
     @property
@@ -120,6 +121,7 @@ class ConversationQuery(object):
         :type: list[SegmentDetailQueryFilter]
         """
         
+
         self._segment_filters = segment_filters
 
     @property
@@ -143,6 +145,7 @@ class ConversationQuery(object):
         :type: list[EvaluationDetailQueryFilter]
         """
         
+
         self._evaluation_filters = evaluation_filters
 
     @property
@@ -166,6 +169,7 @@ class ConversationQuery(object):
         :type: list[SurveyDetailQueryFilter]
         """
         
+
         self._survey_filters = survey_filters
 
     @property
@@ -189,6 +193,7 @@ class ConversationQuery(object):
         :type: list[ResolutionDetailQueryFilter]
         """
         
+
         self._resolution_filters = resolution_filters
 
     @property
@@ -266,6 +271,10 @@ class ConversationQuery(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -289,6 +298,7 @@ class ConversationQuery(object):
         :type: list[AnalyticsQueryAggregation]
         """
         
+
         self._aggregations = aggregations
 
     @property
@@ -312,6 +322,7 @@ class ConversationQuery(object):
         :type: PagingSpec
         """
         
+
         self._paging = paging
 
     def to_dict(self):

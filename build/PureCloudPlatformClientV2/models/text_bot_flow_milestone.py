@@ -76,6 +76,10 @@ class TextBotFlowMilestone(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -99,6 +103,10 @@ class TextBotFlowMilestone(object):
         :type: datetime
         """
         
+        if not date_reached:
+            raise ValueError("Invalid value for `date_reached`, must not be `None`")
+
+
         self._date_reached = date_reached
 
     @property
@@ -122,6 +130,10 @@ class TextBotFlowMilestone(object):
         :type: int
         """
         
+        if not sequence:
+            raise ValueError("Invalid value for `sequence`, must not be `None`")
+
+
         self._sequence = sequence
 
     def to_dict(self):

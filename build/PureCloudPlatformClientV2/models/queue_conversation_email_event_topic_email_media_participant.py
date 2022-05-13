@@ -187,6 +187,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -210,6 +211,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -233,6 +235,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -256,6 +259,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -279,6 +283,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -302,6 +307,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -325,6 +331,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -348,6 +355,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -452,6 +460,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -475,6 +484,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_required = wrapup_required
 
     @property
@@ -498,6 +508,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._wrapup_prompt = wrapup_prompt
 
     @property
@@ -521,6 +532,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicUriReference
         """
         
+
         self._user = user
 
     @property
@@ -544,6 +556,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicUriReference
         """
         
+
         self._queue = queue
 
     @property
@@ -567,6 +580,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicUriReference
         """
         
+
         self._team = team
 
     @property
@@ -590,6 +604,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -613,6 +628,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicErrorBody
         """
         
+
         self._error_info = error_info
 
     @property
@@ -636,6 +652,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicUriReference
         """
         
+
         self._script = script
 
     @property
@@ -659,6 +676,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: int
         """
         
+
         self._wrapup_timeout_ms = wrapup_timeout_ms
 
     @property
@@ -682,6 +700,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_skipped = wrapup_skipped
 
     @property
@@ -705,6 +724,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: int
         """
         
+
         self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
@@ -728,6 +748,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -751,6 +772,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicUriReference
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -774,6 +796,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicUriReference
         """
         
+
         self._external_organization = external_organization
 
     @property
@@ -797,6 +820,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -820,6 +844,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicConversationRoutingData
         """
         
+
         self._conversation_routing_data = conversation_routing_data
 
     @property
@@ -843,6 +868,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._peer = peer
 
     @property
@@ -866,6 +892,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._screen_recording_state = screen_recording_state
 
     @property
@@ -916,6 +943,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: QueueConversationEmailEventTopicJourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -939,6 +967,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_acw_time = start_acw_time
 
     @property
@@ -962,6 +991,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_acw_time = end_acw_time
 
     @property
@@ -985,6 +1015,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -1008,6 +1039,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: int
         """
         
+
         self._messages_sent = messages_sent
 
     @property
@@ -1031,6 +1063,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: bool
         """
         
+
         self._auto_generated = auto_generated
 
     @property
@@ -1054,6 +1087,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: str
         """
         
+
         self._message_id = message_id
 
     @property
@@ -1077,6 +1111,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: list[QueueConversationEmailEventTopicAttachment]
         """
         
+
         self._draft_attachments = draft_attachments
 
     @property
@@ -1100,6 +1135,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         :type: bool
         """
         
+
         self._spam = spam
 
     def to_dict(self):

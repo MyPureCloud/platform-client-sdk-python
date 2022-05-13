@@ -103,6 +103,7 @@ class Annotation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class Annotation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -149,6 +151,7 @@ class Annotation(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -172,6 +175,7 @@ class Annotation(object):
         :type: int
         """
         
+
         self._location = location
 
     @property
@@ -195,6 +199,7 @@ class Annotation(object):
         :type: int
         """
         
+
         self._duration_ms = duration_ms
 
     @property
@@ -218,6 +223,7 @@ class Annotation(object):
         :type: int
         """
         
+
         self._absolute_location = absolute_location
 
     @property
@@ -241,6 +247,7 @@ class Annotation(object):
         :type: int
         """
         
+
         self._absolute_duration_ms = absolute_duration_ms
 
     @property
@@ -264,6 +271,7 @@ class Annotation(object):
         :type: int
         """
         
+
         self._recording_location = recording_location
 
     @property
@@ -287,6 +295,7 @@ class Annotation(object):
         :type: int
         """
         
+
         self._recording_duration_ms = recording_duration_ms
 
     @property
@@ -310,6 +319,7 @@ class Annotation(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -333,6 +343,7 @@ class Annotation(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -356,6 +367,7 @@ class Annotation(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

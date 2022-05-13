@@ -70,6 +70,7 @@ class IpAddressAuthentication(object):
         :type: list[str]
         """
         
+
         self._network_whitelist = network_whitelist
 
     def to_dict(self):

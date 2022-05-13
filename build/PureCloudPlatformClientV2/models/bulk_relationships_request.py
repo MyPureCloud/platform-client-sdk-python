@@ -70,6 +70,7 @@ class BulkRelationshipsRequest(object):
         :type: list[Relationship]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

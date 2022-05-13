@@ -205,6 +205,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -228,6 +229,7 @@ class ParticipantBasic(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -251,6 +253,7 @@ class ParticipantBasic(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -274,6 +277,7 @@ class ParticipantBasic(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -297,6 +301,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -320,6 +325,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._user_uri = user_uri
 
     @property
@@ -343,6 +349,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -366,6 +373,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     @property
@@ -389,6 +397,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._external_organization_id = external_organization_id
 
     @property
@@ -412,6 +421,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -435,6 +445,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._group_id = group_id
 
     @property
@@ -458,6 +469,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._team_id = team_id
 
     @property
@@ -481,6 +493,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._queue_name = queue_name
 
     @property
@@ -504,6 +517,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -527,6 +541,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._participant_type = participant_type
 
     @property
@@ -550,6 +565,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._consult_participant_id = consult_participant_id
 
     @property
@@ -573,6 +589,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -596,6 +613,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -619,6 +637,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._ani_name = ani_name
 
     @property
@@ -642,6 +661,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -665,6 +685,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._locale = locale
 
     @property
@@ -688,6 +709,7 @@ class ParticipantBasic(object):
         :type: bool
         """
         
+
         self._wrapup_required = wrapup_required
 
     @property
@@ -738,6 +760,7 @@ class ParticipantBasic(object):
         :type: int
         """
         
+
         self._wrapup_timeout_ms = wrapup_timeout_ms
 
     @property
@@ -761,6 +784,7 @@ class ParticipantBasic(object):
         :type: bool
         """
         
+
         self._wrapup_skipped = wrapup_skipped
 
     @property
@@ -784,6 +808,7 @@ class ParticipantBasic(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -807,6 +832,7 @@ class ParticipantBasic(object):
         :type: ConversationRoutingData
         """
         
+
         self._conversation_routing_data = conversation_routing_data
 
     @property
@@ -830,6 +856,7 @@ class ParticipantBasic(object):
         :type: int
         """
         
+
         self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
@@ -853,6 +880,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._monitored_participant_id = monitored_participant_id
 
     @property
@@ -876,6 +904,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._coached_participant_id = coached_participant_id
 
     @property
@@ -899,6 +928,7 @@ class ParticipantBasic(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -922,6 +952,7 @@ class ParticipantBasic(object):
         :type: list[CallBasic]
         """
         
+
         self._calls = calls
 
     @property
@@ -945,6 +976,7 @@ class ParticipantBasic(object):
         :type: list[CallbackBasic]
         """
         
+
         self._callbacks = callbacks
 
     @property
@@ -968,6 +1000,7 @@ class ParticipantBasic(object):
         :type: list[ConversationChat]
         """
         
+
         self._chats = chats
 
     @property
@@ -991,6 +1024,7 @@ class ParticipantBasic(object):
         :type: list[Cobrowsesession]
         """
         
+
         self._cobrowsesessions = cobrowsesessions
 
     @property
@@ -1014,6 +1048,7 @@ class ParticipantBasic(object):
         :type: list[Email]
         """
         
+
         self._emails = emails
 
     @property
@@ -1037,6 +1072,7 @@ class ParticipantBasic(object):
         :type: list[Message]
         """
         
+
         self._messages = messages
 
     @property
@@ -1060,6 +1096,7 @@ class ParticipantBasic(object):
         :type: list[Screenshare]
         """
         
+
         self._screenshares = screenshares
 
     @property
@@ -1083,6 +1120,7 @@ class ParticipantBasic(object):
         :type: list[SocialExpression]
         """
         
+
         self._social_expressions = social_expressions
 
     @property
@@ -1106,6 +1144,7 @@ class ParticipantBasic(object):
         :type: list[Video]
         """
         
+
         self._videos = videos
 
     @property
@@ -1129,6 +1168,7 @@ class ParticipantBasic(object):
         :type: list[Evaluation]
         """
         
+
         self._evaluations = evaluations
 
     @property
@@ -1206,6 +1246,7 @@ class ParticipantBasic(object):
         :type: datetime
         """
         
+
         self._start_acw_time = start_acw_time
 
     @property
@@ -1229,6 +1270,7 @@ class ParticipantBasic(object):
         :type: datetime
         """
         
+
         self._end_acw_time = end_acw_time
 
     @property
@@ -1252,6 +1294,7 @@ class ParticipantBasic(object):
         :type: str
         """
         
+
         self._barged_participant_id = barged_participant_id
 
     def to_dict(self):

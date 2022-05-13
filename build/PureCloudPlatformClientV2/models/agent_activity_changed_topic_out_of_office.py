@@ -73,6 +73,7 @@ class AgentActivityChangedTopicOutOfOffice(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property
@@ -96,6 +97,7 @@ class AgentActivityChangedTopicOutOfOffice(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

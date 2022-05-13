@@ -73,6 +73,7 @@ class ConversationDivisionMembership(object):
         :type: DomainEntityRef
         """
         
+
         self._division = division
 
     @property
@@ -96,6 +97,7 @@ class ConversationDivisionMembership(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

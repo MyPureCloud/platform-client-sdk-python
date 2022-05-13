@@ -160,6 +160,7 @@ class ExternalContact(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -183,6 +184,10 @@ class ExternalContact(object):
         :type: str
         """
         
+        if not first_name:
+            raise ValueError("Invalid value for `first_name`, must not be `None`")
+
+
         self._first_name = first_name
 
     @property
@@ -206,6 +211,7 @@ class ExternalContact(object):
         :type: str
         """
         
+
         self._middle_name = middle_name
 
     @property
@@ -229,6 +235,10 @@ class ExternalContact(object):
         :type: str
         """
         
+        if not last_name:
+            raise ValueError("Invalid value for `last_name`, must not be `None`")
+
+
         self._last_name = last_name
 
     @property
@@ -252,6 +262,7 @@ class ExternalContact(object):
         :type: str
         """
         
+
         self._salutation = salutation
 
     @property
@@ -275,6 +286,7 @@ class ExternalContact(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -298,6 +310,7 @@ class ExternalContact(object):
         :type: PhoneNumber
         """
         
+
         self._work_phone = work_phone
 
     @property
@@ -321,6 +334,7 @@ class ExternalContact(object):
         :type: PhoneNumber
         """
         
+
         self._cell_phone = cell_phone
 
     @property
@@ -344,6 +358,7 @@ class ExternalContact(object):
         :type: PhoneNumber
         """
         
+
         self._home_phone = home_phone
 
     @property
@@ -367,6 +382,7 @@ class ExternalContact(object):
         :type: PhoneNumber
         """
         
+
         self._other_phone = other_phone
 
     @property
@@ -390,6 +406,7 @@ class ExternalContact(object):
         :type: str
         """
         
+
         self._work_email = work_email
 
     @property
@@ -413,6 +430,7 @@ class ExternalContact(object):
         :type: str
         """
         
+
         self._personal_email = personal_email
 
     @property
@@ -436,6 +454,7 @@ class ExternalContact(object):
         :type: str
         """
         
+
         self._other_email = other_email
 
     @property
@@ -459,6 +478,7 @@ class ExternalContact(object):
         :type: ContactAddress
         """
         
+
         self._address = address
 
     @property
@@ -482,6 +502,7 @@ class ExternalContact(object):
         :type: TwitterId
         """
         
+
         self._twitter_id = twitter_id
 
     @property
@@ -505,6 +526,7 @@ class ExternalContact(object):
         :type: LineId
         """
         
+
         self._line_id = line_id
 
     @property
@@ -528,6 +550,7 @@ class ExternalContact(object):
         :type: WhatsAppId
         """
         
+
         self._whats_app_id = whats_app_id
 
     @property
@@ -551,6 +574,7 @@ class ExternalContact(object):
         :type: FacebookId
         """
         
+
         self._facebook_id = facebook_id
 
     @property
@@ -574,6 +598,7 @@ class ExternalContact(object):
         :type: datetime
         """
         
+
         self._modify_date = modify_date
 
     @property
@@ -597,6 +622,7 @@ class ExternalContact(object):
         :type: datetime
         """
         
+
         self._create_date = create_date
 
     @property
@@ -620,6 +646,7 @@ class ExternalContact(object):
         :type: ExternalOrganization
         """
         
+
         self._external_organization = external_organization
 
     @property
@@ -643,6 +670,7 @@ class ExternalContact(object):
         :type: bool
         """
         
+
         self._survey_opt_out = survey_opt_out
 
     @property
@@ -666,6 +694,7 @@ class ExternalContact(object):
         :type: str
         """
         
+
         self._external_system_url = external_system_url
 
     @property
@@ -689,6 +718,7 @@ class ExternalContact(object):
         :type: DataSchema
         """
         
+
         self._schema = schema
 
     @property
@@ -712,6 +742,7 @@ class ExternalContact(object):
         :type: dict(str, object)
         """
         
+
         self._custom_fields = custom_fields
 
     @property
@@ -735,6 +766,7 @@ class ExternalContact(object):
         :type: list[ExternalDataSource]
         """
         
+
         self._external_data_sources = external_data_sources
 
     @property
@@ -785,6 +817,7 @@ class ExternalContact(object):
         :type: ContactAddressableEntityRef
         """
         
+
         self._canonical_contact = canonical_contact
 
     @property
@@ -808,6 +841,7 @@ class ExternalContact(object):
         :type: list[ContactAddressableEntityRef]
         """
         
+
         self._merge_set = merge_set
 
     @property
@@ -831,6 +865,7 @@ class ExternalContact(object):
         :type: MergeOperation
         """
         
+
         self._merge_operation = merge_operation
 
     @property
@@ -854,6 +889,7 @@ class ExternalContact(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

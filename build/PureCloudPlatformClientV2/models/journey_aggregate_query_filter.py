@@ -103,6 +103,7 @@ class JourneyAggregateQueryFilter(object):
         :type: list[JourneyAggregateQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class JourneyAggregateQueryFilter(object):
         :type: list[JourneyAggregateQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

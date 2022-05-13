@@ -97,6 +97,7 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -143,6 +145,7 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :type: JourneyWebActionEventsNotificationExternalContact
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -166,6 +169,7 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -189,6 +193,7 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :type: str
         """
         
+
         self._customer_id = customer_id
 
     @property
@@ -212,6 +217,7 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :type: str
         """
         
+
         self._customer_id_type = customer_id_type
 
     @property
@@ -235,6 +241,7 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :type: JourneyWebActionEventsNotificationSession
         """
         
+
         self._session = session
 
     @property
@@ -285,6 +292,7 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :type: JourneyWebActionEventsNotificationWebActionMessage
         """
         
+
         self._web_action_event = web_action_event
 
     @property
@@ -308,6 +316,7 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :type: JourneyWebActionEventsNotificationBlockedWebActionOfferMessage
         """
         
+
         self._blocked_web_action_offer_event = blocked_web_action_offer_event
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class TrunkInstanceTopicTrunk(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class TrunkInstanceTopicTrunk(object):
         :type: TrunkInstanceTopicTrunkConnectedStatus
         """
         
+
         self._connected_status = connected_status
 
     @property
@@ -128,6 +130,7 @@ class TrunkInstanceTopicTrunk(object):
         :type: list[TrunkInstanceTopicTrunkMetricsOptions]
         """
         
+
         self._options_status = options_status
 
     @property
@@ -151,6 +154,7 @@ class TrunkInstanceTopicTrunk(object):
         :type: list[TrunkInstanceTopicTrunkMetricsRegisters]
         """
         
+
         self._registers_status = registers_status
 
     @property
@@ -174,6 +178,7 @@ class TrunkInstanceTopicTrunk(object):
         :type: TrunkInstanceTopicTrunkMetricsNetworkTypeIp
         """
         
+
         self._ip_status = ip_status
 
     def to_dict(self):

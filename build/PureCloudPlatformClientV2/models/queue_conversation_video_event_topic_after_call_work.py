@@ -103,6 +103,7 @@ class QueueConversationVideoEventTopicAfterCallWork(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -126,6 +127,7 @@ class QueueConversationVideoEventTopicAfterCallWork(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     def to_dict(self):

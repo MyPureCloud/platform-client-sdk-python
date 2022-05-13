@@ -73,6 +73,7 @@ class DomainPhysicalCapabilities(object):
         :type: bool
         """
         
+
         self._vlan = vlan
 
     @property
@@ -96,6 +97,7 @@ class DomainPhysicalCapabilities(object):
         :type: bool
         """
         
+
         self._team = team
 
     def to_dict(self):

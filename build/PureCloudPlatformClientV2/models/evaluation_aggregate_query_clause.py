@@ -100,6 +100,10 @@ class EvaluationAggregateQueryClause(object):
         :type: list[EvaluationAggregateQueryPredicate]
         """
         
+        if not predicates:
+            raise ValueError("Invalid value for `predicates`, must not be `None`")
+
+
         self._predicates = predicates
 
     def to_dict(self):

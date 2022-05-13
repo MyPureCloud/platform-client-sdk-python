@@ -106,6 +106,7 @@ class PermissionDetails(object):
         :type: list[str]
         """
         
+
         self._permissions = permissions
 
     @property
@@ -129,6 +130,7 @@ class PermissionDetails(object):
         :type: bool
         """
         
+
         self._allows_current_user = allows_current_user
 
     @property
@@ -152,6 +154,7 @@ class PermissionDetails(object):
         :type: bool
         """
         
+
         self._enforced = enforced
 
     def to_dict(self):

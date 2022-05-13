@@ -79,6 +79,7 @@ class TimeInterval(object):
         :type: int
         """
         
+
         self._months = months
 
     @property
@@ -102,6 +103,7 @@ class TimeInterval(object):
         :type: int
         """
         
+
         self._weeks = weeks
 
     @property
@@ -125,6 +127,7 @@ class TimeInterval(object):
         :type: int
         """
         
+
         self._days = days
 
     @property
@@ -148,6 +151,7 @@ class TimeInterval(object):
         :type: int
         """
         
+
         self._hours = hours
 
     def to_dict(self):

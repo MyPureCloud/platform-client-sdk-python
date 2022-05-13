@@ -193,6 +193,7 @@ class Session(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -216,6 +217,7 @@ class Session(object):
         :type: str
         """
         
+
         self._customer_id = customer_id
 
     @property
@@ -239,6 +241,7 @@ class Session(object):
         :type: str
         """
         
+
         self._customer_id_type = customer_id_type
 
     @property
@@ -262,6 +265,7 @@ class Session(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -285,6 +289,7 @@ class Session(object):
         :type: str
         """
         
+
         self._external_id = external_id
 
     @property
@@ -308,6 +313,7 @@ class Session(object):
         :type: str
         """
         
+
         self._external_url = external_url
 
     @property
@@ -331,6 +337,7 @@ class Session(object):
         :type: str
         """
         
+
         self._short_id = short_id
 
     @property
@@ -354,6 +361,7 @@ class Session(object):
         :type: list[OutcomeAchievement]
         """
         
+
         self._outcome_achievements = outcome_achievements
 
     @property
@@ -377,6 +385,7 @@ class Session(object):
         :type: list[SessionSegmentAssignment]
         """
         
+
         self._segment_assignments = segment_assignments
 
     @property
@@ -400,6 +409,7 @@ class Session(object):
         :type: dict(str, CustomEventAttribute)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -423,6 +433,7 @@ class Session(object):
         :type: dict(str, CustomEventAttributeList)
         """
         
+
         self._attribute_lists = attribute_lists
 
     @property
@@ -446,6 +457,7 @@ class Session(object):
         :type: Browser
         """
         
+
         self._browser = browser
 
     @property
@@ -469,6 +481,7 @@ class Session(object):
         :type: Device
         """
         
+
         self._device = device
 
     @property
@@ -492,6 +505,7 @@ class Session(object):
         :type: JourneyGeolocation
         """
         
+
         self._geolocation = geolocation
 
     @property
@@ -515,6 +529,7 @@ class Session(object):
         :type: str
         """
         
+
         self._ip_address = ip_address
 
     @property
@@ -538,6 +553,7 @@ class Session(object):
         :type: str
         """
         
+
         self._ip_organization = ip_organization
 
     @property
@@ -561,6 +577,7 @@ class Session(object):
         :type: JourneyPage
         """
         
+
         self._last_page = last_page
 
     @property
@@ -584,6 +601,7 @@ class Session(object):
         :type: JourneyCampaign
         """
         
+
         self._mkt_campaign = mkt_campaign
 
     @property
@@ -607,6 +625,7 @@ class Session(object):
         :type: Referrer
         """
         
+
         self._referrer = referrer
 
     @property
@@ -630,6 +649,7 @@ class Session(object):
         :type: list[str]
         """
         
+
         self._search_terms = search_terms
 
     @property
@@ -653,6 +673,7 @@ class Session(object):
         :type: str
         """
         
+
         self._user_agent_string = user_agent_string
 
     @property
@@ -676,6 +697,7 @@ class Session(object):
         :type: int
         """
         
+
         self._duration_in_seconds = duration_in_seconds
 
     @property
@@ -699,6 +721,7 @@ class Session(object):
         :type: int
         """
         
+
         self._event_count = event_count
 
     @property
@@ -722,6 +745,7 @@ class Session(object):
         :type: int
         """
         
+
         self._pageview_count = pageview_count
 
     @property
@@ -745,6 +769,7 @@ class Session(object):
         :type: int
         """
         
+
         self._screenview_count = screenview_count
 
     @property
@@ -768,6 +793,7 @@ class Session(object):
         :type: SessionLastEvent
         """
         
+
         self._last_event = last_event
 
     @property
@@ -791,6 +817,7 @@ class Session(object):
         :type: ConnectedQueue
         """
         
+
         self._last_connected_queue = last_connected_queue
 
     @property
@@ -814,6 +841,7 @@ class Session(object):
         :type: ConnectedUser
         """
         
+
         self._last_connected_user = last_connected_user
 
     @property
@@ -837,6 +865,7 @@ class Session(object):
         :type: ConversationUserDisposition
         """
         
+
         self._last_user_disposition = last_user_disposition
 
     @property
@@ -860,6 +889,7 @@ class Session(object):
         :type: list[ConversationChannel]
         """
         
+
         self._conversation_channels = conversation_channels
 
     @property
@@ -910,6 +940,7 @@ class Session(object):
         :type: str
         """
         
+
         self._conversation_subject = conversation_subject
 
     @property
@@ -987,6 +1018,7 @@ class Session(object):
         :type: bool
         """
         
+
         self._authenticated = authenticated
 
     @property
@@ -1010,6 +1042,7 @@ class Session(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -1033,6 +1066,7 @@ class Session(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -1056,6 +1090,7 @@ class Session(object):
         :type: datetime
         """
         
+
         self._ended_date = ended_date
 
     @property
@@ -1079,6 +1114,7 @@ class Session(object):
         :type: AddressableEntityRef
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -1102,6 +1138,7 @@ class Session(object):
         :type: datetime
         """
         
+
         self._away_date = away_date
 
     @property
@@ -1125,6 +1162,7 @@ class Session(object):
         :type: datetime
         """
         
+
         self._idle_date = idle_date
 
     @property
@@ -1148,6 +1186,7 @@ class Session(object):
         :type: AddressableEntityRef
         """
         
+
         self._conversation = conversation
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class GamificationScorecardChangeTopicPerformanceMetric(object):
         :type: GamificationScorecardChangeTopicMetric
         """
         
+
         self._metric = metric
 
     @property
@@ -102,6 +103,7 @@ class GamificationScorecardChangeTopicPerformanceMetric(object):
         :type: int
         """
         
+
         self._points = points
 
     @property
@@ -125,6 +127,7 @@ class GamificationScorecardChangeTopicPerformanceMetric(object):
         :type: float
         """
         
+
         self._value = value
 
     @property
@@ -148,6 +151,7 @@ class GamificationScorecardChangeTopicPerformanceMetric(object):
         :type: list[GamificationScorecardChangeTopicPunctualityEvent]
         """
         
+
         self._punctuality_events = punctuality_events
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class WaitlistPosition(object):
         :type: TimeOffRequestReference
         """
         
+
         self._time_off_request = time_off_request
 
     @property
@@ -102,6 +103,7 @@ class WaitlistPosition(object):
         :type: TimeOffLimitReference
         """
         
+
         self._time_off_limit = time_off_limit
 
     @property
@@ -125,6 +127,7 @@ class WaitlistPosition(object):
         :type: date
         """
         
+
         self._date = date
 
     @property
@@ -148,6 +151,7 @@ class WaitlistPosition(object):
         :type: int
         """
         
+
         self._waitlist_position = waitlist_position
 
     def to_dict(self):

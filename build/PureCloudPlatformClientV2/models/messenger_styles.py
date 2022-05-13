@@ -70,6 +70,7 @@ class MessengerStyles(object):
         :type: str
         """
         
+
         self._primary_color = primary_color
 
     def to_dict(self):

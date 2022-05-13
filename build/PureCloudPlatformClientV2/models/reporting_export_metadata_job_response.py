@@ -97,6 +97,7 @@ class ReportingExportMetadataJobResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class ReportingExportMetadataJobResponse(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -170,6 +172,7 @@ class ReportingExportMetadataJobResponse(object):
         :type: str
         """
         
+
         self._date_limitations = date_limitations
 
     @property
@@ -193,6 +196,7 @@ class ReportingExportMetadataJobResponse(object):
         :type: list[str]
         """
         
+
         self._required_filters = required_filters
 
     @property
@@ -216,6 +220,7 @@ class ReportingExportMetadataJobResponse(object):
         :type: list[str]
         """
         
+
         self._supported_filters = supported_filters
 
     @property
@@ -239,6 +244,7 @@ class ReportingExportMetadataJobResponse(object):
         :type: list[str]
         """
         
+
         self._required_column_ids = required_column_ids
 
     @property
@@ -262,6 +268,7 @@ class ReportingExportMetadataJobResponse(object):
         :type: dict(str, list[str])
         """
         
+
         self._dependent_column_ids = dependent_column_ids
 
     @property
@@ -285,6 +292,7 @@ class ReportingExportMetadataJobResponse(object):
         :type: list[str]
         """
         
+
         self._available_column_ids = available_column_ids
 
     @property
@@ -308,6 +316,7 @@ class ReportingExportMetadataJobResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

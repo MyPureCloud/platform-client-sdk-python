@@ -79,6 +79,10 @@ class FlowExecutionLaunchRequest(object):
         :type: str
         """
         
+        if not flow_id:
+            raise ValueError("Invalid value for `flow_id`, must not be `None`")
+
+
         self._flow_id = flow_id
 
     @property
@@ -102,6 +106,7 @@ class FlowExecutionLaunchRequest(object):
         :type: str
         """
         
+
         self._flow_version = flow_version
 
     @property
@@ -125,6 +130,7 @@ class FlowExecutionLaunchRequest(object):
         :type: dict(str, object)
         """
         
+
         self._input_data = input_data
 
     @property
@@ -148,6 +154,7 @@ class FlowExecutionLaunchRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     def to_dict(self):

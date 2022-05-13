@@ -88,6 +88,7 @@ class AssessmentForm(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class AssessmentForm(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -134,6 +136,7 @@ class AssessmentForm(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     @property
@@ -157,6 +160,7 @@ class AssessmentForm(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -180,6 +184,7 @@ class AssessmentForm(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -203,6 +208,10 @@ class AssessmentForm(object):
         :type: int
         """
         
+        if not pass_percent:
+            raise ValueError("Invalid value for `pass_percent`, must not be `None`")
+
+
         self._pass_percent = pass_percent
 
     @property
@@ -226,6 +235,10 @@ class AssessmentForm(object):
         :type: list[AssessmentFormQuestionGroup]
         """
         
+        if not question_groups:
+            raise ValueError("Invalid value for `question_groups`, must not be `None`")
+
+
         self._question_groups = question_groups
 
     def to_dict(self):

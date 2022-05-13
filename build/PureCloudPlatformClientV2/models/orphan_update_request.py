@@ -82,6 +82,7 @@ class OrphanUpdateRequest(object):
         :type: datetime
         """
         
+
         self._archive_date = archive_date
 
     @property
@@ -105,6 +106,7 @@ class OrphanUpdateRequest(object):
         :type: datetime
         """
         
+
         self._delete_date = delete_date
 
     @property
@@ -128,6 +130,7 @@ class OrphanUpdateRequest(object):
         :type: datetime
         """
         
+
         self._export_date = export_date
 
     @property
@@ -151,6 +154,7 @@ class OrphanUpdateRequest(object):
         :type: str
         """
         
+
         self._integration_id = integration_id
 
     @property
@@ -174,6 +178,7 @@ class OrphanUpdateRequest(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class ContactColumnTimeZone(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property

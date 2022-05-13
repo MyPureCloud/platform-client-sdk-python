@@ -76,6 +76,7 @@ class ArchitectFlowOutcomeNotificationHomeOrganization(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class ArchitectFlowOutcomeNotificationHomeOrganization(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -122,6 +124,7 @@ class ArchitectFlowOutcomeNotificationHomeOrganization(object):
         :type: str
         """
         
+
         self._third_party_org_name = third_party_org_name
 
     def to_dict(self):

@@ -94,6 +94,7 @@ class DataSchema(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class DataSchema(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,10 @@ class DataSchema(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -163,6 +169,7 @@ class DataSchema(object):
         :type: list[str]
         """
         
+
         self._applies_to = applies_to
 
     @property
@@ -186,6 +193,7 @@ class DataSchema(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -209,6 +217,7 @@ class DataSchema(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -232,6 +241,7 @@ class DataSchema(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -255,6 +265,10 @@ class DataSchema(object):
         :type: JsonSchemaDocument
         """
         
+        if not json_schema:
+            raise ValueError("Invalid value for `json_schema`, must not be `None`")
+
+
         self._json_schema = json_schema
 
     @property
@@ -278,6 +292,7 @@ class DataSchema(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

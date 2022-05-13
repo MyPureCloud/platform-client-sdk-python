@@ -82,6 +82,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentNotificatio
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentNotificatio
         :type: str
         """
         
+
         self._language = language
 
     @property
@@ -128,6 +130,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentNotificatio
         :type: V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader
         """
         
+
         self._header = header
 
     @property
@@ -151,6 +154,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentNotificatio
         :type: V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateBody
         """
         
+
         self._body = body
 
     @property
@@ -174,6 +178,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentNotificatio
         :type: V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateFooter
         """
         
+
         self._footer = footer
 
     def to_dict(self):

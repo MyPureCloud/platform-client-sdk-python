@@ -79,6 +79,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -102,6 +103,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         :type: float
         """
         
+
         self._min = min
 
     @property
@@ -125,6 +127,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         :type: float
         """
         
+
         self._max = max
 
     @property
@@ -148,6 +151,7 @@ class LearningAssignmentAggregateQueryResponseStats(object):
         :type: float
         """
         
+
         self._sum = sum
 
     def to_dict(self):

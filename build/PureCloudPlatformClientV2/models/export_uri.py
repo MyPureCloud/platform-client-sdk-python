@@ -73,6 +73,7 @@ class ExportUri(object):
         :type: str
         """
         
+
         self._uri = uri
 
     @property
@@ -96,6 +97,7 @@ class ExportUri(object):
         :type: datetime
         """
         
+
         self._export_timestamp = export_timestamp
 
     def to_dict(self):

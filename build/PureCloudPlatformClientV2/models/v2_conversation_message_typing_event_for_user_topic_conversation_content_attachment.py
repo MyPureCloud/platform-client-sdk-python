@@ -88,6 +88,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentAttachment(
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentAttachment(
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -161,6 +163,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentAttachment(
         :type: str
         """
         
+
         self._mime = mime
 
     @property
@@ -184,6 +187,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentAttachment(
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -207,6 +211,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentAttachment(
         :type: str
         """
         
+
         self._sha256 = sha256
 
     @property
@@ -230,6 +235,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentAttachment(
         :type: str
         """
         
+
         self._filename = filename
 
     def to_dict(self):

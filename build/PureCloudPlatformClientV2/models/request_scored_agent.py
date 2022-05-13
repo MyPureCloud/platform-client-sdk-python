@@ -73,6 +73,7 @@ class RequestScoredAgent(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class RequestScoredAgent(object):
         :type: int
         """
         
+
         self._score = score
 
     def to_dict(self):

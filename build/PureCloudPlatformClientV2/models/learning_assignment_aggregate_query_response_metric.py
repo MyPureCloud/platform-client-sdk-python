@@ -100,6 +100,7 @@ class LearningAssignmentAggregateQueryResponseMetric(object):
         :type: LearningAssignmentAggregateQueryResponseStats
         """
         
+
         self._stats = stats
 
     def to_dict(self):

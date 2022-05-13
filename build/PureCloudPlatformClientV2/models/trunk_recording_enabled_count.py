@@ -73,6 +73,7 @@ class TrunkRecordingEnabledCount(object):
         :type: int
         """
         
+
         self._enabled_count = enabled_count
 
     @property
@@ -96,6 +97,7 @@ class TrunkRecordingEnabledCount(object):
         :type: int
         """
         
+
         self._disabled_count = disabled_count
 
     def to_dict(self):

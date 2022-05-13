@@ -79,6 +79,7 @@ class JourneyOutcomeEventsNotificationOutcomeTouchpoint(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class JourneyOutcomeEventsNotificationOutcomeTouchpoint(object):
         :type: list[JourneyOutcomeEventsNotificationOutcomeTouchpointChannel]
         """
         
+
         self._channels = channels
 
     @property
@@ -125,6 +127,7 @@ class JourneyOutcomeEventsNotificationOutcomeTouchpoint(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -148,6 +151,7 @@ class JourneyOutcomeEventsNotificationOutcomeTouchpoint(object):
         :type: JourneyOutcomeEventsNotificationActionMap
         """
         
+
         self._action_map = action_map
 
     def to_dict(self):

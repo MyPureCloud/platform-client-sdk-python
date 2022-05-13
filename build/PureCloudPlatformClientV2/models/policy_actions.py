@@ -103,6 +103,7 @@ class PolicyActions(object):
         :type: bool
         """
         
+
         self._retain_recording = retain_recording
 
     @property
@@ -126,6 +127,7 @@ class PolicyActions(object):
         :type: bool
         """
         
+
         self._delete_recording = delete_recording
 
     @property
@@ -149,6 +151,7 @@ class PolicyActions(object):
         :type: bool
         """
         
+
         self._always_delete = always_delete
 
     @property
@@ -172,6 +175,7 @@ class PolicyActions(object):
         :type: list[EvaluationAssignment]
         """
         
+
         self._assign_evaluations = assign_evaluations
 
     @property
@@ -195,6 +199,7 @@ class PolicyActions(object):
         :type: list[MeteredEvaluationAssignment]
         """
         
+
         self._assign_metered_evaluations = assign_metered_evaluations
 
     @property
@@ -218,6 +223,7 @@ class PolicyActions(object):
         :type: list[MeteredAssignmentByAgent]
         """
         
+
         self._assign_metered_assignment_by_agent = assign_metered_assignment_by_agent
 
     @property
@@ -241,6 +247,7 @@ class PolicyActions(object):
         :type: list[CalibrationAssignment]
         """
         
+
         self._assign_calibrations = assign_calibrations
 
     @property
@@ -264,6 +271,7 @@ class PolicyActions(object):
         :type: list[SurveyAssignment]
         """
         
+
         self._assign_surveys = assign_surveys
 
     @property
@@ -287,6 +295,7 @@ class PolicyActions(object):
         :type: RetentionDuration
         """
         
+
         self._retention_duration = retention_duration
 
     @property
@@ -310,6 +319,7 @@ class PolicyActions(object):
         :type: InitiateScreenRecording
         """
         
+
         self._initiate_screen_recording = initiate_screen_recording
 
     @property
@@ -333,6 +343,7 @@ class PolicyActions(object):
         :type: list[MediaTranscription]
         """
         
+
         self._media_transcriptions = media_transcriptions
 
     @property
@@ -356,6 +367,7 @@ class PolicyActions(object):
         :type: IntegrationExport
         """
         
+
         self._integration_export = integration_export
 
     def to_dict(self):

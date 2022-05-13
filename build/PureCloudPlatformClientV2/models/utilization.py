@@ -70,6 +70,7 @@ class Utilization(object):
         :type: dict(str, MediaUtilization)
         """
         
+
         self._utilization = utilization
 
     def to_dict(self):

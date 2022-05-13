@@ -70,6 +70,7 @@ class WeekShiftTradeListResponse(object):
         :type: list[WeekShiftTradeResponse]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class ContactListFilterPredicate(object):
         :type: str
         """
         
+
         self._column = column
 
     @property
@@ -162,6 +163,7 @@ class ContactListFilterPredicate(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -185,6 +187,7 @@ class ContactListFilterPredicate(object):
         :type: ContactListFilterRange
         """
         
+
         self._range = range
 
     @property
@@ -208,6 +211,7 @@ class ContactListFilterPredicate(object):
         :type: bool
         """
         
+
         self._inverted = inverted
 
     def to_dict(self):

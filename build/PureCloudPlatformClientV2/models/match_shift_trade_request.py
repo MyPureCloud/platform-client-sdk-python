@@ -76,6 +76,10 @@ class MatchShiftTradeRequest(object):
         :type: str
         """
         
+        if not receiving_schedule_id:
+            raise ValueError("Invalid value for `receiving_schedule_id`, must not be `None`")
+
+
         self._receiving_schedule_id = receiving_schedule_id
 
     @property
@@ -99,6 +103,7 @@ class MatchShiftTradeRequest(object):
         :type: str
         """
         
+
         self._receiving_shift_id = receiving_shift_id
 
     @property
@@ -122,6 +127,10 @@ class MatchShiftTradeRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

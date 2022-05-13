@@ -201,7 +201,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GeneralDataProtectionRegulationApi()
 body = PureCloudPlatformClientV2.GDPRRequest() # GDPRRequest | GDPR request
-delete_confirmed = false # bool | Confirm delete (optional) (default to false)
+delete_confirmed = False # bool | Confirm delete (optional) (default to False)
 
 try:
     # Submit a new GDPR request
@@ -217,7 +217,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**GDPRRequest**](GDPRRequest.html)| GDPR request |  |
-| **delete_confirmed** | **bool**| Confirm delete | [optional] [default to false] |
+| **delete_confirmed** | **bool**| Confirm delete | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type

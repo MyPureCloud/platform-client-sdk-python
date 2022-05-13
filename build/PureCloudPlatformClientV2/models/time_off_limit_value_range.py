@@ -91,6 +91,7 @@ class TimeOffLimitValueRange(object):
         :type: TimeOffLimitReference
         """
         
+
         self._time_off_limit = time_off_limit
 
     @property
@@ -114,6 +115,10 @@ class TimeOffLimitValueRange(object):
         :type: date
         """
         
+        if not start_date:
+            raise ValueError("Invalid value for `start_date`, must not be `None`")
+
+
         self._start_date = start_date
 
     @property
@@ -164,6 +169,7 @@ class TimeOffLimitValueRange(object):
         :type: list[int]
         """
         
+
         self._limit_minutes_per_interval = limit_minutes_per_interval
 
     @property
@@ -187,6 +193,7 @@ class TimeOffLimitValueRange(object):
         :type: list[int]
         """
         
+
         self._allocated_minutes_per_interval = allocated_minutes_per_interval
 
     @property
@@ -210,6 +217,7 @@ class TimeOffLimitValueRange(object):
         :type: list[int]
         """
         
+
         self._waitlisted_minutes_per_interval = waitlisted_minutes_per_interval
 
     @property
@@ -233,6 +241,7 @@ class TimeOffLimitValueRange(object):
         :type: list[int]
         """
         
+
         self._waitlisted_requests_per_interval = waitlisted_requests_per_interval
 
     @property
@@ -256,6 +265,7 @@ class TimeOffLimitValueRange(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

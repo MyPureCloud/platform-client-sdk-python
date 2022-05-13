@@ -76,6 +76,7 @@ class SurveyScoringSet(object):
         :type: float
         """
         
+
         self._total_score = total_score
 
     @property
@@ -99,6 +100,7 @@ class SurveyScoringSet(object):
         :type: int
         """
         
+
         self._nps_score = nps_score
 
     @property
@@ -122,6 +124,7 @@ class SurveyScoringSet(object):
         :type: list[SurveyQuestionGroupScore]
         """
         
+
         self._question_group_scores = question_group_scores
 
     def to_dict(self):

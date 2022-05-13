@@ -79,6 +79,7 @@ class JourneyWebEventsNotificationOutcome(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class JourneyWebEventsNotificationOutcome(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -125,6 +127,7 @@ class JourneyWebEventsNotificationOutcome(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     @property
@@ -148,6 +151,7 @@ class JourneyWebEventsNotificationOutcome(object):
         :type: str
         """
         
+
         self._version = version
 
     def to_dict(self):

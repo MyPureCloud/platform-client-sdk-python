@@ -73,6 +73,7 @@ class DocumentAttribute(object):
         :type: Attribute
         """
         
+
         self._attribute = attribute
 
     @property
@@ -96,6 +97,7 @@ class DocumentAttribute(object):
         :type: list[str]
         """
         
+
         self._values = values
 
     def to_dict(self):

@@ -103,6 +103,7 @@ class BotAggregateQueryFilter(object):
         :type: list[BotAggregateQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class BotAggregateQueryFilter(object):
         :type: list[BotAggregateQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

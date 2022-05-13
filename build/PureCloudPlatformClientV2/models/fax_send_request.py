@@ -94,6 +94,7 @@ class FaxSendRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class FaxSendRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,10 @@ class FaxSendRequest(object):
         :type: list[str]
         """
         
+        if not addresses:
+            raise ValueError("Invalid value for `addresses`, must not be `None`")
+
+
         self._addresses = addresses
 
     @property
@@ -163,6 +169,7 @@ class FaxSendRequest(object):
         :type: str
         """
         
+
         self._document_id = document_id
 
     @property
@@ -213,6 +220,7 @@ class FaxSendRequest(object):
         :type: Workspace
         """
         
+
         self._workspace = workspace
 
     @property
@@ -236,6 +244,7 @@ class FaxSendRequest(object):
         :type: CoverSheet
         """
         
+
         self._cover_sheet = cover_sheet
 
     @property
@@ -259,6 +268,7 @@ class FaxSendRequest(object):
         :type: int
         """
         
+
         self._time_zone_offset_minutes = time_zone_offset_minutes
 
     @property
@@ -282,6 +292,7 @@ class FaxSendRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

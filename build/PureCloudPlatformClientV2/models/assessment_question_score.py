@@ -88,6 +88,7 @@ class AssessmentQuestionScore(object):
         :type: bool
         """
         
+
         self._failed_kill_question = failed_kill_question
 
     @property
@@ -111,6 +112,7 @@ class AssessmentQuestionScore(object):
         :type: str
         """
         
+
         self._comments = comments
 
     @property
@@ -134,6 +136,10 @@ class AssessmentQuestionScore(object):
         :type: str
         """
         
+        if not question_id:
+            raise ValueError("Invalid value for `question_id`, must not be `None`")
+
+
         self._question_id = question_id
 
     @property
@@ -157,6 +163,7 @@ class AssessmentQuestionScore(object):
         :type: str
         """
         
+
         self._answer_id = answer_id
 
     @property
@@ -180,6 +187,7 @@ class AssessmentQuestionScore(object):
         :type: int
         """
         
+
         self._score = score
 
     @property
@@ -203,6 +211,7 @@ class AssessmentQuestionScore(object):
         :type: bool
         """
         
+
         self._marked_na = marked_na
 
     @property
@@ -226,6 +235,7 @@ class AssessmentQuestionScore(object):
         :type: str
         """
         
+
         self._free_text_answer = free_text_answer
 
     def to_dict(self):

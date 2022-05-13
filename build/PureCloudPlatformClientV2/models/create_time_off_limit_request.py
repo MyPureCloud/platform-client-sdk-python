@@ -100,6 +100,7 @@ class CreateTimeOffLimitRequest(object):
         :type: int
         """
         
+
         self._default_limit_minutes = default_limit_minutes
 
     def to_dict(self):

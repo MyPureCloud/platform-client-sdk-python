@@ -79,6 +79,7 @@ class AnalyticsResolution(object):
         :type: datetime
         """
         
+
         self._event_time = event_time
 
     @property
@@ -102,6 +103,7 @@ class AnalyticsResolution(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -125,6 +127,7 @@ class AnalyticsResolution(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -148,6 +151,7 @@ class AnalyticsResolution(object):
         :type: int
         """
         
+
         self._n_next_contact_avoided = n_next_contact_avoided
 
     def to_dict(self):

@@ -106,6 +106,7 @@ class NotificationTemplateHeader(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -129,6 +130,7 @@ class NotificationTemplateHeader(object):
         :type: ContentAttachment
         """
         
+
         self._media = media
 
     @property
@@ -152,6 +154,7 @@ class NotificationTemplateHeader(object):
         :type: list[NotificationTemplateParameter]
         """
         
+
         self._parameters = parameters
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class EdgeRebootParameters(object):
         :type: int
         """
         
+
         self._call_draining_wait_time_seconds = call_draining_wait_time_seconds
 
     def to_dict(self):

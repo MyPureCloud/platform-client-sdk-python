@@ -70,6 +70,7 @@ class TrunkMetricsTopicTrunkMetricsQoS(object):
         :type: int
         """
         
+
         self._mismatch_count = mismatch_count
 
     def to_dict(self):

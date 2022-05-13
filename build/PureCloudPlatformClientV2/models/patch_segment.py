@@ -109,6 +109,7 @@ class PatchSegment(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class PatchSegment(object):
         :type: bool
         """
         
+
         self._is_active = is_active
 
     @property
@@ -155,6 +157,10 @@ class PatchSegment(object):
         :type: str
         """
         
+        if not display_name:
+            raise ValueError("Invalid value for `display_name`, must not be `None`")
+
+
         self._display_name = display_name
 
     @property
@@ -178,6 +184,7 @@ class PatchSegment(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -201,6 +208,7 @@ class PatchSegment(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -224,6 +232,7 @@ class PatchSegment(object):
         :type: str
         """
         
+
         self._color = color
 
     @property
@@ -247,6 +256,7 @@ class PatchSegment(object):
         :type: bool
         """
         
+
         self._should_display_to_agent = should_display_to_agent
 
     @property
@@ -270,6 +280,7 @@ class PatchSegment(object):
         :type: Context
         """
         
+
         self._context = context
 
     @property
@@ -293,6 +304,7 @@ class PatchSegment(object):
         :type: Journey
         """
         
+
         self._journey = journey
 
     @property
@@ -316,6 +328,7 @@ class PatchSegment(object):
         :type: PatchExternalSegment
         """
         
+
         self._external_segment = external_segment
 
     @property
@@ -339,6 +352,7 @@ class PatchSegment(object):
         :type: int
         """
         
+
         self._assignment_expiration_days = assignment_expiration_days
 
     @property
@@ -362,6 +376,7 @@ class PatchSegment(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -385,6 +400,7 @@ class PatchSegment(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -408,6 +424,7 @@ class PatchSegment(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

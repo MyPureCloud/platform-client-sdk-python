@@ -76,6 +76,7 @@ class NluDetectionResponse(object):
         :type: NluDomainVersion
         """
         
+
         self._version = version
 
     @property
@@ -99,6 +100,7 @@ class NluDetectionResponse(object):
         :type: NluDetectionOutput
         """
         
+
         self._output = output
 
     @property
@@ -122,6 +124,7 @@ class NluDetectionResponse(object):
         :type: NluDetectionInput
         """
         
+
         self._input = input
 
     def to_dict(self):

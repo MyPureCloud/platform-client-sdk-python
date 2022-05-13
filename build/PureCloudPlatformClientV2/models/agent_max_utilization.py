@@ -73,6 +73,7 @@ class AgentMaxUtilization(object):
         :type: dict(str, MediaUtilization)
         """
         
+
         self._utilization = utilization
 
     @property

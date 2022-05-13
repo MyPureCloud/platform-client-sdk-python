@@ -79,6 +79,7 @@ class ScimV2EnterpriseUser(object):
         :type: str
         """
         
+
         self._division = division
 
     @property
@@ -102,6 +103,7 @@ class ScimV2EnterpriseUser(object):
         :type: str
         """
         
+
         self._department = department
 
     @property
@@ -125,6 +127,7 @@ class ScimV2EnterpriseUser(object):
         :type: Manager
         """
         
+
         self._manager = manager
 
     @property
@@ -148,6 +151,7 @@ class ScimV2EnterpriseUser(object):
         :type: str
         """
         
+
         self._employee_number = employee_number
 
     def to_dict(self):

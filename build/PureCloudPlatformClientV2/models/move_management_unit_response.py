@@ -73,6 +73,7 @@ class MoveManagementUnitResponse(object):
         :type: BusinessUnitReference
         """
         
+
         self._business_unit = business_unit
 
     @property

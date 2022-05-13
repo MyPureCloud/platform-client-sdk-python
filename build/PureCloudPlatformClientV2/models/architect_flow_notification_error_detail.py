@@ -79,6 +79,7 @@ class ArchitectFlowNotificationErrorDetail(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -102,6 +103,7 @@ class ArchitectFlowNotificationErrorDetail(object):
         :type: str
         """
         
+
         self._entity_id = entity_id
 
     @property
@@ -125,6 +127,7 @@ class ArchitectFlowNotificationErrorDetail(object):
         :type: str
         """
         
+
         self._entity_name = entity_name
 
     @property
@@ -148,6 +151,7 @@ class ArchitectFlowNotificationErrorDetail(object):
         :type: str
         """
         
+
         self._field_name = field_name
 
     def to_dict(self):

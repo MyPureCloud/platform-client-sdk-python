@@ -73,6 +73,7 @@ class UserScheduleAdherenceListing(object):
         :type: list[UserScheduleAdherence]
         """
         
+
         self._entities = entities
 
     @property
@@ -96,6 +97,7 @@ class UserScheduleAdherenceListing(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     def to_dict(self):

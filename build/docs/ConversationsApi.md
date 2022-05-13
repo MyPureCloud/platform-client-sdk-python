@@ -232,7 +232,7 @@ Delete a code used to add a communication to this participant
 
 Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -285,7 +285,7 @@ Remove flagged reason from conversation participant.
 
 Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -336,7 +336,7 @@ Cancel the transfer
 
 Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -387,7 +387,7 @@ Delete attachment from draft
 
 Wraps DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -535,6 +535,8 @@ void (empty response body)
 Delete an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/open/{integrationId} 
 
@@ -1049,7 +1051,7 @@ Fetch info on a secure session
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1103,7 +1105,7 @@ Get a list of secure sessions for this participant.
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1155,7 +1157,7 @@ Get the wrap-up for this conversation participant.
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1173,7 +1175,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversation ID
 participant_id = 'participant_id_example' # str | participant ID
-provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -1190,7 +1192,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1209,7 +1211,7 @@ Get list of wrapup codes for this conversation participant
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1261,7 +1263,7 @@ Get active conversations for the logged in user
 
 Wraps GET /api/v2/conversations 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1311,7 +1313,7 @@ Get call conversation
 
 Wraps GET /api/v2/conversations/calls/{conversationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1361,7 +1363,7 @@ Get the wrap-up for this conversation participant.
 
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1379,7 +1381,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -1396,7 +1398,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1415,7 +1417,7 @@ Get list of wrapup codes for this conversation participant
 
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1467,7 +1469,7 @@ Get callback conversation
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1517,7 +1519,7 @@ Get the wrap-up for this conversation participant.
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1535,7 +1537,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -1552,7 +1554,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1571,7 +1573,7 @@ Get list of wrapup codes for this conversation participant
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1623,7 +1625,7 @@ Get active callback conversations for the logged in user
 
 Wraps GET /api/v2/conversations/callbacks 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1669,7 +1671,7 @@ Get active call conversations for the logged in user
 
 Wraps GET /api/v2/conversations/calls 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1715,7 +1717,7 @@ Get call history
 
 Wraps GET /api/v2/conversations/calls/history 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1771,7 +1773,7 @@ Get the maximum number of participants that this user can have on a conference
 
 Wraps GET /api/v2/conversations/calls/maximumconferenceparties 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1817,7 +1819,7 @@ Get chat conversation
 
 Wraps GET /api/v2/conversations/chats/{conversationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1865,9 +1867,11 @@ Get a web chat conversation message
 
 The current user must be involved with the conversation to get its messages.
 
+
+
 Wraps GET /api/v2/conversations/chats/{conversationId}/messages/{messageId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1917,9 +1921,11 @@ Get the messages of a chat conversation.
 
 The current user must be involved with the conversation to get its messages.
 
+
+
 Wraps GET /api/v2/conversations/chats/{conversationId}/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1938,7 +1944,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 after = 'after_example' # str | If specified, get the messages chronologically after the id of this message (optional)
 before = 'before_example' # str | If specified, get the messages chronologically before the id of this message (optional)
-sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 max_results = 100 # int | Limit the returned number of messages, up to a maximum of 100 (optional) (default to 100)
 
 try:
@@ -1957,7 +1963,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **after** | **str**| If specified, get the messages chronologically after the id of this message | [optional]  |
 | **before** | **str**| If specified, get the messages chronologically before the id of this message | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **max_results** | **int**| Limit the returned number of messages, up to a maximum of 100 | [optional] [default to 100] |
 {: class="table table-striped"}
 
@@ -1977,7 +1983,7 @@ Get the wrap-up for this conversation participant.
 
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1995,7 +2001,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -2012,7 +2018,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2031,7 +2037,7 @@ Get list of wrapup codes for this conversation participant
 
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2083,7 +2089,7 @@ Get active chat conversations for the logged in user
 
 Wraps GET /api/v2/conversations/chats 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2129,7 +2135,7 @@ Get cobrowse conversation
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2179,7 +2185,7 @@ Get the wrap-up for this conversation participant.
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2197,7 +2203,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -2214,7 +2220,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2233,7 +2239,7 @@ Get list of wrapup codes for this conversation participant
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2285,7 +2291,7 @@ Get active cobrowse conversations for the logged in user
 
 Wraps GET /api/v2/conversations/cobrowsesessions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2331,7 +2337,7 @@ Get email conversation
 
 Wraps GET /api/v2/conversations/emails/{conversationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2381,7 +2387,7 @@ Get conversation message
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/{messageId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2433,7 +2439,7 @@ Get conversation messages
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2483,7 +2489,7 @@ Get conversation draft reply
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/draft 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2533,7 +2539,7 @@ Get the wrap-up for this conversation participant.
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2551,7 +2557,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -2568,7 +2574,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2587,7 +2593,7 @@ Get list of wrapup codes for this conversation participant
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2639,7 +2645,7 @@ Get emails settings for a given conversation
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/settings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2689,7 +2695,7 @@ Get active email conversations for the logged in user
 
 Wraps GET /api/v2/conversations/emails 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2735,7 +2741,7 @@ Get message conversation
 
 Wraps GET /api/v2/conversations/messages/{conversationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2782,6 +2788,8 @@ except ApiException as e:
 Get media
 
 See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+
+
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} 
 
@@ -2947,7 +2955,7 @@ Get the wrap-up for this conversation participant.
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2965,7 +2973,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -2982,7 +2990,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3001,7 +3009,7 @@ Get list of wrapup codes for this conversation participant
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3053,7 +3061,7 @@ Get active message conversations for the logged in user
 
 Wraps GET /api/v2/conversations/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3421,6 +3429,8 @@ Get a list of Open messaging integrations
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
+
+
 Wraps GET /api/v2/conversations/messaging/integrations/open 
 
 Requires ALL permissions: 
@@ -3477,6 +3487,8 @@ except ApiException as e:
 Get an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+
 
 Wraps GET /api/v2/conversations/messaging/integrations/open/{integrationId} 
 
@@ -3859,6 +3871,8 @@ Get the organization's default supported content profile that will be used as th
 
 When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
 
+
+
 Wraps GET /api/v2/conversations/messaging/supportedcontent/default 
 
 Requires ALL permissions: 
@@ -3957,6 +3971,8 @@ Get conversation threading window timeline for each messaging type
 
 Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
 
+
+
 Wraps GET /api/v2/conversations/messaging/threadingtimeline 
 
 Requires ALL permissions: 
@@ -4004,9 +4020,11 @@ Update a participant.
 
 Update conversation participant.
 
+
+
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4059,7 +4077,7 @@ Update the attributes on a conversation participant.
 
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4165,7 +4183,7 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4218,7 +4236,7 @@ Update the attributes on a conversation participant.
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4261,7 +4279,7 @@ void (empty response body)
 
 <a name="patch_conversations_call_participant_communication"></a>
 
-## [**Empty**](Empty.html) patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
+## Empty** patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -4271,7 +4289,7 @@ Update conversation participant's communication by disconnecting it.
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4313,7 +4331,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patch_conversations_call_participant_consult"></a>
 
@@ -4327,7 +4345,7 @@ Change who can speak
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4434,7 +4452,7 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4487,7 +4505,7 @@ Update the attributes on a conversation participant.
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4530,7 +4548,7 @@ void (empty response body)
 
 <a name="patch_conversations_callback_participant_communication"></a>
 
-## [**Empty**](Empty.html) patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
+## Empty** patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -4540,7 +4558,7 @@ Update conversation participant's communication by disconnecting it.
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4582,7 +4600,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patch_conversations_callbacks"></a>
 
@@ -4700,7 +4718,7 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4753,7 +4771,7 @@ Update the attributes on a conversation participant.
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4796,7 +4814,7 @@ void (empty response body)
 
 <a name="patch_conversations_chat_participant_communication"></a>
 
-## [**Empty**](Empty.html) patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
+## Empty** patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -4806,7 +4824,7 @@ Update conversation participant's communication by disconnecting it.
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4848,7 +4866,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patch_conversations_cobrowsesession"></a>
 
@@ -4915,7 +4933,7 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4968,7 +4986,7 @@ Update the attributes on a conversation participant.
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5011,7 +5029,7 @@ void (empty response body)
 
 <a name="patch_conversations_cobrowsesession_participant_communication"></a>
 
-## [**Empty**](Empty.html) patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
+## Empty** patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -5021,7 +5039,7 @@ Update conversation participant's communication by disconnecting it.
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5063,7 +5081,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patch_conversations_email"></a>
 
@@ -5130,7 +5148,7 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5183,7 +5201,7 @@ Update the attributes on a conversation participant.
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5226,7 +5244,7 @@ void (empty response body)
 
 <a name="patch_conversations_email_participant_communication"></a>
 
-## [**Empty**](Empty.html) patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
+## Empty** patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -5236,7 +5254,7 @@ Update conversation participant's communication by disconnecting it.
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5278,7 +5296,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patch_conversations_message"></a>
 
@@ -5345,7 +5363,7 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5398,7 +5416,7 @@ Update the attributes on a conversation participant.
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5441,7 +5459,7 @@ void (empty response body)
 
 <a name="patch_conversations_message_participant_communication"></a>
 
-## [**Empty**](Empty.html) patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
+## Empty** patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -5451,7 +5469,7 @@ Update conversation participant's communication by disconnecting it.
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -5493,7 +5511,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patch_conversations_messaging_integrations_facebook_integration_id"></a>
 
@@ -5557,6 +5575,8 @@ except ApiException as e:
 Update an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+
 
 Wraps PATCH /api/v2/conversations/messaging/integrations/open/{integrationId} 
 
@@ -5663,6 +5683,8 @@ except ApiException as e:
 Update or activate a WhatsApp messaging integration
 
 The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+
+
 
 Wraps PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
 
@@ -6147,7 +6169,7 @@ Sends DTMF to the participant
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6200,7 +6222,7 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6253,7 +6275,7 @@ Create secure IVR session. Only a participant in the conversation can invoke a s
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6307,7 +6329,7 @@ Place a new call as part of a callback conversation.
 
 Wraps POST /api/v2/conversations/calls/{conversationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6411,7 +6433,7 @@ Initiate and update consult transfer
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6517,7 +6539,7 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6570,7 +6592,7 @@ Add participants to a conversation
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6622,7 +6644,7 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6878,7 +6900,7 @@ Send a message on behalf of a communication in a chat conversation.
 
 Wraps POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6932,7 +6954,7 @@ Send a typing-indicator on behalf of a communication in a chat conversation.
 
 Wraps POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -6984,7 +7006,7 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -7088,7 +7110,7 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -7141,7 +7163,7 @@ Send an email to an external conversation. An external conversation is one where
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/inboundmessages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -7193,7 +7215,7 @@ Send an email reply
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -7245,7 +7267,7 @@ Copy attachments from an email message to the current draft.
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -7297,7 +7319,7 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -7347,6 +7369,8 @@ void (empty response body)
 Create an email conversation
 
 If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
+
+
 
 Wraps POST /api/v2/conversations/emails 
 
@@ -7401,7 +7425,7 @@ Create Fax Conversation
 
 Wraps POST /api/v2/conversations/faxes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -7448,6 +7472,8 @@ except ApiException as e:
 Send message
 
 Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+
+
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages 
 
@@ -7505,6 +7531,8 @@ Create media
 
 See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
+
+
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media 
 
 Requires ANY permissions: 
@@ -7559,6 +7587,8 @@ Get messages in batch
 
 The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
 
+
+
 Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk 
 
 Requires ANY permissions: 
@@ -7580,7 +7610,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | 
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | messageIds (optional)
+body = ['body_example'] # list[str] | messageIds (optional)
 
 try:
     # Get messages in batch
@@ -7596,7 +7626,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**|  |  |
-| **body** | **list[str]**| messageIds | [optional]  |
+| **body** | [**list[str]**](str.html)| messageIds | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7615,7 +7645,7 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -7665,6 +7695,8 @@ void (empty response body)
 Create an outbound messaging conversation.
 
 If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
+
+
 
 Wraps POST /api/v2/conversations/messages 
 
@@ -7717,6 +7749,8 @@ Send an agentless outbound message
 
 Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
 
+
+
 Wraps POST /api/v2/conversations/messages/agentless 
 
 Requires ALL permissions: 
@@ -7767,6 +7801,8 @@ except ApiException as e:
 Send an inbound Open Message
 
 Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+
 
 Wraps POST /api/v2/conversations/messages/inbound/open 
 
@@ -7921,6 +7957,8 @@ Create an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
+
+
 Wraps POST /api/v2/conversations/messaging/integrations/open 
 
 Requires ALL permissions: 
@@ -8022,6 +8060,8 @@ except ApiException as e:
 Create a WhatsApp Integration
 
 You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
+
+
 
 Wraps POST /api/v2/conversations/messaging/integrations/whatsapp 
 
@@ -8127,7 +8167,7 @@ Set flagged reason on conversation participant to indicate bad conversation qual
 
 Wraps PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -8221,7 +8261,7 @@ except ApiException as e:
 
 <a name="put_conversations_call_participant_communication_uuidata"></a>
 
-## [**Empty**](Empty.html) put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
+## Empty** put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -8231,7 +8271,7 @@ Set uuiData to be sent on future commands.
 
 Wraps PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -8273,7 +8313,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="put_conversations_email_messages_draft"></a>
 
@@ -8287,7 +8327,7 @@ Update conversation draft reply
 
 Wraps PUT /api/v2/conversations/emails/{conversationId}/messages/draft 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -8390,6 +8430,8 @@ Set the organization's default supported content profile that may be assigned to
 
 When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
 
+
+
 Wraps PUT /api/v2/conversations/messaging/supportedcontent/default 
 
 Requires ALL permissions: 
@@ -8440,6 +8482,8 @@ except ApiException as e:
 Update conversation threading window timeline for each messaging type
 
 PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
+
+
 
 Wraps PUT /api/v2/conversations/messaging/threadingtimeline 
 

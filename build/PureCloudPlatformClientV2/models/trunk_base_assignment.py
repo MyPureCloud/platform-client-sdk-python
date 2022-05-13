@@ -73,6 +73,7 @@ class TrunkBaseAssignment(object):
         :type: int
         """
         
+
         self._family = family
 
     @property
@@ -96,6 +97,7 @@ class TrunkBaseAssignment(object):
         :type: TrunkBase
         """
         
+
         self._trunk_base = trunk_base
 
     def to_dict(self):

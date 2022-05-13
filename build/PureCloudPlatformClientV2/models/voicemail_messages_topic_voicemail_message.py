@@ -109,6 +109,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: bool
         """
         
+
         self._read = read
 
     @property
@@ -155,6 +157,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: int
         """
         
+
         self._audio_recording_duration_seconds = audio_recording_duration_seconds
 
     @property
@@ -178,6 +181,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: int
         """
         
+
         self._audio_recording_size_bytes = audio_recording_size_bytes
 
     @property
@@ -201,6 +205,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -224,6 +229,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -247,6 +253,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: str
         """
         
+
         self._caller_address = caller_address
 
     @property
@@ -270,6 +277,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: str
         """
         
+
         self._caller_name = caller_name
 
     @property
@@ -293,6 +301,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: str
         """
         
+
         self._action = action
 
     @property
@@ -316,6 +325,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: str
         """
         
+
         self._note = note
 
     @property
@@ -339,6 +349,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: bool
         """
         
+
         self._deleted = deleted
 
     @property
@@ -362,6 +373,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: str
         """
         
+
         self._modified_by_user_id = modified_by_user_id
 
     @property
@@ -385,6 +397,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: list[VoicemailMessagesTopicVoicemailCopyRecord]
         """
         
+
         self._copied_to = copied_to
 
     @property
@@ -408,6 +421,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         :type: VoicemailMessagesTopicVoicemailCopyRecord
         """
         
+
         self._copied_from = copied_from
 
     def to_dict(self):

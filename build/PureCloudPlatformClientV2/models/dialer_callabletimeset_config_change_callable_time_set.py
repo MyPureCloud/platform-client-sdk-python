@@ -85,6 +85,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
         :type: list[DialerCallabletimesetConfigChangeCallableTime]
         """
         
+
         self._callable_times = callable_times
 
     @property
@@ -108,6 +109,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -131,6 +133,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -154,6 +157,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -177,6 +181,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -200,6 +205,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

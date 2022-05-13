@@ -70,6 +70,7 @@ class BuIntradayScheduleData(object):
         :type: int
         """
         
+
         self._on_queue_time_seconds = on_queue_time_seconds
 
     def to_dict(self):

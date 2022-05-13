@@ -100,6 +100,7 @@ class IntegrationEvent(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class IntegrationEvent(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -146,6 +148,7 @@ class IntegrationEvent(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -169,6 +172,7 @@ class IntegrationEvent(object):
         :type: datetime
         """
         
+
         self._timestamp = timestamp
 
     @property
@@ -219,6 +223,7 @@ class IntegrationEvent(object):
         :type: str
         """
         
+
         self._event_code = event_code
 
     @property
@@ -242,6 +247,7 @@ class IntegrationEvent(object):
         :type: MessageInfo
         """
         
+
         self._message = message
 
     @property
@@ -265,6 +271,7 @@ class IntegrationEvent(object):
         :type: list[EventEntity]
         """
         
+
         self._entities = entities
 
     @property
@@ -288,6 +295,7 @@ class IntegrationEvent(object):
         :type: dict(str, str)
         """
         
+
         self._context_attributes = context_attributes
 
     @property
@@ -311,6 +319,7 @@ class IntegrationEvent(object):
         :type: MessageInfo
         """
         
+
         self._detail_message = detail_message
 
     @property
@@ -334,6 +343,7 @@ class IntegrationEvent(object):
         :type: User
         """
         
+
         self._user = user
 
     def to_dict(self):

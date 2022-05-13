@@ -76,6 +76,7 @@ class ContentPostback(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class ContentPostback(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -122,6 +124,10 @@ class ContentPostback(object):
         :type: str
         """
         
+        if not payload:
+            raise ValueError("Invalid value for `payload`, must not be `None`")
+
+
         self._payload = payload
 
     def to_dict(self):

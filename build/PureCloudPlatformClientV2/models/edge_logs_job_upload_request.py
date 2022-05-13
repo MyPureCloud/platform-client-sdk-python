@@ -70,6 +70,10 @@ class EdgeLogsJobUploadRequest(object):
         :type: list[str]
         """
         
+        if not file_ids:
+            raise ValueError("Invalid value for `file_ids`, must not be `None`")
+
+
         self._file_ids = file_ids
 
     def to_dict(self):

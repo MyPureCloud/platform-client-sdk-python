@@ -76,6 +76,7 @@ class Reaction(object):
         :type: str
         """
         
+
         self._data = data
 
     @property
@@ -99,6 +100,7 @@ class Reaction(object):
         :type: str
         """
         
+
         self._name = name
 
     @property

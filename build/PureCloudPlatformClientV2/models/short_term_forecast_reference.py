@@ -79,6 +79,7 @@ class ShortTermForecastReference(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class ShortTermForecastReference(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -125,6 +127,10 @@ class ShortTermForecastReference(object):
         :type: str
         """
         
+        if not week_date:
+            raise ValueError("Invalid value for `week_date`, must not be `None`")
+
+
         self._week_date = week_date
 
     @property
@@ -148,6 +154,7 @@ class ShortTermForecastReference(object):
         :type: str
         """
         
+
         self._description = description
 
     def to_dict(self):

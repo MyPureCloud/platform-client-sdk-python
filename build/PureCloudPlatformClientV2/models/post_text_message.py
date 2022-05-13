@@ -103,6 +103,7 @@ class PostTextMessage(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -126,6 +127,7 @@ class PostTextMessage(object):
         :type: list[MessageContent]
         """
         
+
         self._content = content
 
     def to_dict(self):

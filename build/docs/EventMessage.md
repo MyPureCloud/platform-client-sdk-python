@@ -12,7 +12,7 @@ title: EventMessage
 | **message_with_params** | **str** |  | [optional] |
 | **message_params** | **dict(str, object)** |  | [optional] |
 | **documentation_uri** | **str** |  | [optional] |
-| **resource_ur_is** | **list[str]** |  | [optional] |
+| **resource_uris** | **list[str]** |  | [optional] |
 {: class="table table-striped"}
 
 

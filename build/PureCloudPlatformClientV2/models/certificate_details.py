@@ -88,6 +88,7 @@ class CertificateDetails(object):
         :type: str
         """
         
+
         self._issuer = issuer
 
     @property
@@ -111,6 +112,7 @@ class CertificateDetails(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -134,6 +136,7 @@ class CertificateDetails(object):
         :type: datetime
         """
         
+
         self._expiration_date = expiration_date
 
     @property
@@ -157,6 +160,7 @@ class CertificateDetails(object):
         :type: datetime
         """
         
+
         self._issue_date = issue_date
 
     @property
@@ -180,6 +184,7 @@ class CertificateDetails(object):
         :type: bool
         """
         
+
         self._expired = expired
 
     @property
@@ -203,6 +208,7 @@ class CertificateDetails(object):
         :type: bool
         """
         
+
         self._valid = valid
 
     @property
@@ -226,6 +232,7 @@ class CertificateDetails(object):
         :type: bool
         """
         
+
         self._signature_valid = signature_valid
 
     def to_dict(self):

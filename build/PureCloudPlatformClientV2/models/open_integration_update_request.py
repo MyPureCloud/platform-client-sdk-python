@@ -91,6 +91,7 @@ class OpenIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,10 @@ class OpenIntegrationUpdateRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -137,6 +142,7 @@ class OpenIntegrationUpdateRequest(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -160,6 +166,7 @@ class OpenIntegrationUpdateRequest(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -183,6 +190,7 @@ class OpenIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._outbound_notification_webhook_url = outbound_notification_webhook_url
 
     @property
@@ -206,6 +214,7 @@ class OpenIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._outbound_notification_webhook_signature_secret_token = outbound_notification_webhook_signature_secret_token
 
     @property
@@ -229,6 +238,7 @@ class OpenIntegrationUpdateRequest(object):
         :type: dict(str, str)
         """
         
+
         self._webhook_headers = webhook_headers
 
     @property
@@ -252,6 +262,7 @@ class OpenIntegrationUpdateRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

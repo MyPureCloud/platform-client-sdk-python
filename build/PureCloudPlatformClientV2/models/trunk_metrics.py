@@ -82,6 +82,7 @@ class TrunkMetrics(object):
         :type: datetime
         """
         
+
         self._event_time = event_time
 
     @property
@@ -105,6 +106,7 @@ class TrunkMetrics(object):
         :type: DomainEntityRef
         """
         
+
         self._logical_interface = logical_interface
 
     @property
@@ -128,6 +130,7 @@ class TrunkMetrics(object):
         :type: DomainEntityRef
         """
         
+
         self._trunk = trunk
 
     @property
@@ -151,6 +154,7 @@ class TrunkMetrics(object):
         :type: TrunkMetricsCalls
         """
         
+
         self._calls = calls
 
     @property
@@ -174,6 +178,7 @@ class TrunkMetrics(object):
         :type: TrunkMetricsQoS
         """
         
+
         self._qos = qos
 
     def to_dict(self):

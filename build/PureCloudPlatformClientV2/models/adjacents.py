@@ -76,6 +76,7 @@ class Adjacents(object):
         :type: list[User]
         """
         
+
         self._superiors = superiors
 
     @property
@@ -99,6 +100,7 @@ class Adjacents(object):
         :type: list[User]
         """
         
+
         self._siblings = siblings
 
     @property
@@ -122,6 +124,7 @@ class Adjacents(object):
         :type: list[User]
         """
         
+
         self._direct_reports = direct_reports
 
     def to_dict(self):

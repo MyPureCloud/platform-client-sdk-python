@@ -70,6 +70,7 @@ class TranscriptAggregateQueryResponse(object):
         :type: list[TranscriptAggregateDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class ScimV2Group(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class ScimV2Group(object):
         :type: list[str]
         """
         
+
         self._schemas = schemas
 
     @property
@@ -131,6 +133,10 @@ class ScimV2Group(object):
         :type: str
         """
         
+        if not display_name:
+            raise ValueError("Invalid value for `display_name`, must not be `None`")
+
+
         self._display_name = display_name
 
     @property
@@ -154,6 +160,7 @@ class ScimV2Group(object):
         :type: str
         """
         
+
         self._external_id = external_id
 
     @property
@@ -177,6 +184,7 @@ class ScimV2Group(object):
         :type: list[ScimV2MemberReference]
         """
         
+
         self._members = members
 
     @property
@@ -200,6 +208,7 @@ class ScimV2Group(object):
         :type: ScimMetadata
         """
         
+
         self._meta = meta
 
     def to_dict(self):

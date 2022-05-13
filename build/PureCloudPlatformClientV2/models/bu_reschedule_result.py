@@ -82,6 +82,7 @@ class BuRescheduleResult(object):
         :type: ScheduleGenerationResult
         """
         
+
         self._generation_results = generation_results
 
     @property
@@ -105,6 +106,7 @@ class BuRescheduleResult(object):
         :type: str
         """
         
+
         self._generation_results_download_url = generation_results_download_url
 
     @property
@@ -128,6 +130,7 @@ class BuRescheduleResult(object):
         :type: BuHeadcountForecast
         """
         
+
         self._headcount_forecast = headcount_forecast
 
     @property
@@ -151,6 +154,7 @@ class BuRescheduleResult(object):
         :type: str
         """
         
+
         self._headcount_forecast_download_url = headcount_forecast_download_url
 
     @property
@@ -174,6 +178,7 @@ class BuRescheduleResult(object):
         :type: list[BuRescheduleAgentScheduleResult]
         """
         
+
         self._agent_schedules = agent_schedules
 
     def to_dict(self):

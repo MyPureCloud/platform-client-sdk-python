@@ -88,6 +88,7 @@ class BillingUsageReport(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class BillingUsageReport(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,10 @@ class BillingUsageReport(object):
         :type: datetime
         """
         
+        if not start_date:
+            raise ValueError("Invalid value for `start_date`, must not be `None`")
+
+
         self._start_date = start_date
 
     @property
@@ -157,6 +163,10 @@ class BillingUsageReport(object):
         :type: datetime
         """
         
+        if not end_date:
+            raise ValueError("Invalid value for `end_date`, must not be `None`")
+
+
         self._end_date = end_date
 
     @property
@@ -207,6 +217,10 @@ class BillingUsageReport(object):
         :type: list[BillingUsage]
         """
         
+        if not usages:
+            raise ValueError("Invalid value for `usages`, must not be `None`")
+
+
         self._usages = usages
 
     @property
@@ -230,6 +244,7 @@ class BillingUsageReport(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

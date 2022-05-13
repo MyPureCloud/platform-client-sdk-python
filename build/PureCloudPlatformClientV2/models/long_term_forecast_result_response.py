@@ -73,6 +73,7 @@ class LongTermForecastResultResponse(object):
         :type: LongTermForecastResult
         """
         
+
         self._result = result
 
     @property
@@ -96,6 +97,7 @@ class LongTermForecastResultResponse(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     def to_dict(self):

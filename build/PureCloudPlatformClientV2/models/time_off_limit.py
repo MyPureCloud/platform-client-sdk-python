@@ -82,6 +82,7 @@ class TimeOffLimit(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class TimeOffLimit(object):
         :type: int
         """
         
+
         self._default_limit_minutes = default_limit_minutes
 
     @property
@@ -155,6 +157,7 @@ class TimeOffLimit(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -178,6 +181,7 @@ class TimeOffLimit(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

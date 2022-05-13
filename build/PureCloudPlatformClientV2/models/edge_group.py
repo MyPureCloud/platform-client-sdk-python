@@ -118,6 +118,7 @@ class EdgeGroup(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,10 @@ class EdgeGroup(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -164,6 +169,7 @@ class EdgeGroup(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -187,6 +193,7 @@ class EdgeGroup(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -210,6 +217,7 @@ class EdgeGroup(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -233,6 +241,7 @@ class EdgeGroup(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -256,6 +265,7 @@ class EdgeGroup(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -279,6 +289,7 @@ class EdgeGroup(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -302,6 +313,7 @@ class EdgeGroup(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -352,6 +364,7 @@ class EdgeGroup(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -375,6 +388,7 @@ class EdgeGroup(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -398,6 +412,7 @@ class EdgeGroup(object):
         :type: bool
         """
         
+
         self._managed = managed
 
     @property
@@ -421,6 +436,7 @@ class EdgeGroup(object):
         :type: bool
         """
         
+
         self._hybrid = hybrid
 
     @property
@@ -444,6 +460,10 @@ class EdgeGroup(object):
         :type: TrunkBaseAssignment
         """
         
+        if not edge_trunk_base_assignment:
+            raise ValueError("Invalid value for `edge_trunk_base_assignment`, must not be `None`")
+
+
         self._edge_trunk_base_assignment = edge_trunk_base_assignment
 
     @property
@@ -467,6 +487,10 @@ class EdgeGroup(object):
         :type: list[TrunkBase]
         """
         
+        if not phone_trunk_bases:
+            raise ValueError("Invalid value for `phone_trunk_bases`, must not be `None`")
+
+
         self._phone_trunk_bases = phone_trunk_bases
 
     @property
@@ -490,6 +514,7 @@ class EdgeGroup(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

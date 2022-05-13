@@ -73,6 +73,7 @@ class ShrinkageOverrides(object):
         :type: bool
         """
         
+
         self._clear = clear
 
     @property
@@ -96,6 +97,7 @@ class ShrinkageOverrides(object):
         :type: list[ShrinkageOverride]
         """
         
+
         self._values = values
 
     def to_dict(self):

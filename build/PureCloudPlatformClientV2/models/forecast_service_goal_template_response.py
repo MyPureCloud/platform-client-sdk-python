@@ -76,6 +76,7 @@ class ForecastServiceGoalTemplateResponse(object):
         :type: ForecastServiceLevelResponse
         """
         
+
         self._service_level = service_level
 
     @property
@@ -99,6 +100,7 @@ class ForecastServiceGoalTemplateResponse(object):
         :type: ForecastAverageSpeedOfAnswerResponse
         """
         
+
         self._average_speed_of_answer = average_speed_of_answer
 
     @property
@@ -122,6 +124,7 @@ class ForecastServiceGoalTemplateResponse(object):
         :type: ForecastAbandonRateResponse
         """
         
+
         self._abandon_rate = abandon_rate
 
     def to_dict(self):

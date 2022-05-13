@@ -88,6 +88,7 @@ class AuditQueryExecutionStatusResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class AuditQueryExecutionStatusResponse(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -161,6 +163,7 @@ class AuditQueryExecutionStatusResponse(object):
         :type: str
         """
         
+
         self._interval = interval
 
     @property
@@ -211,6 +214,7 @@ class AuditQueryExecutionStatusResponse(object):
         :type: list[AuditQueryFilter]
         """
         
+
         self._filters = filters
 
     @property
@@ -234,6 +238,7 @@ class AuditQueryExecutionStatusResponse(object):
         :type: list[AuditQuerySort]
         """
         
+
         self._sort = sort
 
     def to_dict(self):

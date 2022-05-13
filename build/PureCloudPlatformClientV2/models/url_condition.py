@@ -73,6 +73,10 @@ class UrlCondition(object):
         :type: list[str]
         """
         
+        if not values:
+            raise ValueError("Invalid value for `values`, must not be `None`")
+
+
         self._values = values
 
     @property

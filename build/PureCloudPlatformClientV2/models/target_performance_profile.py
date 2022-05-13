@@ -70,6 +70,10 @@ class TargetPerformanceProfile(object):
         :type: str
         """
         
+        if not target_performance_profile_id:
+            raise ValueError("Invalid value for `target_performance_profile_id`, must not be `None`")
+
+
         self._target_performance_profile_id = target_performance_profile_id
 
     def to_dict(self):

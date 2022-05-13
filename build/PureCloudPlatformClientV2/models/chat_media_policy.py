@@ -73,6 +73,7 @@ class ChatMediaPolicy(object):
         :type: PolicyActions
         """
         
+
         self._actions = actions
 
     @property
@@ -96,6 +97,7 @@ class ChatMediaPolicy(object):
         :type: ChatMediaPolicyConditions
         """
         
+
         self._conditions = conditions
 
     def to_dict(self):

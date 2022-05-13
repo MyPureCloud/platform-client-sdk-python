@@ -184,6 +184,8 @@ Delete media retention policies
 
 Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 
+
+
 Wraps DELETE /api/v2/recording/crossplatform/mediaretentionpolicies 
 
 Requires ANY permissions: 
@@ -334,6 +336,8 @@ Delete media retention policies
 
 Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 
+
+
 Wraps DELETE /api/v2/recording/mediaretentionpolicies 
 
 Requires ANY permissions: 
@@ -456,11 +460,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 recording_id = 'recording_id_example' # str | Recording ID
-format_id = 'WEBM' # str | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE (optional) (default to WEBM)
-email_format_id = 'EML' # str | The desired media format when downloading an email recording. Valid values:EML,NONE (optional) (default to EML)
-chat_format_id = 'ZIP' # str | The desired media format when downloading a chat recording. Valid values:ZIP,NONE  (optional) (default to ZIP)
-message_format_id = 'ZIP' # str | The desired media format when downloading a message recording. Valid values:ZIP,NONE (optional) (default to ZIP)
-download = false # bool | requesting a download format of the recording. Valid values:true,false (optional) (default to false)
+format_id = ''WEBM'' # str | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE (optional) (default to 'WEBM')
+email_format_id = ''EML'' # str | The desired media format when downloading an email recording. Valid values:EML,NONE (optional) (default to 'EML')
+chat_format_id = ''ZIP'' # str | The desired media format when downloading a chat recording. Valid values:ZIP,NONE  (optional) (default to 'ZIP')
+message_format_id = ''ZIP'' # str | The desired media format when downloading a message recording. Valid values:ZIP,NONE (optional) (default to 'ZIP')
+download = False # bool | requesting a download format of the recording. Valid values:true,false (optional) (default to False)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
 locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
 media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 (optional)
@@ -480,11 +484,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
-| **format_id** | **str**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-| **email_format_id** | **str**| The desired media format when downloading an email recording. Valid values:EML,NONE | [optional] [default to EML]<br />**Values**: EML, NONE |
-| **chat_format_id** | **str**| The desired media format when downloading a chat recording. Valid values:ZIP,NONE  | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
-| **message_format_id** | **str**| The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
-| **download** | **bool**| requesting a download format of the recording. Valid values:true,false | [optional] [default to false] |
+| **format_id** | **str**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **email_format_id** | **str**| The desired media format when downloading an email recording. Valid values:EML,NONE | [optional] [default to &#39;EML&#39;]<br />**Values**: EML, NONE |
+| **chat_format_id** | **str**| The desired media format when downloading a chat recording. Valid values:ZIP,NONE  | [optional] [default to &#39;ZIP&#39;]<br />**Values**: ZIP, NONE |
+| **message_format_id** | **str**| The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to &#39;ZIP&#39;]<br />**Values**: ZIP, NONE |
+| **download** | **bool**| requesting a download format of the recording. Valid values:true,false | [optional] [default to False]<br />**Values**: true, false |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 | **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
 | **media_formats** | [**list[str]**](str.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
@@ -740,7 +744,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 max_wait_ms = 5000 # int | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional) (default to 5000)
-format_id = 'WEBM' # str | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional) (default to WEBM)
+format_id = ''WEBM'' # str | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional) (default to 'WEBM')
 media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. (optional)
 
 try:
@@ -758,7 +762,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **max_wait_ms** | **int**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
-| **format_id** | **str**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **format_id** | **str**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 | **media_formats** | [**list[str]**](str.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
 {: class="table table-striped"}
 
@@ -827,6 +831,8 @@ Gets the media of a single orphan recording
 
 A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
 
+
+
 Wraps GET /api/v2/orphanrecordings/{orphanId}/media 
 
 Requires ANY permissions: 
@@ -847,11 +853,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 orphan_id = 'orphan_id_example' # str | Orphan ID
-format_id = 'WEBM' # str | The desired media format. (optional) (default to WEBM)
-email_format_id = 'EML' # str | The desired media format when downloading an email recording. (optional) (default to EML)
-chat_format_id = 'ZIP' # str | The desired media format when downloading a chat recording. (optional) (default to ZIP)
-message_format_id = 'ZIP' # str | The desired media format when downloading a message recording. (optional) (default to ZIP)
-download = false # bool | requesting a download format of the recording (optional) (default to false)
+format_id = ''WEBM'' # str | The desired media format. (optional) (default to 'WEBM')
+email_format_id = ''EML'' # str | The desired media format when downloading an email recording. (optional) (default to 'EML')
+chat_format_id = ''ZIP'' # str | The desired media format when downloading a chat recording. (optional) (default to 'ZIP')
+message_format_id = ''ZIP'' # str | The desired media format when downloading a message recording. (optional) (default to 'ZIP')
+download = False # bool | requesting a download format of the recording (optional) (default to False)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
 locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
 media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 (optional)
@@ -870,11 +876,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **orphan_id** | **str**| Orphan ID |  |
-| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-| **email_format_id** | **str**| The desired media format when downloading an email recording. | [optional] [default to EML]<br />**Values**: EML, NONE |
-| **chat_format_id** | **str**| The desired media format when downloading a chat recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
-| **message_format_id** | **str**| The desired media format when downloading a message recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
-| **download** | **bool**| requesting a download format of the recording | [optional] [default to false] |
+| **format_id** | **str**| The desired media format. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **email_format_id** | **str**| The desired media format when downloading an email recording. | [optional] [default to &#39;EML&#39;]<br />**Values**: EML, NONE |
+| **chat_format_id** | **str**| The desired media format when downloading a chat recording. | [optional] [default to &#39;ZIP&#39;]<br />**Values**: ZIP, NONE |
+| **message_format_id** | **str**| The desired media format when downloading a message recording. | [optional] [default to &#39;ZIP&#39;]<br />**Values**: ZIP, NONE |
+| **download** | **bool**| requesting a download format of the recording | [optional] [default to False]<br />**Values**: true, false |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 | **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
 | **media_formats** | [**list[str]**](str.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
@@ -919,7 +925,7 @@ sort_by = 'sort_by_example' # str | variable name requested to sort by (optional
 expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
-has_conversation = false # bool | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional) (default to false)
+has_conversation = False # bool | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional) (default to False)
 media = 'media_example' # str | Filter resulting orphans based on their media type (optional)
 
 try:
@@ -941,7 +947,7 @@ except ApiException as e:
 | **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
-| **has_conversation** | **bool**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
+| **has_conversation** | **bool**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to False] |
 | **media** | **str**| Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
 {: class="table table-striped"}
 
@@ -961,7 +967,7 @@ Get the status and results for a batch request job, only the user that submitted
 
 Wraps GET /api/v2/recording/batchrequests/{jobId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1009,6 +1015,8 @@ Gets media retention policy list with query options to filter on name and enable
 
 for a less verbose response, add summary=true to this endpoint
 
+
+
 Wraps GET /api/v2/recording/crossplatform/mediaretentionpolicies 
 
 Requires ANY permissions: 
@@ -1035,9 +1043,9 @@ expand = ['expand_example'] # list[str] | variable name requested by expand list
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 name = 'name_example' # str | the policy name - used for filtering results in searches. (optional)
-enabled = true # bool | checks to see if policy is enabled - use enabled = true or enabled = false (optional)
-summary = false # bool | provides a less verbose response of policy lists. (optional) (default to false)
-has_errors = true # bool | provides a way to fetch all policies with errors or policies that do not have errors (optional)
+enabled = True # bool | checks to see if policy is enabled - use enabled = true or enabled = false (optional)
+summary = False # bool | provides a less verbose response of policy lists. (optional) (default to False)
+has_errors = True # bool | provides a way to fetch all policies with errors or policies that do not have errors (optional)
 delete_days_threshold = 56 # int | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value (optional)
 
 try:
@@ -1060,8 +1068,8 @@ except ApiException as e:
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **name** | **str**| the policy name - used for filtering results in searches. | [optional]  |
-| **enabled** | **bool**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
-| **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to false] |
+| **enabled** | **bool**| checks to see if policy is enabled - use enabled &#x3D; true or enabled &#x3D; false | [optional]  |
+| **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to False] |
 | **has_errors** | **bool**| provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
 | **delete_days_threshold** | **int**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
 {: class="table table-striped"}
@@ -1204,7 +1212,7 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 job_id = 'job_id_example' # str | jobId
 page_size = 25 # int | Page size. Maximum is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-include_total = true # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
+include_total = True # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
 
 try:
@@ -1262,11 +1270,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'userId' # str | Sort by (optional) (default to userId)
+sort_by = ''userId'' # str | Sort by (optional) (default to 'userId')
 state = 'state_example' # str | Filter by state (optional)
-show_only_my_jobs = true # bool | Show only my jobs (optional)
+show_only_my_jobs = True # bool | Show only my jobs (optional)
 job_type = 'job_type_example' # str | Job Type (Can be left empty for both) (optional)
-include_total = true # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
+include_total = True # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
 
 try:
@@ -1284,7 +1292,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to userId]<br />**Values**: userId, dateCreated |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;userId&#39;]<br />**Values**: userId, dateCreated |
 | **state** | **str**| Filter by state | [optional] <br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED |
 | **show_only_my_jobs** | **bool**| Show only my jobs | [optional]  |
 | **job_type** | **str**| Job Type (Can be left empty for both) | [optional] <br />**Values**: DELETE, EXPORT |
@@ -1502,6 +1510,8 @@ Gets media retention policy list with query options to filter on name and enable
 
 for a less verbose response, add summary=true to this endpoint
 
+
+
 Wraps GET /api/v2/recording/mediaretentionpolicies 
 
 Requires ANY permissions: 
@@ -1528,9 +1538,9 @@ expand = ['expand_example'] # list[str] | variable name requested by expand list
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 name = 'name_example' # str | the policy name - used for filtering results in searches. (optional)
-enabled = true # bool | checks to see if policy is enabled - use enabled = true or enabled = false (optional)
-summary = false # bool | provides a less verbose response of policy lists. (optional) (default to false)
-has_errors = true # bool | provides a way to fetch all policies with errors or policies that do not have errors (optional)
+enabled = True # bool | checks to see if policy is enabled - use enabled = true or enabled = false (optional)
+summary = False # bool | provides a less verbose response of policy lists. (optional) (default to False)
+has_errors = True # bool | provides a way to fetch all policies with errors or policies that do not have errors (optional)
 delete_days_threshold = 56 # int | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value (optional)
 
 try:
@@ -1553,8 +1563,8 @@ except ApiException as e:
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **name** | **str**| the policy name - used for filtering results in searches. | [optional]  |
-| **enabled** | **bool**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
-| **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to false] |
+| **enabled** | **bool**| checks to see if policy is enabled - use enabled &#x3D; true or enabled &#x3D; false | [optional]  |
+| **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to False] |
 | **has_errors** | **bool**| provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
 | **delete_days_threshold** | **int**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
 {: class="table table-striped"}
@@ -1744,7 +1754,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RecordingApi()
-create_default = false # bool | If no settings are found, a new one is created with default values (optional) (default to false)
+create_default = False # bool | If no settings are found, a new one is created with default values (optional) (default to False)
 
 try:
     # Get the Recording Settings for the Organization
@@ -1759,7 +1769,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **create_default** | **bool**| If no settings are found, a new one is created with default values | [optional] [default to false] |
+| **create_default** | **bool**| If no settings are found, a new one is created with default values | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2044,7 +2054,7 @@ Submit a batch download request for recordings. Recordings in response will be i
 
 Wraps POST /api/v2/recording/batchrequests 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2091,6 +2101,8 @@ except ApiException as e:
 Create media retention policy
 
 Policy does not work retroactively
+
+
 
 Wraps POST /api/v2/recording/crossplatform/mediaretentionpolicies 
 
@@ -2142,6 +2154,8 @@ except ApiException as e:
 Create a recording bulk job.
 
 Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
+
+
 
 Wraps POST /api/v2/recording/jobs 
 
@@ -2398,6 +2412,8 @@ Create media retention policy
 
 Policy does not work retroactively
 
+
+
 Wraps POST /api/v2/recording/mediaretentionpolicies 
 
 Requires ANY permissions: 
@@ -2498,7 +2514,7 @@ Get a list of conversations with protected recordings
 
 Wraps POST /api/v2/recordings/deletionprotection 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2548,7 +2564,7 @@ Acknowledge a screen recording.
 
 Wraps POST /api/v2/recordings/screensessions/acknowledge 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2597,7 +2613,7 @@ Provide meta-data a screen recording.
 
 Wraps POST /api/v2/recordings/screensessions/metadata 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2643,6 +2659,8 @@ void (empty response body)
 Updates the retention records on a recording.
 
 Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+
+
 
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId} 
 
@@ -2760,6 +2778,8 @@ Updates an orphan recording to a regular recording with retention values
 
 If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
 
+
+
 Wraps PUT /api/v2/orphanrecordings/{orphanId} 
 
 Requires ANY permissions: 
@@ -2813,6 +2833,8 @@ Update a media retention policy
 
 Policy does not work retroactively
 
+
+
 Wraps PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
 
 Requires ANY permissions: 
@@ -2865,6 +2887,8 @@ except ApiException as e:
 Execute the recording bulk job.
 
 A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
+
+
 
 Wraps PUT /api/v2/recording/jobs/{jobId} 
 
@@ -3026,6 +3050,8 @@ except ApiException as e:
 Update a media retention policy
 
 Policy does not work retroactively
+
+
 
 Wraps PUT /api/v2/recording/mediaretentionpolicies/{policyId} 
 
@@ -3202,7 +3228,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RecordingApi()
-protect = true # bool | Check for apply, uncheck for revoke (each action requires the respective permission) (optional) (default to true)
+protect = True # bool | Check for apply, uncheck for revoke (each action requires the respective permission) (optional) (default to True)
 body = PureCloudPlatformClientV2.ConversationDeletionProtectionQuery() # ConversationDeletionProtectionQuery |  (optional)
 
 try:
@@ -3217,7 +3243,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **protect** | **bool**| Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to true] |
+| **protect** | **bool**| Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to True] |
 | **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery.html)|  | [optional]  |
 {: class="table table-striped"}
 

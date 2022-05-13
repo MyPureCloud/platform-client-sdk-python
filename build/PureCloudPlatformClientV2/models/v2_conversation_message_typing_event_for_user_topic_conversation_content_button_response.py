@@ -103,6 +103,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentButtonRespo
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -126,6 +127,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationContentButtonRespo
         :type: str
         """
         
+
         self._payload = payload
 
     def to_dict(self):

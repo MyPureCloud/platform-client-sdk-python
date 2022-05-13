@@ -100,6 +100,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: int
         """
         
+
         self._day_start_offset_secs = day_start_offset_secs
 
     @property
@@ -123,6 +124,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: int
         """
         
+
         self._adherence_schedule_secs = adherence_schedule_secs
 
     @property
@@ -146,6 +148,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: int
         """
         
+
         self._conformance_schedule_secs = conformance_schedule_secs
 
     @property
@@ -169,6 +172,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: int
         """
         
+
         self._conformance_actual_secs = conformance_actual_secs
 
     @property
@@ -192,6 +196,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: int
         """
         
+
         self._exception_count = exception_count
 
     @property
@@ -215,6 +220,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: int
         """
         
+
         self._exception_duration_secs = exception_duration_secs
 
     @property
@@ -238,6 +244,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: int
         """
         
+
         self._impact_seconds = impact_seconds
 
     @property
@@ -261,6 +268,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: int
         """
         
+
         self._schedule_length_secs = schedule_length_secs
 
     @property
@@ -284,6 +292,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: int
         """
         
+
         self._actual_length_secs = actual_length_secs
 
     @property
@@ -307,6 +316,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: float
         """
         
+
         self._adherence_percentage = adherence_percentage
 
     @property
@@ -330,6 +340,7 @@ class HistoricalAdherenceDayMetrics(object):
         :type: float
         """
         
+
         self._conformance_percentage = conformance_percentage
 
     def to_dict(self):

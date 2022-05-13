@@ -76,6 +76,7 @@ class AnalyticsSessionMetric(object):
         :type: datetime
         """
         
+
         self._emit_date = emit_date
 
     @property
@@ -99,6 +100,7 @@ class AnalyticsSessionMetric(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -122,6 +124,7 @@ class AnalyticsSessionMetric(object):
         :type: int
         """
         
+
         self._value = value
 
     def to_dict(self):

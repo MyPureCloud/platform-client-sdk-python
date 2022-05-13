@@ -73,6 +73,7 @@ class MediaSummary(object):
         :type: MediaSummaryDetail
         """
         
+
         self._contact_center = contact_center
 
     @property
@@ -96,6 +97,7 @@ class MediaSummary(object):
         :type: MediaSummaryDetail
         """
         
+
         self._enterprise = enterprise
 
     def to_dict(self):

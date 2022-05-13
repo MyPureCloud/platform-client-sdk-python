@@ -91,6 +91,7 @@ class AssessmentScoringSet(object):
         :type: float
         """
         
+
         self._total_score = total_score
 
     @property
@@ -114,6 +115,7 @@ class AssessmentScoringSet(object):
         :type: float
         """
         
+
         self._total_critical_score = total_critical_score
 
     @property
@@ -137,6 +139,7 @@ class AssessmentScoringSet(object):
         :type: float
         """
         
+
         self._total_non_critical_score = total_non_critical_score
 
     @property
@@ -160,6 +163,10 @@ class AssessmentScoringSet(object):
         :type: list[AssessmentQuestionGroupScore]
         """
         
+        if not question_group_scores:
+            raise ValueError("Invalid value for `question_group_scores`, must not be `None`")
+
+
         self._question_group_scores = question_group_scores
 
     @property
@@ -183,6 +190,7 @@ class AssessmentScoringSet(object):
         :type: list[str]
         """
         
+
         self._failure_reasons = failure_reasons
 
     @property
@@ -206,6 +214,7 @@ class AssessmentScoringSet(object):
         :type: str
         """
         
+
         self._comments = comments
 
     @property
@@ -229,6 +238,7 @@ class AssessmentScoringSet(object):
         :type: str
         """
         
+
         self._agent_comments = agent_comments
 
     @property
@@ -252,6 +262,7 @@ class AssessmentScoringSet(object):
         :type: bool
         """
         
+
         self._is_passed = is_passed
 
     def to_dict(self):

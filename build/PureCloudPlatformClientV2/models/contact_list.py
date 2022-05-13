@@ -115,6 +115,7 @@ class ContactList(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class ContactList(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -161,6 +163,7 @@ class ContactList(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -184,6 +187,7 @@ class ContactList(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -207,6 +211,7 @@ class ContactList(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -230,6 +235,7 @@ class ContactList(object):
         :type: DomainEntityRef
         """
         
+
         self._division = division
 
     @property
@@ -253,6 +259,10 @@ class ContactList(object):
         :type: list[str]
         """
         
+        if not column_names:
+            raise ValueError("Invalid value for `column_names`, must not be `None`")
+
+
         self._column_names = column_names
 
     @property
@@ -276,6 +286,7 @@ class ContactList(object):
         :type: list[ContactPhoneNumberColumn]
         """
         
+
         self._phone_columns = phone_columns
 
     @property
@@ -299,6 +310,7 @@ class ContactList(object):
         :type: ImportStatus
         """
         
+
         self._import_status = import_status
 
     @property
@@ -322,6 +334,7 @@ class ContactList(object):
         :type: str
         """
         
+
         self._preview_mode_column_name = preview_mode_column_name
 
     @property
@@ -345,6 +358,7 @@ class ContactList(object):
         :type: list[str]
         """
         
+
         self._preview_mode_accepted_values = preview_mode_accepted_values
 
     @property
@@ -368,6 +382,7 @@ class ContactList(object):
         :type: int
         """
         
+
         self._size = size
 
     @property
@@ -391,6 +406,7 @@ class ContactList(object):
         :type: DomainEntityRef
         """
         
+
         self._attempt_limits = attempt_limits
 
     @property
@@ -414,6 +430,7 @@ class ContactList(object):
         :type: bool
         """
         
+
         self._automatic_time_zone_mapping = automatic_time_zone_mapping
 
     @property
@@ -437,6 +454,7 @@ class ContactList(object):
         :type: str
         """
         
+
         self._zip_code_column_name = zip_code_column_name
 
     @property
@@ -460,6 +478,7 @@ class ContactList(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class SetWrapperDayOfWeek(object):
         :type: list[str]
         """
         
+
         self._values = values
 
     def to_dict(self):

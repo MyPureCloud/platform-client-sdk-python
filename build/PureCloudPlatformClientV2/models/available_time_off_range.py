@@ -85,6 +85,7 @@ class AvailableTimeOffRange(object):
         :type: TimeOffLimitReference
         """
         
+
         self._time_off_limit = time_off_limit
 
     @property
@@ -108,6 +109,7 @@ class AvailableTimeOffRange(object):
         :type: date
         """
         
+
         self._start_date = start_date
 
     @property
@@ -158,6 +160,7 @@ class AvailableTimeOffRange(object):
         :type: list[int]
         """
         
+
         self._available_minutes_per_interval = available_minutes_per_interval
 
     @property
@@ -181,6 +184,7 @@ class AvailableTimeOffRange(object):
         :type: list[int]
         """
         
+
         self._waitlisted_requests_per_interval = waitlisted_requests_per_interval
 
     @property
@@ -204,6 +208,7 @@ class AvailableTimeOffRange(object):
         :type: bool
         """
         
+
         self._waitlist_enabled = waitlist_enabled
 
     def to_dict(self):

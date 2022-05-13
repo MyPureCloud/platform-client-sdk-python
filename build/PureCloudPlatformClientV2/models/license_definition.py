@@ -85,6 +85,7 @@ class LicenseDefinition(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class LicenseDefinition(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -131,6 +133,7 @@ class LicenseDefinition(object):
         :type: Permissions
         """
         
+
         self._permissions = permissions
 
     @property
@@ -154,6 +157,7 @@ class LicenseDefinition(object):
         :type: list[AddressableLicenseDefinition]
         """
         
+
         self._prerequisites = prerequisites
 
     @property
@@ -177,6 +181,7 @@ class LicenseDefinition(object):
         :type: list[LicenseDefinition]
         """
         
+
         self._comprises = comprises
 
     @property
@@ -200,6 +205,7 @@ class LicenseDefinition(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

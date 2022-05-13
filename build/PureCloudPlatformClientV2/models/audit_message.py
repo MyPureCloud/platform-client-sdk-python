@@ -115,6 +115,10 @@ class AuditMessage(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -138,6 +142,7 @@ class AuditMessage(object):
         :type: AuditUser
         """
         
+
         self._user = user
 
     @property
@@ -161,6 +166,7 @@ class AuditMessage(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -184,6 +190,7 @@ class AuditMessage(object):
         :type: str
         """
         
+
         self._transaction_id = transaction_id
 
     @property
@@ -207,6 +214,7 @@ class AuditMessage(object):
         :type: bool
         """
         
+
         self._transaction_initiator = transaction_initiator
 
     @property
@@ -230,6 +238,7 @@ class AuditMessage(object):
         :type: str
         """
         
+
         self._application = application
 
     @property
@@ -253,6 +262,10 @@ class AuditMessage(object):
         :type: str
         """
         
+        if not service_name:
+            raise ValueError("Invalid value for `service_name`, must not be `None`")
+
+
         self._service_name = service_name
 
     @property
@@ -276,6 +289,10 @@ class AuditMessage(object):
         :type: str
         """
         
+        if not level:
+            raise ValueError("Invalid value for `level`, must not be `None`")
+
+
         self._level = level
 
     @property
@@ -299,6 +316,7 @@ class AuditMessage(object):
         :type: str
         """
         
+
         self._timestamp = timestamp
 
     @property
@@ -322,6 +340,10 @@ class AuditMessage(object):
         :type: str
         """
         
+        if not received_timestamp:
+            raise ValueError("Invalid value for `received_timestamp`, must not be `None`")
+
+
         self._received_timestamp = received_timestamp
 
     @property
@@ -345,6 +367,10 @@ class AuditMessage(object):
         :type: str
         """
         
+        if not status:
+            raise ValueError("Invalid value for `status`, must not be `None`")
+
+
         self._status = status
 
     @property
@@ -368,6 +394,7 @@ class AuditMessage(object):
         :type: str
         """
         
+
         self._action_context = action_context
 
     @property
@@ -391,6 +418,7 @@ class AuditMessage(object):
         :type: str
         """
         
+
         self._action = action
 
     @property
@@ -414,6 +442,7 @@ class AuditMessage(object):
         :type: list[Change]
         """
         
+
         self._changes = changes
 
     @property
@@ -437,6 +466,7 @@ class AuditMessage(object):
         :type: AuditEntity
         """
         
+
         self._entity = entity
 
     @property
@@ -460,6 +490,7 @@ class AuditMessage(object):
         :type: ServiceContext
         """
         
+
         self._service_context = service_context
 
     def to_dict(self):

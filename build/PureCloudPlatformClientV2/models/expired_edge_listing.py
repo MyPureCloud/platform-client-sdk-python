@@ -70,6 +70,7 @@ class ExpiredEdgeListing(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

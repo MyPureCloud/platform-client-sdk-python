@@ -109,6 +109,10 @@ class JourneySurveyQuestion(object):
         :type: str
         """
         
+        if not label:
+            raise ValueError("Invalid value for `label`, must not be `None`")
+
+
         self._label = label
 
     @property
@@ -159,6 +163,7 @@ class JourneySurveyQuestion(object):
         :type: list[str]
         """
         
+
         self._choices = choices
 
     @property
@@ -182,6 +187,7 @@ class JourneySurveyQuestion(object):
         :type: bool
         """
         
+
         self._is_mandatory = is_mandatory
 
     def to_dict(self):

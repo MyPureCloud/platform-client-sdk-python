@@ -127,6 +127,7 @@ class UserScheduleAdherence(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -150,6 +151,7 @@ class UserScheduleAdherence(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -173,6 +175,7 @@ class UserScheduleAdherence(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -196,6 +199,7 @@ class UserScheduleAdherence(object):
         :type: BusinessUnit
         """
         
+
         self._business_unit = business_unit
 
     @property
@@ -219,6 +223,7 @@ class UserScheduleAdherence(object):
         :type: ManagementUnit
         """
         
+
         self._management_unit = management_unit
 
     @property
@@ -242,6 +247,7 @@ class UserScheduleAdherence(object):
         :type: Team
         """
         
+
         self._team = team
 
     @property
@@ -319,6 +325,7 @@ class UserScheduleAdherence(object):
         :type: str
         """
         
+
         self._organization_secondary_presence_id = organization_secondary_presence_id
 
     @property
@@ -396,6 +403,7 @@ class UserScheduleAdherence(object):
         :type: bool
         """
         
+
         self._is_out_of_office = is_out_of_office
 
     @property
@@ -473,6 +481,7 @@ class UserScheduleAdherence(object):
         :type: datetime
         """
         
+
         self._time_of_adherence_change = time_of_adherence_change
 
     @property
@@ -496,6 +505,7 @@ class UserScheduleAdherence(object):
         :type: datetime
         """
         
+
         self._presence_update_time = presence_update_time
 
     @property
@@ -519,6 +529,7 @@ class UserScheduleAdherence(object):
         :type: list[QueueReference]
         """
         
+
         self._active_queues = active_queues
 
     @property
@@ -542,6 +553,7 @@ class UserScheduleAdherence(object):
         :type: datetime
         """
         
+
         self._active_queues_modified_time = active_queues_modified_time
 
     @property
@@ -565,6 +577,7 @@ class UserScheduleAdherence(object):
         :type: bool
         """
         
+
         self._removed_from_management_unit = removed_from_management_unit
 
     @property
@@ -588,6 +601,7 @@ class UserScheduleAdherence(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -103,6 +103,7 @@ class ScheduleUploadProcessingResponse(object):
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -126,6 +127,7 @@ class ScheduleUploadProcessingResponse(object):
         :type: BuScheduleMetadata
         """
         
+
         self._result = result
 
     def to_dict(self):

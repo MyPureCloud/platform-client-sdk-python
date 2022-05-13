@@ -109,6 +109,7 @@ class AggregationResult(object):
         :type: str
         """
         
+
         self._dimension = dimension
 
     @property
@@ -132,6 +133,7 @@ class AggregationResult(object):
         :type: str
         """
         
+
         self._metric = metric
 
     @property
@@ -155,6 +157,7 @@ class AggregationResult(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -178,6 +181,7 @@ class AggregationResult(object):
         :type: list[AggregationResultEntry]
         """
         
+
         self._results = results
 
     def to_dict(self):

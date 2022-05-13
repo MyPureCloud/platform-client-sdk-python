@@ -73,6 +73,7 @@ class StorySetting(object):
         :type: InboundOnlySetting
         """
         
+
         self._mention = mention
 
     @property
@@ -96,6 +97,7 @@ class StorySetting(object):
         :type: InboundOnlySetting
         """
         
+
         self._reply = reply
 
     def to_dict(self):

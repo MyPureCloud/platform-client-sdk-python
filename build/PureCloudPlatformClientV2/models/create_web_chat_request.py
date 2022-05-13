@@ -88,6 +88,10 @@ class CreateWebChatRequest(object):
         :type: str
         """
         
+        if not queue_id:
+            raise ValueError("Invalid value for `queue_id`, must not be `None`")
+
+
         self._queue_id = queue_id
 
     @property
@@ -111,6 +115,10 @@ class CreateWebChatRequest(object):
         :type: str
         """
         
+        if not provider:
+            raise ValueError("Invalid value for `provider`, must not be `None`")
+
+
         self._provider = provider
 
     @property
@@ -134,6 +142,7 @@ class CreateWebChatRequest(object):
         :type: list[str]
         """
         
+
         self._skill_ids = skill_ids
 
     @property
@@ -157,6 +166,7 @@ class CreateWebChatRequest(object):
         :type: str
         """
         
+
         self._language_id = language_id
 
     @property
@@ -180,6 +190,7 @@ class CreateWebChatRequest(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -203,6 +214,7 @@ class CreateWebChatRequest(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -226,6 +238,7 @@ class CreateWebChatRequest(object):
         :type: str
         """
         
+
         self._customer_name = customer_name
 
     def to_dict(self):

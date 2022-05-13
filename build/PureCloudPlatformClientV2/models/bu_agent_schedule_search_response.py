@@ -76,6 +76,7 @@ class BuAgentScheduleSearchResponse(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -99,6 +100,7 @@ class BuAgentScheduleSearchResponse(object):
         :type: list[BuAgentScheduleShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -122,6 +124,7 @@ class BuAgentScheduleSearchResponse(object):
         :type: list[BuFullDayTimeOffMarker]
         """
         
+
         self._full_day_time_off_markers = full_day_time_off_markers
 
     def to_dict(self):

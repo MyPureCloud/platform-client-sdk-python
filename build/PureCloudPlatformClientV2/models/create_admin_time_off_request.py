@@ -115,6 +115,10 @@ class CreateAdminTimeOffRequest(object):
         :type: list[UserReference]
         """
         
+        if not users:
+            raise ValueError("Invalid value for `users`, must not be `None`")
+
+
         self._users = users
 
     @property
@@ -138,6 +142,10 @@ class CreateAdminTimeOffRequest(object):
         :type: str
         """
         
+        if not activity_code_id:
+            raise ValueError("Invalid value for `activity_code_id`, must not be `None`")
+
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -161,6 +169,7 @@ class CreateAdminTimeOffRequest(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -184,6 +193,7 @@ class CreateAdminTimeOffRequest(object):
         :type: list[str]
         """
         
+
         self._full_day_management_unit_dates = full_day_management_unit_dates
 
     @property
@@ -207,6 +217,7 @@ class CreateAdminTimeOffRequest(object):
         :type: list[datetime]
         """
         
+
         self._partial_day_start_date_times = partial_day_start_date_times
 
     @property
@@ -230,6 +241,10 @@ class CreateAdminTimeOffRequest(object):
         :type: int
         """
         
+        if not daily_duration_minutes:
+            raise ValueError("Invalid value for `daily_duration_minutes`, must not be `None`")
+
+
         self._daily_duration_minutes = daily_duration_minutes
 
     def to_dict(self):

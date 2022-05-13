@@ -103,7 +103,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
 client_id = 'client_id_example' # str | The ID of client
-accept_language = 'en-us' # str | The language in which to display the client descriptions. (optional) (default to en-us)
+accept_language = ''en-us'' # str | The language in which to display the client descriptions. (optional) (default to 'en-us')
 
 try:
     # Get a client that is authorized by the resource owner
@@ -119,7 +119,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| The ID of client |  |
-| **accept_language** | **str**| The language in which to display the client descriptions. | [optional] [default to en-us] |
+| **accept_language** | **str**| The language in which to display the client descriptions. | [optional] [default to &#39;en-us&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -155,7 +155,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
-accept_language = 'en-us' # str | The language in which to display the client descriptions. (optional) (default to en-us)
+accept_language = ''en-us'' # str | The language in which to display the client descriptions. (optional) (default to 'en-us')
 
 try:
     # List clients that have been authorized, requested, or revoked by the resource owner
@@ -170,7 +170,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **accept_language** | **str**| The language in which to display the client descriptions. | [optional] [default to en-us] |
+| **accept_language** | **str**| The language in which to display the client descriptions. | [optional] [default to &#39;en-us&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -291,6 +291,8 @@ Get a summary of OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
+
+
 Wraps GET /api/v2/oauth/clients/{clientId}/usage/summary 
 
 Requires ANY permissions: 
@@ -311,7 +313,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
 client_id = 'client_id_example' # str | Client ID
-days = '7' # str | Previous number of days to query (optional) (default to 7)
+days = ''7'' # str | Previous number of days to query (optional) (default to '7')
 
 try:
     # Get a summary of OAuth client API usage
@@ -327,7 +329,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-| **days** | **str**| Previous number of days to query | [optional] [default to 7] |
+| **days** | **str**| Previous number of days to query | [optional] [default to &#39;7&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -393,7 +395,7 @@ An OAuth scope
 
 Wraps GET /api/v2/oauth/scopes/{scopeId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -410,7 +412,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
 scope_id = 'scope_id_example' # str | Scope ID
-accept_language = 'en-us' # str | The language with which to display the scope description. (optional) (default to en-us)
+accept_language = ''en-us'' # str | The language with which to display the scope description. (optional) (default to 'en-us')
 
 try:
     # An OAuth scope
@@ -426,7 +428,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **scope_id** | **str**| Scope ID |  |
-| **accept_language** | **str**| The language with which to display the scope description. | [optional] [default to en-us] |
+| **accept_language** | **str**| The language with which to display the scope description. | [optional] [default to &#39;en-us&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -445,7 +447,7 @@ The list of OAuth scopes
 
 Wraps GET /api/v2/oauth/scopes 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -461,7 +463,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
-accept_language = 'en-us' # str | The language with which to display the scope descriptions. (optional) (default to en-us)
+accept_language = ''en-us'' # str | The language with which to display the scope descriptions. (optional) (default to 'en-us')
 
 try:
     # The list of OAuth scopes
@@ -476,7 +478,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **accept_language** | **str**| The language with which to display the scope descriptions. | [optional] [default to en-us] |
+| **accept_language** | **str**| The language with which to display the scope descriptions. | [optional] [default to &#39;en-us&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -492,6 +494,8 @@ except ApiException as e:
 Regenerate Client Secret
 
 This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
+
+
 
 Wraps POST /api/v2/oauth/clients/{clientId}/secret 
 
@@ -543,6 +547,8 @@ except ApiException as e:
 Query for OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+
 
 Wraps POST /api/v2/oauth/clients/{clientId}/usage/query 
 
@@ -596,6 +602,8 @@ except ApiException as e:
 Create OAuth client
 
 The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
+
+
 
 Wraps POST /api/v2/oauth/clients 
 

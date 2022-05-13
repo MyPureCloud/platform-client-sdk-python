@@ -70,6 +70,10 @@ class BatchDownloadJobSubmission(object):
         :type: list[BatchDownloadRequest]
         """
         
+        if not batch_download_request_list:
+            raise ValueError("Invalid value for `batch_download_request_list`, must not be `None`")
+
+
         self._batch_download_request_list = batch_download_request_list
 
     def to_dict(self):

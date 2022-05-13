@@ -245,7 +245,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 prompt_id = 'prompt_id_example' # str | Prompt ID
-all_resources = true # bool | Whether or not to delete all the prompt resources (optional)
+all_resources = True # bool | Whether or not to delete all the prompt resources (optional)
 
 try:
     # Delete specified user prompt
@@ -380,6 +380,8 @@ void (empty response body)
 Batch-delete a list of prompts
 
 Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+
+
 
 Wraps DELETE /api/v2/architect/prompts 
 
@@ -634,6 +636,8 @@ Batch-delete a list of flows
 
 Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 
+
+
 Wraps DELETE /api/v2/flows 
 
 Requires ANY permissions: 
@@ -685,6 +689,8 @@ deletes a specific datatable by id
 
 Deletes an entire datatable (including the schema and data) with a given datatableId
 
+
+
 Wraps DELETE /api/v2/flows/datatables/{datatableId} 
 
 Requires ANY permissions: 
@@ -705,7 +711,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 datatable_id = 'datatable_id_example' # str | id of datatable
-force = false # bool | force delete, even if in use (optional) (default to false)
+force = False # bool | force delete, even if in use (optional) (default to False)
 
 try:
     # deletes a specific datatable by id
@@ -720,7 +726,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **datatable_id** | **str**| id of datatable |  |
-| **force** | **bool**| force delete, even if in use | [optional] [default to false] |
+| **force** | **bool**| force delete, even if in use | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -736,6 +742,8 @@ void (empty response body)
 Delete a row entry
 
 Deletes a row with a given rowId (the value of the key field).
+
+
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
 
@@ -782,7 +790,7 @@ void (empty response body)
 
 <a name="delete_flows_milestone"></a>
 
-## [**Empty**](Empty.html) delete_flows_milestone(milestone_id)
+## Empty** delete_flows_milestone(milestone_id)
 
 
 
@@ -829,7 +837,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="get_architect_dependencytracking"></a>
 
@@ -864,8 +872,8 @@ name = 'name_example' # str | Object name to search for
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 object_type = ['object_type_example'] # list[str] | Object type(s) to search for (optional)
-consumed_resources = true # bool | Include resources each result item consumes (optional)
-consuming_resources = true # bool | Include resources that consume each result item (optional)
+consumed_resources = True # bool | Include resources each result item consumes (optional)
+consuming_resources = True # bool | Include resources that consume each result item (optional)
 consumed_resource_type = ['consumed_resource_type_example'] # list[str] | Types of consumed resources to return, if consumed resources are requested (optional)
 consuming_resource_type = ['consuming_resource_type_example'] # list[str] | Types of consuming resources to return, if consuming resources are requested (optional)
 
@@ -1099,7 +1107,7 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 name = 'name_example' # str | Name to search for (optional)
 object_type = ['object_type_example'] # list[str] | Object type(s) to search for (optional)
 flow_filter = 'flow_filter_example' # str | Show only checkedIn or published flows (optional)
-consumed_resources = false # bool | Return consumed resources? (optional) (default to false)
+consumed_resources = False # bool | Return consumed resources? (optional) (default to False)
 consumed_resource_type = ['consumed_resource_type_example'] # list[str] | Resource type(s) to return (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
@@ -1120,7 +1128,7 @@ except ApiException as e:
 | **name** | **str**| Name to search for | [optional]  |
 | **object_type** | [**list[str]**](str.html)| Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, VOICEFLOW, VOICEMAILFLOW, WIDGET, WORKFLOW, WORKITEMFLOW |
 | **flow_filter** | **str**| Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
-| **consumed_resources** | **bool**| Return consumed resources? | [optional] [default to false] |
+| **consumed_resources** | **bool**| Return consumed resources? | [optional] [default to False] |
 | **consumed_resource_type** | [**list[str]**](str.html)| Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, VOICEFLOW, VOICEMAILFLOW, WIDGET, WORKFLOW, WORKITEMFLOW |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
@@ -1162,11 +1170,11 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 id = 'id_example' # str | Object ID
 version = 'version_example' # str | Object version (optional)
 object_type = 'object_type_example' # str | Object type (optional)
-consumed_resources = true # bool | Include resources this item consumes (optional)
-consuming_resources = true # bool | Include resources that consume this item (optional)
+consumed_resources = True # bool | Include resources this item consumes (optional)
+consuming_resources = True # bool | Include resources that consume this item (optional)
 consumed_resource_type = ['consumed_resource_type_example'] # list[str] | Types of consumed resources to return, if consumed resources are requested (optional)
 consuming_resource_type = ['consuming_resource_type_example'] # list[str] | Types of consuming resources to return, if consuming resources are requested (optional)
-consumed_resource_request = true # bool | Indicate that this is going to look up a consumed resource object (optional)
+consumed_resource_request = True # bool | Indicate that this is going to look up a consumed resource object (optional)
 
 try:
     # Get a Dependency Tracking object
@@ -1330,7 +1338,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 name = 'name_example' # str | Name to search for (optional)
 object_type = ['object_type_example'] # list[str] | Object type(s) to search for (optional)
-consumed_resources = false # bool | Return consumed resources? (optional) (default to false)
+consumed_resources = False # bool | Return consumed resources? (optional) (default to False)
 consumed_resource_type = ['consumed_resource_type_example'] # list[str] | Resource type(s) to return (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
@@ -1350,7 +1358,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **name** | **str**| Name to search for | [optional]  |
 | **object_type** | [**list[str]**](str.html)| Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, VOICEFLOW, VOICEMAILFLOW, WIDGET, WORKFLOW, WORKITEMFLOW |
-| **consumed_resources** | **bool**| Return consumed resources? | [optional] [default to false] |
+| **consumed_resources** | **bool**| Return consumed resources? | [optional] [default to False] |
 | **consumed_resource_type** | [**list[str]**](str.html)| Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, VOICEFLOW, VOICEMAILFLOW, WIDGET, WORKFLOW, WORKITEMFLOW |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
@@ -1442,8 +1450,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 name = 'name_example' # str | Name of the Emergency Group to filter by. (optional)
 
 try:
@@ -1461,8 +1469,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **name** | **str**| Name of the Emergency Group to filter by. | [optional]  |
 {: class="table table-striped"}
 
@@ -1552,8 +1560,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 name = 'name_example' # str | Name of the IVR to filter by. (optional)
 
 try:
@@ -1571,8 +1579,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **name** | **str**| Name of the IVR to filter by. | [optional]  |
 {: class="table table-striped"}
 
@@ -1664,8 +1672,8 @@ prompt_id = 'prompt_id_example' # str | Prompt ID
 history_id = 'history_id_example' # str | History request ID
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_order = 'desc' # str | Sort order (optional) (default to desc)
-sort_by = 'timestamp' # str | Sort by (optional) (default to timestamp)
+sort_order = ''desc'' # str | Sort order (optional) (default to 'desc')
+sort_by = ''timestamp'' # str | Sort by (optional) (default to 'timestamp')
 action = ['action_example'] # list[str] | Flow actions to include (omit to include all) (optional)
 
 try:
@@ -1685,8 +1693,8 @@ except ApiException as e:
 | **history_id** | **str**| History request ID |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_order** | **str**| Sort order | [optional] [default to desc] |
-| **sort_by** | **str**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;desc&#39;] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;timestamp&#39;]<br />**Values**: action, timestamp, user |
 | **action** | [**list[str]**](str.html)| Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
 {: class="table table-striped"}
 
@@ -1757,6 +1765,8 @@ Get a pageable list of user prompt resources
 
 The returned list is pageable, and query parameters can be used for filtering.
 
+
+
 Wraps GET /api/v2/architect/prompts/{promptId}/resources 
 
 Requires ALL permissions: 
@@ -1812,6 +1822,8 @@ Get a pageable list of user prompts
 
 The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
 
+
+
 Wraps GET /api/v2/architect/prompts 
 
 Requires ALL permissions: 
@@ -1836,8 +1848,8 @@ page_size = 25 # int | Page size (optional) (default to 25)
 name = ['name_example'] # list[str] | Name (optional)
 description = 'description_example' # str | Description (optional)
 name_or_description = 'name_or_description_example' # str | Name or description (optional)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 
 try:
     # Get a pageable list of user prompts
@@ -1857,8 +1869,8 @@ except ApiException as e:
 | **name** | [**list[str]**](str.html)| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
 | **name_or_description** | **str**| Name or description | [optional]  |
-| **sort_by** | **str**| Sort by | [optional] [default to id] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1998,8 +2010,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 name = 'name_example' # str | Name of the Schedule Group to filter by. (optional)
 schedule_ids = 'schedule_ids_example' # str | A comma-delimited list of Schedule IDs to filter by. (optional)
 division_id = ['division_id_example'] # list[str] | List of divisionIds on which to filter. (optional)
@@ -2019,8 +2031,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **name** | **str**| Name of the Schedule Group to filter by. | [optional]  |
 | **schedule_ids** | **str**| A comma-delimited list of Schedule IDs to filter by. | [optional]  |
 | **division_id** | [**list[str]**](str.html)| List of divisionIds on which to filter. | [optional]  |
@@ -2061,8 +2073,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 name = 'name_example' # str | Name of the Schedule to filter by. (optional)
 division_id = ['division_id_example'] # list[str] | List of divisionIds on which to filter. (optional)
 
@@ -2081,8 +2093,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **name** | **str**| Name of the Schedule to filter by. | [optional]  |
 | **division_id** | [**list[str]**](str.html)| List of divisionIds on which to filter. | [optional]  |
 {: class="table table-striped"}
@@ -2175,8 +2187,8 @@ prompt_id = 'prompt_id_example' # str | promptId
 history_id = 'history_id_example' # str | History request ID
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_order = 'desc' # str | Sort order (optional) (default to desc)
-sort_by = 'timestamp' # str | Sort by (optional) (default to timestamp)
+sort_order = ''desc'' # str | Sort order (optional) (default to 'desc')
+sort_by = ''timestamp'' # str | Sort by (optional) (default to 'timestamp')
 action = ['action_example'] # list[str] | Flow actions to include (omit to include all) (optional)
 
 try:
@@ -2196,8 +2208,8 @@ except ApiException as e:
 | **history_id** | **str**| History request ID |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_order** | **str**| Sort order | [optional] [default to desc] |
-| **sort_by** | **str**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;desc&#39;] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;timestamp&#39;]<br />**Values**: action, timestamp, user |
 | **action** | [**list[str]**](str.html)| Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
 {: class="table table-striped"}
 
@@ -2290,8 +2302,8 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 prompt_id = 'prompt_id_example' # str | Prompt ID
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 
 try:
     # Get system prompt resources.
@@ -2309,8 +2321,8 @@ except ApiException as e:
 | **prompt_id** | **str**| Prompt ID |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2348,8 +2360,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 name = 'name_example' # str | Name (optional)
 description = 'description_example' # str | Description (optional)
 name_or_description = 'name_or_description_example' # str | Name or description (optional)
@@ -2369,8 +2381,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 | **name** | **str**| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
 | **name_or_description** | **str**| Name or description | [optional]  |
@@ -2410,7 +2422,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 flow_id = 'flow_id_example' # str | Flow ID
-deleted = false # bool | Deleted flows (optional) (default to false)
+deleted = False # bool | Deleted flows (optional) (default to False)
 
 try:
     # Get flow
@@ -2426,7 +2438,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **flow_id** | **str**| Flow ID |  |
-| **deleted** | **bool**| Deleted flows | [optional] [default to false] |
+| **deleted** | **bool**| Deleted flows | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2466,8 +2478,8 @@ flow_id = 'flow_id_example' # str | Flow ID
 history_id = 'history_id_example' # str | History request ID
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_order = 'desc' # str | Sort order (optional) (default to desc)
-sort_by = 'timestamp' # str | Sort by (optional) (default to timestamp)
+sort_order = ''desc'' # str | Sort order (optional) (default to 'desc')
+sort_by = ''timestamp'' # str | Sort by (optional) (default to 'timestamp')
 action = ['action_example'] # list[str] | Flow actions to include (omit to include all) (optional)
 
 try:
@@ -2487,8 +2499,8 @@ except ApiException as e:
 | **history_id** | **str**| History request ID |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_order** | **str**| Sort order | [optional] [default to desc] |
-| **sort_by** | **str**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;desc&#39;] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;timestamp&#39;]<br />**Values**: action, timestamp, user |
 | **action** | [**list[str]**](str.html)| Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
 {: class="table table-striped"}
 
@@ -2526,7 +2538,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 flow_id = 'flow_id_example' # str | Flow ID
-deleted = false # bool | Deleted flows (optional) (default to false)
+deleted = False # bool | Deleted flows (optional) (default to False)
 
 try:
     # Get the latest configuration for flow
@@ -2542,7 +2554,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **flow_id** | **str**| Flow ID |  |
-| **deleted** | **bool**| Deleted flows | [optional] [default to false] |
+| **deleted** | **bool**| Deleted flows | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2691,7 +2703,7 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 flow_id = 'flow_id_example' # str | Flow ID
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-deleted = true # bool | Include Deleted flows (optional)
+deleted = True # bool | Include Deleted flows (optional)
 
 try:
     # Get flow version list
@@ -2726,6 +2738,8 @@ Get a pageable list of flows, filtered by query parameters
 
 If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
 
+
+
 Wraps GET /api/v2/flows 
 
 Requires ANY permissions: 
@@ -2748,8 +2762,8 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 type = ['type_example'] # list[str] | Type (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 id = ['id_example'] # list[str] | ID (optional)
 name = 'name_example' # str | Name (optional)
 description = 'description_example' # str | Description (optional)
@@ -2759,8 +2773,8 @@ editable_by = 'editable_by_example' # str | Editable by (optional)
 locked_by = 'locked_by_example' # str | Locked by (optional)
 locked_by_client_id = 'locked_by_client_id_example' # str | Locked by client ID (optional)
 secure = 'secure_example' # str | Secure (optional)
-deleted = false # bool | Include deleted (optional) (default to false)
-include_schemas = false # bool | Include variable schemas (optional) (default to false)
+deleted = False # bool | Include deleted (optional) (default to False)
+include_schemas = False # bool | Include variable schemas (optional) (default to False)
 published_after = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published after (optional)
 published_before = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published before (optional)
 division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
@@ -2781,8 +2795,8 @@ except ApiException as e:
 | **type** | [**list[str]**](str.html)| Type | [optional] <br />**Values**: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, workflow, workitem |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 | **id** | [**list[str]**](str.html)| ID | [optional]  |
 | **name** | **str**| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
@@ -2792,8 +2806,8 @@ except ApiException as e:
 | **locked_by** | **str**| Locked by | [optional]  |
 | **locked_by_client_id** | **str**| Locked by client ID | [optional]  |
 | **secure** | **str**| Secure | [optional] <br />**Values**: any, checkedin, published |
-| **deleted** | **bool**| Include deleted | [optional] [default to false] |
-| **include_schemas** | **bool**| Include variable schemas | [optional] [default to false] |
+| **deleted** | **bool**| Include deleted | [optional] [default to False] |
+| **include_schemas** | **bool**| Include variable schemas | [optional] [default to False] |
 | **published_after** | **str**| Published after | [optional]  |
 | **published_before** | **str**| Published before | [optional]  |
 | **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
@@ -2812,6 +2826,8 @@ except ApiException as e:
 Returns a specific datatable by id
 
 Given a datatableId returns the datatable object and schema associated with it.
+
+
 
 Wraps GET /api/v2/flows/datatables/{datatableId} 
 
@@ -2865,6 +2881,8 @@ except ApiException as e:
 Returns the state information about an export job
 
 Returns the state information about an export job.
+
+
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId} 
 
@@ -2920,6 +2938,8 @@ Returns the state information about an import job
 
 Returns the state information about an import job.
 
+
+
 Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId} 
 
 Requires ANY permissions: 
@@ -2974,6 +2994,8 @@ Get all recent import jobs
 
 Get all recent import jobs
 
+
+
 Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs 
 
 Requires ANY permissions: 
@@ -3022,13 +3044,15 @@ except ApiException as e:
 
 <a name="get_flows_datatable_row"></a>
 
-## [**dict(str, object)**](dict.html) get_flows_datatable_row(datatable_id, row_id, showbrief=showbrief)
+## dict(str, object)** get_flows_datatable_row(datatable_id, row_id, showbrief=showbrief)
 
 
 
 Returns a specific row for the datatable
 
 Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
+
+
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
 
@@ -3052,7 +3076,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 datatable_id = 'datatable_id_example' # str | id of datatable
 row_id = 'row_id_example' # str | The key for the row
-showbrief = true # bool | if true returns just the key field for the row (optional) (default to true)
+showbrief = True # bool | if true returns just the key field for the row (optional) (default to True)
 
 try:
     # Returns a specific row for the datatable
@@ -3069,12 +3093,12 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **datatable_id** | **str**| id of datatable |  |
 | **row_id** | **str**| The key for the row |  |
-| **showbrief** | **bool**| if true returns just the key field for the row | [optional] [default to true] |
+| **showbrief** | **bool**| if true returns just the key field for the row | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**dict(str, object)**](dict.html)
+**dict(str, object)**
 
 <a name="get_flows_datatable_rows"></a>
 
@@ -3085,6 +3109,8 @@ except ApiException as e:
 Returns the rows for the datatable with the given id
 
 Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
+
+
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows 
 
@@ -3109,7 +3135,7 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 datatable_id = 'datatable_id_example' # str | id of datatable
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-showbrief = true # bool | If true returns just the key value of the row (optional) (default to true)
+showbrief = True # bool | If true returns just the key value of the row (optional) (default to True)
 
 try:
     # Returns the rows for the datatable with the given id
@@ -3127,7 +3153,7 @@ except ApiException as e:
 | **datatable_id** | **str**| id of datatable |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **showbrief** | **bool**| If true returns just the key value of the row | [optional] [default to true] |
+| **showbrief** | **bool**| If true returns just the key value of the row | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3143,6 +3169,8 @@ except ApiException as e:
 Retrieve a list of datatables for the org
 
 Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+
+
 
 Wraps GET /api/v2/flows/datatables 
 
@@ -3166,8 +3194,8 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 expand = 'expand_example' # str | Expand instructions for the result (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 name = 'name_example' # str | Name to filter by (optional)
 
@@ -3187,8 +3215,8 @@ except ApiException as e:
 | **expand** | **str**| Expand instructions for the result | [optional] <br />**Values**: schema |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id]<br />**Values**: id, name |
-| **sort_order** | **str**| Sort order | [optional] [default to ascending] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;]<br />**Values**: id, name |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;] |
 | **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
 | **name** | **str**| Name to filter by | [optional]  |
 {: class="table table-striped"}
@@ -3206,6 +3234,8 @@ except ApiException as e:
 Returns a specific datatable by id
 
 Given a datatableId returns the datatable object and schema associated with it.
+
+
 
 Wraps GET /api/v2/flows/datatables/divisionviews/{datatableId} 
 
@@ -3260,6 +3290,8 @@ Retrieve a list of datatables for the org
 
 Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
 
+
+
 Wraps GET /api/v2/flows/datatables/divisionviews 
 
 Requires ALL permissions: 
@@ -3282,8 +3314,8 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 expand = 'expand_example' # str | Expand instructions for the result (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 name = 'name_example' # str | Name to filter by (optional)
 
@@ -3303,8 +3335,8 @@ except ApiException as e:
 | **expand** | **str**| Expand instructions for the result | [optional] <br />**Values**: schema |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id]<br />**Values**: id, name |
-| **sort_order** | **str**| Sort order | [optional] [default to ascending] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;]<br />**Values**: id, name |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;] |
 | **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
 | **name** | **str**| Name to filter by | [optional]  |
 {: class="table table-striped"}
@@ -3322,6 +3354,8 @@ except ApiException as e:
 Get a pageable list of basic flow information objects filterable by query parameters.
 
 This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+
 
 Wraps GET /api/v2/flows/divisionviews 
 
@@ -3345,15 +3379,15 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 type = ['type_example'] # list[str] | Type (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 id = ['id_example'] # list[str] | ID (optional)
 name = 'name_example' # str | Name (optional)
 publish_version_id = 'publish_version_id_example' # str | Publish version ID (optional)
 published_after = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published after (optional)
 published_before = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published before (optional)
 division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
-include_schemas = false # bool | Include variable schemas (optional) (default to false)
+include_schemas = False # bool | Include variable schemas (optional) (default to False)
 
 try:
     # Get a pageable list of basic flow information objects filterable by query parameters.
@@ -3371,15 +3405,15 @@ except ApiException as e:
 | **type** | [**list[str]**](str.html)| Type | [optional] <br />**Values**: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, workflow, workitem |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 | **id** | [**list[str]**](str.html)| ID | [optional]  |
 | **name** | **str**| Name | [optional]  |
 | **publish_version_id** | **str**| Publish version ID | [optional]  |
 | **published_after** | **str**| Published after | [optional]  |
 | **published_before** | **str**| Published before | [optional]  |
 | **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
-| **include_schemas** | **bool**| Include variable schemas | [optional] [default to false] |
+| **include_schemas** | **bool**| Include variable schemas | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3500,6 +3534,8 @@ Get a flow milestone
 
 Returns a specified flow milestone
 
+
+
 Wraps GET /api/v2/flows/milestones/{milestoneId} 
 
 Requires ALL permissions: 
@@ -3551,6 +3587,8 @@ Get a pageable list of flow milestones, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
 
+
+
 Wraps GET /api/v2/flows/milestones 
 
 Requires ALL permissions: 
@@ -3572,8 +3610,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 id = ['id_example'] # list[str] | ID (optional)
 name = 'name_example' # str | Name (optional)
 description = 'description_example' # str | Description (optional)
@@ -3595,8 +3633,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 | **id** | [**list[str]**](str.html)| ID | [optional]  |
 | **name** | **str**| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
@@ -3617,6 +3655,8 @@ except ApiException as e:
 Get a pageable list of basic flow milestone information objects filterable by query parameters.
 
 This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+
 
 Wraps GET /api/v2/flows/milestones/divisionviews 
 
@@ -3639,8 +3679,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 id = ['id_example'] # list[str] | ID (optional)
 name = 'name_example' # str | Name (optional)
 division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
@@ -3660,8 +3700,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 | **id** | [**list[str]**](str.html)| ID | [optional]  |
 | **name** | **str**| Name | [optional]  |
 | **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
@@ -3680,6 +3720,8 @@ except ApiException as e:
 Get a flow outcome
 
 Returns a specified flow outcome
+
+
 
 Wraps GET /api/v2/flows/outcomes/{flowOutcomeId} 
 
@@ -3732,6 +3774,8 @@ Get a pageable list of flow outcomes, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
 
+
+
 Wraps GET /api/v2/flows/outcomes 
 
 Requires ALL permissions: 
@@ -3753,8 +3797,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 id = ['id_example'] # list[str] | ID (optional)
 name = 'name_example' # str | Name (optional)
 description = 'description_example' # str | Description (optional)
@@ -3776,8 +3820,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 | **id** | [**list[str]**](str.html)| ID | [optional]  |
 | **name** | **str**| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
@@ -3798,6 +3842,8 @@ except ApiException as e:
 Get a pageable list of basic flow outcome information objects filterable by query parameters.
 
 This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+
 
 Wraps GET /api/v2/flows/outcomes/divisionviews 
 
@@ -3820,8 +3866,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'id' # str | Sort by (optional) (default to id)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 id = ['id_example'] # list[str] | ID (optional)
 name = 'name_example' # str | Name (optional)
 division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
@@ -3841,8 +3887,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Sort by | [optional] [default to id] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 | **id** | [**list[str]**](str.html)| ID | [optional]  |
 | **name** | **str**| Name | [optional]  |
 | **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
@@ -3861,6 +3907,8 @@ except ApiException as e:
 Rebuild Dependency Tracking data for an organization
 
 Asynchronous.  Notification topic: v2.architect.dependencytracking.build
+
+
 
 Wraps POST /api/v2/architect/dependencytracking/build 
 
@@ -4009,6 +4057,8 @@ except ApiException as e:
 Generate prompt history
 
 Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+
+
 
 Wraps POST /api/v2/architect/prompts/{promptId}/history 
 
@@ -4267,6 +4317,8 @@ Generate system prompt history
 
 Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
 
+
+
 Wraps POST /api/v2/architect/systemprompts/{promptId}/history 
 
 Requires ALL permissions: 
@@ -4371,6 +4423,8 @@ Generate flow history
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
+
+
 Wraps POST /api/v2/flows/{flowId}/history 
 
 Requires ANY permissions: 
@@ -4458,7 +4512,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **flow_id** | **str**| Flow ID |  |
-| **body** | **object**|  |  |
+| **body** | [**object**](object.html)|  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4527,6 +4581,8 @@ except ApiException as e:
 Check-in flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
+
+
 
 Wraps POST /api/v2/flows/actions/checkin 
 
@@ -4682,6 +4738,8 @@ Publish flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
+
+
 Wraps POST /api/v2/flows/actions/publish 
 
 Requires ANY permissions: 
@@ -4787,6 +4845,8 @@ Unlock flow
 
 Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
 
+
+
 Wraps POST /api/v2/flows/actions/unlock 
 
 Requires ANY permissions: 
@@ -4837,6 +4897,8 @@ except ApiException as e:
 Begin an export process for exporting all rows from a datatable
 
 Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+
+
 
 Wraps POST /api/v2/flows/datatables/{datatableId}/export/jobs 
 
@@ -4890,6 +4952,8 @@ Begin an import process for importing rows into a datatable
 
 Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
 
+
+
 Wraps POST /api/v2/flows/datatables/{datatableId}/import/jobs 
 
 Requires ANY permissions: 
@@ -4936,13 +5000,15 @@ except ApiException as e:
 
 <a name="post_flows_datatable_rows"></a>
 
-## [**dict(str, object)**](dict.html) post_flows_datatable_rows(datatable_id, data_table_row)
+## dict(str, object)** post_flows_datatable_rows(datatable_id, data_table_row)
 
 
 
 Create a new row entry for the datatable.
 
 Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
+
+
 
 Wraps POST /api/v2/flows/datatables/{datatableId}/rows 
 
@@ -4981,12 +5047,12 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **datatable_id** | **str**| id of datatable |  |
-| **data_table_row** | **object**|  |  |
+| **data_table_row** | [**object**](object.html)|  |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**dict(str, object)**](dict.html)
+**dict(str, object)**
 
 <a name="post_flows_datatables"></a>
 
@@ -4997,6 +5063,8 @@ except ApiException as e:
 Create a new datatable with the specified json-schema definition
 
 This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+
+
 
 Wraps POST /api/v2/flows/datatables 
 
@@ -5048,6 +5116,8 @@ except ApiException as e:
 Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
 
 The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+
+
 
 Wraps POST /api/v2/flows/executions 
 
@@ -5197,6 +5267,8 @@ except ApiException as e:
 Create a flow outcome
 
 Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
+
+
 
 Wraps POST /api/v2/flows/outcomes 
 
@@ -5677,6 +5749,8 @@ Updates a specific datatable by id
 
 Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 
+
+
 Wraps PUT /api/v2/flows/datatables/{datatableId} 
 
 Requires ANY permissions: 
@@ -5724,13 +5798,15 @@ except ApiException as e:
 
 <a name="put_flows_datatable_row"></a>
 
-## [**dict(str, object)**](dict.html) put_flows_datatable_row(datatable_id, row_id, body=body)
+## dict(str, object)** put_flows_datatable_row(datatable_id, row_id, body=body)
 
 
 
 Update a row entry
 
 Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
+
+
 
 Wraps PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
 
@@ -5771,12 +5847,12 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **datatable_id** | **str**| id of datatable |  |
 | **row_id** | **str**| the key for the row |  |
-| **body** | **object**| datatable row | [optional]  |
+| **body** | [**object**](object.html)| datatable row | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**dict(str, object)**](dict.html)
+**dict(str, object)**
 
 <a name="put_flows_milestone"></a>
 
@@ -5840,6 +5916,8 @@ except ApiException as e:
 Updates a flow outcome
 
 Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
+
+
 
 Wraps PUT /api/v2/flows/outcomes/{flowOutcomeId} 
 

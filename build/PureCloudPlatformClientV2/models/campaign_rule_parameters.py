@@ -106,6 +106,7 @@ class CampaignRuleParameters(object):
         :type: str
         """
         
+
         self._value = value
 
     @property

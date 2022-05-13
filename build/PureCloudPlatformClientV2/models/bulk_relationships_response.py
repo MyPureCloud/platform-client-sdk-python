@@ -76,6 +76,7 @@ class BulkRelationshipsResponse(object):
         :type: list[BulkResponseResultRelationshipRelationship]
         """
         
+
         self._results = results
 
     @property
@@ -99,6 +100,7 @@ class BulkRelationshipsResponse(object):
         :type: int
         """
         
+
         self._error_count = error_count
 
     @property
@@ -122,6 +124,7 @@ class BulkRelationshipsResponse(object):
         :type: list[int]
         """
         
+
         self._error_indexes = error_indexes
 
     def to_dict(self):

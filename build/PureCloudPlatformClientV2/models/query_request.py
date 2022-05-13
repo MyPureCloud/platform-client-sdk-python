@@ -91,6 +91,7 @@ class QueryRequest(object):
         :type: str
         """
         
+
         self._query_phrase = query_phrase
 
     @property
@@ -114,6 +115,7 @@ class QueryRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -137,6 +139,7 @@ class QueryRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -160,6 +163,7 @@ class QueryRequest(object):
         :type: list[str]
         """
         
+
         self._facet_name_requests = facet_name_requests
 
     @property
@@ -183,6 +187,7 @@ class QueryRequest(object):
         :type: list[SortItem]
         """
         
+
         self._sort = sort
 
     @property
@@ -206,6 +211,7 @@ class QueryRequest(object):
         :type: list[ContentFilterItem]
         """
         
+
         self._filters = filters
 
     @property
@@ -229,6 +235,7 @@ class QueryRequest(object):
         :type: list[AttributeFilterItem]
         """
         
+
         self._attribute_filters = attribute_filters
 
     @property
@@ -252,6 +259,7 @@ class QueryRequest(object):
         :type: bool
         """
         
+
         self._include_shares = include_shares
 
     def to_dict(self):

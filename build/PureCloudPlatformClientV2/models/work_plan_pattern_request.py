@@ -70,6 +70,10 @@ class WorkPlanPatternRequest(object):
         :type: list[str]
         """
         
+        if not work_plan_ids:
+            raise ValueError("Invalid value for `work_plan_ids`, must not be `None`")
+
+
         self._work_plan_ids = work_plan_ids
 
     def to_dict(self):

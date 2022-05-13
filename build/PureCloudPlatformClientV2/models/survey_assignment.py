@@ -82,6 +82,7 @@ class SurveyAssignment(object):
         :type: PublishedSurveyFormReference
         """
         
+
         self._survey_form = survey_form
 
     @property
@@ -105,6 +106,7 @@ class SurveyAssignment(object):
         :type: DomainEntityRef
         """
         
+
         self._flow = flow
 
     @property
@@ -128,6 +130,7 @@ class SurveyAssignment(object):
         :type: str
         """
         
+
         self._invite_time_interval = invite_time_interval
 
     @property
@@ -151,6 +154,7 @@ class SurveyAssignment(object):
         :type: str
         """
         
+
         self._sending_user = sending_user
 
     @property
@@ -174,6 +178,10 @@ class SurveyAssignment(object):
         :type: str
         """
         
+        if not sending_domain:
+            raise ValueError("Invalid value for `sending_domain`, must not be `None`")
+
+
         self._sending_domain = sending_domain
 
     def to_dict(self):

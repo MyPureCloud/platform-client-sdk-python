@@ -130,6 +130,10 @@ class PredictionResults(object):
         :type: int
         """
         
+        if not estimated_wait_time_seconds:
+            raise ValueError("Invalid value for `estimated_wait_time_seconds`, must not be `None`")
+
+
         self._estimated_wait_time_seconds = estimated_wait_time_seconds
 
     def to_dict(self):

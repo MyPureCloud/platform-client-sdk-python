@@ -109,6 +109,7 @@ class AgentActivity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class AgentActivity(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -155,6 +157,7 @@ class AgentActivity(object):
         :type: User
         """
         
+
         self._agent = agent
 
     @property
@@ -178,6 +181,7 @@ class AgentActivity(object):
         :type: int
         """
         
+
         self._num_evaluations = num_evaluations
 
     @property
@@ -201,6 +205,7 @@ class AgentActivity(object):
         :type: int
         """
         
+
         self._average_evaluation_score = average_evaluation_score
 
     @property
@@ -224,6 +229,7 @@ class AgentActivity(object):
         :type: int
         """
         
+
         self._num_critical_evaluations = num_critical_evaluations
 
     @property
@@ -247,6 +253,7 @@ class AgentActivity(object):
         :type: float
         """
         
+
         self._average_critical_score = average_critical_score
 
     @property
@@ -270,6 +277,7 @@ class AgentActivity(object):
         :type: float
         """
         
+
         self._highest_evaluation_score = highest_evaluation_score
 
     @property
@@ -293,6 +301,7 @@ class AgentActivity(object):
         :type: float
         """
         
+
         self._lowest_evaluation_score = lowest_evaluation_score
 
     @property
@@ -316,6 +325,7 @@ class AgentActivity(object):
         :type: float
         """
         
+
         self._highest_critical_score = highest_critical_score
 
     @property
@@ -339,6 +349,7 @@ class AgentActivity(object):
         :type: float
         """
         
+
         self._lowest_critical_score = lowest_critical_score
 
     @property
@@ -362,6 +373,7 @@ class AgentActivity(object):
         :type: list[AgentEvaluatorActivity]
         """
         
+
         self._agent_evaluator_activity_list = agent_evaluator_activity_list
 
     @property
@@ -385,6 +397,7 @@ class AgentActivity(object):
         :type: int
         """
         
+
         self._num_evaluations_without_view_permission = num_evaluations_without_view_permission
 
     @property
@@ -408,6 +421,7 @@ class AgentActivity(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

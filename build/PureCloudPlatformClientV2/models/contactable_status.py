@@ -73,6 +73,7 @@ class ContactableStatus(object):
         :type: bool
         """
         
+
         self._contactable = contactable
 
     @property
@@ -96,6 +97,7 @@ class ContactableStatus(object):
         :type: dict(str, ColumnStatus)
         """
         
+
         self._column_status = column_status
 
     def to_dict(self):

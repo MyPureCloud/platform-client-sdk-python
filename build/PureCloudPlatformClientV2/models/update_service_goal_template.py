@@ -82,6 +82,7 @@ class UpdateServiceGoalTemplate(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -105,6 +106,7 @@ class UpdateServiceGoalTemplate(object):
         :type: BuServiceLevel
         """
         
+
         self._service_level = service_level
 
     @property
@@ -128,6 +130,7 @@ class UpdateServiceGoalTemplate(object):
         :type: BuAverageSpeedOfAnswer
         """
         
+
         self._average_speed_of_answer = average_speed_of_answer
 
     @property
@@ -151,6 +154,7 @@ class UpdateServiceGoalTemplate(object):
         :type: BuAbandonRate
         """
         
+
         self._abandon_rate = abandon_rate
 
     @property
@@ -174,6 +178,10 @@ class UpdateServiceGoalTemplate(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

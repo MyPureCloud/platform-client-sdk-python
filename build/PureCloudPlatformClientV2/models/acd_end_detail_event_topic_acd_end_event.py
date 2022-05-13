@@ -151,6 +151,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: int
         """
         
+
         self._event_time = event_time
 
     @property
@@ -174,6 +175,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -197,6 +199,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._participant_id = participant_id
 
     @property
@@ -220,6 +223,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -297,6 +301,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -347,6 +352,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -370,6 +376,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -393,6 +400,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._address_to = address_to
 
     @property
@@ -416,6 +424,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._address_from = address_from
 
     @property
@@ -439,6 +448,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._callback_user_name = callback_user_name
 
     @property
@@ -462,6 +472,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: list[str]
         """
         
+
         self._callback_numbers = callback_numbers
 
     @property
@@ -485,6 +496,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: int
         """
         
+
         self._callback_scheduled_time = callback_scheduled_time
 
     @property
@@ -508,6 +520,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -558,6 +571,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -581,6 +595,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._division_id = division_id
 
     @property
@@ -631,6 +646,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._answered_user_id = answered_user_id
 
     @property
@@ -654,6 +670,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: list[str]
         """
         
+
         self._requested_routings = requested_routings
 
     @property
@@ -704,6 +721,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: list[str]
         """
         
+
         self._requested_routing_skill_ids = requested_routing_skill_ids
 
     @property
@@ -727,6 +745,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: str
         """
         
+
         self._requested_language_id = requested_language_id
 
     @property
@@ -750,6 +769,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: list[str]
         """
         
+
         self._requested_routing_user_ids = requested_routing_user_ids
 
     @property
@@ -773,6 +793,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: int
         """
         
+
         self._routing_priority = routing_priority
 
     @property
@@ -796,6 +817,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :type: int
         """
         
+
         self._connected_duration_ms = connected_duration_ms
 
     def to_dict(self):

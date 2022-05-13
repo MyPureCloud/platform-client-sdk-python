@@ -124,6 +124,7 @@ class ConversationMessageContent(object):
         :type: ConversationContentLocation
         """
         
+
         self._location = location
 
     @property
@@ -147,6 +148,7 @@ class ConversationMessageContent(object):
         :type: ConversationContentStory
         """
         
+
         self._story = story
 
     @property
@@ -170,6 +172,7 @@ class ConversationMessageContent(object):
         :type: ConversationContentAttachment
         """
         
+
         self._attachment = attachment
 
     @property
@@ -193,6 +196,7 @@ class ConversationMessageContent(object):
         :type: ConversationContentQuickReply
         """
         
+
         self._quick_reply = quick_reply
 
     @property
@@ -216,6 +220,7 @@ class ConversationMessageContent(object):
         :type: ConversationContentNotificationTemplate
         """
         
+
         self._template = template
 
     @property
@@ -239,6 +244,7 @@ class ConversationMessageContent(object):
         :type: ConversationContentButtonResponse
         """
         
+
         self._button_response = button_response
 
     @property
@@ -262,6 +268,7 @@ class ConversationMessageContent(object):
         :type: ConversationContentGeneric
         """
         
+
         self._generic = generic
 
     @property
@@ -285,6 +292,7 @@ class ConversationMessageContent(object):
         :type: ConversationContentCard
         """
         
+
         self._card = card
 
     @property
@@ -308,6 +316,7 @@ class ConversationMessageContent(object):
         :type: ConversationContentCarousel
         """
         
+
         self._carousel = carousel
 
     def to_dict(self):

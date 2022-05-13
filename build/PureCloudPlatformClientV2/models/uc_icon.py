@@ -70,6 +70,10 @@ class UCIcon(object):
         :type: str
         """
         
+        if not vector:
+            raise ValueError("Invalid value for `vector`, must not be `None`")
+
+
         self._vector = vector
 
     def to_dict(self):

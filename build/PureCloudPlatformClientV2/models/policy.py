@@ -103,6 +103,7 @@ class Policy(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class Policy(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -149,6 +151,7 @@ class Policy(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -172,6 +175,7 @@ class Policy(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -195,6 +199,7 @@ class Policy(object):
         :type: int
         """
         
+
         self._order = order
 
     @property
@@ -218,6 +223,7 @@ class Policy(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -241,6 +247,7 @@ class Policy(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -264,6 +271,7 @@ class Policy(object):
         :type: MediaPolicies
         """
         
+
         self._media_policies = media_policies
 
     @property
@@ -287,6 +295,7 @@ class Policy(object):
         :type: PolicyConditions
         """
         
+
         self._conditions = conditions
 
     @property
@@ -310,6 +319,7 @@ class Policy(object):
         :type: PolicyActions
         """
         
+
         self._actions = actions
 
     @property
@@ -333,6 +343,7 @@ class Policy(object):
         :type: PolicyErrors
         """
         
+
         self._policy_errors = policy_errors
 
     @property
@@ -356,6 +367,7 @@ class Policy(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

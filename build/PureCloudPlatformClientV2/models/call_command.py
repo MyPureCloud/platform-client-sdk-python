@@ -73,6 +73,10 @@ class CallCommand(object):
         :type: str
         """
         
+        if not call_number:
+            raise ValueError("Invalid value for `call_number`, must not be `None`")
+
+
         self._call_number = call_number
 
     @property
@@ -96,6 +100,7 @@ class CallCommand(object):
         :type: str
         """
         
+
         self._phone_column = phone_column
 
     def to_dict(self):

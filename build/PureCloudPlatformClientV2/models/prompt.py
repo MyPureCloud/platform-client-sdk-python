@@ -85,6 +85,7 @@ class Prompt(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,10 @@ class Prompt(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -131,6 +136,7 @@ class Prompt(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -154,6 +160,7 @@ class Prompt(object):
         :type: list[PromptAsset]
         """
         
+
         self._resources = resources
 
     @property
@@ -177,6 +184,7 @@ class Prompt(object):
         :type: Operation
         """
         
+
         self._current_operation = current_operation
 
     @property
@@ -200,6 +208,7 @@ class Prompt(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

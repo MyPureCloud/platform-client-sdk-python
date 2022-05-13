@@ -85,6 +85,7 @@ class ConditionalGroupRoutingRule(object):
         :type: DomainEntityRef
         """
         
+
         self._queue = queue
 
     @property
@@ -162,6 +163,7 @@ class ConditionalGroupRoutingRule(object):
         :type: float
         """
         
+
         self._condition_value = condition_value
 
     @property
@@ -185,6 +187,7 @@ class ConditionalGroupRoutingRule(object):
         :type: list[MemberGroup]
         """
         
+
         self._groups = groups
 
     @property
@@ -208,6 +211,7 @@ class ConditionalGroupRoutingRule(object):
         :type: int
         """
         
+
         self._wait_seconds = wait_seconds
 
     def to_dict(self):

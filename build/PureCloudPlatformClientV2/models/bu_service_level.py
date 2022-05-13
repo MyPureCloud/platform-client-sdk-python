@@ -76,6 +76,10 @@ class BuServiceLevel(object):
         :type: bool
         """
         
+        if not include:
+            raise ValueError("Invalid value for `include`, must not be `None`")
+
+
         self._include = include
 
     @property
@@ -99,6 +103,7 @@ class BuServiceLevel(object):
         :type: int
         """
         
+
         self._percent = percent
 
     @property
@@ -122,6 +127,7 @@ class BuServiceLevel(object):
         :type: int
         """
         
+
         self._seconds = seconds
 
     def to_dict(self):

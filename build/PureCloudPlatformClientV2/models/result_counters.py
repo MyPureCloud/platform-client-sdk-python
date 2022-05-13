@@ -73,6 +73,7 @@ class ResultCounters(object):
         :type: int
         """
         
+
         self._success = success
 
     @property
@@ -96,6 +97,7 @@ class ResultCounters(object):
         :type: int
         """
         
+
         self._failure = failure
 
     def to_dict(self):

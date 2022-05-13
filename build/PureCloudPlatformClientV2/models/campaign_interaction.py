@@ -130,6 +130,7 @@ class CampaignInteraction(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -153,6 +154,7 @@ class CampaignInteraction(object):
         :type: DomainEntityRef
         """
         
+
         self._campaign = campaign
 
     @property
@@ -176,6 +178,7 @@ class CampaignInteraction(object):
         :type: DomainEntityRef
         """
         
+
         self._agent = agent
 
     @property
@@ -199,6 +202,7 @@ class CampaignInteraction(object):
         :type: DomainEntityRef
         """
         
+
         self._contact = contact
 
     @property
@@ -222,6 +226,7 @@ class CampaignInteraction(object):
         :type: str
         """
         
+
         self._destination_address = destination_address
 
     @property
@@ -245,6 +250,7 @@ class CampaignInteraction(object):
         :type: bool
         """
         
+
         self._active_preview_call = active_preview_call
 
     @property
@@ -268,6 +274,7 @@ class CampaignInteraction(object):
         :type: datetime
         """
         
+
         self._last_active_preview_wrapup_time = last_active_preview_wrapup_time
 
     @property
@@ -291,6 +298,7 @@ class CampaignInteraction(object):
         :type: datetime
         """
         
+
         self._creation_time = creation_time
 
     @property
@@ -314,6 +322,7 @@ class CampaignInteraction(object):
         :type: datetime
         """
         
+
         self._call_placed_time = call_placed_time
 
     @property
@@ -337,6 +346,7 @@ class CampaignInteraction(object):
         :type: datetime
         """
         
+
         self._call_routed_time = call_routed_time
 
     @property
@@ -360,6 +370,7 @@ class CampaignInteraction(object):
         :type: datetime
         """
         
+
         self._preview_connected_time = preview_connected_time
 
     @property
@@ -383,6 +394,7 @@ class CampaignInteraction(object):
         :type: DomainEntityRef
         """
         
+
         self._queue = queue
 
     @property
@@ -406,6 +418,7 @@ class CampaignInteraction(object):
         :type: DomainEntityRef
         """
         
+
         self._script = script
 
     @property
@@ -456,6 +469,7 @@ class CampaignInteraction(object):
         :type: str
         """
         
+
         self._caller_name = caller_name
 
     @property
@@ -479,6 +493,7 @@ class CampaignInteraction(object):
         :type: str
         """
         
+
         self._caller_address = caller_address
 
     @property
@@ -502,6 +517,7 @@ class CampaignInteraction(object):
         :type: datetime
         """
         
+
         self._preview_pop_delivered_time = preview_pop_delivered_time
 
     @property
@@ -525,6 +541,7 @@ class CampaignInteraction(object):
         :type: ConversationBasic
         """
         
+
         self._conversation = conversation
 
     @property
@@ -548,6 +565,7 @@ class CampaignInteraction(object):
         :type: str
         """
         
+
         self._dialer_system_participant_id = dialer_system_participant_id
 
     @property
@@ -571,6 +589,7 @@ class CampaignInteraction(object):
         :type: str
         """
         
+
         self._dialing_mode = dialing_mode
 
     @property
@@ -594,6 +613,7 @@ class CampaignInteraction(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._skills = skills
 
     def to_dict(self):

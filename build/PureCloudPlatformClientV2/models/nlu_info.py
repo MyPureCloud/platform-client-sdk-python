@@ -79,6 +79,7 @@ class NluInfo(object):
         :type: AddressableEntityRef
         """
         
+
         self._domain = domain
 
     @property
@@ -102,6 +103,7 @@ class NluInfo(object):
         :type: NluDomainVersion
         """
         
+
         self._version = version
 
     @property
@@ -125,6 +127,7 @@ class NluInfo(object):
         :type: list[Intent]
         """
         
+
         self._intents = intents
 
     @property
@@ -148,6 +151,7 @@ class NluInfo(object):
         :type: str
         """
         
+
         self._engine_version = engine_version
 
     def to_dict(self):

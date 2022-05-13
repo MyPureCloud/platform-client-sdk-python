@@ -109,6 +109,10 @@ class WebChatRoutingTarget(object):
         :type: str
         """
         
+        if not target_address:
+            raise ValueError("Invalid value for `target_address`, must not be `None`")
+
+
         self._target_address = target_address
 
     @property
@@ -132,6 +136,7 @@ class WebChatRoutingTarget(object):
         :type: list[str]
         """
         
+
         self._skills = skills
 
     @property
@@ -155,6 +160,7 @@ class WebChatRoutingTarget(object):
         :type: str
         """
         
+
         self._language = language
 
     @property
@@ -178,6 +184,7 @@ class WebChatRoutingTarget(object):
         :type: int
         """
         
+
         self._priority = priority
 
     def to_dict(self):

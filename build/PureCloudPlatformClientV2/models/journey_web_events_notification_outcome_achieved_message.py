@@ -97,6 +97,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyWebEventsNotificationOutcome
         """
         
+
         self._outcome = outcome
 
     @property
@@ -120,6 +121,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyWebEventsNotificationBrowser
         """
         
+
         self._browser = browser
 
     @property
@@ -143,6 +145,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: datetime
         """
         
+
         self._visit_created_date = visit_created_date
 
     @property
@@ -166,6 +169,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: str
         """
         
+
         self._ip_address = ip_address
 
     @property
@@ -189,6 +193,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: str
         """
         
+
         self._ip_organization = ip_organization
 
     @property
@@ -212,6 +217,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: str
         """
         
+
         self._user_agent_string = user_agent_string
 
     @property
@@ -235,6 +241,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyWebEventsNotificationDevice
         """
         
+
         self._device = device
 
     @property
@@ -258,6 +265,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyWebEventsNotificationGeoLocation
         """
         
+
         self._geolocation = geolocation
 
     @property
@@ -281,6 +289,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyWebEventsNotificationMktCampaign
         """
         
+
         self._mkt_campaign = mkt_campaign
 
     @property
@@ -304,6 +313,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         :type: JourneyWebEventsNotificationReferrer
         """
         
+
         self._visit_referrer = visit_referrer
 
     def to_dict(self):

@@ -166,6 +166,7 @@ class Campaign(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -189,6 +190,10 @@ class Campaign(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -212,6 +217,7 @@ class Campaign(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -235,6 +241,7 @@ class Campaign(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -258,6 +265,7 @@ class Campaign(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -281,6 +289,10 @@ class Campaign(object):
         :type: DomainEntityRef
         """
         
+        if not contact_list:
+            raise ValueError("Invalid value for `contact_list`, must not be `None`")
+
+
         self._contact_list = contact_list
 
     @property
@@ -304,6 +316,7 @@ class Campaign(object):
         :type: DomainEntityRef
         """
         
+
         self._queue = queue
 
     @property
@@ -354,6 +367,7 @@ class Campaign(object):
         :type: DomainEntityRef
         """
         
+
         self._script = script
 
     @property
@@ -377,6 +391,7 @@ class Campaign(object):
         :type: DomainEntityRef
         """
         
+
         self._edge_group = edge_group
 
     @property
@@ -400,6 +415,7 @@ class Campaign(object):
         :type: DomainEntityRef
         """
         
+
         self._site = site
 
     @property
@@ -450,6 +466,10 @@ class Campaign(object):
         :type: list[PhoneColumn]
         """
         
+        if not phone_columns:
+            raise ValueError("Invalid value for `phone_columns`, must not be `None`")
+
+
         self._phone_columns = phone_columns
 
     @property
@@ -473,6 +493,7 @@ class Campaign(object):
         :type: float
         """
         
+
         self._abandon_rate = abandon_rate
 
     @property
@@ -496,6 +517,7 @@ class Campaign(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._dnc_lists = dnc_lists
 
     @property
@@ -519,6 +541,7 @@ class Campaign(object):
         :type: DomainEntityRef
         """
         
+
         self._callable_time_set = callable_time_set
 
     @property
@@ -542,6 +565,7 @@ class Campaign(object):
         :type: DomainEntityRef
         """
         
+
         self._call_analysis_response_set = call_analysis_response_set
 
     @property
@@ -565,6 +589,7 @@ class Campaign(object):
         :type: list[RestErrorDetail]
         """
         
+
         self._errors = errors
 
     @property
@@ -588,6 +613,10 @@ class Campaign(object):
         :type: str
         """
         
+        if not caller_name:
+            raise ValueError("Invalid value for `caller_name`, must not be `None`")
+
+
         self._caller_name = caller_name
 
     @property
@@ -611,6 +640,10 @@ class Campaign(object):
         :type: str
         """
         
+        if not caller_address:
+            raise ValueError("Invalid value for `caller_address`, must not be `None`")
+
+
         self._caller_address = caller_address
 
     @property
@@ -634,6 +667,7 @@ class Campaign(object):
         :type: int
         """
         
+
         self._outbound_line_count = outbound_line_count
 
     @property
@@ -657,6 +691,7 @@ class Campaign(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._rule_sets = rule_sets
 
     @property
@@ -680,6 +715,7 @@ class Campaign(object):
         :type: bool
         """
         
+
         self._skip_preview_disabled = skip_preview_disabled
 
     @property
@@ -703,6 +739,7 @@ class Campaign(object):
         :type: int
         """
         
+
         self._preview_time_out_seconds = preview_time_out_seconds
 
     @property
@@ -726,6 +763,7 @@ class Campaign(object):
         :type: bool
         """
         
+
         self._always_running = always_running
 
     @property
@@ -749,6 +787,7 @@ class Campaign(object):
         :type: ContactSort
         """
         
+
         self._contact_sort = contact_sort
 
     @property
@@ -772,6 +811,7 @@ class Campaign(object):
         :type: list[ContactSort]
         """
         
+
         self._contact_sorts = contact_sorts
 
     @property
@@ -795,6 +835,7 @@ class Campaign(object):
         :type: int
         """
         
+
         self._no_answer_timeout = no_answer_timeout
 
     @property
@@ -818,6 +859,7 @@ class Campaign(object):
         :type: str
         """
         
+
         self._call_analysis_language = call_analysis_language
 
     @property
@@ -841,6 +883,7 @@ class Campaign(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -864,6 +907,7 @@ class Campaign(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._contact_list_filters = contact_list_filters
 
     @property
@@ -887,6 +931,7 @@ class Campaign(object):
         :type: DomainEntityRef
         """
         
+
         self._division = division
 
     @property
@@ -910,6 +955,7 @@ class Campaign(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

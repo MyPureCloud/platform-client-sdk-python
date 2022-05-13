@@ -193,6 +193,7 @@ class SurveyDetailQueryPredicate(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -216,6 +217,7 @@ class SurveyDetailQueryPredicate(object):
         :type: NumericRange
         """
         
+
         self._range = range
 
     def to_dict(self):

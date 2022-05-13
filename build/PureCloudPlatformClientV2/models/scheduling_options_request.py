@@ -70,6 +70,7 @@ class SchedulingOptionsRequest(object):
         :type: SchedulingNoForecastOptionsRequest
         """
         
+
         self._no_forecast_options = no_forecast_options
 
     def to_dict(self):

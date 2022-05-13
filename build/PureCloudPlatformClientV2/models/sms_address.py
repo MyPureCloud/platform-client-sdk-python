@@ -94,6 +94,7 @@ class SmsAddress(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class SmsAddress(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class SmsAddress(object):
         :type: str
         """
         
+
         self._street = street
 
     @property
@@ -163,6 +166,7 @@ class SmsAddress(object):
         :type: str
         """
         
+
         self._city = city
 
     @property
@@ -186,6 +190,7 @@ class SmsAddress(object):
         :type: str
         """
         
+
         self._region = region
 
     @property
@@ -209,6 +214,7 @@ class SmsAddress(object):
         :type: str
         """
         
+
         self._postal_code = postal_code
 
     @property
@@ -232,6 +238,7 @@ class SmsAddress(object):
         :type: str
         """
         
+
         self._country_code = country_code
 
     @property
@@ -255,6 +262,7 @@ class SmsAddress(object):
         :type: bool
         """
         
+
         self._validated = validated
 
     @property
@@ -278,6 +286,7 @@ class SmsAddress(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

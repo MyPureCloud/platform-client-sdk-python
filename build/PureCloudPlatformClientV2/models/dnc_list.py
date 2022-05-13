@@ -109,6 +109,7 @@ class DncList(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,10 @@ class DncList(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -155,6 +160,7 @@ class DncList(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -178,6 +184,7 @@ class DncList(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -201,6 +208,7 @@ class DncList(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -224,6 +232,7 @@ class DncList(object):
         :type: ImportStatus
         """
         
+
         self._import_status = import_status
 
     @property
@@ -247,6 +256,7 @@ class DncList(object):
         :type: int
         """
         
+
         self._size = size
 
     @property
@@ -324,6 +334,7 @@ class DncList(object):
         :type: str
         """
         
+
         self._login_id = login_id
 
     @property
@@ -347,6 +358,7 @@ class DncList(object):
         :type: list[str]
         """
         
+
         self._dnc_codes = dnc_codes
 
     @property
@@ -370,6 +382,7 @@ class DncList(object):
         :type: str
         """
         
+
         self._license_id = license_id
 
     @property
@@ -393,6 +406,7 @@ class DncList(object):
         :type: DomainEntityRef
         """
         
+
         self._division = division
 
     @property
@@ -416,6 +430,7 @@ class DncList(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class SecureSession(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,10 @@ class SecureSession(object):
         :type: DomainEntityRef
         """
         
+        if not flow:
+            raise ValueError("Invalid value for `flow`, must not be `None`")
+
+
         self._flow = flow
 
     @property
@@ -134,6 +139,7 @@ class SecureSession(object):
         :type: str
         """
         
+
         self._user_data = user_data
 
     @property
@@ -184,6 +190,7 @@ class SecureSession(object):
         :type: str
         """
         
+
         self._source_participant_id = source_participant_id
 
     @property
@@ -207,6 +214,7 @@ class SecureSession(object):
         :type: bool
         """
         
+
         self._disconnect = disconnect
 
     @property
@@ -230,6 +238,7 @@ class SecureSession(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

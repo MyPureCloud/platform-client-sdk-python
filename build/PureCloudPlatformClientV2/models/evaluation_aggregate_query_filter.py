@@ -103,6 +103,7 @@ class EvaluationAggregateQueryFilter(object):
         :type: list[EvaluationAggregateQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class EvaluationAggregateQueryFilter(object):
         :type: list[EvaluationAggregateQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

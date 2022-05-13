@@ -82,6 +82,10 @@ class RoutePathRequest(object):
         :type: str
         """
         
+        if not queue_id:
+            raise ValueError("Invalid value for `queue_id`, must not be `None`")
+
+
         self._queue_id = queue_id
 
     @property
@@ -132,6 +136,7 @@ class RoutePathRequest(object):
         :type: str
         """
         
+
         self._language_id = language_id
 
     @property
@@ -155,6 +160,7 @@ class RoutePathRequest(object):
         :type: list[str]
         """
         
+
         self._skill_ids = skill_ids
 
     @property
@@ -178,6 +184,7 @@ class RoutePathRequest(object):
         :type: SourcePlanningGroupRequest
         """
         
+
         self._source_planning_group = source_planning_group
 
     def to_dict(self):

@@ -97,6 +97,7 @@ class FieldList(object):
         :type: bool
         """
         
+
         self._custom_labels = custom_labels
 
     @property
@@ -120,6 +121,7 @@ class FieldList(object):
         :type: str
         """
         
+
         self._instruction_text = instruction_text
 
     @property
@@ -143,6 +145,7 @@ class FieldList(object):
         :type: str
         """
         
+
         self._key = key
 
     @property
@@ -166,6 +169,7 @@ class FieldList(object):
         :type: list[str]
         """
         
+
         self._label_keys = label_keys
 
     @property
@@ -189,6 +193,7 @@ class FieldList(object):
         :type: dict(str, object)
         """
         
+
         self._params = params
 
     @property
@@ -212,6 +217,7 @@ class FieldList(object):
         :type: bool
         """
         
+
         self._repeatable = repeatable
 
     @property
@@ -235,6 +241,7 @@ class FieldList(object):
         :type: str
         """
         
+
         self._state = state
 
     @property
@@ -258,6 +265,7 @@ class FieldList(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -281,6 +289,7 @@ class FieldList(object):
         :type: bool
         """
         
+
         self._required = required
 
     @property
@@ -304,6 +313,7 @@ class FieldList(object):
         :type: bool
         """
         
+
         self._gdpr = gdpr
 
     def to_dict(self):

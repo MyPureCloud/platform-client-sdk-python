@@ -73,6 +73,10 @@ class TextBotErrorInputEvent(object):
         :type: str
         """
         
+        if not code:
+            raise ValueError("Invalid value for `code`, must not be `None`")
+
+
         self._code = code
 
     @property
@@ -96,6 +100,10 @@ class TextBotErrorInputEvent(object):
         :type: str
         """
         
+        if not message:
+            raise ValueError("Invalid value for `message`, must not be `None`")
+
+
         self._message = message
 
     def to_dict(self):

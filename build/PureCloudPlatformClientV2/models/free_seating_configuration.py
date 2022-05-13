@@ -100,6 +100,7 @@ class FreeSeatingConfiguration(object):
         :type: int
         """
         
+
         self._ttl_minutes = ttl_minutes
 
     def to_dict(self):

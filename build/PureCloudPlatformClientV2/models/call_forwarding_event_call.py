@@ -70,6 +70,7 @@ class CallForwardingEventCall(object):
         :type: list[CallForwardingEventTarget]
         """
         
+
         self._targets = targets
 
     def to_dict(self):

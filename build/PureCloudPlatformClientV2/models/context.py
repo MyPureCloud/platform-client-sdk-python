@@ -70,6 +70,10 @@ class Context(object):
         :type: list[ContextPattern]
         """
         
+        if not patterns:
+            raise ValueError("Invalid value for `patterns`, must not be `None`")
+
+
         self._patterns = patterns
 
     def to_dict(self):

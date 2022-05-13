@@ -103,6 +103,7 @@ class ConversationNormalizedMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class ConversationNormalizedMessage(object):
         :type: ConversationMessagingChannel
         """
         
+
         self._channel = channel
 
     @property
@@ -176,6 +178,7 @@ class ConversationNormalizedMessage(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -199,6 +202,7 @@ class ConversationNormalizedMessage(object):
         :type: list[ConversationMessageContent]
         """
         
+
         self._content = content
 
     @property
@@ -222,6 +226,7 @@ class ConversationNormalizedMessage(object):
         :type: list[ConversationMessageEvent]
         """
         
+
         self._events = events
 
     @property
@@ -272,6 +277,7 @@ class ConversationNormalizedMessage(object):
         :type: list[ConversationReason]
         """
         
+
         self._reasons = reasons
 
     @property
@@ -322,6 +328,7 @@ class ConversationNormalizedMessage(object):
         :type: bool
         """
         
+
         self._is_final_receipt = is_final_receipt
 
     @property
@@ -372,6 +379,7 @@ class ConversationNormalizedMessage(object):
         :type: dict(str, str)
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

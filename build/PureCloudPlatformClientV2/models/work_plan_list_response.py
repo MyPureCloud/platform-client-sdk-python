@@ -70,6 +70,7 @@ class WorkPlanListResponse(object):
         :type: list[WorkPlanListItemResponse]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

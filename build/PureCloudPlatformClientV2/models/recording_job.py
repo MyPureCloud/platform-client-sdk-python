@@ -109,6 +109,7 @@ class RecordingJob(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -159,6 +160,7 @@ class RecordingJob(object):
         :type: RecordingJobsQuery
         """
         
+
         self._recording_jobs_query = recording_jobs_query
 
     @property
@@ -182,6 +184,7 @@ class RecordingJob(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -205,6 +208,7 @@ class RecordingJob(object):
         :type: int
         """
         
+
         self._total_conversations = total_conversations
 
     @property
@@ -228,6 +232,7 @@ class RecordingJob(object):
         :type: int
         """
         
+
         self._total_recordings = total_recordings
 
     @property
@@ -251,6 +256,7 @@ class RecordingJob(object):
         :type: int
         """
         
+
         self._total_skipped_recordings = total_skipped_recordings
 
     @property
@@ -274,6 +280,7 @@ class RecordingJob(object):
         :type: int
         """
         
+
         self._total_failed_recordings = total_failed_recordings
 
     @property
@@ -297,6 +304,7 @@ class RecordingJob(object):
         :type: int
         """
         
+
         self._total_processed_recordings = total_processed_recordings
 
     @property
@@ -320,6 +328,7 @@ class RecordingJob(object):
         :type: int
         """
         
+
         self._percent_progress = percent_progress
 
     @property
@@ -343,6 +352,7 @@ class RecordingJob(object):
         :type: str
         """
         
+
         self._error_message = error_message
 
     @property
@@ -366,6 +376,7 @@ class RecordingJob(object):
         :type: str
         """
         
+
         self._failed_recordings = failed_recordings
 
     @property
@@ -389,6 +400,7 @@ class RecordingJob(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -412,6 +424,7 @@ class RecordingJob(object):
         :type: AddressableEntityRef
         """
         
+
         self._user = user
 
     def to_dict(self):

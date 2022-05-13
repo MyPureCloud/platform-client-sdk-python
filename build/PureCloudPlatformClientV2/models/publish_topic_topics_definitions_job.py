@@ -73,6 +73,7 @@ class PublishTopicTopicsDefinitionsJob(object):
         :type: str
         """
         
+
         self._id = id
 
     @property

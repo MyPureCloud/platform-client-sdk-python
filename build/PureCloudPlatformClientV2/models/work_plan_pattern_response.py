@@ -70,6 +70,7 @@ class WorkPlanPatternResponse(object):
         :type: list[WorkPlanReference]
         """
         
+
         self._work_plans = work_plans
 
     def to_dict(self):

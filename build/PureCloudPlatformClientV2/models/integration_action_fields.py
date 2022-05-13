@@ -73,6 +73,7 @@ class IntegrationActionFields(object):
         :type: IntegrationAction
         """
         
+
         self._integration_action = integration_action
 
     @property
@@ -96,6 +97,7 @@ class IntegrationActionFields(object):
         :type: list[RequestMapping]
         """
         
+
         self._request_mappings = request_mappings
 
     def to_dict(self):

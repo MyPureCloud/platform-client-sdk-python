@@ -100,6 +100,7 @@ class VisibilityCondition(object):
         :type: list[object]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

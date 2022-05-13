@@ -76,6 +76,7 @@ class BuRescheduleAgentScheduleResult(object):
         :type: ManagementUnitReference
         """
         
+
         self._management_unit = management_unit
 
     @property
@@ -99,6 +100,7 @@ class BuRescheduleAgentScheduleResult(object):
         :type: MuRescheduleResultWrapper
         """
         
+
         self._download_result = download_result
 
     @property
@@ -122,6 +124,7 @@ class BuRescheduleAgentScheduleResult(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     def to_dict(self):

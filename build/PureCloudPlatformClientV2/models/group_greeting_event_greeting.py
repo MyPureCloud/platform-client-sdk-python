@@ -88,6 +88,7 @@ class GroupGreetingEventGreeting(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class GroupGreetingEventGreeting(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class GroupGreetingEventGreeting(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -157,6 +160,7 @@ class GroupGreetingEventGreeting(object):
         :type: str
         """
         
+
         self._owner_type = owner_type
 
     @property
@@ -180,6 +184,7 @@ class GroupGreetingEventGreeting(object):
         :type: GroupGreetingEventGreetingOwner
         """
         
+
         self._owner = owner
 
     @property
@@ -203,6 +208,7 @@ class GroupGreetingEventGreeting(object):
         :type: GroupGreetingEventGreetingAudioFile
         """
         
+
         self._greeting_audio_file = greeting_audio_file
 
     @property
@@ -226,6 +232,7 @@ class GroupGreetingEventGreeting(object):
         :type: str
         """
         
+
         self._audio_tts = audio_tts
 
     def to_dict(self):

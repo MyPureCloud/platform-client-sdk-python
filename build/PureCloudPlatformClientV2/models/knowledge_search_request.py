@@ -85,6 +85,10 @@ class KnowledgeSearchRequest(object):
         :type: str
         """
         
+        if not query:
+            raise ValueError("Invalid value for `query`, must not be `None`")
+
+
         self._query = query
 
     @property
@@ -108,6 +112,7 @@ class KnowledgeSearchRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -131,6 +136,7 @@ class KnowledgeSearchRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -181,6 +187,10 @@ class KnowledgeSearchRequest(object):
         :type: str
         """
         
+        if not language_code:
+            raise ValueError("Invalid value for `language_code`, must not be `None`")
+
+
         self._language_code = language_code
 
     @property
@@ -204,6 +214,7 @@ class KnowledgeSearchRequest(object):
         :type: bool
         """
         
+
         self._search_on_draft_documents = search_on_draft_documents
 
     def to_dict(self):

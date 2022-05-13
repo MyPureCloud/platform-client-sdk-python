@@ -79,6 +79,10 @@ class TextBotPromptSegment(object):
         :type: str
         """
         
+        if not text:
+            raise ValueError("Invalid value for `text`, must not be `None`")
+
+
         self._text = text
 
     @property
@@ -129,6 +133,7 @@ class TextBotPromptSegment(object):
         :type: Format
         """
         
+
         self._format = format
 
     @property
@@ -152,6 +157,7 @@ class TextBotPromptSegment(object):
         :type: list[MessageContent]
         """
         
+
         self._content = content
 
     def to_dict(self):

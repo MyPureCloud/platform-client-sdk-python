@@ -70,6 +70,7 @@ class ListWrapperSecondaryPresence(object):
         :type: list[SecondaryPresence]
         """
         
+
         self._values = values
 
     def to_dict(self):

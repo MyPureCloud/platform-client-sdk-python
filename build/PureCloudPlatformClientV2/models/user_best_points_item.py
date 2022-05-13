@@ -109,6 +109,7 @@ class UserBestPointsItem(object):
         :type: int
         """
         
+
         self._points = points
 
     @property
@@ -132,6 +133,7 @@ class UserBestPointsItem(object):
         :type: date
         """
         
+
         self._date_start_workday = date_start_workday
 
     @property
@@ -155,6 +157,7 @@ class UserBestPointsItem(object):
         :type: date
         """
         
+
         self._date_end_workday = date_end_workday
 
     @property
@@ -178,6 +181,7 @@ class UserBestPointsItem(object):
         :type: int
         """
         
+
         self._rank = rank
 
     def to_dict(self):

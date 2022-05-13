@@ -79,6 +79,7 @@ class FailedObject(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class FailedObject(object):
         :type: str
         """
         
+
         self._version = version
 
     @property
@@ -125,6 +127,7 @@ class FailedObject(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -148,6 +151,7 @@ class FailedObject(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     def to_dict(self):

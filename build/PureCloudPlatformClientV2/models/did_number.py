@@ -91,6 +91,7 @@ class DIDNumber(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class DIDNumber(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class DIDNumber(object):
         :type: str
         """
         
+
         self._number = number
 
     @property
@@ -160,6 +163,7 @@ class DIDNumber(object):
         :type: bool
         """
         
+
         self._assigned = assigned
 
     @property
@@ -183,6 +187,7 @@ class DIDNumber(object):
         :type: AddressableEntityRef
         """
         
+
         self._did_pool = did_pool
 
     @property
@@ -206,6 +211,7 @@ class DIDNumber(object):
         :type: DomainEntityRef
         """
         
+
         self._owner = owner
 
     @property
@@ -256,6 +262,7 @@ class DIDNumber(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

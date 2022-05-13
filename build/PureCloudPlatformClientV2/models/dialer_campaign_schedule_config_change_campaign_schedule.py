@@ -91,6 +91,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         :type: list[DialerCampaignScheduleConfigChangeScheduleInterval]
         """
         
+
         self._intervals = intervals
 
     @property
@@ -114,6 +115,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -137,6 +139,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         :type: DialerCampaignScheduleConfigChangeUriReference
         """
         
+
         self._campaign = campaign
 
     @property
@@ -160,6 +163,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -183,6 +187,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -206,6 +211,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -229,6 +235,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -252,6 +259,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

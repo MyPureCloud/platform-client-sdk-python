@@ -73,6 +73,7 @@ class WebMessagingOfferFields(object):
         :type: str
         """
         
+
         self._offer_text = offer_text
 
     @property
@@ -96,6 +97,7 @@ class WebMessagingOfferFields(object):
         :type: AddressableEntityRef
         """
         
+
         self._architect_flow = architect_flow
 
     def to_dict(self):

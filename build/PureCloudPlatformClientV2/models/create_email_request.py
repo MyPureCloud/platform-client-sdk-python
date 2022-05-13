@@ -115,6 +115,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -138,6 +139,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._flow_id = flow_id
 
     @property
@@ -161,6 +163,10 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+        if not provider:
+            raise ValueError("Invalid value for `provider`, must not be `None`")
+
+
         self._provider = provider
 
     @property
@@ -184,6 +190,7 @@ class CreateEmailRequest(object):
         :type: list[str]
         """
         
+
         self._skill_ids = skill_ids
 
     @property
@@ -207,6 +214,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._language_id = language_id
 
     @property
@@ -230,6 +238,7 @@ class CreateEmailRequest(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -253,6 +262,7 @@ class CreateEmailRequest(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -276,6 +286,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._to_address = to_address
 
     @property
@@ -299,6 +310,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._to_name = to_name
 
     @property
@@ -322,6 +334,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._from_address = from_address
 
     @property
@@ -345,6 +358,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._from_name = from_name
 
     @property
@@ -368,6 +382,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -418,6 +433,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._html_body = html_body
 
     @property
@@ -441,6 +457,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._text_body = text_body
 
     @property
@@ -464,6 +481,7 @@ class CreateEmailRequest(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     def to_dict(self):

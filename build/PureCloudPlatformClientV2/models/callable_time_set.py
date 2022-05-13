@@ -88,6 +88,7 @@ class CallableTimeSet(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,10 @@ class CallableTimeSet(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -134,6 +139,7 @@ class CallableTimeSet(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -157,6 +163,7 @@ class CallableTimeSet(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -180,6 +187,7 @@ class CallableTimeSet(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -203,6 +211,10 @@ class CallableTimeSet(object):
         :type: list[CallableTime]
         """
         
+        if not callable_times:
+            raise ValueError("Invalid value for `callable_times`, must not be `None`")
+
+
         self._callable_times = callable_times
 
     @property
@@ -226,6 +238,7 @@ class CallableTimeSet(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

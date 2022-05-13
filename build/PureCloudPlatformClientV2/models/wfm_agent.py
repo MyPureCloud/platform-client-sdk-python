@@ -100,6 +100,7 @@ class WfmAgent(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class WfmAgent(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -146,6 +148,7 @@ class WfmAgent(object):
         :type: WorkPlanReference
         """
         
+
         self._work_plan = work_plan
 
     @property
@@ -169,6 +172,7 @@ class WfmAgent(object):
         :type: WorkPlanRotationReference
         """
         
+
         self._work_plan_rotation = work_plan_rotation
 
     @property
@@ -192,6 +196,7 @@ class WfmAgent(object):
         :type: bool
         """
         
+
         self._accept_direct_shift_trades = accept_direct_shift_trades
 
     @property
@@ -215,6 +220,7 @@ class WfmAgent(object):
         :type: list[QueueReference]
         """
         
+
         self._queues = queues
 
     @property
@@ -238,6 +244,7 @@ class WfmAgent(object):
         :type: list[LanguageReference]
         """
         
+
         self._languages = languages
 
     @property
@@ -261,6 +268,7 @@ class WfmAgent(object):
         :type: list[RoutingSkillReference]
         """
         
+
         self._skills = skills
 
     @property
@@ -284,6 +292,7 @@ class WfmAgent(object):
         :type: bool
         """
         
+
         self._schedulable = schedulable
 
     @property
@@ -307,6 +316,7 @@ class WfmAgent(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -330,6 +340,7 @@ class WfmAgent(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -76,6 +76,7 @@ class WorkPlanRotationAgentResponse(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -99,6 +100,7 @@ class WorkPlanRotationAgentResponse(object):
         :type: DateRangeWithOptionalEnd
         """
         
+
         self._date_range = date_range
 
     @property
@@ -122,6 +124,7 @@ class WorkPlanRotationAgentResponse(object):
         :type: int
         """
         
+
         self._position = position
 
     def to_dict(self):

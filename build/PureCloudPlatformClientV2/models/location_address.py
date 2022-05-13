@@ -88,6 +88,7 @@ class LocationAddress(object):
         :type: str
         """
         
+
         self._city = city
 
     @property
@@ -111,6 +112,7 @@ class LocationAddress(object):
         :type: str
         """
         
+
         self._country = country
 
     @property
@@ -134,6 +136,7 @@ class LocationAddress(object):
         :type: str
         """
         
+
         self._country_name = country_name
 
     @property
@@ -157,6 +160,7 @@ class LocationAddress(object):
         :type: str
         """
         
+
         self._state = state
 
     @property
@@ -180,6 +184,7 @@ class LocationAddress(object):
         :type: str
         """
         
+
         self._street1 = street1
 
     @property
@@ -203,6 +208,7 @@ class LocationAddress(object):
         :type: str
         """
         
+
         self._street2 = street2
 
     @property
@@ -226,6 +232,7 @@ class LocationAddress(object):
         :type: str
         """
         
+
         self._zipcode = zipcode
 
     def to_dict(self):

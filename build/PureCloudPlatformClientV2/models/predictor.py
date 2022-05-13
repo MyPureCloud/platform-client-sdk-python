@@ -100,6 +100,7 @@ class Predictor(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,10 @@ class Predictor(object):
         :type: list[AddressableEntityRef]
         """
         
+        if not queues:
+            raise ValueError("Invalid value for `queues`, must not be `None`")
+
+
         self._queues = queues
 
     @property
@@ -146,6 +151,10 @@ class Predictor(object):
         :type: str
         """
         
+        if not kpi:
+            raise ValueError("Invalid value for `kpi`, must not be `None`")
+
+
         self._kpi = kpi
 
     @property
@@ -169,6 +178,7 @@ class Predictor(object):
         :type: int
         """
         
+
         self._routing_timeout_seconds = routing_timeout_seconds
 
     @property
@@ -192,6 +202,7 @@ class Predictor(object):
         :type: PredictorSchedule
         """
         
+
         self._schedule = schedule
 
     @property
@@ -242,6 +253,7 @@ class Predictor(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -265,6 +277,7 @@ class Predictor(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -288,6 +301,7 @@ class Predictor(object):
         :type: PredictorWorkloadBalancing
         """
         
+
         self._workload_balancing_config = workload_balancing_config
 
     @property
@@ -311,6 +325,7 @@ class Predictor(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -334,6 +349,7 @@ class Predictor(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -76,6 +76,7 @@ class WfmScheduleActivity(object):
         :type: UserReference
         """
         
+
         self._user_reference = user_reference
 
     @property
@@ -99,6 +100,7 @@ class WfmScheduleActivity(object):
         :type: list[ScheduleActivity]
         """
         
+
         self._activities = activities
 
     @property
@@ -122,6 +124,7 @@ class WfmScheduleActivity(object):
         :type: list[FullDayTimeOffMarker]
         """
         
+
         self._full_day_time_off_markers = full_day_time_off_markers
 
     def to_dict(self):

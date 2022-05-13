@@ -76,6 +76,10 @@ class TrustMemberCreate(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -99,6 +103,7 @@ class TrustMemberCreate(object):
         :type: list[str]
         """
         
+
         self._role_ids = role_ids
 
     @property
@@ -122,6 +127,7 @@ class TrustMemberCreate(object):
         :type: RoleDivisionGrants
         """
         
+
         self._role_divisions = role_divisions
 
     def to_dict(self):

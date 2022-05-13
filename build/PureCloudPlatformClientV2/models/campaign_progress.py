@@ -85,6 +85,10 @@ class CampaignProgress(object):
         :type: DomainEntityRef
         """
         
+        if not campaign:
+            raise ValueError("Invalid value for `campaign`, must not be `None`")
+
+
         self._campaign = campaign
 
     @property
@@ -108,6 +112,10 @@ class CampaignProgress(object):
         :type: DomainEntityRef
         """
         
+        if not contact_list:
+            raise ValueError("Invalid value for `contact_list`, must not be `None`")
+
+
         self._contact_list = contact_list
 
     @property
@@ -131,6 +139,7 @@ class CampaignProgress(object):
         :type: int
         """
         
+
         self._number_of_contacts_called = number_of_contacts_called
 
     @property
@@ -154,6 +163,7 @@ class CampaignProgress(object):
         :type: int
         """
         
+
         self._number_of_contacts_messaged = number_of_contacts_messaged
 
     @property
@@ -177,6 +187,7 @@ class CampaignProgress(object):
         :type: int
         """
         
+
         self._total_number_of_contacts = total_number_of_contacts
 
     @property
@@ -200,6 +211,7 @@ class CampaignProgress(object):
         :type: int
         """
         
+
         self._percentage = percentage
 
     def to_dict(self):

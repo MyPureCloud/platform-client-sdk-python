@@ -121,6 +121,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -144,6 +145,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: WfmTimeOffRequestUpdateTopicUserReference
         """
         
+
         self._user = user
 
     @property
@@ -167,6 +169,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: bool
         """
         
+
         self._is_full_day_request = is_full_day_request
 
     @property
@@ -190,6 +193,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: bool
         """
         
+
         self._marked_as_read = marked_as_read
 
     @property
@@ -213,6 +217,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -236,6 +241,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: bool
         """
         
+
         self._paid = paid
 
     @property
@@ -313,6 +319,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: list[str]
         """
         
+
         self._partial_day_start_date_times = partial_day_start_date_times
 
     @property
@@ -336,6 +343,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: list[str]
         """
         
+
         self._full_day_management_unit_dates = full_day_management_unit_dates
 
     @property
@@ -359,6 +367,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: int
         """
         
+
         self._daily_duration_minutes = daily_duration_minutes
 
     @property
@@ -382,6 +391,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -405,6 +415,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: str
         """
         
+
         self._reviewed_date = reviewed_date
 
     @property
@@ -428,6 +439,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: str
         """
         
+
         self._reviewed_by = reviewed_by
 
     @property
@@ -451,6 +463,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: str
         """
         
+
         self._submitted_date = submitted_date
 
     @property
@@ -474,6 +487,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: str
         """
         
+
         self._submitted_by = submitted_by
 
     @property
@@ -497,6 +511,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: str
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -520,6 +535,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     def to_dict(self):

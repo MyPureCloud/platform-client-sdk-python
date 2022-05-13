@@ -76,6 +76,7 @@ class CobrowseSettings(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -99,6 +100,7 @@ class CobrowseSettings(object):
         :type: bool
         """
         
+
         self._allow_agent_control = allow_agent_control
 
     @property
@@ -122,6 +124,7 @@ class CobrowseSettings(object):
         :type: list[str]
         """
         
+
         self._mask_selectors = mask_selectors
 
     def to_dict(self):

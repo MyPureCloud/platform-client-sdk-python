@@ -70,6 +70,7 @@ class ValidateAddressRequest(object):
         :type: StreetAddress
         """
         
+
         self._address = address
 
     def to_dict(self):

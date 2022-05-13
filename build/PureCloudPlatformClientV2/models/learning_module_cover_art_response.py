@@ -76,6 +76,7 @@ class LearningModuleCoverArtResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class LearningModuleCoverArtResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -122,6 +124,7 @@ class LearningModuleCoverArtResponse(object):
         :type: str
         """
         
+
         self._url = url
 
     def to_dict(self):

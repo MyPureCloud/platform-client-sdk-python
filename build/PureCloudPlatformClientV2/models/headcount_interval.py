@@ -73,6 +73,10 @@ class HeadcountInterval(object):
         :type: datetime
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -96,6 +100,10 @@ class HeadcountInterval(object):
         :type: float
         """
         
+        if not value:
+            raise ValueError("Invalid value for `value`, must not be `None`")
+
+
         self._value = value
 
     def to_dict(self):

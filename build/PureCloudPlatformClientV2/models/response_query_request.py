@@ -76,6 +76,7 @@ class ResponseQueryRequest(object):
         :type: str
         """
         
+
         self._query_phrase = query_phrase
 
     @property
@@ -99,6 +100,7 @@ class ResponseQueryRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -122,6 +124,7 @@ class ResponseQueryRequest(object):
         :type: list[ResponseFilter]
         """
         
+
         self._filters = filters
 
     def to_dict(self):

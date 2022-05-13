@@ -121,6 +121,7 @@ class ShiftTradeResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -144,6 +145,7 @@ class ShiftTradeResponse(object):
         :type: date
         """
         
+
         self._week_date = week_date
 
     @property
@@ -167,6 +169,7 @@ class ShiftTradeResponse(object):
         :type: BuScheduleReferenceForMuRoute
         """
         
+
         self._schedule = schedule
 
     @property
@@ -217,6 +220,7 @@ class ShiftTradeResponse(object):
         :type: UserReference
         """
         
+
         self._initiating_user = initiating_user
 
     @property
@@ -240,6 +244,7 @@ class ShiftTradeResponse(object):
         :type: str
         """
         
+
         self._initiating_shift_id = initiating_shift_id
 
     @property
@@ -263,6 +268,7 @@ class ShiftTradeResponse(object):
         :type: datetime
         """
         
+
         self._initiating_shift_start = initiating_shift_start
 
     @property
@@ -286,6 +292,7 @@ class ShiftTradeResponse(object):
         :type: datetime
         """
         
+
         self._initiating_shift_end = initiating_shift_end
 
     @property
@@ -309,6 +316,7 @@ class ShiftTradeResponse(object):
         :type: UserReference
         """
         
+
         self._receiving_user = receiving_user
 
     @property
@@ -332,6 +340,7 @@ class ShiftTradeResponse(object):
         :type: str
         """
         
+
         self._receiving_shift_id = receiving_shift_id
 
     @property
@@ -355,6 +364,7 @@ class ShiftTradeResponse(object):
         :type: datetime
         """
         
+
         self._receiving_shift_start = receiving_shift_start
 
     @property
@@ -378,6 +388,7 @@ class ShiftTradeResponse(object):
         :type: datetime
         """
         
+
         self._receiving_shift_end = receiving_shift_end
 
     @property
@@ -401,6 +412,7 @@ class ShiftTradeResponse(object):
         :type: datetime
         """
         
+
         self._expiration = expiration
 
     @property
@@ -424,6 +436,7 @@ class ShiftTradeResponse(object):
         :type: bool
         """
         
+
         self._one_sided = one_sided
 
     @property
@@ -447,6 +460,7 @@ class ShiftTradeResponse(object):
         :type: list[str]
         """
         
+
         self._acceptable_intervals = acceptable_intervals
 
     @property
@@ -470,6 +484,7 @@ class ShiftTradeResponse(object):
         :type: UserReference
         """
         
+
         self._reviewed_by = reviewed_by
 
     @property
@@ -493,6 +508,7 @@ class ShiftTradeResponse(object):
         :type: datetime
         """
         
+
         self._reviewed_date = reviewed_date
 
     @property
@@ -516,6 +532,7 @@ class ShiftTradeResponse(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

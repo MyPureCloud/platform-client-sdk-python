@@ -73,6 +73,7 @@ class PresenceEventOrganizationPresence(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class PresenceEventOrganizationPresence(object):
         :type: str
         """
         
+
         self._system_presence = system_presence
 
     def to_dict(self):

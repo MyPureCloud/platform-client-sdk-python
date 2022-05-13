@@ -82,6 +82,7 @@ class ShiftTradeMatchReviewUserResponse(object):
         :type: int
         """
         
+
         self._weekly_minimum_paid_minutes = weekly_minimum_paid_minutes
 
     @property
@@ -105,6 +106,7 @@ class ShiftTradeMatchReviewUserResponse(object):
         :type: int
         """
         
+
         self._weekly_maximum_paid_minutes = weekly_maximum_paid_minutes
 
     @property
@@ -128,6 +130,7 @@ class ShiftTradeMatchReviewUserResponse(object):
         :type: int
         """
         
+
         self._pre_trade_schedule_paid_minutes = pre_trade_schedule_paid_minutes
 
     @property
@@ -151,6 +154,7 @@ class ShiftTradeMatchReviewUserResponse(object):
         :type: int
         """
         
+
         self._post_trade_schedule_paid_minutes = post_trade_schedule_paid_minutes
 
     @property
@@ -174,6 +178,7 @@ class ShiftTradeMatchReviewUserResponse(object):
         :type: ShiftTradePreviewResponse
         """
         
+
         self._post_trade_new_shift = post_trade_new_shift
 
     def to_dict(self):

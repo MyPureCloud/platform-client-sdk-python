@@ -76,6 +76,10 @@ class AuditUser(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -99,6 +103,7 @@ class AuditUser(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -122,6 +127,7 @@ class AuditUser(object):
         :type: str
         """
         
+
         self._display = display
 
     def to_dict(self):

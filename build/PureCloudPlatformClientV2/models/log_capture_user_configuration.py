@@ -76,6 +76,7 @@ class LogCaptureUserConfiguration(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,10 @@ class LogCaptureUserConfiguration(object):
         :type: datetime
         """
         
+        if not date_expired:
+            raise ValueError("Invalid value for `date_expired`, must not be `None`")
+
+
         self._date_expired = date_expired
 
     @property
@@ -122,6 +127,7 @@ class LogCaptureUserConfiguration(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

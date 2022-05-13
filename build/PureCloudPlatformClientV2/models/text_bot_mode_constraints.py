@@ -70,6 +70,7 @@ class TextBotModeConstraints(object):
         :type: TextBotTextModeConstraints
         """
         
+
         self._text = text
 
     def to_dict(self):

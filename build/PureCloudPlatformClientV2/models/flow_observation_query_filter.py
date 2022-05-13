@@ -103,6 +103,7 @@ class FlowObservationQueryFilter(object):
         :type: list[FlowObservationQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class FlowObservationQueryFilter(object):
         :type: list[FlowObservationQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

@@ -91,6 +91,7 @@ class CommandStatus(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class CommandStatus(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class CommandStatus(object):
         :type: datetime
         """
         
+
         self._expiration = expiration
 
     @property
@@ -160,6 +163,7 @@ class CommandStatus(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -237,6 +241,7 @@ class CommandStatus(object):
         :type: Document
         """
         
+
         self._document = document
 
     @property
@@ -260,6 +265,7 @@ class CommandStatus(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

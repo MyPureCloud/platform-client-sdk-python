@@ -70,6 +70,7 @@ class ChannelEntityListing(object):
         :type: list[Channel]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

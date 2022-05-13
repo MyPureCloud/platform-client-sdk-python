@@ -70,6 +70,7 @@ class SetUuiDataRequest(object):
         :type: str
         """
         
+
         self._uui_data = uui_data
 
     def to_dict(self):

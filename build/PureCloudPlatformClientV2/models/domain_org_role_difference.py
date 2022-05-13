@@ -82,6 +82,7 @@ class DomainOrgRoleDifference(object):
         :type: list[DomainPermissionPolicy]
         """
         
+
         self._removed_permission_policies = removed_permission_policies
 
     @property
@@ -105,6 +106,7 @@ class DomainOrgRoleDifference(object):
         :type: list[DomainPermissionPolicy]
         """
         
+
         self._added_permission_policies = added_permission_policies
 
     @property
@@ -128,6 +130,7 @@ class DomainOrgRoleDifference(object):
         :type: list[DomainPermissionPolicy]
         """
         
+
         self._same_permission_policies = same_permission_policies
 
     @property
@@ -151,6 +154,7 @@ class DomainOrgRoleDifference(object):
         :type: DomainOrganizationRole
         """
         
+
         self._user_org_role = user_org_role
 
     @property
@@ -174,6 +178,7 @@ class DomainOrgRoleDifference(object):
         :type: DomainOrganizationRole
         """
         
+
         self._role_from_default = role_from_default
 
     def to_dict(self):

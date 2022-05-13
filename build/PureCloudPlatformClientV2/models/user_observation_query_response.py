@@ -70,6 +70,7 @@ class UserObservationQueryResponse(object):
         :type: list[UserObservationDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

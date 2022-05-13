@@ -70,6 +70,7 @@ class ValueWrapperDate(object):
         :type: datetime
         """
         
+
         self._value = value
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class DialerRule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,10 @@ class DialerRule(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -131,6 +136,7 @@ class DialerRule(object):
         :type: int
         """
         
+
         self._order = order
 
     @property
@@ -181,6 +187,10 @@ class DialerRule(object):
         :type: list[Condition]
         """
         
+        if not conditions:
+            raise ValueError("Invalid value for `conditions`, must not be `None`")
+
+
         self._conditions = conditions
 
     @property
@@ -204,6 +214,7 @@ class DialerRule(object):
         :type: list[DialerAction]
         """
         
+
         self._actions = actions
 
     def to_dict(self):

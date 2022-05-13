@@ -76,6 +76,10 @@ class NamedEntityTypeDefinition(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -99,6 +103,7 @@ class NamedEntityTypeDefinition(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -122,6 +127,10 @@ class NamedEntityTypeDefinition(object):
         :type: NamedEntityTypeMechanism
         """
         
+        if not mechanism:
+            raise ValueError("Invalid value for `mechanism`, must not be `None`")
+
+
         self._mechanism = mechanism
 
     def to_dict(self):

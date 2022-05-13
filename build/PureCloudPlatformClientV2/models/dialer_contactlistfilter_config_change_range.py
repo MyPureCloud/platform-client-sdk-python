@@ -82,6 +82,7 @@ class DialerContactlistfilterConfigChangeRange(object):
         :type: str
         """
         
+
         self._min = min
 
     @property
@@ -105,6 +106,7 @@ class DialerContactlistfilterConfigChangeRange(object):
         :type: str
         """
         
+
         self._max = max
 
     @property
@@ -128,6 +130,7 @@ class DialerContactlistfilterConfigChangeRange(object):
         :type: bool
         """
         
+
         self._min_inclusive = min_inclusive
 
     @property
@@ -151,6 +154,7 @@ class DialerContactlistfilterConfigChangeRange(object):
         :type: bool
         """
         
+
         self._max_inclusive = max_inclusive
 
     @property
@@ -174,6 +178,7 @@ class DialerContactlistfilterConfigChangeRange(object):
         :type: list[str]
         """
         
+
         self._in_set = in_set
 
     def to_dict(self):

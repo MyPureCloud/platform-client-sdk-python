@@ -76,6 +76,7 @@ class KeyPerformanceIndicatorAssessment(object):
         :type: str
         """
         
+
         self._kpi = kpi
 
     @property
@@ -126,6 +127,7 @@ class KeyPerformanceIndicatorAssessment(object):
         :type: list[Check]
         """
         
+
         self._checks = checks
 
     def to_dict(self):

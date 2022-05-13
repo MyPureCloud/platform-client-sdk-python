@@ -142,6 +142,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -165,6 +166,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -188,6 +190,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -211,6 +214,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -234,6 +238,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: str
         """
         
+
         self._room_id = room_id
 
     @property
@@ -257,6 +262,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: str
         """
         
+
         self._avatar_image_url = avatar_image_url
 
     @property
@@ -280,6 +286,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -330,6 +337,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -353,6 +361,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -376,6 +385,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -399,6 +409,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: QueueConversationSocialExpressionEventTopicJourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -422,6 +433,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: QueueConversationSocialExpressionEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -445,6 +457,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: QueueConversationSocialExpressionEventTopicAfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -468,6 +481,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

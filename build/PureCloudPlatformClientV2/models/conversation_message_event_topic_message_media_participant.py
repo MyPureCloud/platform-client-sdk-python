@@ -181,6 +181,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -204,6 +205,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -227,6 +229,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -250,6 +253,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -273,6 +277,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -296,6 +301,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -319,6 +325,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -342,6 +349,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -446,6 +454,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -469,6 +478,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_required = wrapup_required
 
     @property
@@ -492,6 +502,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._wrapup_prompt = wrapup_prompt
 
     @property
@@ -515,6 +526,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicUriReference
         """
         
+
         self._user = user
 
     @property
@@ -538,6 +550,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicUriReference
         """
         
+
         self._queue = queue
 
     @property
@@ -561,6 +574,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicUriReference
         """
         
+
         self._team = team
 
     @property
@@ -584,6 +598,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -607,6 +622,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicErrorBody
         """
         
+
         self._error_info = error_info
 
     @property
@@ -630,6 +646,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicUriReference
         """
         
+
         self._script = script
 
     @property
@@ -653,6 +670,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: int
         """
         
+
         self._wrapup_timeout_ms = wrapup_timeout_ms
 
     @property
@@ -676,6 +694,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_skipped = wrapup_skipped
 
     @property
@@ -699,6 +718,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: int
         """
         
+
         self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
@@ -722,6 +742,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -745,6 +766,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicUriReference
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -768,6 +790,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicUriReference
         """
         
+
         self._external_organization = external_organization
 
     @property
@@ -791,6 +814,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -814,6 +838,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicConversationRoutingData
         """
         
+
         self._conversation_routing_data = conversation_routing_data
 
     @property
@@ -837,6 +862,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._peer = peer
 
     @property
@@ -860,6 +886,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._screen_recording_state = screen_recording_state
 
     @property
@@ -910,6 +937,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: ConversationMessageEventTopicJourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -933,6 +961,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_acw_time = start_acw_time
 
     @property
@@ -956,6 +985,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_acw_time = end_acw_time
 
     @property
@@ -979,6 +1009,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: list[ConversationMessageEventTopicMessageDetails]
         """
         
+
         self._messages = messages
 
     @property
@@ -1029,6 +1060,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._recipient_country = recipient_country
 
     @property
@@ -1052,6 +1084,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         :type: str
         """
         
+
         self._recipient_type = recipient_type
 
     def to_dict(self):

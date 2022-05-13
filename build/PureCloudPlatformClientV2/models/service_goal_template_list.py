@@ -70,6 +70,7 @@ class ServiceGoalTemplateList(object):
         :type: list[ServiceGoalTemplate]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

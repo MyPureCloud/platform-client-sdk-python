@@ -85,6 +85,7 @@ class Attachment(object):
         :type: str
         """
         
+
         self._attachment_id = attachment_id
 
     @property
@@ -108,6 +109,7 @@ class Attachment(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class Attachment(object):
         :type: str
         """
         
+
         self._content_uri = content_uri
 
     @property
@@ -154,6 +157,7 @@ class Attachment(object):
         :type: str
         """
         
+
         self._content_type = content_type
 
     @property
@@ -177,6 +181,7 @@ class Attachment(object):
         :type: int
         """
         
+
         self._content_length = content_length
 
     @property
@@ -200,6 +205,7 @@ class Attachment(object):
         :type: bool
         """
         
+
         self._inline_image = inline_image
 
     def to_dict(self):

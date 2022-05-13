@@ -100,6 +100,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping(ob
         :type: int
         """
         
+
         self._duration = duration
 
     def to_dict(self):

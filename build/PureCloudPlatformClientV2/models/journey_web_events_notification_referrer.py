@@ -94,6 +94,7 @@ class JourneyWebEventsNotificationReferrer(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -117,6 +118,7 @@ class JourneyWebEventsNotificationReferrer(object):
         :type: str
         """
         
+
         self._domain = domain
 
     @property
@@ -140,6 +142,7 @@ class JourneyWebEventsNotificationReferrer(object):
         :type: str
         """
         
+
         self._hostname = hostname
 
     @property
@@ -163,6 +166,7 @@ class JourneyWebEventsNotificationReferrer(object):
         :type: str
         """
         
+
         self._keywords = keywords
 
     @property
@@ -186,6 +190,7 @@ class JourneyWebEventsNotificationReferrer(object):
         :type: str
         """
         
+
         self._pathname = pathname
 
     @property
@@ -209,6 +214,7 @@ class JourneyWebEventsNotificationReferrer(object):
         :type: str
         """
         
+
         self._query_string = query_string
 
     @property
@@ -232,6 +238,7 @@ class JourneyWebEventsNotificationReferrer(object):
         :type: str
         """
         
+
         self._fragment = fragment
 
     @property
@@ -255,6 +262,7 @@ class JourneyWebEventsNotificationReferrer(object):
         :type: str
         """
         
+
         self._name = name
 
     @property

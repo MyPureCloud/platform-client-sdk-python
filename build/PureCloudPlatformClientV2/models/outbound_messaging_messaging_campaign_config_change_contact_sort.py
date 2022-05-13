@@ -76,6 +76,7 @@ class OutboundMessagingMessagingCampaignConfigChangeContactSort(object):
         :type: str
         """
         
+
         self._field_name = field_name
 
     @property
@@ -126,6 +127,7 @@ class OutboundMessagingMessagingCampaignConfigChangeContactSort(object):
         :type: bool
         """
         
+
         self._numeric = numeric
 
     def to_dict(self):

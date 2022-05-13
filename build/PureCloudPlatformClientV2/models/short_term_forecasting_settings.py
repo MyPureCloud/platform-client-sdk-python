@@ -70,6 +70,7 @@ class ShortTermForecastingSettings(object):
         :type: int
         """
         
+
         self._default_history_weeks = default_history_weeks
 
     def to_dict(self):

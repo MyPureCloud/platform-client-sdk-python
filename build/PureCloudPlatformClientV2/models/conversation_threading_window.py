@@ -76,6 +76,7 @@ class ConversationThreadingWindow(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,10 @@ class ConversationThreadingWindow(object):
         :type: list[ConversationThreadingWindowSetting]
         """
         
+        if not settings:
+            raise ValueError("Invalid value for `settings`, must not be `None`")
+
+
         self._settings = settings
 
     @property
@@ -122,6 +127,7 @@ class ConversationThreadingWindow(object):
         :type: int
         """
         
+
         self._default_timeout_minutes = default_timeout_minutes
 
     def to_dict(self):

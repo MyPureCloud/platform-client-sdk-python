@@ -88,6 +88,7 @@ class QueueMemberEntityListing(object):
         :type: list[QueueMember]
         """
         
+
         self._entities = entities
 
     @property
@@ -111,6 +112,7 @@ class QueueMemberEntityListing(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -134,6 +136,7 @@ class QueueMemberEntityListing(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -157,6 +160,7 @@ class QueueMemberEntityListing(object):
         :type: str
         """
         
+
         self._first_uri = first_uri
 
     @property
@@ -180,6 +184,7 @@ class QueueMemberEntityListing(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -203,6 +208,7 @@ class QueueMemberEntityListing(object):
         :type: str
         """
         
+
         self._previous_uri = previous_uri
 
     @property
@@ -226,6 +232,7 @@ class QueueMemberEntityListing(object):
         :type: str
         """
         
+
         self._next_uri = next_uri
 
     def to_dict(self):

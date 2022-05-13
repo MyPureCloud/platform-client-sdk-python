@@ -73,6 +73,7 @@ class UpdateTimeOffLimitRequest(object):
         :type: int
         """
         
+
         self._default_limit_minutes = default_limit_minutes
 
     @property
@@ -96,6 +97,10 @@ class UpdateTimeOffLimitRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

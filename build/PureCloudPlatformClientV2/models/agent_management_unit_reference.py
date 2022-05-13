@@ -76,6 +76,7 @@ class AgentManagementUnitReference(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -99,6 +100,7 @@ class AgentManagementUnitReference(object):
         :type: ManagementUnitReference
         """
         
+
         self._management_unit = management_unit
 
     @property
@@ -122,6 +124,7 @@ class AgentManagementUnitReference(object):
         :type: BusinessUnitReference
         """
         
+
         self._business_unit = business_unit
 
     def to_dict(self):

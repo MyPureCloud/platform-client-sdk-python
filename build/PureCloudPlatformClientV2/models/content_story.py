@@ -103,6 +103,10 @@ class ContentStory(object):
         :type: str
         """
         
+        if not url:
+            raise ValueError("Invalid value for `url`, must not be `None`")
+
+
         self._url = url
 
     @property
@@ -126,6 +130,7 @@ class ContentStory(object):
         :type: str
         """
         
+
         self._reply_to_id = reply_to_id
 
     def to_dict(self):

@@ -60,7 +60,7 @@ Delete a document.
 
 Wraps DELETE /api/v2/contentmanagement/documents/{documentId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -77,7 +77,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ContentManagementApi()
 document_id = 'document_id_example' # str | Document ID
-override = true # bool | Override any lock on the document (optional)
+override = True # bool | Override any lock on the document (optional)
 
 try:
     # Delete a document.
@@ -109,9 +109,11 @@ Deletes an existing share.
 
 This revokes sharing rights specified in the share record
 
+
+
 Wraps DELETE /api/v2/contentmanagement/shares/{shareId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -160,7 +162,7 @@ Cancel the command for this status
 
 Wraps DELETE /api/v2/contentmanagement/status/{statusId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -209,7 +211,7 @@ Delete a workspace
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -260,7 +262,7 @@ Delete a member from a workspace
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -309,9 +311,11 @@ Delete workspace tag
 
 Delete a tag from a workspace. Will remove this tag from all documents.
 
+
+
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -362,7 +366,7 @@ Get a document.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -414,7 +418,7 @@ Get a list of audits for a document.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/audits 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -434,9 +438,9 @@ document_id = 'document_id_example' # str | Document ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 transaction_filter = 'transaction_filter_example' # str | Transaction filter (optional)
-level = 'USER' # str | level (optional) (default to USER)
+level = ''USER'' # str | level (optional) (default to 'USER')
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 
 try:
     # Get a list of audits for a document.
@@ -455,9 +459,9 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **transaction_filter** | **str**| Transaction filter | [optional]  |
-| **level** | **str**| level | [optional] [default to USER] |
+| **level** | **str**| level | [optional] [default to &#39;USER&#39;] |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to ascending] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -476,7 +480,7 @@ Download a document.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/content 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -511,7 +515,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **disposition** | **str**| Request how the content will be downloaded: a file attachment or inline. Default is attachment. | [optional] <br />**Values**: attachment, inline |
-| **content_type** | **str**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
+| **content_type** | **str**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -530,7 +534,7 @@ Get a list of documents.
 
 Wraps GET /api/v2/contentmanagement/documents 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -552,7 +556,7 @@ expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (opti
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'sort_by_example' # str | name or dateCreated (optional)
-sort_order = 'ascending' # str | ascending or descending (optional) (default to ascending)
+sort_order = ''ascending'' # str | ascending or descending (optional) (default to 'ascending')
 
 try:
     # Get a list of documents.
@@ -573,7 +577,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| name or dateCreated | [optional]  |
-| **sort_order** | **str**| ascending or descending | [optional] [default to ascending] |
+| **sort_order** | **str**| ascending or descending | [optional] [default to &#39;ascending&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -592,7 +596,7 @@ Query content
 
 Wraps GET /api/v2/contentmanagement/query 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -611,8 +615,8 @@ api_instance = PureCloudPlatformClientV2.ContentManagementApi()
 query_phrase = 'query_phrase_example' # str | Phrase tokens are ANDed together over all searchable fields
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | name or dateCreated (optional) (default to name)
-sort_order = 'ascending' # str | ascending or descending (optional) (default to ascending)
+sort_by = ''name'' # str | name or dateCreated (optional) (default to 'name')
+sort_order = ''ascending'' # str | ascending or descending (optional) (default to 'ascending')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 
 try:
@@ -631,8 +635,8 @@ except ApiException as e:
 | **query_phrase** | **str**| Phrase tokens are ANDed together over all searchable fields |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| name or dateCreated | [optional] [default to name] |
-| **sort_order** | **str**| ascending or descending | [optional] [default to ascending] |
+| **sort_by** | **str**| name or dateCreated | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| ascending or descending | [optional] [default to &#39;ascending&#39;] |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
 {: class="table table-striped"}
 
@@ -652,7 +656,7 @@ Get a Security Profile
 
 Wraps GET /api/v2/contentmanagement/securityprofiles/{securityProfileId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -702,7 +706,7 @@ Get a List of Security Profiles
 
 Wraps GET /api/v2/contentmanagement/securityprofiles 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -748,7 +752,7 @@ Retrieve details about an existing share.
 
 Wraps GET /api/v2/contentmanagement/shares/{shareId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -798,9 +802,11 @@ Get shared documents. Securely download a shared document.
 
 This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
 
+
+
 Wraps GET /api/v2/contentmanagement/shared/{sharedId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -817,8 +823,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ContentManagementApi()
 shared_id = 'shared_id_example' # str | Shared ID
-redirect = true # bool | Turn on or off redirect (optional) (default to true)
-disposition = 'attachment' # str | Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (optional) (default to attachment)
+redirect = True # bool | Turn on or off redirect (optional) (default to True)
+disposition = ''attachment'' # str | Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (optional) (default to 'attachment')
 content_type = 'content_type_example' # str | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav (optional)
 expand = 'expand_example' # str | Expand some document fields (optional)
 
@@ -836,9 +842,9 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **shared_id** | **str**| Shared ID |  |
-| **redirect** | **bool**| Turn on or off redirect | [optional] [default to true] |
-| **disposition** | **str**| Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment]<br />**Values**: attachment, inline, none |
-| **content_type** | **str**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
+| **redirect** | **bool**| Turn on or off redirect | [optional] [default to True] |
+| **disposition** | **str**| Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to &#39;attachment&#39;]<br />**Values**: attachment, inline, none |
+| **content_type** | **str**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional]  |
 | **expand** | **str**| Expand some document fields | [optional] <br />**Values**: document.acl |
 {: class="table table-striped"}
 
@@ -856,9 +862,11 @@ Gets a list of shares.  You must specify at least one filter (e.g. entityId).
 
 Failing to specify a filter will return 400.
 
+
+
 Wraps GET /api/v2/contentmanagement/shares 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -914,7 +922,7 @@ Get a list of statuses for pending operations
 
 Wraps GET /api/v2/contentmanagement/status 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -966,7 +974,7 @@ Get a status.
 
 Wraps GET /api/v2/contentmanagement/status/{statusId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1016,7 +1024,7 @@ Get usage details.
 
 Wraps GET /api/v2/contentmanagement/usage 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1062,7 +1070,7 @@ Get a workspace.
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1114,7 +1122,7 @@ Get a list of documents.
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1135,7 +1143,7 @@ expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (opti
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'sort_by_example' # str | name or dateCreated (optional)
-sort_order = 'ascending' # str | ascending or descending (optional) (default to ascending)
+sort_order = ''ascending'' # str | ascending or descending (optional) (default to 'ascending')
 
 try:
     # Get a list of documents.
@@ -1155,7 +1163,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| name or dateCreated | [optional]  |
-| **sort_order** | **str**| ascending or descending | [optional] [default to ascending] |
+| **sort_order** | **str**| ascending or descending | [optional] [default to &#39;ascending&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1174,7 +1182,7 @@ Get a workspace member
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1228,7 +1236,7 @@ Get a list workspace members
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1284,7 +1292,7 @@ Get a workspace tag
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1338,7 +1346,7 @@ Get a list of workspace tags
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1394,9 +1402,11 @@ Get a list of workspaces.
 
 Specifying 'content' access will return all workspaces the user has document access to, while 'admin' access will return all group workspaces the user has administrative rights to.
 
+
+
 Wraps GET /api/v2/contentmanagement/workspaces 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1452,7 +1462,7 @@ Query audits
 
 Wraps POST /api/v2/contentmanagement/auditquery 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1502,7 +1512,7 @@ Update a document.
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1521,7 +1531,7 @@ api_instance = PureCloudPlatformClientV2.ContentManagementApi()
 document_id = 'document_id_example' # str | Document ID
 body = PureCloudPlatformClientV2.DocumentUpdate() # DocumentUpdate | Document
 expand = 'expand_example' # str | Expand some document fields (optional)
-override = true # bool | Override any lock on the document (optional)
+override = True # bool | Override any lock on the document (optional)
 
 try:
     # Update a document.
@@ -1558,7 +1568,7 @@ Replace the contents of a document.
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId}/content 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1576,7 +1586,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ContentManagementApi()
 document_id = 'document_id_example' # str | Document ID
 body = PureCloudPlatformClientV2.ReplaceRequest() # ReplaceRequest | Replace Request
-override = true # bool | Override any lock on the document (optional)
+override = True # bool | Override any lock on the document (optional)
 
 try:
     # Replace the contents of a document.
@@ -1612,7 +1622,7 @@ Add a document.
 
 Wraps POST /api/v2/contentmanagement/documents 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1631,7 +1641,7 @@ api_instance = PureCloudPlatformClientV2.ContentManagementApi()
 body = PureCloudPlatformClientV2.DocumentUpload() # DocumentUpload | Document
 copy_source = 'copy_source_example' # str | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source. (optional)
 move_source = 'move_source_example' # str | Move a document to a new workspace. Provide a document ID as the move source. (optional)
-override = true # bool | Override any lock on the source document (optional)
+override = True # bool | Override any lock on the source document (optional)
 
 try:
     # Add a document.
@@ -1668,7 +1678,7 @@ Query content
 
 Wraps POST /api/v2/contentmanagement/query 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1720,7 +1730,7 @@ Creates a new share or updates an existing share if the entity has already been 
 
 Wraps POST /api/v2/contentmanagement/shares 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1770,7 +1780,7 @@ Create a workspace tag
 
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1822,7 +1832,7 @@ Perform a prefix query on tags in the workspace
 
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1876,7 +1886,7 @@ Create a group workspace
 
 Wraps POST /api/v2/contentmanagement/workspaces 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1926,7 +1936,7 @@ Update a workspace
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1978,7 +1988,7 @@ Add a member to a workspace
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2032,7 +2042,7 @@ Update a workspace tag. Will update all documents with the new tag value.
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

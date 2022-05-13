@@ -118,6 +118,10 @@ class Device(object):
         :type: str
         """
         
+        if not type:
+            raise ValueError("Invalid value for `type`, must not be `None`")
+
+
         self._type = type
 
     @property
@@ -141,6 +145,7 @@ class Device(object):
         :type: bool
         """
         
+
         self._is_mobile = is_mobile
 
     @property
@@ -164,6 +169,7 @@ class Device(object):
         :type: int
         """
         
+
         self._screen_height = screen_height
 
     @property
@@ -187,6 +193,7 @@ class Device(object):
         :type: int
         """
         
+
         self._screen_width = screen_width
 
     @property
@@ -210,6 +217,7 @@ class Device(object):
         :type: str
         """
         
+
         self._fingerprint = fingerprint
 
     @property
@@ -233,6 +241,10 @@ class Device(object):
         :type: str
         """
         
+        if not os_family:
+            raise ValueError("Invalid value for `os_family`, must not be `None`")
+
+
         self._os_family = os_family
 
     @property
@@ -256,6 +268,10 @@ class Device(object):
         :type: str
         """
         
+        if not os_version:
+            raise ValueError("Invalid value for `os_version`, must not be `None`")
+
+
         self._os_version = os_version
 
     def to_dict(self):

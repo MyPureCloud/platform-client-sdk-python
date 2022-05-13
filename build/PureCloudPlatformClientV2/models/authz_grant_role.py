@@ -85,6 +85,7 @@ class AuthzGrantRole(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class AuthzGrantRole(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class AuthzGrantRole(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -154,6 +157,7 @@ class AuthzGrantRole(object):
         :type: list[AuthzGrantPolicy]
         """
         
+
         self._policies = policies
 
     @property
@@ -177,6 +181,7 @@ class AuthzGrantRole(object):
         :type: bool
         """
         
+
         self._default = default
 
     @property
@@ -200,6 +205,7 @@ class AuthzGrantRole(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

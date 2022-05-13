@@ -85,6 +85,7 @@ class ArchitectJobStateResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class ArchitectJobStateResponse(object):
         :type: AddressableEntityRef
         """
         
+
         self._flow = flow
 
     @property
@@ -185,6 +187,7 @@ class ArchitectJobStateResponse(object):
         :type: list[ArchitectJobMessage]
         """
         
+
         self._messages = messages
 
     @property
@@ -208,6 +211,7 @@ class ArchitectJobStateResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

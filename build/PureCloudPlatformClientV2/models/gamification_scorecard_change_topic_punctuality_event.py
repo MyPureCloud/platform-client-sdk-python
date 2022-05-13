@@ -79,6 +79,7 @@ class GamificationScorecardChangeTopicPunctualityEvent(object):
         :type: str
         """
         
+
         self._date_start = date_start
 
     @property
@@ -102,6 +103,7 @@ class GamificationScorecardChangeTopicPunctualityEvent(object):
         :type: str
         """
         
+
         self._date_schedule_start = date_schedule_start
 
     @property
@@ -125,6 +127,7 @@ class GamificationScorecardChangeTopicPunctualityEvent(object):
         :type: str
         """
         
+
         self._activity_code = activity_code
 
     @property
@@ -148,6 +151,7 @@ class GamificationScorecardChangeTopicPunctualityEvent(object):
         :type: int
         """
         
+
         self._points = points
 
     def to_dict(self):

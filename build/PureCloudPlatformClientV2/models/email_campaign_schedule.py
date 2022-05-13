@@ -94,6 +94,7 @@ class EmailCampaignSchedule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class EmailCampaignSchedule(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class EmailCampaignSchedule(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -163,6 +166,7 @@ class EmailCampaignSchedule(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -186,6 +190,7 @@ class EmailCampaignSchedule(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -209,6 +214,10 @@ class EmailCampaignSchedule(object):
         :type: list[ScheduleInterval]
         """
         
+        if not intervals:
+            raise ValueError("Invalid value for `intervals`, must not be `None`")
+
+
         self._intervals = intervals
 
     @property
@@ -232,6 +241,7 @@ class EmailCampaignSchedule(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -255,6 +265,10 @@ class EmailCampaignSchedule(object):
         :type: DomainEntityRef
         """
         
+        if not email_campaign:
+            raise ValueError("Invalid value for `email_campaign`, must not be `None`")
+
+
         self._email_campaign = email_campaign
 
     @property
@@ -278,6 +292,7 @@ class EmailCampaignSchedule(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

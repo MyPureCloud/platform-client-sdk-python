@@ -73,6 +73,7 @@ class LicenseOrgToggle(object):
         :type: str
         """
         
+
         self._feature_name = feature_name
 
     @property
@@ -96,6 +97,7 @@ class LicenseOrgToggle(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     def to_dict(self):

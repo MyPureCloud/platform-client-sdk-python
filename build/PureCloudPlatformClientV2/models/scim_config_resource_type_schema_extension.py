@@ -73,6 +73,7 @@ class ScimConfigResourceTypeSchemaExtension(object):
         :type: str
         """
         
+
         self._schema = schema
 
     @property
@@ -96,6 +97,7 @@ class ScimConfigResourceTypeSchemaExtension(object):
         :type: bool
         """
         
+
         self._required = required
 
     def to_dict(self):

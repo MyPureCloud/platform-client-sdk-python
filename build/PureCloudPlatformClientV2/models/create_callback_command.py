@@ -100,6 +100,7 @@ class CreateCallbackCommand(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -123,6 +124,7 @@ class CreateCallbackCommand(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -146,6 +148,7 @@ class CreateCallbackCommand(object):
         :type: RoutingData
         """
         
+
         self._routing_data = routing_data
 
     @property
@@ -169,6 +172,7 @@ class CreateCallbackCommand(object):
         :type: str
         """
         
+
         self._callback_user_name = callback_user_name
 
     @property
@@ -192,6 +196,10 @@ class CreateCallbackCommand(object):
         :type: list[str]
         """
         
+        if not callback_numbers:
+            raise ValueError("Invalid value for `callback_numbers`, must not be `None`")
+
+
         self._callback_numbers = callback_numbers
 
     @property
@@ -215,6 +223,7 @@ class CreateCallbackCommand(object):
         :type: datetime
         """
         
+
         self._callback_scheduled_time = callback_scheduled_time
 
     @property
@@ -238,6 +247,7 @@ class CreateCallbackCommand(object):
         :type: str
         """
         
+
         self._country_code = country_code
 
     @property
@@ -261,6 +271,7 @@ class CreateCallbackCommand(object):
         :type: bool
         """
         
+
         self._validate_callback_numbers = validate_callback_numbers
 
     @property
@@ -284,6 +295,7 @@ class CreateCallbackCommand(object):
         :type: dict(str, str)
         """
         
+
         self._data = data
 
     @property
@@ -307,6 +319,7 @@ class CreateCallbackCommand(object):
         :type: str
         """
         
+
         self._caller_id = caller_id
 
     @property
@@ -330,6 +343,7 @@ class CreateCallbackCommand(object):
         :type: str
         """
         
+
         self._caller_id_name = caller_id_name
 
     def to_dict(self):

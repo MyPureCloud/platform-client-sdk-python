@@ -88,6 +88,7 @@ class Draft(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,10 @@ class Draft(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -134,6 +139,7 @@ class Draft(object):
         :type: Miner
         """
         
+
         self._miner = miner
 
     @property
@@ -157,6 +163,7 @@ class Draft(object):
         :type: list[DraftIntents]
         """
         
+
         self._intents = intents
 
     @property
@@ -180,6 +187,7 @@ class Draft(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -203,6 +211,7 @@ class Draft(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -226,6 +235,7 @@ class Draft(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

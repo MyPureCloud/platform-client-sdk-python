@@ -106,6 +106,7 @@ class PromptAsset(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class PromptAsset(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -152,6 +154,7 @@ class PromptAsset(object):
         :type: str
         """
         
+
         self._prompt_id = prompt_id
 
     @property
@@ -175,6 +178,7 @@ class PromptAsset(object):
         :type: str
         """
         
+
         self._language = language
 
     @property
@@ -198,6 +202,7 @@ class PromptAsset(object):
         :type: str
         """
         
+
         self._media_uri = media_uri
 
     @property
@@ -221,6 +226,7 @@ class PromptAsset(object):
         :type: str
         """
         
+
         self._tts_string = tts_string
 
     @property
@@ -244,6 +250,7 @@ class PromptAsset(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -294,6 +301,7 @@ class PromptAsset(object):
         :type: str
         """
         
+
         self._upload_uri = upload_uri
 
     @property
@@ -317,6 +325,7 @@ class PromptAsset(object):
         :type: bool
         """
         
+
         self._language_default = language_default
 
     @property
@@ -340,6 +349,7 @@ class PromptAsset(object):
         :type: dict(str, list[str])
         """
         
+
         self._tags = tags
 
     @property
@@ -363,6 +373,7 @@ class PromptAsset(object):
         :type: float
         """
         
+
         self._duration_seconds = duration_seconds
 
     @property
@@ -386,6 +397,7 @@ class PromptAsset(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class TextBotFlowTurnRequest(object):
         :type: TextBotTurnReference
         """
         
+
         self._previous_turn = previous_turn
 
     @property
@@ -129,6 +130,7 @@ class TextBotFlowTurnRequest(object):
         :type: TextBotUserInputEvent
         """
         
+
         self._input_event_user_input = input_event_user_input
 
     @property
@@ -152,6 +154,7 @@ class TextBotFlowTurnRequest(object):
         :type: TextBotErrorInputEvent
         """
         
+
         self._input_event_error = input_event_error
 
     def to_dict(self):

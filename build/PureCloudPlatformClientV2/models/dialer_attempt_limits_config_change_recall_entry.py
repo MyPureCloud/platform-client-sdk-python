@@ -73,6 +73,7 @@ class DialerAttemptLimitsConfigChangeRecallEntry(object):
         :type: int
         """
         
+
         self._nbr_attempts = nbr_attempts
 
     @property
@@ -96,6 +97,7 @@ class DialerAttemptLimitsConfigChangeRecallEntry(object):
         :type: int
         """
         
+
         self._minutes_between_attempts = minutes_between_attempts
 
     def to_dict(self):

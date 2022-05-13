@@ -82,6 +82,7 @@ class ConversationEventTopicConversationRoutingData(object):
         :type: ConversationEventTopicUriReference
         """
         
+
         self._queue = queue
 
     @property
@@ -105,6 +106,7 @@ class ConversationEventTopicConversationRoutingData(object):
         :type: ConversationEventTopicUriReference
         """
         
+
         self._language = language
 
     @property
@@ -128,6 +130,7 @@ class ConversationEventTopicConversationRoutingData(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -151,6 +154,7 @@ class ConversationEventTopicConversationRoutingData(object):
         :type: list[ConversationEventTopicUriReference]
         """
         
+
         self._skills = skills
 
     @property
@@ -174,6 +178,7 @@ class ConversationEventTopicConversationRoutingData(object):
         :type: list[ConversationEventTopicScoredAgent]
         """
         
+
         self._scored_agents = scored_agents
 
     def to_dict(self):

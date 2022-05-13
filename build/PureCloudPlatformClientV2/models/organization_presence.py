@@ -100,6 +100,7 @@ class OrganizationPresence(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class OrganizationPresence(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,10 @@ class OrganizationPresence(object):
         :type: dict(str, str)
         """
         
+        if not language_labels:
+            raise ValueError("Invalid value for `language_labels`, must not be `None`")
+
+
         self._language_labels = language_labels
 
     @property
@@ -169,6 +175,7 @@ class OrganizationPresence(object):
         :type: str
         """
         
+
         self._system_presence = system_presence
 
     @property
@@ -192,6 +199,7 @@ class OrganizationPresence(object):
         :type: bool
         """
         
+
         self._deactivated = deactivated
 
     @property
@@ -215,6 +223,7 @@ class OrganizationPresence(object):
         :type: bool
         """
         
+
         self._primary = primary
 
     @property
@@ -238,6 +247,7 @@ class OrganizationPresence(object):
         :type: User
         """
         
+
         self._created_by = created_by
 
     @property
@@ -261,6 +271,7 @@ class OrganizationPresence(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -284,6 +295,7 @@ class OrganizationPresence(object):
         :type: User
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -307,6 +319,7 @@ class OrganizationPresence(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -330,6 +343,7 @@ class OrganizationPresence(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

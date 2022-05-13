@@ -82,6 +82,7 @@ class ConversationMetrics(object):
         :type: AddressableEntityRef
         """
         
+
         self._conversation = conversation
 
     @property
@@ -105,6 +106,7 @@ class ConversationMetrics(object):
         :type: float
         """
         
+
         self._sentiment_score = sentiment_score
 
     @property
@@ -128,6 +130,7 @@ class ConversationMetrics(object):
         :type: float
         """
         
+
         self._sentiment_trend = sentiment_trend
 
     @property
@@ -178,6 +181,7 @@ class ConversationMetrics(object):
         :type: ParticipantMetrics
         """
         
+
         self._participant_metrics = participant_metrics
 
     def to_dict(self):

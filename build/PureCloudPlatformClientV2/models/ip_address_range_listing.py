@@ -70,6 +70,7 @@ class IpAddressRangeListing(object):
         :type: list[IpAddressRange]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

@@ -115,6 +115,7 @@ class AnalyticsConversation(object):
         :type: datetime
         """
         
+
         self._conversation_end = conversation_end
 
     @property
@@ -138,6 +139,7 @@ class AnalyticsConversation(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -188,6 +190,7 @@ class AnalyticsConversation(object):
         :type: datetime
         """
         
+
         self._conversation_start = conversation_start
 
     @property
@@ -211,6 +214,7 @@ class AnalyticsConversation(object):
         :type: bool
         """
         
+
         self._customer_participation = customer_participation
 
     @property
@@ -234,6 +238,7 @@ class AnalyticsConversation(object):
         :type: list[str]
         """
         
+
         self._division_ids = division_ids
 
     @property
@@ -257,6 +262,7 @@ class AnalyticsConversation(object):
         :type: str
         """
         
+
         self._external_tag = external_tag
 
     @property
@@ -280,6 +286,7 @@ class AnalyticsConversation(object):
         :type: list[str]
         """
         
+
         self._knowledge_base_ids = knowledge_base_ids
 
     @property
@@ -303,6 +310,7 @@ class AnalyticsConversation(object):
         :type: float
         """
         
+
         self._media_stats_min_conversation_mos = media_stats_min_conversation_mos
 
     @property
@@ -326,6 +334,7 @@ class AnalyticsConversation(object):
         :type: float
         """
         
+
         self._media_stats_min_conversation_r_factor = media_stats_min_conversation_r_factor
 
     @property
@@ -376,6 +385,7 @@ class AnalyticsConversation(object):
         :type: bool
         """
         
+
         self._self_served = self_served
 
     @property
@@ -399,6 +409,7 @@ class AnalyticsConversation(object):
         :type: list[AnalyticsEvaluation]
         """
         
+
         self._evaluations = evaluations
 
     @property
@@ -422,6 +433,7 @@ class AnalyticsConversation(object):
         :type: list[AnalyticsSurvey]
         """
         
+
         self._surveys = surveys
 
     @property
@@ -445,6 +457,7 @@ class AnalyticsConversation(object):
         :type: list[AnalyticsResolution]
         """
         
+
         self._resolutions = resolutions
 
     @property
@@ -468,6 +481,7 @@ class AnalyticsConversation(object):
         :type: list[AnalyticsParticipant]
         """
         
+
         self._participants = participants
 
     def to_dict(self):

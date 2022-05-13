@@ -73,6 +73,7 @@ class DetectedNamedEntityValue(object):
         :type: str
         """
         
+
         self._raw = raw
 
     @property
@@ -96,6 +97,7 @@ class DetectedNamedEntityValue(object):
         :type: str
         """
         
+
         self._resolved = resolved
 
     def to_dict(self):

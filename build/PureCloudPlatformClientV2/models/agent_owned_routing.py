@@ -76,6 +76,7 @@ class AgentOwnedRouting(object):
         :type: bool
         """
         
+
         self._enable_agent_owned_callbacks = enable_agent_owned_callbacks
 
     @property
@@ -99,6 +100,7 @@ class AgentOwnedRouting(object):
         :type: int
         """
         
+
         self._max_owned_callback_hours = max_owned_callback_hours
 
     @property
@@ -122,6 +124,7 @@ class AgentOwnedRouting(object):
         :type: int
         """
         
+
         self._max_owned_callback_delay_hours = max_owned_callback_delay_hours
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class PhonesReboot(object):
         :type: list[str]
         """
         
+
         self._phone_ids = phone_ids
 
     @property
@@ -96,6 +97,7 @@ class PhonesReboot(object):
         :type: str
         """
         
+
         self._site_id = site_id
 
     def to_dict(self):

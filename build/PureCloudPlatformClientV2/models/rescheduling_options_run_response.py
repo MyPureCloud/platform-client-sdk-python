@@ -97,6 +97,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: BuScheduleReference
         """
         
+
         self._existing_schedule = existing_schedule
 
     @property
@@ -120,6 +121,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -143,6 +145,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -166,6 +169,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: list[ReschedulingManagementUnitResponse]
         """
         
+
         self._management_units = management_units
 
     @property
@@ -189,6 +193,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: int
         """
         
+
         self._agent_count = agent_count
 
     @property
@@ -212,6 +217,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: list[str]
         """
         
+
         self._activity_code_ids = activity_code_ids
 
     @property
@@ -235,6 +241,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: bool
         """
         
+
         self._do_not_change_weekly_paid_time = do_not_change_weekly_paid_time
 
     @property
@@ -258,6 +265,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: bool
         """
         
+
         self._do_not_change_daily_paid_time = do_not_change_daily_paid_time
 
     @property
@@ -281,6 +289,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: bool
         """
         
+
         self._do_not_change_shift_start_times = do_not_change_shift_start_times
 
     @property
@@ -304,6 +313,7 @@ class ReschedulingOptionsRunResponse(object):
         :type: bool
         """
         
+
         self._do_not_change_manually_edited_shifts = do_not_change_manually_edited_shifts
 
     def to_dict(self):

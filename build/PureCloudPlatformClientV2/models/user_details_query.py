@@ -91,6 +91,10 @@ class UserDetailsQuery(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -114,6 +118,7 @@ class UserDetailsQuery(object):
         :type: list[UserDetailQueryFilter]
         """
         
+
         self._user_filters = user_filters
 
     @property
@@ -137,6 +142,7 @@ class UserDetailsQuery(object):
         :type: list[PresenceDetailQueryFilter]
         """
         
+
         self._presence_filters = presence_filters
 
     @property
@@ -160,6 +166,7 @@ class UserDetailsQuery(object):
         :type: list[RoutingStatusDetailQueryFilter]
         """
         
+
         self._routing_status_filters = routing_status_filters
 
     @property
@@ -210,6 +217,7 @@ class UserDetailsQuery(object):
         :type: list[AnalyticsQueryAggregation]
         """
         
+
         self._presence_aggregations = presence_aggregations
 
     @property
@@ -233,6 +241,7 @@ class UserDetailsQuery(object):
         :type: list[AnalyticsQueryAggregation]
         """
         
+
         self._routing_status_aggregations = routing_status_aggregations
 
     @property
@@ -256,6 +265,7 @@ class UserDetailsQuery(object):
         :type: PagingSpec
         """
         
+
         self._paging = paging
 
     def to_dict(self):

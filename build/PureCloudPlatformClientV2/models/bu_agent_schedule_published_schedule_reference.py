@@ -79,6 +79,7 @@ class BuAgentSchedulePublishedScheduleReference(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class BuAgentSchedulePublishedScheduleReference(object):
         :type: date
         """
         
+
         self._week_date = week_date
 
     @property
@@ -125,6 +127,7 @@ class BuAgentSchedulePublishedScheduleReference(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     @property
@@ -148,6 +151,7 @@ class BuAgentSchedulePublishedScheduleReference(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

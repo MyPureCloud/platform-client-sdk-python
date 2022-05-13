@@ -82,6 +82,7 @@ class CreateMetric(object):
         :type: str
         """
         
+
         self._metric_definition_id = metric_definition_id
 
     @property
@@ -105,6 +106,7 @@ class CreateMetric(object):
         :type: str
         """
         
+
         self._external_metric_definition_id = external_metric_definition_id
 
     @property
@@ -128,6 +130,7 @@ class CreateMetric(object):
         :type: CreateObjective
         """
         
+
         self._objective = objective
 
     @property
@@ -151,6 +154,7 @@ class CreateMetric(object):
         :type: str
         """
         
+
         self._performance_profile_id = performance_profile_id
 
     @property
@@ -174,6 +178,10 @@ class CreateMetric(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     def to_dict(self):

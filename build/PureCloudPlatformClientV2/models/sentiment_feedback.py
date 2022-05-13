@@ -85,6 +85,7 @@ class SentimentFeedback(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,10 @@ class SentimentFeedback(object):
         :type: str
         """
         
+        if not phrase:
+            raise ValueError("Invalid value for `phrase`, must not be `None`")
+
+
         self._phrase = phrase
 
     @property
@@ -131,6 +136,10 @@ class SentimentFeedback(object):
         :type: str
         """
         
+        if not dialect:
+            raise ValueError("Invalid value for `dialect`, must not be `None`")
+
+
         self._dialect = dialect
 
     @property
@@ -181,6 +190,7 @@ class SentimentFeedback(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -204,6 +214,7 @@ class SentimentFeedback(object):
         :type: AddressableEntityRef
         """
         
+
         self._created_by = created_by
 
     def to_dict(self):

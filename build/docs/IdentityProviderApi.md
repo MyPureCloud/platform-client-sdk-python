@@ -46,7 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_identityproviders_adfs"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_adfs()
+## Empty** delete_identityproviders_adfs()
 
 
 
@@ -89,11 +89,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_cic"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_cic()
+## Empty** delete_identityproviders_cic()
 
 
 
@@ -136,11 +136,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_generic"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_generic()
+## Empty** delete_identityproviders_generic()
 
 
 
@@ -183,11 +183,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_gsuite"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_gsuite()
+## Empty** delete_identityproviders_gsuite()
 
 
 
@@ -230,11 +230,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_identitynow"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_identitynow()
+## Empty** delete_identityproviders_identitynow()
 
 
 
@@ -277,11 +277,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_okta"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_okta()
+## Empty** delete_identityproviders_okta()
 
 
 
@@ -324,11 +324,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_onelogin"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_onelogin()
+## Empty** delete_identityproviders_onelogin()
 
 
 
@@ -371,11 +371,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_ping"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_ping()
+## Empty** delete_identityproviders_ping()
 
 
 
@@ -418,11 +418,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_purecloud"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_purecloud()
+## Empty** delete_identityproviders_purecloud()
 
 
 
@@ -465,11 +465,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_pureengage"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_pureengage()
+## Empty** delete_identityproviders_pureengage()
 
 
 
@@ -512,11 +512,11 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_identityproviders_salesforce"></a>
 
-## [**Empty**](Empty.html) delete_identityproviders_salesforce()
+## Empty** delete_identityproviders_salesforce()
 
 
 
@@ -559,7 +559,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="get_identityproviders"></a>
 

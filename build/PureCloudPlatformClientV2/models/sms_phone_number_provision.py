@@ -88,6 +88,7 @@ class SmsPhoneNumberProvision(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class SmsPhoneNumberProvision(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,10 @@ class SmsPhoneNumberProvision(object):
         :type: str
         """
         
+        if not phone_number:
+            raise ValueError("Invalid value for `phone_number`, must not be `None`")
+
+
         self._phone_number = phone_number
 
     @property
@@ -184,6 +190,10 @@ class SmsPhoneNumberProvision(object):
         :type: str
         """
         
+        if not country_code:
+            raise ValueError("Invalid value for `country_code`, must not be `None`")
+
+
         self._country_code = country_code
 
     @property
@@ -207,6 +217,7 @@ class SmsPhoneNumberProvision(object):
         :type: str
         """
         
+
         self._address_id = address_id
 
     @property
@@ -230,6 +241,7 @@ class SmsPhoneNumberProvision(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

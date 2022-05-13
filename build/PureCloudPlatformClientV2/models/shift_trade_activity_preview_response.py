@@ -79,6 +79,7 @@ class ShiftTradeActivityPreviewResponse(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -102,6 +103,7 @@ class ShiftTradeActivityPreviewResponse(object):
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property
@@ -125,6 +127,7 @@ class ShiftTradeActivityPreviewResponse(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -148,6 +151,7 @@ class ShiftTradeActivityPreviewResponse(object):
         :type: bool
         """
         
+
         self._counts_as_paid_time = counts_as_paid_time
 
     def to_dict(self):

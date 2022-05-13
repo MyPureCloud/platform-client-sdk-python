@@ -118,6 +118,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation
         """
         
+
         self._location = location
 
     @property
@@ -141,6 +142,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory
         """
         
+
         self._story = story
 
     @property
@@ -164,6 +166,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment
         """
         
+
         self._attachment = attachment
 
     @property
@@ -187,6 +190,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply
         """
         
+
         self._quick_reply = quick_reply
 
     @property
@@ -210,6 +214,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate
         """
         
+
         self._template = template
 
     @property
@@ -233,6 +238,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse
         """
         
+
         self._button_response = button_response
 
     @property
@@ -256,6 +262,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationContentGeneric
         """
         
+
         self._generic = generic
 
     def to_dict(self):

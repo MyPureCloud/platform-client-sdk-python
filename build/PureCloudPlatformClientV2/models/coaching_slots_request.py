@@ -82,6 +82,10 @@ class CoachingSlotsRequest(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -105,6 +109,10 @@ class CoachingSlotsRequest(object):
         :type: int
         """
         
+        if not length_in_minutes:
+            raise ValueError("Invalid value for `length_in_minutes`, must not be `None`")
+
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -128,6 +136,10 @@ class CoachingSlotsRequest(object):
         :type: list[str]
         """
         
+        if not attendee_ids:
+            raise ValueError("Invalid value for `attendee_ids`, must not be `None`")
+
+
         self._attendee_ids = attendee_ids
 
     @property
@@ -151,6 +163,7 @@ class CoachingSlotsRequest(object):
         :type: list[str]
         """
         
+
         self._facilitator_ids = facilitator_ids
 
     @property
@@ -174,6 +187,7 @@ class CoachingSlotsRequest(object):
         :type: list[str]
         """
         
+
         self._interruptible_appointment_ids = interruptible_appointment_ids
 
     def to_dict(self):

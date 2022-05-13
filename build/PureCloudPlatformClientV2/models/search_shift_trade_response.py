@@ -76,6 +76,7 @@ class SearchShiftTradeResponse(object):
         :type: ShiftTradeResponse
         """
         
+
         self._trade = trade
 
     @property
@@ -99,6 +100,7 @@ class SearchShiftTradeResponse(object):
         :type: list[str]
         """
         
+
         self._matching_receiving_shift_ids = matching_receiving_shift_ids
 
     @property
@@ -122,6 +124,7 @@ class SearchShiftTradeResponse(object):
         :type: ShiftTradePreviewResponse
         """
         
+
         self._preview = preview
 
     def to_dict(self):

@@ -85,6 +85,10 @@ class CreateManagementUnitApiRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -108,6 +112,7 @@ class CreateManagementUnitApiRequest(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -158,6 +163,7 @@ class CreateManagementUnitApiRequest(object):
         :type: CreateManagementUnitSettingsRequest
         """
         
+
         self._settings = settings
 
     @property
@@ -181,6 +187,7 @@ class CreateManagementUnitApiRequest(object):
         :type: str
         """
         
+
         self._division_id = division_id
 
     @property
@@ -204,6 +211,10 @@ class CreateManagementUnitApiRequest(object):
         :type: str
         """
         
+        if not business_unit_id:
+            raise ValueError("Invalid value for `business_unit_id`, must not be `None`")
+
+
         self._business_unit_id = business_unit_id
 
     def to_dict(self):

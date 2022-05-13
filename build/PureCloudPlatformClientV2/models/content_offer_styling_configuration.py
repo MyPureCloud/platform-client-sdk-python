@@ -88,6 +88,7 @@ class ContentOfferStylingConfiguration(object):
         :type: ContentPositionProperties
         """
         
+
         self._position = position
 
     @property
@@ -111,6 +112,7 @@ class ContentOfferStylingConfiguration(object):
         :type: ContentOfferStyleProperties
         """
         
+
         self._offer = offer
 
     @property
@@ -134,6 +136,7 @@ class ContentOfferStylingConfiguration(object):
         :type: CloseButtonStyleProperties
         """
         
+
         self._close_button = close_button
 
     @property
@@ -157,6 +160,7 @@ class ContentOfferStylingConfiguration(object):
         :type: CtaButtonStyleProperties
         """
         
+
         self._cta_button = cta_button
 
     @property
@@ -180,6 +184,7 @@ class ContentOfferStylingConfiguration(object):
         :type: TextStyleProperties
         """
         
+
         self._title = title
 
     @property
@@ -203,6 +208,7 @@ class ContentOfferStylingConfiguration(object):
         :type: TextStyleProperties
         """
         
+
         self._headline = headline
 
     @property
@@ -226,6 +232,7 @@ class ContentOfferStylingConfiguration(object):
         :type: TextStyleProperties
         """
         
+
         self._body = body
 
     def to_dict(self):

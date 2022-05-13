@@ -76,6 +76,10 @@ class UserObservationQuery(object):
         :type: UserObservationQueryFilter
         """
         
+        if not filter:
+            raise ValueError("Invalid value for `filter`, must not be `None`")
+
+
         self._filter = filter
 
     @property
@@ -99,6 +103,10 @@ class UserObservationQuery(object):
         :type: list[str]
         """
         
+        if not metrics:
+            raise ValueError("Invalid value for `metrics`, must not be `None`")
+
+
         self._metrics = metrics
 
     @property
@@ -122,6 +130,7 @@ class UserObservationQuery(object):
         :type: list[str]
         """
         
+
         self._detail_metrics = detail_metrics
 
     def to_dict(self):

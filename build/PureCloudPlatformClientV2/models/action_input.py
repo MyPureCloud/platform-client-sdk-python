@@ -76,6 +76,7 @@ class ActionInput(object):
         :type: JsonSchemaDocument
         """
         
+
         self._input_schema = input_schema
 
     @property
@@ -99,6 +100,7 @@ class ActionInput(object):
         :type: JsonSchemaDocument
         """
         
+
         self._input_schema_flattened = input_schema_flattened
 
     @property
@@ -122,6 +124,7 @@ class ActionInput(object):
         :type: str
         """
         
+
         self._input_schema_uri = input_schema_uri
 
     def to_dict(self):

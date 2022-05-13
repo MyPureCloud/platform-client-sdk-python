@@ -73,6 +73,7 @@ class LineId(object):
         :type: list[LineUserId]
         """
         
+
         self._ids = ids
 
     @property
@@ -96,6 +97,7 @@ class LineId(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     def to_dict(self):

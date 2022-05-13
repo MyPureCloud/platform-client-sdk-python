@@ -82,6 +82,7 @@ class CallForwardingEventCallForwarding(object):
         :type: CallForwardingEventUser
         """
         
+
         self._user = user
 
     @property
@@ -105,6 +106,7 @@ class CallForwardingEventCallForwarding(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -128,6 +130,7 @@ class CallForwardingEventCallForwarding(object):
         :type: list[CallForwardingEventCall]
         """
         
+
         self._calls = calls
 
     @property
@@ -151,6 +154,7 @@ class CallForwardingEventCallForwarding(object):
         :type: str
         """
         
+
         self._voicemail = voicemail
 
     @property
@@ -174,6 +178,7 @@ class CallForwardingEventCallForwarding(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

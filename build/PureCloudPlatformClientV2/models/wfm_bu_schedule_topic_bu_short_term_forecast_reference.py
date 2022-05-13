@@ -76,6 +76,7 @@ class WfmBuScheduleTopicBuShortTermForecastReference(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class WfmBuScheduleTopicBuShortTermForecastReference(object):
         :type: str
         """
         
+
         self._week_date = week_date
 
     @property
@@ -122,6 +124,7 @@ class WfmBuScheduleTopicBuShortTermForecastReference(object):
         :type: str
         """
         
+
         self._description = description
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class WritableDialerContact(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,10 @@ class WritableDialerContact(object):
         :type: str
         """
         
+        if not contact_list_id:
+            raise ValueError("Invalid value for `contact_list_id`, must not be `None`")
+
+
         self._contact_list_id = contact_list_id
 
     @property
@@ -131,6 +136,10 @@ class WritableDialerContact(object):
         :type: dict(str, object)
         """
         
+        if not data:
+            raise ValueError("Invalid value for `data`, must not be `None`")
+
+
         self._data = data
 
     @property
@@ -154,6 +163,7 @@ class WritableDialerContact(object):
         :type: dict(str, MessageEvaluation)
         """
         
+
         self._latest_sms_evaluations = latest_sms_evaluations
 
     @property
@@ -177,6 +187,7 @@ class WritableDialerContact(object):
         :type: bool
         """
         
+
         self._callable = callable
 
     @property
@@ -200,6 +211,7 @@ class WritableDialerContact(object):
         :type: dict(str, PhoneNumberStatus)
         """
         
+
         self._phone_number_status = phone_number_status
 
     def to_dict(self):

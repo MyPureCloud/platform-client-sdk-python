@@ -73,6 +73,7 @@ class ArchitectFlowFields(object):
         :type: AddressableEntityRef
         """
         
+
         self._architect_flow = architect_flow
 
     @property
@@ -96,6 +97,7 @@ class ArchitectFlowFields(object):
         :type: list[RequestMapping]
         """
         
+
         self._flow_request_mappings = flow_request_mappings
 
     def to_dict(self):

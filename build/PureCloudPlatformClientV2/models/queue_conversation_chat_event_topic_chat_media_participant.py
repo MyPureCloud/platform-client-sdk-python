@@ -175,6 +175,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -198,6 +199,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -221,6 +223,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -244,6 +247,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -267,6 +271,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -290,6 +295,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -313,6 +319,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -336,6 +343,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -440,6 +448,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -463,6 +472,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_required = wrapup_required
 
     @property
@@ -486,6 +496,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._wrapup_prompt = wrapup_prompt
 
     @property
@@ -509,6 +520,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicUriReference
         """
         
+
         self._user = user
 
     @property
@@ -532,6 +544,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicUriReference
         """
         
+
         self._queue = queue
 
     @property
@@ -555,6 +568,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicUriReference
         """
         
+
         self._team = team
 
     @property
@@ -578,6 +592,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -601,6 +616,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicErrorBody
         """
         
+
         self._error_info = error_info
 
     @property
@@ -624,6 +640,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicUriReference
         """
         
+
         self._script = script
 
     @property
@@ -647,6 +664,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: int
         """
         
+
         self._wrapup_timeout_ms = wrapup_timeout_ms
 
     @property
@@ -670,6 +688,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_skipped = wrapup_skipped
 
     @property
@@ -693,6 +712,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: int
         """
         
+
         self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
@@ -716,6 +736,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -739,6 +760,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicUriReference
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -762,6 +784,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicUriReference
         """
         
+
         self._external_organization = external_organization
 
     @property
@@ -785,6 +808,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -808,6 +832,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicConversationRoutingData
         """
         
+
         self._conversation_routing_data = conversation_routing_data
 
     @property
@@ -831,6 +856,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._peer = peer
 
     @property
@@ -854,6 +880,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._screen_recording_state = screen_recording_state
 
     @property
@@ -904,6 +931,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: QueueConversationChatEventTopicJourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -927,6 +955,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_acw_time = start_acw_time
 
     @property
@@ -950,6 +979,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_acw_time = end_acw_time
 
     @property
@@ -973,6 +1003,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._room_id = room_id
 
     @property
@@ -996,6 +1027,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         :type: str
         """
         
+
         self._avatar_image_url = avatar_image_url
 
     def to_dict(self):

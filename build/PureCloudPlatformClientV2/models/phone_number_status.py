@@ -70,6 +70,7 @@ class PhoneNumberStatus(object):
         :type: bool
         """
         
+
         self._callable = callable
 
     def to_dict(self):

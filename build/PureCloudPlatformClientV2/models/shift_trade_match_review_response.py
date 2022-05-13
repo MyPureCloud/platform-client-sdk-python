@@ -79,6 +79,7 @@ class ShiftTradeMatchReviewResponse(object):
         :type: ShiftTradeMatchReviewUserResponse
         """
         
+
         self._initiating_user = initiating_user
 
     @property
@@ -102,6 +103,7 @@ class ShiftTradeMatchReviewResponse(object):
         :type: ShiftTradeMatchReviewUserResponse
         """
         
+
         self._receiving_user = receiving_user
 
     @property
@@ -125,6 +127,7 @@ class ShiftTradeMatchReviewResponse(object):
         :type: list[ShiftTradeMatchViolation]
         """
         
+
         self._violations = violations
 
     @property
@@ -148,6 +151,7 @@ class ShiftTradeMatchReviewResponse(object):
         :type: list[ShiftTradeMatchViolation]
         """
         
+
         self._admin_review_violations = admin_review_violations
 
     def to_dict(self):

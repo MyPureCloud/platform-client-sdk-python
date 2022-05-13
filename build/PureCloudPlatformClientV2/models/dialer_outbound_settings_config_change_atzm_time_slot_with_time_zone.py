@@ -76,6 +76,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone(object):
         :type: str
         """
         
+
         self._time_zone_id = time_zone_id
 
     @property
@@ -99,6 +100,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone(object):
         :type: str
         """
         
+
         self._earliest_callable_time = earliest_callable_time
 
     @property
@@ -122,6 +124,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone(object):
         :type: str
         """
         
+
         self._latest_callable_time = latest_callable_time
 
     def to_dict(self):

@@ -73,6 +73,10 @@ class NamedEntityTypeBinding(object):
         :type: str
         """
         
+        if not entity_type:
+            raise ValueError("Invalid value for `entity_type`, must not be `None`")
+
+
         self._entity_type = entity_type
 
     @property
@@ -96,6 +100,10 @@ class NamedEntityTypeBinding(object):
         :type: str
         """
         
+        if not entity_name:
+            raise ValueError("Invalid value for `entity_name`, must not be `None`")
+
+
         self._entity_name = entity_name
 
     def to_dict(self):

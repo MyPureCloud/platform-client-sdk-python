@@ -73,6 +73,10 @@ class SearchShiftTradesRequest(object):
         :type: str
         """
         
+        if not receiving_schedule_id:
+            raise ValueError("Invalid value for `receiving_schedule_id`, must not be `None`")
+
+
         self._receiving_schedule_id = receiving_schedule_id
 
     @property
@@ -96,6 +100,7 @@ class SearchShiftTradesRequest(object):
         :type: list[str]
         """
         
+
         self._receiving_shift_ids = receiving_shift_ids
 
     def to_dict(self):

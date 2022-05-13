@@ -79,6 +79,10 @@ class IntradayPlanningGroupRequest(object):
         :type: date
         """
         
+        if not business_unit_date:
+            raise ValueError("Invalid value for `business_unit_date`, must not be `None`")
+
+
         self._business_unit_date = business_unit_date
 
     @property
@@ -102,6 +106,10 @@ class IntradayPlanningGroupRequest(object):
         :type: list[str]
         """
         
+        if not categories:
+            raise ValueError("Invalid value for `categories`, must not be `None`")
+
+
         self._categories = categories
 
     @property
@@ -125,6 +133,7 @@ class IntradayPlanningGroupRequest(object):
         :type: list[str]
         """
         
+
         self._planning_group_ids = planning_group_ids
 
     @property
@@ -148,6 +157,7 @@ class IntradayPlanningGroupRequest(object):
         :type: int
         """
         
+
         self._interval_length_minutes = interval_length_minutes
 
     def to_dict(self):

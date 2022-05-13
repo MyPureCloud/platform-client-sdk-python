@@ -70,6 +70,7 @@ class BulkNotesRequest(object):
         :type: list[Note]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

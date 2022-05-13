@@ -82,6 +82,7 @@ class CreateManagementUnitSettingsRequest(object):
         :type: AdherenceSettings
         """
         
+
         self._adherence = adherence
 
     @property
@@ -105,6 +106,7 @@ class CreateManagementUnitSettingsRequest(object):
         :type: ShortTermForecastingSettings
         """
         
+
         self._short_term_forecasting = short_term_forecasting
 
     @property
@@ -128,6 +130,7 @@ class CreateManagementUnitSettingsRequest(object):
         :type: TimeOffRequestSettings
         """
         
+
         self._time_off = time_off
 
     @property
@@ -151,6 +154,7 @@ class CreateManagementUnitSettingsRequest(object):
         :type: SchedulingSettingsRequest
         """
         
+
         self._scheduling = scheduling
 
     @property
@@ -174,6 +178,7 @@ class CreateManagementUnitSettingsRequest(object):
         :type: ShiftTradeSettings
         """
         
+
         self._shift_trading = shift_trading
 
     def to_dict(self):

@@ -124,6 +124,7 @@ class CallHistoryParticipant(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -147,6 +148,7 @@ class CallHistoryParticipant(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -170,6 +172,7 @@ class CallHistoryParticipant(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -193,6 +196,7 @@ class CallHistoryParticipant(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -216,6 +220,7 @@ class CallHistoryParticipant(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -239,6 +244,7 @@ class CallHistoryParticipant(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -289,6 +295,7 @@ class CallHistoryParticipant(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -312,6 +319,7 @@ class CallHistoryParticipant(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -335,6 +343,7 @@ class CallHistoryParticipant(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -358,6 +367,7 @@ class CallHistoryParticipant(object):
         :type: Queue
         """
         
+
         self._queue = queue
 
     @property
@@ -381,6 +391,7 @@ class CallHistoryParticipant(object):
         :type: Group
         """
         
+
         self._group = group
 
     @property
@@ -431,6 +442,7 @@ class CallHistoryParticipant(object):
         :type: ExternalContact
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -454,6 +466,7 @@ class CallHistoryParticipant(object):
         :type: ExternalOrganization
         """
         
+
         self._external_organization = external_organization
 
     @property
@@ -477,6 +490,7 @@ class CallHistoryParticipant(object):
         :type: bool
         """
         
+
         self._did_interact = did_interact
 
     @property
@@ -500,6 +514,7 @@ class CallHistoryParticipant(object):
         :type: list[int]
         """
         
+
         self._sip_response_codes = sip_response_codes
 
     @property
@@ -550,6 +565,7 @@ class CallHistoryParticipant(object):
         :type: Campaign
         """
         
+
         self._outbound_campaign = outbound_campaign
 
     def to_dict(self):

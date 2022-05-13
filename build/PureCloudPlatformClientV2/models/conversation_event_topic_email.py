@@ -130,6 +130,7 @@ class ConversationEventTopicEmail(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -180,6 +181,7 @@ class ConversationEventTopicEmail(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -203,6 +205,7 @@ class ConversationEventTopicEmail(object):
         :type: bool
         """
         
+
         self._auto_generated = auto_generated
 
     @property
@@ -226,6 +229,7 @@ class ConversationEventTopicEmail(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -249,6 +253,7 @@ class ConversationEventTopicEmail(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -272,6 +277,7 @@ class ConversationEventTopicEmail(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -295,6 +301,7 @@ class ConversationEventTopicEmail(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -318,6 +325,7 @@ class ConversationEventTopicEmail(object):
         :type: int
         """
         
+
         self._messages_sent = messages_sent
 
     @property
@@ -341,6 +349,7 @@ class ConversationEventTopicEmail(object):
         :type: ConversationEventTopicErrorDetails
         """
         
+
         self._error_info = error_info
 
     @property
@@ -391,6 +400,7 @@ class ConversationEventTopicEmail(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -414,6 +424,7 @@ class ConversationEventTopicEmail(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -437,6 +448,7 @@ class ConversationEventTopicEmail(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -460,6 +472,7 @@ class ConversationEventTopicEmail(object):
         :type: str
         """
         
+
         self._message_id = message_id
 
     @property
@@ -510,6 +523,7 @@ class ConversationEventTopicEmail(object):
         :type: list[ConversationEventTopicAttachment]
         """
         
+
         self._draft_attachments = draft_attachments
 
     @property
@@ -533,6 +547,7 @@ class ConversationEventTopicEmail(object):
         :type: bool
         """
         
+
         self._spam = spam
 
     @property
@@ -556,6 +571,7 @@ class ConversationEventTopicEmail(object):
         :type: ConversationEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -579,6 +595,7 @@ class ConversationEventTopicEmail(object):
         :type: ConversationEventTopicAfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -602,6 +619,7 @@ class ConversationEventTopicEmail(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class TypingSetting(object):
         :type: SettingDirection
         """
         
+
         self._on = on
 
     def to_dict(self):

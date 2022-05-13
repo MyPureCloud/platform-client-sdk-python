@@ -154,6 +154,7 @@ class Trunk(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -177,6 +178,10 @@ class Trunk(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -200,6 +205,7 @@ class Trunk(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -223,6 +229,7 @@ class Trunk(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -246,6 +253,7 @@ class Trunk(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -269,6 +277,7 @@ class Trunk(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -292,6 +301,7 @@ class Trunk(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -315,6 +325,7 @@ class Trunk(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -338,6 +349,7 @@ class Trunk(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -388,6 +400,7 @@ class Trunk(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -411,6 +424,7 @@ class Trunk(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -461,6 +475,7 @@ class Trunk(object):
         :type: DomainEntityRef
         """
         
+
         self._edge = edge
 
     @property
@@ -484,6 +499,7 @@ class Trunk(object):
         :type: DomainEntityRef
         """
         
+
         self._trunk_base = trunk_base
 
     @property
@@ -507,6 +523,7 @@ class Trunk(object):
         :type: DomainEntityRef
         """
         
+
         self._trunk_metabase = trunk_metabase
 
     @property
@@ -530,6 +547,7 @@ class Trunk(object):
         :type: DomainEntityRef
         """
         
+
         self._edge_group = edge_group
 
     @property
@@ -553,6 +571,7 @@ class Trunk(object):
         :type: bool
         """
         
+
         self._in_service = in_service
 
     @property
@@ -576,6 +595,7 @@ class Trunk(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -599,6 +619,7 @@ class Trunk(object):
         :type: DomainEntityRef
         """
         
+
         self._logical_interface = logical_interface
 
     @property
@@ -622,6 +643,7 @@ class Trunk(object):
         :type: TrunkConnectedStatus
         """
         
+
         self._connected_status = connected_status
 
     @property
@@ -645,6 +667,7 @@ class Trunk(object):
         :type: list[TrunkMetricsOptions]
         """
         
+
         self._options_status = options_status
 
     @property
@@ -668,6 +691,7 @@ class Trunk(object):
         :type: list[TrunkMetricsRegisters]
         """
         
+
         self._registers_status = registers_status
 
     @property
@@ -691,6 +715,7 @@ class Trunk(object):
         :type: TrunkMetricsNetworkTypeIp
         """
         
+
         self._ip_status = ip_status
 
     @property
@@ -768,6 +793,7 @@ class Trunk(object):
         :type: int
         """
         
+
         self._family = family
 
     @property
@@ -791,6 +817,7 @@ class Trunk(object):
         :type: list[str]
         """
         
+
         self._proxy_address_list = proxy_address_list
 
     @property
@@ -814,6 +841,7 @@ class Trunk(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

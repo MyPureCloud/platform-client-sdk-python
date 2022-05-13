@@ -100,6 +100,7 @@ class ActionTarget(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class ActionTarget(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class ActionTarget(object):
         :type: list[KeyValue]
         """
         
+
         self._user_data = user_data
 
     @property
@@ -169,6 +172,7 @@ class ActionTarget(object):
         :type: list[str]
         """
         
+
         self._supported_media_types = supported_media_types
 
     @property
@@ -219,6 +223,7 @@ class ActionTarget(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -242,6 +247,7 @@ class ActionTarget(object):
         :type: ServiceLevel
         """
         
+
         self._service_level = service_level
 
     @property
@@ -265,6 +271,7 @@ class ActionTarget(object):
         :type: int
         """
         
+
         self._short_abandon_threshold = short_abandon_threshold
 
     @property
@@ -288,6 +295,7 @@ class ActionTarget(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -311,6 +319,7 @@ class ActionTarget(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -334,6 +343,7 @@ class ActionTarget(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

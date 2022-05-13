@@ -106,6 +106,7 @@ class ButtonResponse(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -129,6 +130,7 @@ class ButtonResponse(object):
         :type: str
         """
         
+
         self._payload = payload
 
     @property

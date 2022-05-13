@@ -70,6 +70,7 @@ class CreateBenefitAssessmentJobRequest(object):
         :type: list[str]
         """
         
+
         self._division_ids = division_ids
 
     def to_dict(self):

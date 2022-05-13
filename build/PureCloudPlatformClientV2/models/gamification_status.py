@@ -79,6 +79,7 @@ class GamificationStatus(object):
         :type: bool
         """
         
+
         self._is_active = is_active
 
     @property
@@ -102,6 +103,7 @@ class GamificationStatus(object):
         :type: date
         """
         
+
         self._date_start = date_start
 
     @property
@@ -125,6 +127,7 @@ class GamificationStatus(object):
         :type: bool
         """
         
+
         self._automatic_user_assignment = automatic_user_assignment
 
     @property
@@ -148,6 +151,7 @@ class GamificationStatus(object):
         :type: date
         """
         
+
         self._date_start_personal_best = date_start_personal_best
 
     def to_dict(self):

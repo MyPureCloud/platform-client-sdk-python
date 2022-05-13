@@ -73,6 +73,7 @@ class RetentionDuration(object):
         :type: ArchiveRetention
         """
         
+
         self._archive_retention = archive_retention
 
     @property
@@ -96,6 +97,7 @@ class RetentionDuration(object):
         :type: DeleteRetention
         """
         
+
         self._delete_retention = delete_retention
 
     def to_dict(self):

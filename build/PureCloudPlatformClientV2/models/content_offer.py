@@ -91,6 +91,7 @@ class ContentOffer(object):
         :type: str
         """
         
+
         self._image_url = image_url
 
     @property
@@ -168,6 +169,7 @@ class ContentOffer(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -191,6 +193,7 @@ class ContentOffer(object):
         :type: str
         """
         
+
         self._headline = headline
 
     @property
@@ -214,6 +217,7 @@ class ContentOffer(object):
         :type: str
         """
         
+
         self._body = body
 
     @property
@@ -237,6 +241,7 @@ class ContentOffer(object):
         :type: CallToAction
         """
         
+
         self._call_to_action = call_to_action
 
     @property
@@ -260,6 +265,7 @@ class ContentOffer(object):
         :type: ContentOfferStylingConfiguration
         """
         
+
         self._style = style
 
     def to_dict(self):

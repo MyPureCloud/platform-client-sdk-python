@@ -70,6 +70,7 @@ class WaitlistPositionListing(object):
         :type: list[WaitlistPosition]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

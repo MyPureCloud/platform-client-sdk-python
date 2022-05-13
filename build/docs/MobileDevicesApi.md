@@ -27,7 +27,7 @@ Delete device
 
 Wraps DELETE /api/v2/mobiledevices/{deviceId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -76,7 +76,7 @@ Get device
 
 Wraps GET /api/v2/mobiledevices/{deviceId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -126,7 +126,7 @@ Get a list of all devices.
 
 Wraps GET /api/v2/mobiledevices 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -144,7 +144,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.MobileDevicesApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ascending' # str | Ascending or descending sort order (optional) (default to ascending)
+sort_order = ''ascending'' # str | Ascending or descending sort order (optional) (default to 'ascending')
 
 try:
     # Get a list of all devices.
@@ -161,7 +161,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -180,7 +180,7 @@ Create User device
 
 Wraps POST /api/v2/mobiledevices 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -230,7 +230,7 @@ Update device
 
 Wraps PUT /api/v2/mobiledevices/{deviceId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

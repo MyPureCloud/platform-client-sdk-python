@@ -79,6 +79,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
         :type: dict(str, str)
         """
         
+
         self._parameters = parameters
 
     @property
@@ -152,6 +154,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
         :type: DialerCampaignRuleConfigChangeCampaignRuleActionEntities
         """
         
+
         self._campaign_rule_action_entities = campaign_rule_action_entities
 
     def to_dict(self):

@@ -103,6 +103,7 @@ class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification(object):
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -126,6 +127,7 @@ class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification(object):
         :type: WfmBuScheduleRunTopicBuScheduleRun
         """
         
+
         self._result = result
 
     def to_dict(self):

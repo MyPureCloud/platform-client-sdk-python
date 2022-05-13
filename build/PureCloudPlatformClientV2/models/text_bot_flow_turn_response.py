@@ -88,6 +88,10 @@ class TextBotFlowTurnResponse(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -111,6 +115,7 @@ class TextBotFlowTurnResponse(object):
         :type: TextBotTurnReference
         """
         
+
         self._previous_turn = previous_turn
 
     @property
@@ -134,6 +139,7 @@ class TextBotFlowTurnResponse(object):
         :type: TextBotOutputPrompts
         """
         
+
         self._prompts = prompts
 
     @property
@@ -184,6 +190,7 @@ class TextBotFlowTurnResponse(object):
         :type: TextBotDisconnectAction
         """
         
+
         self._next_action_disconnect = next_action_disconnect
 
     @property
@@ -207,6 +214,7 @@ class TextBotFlowTurnResponse(object):
         :type: TextBotWaitForInputAction
         """
         
+
         self._next_action_wait_for_input = next_action_wait_for_input
 
     @property
@@ -230,6 +238,7 @@ class TextBotFlowTurnResponse(object):
         :type: TextBotExitAction
         """
         
+
         self._next_action_exit = next_action_exit
 
     def to_dict(self):

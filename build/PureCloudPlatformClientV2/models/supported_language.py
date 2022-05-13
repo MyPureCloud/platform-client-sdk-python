@@ -73,6 +73,7 @@ class SupportedLanguage(object):
         :type: str
         """
         
+
         self._language = language
 
     @property
@@ -96,6 +97,7 @@ class SupportedLanguage(object):
         :type: bool
         """
         
+
         self._is_default = is_default
 
     def to_dict(self):

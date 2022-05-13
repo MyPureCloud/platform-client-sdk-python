@@ -79,6 +79,7 @@ class ImportReport(object):
         :type: list[ImportError]
         """
         
+
         self._errors = errors
 
     @property
@@ -102,6 +103,7 @@ class ImportReport(object):
         :type: ResultCounters
         """
         
+
         self._validated = validated
 
     @property
@@ -125,6 +127,7 @@ class ImportReport(object):
         :type: ResultCounters
         """
         
+
         self._imported = imported
 
     @property
@@ -148,6 +151,7 @@ class ImportReport(object):
         :type: int
         """
         
+
         self._total_documents = total_documents
 
     def to_dict(self):

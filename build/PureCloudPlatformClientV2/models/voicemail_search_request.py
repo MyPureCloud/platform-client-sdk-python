@@ -115,6 +115,7 @@ class VoicemailSearchRequest(object):
         :type: str
         """
         
+
         self._sort_by = sort_by
 
     @property
@@ -138,6 +139,7 @@ class VoicemailSearchRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -161,6 +163,7 @@ class VoicemailSearchRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -184,6 +187,7 @@ class VoicemailSearchRequest(object):
         :type: list[SearchSort]
         """
         
+
         self._sort = sort
 
     @property
@@ -207,6 +211,7 @@ class VoicemailSearchRequest(object):
         :type: list[str]
         """
         
+
         self._expand = expand
 
     @property
@@ -230,6 +235,7 @@ class VoicemailSearchRequest(object):
         :type: list[VoicemailSearchCriteria]
         """
         
+
         self._query = query
 
     def to_dict(self):

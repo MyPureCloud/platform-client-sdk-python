@@ -88,6 +88,7 @@ class TranscriptTopic(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class TranscriptTopic(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class TranscriptTopic(object):
         :type: str
         """
         
+
         self._topic_phrase = topic_phrase
 
     @property
@@ -157,6 +160,7 @@ class TranscriptTopic(object):
         :type: str
         """
         
+
         self._transcript_phrase = transcript_phrase
 
     @property
@@ -180,6 +184,7 @@ class TranscriptTopic(object):
         :type: int
         """
         
+
         self._confidence = confidence
 
     @property
@@ -203,6 +208,7 @@ class TranscriptTopic(object):
         :type: int
         """
         
+
         self._start_time_milliseconds = start_time_milliseconds
 
     @property
@@ -226,6 +232,7 @@ class TranscriptTopic(object):
         :type: TopicDuration
         """
         
+
         self._duration = duration
 
     def to_dict(self):

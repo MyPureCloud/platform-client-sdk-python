@@ -100,6 +100,7 @@ class PredictorSchedule(object):
         :type: datetime
         """
         
+
         self._date_started = date_started
 
     def to_dict(self):

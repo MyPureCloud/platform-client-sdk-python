@@ -82,6 +82,7 @@ class EmailAttachment(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -105,6 +106,7 @@ class EmailAttachment(object):
         :type: str
         """
         
+
         self._content_path = content_path
 
     @property
@@ -128,6 +130,7 @@ class EmailAttachment(object):
         :type: str
         """
         
+
         self._content_type = content_type
 
     @property
@@ -151,6 +154,7 @@ class EmailAttachment(object):
         :type: str
         """
         
+
         self._attachment_id = attachment_id
 
     @property
@@ -174,6 +178,7 @@ class EmailAttachment(object):
         :type: int
         """
         
+
         self._content_length = content_length
 
     def to_dict(self):

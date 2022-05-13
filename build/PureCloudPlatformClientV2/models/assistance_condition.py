@@ -100,6 +100,7 @@ class AssistanceCondition(object):
         :type: list[str]
         """
         
+
         self._topic_ids = topic_ids
 
     def to_dict(self):

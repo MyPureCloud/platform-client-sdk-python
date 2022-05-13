@@ -76,6 +76,7 @@ class LicenseUpdateStatus(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -99,6 +100,7 @@ class LicenseUpdateStatus(object):
         :type: str
         """
         
+
         self._license_id = license_id
 
     @property
@@ -122,6 +124,7 @@ class LicenseUpdateStatus(object):
         :type: str
         """
         
+
         self._result = result
 
     def to_dict(self):

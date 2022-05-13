@@ -88,6 +88,7 @@ class JourneyCampaign(object):
         :type: str
         """
         
+
         self._content = content
 
     @property
@@ -111,6 +112,7 @@ class JourneyCampaign(object):
         :type: str
         """
         
+
         self._medium = medium
 
     @property
@@ -134,6 +136,7 @@ class JourneyCampaign(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -157,6 +160,7 @@ class JourneyCampaign(object):
         :type: str
         """
         
+
         self._source = source
 
     @property
@@ -180,6 +184,7 @@ class JourneyCampaign(object):
         :type: str
         """
         
+
         self._term = term
 
     @property
@@ -203,6 +208,7 @@ class JourneyCampaign(object):
         :type: str
         """
         
+
         self._click_id = click_id
 
     @property
@@ -226,6 +232,7 @@ class JourneyCampaign(object):
         :type: str
         """
         
+
         self._network = network
 
     def to_dict(self):

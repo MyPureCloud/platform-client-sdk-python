@@ -157,6 +157,7 @@ class QueueRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -180,6 +181,10 @@ class QueueRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -203,6 +208,7 @@ class QueueRequest(object):
         :type: WritableDivision
         """
         
+
         self._division = division
 
     @property
@@ -226,6 +232,7 @@ class QueueRequest(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -249,6 +256,7 @@ class QueueRequest(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -272,6 +280,7 @@ class QueueRequest(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -295,6 +304,7 @@ class QueueRequest(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -318,6 +328,7 @@ class QueueRequest(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -341,6 +352,7 @@ class QueueRequest(object):
         :type: int
         """
         
+
         self._member_count = member_count
 
     @property
@@ -364,6 +376,7 @@ class QueueRequest(object):
         :type: int
         """
         
+
         self._user_member_count = user_member_count
 
     @property
@@ -387,6 +400,7 @@ class QueueRequest(object):
         :type: int
         """
         
+
         self._joined_member_count = joined_member_count
 
     @property
@@ -410,6 +424,7 @@ class QueueRequest(object):
         :type: dict(str, MediaSetting)
         """
         
+
         self._media_settings = media_settings
 
     @property
@@ -433,6 +448,7 @@ class QueueRequest(object):
         :type: list[RoutingRule]
         """
         
+
         self._routing_rules = routing_rules
 
     @property
@@ -456,6 +472,7 @@ class QueueRequest(object):
         :type: Bullseye
         """
         
+
         self._bullseye = bullseye
 
     @property
@@ -479,6 +496,7 @@ class QueueRequest(object):
         :type: AcwSettings
         """
         
+
         self._acw_settings = acw_settings
 
     @property
@@ -529,6 +547,7 @@ class QueueRequest(object):
         :type: DomainEntityRef
         """
         
+
         self._queue_flow = queue_flow
 
     @property
@@ -552,6 +571,7 @@ class QueueRequest(object):
         :type: DomainEntityRef
         """
         
+
         self._email_in_queue_flow = email_in_queue_flow
 
     @property
@@ -575,6 +595,7 @@ class QueueRequest(object):
         :type: DomainEntityRef
         """
         
+
         self._message_in_queue_flow = message_in_queue_flow
 
     @property
@@ -598,6 +619,7 @@ class QueueRequest(object):
         :type: DomainEntityRef
         """
         
+
         self._whisper_prompt = whisper_prompt
 
     @property
@@ -621,6 +643,7 @@ class QueueRequest(object):
         :type: DomainEntityRef
         """
         
+
         self._on_hold_prompt = on_hold_prompt
 
     @property
@@ -644,6 +667,7 @@ class QueueRequest(object):
         :type: bool
         """
         
+
         self._auto_answer_only = auto_answer_only
 
     @property
@@ -667,6 +691,7 @@ class QueueRequest(object):
         :type: bool
         """
         
+
         self._enable_transcription = enable_transcription
 
     @property
@@ -690,6 +715,7 @@ class QueueRequest(object):
         :type: bool
         """
         
+
         self._enable_manual_assignment = enable_manual_assignment
 
     @property
@@ -713,6 +739,7 @@ class QueueRequest(object):
         :type: str
         """
         
+
         self._calling_party_name = calling_party_name
 
     @property
@@ -736,6 +763,7 @@ class QueueRequest(object):
         :type: str
         """
         
+
         self._calling_party_number = calling_party_number
 
     @property
@@ -759,6 +787,7 @@ class QueueRequest(object):
         :type: dict(str, Script)
         """
         
+
         self._default_scripts = default_scripts
 
     @property
@@ -782,6 +811,7 @@ class QueueRequest(object):
         :type: QueueMessagingAddresses
         """
         
+
         self._outbound_messaging_addresses = outbound_messaging_addresses
 
     @property
@@ -805,6 +835,7 @@ class QueueRequest(object):
         :type: QueueEmailAddress
         """
         
+
         self._outbound_email_address = outbound_email_address
 
     @property
@@ -828,6 +859,7 @@ class QueueRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

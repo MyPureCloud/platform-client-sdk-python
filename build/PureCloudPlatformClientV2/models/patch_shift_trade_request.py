@@ -79,6 +79,7 @@ class PatchShiftTradeRequest(object):
         :type: ValueWrapperString
         """
         
+
         self._receiving_user_id = receiving_user_id
 
     @property
@@ -102,6 +103,7 @@ class PatchShiftTradeRequest(object):
         :type: ValueWrapperDate
         """
         
+
         self._expiration = expiration
 
     @property
@@ -125,6 +127,7 @@ class PatchShiftTradeRequest(object):
         :type: ListWrapperInterval
         """
         
+
         self._acceptable_intervals = acceptable_intervals
 
     @property
@@ -148,6 +151,10 @@ class PatchShiftTradeRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

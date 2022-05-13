@@ -76,6 +76,7 @@ class ConversationUserDisposition(object):
         :type: str
         """
         
+
         self._code = code
 
     @property
@@ -99,6 +100,7 @@ class ConversationUserDisposition(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -122,6 +124,7 @@ class ConversationUserDisposition(object):
         :type: AddressableEntityRef
         """
         
+
         self._user = user
 
     def to_dict(self):

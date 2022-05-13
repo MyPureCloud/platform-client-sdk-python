@@ -82,6 +82,7 @@ class CoachingSlot(object):
         :type: datetime
         """
         
+
         self._date_start = date_start
 
     @property
@@ -105,6 +106,7 @@ class CoachingSlot(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -128,6 +130,7 @@ class CoachingSlot(object):
         :type: float
         """
         
+
         self._staffing_difference = staffing_difference
 
     @property
@@ -178,6 +181,7 @@ class CoachingSlot(object):
         :type: WfmScheduleReference
         """
         
+
         self._wfm_schedule = wfm_schedule
 
     def to_dict(self):

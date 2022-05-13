@@ -109,6 +109,7 @@ class KnowledgeDocumentRequest(object):
         :type: str
         """
         
+
         self._external_url = external_url
 
     @property
@@ -132,6 +133,7 @@ class KnowledgeDocumentRequest(object):
         :type: DocumentFaq
         """
         
+
         self._faq = faq
 
     @property
@@ -155,6 +157,7 @@ class KnowledgeDocumentRequest(object):
         :type: list[DocumentCategoryInput]
         """
         
+
         self._categories = categories
 
     @property
@@ -178,6 +181,7 @@ class KnowledgeDocumentRequest(object):
         :type: DocumentArticle
         """
         
+
         self._article = article
 
     def to_dict(self):

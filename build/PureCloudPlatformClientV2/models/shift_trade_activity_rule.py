@@ -130,6 +130,7 @@ class ShiftTradeActivityRule(object):
         :type: str
         """
         
+
         self._activity_code_id_replacement = activity_code_id_replacement
 
     def to_dict(self):

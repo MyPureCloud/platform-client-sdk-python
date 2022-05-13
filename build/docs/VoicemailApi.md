@@ -45,9 +45,11 @@ Delete a voicemail message.
 
 A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
 
+
+
 Wraps DELETE /api/v2/voicemail/messages/{messageId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -96,7 +98,7 @@ Delete all voicemail messages
 
 Wraps DELETE /api/v2/voicemail/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -141,7 +143,7 @@ Get the group's mailbox information
 
 Wraps GET /api/v2/voicemail/groups/{groupId}/mailbox 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -191,7 +193,7 @@ List voicemail messages
 
 Wraps GET /api/v2/voicemail/groups/{groupId}/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -297,7 +299,7 @@ Get the current user's mailbox information
 
 Wraps GET /api/v2/voicemail/mailbox 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -343,7 +345,7 @@ Get the current user's mailbox information
 
 Wraps GET /api/v2/voicemail/me/mailbox 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -389,7 +391,7 @@ List voicemail messages
 
 Wraps GET /api/v2/voicemail/me/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -441,7 +443,7 @@ Get the current user's voicemail policy
 
 Wraps GET /api/v2/voicemail/me/policy 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -487,7 +489,7 @@ Get a voicemail message
 
 Wraps GET /api/v2/voicemail/messages/{messageId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -539,7 +541,7 @@ Get media playback URI for this voicemail message
 
 Wraps GET /api/v2/voicemail/messages/{messageId}/media 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -556,7 +558,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.VoicemailApi()
 message_id = 'message_id_example' # str | Message ID
-format_id = 'WEBM' # str | The desired media format. (optional) (default to WEBM)
+format_id = ''WEBM'' # str | The desired media format. (optional) (default to 'WEBM')
 
 try:
     # Get media playback URI for this voicemail message
@@ -572,7 +574,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_id** | **str**| Message ID |  |
-| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **format_id** | **str**| The desired media format. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -591,7 +593,7 @@ List voicemail messages
 
 Wraps GET /api/v2/voicemail/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -745,7 +747,7 @@ Search voicemails using the q64 value returned from a previous search
 
 Wraps GET /api/v2/voicemail/search 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -797,7 +799,7 @@ Get a user's voicemail policy
 
 Wraps GET /api/v2/voicemail/userpolicies/{userId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -901,7 +903,7 @@ Update the current user's voicemail policy
 
 Wraps PATCH /api/v2/voicemail/me/policy 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -949,9 +951,11 @@ Update a voicemail message
 
 A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 
+
+
 Wraps PATCH /api/v2/voicemail/messages/{messageId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1003,7 +1007,7 @@ Update a user's voicemail policy
 
 Wraps PATCH /api/v2/voicemail/userpolicies/{userId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1055,7 +1059,7 @@ Copy a voicemail message to a user or group
 
 Wraps POST /api/v2/voicemail/messages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1105,7 +1109,7 @@ Search voicemails
 
 Wraps POST /api/v2/voicemail/search 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1153,9 +1157,11 @@ Update a voicemail message
 
 A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 
+
+
 Wraps PUT /api/v2/voicemail/messages/{messageId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

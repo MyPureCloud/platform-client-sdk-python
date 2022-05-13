@@ -91,6 +91,7 @@ class SuggestSearchCriteria(object):
         :type: str
         """
         
+
         self._end_value = end_value
 
     @property
@@ -114,6 +115,7 @@ class SuggestSearchCriteria(object):
         :type: list[str]
         """
         
+
         self._values = values
 
     @property
@@ -137,6 +139,7 @@ class SuggestSearchCriteria(object):
         :type: str
         """
         
+
         self._start_value = start_value
 
     @property
@@ -160,6 +163,7 @@ class SuggestSearchCriteria(object):
         :type: list[str]
         """
         
+
         self._fields = fields
 
     @property
@@ -183,6 +187,7 @@ class SuggestSearchCriteria(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -233,6 +238,7 @@ class SuggestSearchCriteria(object):
         :type: list[SuggestSearchCriteria]
         """
         
+
         self._group = group
 
     @property
@@ -256,6 +262,7 @@ class SuggestSearchCriteria(object):
         :type: str
         """
         
+
         self._date_format = date_format
 
     def to_dict(self):

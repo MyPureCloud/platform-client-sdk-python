@@ -73,6 +73,8 @@ Query organization API Usage -
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
+
+
 Wraps POST /api/v2/usage/query 
 
 Requires ANY permissions: 

@@ -70,6 +70,10 @@ class NluUtterance(object):
         :type: list[NluUtteranceSegment]
         """
         
+        if not segments:
+            raise ValueError("Invalid value for `segments`, must not be `None`")
+
+
         self._segments = segments
 
     def to_dict(self):

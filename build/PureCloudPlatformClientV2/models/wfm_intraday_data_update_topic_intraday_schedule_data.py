@@ -73,6 +73,7 @@ class WfmIntradayDataUpdateTopicIntradayScheduleData(object):
         :type: int
         """
         
+
         self._on_queue_time_seconds = on_queue_time_seconds
 
     @property
@@ -96,6 +97,7 @@ class WfmIntradayDataUpdateTopicIntradayScheduleData(object):
         :type: int
         """
         
+
         self._scheduled_time_seconds = scheduled_time_seconds
 
     def to_dict(self):

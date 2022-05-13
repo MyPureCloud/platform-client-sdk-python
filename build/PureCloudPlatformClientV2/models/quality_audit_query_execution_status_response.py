@@ -85,6 +85,7 @@ class QualityAuditQueryExecutionStatusResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class QualityAuditQueryExecutionStatusResponse(object):
         :type: datetime
         """
         
+
         self._date_start = date_start
 
     @property
@@ -158,6 +160,7 @@ class QualityAuditQueryExecutionStatusResponse(object):
         :type: str
         """
         
+
         self._interval = interval
 
     @property
@@ -181,6 +184,7 @@ class QualityAuditQueryExecutionStatusResponse(object):
         :type: list[QualityAuditQueryFilter]
         """
         
+
         self._filters = filters
 
     @property
@@ -204,6 +208,7 @@ class QualityAuditQueryExecutionStatusResponse(object):
         :type: list[AuditQuerySort]
         """
         
+
         self._sort = sort
 
     def to_dict(self):

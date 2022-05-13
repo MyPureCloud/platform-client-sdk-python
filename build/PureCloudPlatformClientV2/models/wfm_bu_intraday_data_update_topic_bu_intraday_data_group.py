@@ -115,6 +115,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup(object):
         :type: WfmBuIntradayDataUpdateTopicBuIntradayForecastData
         """
         
+
         self._forecast_data_summary = forecast_data_summary
 
     @property
@@ -138,6 +139,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup(object):
         :type: list[WfmBuIntradayDataUpdateTopicBuIntradayForecastData]
         """
         
+
         self._forecast_data_per_interval = forecast_data_per_interval
 
     @property
@@ -161,6 +163,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup(object):
         :type: WfmBuIntradayDataUpdateTopicBuIntradayScheduleData
         """
         
+
         self._schedule_data_summary = schedule_data_summary
 
     @property
@@ -184,6 +187,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup(object):
         :type: list[WfmBuIntradayDataUpdateTopicBuIntradayScheduleData]
         """
         
+
         self._schedule_data_per_interval = schedule_data_per_interval
 
     @property
@@ -207,6 +211,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup(object):
         :type: WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData
         """
         
+
         self._performance_prediction_data_summary = performance_prediction_data_summary
 
     @property
@@ -230,6 +235,7 @@ class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup(object):
         :type: list[WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData]
         """
         
+
         self._performance_prediction_data_per_interval = performance_prediction_data_per_interval
 
     def to_dict(self):

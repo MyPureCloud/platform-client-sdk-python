@@ -76,6 +76,7 @@ class JourneyOutcomeEventsNotificationOutcome(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class JourneyOutcomeEventsNotificationOutcome(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -122,6 +124,7 @@ class JourneyOutcomeEventsNotificationOutcome(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     def to_dict(self):

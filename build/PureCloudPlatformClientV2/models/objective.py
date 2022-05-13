@@ -94,6 +94,7 @@ class Objective(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class Objective(object):
         :type: str
         """
         
+
         self._template_id = template_id
 
     @property
@@ -140,6 +142,7 @@ class Objective(object):
         :type: list[ObjectiveZone]
         """
         
+
         self._zones = zones
 
     @property
@@ -163,6 +166,7 @@ class Objective(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -186,6 +190,7 @@ class Objective(object):
         :type: list[str]
         """
         
+
         self._media_types = media_types
 
     @property
@@ -209,6 +214,7 @@ class Objective(object):
         :type: list[AddressableEntityRef]
         """
         
+
         self._queues = queues
 
     @property
@@ -232,6 +238,7 @@ class Objective(object):
         :type: list[AddressableEntityRef]
         """
         
+
         self._topics = topics
 
     @property
@@ -282,6 +289,7 @@ class Objective(object):
         :type: date
         """
         
+
         self._date_start = date_start
 
     def to_dict(self):

@@ -73,6 +73,10 @@ class RestErrorDetail(object):
         :type: str
         """
         
+        if not error:
+            raise ValueError("Invalid value for `error`, must not be `None`")
+
+
         self._error = error
 
     @property
@@ -96,6 +100,7 @@ class RestErrorDetail(object):
         :type: str
         """
         
+
         self._details = details
 
     def to_dict(self):

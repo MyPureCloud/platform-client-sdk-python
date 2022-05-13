@@ -88,6 +88,7 @@ class UpdateActivityCodeRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -138,6 +139,7 @@ class UpdateActivityCodeRequest(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -161,6 +163,7 @@ class UpdateActivityCodeRequest(object):
         :type: bool
         """
         
+
         self._counts_as_paid_time = counts_as_paid_time
 
     @property
@@ -184,6 +187,7 @@ class UpdateActivityCodeRequest(object):
         :type: bool
         """
         
+
         self._counts_as_work_time = counts_as_work_time
 
     @property
@@ -207,6 +211,7 @@ class UpdateActivityCodeRequest(object):
         :type: bool
         """
         
+
         self._agent_time_off_selectable = agent_time_off_selectable
 
     @property
@@ -230,6 +235,10 @@ class UpdateActivityCodeRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

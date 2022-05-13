@@ -112,6 +112,7 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,10 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
+        if not key:
+            raise ValueError("Invalid value for `key`, must not be `None`")
+
+
         self._key = key
 
     @property
@@ -158,6 +163,10 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
+        if not namespace:
+            raise ValueError("Invalid value for `namespace`, must not be `None`")
+
+
         self._namespace = namespace
 
     @property
@@ -181,6 +190,10 @@ class LimitChangeRequestDetails(object):
         :type: float
         """
         
+        if not requested_value:
+            raise ValueError("Invalid value for `requested_value`, must not be `None`")
+
+
         self._requested_value = requested_value
 
     @property
@@ -204,6 +217,10 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
+        if not description:
+            raise ValueError("Invalid value for `description`, must not be `None`")
+
+
         self._description = description
 
     @property
@@ -227,6 +244,10 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
+        if not support_case_url:
+            raise ValueError("Invalid value for `support_case_url`, must not be `None`")
+
+
         self._support_case_url = support_case_url
 
     @property
@@ -250,6 +271,7 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -300,6 +322,7 @@ class LimitChangeRequestDetails(object):
         :type: float
         """
         
+
         self._current_value = current_value
 
     @property
@@ -323,6 +346,7 @@ class LimitChangeRequestDetails(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -346,6 +370,7 @@ class LimitChangeRequestDetails(object):
         :type: list[StatusChange]
         """
         
+
         self._status_history = status_history
 
     @property
@@ -369,6 +394,7 @@ class LimitChangeRequestDetails(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -392,6 +418,7 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
+
         self._last_changed_by = last_changed_by
 
     @property
@@ -442,6 +469,7 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

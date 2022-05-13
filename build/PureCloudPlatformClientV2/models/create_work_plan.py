@@ -151,6 +151,10 @@ class CreateWorkPlan(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -174,6 +178,7 @@ class CreateWorkPlan(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -197,6 +202,7 @@ class CreateWorkPlan(object):
         :type: bool
         """
         
+
         self._constrain_weekly_paid_time = constrain_weekly_paid_time
 
     @property
@@ -220,6 +226,7 @@ class CreateWorkPlan(object):
         :type: bool
         """
         
+
         self._flexible_weekly_paid_time = flexible_weekly_paid_time
 
     @property
@@ -243,6 +250,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._weekly_exact_paid_minutes = weekly_exact_paid_minutes
 
     @property
@@ -266,6 +274,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._weekly_minimum_paid_minutes = weekly_minimum_paid_minutes
 
     @property
@@ -289,6 +298,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._weekly_maximum_paid_minutes = weekly_maximum_paid_minutes
 
     @property
@@ -312,6 +322,7 @@ class CreateWorkPlan(object):
         :type: bool
         """
         
+
         self._constrain_paid_time_granularity = constrain_paid_time_granularity
 
     @property
@@ -335,6 +346,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._paid_time_granularity_minutes = paid_time_granularity_minutes
 
     @property
@@ -358,6 +370,7 @@ class CreateWorkPlan(object):
         :type: bool
         """
         
+
         self._constrain_minimum_time_between_shifts = constrain_minimum_time_between_shifts
 
     @property
@@ -381,6 +394,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._minimum_time_between_shifts_minutes = minimum_time_between_shifts_minutes
 
     @property
@@ -404,6 +418,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._maximum_days = maximum_days
 
     @property
@@ -427,6 +442,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._minimum_consecutive_non_working_minutes_per_week = minimum_consecutive_non_working_minutes_per_week
 
     @property
@@ -450,6 +466,7 @@ class CreateWorkPlan(object):
         :type: bool
         """
         
+
         self._constrain_maximum_consecutive_working_weekends = constrain_maximum_consecutive_working_weekends
 
     @property
@@ -473,6 +490,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._maximum_consecutive_working_weekends = maximum_consecutive_working_weekends
 
     @property
@@ -496,6 +514,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._minimum_working_days_per_week = minimum_working_days_per_week
 
     @property
@@ -519,6 +538,7 @@ class CreateWorkPlan(object):
         :type: bool
         """
         
+
         self._constrain_maximum_consecutive_working_days = constrain_maximum_consecutive_working_days
 
     @property
@@ -542,6 +562,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._maximum_consecutive_working_days = maximum_consecutive_working_days
 
     @property
@@ -565,6 +586,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._minimum_shift_start_distance_minutes = minimum_shift_start_distance_minutes
 
     @property
@@ -588,6 +610,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._minimum_days_off_per_planning_period = minimum_days_off_per_planning_period
 
     @property
@@ -611,6 +634,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._maximum_days_off_per_planning_period = maximum_days_off_per_planning_period
 
     @property
@@ -634,6 +658,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._minimum_paid_minutes_per_planning_period = minimum_paid_minutes_per_planning_period
 
     @property
@@ -657,6 +682,7 @@ class CreateWorkPlan(object):
         :type: int
         """
         
+
         self._maximum_paid_minutes_per_planning_period = maximum_paid_minutes_per_planning_period
 
     @property
@@ -680,6 +706,7 @@ class CreateWorkPlan(object):
         :type: SetWrapperDayOfWeek
         """
         
+
         self._optional_days = optional_days
 
     @property
@@ -730,6 +757,7 @@ class CreateWorkPlan(object):
         :type: ListWrapperShiftStartVariance
         """
         
+
         self._shift_start_variances = shift_start_variances
 
     @property
@@ -753,6 +781,7 @@ class CreateWorkPlan(object):
         :type: list[CreateWorkPlanShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -776,6 +805,7 @@ class CreateWorkPlan(object):
         :type: list[UserReference]
         """
         
+
         self._agents = agents
 
     def to_dict(self):

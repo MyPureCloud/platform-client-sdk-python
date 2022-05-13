@@ -73,6 +73,10 @@ class Activation(object):
         :type: str
         """
         
+        if not type:
+            raise ValueError("Invalid value for `type`, must not be `None`")
+
+
         self._type = type
 
     @property
@@ -96,6 +100,7 @@ class Activation(object):
         :type: int
         """
         
+
         self._delay_in_seconds = delay_in_seconds
 
     def to_dict(self):

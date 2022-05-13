@@ -70,6 +70,7 @@ class PlanningGroupList(object):
         :type: list[PlanningGroup]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

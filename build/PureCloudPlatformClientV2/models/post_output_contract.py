@@ -70,6 +70,10 @@ class PostOutputContract(object):
         :type: JsonSchemaDocument
         """
         
+        if not success_schema:
+            raise ValueError("Invalid value for `success_schema`, must not be `None`")
+
+
         self._success_schema = success_schema
 
     def to_dict(self):

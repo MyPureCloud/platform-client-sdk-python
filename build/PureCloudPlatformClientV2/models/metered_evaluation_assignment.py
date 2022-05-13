@@ -85,6 +85,7 @@ class MeteredEvaluationAssignment(object):
         :type: str
         """
         
+
         self._evaluation_context_id = evaluation_context_id
 
     @property
@@ -108,6 +109,7 @@ class MeteredEvaluationAssignment(object):
         :type: list[User]
         """
         
+
         self._evaluators = evaluators
 
     @property
@@ -131,6 +133,7 @@ class MeteredEvaluationAssignment(object):
         :type: int
         """
         
+
         self._max_number_evaluations = max_number_evaluations
 
     @property
@@ -154,6 +157,7 @@ class MeteredEvaluationAssignment(object):
         :type: EvaluationForm
         """
         
+
         self._evaluation_form = evaluation_form
 
     @property
@@ -177,6 +181,7 @@ class MeteredEvaluationAssignment(object):
         :type: bool
         """
         
+
         self._assign_to_active_user = assign_to_active_user
 
     @property
@@ -200,6 +205,7 @@ class MeteredEvaluationAssignment(object):
         :type: TimeInterval
         """
         
+
         self._time_interval = time_interval
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class SupportCenterSettings(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -111,6 +112,7 @@ class SupportCenterSettings(object):
         :type: AddressableEntityRef
         """
         
+
         self._knowledge_base = knowledge_base
 
     @property
@@ -134,6 +136,7 @@ class SupportCenterSettings(object):
         :type: list[SupportCenterCustomMessage]
         """
         
+
         self._custom_messages = custom_messages
 
     @property
@@ -184,6 +187,7 @@ class SupportCenterSettings(object):
         :type: list[SupportCenterScreen]
         """
         
+
         self._screens = screens
 
     @property
@@ -207,6 +211,7 @@ class SupportCenterSettings(object):
         :type: list[AddressableEntityRef]
         """
         
+
         self._enabled_categories = enabled_categories
 
     @property
@@ -230,6 +235,7 @@ class SupportCenterSettings(object):
         :type: SupportCenterStyleSetting
         """
         
+
         self._style_setting = style_setting
 
     def to_dict(self):

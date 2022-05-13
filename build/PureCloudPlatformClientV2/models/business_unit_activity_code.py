@@ -100,6 +100,7 @@ class BusinessUnitActivityCode(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class BusinessUnitActivityCode(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class BusinessUnitActivityCode(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property
@@ -169,6 +172,7 @@ class BusinessUnitActivityCode(object):
         :type: bool
         """
         
+
         self._default_code = default_code
 
     @property
@@ -219,6 +223,7 @@ class BusinessUnitActivityCode(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -242,6 +247,7 @@ class BusinessUnitActivityCode(object):
         :type: bool
         """
         
+
         self._counts_as_paid_time = counts_as_paid_time
 
     @property
@@ -265,6 +271,7 @@ class BusinessUnitActivityCode(object):
         :type: bool
         """
         
+
         self._counts_as_work_time = counts_as_work_time
 
     @property
@@ -288,6 +295,7 @@ class BusinessUnitActivityCode(object):
         :type: bool
         """
         
+
         self._agent_time_off_selectable = agent_time_off_selectable
 
     @property
@@ -311,6 +319,7 @@ class BusinessUnitActivityCode(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -334,6 +343,7 @@ class BusinessUnitActivityCode(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

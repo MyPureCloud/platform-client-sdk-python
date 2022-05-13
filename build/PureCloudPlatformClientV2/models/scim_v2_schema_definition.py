@@ -82,6 +82,7 @@ class ScimV2SchemaDefinition(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class ScimV2SchemaDefinition(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class ScimV2SchemaDefinition(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -151,6 +154,7 @@ class ScimV2SchemaDefinition(object):
         :type: list[ScimV2SchemaAttribute]
         """
         
+
         self._attributes = attributes
 
     @property
@@ -174,6 +178,7 @@ class ScimV2SchemaDefinition(object):
         :type: ScimMetadata
         """
         
+
         self._meta = meta
 
     def to_dict(self):

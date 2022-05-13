@@ -73,6 +73,7 @@ class Ring(object):
         :type: list[ExpansionCriterium]
         """
         
+
         self._expansion_criteria = expansion_criteria
 
     @property
@@ -96,6 +97,7 @@ class Ring(object):
         :type: Actions
         """
         
+
         self._actions = actions
 
     def to_dict(self):

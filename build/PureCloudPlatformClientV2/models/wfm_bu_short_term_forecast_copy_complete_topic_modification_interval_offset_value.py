@@ -73,6 +73,7 @@ class WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue(obj
         :type: int
         """
         
+
         self._interval_index = interval_index
 
     @property
@@ -96,6 +97,7 @@ class WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue(obj
         :type: float
         """
         
+
         self._value = value
 
     def to_dict(self):

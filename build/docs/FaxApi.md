@@ -28,7 +28,7 @@ Delete a fax document.
 
 Wraps DELETE /api/v2/fax/documents/{documentId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -77,7 +77,7 @@ Get a document.
 
 Wraps GET /api/v2/fax/documents/{documentId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -127,7 +127,7 @@ Download a fax document.
 
 Wraps GET /api/v2/fax/documents/{documentId}/content 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -177,7 +177,7 @@ Get a list of fax documents.
 
 Wraps GET /api/v2/fax/documents 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -229,7 +229,7 @@ Get fax summary
 
 Wraps GET /api/v2/fax/summary 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -275,7 +275,7 @@ Update a fax document.
 
 Wraps PUT /api/v2/fax/documents/{documentId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

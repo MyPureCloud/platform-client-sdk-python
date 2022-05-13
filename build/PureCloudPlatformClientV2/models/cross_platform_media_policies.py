@@ -79,6 +79,7 @@ class CrossPlatformMediaPolicies(object):
         :type: CrossPlatformCallMediaPolicy
         """
         
+
         self._call_policy = call_policy
 
     @property
@@ -102,6 +103,7 @@ class CrossPlatformMediaPolicies(object):
         :type: CrossPlatformChatMediaPolicy
         """
         
+
         self._chat_policy = chat_policy
 
     @property
@@ -125,6 +127,7 @@ class CrossPlatformMediaPolicies(object):
         :type: CrossPlatformEmailMediaPolicy
         """
         
+
         self._email_policy = email_policy
 
     @property
@@ -148,6 +151,7 @@ class CrossPlatformMediaPolicies(object):
         :type: CrossPlatformMessageMediaPolicy
         """
         
+
         self._message_policy = message_policy
 
     def to_dict(self):

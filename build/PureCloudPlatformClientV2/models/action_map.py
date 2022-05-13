@@ -121,6 +121,7 @@ class ActionMap(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -144,6 +145,7 @@ class ActionMap(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -167,6 +169,7 @@ class ActionMap(object):
         :type: bool
         """
         
+
         self._is_active = is_active
 
     @property
@@ -190,6 +193,10 @@ class ActionMap(object):
         :type: str
         """
         
+        if not display_name:
+            raise ValueError("Invalid value for `display_name`, must not be `None`")
+
+
         self._display_name = display_name
 
     @property
@@ -213,6 +220,10 @@ class ActionMap(object):
         :type: list[str]
         """
         
+        if not trigger_with_segments:
+            raise ValueError("Invalid value for `trigger_with_segments`, must not be `None`")
+
+
         self._trigger_with_segments = trigger_with_segments
 
     @property
@@ -236,6 +247,7 @@ class ActionMap(object):
         :type: list[EventCondition]
         """
         
+
         self._trigger_with_event_conditions = trigger_with_event_conditions
 
     @property
@@ -259,6 +271,7 @@ class ActionMap(object):
         :type: list[OutcomeProbabilityCondition]
         """
         
+
         self._trigger_with_outcome_probability_conditions = trigger_with_outcome_probability_conditions
 
     @property
@@ -282,6 +295,10 @@ class ActionMap(object):
         :type: list[UrlCondition]
         """
         
+        if not page_url_conditions:
+            raise ValueError("Invalid value for `page_url_conditions`, must not be `None`")
+
+
         self._page_url_conditions = page_url_conditions
 
     @property
@@ -305,6 +322,7 @@ class ActionMap(object):
         :type: Activation
         """
         
+
         self._activation = activation
 
     @property
@@ -328,6 +346,7 @@ class ActionMap(object):
         :type: int
         """
         
+
         self._weight = weight
 
     @property
@@ -351,6 +370,7 @@ class ActionMap(object):
         :type: ActionMapAction
         """
         
+
         self._action = action
 
     @property
@@ -374,6 +394,7 @@ class ActionMap(object):
         :type: ActionMapScheduleGroups
         """
         
+
         self._action_map_schedule_groups = action_map_schedule_groups
 
     @property
@@ -397,6 +418,7 @@ class ActionMap(object):
         :type: bool
         """
         
+
         self._ignore_frequency_cap = ignore_frequency_cap
 
     @property
@@ -420,6 +442,7 @@ class ActionMap(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -443,6 +466,7 @@ class ActionMap(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -466,6 +490,7 @@ class ActionMap(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -489,6 +514,7 @@ class ActionMap(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -512,6 +538,7 @@ class ActionMap(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     def to_dict(self):

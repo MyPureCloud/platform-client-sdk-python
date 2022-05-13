@@ -109,6 +109,7 @@ class AuditLogMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class AuditLogMessage(object):
         :type: str
         """
         
+
         self._user_home_org_id = user_home_org_id
 
     @property
@@ -155,6 +157,7 @@ class AuditLogMessage(object):
         :type: DomainEntityRef
         """
         
+
         self._user = user
 
     @property
@@ -178,6 +181,7 @@ class AuditLogMessage(object):
         :type: AddressableEntityRef
         """
         
+
         self._client = client
 
     @property
@@ -201,6 +205,7 @@ class AuditLogMessage(object):
         :type: list[str]
         """
         
+
         self._remote_ip = remote_ip
 
     @property
@@ -251,6 +256,7 @@ class AuditLogMessage(object):
         :type: datetime
         """
         
+
         self._event_date = event_date
 
     @property
@@ -274,6 +280,7 @@ class AuditLogMessage(object):
         :type: MessageInfo
         """
         
+
         self._message = message
 
     @property
@@ -324,6 +331,7 @@ class AuditLogMessage(object):
         :type: DomainEntityRef
         """
         
+
         self._entity = entity
 
     @property
@@ -401,6 +409,7 @@ class AuditLogMessage(object):
         :type: list[PropertyChange]
         """
         
+
         self._property_changes = property_changes
 
     @property
@@ -424,6 +433,7 @@ class AuditLogMessage(object):
         :type: dict(str, str)
         """
         
+
         self._context = context
 
     def to_dict(self):

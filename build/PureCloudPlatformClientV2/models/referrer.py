@@ -94,6 +94,10 @@ class Referrer(object):
         :type: str
         """
         
+        if not url:
+            raise ValueError("Invalid value for `url`, must not be `None`")
+
+
         self._url = url
 
     @property
@@ -117,6 +121,10 @@ class Referrer(object):
         :type: str
         """
         
+        if not domain:
+            raise ValueError("Invalid value for `domain`, must not be `None`")
+
+
         self._domain = domain
 
     @property
@@ -140,6 +148,10 @@ class Referrer(object):
         :type: str
         """
         
+        if not hostname:
+            raise ValueError("Invalid value for `hostname`, must not be `None`")
+
+
         self._hostname = hostname
 
     @property
@@ -163,6 +175,7 @@ class Referrer(object):
         :type: str
         """
         
+
         self._keywords = keywords
 
     @property
@@ -186,6 +199,10 @@ class Referrer(object):
         :type: str
         """
         
+        if not pathname:
+            raise ValueError("Invalid value for `pathname`, must not be `None`")
+
+
         self._pathname = pathname
 
     @property
@@ -209,6 +226,7 @@ class Referrer(object):
         :type: str
         """
         
+
         self._query_string = query_string
 
     @property
@@ -232,6 +250,7 @@ class Referrer(object):
         :type: str
         """
         
+
         self._fragment = fragment
 
     @property
@@ -255,6 +274,7 @@ class Referrer(object):
         :type: str
         """
         
+
         self._name = name
 
     @property

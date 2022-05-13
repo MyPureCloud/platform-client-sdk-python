@@ -76,6 +76,7 @@ class WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata(obje
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -99,6 +100,7 @@ class WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata(obje
         :type: WfmBuShortTermForecastGenerateProgressTopicUserReference
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -122,6 +124,7 @@ class WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata(obje
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     def to_dict(self):

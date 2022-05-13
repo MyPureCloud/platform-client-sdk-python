@@ -91,6 +91,7 @@ class CallMediaPolicyConditions(object):
         :type: list[User]
         """
         
+
         self._for_users = for_users
 
     @property
@@ -114,6 +115,7 @@ class CallMediaPolicyConditions(object):
         :type: list[str]
         """
         
+
         self._date_ranges = date_ranges
 
     @property
@@ -137,6 +139,7 @@ class CallMediaPolicyConditions(object):
         :type: list[Queue]
         """
         
+
         self._for_queues = for_queues
 
     @property
@@ -160,6 +163,7 @@ class CallMediaPolicyConditions(object):
         :type: list[WrapupCode]
         """
         
+
         self._wrapup_codes = wrapup_codes
 
     @property
@@ -183,6 +187,7 @@ class CallMediaPolicyConditions(object):
         :type: list[Language]
         """
         
+
         self._languages = languages
 
     @property
@@ -206,6 +211,7 @@ class CallMediaPolicyConditions(object):
         :type: TimeAllowed
         """
         
+
         self._time_allowed = time_allowed
 
     @property
@@ -229,6 +235,7 @@ class CallMediaPolicyConditions(object):
         :type: list[str]
         """
         
+
         self._directions = directions
 
     @property
@@ -252,6 +259,7 @@ class CallMediaPolicyConditions(object):
         :type: DurationCondition
         """
         
+
         self._duration = duration
 
     def to_dict(self):

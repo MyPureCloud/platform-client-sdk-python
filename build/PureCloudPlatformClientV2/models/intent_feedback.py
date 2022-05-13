@@ -79,6 +79,7 @@ class IntentFeedback(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -102,6 +103,7 @@ class IntentFeedback(object):
         :type: float
         """
         
+
         self._probability = probability
 
     @property
@@ -125,6 +127,7 @@ class IntentFeedback(object):
         :type: list[DetectedNamedEntity]
         """
         
+
         self._entities = entities
 
     @property

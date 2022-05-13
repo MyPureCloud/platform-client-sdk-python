@@ -88,6 +88,7 @@ class ScreenRecordingMetaData(object):
         :type: str
         """
         
+
         self._track_id = track_id
 
     @property
@@ -111,6 +112,7 @@ class ScreenRecordingMetaData(object):
         :type: str
         """
         
+
         self._media_id = media_id
 
     @property
@@ -134,6 +136,7 @@ class ScreenRecordingMetaData(object):
         :type: str
         """
         
+
         self._screen_id = screen_id
 
     @property
@@ -157,6 +160,7 @@ class ScreenRecordingMetaData(object):
         :type: int
         """
         
+
         self._origin_x = origin_x
 
     @property
@@ -180,6 +184,7 @@ class ScreenRecordingMetaData(object):
         :type: int
         """
         
+
         self._origin_y = origin_y
 
     @property
@@ -203,6 +208,7 @@ class ScreenRecordingMetaData(object):
         :type: bool
         """
         
+
         self._primary = primary
 
     @property
@@ -226,6 +232,7 @@ class ScreenRecordingMetaData(object):
         :type: bool
         """
         
+
         self._main = main
 
     def to_dict(self):

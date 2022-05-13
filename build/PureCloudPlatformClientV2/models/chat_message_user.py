@@ -82,6 +82,7 @@ class ChatMessageUser(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class ChatMessageUser(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class ChatMessageUser(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     @property
@@ -151,6 +154,7 @@ class ChatMessageUser(object):
         :type: str
         """
         
+
         self._username = username
 
     @property
@@ -174,6 +178,7 @@ class ChatMessageUser(object):
         :type: list[UserImage]
         """
         
+
         self._images = images
 
     def to_dict(self):

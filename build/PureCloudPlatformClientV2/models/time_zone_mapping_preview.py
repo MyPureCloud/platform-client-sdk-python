@@ -94,6 +94,7 @@ class TimeZoneMappingPreview(object):
         :type: DomainEntityRef
         """
         
+
         self._contact_list = contact_list
 
     @property
@@ -117,6 +118,7 @@ class TimeZoneMappingPreview(object):
         :type: dict(str, int)
         """
         
+
         self._contacts_per_time_zone = contacts_per_time_zone
 
     @property
@@ -140,6 +142,7 @@ class TimeZoneMappingPreview(object):
         :type: dict(str, int)
         """
         
+
         self._contacts_mapped_using_zip_code = contacts_mapped_using_zip_code
 
     @property
@@ -163,6 +166,7 @@ class TimeZoneMappingPreview(object):
         :type: int
         """
         
+
         self._contacts_mapped_to_a_single_zone = contacts_mapped_to_a_single_zone
 
     @property
@@ -186,6 +190,7 @@ class TimeZoneMappingPreview(object):
         :type: int
         """
         
+
         self._contacts_mapped_to_a_single_zone_using_zip_code = contacts_mapped_to_a_single_zone_using_zip_code
 
     @property
@@ -209,6 +214,7 @@ class TimeZoneMappingPreview(object):
         :type: int
         """
         
+
         self._contacts_mapped_to_multiple_zones = contacts_mapped_to_multiple_zones
 
     @property
@@ -232,6 +238,7 @@ class TimeZoneMappingPreview(object):
         :type: int
         """
         
+
         self._contacts_mapped_to_multiple_zones_using_zip_code = contacts_mapped_to_multiple_zones_using_zip_code
 
     @property
@@ -255,6 +262,7 @@ class TimeZoneMappingPreview(object):
         :type: int
         """
         
+
         self._contacts_in_default_window = contacts_in_default_window
 
     @property
@@ -278,6 +286,7 @@ class TimeZoneMappingPreview(object):
         :type: int
         """
         
+
         self._contact_list_size = contact_list_size
 
     def to_dict(self):

@@ -118,6 +118,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: int
         """
         
+
         self._event_time = event_time
 
     @property
@@ -141,6 +142,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -164,6 +166,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._participant_id = participant_id
 
     @property
@@ -187,6 +190,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -237,6 +241,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -287,6 +292,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -310,6 +316,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -333,6 +340,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._address_to = address_to
 
     @property
@@ -356,6 +364,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._address_from = address_from
 
     @property
@@ -379,6 +388,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -429,6 +439,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._outbound_campaign_id = outbound_campaign_id
 
     @property
@@ -452,6 +463,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._division_id = division_id
 
     @property
@@ -475,6 +487,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._outbound_contact_list_id = outbound_contact_list_id
 
     @property
@@ -498,6 +511,7 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         :type: str
         """
         
+
         self._outbound_contact_id = outbound_contact_id
 
     def to_dict(self):

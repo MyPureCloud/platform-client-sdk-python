@@ -82,6 +82,10 @@ class WfmHistoricalAdherenceQuery(object):
         :type: datetime
         """
         
+        if not start_date:
+            raise ValueError("Invalid value for `start_date`, must not be `None`")
+
+
         self._start_date = start_date
 
     @property
@@ -105,6 +109,7 @@ class WfmHistoricalAdherenceQuery(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -128,6 +133,7 @@ class WfmHistoricalAdherenceQuery(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -151,6 +157,7 @@ class WfmHistoricalAdherenceQuery(object):
         :type: list[str]
         """
         
+
         self._user_ids = user_ids
 
     @property
@@ -174,6 +181,7 @@ class WfmHistoricalAdherenceQuery(object):
         :type: bool
         """
         
+
         self._include_exceptions = include_exceptions
 
     def to_dict(self):

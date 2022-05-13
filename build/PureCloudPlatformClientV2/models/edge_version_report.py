@@ -73,6 +73,7 @@ class EdgeVersionReport(object):
         :type: EdgeVersionInformation
         """
         
+
         self._oldest_version = oldest_version
 
     @property
@@ -96,6 +97,7 @@ class EdgeVersionReport(object):
         :type: EdgeVersionInformation
         """
         
+
         self._newest_version = newest_version
 
     def to_dict(self):

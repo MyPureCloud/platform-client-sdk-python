@@ -88,6 +88,7 @@ class DialogflowAgent(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class DialogflowAgent(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class DialogflowAgent(object):
         :type: DialogflowProject
         """
         
+
         self._project = project
 
     @property
@@ -157,6 +160,7 @@ class DialogflowAgent(object):
         :type: list[str]
         """
         
+
         self._languages = languages
 
     @property
@@ -180,6 +184,7 @@ class DialogflowAgent(object):
         :type: list[DialogflowIntent]
         """
         
+
         self._intents = intents
 
     @property
@@ -203,6 +208,7 @@ class DialogflowAgent(object):
         :type: list[str]
         """
         
+
         self._environments = environments
 
     @property
@@ -226,6 +232,7 @@ class DialogflowAgent(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -76,6 +76,7 @@ class MergeOperation(object):
         :type: AddressableEntityRef
         """
         
+
         self._source_contact = source_contact
 
     @property
@@ -99,6 +100,7 @@ class MergeOperation(object):
         :type: AddressableEntityRef
         """
         
+
         self._target_contact = target_contact
 
     @property
@@ -122,6 +124,7 @@ class MergeOperation(object):
         :type: AddressableEntityRef
         """
         
+
         self._resulting_contact = resulting_contact
 
     def to_dict(self):

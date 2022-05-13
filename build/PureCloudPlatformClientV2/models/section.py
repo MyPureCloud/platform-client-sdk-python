@@ -79,6 +79,7 @@ class Section(object):
         :type: list[FieldList]
         """
         
+
         self._field_list = field_list
 
     @property
@@ -102,6 +103,7 @@ class Section(object):
         :type: str
         """
         
+
         self._instruction_text = instruction_text
 
     @property
@@ -125,6 +127,7 @@ class Section(object):
         :type: str
         """
         
+
         self._key = key
 
     @property
@@ -148,6 +151,7 @@ class Section(object):
         :type: str
         """
         
+
         self._state = state
 
     def to_dict(self):

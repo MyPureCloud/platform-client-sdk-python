@@ -103,6 +103,7 @@ class UsageItem(object):
         :type: int
         """
         
+
         self._total_document_byte_count = total_document_byte_count
 
     @property
@@ -126,6 +127,7 @@ class UsageItem(object):
         :type: int
         """
         
+
         self._total_document_count = total_document_count
 
     def to_dict(self):

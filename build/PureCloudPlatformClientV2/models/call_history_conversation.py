@@ -106,6 +106,7 @@ class CallHistoryConversation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class CallHistoryConversation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -152,6 +154,7 @@ class CallHistoryConversation(object):
         :type: list[CallHistoryParticipant]
         """
         
+
         self._participants = participants
 
     @property
@@ -202,6 +205,7 @@ class CallHistoryConversation(object):
         :type: bool
         """
         
+
         self._went_to_voicemail = went_to_voicemail
 
     @property
@@ -225,6 +229,7 @@ class CallHistoryConversation(object):
         :type: bool
         """
         
+
         self._missed_call = missed_call
 
     @property
@@ -248,6 +253,7 @@ class CallHistoryConversation(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -271,6 +277,7 @@ class CallHistoryConversation(object):
         :type: bool
         """
         
+
         self._was_conference = was_conference
 
     @property
@@ -294,6 +301,7 @@ class CallHistoryConversation(object):
         :type: bool
         """
         
+
         self._was_callback = was_callback
 
     @property
@@ -317,6 +325,7 @@ class CallHistoryConversation(object):
         :type: bool
         """
         
+
         self._had_screen_share = had_screen_share
 
     @property
@@ -340,6 +349,7 @@ class CallHistoryConversation(object):
         :type: bool
         """
         
+
         self._had_cobrowse = had_cobrowse
 
     @property
@@ -363,6 +373,7 @@ class CallHistoryConversation(object):
         :type: bool
         """
         
+
         self._was_outbound_campaign = was_outbound_campaign
 
     @property
@@ -386,6 +397,7 @@ class CallHistoryConversation(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

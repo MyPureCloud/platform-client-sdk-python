@@ -133,6 +133,7 @@ class SmsProvisioningStatus(object):
         :type: ErrorBody
         """
         
+
         self._error = error
 
     @property
@@ -156,6 +157,7 @@ class SmsProvisioningStatus(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

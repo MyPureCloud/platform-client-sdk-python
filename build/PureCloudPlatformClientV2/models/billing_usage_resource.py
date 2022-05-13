@@ -73,6 +73,10 @@ class BillingUsageResource(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -96,6 +100,10 @@ class BillingUsageResource(object):
         :type: datetime
         """
         
+        if not date:
+            raise ValueError("Invalid value for `date`, must not be `None`")
+
+
         self._date = date
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTe
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -96,6 +97,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTe
         :type: list[V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter]
         """
         
+
         self._parameters = parameters
 
     def to_dict(self):

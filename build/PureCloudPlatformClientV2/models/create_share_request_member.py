@@ -100,6 +100,7 @@ class CreateShareRequestMember(object):
         :type: MemberEntity
         """
         
+
         self._member = member
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class DisallowedEntityLearningAssignmentReference(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -96,6 +97,7 @@ class DisallowedEntityLearningAssignmentReference(object):
         :type: LearningAssignmentReference
         """
         
+
         self._entity = entity
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class RegisterArchitectJobResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class RegisterArchitectJobResponse(object):
         :type: str
         """
         
+
         self._presigned_url = presigned_url
 
     @property
@@ -125,6 +127,7 @@ class RegisterArchitectJobResponse(object):
         :type: dict(str, str)
         """
         
+
         self._headers = headers
 
     @property
@@ -148,6 +151,7 @@ class RegisterArchitectJobResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

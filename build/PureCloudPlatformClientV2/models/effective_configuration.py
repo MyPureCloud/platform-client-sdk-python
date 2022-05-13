@@ -82,6 +82,10 @@ class EffectiveConfiguration(object):
         :type: dict(str, object)
         """
         
+        if not properties:
+            raise ValueError("Invalid value for `properties`, must not be `None`")
+
+
         self._properties = properties
 
     @property
@@ -105,6 +109,10 @@ class EffectiveConfiguration(object):
         :type: dict(str, object)
         """
         
+        if not advanced:
+            raise ValueError("Invalid value for `advanced`, must not be `None`")
+
+
         self._advanced = advanced
 
     @property
@@ -128,6 +136,10 @@ class EffectiveConfiguration(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -151,6 +163,10 @@ class EffectiveConfiguration(object):
         :type: str
         """
         
+        if not notes:
+            raise ValueError("Invalid value for `notes`, must not be `None`")
+
+
         self._notes = notes
 
     @property
@@ -174,6 +190,10 @@ class EffectiveConfiguration(object):
         :type: dict(str, CredentialInfo)
         """
         
+        if not credentials:
+            raise ValueError("Invalid value for `credentials`, must not be `None`")
+
+
         self._credentials = credentials
 
     def to_dict(self):

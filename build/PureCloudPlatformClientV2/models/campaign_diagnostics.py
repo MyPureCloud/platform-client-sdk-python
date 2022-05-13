@@ -82,6 +82,7 @@ class CampaignDiagnostics(object):
         :type: CallableContactsDiagnostic
         """
         
+
         self._callable_contacts = callable_contacts
 
     @property
@@ -105,6 +106,7 @@ class CampaignDiagnostics(object):
         :type: QueueUtilizationDiagnostic
         """
         
+
         self._queue_utilization_diagnostic = queue_utilization_diagnostic
 
     @property
@@ -128,6 +130,7 @@ class CampaignDiagnostics(object):
         :type: list[RuleSetDiagnostic]
         """
         
+
         self._rule_set_diagnostics = rule_set_diagnostics
 
     @property
@@ -151,6 +154,7 @@ class CampaignDiagnostics(object):
         :type: int
         """
         
+
         self._outstanding_interactions_count = outstanding_interactions_count
 
     @property
@@ -174,6 +178,7 @@ class CampaignDiagnostics(object):
         :type: int
         """
         
+
         self._scheduled_interactions_count = scheduled_interactions_count
 
     def to_dict(self):

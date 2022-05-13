@@ -70,6 +70,7 @@ class BotSearchResponseEntityListing(object):
         :type: list[BotSearchResponse]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

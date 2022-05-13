@@ -106,6 +106,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._realtime_cic = realtime_cic
 
     @property
@@ -129,6 +130,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._purecloud = purecloud
 
     @property
@@ -152,6 +154,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._hipaa = hipaa
 
     @property
@@ -175,6 +178,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._uc_enabled = uc_enabled
 
     @property
@@ -198,6 +202,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._pci = pci
 
     @property
@@ -221,6 +226,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._purecloud_voice = purecloud_voice
 
     @property
@@ -244,6 +250,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._xmpp_federation = xmpp_federation
 
     @property
@@ -267,6 +274,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._chat = chat
 
     @property
@@ -290,6 +298,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._informal_photos = informal_photos
 
     @property
@@ -313,6 +322,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._directory = directory
 
     @property
@@ -336,6 +346,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._contact_center = contact_center
 
     @property
@@ -359,6 +370,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._unified_communications = unified_communications
 
     @property
@@ -382,6 +394,7 @@ class OrganizationFeatures(object):
         :type: bool
         """
         
+
         self._custserv = custserv
 
     def to_dict(self):

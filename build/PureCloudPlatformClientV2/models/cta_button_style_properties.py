@@ -82,6 +82,7 @@ class CtaButtonStyleProperties(object):
         :type: str
         """
         
+
         self._color = color
 
     @property
@@ -105,6 +106,7 @@ class CtaButtonStyleProperties(object):
         :type: str
         """
         
+
         self._font = font
 
     @property
@@ -128,6 +130,7 @@ class CtaButtonStyleProperties(object):
         :type: str
         """
         
+
         self._font_size = font_size
 
     @property
@@ -178,6 +181,7 @@ class CtaButtonStyleProperties(object):
         :type: str
         """
         
+
         self._background_color = background_color
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class UserConversationsEventMediaSummary(object):
         :type: UserConversationsEventMediaSummaryDetail
         """
         
+
         self._contact_center = contact_center
 
     @property
@@ -96,6 +97,7 @@ class UserConversationsEventMediaSummary(object):
         :type: UserConversationsEventMediaSummaryDetail
         """
         
+
         self._enterprise = enterprise
 
     def to_dict(self):

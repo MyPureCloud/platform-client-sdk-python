@@ -103,6 +103,7 @@ class ResponseAsset(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class ResponseAsset(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -149,6 +151,7 @@ class ResponseAsset(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -172,6 +175,7 @@ class ResponseAsset(object):
         :type: int
         """
         
+
         self._content_length = content_length
 
     @property
@@ -195,6 +199,7 @@ class ResponseAsset(object):
         :type: str
         """
         
+
         self._content_location = content_location
 
     @property
@@ -218,6 +223,7 @@ class ResponseAsset(object):
         :type: str
         """
         
+
         self._content_type = content_type
 
     @property
@@ -241,6 +247,7 @@ class ResponseAsset(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -264,6 +271,7 @@ class ResponseAsset(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -287,6 +295,7 @@ class ResponseAsset(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -310,6 +319,7 @@ class ResponseAsset(object):
         :type: DomainEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -333,6 +343,7 @@ class ResponseAsset(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._responses = responses
 
     @property
@@ -356,6 +367,7 @@ class ResponseAsset(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

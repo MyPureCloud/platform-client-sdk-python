@@ -70,6 +70,7 @@ class FacebookScopedId(object):
         :type: str
         """
         
+
         self._scoped_id = scoped_id
 
     def to_dict(self):

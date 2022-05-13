@@ -79,6 +79,7 @@ class AnswerOption(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class AnswerOption(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -125,6 +127,7 @@ class AnswerOption(object):
         :type: int
         """
         
+
         self._value = value
 
     @property
@@ -148,6 +151,7 @@ class AnswerOption(object):
         :type: list[AssistanceCondition]
         """
         
+
         self._assistance_conditions = assistance_conditions
 
     def to_dict(self):

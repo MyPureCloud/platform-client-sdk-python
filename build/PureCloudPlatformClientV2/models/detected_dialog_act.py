@@ -73,6 +73,7 @@ class DetectedDialogAct(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -96,6 +97,7 @@ class DetectedDialogAct(object):
         :type: float
         """
         
+
         self._probability = probability
 
     def to_dict(self):

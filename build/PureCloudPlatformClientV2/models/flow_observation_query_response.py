@@ -70,6 +70,7 @@ class FlowObservationQueryResponse(object):
         :type: list[FlowObservationDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

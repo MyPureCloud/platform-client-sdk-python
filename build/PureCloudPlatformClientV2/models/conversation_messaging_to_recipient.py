@@ -91,6 +91,7 @@ class ConversationMessagingToRecipient(object):
         :type: str
         """
         
+
         self._nickname = nickname
 
     @property
@@ -114,6 +115,10 @@ class ConversationMessagingToRecipient(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -164,6 +169,7 @@ class ConversationMessagingToRecipient(object):
         :type: str
         """
         
+
         self._image = image
 
     @property
@@ -187,6 +193,7 @@ class ConversationMessagingToRecipient(object):
         :type: str
         """
         
+
         self._first_name = first_name
 
     @property
@@ -210,6 +217,7 @@ class ConversationMessagingToRecipient(object):
         :type: str
         """
         
+
         self._last_name = last_name
 
     @property
@@ -233,6 +241,7 @@ class ConversationMessagingToRecipient(object):
         :type: str
         """
         
+
         self._email = email
 
     @property
@@ -256,6 +265,7 @@ class ConversationMessagingToRecipient(object):
         :type: list[ConversationRecipientAdditionalIdentifier]
         """
         
+
         self._additional_ids = additional_ids
 
     def to_dict(self):

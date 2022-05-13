@@ -73,6 +73,7 @@ class UsageExecutionResult(object):
         :type: str
         """
         
+
         self._execution_id = execution_id
 
     @property
@@ -96,6 +97,7 @@ class UsageExecutionResult(object):
         :type: str
         """
         
+
         self._results_uri = results_uri
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class SingleWorkdayAverageValues(object):
         :type: date
         """
         
+
         self._date_workday = date_workday
 
     @property
@@ -108,6 +109,7 @@ class SingleWorkdayAverageValues(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -131,6 +133,7 @@ class SingleWorkdayAverageValues(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -154,6 +157,7 @@ class SingleWorkdayAverageValues(object):
         :type: str
         """
         
+
         self._timezone = timezone
 
     @property
@@ -177,6 +181,7 @@ class SingleWorkdayAverageValues(object):
         :type: list[WorkdayValuesMetricItem]
         """
         
+
         self._results = results
 
     @property
@@ -200,6 +205,7 @@ class SingleWorkdayAverageValues(object):
         :type: AddressableEntityRef
         """
         
+
         self._performance_profile = performance_profile
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class LearningAssignmentRuleRunTopicLearningAssignmentsCreated(object):
         :type: LearningAssignmentRuleRunTopicLearningModuleReference
         """
         
+
         self._module = module
 
     def to_dict(self):

@@ -127,6 +127,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: int
         """
         
+
         self._event_time = event_time
 
     @property
@@ -150,6 +151,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -173,6 +175,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._participant_id = participant_id
 
     @property
@@ -196,6 +199,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -273,6 +277,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._external_organization_id = external_organization_id
 
     @property
@@ -296,6 +301,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     @property
@@ -319,6 +325,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -369,6 +376,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -392,6 +400,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -415,6 +424,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._address_to = address_to
 
     @property
@@ -438,6 +448,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._address_from = address_from
 
     @property
@@ -461,6 +472,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._callback_user_name = callback_user_name
 
     @property
@@ -484,6 +496,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: list[str]
         """
         
+
         self._callback_numbers = callback_numbers
 
     @property
@@ -507,6 +520,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: int
         """
         
+
         self._callback_scheduled_time = callback_scheduled_time
 
     @property
@@ -530,6 +544,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -580,6 +595,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :type: int
         """
         
+
         self._interacting_duration_ms = interacting_duration_ms
 
     def to_dict(self):

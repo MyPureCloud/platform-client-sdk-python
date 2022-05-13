@@ -73,6 +73,7 @@ class AutomaticTimeZoneMappingSettings(object):
         :type: list[CallableWindow]
         """
         
+
         self._callable_windows = callable_windows
 
     @property
@@ -96,6 +97,7 @@ class AutomaticTimeZoneMappingSettings(object):
         :type: list[str]
         """
         
+
         self._supported_countries = supported_countries
 
     def to_dict(self):

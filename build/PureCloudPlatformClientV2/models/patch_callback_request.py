@@ -79,6 +79,10 @@ class PatchCallbackRequest(object):
         :type: str
         """
         
+        if not conversation_id:
+            raise ValueError("Invalid value for `conversation_id`, must not be `None`")
+
+
         self._conversation_id = conversation_id
 
     @property
@@ -102,6 +106,7 @@ class PatchCallbackRequest(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -125,6 +130,10 @@ class PatchCallbackRequest(object):
         :type: str
         """
         
+        if not agent_id:
+            raise ValueError("Invalid value for `agent_id`, must not be `None`")
+
+
         self._agent_id = agent_id
 
     @property
@@ -148,6 +157,7 @@ class PatchCallbackRequest(object):
         :type: datetime
         """
         
+
         self._callback_scheduled_time = callback_scheduled_time
 
     def to_dict(self):

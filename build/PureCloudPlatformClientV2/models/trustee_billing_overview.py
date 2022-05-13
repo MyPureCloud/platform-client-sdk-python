@@ -118,6 +118,7 @@ class TrusteeBillingOverview(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,7 @@ class TrusteeBillingOverview(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -164,6 +166,10 @@ class TrusteeBillingOverview(object):
         :type: NamedEntity
         """
         
+        if not organization:
+            raise ValueError("Invalid value for `organization`, must not be `None`")
+
+
         self._organization = organization
 
     @property
@@ -187,6 +193,10 @@ class TrusteeBillingOverview(object):
         :type: str
         """
         
+        if not currency:
+            raise ValueError("Invalid value for `currency`, must not be `None`")
+
+
         self._currency = currency
 
     @property
@@ -210,6 +220,10 @@ class TrusteeBillingOverview(object):
         :type: list[str]
         """
         
+        if not enabled_products:
+            raise ValueError("Invalid value for `enabled_products`, must not be `None`")
+
+
         self._enabled_products = enabled_products
 
     @property
@@ -260,6 +274,7 @@ class TrusteeBillingOverview(object):
         :type: datetime
         """
         
+
         self._ramp_period_start_date = ramp_period_start_date
 
     @property
@@ -283,6 +298,7 @@ class TrusteeBillingOverview(object):
         :type: datetime
         """
         
+
         self._ramp_period_end_date = ramp_period_end_date
 
     @property
@@ -306,6 +322,7 @@ class TrusteeBillingOverview(object):
         :type: datetime
         """
         
+
         self._billing_period_start_date = billing_period_start_date
 
     @property
@@ -329,6 +346,7 @@ class TrusteeBillingOverview(object):
         :type: datetime
         """
         
+
         self._billing_period_end_date = billing_period_end_date
 
     @property
@@ -352,6 +370,10 @@ class TrusteeBillingOverview(object):
         :type: list[SubscriptionOverviewUsage]
         """
         
+        if not usages:
+            raise ValueError("Invalid value for `usages`, must not be `None`")
+
+
         self._usages = usages
 
     @property
@@ -375,6 +397,7 @@ class TrusteeBillingOverview(object):
         :type: datetime
         """
         
+
         self._contract_amendment_date = contract_amendment_date
 
     @property
@@ -398,6 +421,7 @@ class TrusteeBillingOverview(object):
         :type: datetime
         """
         
+
         self._contract_effective_date = contract_effective_date
 
     @property
@@ -421,6 +445,7 @@ class TrusteeBillingOverview(object):
         :type: datetime
         """
         
+
         self._contract_end_date = contract_end_date
 
     @property
@@ -444,6 +469,7 @@ class TrusteeBillingOverview(object):
         :type: str
         """
         
+
         self._minimum_monthly_amount = minimum_monthly_amount
 
     @property
@@ -467,6 +493,7 @@ class TrusteeBillingOverview(object):
         :type: bool
         """
         
+
         self._in_ramp_period = in_ramp_period
 
     @property
@@ -490,6 +517,7 @@ class TrusteeBillingOverview(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

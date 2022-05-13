@@ -70,6 +70,7 @@ class QueryTimeOffLimitValuesResponse(object):
         :type: list[TimeOffLimitValueRange]
         """
         
+
         self._values = values
 
     def to_dict(self):

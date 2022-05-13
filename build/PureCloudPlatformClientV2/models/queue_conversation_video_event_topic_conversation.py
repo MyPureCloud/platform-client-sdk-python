@@ -85,6 +85,7 @@ class QueueConversationVideoEventTopicConversation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class QueueConversationVideoEventTopicConversation(object):
         :type: int
         """
         
+
         self._max_participants = max_participants
 
     @property
@@ -131,6 +133,7 @@ class QueueConversationVideoEventTopicConversation(object):
         :type: list[QueueConversationVideoEventTopicParticipant]
         """
         
+
         self._participants = participants
 
     @property
@@ -154,6 +157,7 @@ class QueueConversationVideoEventTopicConversation(object):
         :type: str
         """
         
+
         self._recording_state = recording_state
 
     @property
@@ -177,6 +181,7 @@ class QueueConversationVideoEventTopicConversation(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -200,6 +205,7 @@ class QueueConversationVideoEventTopicConversation(object):
         :type: str
         """
         
+
         self._external_tag = external_tag
 
     def to_dict(self):

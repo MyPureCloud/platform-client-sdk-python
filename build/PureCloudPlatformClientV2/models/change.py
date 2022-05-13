@@ -79,6 +79,7 @@ class Change(object):
         :type: AuditEntity
         """
         
+
         self._entity = entity
 
     @property
@@ -102,6 +103,7 @@ class Change(object):
         :type: str
         """
         
+
         self._pcProperty = pcProperty
 
     @property
@@ -125,6 +127,7 @@ class Change(object):
         :type: list[str]
         """
         
+
         self._old_values = old_values
 
     @property
@@ -148,6 +151,7 @@ class Change(object):
         :type: list[str]
         """
         
+
         self._new_values = new_values
 
     def to_dict(self):

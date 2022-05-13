@@ -73,6 +73,7 @@ class ExportScriptRequest(object):
         :type: str
         """
         
+
         self._file_name = file_name
 
     @property
@@ -96,6 +97,7 @@ class ExportScriptRequest(object):
         :type: str
         """
         
+
         self._version_id = version_id
 
     def to_dict(self):

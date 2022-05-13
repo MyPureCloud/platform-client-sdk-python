@@ -70,6 +70,10 @@ class CreateBenefitAssessmentRequest(object):
         :type: list[str]
         """
         
+        if not queue_ids:
+            raise ValueError("Invalid value for `queue_ids`, must not be `None`")
+
+
         self._queue_ids = queue_ids
 
     def to_dict(self):

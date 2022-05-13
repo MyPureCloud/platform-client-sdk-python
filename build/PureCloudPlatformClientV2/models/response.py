@@ -109,6 +109,7 @@ class Response(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class Response(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -155,6 +157,7 @@ class Response(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -178,6 +181,10 @@ class Response(object):
         :type: list[DomainEntityRef]
         """
         
+        if not libraries:
+            raise ValueError("Invalid value for `libraries`, must not be `None`")
+
+
         self._libraries = libraries
 
     @property
@@ -201,6 +208,10 @@ class Response(object):
         :type: list[ResponseText]
         """
         
+        if not texts:
+            raise ValueError("Invalid value for `texts`, must not be `None`")
+
+
         self._texts = texts
 
     @property
@@ -224,6 +235,7 @@ class Response(object):
         :type: User
         """
         
+
         self._created_by = created_by
 
     @property
@@ -247,6 +259,7 @@ class Response(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -297,6 +310,7 @@ class Response(object):
         :type: list[ResponseSubstitution]
         """
         
+
         self._substitutions = substitutions
 
     @property
@@ -320,6 +334,7 @@ class Response(object):
         :type: JsonSchemaDocument
         """
         
+
         self._substitutions_schema = substitutions_schema
 
     @property
@@ -370,6 +385,7 @@ class Response(object):
         :type: MessagingTemplate
         """
         
+
         self._messaging_template = messaging_template
 
     @property
@@ -393,6 +409,7 @@ class Response(object):
         :type: list[AddressableEntityRef]
         """
         
+
         self._assets = assets
 
     @property
@@ -416,6 +433,7 @@ class Response(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

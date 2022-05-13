@@ -94,6 +94,7 @@ class RuleSet(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,10 @@ class RuleSet(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -140,6 +145,7 @@ class RuleSet(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -163,6 +169,7 @@ class RuleSet(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -186,6 +193,7 @@ class RuleSet(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -209,6 +217,7 @@ class RuleSet(object):
         :type: DomainEntityRef
         """
         
+
         self._contact_list = contact_list
 
     @property
@@ -232,6 +241,7 @@ class RuleSet(object):
         :type: DomainEntityRef
         """
         
+
         self._queue = queue
 
     @property
@@ -255,6 +265,10 @@ class RuleSet(object):
         :type: list[DialerRule]
         """
         
+        if not rules:
+            raise ValueError("Invalid value for `rules`, must not be `None`")
+
+
         self._rules = rules
 
     @property
@@ -278,6 +292,7 @@ class RuleSet(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

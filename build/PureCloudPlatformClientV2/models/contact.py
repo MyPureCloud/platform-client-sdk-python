@@ -88,6 +88,7 @@ class Contact(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -111,6 +112,7 @@ class Contact(object):
         :type: str
         """
         
+
         self._display = display
 
     @property
@@ -188,6 +190,7 @@ class Contact(object):
         :type: str
         """
         
+
         self._extension = extension
 
     @property
@@ -211,6 +214,7 @@ class Contact(object):
         :type: str
         """
         
+
         self._country_code = country_code
 
     @property
@@ -234,6 +238,7 @@ class Contact(object):
         :type: str
         """
         
+
         self._integration = integration
 
     def to_dict(self):

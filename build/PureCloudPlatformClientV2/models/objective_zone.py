@@ -88,6 +88,10 @@ class ObjectiveZone(object):
         :type: str
         """
         
+        if not label:
+            raise ValueError("Invalid value for `label`, must not be `None`")
+
+
         self._label = label
 
     @property
@@ -165,6 +169,10 @@ class ObjectiveZone(object):
         :type: int
         """
         
+        if not upper_limit_points:
+            raise ValueError("Invalid value for `upper_limit_points`, must not be `None`")
+
+
         self._upper_limit_points = upper_limit_points
 
     @property
@@ -188,6 +196,10 @@ class ObjectiveZone(object):
         :type: int
         """
         
+        if not lower_limit_points:
+            raise ValueError("Invalid value for `lower_limit_points`, must not be `None`")
+
+
         self._lower_limit_points = lower_limit_points
 
     @property
@@ -211,6 +223,7 @@ class ObjectiveZone(object):
         :type: int
         """
         
+
         self._upper_limit_value = upper_limit_value
 
     @property
@@ -234,6 +247,7 @@ class ObjectiveZone(object):
         :type: int
         """
         
+
         self._lower_limit_value = lower_limit_value
 
     def to_dict(self):

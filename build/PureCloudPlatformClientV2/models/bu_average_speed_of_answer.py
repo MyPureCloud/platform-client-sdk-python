@@ -73,6 +73,10 @@ class BuAverageSpeedOfAnswer(object):
         :type: bool
         """
         
+        if not include:
+            raise ValueError("Invalid value for `include`, must not be `None`")
+
+
         self._include = include
 
     @property
@@ -96,6 +100,7 @@ class BuAverageSpeedOfAnswer(object):
         :type: int
         """
         
+
         self._seconds = seconds
 
     def to_dict(self):

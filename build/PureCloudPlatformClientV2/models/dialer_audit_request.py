@@ -79,6 +79,7 @@ class DialerAuditRequest(object):
         :type: str
         """
         
+
         self._query_phrase = query_phrase
 
     @property
@@ -102,6 +103,7 @@ class DialerAuditRequest(object):
         :type: list[str]
         """
         
+
         self._query_fields = query_fields
 
     @property
@@ -125,6 +127,7 @@ class DialerAuditRequest(object):
         :type: list[AuditFacet]
         """
         
+
         self._facets = facets
 
     @property
@@ -148,6 +151,7 @@ class DialerAuditRequest(object):
         :type: list[AuditFilter]
         """
         
+
         self._filters = filters
 
     def to_dict(self):

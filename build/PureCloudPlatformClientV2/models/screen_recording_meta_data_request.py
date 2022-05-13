@@ -76,6 +76,7 @@ class ScreenRecordingMetaDataRequest(object):
         :type: str
         """
         
+
         self._participant_jid = participant_jid
 
     @property
@@ -99,6 +100,7 @@ class ScreenRecordingMetaDataRequest(object):
         :type: str
         """
         
+
         self._room_id = room_id
 
     @property
@@ -122,6 +124,7 @@ class ScreenRecordingMetaDataRequest(object):
         :type: list[ScreenRecordingMetaData]
         """
         
+
         self._meta_data = meta_data
 
     def to_dict(self):

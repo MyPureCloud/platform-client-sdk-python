@@ -157,6 +157,7 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -180,6 +181,7 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -203,6 +205,10 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+        if not run_id:
+            raise ValueError("Invalid value for `run_id`, must not be `None`")
+
+
         self._run_id = run_id
 
     @property
@@ -253,6 +259,10 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+        if not time_zone:
+            raise ValueError("Invalid value for `time_zone`, must not be `None`")
+
+
         self._time_zone = time_zone
 
     @property
@@ -303,6 +313,10 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -326,6 +340,7 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     @property
@@ -403,6 +418,10 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+        if not period:
+            raise ValueError("Invalid value for `period`, must not be `None`")
+
+
         self._period = period
 
     @property
@@ -426,6 +445,10 @@ class ReportingExportJobResponse(object):
         :type: ViewFilter
         """
         
+        if not filter:
+            raise ValueError("Invalid value for `filter`, must not be `None`")
+
+
         self._filter = filter
 
     @property
@@ -449,6 +472,10 @@ class ReportingExportJobResponse(object):
         :type: bool
         """
         
+        if not read:
+            raise ValueError("Invalid value for `read`, must not be `None`")
+
+
         self._read = read
 
     @property
@@ -472,6 +499,10 @@ class ReportingExportJobResponse(object):
         :type: datetime
         """
         
+        if not created_date_time:
+            raise ValueError("Invalid value for `created_date_time`, must not be `None`")
+
+
         self._created_date_time = created_date_time
 
     @property
@@ -495,6 +526,10 @@ class ReportingExportJobResponse(object):
         :type: datetime
         """
         
+        if not modified_date_time:
+            raise ValueError("Invalid value for `modified_date_time`, must not be `None`")
+
+
         self._modified_date_time = modified_date_time
 
     @property
@@ -518,6 +553,10 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+        if not locale:
+            raise ValueError("Invalid value for `locale`, must not be `None`")
+
+
         self._locale = locale
 
     @property
@@ -541,6 +580,10 @@ class ReportingExportJobResponse(object):
         :type: float
         """
         
+        if not percentage_complete:
+            raise ValueError("Invalid value for `percentage_complete`, must not be `None`")
+
+
         self._percentage_complete = percentage_complete
 
     @property
@@ -564,6 +607,7 @@ class ReportingExportJobResponse(object):
         :type: bool
         """
         
+
         self._has_format_durations = has_format_durations
 
     @property
@@ -587,6 +631,7 @@ class ReportingExportJobResponse(object):
         :type: bool
         """
         
+
         self._has_split_filters = has_split_filters
 
     @property
@@ -610,6 +655,7 @@ class ReportingExportJobResponse(object):
         :type: bool
         """
         
+
         self._exclude_empty_rows = exclude_empty_rows
 
     @property
@@ -633,6 +679,7 @@ class ReportingExportJobResponse(object):
         :type: bool
         """
         
+
         self._has_split_by_media = has_split_by_media
 
     @property
@@ -656,6 +703,7 @@ class ReportingExportJobResponse(object):
         :type: bool
         """
         
+
         self._has_summary_row = has_summary_row
 
     @property
@@ -706,6 +754,7 @@ class ReportingExportJobResponse(object):
         :type: list[SelectedColumns]
         """
         
+
         self._selected_columns = selected_columns
 
     @property
@@ -729,6 +778,7 @@ class ReportingExportJobResponse(object):
         :type: bool
         """
         
+
         self._has_custom_participant_attributes = has_custom_participant_attributes
 
     @property
@@ -752,6 +802,7 @@ class ReportingExportJobResponse(object):
         :type: list[str]
         """
         
+
         self._recipient_emails = recipient_emails
 
     @property
@@ -775,6 +826,7 @@ class ReportingExportJobResponse(object):
         :type: dict(str, str)
         """
         
+
         self._email_statuses = email_statuses
 
     @property
@@ -798,6 +850,7 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+
         self._email_error_description = email_error_description
 
     @property
@@ -821,6 +874,7 @@ class ReportingExportJobResponse(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -844,6 +898,7 @@ class ReportingExportJobResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

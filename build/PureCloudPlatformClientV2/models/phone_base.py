@@ -118,6 +118,7 @@ class PhoneBase(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,10 @@ class PhoneBase(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -164,6 +169,7 @@ class PhoneBase(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -187,6 +193,7 @@ class PhoneBase(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -210,6 +217,7 @@ class PhoneBase(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -233,6 +241,7 @@ class PhoneBase(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -256,6 +265,7 @@ class PhoneBase(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -279,6 +289,7 @@ class PhoneBase(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -302,6 +313,7 @@ class PhoneBase(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -352,6 +364,7 @@ class PhoneBase(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -375,6 +388,7 @@ class PhoneBase(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -398,6 +412,10 @@ class PhoneBase(object):
         :type: DomainEntityRef
         """
         
+        if not phone_meta_base:
+            raise ValueError("Invalid value for `phone_meta_base`, must not be `None`")
+
+
         self._phone_meta_base = phone_meta_base
 
     @property
@@ -421,6 +439,10 @@ class PhoneBase(object):
         :type: list[LineBase]
         """
         
+        if not lines:
+            raise ValueError("Invalid value for `lines`, must not be `None`")
+
+
         self._lines = lines
 
     @property
@@ -444,6 +466,7 @@ class PhoneBase(object):
         :type: dict(str, object)
         """
         
+
         self._properties = properties
 
     @property
@@ -467,6 +490,7 @@ class PhoneBase(object):
         :type: PhoneCapabilities
         """
         
+
         self._capabilities = capabilities
 
     @property
@@ -490,6 +514,7 @@ class PhoneBase(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

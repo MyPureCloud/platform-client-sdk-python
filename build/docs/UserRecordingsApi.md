@@ -28,7 +28,7 @@ Delete a user recording.
 
 Wraps DELETE /api/v2/userrecordings/{recordingId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -77,7 +77,7 @@ Get a user recording.
 
 Wraps GET /api/v2/userrecordings/{recordingId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -129,7 +129,7 @@ Download a user recording.
 
 Wraps GET /api/v2/userrecordings/{recordingId}/media 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -146,7 +146,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UserRecordingsApi()
 recording_id = 'recording_id_example' # str | User Recording ID
-format_id = 'WEBM' # str | The desired media format. (optional) (default to WEBM)
+format_id = ''WEBM'' # str | The desired media format. (optional) (default to 'WEBM')
 
 try:
     # Download a user recording.
@@ -162,7 +162,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recording_id** | **str**| User Recording ID |  |
-| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **format_id** | **str**| The desired media format. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -181,7 +181,7 @@ Get a list of user recordings.
 
 Wraps GET /api/v2/userrecordings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -235,7 +235,7 @@ Get user recording summary
 
 Wraps GET /api/v2/userrecordings/summary 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -281,7 +281,7 @@ Update a user recording.
 
 Wraps PUT /api/v2/userrecordings/{recordingId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

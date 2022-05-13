@@ -73,6 +73,10 @@ class SelectorEventTrigger(object):
         :type: str
         """
         
+        if not selector:
+            raise ValueError("Invalid value for `selector`, must not be `None`")
+
+
         self._selector = selector
 
     @property
@@ -96,6 +100,10 @@ class SelectorEventTrigger(object):
         :type: str
         """
         
+        if not event_name:
+            raise ValueError("Invalid value for `event_name`, must not be `None`")
+
+
         self._event_name = event_name
 
     def to_dict(self):

@@ -109,6 +109,7 @@ class BuAsyncAgentSchedulesQueryResponse(object):
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -132,6 +133,7 @@ class BuAsyncAgentSchedulesQueryResponse(object):
         :type: BuAgentSchedulesQueryResponse
         """
         
+
         self._result = result
 
     @property
@@ -155,6 +157,7 @@ class BuAsyncAgentSchedulesQueryResponse(object):
         :type: int
         """
         
+
         self._progress = progress
 
     @property
@@ -178,6 +181,7 @@ class BuAsyncAgentSchedulesQueryResponse(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     def to_dict(self):

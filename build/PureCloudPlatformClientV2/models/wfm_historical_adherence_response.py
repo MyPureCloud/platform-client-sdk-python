@@ -82,6 +82,7 @@ class WfmHistoricalAdherenceResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class WfmHistoricalAdherenceResponse(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     @property
@@ -128,6 +130,7 @@ class WfmHistoricalAdherenceResponse(object):
         :type: WfmHistoricalAdherenceResultWrapper
         """
         
+
         self._download_result = download_result
 
     @property
@@ -151,6 +154,7 @@ class WfmHistoricalAdherenceResponse(object):
         :type: list[str]
         """
         
+
         self._download_urls = download_urls
 
     @property

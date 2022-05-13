@@ -73,6 +73,7 @@ class Knowledge(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -96,6 +97,7 @@ class Knowledge(object):
         :type: AddressableEntityRef
         """
         
+
         self._knowledge_base = knowledge_base
 
     def to_dict(self):

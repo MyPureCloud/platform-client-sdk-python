@@ -73,6 +73,7 @@ class SupportCenterHeroStyle(object):
         :type: str
         """
         
+
         self._background_color = background_color
 
     @property
@@ -96,6 +97,7 @@ class SupportCenterHeroStyle(object):
         :type: str
         """
         
+
         self._text_color = text_color
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class OpenMessagingToRecipient(object):
         :type: str
         """
         
+
         self._nickname = nickname
 
     @property
@@ -111,6 +112,10 @@ class OpenMessagingToRecipient(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -161,6 +166,7 @@ class OpenMessagingToRecipient(object):
         :type: str
         """
         
+
         self._first_name = first_name
 
     @property
@@ -184,6 +190,7 @@ class OpenMessagingToRecipient(object):
         :type: str
         """
         
+
         self._last_name = last_name
 
     @property
@@ -207,6 +214,7 @@ class OpenMessagingToRecipient(object):
         :type: str
         """
         
+
         self._image = image
 
     @property
@@ -230,6 +238,7 @@ class OpenMessagingToRecipient(object):
         :type: str
         """
         
+
         self._email = email
 
     def to_dict(self):

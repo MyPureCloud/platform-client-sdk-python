@@ -73,6 +73,7 @@ class WorkspaceSummary(object):
         :type: int
         """
         
+
         self._total_document_count = total_document_count
 
     @property
@@ -96,6 +97,7 @@ class WorkspaceSummary(object):
         :type: int
         """
         
+
         self._total_document_byte_count = total_document_byte_count
 
     def to_dict(self):

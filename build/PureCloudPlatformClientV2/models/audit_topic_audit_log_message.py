@@ -112,6 +112,7 @@ class AuditTopicAuditLogMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class AuditTopicAuditLogMessage(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -158,6 +160,7 @@ class AuditTopicAuditLogMessage(object):
         :type: str
         """
         
+
         self._user_home_org_id = user_home_org_id
 
     @property
@@ -181,6 +184,7 @@ class AuditTopicAuditLogMessage(object):
         :type: AuditTopicDomainEntityRef
         """
         
+
         self._username = username
 
     @property
@@ -204,6 +208,7 @@ class AuditTopicAuditLogMessage(object):
         :type: str
         """
         
+
         self._user_display = user_display
 
     @property
@@ -227,6 +232,7 @@ class AuditTopicAuditLogMessage(object):
         :type: AuditTopicAddressableEntityRef
         """
         
+
         self._client_id = client_id
 
     @property
@@ -250,6 +256,7 @@ class AuditTopicAuditLogMessage(object):
         :type: list[str]
         """
         
+
         self._remote_ip = remote_ip
 
     @property
@@ -300,6 +307,7 @@ class AuditTopicAuditLogMessage(object):
         :type: datetime
         """
         
+
         self._event_time = event_time
 
     @property
@@ -323,6 +331,7 @@ class AuditTopicAuditLogMessage(object):
         :type: AuditTopicMessageInfo
         """
         
+
         self._message = message
 
     @property
@@ -400,6 +409,7 @@ class AuditTopicAuditLogMessage(object):
         :type: AuditTopicDomainEntityRef
         """
         
+
         self._entity = entity
 
     @property
@@ -423,6 +433,7 @@ class AuditTopicAuditLogMessage(object):
         :type: list[AuditTopicPropertyChange]
         """
         
+
         self._property_changes = property_changes
 
     @property
@@ -446,6 +457,7 @@ class AuditTopicAuditLogMessage(object):
         :type: dict(str, str)
         """
         
+
         self._context = context
 
     def to_dict(self):

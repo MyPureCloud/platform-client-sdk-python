@@ -82,6 +82,7 @@ class OutOfOfficeEventOutOfOffice(object):
         :type: OutOfOfficeEventUser
         """
         
+
         self._user = user
 
     @property
@@ -105,6 +106,7 @@ class OutOfOfficeEventOutOfOffice(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property
@@ -128,6 +130,7 @@ class OutOfOfficeEventOutOfOffice(object):
         :type: bool
         """
         
+
         self._indefinite = indefinite
 
     @property
@@ -151,6 +154,7 @@ class OutOfOfficeEventOutOfOffice(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -174,6 +178,7 @@ class OutOfOfficeEventOutOfOffice(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     def to_dict(self):

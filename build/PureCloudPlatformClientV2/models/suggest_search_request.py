@@ -76,6 +76,7 @@ class SuggestSearchRequest(object):
         :type: list[str]
         """
         
+
         self._expand = expand
 
     @property
@@ -99,6 +100,10 @@ class SuggestSearchRequest(object):
         :type: list[str]
         """
         
+        if not types:
+            raise ValueError("Invalid value for `types`, must not be `None`")
+
+
         self._types = types
 
     @property
@@ -122,6 +127,10 @@ class SuggestSearchRequest(object):
         :type: list[SuggestSearchCriteria]
         """
         
+        if not query:
+            raise ValueError("Invalid value for `query`, must not be `None`")
+
+
         self._query = query
 
     def to_dict(self):

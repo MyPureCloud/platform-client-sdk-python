@@ -91,6 +91,7 @@ class ConversationMessagingChannel(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,7 @@ class ConversationMessagingChannel(object):
         :type: str
         """
         
+
         self._message_id = message_id
 
     @property
@@ -164,6 +166,7 @@ class ConversationMessagingChannel(object):
         :type: ConversationMessagingToRecipient
         """
         
+
         self._to = to
 
     @property
@@ -187,6 +190,7 @@ class ConversationMessagingChannel(object):
         :type: ConversationMessagingFromRecipient
         """
         
+
         self._pcFrom = pcFrom
 
     @property
@@ -210,6 +214,7 @@ class ConversationMessagingChannel(object):
         :type: datetime
         """
         
+
         self._time = time
 
     @property
@@ -233,6 +238,7 @@ class ConversationMessagingChannel(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -256,6 +262,7 @@ class ConversationMessagingChannel(object):
         :type: datetime
         """
         
+
         self._date_deleted = date_deleted
 
     def to_dict(self):

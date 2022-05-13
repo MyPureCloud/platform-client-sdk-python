@@ -97,6 +97,10 @@ class OAuthClientRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -120,6 +124,7 @@ class OAuthClientRequest(object):
         :type: int
         """
         
+
         self._access_token_validity_seconds = access_token_validity_seconds
 
     @property
@@ -143,6 +148,7 @@ class OAuthClientRequest(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -166,6 +172,7 @@ class OAuthClientRequest(object):
         :type: list[str]
         """
         
+
         self._registered_redirect_uri = registered_redirect_uri
 
     @property
@@ -189,6 +196,7 @@ class OAuthClientRequest(object):
         :type: list[str]
         """
         
+
         self._role_ids = role_ids
 
     @property
@@ -239,6 +247,7 @@ class OAuthClientRequest(object):
         :type: list[str]
         """
         
+
         self._scope = scope
 
     @property
@@ -262,6 +271,7 @@ class OAuthClientRequest(object):
         :type: list[RoleDivision]
         """
         
+
         self._role_divisions = role_divisions
 
     @property
@@ -312,6 +322,7 @@ class OAuthClientRequest(object):
         :type: datetime
         """
         
+
         self._date_to_delete = date_to_delete
 
     def to_dict(self):

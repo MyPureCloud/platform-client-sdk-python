@@ -88,6 +88,7 @@ class RecordingEncryptionConfiguration(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,10 @@ class RecordingEncryptionConfiguration(object):
         :type: str
         """
         
+        if not url:
+            raise ValueError("Invalid value for `url`, must not be `None`")
+
+
         self._url = url
 
     @property
@@ -134,6 +139,7 @@ class RecordingEncryptionConfiguration(object):
         :type: str
         """
         
+
         self._api_id = api_id
 
     @property
@@ -157,6 +163,7 @@ class RecordingEncryptionConfiguration(object):
         :type: str
         """
         
+
         self._api_key = api_key
 
     @property
@@ -207,6 +214,7 @@ class RecordingEncryptionConfiguration(object):
         :type: ErrorBody
         """
         
+
         self._last_error = last_error
 
     @property
@@ -230,6 +238,7 @@ class RecordingEncryptionConfiguration(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

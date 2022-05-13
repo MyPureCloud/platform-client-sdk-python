@@ -70,6 +70,7 @@ class EmailSetup(object):
         :type: str
         """
         
+
         self._root_domain = root_domain
 
     def to_dict(self):

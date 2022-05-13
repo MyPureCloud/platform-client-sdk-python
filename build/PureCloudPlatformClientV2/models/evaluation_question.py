@@ -97,6 +97,7 @@ class EvaluationQuestion(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class EvaluationQuestion(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -143,6 +145,7 @@ class EvaluationQuestion(object):
         :type: str
         """
         
+
         self._help_text = help_text
 
     @property
@@ -193,6 +196,7 @@ class EvaluationQuestion(object):
         :type: bool
         """
         
+
         self._na_enabled = na_enabled
 
     @property
@@ -216,6 +220,7 @@ class EvaluationQuestion(object):
         :type: bool
         """
         
+
         self._comments_required = comments_required
 
     @property
@@ -239,6 +244,7 @@ class EvaluationQuestion(object):
         :type: VisibilityCondition
         """
         
+
         self._visibility_condition = visibility_condition
 
     @property
@@ -262,6 +268,7 @@ class EvaluationQuestion(object):
         :type: list[AnswerOption]
         """
         
+
         self._answer_options = answer_options
 
     @property
@@ -285,6 +292,7 @@ class EvaluationQuestion(object):
         :type: bool
         """
         
+
         self._is_kill = is_kill
 
     @property
@@ -308,6 +316,7 @@ class EvaluationQuestion(object):
         :type: bool
         """
         
+
         self._is_critical = is_critical
 
     def to_dict(self):

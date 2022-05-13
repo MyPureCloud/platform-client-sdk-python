@@ -76,6 +76,7 @@ class UploadUrlResponse(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -99,6 +100,7 @@ class UploadUrlResponse(object):
         :type: str
         """
         
+
         self._upload_key = upload_key
 
     @property
@@ -122,6 +124,7 @@ class UploadUrlResponse(object):
         :type: dict(str, str)
         """
         
+
         self._headers = headers
 
     def to_dict(self):

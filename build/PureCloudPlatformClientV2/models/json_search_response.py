@@ -45,8 +45,8 @@ class JsonSearchResponse(object):
             'page_size': 'int',
             'page_number': 'int',
             'types': 'list[str]',
-            'results': 'ArrayNode',
-            'aggregations': 'ArrayNode'
+            'results': 'object',
+            'aggregations': 'object'
         }
 
         self.attribute_map = {
@@ -88,6 +88,10 @@ class JsonSearchResponse(object):
         :type: int
         """
         
+        if not total:
+            raise ValueError("Invalid value for `total`, must not be `None`")
+
+
         self._total = total
 
     @property
@@ -111,6 +115,10 @@ class JsonSearchResponse(object):
         :type: int
         """
         
+        if not page_count:
+            raise ValueError("Invalid value for `page_count`, must not be `None`")
+
+
         self._page_count = page_count
 
     @property
@@ -134,6 +142,10 @@ class JsonSearchResponse(object):
         :type: int
         """
         
+        if not page_size:
+            raise ValueError("Invalid value for `page_size`, must not be `None`")
+
+
         self._page_size = page_size
 
     @property
@@ -157,6 +169,10 @@ class JsonSearchResponse(object):
         :type: int
         """
         
+        if not page_number:
+            raise ValueError("Invalid value for `page_number`, must not be `None`")
+
+
         self._page_number = page_number
 
     @property
@@ -180,6 +196,10 @@ class JsonSearchResponse(object):
         :type: list[str]
         """
         
+        if not types:
+            raise ValueError("Invalid value for `types`, must not be `None`")
+
+
         self._types = types
 
     @property
@@ -189,7 +209,7 @@ class JsonSearchResponse(object):
         Search results
 
         :return: The results of this JsonSearchResponse.
-        :rtype: ArrayNode
+        :rtype: object
         """
         return self._results
 
@@ -200,9 +220,13 @@ class JsonSearchResponse(object):
         Search results
 
         :param results: The results of this JsonSearchResponse.
-        :type: ArrayNode
+        :type: object
         """
         
+        if not results:
+            raise ValueError("Invalid value for `results`, must not be `None`")
+
+
         self._results = results
 
     @property
@@ -212,7 +236,7 @@ class JsonSearchResponse(object):
 
 
         :return: The aggregations of this JsonSearchResponse.
-        :rtype: ArrayNode
+        :rtype: object
         """
         return self._aggregations
 
@@ -223,9 +247,10 @@ class JsonSearchResponse(object):
 
 
         :param aggregations: The aggregations of this JsonSearchResponse.
-        :type: ArrayNode
+        :type: object
         """
         
+
         self._aggregations = aggregations
 
     def to_dict(self):

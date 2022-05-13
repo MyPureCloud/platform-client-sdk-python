@@ -88,6 +88,7 @@ class ServiceGoalTemplate(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class ServiceGoalTemplate(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class ServiceGoalTemplate(object):
         :type: BuServiceLevel
         """
         
+
         self._service_level = service_level
 
     @property
@@ -157,6 +160,7 @@ class ServiceGoalTemplate(object):
         :type: BuAverageSpeedOfAnswer
         """
         
+
         self._average_speed_of_answer = average_speed_of_answer
 
     @property
@@ -180,6 +184,7 @@ class ServiceGoalTemplate(object):
         :type: BuAbandonRate
         """
         
+
         self._abandon_rate = abandon_rate
 
     @property
@@ -203,6 +208,7 @@ class ServiceGoalTemplate(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -226,6 +232,7 @@ class ServiceGoalTemplate(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

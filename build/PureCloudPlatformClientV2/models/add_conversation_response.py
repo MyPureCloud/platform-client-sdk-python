@@ -73,6 +73,7 @@ class AddConversationResponse(object):
         :type: ConversationReference
         """
         
+
         self._conversation = conversation
 
     @property
@@ -96,6 +97,7 @@ class AddConversationResponse(object):
         :type: CoachingAppointmentReference
         """
         
+
         self._appointment = appointment
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class TimeOffPlanListing(object):
         :type: list[TimeOffPlan]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

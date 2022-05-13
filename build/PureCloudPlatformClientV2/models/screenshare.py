@@ -139,6 +139,7 @@ class Screenshare(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -162,6 +163,7 @@ class Screenshare(object):
         :type: str
         """
         
+
         self._context = context
 
     @property
@@ -185,6 +187,7 @@ class Screenshare(object):
         :type: bool
         """
         
+
         self._sharing = sharing
 
     @property
@@ -208,6 +211,7 @@ class Screenshare(object):
         :type: int
         """
         
+
         self._peer_count = peer_count
 
     @property
@@ -258,6 +262,7 @@ class Screenshare(object):
         :type: datetime
         """
         
+
         self._start_alerting_time = start_alerting_time
 
     @property
@@ -281,6 +286,7 @@ class Screenshare(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -304,6 +310,7 @@ class Screenshare(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -327,6 +334,7 @@ class Screenshare(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -350,6 +358,7 @@ class Screenshare(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -373,6 +382,7 @@ class Screenshare(object):
         :type: list[Segment]
         """
         
+
         self._segments = segments
 
     @property
@@ -396,6 +406,7 @@ class Screenshare(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -419,6 +430,7 @@ class Screenshare(object):
         :type: AfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -442,6 +454,7 @@ class Screenshare(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

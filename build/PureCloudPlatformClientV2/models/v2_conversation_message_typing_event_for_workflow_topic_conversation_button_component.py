@@ -73,6 +73,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationButtonComponen
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -96,6 +97,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationButtonComponen
         :type: V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions
         """
         
+
         self._actions = actions
 
     def to_dict(self):

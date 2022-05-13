@@ -82,6 +82,7 @@ class SchedulingStatusResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class SchedulingStatusResponse(object):
         :type: list[SchedulingProcessingError]
         """
         
+
         self._error_details = error_details
 
     @property
@@ -155,6 +157,7 @@ class SchedulingStatusResponse(object):
         :type: str
         """
         
+
         self._scheduling_result_uri = scheduling_result_uri
 
     @property
@@ -178,6 +181,7 @@ class SchedulingStatusResponse(object):
         :type: int
         """
         
+
         self._percent_complete = percent_complete
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class SchedulingTestingOptionsRequest(object):
         :type: bool
         """
         
+
         self._fast_scheduling = fast_scheduling
 
     @property
@@ -105,6 +106,7 @@ class SchedulingTestingOptionsRequest(object):
         :type: bool
         """
         
+
         self._delay_scheduling = delay_scheduling
 
     @property
@@ -128,6 +130,7 @@ class SchedulingTestingOptionsRequest(object):
         :type: bool
         """
         
+
         self._fail_scheduling = fail_scheduling
 
     @property
@@ -151,6 +154,7 @@ class SchedulingTestingOptionsRequest(object):
         :type: bool
         """
         
+
         self._populate_warnings = populate_warnings
 
     @property
@@ -174,6 +178,7 @@ class SchedulingTestingOptionsRequest(object):
         :type: bool
         """
         
+
         self._populate_deprecated_warnings = populate_deprecated_warnings
 
     def to_dict(self):

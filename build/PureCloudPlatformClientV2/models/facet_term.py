@@ -85,6 +85,7 @@ class FacetTerm(object):
         :type: str
         """
         
+
         self._term = term
 
     @property
@@ -108,6 +109,7 @@ class FacetTerm(object):
         :type: int
         """
         
+
         self._key = key
 
     @property
@@ -131,6 +133,7 @@ class FacetTerm(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -154,6 +157,7 @@ class FacetTerm(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -177,6 +181,7 @@ class FacetTerm(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -200,6 +205,7 @@ class FacetTerm(object):
         :type: datetime
         """
         
+
         self._time = time
 
     def to_dict(self):

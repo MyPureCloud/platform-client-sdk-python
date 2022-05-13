@@ -76,6 +76,7 @@ class MetaData(object):
         :type: str
         """
         
+
         self._pairing_token = pairing_token
 
     @property
@@ -99,6 +100,7 @@ class MetaData(object):
         :type: list[str]
         """
         
+
         self._pairing_trust = pairing_trust
 
     @property
@@ -122,6 +124,7 @@ class MetaData(object):
         :type: str
         """
         
+
         self._pairing_url = pairing_url
 
     def to_dict(self):

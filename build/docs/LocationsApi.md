@@ -80,7 +80,7 @@ Get Location by ID.
 
 Wraps GET /api/v2/locations/{locationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -132,7 +132,7 @@ Get sublocations for location ID.
 
 Wraps GET /api/v2/locations/{locationId}/sublocations 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -182,7 +182,7 @@ Get a list of all locations.
 
 Wraps GET /api/v2/locations 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -238,7 +238,7 @@ Search locations using the q64 value returned from a previous search
 
 Wraps GET /api/v2/locations/search 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -394,7 +394,7 @@ Search locations
 
 Wraps POST /api/v2/locations/search 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

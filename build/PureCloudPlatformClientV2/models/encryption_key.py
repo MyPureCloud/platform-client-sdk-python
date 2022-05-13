@@ -94,6 +94,7 @@ class EncryptionKey(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class EncryptionKey(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class EncryptionKey(object):
         :type: datetime
         """
         
+
         self._create_date = create_date
 
     @property
@@ -163,6 +166,7 @@ class EncryptionKey(object):
         :type: str
         """
         
+
         self._keydata_summary = keydata_summary
 
     @property
@@ -186,6 +190,7 @@ class EncryptionKey(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -209,6 +214,7 @@ class EncryptionKey(object):
         :type: LocalEncryptionConfiguration
         """
         
+
         self._local_encryption_configuration = local_encryption_configuration
 
     @property
@@ -259,6 +265,7 @@ class EncryptionKey(object):
         :type: str
         """
         
+
         self._kms_key_arn = kms_key_arn
 
     @property
@@ -282,6 +289,7 @@ class EncryptionKey(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

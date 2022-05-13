@@ -73,6 +73,7 @@ class SortItem(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -96,6 +97,7 @@ class SortItem(object):
         :type: bool
         """
         
+
         self._ascending = ascending
 
     def to_dict(self):

@@ -106,6 +106,7 @@ class OrphanRecording(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class OrphanRecording(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -152,6 +154,7 @@ class OrphanRecording(object):
         :type: datetime
         """
         
+
         self._created_time = created_time
 
     @property
@@ -175,6 +178,7 @@ class OrphanRecording(object):
         :type: datetime
         """
         
+
         self._recovered_time = recovered_time
 
     @property
@@ -225,6 +229,7 @@ class OrphanRecording(object):
         :type: int
         """
         
+
         self._media_size_bytes = media_size_bytes
 
     @property
@@ -302,6 +307,7 @@ class OrphanRecording(object):
         :type: Endpoint
         """
         
+
         self._provider_endpoint = provider_endpoint
 
     @property
@@ -325,6 +331,7 @@ class OrphanRecording(object):
         :type: Recording
         """
         
+
         self._recording = recording
 
     @property
@@ -375,6 +382,7 @@ class OrphanRecording(object):
         :type: str
         """
         
+
         self._source_orphaning_id = source_orphaning_id
 
     @property
@@ -398,6 +406,7 @@ class OrphanRecording(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

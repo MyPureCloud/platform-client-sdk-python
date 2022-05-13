@@ -70,6 +70,7 @@ class PredictiveRouting(object):
         :type: bool
         """
         
+
         self._respect_skills = respect_skills
 
     def to_dict(self):

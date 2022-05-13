@@ -103,6 +103,7 @@ class QueueObservationQueryFilter(object):
         :type: list[QueueObservationQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class QueueObservationQueryFilter(object):
         :type: list[QueueObservationQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class EdgeVersionInformation(object):
         :type: str
         """
         
+
         self._software_version = software_version
 
     def to_dict(self):

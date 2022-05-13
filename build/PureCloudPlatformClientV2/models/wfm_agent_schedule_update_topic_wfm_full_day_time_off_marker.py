@@ -88,6 +88,7 @@ class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker(object):
         :type: str
         """
         
+
         self._time_off_request_id = time_off_request_id
 
     @property
@@ -111,6 +112,7 @@ class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker(object):
         :type: str
         """
         
+
         self._management_unit_date = management_unit_date
 
     @property
@@ -134,6 +136,7 @@ class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -157,6 +160,7 @@ class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker(object):
         :type: bool
         """
         
+
         self._is_paid = is_paid
 
     @property
@@ -180,6 +184,7 @@ class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -203,6 +208,7 @@ class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -226,6 +232,7 @@ class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker(object):
         :type: bool
         """
         
+
         self._paid = paid
 
     def to_dict(self):

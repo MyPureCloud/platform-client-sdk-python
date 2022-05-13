@@ -70,6 +70,7 @@ class BuSchedulingSettings(object):
         :type: list[SchedulerMessageTypeSeverity]
         """
         
+
         self._message_severities = message_severities
 
     def to_dict(self):

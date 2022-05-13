@@ -70,6 +70,7 @@ class JourneyAggregateQueryResponse(object):
         :type: list[JourneyAggregateDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

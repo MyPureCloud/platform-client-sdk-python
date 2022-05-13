@@ -73,6 +73,7 @@ class QueryResults(object):
         :type: DomainEntityListingQueryResult
         """
         
+
         self._results = results
 
     @property
@@ -96,6 +97,7 @@ class QueryResults(object):
         :type: QueryFacetInfo
         """
         
+
         self._facet_info = facet_info
 
     def to_dict(self):

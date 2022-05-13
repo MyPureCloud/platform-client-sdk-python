@@ -88,6 +88,7 @@ class TopicJob(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class TopicJob(object):
         :type: list[BaseTopicEntitiy]
         """
         
+
         self._topics = topics
 
     @property
@@ -161,6 +163,7 @@ class TopicJob(object):
         :type: AddressableEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -184,6 +187,7 @@ class TopicJob(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -207,6 +211,7 @@ class TopicJob(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -230,6 +235,7 @@ class TopicJob(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

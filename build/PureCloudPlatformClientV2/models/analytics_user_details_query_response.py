@@ -76,6 +76,7 @@ class AnalyticsUserDetailsQueryResponse(object):
         :type: list[AnalyticsUserDetail]
         """
         
+
         self._user_details = user_details
 
     @property
@@ -99,6 +100,7 @@ class AnalyticsUserDetailsQueryResponse(object):
         :type: list[AggregationResult]
         """
         
+
         self._aggregations = aggregations
 
     @property
@@ -122,6 +124,7 @@ class AnalyticsUserDetailsQueryResponse(object):
         :type: int
         """
         
+
         self._total_hits = total_hits
 
     def to_dict(self):

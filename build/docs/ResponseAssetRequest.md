@@ -7,7 +7,7 @@ title: ResponseAssetRequest
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **name** | **str** | Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\&quot;&gt;[~&lt;#| | |
+| **name** | **str** | Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%&#x60;]\&quot;&gt;[~&lt;#| | |
 | **division_id** | **str** | Division to associate to this asset. Can only be used with this division. | [optional] |
 {: class="table table-striped"}
 

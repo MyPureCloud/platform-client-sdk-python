@@ -232,7 +232,7 @@ Delete a set of credentials
 
 Wraps DELETE /api/v2/integrations/credentials/{credentialId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -476,7 +476,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 action_id = 'action_id_example' # str | actionId
 expand = 'expand_example' # str | Indicates a field in the response which should be expanded. (optional)
-include_config = false # bool | Return config in response. (optional) (default to false)
+include_config = False # bool | Return config in response. (optional) (default to False)
 
 try:
     # Retrieves a single Action matching id.
@@ -493,7 +493,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
 | **expand** | **str**| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
-| **include_config** | **bool**| Return config in response. | [optional] [default to false] |
+| **include_config** | **bool**| Return config in response. | [optional] [default to False]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -532,7 +532,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 action_id = 'action_id_example' # str | actionId
 expand = 'expand_example' # str | Indicates a field in the response which should be expanded. (optional)
-include_config = false # bool | Return config in response. (optional) (default to false)
+include_config = False # bool | Return config in response. (optional) (default to False)
 
 try:
     # Retrieve a Draft
@@ -549,7 +549,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
 | **expand** | **str**| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
-| **include_config** | **bool**| Return config in response. | [optional] [default to false] |
+| **include_config** | **bool**| Return config in response. | [optional] [default to False]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -858,12 +858,12 @@ page_number = 1 # int | The page number requested (optional) (default to 1)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 sort_by = 'sort_by_example' # str | Root level field name to sort on. (optional)
-sort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)
+sort_order = ''asc'' # str | Direction to sort 'sortBy' field. (optional) (default to 'asc')
 category = 'category_example' # str | Filter by category name. (optional)
 name = 'name_example' # str | Filter by partial or complete action name. (optional)
 ids = 'ids_example' # str | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
 secure = 'secure_example' # str | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
-include_auth_actions = 'false' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to false)
+include_auth_actions = ''false'' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to 'false')
 
 try:
     # Retrieves all actions associated with filters passed in via query param.
@@ -883,12 +883,12 @@ except ApiException as e:
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **sort_by** | **str**| Root level field name to sort on. | [optional]  |
-| **sort_order** | **str**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+| **sort_order** | **str**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to &#39;asc&#39;]<br />**Values**: ASC, DESC |
 | **category** | **str**| Filter by category name. | [optional]  |
 | **name** | **str**| Filter by partial or complete action name. | [optional]  |
 | **ids** | **str**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
 | **secure** | **str**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
-| **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
+| **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to &#39;false&#39;]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -930,7 +930,7 @@ page_number = 1 # int | The page number requested (optional) (default to 1)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 sort_by = 'sort_by_example' # str | Root level field name to sort on.  Only 'name' is supported on this endpoint. (optional)
-sort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)
+sort_order = ''asc'' # str | Direction to sort 'sortBy' field. (optional) (default to 'asc')
 secure = 'secure_example' # str | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
 
 try:
@@ -951,7 +951,7 @@ except ApiException as e:
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **sort_by** | **str**| Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. | [optional]  |
-| **sort_order** | **str**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+| **sort_order** | **str**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to &#39;asc&#39;]<br />**Values**: ASC, DESC |
 | **secure** | **str**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 {: class="table table-striped"}
 
@@ -994,12 +994,12 @@ page_number = 1 # int | The page number requested (optional) (default to 1)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 sort_by = 'sort_by_example' # str | Root level field name to sort on. (optional)
-sort_order = 'asc' # str | Direction to sort 'sortBy' field. (optional) (default to asc)
+sort_order = ''asc'' # str | Direction to sort 'sortBy' field. (optional) (default to 'asc')
 category = 'category_example' # str | Filter by category name. (optional)
 name = 'name_example' # str | Filter by partial or complete action name. (optional)
 ids = 'ids_example' # str | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
 secure = 'secure_example' # str | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
-include_auth_actions = 'false' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to false)
+include_auth_actions = ''false'' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to 'false')
 
 try:
     # Retrieves all action drafts associated with the filters passed in via query param.
@@ -1019,12 +1019,12 @@ except ApiException as e:
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **sort_by** | **str**| Root level field name to sort on. | [optional]  |
-| **sort_order** | **str**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+| **sort_order** | **str**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to &#39;asc&#39;]<br />**Values**: ASC, DESC |
 | **category** | **str**| Filter by category name. | [optional]  |
 | **name** | **str**| Filter by partial or complete action name. | [optional]  |
 | **ids** | **str**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
 | **secure** | **str**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
-| **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
+| **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to &#39;false&#39;]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -1261,7 +1261,7 @@ List permitted client app integrations for the logged in user
 
 Wraps GET /api/v2/integrations/clientapps 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1318,6 +1318,8 @@ except ApiException as e:
 UC integration client application configuration.
 
 This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+
+
 
 Wraps GET /api/v2/integrations/clientapps/unifiedcommunications 
 
@@ -1382,7 +1384,7 @@ Get a single credential with sensitive fields redacted
 
 Wraps GET /api/v2/integrations/credentials/{credentialId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1432,7 +1434,7 @@ List multiple sets of credentials
 
 Wraps GET /api/v2/integrations/credentials 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1484,7 +1486,7 @@ List all credential types
 
 Wraps GET /api/v2/integrations/credentials/types 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1550,8 +1552,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'timestamp' # str | Sort by (optional) (default to timestamp)
-sort_order = 'descending' # str | Order by (optional) (default to descending)
+sort_by = ''timestamp'' # str | Sort by (optional) (default to 'timestamp')
+sort_order = ''descending'' # str | Order by (optional) (default to 'descending')
 entity_id = 'entity_id_example' # str | Include only events with this entity ID (optional)
 
 try:
@@ -1569,8 +1571,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to timestamp] |
-| **sort_order** | **str**| Order by | [optional] [default to descending] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;timestamp&#39;] |
+| **sort_order** | **str**| Order by | [optional] [default to &#39;descending&#39;] |
 | **entity_id** | **str**| Include only events with this entity ID | [optional]  |
 {: class="table table-striped"}
 
@@ -1931,7 +1933,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 engine_id = 'engine_id_example' # str | The engine ID
-include_voices = false # bool | Include voices for the engine (optional) (default to false)
+include_voices = False # bool | Include voices for the engine (optional) (default to False)
 
 try:
     # Get details about a TTS engine
@@ -1947,7 +1949,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **engine_id** | **str**| The engine ID |  |
-| **include_voices** | **bool**| Include voices for the engine | [optional] [default to false] |
+| **include_voices** | **bool**| Include voices for the engine | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2093,7 +2095,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-include_voices = false # bool | Include voices for the engine (optional) (default to false)
+include_voices = False # bool | Include voices for the engine (optional) (default to False)
 name = 'name_example' # str | Filter on engine name (optional)
 language = 'language_example' # str | Filter on supported language. If includeVoices=true then the voices are also filtered. (optional)
 
@@ -2112,9 +2114,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **include_voices** | **bool**| Include voices for the engine | [optional] [default to false] |
+| **include_voices** | **bool**| Include voices for the engine | [optional] [default to False] |
 | **name** | **str**| Filter on engine name | [optional]  |
-| **language** | **str**| Filter on supported language. If includeVoices=true then the voices are also filtered. | [optional]  |
+| **language** | **str**| Filter on supported language. If includeVoices&#x3D;true then the voices are also filtered. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2345,7 +2347,7 @@ List permitted user app integrations for the logged in user
 
 Wraps GET /api/v2/integrations/userapps 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2397,7 +2399,7 @@ except ApiException as e:
 
 <a name="patch_integration"></a>
 
-## [**Integration**](Integration.html) patch_integration(integration_id, body=body, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+## [**Integration**](Integration.html) patch_integration(integration_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, body=body)
 
 
 
@@ -2425,17 +2427,17 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 integration_id = 'integration_id_example' # str | Integration Id
-body = PureCloudPlatformClientV2.Integration() # Integration | Integration Update (optional)
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
 expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
+body = PureCloudPlatformClientV2.Integration() # Integration | Integration Update (optional)
 
 try:
     # Update an integration.
-    api_response = api_instance.patch_integration(integration_id, body=body, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+    api_response = api_instance.patch_integration(integration_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->patch_integration: %s\n" % e)
@@ -2447,13 +2449,13 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration Id |  |
-| **body** | [**Integration**](Integration.html)| Integration Update | [optional]  |
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
 | **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
+| **body** | [**Integration**](Integration.html)| Integration Update | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2767,7 +2769,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | **object**| Map of parameters used for variable substitution. |  |
+| **body** | [**object**](object.html)| Map of parameters used for variable substitution. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2821,7 +2823,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | **object**| Map of parameters used for variable substitution. |  |
+| **body** | [**object**](object.html)| Map of parameters used for variable substitution. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2875,7 +2877,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | **object**| Map of parameters used for variable substitution. |  |
+| **body** | [**object**](object.html)| Map of parameters used for variable substitution. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2996,7 +2998,7 @@ Create a set of credentials
 
 Wraps POST /api/v2/integrations/credentials 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3046,7 +3048,7 @@ Add a vendor connection
 
 Wraps POST /api/v2/integrations/workforcemanagement/vendorconnection 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3201,7 +3203,7 @@ Update a set of credentials
 
 Wraps PUT /api/v2/integrations/credentials/{credentialId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

@@ -103,6 +103,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse(
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -126,6 +127,7 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse(
         :type: str
         """
         
+
         self._session_join_token = session_join_token
 
     def to_dict(self):

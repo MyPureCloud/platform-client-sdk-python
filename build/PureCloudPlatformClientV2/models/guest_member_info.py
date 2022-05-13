@@ -88,6 +88,10 @@ class GuestMemberInfo(object):
         :type: str
         """
         
+        if not display_name:
+            raise ValueError("Invalid value for `display_name`, must not be `None`")
+
+
         self._display_name = display_name
 
     @property
@@ -111,6 +115,7 @@ class GuestMemberInfo(object):
         :type: str
         """
         
+
         self._first_name = first_name
 
     @property
@@ -134,6 +139,7 @@ class GuestMemberInfo(object):
         :type: str
         """
         
+
         self._last_name = last_name
 
     @property
@@ -157,6 +163,7 @@ class GuestMemberInfo(object):
         :type: str
         """
         
+
         self._email = email
 
     @property
@@ -180,6 +187,7 @@ class GuestMemberInfo(object):
         :type: str
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -203,6 +211,7 @@ class GuestMemberInfo(object):
         :type: str
         """
         
+
         self._avatar_image_url = avatar_image_url
 
     @property
@@ -226,6 +235,7 @@ class GuestMemberInfo(object):
         :type: dict(str, str)
         """
         
+
         self._custom_fields = custom_fields
 
     def to_dict(self):

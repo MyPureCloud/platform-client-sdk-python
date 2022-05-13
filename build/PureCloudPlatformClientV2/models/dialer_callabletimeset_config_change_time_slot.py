@@ -76,6 +76,7 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
         :type: str
         """
         
+
         self._start_time = start_time
 
     @property
@@ -99,6 +100,7 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
         :type: str
         """
         
+
         self._stop_time = stop_time
 
     @property
@@ -122,6 +124,7 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
         :type: int
         """
         
+
         self._day = day
 
     def to_dict(self):

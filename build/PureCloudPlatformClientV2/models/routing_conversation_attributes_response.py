@@ -79,6 +79,7 @@ class RoutingConversationAttributesResponse(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -102,6 +103,7 @@ class RoutingConversationAttributesResponse(object):
         :type: list[RoutingSkill]
         """
         
+
         self._skills = skills
 
     @property
@@ -125,6 +127,7 @@ class RoutingConversationAttributesResponse(object):
         :type: Language
         """
         
+
         self._language = language
 
     @property
@@ -148,6 +151,7 @@ class RoutingConversationAttributesResponse(object):
         :type: list[ScoredAgent]
         """
         
+
         self._scored_agents = scored_agents
 
     def to_dict(self):

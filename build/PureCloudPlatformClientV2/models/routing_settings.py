@@ -70,6 +70,7 @@ class RoutingSettings(object):
         :type: bool
         """
         
+
         self._reset_agent_score_on_presence_change = reset_agent_score_on_presence_change
 
     def to_dict(self):

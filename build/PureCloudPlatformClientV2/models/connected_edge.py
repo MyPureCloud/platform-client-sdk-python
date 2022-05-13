@@ -85,6 +85,7 @@ class ConnectedEdge(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class ConnectedEdge(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class ConnectedEdge(object):
         :type: str
         """
         
+
         self._interface_name = interface_name
 
     @property
@@ -154,6 +157,7 @@ class ConnectedEdge(object):
         :type: str
         """
         
+
         self._interface_ip_address = interface_ip_address
 
     @property
@@ -177,6 +181,7 @@ class ConnectedEdge(object):
         :type: list[EdgeConnectionInfo]
         """
         
+
         self._edge_connection_list = edge_connection_list
 
     @property
@@ -200,6 +205,7 @@ class ConnectedEdge(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

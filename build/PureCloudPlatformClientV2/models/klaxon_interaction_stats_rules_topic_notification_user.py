@@ -73,6 +73,7 @@ class KlaxonInteractionStatsRulesTopicNotificationUser(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class KlaxonInteractionStatsRulesTopicNotificationUser(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     def to_dict(self):

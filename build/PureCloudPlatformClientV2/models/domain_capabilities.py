@@ -85,6 +85,7 @@ class DomainCapabilities(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -108,6 +109,7 @@ class DomainCapabilities(object):
         :type: bool
         """
         
+
         self._dhcp = dhcp
 
     @property
@@ -131,6 +133,7 @@ class DomainCapabilities(object):
         :type: int
         """
         
+
         self._metric = metric
 
     @property
@@ -154,6 +157,7 @@ class DomainCapabilities(object):
         :type: bool
         """
         
+
         self._auto_metric = auto_metric
 
     @property
@@ -177,6 +181,7 @@ class DomainCapabilities(object):
         :type: bool
         """
         
+
         self._supports_metric = supports_metric
 
     @property
@@ -200,6 +205,7 @@ class DomainCapabilities(object):
         :type: bool
         """
         
+
         self._ping_enabled = ping_enabled
 
     def to_dict(self):

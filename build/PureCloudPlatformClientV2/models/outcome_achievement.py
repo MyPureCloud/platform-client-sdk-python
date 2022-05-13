@@ -73,6 +73,7 @@ class OutcomeAchievement(object):
         :type: AchievedOutcome
         """
         
+
         self._outcome = outcome
 
     @property
@@ -96,6 +97,7 @@ class OutcomeAchievement(object):
         :type: datetime
         """
         
+
         self._achieved_date = achieved_date
 
     def to_dict(self):

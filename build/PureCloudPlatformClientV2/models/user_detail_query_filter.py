@@ -103,6 +103,7 @@ class UserDetailQueryFilter(object):
         :type: list[UserDetailQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class UserDetailQueryFilter(object):
         :type: list[UserDetailQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

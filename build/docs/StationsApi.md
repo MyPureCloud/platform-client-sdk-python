@@ -27,7 +27,7 @@ Unassigns the user assigned to this station
 
 Wraps DELETE /api/v2/stations/{stationId}/associateduser 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -76,7 +76,7 @@ Get station.
 
 Wraps GET /api/v2/stations/{stationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -126,7 +126,7 @@ Get the list of available stations.
 
 Wraps GET /api/v2/stations 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -144,7 +144,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.StationsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 name = 'name_example' # str | Name (optional)
 user_selectable = 'user_selectable_example' # str | True for stations that the user can select otherwise false (optional)
 web_rtc_user_id = 'web_rtc_user_id_example' # str | Filter for the webRtc station of the webRtcUserId (optional)
@@ -166,7 +166,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
 | **name** | **str**| Name | [optional]  |
 | **user_selectable** | **str**| True for stations that the user can select otherwise false | [optional]  |
 | **web_rtc_user_id** | **str**| Filter for the webRtc station of the webRtcUserId | [optional]  |
@@ -190,7 +190,7 @@ Get an organization's StationSettings
 
 Wraps GET /api/v2/stations/settings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

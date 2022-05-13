@@ -79,6 +79,7 @@ class LearningModuleSummary(object):
         :type: int
         """
         
+
         self._assigned_count = assigned_count
 
     @property
@@ -102,6 +103,7 @@ class LearningModuleSummary(object):
         :type: int
         """
         
+
         self._completed_count = completed_count
 
     @property
@@ -125,6 +127,7 @@ class LearningModuleSummary(object):
         :type: int
         """
         
+
         self._passed_count = passed_count
 
     @property
@@ -148,6 +151,7 @@ class LearningModuleSummary(object):
         :type: float
         """
         
+
         self._completed_sum = completed_sum
 
     def to_dict(self):

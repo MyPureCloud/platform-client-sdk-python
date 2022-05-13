@@ -73,6 +73,7 @@ class TrustUserDetails(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -96,6 +97,7 @@ class TrustUserDetails(object):
         :type: OrgUser
         """
         
+
         self._created_by = created_by
 
     def to_dict(self):

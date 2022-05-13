@@ -76,6 +76,7 @@ class RecordingButtonComponent(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -99,6 +100,7 @@ class RecordingButtonComponent(object):
         :type: RecordingContentActions
         """
         
+
         self._actions = actions
 
     @property
@@ -122,6 +124,7 @@ class RecordingButtonComponent(object):
         :type: bool
         """
         
+
         self._is_selected = is_selected
 
     def to_dict(self):

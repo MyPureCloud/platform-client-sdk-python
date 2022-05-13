@@ -73,6 +73,7 @@ class AttendanceStatus(object):
         :type: date
         """
         
+
         self._date_workday = date_workday
 
     @property

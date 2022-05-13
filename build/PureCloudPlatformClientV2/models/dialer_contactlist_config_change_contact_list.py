@@ -115,6 +115,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: list[str]
         """
         
+
         self._column_names = column_names
 
     @property
@@ -138,6 +139,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: list[DialerContactlistConfigChangeContactPhoneNumberColumn]
         """
         
+
         self._phone_columns = phone_columns
 
     @property
@@ -161,6 +163,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: list[DialerContactlistConfigChangeEmailColumn]
         """
         
+
         self._email_columns = email_columns
 
     @property
@@ -184,6 +187,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: DialerContactlistConfigChangeImportStatus
         """
         
+
         self._import_status = import_status
 
     @property
@@ -207,6 +211,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: str
         """
         
+
         self._preview_mode_column_name = preview_mode_column_name
 
     @property
@@ -230,6 +235,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: list[str]
         """
         
+
         self._preview_mode_accepted_values = preview_mode_accepted_values
 
     @property
@@ -253,6 +259,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: int
         """
         
+
         self._size = size
 
     @property
@@ -276,6 +283,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: DialerContactlistConfigChangeUriReference
         """
         
+
         self._attempt_limits = attempt_limits
 
     @property
@@ -299,6 +307,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: bool
         """
         
+
         self._automatic_time_zone_mapping = automatic_time_zone_mapping
 
     @property
@@ -322,6 +331,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: str
         """
         
+
         self._zip_code_column_name = zip_code_column_name
 
     @property
@@ -345,6 +355,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: DialerContactlistConfigChangeUriReference
         """
         
+
         self._division = division
 
     @property
@@ -368,6 +379,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -391,6 +403,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -414,6 +427,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -437,6 +451,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -460,6 +475,7 @@ class DialerContactlistConfigChangeContactList(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

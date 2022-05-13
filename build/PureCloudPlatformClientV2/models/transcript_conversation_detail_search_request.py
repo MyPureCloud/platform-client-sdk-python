@@ -115,6 +115,7 @@ class TranscriptConversationDetailSearchRequest(object):
         :type: str
         """
         
+
         self._sort_by = sort_by
 
     @property
@@ -138,6 +139,7 @@ class TranscriptConversationDetailSearchRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -161,6 +163,7 @@ class TranscriptConversationDetailSearchRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -184,6 +187,7 @@ class TranscriptConversationDetailSearchRequest(object):
         :type: list[SearchSort]
         """
         
+
         self._sort = sort
 
     @property
@@ -207,6 +211,10 @@ class TranscriptConversationDetailSearchRequest(object):
         :type: list[str]
         """
         
+        if not types:
+            raise ValueError("Invalid value for `types`, must not be `None`")
+
+
         self._types = types
 
     @property
@@ -230,6 +238,7 @@ class TranscriptConversationDetailSearchRequest(object):
         :type: list[TranscriptConversationDetailSearchCriteria]
         """
         
+
         self._query = query
 
     def to_dict(self):

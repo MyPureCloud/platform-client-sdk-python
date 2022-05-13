@@ -70,6 +70,7 @@ class LearningAssignmentAggregateResponse(object):
         :type: list[LearningAssignmentAggregateQueryResponseGroupedData]
         """
         
+
         self._results = results
 
     def to_dict(self):

@@ -76,6 +76,7 @@ class AnalyticsRoutingStatusRecord(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -99,6 +100,7 @@ class AnalyticsRoutingStatusRecord(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property

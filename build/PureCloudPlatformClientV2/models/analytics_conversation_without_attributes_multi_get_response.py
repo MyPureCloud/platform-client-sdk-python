@@ -70,6 +70,7 @@ class AnalyticsConversationWithoutAttributesMultiGetResponse(object):
         :type: list[AnalyticsConversationWithoutAttributes]
         """
         
+
         self._conversations = conversations
 
     def to_dict(self):

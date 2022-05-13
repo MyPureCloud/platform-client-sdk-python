@@ -73,6 +73,7 @@ class BuAgentSchedulesQueryResponse(object):
         :type: list[BuAgentScheduleQueryResponse]
         """
         
+
         self._agent_schedules = agent_schedules
 
     @property
@@ -96,6 +97,7 @@ class BuAgentSchedulesQueryResponse(object):
         :type: str
         """
         
+
         self._business_unit_time_zone = business_unit_time_zone
 
     def to_dict(self):

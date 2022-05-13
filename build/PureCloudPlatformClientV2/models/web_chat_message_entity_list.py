@@ -82,6 +82,7 @@ class WebChatMessageEntityList(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -105,6 +106,7 @@ class WebChatMessageEntityList(object):
         :type: list[WebChatMessage]
         """
         
+
         self._entities = entities
 
     @property
@@ -128,6 +130,7 @@ class WebChatMessageEntityList(object):
         :type: str
         """
         
+
         self._previous_page = previous_page
 
     @property
@@ -151,6 +154,7 @@ class WebChatMessageEntityList(object):
         :type: str
         """
         
+
         self._next = next
 
     @property
@@ -174,6 +178,7 @@ class WebChatMessageEntityList(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

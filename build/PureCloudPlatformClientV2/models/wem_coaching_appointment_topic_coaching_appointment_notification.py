@@ -115,6 +115,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -161,6 +163,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: datetime
         """
         
+
         self._date_start = date_start
 
     @property
@@ -184,6 +187,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -234,6 +238,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: WemCoachingAppointmentTopicUserReference
         """
         
+
         self._facilitator = facilitator
 
     @property
@@ -257,6 +262,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: list[WemCoachingAppointmentTopicUserReference]
         """
         
+
         self._attendees = attendees
 
     @property
@@ -280,6 +286,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: WemCoachingAppointmentTopicUserReference
         """
         
+
         self._created_by = created_by
 
     @property
@@ -303,6 +310,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -326,6 +334,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: WemCoachingAppointmentTopicUserReference
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -349,6 +358,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -372,6 +382,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: list[WemCoachingAppointmentTopicCoachingAppointmentConversation]
         """
         
+
         self._conversations = conversations
 
     @property
@@ -395,6 +406,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: list[WemCoachingAppointmentTopicCoachingAppointmentDocument]
         """
         
+
         self._documents = documents
 
     @property
@@ -445,6 +457,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -468,6 +481,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :type: list[WemCoachingAppointmentTopicCoachingAppointmentExternalLink]
         """
         
+
         self._external_links = external_links
 
     def to_dict(self):

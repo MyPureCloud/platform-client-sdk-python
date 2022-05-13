@@ -133,7 +133,7 @@ Gets active alert count for a user.
 
 Wraps GET /api/v2/alerting/alerts/active 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -283,7 +283,7 @@ Gets user unread count of interaction stats alerts.
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/unread 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

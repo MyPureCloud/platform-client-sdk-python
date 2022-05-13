@@ -94,6 +94,7 @@ class ActionTemplate(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,10 @@ class ActionTemplate(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -140,6 +145,7 @@ class ActionTemplate(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -217,6 +223,7 @@ class ActionTemplate(object):
         :type: ContentOffer
         """
         
+
         self._content_offer = content_offer
 
     @property
@@ -240,6 +247,7 @@ class ActionTemplate(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -263,6 +271,7 @@ class ActionTemplate(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -286,6 +295,7 @@ class ActionTemplate(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

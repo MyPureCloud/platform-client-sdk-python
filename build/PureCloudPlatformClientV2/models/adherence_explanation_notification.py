@@ -97,6 +97,7 @@ class AdherenceExplanationNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class AdherenceExplanationNotification(object):
         :type: UserReference
         """
         
+
         self._agent = agent
 
     @property
@@ -143,6 +145,7 @@ class AdherenceExplanationNotification(object):
         :type: ManagementUnitReference
         """
         
+
         self._management_unit = management_unit
 
     @property
@@ -166,6 +169,7 @@ class AdherenceExplanationNotification(object):
         :type: BusinessUnitReference
         """
         
+
         self._business_unit = business_unit
 
     @property
@@ -189,6 +193,7 @@ class AdherenceExplanationNotification(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -212,6 +217,7 @@ class AdherenceExplanationNotification(object):
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property
@@ -289,6 +295,7 @@ class AdherenceExplanationNotification(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -312,6 +319,7 @@ class AdherenceExplanationNotification(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

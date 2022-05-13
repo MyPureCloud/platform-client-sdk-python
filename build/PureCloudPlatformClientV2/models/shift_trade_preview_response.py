@@ -70,6 +70,7 @@ class ShiftTradePreviewResponse(object):
         :type: list[ShiftTradeActivityPreviewResponse]
         """
         
+
         self._activities = activities
 
     def to_dict(self):

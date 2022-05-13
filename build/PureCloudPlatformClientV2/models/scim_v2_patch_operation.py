@@ -42,7 +42,7 @@ class ScimV2PatchOperation(object):
         self.swagger_types = {
             'op': 'str',
             'path': 'str',
-            'value': 'JsonNode'
+            'value': 'object'
         }
 
         self.attribute_map = {
@@ -103,6 +103,7 @@ class ScimV2PatchOperation(object):
         :type: str
         """
         
+
         self._path = path
 
     @property
@@ -112,7 +113,7 @@ class ScimV2PatchOperation(object):
         The value to set in the path.
 
         :return: The value of this ScimV2PatchOperation.
-        :rtype: JsonNode
+        :rtype: object
         """
         return self._value
 
@@ -123,9 +124,10 @@ class ScimV2PatchOperation(object):
         The value to set in the path.
 
         :param value: The value of this ScimV2PatchOperation.
-        :type: JsonNode
+        :type: object
         """
         
+
         self._value = value
 
     def to_dict(self):

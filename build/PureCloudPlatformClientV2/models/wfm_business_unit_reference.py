@@ -73,6 +73,10 @@ class WfmBusinessUnitReference(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -96,6 +100,7 @@ class WfmBusinessUnitReference(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

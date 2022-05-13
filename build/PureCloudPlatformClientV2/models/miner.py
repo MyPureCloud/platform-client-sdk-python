@@ -115,6 +115,7 @@ class Miner(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,10 @@ class Miner(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -188,6 +193,7 @@ class Miner(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -238,6 +244,7 @@ class Miner(object):
         :type: date
         """
         
+
         self._conversations_date_range_start = conversations_date_range_start
 
     @property
@@ -261,6 +268,7 @@ class Miner(object):
         :type: date
         """
         
+
         self._conversations_date_range_end = conversations_date_range_end
 
     @property
@@ -284,6 +292,7 @@ class Miner(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -307,6 +316,7 @@ class Miner(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -330,6 +340,7 @@ class Miner(object):
         :type: bool
         """
         
+
         self._conversation_data_uploaded = conversation_data_uploaded
 
     @property
@@ -380,6 +391,7 @@ class Miner(object):
         :type: list[str]
         """
         
+
         self._queue_ids = queue_ids
 
     @property
@@ -403,6 +415,7 @@ class Miner(object):
         :type: datetime
         """
         
+
         self._date_triggered = date_triggered
 
     @property
@@ -426,6 +439,7 @@ class Miner(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -449,6 +463,7 @@ class Miner(object):
         :type: Draft
         """
         
+
         self._latest_draft_version = latest_draft_version
 
     @property
@@ -472,6 +487,7 @@ class Miner(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

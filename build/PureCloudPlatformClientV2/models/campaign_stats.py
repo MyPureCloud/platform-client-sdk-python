@@ -85,6 +85,7 @@ class CampaignStats(object):
         :type: ConnectRate
         """
         
+
         self._contact_rate = contact_rate
 
     @property
@@ -108,6 +109,7 @@ class CampaignStats(object):
         :type: int
         """
         
+
         self._idle_agents = idle_agents
 
     @property
@@ -131,6 +133,7 @@ class CampaignStats(object):
         :type: float
         """
         
+
         self._effective_idle_agents = effective_idle_agents
 
     @property
@@ -154,6 +157,7 @@ class CampaignStats(object):
         :type: float
         """
         
+
         self._adjusted_calls_per_agent = adjusted_calls_per_agent
 
     @property
@@ -177,6 +181,7 @@ class CampaignStats(object):
         :type: int
         """
         
+
         self._outstanding_calls = outstanding_calls
 
     @property
@@ -200,6 +205,7 @@ class CampaignStats(object):
         :type: int
         """
         
+
         self._scheduled_calls = scheduled_calls
 
     def to_dict(self):

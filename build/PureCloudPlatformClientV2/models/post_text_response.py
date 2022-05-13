@@ -124,6 +124,7 @@ class PostTextResponse(object):
         :type: list[PostTextMessage]
         """
         
+
         self._reply_messages = reply_messages
 
     @property
@@ -147,6 +148,7 @@ class PostTextResponse(object):
         :type: str
         """
         
+
         self._intent_name = intent_name
 
     @property
@@ -170,6 +172,7 @@ class PostTextResponse(object):
         :type: dict(str, str)
         """
         
+
         self._slots = slots
 
     @property
@@ -193,6 +196,7 @@ class PostTextResponse(object):
         :type: str
         """
         
+
         self._bot_correlation_id = bot_correlation_id
 
     @property
@@ -216,6 +220,7 @@ class PostTextResponse(object):
         :type: dict(str, object)
         """
         
+
         self._amazon_lex = amazon_lex
 
     @property
@@ -239,6 +244,7 @@ class PostTextResponse(object):
         :type: dict(str, object)
         """
         
+
         self._google_dialog_flow = google_dialog_flow
 
     @property
@@ -262,6 +268,7 @@ class PostTextResponse(object):
         :type: dict(str, object)
         """
         
+
         self._genesys_dialog_engine = genesys_dialog_engine
 
     @property
@@ -285,6 +292,7 @@ class PostTextResponse(object):
         :type: dict(str, object)
         """
         
+
         self._genesys_bot_connector = genesys_bot_connector
 
     @property
@@ -308,6 +316,7 @@ class PostTextResponse(object):
         :type: dict(str, object)
         """
         
+
         self._nuance_mix_dlg = nuance_mix_dlg
 
     def to_dict(self):

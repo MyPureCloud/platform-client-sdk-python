@@ -103,6 +103,7 @@ class WorkPlanConfigurationViolationMessage(object):
         :type: list[WorkPlanValidationMessageArgument]
         """
         
+
         self._arguments = arguments
 
     @property

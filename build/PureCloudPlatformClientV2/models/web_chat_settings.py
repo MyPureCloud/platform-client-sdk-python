@@ -70,6 +70,7 @@ class WebChatSettings(object):
         :type: bool
         """
         
+
         self._require_deployment = require_deployment
 
     def to_dict(self):

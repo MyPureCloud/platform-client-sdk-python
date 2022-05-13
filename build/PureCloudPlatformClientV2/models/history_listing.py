@@ -127,6 +127,7 @@ class HistoryListing(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -150,6 +151,7 @@ class HistoryListing(object):
         :type: bool
         """
         
+
         self._complete = complete
 
     @property
@@ -173,6 +175,7 @@ class HistoryListing(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -196,6 +199,7 @@ class HistoryListing(object):
         :type: DomainEntityRef
         """
         
+
         self._client = client
 
     @property
@@ -219,6 +223,7 @@ class HistoryListing(object):
         :type: str
         """
         
+
         self._error_message = error_message
 
     @property
@@ -242,6 +247,7 @@ class HistoryListing(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -265,6 +271,7 @@ class HistoryListing(object):
         :type: list[Detail]
         """
         
+
         self._error_details = error_details
 
     @property
@@ -288,6 +295,7 @@ class HistoryListing(object):
         :type: dict(str, str)
         """
         
+
         self._error_message_params = error_message_params
 
     @property
@@ -365,6 +373,7 @@ class HistoryListing(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -388,6 +397,7 @@ class HistoryListing(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -411,6 +421,7 @@ class HistoryListing(object):
         :type: bool
         """
         
+
         self._system = system
 
     @property
@@ -434,6 +445,7 @@ class HistoryListing(object):
         :type: datetime
         """
         
+
         self._started = started
 
     @property
@@ -457,6 +469,7 @@ class HistoryListing(object):
         :type: datetime
         """
         
+
         self._completed = completed
 
     @property
@@ -480,6 +493,7 @@ class HistoryListing(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -503,6 +517,7 @@ class HistoryListing(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -526,6 +541,7 @@ class HistoryListing(object):
         :type: int
         """
         
+
         self._total = total
 
     @property
@@ -549,6 +565,7 @@ class HistoryListing(object):
         :type: list[HistoryEntry]
         """
         
+
         self._entities = entities
 
     @property
@@ -572,6 +589,7 @@ class HistoryListing(object):
         :type: int
         """
         
+
         self._page_count = page_count
 
     def to_dict(self):

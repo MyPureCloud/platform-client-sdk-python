@@ -79,6 +79,7 @@ class BuAgentScheduleHistoryResponse(object):
         :type: list[BuScheduleReference]
         """
         
+
         self._prior_published_schedules = prior_published_schedules
 
     @property
@@ -102,6 +103,7 @@ class BuAgentScheduleHistoryResponse(object):
         :type: BuAgentScheduleHistoryChange
         """
         
+
         self._base_published_schedule = base_published_schedule
 
     @property
@@ -125,6 +127,7 @@ class BuAgentScheduleHistoryResponse(object):
         :type: list[BuAgentScheduleHistoryDroppedChange]
         """
         
+
         self._dropped_changes = dropped_changes
 
     @property
@@ -148,6 +151,7 @@ class BuAgentScheduleHistoryResponse(object):
         :type: list[BuAgentScheduleHistoryChange]
         """
         
+
         self._changes = changes
 
     def to_dict(self):

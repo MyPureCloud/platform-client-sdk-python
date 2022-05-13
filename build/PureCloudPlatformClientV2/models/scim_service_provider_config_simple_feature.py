@@ -70,6 +70,7 @@ class ScimServiceProviderConfigSimpleFeature(object):
         :type: bool
         """
         
+
         self._supported = supported
 
     def to_dict(self):

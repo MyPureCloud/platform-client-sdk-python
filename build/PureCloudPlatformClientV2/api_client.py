@@ -295,7 +295,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '141.1.0'
+        header_params['purecloud-sdk'] = '142.0.0'
 
         # path parameters
         if path_params:
@@ -491,7 +491,7 @@ class ApiClient(object):
         elif klass == date:
             return self.__deserialize_date(data)
         elif klass == datetime:
-            return self.__deserialize_datatime(data)
+            return self.__deserialize_datetime(data)
         else:
             return self.__deserialize_model(data, klass)
 
@@ -757,7 +757,7 @@ class ApiClient(object):
         except ImportError:
             return string
 
-    def __deserialize_datatime(self, string):
+    def __deserialize_datetime(self, string):
         """
         Deserializes string to datetime.
 

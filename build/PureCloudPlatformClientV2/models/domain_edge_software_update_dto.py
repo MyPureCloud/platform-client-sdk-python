@@ -97,6 +97,10 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: DomainEdgeSoftwareVersionDto
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -120,6 +124,7 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: int
         """
         
+
         self._max_download_rate = max_download_rate
 
     @property
@@ -143,6 +148,7 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: datetime
         """
         
+
         self._download_start_time = download_start_time
 
     @property
@@ -166,6 +172,7 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: datetime
         """
         
+
         self._execute_start_time = execute_start_time
 
     @property
@@ -189,6 +196,7 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: datetime
         """
         
+
         self._execute_stop_time = execute_stop_time
 
     @property
@@ -212,6 +220,7 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: bool
         """
         
+
         self._execute_on_idle = execute_on_idle
 
     @property
@@ -262,6 +271,7 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: str
         """
         
+
         self._edge_uri = edge_uri
 
     @property
@@ -285,6 +295,7 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: int
         """
         
+
         self._call_draining_wait_time_seconds = call_draining_wait_time_seconds
 
     @property
@@ -308,6 +319,7 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: bool
         """
         
+
         self._current = current
 
     def to_dict(self):

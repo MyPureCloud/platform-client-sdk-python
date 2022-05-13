@@ -79,6 +79,7 @@ class FlowOutcomeDivisionView(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,10 @@ class FlowOutcomeDivisionView(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -125,6 +130,7 @@ class FlowOutcomeDivisionView(object):
         :type: WritableDivision
         """
         
+
         self._division = division
 
     @property
@@ -148,6 +154,7 @@ class FlowOutcomeDivisionView(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

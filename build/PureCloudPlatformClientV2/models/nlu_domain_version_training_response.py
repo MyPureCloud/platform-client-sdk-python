@@ -73,6 +73,7 @@ class NluDomainVersionTrainingResponse(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -96,6 +97,7 @@ class NluDomainVersionTrainingResponse(object):
         :type: NluDomainVersion
         """
         
+
         self._version = version
 
     def to_dict(self):

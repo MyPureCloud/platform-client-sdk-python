@@ -73,6 +73,7 @@ class OutboundMessagingMessagingCampaignConfigChangeErrorDetail(object):
         :type: str
         """
         
+
         self._error = error
 
     @property
@@ -96,6 +97,7 @@ class OutboundMessagingMessagingCampaignConfigChangeErrorDetail(object):
         :type: str
         """
         
+
         self._details = details
 
     def to_dict(self):

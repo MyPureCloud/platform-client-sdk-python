@@ -94,6 +94,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         :type: DialerContactlistfilterConfigChangeUriReference
         """
         
+
         self._contact_list = contact_list
 
     @property
@@ -117,6 +118,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         :type: list[str]
         """
         
+
         self._contact_list_columns = contact_list_columns
 
     @property
@@ -140,6 +142,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         :type: list[DialerContactlistfilterConfigChangeFilterClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -190,6 +193,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -213,6 +217,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -236,6 +241,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -259,6 +265,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -282,6 +289,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

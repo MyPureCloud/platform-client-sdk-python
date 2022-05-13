@@ -79,6 +79,7 @@ class TrunkMetricsOptions(object):
         :type: str
         """
         
+
         self._proxy_address = proxy_address
 
     @property
@@ -102,6 +103,7 @@ class TrunkMetricsOptions(object):
         :type: bool
         """
         
+
         self._option_state = option_state
 
     @property
@@ -125,6 +127,7 @@ class TrunkMetricsOptions(object):
         :type: datetime
         """
         
+
         self._option_state_time = option_state_time
 
     @property
@@ -148,6 +151,7 @@ class TrunkMetricsOptions(object):
         :type: TrunkErrorInfo
         """
         
+
         self._error_info = error_info
 
     def to_dict(self):

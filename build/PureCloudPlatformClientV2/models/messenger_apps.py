@@ -73,6 +73,7 @@ class MessengerApps(object):
         :type: ConversationAppSettings
         """
         
+
         self._conversations = conversations
 
     @property
@@ -96,6 +97,7 @@ class MessengerApps(object):
         :type: Knowledge
         """
         
+
         self._knowledge = knowledge
 
     def to_dict(self):

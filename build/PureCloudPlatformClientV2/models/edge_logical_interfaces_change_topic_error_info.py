@@ -79,6 +79,7 @@ class EdgeLogicalInterfacesChangeTopicErrorInfo(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -102,6 +103,7 @@ class EdgeLogicalInterfacesChangeTopicErrorInfo(object):
         :type: str
         """
         
+
         self._message_with_params = message_with_params
 
     @property
@@ -125,6 +127,7 @@ class EdgeLogicalInterfacesChangeTopicErrorInfo(object):
         :type: dict(str, str)
         """
         
+
         self._message_params = message_params
 
     @property
@@ -148,6 +151,7 @@ class EdgeLogicalInterfacesChangeTopicErrorInfo(object):
         :type: str
         """
         
+
         self._code = code
 
     def to_dict(self):

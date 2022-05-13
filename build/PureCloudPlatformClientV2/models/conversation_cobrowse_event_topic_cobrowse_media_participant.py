@@ -184,6 +184,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -207,6 +208,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -230,6 +232,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -253,6 +256,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -276,6 +280,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -299,6 +304,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -322,6 +328,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -345,6 +352,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -449,6 +457,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -472,6 +481,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_required = wrapup_required
 
     @property
@@ -495,6 +505,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._wrapup_prompt = wrapup_prompt
 
     @property
@@ -518,6 +529,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicUriReference
         """
         
+
         self._user = user
 
     @property
@@ -541,6 +553,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicUriReference
         """
         
+
         self._queue = queue
 
     @property
@@ -564,6 +577,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicUriReference
         """
         
+
         self._team = team
 
     @property
@@ -587,6 +601,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -610,6 +625,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicErrorBody
         """
         
+
         self._error_info = error_info
 
     @property
@@ -633,6 +649,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicUriReference
         """
         
+
         self._script = script
 
     @property
@@ -656,6 +673,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: int
         """
         
+
         self._wrapup_timeout_ms = wrapup_timeout_ms
 
     @property
@@ -679,6 +697,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_skipped = wrapup_skipped
 
     @property
@@ -702,6 +721,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: int
         """
         
+
         self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
@@ -725,6 +745,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -748,6 +769,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicUriReference
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -771,6 +793,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicUriReference
         """
         
+
         self._external_organization = external_organization
 
     @property
@@ -794,6 +817,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -817,6 +841,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicConversationRoutingData
         """
         
+
         self._conversation_routing_data = conversation_routing_data
 
     @property
@@ -840,6 +865,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._peer = peer
 
     @property
@@ -863,6 +889,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._screen_recording_state = screen_recording_state
 
     @property
@@ -913,6 +940,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: ConversationCobrowseEventTopicJourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -936,6 +964,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_acw_time = start_acw_time
 
     @property
@@ -959,6 +988,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_acw_time = end_acw_time
 
     @property
@@ -982,6 +1012,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._cobrowse_session_id = cobrowse_session_id
 
     @property
@@ -1005,6 +1036,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._cobrowse_role = cobrowse_role
 
     @property
@@ -1028,6 +1060,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: str
         """
         
+
         self._viewer_url = viewer_url
 
     @property
@@ -1051,6 +1084,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: datetime
         """
         
+
         self._provider_event_time = provider_event_time
 
     @property
@@ -1074,6 +1108,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         :type: list[str]
         """
         
+
         self._controlling = controlling
 
     def to_dict(self):

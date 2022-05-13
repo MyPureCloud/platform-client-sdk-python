@@ -73,6 +73,7 @@ class QueueConversationCallbackEventTopicJourneyActionMap(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class QueueConversationCallbackEventTopicJourneyActionMap(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

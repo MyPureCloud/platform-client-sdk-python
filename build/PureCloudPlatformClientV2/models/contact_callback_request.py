@@ -82,6 +82,10 @@ class ContactCallbackRequest(object):
         :type: str
         """
         
+        if not campaign_id:
+            raise ValueError("Invalid value for `campaign_id`, must not be `None`")
+
+
         self._campaign_id = campaign_id
 
     @property
@@ -105,6 +109,10 @@ class ContactCallbackRequest(object):
         :type: str
         """
         
+        if not contact_list_id:
+            raise ValueError("Invalid value for `contact_list_id`, must not be `None`")
+
+
         self._contact_list_id = contact_list_id
 
     @property
@@ -128,6 +136,10 @@ class ContactCallbackRequest(object):
         :type: str
         """
         
+        if not contact_id:
+            raise ValueError("Invalid value for `contact_id`, must not be `None`")
+
+
         self._contact_id = contact_id
 
     @property
@@ -151,6 +163,10 @@ class ContactCallbackRequest(object):
         :type: str
         """
         
+        if not phone_column:
+            raise ValueError("Invalid value for `phone_column`, must not be `None`")
+
+
         self._phone_column = phone_column
 
     @property
@@ -174,6 +190,10 @@ class ContactCallbackRequest(object):
         :type: str
         """
         
+        if not schedule:
+            raise ValueError("Invalid value for `schedule`, must not be `None`")
+
+
         self._schedule = schedule
 
     def to_dict(self):

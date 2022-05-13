@@ -76,6 +76,7 @@ class TimeOffRequestSettings(object):
         :type: bool
         """
         
+
         self._submission_range_enforced = submission_range_enforced
 
     @property
@@ -99,6 +100,7 @@ class TimeOffRequestSettings(object):
         :type: int
         """
         
+
         self._submission_earliest_days_from_now = submission_earliest_days_from_now
 
     @property
@@ -122,6 +124,7 @@ class TimeOffRequestSettings(object):
         :type: int
         """
         
+
         self._submission_latest_days_from_now = submission_latest_days_from_now
 
     def to_dict(self):

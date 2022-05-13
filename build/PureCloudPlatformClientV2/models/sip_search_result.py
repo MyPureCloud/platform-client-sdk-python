@@ -91,6 +91,7 @@ class SipSearchResult(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class SipSearchResult(object):
         :type: int
         """
         
+
         self._status = status
 
     @property
@@ -137,6 +139,7 @@ class SipSearchResult(object):
         :type: str
         """
         
+
         self._sid = sid
 
     @property
@@ -160,6 +163,7 @@ class SipSearchResult(object):
         :type: str
         """
         
+
         self._auth = auth
 
     @property
@@ -183,6 +187,7 @@ class SipSearchResult(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -206,6 +211,7 @@ class SipSearchResult(object):
         :type: list[HomerRecord]
         """
         
+
         self._data = data
 
     @property
@@ -229,6 +235,7 @@ class SipSearchResult(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -252,6 +259,7 @@ class SipSearchResult(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

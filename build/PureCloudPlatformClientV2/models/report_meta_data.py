@@ -94,6 +94,7 @@ class ReportMetaData(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class ReportMetaData(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class ReportMetaData(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -163,6 +166,7 @@ class ReportMetaData(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -186,6 +190,7 @@ class ReportMetaData(object):
         :type: list[str]
         """
         
+
         self._keywords = keywords
 
     @property
@@ -209,6 +214,7 @@ class ReportMetaData(object):
         :type: list[str]
         """
         
+
         self._available_locales = available_locales
 
     @property
@@ -232,6 +238,7 @@ class ReportMetaData(object):
         :type: list[Parameter]
         """
         
+
         self._parameters = parameters
 
     @property
@@ -255,6 +262,7 @@ class ReportMetaData(object):
         :type: str
         """
         
+
         self._example_url = example_url
 
     @property
@@ -278,6 +286,7 @@ class ReportMetaData(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

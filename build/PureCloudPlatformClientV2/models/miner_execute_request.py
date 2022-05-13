@@ -82,6 +82,7 @@ class MinerExecuteRequest(object):
         :type: date
         """
         
+
         self._date_start = date_start
 
     @property
@@ -105,6 +106,7 @@ class MinerExecuteRequest(object):
         :type: date
         """
         
+
         self._date_end = date_end
 
     @property
@@ -128,6 +130,7 @@ class MinerExecuteRequest(object):
         :type: str
         """
         
+
         self._upload_key = upload_key
 
     @property
@@ -178,6 +181,7 @@ class MinerExecuteRequest(object):
         :type: list[str]
         """
         
+
         self._queue_ids = queue_ids
 
     def to_dict(self):

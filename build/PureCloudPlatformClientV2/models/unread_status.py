@@ -70,6 +70,7 @@ class UnreadStatus(object):
         :type: bool
         """
         
+
         self._unread = unread
 
     def to_dict(self):

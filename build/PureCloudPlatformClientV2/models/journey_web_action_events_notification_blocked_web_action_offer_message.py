@@ -97,6 +97,7 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :type: JourneyWebActionEventsNotificationEventAction
         """
         
+
         self._action = action
 
     @property
@@ -120,6 +121,7 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :type: JourneyWebActionEventsNotificationActionMap
         """
         
+
         self._action_map = action_map
 
     @property
@@ -143,6 +145,7 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :type: JourneyWebActionEventsNotificationActionTarget
         """
         
+
         self._action_target = action_target
 
     @property
@@ -193,6 +196,7 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :type: JourneyWebActionEventsNotificationActionMap
         """
         
+
         self._blocking_action_map = blocking_action_map
 
     @property
@@ -216,6 +220,7 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :type: JourneyWebActionEventsNotificationEventAction
         """
         
+
         self._blocking_action = blocking_action
 
     @property
@@ -266,6 +271,7 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :type: list[JourneyWebActionEventsNotificationActionMapPageUrlCondition]
         """
         
+
         self._blocking_page_url_conditions = blocking_page_url_conditions
 
     @property
@@ -289,6 +295,7 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :type: JourneyWebActionEventsNotificationScheduleGroup
         """
         
+
         self._blocking_schedule_group = blocking_schedule_group
 
     @property
@@ -312,6 +319,7 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :type: JourneyWebActionEventsNotificationEmergencyGroup
         """
         
+
         self._blocking_emergency_schedule_group = blocking_emergency_schedule_group
 
     def to_dict(self):

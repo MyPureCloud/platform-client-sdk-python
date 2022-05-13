@@ -76,6 +76,7 @@ class QueryTimeOffLimitValuesRequest(object):
         :type: str
         """
         
+
         self._time_off_limit_id = time_off_limit_id
 
     @property
@@ -99,6 +100,7 @@ class QueryTimeOffLimitValuesRequest(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -122,6 +124,10 @@ class QueryTimeOffLimitValuesRequest(object):
         :type: list[LocalDateRange]
         """
         
+        if not date_ranges:
+            raise ValueError("Invalid value for `date_ranges`, must not be `None`")
+
+
         self._date_ranges = date_ranges
 
     def to_dict(self):

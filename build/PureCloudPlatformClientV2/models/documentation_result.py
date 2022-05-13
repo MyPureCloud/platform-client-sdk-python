@@ -127,6 +127,10 @@ class DocumentationResult(object):
         :type: int
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -150,6 +154,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._categories = categories
 
     @property
@@ -173,6 +178,7 @@ class DocumentationResult(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -196,6 +202,7 @@ class DocumentationResult(object):
         :type: str
         """
         
+
         self._content = content
 
     @property
@@ -219,6 +226,7 @@ class DocumentationResult(object):
         :type: str
         """
         
+
         self._excerpt = excerpt
 
     @property
@@ -242,6 +250,7 @@ class DocumentationResult(object):
         :type: str
         """
         
+
         self._link = link
 
     @property
@@ -265,6 +274,7 @@ class DocumentationResult(object):
         :type: datetime
         """
         
+
         self._modified = modified
 
     @property
@@ -288,6 +298,7 @@ class DocumentationResult(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -311,6 +322,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._service = service
 
     @property
@@ -334,6 +346,7 @@ class DocumentationResult(object):
         :type: str
         """
         
+
         self._slug = slug
 
     @property
@@ -357,6 +370,7 @@ class DocumentationResult(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -380,6 +394,7 @@ class DocumentationResult(object):
         :type: str
         """
         
+
         self._get_type = get_type
 
     @property
@@ -403,6 +418,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._facet_feature = facet_feature
 
     @property
@@ -426,6 +442,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._facet_role = facet_role
 
     @property
@@ -449,6 +466,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._facet_service = facet_service
 
     @property
@@ -472,6 +490,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._faq_categories = faq_categories
 
     @property
@@ -495,6 +514,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._releasenote_category = releasenote_category
 
     @property
@@ -518,6 +538,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._releasenote_tag = releasenote_tag
 
     @property
@@ -541,6 +562,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._service_area = service_area
 
     @property
@@ -564,6 +586,7 @@ class DocumentationResult(object):
         :type: list[int]
         """
         
+
         self._video_categories = video_categories
 
     def to_dict(self):

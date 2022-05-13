@@ -82,6 +82,7 @@ class BusinessUnit(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class BusinessUnit(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class BusinessUnit(object):
         :type: BusinessUnitSettings
         """
         
+
         self._settings = settings
 
     @property
@@ -151,6 +154,7 @@ class BusinessUnit(object):
         :type: DivisionReference
         """
         
+
         self._division = division
 
     @property
@@ -174,6 +178,7 @@ class BusinessUnit(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

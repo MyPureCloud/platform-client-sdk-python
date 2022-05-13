@@ -118,6 +118,7 @@ class TranscriptSearchRequest(object):
         :type: str
         """
         
+
         self._sort_by = sort_by
 
     @property
@@ -141,6 +142,7 @@ class TranscriptSearchRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -164,6 +166,7 @@ class TranscriptSearchRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -187,6 +190,7 @@ class TranscriptSearchRequest(object):
         :type: list[SearchSort]
         """
         
+
         self._sort = sort
 
     @property
@@ -210,6 +214,7 @@ class TranscriptSearchRequest(object):
         :type: list[str]
         """
         
+
         self._return_fields = return_fields
 
     @property
@@ -233,6 +238,10 @@ class TranscriptSearchRequest(object):
         :type: list[str]
         """
         
+        if not types:
+            raise ValueError("Invalid value for `types`, must not be `None`")
+
+
         self._types = types
 
     @property
@@ -256,6 +265,7 @@ class TranscriptSearchRequest(object):
         :type: list[TranscriptSearchCriteria]
         """
         
+
         self._query = query
 
     def to_dict(self):

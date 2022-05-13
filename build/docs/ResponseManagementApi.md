@@ -37,9 +37,11 @@ Delete an existing response library.
 
 This will remove any responses associated with the library.
 
+
+
 Wraps DELETE /api/v2/responsemanagement/libraries/{libraryId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -86,9 +88,11 @@ Delete an existing response.
 
 This will remove the response from any libraries associated with it.
 
+
+
 Wraps DELETE /api/v2/responsemanagement/responses/{responseId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -187,7 +191,7 @@ Gets a list of existing response libraries.
 
 Wraps GET /api/v2/responsemanagement/libraries 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -241,7 +245,7 @@ Get details about an existing response library.
 
 Wraps GET /api/v2/responsemanagement/libraries/{libraryId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -291,7 +295,7 @@ Get details about an existing response.
 
 Wraps GET /api/v2/responsemanagement/responses/{responseId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -445,7 +449,7 @@ Gets a list of existing responses.
 
 Wraps GET /api/v2/responsemanagement/responses 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -501,7 +505,7 @@ Create a response library.
 
 Wraps POST /api/v2/responsemanagement/libraries 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -655,7 +659,7 @@ Create a response.
 
 Wraps POST /api/v2/responsemanagement/responses 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -707,7 +711,7 @@ Query responses
 
 Wraps POST /api/v2/responsemanagement/responses/query 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -755,9 +759,11 @@ Update an existing response library.
 
 Fields that can be updated: name. The most recent version is required for updates.
 
+
+
 Wraps PUT /api/v2/responsemanagement/libraries/{libraryId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -807,9 +813,11 @@ Update an existing response.
 
 Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
 
+
+
 Wraps PUT /api/v2/responsemanagement/responses/{responseId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

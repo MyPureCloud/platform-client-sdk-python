@@ -70,6 +70,7 @@ class BuShortTermForecastListing(object):
         :type: list[BuShortTermForecastListItem]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

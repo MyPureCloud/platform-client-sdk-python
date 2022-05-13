@@ -73,6 +73,10 @@ class GroupMembersUpdate(object):
         :type: list[str]
         """
         
+        if not member_ids:
+            raise ValueError("Invalid value for `member_ids`, must not be `None`")
+
+
         self._member_ids = member_ids
 
     @property
@@ -96,6 +100,10 @@ class GroupMembersUpdate(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     def to_dict(self):

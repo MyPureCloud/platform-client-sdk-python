@@ -83,7 +83,7 @@ Get a Presence Definition
 
 Wraps GET /api/v2/presencedefinitions/{presenceId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -135,7 +135,7 @@ Get an Organization's list of Presence Definitions
 
 Wraps GET /api/v2/presencedefinitions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -153,7 +153,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.PresenceApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-deleted = 'false' # str | Deleted query can be TRUE, FALSE or ALL (optional) (default to false)
+deleted = ''false'' # str | Deleted query can be TRUE, FALSE or ALL (optional) (default to 'false')
 locale_code = 'locale_code_example' # str | The locale code to fetch for each presence definition. Use ALL to fetch everything. (optional)
 
 try:
@@ -171,7 +171,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **deleted** | **str**| Deleted query can be TRUE, FALSE or ALL | [optional] [default to false] |
+| **deleted** | **str**| Deleted query can be TRUE, FALSE or ALL | [optional] [default to &#39;false&#39;] |
 | **locale_code** | **str**| The locale code to fetch for each presence definition. Use ALL to fetch everything. | [optional]  |
 {: class="table table-striped"}
 
@@ -191,7 +191,7 @@ Get the list of SystemPresences
 
 Wraps GET /api/v2/systempresences 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -235,9 +235,11 @@ Get a user's Presence
 
 Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources.
 
+
+
 Wraps GET /api/v2/users/{userId}/presences/{sourceId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -287,9 +289,11 @@ Get a user's Genesys Cloud presence.
 
 Get the default Genesys Cloud user presence source PURECLOUD
 
+
+
 Wraps GET /api/v2/users/{userId}/presences/purecloud 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -337,9 +341,11 @@ Patch a user's Presence
 
 Patch a user's presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
+
+
 Wraps PATCH /api/v2/users/{userId}/presences/{sourceId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -391,9 +397,11 @@ Patch a Genesys Cloud user's presence
 
 The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
+
+
 Wraps PATCH /api/v2/users/{userId}/presences/purecloud 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

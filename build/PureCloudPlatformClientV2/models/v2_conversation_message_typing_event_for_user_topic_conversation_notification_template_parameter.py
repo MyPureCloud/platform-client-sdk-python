@@ -73,6 +73,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationNotificationTempla
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -96,6 +97,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationNotificationTempla
         :type: str
         """
         
+
         self._text = text
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class ReplaceResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class ReplaceResponse(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class ReplaceResponse(object):
         :type: int
         """
         
+
         self._change_number = change_number
 
     @property
@@ -154,6 +157,7 @@ class ReplaceResponse(object):
         :type: DomainEntityRef
         """
         
+
         self._upload_status = upload_status
 
     @property
@@ -177,6 +181,7 @@ class ReplaceResponse(object):
         :type: str
         """
         
+
         self._upload_destination_uri = upload_destination_uri
 
     @property

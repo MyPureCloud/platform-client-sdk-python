@@ -79,6 +79,7 @@ class UserAuthorization(object):
         :type: list[DomainRole]
         """
         
+
         self._roles = roles
 
     @property
@@ -102,6 +103,7 @@ class UserAuthorization(object):
         :type: list[DomainRole]
         """
         
+
         self._unused_roles = unused_roles
 
     @property
@@ -125,6 +127,7 @@ class UserAuthorization(object):
         :type: list[str]
         """
         
+
         self._permissions = permissions
 
     @property
@@ -148,6 +151,7 @@ class UserAuthorization(object):
         :type: list[ResourcePermissionPolicy]
         """
         
+
         self._permission_policies = permission_policies
 
     def to_dict(self):

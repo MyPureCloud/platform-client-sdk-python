@@ -79,6 +79,7 @@ class DetectedNamedEntity(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -102,6 +103,7 @@ class DetectedNamedEntity(object):
         :type: str
         """
         
+
         self._entity_type = entity_type
 
     @property
@@ -125,6 +127,7 @@ class DetectedNamedEntity(object):
         :type: float
         """
         
+
         self._probability = probability
 
     @property
@@ -148,6 +151,7 @@ class DetectedNamedEntity(object):
         :type: DetectedNamedEntityValue
         """
         
+
         self._value = value
 
     def to_dict(self):

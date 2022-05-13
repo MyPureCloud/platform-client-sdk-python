@@ -103,6 +103,10 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -126,6 +130,10 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+        if not part_number:
+            raise ValueError("Invalid value for `part_number`, must not be `None`")
+
+
         self._part_number = part_number
 
     @property
@@ -149,6 +157,10 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+        if not grouping:
+            raise ValueError("Invalid value for `grouping`, must not be `None`")
+
+
         self._grouping = grouping
 
     @property
@@ -172,6 +184,10 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+        if not unit_of_measure_type:
+            raise ValueError("Invalid value for `unit_of_measure_type`, must not be `None`")
+
+
         self._unit_of_measure_type = unit_of_measure_type
 
     @property
@@ -195,6 +211,10 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+        if not usage_quantity:
+            raise ValueError("Invalid value for `usage_quantity`, must not be `None`")
+
+
         self._usage_quantity = usage_quantity
 
     @property
@@ -218,6 +238,7 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+
         self._overage_price = overage_price
 
     @property
@@ -241,6 +262,10 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+        if not prepay_quantity:
+            raise ValueError("Invalid value for `prepay_quantity`, must not be `None`")
+
+
         self._prepay_quantity = prepay_quantity
 
     @property
@@ -264,6 +289,7 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+
         self._prepay_price = prepay_price
 
     @property
@@ -287,6 +313,7 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+
         self._usage_notes = usage_notes
 
     @property
@@ -310,6 +337,7 @@ class SubscriptionOverviewUsage(object):
         :type: bool
         """
         
+
         self._is_cancellable = is_cancellable
 
     @property
@@ -333,6 +361,7 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
+
         self._bundle_quantity = bundle_quantity
 
     @property
@@ -356,6 +385,7 @@ class SubscriptionOverviewUsage(object):
         :type: bool
         """
         
+
         self._is_third_party = is_third_party
 
     def to_dict(self):

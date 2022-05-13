@@ -76,6 +76,7 @@ class LicenseUser(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class LicenseUser(object):
         :type: list[LicenseDefinition]
         """
         
+
         self._licenses = licenses
 
     @property
@@ -122,6 +124,7 @@ class LicenseUser(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

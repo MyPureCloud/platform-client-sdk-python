@@ -79,6 +79,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsConfig(object):
         :type: str
         """
         
+
         self._message_column = message_column
 
     @property
@@ -102,6 +103,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsConfig(object):
         :type: str
         """
         
+
         self._phone_column = phone_column
 
     @property
@@ -125,6 +127,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsConfig(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef
         """
         
+
         self._sender_sms_phone_number = sender_sms_phone_number
 
     @property
@@ -148,6 +151,7 @@ class OutboundMessagingMessagingCampaignConfigChangeSmsConfig(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeResponseRef
         """
         
+
         self._content_template = content_template
 
     def to_dict(self):

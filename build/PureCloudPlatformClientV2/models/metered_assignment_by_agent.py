@@ -85,6 +85,7 @@ class MeteredAssignmentByAgent(object):
         :type: str
         """
         
+
         self._evaluation_context_id = evaluation_context_id
 
     @property
@@ -108,6 +109,7 @@ class MeteredAssignmentByAgent(object):
         :type: list[User]
         """
         
+
         self._evaluators = evaluators
 
     @property
@@ -131,6 +133,7 @@ class MeteredAssignmentByAgent(object):
         :type: int
         """
         
+
         self._max_number_evaluations = max_number_evaluations
 
     @property
@@ -154,6 +157,7 @@ class MeteredAssignmentByAgent(object):
         :type: EvaluationForm
         """
         
+
         self._evaluation_form = evaluation_form
 
     @property
@@ -177,6 +181,7 @@ class MeteredAssignmentByAgent(object):
         :type: TimeInterval
         """
         
+
         self._time_interval = time_interval
 
     @property
@@ -200,6 +205,7 @@ class MeteredAssignmentByAgent(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     def to_dict(self):

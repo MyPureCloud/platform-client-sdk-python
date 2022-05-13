@@ -100,6 +100,7 @@ class ContactListFilterClause(object):
         :type: list[ContactListFilterPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

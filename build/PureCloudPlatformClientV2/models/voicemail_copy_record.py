@@ -76,6 +76,7 @@ class VoicemailCopyRecord(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -99,6 +100,7 @@ class VoicemailCopyRecord(object):
         :type: Group
         """
         
+
         self._group = group
 
     @property
@@ -122,6 +124,7 @@ class VoicemailCopyRecord(object):
         :type: datetime
         """
         
+
         self._date = date
 
     def to_dict(self):

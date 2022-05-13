@@ -79,6 +79,7 @@ class BulkResponseResultExternalContactEntity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class BulkResponseResultExternalContactEntity(object):
         :type: bool
         """
         
+
         self._success = success
 
     @property
@@ -125,6 +127,7 @@ class BulkResponseResultExternalContactEntity(object):
         :type: ExternalContact
         """
         
+
         self._entity = entity
 
     @property
@@ -148,6 +151,7 @@ class BulkResponseResultExternalContactEntity(object):
         :type: BulkErrorEntity
         """
         
+
         self._error = error
 
     def to_dict(self):

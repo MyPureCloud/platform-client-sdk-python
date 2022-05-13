@@ -82,6 +82,7 @@ class WorkdayMetric(object):
         :type: Metric
         """
         
+
         self._metric = metric
 
     @property
@@ -105,6 +106,7 @@ class WorkdayMetric(object):
         :type: Objective
         """
         
+
         self._objective = objective
 
     @property
@@ -128,6 +130,7 @@ class WorkdayMetric(object):
         :type: int
         """
         
+
         self._points = points
 
     @property
@@ -151,6 +154,7 @@ class WorkdayMetric(object):
         :type: float
         """
         
+
         self._value = value
 
     @property
@@ -174,6 +178,7 @@ class WorkdayMetric(object):
         :type: list[PunctualityEvent]
         """
         
+
         self._punctuality_events = punctuality_events
 
     def to_dict(self):

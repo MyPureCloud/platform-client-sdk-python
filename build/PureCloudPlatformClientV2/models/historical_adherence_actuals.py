@@ -103,6 +103,7 @@ class HistoricalAdherenceActuals(object):
         :type: int
         """
         
+
         self._start_offset_seconds = start_offset_seconds
 
     @property
@@ -126,6 +127,7 @@ class HistoricalAdherenceActuals(object):
         :type: int
         """
         
+
         self._end_offset_seconds = end_offset_seconds
 
     def to_dict(self):

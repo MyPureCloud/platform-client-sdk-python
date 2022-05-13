@@ -85,6 +85,7 @@ class PlanningGroup(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class PlanningGroup(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class PlanningGroup(object):
         :type: ServiceGoalTemplateReference
         """
         
+
         self._service_goal_template = service_goal_template
 
     @property
@@ -154,6 +157,7 @@ class PlanningGroup(object):
         :type: list[RoutePathResponse]
         """
         
+
         self._route_paths = route_paths
 
     @property
@@ -177,6 +181,7 @@ class PlanningGroup(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -200,6 +205,7 @@ class PlanningGroup(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

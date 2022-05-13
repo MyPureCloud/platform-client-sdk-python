@@ -94,6 +94,7 @@ class ReportingTurn(object):
         :type: str
         """
         
+
         self._user_input = user_input
 
     @property
@@ -117,6 +118,7 @@ class ReportingTurn(object):
         :type: list[str]
         """
         
+
         self._bot_prompts = bot_prompts
 
     @property
@@ -140,6 +142,7 @@ class ReportingTurn(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -163,6 +166,7 @@ class ReportingTurn(object):
         :type: ReportingTurnAction
         """
         
+
         self._ask_action = ask_action
 
     @property
@@ -186,6 +190,7 @@ class ReportingTurn(object):
         :type: ReportingTurnIntent
         """
         
+
         self._intent = intent
 
     @property
@@ -209,6 +214,7 @@ class ReportingTurn(object):
         :type: ReportingTurnKnowledge
         """
         
+
         self._knowledge = knowledge
 
     @property
@@ -232,6 +238,7 @@ class ReportingTurn(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -282,6 +289,7 @@ class ReportingTurn(object):
         :type: AddressableEntityRef
         """
         
+
         self._conversation = conversation
 
     def to_dict(self):

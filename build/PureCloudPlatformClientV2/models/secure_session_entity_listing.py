@@ -70,6 +70,7 @@ class SecureSessionEntityListing(object):
         :type: list[SecureSession]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

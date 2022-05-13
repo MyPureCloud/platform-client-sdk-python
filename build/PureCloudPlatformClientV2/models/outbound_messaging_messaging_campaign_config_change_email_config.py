@@ -79,6 +79,7 @@ class OutboundMessagingMessagingCampaignConfigChangeEmailConfig(object):
         :type: list[str]
         """
         
+
         self._email_columns = email_columns
 
     @property
@@ -102,6 +103,7 @@ class OutboundMessagingMessagingCampaignConfigChangeEmailConfig(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeResponseRef
         """
         
+
         self._content_template = content_template
 
     @property
@@ -125,6 +127,7 @@ class OutboundMessagingMessagingCampaignConfigChangeEmailConfig(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress
         """
         
+
         self._from_address = from_address
 
     @property
@@ -148,6 +151,7 @@ class OutboundMessagingMessagingCampaignConfigChangeEmailConfig(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress
         """
         
+
         self._reply_to_address = reply_to_address
 
     def to_dict(self):

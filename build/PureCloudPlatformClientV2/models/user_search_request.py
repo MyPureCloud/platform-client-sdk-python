@@ -121,6 +121,7 @@ class UserSearchRequest(object):
         :type: str
         """
         
+
         self._sort_by = sort_by
 
     @property
@@ -144,6 +145,7 @@ class UserSearchRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -167,6 +169,7 @@ class UserSearchRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -190,6 +193,7 @@ class UserSearchRequest(object):
         :type: list[SearchSort]
         """
         
+
         self._sort = sort
 
     @property
@@ -213,6 +217,7 @@ class UserSearchRequest(object):
         :type: list[str]
         """
         
+
         self._expand = expand
 
     @property
@@ -236,6 +241,7 @@ class UserSearchRequest(object):
         :type: list[UserSearchCriteria]
         """
         
+
         self._query = query
 
     @property
@@ -286,6 +292,7 @@ class UserSearchRequest(object):
         :type: bool
         """
         
+
         self._enforce_permissions = enforce_permissions
 
     def to_dict(self):

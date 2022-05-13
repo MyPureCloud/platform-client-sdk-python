@@ -85,6 +85,7 @@ class PhoneNumber(object):
         :type: str
         """
         
+
         self._display = display
 
     @property
@@ -108,6 +109,7 @@ class PhoneNumber(object):
         :type: int
         """
         
+
         self._extension = extension
 
     @property
@@ -131,6 +133,7 @@ class PhoneNumber(object):
         :type: bool
         """
         
+
         self._accepts_sms = accepts_sms
 
     @property
@@ -154,6 +157,7 @@ class PhoneNumber(object):
         :type: str
         """
         
+
         self._user_input = user_input
 
     @property
@@ -177,6 +181,7 @@ class PhoneNumber(object):
         :type: str
         """
         
+
         self._e164 = e164
 
     @property
@@ -200,6 +205,7 @@ class PhoneNumber(object):
         :type: str
         """
         
+
         self._country_code = country_code
 
     def to_dict(self):

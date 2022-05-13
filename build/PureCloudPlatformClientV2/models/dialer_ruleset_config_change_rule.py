@@ -85,6 +85,7 @@ class DialerRulesetConfigChangeRule(object):
         :type: list[DialerRulesetConfigChangeCondition]
         """
         
+
         self._conditions = conditions
 
     @property
@@ -108,6 +109,7 @@ class DialerRulesetConfigChangeRule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -131,6 +133,7 @@ class DialerRulesetConfigChangeRule(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -154,6 +157,7 @@ class DialerRulesetConfigChangeRule(object):
         :type: int
         """
         
+
         self._order = order
 
     @property
@@ -204,6 +208,7 @@ class DialerRulesetConfigChangeRule(object):
         :type: list[DialerRulesetConfigChangeAction]
         """
         
+
         self._actions = actions
 
     def to_dict(self):

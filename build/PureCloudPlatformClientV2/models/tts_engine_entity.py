@@ -91,6 +91,7 @@ class TtsEngineEntity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class TtsEngineEntity(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,10 @@ class TtsEngineEntity(object):
         :type: list[str]
         """
         
+        if not languages:
+            raise ValueError("Invalid value for `languages`, must not be `None`")
+
+
         self._languages = languages
 
     @property
@@ -160,6 +166,10 @@ class TtsEngineEntity(object):
         :type: list[str]
         """
         
+        if not output_formats:
+            raise ValueError("Invalid value for `output_formats`, must not be `None`")
+
+
         self._output_formats = output_formats
 
     @property
@@ -183,6 +193,7 @@ class TtsEngineEntity(object):
         :type: list[TtsVoiceEntity]
         """
         
+
         self._voices = voices
 
     @property
@@ -206,6 +217,7 @@ class TtsEngineEntity(object):
         :type: bool
         """
         
+
         self._is_default = is_default
 
     @property
@@ -229,6 +241,7 @@ class TtsEngineEntity(object):
         :type: bool
         """
         
+
         self._is_secure = is_secure
 
     @property
@@ -252,6 +265,7 @@ class TtsEngineEntity(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

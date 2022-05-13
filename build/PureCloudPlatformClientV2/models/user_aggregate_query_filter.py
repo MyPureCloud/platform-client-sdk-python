@@ -103,6 +103,7 @@ class UserAggregateQueryFilter(object):
         :type: list[UserAggregateQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class UserAggregateQueryFilter(object):
         :type: list[UserAggregateQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

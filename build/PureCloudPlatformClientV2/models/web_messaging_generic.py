@@ -82,6 +82,7 @@ class WebMessagingGeneric(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -105,6 +106,7 @@ class WebMessagingGeneric(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -128,6 +130,7 @@ class WebMessagingGeneric(object):
         :type: str
         """
         
+
         self._image = image
 
     @property
@@ -151,6 +154,7 @@ class WebMessagingGeneric(object):
         :type: ContentActions
         """
         
+
         self._actions = actions
 
     @property
@@ -174,6 +178,7 @@ class WebMessagingGeneric(object):
         :type: list[ButtonComponent]
         """
         
+
         self._components = components
 
     def to_dict(self):

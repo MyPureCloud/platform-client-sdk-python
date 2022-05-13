@@ -70,6 +70,7 @@ class PatchBuScheduleRunRequest(object):
         :type: PatchBuReschedulingOptionsRequest
         """
         
+
         self._rescheduling_options = rescheduling_options
 
     def to_dict(self):

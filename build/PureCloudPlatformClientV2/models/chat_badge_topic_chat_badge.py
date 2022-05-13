@@ -76,6 +76,7 @@ class ChatBadgeTopicChatBadge(object):
         :type: ChatBadgeTopicBadgeEntity
         """
         
+
         self._entity = entity
 
     @property
@@ -99,6 +100,7 @@ class ChatBadgeTopicChatBadge(object):
         :type: int
         """
         
+
         self._unread_count = unread_count
 
     @property
@@ -122,6 +124,7 @@ class ChatBadgeTopicChatBadge(object):
         :type: datetime
         """
         
+
         self._last_unread_notification_date = last_unread_notification_date
 
     def to_dict(self):

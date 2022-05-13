@@ -154,6 +154,7 @@ class ConversationChat(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -177,6 +178,7 @@ class ConversationChat(object):
         :type: str
         """
         
+
         self._room_id = room_id
 
     @property
@@ -200,6 +202,7 @@ class ConversationChat(object):
         :type: str
         """
         
+
         self._recording_id = recording_id
 
     @property
@@ -223,6 +226,7 @@ class ConversationChat(object):
         :type: list[Segment]
         """
         
+
         self._segments = segments
 
     @property
@@ -246,6 +250,7 @@ class ConversationChat(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -323,6 +328,7 @@ class ConversationChat(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -346,6 +352,7 @@ class ConversationChat(object):
         :type: datetime
         """
         
+
         self._start_alerting_time = start_alerting_time
 
     @property
@@ -369,6 +376,7 @@ class ConversationChat(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -392,6 +400,7 @@ class ConversationChat(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -415,6 +424,7 @@ class ConversationChat(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -438,6 +448,7 @@ class ConversationChat(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -461,6 +472,7 @@ class ConversationChat(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -484,6 +496,7 @@ class ConversationChat(object):
         :type: str
         """
         
+
         self._avatar_image_url = avatar_image_url
 
     @property
@@ -507,6 +520,7 @@ class ConversationChat(object):
         :type: JourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -530,6 +544,7 @@ class ConversationChat(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -553,6 +568,7 @@ class ConversationChat(object):
         :type: AfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -576,6 +592,7 @@ class ConversationChat(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

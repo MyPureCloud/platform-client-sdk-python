@@ -103,6 +103,7 @@ class ConversationEventTopicDisconnectReason(object):
         :type: int
         """
         
+
         self._code = code
 
     @property
@@ -126,6 +127,7 @@ class ConversationEventTopicDisconnectReason(object):
         :type: str
         """
         
+
         self._phrase = phrase
 
     def to_dict(self):

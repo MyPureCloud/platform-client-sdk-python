@@ -73,6 +73,10 @@ class CopyAttachmentsRequest(object):
         :type: DomainEntityRef
         """
         
+        if not source_message:
+            raise ValueError("Invalid value for `source_message`, must not be `None`")
+
+
         self._source_message = source_message
 
     @property
@@ -96,6 +100,10 @@ class CopyAttachmentsRequest(object):
         :type: list[Attachment]
         """
         
+        if not attachments:
+            raise ValueError("Invalid value for `attachments`, must not be `None`")
+
+
         self._attachments = attachments
 
     def to_dict(self):

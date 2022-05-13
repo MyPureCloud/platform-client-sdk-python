@@ -79,6 +79,7 @@ class DomainNetworkCommandResponse(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -102,6 +103,7 @@ class DomainNetworkCommandResponse(object):
         :type: str
         """
         
+
         self._command_name = command_name
 
     @property
@@ -125,6 +127,7 @@ class DomainNetworkCommandResponse(object):
         :type: bool
         """
         
+
         self._acknowledged = acknowledged
 
     @property
@@ -148,6 +151,7 @@ class DomainNetworkCommandResponse(object):
         :type: ErrorDetails
         """
         
+
         self._error_info = error_info
 
     def to_dict(self):

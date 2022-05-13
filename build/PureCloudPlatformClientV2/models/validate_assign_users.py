@@ -70,6 +70,10 @@ class ValidateAssignUsers(object):
         :type: list[str]
         """
         
+        if not members_to_assign:
+            raise ValueError("Invalid value for `members_to_assign`, must not be `None`")
+
+
         self._members_to_assign = members_to_assign
 
     def to_dict(self):

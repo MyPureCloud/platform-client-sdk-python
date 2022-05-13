@@ -142,6 +142,7 @@ class AnalyticsConversationSegment(object):
         :type: bool
         """
         
+
         self._audio_muted = audio_muted
 
     @property
@@ -165,6 +166,7 @@ class AnalyticsConversationSegment(object):
         :type: bool
         """
         
+
         self._conference = conference
 
     @property
@@ -188,6 +190,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._destination_conversation_id = destination_conversation_id
 
     @property
@@ -211,6 +214,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._destination_session_id = destination_session_id
 
     @property
@@ -261,6 +265,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -284,6 +289,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._group_id = group_id
 
     @property
@@ -307,6 +313,7 @@ class AnalyticsConversationSegment(object):
         :type: list[int]
         """
         
+
         self._q850_response_codes = q850_response_codes
 
     @property
@@ -330,6 +337,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -353,6 +361,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._requested_language_id = requested_language_id
 
     @property
@@ -376,6 +385,7 @@ class AnalyticsConversationSegment(object):
         :type: list[str]
         """
         
+
         self._requested_routing_skill_ids = requested_routing_skill_ids
 
     @property
@@ -399,6 +409,7 @@ class AnalyticsConversationSegment(object):
         :type: list[str]
         """
         
+
         self._requested_routing_user_ids = requested_routing_user_ids
 
     @property
@@ -422,6 +433,7 @@ class AnalyticsConversationSegment(object):
         :type: datetime
         """
         
+
         self._segment_end = segment_end
 
     @property
@@ -445,6 +457,7 @@ class AnalyticsConversationSegment(object):
         :type: datetime
         """
         
+
         self._segment_start = segment_start
 
     @property
@@ -495,6 +508,7 @@ class AnalyticsConversationSegment(object):
         :type: list[int]
         """
         
+
         self._sip_response_codes = sip_response_codes
 
     @property
@@ -518,6 +532,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._source_conversation_id = source_conversation_id
 
     @property
@@ -541,6 +556,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._source_session_id = source_session_id
 
     @property
@@ -564,6 +580,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -587,6 +604,7 @@ class AnalyticsConversationSegment(object):
         :type: bool
         """
         
+
         self._video_muted = video_muted
 
     @property
@@ -610,6 +628,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._wrap_up_code = wrap_up_code
 
     @property
@@ -633,6 +652,7 @@ class AnalyticsConversationSegment(object):
         :type: str
         """
         
+
         self._wrap_up_note = wrap_up_note
 
     @property
@@ -656,6 +676,7 @@ class AnalyticsConversationSegment(object):
         :type: list[str]
         """
         
+
         self._wrap_up_tags = wrap_up_tags
 
     @property
@@ -679,6 +700,7 @@ class AnalyticsConversationSegment(object):
         :type: list[AnalyticsScoredAgent]
         """
         
+
         self._scored_agents = scored_agents
 
     @property
@@ -702,6 +724,7 @@ class AnalyticsConversationSegment(object):
         :type: list[AnalyticsProperty]
         """
         
+
         self._properties = properties
 
     def to_dict(self):

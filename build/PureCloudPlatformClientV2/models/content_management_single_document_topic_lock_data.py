@@ -76,6 +76,7 @@ class ContentManagementSingleDocumentTopicLockData(object):
         :type: ContentManagementSingleDocumentTopicUserData
         """
         
+
         self._locked_by = locked_by
 
     @property
@@ -99,6 +100,7 @@ class ContentManagementSingleDocumentTopicLockData(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -122,6 +124,7 @@ class ContentManagementSingleDocumentTopicLockData(object):
         :type: datetime
         """
         
+
         self._date_expires = date_expires
 
     def to_dict(self):

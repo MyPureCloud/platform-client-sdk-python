@@ -193,6 +193,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -216,6 +217,10 @@ class Edge(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -239,6 +244,7 @@ class Edge(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -262,6 +268,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -285,6 +292,7 @@ class Edge(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -308,6 +316,7 @@ class Edge(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -331,6 +340,7 @@ class Edge(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -354,6 +364,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -377,6 +388,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -427,6 +439,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -450,6 +463,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -473,6 +487,7 @@ class Edge(object):
         :type: list[EdgeInterface]
         """
         
+
         self._interfaces = interfaces
 
     @property
@@ -496,6 +511,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._make = make
 
     @property
@@ -519,6 +535,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._model = model
 
     @property
@@ -542,6 +559,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._api_version = api_version
 
     @property
@@ -565,6 +583,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._software_version = software_version
 
     @property
@@ -588,6 +607,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._software_version_timestamp = software_version_timestamp
 
     @property
@@ -611,6 +631,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._software_version_platform = software_version_platform
 
     @property
@@ -634,6 +655,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._software_version_configuration = software_version_configuration
 
     @property
@@ -657,6 +679,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._full_software_version = full_software_version
 
     @property
@@ -680,6 +703,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._pairing_id = pairing_id
 
     @property
@@ -703,6 +727,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._fingerprint = fingerprint
 
     @property
@@ -726,6 +751,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._fingerprint_hint = fingerprint_hint
 
     @property
@@ -749,6 +775,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._current_version = current_version
 
     @property
@@ -772,6 +799,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._staged_version = staged_version
 
     @property
@@ -795,6 +823,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._patch = patch
 
     @property
@@ -845,6 +874,7 @@ class Edge(object):
         :type: EdgeGroup
         """
         
+
         self._edge_group = edge_group
 
     @property
@@ -868,6 +898,7 @@ class Edge(object):
         :type: Site
         """
         
+
         self._site = site
 
     @property
@@ -891,6 +922,7 @@ class Edge(object):
         :type: DomainEdgeSoftwareUpdateDto
         """
         
+
         self._software_status = software_status
 
     @property
@@ -941,6 +973,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._serial_number = serial_number
 
     @property
@@ -964,6 +997,7 @@ class Edge(object):
         :type: bool
         """
         
+
         self._physical_edge = physical_edge
 
     @property
@@ -987,6 +1021,7 @@ class Edge(object):
         :type: bool
         """
         
+
         self._managed = managed
 
     @property
@@ -1064,6 +1099,7 @@ class Edge(object):
         :type: int
         """
         
+
         self._conversation_count = conversation_count
 
     @property
@@ -1087,6 +1123,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._proxy = proxy
 
     @property
@@ -1110,6 +1147,7 @@ class Edge(object):
         :type: bool
         """
         
+
         self._offline_config_called = offline_config_called
 
     @property
@@ -1133,6 +1171,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._os_name = os_name
 
     @property
@@ -1156,6 +1195,7 @@ class Edge(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

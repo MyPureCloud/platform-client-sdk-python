@@ -85,6 +85,7 @@ class UserRoutingStatusErrorInfo(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -108,6 +109,7 @@ class UserRoutingStatusErrorInfo(object):
         :type: int
         """
         
+
         self._status = status
 
     @property
@@ -131,6 +133,7 @@ class UserRoutingStatusErrorInfo(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -154,6 +157,7 @@ class UserRoutingStatusErrorInfo(object):
         :type: str
         """
         
+
         self._user_message = user_message
 
     @property
@@ -177,6 +181,7 @@ class UserRoutingStatusErrorInfo(object):
         :type: str
         """
         
+
         self._user_params_message = user_params_message
 
     @property
@@ -200,6 +205,7 @@ class UserRoutingStatusErrorInfo(object):
         :type: list[UserRoutingStatusUserParam]
         """
         
+
         self._user_params = user_params
 
     def to_dict(self):

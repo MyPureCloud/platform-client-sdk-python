@@ -175,6 +175,7 @@ class Message(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -198,6 +199,7 @@ class Message(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -221,6 +223,7 @@ class Message(object):
         :type: list[Segment]
         """
         
+
         self._segments = segments
 
     @property
@@ -271,6 +274,7 @@ class Message(object):
         :type: str
         """
         
+
         self._recording_id = recording_id
 
     @property
@@ -294,6 +298,7 @@ class Message(object):
         :type: ErrorBody
         """
         
+
         self._error_info = error_info
 
     @property
@@ -344,6 +349,7 @@ class Message(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -367,6 +373,7 @@ class Message(object):
         :type: datetime
         """
         
+
         self._start_alerting_time = start_alerting_time
 
     @property
@@ -390,6 +397,7 @@ class Message(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -413,6 +421,7 @@ class Message(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -436,6 +445,7 @@ class Message(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -459,6 +469,7 @@ class Message(object):
         :type: bool
         """
         
+
         self._authenticated = authenticated
 
     @property
@@ -509,6 +520,7 @@ class Message(object):
         :type: str
         """
         
+
         self._recipient_country = recipient_country
 
     @property
@@ -532,6 +544,7 @@ class Message(object):
         :type: str
         """
         
+
         self._recipient_type = recipient_type
 
     @property
@@ -555,6 +568,7 @@ class Message(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -578,6 +592,7 @@ class Message(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -601,6 +616,7 @@ class Message(object):
         :type: Address
         """
         
+
         self._to_address = to_address
 
     @property
@@ -624,6 +640,7 @@ class Message(object):
         :type: Address
         """
         
+
         self._from_address = from_address
 
     @property
@@ -647,6 +664,7 @@ class Message(object):
         :type: list[MessageDetails]
         """
         
+
         self._messages = messages
 
     @property
@@ -670,6 +688,7 @@ class Message(object):
         :type: JourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -693,6 +712,7 @@ class Message(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -716,6 +736,7 @@ class Message(object):
         :type: AfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -739,6 +760,7 @@ class Message(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     @property
@@ -762,6 +784,7 @@ class Message(object):
         :type: str
         """
         
+
         self._agent_assistant_id = agent_assistant_id
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class LockInfo(object):
         :type: DomainEntityRef
         """
         
+
         self._locked_by = locked_by
 
     @property
@@ -102,6 +103,7 @@ class LockInfo(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -125,6 +127,7 @@ class LockInfo(object):
         :type: datetime
         """
         
+
         self._date_expires = date_expires
 
     @property

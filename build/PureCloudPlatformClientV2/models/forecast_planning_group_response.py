@@ -79,6 +79,7 @@ class ForecastPlanningGroupResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class ForecastPlanningGroupResponse(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -125,6 +127,7 @@ class ForecastPlanningGroupResponse(object):
         :type: list[RoutePathResponse]
         """
         
+
         self._route_paths = route_paths
 
     @property
@@ -148,6 +151,7 @@ class ForecastPlanningGroupResponse(object):
         :type: ForecastServiceGoalTemplateResponse
         """
         
+
         self._service_goal_template = service_goal_template
 
     def to_dict(self):

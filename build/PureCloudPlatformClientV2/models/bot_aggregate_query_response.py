@@ -70,6 +70,7 @@ class BotAggregateQueryResponse(object):
         :type: list[BotAggregateDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

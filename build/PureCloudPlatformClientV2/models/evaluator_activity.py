@@ -100,6 +100,7 @@ class EvaluatorActivity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class EvaluatorActivity(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class EvaluatorActivity(object):
         :type: User
         """
         
+
         self._evaluator = evaluator
 
     @property
@@ -169,6 +172,7 @@ class EvaluatorActivity(object):
         :type: int
         """
         
+
         self._num_evaluations_assigned = num_evaluations_assigned
 
     @property
@@ -192,6 +196,7 @@ class EvaluatorActivity(object):
         :type: int
         """
         
+
         self._num_evaluations_started = num_evaluations_started
 
     @property
@@ -215,6 +220,7 @@ class EvaluatorActivity(object):
         :type: int
         """
         
+
         self._num_evaluations_completed = num_evaluations_completed
 
     @property
@@ -238,6 +244,7 @@ class EvaluatorActivity(object):
         :type: int
         """
         
+
         self._num_calibrations_assigned = num_calibrations_assigned
 
     @property
@@ -261,6 +268,7 @@ class EvaluatorActivity(object):
         :type: int
         """
         
+
         self._num_calibrations_started = num_calibrations_started
 
     @property
@@ -284,6 +292,7 @@ class EvaluatorActivity(object):
         :type: int
         """
         
+
         self._num_calibrations_completed = num_calibrations_completed
 
     @property
@@ -307,6 +316,7 @@ class EvaluatorActivity(object):
         :type: int
         """
         
+
         self._num_evaluations_without_view_permission = num_evaluations_without_view_permission
 
     @property
@@ -330,6 +340,7 @@ class EvaluatorActivity(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

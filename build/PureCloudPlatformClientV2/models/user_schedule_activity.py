@@ -88,6 +88,7 @@ class UserScheduleActivity(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -111,6 +112,7 @@ class UserScheduleActivity(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -134,6 +136,7 @@ class UserScheduleActivity(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -157,6 +160,7 @@ class UserScheduleActivity(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -180,6 +184,7 @@ class UserScheduleActivity(object):
         :type: bool
         """
         
+
         self._counts_as_paid_time = counts_as_paid_time
 
     @property
@@ -203,6 +208,7 @@ class UserScheduleActivity(object):
         :type: bool
         """
         
+
         self._is_dst_fallback = is_dst_fallback
 
     @property
@@ -226,6 +232,7 @@ class UserScheduleActivity(object):
         :type: str
         """
         
+
         self._time_off_request_id = time_off_request_id
 
     def to_dict(self):

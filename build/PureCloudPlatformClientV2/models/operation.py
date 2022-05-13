@@ -97,6 +97,7 @@ class Operation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class Operation(object):
         :type: bool
         """
         
+
         self._complete = complete
 
     @property
@@ -143,6 +145,7 @@ class Operation(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -166,6 +169,7 @@ class Operation(object):
         :type: DomainEntityRef
         """
         
+
         self._client = client
 
     @property
@@ -189,6 +193,7 @@ class Operation(object):
         :type: str
         """
         
+
         self._error_message = error_message
 
     @property
@@ -212,6 +217,7 @@ class Operation(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -235,6 +241,7 @@ class Operation(object):
         :type: list[Detail]
         """
         
+
         self._error_details = error_details
 
     @property
@@ -258,6 +265,7 @@ class Operation(object):
         :type: dict(str, str)
         """
         
+
         self._error_message_params = error_message_params
 
     @property

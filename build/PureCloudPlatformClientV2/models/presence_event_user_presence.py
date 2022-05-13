@@ -82,6 +82,7 @@ class PresenceEventUserPresence(object):
         :type: str
         """
         
+
         self._source = source
 
     @property
@@ -105,6 +106,7 @@ class PresenceEventUserPresence(object):
         :type: PresenceEventOrganizationPresence
         """
         
+
         self._presence_definition = presence_definition
 
     @property
@@ -128,6 +130,7 @@ class PresenceEventUserPresence(object):
         :type: bool
         """
         
+
         self._primary = primary
 
     @property
@@ -151,6 +154,7 @@ class PresenceEventUserPresence(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -174,6 +178,7 @@ class PresenceEventUserPresence(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

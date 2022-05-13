@@ -700,7 +700,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ScriptsApi()
 upload_id = 'upload_id_example' # str | Upload ID
-long_poll = false # bool | Enable longPolling endpoint (optional) (default to false)
+long_poll = False # bool | Enable longPolling endpoint (optional) (default to False)
 
 try:
     # Get the upload status of an imported script
@@ -716,7 +716,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **upload_id** | **str**| Upload ID |  |
-| **long_poll** | **bool**| Enable longPolling endpoint | [optional] [default to false] |
+| **long_poll** | **bool**| Enable longPolling endpoint | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type

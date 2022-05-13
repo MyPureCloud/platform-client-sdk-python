@@ -70,6 +70,7 @@ class ParsedCertificate(object):
         :type: list[CertificateDetails]
         """
         
+
         self._certificate_details = certificate_details
 
     def to_dict(self):

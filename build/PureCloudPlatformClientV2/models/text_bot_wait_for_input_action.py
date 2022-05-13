@@ -70,6 +70,10 @@ class TextBotWaitForInputAction(object):
         :type: TextBotModeConstraints
         """
         
+        if not mode_constraints:
+            raise ValueError("Invalid value for `mode_constraints`, must not be `None`")
+
+
         self._mode_constraints = mode_constraints
 
     def to_dict(self):

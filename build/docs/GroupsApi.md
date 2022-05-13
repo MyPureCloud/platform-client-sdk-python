@@ -76,7 +76,7 @@ void (empty response body)
 
 <a name="delete_group_members"></a>
 
-## [**Empty**](Empty.html) delete_group_members(group_id, ids)
+## Empty** delete_group_members(group_id, ids)
 
 
 
@@ -86,7 +86,7 @@ Remove members
 
 Wraps DELETE /api/v2/groups/{groupId}/members 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -124,7 +124,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="get_fieldconfig"></a>
 
@@ -138,7 +138,7 @@ Fetch field config for an entity type
 
 Wraps GET /api/v2/fieldconfig 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -188,7 +188,7 @@ Get group
 
 Wraps GET /api/v2/groups/{groupId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -238,7 +238,7 @@ Get all individuals associated with the group
 
 Wraps GET /api/v2/groups/{groupId}/individuals 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -288,7 +288,7 @@ Get group members, includes individuals, owners, and dynamically included people
 
 Wraps GET /api/v2/groups/{groupId}/members 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -307,7 +307,7 @@ api_instance = PureCloudPlatformClientV2.GroupsApi()
 group_id = 'group_id_example' # str | Group ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
@@ -326,7 +326,7 @@ except ApiException as e:
 | **group_id** | **str**| Group ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
@@ -344,9 +344,11 @@ Get group profile
 
 This api is deprecated. Use /api/v2/groups instead
 
+
+
 Wraps GET /api/v2/groups/{groupId}/profile 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -379,7 +381,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| groupId |  |
-| **fields** | **str**| Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList | [optional]  |
+| **fields** | **str**| Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type&#x3D;group and using the key for the elements returned by the fieldList | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -398,7 +400,7 @@ Get a group list
 
 Wraps GET /api/v2/groups 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -418,7 +420,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 id = ['id_example'] # list[str] | id (optional)
 jabber_id = ['jabber_id_example'] # list[str] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 
 try:
     # Get a group list
@@ -437,7 +439,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -456,7 +458,7 @@ Search groups using the q64 value returned from a previous search
 
 Wraps GET /api/v2/groups/search 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -506,9 +508,11 @@ Get group profile listing
 
 This api is deprecated. Use /api/v2/groups instead.
 
+
+
 Wraps GET /api/v2/profiles/groups 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -527,7 +531,7 @@ api_instance = PureCloudPlatformClientV2.GroupsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 id = ['id_example'] # list[str] | id (optional)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 
 try:
     # Get group profile listing
@@ -545,7 +549,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -554,7 +558,7 @@ except ApiException as e:
 
 <a name="post_group_members"></a>
 
-## [**Empty**](Empty.html) post_group_members(group_id, body)
+## Empty** post_group_members(group_id, body)
 
 
 
@@ -564,7 +568,7 @@ Add members
 
 Wraps POST /api/v2/groups/{groupId}/members 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -602,7 +606,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="post_groups"></a>
 
@@ -667,7 +671,7 @@ Search groups
 
 Wraps POST /api/v2/groups/search 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

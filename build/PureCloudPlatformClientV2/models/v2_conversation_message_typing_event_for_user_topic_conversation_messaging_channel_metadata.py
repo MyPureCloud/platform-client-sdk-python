@@ -70,6 +70,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMe
         :type: dict(str, str)
         """
         
+
         self._custom_attributes = custom_attributes
 
     def to_dict(self):

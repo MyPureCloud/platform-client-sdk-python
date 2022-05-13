@@ -496,6 +496,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._media_types = media_types
 
     @property
@@ -519,6 +520,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._queue_ids = queue_ids
 
     @property
@@ -542,6 +544,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._skill_ids = skill_ids
 
     @property
@@ -565,6 +568,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._skill_groups = skill_groups
 
     @property
@@ -588,6 +592,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._language_ids = language_ids
 
     @property
@@ -611,6 +616,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._language_groups = language_groups
 
     @property
@@ -634,6 +640,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._directions = directions
 
     @property
@@ -657,6 +664,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._originating_directions = originating_directions
 
     @property
@@ -680,6 +688,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._wrap_up_codes = wrap_up_codes
 
     @property
@@ -703,6 +712,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._dnis_list = dnis_list
 
     @property
@@ -726,6 +736,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._session_dnis_list = session_dnis_list
 
     @property
@@ -749,6 +760,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._filter_queues_by_user_ids = filter_queues_by_user_ids
 
     @property
@@ -772,6 +784,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._filter_users_by_queue_ids = filter_users_by_queue_ids
 
     @property
@@ -795,6 +808,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._user_ids = user_ids
 
     @property
@@ -818,6 +832,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._management_unit_ids = management_unit_ids
 
     @property
@@ -841,6 +856,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._address_tos = address_tos
 
     @property
@@ -864,6 +880,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._address_froms = address_froms
 
     @property
@@ -887,6 +904,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._outbound_campaign_ids = outbound_campaign_ids
 
     @property
@@ -910,6 +928,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._outbound_contact_list_ids = outbound_contact_list_ids
 
     @property
@@ -933,6 +952,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._contact_ids = contact_ids
 
     @property
@@ -956,6 +976,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._external_contact_ids = external_contact_ids
 
     @property
@@ -979,6 +1000,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._external_org_ids = external_org_ids
 
     @property
@@ -1002,6 +1024,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._ani_list = ani_list
 
     @property
@@ -1025,6 +1048,7 @@ class ViewFilter(object):
         :type: list[NumericRange]
         """
         
+
         self._durations_milliseconds = durations_milliseconds
 
     @property
@@ -1048,6 +1072,7 @@ class ViewFilter(object):
         :type: list[NumericRange]
         """
         
+
         self._acd_durations_milliseconds = acd_durations_milliseconds
 
     @property
@@ -1071,6 +1096,7 @@ class ViewFilter(object):
         :type: list[NumericRange]
         """
         
+
         self._talk_durations_milliseconds = talk_durations_milliseconds
 
     @property
@@ -1094,6 +1120,7 @@ class ViewFilter(object):
         :type: list[NumericRange]
         """
         
+
         self._acw_durations_milliseconds = acw_durations_milliseconds
 
     @property
@@ -1117,6 +1144,7 @@ class ViewFilter(object):
         :type: list[NumericRange]
         """
         
+
         self._handle_durations_milliseconds = handle_durations_milliseconds
 
     @property
@@ -1140,6 +1168,7 @@ class ViewFilter(object):
         :type: list[NumericRange]
         """
         
+
         self._hold_durations_milliseconds = hold_durations_milliseconds
 
     @property
@@ -1163,6 +1192,7 @@ class ViewFilter(object):
         :type: list[NumericRange]
         """
         
+
         self._abandon_durations_milliseconds = abandon_durations_milliseconds
 
     @property
@@ -1186,6 +1216,7 @@ class ViewFilter(object):
         :type: NumericRange
         """
         
+
         self._evaluation_score = evaluation_score
 
     @property
@@ -1209,6 +1240,7 @@ class ViewFilter(object):
         :type: NumericRange
         """
         
+
         self._evaluation_critical_score = evaluation_critical_score
 
     @property
@@ -1232,6 +1264,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._evaluation_form_ids = evaluation_form_ids
 
     @property
@@ -1255,6 +1288,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._evaluated_agent_ids = evaluated_agent_ids
 
     @property
@@ -1278,6 +1312,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._evaluator_ids = evaluator_ids
 
     @property
@@ -1301,6 +1336,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._transferred = transferred
 
     @property
@@ -1324,6 +1360,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._abandoned = abandoned
 
     @property
@@ -1347,6 +1384,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._answered = answered
 
     @property
@@ -1370,6 +1408,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._message_types = message_types
 
     @property
@@ -1393,6 +1432,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._division_ids = division_ids
 
     @property
@@ -1416,6 +1456,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._survey_form_ids = survey_form_ids
 
     @property
@@ -1439,6 +1480,7 @@ class ViewFilter(object):
         :type: NumericRange
         """
         
+
         self._survey_total_score = survey_total_score
 
     @property
@@ -1462,6 +1504,7 @@ class ViewFilter(object):
         :type: NumericRange
         """
         
+
         self._survey_nps_score = survey_nps_score
 
     @property
@@ -1485,6 +1528,7 @@ class ViewFilter(object):
         :type: NumericRange
         """
         
+
         self._mos = mos
 
     @property
@@ -1508,6 +1552,7 @@ class ViewFilter(object):
         :type: NumericRange
         """
         
+
         self._survey_question_group_score = survey_question_group_score
 
     @property
@@ -1531,6 +1576,7 @@ class ViewFilter(object):
         :type: NumericRange
         """
         
+
         self._survey_promoter_score = survey_promoter_score
 
     @property
@@ -1554,6 +1600,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._survey_form_context_ids = survey_form_context_ids
 
     @property
@@ -1577,6 +1624,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._conversation_ids = conversation_ids
 
     @property
@@ -1600,6 +1648,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._sip_call_ids = sip_call_ids
 
     @property
@@ -1623,6 +1672,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_ended = is_ended
 
     @property
@@ -1646,6 +1696,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_surveyed = is_surveyed
 
     @property
@@ -1669,6 +1720,7 @@ class ViewFilter(object):
         :type: list[NumericRange]
         """
         
+
         self._survey_scores = survey_scores
 
     @property
@@ -1692,6 +1744,7 @@ class ViewFilter(object):
         :type: list[NumericRange]
         """
         
+
         self._promoter_scores = promoter_scores
 
     @property
@@ -1715,6 +1768,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_campaign = is_campaign
 
     @property
@@ -1738,6 +1792,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._survey_statuses = survey_statuses
 
     @property
@@ -1761,6 +1816,7 @@ class ViewFilter(object):
         :type: ConversationProperties
         """
         
+
         self._conversation_properties = conversation_properties
 
     @property
@@ -1784,6 +1840,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_blind_transferred = is_blind_transferred
 
     @property
@@ -1807,6 +1864,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_consulted = is_consulted
 
     @property
@@ -1830,6 +1888,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_consult_transferred = is_consult_transferred
 
     @property
@@ -1853,6 +1912,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._remote_participants = remote_participants
 
     @property
@@ -1876,6 +1936,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_ids = flow_ids
 
     @property
@@ -1899,6 +1960,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_outcome_ids = flow_outcome_ids
 
     @property
@@ -1922,6 +1984,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_outcome_values = flow_outcome_values
 
     @property
@@ -1945,6 +2008,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_destination_types = flow_destination_types
 
     @property
@@ -1968,6 +2032,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_disconnect_reasons = flow_disconnect_reasons
 
     @property
@@ -1991,6 +2056,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_types = flow_types
 
     @property
@@ -2014,6 +2080,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_entry_types = flow_entry_types
 
     @property
@@ -2037,6 +2104,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_entry_reasons = flow_entry_reasons
 
     @property
@@ -2060,6 +2128,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_versions = flow_versions
 
     @property
@@ -2083,6 +2152,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._group_ids = group_ids
 
     @property
@@ -2106,6 +2176,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._has_journey_customer_id = has_journey_customer_id
 
     @property
@@ -2129,6 +2200,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._has_journey_action_map_id = has_journey_action_map_id
 
     @property
@@ -2152,6 +2224,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._has_journey_visit_id = has_journey_visit_id
 
     @property
@@ -2175,6 +2248,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._has_media = has_media
 
     @property
@@ -2198,6 +2272,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._role_ids = role_ids
 
     @property
@@ -2221,6 +2296,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._reports_tos = reports_tos
 
     @property
@@ -2244,6 +2320,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._location_ids = location_ids
 
     @property
@@ -2267,6 +2344,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_out_types = flow_out_types
 
     @property
@@ -2290,6 +2368,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._provider_list = provider_list
 
     @property
@@ -2313,6 +2392,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._callback_number_list = callback_number_list
 
     @property
@@ -2336,6 +2416,7 @@ class ViewFilter(object):
         :type: str
         """
         
+
         self._callback_interval = callback_interval
 
     @property
@@ -2359,6 +2440,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._used_routing_types = used_routing_types
 
     @property
@@ -2382,6 +2464,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._requested_routing_types = requested_routing_types
 
     @property
@@ -2405,6 +2488,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._has_agent_assist_id = has_agent_assist_id
 
     @property
@@ -2428,6 +2512,7 @@ class ViewFilter(object):
         :type: list[Transcripts]
         """
         
+
         self._transcripts = transcripts
 
     @property
@@ -2451,6 +2536,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._transcript_languages = transcript_languages
 
     @property
@@ -2474,6 +2560,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._participant_purposes = participant_purposes
 
     @property
@@ -2497,6 +2584,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._show_first_queue = show_first_queue
 
     @property
@@ -2520,6 +2608,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._team_ids = team_ids
 
     @property
@@ -2543,6 +2632,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._filter_users_by_team_ids = filter_users_by_team_ids
 
     @property
@@ -2566,6 +2656,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_action_map_ids = journey_action_map_ids
 
     @property
@@ -2589,6 +2680,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_outcome_ids = journey_outcome_ids
 
     @property
@@ -2612,6 +2704,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_segment_ids = journey_segment_ids
 
     @property
@@ -2635,6 +2728,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_action_map_types = journey_action_map_types
 
     @property
@@ -2658,6 +2752,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._development_role_list = development_role_list
 
     @property
@@ -2681,6 +2776,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._development_type_list = development_type_list
 
     @property
@@ -2704,6 +2800,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._development_status_list = development_status_list
 
     @property
@@ -2727,6 +2824,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._development_module_ids = development_module_ids
 
     @property
@@ -2750,6 +2848,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._development_activity_overdue = development_activity_overdue
 
     @property
@@ -2773,6 +2872,7 @@ class ViewFilter(object):
         :type: NumericRange
         """
         
+
         self._customer_sentiment_score = customer_sentiment_score
 
     @property
@@ -2796,6 +2896,7 @@ class ViewFilter(object):
         :type: NumericRange
         """
         
+
         self._customer_sentiment_trend = customer_sentiment_trend
 
     @property
@@ -2819,6 +2920,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_transfer_targets = flow_transfer_targets
 
     @property
@@ -2842,6 +2944,7 @@ class ViewFilter(object):
         :type: str
         """
         
+
         self._development_name = development_name
 
     @property
@@ -2865,6 +2968,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._topic_ids = topic_ids
 
     @property
@@ -2888,6 +2992,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._external_tags = external_tags
 
     @property
@@ -2911,6 +3016,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_not_responding = is_not_responding
 
     @property
@@ -2934,6 +3040,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_authenticated = is_authenticated
 
     @property
@@ -2957,6 +3064,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_ids = bot_ids
 
     @property
@@ -2980,6 +3088,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_versions = bot_versions
 
     @property
@@ -3003,6 +3112,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_message_types = bot_message_types
 
     @property
@@ -3026,6 +3136,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_provider_list = bot_provider_list
 
     @property
@@ -3049,6 +3160,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_product_list = bot_product_list
 
     @property
@@ -3072,6 +3184,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_recognition_failure_reason_list = bot_recognition_failure_reason_list
 
     @property
@@ -3095,6 +3208,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_intent_list = bot_intent_list
 
     @property
@@ -3118,6 +3232,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_final_intent_list = bot_final_intent_list
 
     @property
@@ -3141,6 +3256,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_slot_list = bot_slot_list
 
     @property
@@ -3164,6 +3280,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._bot_result_list = bot_result_list
 
     @property
@@ -3187,6 +3304,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._blocked_reasons = blocked_reasons
 
     @property
@@ -3210,6 +3328,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_recorded = is_recorded
 
     @property
@@ -3233,6 +3352,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._has_evaluation = has_evaluation
 
     @property
@@ -3256,6 +3376,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._has_scored_evaluation = has_scored_evaluation
 
     @property
@@ -3279,6 +3400,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._email_delivery_status_list = email_delivery_status_list
 
     @property
@@ -3302,6 +3424,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_agent_owned_callback = is_agent_owned_callback
 
     @property
@@ -3325,6 +3448,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._agent_callback_owner_ids = agent_callback_owner_ids
 
     @property
@@ -3348,6 +3472,7 @@ class ViewFilter(object):
         :type: list[TranscriptTopics]
         """
         
+
         self._transcript_topics = transcript_topics
 
     @property
@@ -3371,6 +3496,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_frequency_cap_reasons = journey_frequency_cap_reasons
 
     @property
@@ -3394,6 +3520,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_blocking_action_map_ids = journey_blocking_action_map_ids
 
     @property
@@ -3417,6 +3544,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_action_target_ids = journey_action_target_ids
 
     @property
@@ -3440,6 +3568,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_blocking_schedule_group_ids = journey_blocking_schedule_group_ids
 
     @property
@@ -3463,6 +3592,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_blocking_emergency_schedule_group_ids = journey_blocking_emergency_schedule_group_ids
 
     @property
@@ -3486,6 +3616,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_url_equal_conditions = journey_url_equal_conditions
 
     @property
@@ -3509,6 +3640,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_url_not_equal_conditions = journey_url_not_equal_conditions
 
     @property
@@ -3532,6 +3664,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_url_starts_with_conditions = journey_url_starts_with_conditions
 
     @property
@@ -3555,6 +3688,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_url_ends_with_conditions = journey_url_ends_with_conditions
 
     @property
@@ -3578,6 +3712,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_url_contains_any_conditions = journey_url_contains_any_conditions
 
     @property
@@ -3601,6 +3736,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_url_not_contains_any_conditions = journey_url_not_contains_any_conditions
 
     @property
@@ -3624,6 +3760,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_url_contains_all_conditions = journey_url_contains_all_conditions
 
     @property
@@ -3647,6 +3784,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._journey_url_not_contains_all_conditions = journey_url_not_contains_all_conditions
 
     @property
@@ -3670,6 +3808,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._flow_milestone_ids = flow_milestone_ids
 
     @property
@@ -3693,6 +3832,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_assessment_passed = is_assessment_passed
 
     @property
@@ -3716,6 +3856,7 @@ class ViewFilter(object):
         :type: list[str]
         """
         
+
         self._conversation_initiators = conversation_initiators
 
     @property
@@ -3739,6 +3880,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._has_customer_participated = has_customer_participated
 
     @property
@@ -3762,6 +3904,7 @@ class ViewFilter(object):
         :type: bool
         """
         
+
         self._is_acd_interaction = is_acd_interaction
 
     def to_dict(self):

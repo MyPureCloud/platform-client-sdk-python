@@ -76,6 +76,7 @@ class PatchCallToAction(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -99,6 +100,7 @@ class PatchCallToAction(object):
         :type: str
         """
         
+
         self._url = url
 
     @property

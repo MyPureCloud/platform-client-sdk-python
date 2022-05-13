@@ -70,6 +70,7 @@ class AvailableTimeOffResponse(object):
         :type: list[AvailableTimeOffRange]
         """
         
+
         self._values = values
 
     def to_dict(self):

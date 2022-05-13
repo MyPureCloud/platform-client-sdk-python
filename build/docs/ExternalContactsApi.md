@@ -75,7 +75,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_externalcontacts_contact"></a>
 
-## [**Empty**](Empty.html) delete_externalcontacts_contact(contact_id)
+## Empty** delete_externalcontacts_contact(contact_id)
 
 
 
@@ -122,11 +122,11 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_externalcontacts_contact_note"></a>
 
-## [**Empty**](Empty.html) delete_externalcontacts_contact_note(contact_id, note_id)
+## Empty** delete_externalcontacts_contact_note(contact_id, note_id)
 
 
 
@@ -175,7 +175,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_externalcontacts_contacts_schema"></a>
 
@@ -229,7 +229,7 @@ void (empty response body)
 
 <a name="delete_externalcontacts_organization"></a>
 
-## [**Empty**](Empty.html) delete_externalcontacts_organization(external_organization_id)
+## Empty** delete_externalcontacts_organization(external_organization_id)
 
 
 
@@ -277,11 +277,11 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_externalcontacts_organization_note"></a>
 
-## [**Empty**](Empty.html) delete_externalcontacts_organization_note(external_organization_id, note_id)
+## Empty** delete_externalcontacts_organization_note(external_organization_id, note_id)
 
 
 
@@ -330,7 +330,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_externalcontacts_organization_trustor"></a>
 
@@ -384,7 +384,7 @@ void (empty response body)
 
 <a name="delete_externalcontacts_relationship"></a>
 
-## [**Empty**](Empty.html) delete_externalcontacts_relationship(relationship_id)
+## Empty** delete_externalcontacts_relationship(relationship_id)
 
 
 
@@ -431,7 +431,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="get_externalcontacts_contact"></a>
 
@@ -590,8 +590,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact Id |  |
-| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -648,8 +648,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| Sort order | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
@@ -893,7 +893,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization ID
 expand = 'expand_example' # str | which fields, if any, to expand (externalDataSources) (optional)
-include_trustors = true # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
+include_trustors = True # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
 
 try:
     # Fetch an external organization
@@ -967,8 +967,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| Sort order | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
@@ -1083,8 +1083,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
-| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -1143,8 +1143,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 | **sort_order** | **str**| Sort order | [optional]  |
 {: class="table table-striped"}
@@ -1189,7 +1189,7 @@ q = 'q_example' # str | Search query (optional)
 trustor_id = ['trustor_id_example'] # list[str] | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
-include_trustors = true # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
+include_trustors = True # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
 
 try:
     # Search for external organizations
@@ -1204,8 +1204,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| Search query | [optional]  |
 | **trustor_id** | [**list[str]**](str.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
 | **sort_order** | **str**| Sort order | [optional]  |
@@ -3087,13 +3087,15 @@ except ApiException as e:
 
 <a name="put_externalcontacts_conversation"></a>
 
-##  put_externalcontacts_conversation(body, conversation_id)
+##  put_externalcontacts_conversation(conversation_id, body)
 
 
 
 Associate/disassociate an external contact with a conversation
 
 To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
+
+
 
 Wraps PUT /api/v2/externalcontacts/conversations/{conversationId} 
 
@@ -3114,12 +3116,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
-body = PureCloudPlatformClientV2.ConversationAssociation() # ConversationAssociation | ConversationAssociation
 conversation_id = 'conversation_id_example' # str | Conversation ID
+body = PureCloudPlatformClientV2.ConversationAssociation() # ConversationAssociation | ConversationAssociation
 
 try:
     # Associate/disassociate an external contact with a conversation
-    api_instance.put_externalcontacts_conversation(body, conversation_id)
+    api_instance.put_externalcontacts_conversation(conversation_id, body)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->put_externalcontacts_conversation: %s\n" % e)
 ```
@@ -3129,8 +3131,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation |  |
 | **conversation_id** | **str**| Conversation ID |  |
+| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -76,6 +76,7 @@ class TagQueryRequest(object):
         :type: str
         """
         
+
         self._query = query
 
     @property
@@ -99,6 +100,7 @@ class TagQueryRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -122,6 +124,7 @@ class TagQueryRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     def to_dict(self):

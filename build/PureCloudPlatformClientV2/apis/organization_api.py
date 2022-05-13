@@ -678,7 +678,7 @@ class OrganizationApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size
         :param int page_number: Page number
-        :return: PagedNamespaceListing
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -734,7 +734,7 @@ class OrganizationApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='PagedNamespaceListing',
+                                            response_type='object',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

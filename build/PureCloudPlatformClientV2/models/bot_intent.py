@@ -73,6 +73,10 @@ class BotIntent(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -96,6 +100,7 @@ class BotIntent(object):
         :type: dict(str, BotSlot)
         """
         
+
         self._slots = slots
 
     def to_dict(self):

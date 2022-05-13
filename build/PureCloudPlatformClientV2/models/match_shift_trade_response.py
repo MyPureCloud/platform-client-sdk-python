@@ -76,6 +76,7 @@ class MatchShiftTradeResponse(object):
         :type: ShiftTradeResponse
         """
         
+
         self._trade = trade
 
     @property
@@ -99,6 +100,7 @@ class MatchShiftTradeResponse(object):
         :type: list[ShiftTradeMatchViolation]
         """
         
+
         self._violations = violations
 
     @property
@@ -122,6 +124,7 @@ class MatchShiftTradeResponse(object):
         :type: list[ShiftTradeMatchViolation]
         """
         
+
         self._admin_review_violations = admin_review_violations
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate(object):
         :type: datetime
         """
         
+
         self._download_start_time = download_start_time
 
     @property
@@ -155,6 +157,7 @@ class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate(object):
         :type: datetime
         """
         
+
         self._execute_start_time = execute_start_time
 
     @property
@@ -178,6 +181,7 @@ class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate(object):
         :type: datetime
         """
         
+
         self._execute_stop_time = execute_stop_time
 
     def to_dict(self):

@@ -103,6 +103,7 @@ class FlowAggregateQueryFilter(object):
         :type: list[FlowAggregateQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class FlowAggregateQueryFilter(object):
         :type: list[FlowAggregateQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

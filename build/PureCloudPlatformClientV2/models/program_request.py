@@ -79,6 +79,10 @@ class ProgramRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -102,6 +106,7 @@ class ProgramRequest(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -125,6 +130,7 @@ class ProgramRequest(object):
         :type: list[str]
         """
         
+
         self._topic_ids = topic_ids
 
     @property
@@ -148,6 +154,7 @@ class ProgramRequest(object):
         :type: list[str]
         """
         
+
         self._tags = tags
 
     def to_dict(self):

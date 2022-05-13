@@ -100,6 +100,7 @@ class DialerContact(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class DialerContact(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,10 @@ class DialerContact(object):
         :type: str
         """
         
+        if not contact_list_id:
+            raise ValueError("Invalid value for `contact_list_id`, must not be `None`")
+
+
         self._contact_list_id = contact_list_id
 
     @property
@@ -169,6 +175,10 @@ class DialerContact(object):
         :type: dict(str, object)
         """
         
+        if not data:
+            raise ValueError("Invalid value for `data`, must not be `None`")
+
+
         self._data = data
 
     @property
@@ -192,6 +202,7 @@ class DialerContact(object):
         :type: dict(str, CallRecord)
         """
         
+
         self._call_records = call_records
 
     @property
@@ -215,6 +226,7 @@ class DialerContact(object):
         :type: dict(str, MessageEvaluation)
         """
         
+
         self._latest_sms_evaluations = latest_sms_evaluations
 
     @property
@@ -238,6 +250,7 @@ class DialerContact(object):
         :type: bool
         """
         
+
         self._callable = callable
 
     @property
@@ -261,6 +274,7 @@ class DialerContact(object):
         :type: dict(str, PhoneNumberStatus)
         """
         
+
         self._phone_number_status = phone_number_status
 
     @property
@@ -284,6 +298,7 @@ class DialerContact(object):
         :type: dict(str, ContactColumnTimeZone)
         """
         
+
         self._contact_column_time_zones = contact_column_time_zones
 
     @property
@@ -307,6 +322,7 @@ class DialerContact(object):
         :type: ConfigurationOverrides
         """
         
+
         self._configuration_overrides = configuration_overrides
 
     @property
@@ -330,6 +346,7 @@ class DialerContact(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -48,7 +48,7 @@ class SystemMessageSystemMessage(object):
             'oauth_client_id': 'str',
             'reason': 'str',
             'message': 'str',
-            'data': 'dict(str, SystemMessageObject)'
+            'data': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -94,6 +94,7 @@ class SystemMessageSystemMessage(object):
         :type: str
         """
         
+
         self._channel_id = channel_id
 
     @property
@@ -144,6 +145,7 @@ class SystemMessageSystemMessage(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -167,6 +169,7 @@ class SystemMessageSystemMessage(object):
         :type: str
         """
         
+
         self._organization_id = organization_id
 
     @property
@@ -190,6 +193,7 @@ class SystemMessageSystemMessage(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -213,6 +217,7 @@ class SystemMessageSystemMessage(object):
         :type: str
         """
         
+
         self._oauth_client_id = oauth_client_id
 
     @property
@@ -263,6 +268,7 @@ class SystemMessageSystemMessage(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -272,7 +278,7 @@ class SystemMessageSystemMessage(object):
 
 
         :return: The data of this SystemMessageSystemMessage.
-        :rtype: dict(str, SystemMessageObject)
+        :rtype: dict(str, object)
         """
         return self._data
 
@@ -283,9 +289,10 @@ class SystemMessageSystemMessage(object):
 
 
         :param data: The data of this SystemMessageSystemMessage.
-        :type: dict(str, SystemMessageObject)
+        :type: dict(str, object)
         """
         
+
         self._data = data
 
     def to_dict(self):

@@ -80,7 +80,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 division_id = 'division_id_example' # str | Division ID
-force = false # bool | Force delete this division as well as the grants and objects associated with it (optional) (default to false)
+force = False # bool | Force delete this division as well as the grants and objects associated with it (optional) (default to False)
 
 try:
     # Delete a division.
@@ -95,7 +95,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **force** | **bool**| Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
+| **force** | **bool**| Force delete this division as well as the grants and objects associated with it | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -218,7 +218,7 @@ Returns an authorization division.
 
 Wraps GET /api/v2/authorization/divisions/{divisionId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -235,7 +235,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 division_id = 'division_id_example' # str | Division ID
-object_count = false # bool | Get count of objects in this division, grouped by type (optional) (default to false)
+object_count = False # bool | Get count of objects in this division, grouped by type (optional) (default to False)
 
 try:
     # Returns an authorization division.
@@ -251,7 +251,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **object_count** | **bool**| Get count of objects in this division, grouped by type | [optional] [default to false] |
+| **object_count** | **bool**| Get count of objects in this division, grouped by type | [optional] [default to False]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -267,6 +267,8 @@ except ApiException as e:
 Gets all grants for a given division.
 
 Returns all grants assigned to a given division. Maximum page size is 500.
+
+
 
 Wraps GET /api/v2/authorization/divisions/{divisionId}/grants 
 
@@ -323,9 +325,11 @@ Retrieve a list of all divisions defined for the organization
 
 Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
 
+
+
 Wraps GET /api/v2/authorization/divisions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -347,7 +351,7 @@ sort_by = 'sort_by_example' # str | variable name requested to sort by (optional
 expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
-object_count = false # bool | Include the count of objects contained in the division (optional) (default to false)
+object_count = False # bool | Include the count of objects contained in the division (optional) (default to False)
 id = ['id_example'] # list[str] | Optionally request specific divisions by their IDs (optional)
 name = 'name_example' # str | Search term to filter by division name (optional)
 
@@ -370,7 +374,7 @@ except ApiException as e:
 | **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
-| **object_count** | **bool**| Include the count of objects contained in the division | [optional] [default to false] |
+| **object_count** | **bool**| Include the count of objects contained in the division | [optional] [default to False] |
 | **id** | [**list[str]**](str.html)| Optionally request specific divisions by their IDs | [optional]  |
 | **name** | **str**| Search term to filter by division name | [optional]  |
 {: class="table table-striped"}
@@ -389,9 +393,11 @@ Retrieve the home division for the organization.
 
 Will not include object counts.
 
+
+
 Wraps GET /api/v2/authorization/divisions/home 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -437,7 +443,7 @@ Returns the maximum allowed number of divisions.
 
 Wraps GET /api/v2/authorization/divisions/limit 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -481,9 +487,11 @@ Returns which divisions the current user has the given permission in.
 
 This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
+
+
 Wraps GET /api/v2/authorization/divisionspermitted/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -535,7 +543,7 @@ Returns which divisions the current user has the given permission in.
 
 Wraps GET /api/v2/authorization/divisionspermitted/paged/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -587,9 +595,11 @@ Returns which divisions the specified user has the given permission in.
 
 This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
+
+
 Wraps GET /api/v2/authorization/divisionspermitted/paged/{subjectId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -643,9 +653,11 @@ Get all permissions.
 
 Retrieve a list of all permission defined in the system.
 
+
+
 Wraps GET /api/v2/authorization/permissions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -699,9 +711,11 @@ Get the list of enabled products
 
 Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
 
+
+
 Wraps GET /api/v2/authorization/products 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -744,6 +758,8 @@ This endpoint does not need any parameters.
 Get a single organization role.
 
 Get the organization role specified by its ID.
+
+
 
 Wraps GET /api/v2/authorization/roles/{roleId} 
 
@@ -798,6 +814,8 @@ Get an org role to default role comparison
 
 Compares any organization role to a default role id and show differences
 
+
+
 Wraps GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} 
 
 Requires ANY permissions: 
@@ -850,6 +868,8 @@ except ApiException as e:
 Get the subjects' granted divisions in the specified role.
 
 Includes the divisions for which the subject has a grant.
+
+
 
 Wraps GET /api/v2/authorization/roles/{roleId}/subjectgrants 
 
@@ -914,9 +934,11 @@ Get a list of the users in a specified role.
 
 Get an array of the UUIDs of the users in the specified role.
 
+
+
 Wraps GET /api/v2/authorization/roles/{roleId}/users 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -996,7 +1018,7 @@ previous_page = 'previous_page_example' # str | Previous page token (optional)
 name = 'name_example' # str |  (optional)
 permission = ['permission_example'] # list[str] |  (optional)
 default_role_id = ['default_role_id_example'] # list[str] |  (optional)
-user_count = true # bool |  (optional) (default to true)
+user_count = True # bool |  (optional) (default to True)
 id = ['id_example'] # list[str] | id (optional)
 
 try:
@@ -1021,7 +1043,7 @@ except ApiException as e:
 | **name** | **str**|  | [optional]  |
 | **permission** | [**list[str]**](str.html)|  | [optional]  |
 | **default_role_id** | [**list[str]**](str.html)|  | [optional]  |
-| **user_count** | **bool**|  | [optional] [default to true] |
+| **user_count** | **bool**|  | [optional] [default to True] |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 {: class="table table-striped"}
 
@@ -1092,7 +1114,7 @@ Returns a listing of roles and permissions for the currently authenticated user.
 
 Wraps GET /api/v2/authorization/subjects/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1128,7 +1150,7 @@ This endpoint does not need any parameters.
 
 <a name="get_authorization_subjects_rolecounts"></a>
 
-## [**dict(str, object)**](dict.html) get_authorization_subjects_rolecounts(id=id)
+## dict(str, object)** get_authorization_subjects_rolecounts(id=id)
 
 
 
@@ -1175,7 +1197,7 @@ except ApiException as e:
 
 ### Return type
 
-[**dict(str, object)**](dict.html)
+**dict(str, object)**
 
 <a name="get_user_roles"></a>
 
@@ -1238,6 +1260,8 @@ Patch Organization Role for needsUpdate Field
 
 Patch Organization Role for needsUpdate Field
 
+
+
 Wraps PATCH /api/v2/authorization/roles/{roleId} 
 
 Requires ANY permissions: 
@@ -1291,9 +1315,11 @@ Assign a list of objects to a division
 
 Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
 
+
+
 Wraps POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1311,7 +1337,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 division_id = 'division_id_example' # str | Division ID
 object_type = 'object_type_example' # str | The type of the objects. Must be one of the valid object types
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Object Id List
+body = ['body_example'] # list[str] | Object Id List
 
 try:
     # Assign a list of objects to a division
@@ -1327,7 +1353,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
 | **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
-| **body** | **list[str]**| Object Id List |  |
+| **body** | [**list[str]**](str.html)| Object Id List |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1470,7 +1496,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 role_id = 'role_id_example' # str | Role ID
 body = PureCloudPlatformClientV2.SubjectDivisions() # SubjectDivisions | Subjects and Divisions
-subject_type = 'PC_USER' # str | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to PC_USER)
+subject_type = ''PC_USER'' # str | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to 'PC_USER')
 
 try:
     # Bulk-grant subjects and divisions with an organization role.
@@ -1486,7 +1512,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
 | **body** | [**SubjectDivisions**](SubjectDivisions.html)| Subjects and Divisions |  |
-| **subject_type** | **str**| what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1502,6 +1528,8 @@ void (empty response body)
 Get an unsaved org role to default role comparison
 
 Allows users to compare their existing roles in an unsaved state to its default role
+
+
 
 Wraps POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} 
 
@@ -1609,6 +1637,8 @@ Restores all default roles
 
 This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
 
+
+
 Wraps POST /api/v2/authorization/roles/default 
 
 Requires ANY permissions: 
@@ -1628,7 +1658,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
-force = false # bool | Restore default roles (optional) (default to false)
+force = False # bool | Restore default roles (optional) (default to False)
 
 try:
     # Restores all default roles
@@ -1643,7 +1673,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **force** | **bool**| Restore default roles | [optional] [default to false] |
+| **force** | **bool**| Restore default roles | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1681,7 +1711,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
 body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Pairs of role and division IDs
-subject_type = 'PC_USER' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to PC_USER)
+subject_type = ''PC_USER'' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to 'PC_USER')
 
 try:
     # Bulk-grant roles and divisions to a subject.
@@ -1697,7 +1727,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
-| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1766,6 +1796,8 @@ Replace subject's roles and divisions with the exact list supplied in the reques
 
 This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
 
+
+
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkreplace 
 
 Requires ALL permissions: 
@@ -1788,7 +1820,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
 body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Pairs of role and division IDs
-subject_type = 'PC_USER' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to PC_USER)
+subject_type = ''PC_USER'' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to 'PC_USER')
 
 try:
     # Replace subject's roles and divisions with the exact list supplied in the request.
@@ -1804,7 +1836,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
-| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1843,7 +1875,7 @@ api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
 division_id = 'division_id_example' # str | the id of the division to which to make the grant
 role_id = 'role_id_example' # str | the id of the role to grant
-subject_type = 'PC_USER' # str | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (optional) (default to PC_USER)
+subject_type = ''PC_USER'' # str | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (optional) (default to 'PC_USER')
 
 try:
     # Make a grant of a role in a division
@@ -1860,7 +1892,7 @@ except ApiException as e:
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **division_id** | **str**| the id of the division to which to make the grant |  |
 | **role_id** | **str**| the id of the role to grant |  |
-| **subject_type** | **str**| what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to &#39;PC_USER&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1929,6 +1961,8 @@ except ApiException as e:
 Update an organization role.
 
 Update
+
+
 
 Wraps PUT /api/v2/authorization/roles/{roleId} 
 
@@ -2003,7 +2037,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 role_id = 'role_id_example' # str | Role ID
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | List of user IDs
+body = ['body_example'] # list[str] | List of user IDs
 
 try:
     # Sets the users for the role
@@ -2019,7 +2053,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
-| **body** | **list[str]**| List of user IDs |  |
+| **body** | [**list[str]**](str.html)| List of user IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2056,7 +2090,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 role_id = 'role_id_example' # str | Role ID
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | List of user IDs
+body = ['body_example'] # list[str] | List of user IDs
 
 try:
     # Removes the users from the role
@@ -2072,7 +2106,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
-| **body** | **list[str]**| List of user IDs |  |
+| **body** | [**list[str]**](str.html)| List of user IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2160,7 +2194,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 user_id = 'user_id_example' # str | User ID
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | List of roles
+body = ['body_example'] # list[str] | List of roles
 
 try:
     # Sets the user's roles
@@ -2176,7 +2210,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | **list[str]**| List of roles |  |
+| **body** | [**list[str]**](str.html)| List of roles |  |
 {: class="table table-striped"}
 
 ### Return type

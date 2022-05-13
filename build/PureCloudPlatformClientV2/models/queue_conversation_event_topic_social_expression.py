@@ -148,6 +148,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -171,6 +172,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: str
         """
         
+
         self._social_media_id = social_media_id
 
     @property
@@ -194,6 +196,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: str
         """
         
+
         self._social_media_hub = social_media_hub
 
     @property
@@ -217,6 +220,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: str
         """
         
+
         self._social_user_name = social_user_name
 
     @property
@@ -240,6 +244,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: str
         """
         
+
         self._preview_text = preview_text
 
     @property
@@ -263,6 +268,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: str
         """
         
+
         self._recording_id = recording_id
 
     @property
@@ -286,6 +292,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -309,6 +316,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -332,6 +340,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -355,6 +364,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -405,6 +415,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -428,6 +439,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -451,6 +463,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -474,6 +487,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: QueueConversationEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -497,6 +511,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: QueueConversationEventTopicAfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -520,6 +535,7 @@ class QueueConversationEventTopicSocialExpression(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

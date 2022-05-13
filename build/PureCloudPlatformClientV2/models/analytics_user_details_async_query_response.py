@@ -76,6 +76,7 @@ class AnalyticsUserDetailsAsyncQueryResponse(object):
         :type: list[AnalyticsUserDetail]
         """
         
+
         self._user_details = user_details
 
     @property
@@ -99,6 +100,7 @@ class AnalyticsUserDetailsAsyncQueryResponse(object):
         :type: str
         """
         
+
         self._cursor = cursor
 
     @property
@@ -122,6 +124,7 @@ class AnalyticsUserDetailsAsyncQueryResponse(object):
         :type: datetime
         """
         
+
         self._data_availability_date = data_availability_date
 
     def to_dict(self):

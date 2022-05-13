@@ -106,6 +106,7 @@ class ScimMetadata(object):
         :type: datetime
         """
         
+
         self._last_modified = last_modified
 
     @property
@@ -129,6 +130,7 @@ class ScimMetadata(object):
         :type: str
         """
         
+
         self._location = location
 
     @property
@@ -152,6 +154,7 @@ class ScimMetadata(object):
         :type: str
         """
         
+
         self._version = version
 
     def to_dict(self):

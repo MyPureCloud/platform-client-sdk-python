@@ -76,6 +76,7 @@ class EdgeMetricsTopicEdgeMetricSubsystem(object):
         :type: str
         """
         
+
         self._process_name = process_name
 
     @property
@@ -99,6 +100,7 @@ class EdgeMetricsTopicEdgeMetricSubsystem(object):
         :type: int
         """
         
+
         self._delay_ms = delay_ms
 
     @property
@@ -122,6 +124,7 @@ class EdgeMetricsTopicEdgeMetricSubsystem(object):
         :type: EdgeMetricsTopicEdgeMetricSubsystemMedia
         """
         
+
         self._media_subsystem = media_subsystem
 
     def to_dict(self):

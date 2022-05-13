@@ -76,6 +76,7 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
         :type: str
         """
         
+
         self._column_name = column_name
 
     @property
@@ -99,6 +100,7 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -122,6 +124,7 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
         :type: str
         """
         
+
         self._callable_time_column = callable_time_column
 
     def to_dict(self):

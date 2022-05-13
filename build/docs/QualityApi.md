@@ -333,6 +333,8 @@ Gets a list of Agent Activities
 
 Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
 
+
+
 Wraps GET /api/v2/quality/agents/activity 
 
 Requires ANY permissions: 
@@ -744,6 +746,8 @@ Queries Evaluations and returns a paged list
 
 Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
 
+
+
 Wraps GET /api/v2/quality/evaluations/query 
 
 Requires ANY permissions: 
@@ -776,9 +780,9 @@ queue_id = 'queue_id_example' # str | queue id (optional)
 start_time = 'start_time_example' # str | start time of the evaluation query (optional)
 end_time = 'end_time_example' # str | end time of the evaluation query (optional)
 evaluation_state = ['evaluation_state_example'] # list[str] |  (optional)
-is_released = true # bool | the evaluation has been released (optional)
-agent_has_read = true # bool | agent has the evaluation (optional)
-expand_answer_total_scores = true # bool | get the total scores for evaluations (optional)
+is_released = True # bool | the evaluation has been released (optional)
+agent_has_read = True # bool | agent has the evaluation (optional)
+expand_answer_total_scores = True # bool | get the total scores for evaluations (optional)
 maximum = 56 # int | maximum (optional)
 sort_order = 'sort_order_example' # str | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending' (optional)
 
@@ -1144,7 +1148,7 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 form_id = 'form_id_example' # str | Form ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 
 try:
     # Gets all the revisions for a specific evaluation.
@@ -1162,7 +1166,7 @@ except ApiException as e:
 | **form_id** | **str**| Form ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1537,7 +1541,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
 context_id = ['context_id_example'] # list[str] | A comma-delimited list of valid survey form context ids
-published = true # bool | If true, the latest published version will be included. If false, only the unpublished version will be included. (optional) (default to true)
+published = True # bool | If true, the latest published version will be included. If false, only the unpublished version will be included. (optional) (default to True)
 
 try:
     # Retrieve a list of the latest form versions by context ids
@@ -1553,7 +1557,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **context_id** | [**list[str]**](str.html)| A comma-delimited list of valid survey form context ids |  |
-| **published** | **bool**| If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to true] |
+| **published** | **bool**| If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1643,7 +1647,7 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
-only_latest_per_context = false # bool | onlyLatestPerContext (optional) (default to false)
+only_latest_per_context = False # bool | onlyLatestPerContext (optional) (default to False)
 
 try:
     # Get the published evaluation forms.
@@ -1661,7 +1665,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
-| **only_latest_per_context** | **bool**| onlyLatestPerContext | [optional] [default to false] |
+| **only_latest_per_context** | **bool**| onlyLatestPerContext | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1751,7 +1755,7 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
-only_latest_per_context = false # bool | onlyLatestPerContext (optional) (default to false)
+only_latest_per_context = False # bool | onlyLatestPerContext (optional) (default to False)
 
 try:
     # Get the published evaluation forms.
@@ -1769,7 +1773,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
-| **only_latest_per_context** | **bool**| onlyLatestPerContext | [optional] [default to false] |
+| **only_latest_per_context** | **bool**| onlyLatestPerContext | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1859,7 +1863,7 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
-only_latest_enabled_per_context = false # bool | onlyLatestEnabledPerContext (optional) (default to false)
+only_latest_enabled_per_context = False # bool | onlyLatestEnabledPerContext (optional) (default to False)
 
 try:
     # Get the published survey forms.
@@ -1877,7 +1881,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
-| **only_latest_enabled_per_context** | **bool**| onlyLatestEnabledPerContext | [optional] [default to false] |
+| **only_latest_enabled_per_context** | **bool**| onlyLatestEnabledPerContext | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1947,7 +1951,7 @@ Get a survey as an end-customer, for the purposes of scoring it.
 
 Wraps GET /api/v2/quality/surveys/scorable 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2308,7 +2312,7 @@ Query for evaluation aggregates for the current user
 
 Wraps POST /api/v2/quality/evaluations/aggregates/query/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2358,7 +2362,7 @@ Score evaluation
 
 Wraps POST /api/v2/quality/evaluations/scoring 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2714,7 +2718,7 @@ Score survey
 
 Wraps POST /api/v2/quality/surveys/scoring 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2814,6 +2818,8 @@ except ApiException as e:
 Update an evaluation
 
 The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
+
+
 
 Wraps PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} 
 
@@ -3025,7 +3031,7 @@ except ApiException as e:
 
 <a name="put_quality_surveys_scorable"></a>
 
-## [**ScorableSurvey**](ScorableSurvey.html) put_quality_surveys_scorable(body, customer_survey_url)
+## [**ScorableSurvey**](ScorableSurvey.html) put_quality_surveys_scorable(customer_survey_url, body)
 
 
 
@@ -3035,7 +3041,7 @@ Update a survey as an end-customer, for the purposes of scoring it.
 
 Wraps PUT /api/v2/quality/surveys/scorable 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3048,12 +3054,12 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
-body = PureCloudPlatformClientV2.ScorableSurvey() # ScorableSurvey | survey
 customer_survey_url = 'customer_survey_url_example' # str | customerSurveyUrl
+body = PureCloudPlatformClientV2.ScorableSurvey() # ScorableSurvey | survey
 
 try:
     # Update a survey as an end-customer, for the purposes of scoring it.
-    api_response = api_instance.put_quality_surveys_scorable(body, customer_survey_url)
+    api_response = api_instance.put_quality_surveys_scorable(customer_survey_url, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->put_quality_surveys_scorable: %s\n" % e)
@@ -3064,8 +3070,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ScorableSurvey**](ScorableSurvey.html)| survey |  |
 | **customer_survey_url** | **str**| customerSurveyUrl |  |
+| **body** | [**ScorableSurvey**](ScorableSurvey.html)| survey |  |
 {: class="table table-striped"}
 
 ### Return type

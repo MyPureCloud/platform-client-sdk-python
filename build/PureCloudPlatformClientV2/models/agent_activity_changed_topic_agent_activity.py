@@ -85,6 +85,7 @@ class AgentActivityChangedTopicAgentActivity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class AgentActivityChangedTopicAgentActivity(object):
         :type: AgentActivityChangedTopicRoutingStatus
         """
         
+
         self._routing_status = routing_status
 
     @property
@@ -131,6 +133,7 @@ class AgentActivityChangedTopicAgentActivity(object):
         :type: AgentActivityChangedTopicPresence
         """
         
+
         self._presence = presence
 
     @property
@@ -154,6 +157,7 @@ class AgentActivityChangedTopicAgentActivity(object):
         :type: AgentActivityChangedTopicOutOfOffice
         """
         
+
         self._out_of_office = out_of_office
 
     @property
@@ -177,6 +181,7 @@ class AgentActivityChangedTopicAgentActivity(object):
         :type: list[str]
         """
         
+
         self._active_queue_ids = active_queue_ids
 
     @property
@@ -200,6 +205,7 @@ class AgentActivityChangedTopicAgentActivity(object):
         :type: datetime
         """
         
+
         self._date_active_queues_changed = date_active_queues_changed
 
     def to_dict(self):

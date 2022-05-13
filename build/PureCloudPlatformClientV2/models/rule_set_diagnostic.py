@@ -73,6 +73,7 @@ class RuleSetDiagnostic(object):
         :type: DomainEntityRef
         """
         
+
         self._rule_set = rule_set
 
     @property
@@ -96,6 +97,7 @@ class RuleSetDiagnostic(object):
         :type: list[str]
         """
         
+
         self._warnings = warnings
 
     def to_dict(self):

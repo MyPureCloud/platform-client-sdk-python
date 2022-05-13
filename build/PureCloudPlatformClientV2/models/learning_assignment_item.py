@@ -73,6 +73,10 @@ class LearningAssignmentItem(object):
         :type: str
         """
         
+        if not module_id:
+            raise ValueError("Invalid value for `module_id`, must not be `None`")
+
+
         self._module_id = module_id
 
     @property
@@ -96,6 +100,10 @@ class LearningAssignmentItem(object):
         :type: str
         """
         
+        if not user_id:
+            raise ValueError("Invalid value for `user_id`, must not be `None`")
+
+
         self._user_id = user_id
 
     def to_dict(self):

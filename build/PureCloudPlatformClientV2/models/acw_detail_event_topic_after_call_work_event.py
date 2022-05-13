@@ -130,6 +130,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: int
         """
         
+
         self._event_time = event_time
 
     @property
@@ -153,6 +154,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -176,6 +178,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._participant_id = participant_id
 
     @property
@@ -199,6 +202,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -249,6 +253,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -299,6 +304,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -322,6 +328,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -345,6 +352,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._address_to = address_to
 
     @property
@@ -368,6 +376,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._address_from = address_from
 
     @property
@@ -391,6 +400,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._callback_user_name = callback_user_name
 
     @property
@@ -414,6 +424,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: list[str]
         """
         
+
         self._callback_numbers = callback_numbers
 
     @property
@@ -437,6 +448,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: int
         """
         
+
         self._callback_scheduled_time = callback_scheduled_time
 
     @property
@@ -460,6 +472,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -510,6 +523,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -533,6 +547,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -556,6 +571,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._wrapup_code = wrapup_code
 
     @property
@@ -579,6 +595,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: str
         """
         
+
         self._wrapup_notes = wrapup_notes
 
     @property
@@ -602,6 +619,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         :type: int
         """
         
+
         self._wrapup_duration_ms = wrapup_duration_ms
 
     def to_dict(self):

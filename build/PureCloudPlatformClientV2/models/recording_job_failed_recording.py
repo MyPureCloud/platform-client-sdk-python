@@ -73,6 +73,7 @@ class RecordingJobFailedRecording(object):
         :type: AddressableEntityRef
         """
         
+
         self._conversation = conversation
 
     @property
@@ -96,6 +97,7 @@ class RecordingJobFailedRecording(object):
         :type: AddressableEntityRef
         """
         
+
         self._recording = recording
 
     def to_dict(self):

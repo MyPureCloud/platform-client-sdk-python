@@ -73,6 +73,7 @@ class NuanceMixDlgSettings(object):
         :type: str
         """
         
+
         self._channel_id = channel_id
 
     @property
@@ -96,6 +97,7 @@ class NuanceMixDlgSettings(object):
         :type: dict(str, object)
         """
         
+
         self._input_parameters = input_parameters
 
     def to_dict(self):

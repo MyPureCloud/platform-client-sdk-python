@@ -79,6 +79,7 @@ class CoachingSlotsResponse(object):
         :type: list[CoachingSlot]
         """
         
+
         self._suggested_slots = suggested_slots
 
     @property
@@ -102,6 +103,7 @@ class CoachingSlotsResponse(object):
         :type: list[UserAvailableTimes]
         """
         
+
         self._attendee_schedules = attendee_schedules
 
     @property
@@ -125,6 +127,7 @@ class CoachingSlotsResponse(object):
         :type: list[UserAvailableTimes]
         """
         
+
         self._facilitator_schedules = facilitator_schedules
 
     @property
@@ -148,6 +151,7 @@ class CoachingSlotsResponse(object):
         :type: list[WfmScheduleActivity]
         """
         
+
         self._wfm_schedule_activities = wfm_schedule_activities
 
     def to_dict(self):

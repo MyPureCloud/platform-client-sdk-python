@@ -76,6 +76,7 @@ class ComparisonPeriodListing(object):
         :type: int
         """
         
+
         self._total = total
 
     @property
@@ -99,6 +100,7 @@ class ComparisonPeriodListing(object):
         :type: list[ComparisonPeriod]
         """
         
+
         self._entities = entities
 
     @property
@@ -122,6 +124,7 @@ class ComparisonPeriodListing(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

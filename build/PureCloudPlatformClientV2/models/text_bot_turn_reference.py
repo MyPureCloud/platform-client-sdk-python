@@ -70,6 +70,10 @@ class TextBotTurnReference(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     def to_dict(self):

@@ -112,6 +112,7 @@ class GroupSearchRequest(object):
         :type: str
         """
         
+
         self._sort_by = sort_by
 
     @property
@@ -135,6 +136,7 @@ class GroupSearchRequest(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -158,6 +160,7 @@ class GroupSearchRequest(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -181,6 +184,7 @@ class GroupSearchRequest(object):
         :type: list[SearchSort]
         """
         
+
         self._sort = sort
 
     @property
@@ -204,6 +208,7 @@ class GroupSearchRequest(object):
         :type: list[GroupSearchCriteria]
         """
         
+
         self._query = query
 
     def to_dict(self):

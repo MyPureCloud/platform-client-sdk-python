@@ -70,6 +70,7 @@ class PresenceSetting(object):
         :type: SettingDirection
         """
         
+
         self._join = join
 
     def to_dict(self):

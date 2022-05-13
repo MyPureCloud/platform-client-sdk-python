@@ -376,6 +376,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: datetime
         """
         
+
         self._metric_date = metric_date
 
     @property
@@ -399,6 +400,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: int
         """
         
+
         self._value = value
 
     @property
@@ -422,6 +424,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._record_id = record_id
 
     @property
@@ -445,6 +448,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[str]
         """
         
+
         self._active_skill_ids = active_skill_ids
 
     @property
@@ -468,6 +472,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._address_from = address_from
 
     @property
@@ -491,6 +496,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._address_to = address_to
 
     @property
@@ -514,6 +520,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._agent_assistant_id = agent_assistant_id
 
     @property
@@ -537,6 +544,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: int
         """
         
+
         self._agent_bullseye_ring = agent_bullseye_ring
 
     @property
@@ -560,6 +568,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: bool
         """
         
+
         self._agent_owned = agent_owned
 
     @property
@@ -583,6 +592,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -606,6 +616,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._assigner_id = assigner_id
 
     @property
@@ -629,6 +640,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: bool
         """
         
+
         self._authenticated = authenticated
 
     @property
@@ -652,6 +664,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -702,6 +715,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._converted_from = converted_from
 
     @property
@@ -725,6 +739,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._converted_to = converted_to
 
     @property
@@ -748,6 +763,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: bool
         """
         
+
         self._customer_participation = customer_participation
 
     @property
@@ -798,6 +814,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[str]
         """
         
+
         self._destination_addresses = destination_addresses
 
     @property
@@ -875,6 +892,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[str]
         """
         
+
         self._division_ids = division_ids
 
     @property
@@ -898,6 +916,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -921,6 +940,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._edge_id = edge_id
 
     @property
@@ -944,6 +964,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[int]
         """
         
+
         self._eligible_agent_counts = eligible_agent_counts
 
     @property
@@ -967,6 +988,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._ending_language = ending_language
 
     @property
@@ -990,6 +1012,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._entry_reason = entry_reason
 
     @property
@@ -1040,6 +1063,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._exit_reason = exit_reason
 
     @property
@@ -1063,6 +1087,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._extended_delivery_status = extended_delivery_status
 
     @property
@@ -1086,6 +1111,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     @property
@@ -1109,6 +1135,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: int
         """
         
+
         self._external_media_count = external_media_count
 
     @property
@@ -1132,6 +1159,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._external_organization_id = external_organization_id
 
     @property
@@ -1155,6 +1183,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._external_tag = external_tag
 
     @property
@@ -1178,6 +1207,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: bool
         """
         
+
         self._first_queue = first_queue
 
     @property
@@ -1228,6 +1258,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._flow_id = flow_id
 
     @property
@@ -1251,6 +1282,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._flow_in_type = flow_in_type
 
     @property
@@ -1274,6 +1306,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[str]
         """
         
+
         self._flow_milestone_ids = flow_milestone_ids
 
     @property
@@ -1297,6 +1330,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._flow_name = flow_name
 
     @property
@@ -1320,6 +1354,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._flow_out_type = flow_out_type
 
     @property
@@ -1370,6 +1405,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._flow_version = flow_version
 
     @property
@@ -1393,6 +1429,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._group_id = group_id
 
     @property
@@ -1416,6 +1453,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._interaction_type = interaction_type
 
     @property
@@ -1439,6 +1477,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._journey_action_id = journey_action_id
 
     @property
@@ -1462,6 +1501,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._journey_action_map_id = journey_action_map_id
 
     @property
@@ -1485,6 +1525,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: int
         """
         
+
         self._journey_action_map_version = journey_action_map_version
 
     @property
@@ -1508,6 +1549,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._journey_customer_id = journey_customer_id
 
     @property
@@ -1531,6 +1573,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._journey_customer_id_type = journey_customer_id_type
 
     @property
@@ -1554,6 +1597,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._journey_customer_session_id = journey_customer_session_id
 
     @property
@@ -1577,6 +1621,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._journey_customer_session_id_type = journey_customer_session_id_type
 
     @property
@@ -1600,6 +1645,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._knowledge_base_id = knowledge_base_id
 
     @property
@@ -1623,6 +1669,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: int
         """
         
+
         self._media_count = media_count
 
     @property
@@ -1673,6 +1720,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._message_type = message_type
 
     @property
@@ -1723,6 +1771,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._outbound_campaign_id = outbound_campaign_id
 
     @property
@@ -1746,6 +1795,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._outbound_contact_id = outbound_contact_id
 
     @property
@@ -1769,6 +1819,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._outbound_contact_list_id = outbound_contact_list_id
 
     @property
@@ -1792,6 +1843,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._participant_name = participant_name
 
     @property
@@ -1815,6 +1867,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -1838,6 +1891,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -1888,6 +1942,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -1911,6 +1966,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._recognition_failure_reason = recognition_failure_reason
 
     @property
@@ -1934,6 +1990,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._remote = remote
 
     @property
@@ -1957,6 +2014,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[str]
         """
         
+
         self._removed_skill_ids = removed_skill_ids
 
     @property
@@ -1980,6 +2038,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: bool
         """
         
+
         self._reoffered = reoffered
 
     @property
@@ -2003,6 +2062,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._requested_language_id = requested_language_id
 
     @property
@@ -2026,6 +2086,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[str]
         """
         
+
         self._requested_routing_skill_ids = requested_routing_skill_ids
 
     @property
@@ -2049,6 +2110,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[str]
         """
         
+
         self._requested_routings = requested_routings
 
     @property
@@ -2072,6 +2134,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._room_id = room_id
 
     @property
@@ -2095,6 +2158,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: int
         """
         
+
         self._routing_priority = routing_priority
 
     @property
@@ -2118,6 +2182,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: int
         """
         
+
         self._routing_ring = routing_ring
 
     @property
@@ -2141,6 +2206,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._selected_agent_id = selected_agent_id
 
     @property
@@ -2164,6 +2230,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: int
         """
         
+
         self._selected_agent_rank = selected_agent_rank
 
     @property
@@ -2187,6 +2254,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: bool
         """
         
+
         self._self_served = self_served
 
     @property
@@ -2210,6 +2278,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._session_dnis = session_dnis
 
     @property
@@ -2233,6 +2302,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -2256,6 +2326,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._starting_language = starting_language
 
     @property
@@ -2279,6 +2350,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._station_id = station_id
 
     @property
@@ -2302,6 +2374,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._team_id = team_id
 
     @property
@@ -2325,6 +2398,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._transfer_target_address = transfer_target_address
 
     @property
@@ -2348,6 +2422,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._transfer_target_name = transfer_target_name
 
     @property
@@ -2371,6 +2446,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._transfer_type = transfer_type
 
     @property
@@ -2421,6 +2497,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -2444,6 +2521,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[int]
         """
         
+
         self._waiting_interaction_counts = waiting_interaction_counts
 
     @property
@@ -2467,6 +2545,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: str
         """
         
+
         self._wrap_up_code = wrap_up_code
 
     @property
@@ -2490,6 +2569,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[FlowMetricsTopicFlowProposedAgent]
         """
         
+
         self._proposed_agents = proposed_agents
 
     @property
@@ -2513,6 +2593,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[FlowMetricsTopicFlowOutcome]
         """
         
+
         self._outcomes = outcomes
 
     @property
@@ -2536,6 +2617,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :type: list[FlowMetricsTopicFlowScoredAgent]
         """
         
+
         self._scored_agents = scored_agents
 
     def to_dict(self):

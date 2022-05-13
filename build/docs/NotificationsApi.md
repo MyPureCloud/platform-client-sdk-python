@@ -30,7 +30,7 @@ Remove all subscriptions
 
 Wraps DELETE /api/v2/notifications/channels/{channelId}/subscriptions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -79,7 +79,7 @@ Get available notification topics.
 
 Wraps GET /api/v2/notifications/availabletopics 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -96,7 +96,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.NotificationsApi()
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
-include_preview = true # bool | Whether or not to include Preview topics (optional) (default to true)
+include_preview = True # bool | Whether or not to include Preview topics (optional) (default to True)
 
 try:
     # Get available notification topics.
@@ -112,7 +112,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails, topicParameters |
-| **include_preview** | **bool**| Whether or not to include Preview topics | [optional] [default to true] |
+| **include_preview** | **bool**| Whether or not to include Preview topics | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type
@@ -131,7 +131,7 @@ The list of all subscriptions for this channel
 
 Wraps GET /api/v2/notifications/channels/{channelId}/subscriptions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -181,7 +181,7 @@ The list of existing channels
 
 Wraps GET /api/v2/notifications/channels 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -197,7 +197,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.NotificationsApi()
-includechannels = 'token' # str | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (optional) (default to token)
+includechannels = ''token'' # str | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (optional) (default to 'token')
 
 try:
     # The list of existing channels
@@ -212,7 +212,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **includechannels** | **str**| Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to token]<br />**Values**: token, oauthclient |
+| **includechannels** | **str**| Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to &#39;token&#39;]<br />**Values**: token, oauthclient |
 {: class="table table-striped"}
 
 ### Return type
@@ -229,9 +229,11 @@ Verify a channel still exists and is valid
 
 Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
 
+
+
 Wraps HEAD /api/v2/notifications/channels/{channelId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -280,7 +282,7 @@ Add a list of subscriptions to the existing list of subscriptions
 
 Wraps POST /api/v2/notifications/channels/{channelId}/subscriptions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -330,9 +332,11 @@ Create a new channel
 
 There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
 
+
+
 Wraps POST /api/v2/notifications/channels 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -378,7 +382,7 @@ Replace the current list of subscriptions with a new list.
 
 Wraps PUT /api/v2/notifications/channels/{channelId}/subscriptions 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

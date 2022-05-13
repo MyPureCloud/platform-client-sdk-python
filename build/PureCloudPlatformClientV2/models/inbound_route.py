@@ -109,6 +109,7 @@ class InboundRoute(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class InboundRoute(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -155,6 +157,10 @@ class InboundRoute(object):
         :type: str
         """
         
+        if not pattern:
+            raise ValueError("Invalid value for `pattern`, must not be `None`")
+
+
         self._pattern = pattern
 
     @property
@@ -178,6 +184,7 @@ class InboundRoute(object):
         :type: DomainEntityRef
         """
         
+
         self._queue = queue
 
     @property
@@ -201,6 +208,7 @@ class InboundRoute(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -224,6 +232,7 @@ class InboundRoute(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._skills = skills
 
     @property
@@ -247,6 +256,7 @@ class InboundRoute(object):
         :type: DomainEntityRef
         """
         
+
         self._language = language
 
     @property
@@ -270,6 +280,10 @@ class InboundRoute(object):
         :type: str
         """
         
+        if not from_name:
+            raise ValueError("Invalid value for `from_name`, must not be `None`")
+
+
         self._from_name = from_name
 
     @property
@@ -293,6 +307,7 @@ class InboundRoute(object):
         :type: str
         """
         
+
         self._from_email = from_email
 
     @property
@@ -316,6 +331,7 @@ class InboundRoute(object):
         :type: DomainEntityRef
         """
         
+
         self._flow = flow
 
     @property
@@ -339,6 +355,7 @@ class InboundRoute(object):
         :type: QueueEmailAddress
         """
         
+
         self._reply_email_address = reply_email_address
 
     @property
@@ -362,6 +379,7 @@ class InboundRoute(object):
         :type: list[EmailAddress]
         """
         
+
         self._auto_bcc = auto_bcc
 
     @property
@@ -385,6 +403,7 @@ class InboundRoute(object):
         :type: DomainEntityRef
         """
         
+
         self._spam_flow = spam_flow
 
     @property
@@ -408,6 +427,7 @@ class InboundRoute(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

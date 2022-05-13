@@ -73,6 +73,7 @@ class WfmMoveAgentsCompleteTopicWfmMoveAgentData(object):
         :type: WfmMoveAgentsCompleteTopicUserReference
         """
         
+
         self._user = user
 
     @property

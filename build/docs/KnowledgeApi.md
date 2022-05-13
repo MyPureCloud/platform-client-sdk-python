@@ -754,7 +754,7 @@ limit = 'limit_example' # str | Number of entities to return. Maximum of 200. De
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 name = 'name_example' # str | Filter by Name. (optional)
 core_language = 'core_language_example' # str | Filter by core language. (optional)
-published = true # bool | Filter by published status. (optional)
+published = True # bool | Filter by published status. (optional)
 sort_by = 'sort_by_example' # str | Sort by. (optional)
 sort_order = 'sort_order_example' # str | Sort Order. (optional)
 

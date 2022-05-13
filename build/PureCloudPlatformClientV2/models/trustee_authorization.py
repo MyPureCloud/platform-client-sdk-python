@@ -70,6 +70,7 @@ class TrusteeAuthorization(object):
         :type: list[str]
         """
         
+
         self._permissions = permissions
 
     def to_dict(self):

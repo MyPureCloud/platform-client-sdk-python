@@ -73,6 +73,10 @@ class RoleDivisionPair(object):
         :type: str
         """
         
+        if not role_id:
+            raise ValueError("Invalid value for `role_id`, must not be `None`")
+
+
         self._role_id = role_id
 
     @property
@@ -96,6 +100,10 @@ class RoleDivisionPair(object):
         :type: str
         """
         
+        if not division_id:
+            raise ValueError("Invalid value for `division_id`, must not be `None`")
+
+
         self._division_id = division_id
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class FlowOutcome(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,10 @@ class FlowOutcome(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -131,6 +136,7 @@ class FlowOutcome(object):
         :type: WritableDivision
         """
         
+
         self._division = division
 
     @property
@@ -154,6 +160,7 @@ class FlowOutcome(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -177,6 +184,7 @@ class FlowOutcome(object):
         :type: Operation
         """
         
+
         self._current_operation = current_operation
 
     @property
@@ -200,6 +208,7 @@ class FlowOutcome(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

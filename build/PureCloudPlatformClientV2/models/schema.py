@@ -82,6 +82,7 @@ class Schema(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -105,6 +106,7 @@ class Schema(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -128,6 +130,7 @@ class Schema(object):
         :type: list[str]
         """
         
+
         self._type = type
 
     @property
@@ -151,6 +154,7 @@ class Schema(object):
         :type: Items
         """
         
+
         self._items = items
 
     @property
@@ -174,6 +178,7 @@ class Schema(object):
         :type: str
         """
         
+
         self._pattern = pattern
 
     def to_dict(self):

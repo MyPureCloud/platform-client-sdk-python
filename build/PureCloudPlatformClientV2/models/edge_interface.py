@@ -91,6 +91,7 @@ class EdgeInterface(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -114,6 +115,7 @@ class EdgeInterface(object):
         :type: str
         """
         
+
         self._ip_address = ip_address
 
     @property
@@ -137,6 +139,7 @@ class EdgeInterface(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -160,6 +163,7 @@ class EdgeInterface(object):
         :type: str
         """
         
+
         self._mac_address = mac_address
 
     @property
@@ -183,6 +187,7 @@ class EdgeInterface(object):
         :type: str
         """
         
+
         self._if_name = if_name
 
     @property
@@ -206,6 +211,7 @@ class EdgeInterface(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._endpoints = endpoints
 
     @property
@@ -229,6 +235,7 @@ class EdgeInterface(object):
         :type: list[str]
         """
         
+
         self._line_types = line_types
 
     @property
@@ -252,6 +259,7 @@ class EdgeInterface(object):
         :type: str
         """
         
+
         self._address_family_id = address_family_id
 
     def to_dict(self):

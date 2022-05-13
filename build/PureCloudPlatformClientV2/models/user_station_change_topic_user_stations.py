@@ -70,6 +70,7 @@ class UserStationChangeTopicUserStations(object):
         :type: UserStationChangeTopicUserStation
         """
         
+
         self._associated_station = associated_station
 
     def to_dict(self):

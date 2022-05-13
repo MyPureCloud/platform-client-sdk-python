@@ -211,6 +211,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -234,6 +235,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -257,6 +259,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -280,6 +283,7 @@ class CallMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -303,6 +307,7 @@ class CallMediaParticipant(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -326,6 +331,7 @@ class CallMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -349,6 +355,7 @@ class CallMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -372,6 +379,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -476,6 +484,7 @@ class CallMediaParticipant(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -499,6 +508,7 @@ class CallMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_required = wrapup_required
 
     @property
@@ -522,6 +532,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._wrapup_prompt = wrapup_prompt
 
     @property
@@ -545,6 +556,7 @@ class CallMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._user = user
 
     @property
@@ -568,6 +580,7 @@ class CallMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._queue = queue
 
     @property
@@ -591,6 +604,7 @@ class CallMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._team = team
 
     @property
@@ -614,6 +628,7 @@ class CallMediaParticipant(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -637,6 +652,7 @@ class CallMediaParticipant(object):
         :type: ErrorInfo
         """
         
+
         self._error_info = error_info
 
     @property
@@ -660,6 +676,7 @@ class CallMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._script = script
 
     @property
@@ -683,6 +700,7 @@ class CallMediaParticipant(object):
         :type: int
         """
         
+
         self._wrapup_timeout_ms = wrapup_timeout_ms
 
     @property
@@ -706,6 +724,7 @@ class CallMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_skipped = wrapup_skipped
 
     @property
@@ -729,6 +748,7 @@ class CallMediaParticipant(object):
         :type: int
         """
         
+
         self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
@@ -752,6 +772,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -775,6 +796,7 @@ class CallMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -798,6 +820,7 @@ class CallMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._external_organization = external_organization
 
     @property
@@ -821,6 +844,7 @@ class CallMediaParticipant(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -844,6 +868,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._peer = peer
 
     @property
@@ -894,6 +919,7 @@ class CallMediaParticipant(object):
         :type: JourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -917,6 +943,7 @@ class CallMediaParticipant(object):
         :type: ConversationRoutingData
         """
         
+
         self._conversation_routing_data = conversation_routing_data
 
     @property
@@ -940,6 +967,7 @@ class CallMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_acw_time = start_acw_time
 
     @property
@@ -963,6 +991,7 @@ class CallMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_acw_time = end_acw_time
 
     @property
@@ -986,6 +1015,7 @@ class CallMediaParticipant(object):
         :type: bool
         """
         
+
         self._muted = muted
 
     @property
@@ -1009,6 +1039,7 @@ class CallMediaParticipant(object):
         :type: bool
         """
         
+
         self._confined = confined
 
     @property
@@ -1032,6 +1063,7 @@ class CallMediaParticipant(object):
         :type: bool
         """
         
+
         self._recording = recording
 
     @property
@@ -1082,6 +1114,7 @@ class CallMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._group = group
 
     @property
@@ -1105,6 +1138,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -1128,6 +1162,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -1151,6 +1186,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._document_id = document_id
 
     @property
@@ -1174,6 +1210,7 @@ class CallMediaParticipant(object):
         :type: FaxStatus
         """
         
+
         self._fax_status = fax_status
 
     @property
@@ -1197,6 +1234,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._monitored_participant_id = monitored_participant_id
 
     @property
@@ -1220,6 +1258,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._coached_participant_id = coached_participant_id
 
     @property
@@ -1243,6 +1282,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._barged_participant_id = barged_participant_id
 
     @property
@@ -1266,6 +1306,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._consult_participant_id = consult_participant_id
 
     @property
@@ -1289,6 +1330,7 @@ class CallMediaParticipant(object):
         :type: str
         """
         
+
         self._uui_data = uui_data
 
     @property
@@ -1312,6 +1354,7 @@ class CallMediaParticipant(object):
         :type: datetime
         """
         
+
         self._barged_time = barged_time
 
     def to_dict(self):

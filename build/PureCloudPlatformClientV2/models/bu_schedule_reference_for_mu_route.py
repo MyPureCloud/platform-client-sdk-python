@@ -79,6 +79,7 @@ class BuScheduleReferenceForMuRoute(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class BuScheduleReferenceForMuRoute(object):
         :type: date
         """
         
+
         self._week_date = week_date
 
     @property
@@ -125,6 +127,7 @@ class BuScheduleReferenceForMuRoute(object):
         :type: BusinessUnitReference
         """
         
+
         self._business_unit = business_unit
 
     @property
@@ -148,6 +151,7 @@ class BuScheduleReferenceForMuRoute(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

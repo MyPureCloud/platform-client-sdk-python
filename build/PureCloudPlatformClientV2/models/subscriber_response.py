@@ -73,6 +73,7 @@ class SubscriberResponse(object):
         :type: list[str]
         """
         
+
         self._message_returned = message_returned
 
     @property
@@ -96,6 +97,10 @@ class SubscriberResponse(object):
         :type: str
         """
         
+        if not status:
+            raise ValueError("Invalid value for `status`, must not be `None`")
+
+
         self._status = status
 
     def to_dict(self):

@@ -76,6 +76,7 @@ class WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody(object):
         :type: str
         """
         
+
         self._version = version
 
     @property

@@ -76,6 +76,10 @@ class DocumentArticle(object):
         :type: str
         """
         
+        if not title:
+            raise ValueError("Invalid value for `title`, must not be `None`")
+
+
         self._title = title
 
     @property
@@ -99,6 +103,7 @@ class DocumentArticle(object):
         :type: ArticleContent
         """
         
+
         self._content = content
 
     @property
@@ -122,6 +127,7 @@ class DocumentArticle(object):
         :type: list[str]
         """
         
+
         self._alternatives = alternatives
 
     def to_dict(self):

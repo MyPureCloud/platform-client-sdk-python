@@ -73,6 +73,7 @@ class JourneyWebEventsNotificationCustomEventAttribute(object):
         :type: str
         """
         
+
         self._value = value
 
     @property

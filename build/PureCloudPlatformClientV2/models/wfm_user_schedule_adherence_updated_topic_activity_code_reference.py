@@ -73,6 +73,7 @@ class WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference(object):
         :type: list[WfmUserScheduleAdherenceUpdatedTopicSecondaryPresenceReference]
         """
         
+
         self._secondary_presences = secondary_presences
 
     def to_dict(self):

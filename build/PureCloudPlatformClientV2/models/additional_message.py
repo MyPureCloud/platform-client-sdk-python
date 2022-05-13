@@ -79,6 +79,10 @@ class AdditionalMessage(object):
         :type: str
         """
         
+        if not text_body:
+            raise ValueError("Invalid value for `text_body`, must not be `None`")
+
+
         self._text_body = text_body
 
     @property
@@ -102,6 +106,7 @@ class AdditionalMessage(object):
         :type: list[str]
         """
         
+
         self._media_ids = media_ids
 
     @property
@@ -125,6 +130,7 @@ class AdditionalMessage(object):
         :type: list[str]
         """
         
+
         self._sticker_ids = sticker_ids
 
     @property
@@ -148,6 +154,7 @@ class AdditionalMessage(object):
         :type: MessagingTemplateRequest
         """
         
+
         self._messaging_template = messaging_template
 
     def to_dict(self):

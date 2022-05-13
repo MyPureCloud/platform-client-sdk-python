@@ -112,6 +112,7 @@ class EvaluationQuestionGroupScore(object):
         :type: str
         """
         
+
         self._question_group_id = question_group_id
 
     @property
@@ -135,6 +136,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._total_score = total_score
 
     @property
@@ -158,6 +160,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._max_total_score = max_total_score
 
     @property
@@ -181,6 +184,7 @@ class EvaluationQuestionGroupScore(object):
         :type: bool
         """
         
+
         self._marked_na = marked_na
 
     @property
@@ -204,6 +208,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._total_critical_score = total_critical_score
 
     @property
@@ -227,6 +232,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._max_total_critical_score = max_total_critical_score
 
     @property
@@ -250,6 +256,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._total_non_critical_score = total_non_critical_score
 
     @property
@@ -273,6 +280,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._max_total_non_critical_score = max_total_non_critical_score
 
     @property
@@ -296,6 +304,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._total_score_unweighted = total_score_unweighted
 
     @property
@@ -319,6 +328,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._max_total_score_unweighted = max_total_score_unweighted
 
     @property
@@ -342,6 +352,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._total_critical_score_unweighted = total_critical_score_unweighted
 
     @property
@@ -365,6 +376,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._max_total_critical_score_unweighted = max_total_critical_score_unweighted
 
     @property
@@ -388,6 +400,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._total_non_critical_score_unweighted = total_non_critical_score_unweighted
 
     @property
@@ -411,6 +424,7 @@ class EvaluationQuestionGroupScore(object):
         :type: float
         """
         
+
         self._max_total_non_critical_score_unweighted = max_total_non_critical_score_unweighted
 
     @property
@@ -434,6 +448,7 @@ class EvaluationQuestionGroupScore(object):
         :type: list[EvaluationQuestionScore]
         """
         
+
         self._question_scores = question_scores
 
     def to_dict(self):

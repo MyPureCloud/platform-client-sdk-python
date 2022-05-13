@@ -94,6 +94,7 @@ class VoicemailOrganizationPolicy(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -117,6 +118,7 @@ class VoicemailOrganizationPolicy(object):
         :type: int
         """
         
+
         self._alert_timeout_seconds = alert_timeout_seconds
 
     @property
@@ -140,6 +142,7 @@ class VoicemailOrganizationPolicy(object):
         :type: PINConfiguration
         """
         
+
         self._pin_configuration = pin_configuration
 
     @property
@@ -163,6 +166,7 @@ class VoicemailOrganizationPolicy(object):
         :type: str
         """
         
+
         self._voicemail_extension = voicemail_extension
 
     @property
@@ -186,6 +190,7 @@ class VoicemailOrganizationPolicy(object):
         :type: bool
         """
         
+
         self._pin_required = pin_required
 
     @property
@@ -209,6 +214,7 @@ class VoicemailOrganizationPolicy(object):
         :type: bool
         """
         
+
         self._interactive_response_required = interactive_response_required
 
     @property
@@ -232,6 +238,7 @@ class VoicemailOrganizationPolicy(object):
         :type: bool
         """
         
+
         self._send_email_notifications = send_email_notifications
 
     @property
@@ -255,6 +262,7 @@ class VoicemailOrganizationPolicy(object):
         :type: bool
         """
         
+
         self._disable_email_pii = disable_email_pii
 
     @property
@@ -278,6 +286,7 @@ class VoicemailOrganizationPolicy(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

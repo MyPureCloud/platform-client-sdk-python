@@ -85,6 +85,7 @@ class ManagementUnitSettingsRequest(object):
         :type: AdherenceSettings
         """
         
+
         self._adherence = adherence
 
     @property
@@ -108,6 +109,7 @@ class ManagementUnitSettingsRequest(object):
         :type: ShortTermForecastingSettings
         """
         
+
         self._short_term_forecasting = short_term_forecasting
 
     @property
@@ -131,6 +133,7 @@ class ManagementUnitSettingsRequest(object):
         :type: TimeOffRequestSettings
         """
         
+
         self._time_off = time_off
 
     @property
@@ -154,6 +157,7 @@ class ManagementUnitSettingsRequest(object):
         :type: SchedulingSettingsRequest
         """
         
+
         self._scheduling = scheduling
 
     @property
@@ -177,6 +181,7 @@ class ManagementUnitSettingsRequest(object):
         :type: ShiftTradeSettings
         """
         
+
         self._shift_trading = shift_trading
 
     @property
@@ -200,6 +205,10 @@ class ManagementUnitSettingsRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

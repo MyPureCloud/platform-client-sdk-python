@@ -109,6 +109,7 @@ class AvailableTopic(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -132,6 +133,7 @@ class AvailableTopic(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -155,6 +157,7 @@ class AvailableTopic(object):
         :type: list[PermissionDetails]
         """
         
+
         self._permission_details = permission_details
 
     @property
@@ -178,6 +181,7 @@ class AvailableTopic(object):
         :type: list[str]
         """
         
+
         self._requires_permissions = requires_permissions
 
     @property
@@ -201,6 +205,7 @@ class AvailableTopic(object):
         :type: bool
         """
         
+
         self._requires_division_permissions = requires_division_permissions
 
     @property
@@ -224,6 +229,7 @@ class AvailableTopic(object):
         :type: bool
         """
         
+
         self._requires_any_validator = requires_any_validator
 
     @property
@@ -247,6 +253,7 @@ class AvailableTopic(object):
         :type: bool
         """
         
+
         self._enforced = enforced
 
     @property
@@ -297,6 +304,7 @@ class AvailableTopic(object):
         :type: dict(str, object)
         """
         
+
         self._schema = schema
 
     @property
@@ -320,6 +328,7 @@ class AvailableTopic(object):
         :type: bool
         """
         
+
         self._requires_current_user = requires_current_user
 
     @property
@@ -343,6 +352,7 @@ class AvailableTopic(object):
         :type: bool
         """
         
+
         self._requires_current_user_or_permission = requires_current_user_or_permission
 
     @property
@@ -366,6 +376,7 @@ class AvailableTopic(object):
         :type: list[str]
         """
         
+
         self._transports = transports
 
     @property
@@ -389,6 +400,7 @@ class AvailableTopic(object):
         :type: list[str]
         """
         
+
         self._public_api_template_uri_paths = public_api_template_uri_paths
 
     @property
@@ -412,6 +424,7 @@ class AvailableTopic(object):
         :type: list[str]
         """
         
+
         self._topic_parameters = topic_parameters
 
     def to_dict(self):

@@ -76,6 +76,7 @@ class BuPlanningGroupHeadcountForecast(object):
         :type: PlanningGroupReference
         """
         
+
         self._planning_group = planning_group
 
     @property
@@ -99,6 +100,7 @@ class BuPlanningGroupHeadcountForecast(object):
         :type: list[float]
         """
         
+
         self._required_per_interval = required_per_interval
 
     @property
@@ -122,6 +124,7 @@ class BuPlanningGroupHeadcountForecast(object):
         :type: list[float]
         """
         
+
         self._required_without_shrinkage_per_interval = required_without_shrinkage_per_interval
 
     def to_dict(self):

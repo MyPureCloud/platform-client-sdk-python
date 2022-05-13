@@ -85,6 +85,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleActivity(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -108,6 +109,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleActivity(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -131,6 +133,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleActivity(object):
         :type: bool
         """
         
+
         self._counts_as_paid_time = counts_as_paid_time
 
     @property
@@ -154,6 +157,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleActivity(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -177,6 +181,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleActivity(object):
         :type: str
         """
         
+
         self._time_off_request_id = time_off_request_id
 
     @property
@@ -200,6 +205,7 @@ class WfmAgentScheduleUpdateTopicWfmScheduleActivity(object):
         :type: str
         """
         
+
         self._description = description
 
     def to_dict(self):

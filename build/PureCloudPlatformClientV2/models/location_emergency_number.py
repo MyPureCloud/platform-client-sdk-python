@@ -76,6 +76,7 @@ class LocationEmergencyNumber(object):
         :type: str
         """
         
+
         self._e164 = e164
 
     @property
@@ -99,6 +100,7 @@ class LocationEmergencyNumber(object):
         :type: str
         """
         
+
         self._number = number
 
     @property

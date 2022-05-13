@@ -79,6 +79,7 @@ class BuForecastResult(object):
         :type: datetime
         """
         
+
         self._reference_start_date = reference_start_date
 
     @property
@@ -102,6 +103,7 @@ class BuForecastResult(object):
         :type: list[ForecastPlanningGroupData]
         """
         
+
         self._planning_groups = planning_groups
 
     @property
@@ -125,6 +127,7 @@ class BuForecastResult(object):
         :type: int
         """
         
+
         self._week_number = week_number
 
     @property
@@ -148,6 +151,7 @@ class BuForecastResult(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     def to_dict(self):

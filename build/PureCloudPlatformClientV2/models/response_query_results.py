@@ -70,6 +70,10 @@ class ResponseQueryResults(object):
         :type: ResponseEntityList
         """
         
+        if not results:
+            raise ValueError("Invalid value for `results`, must not be `None`")
+
+
         self._results = results
 
     def to_dict(self):

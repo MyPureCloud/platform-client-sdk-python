@@ -73,6 +73,7 @@ class MediaTypeAccess(object):
         :type: list[MediaType]
         """
         
+
         self._inbound = inbound
 
     @property
@@ -96,6 +97,7 @@ class MediaTypeAccess(object):
         :type: list[MediaType]
         """
         
+
         self._outbound = outbound
 
     def to_dict(self):

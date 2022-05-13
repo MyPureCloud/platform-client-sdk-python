@@ -88,6 +88,7 @@ class ContentList(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class ContentList(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -161,6 +163,7 @@ class ContentList(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -184,6 +187,7 @@ class ContentList(object):
         :type: str
         """
         
+
         self._submit_label = submit_label
 
     @property
@@ -207,6 +211,7 @@ class ContentList(object):
         :type: ContentActions
         """
         
+
         self._actions = actions
 
     @property
@@ -230,6 +235,7 @@ class ContentList(object):
         :type: list[ListItemComponent]
         """
         
+
         self._components = components
 
     def to_dict(self):

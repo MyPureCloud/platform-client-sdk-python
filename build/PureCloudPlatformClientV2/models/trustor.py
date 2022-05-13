@@ -88,6 +88,7 @@ class Trustor(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,10 @@ class Trustor(object):
         :type: bool
         """
         
+        if not enabled:
+            raise ValueError("Invalid value for `enabled`, must not be `None`")
+
+
         self._enabled = enabled
 
     @property
@@ -134,6 +139,7 @@ class Trustor(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -157,6 +163,7 @@ class Trustor(object):
         :type: OrgUser
         """
         
+
         self._created_by = created_by
 
     @property
@@ -180,6 +187,7 @@ class Trustor(object):
         :type: Organization
         """
         
+
         self._organization = organization
 
     @property
@@ -203,6 +211,7 @@ class Trustor(object):
         :type: TrusteeAuthorization
         """
         
+
         self._authorization = authorization
 
     @property
@@ -226,6 +235,7 @@ class Trustor(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

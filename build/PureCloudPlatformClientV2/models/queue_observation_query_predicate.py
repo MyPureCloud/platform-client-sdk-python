@@ -163,6 +163,7 @@ class QueueObservationQueryPredicate(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -186,6 +187,7 @@ class QueueObservationQueryPredicate(object):
         :type: NumericRange
         """
         
+
         self._range = range
 
     def to_dict(self):

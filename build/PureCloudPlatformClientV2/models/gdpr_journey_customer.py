@@ -73,6 +73,7 @@ class GDPRJourneyCustomer(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -96,6 +97,7 @@ class GDPRJourneyCustomer(object):
         :type: str
         """
         
+
         self._id = id
 
     def to_dict(self):

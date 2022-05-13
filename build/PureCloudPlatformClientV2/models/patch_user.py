@@ -73,6 +73,7 @@ class PatchUser(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class PatchUser(object):
         :type: bool
         """
         
+
         self._acd_auto_answer = acd_auto_answer
 
     def to_dict(self):

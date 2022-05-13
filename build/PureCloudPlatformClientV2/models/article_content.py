@@ -70,6 +70,7 @@ class ArticleContent(object):
         :type: ArticleContentBody
         """
         
+
         self._body = body
 
     def to_dict(self):

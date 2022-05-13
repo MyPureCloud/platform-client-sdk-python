@@ -73,6 +73,7 @@ class CampaignRuleEntities(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._campaigns = campaigns
 
     @property
@@ -96,6 +97,7 @@ class CampaignRuleEntities(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._sequences = sequences
 
     def to_dict(self):

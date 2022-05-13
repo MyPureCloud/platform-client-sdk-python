@@ -70,6 +70,10 @@ class ConsultTransferResponse(object):
         :type: str
         """
         
+        if not destination_participant_id:
+            raise ValueError("Invalid value for `destination_participant_id`, must not be `None`")
+
+
         self._destination_participant_id = destination_participant_id
 
     def to_dict(self):

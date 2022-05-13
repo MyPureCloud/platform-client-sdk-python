@@ -115,6 +115,7 @@ class WebMessagingContent(object):
         :type: WebMessagingAttachment
         """
         
+
         self._attachment = attachment
 
     @property
@@ -138,6 +139,7 @@ class WebMessagingContent(object):
         :type: WebMessagingQuickReply
         """
         
+
         self._quick_reply = quick_reply
 
     @property
@@ -161,6 +163,7 @@ class WebMessagingContent(object):
         :type: WebMessagingButtonResponse
         """
         
+
         self._button_response = button_response
 
     @property
@@ -184,6 +187,7 @@ class WebMessagingContent(object):
         :type: WebMessagingGeneric
         """
         
+
         self._generic = generic
 
     @property
@@ -207,6 +211,7 @@ class WebMessagingContent(object):
         :type: ContentCard
         """
         
+
         self._card = card
 
     @property
@@ -230,6 +235,7 @@ class WebMessagingContent(object):
         :type: ContentCarousel
         """
         
+
         self._carousel = carousel
 
     def to_dict(self):

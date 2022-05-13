@@ -73,6 +73,7 @@ class StatEventQueueTopicStatsNotification(object):
         :type: dict(str, str)
         """
         
+
         self._group = group
 
     @property
@@ -96,6 +97,7 @@ class StatEventQueueTopicStatsNotification(object):
         :type: list[StatEventQueueTopicIntervalMetrics]
         """
         
+
         self._data = data
 
     def to_dict(self):

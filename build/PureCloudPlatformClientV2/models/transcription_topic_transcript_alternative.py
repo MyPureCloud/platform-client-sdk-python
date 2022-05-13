@@ -82,6 +82,7 @@ class TranscriptionTopicTranscriptAlternative(object):
         :type: float
         """
         
+
         self._confidence = confidence
 
     @property
@@ -105,6 +106,7 @@ class TranscriptionTopicTranscriptAlternative(object):
         :type: int
         """
         
+
         self._offset_ms = offset_ms
 
     @property
@@ -128,6 +130,7 @@ class TranscriptionTopicTranscriptAlternative(object):
         :type: int
         """
         
+
         self._duration_ms = duration_ms
 
     @property
@@ -151,6 +154,7 @@ class TranscriptionTopicTranscriptAlternative(object):
         :type: str
         """
         
+
         self._transcript = transcript
 
     @property
@@ -174,6 +178,7 @@ class TranscriptionTopicTranscriptAlternative(object):
         :type: list[TranscriptionTopicTranscriptWord]
         """
         
+
         self._words = words
 
     def to_dict(self):

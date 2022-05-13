@@ -70,6 +70,10 @@ class UpdateNotificationsRequest(object):
         :type: list[WfmUserNotification]
         """
         
+        if not entities:
+            raise ValueError("Invalid value for `entities`, must not be `None`")
+
+
         self._entities = entities
 
     def to_dict(self):

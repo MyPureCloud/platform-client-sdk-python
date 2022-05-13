@@ -82,6 +82,7 @@ class KpiResult(object):
         :type: int
         """
         
+
         self._kpi_total_on = kpi_total_on
 
     @property
@@ -105,6 +106,7 @@ class KpiResult(object):
         :type: int
         """
         
+
         self._kpi_total_off = kpi_total_off
 
     @property
@@ -128,6 +130,7 @@ class KpiResult(object):
         :type: int
         """
         
+
         self._interaction_count_on = interaction_count_on
 
     @property
@@ -151,6 +154,7 @@ class KpiResult(object):
         :type: int
         """
         
+
         self._interaction_count_off = interaction_count_off
 
     @property

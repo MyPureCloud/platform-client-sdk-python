@@ -79,6 +79,7 @@ class DialerRulesetConfigChangeAction(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -102,6 +103,7 @@ class DialerRulesetConfigChangeAction(object):
         :type: str
         """
         
+
         self._action_type_name = action_type_name
 
     @property
@@ -125,6 +127,7 @@ class DialerRulesetConfigChangeAction(object):
         :type: str
         """
         
+
         self._update_option = update_option
 
     @property
@@ -148,6 +151,7 @@ class DialerRulesetConfigChangeAction(object):
         :type: dict(str, str)
         """
         
+
         self._properties = properties
 
     def to_dict(self):

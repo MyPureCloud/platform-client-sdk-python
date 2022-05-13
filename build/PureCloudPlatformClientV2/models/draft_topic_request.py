@@ -79,6 +79,10 @@ class DraftTopicRequest(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -102,6 +106,10 @@ class DraftTopicRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -125,6 +133,10 @@ class DraftTopicRequest(object):
         :type: list[str]
         """
         
+        if not phrases:
+            raise ValueError("Invalid value for `phrases`, must not be `None`")
+
+
         self._phrases = phrases
 
     @property
@@ -148,6 +160,7 @@ class DraftTopicRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class QueueConversationCallbackEventTopicPhoneNumberColumn(object):
         :type: str
         """
         
+
         self._column_name = column_name
 
     @property
@@ -96,6 +97,7 @@ class QueueConversationCallbackEventTopicPhoneNumberColumn(object):
         :type: str
         """
         
+
         self._type = type
 
     def to_dict(self):

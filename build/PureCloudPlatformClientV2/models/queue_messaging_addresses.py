@@ -70,6 +70,7 @@ class QueueMessagingAddresses(object):
         :type: DomainEntityRef
         """
         
+
         self._sms_address = sms_address
 
     def to_dict(self):

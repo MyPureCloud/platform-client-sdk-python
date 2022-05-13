@@ -70,6 +70,7 @@ class DynamicContactQueueingSettings(object):
         :type: bool
         """
         
+
         self._sort = sort
 
     def to_dict(self):

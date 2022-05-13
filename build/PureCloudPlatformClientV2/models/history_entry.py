@@ -115,6 +115,7 @@ class HistoryEntry(object):
         :type: str
         """
         
+
         self._resource = resource
 
     @property
@@ -138,6 +139,7 @@ class HistoryEntry(object):
         :type: datetime
         """
         
+
         self._timestamp = timestamp
 
     @property
@@ -161,6 +163,7 @@ class HistoryEntry(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -184,6 +187,7 @@ class HistoryEntry(object):
         :type: DomainEntityRef
         """
         
+
         self._client = client
 
     @property
@@ -207,6 +211,7 @@ class HistoryEntry(object):
         :type: str
         """
         
+
         self._version = version
 
     @property
@@ -230,6 +235,7 @@ class HistoryEntry(object):
         :type: bool
         """
         
+
         self._secure = secure
 
     def to_dict(self):

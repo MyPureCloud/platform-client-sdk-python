@@ -76,6 +76,7 @@ class ConversationCallEventTopicJourneyContext(object):
         :type: ConversationCallEventTopicJourneyCustomer
         """
         
+
         self._customer = customer
 
     @property
@@ -99,6 +100,7 @@ class ConversationCallEventTopicJourneyContext(object):
         :type: ConversationCallEventTopicJourneyCustomerSession
         """
         
+
         self._customer_session = customer_session
 
     @property
@@ -122,6 +124,7 @@ class ConversationCallEventTopicJourneyContext(object):
         :type: ConversationCallEventTopicJourneyAction
         """
         
+
         self._triggering_action = triggering_action
 
     def to_dict(self):

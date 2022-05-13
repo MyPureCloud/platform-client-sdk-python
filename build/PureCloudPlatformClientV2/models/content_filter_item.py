@@ -79,6 +79,7 @@ class ContentFilterItem(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -156,6 +157,7 @@ class ContentFilterItem(object):
         :type: list[str]
         """
         
+
         self._values = values
 
     def to_dict(self):

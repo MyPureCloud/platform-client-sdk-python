@@ -82,6 +82,10 @@ class GroupContact(object):
         :type: str
         """
         
+        if not address:
+            raise ValueError("Invalid value for `address`, must not be `None`")
+
+
         self._address = address
 
     @property
@@ -105,6 +109,7 @@ class GroupContact(object):
         :type: str
         """
         
+
         self._extension = extension
 
     @property
@@ -128,6 +133,7 @@ class GroupContact(object):
         :type: str
         """
         
+
         self._display = display
 
     @property

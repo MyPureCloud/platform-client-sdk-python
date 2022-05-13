@@ -106,6 +106,7 @@ class DomainNetworkAddress(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -129,6 +130,7 @@ class DomainNetworkAddress(object):
         :type: bool
         """
         
+
         self._persistent = persistent
 
     @property

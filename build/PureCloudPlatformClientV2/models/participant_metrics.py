@@ -91,6 +91,7 @@ class ParticipantMetrics(object):
         :type: float
         """
         
+
         self._agent_duration_percentage = agent_duration_percentage
 
     @property
@@ -114,6 +115,7 @@ class ParticipantMetrics(object):
         :type: float
         """
         
+
         self._customer_duration_percentage = customer_duration_percentage
 
     @property
@@ -137,6 +139,7 @@ class ParticipantMetrics(object):
         :type: float
         """
         
+
         self._silence_duration_percentage = silence_duration_percentage
 
     @property
@@ -160,6 +163,7 @@ class ParticipantMetrics(object):
         :type: float
         """
         
+
         self._ivr_duration_percentage = ivr_duration_percentage
 
     @property
@@ -183,6 +187,7 @@ class ParticipantMetrics(object):
         :type: float
         """
         
+
         self._acd_duration_percentage = acd_duration_percentage
 
     @property
@@ -206,6 +211,7 @@ class ParticipantMetrics(object):
         :type: float
         """
         
+
         self._overtalk_duration_percentage = overtalk_duration_percentage
 
     @property
@@ -229,6 +235,7 @@ class ParticipantMetrics(object):
         :type: float
         """
         
+
         self._other_duration_percentage = other_duration_percentage
 
     @property
@@ -252,6 +259,7 @@ class ParticipantMetrics(object):
         :type: int
         """
         
+
         self._overtalk_count = overtalk_count
 
     def to_dict(self):

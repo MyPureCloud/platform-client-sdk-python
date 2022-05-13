@@ -85,6 +85,7 @@ class ConversationContentGeneric(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -108,6 +109,7 @@ class ConversationContentGeneric(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -131,6 +133,7 @@ class ConversationContentGeneric(object):
         :type: str
         """
         
+
         self._image = image
 
     @property
@@ -154,6 +157,7 @@ class ConversationContentGeneric(object):
         :type: str
         """
         
+
         self._video = video
 
     @property
@@ -177,6 +181,7 @@ class ConversationContentGeneric(object):
         :type: ConversationContentActions
         """
         
+
         self._actions = actions
 
     @property
@@ -200,6 +205,7 @@ class ConversationContentGeneric(object):
         :type: list[ConversationButtonComponent]
         """
         
+
         self._components = components
 
     def to_dict(self):

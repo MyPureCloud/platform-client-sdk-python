@@ -106,6 +106,7 @@ class UserState(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -156,6 +157,7 @@ class UserState(object):
         :type: datetime
         """
         
+
         self._state_change_date = state_change_date
 
     def to_dict(self):

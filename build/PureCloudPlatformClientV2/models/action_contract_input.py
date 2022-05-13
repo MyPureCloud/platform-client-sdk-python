@@ -73,6 +73,10 @@ class ActionContractInput(object):
         :type: PostInputContract
         """
         
+        if not input:
+            raise ValueError("Invalid value for `input`, must not be `None`")
+
+
         self._input = input
 
     @property
@@ -96,6 +100,10 @@ class ActionContractInput(object):
         :type: PostOutputContract
         """
         
+        if not output:
+            raise ValueError("Invalid value for `output`, must not be `None`")
+
+
         self._output = output
 
     def to_dict(self):

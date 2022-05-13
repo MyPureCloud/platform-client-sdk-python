@@ -100,6 +100,7 @@ class SupportCenterScreen(object):
         :type: list[SupportCenterModuleSetting]
         """
         
+
         self._module_settings = module_settings
 
     def to_dict(self):

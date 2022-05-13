@@ -1219,11 +1219,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query attempt limits list
@@ -1240,11 +1240,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -1333,11 +1333,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query callable time set list
@@ -1354,11 +1354,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -1447,11 +1447,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of dialer call analysis response sets.
@@ -1468,11 +1468,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -1869,11 +1869,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query Campaign Rule list
@@ -1890,11 +1890,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -1932,7 +1932,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | id (optional)
 contact_list_id = 'contact_list_id_example' # str | Contact List ID (optional)
@@ -1942,7 +1942,7 @@ edge_group_id = 'edge_group_id_example' # str | Edge group ID (optional)
 call_analysis_response_set_id = 'call_analysis_response_set_id_example' # str | Call analysis response set ID (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of dialer campaigns.
@@ -1959,7 +1959,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **contact_list_id** | **str**| Contact List ID | [optional]  |
@@ -1969,7 +1969,7 @@ except ApiException as e:
 | **call_analysis_response_set_id** | **str**| Call analysis response set ID | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -2013,7 +2013,7 @@ id = ['id_example'] # list[str] | Campaign ID(s) (optional)
 name = 'name_example' # str | Campaign name(s) (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 media_type = ['media_type_example'] # list[str] | Media type(s) (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query across all types of campaigns by division
@@ -2034,7 +2034,7 @@ except ApiException as e:
 | **name** | **str**| Campaign name(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 | **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -2078,7 +2078,7 @@ id = ['id_example'] # list[str] | Campaign ID(s) (optional)
 name = 'name_example' # str | Campaign name(s) (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 media_type = ['media_type_example'] # list[str] | Media type(s) (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query across all types of campaigns
@@ -2099,7 +2099,7 @@ except ApiException as e:
 | **name** | **str**| Campaign name(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 | **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -2115,6 +2115,8 @@ except ApiException as e:
 Get a basic Campaign information object
 
 This returns a simplified version of a Campaign, consisting of name and division.
+
+
 
 Wraps GET /api/v2/outbound/campaigns/divisionviews/{campaignId} 
 
@@ -2167,6 +2169,8 @@ Query a list of basic Campaign information objects
 
 This returns a simplified version of a Campaign, consisting of name and division.
 
+
+
 Wraps GET /api/v2/outbound/campaigns/divisionviews 
 
 Requires ALL permissions: 
@@ -2188,11 +2192,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | id (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of basic Campaign information objects
@@ -2209,11 +2213,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -2250,8 +2254,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 contact_list_id = 'contact_list_id_example' # str | ContactList ID
-include_import_status = false # bool | Import status (optional) (default to false)
-include_size = false # bool | Include size (optional) (default to false)
+include_import_status = False # bool | Import status (optional) (default to False)
+include_size = False # bool | Include size (optional) (default to False)
 
 try:
     # Get a dialer contact list.
@@ -2267,8 +2271,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| ContactList ID |  |
-| **include_import_status** | **bool**| Import status | [optional] [default to false] |
-| **include_size** | **bool**| Include size | [optional] [default to false] |
+| **include_import_status** | **bool**| Import status | [optional] [default to False] |
+| **include_size** | **bool**| Include size | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2359,7 +2363,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 contact_list_id = 'contact_list_id_example' # str | ContactList ID
-download = 'false' # str | Redirect to download uri (optional) (default to false)
+download = ''false'' # str | Redirect to download uri (optional) (default to 'false')
 
 try:
     # Get the URI of a contact list export.
@@ -2375,7 +2379,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| ContactList ID |  |
-| **download** | **str**| Redirect to download uri | [optional] [default to false] |
+| **download** | **str**| Redirect to download uri | [optional] [default to &#39;false&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2566,11 +2570,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 contact_list_id = 'contact_list_id_example' # str | Contact List ID (optional)
 
 try:
@@ -2588,11 +2592,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 | **contact_list_id** | **str**| Contact List ID | [optional]  |
 {: class="table table-striped"}
 
@@ -2629,17 +2633,17 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-include_import_status = false # bool | Include import status (optional) (default to false)
-include_size = false # bool | Include size (optional) (default to false)
+include_import_status = False # bool | Include import status (optional) (default to False)
+include_size = False # bool | Include size (optional) (default to False)
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | id (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of contact lists.
@@ -2654,17 +2658,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **include_import_status** | **bool**| Include import status | [optional] [default to false] |
-| **include_size** | **bool**| Include size | [optional] [default to false] |
+| **include_import_status** | **bool**| Include import status | [optional] [default to False] |
+| **include_size** | **bool**| Include size | [optional] [default to False] |
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -2680,6 +2684,8 @@ except ApiException as e:
 Get a basic ContactList information object
 
 This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
+
+
 
 Wraps GET /api/v2/outbound/contactlists/divisionviews/{contactListId} 
 
@@ -2701,8 +2707,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 contact_list_id = 'contact_list_id_example' # str | Contactlist ID
-include_import_status = false # bool | Include import status (optional) (default to false)
-include_size = false # bool | Include size (optional) (default to false)
+include_import_status = False # bool | Include import status (optional) (default to False)
+include_size = False # bool | Include size (optional) (default to False)
 
 try:
     # Get a basic ContactList information object
@@ -2718,8 +2724,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contactlist ID |  |
-| **include_import_status** | **bool**| Include import status | [optional] [default to false] |
-| **include_size** | **bool**| Include size | [optional] [default to false] |
+| **include_import_status** | **bool**| Include import status | [optional] [default to False] |
+| **include_size** | **bool**| Include size | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2735,6 +2741,8 @@ except ApiException as e:
 Query a list of simplified contact list objects.
 
 This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
+
+
 
 Wraps GET /api/v2/outbound/contactlists/divisionviews 
 
@@ -2755,15 +2763,15 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-include_import_status = false # bool | Include import status (optional) (default to false)
-include_size = false # bool | Include size (optional) (default to false)
+include_import_status = False # bool | Include import status (optional) (default to False)
+include_size = False # bool | Include size (optional) (default to False)
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | id (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of simplified contact list objects.
@@ -2778,15 +2786,15 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **include_import_status** | **bool**| Include import status | [optional] [default to false] |
-| **include_size** | **bool**| Include size | [optional] [default to false] |
+| **include_import_status** | **bool**| Include import status | [optional] [default to False] |
+| **include_size** | **bool**| Include size | [optional] [default to False] |
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -2823,8 +2831,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 dnc_list_id = 'dnc_list_id_example' # str | DncList ID
-include_import_status = false # bool | Import status (optional) (default to false)
-include_size = false # bool | Include size (optional) (default to false)
+include_import_status = False # bool | Import status (optional) (default to False)
+include_size = False # bool | Include size (optional) (default to False)
 
 try:
     # Get dialer DNC list
@@ -2840,8 +2848,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
-| **include_import_status** | **bool**| Import status | [optional] [default to false] |
-| **include_size** | **bool**| Include size | [optional] [default to false] |
+| **include_import_status** | **bool**| Import status | [optional] [default to False] |
+| **include_size** | **bool**| Include size | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2879,7 +2887,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 dnc_list_id = 'dnc_list_id_example' # str | DncList ID
-download = 'false' # str | Redirect to download uri (optional) (default to false)
+download = ''false'' # str | Redirect to download uri (optional) (default to 'false')
 
 try:
     # Get the URI of a DNC list export.
@@ -2895,7 +2903,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
-| **download** | **str**| Redirect to download uri | [optional] [default to false] |
+| **download** | **str**| Redirect to download uri | [optional] [default to &#39;false&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2982,12 +2990,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-include_import_status = false # bool | Import status (optional) (default to false)
-include_size = false # bool | Include size (optional) (default to false)
+include_import_status = False # bool | Import status (optional) (default to False)
+include_size = False # bool | Include size (optional) (default to False)
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 dnc_source_type = 'dnc_source_type_example' # str | DncSourceType (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
@@ -3007,12 +3015,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **include_import_status** | **bool**| Import status | [optional] [default to false] |
-| **include_size** | **bool**| Include size | [optional] [default to false] |
+| **include_import_status** | **bool**| Import status | [optional] [default to False] |
+| **include_size** | **bool**| Include size | [optional] [default to False] |
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
@@ -3034,6 +3042,8 @@ Get a basic DncList information object
 
 This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
 
+
+
 Wraps GET /api/v2/outbound/dnclists/divisionviews/{dncListId} 
 
 Requires ALL permissions: 
@@ -3054,8 +3064,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 dnc_list_id = 'dnc_list_id_example' # str | Dnclist ID
-include_import_status = false # bool | Include import status (optional) (default to false)
-include_size = false # bool | Include size (optional) (default to false)
+include_import_status = False # bool | Include import status (optional) (default to False)
+include_size = False # bool | Include size (optional) (default to False)
 
 try:
     # Get a basic DncList information object
@@ -3071,8 +3081,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| Dnclist ID |  |
-| **include_import_status** | **bool**| Include import status | [optional] [default to false] |
-| **include_size** | **bool**| Include size | [optional] [default to false] |
+| **include_import_status** | **bool**| Include import status | [optional] [default to False] |
+| **include_size** | **bool**| Include size | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3088,6 +3098,8 @@ except ApiException as e:
 Query a list of simplified dnc list objects.
 
 This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
+
+
 
 Wraps GET /api/v2/outbound/dnclists/divisionviews 
 
@@ -3108,16 +3120,16 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-include_import_status = false # bool | Include import status (optional) (default to false)
-include_size = false # bool | Include size (optional) (default to false)
+include_import_status = False # bool | Include import status (optional) (default to False)
+include_size = False # bool | Include size (optional) (default to False)
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 dnc_source_type = 'dnc_source_type_example' # str | DncSourceType (optional)
 id = ['id_example'] # list[str] | id (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of simplified dnc list objects.
@@ -3132,16 +3144,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **include_import_status** | **bool**| Include import status | [optional] [default to false] |
-| **include_size** | **bool**| Include size | [optional] [default to false] |
+| **include_import_status** | **bool**| Include import status | [optional] [default to False] |
+| **include_size** | **bool**| Include size | [optional] [default to False] |
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -3230,11 +3242,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 category = 'category_example' # str | Category (optional)
 level = 'level_example' # str | Level (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query Event Logs
@@ -3251,11 +3263,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **category** | **str**| Category | [optional]  |
 | **level** | **str**| Level | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -3398,8 +3410,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | The field to sort by (optional) (default to name)
-sort_order = 'ascending' # str | The direction to sort (optional) (default to ascending)
+sort_by = ''name'' # str | The field to sort by (optional) (default to 'name')
+sort_order = ''ascending'' # str | The direction to sort (optional) (default to 'ascending')
 name = 'name_example' # str | Name (optional)
 contact_list_id = 'contact_list_id_example' # str | Contact List ID (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
@@ -3422,8 +3434,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| The field to sort by | [optional] [default to name]<br />**Values**: campaignStatus, name, type |
-| **sort_order** | **str**| The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending |
+| **sort_by** | **str**| The field to sort by | [optional] [default to &#39;name&#39;]<br />**Values**: campaignStatus, name, type |
+| **sort_order** | **str**| The direction to sort | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
 | **contact_list_id** | **str**| Contact List ID | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
@@ -3445,6 +3457,8 @@ except ApiException as e:
 Get a basic Messaging Campaign information object
 
 This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+
+
 
 Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId} 
 
@@ -3498,6 +3512,8 @@ Query a list of basic Messaging Campaign information objects
 
 This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
 
+
+
 Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews 
 
 Requires ANY permissions: 
@@ -3520,7 +3536,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'a' # str | The direction to sort (optional) (default to a)
+sort_order = ''a'' # str | The direction to sort (optional) (default to 'a')
 name = 'name_example' # str | Name (optional)
 type = 'type_example' # str | Campaign Type (optional)
 id = ['id_example'] # list[str] | id (optional)
@@ -3541,7 +3557,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| The direction to sort | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
 | **type** | **str**| Campaign Type | [optional] <br />**Values**: EMAIL, SMS |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
@@ -3634,11 +3650,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of Rule Sets.
@@ -3655,11 +3671,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -4140,11 +4156,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
-filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = 'a' # str | Sort order (optional) (default to a)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of dialer campaign sequences.
@@ -4161,11 +4177,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
-| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -4399,9 +4415,9 @@ api_instance = PureCloudPlatformClientV2.OutboundApi()
 body = PureCloudPlatformClientV2.DialerAuditRequest() # DialerAuditRequest | AuditSearch
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'entity.name' # str | Sort by (optional) (default to entity.name)
-sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
-facets_only = false # bool | Facets only (optional) (default to false)
+sort_by = ''entity.name'' # str | Sort by (optional) (default to 'entity.name')
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
+facets_only = False # bool | Facets only (optional) (default to False)
 
 try:
     # Retrieves audits for dialer.
@@ -4419,9 +4435,9 @@ except ApiException as e:
 | **body** | [**DialerAuditRequest**](DialerAuditRequest.html)| AuditSearch |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to entity.name] |
-| **sort_order** | **str**| Sort order | [optional] [default to ascending] |
-| **facets_only** | **bool**| Facets only | [optional] [default to false] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;entity.name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;] |
+| **facets_only** | **bool**| Facets only | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4532,7 +4548,7 @@ except ApiException as e:
 
 <a name="post_outbound_campaign_agentownedmappingpreview"></a>
 
-## [**Empty**](Empty.html) post_outbound_campaign_agentownedmappingpreview(campaign_id)
+## Empty** post_outbound_campaign_agentownedmappingpreview(campaign_id)
 
 
 
@@ -4581,7 +4597,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="post_outbound_campaign_callback_schedule"></a>
 
@@ -4593,9 +4609,11 @@ Schedule a Callback for a Dialer Campaign (Deprecated)
 
 This endpoint is deprecated and may have unexpected results. Please use \"/conversations/{conversationId}/participants/{participantId}/callbacks instead.\"
 
+
+
 Wraps POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4766,7 +4784,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Campaign IDs
+body = ['body_example'] # list[str] | Campaign IDs
 
 try:
     # Get progress for a list of campaigns
@@ -4781,7 +4799,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | **list[str]**| Campaign IDs |  |
+| **body** | [**list[str]**](str.html)| Campaign IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4869,9 +4887,9 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 contact_list_id = 'contact_list_id_example' # str | Contact List ID
 body = [PureCloudPlatformClientV2.WritableDialerContact()] # list[WritableDialerContact] | Contact
-priority = true # bool | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
-clear_system_data = true # bool | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't. (optional)
-do_not_queue = true # bool | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter. (optional)
+priority = True # bool | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
+clear_system_data = True # bool | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't. (optional)
+do_not_queue = True # bool | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter. (optional)
 
 try:
     # Add contacts to a contact list.
@@ -4927,7 +4945,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 contact_list_id = 'contact_list_id_example' # str | Contact List ID
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | ContactIds to get.
+body = ['body_example'] # list[str] | ContactIds to get.
 
 try:
     # Get contacts from a contact list.
@@ -4943,7 +4961,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID |  |
-| **body** | **list[str]**| ContactIds to get. |  |
+| **body** | [**list[str]**](str.html)| ContactIds to get. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4959,6 +4977,8 @@ except ApiException as e:
 Initiate the export of a contact list.
 
 Returns 200 if received OK.
+
+
 
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/export 
 
@@ -5215,6 +5235,8 @@ Initiate the export of a dnc list.
 
 Returns 200 if received OK.
 
+
+
 Wraps POST /api/v2/outbound/dnclists/{dncListId}/export 
 
 Requires ALL permissions: 
@@ -5267,6 +5289,8 @@ Add phone numbers to a DNC list.
 
 Only Internal DNC lists may be appended to
 
+
+
 Wraps POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers 
 
 Requires ANY permissions: 
@@ -5287,7 +5311,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 dnc_list_id = 'dnc_list_id_example' # str | DncList ID
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | DNC Phone Numbers
+body = ['body_example'] # list[str] | DNC Phone Numbers
 expiration_date_time = 'expiration_date_time_example' # str | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format (optional)
 
 try:
@@ -5303,7 +5327,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
-| **body** | **list[str]**| DNC Phone Numbers |  |
+| **body** | [**list[str]**](str.html)| DNC Phone Numbers |  |
 | **expiration_date_time** | **str**| Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional]  |
 {: class="table table-striped"}
 
@@ -5444,7 +5468,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Messaging Campaign IDs
+body = ['body_example'] # list[str] | Messaging Campaign IDs
 
 try:
     # Get progress for a list of messaging campaigns
@@ -5459,7 +5483,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | **list[str]**| Messaging Campaign IDs |  |
+| **body** | [**list[str]**](str.html)| Messaging Campaign IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5790,9 +5814,11 @@ Send notification that an agent's state changed
 
 New agent state.
 
+
+
 Wraps PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

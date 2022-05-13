@@ -82,6 +82,7 @@ class TrustCreate(object):
         :type: str
         """
         
+
         self._pairing_id = pairing_id
 
     @property
@@ -105,6 +106,10 @@ class TrustCreate(object):
         :type: bool
         """
         
+        if not enabled:
+            raise ValueError("Invalid value for `enabled`, must not be `None`")
+
+
         self._enabled = enabled
 
     @property
@@ -128,6 +133,7 @@ class TrustCreate(object):
         :type: list[TrustMemberCreate]
         """
         
+
         self._users = users
 
     @property
@@ -151,6 +157,7 @@ class TrustCreate(object):
         :type: list[TrustMemberCreate]
         """
         
+
         self._groups = groups
 
     @property
@@ -174,6 +181,7 @@ class TrustCreate(object):
         :type: datetime
         """
         
+
         self._date_expired = date_expired
 
     def to_dict(self):

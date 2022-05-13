@@ -178,6 +178,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -201,6 +202,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -224,6 +226,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -247,6 +250,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -270,6 +274,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     @property
@@ -293,6 +298,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._external_organization_id = external_organization_id
 
     @property
@@ -316,6 +322,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -339,6 +346,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -362,6 +370,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._group_id = group_id
 
     @property
@@ -385,6 +394,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._team_id = team_id
 
     @property
@@ -408,6 +418,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -431,6 +442,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._consult_participant_id = consult_participant_id
 
     @property
@@ -454,6 +466,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -477,6 +490,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_required = wrapup_required
 
     @property
@@ -500,6 +514,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_expected = wrapup_expected
 
     @property
@@ -523,6 +538,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._wrapup_prompt = wrapup_prompt
 
     @property
@@ -546,6 +562,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: int
         """
         
+
         self._wrapup_timeout_ms = wrapup_timeout_ms
 
     @property
@@ -569,6 +586,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: QueueConversationEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -592,6 +610,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: datetime
         """
         
+
         self._start_acw_time = start_acw_time
 
     @property
@@ -615,6 +634,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: datetime
         """
         
+
         self._end_acw_time = end_acw_time
 
     @property
@@ -638,6 +658,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: QueueConversationEventTopicConversationRoutingData
         """
         
+
         self._conversation_routing_data = conversation_routing_data
 
     @property
@@ -661,6 +682,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: int
         """
         
+
         self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
@@ -684,6 +706,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._monitored_participant_id = monitored_participant_id
 
     @property
@@ -707,6 +730,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._coached_participant_id = coached_participant_id
 
     @property
@@ -730,6 +754,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._barged_participant_id = barged_participant_id
 
     @property
@@ -780,6 +805,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: str
         """
         
+
         self._flagged_reason = flagged_reason
 
     @property
@@ -803,6 +829,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -826,6 +853,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: list[QueueConversationEventTopicCall]
         """
         
+
         self._calls = calls
 
     @property
@@ -849,6 +877,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: list[QueueConversationEventTopicCallback]
         """
         
+
         self._callbacks = callbacks
 
     @property
@@ -872,6 +901,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: list[QueueConversationEventTopicChat]
         """
         
+
         self._chats = chats
 
     @property
@@ -895,6 +925,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: list[QueueConversationEventTopicCobrowse]
         """
         
+
         self._cobrowsesessions = cobrowsesessions
 
     @property
@@ -918,6 +949,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: list[QueueConversationEventTopicEmail]
         """
         
+
         self._emails = emails
 
     @property
@@ -941,6 +973,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: list[QueueConversationEventTopicMessage]
         """
         
+
         self._messages = messages
 
     @property
@@ -964,6 +997,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: list[QueueConversationEventTopicScreenshare]
         """
         
+
         self._screenshares = screenshares
 
     @property
@@ -987,6 +1021,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: list[QueueConversationEventTopicSocialExpression]
         """
         
+
         self._social_expressions = social_expressions
 
     @property
@@ -1010,6 +1045,7 @@ class QueueConversationEventTopicParticipant(object):
         :type: list[QueueConversationEventTopicVideo]
         """
         
+
         self._videos = videos
 
     def to_dict(self):

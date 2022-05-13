@@ -91,6 +91,7 @@ class Dependency(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class Dependency(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class Dependency(object):
         :type: str
         """
         
+
         self._version = version
 
     @property
@@ -187,6 +190,7 @@ class Dependency(object):
         :type: bool
         """
         
+
         self._deleted = deleted
 
     @property
@@ -210,6 +214,7 @@ class Dependency(object):
         :type: bool
         """
         
+
         self._updated = updated
 
     @property
@@ -233,6 +238,7 @@ class Dependency(object):
         :type: bool
         """
         
+
         self._state_unknown = state_unknown
 
     @property
@@ -256,6 +262,7 @@ class Dependency(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

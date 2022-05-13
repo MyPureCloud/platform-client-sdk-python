@@ -106,6 +106,7 @@ class ShiftTradeSettings(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -129,6 +130,7 @@ class ShiftTradeSettings(object):
         :type: bool
         """
         
+
         self._auto_review = auto_review
 
     @property
@@ -152,6 +154,7 @@ class ShiftTradeSettings(object):
         :type: bool
         """
         
+
         self._allow_direct_trades = allow_direct_trades
 
     @property
@@ -175,6 +178,7 @@ class ShiftTradeSettings(object):
         :type: int
         """
         
+
         self._min_hours_in_future = min_hours_in_future
 
     @property
@@ -306,6 +310,7 @@ class ShiftTradeSettings(object):
         :type: bool
         """
         
+
         self._requires_matching_queues = requires_matching_queues
 
     @property
@@ -329,6 +334,7 @@ class ShiftTradeSettings(object):
         :type: bool
         """
         
+
         self._requires_matching_languages = requires_matching_languages
 
     @property
@@ -352,6 +358,7 @@ class ShiftTradeSettings(object):
         :type: bool
         """
         
+
         self._requires_matching_skills = requires_matching_skills
 
     @property
@@ -375,6 +382,7 @@ class ShiftTradeSettings(object):
         :type: bool
         """
         
+
         self._requires_matching_planning_groups = requires_matching_planning_groups
 
     @property
@@ -398,6 +406,7 @@ class ShiftTradeSettings(object):
         :type: list[ShiftTradeActivityRule]
         """
         
+
         self._activity_category_rules = activity_category_rules
 
     def to_dict(self):

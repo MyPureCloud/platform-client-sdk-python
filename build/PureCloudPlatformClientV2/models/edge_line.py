@@ -130,6 +130,7 @@ class EdgeLine(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -153,6 +154,10 @@ class EdgeLine(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -176,6 +181,7 @@ class EdgeLine(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -199,6 +205,7 @@ class EdgeLine(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -222,6 +229,7 @@ class EdgeLine(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -245,6 +253,7 @@ class EdgeLine(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -268,6 +277,7 @@ class EdgeLine(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -291,6 +301,7 @@ class EdgeLine(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -314,6 +325,7 @@ class EdgeLine(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -364,6 +376,7 @@ class EdgeLine(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -387,6 +400,7 @@ class EdgeLine(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -410,6 +424,7 @@ class EdgeLine(object):
         :type: DomainEntityRef
         """
         
+
         self._schema = schema
 
     @property
@@ -433,6 +448,7 @@ class EdgeLine(object):
         :type: dict(str, object)
         """
         
+
         self._properties = properties
 
     @property
@@ -456,6 +472,7 @@ class EdgeLine(object):
         :type: Edge
         """
         
+
         self._edge = edge
 
     @property
@@ -479,6 +496,7 @@ class EdgeLine(object):
         :type: EdgeGroup
         """
         
+
         self._edge_group = edge_group
 
     @property
@@ -529,6 +547,7 @@ class EdgeLine(object):
         :type: Endpoint
         """
         
+
         self._endpoint = endpoint
 
     @property
@@ -552,6 +571,7 @@ class EdgeLine(object):
         :type: str
         """
         
+
         self._ip_address = ip_address
 
     @property
@@ -575,6 +595,7 @@ class EdgeLine(object):
         :type: str
         """
         
+
         self._logical_interface_id = logical_interface_id
 
     @property
@@ -598,6 +619,7 @@ class EdgeLine(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

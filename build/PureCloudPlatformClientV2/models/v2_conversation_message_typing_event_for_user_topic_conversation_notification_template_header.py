@@ -106,6 +106,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationNotificationTempla
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -129,6 +130,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationNotificationTempla
         :type: V2ConversationMessageTypingEventForUserTopicConversationContentAttachment
         """
         
+
         self._media = media
 
     @property
@@ -152,6 +154,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationNotificationTempla
         :type: list[V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter]
         """
         
+
         self._parameters = parameters
 
     def to_dict(self):

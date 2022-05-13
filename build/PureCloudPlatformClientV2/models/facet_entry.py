@@ -91,6 +91,7 @@ class FacetEntry(object):
         :type: TermAttribute
         """
         
+
         self._attribute = attribute
 
     @property
@@ -114,6 +115,7 @@ class FacetEntry(object):
         :type: FacetStatistics
         """
         
+
         self._statistics = statistics
 
     @property
@@ -137,6 +139,7 @@ class FacetEntry(object):
         :type: int
         """
         
+
         self._other = other
 
     @property
@@ -160,6 +163,7 @@ class FacetEntry(object):
         :type: int
         """
         
+
         self._total = total
 
     @property
@@ -183,6 +187,7 @@ class FacetEntry(object):
         :type: int
         """
         
+
         self._missing = missing
 
     @property
@@ -206,6 +211,7 @@ class FacetEntry(object):
         :type: int
         """
         
+
         self._term_count = term_count
 
     @property
@@ -256,6 +262,7 @@ class FacetEntry(object):
         :type: list[FacetTerm]
         """
         
+
         self._terms = terms
 
     def to_dict(self):

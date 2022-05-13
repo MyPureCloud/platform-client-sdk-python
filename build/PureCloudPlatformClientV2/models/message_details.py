@@ -91,6 +91,7 @@ class MessageDetails(object):
         :type: str
         """
         
+
         self._message_id = message_id
 
     @property
@@ -114,6 +115,7 @@ class MessageDetails(object):
         :type: str
         """
         
+
         self._message_uri = message_uri
 
     @property
@@ -164,6 +166,7 @@ class MessageDetails(object):
         :type: int
         """
         
+
         self._message_segment_count = message_segment_count
 
     @property
@@ -187,6 +190,7 @@ class MessageDetails(object):
         :type: datetime
         """
         
+
         self._message_time = message_time
 
     @property
@@ -210,6 +214,7 @@ class MessageDetails(object):
         :type: list[MessageMedia]
         """
         
+
         self._media = media
 
     @property
@@ -233,6 +238,7 @@ class MessageDetails(object):
         :type: list[MessageSticker]
         """
         
+
         self._stickers = stickers
 
     @property
@@ -256,6 +262,7 @@ class MessageDetails(object):
         :type: ErrorBody
         """
         
+
         self._error_info = error_info
 
     def to_dict(self):

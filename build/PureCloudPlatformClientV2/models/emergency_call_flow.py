@@ -73,6 +73,7 @@ class EmergencyCallFlow(object):
         :type: DomainEntityRef
         """
         
+
         self._emergency_flow = emergency_flow
 
     @property
@@ -96,6 +97,7 @@ class EmergencyCallFlow(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._ivrs = ivrs
 
     def to_dict(self):

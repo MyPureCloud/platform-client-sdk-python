@@ -70,6 +70,7 @@ class ArticleContentBody(object):
         :type: str
         """
         
+
         self._location_url = location_url
 
     def to_dict(self):

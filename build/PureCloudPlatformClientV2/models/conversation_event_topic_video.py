@@ -47,7 +47,7 @@ class ConversationEventTopicVideo(object):
             'audio_muted': 'bool',
             'video_muted': 'bool',
             'sharing_screen': 'bool',
-            'peer_count': 'ConversationEventTopicObject',
+            'peer_count': 'object',
             'provider': 'str',
             'script_id': 'str',
             'peer_id': 'str',
@@ -148,6 +148,7 @@ class ConversationEventTopicVideo(object):
         :type: ConversationEventTopicAddress
         """
         
+
         self._pcSelf = pcSelf
 
     @property
@@ -171,6 +172,7 @@ class ConversationEventTopicVideo(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -194,6 +196,7 @@ class ConversationEventTopicVideo(object):
         :type: str
         """
         
+
         self._context = context
 
     @property
@@ -217,6 +220,7 @@ class ConversationEventTopicVideo(object):
         :type: bool
         """
         
+
         self._audio_muted = audio_muted
 
     @property
@@ -240,6 +244,7 @@ class ConversationEventTopicVideo(object):
         :type: bool
         """
         
+
         self._video_muted = video_muted
 
     @property
@@ -263,6 +268,7 @@ class ConversationEventTopicVideo(object):
         :type: bool
         """
         
+
         self._sharing_screen = sharing_screen
 
     @property
@@ -272,7 +278,7 @@ class ConversationEventTopicVideo(object):
         The number of peer participants from the perspective of the participant in the conference.
 
         :return: The peer_count of this ConversationEventTopicVideo.
-        :rtype: ConversationEventTopicObject
+        :rtype: object
         """
         return self._peer_count
 
@@ -283,9 +289,10 @@ class ConversationEventTopicVideo(object):
         The number of peer participants from the perspective of the participant in the conference.
 
         :param peer_count: The peer_count of this ConversationEventTopicVideo.
-        :type: ConversationEventTopicObject
+        :type: object
         """
         
+
         self._peer_count = peer_count
 
     @property
@@ -309,6 +316,7 @@ class ConversationEventTopicVideo(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -332,6 +340,7 @@ class ConversationEventTopicVideo(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -355,6 +364,7 @@ class ConversationEventTopicVideo(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -405,6 +415,7 @@ class ConversationEventTopicVideo(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -428,6 +439,7 @@ class ConversationEventTopicVideo(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -451,6 +463,7 @@ class ConversationEventTopicVideo(object):
         :type: list[str]
         """
         
+
         self._msids = msids
 
     @property
@@ -474,6 +487,7 @@ class ConversationEventTopicVideo(object):
         :type: ConversationEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -497,6 +511,7 @@ class ConversationEventTopicVideo(object):
         :type: ConversationEventTopicAfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -520,6 +535,7 @@ class ConversationEventTopicVideo(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

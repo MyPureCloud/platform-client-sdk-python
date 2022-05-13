@@ -103,6 +103,7 @@ class ConversationDetailQueryFilter(object):
         :type: list[ConversationDetailQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class ConversationDetailQueryFilter(object):
         :type: list[ConversationDetailQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

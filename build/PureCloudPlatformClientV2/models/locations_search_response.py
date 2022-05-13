@@ -94,6 +94,10 @@ class LocationsSearchResponse(object):
         :type: int
         """
         
+        if not total:
+            raise ValueError("Invalid value for `total`, must not be `None`")
+
+
         self._total = total
 
     @property
@@ -117,6 +121,10 @@ class LocationsSearchResponse(object):
         :type: int
         """
         
+        if not page_count:
+            raise ValueError("Invalid value for `page_count`, must not be `None`")
+
+
         self._page_count = page_count
 
     @property
@@ -140,6 +148,10 @@ class LocationsSearchResponse(object):
         :type: int
         """
         
+        if not page_size:
+            raise ValueError("Invalid value for `page_size`, must not be `None`")
+
+
         self._page_size = page_size
 
     @property
@@ -163,6 +175,10 @@ class LocationsSearchResponse(object):
         :type: int
         """
         
+        if not page_number:
+            raise ValueError("Invalid value for `page_number`, must not be `None`")
+
+
         self._page_number = page_number
 
     @property
@@ -186,6 +202,7 @@ class LocationsSearchResponse(object):
         :type: str
         """
         
+
         self._previous_page = previous_page
 
     @property
@@ -209,6 +226,7 @@ class LocationsSearchResponse(object):
         :type: str
         """
         
+
         self._current_page = current_page
 
     @property
@@ -232,6 +250,7 @@ class LocationsSearchResponse(object):
         :type: str
         """
         
+
         self._next_page = next_page
 
     @property
@@ -255,6 +274,10 @@ class LocationsSearchResponse(object):
         :type: list[str]
         """
         
+        if not types:
+            raise ValueError("Invalid value for `types`, must not be `None`")
+
+
         self._types = types
 
     @property
@@ -278,6 +301,10 @@ class LocationsSearchResponse(object):
         :type: list[LocationDefinition]
         """
         
+        if not results:
+            raise ValueError("Invalid value for `results`, must not be `None`")
+
+
         self._results = results
 
     def to_dict(self):

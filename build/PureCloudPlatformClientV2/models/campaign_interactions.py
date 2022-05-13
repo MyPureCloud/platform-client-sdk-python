@@ -85,6 +85,7 @@ class CampaignInteractions(object):
         :type: DomainEntityRef
         """
         
+
         self._campaign = campaign
 
     @property
@@ -108,6 +109,7 @@ class CampaignInteractions(object):
         :type: list[CampaignInteraction]
         """
         
+
         self._pending_interactions = pending_interactions
 
     @property
@@ -131,6 +133,7 @@ class CampaignInteractions(object):
         :type: list[CampaignInteraction]
         """
         
+
         self._proceeding_interactions = proceeding_interactions
 
     @property
@@ -154,6 +157,7 @@ class CampaignInteractions(object):
         :type: list[CampaignInteraction]
         """
         
+
         self._previewing_interactions = previewing_interactions
 
     @property
@@ -177,6 +181,7 @@ class CampaignInteractions(object):
         :type: list[CampaignInteraction]
         """
         
+
         self._interacting_interactions = interacting_interactions
 
     @property
@@ -200,6 +205,7 @@ class CampaignInteractions(object):
         :type: list[CampaignInteraction]
         """
         
+
         self._scheduled_interactions = scheduled_interactions
 
     def to_dict(self):

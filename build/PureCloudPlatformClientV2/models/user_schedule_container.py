@@ -76,6 +76,7 @@ class UserScheduleContainer(object):
         :type: str
         """
         
+
         self._management_unit_time_zone = management_unit_time_zone
 
     @property
@@ -99,6 +100,7 @@ class UserScheduleContainer(object):
         :type: list[WeekScheduleReference]
         """
         
+
         self._published_schedules = published_schedules
 
     @property
@@ -122,6 +124,7 @@ class UserScheduleContainer(object):
         :type: dict(str, UserSchedule)
         """
         
+
         self._user_schedules = user_schedules
 
     def to_dict(self):

@@ -73,6 +73,10 @@ class KeyValue(object):
         :type: str
         """
         
+        if not key:
+            raise ValueError("Invalid value for `key`, must not be `None`")
+
+
         self._key = key
 
     @property
@@ -96,6 +100,10 @@ class KeyValue(object):
         :type: str
         """
         
+        if not value:
+            raise ValueError("Invalid value for `value`, must not be `None`")
+
+
         self._value = value
 
     def to_dict(self):

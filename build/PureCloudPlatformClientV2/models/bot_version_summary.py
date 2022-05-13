@@ -82,6 +82,10 @@ class BotVersionSummary(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -105,6 +109,10 @@ class BotVersionSummary(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -128,6 +136,7 @@ class BotVersionSummary(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -151,6 +160,7 @@ class BotVersionSummary(object):
         :type: str
         """
         
+
         self._bot_composite_tag = bot_composite_tag
 
     @property
@@ -174,6 +184,10 @@ class BotVersionSummary(object):
         :type: str
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     def to_dict(self):

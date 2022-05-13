@@ -85,6 +85,7 @@ class TopicsEntityListing(object):
         :type: list[ListedTopic]
         """
         
+
         self._entities = entities
 
     @property
@@ -108,6 +109,7 @@ class TopicsEntityListing(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -131,6 +133,7 @@ class TopicsEntityListing(object):
         :type: int
         """
         
+
         self._total = total
 
     @property
@@ -154,6 +157,7 @@ class TopicsEntityListing(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -177,6 +181,7 @@ class TopicsEntityListing(object):
         :type: str
         """
         
+
         self._next_uri = next_uri
 
     @property
@@ -200,6 +205,7 @@ class TopicsEntityListing(object):
         :type: int
         """
         
+
         self._page_count = page_count
 
     def to_dict(self):

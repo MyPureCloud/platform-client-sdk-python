@@ -115,6 +115,7 @@ class LocationDefinition(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class LocationDefinition(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -161,6 +163,7 @@ class LocationDefinition(object):
         :type: AddressableEntityRef
         """
         
+
         self._contact_user = contact_user
 
     @property
@@ -184,6 +187,7 @@ class LocationDefinition(object):
         :type: LocationEmergencyNumber
         """
         
+
         self._emergency_number = emergency_number
 
     @property
@@ -207,6 +211,7 @@ class LocationDefinition(object):
         :type: LocationAddress
         """
         
+
         self._address = address
 
     @property
@@ -257,6 +262,7 @@ class LocationDefinition(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -280,6 +286,7 @@ class LocationDefinition(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -303,6 +310,7 @@ class LocationDefinition(object):
         :type: list[str]
         """
         
+
         self._path = path
 
     @property
@@ -326,6 +334,7 @@ class LocationDefinition(object):
         :type: list[LocationImage]
         """
         
+
         self._profile_image = profile_image
 
     @property
@@ -349,6 +358,7 @@ class LocationDefinition(object):
         :type: list[LocationImage]
         """
         
+
         self._floorplan_image = floorplan_image
 
     @property
@@ -372,6 +382,7 @@ class LocationDefinition(object):
         :type: LocationAddressVerificationDetails
         """
         
+
         self._address_verification_details = address_verification_details
 
     @property
@@ -395,6 +406,7 @@ class LocationDefinition(object):
         :type: bool
         """
         
+
         self._address_verified = address_verified
 
     @property
@@ -418,6 +430,7 @@ class LocationDefinition(object):
         :type: bool
         """
         
+
         self._address_stored = address_stored
 
     @property
@@ -441,6 +454,7 @@ class LocationDefinition(object):
         :type: str
         """
         
+
         self._images = images
 
     @property
@@ -464,6 +478,7 @@ class LocationDefinition(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

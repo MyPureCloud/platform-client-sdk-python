@@ -73,6 +73,10 @@ class LearningAssignmentUserQuery(object):
         :type: LearningModuleRule
         """
         
+        if not rule:
+            raise ValueError("Invalid value for `rule`, must not be `None`")
+
+
         self._rule = rule
 
     @property
@@ -96,6 +100,7 @@ class LearningAssignmentUserQuery(object):
         :type: str
         """
         
+
         self._search_term = search_term
 
     def to_dict(self):

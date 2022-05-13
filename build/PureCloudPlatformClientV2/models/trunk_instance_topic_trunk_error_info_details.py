@@ -76,6 +76,7 @@ class TrunkInstanceTopicTrunkErrorInfoDetails(object):
         :type: str
         """
         
+
         self._code = code
 
     @property
@@ -99,6 +100,7 @@ class TrunkInstanceTopicTrunkErrorInfoDetails(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -122,6 +124,7 @@ class TrunkInstanceTopicTrunkErrorInfoDetails(object):
         :type: str
         """
         
+
         self._hostname = hostname
 
     def to_dict(self):

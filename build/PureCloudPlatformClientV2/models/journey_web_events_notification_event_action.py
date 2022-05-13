@@ -82,6 +82,7 @@ class JourneyWebEventsNotificationEventAction(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class JourneyWebEventsNotificationEventAction(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -182,6 +184,7 @@ class JourneyWebEventsNotificationEventAction(object):
         :type: str
         """
         
+
         self._prompt = prompt
 
     def to_dict(self):

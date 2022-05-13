@@ -73,6 +73,7 @@ class EvaluationFormAndScoringSet(object):
         :type: EvaluationForm
         """
         
+
         self._evaluation_form = evaluation_form
 
     @property
@@ -96,6 +97,7 @@ class EvaluationFormAndScoringSet(object):
         :type: EvaluationScoringSet
         """
         
+
         self._answers = answers
 
     def to_dict(self):

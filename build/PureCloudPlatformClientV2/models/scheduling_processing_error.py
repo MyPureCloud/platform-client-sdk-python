@@ -100,6 +100,7 @@ class SchedulingProcessingError(object):
         :type: str
         """
         
+
         self._description = description
 
     def to_dict(self):

@@ -109,6 +109,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: int
         """
         
+
         self._event_time = event_time
 
     @property
@@ -132,6 +133,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -155,6 +157,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: str
         """
         
+
         self._participant_id = participant_id
 
     @property
@@ -178,6 +181,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -255,6 +259,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -305,6 +310,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: str
         """
         
+
         self._ani = ani
 
     @property
@@ -328,6 +334,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: str
         """
         
+
         self._dnis = dnis
 
     @property
@@ -351,6 +358,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -374,6 +382,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -397,6 +406,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: str
         """
         
+
         self._division_id = division_id
 
     @property
@@ -420,6 +430,7 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :type: int
         """
         
+
         self._voicemail_duration_ms = voicemail_duration_ms
 
     def to_dict(self):

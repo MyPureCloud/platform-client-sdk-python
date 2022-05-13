@@ -70,6 +70,7 @@ class SentimentFeedbackEntityListing(object):
         :type: list[SentimentFeedback]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

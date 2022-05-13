@@ -73,6 +73,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationButtonComponent(ob
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -96,6 +97,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationButtonComponent(ob
         :type: V2ConversationMessageTypingEventForUserTopicConversationContentActions
         """
         
+
         self._actions = actions
 
     def to_dict(self):

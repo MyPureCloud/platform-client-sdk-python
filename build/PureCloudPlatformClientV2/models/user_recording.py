@@ -106,6 +106,7 @@ class UserRecording(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class UserRecording(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -152,6 +154,7 @@ class UserRecording(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -175,6 +178,7 @@ class UserRecording(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -198,6 +202,7 @@ class UserRecording(object):
         :type: str
         """
         
+
         self._content_uri = content_uri
 
     @property
@@ -221,6 +226,7 @@ class UserRecording(object):
         :type: DomainEntityRef
         """
         
+
         self._workspace = workspace
 
     @property
@@ -244,6 +250,7 @@ class UserRecording(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -267,6 +274,7 @@ class UserRecording(object):
         :type: Conversation
         """
         
+
         self._conversation = conversation
 
     @property
@@ -290,6 +298,7 @@ class UserRecording(object):
         :type: int
         """
         
+
         self._content_length = content_length
 
     @property
@@ -313,6 +322,7 @@ class UserRecording(object):
         :type: int
         """
         
+
         self._duration_milliseconds = duration_milliseconds
 
     @property
@@ -336,6 +346,7 @@ class UserRecording(object):
         :type: list[DocumentThumbnail]
         """
         
+
         self._thumbnails = thumbnails
 
     @property
@@ -359,6 +370,7 @@ class UserRecording(object):
         :type: bool
         """
         
+
         self._read = read
 
     @property
@@ -382,6 +394,7 @@ class UserRecording(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

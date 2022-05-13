@@ -175,6 +175,7 @@ class CallbackBasic(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -198,6 +199,7 @@ class CallbackBasic(object):
         :type: list[Segment]
         """
         
+
         self._segments = segments
 
     @property
@@ -248,6 +250,7 @@ class CallbackBasic(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -298,6 +301,7 @@ class CallbackBasic(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -321,6 +325,7 @@ class CallbackBasic(object):
         :type: DialerPreview
         """
         
+
         self._dialer_preview = dialer_preview
 
     @property
@@ -344,6 +349,7 @@ class CallbackBasic(object):
         :type: Voicemail
         """
         
+
         self._voicemail = voicemail
 
     @property
@@ -367,6 +373,7 @@ class CallbackBasic(object):
         :type: list[str]
         """
         
+
         self._callback_numbers = callback_numbers
 
     @property
@@ -390,6 +397,7 @@ class CallbackBasic(object):
         :type: str
         """
         
+
         self._callback_user_name = callback_user_name
 
     @property
@@ -413,6 +421,7 @@ class CallbackBasic(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -436,6 +445,7 @@ class CallbackBasic(object):
         :type: bool
         """
         
+
         self._external_campaign = external_campaign
 
     @property
@@ -459,6 +469,7 @@ class CallbackBasic(object):
         :type: bool
         """
         
+
         self._skip_enabled = skip_enabled
 
     @property
@@ -482,6 +493,7 @@ class CallbackBasic(object):
         :type: int
         """
         
+
         self._timeout_seconds = timeout_seconds
 
     @property
@@ -505,6 +517,7 @@ class CallbackBasic(object):
         :type: datetime
         """
         
+
         self._start_alerting_time = start_alerting_time
 
     @property
@@ -528,6 +541,7 @@ class CallbackBasic(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -551,6 +565,7 @@ class CallbackBasic(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -574,6 +589,7 @@ class CallbackBasic(object):
         :type: datetime
         """
         
+
         self._callback_scheduled_time = callback_scheduled_time
 
     @property
@@ -597,6 +613,7 @@ class CallbackBasic(object):
         :type: str
         """
         
+
         self._automated_callback_config_id = automated_callback_config_id
 
     @property
@@ -620,6 +637,7 @@ class CallbackBasic(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -643,6 +661,7 @@ class CallbackBasic(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -666,6 +685,7 @@ class CallbackBasic(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -689,6 +709,7 @@ class CallbackBasic(object):
         :type: AfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -712,6 +733,7 @@ class CallbackBasic(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     @property
@@ -735,6 +757,7 @@ class CallbackBasic(object):
         :type: str
         """
         
+
         self._caller_id = caller_id
 
     @property
@@ -758,6 +781,7 @@ class CallbackBasic(object):
         :type: str
         """
         
+
         self._caller_id_name = caller_id_name
 
     def to_dict(self):

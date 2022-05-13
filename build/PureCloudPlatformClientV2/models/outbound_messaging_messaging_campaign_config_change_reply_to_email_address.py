@@ -73,6 +73,7 @@ class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
         """
         
+
         self._domain = domain
 
     @property
@@ -96,6 +97,7 @@ class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress(object):
         :type: OutboundMessagingMessagingCampaignConfigChangeUriReference
         """
         
+
         self._route = route
 
     def to_dict(self):

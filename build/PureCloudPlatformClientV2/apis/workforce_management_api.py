@@ -7117,7 +7117,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_week_shifttrade(self, management_unit_id, week_date_id, body, trade_id, **kwargs):
+    def patch_workforcemanagement_managementunit_week_shifttrade(self, management_unit_id, week_date_id, trade_id, body, **kwargs):
         """
         Updates a shift trade. This route can only be called by the initiating agent
         
@@ -7128,20 +7128,20 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, body, trade_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, trade_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param date week_date_id: The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param PatchShiftTradeRequest body: body (required)
         :param str trade_id: The ID of the shift trade to update (required)
+        :param PatchShiftTradeRequest body: body (required)
         :return: ShiftTradeResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_date_id', 'body', 'trade_id']
+        all_params = ['management_unit_id', 'week_date_id', 'trade_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -7160,12 +7160,12 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'week_date_id' is set
         if ('week_date_id' not in params) or (params['week_date_id'] is None):
             raise ValueError("Missing the required parameter `week_date_id` when calling `patch_workforcemanagement_managementunit_week_shifttrade`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_week_shifttrade`")
         # verify the required parameter 'trade_id' is set
         if ('trade_id' not in params) or (params['trade_id'] is None):
             raise ValueError("Missing the required parameter `trade_id` when calling `patch_workforcemanagement_managementunit_week_shifttrade`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_week_shifttrade`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}'.replace('{format}', 'json')
@@ -7230,14 +7230,14 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str work_plan_id: The ID of the work plan to update (required)
-        :param WorkPlan body: body
         :param str validation_mode: Allows to update work plan even if validation result is invalid
+        :param WorkPlan body: body
         :return: WorkPlan
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'work_plan_id', 'body', 'validation_mode']
+        all_params = ['management_unit_id', 'work_plan_id', 'validation_mode', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -7718,15 +7718,15 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param BuSearchAgentSchedulesRequest body: body
         :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
         :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
+        :param BuSearchAgentSchedulesRequest body: body
         :return: BuAsyncAgentSchedulesSearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'body', 'force_async', 'force_download_service']
+        all_params = ['business_unit_id', 'force_async', 'force_download_service', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -9566,15 +9566,15 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param BuSearchAgentSchedulesRequest body: body
         :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
         :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
+        :param BuSearchAgentSchedulesRequest body: body
         :return: BuAsyncAgentSchedulesSearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'body', 'force_async', 'force_download_service']
+        all_params = ['management_unit_id', 'force_async', 'force_download_service', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -10366,7 +10366,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_week_shifttrade_match(self, management_unit_id, week_date_id, body, trade_id, **kwargs):
+    def post_workforcemanagement_managementunit_week_shifttrade_match(self, management_unit_id, week_date_id, trade_id, body, **kwargs):
         """
         Matches a shift trade. This route can only be called by the receiving agent
         
@@ -10377,20 +10377,20 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, body, trade_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, trade_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param date week_date_id: The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param MatchShiftTradeRequest body: body (required)
         :param str trade_id: The ID of the shift trade to update (required)
+        :param MatchShiftTradeRequest body: body (required)
         :return: MatchShiftTradeResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_date_id', 'body', 'trade_id']
+        all_params = ['management_unit_id', 'week_date_id', 'trade_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -10409,12 +10409,12 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'week_date_id' is set
         if ('week_date_id' not in params) or (params['week_date_id'] is None):
             raise ValueError("Missing the required parameter `week_date_id` when calling `post_workforcemanagement_managementunit_week_shifttrade_match`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_week_shifttrade_match`")
         # verify the required parameter 'trade_id' is set
         if ('trade_id' not in params) or (params['trade_id'] is None):
             raise ValueError("Missing the required parameter `trade_id` when calling `post_workforcemanagement_managementunit_week_shifttrade_match`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_week_shifttrade_match`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match'.replace('{format}', 'json')
@@ -10839,14 +10839,14 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str work_plan_id: The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. (required)
-        :param WorkPlanValidationRequest body: body
         :param list[str] expand: 
+        :param WorkPlanValidationRequest body: body
         :return: ValidateWorkPlanResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'work_plan_id', 'body', 'expand']
+        all_params = ['management_unit_id', 'work_plan_id', 'expand', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -11096,14 +11096,14 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param CreateWorkPlan body: body
         :param str validation_mode: Allows to create work plan even if the validation result is invalid
+        :param CreateWorkPlan body: body
         :return: WorkPlan
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'body', 'validation_mode']
+        all_params = ['management_unit_id', 'validation_mode', 'body']
         all_params.append('callback')
 
         params = locals()

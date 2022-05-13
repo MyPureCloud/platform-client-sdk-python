@@ -118,6 +118,7 @@ class MessagingCampaign(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,7 @@ class MessagingCampaign(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -164,6 +166,7 @@ class MessagingCampaign(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -187,6 +190,7 @@ class MessagingCampaign(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -210,6 +214,7 @@ class MessagingCampaign(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -233,6 +238,7 @@ class MessagingCampaign(object):
         :type: DomainEntityRef
         """
         
+
         self._division = division
 
     @property
@@ -283,6 +289,7 @@ class MessagingCampaign(object):
         :type: DomainEntityRef
         """
         
+
         self._callable_time_set = callable_time_set
 
     @property
@@ -306,6 +313,10 @@ class MessagingCampaign(object):
         :type: DomainEntityRef
         """
         
+        if not contact_list:
+            raise ValueError("Invalid value for `contact_list`, must not be `None`")
+
+
         self._contact_list = contact_list
 
     @property
@@ -329,6 +340,7 @@ class MessagingCampaign(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._dnc_lists = dnc_lists
 
     @property
@@ -352,6 +364,7 @@ class MessagingCampaign(object):
         :type: bool
         """
         
+
         self._always_running = always_running
 
     @property
@@ -375,6 +388,7 @@ class MessagingCampaign(object):
         :type: list[ContactSort]
         """
         
+
         self._contact_sorts = contact_sorts
 
     @property
@@ -398,6 +412,10 @@ class MessagingCampaign(object):
         :type: int
         """
         
+        if not messages_per_minute:
+            raise ValueError("Invalid value for `messages_per_minute`, must not be `None`")
+
+
         self._messages_per_minute = messages_per_minute
 
     @property
@@ -421,6 +439,7 @@ class MessagingCampaign(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._contact_list_filters = contact_list_filters
 
     @property
@@ -444,6 +463,7 @@ class MessagingCampaign(object):
         :type: list[RestErrorDetail]
         """
         
+
         self._errors = errors
 
     @property
@@ -467,6 +487,7 @@ class MessagingCampaign(object):
         :type: SmsConfig
         """
         
+
         self._sms_config = sms_config
 
     @property
@@ -490,6 +511,7 @@ class MessagingCampaign(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

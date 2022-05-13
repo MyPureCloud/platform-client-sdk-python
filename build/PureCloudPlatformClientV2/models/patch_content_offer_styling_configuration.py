@@ -88,6 +88,7 @@ class PatchContentOfferStylingConfiguration(object):
         :type: PatchContentPositionProperties
         """
         
+
         self._position = position
 
     @property
@@ -111,6 +112,7 @@ class PatchContentOfferStylingConfiguration(object):
         :type: PatchContentOfferStyleProperties
         """
         
+
         self._offer = offer
 
     @property
@@ -134,6 +136,7 @@ class PatchContentOfferStylingConfiguration(object):
         :type: PatchCloseButtonStyleProperties
         """
         
+
         self._close_button = close_button
 
     @property
@@ -157,6 +160,7 @@ class PatchContentOfferStylingConfiguration(object):
         :type: PatchCtaButtonStyleProperties
         """
         
+
         self._cta_button = cta_button
 
     @property
@@ -180,6 +184,7 @@ class PatchContentOfferStylingConfiguration(object):
         :type: PatchTextStyleProperties
         """
         
+
         self._title = title
 
     @property
@@ -203,6 +208,7 @@ class PatchContentOfferStylingConfiguration(object):
         :type: PatchTextStyleProperties
         """
         
+
         self._headline = headline
 
     @property
@@ -226,6 +232,7 @@ class PatchContentOfferStylingConfiguration(object):
         :type: PatchTextStyleProperties
         """
         
+
         self._body = body
 
     def to_dict(self):

@@ -76,6 +76,10 @@ class QMAuditQueryRequest(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -99,6 +103,10 @@ class QMAuditQueryRequest(object):
         :type: list[QualityAuditQueryFilter]
         """
         
+        if not filters:
+            raise ValueError("Invalid value for `filters`, must not be `None`")
+
+
         self._filters = filters
 
     @property
@@ -122,6 +130,7 @@ class QMAuditQueryRequest(object):
         :type: list[AuditQuerySort]
         """
         
+
         self._sort = sort
 
     def to_dict(self):

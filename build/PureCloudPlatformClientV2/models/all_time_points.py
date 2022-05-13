@@ -76,6 +76,7 @@ class AllTimePoints(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -99,6 +100,7 @@ class AllTimePoints(object):
         :type: date
         """
         
+
         self._date_end_workday = date_end_workday
 
     @property
@@ -122,6 +124,7 @@ class AllTimePoints(object):
         :type: int
         """
         
+
         self._all_time_points = all_time_points
 
     def to_dict(self):

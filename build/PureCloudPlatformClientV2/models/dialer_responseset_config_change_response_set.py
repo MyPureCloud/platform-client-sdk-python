@@ -88,6 +88,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         :type: dict(str, DialerResponsesetConfigChangeReaction)
         """
         
+
         self._responses = responses
 
     @property
@@ -111,6 +112,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         :type: bool
         """
         
+
         self._beep_detection_enabled = beep_detection_enabled
 
     @property
@@ -134,6 +136,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -157,6 +160,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -180,6 +184,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -203,6 +208,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -226,6 +232,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

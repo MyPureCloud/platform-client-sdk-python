@@ -79,6 +79,7 @@ class AuditQueryExecutionResultsResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class AuditQueryExecutionResultsResponse(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -125,6 +127,7 @@ class AuditQueryExecutionResultsResponse(object):
         :type: str
         """
         
+
         self._cursor = cursor
 
     @property
@@ -148,6 +151,7 @@ class AuditQueryExecutionResultsResponse(object):
         :type: list[AuditLogMessage]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

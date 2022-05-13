@@ -70,6 +70,7 @@ class MemberListing(object):
         :type: list[Member]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

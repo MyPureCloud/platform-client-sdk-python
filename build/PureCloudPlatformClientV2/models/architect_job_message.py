@@ -76,6 +76,7 @@ class ArchitectJobMessage(object):
         :type: datetime
         """
         
+
         self._date_time = date_time
 
     @property
@@ -126,6 +127,7 @@ class ArchitectJobMessage(object):
         :type: str
         """
         
+
         self._text = text
 
     def to_dict(self):

@@ -103,6 +103,7 @@ class SegmentDetailQueryFilter(object):
         :type: list[SegmentDetailQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class SegmentDetailQueryFilter(object):
         :type: list[SegmentDetailQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

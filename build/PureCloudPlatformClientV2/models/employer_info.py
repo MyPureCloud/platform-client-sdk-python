@@ -79,6 +79,7 @@ class EmployerInfo(object):
         :type: str
         """
         
+
         self._official_name = official_name
 
     @property
@@ -102,6 +103,7 @@ class EmployerInfo(object):
         :type: str
         """
         
+
         self._employee_id = employee_id
 
     @property
@@ -125,6 +127,7 @@ class EmployerInfo(object):
         :type: str
         """
         
+
         self._employee_type = employee_type
 
     @property
@@ -148,6 +151,7 @@ class EmployerInfo(object):
         :type: str
         """
         
+
         self._date_hire = date_hire
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class CallForwardingEventTarget(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -96,6 +97,7 @@ class CallForwardingEventTarget(object):
         :type: str
         """
         
+
         self._value = value
 
     def to_dict(self):

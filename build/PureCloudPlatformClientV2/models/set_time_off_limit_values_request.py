@@ -73,6 +73,7 @@ class SetTimeOffLimitValuesRequest(object):
         :type: list[TimeOffLimitRange]
         """
         
+
         self._values = values
 
     @property
@@ -96,6 +97,10 @@ class SetTimeOffLimitValuesRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
+        if not metadata:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")
+
+
         self._metadata = metadata
 
     def to_dict(self):

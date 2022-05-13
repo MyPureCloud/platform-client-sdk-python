@@ -70,6 +70,7 @@ class WorkdayMetricListing(object):
         :type: list[WorkdayMetric]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

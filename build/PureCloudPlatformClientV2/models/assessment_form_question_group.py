@@ -100,6 +100,7 @@ class AssessmentFormQuestionGroup(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,10 @@ class AssessmentFormQuestionGroup(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -146,6 +151,10 @@ class AssessmentFormQuestionGroup(object):
         :type: str
         """
         
+        if not type:
+            raise ValueError("Invalid value for `type`, must not be `None`")
+
+
         self._type = type
 
     @property
@@ -169,6 +178,7 @@ class AssessmentFormQuestionGroup(object):
         :type: bool
         """
         
+
         self._default_answers_to_highest = default_answers_to_highest
 
     @property
@@ -192,6 +202,7 @@ class AssessmentFormQuestionGroup(object):
         :type: bool
         """
         
+
         self._default_answers_to_na = default_answers_to_na
 
     @property
@@ -215,6 +226,7 @@ class AssessmentFormQuestionGroup(object):
         :type: bool
         """
         
+
         self._na_enabled = na_enabled
 
     @property
@@ -238,6 +250,7 @@ class AssessmentFormQuestionGroup(object):
         :type: float
         """
         
+
         self._weight = weight
 
     @property
@@ -261,6 +274,7 @@ class AssessmentFormQuestionGroup(object):
         :type: bool
         """
         
+
         self._manual_weight = manual_weight
 
     @property
@@ -284,6 +298,10 @@ class AssessmentFormQuestionGroup(object):
         :type: list[AssessmentFormQuestion]
         """
         
+        if not questions:
+            raise ValueError("Invalid value for `questions`, must not be `None`")
+
+
         self._questions = questions
 
     @property
@@ -307,6 +325,7 @@ class AssessmentFormQuestionGroup(object):
         :type: VisibilityCondition
         """
         
+
         self._visibility_condition = visibility_condition
 
     @property
@@ -330,6 +349,7 @@ class AssessmentFormQuestionGroup(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

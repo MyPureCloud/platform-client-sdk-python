@@ -91,6 +91,7 @@ class UserExpands(object):
         :type: RoutingStatus
         """
         
+
         self._routing_status = routing_status
 
     @property
@@ -114,6 +115,7 @@ class UserExpands(object):
         :type: UserPresence
         """
         
+
         self._presence = presence
 
     @property
@@ -137,6 +139,7 @@ class UserExpands(object):
         :type: UserPresence
         """
         
+
         self._integration_presence = integration_presence
 
     @property
@@ -160,6 +163,7 @@ class UserExpands(object):
         :type: UserConversationSummary
         """
         
+
         self._conversation_summary = conversation_summary
 
     @property
@@ -183,6 +187,7 @@ class UserExpands(object):
         :type: OutOfOffice
         """
         
+
         self._out_of_office = out_of_office
 
     @property
@@ -206,6 +211,7 @@ class UserExpands(object):
         :type: Geolocation
         """
         
+
         self._geolocation = geolocation
 
     @property
@@ -229,6 +235,7 @@ class UserExpands(object):
         :type: UserStations
         """
         
+
         self._station = station
 
     @property
@@ -252,6 +259,7 @@ class UserExpands(object):
         :type: UserAuthorization
         """
         
+
         self._authorization = authorization
 
     def to_dict(self):

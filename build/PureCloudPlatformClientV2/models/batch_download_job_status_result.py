@@ -88,6 +88,7 @@ class BatchDownloadJobStatusResult(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class BatchDownloadJobStatusResult(object):
         :type: str
         """
         
+
         self._job_id = job_id
 
     @property
@@ -134,6 +136,7 @@ class BatchDownloadJobStatusResult(object):
         :type: int
         """
         
+
         self._expected_result_count = expected_result_count
 
     @property
@@ -157,6 +160,7 @@ class BatchDownloadJobStatusResult(object):
         :type: int
         """
         
+
         self._result_count = result_count
 
     @property
@@ -180,6 +184,7 @@ class BatchDownloadJobStatusResult(object):
         :type: int
         """
         
+
         self._error_count = error_count
 
     @property
@@ -203,6 +208,7 @@ class BatchDownloadJobStatusResult(object):
         :type: list[BatchDownloadJobResult]
         """
         
+
         self._results = results
 
     @property
@@ -226,6 +232,7 @@ class BatchDownloadJobStatusResult(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

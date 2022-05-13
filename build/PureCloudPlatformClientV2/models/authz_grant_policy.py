@@ -79,6 +79,7 @@ class AuthzGrantPolicy(object):
         :type: list[str]
         """
         
+
         self._actions = actions
 
     @property
@@ -102,6 +103,7 @@ class AuthzGrantPolicy(object):
         :type: str
         """
         
+
         self._condition = condition
 
     @property
@@ -125,6 +127,7 @@ class AuthzGrantPolicy(object):
         :type: str
         """
         
+
         self._domain = domain
 
     @property
@@ -148,6 +151,7 @@ class AuthzGrantPolicy(object):
         :type: str
         """
         
+
         self._entity_name = entity_name
 
     def to_dict(self):

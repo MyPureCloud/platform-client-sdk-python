@@ -82,6 +82,10 @@ class JourneyPattern(object):
         :type: list[Criteria]
         """
         
+        if not criteria:
+            raise ValueError("Invalid value for `criteria`, must not be `None`")
+
+
         self._criteria = criteria
 
     @property
@@ -105,6 +109,7 @@ class JourneyPattern(object):
         :type: int
         """
         
+
         self._count = count
 
     @property
@@ -155,6 +160,10 @@ class JourneyPattern(object):
         :type: str
         """
         
+        if not session_type:
+            raise ValueError("Invalid value for `session_type`, must not be `None`")
+
+
         self._session_type = session_type
 
     @property
@@ -178,6 +187,7 @@ class JourneyPattern(object):
         :type: str
         """
         
+
         self._event_name = event_name
 
     def to_dict(self):

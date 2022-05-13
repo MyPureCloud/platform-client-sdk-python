@@ -76,6 +76,7 @@ class OutcomeEventScore(object):
         :type: AddressableEntityRef
         """
         
+
         self._outcome = outcome
 
     @property
@@ -99,6 +100,7 @@ class OutcomeEventScore(object):
         :type: float
         """
         
+
         self._session_max_probability = session_max_probability
 
     @property
@@ -122,6 +124,7 @@ class OutcomeEventScore(object):
         :type: float
         """
         
+
         self._probability = probability
 
     def to_dict(self):

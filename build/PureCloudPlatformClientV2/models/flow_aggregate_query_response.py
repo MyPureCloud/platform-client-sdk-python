@@ -70,6 +70,7 @@ class FlowAggregateQueryResponse(object):
         :type: list[FlowAggregateDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

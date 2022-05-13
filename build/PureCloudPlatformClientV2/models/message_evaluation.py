@@ -82,6 +82,7 @@ class MessageEvaluation(object):
         :type: str
         """
         
+
         self._contact_column = contact_column
 
     @property
@@ -105,6 +106,7 @@ class MessageEvaluation(object):
         :type: str
         """
         
+
         self._contact_address = contact_address
 
     @property
@@ -155,6 +157,7 @@ class MessageEvaluation(object):
         :type: str
         """
         
+
         self._wrapup_code_id = wrapup_code_id
 
     @property
@@ -178,6 +181,7 @@ class MessageEvaluation(object):
         :type: datetime
         """
         
+
         self._timestamp = timestamp
 
     def to_dict(self):

@@ -97,6 +97,7 @@ class ScimServiceProviderConfig(object):
         :type: list[str]
         """
         
+
         self._schemas = schemas
 
     @property
@@ -120,6 +121,7 @@ class ScimServiceProviderConfig(object):
         :type: str
         """
         
+
         self._documentation_uri = documentation_uri
 
     @property
@@ -143,6 +145,7 @@ class ScimServiceProviderConfig(object):
         :type: ScimServiceProviderConfigSimpleFeature
         """
         
+
         self._patch = patch
 
     @property
@@ -166,6 +169,7 @@ class ScimServiceProviderConfig(object):
         :type: ScimServiceProviderConfigFilterFeature
         """
         
+
         self._filter = filter
 
     @property
@@ -189,6 +193,7 @@ class ScimServiceProviderConfig(object):
         :type: ScimServiceProviderConfigSimpleFeature
         """
         
+
         self._etag = etag
 
     @property
@@ -212,6 +217,7 @@ class ScimServiceProviderConfig(object):
         :type: ScimServiceProviderConfigSimpleFeature
         """
         
+
         self._sort = sort
 
     @property
@@ -235,6 +241,7 @@ class ScimServiceProviderConfig(object):
         :type: ScimServiceProviderConfigBulkFeature
         """
         
+
         self._bulk = bulk
 
     @property
@@ -258,6 +265,7 @@ class ScimServiceProviderConfig(object):
         :type: ScimServiceProviderConfigSimpleFeature
         """
         
+
         self._change_password = change_password
 
     @property
@@ -281,6 +289,7 @@ class ScimServiceProviderConfig(object):
         :type: list[ScimServiceProviderConfigAuthenticationScheme]
         """
         
+
         self._authentication_schemes = authentication_schemes
 
     @property
@@ -304,6 +313,7 @@ class ScimServiceProviderConfig(object):
         :type: ScimMetadata
         """
         
+
         self._meta = meta
 
     def to_dict(self):

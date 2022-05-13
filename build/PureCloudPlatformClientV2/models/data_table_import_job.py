@@ -106,6 +106,7 @@ class DataTableImportJob(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,7 @@ class DataTableImportJob(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -152,6 +154,7 @@ class DataTableImportJob(object):
         :type: AddressableEntityRef
         """
         
+
         self._owner = owner
 
     @property
@@ -202,6 +205,7 @@ class DataTableImportJob(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -225,6 +229,7 @@ class DataTableImportJob(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -248,6 +253,7 @@ class DataTableImportJob(object):
         :type: str
         """
         
+
         self._upload_uri = upload_uri
 
     @property
@@ -298,6 +304,7 @@ class DataTableImportJob(object):
         :type: ErrorBody
         """
         
+
         self._error_information = error_information
 
     @property
@@ -321,6 +328,7 @@ class DataTableImportJob(object):
         :type: int
         """
         
+
         self._count_records_updated = count_records_updated
 
     @property
@@ -344,6 +352,7 @@ class DataTableImportJob(object):
         :type: int
         """
         
+
         self._count_records_deleted = count_records_deleted
 
     @property
@@ -367,6 +376,7 @@ class DataTableImportJob(object):
         :type: int
         """
         
+
         self._count_records_failed = count_records_failed
 
     @property
@@ -390,6 +400,7 @@ class DataTableImportJob(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

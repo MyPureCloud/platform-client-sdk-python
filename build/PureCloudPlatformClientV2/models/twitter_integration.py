@@ -127,6 +127,10 @@ class TwitterIntegration(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -150,6 +154,10 @@ class TwitterIntegration(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -173,6 +181,7 @@ class TwitterIntegration(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -196,6 +205,7 @@ class TwitterIntegration(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -219,6 +229,10 @@ class TwitterIntegration(object):
         :type: str
         """
         
+        if not access_token_key:
+            raise ValueError("Invalid value for `access_token_key`, must not be `None`")
+
+
         self._access_token_key = access_token_key
 
     @property
@@ -242,6 +256,10 @@ class TwitterIntegration(object):
         :type: str
         """
         
+        if not consumer_key:
+            raise ValueError("Invalid value for `consumer_key`, must not be `None`")
+
+
         self._consumer_key = consumer_key
 
     @property
@@ -265,6 +283,7 @@ class TwitterIntegration(object):
         :type: str
         """
         
+
         self._username = username
 
     @property
@@ -288,6 +307,7 @@ class TwitterIntegration(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -311,6 +331,7 @@ class TwitterIntegration(object):
         :type: str
         """
         
+
         self._status = status
 
     @property
@@ -361,6 +382,7 @@ class TwitterIntegration(object):
         :type: str
         """
         
+
         self._env_name = env_name
 
     @property
@@ -384,6 +406,7 @@ class TwitterIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._recipient = recipient
 
     @property
@@ -407,6 +430,7 @@ class TwitterIntegration(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -430,6 +454,7 @@ class TwitterIntegration(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -453,6 +478,7 @@ class TwitterIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -476,6 +502,7 @@ class TwitterIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -499,6 +526,10 @@ class TwitterIntegration(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -549,6 +580,7 @@ class TwitterIntegration(object):
         :type: ErrorBody
         """
         
+
         self._create_error = create_error
 
     @property
@@ -572,6 +604,7 @@ class TwitterIntegration(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -91,6 +91,7 @@ class UserPresence(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class UserPresence(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class UserPresence(object):
         :type: str
         """
         
+
         self._source = source
 
     @property
@@ -160,6 +163,7 @@ class UserPresence(object):
         :type: bool
         """
         
+
         self._primary = primary
 
     @property
@@ -183,6 +187,7 @@ class UserPresence(object):
         :type: PresenceDefinition
         """
         
+
         self._presence_definition = presence_definition
 
     @property
@@ -206,6 +211,7 @@ class UserPresence(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -229,6 +235,7 @@ class UserPresence(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -252,6 +259,7 @@ class UserPresence(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

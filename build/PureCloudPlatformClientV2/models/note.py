@@ -94,6 +94,7 @@ class Note(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class Note(object):
         :type: str
         """
         
+
         self._entity_id = entity_id
 
     @property
@@ -167,6 +169,7 @@ class Note(object):
         :type: str
         """
         
+
         self._note_text = note_text
 
     @property
@@ -190,6 +193,7 @@ class Note(object):
         :type: datetime
         """
         
+
         self._modify_date = modify_date
 
     @property
@@ -213,6 +217,7 @@ class Note(object):
         :type: datetime
         """
         
+
         self._create_date = create_date
 
     @property
@@ -236,6 +241,10 @@ class Note(object):
         :type: User
         """
         
+        if not created_by:
+            raise ValueError("Invalid value for `created_by`, must not be `None`")
+
+
         self._created_by = created_by
 
     @property
@@ -259,6 +268,7 @@ class Note(object):
         :type: list[ExternalDataSource]
         """
         
+
         self._external_data_sources = external_data_sources
 
     @property
@@ -282,6 +292,7 @@ class Note(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

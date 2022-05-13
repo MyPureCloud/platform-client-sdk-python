@@ -82,6 +82,7 @@ class DomainNetworkRoute(object):
         :type: str
         """
         
+
         self._prefix = prefix
 
     @property
@@ -105,6 +106,7 @@ class DomainNetworkRoute(object):
         :type: str
         """
         
+
         self._nexthop = nexthop
 
     @property
@@ -128,6 +130,7 @@ class DomainNetworkRoute(object):
         :type: bool
         """
         
+
         self._persistent = persistent
 
     @property
@@ -151,6 +154,7 @@ class DomainNetworkRoute(object):
         :type: int
         """
         
+
         self._metric = metric
 
     @property

@@ -148,6 +148,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -198,6 +199,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: bool
         """
         
+
         self._recording = recording
 
     @property
@@ -248,6 +250,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: bool
         """
         
+
         self._muted = muted
 
     @property
@@ -271,6 +274,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: bool
         """
         
+
         self._confined = confined
 
     @property
@@ -294,6 +298,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -317,6 +322,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: QueueConversationVideoEventTopicErrorDetails
         """
         
+
         self._error_info = error_info
 
     @property
@@ -367,6 +373,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -417,6 +424,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: str
         """
         
+
         self._document_id = document_id
 
     @property
@@ -440,6 +448,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: QueueConversationVideoEventTopicAddress
         """
         
+
         self._pcSelf = pcSelf
 
     @property
@@ -463,6 +472,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: QueueConversationVideoEventTopicAddress
         """
         
+
         self._other = other
 
     @property
@@ -486,6 +496,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -509,6 +520,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -532,6 +544,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -555,6 +568,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -578,6 +592,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -601,6 +616,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: list[QueueConversationVideoEventTopicDisconnectReason]
         """
         
+
         self._disconnect_reasons = disconnect_reasons
 
     @property
@@ -624,6 +640,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: QueueConversationVideoEventTopicFaxStatus
         """
         
+
         self._fax_status = fax_status
 
     @property
@@ -647,6 +664,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: str
         """
         
+
         self._uui_data = uui_data
 
     @property
@@ -670,6 +688,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: datetime
         """
         
+
         self._barged_time = barged_time
 
     @property
@@ -693,6 +712,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: QueueConversationVideoEventTopicWrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -716,6 +736,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: QueueConversationVideoEventTopicAfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -739,6 +760,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     @property
@@ -762,6 +784,7 @@ class QueueConversationVideoEventTopicCall(object):
         :type: str
         """
         
+
         self._agent_assistant_id = agent_assistant_id
 
     def to_dict(self):

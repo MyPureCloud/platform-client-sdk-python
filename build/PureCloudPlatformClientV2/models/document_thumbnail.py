@@ -79,6 +79,7 @@ class DocumentThumbnail(object):
         :type: str
         """
         
+
         self._resolution = resolution
 
     @property
@@ -102,6 +103,7 @@ class DocumentThumbnail(object):
         :type: str
         """
         
+
         self._image_uri = image_uri
 
     @property
@@ -125,6 +127,7 @@ class DocumentThumbnail(object):
         :type: int
         """
         
+
         self._height = height
 
     @property
@@ -148,6 +151,7 @@ class DocumentThumbnail(object):
         :type: int
         """
         
+
         self._width = width
 
     def to_dict(self):

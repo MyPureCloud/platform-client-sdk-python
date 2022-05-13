@@ -70,6 +70,7 @@ class ValueWrapperPlanningPeriodSettings(object):
         :type: PlanningPeriodSettings
         """
         
+
         self._value = value
 
     def to_dict(self):

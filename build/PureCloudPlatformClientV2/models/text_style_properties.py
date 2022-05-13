@@ -79,6 +79,7 @@ class TextStyleProperties(object):
         :type: str
         """
         
+
         self._color = color
 
     @property
@@ -102,6 +103,7 @@ class TextStyleProperties(object):
         :type: str
         """
         
+
         self._font = font
 
     @property
@@ -125,6 +127,7 @@ class TextStyleProperties(object):
         :type: str
         """
         
+
         self._font_size = font_size
 
     @property

@@ -91,6 +91,7 @@ class WebMessagingMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class WebMessagingMessage(object):
         :type: WebMessagingChannel
         """
         
+
         self._channel = channel
 
     @property
@@ -164,6 +166,7 @@ class WebMessagingMessage(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -187,6 +190,7 @@ class WebMessagingMessage(object):
         :type: list[WebMessagingContent]
         """
         
+
         self._content = content
 
     @property
@@ -210,6 +214,7 @@ class WebMessagingMessage(object):
         :type: list[WebMessagingEvent]
         """
         
+
         self._events = events
 
     @property

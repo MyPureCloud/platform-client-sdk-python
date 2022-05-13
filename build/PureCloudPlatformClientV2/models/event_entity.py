@@ -73,6 +73,7 @@ class EventEntity(object):
         :type: str
         """
         
+
         self._entity_type = entity_type
 
     @property
@@ -96,6 +97,7 @@ class EventEntity(object):
         :type: str
         """
         
+
         self._id = id
 
     def to_dict(self):

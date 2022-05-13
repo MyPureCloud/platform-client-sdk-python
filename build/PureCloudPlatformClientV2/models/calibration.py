@@ -115,6 +115,7 @@ class Calibration(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class Calibration(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -161,6 +163,7 @@ class Calibration(object):
         :type: User
         """
         
+
         self._calibrator = calibrator
 
     @property
@@ -184,6 +187,7 @@ class Calibration(object):
         :type: User
         """
         
+
         self._agent = agent
 
     @property
@@ -207,6 +211,7 @@ class Calibration(object):
         :type: ConversationReference
         """
         
+
         self._conversation = conversation
 
     @property
@@ -230,6 +235,7 @@ class Calibration(object):
         :type: EvaluationForm
         """
         
+
         self._evaluation_form = evaluation_form
 
     @property
@@ -253,6 +259,7 @@ class Calibration(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     @property
@@ -276,6 +283,7 @@ class Calibration(object):
         :type: int
         """
         
+
         self._average_score = average_score
 
     @property
@@ -299,6 +307,7 @@ class Calibration(object):
         :type: int
         """
         
+
         self._high_score = high_score
 
     @property
@@ -322,6 +331,7 @@ class Calibration(object):
         :type: int
         """
         
+
         self._low_score = low_score
 
     @property
@@ -345,6 +355,7 @@ class Calibration(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -368,6 +379,7 @@ class Calibration(object):
         :type: list[Evaluation]
         """
         
+
         self._evaluations = evaluations
 
     @property
@@ -391,6 +403,7 @@ class Calibration(object):
         :type: list[User]
         """
         
+
         self._evaluators = evaluators
 
     @property
@@ -414,6 +427,7 @@ class Calibration(object):
         :type: Evaluation
         """
         
+
         self._scoring_index = scoring_index
 
     @property
@@ -437,6 +451,7 @@ class Calibration(object):
         :type: User
         """
         
+
         self._expert_evaluator = expert_evaluator
 
     @property
@@ -460,6 +475,7 @@ class Calibration(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class RecordingSettings(object):
         :type: int
         """
         
+
         self._max_simultaneous_streams = max_simultaneous_streams
 
     @property
@@ -96,6 +97,7 @@ class RecordingSettings(object):
         :type: int
         """
         
+
         self._max_configurable_screen_recording_streams = max_configurable_screen_recording_streams
 
     def to_dict(self):

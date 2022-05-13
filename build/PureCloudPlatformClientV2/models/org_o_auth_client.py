@@ -103,6 +103,7 @@ class OrgOAuthClient(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,10 @@ class OrgOAuthClient(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -149,6 +154,7 @@ class OrgOAuthClient(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -172,6 +178,7 @@ class OrgOAuthClient(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -195,6 +202,7 @@ class OrgOAuthClient(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -218,6 +226,7 @@ class OrgOAuthClient(object):
         :type: DomainEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -268,6 +277,7 @@ class OrgOAuthClient(object):
         :type: list[str]
         """
         
+
         self._scope = scope
 
     @property
@@ -291,6 +301,7 @@ class OrgOAuthClient(object):
         :type: list[RoleDivision]
         """
         
+
         self._role_divisions = role_divisions
 
     @property
@@ -341,6 +352,7 @@ class OrgOAuthClient(object):
         :type: datetime
         """
         
+
         self._date_to_delete = date_to_delete
 
     @property
@@ -364,6 +376,7 @@ class OrgOAuthClient(object):
         :type: NamedEntity
         """
         
+
         self._organization = organization
 
     def to_dict(self):

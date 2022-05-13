@@ -88,6 +88,7 @@ class Wrapup(object):
         :type: str
         """
         
+
         self._code = code
 
     @property
@@ -111,6 +112,7 @@ class Wrapup(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class Wrapup(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -157,6 +160,7 @@ class Wrapup(object):
         :type: list[str]
         """
         
+
         self._tags = tags
 
     @property
@@ -180,6 +184,7 @@ class Wrapup(object):
         :type: int
         """
         
+
         self._duration_seconds = duration_seconds
 
     @property
@@ -203,6 +208,7 @@ class Wrapup(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -226,6 +232,7 @@ class Wrapup(object):
         :type: bool
         """
         
+
         self._provisional = provisional
 
     def to_dict(self):

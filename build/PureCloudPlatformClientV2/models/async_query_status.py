@@ -109,6 +109,7 @@ class AsyncQueryStatus(object):
         :type: str
         """
         
+
         self._error_message = error_message
 
     @property
@@ -132,6 +133,7 @@ class AsyncQueryStatus(object):
         :type: datetime
         """
         
+
         self._expiration_date = expiration_date
 
     @property
@@ -155,6 +157,7 @@ class AsyncQueryStatus(object):
         :type: datetime
         """
         
+
         self._submission_date = submission_date
 
     @property
@@ -178,6 +181,7 @@ class AsyncQueryStatus(object):
         :type: datetime
         """
         
+
         self._completion_date = completion_date
 
     def to_dict(self):

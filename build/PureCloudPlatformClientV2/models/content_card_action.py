@@ -106,6 +106,7 @@ class ContentCardAction(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -129,6 +130,7 @@ class ContentCardAction(object):
         :type: str
         """
         
+
         self._payload = payload
 
     @property
@@ -152,6 +154,7 @@ class ContentCardAction(object):
         :type: str
         """
         
+
         self._url = url
 
     def to_dict(self):

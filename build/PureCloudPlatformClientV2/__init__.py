@@ -3089,8 +3089,70 @@ from .apis.users_api import UsersApi
 from .apis.utilities_api import UtilitiesApi
 from .apis.voicemail_api import VoicemailApi
 from .apis.web_chat_api import WebChatApi
-from .apis.web_deployments_api import WebDeploymentsApi
 from .apis.web_messaging_api import WebMessagingApi
+from .apis.web_deployments_api import WebDeploymentsApi
+from .apis.widgets_api import WidgetsApi
+from .apis.workforce_management_api import WorkforceManagementApi
+from .apis.alerting_api import AlertingApi
+from .apis.analytics_api import AnalyticsApi
+from .apis.architect_api import ArchitectApi
+from .apis.audit_api import AuditApi
+from .apis.authorization_api import AuthorizationApi
+from .apis.billing_api import BillingApi
+from .apis.chat_api import ChatApi
+from .apis.coaching_api import CoachingApi
+from .apis.content_management_api import ContentManagementApi
+from .apis.conversations_api import ConversationsApi
+from .apis.data_extensions_api import DataExtensionsApi
+from .apis.external_contacts_api import ExternalContactsApi
+from .apis.fax_api import FaxApi
+from .apis.flows_api import FlowsApi
+from .apis.gamification_api import GamificationApi
+from .apis.general_data_protection_regulation_api import GeneralDataProtectionRegulationApi
+from .apis.geolocation_api import GeolocationApi
+from .apis.greetings_api import GreetingsApi
+from .apis.groups_api import GroupsApi
+from .apis.identity_provider_api import IdentityProviderApi
+from .apis.integrations_api import IntegrationsApi
+from .apis.journey_api import JourneyApi
+from .apis.knowledge_api import KnowledgeApi
+from .apis.language_understanding_api import LanguageUnderstandingApi
+from .apis.languages_api import LanguagesApi
+from .apis.learning_api import LearningApi
+from .apis.license_api import LicenseApi
+from .apis.locations_api import LocationsApi
+from .apis.messaging_api import MessagingApi
+from .apis.mobile_devices_api import MobileDevicesApi
+from .apis.notifications_api import NotificationsApi
+from .apis.o_auth_api import OAuthApi
+from .apis.objects_api import ObjectsApi
+from .apis.organization_api import OrganizationApi
+from .apis.organization_authorization_api import OrganizationAuthorizationApi
+from .apis.outbound_api import OutboundApi
+from .apis.presence_api import PresenceApi
+from .apis.quality_api import QualityApi
+from .apis.recording_api import RecordingApi
+from .apis.response_management_api import ResponseManagementApi
+from .apis.routing_api import RoutingApi
+from .apis.scim_api import SCIMApi
+from .apis.scripts_api import ScriptsApi
+from .apis.search_api import SearchApi
+from .apis.speech_text_analytics_api import SpeechTextAnalyticsApi
+from .apis.stations_api import StationsApi
+from .apis.suggest_api import SuggestApi
+from .apis.telephony_api import TelephonyApi
+from .apis.telephony_providers_edge_api import TelephonyProvidersEdgeApi
+from .apis.textbots_api import TextbotsApi
+from .apis.tokens_api import TokensApi
+from .apis.uploads_api import UploadsApi
+from .apis.usage_api import UsageApi
+from .apis.user_recordings_api import UserRecordingsApi
+from .apis.users_api import UsersApi
+from .apis.utilities_api import UtilitiesApi
+from .apis.voicemail_api import VoicemailApi
+from .apis.web_chat_api import WebChatApi
+from .apis.web_messaging_api import WebMessagingApi
+from .apis.web_deployments_api import WebDeploymentsApi
 from .apis.widgets_api import WidgetsApi
 from .apis.workforce_management_api import WorkforceManagementApi
 
@@ -3101,4 +3163,4 @@ from .configuration import Configuration
 
 from .purecloud_region_hosts import PureCloudRegionHosts
 
-configuration = Configuration()
+configuration = Configuration() 

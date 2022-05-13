@@ -79,6 +79,7 @@ class CategoryListing(object):
         :type: list[KnowledgeCategory]
         """
         
+
         self._entities = entities
 
     @property
@@ -102,6 +103,7 @@ class CategoryListing(object):
         :type: str
         """
         
+
         self._next_uri = next_uri
 
     @property
@@ -125,6 +127,7 @@ class CategoryListing(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -148,6 +151,7 @@ class CategoryListing(object):
         :type: str
         """
         
+
         self._previous_uri = previous_uri
 
     def to_dict(self):

@@ -97,6 +97,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: str
         """
         
+
         self._family = family
 
     @property
@@ -120,6 +121,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: str
         """
         
+
         self._version = version
 
     @property
@@ -143,6 +145,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: str
         """
         
+
         self._lang = lang
 
     @property
@@ -166,6 +169,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: str
         """
         
+
         self._fingerprint = fingerprint
 
     @property
@@ -189,6 +193,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: int
         """
         
+
         self._view_height = view_height
 
     @property
@@ -212,6 +217,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: int
         """
         
+
         self._view_width = view_width
 
     @property
@@ -235,6 +241,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: bool
         """
         
+
         self._features_flash = features_flash
 
     @property
@@ -258,6 +265,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: bool
         """
         
+
         self._features_java = features_java
 
     @property
@@ -281,6 +289,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: bool
         """
         
+
         self._features_pdf = features_pdf
 
     @property
@@ -304,6 +313,7 @@ class JourneyWebActionEventsNotificationBrowser(object):
         :type: bool
         """
         
+
         self._features_webrtc = features_webrtc
 
     def to_dict(self):

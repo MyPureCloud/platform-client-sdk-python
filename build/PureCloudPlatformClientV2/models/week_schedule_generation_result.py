@@ -79,6 +79,7 @@ class WeekScheduleGenerationResult(object):
         :type: bool
         """
         
+
         self._failed = failed
 
     @property
@@ -102,6 +103,7 @@ class WeekScheduleGenerationResult(object):
         :type: str
         """
         
+
         self._run_id = run_id
 
     @property
@@ -125,6 +127,7 @@ class WeekScheduleGenerationResult(object):
         :type: list[ScheduleGenerationWarning]
         """
         
+
         self._agent_warnings = agent_warnings
 
     @property
@@ -148,6 +151,7 @@ class WeekScheduleGenerationResult(object):
         :type: int
         """
         
+
         self._agent_warning_count = agent_warning_count
 
     def to_dict(self):

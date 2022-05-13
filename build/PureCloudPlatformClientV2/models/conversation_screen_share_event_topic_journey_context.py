@@ -76,6 +76,7 @@ class ConversationScreenShareEventTopicJourneyContext(object):
         :type: ConversationScreenShareEventTopicJourneyCustomer
         """
         
+
         self._customer = customer
 
     @property
@@ -99,6 +100,7 @@ class ConversationScreenShareEventTopicJourneyContext(object):
         :type: ConversationScreenShareEventTopicJourneyCustomerSession
         """
         
+
         self._customer_session = customer_session
 
     @property
@@ -122,6 +124,7 @@ class ConversationScreenShareEventTopicJourneyContext(object):
         :type: ConversationScreenShareEventTopicJourneyAction
         """
         
+
         self._triggering_action = triggering_action
 
     def to_dict(self):

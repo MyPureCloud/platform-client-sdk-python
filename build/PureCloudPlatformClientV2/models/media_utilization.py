@@ -76,6 +76,7 @@ class MediaUtilization(object):
         :type: int
         """
         
+
         self._maximum_capacity = maximum_capacity
 
     @property
@@ -99,6 +100,7 @@ class MediaUtilization(object):
         :type: list[str]
         """
         
+
         self._interruptable_media_types = interruptable_media_types
 
     @property
@@ -122,6 +124,7 @@ class MediaUtilization(object):
         :type: bool
         """
         
+
         self._include_non_acd = include_non_acd
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class RoutePathResponse(object):
         :type: QueueReference
         """
         
+
         self._queue = queue
 
     @property
@@ -129,6 +130,7 @@ class RoutePathResponse(object):
         :type: LanguageReference
         """
         
+
         self._language = language
 
     @property
@@ -152,6 +154,7 @@ class RoutePathResponse(object):
         :type: list[RoutingSkillReference]
         """
         
+
         self._skills = skills
 
     def to_dict(self):

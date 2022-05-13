@@ -73,6 +73,7 @@ class MediaSetting(object):
         :type: int
         """
         
+
         self._alerting_timeout_seconds = alerting_timeout_seconds
 
     @property
@@ -96,6 +97,7 @@ class MediaSetting(object):
         :type: ServiceLevel
         """
         
+
         self._service_level = service_level
 
     def to_dict(self):

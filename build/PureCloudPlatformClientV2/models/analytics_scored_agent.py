@@ -73,6 +73,7 @@ class AnalyticsScoredAgent(object):
         :type: int
         """
         
+
         self._agent_score = agent_score
 
     @property
@@ -96,6 +97,7 @@ class AnalyticsScoredAgent(object):
         :type: str
         """
         
+
         self._scored_agent_id = scored_agent_id
 
     def to_dict(self):

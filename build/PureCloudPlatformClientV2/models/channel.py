@@ -76,6 +76,7 @@ class Channel(object):
         :type: str
         """
         
+
         self._connect_uri = connect_uri
 
     @property
@@ -99,6 +100,7 @@ class Channel(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -122,6 +124,7 @@ class Channel(object):
         :type: datetime
         """
         
+
         self._expires = expires
 
     def to_dict(self):

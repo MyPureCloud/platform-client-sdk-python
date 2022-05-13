@@ -85,6 +85,7 @@ class UpdateDraftInput(object):
         :type: str
         """
         
+
         self._category = category
 
     @property
@@ -108,6 +109,7 @@ class UpdateDraftInput(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class UpdateDraftInput(object):
         :type: ActionConfig
         """
         
+
         self._config = config
 
     @property
@@ -154,6 +157,7 @@ class UpdateDraftInput(object):
         :type: ActionContractInput
         """
         
+
         self._contract = contract
 
     @property
@@ -177,6 +181,7 @@ class UpdateDraftInput(object):
         :type: bool
         """
         
+
         self._secure = secure
 
     @property
@@ -200,6 +205,10 @@ class UpdateDraftInput(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     def to_dict(self):

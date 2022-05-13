@@ -139,6 +139,10 @@ class IntegrationType(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -162,6 +166,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -185,6 +190,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -208,6 +214,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -231,6 +238,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._category = category
 
     @property
@@ -254,6 +262,7 @@ class IntegrationType(object):
         :type: list[UserImage]
         """
         
+
         self._images = images
 
     @property
@@ -277,6 +286,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._config_properties_schema_uri = config_properties_schema_uri
 
     @property
@@ -300,6 +310,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._config_advanced_schema_uri = config_advanced_schema_uri
 
     @property
@@ -323,6 +334,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._help_uri = help_uri
 
     @property
@@ -346,6 +358,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._terms_of_service_uri = terms_of_service_uri
 
     @property
@@ -369,6 +382,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._vendor_name = vendor_name
 
     @property
@@ -392,6 +406,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._vendor_website_uri = vendor_website_uri
 
     @property
@@ -415,6 +430,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._marketplace_uri = marketplace_uri
 
     @property
@@ -438,6 +454,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._faq_uri = faq_uri
 
     @property
@@ -461,6 +478,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._privacy_policy_uri = privacy_policy_uri
 
     @property
@@ -484,6 +502,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._support_contact_uri = support_contact_uri
 
     @property
@@ -507,6 +526,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._sales_contact_uri = sales_contact_uri
 
     @property
@@ -530,6 +550,7 @@ class IntegrationType(object):
         :type: list[HelpLink]
         """
         
+
         self._help_links = help_links
 
     @property
@@ -553,6 +574,7 @@ class IntegrationType(object):
         :type: dict(str, CredentialSpecification)
         """
         
+
         self._credentials = credentials
 
     @property
@@ -576,6 +598,7 @@ class IntegrationType(object):
         :type: bool
         """
         
+
         self._non_installable = non_installable
 
     @property
@@ -599,6 +622,7 @@ class IntegrationType(object):
         :type: int
         """
         
+
         self._max_instances = max_instances
 
     @property
@@ -622,6 +646,7 @@ class IntegrationType(object):
         :type: list[str]
         """
         
+
         self._user_permissions = user_permissions
 
     @property
@@ -645,6 +670,7 @@ class IntegrationType(object):
         :type: list[str]
         """
         
+
         self._vendor_o_auth_client_ids = vendor_o_auth_client_ids
 
     @property
@@ -668,6 +694,7 @@ class IntegrationType(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

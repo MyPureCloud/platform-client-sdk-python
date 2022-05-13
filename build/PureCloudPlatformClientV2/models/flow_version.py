@@ -124,6 +124,7 @@ class FlowVersion(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -147,6 +148,7 @@ class FlowVersion(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -170,6 +172,7 @@ class FlowVersion(object):
         :type: str
         """
         
+
         self._commit_version = commit_version
 
     @property
@@ -193,6 +196,7 @@ class FlowVersion(object):
         :type: str
         """
         
+
         self._configuration_version = configuration_version
 
     @property
@@ -243,6 +247,7 @@ class FlowVersion(object):
         :type: bool
         """
         
+
         self._secure = secure
 
     @property
@@ -266,6 +271,7 @@ class FlowVersion(object):
         :type: bool
         """
         
+
         self._debug = debug
 
     @property
@@ -289,6 +295,7 @@ class FlowVersion(object):
         :type: User
         """
         
+
         self._created_by = created_by
 
     @property
@@ -312,6 +319,7 @@ class FlowVersion(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by_client = created_by_client
 
     @property
@@ -335,6 +343,7 @@ class FlowVersion(object):
         :type: str
         """
         
+
         self._configuration_uri = configuration_uri
 
     @property
@@ -358,6 +367,7 @@ class FlowVersion(object):
         :type: int
         """
         
+
         self._date_created = date_created
 
     @property
@@ -381,6 +391,7 @@ class FlowVersion(object):
         :type: str
         """
         
+
         self._generation_id = generation_id
 
     @property
@@ -404,6 +415,7 @@ class FlowVersion(object):
         :type: str
         """
         
+
         self._publish_result_uri = publish_result_uri
 
     @property
@@ -427,6 +439,7 @@ class FlowVersion(object):
         :type: JsonSchemaDocument
         """
         
+
         self._input_schema = input_schema
 
     @property
@@ -450,6 +463,7 @@ class FlowVersion(object):
         :type: JsonSchemaDocument
         """
         
+
         self._output_schema = output_schema
 
     @property
@@ -473,6 +487,7 @@ class FlowVersion(object):
         :type: NluInfo
         """
         
+
         self._nlu_info = nlu_info
 
     @property
@@ -496,6 +511,7 @@ class FlowVersion(object):
         :type: list[SupportedLanguage]
         """
         
+
         self._supported_languages = supported_languages
 
     @property
@@ -519,6 +535,7 @@ class FlowVersion(object):
         :type: list[str]
         """
         
+
         self._compatible_flow_types = compatible_flow_types
 
     @property
@@ -542,6 +559,7 @@ class FlowVersion(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

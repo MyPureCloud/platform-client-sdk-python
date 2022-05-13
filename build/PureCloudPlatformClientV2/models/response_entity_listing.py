@@ -97,6 +97,7 @@ class ResponseEntityListing(object):
         :type: list[Response]
         """
         
+
         self._entities = entities
 
     @property
@@ -120,6 +121,7 @@ class ResponseEntityListing(object):
         :type: int
         """
         
+
         self._page_size = page_size
 
     @property
@@ -143,6 +145,7 @@ class ResponseEntityListing(object):
         :type: int
         """
         
+
         self._page_number = page_number
 
     @property
@@ -166,6 +169,7 @@ class ResponseEntityListing(object):
         :type: int
         """
         
+
         self._total = total
 
     @property
@@ -189,6 +193,7 @@ class ResponseEntityListing(object):
         :type: str
         """
         
+
         self._last_uri = last_uri
 
     @property
@@ -212,6 +217,7 @@ class ResponseEntityListing(object):
         :type: str
         """
         
+
         self._first_uri = first_uri
 
     @property
@@ -235,6 +241,7 @@ class ResponseEntityListing(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -258,6 +265,7 @@ class ResponseEntityListing(object):
         :type: str
         """
         
+
         self._previous_uri = previous_uri
 
     @property
@@ -281,6 +289,7 @@ class ResponseEntityListing(object):
         :type: str
         """
         
+
         self._next_uri = next_uri
 
     @property
@@ -304,6 +313,7 @@ class ResponseEntityListing(object):
         :type: int
         """
         
+
         self._page_count = page_count
 
     def to_dict(self):

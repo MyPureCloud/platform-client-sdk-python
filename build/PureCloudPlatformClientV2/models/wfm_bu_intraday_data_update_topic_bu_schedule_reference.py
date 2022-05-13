@@ -40,14 +40,17 @@ class WfmBuIntradayDataUpdateTopicBuScheduleReference(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str'
+            'id': 'str',
+            'week_date': 'datetime'
         }
 
         self.attribute_map = {
-            'id': 'id'
+            'id': 'id',
+            'week_date': 'weekDate'
         }
 
         self._id = None
+        self._week_date = None
 
     @property
     def id(self):
@@ -70,7 +73,32 @@ class WfmBuIntradayDataUpdateTopicBuScheduleReference(object):
         :type: str
         """
         
+
         self._id = id
+
+    @property
+    def week_date(self):
+        """
+        Gets the week_date of this WfmBuIntradayDataUpdateTopicBuScheduleReference.
+
+
+        :return: The week_date of this WfmBuIntradayDataUpdateTopicBuScheduleReference.
+        :rtype: datetime
+        """
+        return self._week_date
+
+    @week_date.setter
+    def week_date(self, week_date):
+        """
+        Sets the week_date of this WfmBuIntradayDataUpdateTopicBuScheduleReference.
+
+
+        :param week_date: The week_date of this WfmBuIntradayDataUpdateTopicBuScheduleReference.
+        :type: datetime
+        """
+        
+
+        self._week_date = week_date
 
     def to_dict(self):
         """

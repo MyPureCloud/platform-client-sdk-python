@@ -100,6 +100,7 @@ class SearchSort(object):
         :type: str
         """
         
+
         self._sort_by = sort_by
 
     def to_dict(self):

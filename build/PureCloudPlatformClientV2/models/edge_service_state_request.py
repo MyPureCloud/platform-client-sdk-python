@@ -73,6 +73,10 @@ class EdgeServiceStateRequest(object):
         :type: bool
         """
         
+        if not in_service:
+            raise ValueError("Invalid value for `in_service`, must not be `None`")
+
+
         self._in_service = in_service
 
     @property
@@ -96,6 +100,7 @@ class EdgeServiceStateRequest(object):
         :type: int
         """
         
+
         self._call_draining_wait_time_seconds = call_draining_wait_time_seconds
 
     def to_dict(self):

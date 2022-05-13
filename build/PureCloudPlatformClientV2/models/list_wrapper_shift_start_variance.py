@@ -70,6 +70,7 @@ class ListWrapperShiftStartVariance(object):
         :type: list[ShiftStartVariance]
         """
         
+
         self._values = values
 
     def to_dict(self):

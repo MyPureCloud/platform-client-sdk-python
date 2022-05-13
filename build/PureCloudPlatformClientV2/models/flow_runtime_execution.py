@@ -100,6 +100,7 @@ class FlowRuntimeExecution(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class FlowRuntimeExecution(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,10 @@ class FlowRuntimeExecution(object):
         :type: FlowVersion
         """
         
+        if not flow_version:
+            raise ValueError("Invalid value for `flow_version`, must not be `None`")
+
+
         self._flow_version = flow_version
 
     @property
@@ -169,6 +175,10 @@ class FlowRuntimeExecution(object):
         :type: datetime
         """
         
+        if not date_launched:
+            raise ValueError("Invalid value for `date_launched`, must not be `None`")
+
+
         self._date_launched = date_launched
 
     @property
@@ -219,6 +229,7 @@ class FlowRuntimeExecution(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -242,6 +253,7 @@ class FlowRuntimeExecution(object):
         :type: str
         """
         
+
         self._completion_reason = completion_reason
 
     @property
@@ -265,6 +277,7 @@ class FlowRuntimeExecution(object):
         :type: ErrorBody
         """
         
+
         self._flow_error_info = flow_error_info
 
     @property
@@ -288,6 +301,7 @@ class FlowRuntimeExecution(object):
         :type: dict(str, object)
         """
         
+
         self._output_data = output_data
 
     @property
@@ -311,6 +325,7 @@ class FlowRuntimeExecution(object):
         :type: DomainEntityRef
         """
         
+
         self._conversation = conversation
 
     @property
@@ -334,6 +349,7 @@ class FlowRuntimeExecution(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

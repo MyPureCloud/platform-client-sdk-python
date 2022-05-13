@@ -76,6 +76,7 @@ class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete(object):
         :type: WfmMoveAgentsCompleteTopicUserReference
         """
         
+
         self._requesting_user = requesting_user
 
     @property
@@ -99,6 +100,7 @@ class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete(object):
         :type: WfmMoveAgentsCompleteTopicManagementUnit
         """
         
+
         self._destination_management_unit = destination_management_unit
 
     @property
@@ -122,6 +124,7 @@ class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete(object):
         :type: list[WfmMoveAgentsCompleteTopicWfmMoveAgentData]
         """
         
+
         self._results = results
 
     def to_dict(self):

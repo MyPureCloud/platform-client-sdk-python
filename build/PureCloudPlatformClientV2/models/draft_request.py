@@ -70,6 +70,7 @@ class DraftRequest(object):
         :type: list[DraftIntents]
         """
         
+
         self._intents = intents
 
     def to_dict(self):

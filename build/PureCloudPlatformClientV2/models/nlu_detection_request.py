@@ -73,6 +73,10 @@ class NluDetectionRequest(object):
         :type: NluDetectionInput
         """
         
+        if not input:
+            raise ValueError("Invalid value for `input`, must not be `None`")
+
+
         self._input = input
 
     @property
@@ -96,6 +100,7 @@ class NluDetectionRequest(object):
         :type: NluDetectionContext
         """
         
+
         self._context = context
 
     def to_dict(self):

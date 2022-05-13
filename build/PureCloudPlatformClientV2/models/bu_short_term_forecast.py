@@ -115,6 +115,7 @@ class BuShortTermForecast(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class BuShortTermForecast(object):
         :type: date
         """
         
+
         self._week_date = week_date
 
     @property
@@ -161,6 +163,7 @@ class BuShortTermForecast(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     @property
@@ -211,6 +214,7 @@ class BuShortTermForecast(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -234,6 +238,7 @@ class BuShortTermForecast(object):
         :type: bool
         """
         
+
         self._legacy = legacy
 
     @property
@@ -257,6 +262,7 @@ class BuShortTermForecast(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -280,6 +286,7 @@ class BuShortTermForecast(object):
         :type: bool
         """
         
+
         self._can_use_for_scheduling = can_use_for_scheduling
 
     @property
@@ -303,6 +310,7 @@ class BuShortTermForecast(object):
         :type: datetime
         """
         
+
         self._reference_start_date = reference_start_date
 
     @property
@@ -326,6 +334,7 @@ class BuShortTermForecast(object):
         :type: list[ForecastSourceDayPointer]
         """
         
+
         self._source_days = source_days
 
     @property
@@ -349,6 +358,7 @@ class BuShortTermForecast(object):
         :type: list[BuForecastModification]
         """
         
+
         self._modifications = modifications
 
     @property
@@ -372,6 +382,7 @@ class BuShortTermForecast(object):
         :type: BuForecastGenerationResult
         """
         
+
         self._generation_results = generation_results
 
     @property
@@ -395,6 +406,7 @@ class BuShortTermForecast(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -418,6 +430,7 @@ class BuShortTermForecast(object):
         :type: int
         """
         
+
         self._planning_groups_version = planning_groups_version
 
     @property
@@ -441,6 +454,7 @@ class BuShortTermForecast(object):
         :type: ForecastPlanningGroupsResponse
         """
         
+
         self._planning_groups = planning_groups
 
     @property
@@ -464,6 +478,7 @@ class BuShortTermForecast(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

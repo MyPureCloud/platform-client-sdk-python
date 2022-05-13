@@ -85,6 +85,7 @@ class MinerIntent(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class MinerIntent(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class MinerIntent(object):
         :type: Miner
         """
         
+
         self._miner = miner
 
     @property
@@ -154,6 +157,7 @@ class MinerIntent(object):
         :type: list[Utterance]
         """
         
+
         self._utterances = utterances
 
     @property
@@ -177,6 +181,7 @@ class MinerIntent(object):
         :type: float
         """
         
+
         self._analytic_volume_percent = analytic_volume_percent
 
     @property
@@ -200,6 +205,7 @@ class MinerIntent(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

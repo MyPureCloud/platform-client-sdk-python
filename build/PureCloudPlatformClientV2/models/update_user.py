@@ -130,6 +130,7 @@ class UpdateUser(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -153,6 +154,7 @@ class UpdateUser(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -176,6 +178,7 @@ class UpdateUser(object):
         :type: Chat
         """
         
+
         self._chat = chat
 
     @property
@@ -199,6 +202,7 @@ class UpdateUser(object):
         :type: str
         """
         
+
         self._department = department
 
     @property
@@ -222,6 +226,7 @@ class UpdateUser(object):
         :type: str
         """
         
+
         self._email = email
 
     @property
@@ -245,6 +250,7 @@ class UpdateUser(object):
         :type: list[Contact]
         """
         
+
         self._primary_contact_info = primary_contact_info
 
     @property
@@ -268,6 +274,7 @@ class UpdateUser(object):
         :type: list[Contact]
         """
         
+
         self._addresses = addresses
 
     @property
@@ -291,6 +298,7 @@ class UpdateUser(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -314,6 +322,7 @@ class UpdateUser(object):
         :type: str
         """
         
+
         self._username = username
 
     @property
@@ -337,6 +346,7 @@ class UpdateUser(object):
         :type: str
         """
         
+
         self._manager = manager
 
     @property
@@ -360,6 +370,7 @@ class UpdateUser(object):
         :type: list[UserImage]
         """
         
+
         self._images = images
 
     @property
@@ -383,6 +394,10 @@ class UpdateUser(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -406,6 +421,7 @@ class UpdateUser(object):
         :type: list[str]
         """
         
+
         self._profile_skills = profile_skills
 
     @property
@@ -429,6 +445,7 @@ class UpdateUser(object):
         :type: list[Location]
         """
         
+
         self._locations = locations
 
     @property
@@ -452,6 +469,7 @@ class UpdateUser(object):
         :type: list[Group]
         """
         
+
         self._groups = groups
 
     @property
@@ -502,6 +520,7 @@ class UpdateUser(object):
         :type: bool
         """
         
+
         self._acd_auto_answer = acd_auto_answer
 
     @property
@@ -525,6 +544,7 @@ class UpdateUser(object):
         :type: list[str]
         """
         
+
         self._certifications = certifications
 
     @property
@@ -548,6 +568,7 @@ class UpdateUser(object):
         :type: Biography
         """
         
+
         self._biography = biography
 
     @property
@@ -571,6 +592,7 @@ class UpdateUser(object):
         :type: EmployerInfo
         """
         
+
         self._employer_info = employer_info
 
     @property
@@ -594,6 +616,7 @@ class UpdateUser(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

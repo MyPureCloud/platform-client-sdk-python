@@ -76,6 +76,7 @@ class ImportScriptStatusResponse(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -99,6 +100,7 @@ class ImportScriptStatusResponse(object):
         :type: bool
         """
         
+
         self._succeeded = succeeded
 
     @property
@@ -122,6 +124,7 @@ class ImportScriptStatusResponse(object):
         :type: str
         """
         
+
         self._message = message
 
     def to_dict(self):

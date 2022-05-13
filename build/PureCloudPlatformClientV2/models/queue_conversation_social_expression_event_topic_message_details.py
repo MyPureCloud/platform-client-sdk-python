@@ -88,6 +88,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         :type: str
         """
         
+
         self._message_id = message_id
 
     @property
@@ -111,6 +112,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         :type: datetime
         """
         
+
         self._message_time = message_time
 
     @property
@@ -161,6 +163,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         :type: int
         """
         
+
         self._message_segment_count = message_segment_count
 
     @property
@@ -184,6 +187,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         :type: list[QueueConversationSocialExpressionEventTopicMessageMedia]
         """
         
+
         self._media = media
 
     @property
@@ -207,6 +211,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         :type: QueueConversationSocialExpressionEventTopicErrorDetails
         """
         
+
         self._error_info = error_info
 
     @property
@@ -230,6 +235,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         :type: list[QueueConversationSocialExpressionEventTopicMessageSticker]
         """
         
+
         self._stickers = stickers
 
     def to_dict(self):

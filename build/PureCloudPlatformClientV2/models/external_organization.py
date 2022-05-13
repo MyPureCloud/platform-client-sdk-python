@@ -133,6 +133,7 @@ class ExternalOrganization(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -156,6 +157,10 @@ class ExternalOrganization(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -179,6 +184,7 @@ class ExternalOrganization(object):
         :type: str
         """
         
+
         self._company_type = company_type
 
     @property
@@ -202,6 +208,7 @@ class ExternalOrganization(object):
         :type: str
         """
         
+
         self._industry = industry
 
     @property
@@ -225,6 +232,7 @@ class ExternalOrganization(object):
         :type: str
         """
         
+
         self._primary_contact_id = primary_contact_id
 
     @property
@@ -248,6 +256,7 @@ class ExternalOrganization(object):
         :type: ContactAddress
         """
         
+
         self._address = address
 
     @property
@@ -271,6 +280,7 @@ class ExternalOrganization(object):
         :type: PhoneNumber
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -294,6 +304,7 @@ class ExternalOrganization(object):
         :type: PhoneNumber
         """
         
+
         self._fax_number = fax_number
 
     @property
@@ -317,6 +328,7 @@ class ExternalOrganization(object):
         :type: int
         """
         
+
         self._employee_count = employee_count
 
     @property
@@ -340,6 +352,7 @@ class ExternalOrganization(object):
         :type: int
         """
         
+
         self._revenue = revenue
 
     @property
@@ -363,6 +376,7 @@ class ExternalOrganization(object):
         :type: list[str]
         """
         
+
         self._tags = tags
 
     @property
@@ -386,6 +400,7 @@ class ExternalOrganization(object):
         :type: list[str]
         """
         
+
         self._websites = websites
 
     @property
@@ -409,6 +424,7 @@ class ExternalOrganization(object):
         :type: list[Ticker]
         """
         
+
         self._tickers = tickers
 
     @property
@@ -432,6 +448,7 @@ class ExternalOrganization(object):
         :type: TwitterId
         """
         
+
         self._twitter_id = twitter_id
 
     @property
@@ -455,6 +472,7 @@ class ExternalOrganization(object):
         :type: str
         """
         
+
         self._external_system_url = external_system_url
 
     @property
@@ -478,6 +496,7 @@ class ExternalOrganization(object):
         :type: datetime
         """
         
+
         self._modify_date = modify_date
 
     @property
@@ -501,6 +520,7 @@ class ExternalOrganization(object):
         :type: datetime
         """
         
+
         self._create_date = create_date
 
     @property
@@ -524,6 +544,7 @@ class ExternalOrganization(object):
         :type: Trustor
         """
         
+
         self._trustor = trustor
 
     @property
@@ -547,6 +568,7 @@ class ExternalOrganization(object):
         :type: DataSchema
         """
         
+
         self._schema = schema
 
     @property
@@ -570,6 +592,7 @@ class ExternalOrganization(object):
         :type: dict(str, object)
         """
         
+
         self._custom_fields = custom_fields
 
     @property
@@ -593,6 +616,7 @@ class ExternalOrganization(object):
         :type: list[ExternalDataSource]
         """
         
+
         self._external_data_sources = external_data_sources
 
     @property
@@ -616,6 +640,7 @@ class ExternalOrganization(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

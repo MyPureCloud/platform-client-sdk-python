@@ -133,6 +133,7 @@ class Line(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -156,6 +157,10 @@ class Line(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -179,6 +184,7 @@ class Line(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -202,6 +208,7 @@ class Line(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -225,6 +232,7 @@ class Line(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -248,6 +256,7 @@ class Line(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -271,6 +280,7 @@ class Line(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -294,6 +304,7 @@ class Line(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -317,6 +328,7 @@ class Line(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -367,6 +379,7 @@ class Line(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -390,6 +403,7 @@ class Line(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -413,6 +427,7 @@ class Line(object):
         :type: dict(str, object)
         """
         
+
         self._properties = properties
 
     @property
@@ -436,6 +451,7 @@ class Line(object):
         :type: DomainEntityRef
         """
         
+
         self._edge_group = edge_group
 
     @property
@@ -459,6 +475,7 @@ class Line(object):
         :type: DomainEntityRef
         """
         
+
         self._template = template
 
     @property
@@ -482,6 +499,7 @@ class Line(object):
         :type: DomainEntityRef
         """
         
+
         self._site = site
 
     @property
@@ -505,6 +523,7 @@ class Line(object):
         :type: DomainEntityRef
         """
         
+
         self._line_base_settings = line_base_settings
 
     @property
@@ -528,6 +547,7 @@ class Line(object):
         :type: Edge
         """
         
+
         self._primary_edge = primary_edge
 
     @property
@@ -551,6 +571,7 @@ class Line(object):
         :type: Edge
         """
         
+
         self._secondary_edge = secondary_edge
 
     @property
@@ -574,6 +595,7 @@ class Line(object):
         :type: DomainEntityRef
         """
         
+
         self._logged_in_user = logged_in_user
 
     @property
@@ -597,6 +619,7 @@ class Line(object):
         :type: DomainEntityRef
         """
         
+
         self._default_for_user = default_for_user
 
     @property
@@ -620,6 +643,7 @@ class Line(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

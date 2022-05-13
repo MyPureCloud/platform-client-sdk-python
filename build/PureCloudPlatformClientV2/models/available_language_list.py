@@ -70,6 +70,7 @@ class AvailableLanguageList(object):
         :type: list[str]
         """
         
+
         self._languages = languages
 
     def to_dict(self):

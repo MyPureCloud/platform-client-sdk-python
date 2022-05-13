@@ -70,6 +70,7 @@ class WebChatGuestMediaRequestEntityList(object):
         :type: list[WebChatGuestMediaRequest]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

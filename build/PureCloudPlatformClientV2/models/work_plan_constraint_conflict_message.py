@@ -100,6 +100,7 @@ class WorkPlanConstraintConflictMessage(object):
         :type: list[WorkPlanValidationMessageArgument]
         """
         
+
         self._arguments = arguments
 
     def to_dict(self):

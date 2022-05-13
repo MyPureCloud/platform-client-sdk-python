@@ -73,6 +73,7 @@ class BuAgentScheduleHistoryChangeMetadata(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -96,6 +97,7 @@ class BuAgentScheduleHistoryChangeMetadata(object):
         :type: UserReference
         """
         
+
         self._modified_by = modified_by
 
     def to_dict(self):

@@ -103,6 +103,7 @@ class DomainOrganizationRole(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class DomainOrganizationRole(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -149,6 +151,7 @@ class DomainOrganizationRole(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -172,6 +175,7 @@ class DomainOrganizationRole(object):
         :type: str
         """
         
+
         self._default_role_id = default_role_id
 
     @property
@@ -195,6 +199,7 @@ class DomainOrganizationRole(object):
         :type: list[str]
         """
         
+
         self._permissions = permissions
 
     @property
@@ -218,6 +223,7 @@ class DomainOrganizationRole(object):
         :type: list[str]
         """
         
+
         self._unused_permissions = unused_permissions
 
     @property
@@ -241,6 +247,7 @@ class DomainOrganizationRole(object):
         :type: list[DomainPermissionPolicy]
         """
         
+
         self._permission_policies = permission_policies
 
     @property
@@ -264,6 +271,7 @@ class DomainOrganizationRole(object):
         :type: int
         """
         
+
         self._user_count = user_count
 
     @property
@@ -287,6 +295,7 @@ class DomainOrganizationRole(object):
         :type: bool
         """
         
+
         self._role_needs_update = role_needs_update
 
     @property
@@ -310,6 +319,7 @@ class DomainOrganizationRole(object):
         :type: bool
         """
         
+
         self._base = base
 
     @property
@@ -333,6 +343,7 @@ class DomainOrganizationRole(object):
         :type: bool
         """
         
+
         self._default = default
 
     @property
@@ -356,6 +367,7 @@ class DomainOrganizationRole(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

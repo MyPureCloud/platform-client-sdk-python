@@ -73,6 +73,7 @@ class UserBestPoints(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -96,6 +97,7 @@ class UserBestPoints(object):
         :type: list[UserBestPointsItem]
         """
         
+
         self._best_points = best_points
 
     def to_dict(self):

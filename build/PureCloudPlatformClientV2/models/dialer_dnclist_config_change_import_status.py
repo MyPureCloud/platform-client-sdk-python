@@ -109,6 +109,7 @@ class DialerDnclistConfigChangeImportStatus(object):
         :type: int
         """
         
+
         self._total_records = total_records
 
     @property
@@ -132,6 +133,7 @@ class DialerDnclistConfigChangeImportStatus(object):
         :type: int
         """
         
+
         self._completed_records = completed_records
 
     @property
@@ -155,6 +157,7 @@ class DialerDnclistConfigChangeImportStatus(object):
         :type: int
         """
         
+
         self._percentage_complete = percentage_complete
 
     @property
@@ -178,6 +181,7 @@ class DialerDnclistConfigChangeImportStatus(object):
         :type: str
         """
         
+
         self._failure_reason = failure_reason
 
     def to_dict(self):

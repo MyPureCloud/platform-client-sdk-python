@@ -70,6 +70,7 @@ class NTPSettings(object):
         :type: list[str]
         """
         
+
         self._servers = servers
 
     def to_dict(self):

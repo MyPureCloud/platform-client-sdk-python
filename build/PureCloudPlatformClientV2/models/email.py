@@ -166,6 +166,7 @@ class Email(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -189,6 +190,7 @@ class Email(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -212,6 +214,7 @@ class Email(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -235,6 +238,7 @@ class Email(object):
         :type: int
         """
         
+
         self._messages_sent = messages_sent
 
     @property
@@ -258,6 +262,7 @@ class Email(object):
         :type: list[Segment]
         """
         
+
         self._segments = segments
 
     @property
@@ -308,6 +313,7 @@ class Email(object):
         :type: str
         """
         
+
         self._recording_id = recording_id
 
     @property
@@ -331,6 +337,7 @@ class Email(object):
         :type: ErrorBody
         """
         
+
         self._error_info = error_info
 
     @property
@@ -381,6 +388,7 @@ class Email(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -404,6 +412,7 @@ class Email(object):
         :type: datetime
         """
         
+
         self._start_alerting_time = start_alerting_time
 
     @property
@@ -427,6 +436,7 @@ class Email(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -450,6 +460,7 @@ class Email(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -473,6 +484,7 @@ class Email(object):
         :type: bool
         """
         
+
         self._auto_generated = auto_generated
 
     @property
@@ -496,6 +508,7 @@ class Email(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -519,6 +532,7 @@ class Email(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -542,6 +556,7 @@ class Email(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -565,6 +580,7 @@ class Email(object):
         :type: str
         """
         
+
         self._message_id = message_id
 
     @property
@@ -588,6 +604,7 @@ class Email(object):
         :type: list[Attachment]
         """
         
+
         self._draft_attachments = draft_attachments
 
     @property
@@ -611,6 +628,7 @@ class Email(object):
         :type: bool
         """
         
+
         self._spam = spam
 
     @property
@@ -634,6 +652,7 @@ class Email(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -657,6 +676,7 @@ class Email(object):
         :type: AfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -680,6 +700,7 @@ class Email(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class RequestMapping(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -156,6 +157,7 @@ class RequestMapping(object):
         :type: str
         """
         
+
         self._value = value
 
     def to_dict(self):

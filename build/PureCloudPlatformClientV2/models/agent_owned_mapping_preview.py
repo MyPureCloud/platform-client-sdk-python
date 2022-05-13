@@ -85,6 +85,7 @@ class AgentOwnedMappingPreview(object):
         :type: str
         """
         
+
         self._agent_owned_column = agent_owned_column
 
     @property
@@ -108,6 +109,7 @@ class AgentOwnedMappingPreview(object):
         :type: str
         """
         
+
         self._email = email
 
     @property
@@ -131,6 +133,7 @@ class AgentOwnedMappingPreview(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -154,6 +157,7 @@ class AgentOwnedMappingPreview(object):
         :type: bool
         """
         
+
         self._exists = exists
 
     @property
@@ -177,6 +181,7 @@ class AgentOwnedMappingPreview(object):
         :type: bool
         """
         
+
         self._is_queue_member = is_queue_member
 
     @property
@@ -200,6 +205,7 @@ class AgentOwnedMappingPreview(object):
         :type: int
         """
         
+
         self._record_count = record_count
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         :type: str
         """
         
+
         self._output_field = output_field
 
     @property
@@ -132,6 +133,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         :type: str
         """
         
+
         self._comparison_value = comparison_value
 
     @property
@@ -155,6 +157,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         :type: bool
         """
         
+
         self._output_field_missing_resolution = output_field_missing_resolution
 
     @property
@@ -178,6 +181,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         :type: bool
         """
         
+
         self._inverted = inverted
 
     def to_dict(self):

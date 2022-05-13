@@ -85,6 +85,7 @@ class BulkErrorExternalContact(object):
         :type: str
         """
         
+
         self._code = code
 
     @property
@@ -108,6 +109,7 @@ class BulkErrorExternalContact(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -131,6 +133,7 @@ class BulkErrorExternalContact(object):
         :type: int
         """
         
+
         self._status = status
 
     @property
@@ -154,6 +157,7 @@ class BulkErrorExternalContact(object):
         :type: bool
         """
         
+
         self._retryable = retryable
 
     @property
@@ -177,6 +181,7 @@ class BulkErrorExternalContact(object):
         :type: ExternalContact
         """
         
+
         self._entity = entity
 
     @property
@@ -200,6 +205,7 @@ class BulkErrorExternalContact(object):
         :type: list[BulkErrorDetail]
         """
         
+
         self._details = details
 
     def to_dict(self):

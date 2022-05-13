@@ -42,18 +42,21 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNoti
         self.swagger_types = {
             'status': 'str',
             'operation_id': 'str',
-            'result': 'WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing'
+            'result': 'WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing',
+            'week_date': 'datetime'
         }
 
         self.attribute_map = {
             'status': 'status',
             'operation_id': 'operationId',
-            'result': 'result'
+            'result': 'result',
+            'week_date': 'weekDate'
         }
 
         self._status = None
         self._operation_id = None
         self._result = None
+        self._week_date = None
 
     @property
     def status(self):
@@ -103,6 +106,7 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNoti
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -126,7 +130,32 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNoti
         :type: WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing
         """
         
+
         self._result = result
+
+    @property
+    def week_date(self):
+        """
+        Gets the week_date of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.
+
+
+        :return: The week_date of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.
+        :rtype: datetime
+        """
+        return self._week_date
+
+    @week_date.setter
+    def week_date(self, week_date):
+        """
+        Sets the week_date of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.
+
+
+        :param week_date: The week_date of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.
+        :type: datetime
+        """
+        
+
+        self._week_date = week_date
 
     def to_dict(self):
         """

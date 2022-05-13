@@ -70,8 +70,8 @@ class DomainLogicalInterface(object):
             'last_modified_user_id': 'str',
             'last_modified_correlation_id': 'str',
             'command_responses': 'list[DomainNetworkCommandResponse]',
-            'inherit_phone_trunk_bases_i_pv4': 'bool',
-            'inherit_phone_trunk_bases_i_pv6': 'bool',
+            'inherit_phone_trunk_bases_ipv4': 'bool',
+            'inherit_phone_trunk_bases_ipv6': 'bool',
             'use_for_internal_edge_communication': 'bool',
             'use_for_indirect_edge_communication': 'bool',
             'use_for_cloud_proxy_edge_communication': 'bool',
@@ -115,8 +115,8 @@ class DomainLogicalInterface(object):
             'last_modified_user_id': 'lastModifiedUserId',
             'last_modified_correlation_id': 'lastModifiedCorrelationId',
             'command_responses': 'commandResponses',
-            'inherit_phone_trunk_bases_i_pv4': 'inheritPhoneTrunkBasesIPv4',
-            'inherit_phone_trunk_bases_i_pv6': 'inheritPhoneTrunkBasesIPv6',
+            'inherit_phone_trunk_bases_ipv4': 'inheritPhoneTrunkBasesIPv4',
+            'inherit_phone_trunk_bases_ipv6': 'inheritPhoneTrunkBasesIPv6',
             'use_for_internal_edge_communication': 'useForInternalEdgeCommunication',
             'use_for_indirect_edge_communication': 'useForIndirectEdgeCommunication',
             'use_for_cloud_proxy_edge_communication': 'useForCloudProxyEdgeCommunication',
@@ -159,8 +159,8 @@ class DomainLogicalInterface(object):
         self._last_modified_user_id = None
         self._last_modified_correlation_id = None
         self._command_responses = None
-        self._inherit_phone_trunk_bases_i_pv4 = None
-        self._inherit_phone_trunk_bases_i_pv6 = None
+        self._inherit_phone_trunk_bases_ipv4 = None
+        self._inherit_phone_trunk_bases_ipv6 = None
         self._use_for_internal_edge_communication = None
         self._use_for_indirect_edge_communication = None
         self._use_for_cloud_proxy_edge_communication = None
@@ -193,6 +193,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -216,6 +217,10 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -239,6 +244,7 @@ class DomainLogicalInterface(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -262,6 +268,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -285,6 +292,7 @@ class DomainLogicalInterface(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -308,6 +316,7 @@ class DomainLogicalInterface(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -331,6 +340,7 @@ class DomainLogicalInterface(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -354,6 +364,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -377,6 +388,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -427,6 +439,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -450,6 +463,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -473,6 +487,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._edge_uri = edge_uri
 
     @property
@@ -496,6 +511,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._edge_assigned_id = edge_assigned_id
 
     @property
@@ -519,6 +535,10 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+        if not friendly_name:
+            raise ValueError("Invalid value for `friendly_name`, must not be `None`")
+
+
         self._friendly_name = friendly_name
 
     @property
@@ -542,6 +562,7 @@ class DomainLogicalInterface(object):
         :type: int
         """
         
+
         self._vlan_tag_id = vlan_tag_id
 
     @property
@@ -565,6 +586,10 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+        if not hardware_address:
+            raise ValueError("Invalid value for `hardware_address`, must not be `None`")
+
+
         self._hardware_address = hardware_address
 
     @property
@@ -588,6 +613,10 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+        if not physical_adapter_id:
+            raise ValueError("Invalid value for `physical_adapter_id`, must not be `None`")
+
+
         self._physical_adapter_id = physical_adapter_id
 
     @property
@@ -611,6 +640,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._if_status = if_status
 
     @property
@@ -661,6 +691,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._public_nat_address_ip_v4 = public_nat_address_ip_v4
 
     @property
@@ -684,6 +715,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._public_nat_address_ip_v6 = public_nat_address_ip_v6
 
     @property
@@ -707,6 +739,7 @@ class DomainLogicalInterface(object):
         :type: list[DomainNetworkRoute]
         """
         
+
         self._routes = routes
 
     @property
@@ -730,6 +763,7 @@ class DomainLogicalInterface(object):
         :type: list[DomainNetworkAddress]
         """
         
+
         self._addresses = addresses
 
     @property
@@ -753,6 +787,7 @@ class DomainLogicalInterface(object):
         :type: DomainCapabilities
         """
         
+
         self._ipv4_capabilities = ipv4_capabilities
 
     @property
@@ -776,6 +811,7 @@ class DomainLogicalInterface(object):
         :type: DomainCapabilities
         """
         
+
         self._ipv6_capabilities = ipv6_capabilities
 
     @property
@@ -826,6 +862,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._last_modified_user_id = last_modified_user_id
 
     @property
@@ -849,6 +886,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._last_modified_correlation_id = last_modified_correlation_id
 
     @property
@@ -872,53 +910,56 @@ class DomainLogicalInterface(object):
         :type: list[DomainNetworkCommandResponse]
         """
         
+
         self._command_responses = command_responses
 
     @property
-    def inherit_phone_trunk_bases_i_pv4(self):
+    def inherit_phone_trunk_bases_ipv4(self):
         """
-        Gets the inherit_phone_trunk_bases_i_pv4 of this DomainLogicalInterface.
+        Gets the inherit_phone_trunk_bases_ipv4 of this DomainLogicalInterface.
         The IPv4 phone trunk base assignment will be inherited from the Edge Group.
 
-        :return: The inherit_phone_trunk_bases_i_pv4 of this DomainLogicalInterface.
+        :return: The inherit_phone_trunk_bases_ipv4 of this DomainLogicalInterface.
         :rtype: bool
         """
-        return self._inherit_phone_trunk_bases_i_pv4
+        return self._inherit_phone_trunk_bases_ipv4
 
-    @inherit_phone_trunk_bases_i_pv4.setter
-    def inherit_phone_trunk_bases_i_pv4(self, inherit_phone_trunk_bases_i_pv4):
+    @inherit_phone_trunk_bases_ipv4.setter
+    def inherit_phone_trunk_bases_ipv4(self, inherit_phone_trunk_bases_ipv4):
         """
-        Sets the inherit_phone_trunk_bases_i_pv4 of this DomainLogicalInterface.
+        Sets the inherit_phone_trunk_bases_ipv4 of this DomainLogicalInterface.
         The IPv4 phone trunk base assignment will be inherited from the Edge Group.
 
-        :param inherit_phone_trunk_bases_i_pv4: The inherit_phone_trunk_bases_i_pv4 of this DomainLogicalInterface.
+        :param inherit_phone_trunk_bases_ipv4: The inherit_phone_trunk_bases_ipv4 of this DomainLogicalInterface.
         :type: bool
         """
         
-        self._inherit_phone_trunk_bases_i_pv4 = inherit_phone_trunk_bases_i_pv4
+
+        self._inherit_phone_trunk_bases_ipv4 = inherit_phone_trunk_bases_ipv4
 
     @property
-    def inherit_phone_trunk_bases_i_pv6(self):
+    def inherit_phone_trunk_bases_ipv6(self):
         """
-        Gets the inherit_phone_trunk_bases_i_pv6 of this DomainLogicalInterface.
+        Gets the inherit_phone_trunk_bases_ipv6 of this DomainLogicalInterface.
         The IPv6 phone trunk base assignment will be inherited from the Edge Group.
 
-        :return: The inherit_phone_trunk_bases_i_pv6 of this DomainLogicalInterface.
+        :return: The inherit_phone_trunk_bases_ipv6 of this DomainLogicalInterface.
         :rtype: bool
         """
-        return self._inherit_phone_trunk_bases_i_pv6
+        return self._inherit_phone_trunk_bases_ipv6
 
-    @inherit_phone_trunk_bases_i_pv6.setter
-    def inherit_phone_trunk_bases_i_pv6(self, inherit_phone_trunk_bases_i_pv6):
+    @inherit_phone_trunk_bases_ipv6.setter
+    def inherit_phone_trunk_bases_ipv6(self, inherit_phone_trunk_bases_ipv6):
         """
-        Sets the inherit_phone_trunk_bases_i_pv6 of this DomainLogicalInterface.
+        Sets the inherit_phone_trunk_bases_ipv6 of this DomainLogicalInterface.
         The IPv6 phone trunk base assignment will be inherited from the Edge Group.
 
-        :param inherit_phone_trunk_bases_i_pv6: The inherit_phone_trunk_bases_i_pv6 of this DomainLogicalInterface.
+        :param inherit_phone_trunk_bases_ipv6: The inherit_phone_trunk_bases_ipv6 of this DomainLogicalInterface.
         :type: bool
         """
         
-        self._inherit_phone_trunk_bases_i_pv6 = inherit_phone_trunk_bases_i_pv6
+
+        self._inherit_phone_trunk_bases_ipv6 = inherit_phone_trunk_bases_ipv6
 
     @property
     def use_for_internal_edge_communication(self):
@@ -941,6 +982,7 @@ class DomainLogicalInterface(object):
         :type: bool
         """
         
+
         self._use_for_internal_edge_communication = use_for_internal_edge_communication
 
     @property
@@ -964,6 +1006,7 @@ class DomainLogicalInterface(object):
         :type: bool
         """
         
+
         self._use_for_indirect_edge_communication = use_for_indirect_edge_communication
 
     @property
@@ -987,6 +1030,7 @@ class DomainLogicalInterface(object):
         :type: bool
         """
         
+
         self._use_for_cloud_proxy_edge_communication = use_for_cloud_proxy_edge_communication
 
     @property
@@ -1010,6 +1054,7 @@ class DomainLogicalInterface(object):
         :type: bool
         """
         
+
         self._use_for_wan_interface = use_for_wan_interface
 
     @property
@@ -1033,6 +1078,7 @@ class DomainLogicalInterface(object):
         :type: list[TrunkBaseAssignment]
         """
         
+
         self._external_trunk_base_assignments = external_trunk_base_assignments
 
     @property
@@ -1056,6 +1102,7 @@ class DomainLogicalInterface(object):
         :type: list[TrunkBaseAssignment]
         """
         
+
         self._phone_trunk_base_assignments = phone_trunk_base_assignments
 
     @property
@@ -1079,6 +1126,7 @@ class DomainLogicalInterface(object):
         :type: bool
         """
         
+
         self._trace_enabled = trace_enabled
 
     @property
@@ -1102,6 +1150,7 @@ class DomainLogicalInterface(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -1125,6 +1174,7 @@ class DomainLogicalInterface(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -1148,6 +1198,7 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

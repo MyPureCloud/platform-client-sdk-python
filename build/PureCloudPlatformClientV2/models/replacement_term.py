@@ -103,6 +103,7 @@ class ReplacementTerm(object):
         :type: str
         """
         
+
         self._existing_value = existing_value
 
     @property
@@ -126,6 +127,7 @@ class ReplacementTerm(object):
         :type: str
         """
         
+
         self._updated_value = updated_value
 
     def to_dict(self):

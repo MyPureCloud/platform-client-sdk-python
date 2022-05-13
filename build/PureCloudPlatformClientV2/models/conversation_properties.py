@@ -100,6 +100,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._is_waiting = is_waiting
 
     @property
@@ -123,6 +124,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._is_active = is_active
 
     @property
@@ -146,6 +148,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._is_acd = is_acd
 
     @property
@@ -169,6 +172,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._is_preferred = is_preferred
 
     @property
@@ -192,6 +196,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._is_screenshare = is_screenshare
 
     @property
@@ -215,6 +220,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._is_cobrowse = is_cobrowse
 
     @property
@@ -238,6 +244,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._is_voicemail = is_voicemail
 
     @property
@@ -261,6 +268,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._is_flagged = is_flagged
 
     @property
@@ -284,6 +292,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._is_monitored = is_monitored
 
     @property
@@ -307,6 +316,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._filter_wrap_up_notes = filter_wrap_up_notes
 
     @property
@@ -330,6 +340,7 @@ class ConversationProperties(object):
         :type: bool
         """
         
+
         self._match_all = match_all
 
     def to_dict(self):

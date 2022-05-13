@@ -91,6 +91,7 @@ class DomainPermissionPolicy(object):
         :type: str
         """
         
+
         self._domain = domain
 
     @property
@@ -114,6 +115,7 @@ class DomainPermissionPolicy(object):
         :type: str
         """
         
+
         self._entity_name = entity_name
 
     @property
@@ -137,6 +139,7 @@ class DomainPermissionPolicy(object):
         :type: str
         """
         
+
         self._policy_name = policy_name
 
     @property
@@ -160,6 +163,7 @@ class DomainPermissionPolicy(object):
         :type: str
         """
         
+
         self._policy_description = policy_description
 
     @property
@@ -183,6 +187,7 @@ class DomainPermissionPolicy(object):
         :type: list[str]
         """
         
+
         self._action_set = action_set
 
     @property
@@ -206,6 +211,7 @@ class DomainPermissionPolicy(object):
         :type: list[str]
         """
         
+
         self._named_resources = named_resources
 
     @property
@@ -229,6 +235,7 @@ class DomainPermissionPolicy(object):
         :type: bool
         """
         
+
         self._allow_conditions = allow_conditions
 
     @property
@@ -252,6 +259,7 @@ class DomainPermissionPolicy(object):
         :type: DomainResourceConditionNode
         """
         
+
         self._resource_condition_node = resource_condition_node
 
     def to_dict(self):

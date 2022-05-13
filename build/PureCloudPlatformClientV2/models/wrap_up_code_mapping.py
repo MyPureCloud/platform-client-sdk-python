@@ -91,6 +91,7 @@ class WrapUpCodeMapping(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class WrapUpCodeMapping(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class WrapUpCodeMapping(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -160,6 +163,7 @@ class WrapUpCodeMapping(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -183,6 +187,7 @@ class WrapUpCodeMapping(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -206,6 +211,7 @@ class WrapUpCodeMapping(object):
         :type: list[str]
         """
         
+
         self._default_set = default_set
 
     @property
@@ -229,6 +235,7 @@ class WrapUpCodeMapping(object):
         :type: dict(str, list[str])
         """
         
+
         self._mapping = mapping
 
     @property
@@ -252,6 +259,7 @@ class WrapUpCodeMapping(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

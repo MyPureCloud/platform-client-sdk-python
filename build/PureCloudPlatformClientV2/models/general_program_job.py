@@ -85,6 +85,7 @@ class GeneralProgramJob(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class GeneralProgramJob(object):
         :type: AddressableEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -158,6 +160,7 @@ class GeneralProgramJob(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -181,6 +184,7 @@ class GeneralProgramJob(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -204,6 +208,7 @@ class GeneralProgramJob(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

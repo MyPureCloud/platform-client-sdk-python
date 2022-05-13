@@ -115,6 +115,7 @@ class DocumentAudit(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,7 @@ class DocumentAudit(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -161,6 +163,7 @@ class DocumentAudit(object):
         :type: DomainEntityRef
         """
         
+
         self._user = user
 
     @property
@@ -184,6 +187,7 @@ class DocumentAudit(object):
         :type: DomainEntityRef
         """
         
+
         self._workspace = workspace
 
     @property
@@ -207,6 +211,7 @@ class DocumentAudit(object):
         :type: str
         """
         
+
         self._transaction_id = transaction_id
 
     @property
@@ -230,6 +235,7 @@ class DocumentAudit(object):
         :type: bool
         """
         
+
         self._transaction_initiator = transaction_initiator
 
     @property
@@ -253,6 +259,7 @@ class DocumentAudit(object):
         :type: str
         """
         
+
         self._application = application
 
     @property
@@ -276,6 +283,7 @@ class DocumentAudit(object):
         :type: str
         """
         
+
         self._service_name = service_name
 
     @property
@@ -326,6 +334,7 @@ class DocumentAudit(object):
         :type: datetime
         """
         
+
         self._timestamp = timestamp
 
     @property
@@ -430,6 +439,7 @@ class DocumentAudit(object):
         :type: AuditEntityReference
         """
         
+
         self._entity = entity
 
     @property
@@ -453,6 +463,7 @@ class DocumentAudit(object):
         :type: list[AuditChange]
         """
         
+
         self._changes = changes
 
     @property
@@ -476,6 +487,7 @@ class DocumentAudit(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

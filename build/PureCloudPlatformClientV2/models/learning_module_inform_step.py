@@ -112,6 +112,7 @@ class LearningModuleInformStep(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -135,6 +136,10 @@ class LearningModuleInformStep(object):
         :type: str
         """
         
+        if not value:
+            raise ValueError("Invalid value for `value`, must not be `None`")
+
+
         self._value = value
 
     @property
@@ -158,6 +163,7 @@ class LearningModuleInformStep(object):
         :type: str
         """
         
+
         self._sharing_uri = sharing_uri
 
     @property
@@ -181,6 +187,7 @@ class LearningModuleInformStep(object):
         :type: str
         """
         
+
         self._content_type = content_type
 
     @property
@@ -204,6 +211,10 @@ class LearningModuleInformStep(object):
         :type: int
         """
         
+        if not order:
+            raise ValueError("Invalid value for `order`, must not be `None`")
+
+
         self._order = order
 
     def to_dict(self):

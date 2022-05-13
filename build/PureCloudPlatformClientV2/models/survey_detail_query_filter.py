@@ -103,6 +103,7 @@ class SurveyDetailQueryFilter(object):
         :type: list[SurveyDetailQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class SurveyDetailQueryFilter(object):
         :type: list[SurveyDetailQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

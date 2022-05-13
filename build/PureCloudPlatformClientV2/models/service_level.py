@@ -73,6 +73,7 @@ class ServiceLevel(object):
         :type: float
         """
         
+
         self._percentage = percentage
 
     @property
@@ -96,6 +97,7 @@ class ServiceLevel(object):
         :type: int
         """
         
+
         self._duration_ms = duration_ms
 
     def to_dict(self):

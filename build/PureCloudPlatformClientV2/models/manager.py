@@ -73,6 +73,7 @@ class Manager(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -96,6 +97,7 @@ class Manager(object):
         :type: str
         """
         
+
         self._ref = ref
 
     def to_dict(self):

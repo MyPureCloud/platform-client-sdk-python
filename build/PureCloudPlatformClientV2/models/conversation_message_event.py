@@ -106,6 +106,7 @@ class ConversationMessageEvent(object):
         :type: ConversationEventCoBrowse
         """
         
+
         self._co_browse = co_browse
 
     @property
@@ -129,6 +130,7 @@ class ConversationMessageEvent(object):
         :type: ConversationEventTyping
         """
         
+
         self._typing = typing
 
     @property
@@ -152,6 +154,7 @@ class ConversationMessageEvent(object):
         :type: ConversationEventPresence
         """
         
+
         self._presence = presence
 
     def to_dict(self):

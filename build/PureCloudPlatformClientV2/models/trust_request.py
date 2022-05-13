@@ -88,6 +88,7 @@ class TrustRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class TrustRequest(object):
         :type: OrgUser
         """
         
+
         self._created_by = created_by
 
     @property
@@ -134,6 +136,7 @@ class TrustRequest(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -157,6 +160,10 @@ class TrustRequest(object):
         :type: Organization
         """
         
+        if not trustee:
+            raise ValueError("Invalid value for `trustee`, must not be `None`")
+
+
         self._trustee = trustee
 
     @property
@@ -180,6 +187,7 @@ class TrustRequest(object):
         :type: list[OrgUser]
         """
         
+
         self._users = users
 
     @property
@@ -203,6 +211,7 @@ class TrustRequest(object):
         :type: list[TrustGroup]
         """
         
+
         self._groups = groups
 
     @property
@@ -226,6 +235,7 @@ class TrustRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -100,6 +100,7 @@ class DialerContactlistfilterConfigChangeFilterClause(object):
         :type: list[DialerContactlistfilterConfigChangeFilterPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

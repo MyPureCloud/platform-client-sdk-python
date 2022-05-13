@@ -70,6 +70,7 @@ class AsyncQueryResponse(object):
         :type: str
         """
         
+
         self._job_id = job_id
 
     def to_dict(self):

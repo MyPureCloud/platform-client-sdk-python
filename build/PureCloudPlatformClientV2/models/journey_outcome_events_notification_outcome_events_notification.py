@@ -97,6 +97,7 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -143,6 +145,7 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         :type: JourneyOutcomeEventsNotificationExternalContact
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -166,6 +169,7 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -189,6 +193,7 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         :type: str
         """
         
+
         self._customer_id = customer_id
 
     @property
@@ -212,6 +217,7 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         :type: str
         """
         
+
         self._customer_id_type = customer_id_type
 
     @property
@@ -235,6 +241,7 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         :type: JourneyOutcomeEventsNotificationSession
         """
         
+
         self._session = session
 
     @property
@@ -285,6 +292,7 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         :type: JourneyOutcomeEventsNotificationOutcomeAchievedMessage
         """
         
+
         self._outcome_achieved_event = outcome_achieved_event
 
     @property
@@ -308,6 +316,7 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         :type: JourneyOutcomeEventsNotificationOutcomeAttributionMessage
         """
         
+
         self._outcome_attribution_event_message = outcome_attribution_event_message
 
     def to_dict(self):

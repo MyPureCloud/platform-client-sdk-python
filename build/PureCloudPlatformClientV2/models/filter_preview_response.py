@@ -76,6 +76,7 @@ class FilterPreviewResponse(object):
         :type: int
         """
         
+
         self._filtered_contacts = filtered_contacts
 
     @property
@@ -99,6 +100,7 @@ class FilterPreviewResponse(object):
         :type: int
         """
         
+
         self._total_contacts = total_contacts
 
     @property
@@ -122,6 +124,7 @@ class FilterPreviewResponse(object):
         :type: list[DialerContact]
         """
         
+
         self._preview = preview
 
     def to_dict(self):

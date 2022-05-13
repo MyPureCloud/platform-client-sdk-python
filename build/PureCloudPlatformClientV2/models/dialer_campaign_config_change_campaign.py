@@ -166,6 +166,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: DialerCampaignConfigChangeUriReference
         """
         
+
         self._contact_list = contact_list
 
     @property
@@ -189,6 +190,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: DialerCampaignConfigChangeUriReference
         """
         
+
         self._queue = queue
 
     @property
@@ -239,6 +241,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: DialerCampaignConfigChangeUriReference
         """
         
+
         self._script = script
 
     @property
@@ -262,6 +265,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: DialerCampaignConfigChangeUriReference
         """
         
+
         self._edge_group = edge_group
 
     @property
@@ -285,6 +289,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: DialerCampaignConfigChangeUriReference
         """
         
+
         self._site = site
 
     @property
@@ -335,6 +340,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: list[DialerCampaignConfigChangePhoneColumn]
         """
         
+
         self._phone_columns = phone_columns
 
     @property
@@ -358,6 +364,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: float
         """
         
+
         self._abandon_rate = abandon_rate
 
     @property
@@ -381,6 +388,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: list[DialerCampaignConfigChangeUriReference]
         """
         
+
         self._dnc_lists = dnc_lists
 
     @property
@@ -404,6 +412,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: DialerCampaignConfigChangeUriReference
         """
         
+
         self._callable_time_set = callable_time_set
 
     @property
@@ -427,6 +436,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: DialerCampaignConfigChangeUriReference
         """
         
+
         self._call_analysis_response_set = call_analysis_response_set
 
     @property
@@ -450,6 +460,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: str
         """
         
+
         self._caller_name = caller_name
 
     @property
@@ -473,6 +484,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: str
         """
         
+
         self._caller_address = caller_address
 
     @property
@@ -496,6 +508,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: int
         """
         
+
         self._outbound_line_count = outbound_line_count
 
     @property
@@ -519,6 +532,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: list[DialerCampaignConfigChangeRestErrorDetail]
         """
         
+
         self._errors = errors
 
     @property
@@ -542,6 +556,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: list[DialerCampaignConfigChangeUriReference]
         """
         
+
         self._rule_sets = rule_sets
 
     @property
@@ -565,6 +580,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: bool
         """
         
+
         self._skip_preview_disabled = skip_preview_disabled
 
     @property
@@ -588,6 +604,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: int
         """
         
+
         self._preview_time_out_seconds = preview_time_out_seconds
 
     @property
@@ -611,6 +628,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: bool
         """
         
+
         self._single_number_preview = single_number_preview
 
     @property
@@ -634,6 +652,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: DialerCampaignConfigChangeContactSort
         """
         
+
         self._contact_sort = contact_sort
 
     @property
@@ -657,6 +676,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: list[DialerCampaignConfigChangeContactSort]
         """
         
+
         self._contact_sorts = contact_sorts
 
     @property
@@ -680,6 +700,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: int
         """
         
+
         self._no_answer_timeout = no_answer_timeout
 
     @property
@@ -703,6 +724,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: str
         """
         
+
         self._call_analysis_language = call_analysis_language
 
     @property
@@ -726,6 +748,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -749,6 +772,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: list[DialerCampaignConfigChangeUriReference]
         """
         
+
         self._contact_list_filters = contact_list_filters
 
     @property
@@ -772,6 +796,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: DialerCampaignConfigChangeUriReference
         """
         
+
         self._division = division
 
     @property
@@ -795,6 +820,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: str
         """
         
+
         self._agent_owned_column = agent_owned_column
 
     @property
@@ -818,6 +844,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -841,6 +868,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -864,6 +892,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -887,6 +916,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -910,6 +940,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

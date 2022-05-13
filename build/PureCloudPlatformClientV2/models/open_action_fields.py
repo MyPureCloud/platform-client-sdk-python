@@ -73,6 +73,10 @@ class OpenActionFields(object):
         :type: DomainEntityRef
         """
         
+        if not open_action:
+            raise ValueError("Invalid value for `open_action`, must not be `None`")
+
+
         self._open_action = open_action
 
     @property
@@ -96,6 +100,7 @@ class OpenActionFields(object):
         :type: dict(str, object)
         """
         
+
         self._configuration_fields = configuration_fields
 
     def to_dict(self):

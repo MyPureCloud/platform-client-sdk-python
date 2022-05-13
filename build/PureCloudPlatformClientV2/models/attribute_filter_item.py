@@ -76,6 +76,7 @@ class AttributeFilterItem(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class AttributeFilterItem(object):
         :type: list[str]
         """
         
+
         self._values = values
 
     def to_dict(self):

@@ -94,6 +94,7 @@ class BuShortTermForecastListItem(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class BuShortTermForecastListItem(object):
         :type: date
         """
         
+
         self._week_date = week_date
 
     @property
@@ -140,6 +142,7 @@ class BuShortTermForecastListItem(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     @property
@@ -190,6 +193,7 @@ class BuShortTermForecastListItem(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -213,6 +217,7 @@ class BuShortTermForecastListItem(object):
         :type: bool
         """
         
+
         self._legacy = legacy
 
     @property
@@ -236,6 +241,7 @@ class BuShortTermForecastListItem(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -259,6 +265,7 @@ class BuShortTermForecastListItem(object):
         :type: bool
         """
         
+
         self._can_use_for_scheduling = can_use_for_scheduling
 
     @property
@@ -282,6 +289,7 @@ class BuShortTermForecastListItem(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

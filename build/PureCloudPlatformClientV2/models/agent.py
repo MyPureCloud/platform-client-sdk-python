@@ -70,6 +70,7 @@ class Agent(object):
         :type: str
         """
         
+
         self._stage = stage
 
     def to_dict(self):

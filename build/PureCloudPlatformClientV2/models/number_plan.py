@@ -127,6 +127,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -150,6 +151,10 @@ class NumberPlan(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -173,6 +178,7 @@ class NumberPlan(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -196,6 +202,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -219,6 +226,7 @@ class NumberPlan(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -242,6 +250,7 @@ class NumberPlan(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -265,6 +274,7 @@ class NumberPlan(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -288,6 +298,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -311,6 +322,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -361,6 +373,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -384,6 +397,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -407,6 +421,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._match = match
 
     @property
@@ -430,6 +445,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._normalized_format = normalized_format
 
     @property
@@ -453,6 +469,7 @@ class NumberPlan(object):
         :type: int
         """
         
+
         self._priority = priority
 
     @property
@@ -476,6 +493,7 @@ class NumberPlan(object):
         :type: list[Number]
         """
         
+
         self._numbers = numbers
 
     @property
@@ -499,6 +517,7 @@ class NumberPlan(object):
         :type: DigitLength
         """
         
+
         self._digit_length = digit_length
 
     @property
@@ -522,6 +541,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._classification = classification
 
     @property
@@ -545,6 +565,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._match_type = match_type
 
     @property
@@ -568,6 +589,7 @@ class NumberPlan(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

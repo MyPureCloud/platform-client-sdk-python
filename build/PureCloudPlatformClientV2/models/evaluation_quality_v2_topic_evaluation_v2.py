@@ -133,6 +133,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -156,6 +157,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -179,6 +181,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: EvaluationQualityV2TopicUser
         """
         
+
         self._agent = agent
 
     @property
@@ -202,6 +205,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: EvaluationQualityV2TopicUser
         """
         
+
         self._evaluator = evaluator
 
     @property
@@ -225,6 +229,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: datetime
         """
         
+
         self._event_time = event_time
 
     @property
@@ -248,6 +253,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: str
         """
         
+
         self._evaluation_form_id = evaluation_form_id
 
     @property
@@ -271,6 +277,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: str
         """
         
+
         self._form_name = form_name
 
     @property
@@ -294,6 +301,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: EvaluationQualityV2TopicEvaluationScoringSet
         """
         
+
         self._scoring_set = scoring_set
 
     @property
@@ -317,6 +325,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     @property
@@ -367,6 +376,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: bool
         """
         
+
         self._agent_has_read = agent_has_read
 
     @property
@@ -390,6 +400,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: datetime
         """
         
+
         self._release_date = release_date
 
     @property
@@ -413,6 +424,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: datetime
         """
         
+
         self._assigned_date = assigned_date
 
     @property
@@ -436,6 +448,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: datetime
         """
         
+
         self._changed_date = changed_date
 
     @property
@@ -459,6 +472,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: str
         """
         
+
         self._event_type = event_type
 
     @property
@@ -482,6 +496,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: str
         """
         
+
         self._resource_id = resource_id
 
     @property
@@ -505,6 +520,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: str
         """
         
+
         self._resource_type = resource_type
 
     @property
@@ -528,6 +544,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: list[str]
         """
         
+
         self._division_ids = division_ids
 
     @property
@@ -551,6 +568,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: bool
         """
         
+
         self._rescore = rescore
 
     @property
@@ -574,6 +592,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: datetime
         """
         
+
         self._conversation_date = conversation_date
 
     @property
@@ -597,6 +616,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: list[str]
         """
         
+
         self._media_type = media_type
 
     @property
@@ -620,6 +640,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         :type: EvaluationQualityV2TopicCalibration
         """
         
+
         self._calibration = calibration
 
     def to_dict(self):

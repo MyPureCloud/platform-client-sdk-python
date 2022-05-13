@@ -103,6 +103,7 @@ class TranscriptAggregateQueryFilter(object):
         :type: list[TranscriptAggregateQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class TranscriptAggregateQueryFilter(object):
         :type: list[TranscriptAggregateQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

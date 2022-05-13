@@ -142,6 +142,7 @@ class Evaluation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -165,6 +166,7 @@ class Evaluation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -188,6 +190,7 @@ class Evaluation(object):
         :type: ConversationReference
         """
         
+
         self._conversation = conversation
 
     @property
@@ -211,6 +214,7 @@ class Evaluation(object):
         :type: EvaluationForm
         """
         
+
         self._evaluation_form = evaluation_form
 
     @property
@@ -234,6 +238,7 @@ class Evaluation(object):
         :type: User
         """
         
+
         self._evaluator = evaluator
 
     @property
@@ -257,6 +262,7 @@ class Evaluation(object):
         :type: User
         """
         
+
         self._agent = agent
 
     @property
@@ -280,6 +286,7 @@ class Evaluation(object):
         :type: Calibration
         """
         
+
         self._calibration = calibration
 
     @property
@@ -330,6 +337,7 @@ class Evaluation(object):
         :type: EvaluationScoringSet
         """
         
+
         self._answers = answers
 
     @property
@@ -353,6 +361,7 @@ class Evaluation(object):
         :type: bool
         """
         
+
         self._agent_has_read = agent_has_read
 
     @property
@@ -376,6 +385,7 @@ class Evaluation(object):
         :type: datetime
         """
         
+
         self._release_date = release_date
 
     @property
@@ -399,6 +409,7 @@ class Evaluation(object):
         :type: datetime
         """
         
+
         self._assigned_date = assigned_date
 
     @property
@@ -422,6 +433,7 @@ class Evaluation(object):
         :type: datetime
         """
         
+
         self._changed_date = changed_date
 
     @property
@@ -445,6 +457,7 @@ class Evaluation(object):
         :type: Queue
         """
         
+
         self._queue = queue
 
     @property
@@ -468,6 +481,7 @@ class Evaluation(object):
         :type: list[str]
         """
         
+
         self._media_type = media_type
 
     @property
@@ -491,6 +505,7 @@ class Evaluation(object):
         :type: bool
         """
         
+
         self._rescore = rescore
 
     @property
@@ -514,6 +529,7 @@ class Evaluation(object):
         :type: datetime
         """
         
+
         self._conversation_date = conversation_date
 
     @property
@@ -537,6 +553,7 @@ class Evaluation(object):
         :type: datetime
         """
         
+
         self._conversation_end_date = conversation_end_date
 
     @property
@@ -560,6 +577,7 @@ class Evaluation(object):
         :type: bool
         """
         
+
         self._never_release = never_release
 
     @property
@@ -583,6 +601,7 @@ class Evaluation(object):
         :type: str
         """
         
+
         self._resource_id = resource_id
 
     @property
@@ -633,6 +652,7 @@ class Evaluation(object):
         :type: bool
         """
         
+
         self._redacted = redacted
 
     @property
@@ -656,6 +676,7 @@ class Evaluation(object):
         :type: bool
         """
         
+
         self._is_scoring_index = is_scoring_index
 
     @property
@@ -679,6 +700,7 @@ class Evaluation(object):
         :type: list[str]
         """
         
+
         self._authorized_actions = authorized_actions
 
     @property
@@ -702,6 +724,7 @@ class Evaluation(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

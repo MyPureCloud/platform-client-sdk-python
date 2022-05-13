@@ -82,6 +82,7 @@ class ObservationMetricData(object):
         :type: str
         """
         
+
         self._metric = metric
 
     @property
@@ -105,6 +106,7 @@ class ObservationMetricData(object):
         :type: str
         """
         
+
         self._qualifier = qualifier
 
     @property
@@ -128,6 +130,7 @@ class ObservationMetricData(object):
         :type: StatisticalSummary
         """
         
+
         self._stats = stats
 
     @property
@@ -151,6 +154,7 @@ class ObservationMetricData(object):
         :type: bool
         """
         
+
         self._truncated = truncated
 
     @property
@@ -174,6 +178,7 @@ class ObservationMetricData(object):
         :type: list[ObservationValue]
         """
         
+
         self._observations = observations
 
     def to_dict(self):

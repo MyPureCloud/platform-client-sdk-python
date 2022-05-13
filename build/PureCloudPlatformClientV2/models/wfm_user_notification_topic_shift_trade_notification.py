@@ -91,6 +91,7 @@ class WfmUserNotificationTopicShiftTradeNotification(object):
         :type: str
         """
         
+
         self._week_date = week_date
 
     @property
@@ -114,6 +115,7 @@ class WfmUserNotificationTopicShiftTradeNotification(object):
         :type: str
         """
         
+
         self._trade_id = trade_id
 
     @property
@@ -137,6 +139,7 @@ class WfmUserNotificationTopicShiftTradeNotification(object):
         :type: bool
         """
         
+
         self._one_sided = one_sided
 
     @property
@@ -187,6 +190,7 @@ class WfmUserNotificationTopicShiftTradeNotification(object):
         :type: WfmUserNotificationTopicUserReference
         """
         
+
         self._initiating_user = initiating_user
 
     @property
@@ -210,6 +214,7 @@ class WfmUserNotificationTopicShiftTradeNotification(object):
         :type: datetime
         """
         
+
         self._initiating_shift_date = initiating_shift_date
 
     @property
@@ -233,6 +238,7 @@ class WfmUserNotificationTopicShiftTradeNotification(object):
         :type: WfmUserNotificationTopicUserReference
         """
         
+
         self._receiving_user = receiving_user
 
     @property
@@ -256,6 +262,7 @@ class WfmUserNotificationTopicShiftTradeNotification(object):
         :type: datetime
         """
         
+
         self._receiving_shift_date = receiving_shift_date
 
     def to_dict(self):

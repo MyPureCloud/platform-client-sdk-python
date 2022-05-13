@@ -73,6 +73,7 @@ class TranscriptTopics(object):
         :type: list[str]
         """
         
+
         self._includes = includes
 
     @property
@@ -96,6 +97,7 @@ class TranscriptTopics(object):
         :type: list[str]
         """
         
+
         self._excludes = excludes
 
     def to_dict(self):

@@ -97,6 +97,7 @@ class OpenNormalizedMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,10 @@ class OpenNormalizedMessage(object):
         :type: OpenMessagingChannel
         """
         
+        if not channel:
+            raise ValueError("Invalid value for `channel`, must not be `None`")
+
+
         self._channel = channel
 
     @property
@@ -170,6 +175,7 @@ class OpenNormalizedMessage(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -193,6 +199,7 @@ class OpenNormalizedMessage(object):
         :type: list[OpenMessageContent]
         """
         
+
         self._content = content
 
     @property
@@ -243,6 +250,7 @@ class OpenNormalizedMessage(object):
         :type: list[Reason]
         """
         
+
         self._reasons = reasons
 
     @property
@@ -266,6 +274,7 @@ class OpenNormalizedMessage(object):
         :type: bool
         """
         
+
         self._is_final_receipt = is_final_receipt
 
     @property
@@ -316,6 +325,7 @@ class OpenNormalizedMessage(object):
         :type: dict(str, str)
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

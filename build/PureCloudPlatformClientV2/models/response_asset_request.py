@@ -73,6 +73,10 @@ class ResponseAssetRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -96,6 +100,7 @@ class ResponseAssetRequest(object):
         :type: str
         """
         
+
         self._division_id = division_id
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class SearchAggregation(object):
         :type: str
         """
         
+
         self._field = field
 
     @property
@@ -108,6 +109,7 @@ class SearchAggregation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -158,6 +160,7 @@ class SearchAggregation(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -181,6 +184,7 @@ class SearchAggregation(object):
         :type: int
         """
         
+
         self._size = size
 
     @property
@@ -204,6 +208,7 @@ class SearchAggregation(object):
         :type: list[str]
         """
         
+
         self._order = order
 
     def to_dict(self):

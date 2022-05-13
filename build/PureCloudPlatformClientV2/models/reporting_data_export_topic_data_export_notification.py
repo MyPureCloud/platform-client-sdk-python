@@ -112,6 +112,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: str
         """
         
+
         self._run_id = run_id
 
     @property
@@ -158,6 +160,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -235,6 +238,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     @property
@@ -312,6 +316,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: bool
         """
         
+
         self._read = read
 
     @property
@@ -335,6 +340,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: datetime
         """
         
+
         self._created_date_time = created_date_time
 
     @property
@@ -358,6 +364,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: datetime
         """
         
+
         self._modified_date_time = modified_date_time
 
     @property
@@ -381,6 +388,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: float
         """
         
+
         self._percentage_complete = percentage_complete
 
     @property
@@ -404,6 +412,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: dict(str, str)
         """
         
+
         self._email_statuses = email_statuses
 
     @property
@@ -427,6 +436,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: str
         """
         
+
         self._email_error_description = email_error_description
 
     @property
@@ -450,6 +460,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :type: str
         """
         
+
         self._schedule_expression = schedule_expression
 
     def to_dict(self):

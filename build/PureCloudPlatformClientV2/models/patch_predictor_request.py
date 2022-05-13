@@ -76,6 +76,7 @@ class PatchPredictorRequest(object):
         :type: int
         """
         
+
         self._routing_timeout_seconds = routing_timeout_seconds
 
     @property
@@ -99,6 +100,7 @@ class PatchPredictorRequest(object):
         :type: PredictorSchedule
         """
         
+
         self._schedule = schedule
 
     @property
@@ -122,6 +124,7 @@ class PatchPredictorRequest(object):
         :type: PredictorWorkloadBalancing
         """
         
+
         self._workload_balancing_config = workload_balancing_config
 
     def to_dict(self):

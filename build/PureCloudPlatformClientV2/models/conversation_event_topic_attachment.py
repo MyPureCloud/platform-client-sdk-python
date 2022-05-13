@@ -82,6 +82,7 @@ class ConversationEventTopicAttachment(object):
         :type: str
         """
         
+
         self._attachment_id = attachment_id
 
     @property
@@ -105,6 +106,7 @@ class ConversationEventTopicAttachment(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class ConversationEventTopicAttachment(object):
         :type: str
         """
         
+
         self._content_uri = content_uri
 
     @property
@@ -151,6 +154,7 @@ class ConversationEventTopicAttachment(object):
         :type: str
         """
         
+
         self._content_type = content_type
 
     @property
@@ -174,6 +178,7 @@ class ConversationEventTopicAttachment(object):
         :type: int
         """
         
+
         self._content_length = content_length
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class SurveyQuestionGroup(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class SurveyQuestionGroup(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,7 @@ class SurveyQuestionGroup(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -154,6 +157,7 @@ class SurveyQuestionGroup(object):
         :type: bool
         """
         
+
         self._na_enabled = na_enabled
 
     @property
@@ -177,6 +181,7 @@ class SurveyQuestionGroup(object):
         :type: list[SurveyQuestion]
         """
         
+
         self._questions = questions
 
     @property
@@ -200,6 +205,7 @@ class SurveyQuestionGroup(object):
         :type: VisibilityCondition
         """
         
+
         self._visibility_condition = visibility_condition
 
     def to_dict(self):

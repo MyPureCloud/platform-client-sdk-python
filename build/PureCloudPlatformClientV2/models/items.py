@@ -73,6 +73,7 @@ class Items(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -96,6 +97,7 @@ class Items(object):
         :type: str
         """
         
+
         self._pattern = pattern
 
     def to_dict(self):

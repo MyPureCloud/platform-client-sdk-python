@@ -94,6 +94,10 @@ class SurveyAggregationQuery(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -117,6 +121,7 @@ class SurveyAggregationQuery(object):
         :type: str
         """
         
+
         self._granularity = granularity
 
     @property
@@ -140,6 +145,7 @@ class SurveyAggregationQuery(object):
         :type: str
         """
         
+
         self._time_zone = time_zone
 
     @property
@@ -163,6 +169,7 @@ class SurveyAggregationQuery(object):
         :type: list[str]
         """
         
+
         self._group_by = group_by
 
     @property
@@ -186,6 +193,7 @@ class SurveyAggregationQuery(object):
         :type: SurveyAggregateQueryFilter
         """
         
+
         self._filter = filter
 
     @property
@@ -209,6 +217,10 @@ class SurveyAggregationQuery(object):
         :type: list[str]
         """
         
+        if not metrics:
+            raise ValueError("Invalid value for `metrics`, must not be `None`")
+
+
         self._metrics = metrics
 
     @property
@@ -232,6 +244,7 @@ class SurveyAggregationQuery(object):
         :type: bool
         """
         
+
         self._flatten_multivalued_dimensions = flatten_multivalued_dimensions
 
     @property
@@ -255,6 +268,7 @@ class SurveyAggregationQuery(object):
         :type: list[SurveyAggregationView]
         """
         
+
         self._views = views
 
     @property

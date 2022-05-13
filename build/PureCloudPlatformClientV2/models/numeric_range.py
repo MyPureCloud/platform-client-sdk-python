@@ -79,6 +79,7 @@ class NumericRange(object):
         :type: float
         """
         
+
         self._gt = gt
 
     @property
@@ -102,6 +103,7 @@ class NumericRange(object):
         :type: float
         """
         
+
         self._gte = gte
 
     @property
@@ -125,6 +127,7 @@ class NumericRange(object):
         :type: float
         """
         
+
         self._lt = lt
 
     @property
@@ -148,6 +151,7 @@ class NumericRange(object):
         :type: float
         """
         
+
         self._lte = lte
 
     def to_dict(self):

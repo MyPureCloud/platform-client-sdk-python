@@ -91,6 +91,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData(object):
         :type: int
         """
         
+
         self._offered = offered
 
     @property
@@ -114,6 +115,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData(object):
         :type: int
         """
         
+
         self._completed = completed
 
     @property
@@ -137,6 +139,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData(object):
         :type: int
         """
         
+
         self._answered = answered
 
     @property
@@ -160,6 +163,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData(object):
         :type: int
         """
         
+
         self._abandoned = abandoned
 
     @property
@@ -183,6 +187,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData(object):
         :type: float
         """
         
+
         self._average_talk_time_seconds = average_talk_time_seconds
 
     @property
@@ -206,6 +211,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData(object):
         :type: float
         """
         
+
         self._average_after_call_work_seconds = average_after_call_work_seconds
 
     @property
@@ -229,6 +235,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData(object):
         :type: float
         """
         
+
         self._service_level_percent = service_level_percent
 
     @property
@@ -252,6 +259,7 @@ class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData(object):
         :type: float
         """
         
+
         self._average_speed_of_answer_seconds = average_speed_of_answer_seconds
 
     def to_dict(self):

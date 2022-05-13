@@ -73,6 +73,7 @@ class AnalyticsReportingSettings(object):
         :type: bool
         """
         
+
         self._pii_masking_enabled = pii_masking_enabled
 
     @property
@@ -96,6 +97,7 @@ class AnalyticsReportingSettings(object):
         :type: bool
         """
         
+
         self._queue_agent_access_obfuscation = queue_agent_access_obfuscation
 
     def to_dict(self):

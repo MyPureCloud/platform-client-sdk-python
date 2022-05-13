@@ -70,6 +70,7 @@ class DevelopmentActivityAggregateResponse(object):
         :type: list[DevelopmentActivityAggregateQueryResponseGroupedData]
         """
         
+
         self._results = results
 
     def to_dict(self):

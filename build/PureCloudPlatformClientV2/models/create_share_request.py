@@ -109,6 +109,10 @@ class CreateShareRequest(object):
         :type: SharedEntity
         """
         
+        if not shared_entity:
+            raise ValueError("Invalid value for `shared_entity`, must not be `None`")
+
+
         self._shared_entity = shared_entity
 
     @property
@@ -159,6 +163,7 @@ class CreateShareRequest(object):
         :type: SharedEntity
         """
         
+
         self._member = member
 
     @property
@@ -182,6 +187,7 @@ class CreateShareRequest(object):
         :type: list[CreateShareRequestMember]
         """
         
+
         self._members = members
 
     def to_dict(self):

@@ -44,7 +44,7 @@ class QueueUserEventTopicQueueMember(object):
             'user': 'QueueUserEventTopicUserReference',
             'queue_id': 'str',
             'joined': 'bool',
-            'additional_properties': 'dict(str, QueueUserEventTopicObject)'
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -82,6 +82,7 @@ class QueueUserEventTopicQueueMember(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class QueueUserEventTopicQueueMember(object):
         :type: QueueUserEventTopicUserReference
         """
         
+
         self._user = user
 
     @property
@@ -128,6 +130,7 @@ class QueueUserEventTopicQueueMember(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -151,6 +154,7 @@ class QueueUserEventTopicQueueMember(object):
         :type: bool
         """
         
+
         self._joined = joined
 
     @property
@@ -160,7 +164,7 @@ class QueueUserEventTopicQueueMember(object):
 
 
         :return: The additional_properties of this QueueUserEventTopicQueueMember.
-        :rtype: dict(str, QueueUserEventTopicObject)
+        :rtype: dict(str, object)
         """
         return self._additional_properties
 
@@ -171,9 +175,10 @@ class QueueUserEventTopicQueueMember(object):
 
 
         :param additional_properties: The additional_properties of this QueueUserEventTopicQueueMember.
-        :type: dict(str, QueueUserEventTopicObject)
+        :type: dict(str, object)
         """
         
+
         self._additional_properties = additional_properties
 
     def to_dict(self):

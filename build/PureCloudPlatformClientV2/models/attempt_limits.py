@@ -100,6 +100,7 @@ class AttemptLimits(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class AttemptLimits(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class AttemptLimits(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -169,6 +172,7 @@ class AttemptLimits(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -192,6 +196,7 @@ class AttemptLimits(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -215,6 +220,7 @@ class AttemptLimits(object):
         :type: int
         """
         
+
         self._max_attempts_per_contact = max_attempts_per_contact
 
     @property
@@ -238,6 +244,7 @@ class AttemptLimits(object):
         :type: int
         """
         
+
         self._max_attempts_per_number = max_attempts_per_number
 
     @property
@@ -261,6 +268,7 @@ class AttemptLimits(object):
         :type: str
         """
         
+
         self._time_zone_id = time_zone_id
 
     @property
@@ -311,6 +319,7 @@ class AttemptLimits(object):
         :type: dict(str, RecallEntry)
         """
         
+
         self._recall_entries = recall_entries
 
     @property
@@ -334,6 +343,7 @@ class AttemptLimits(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

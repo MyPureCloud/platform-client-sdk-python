@@ -73,6 +73,7 @@ class UserAggregateQueryResponse(object):
         :type: dict(str, list[str])
         """
         
+
         self._system_to_organization_mappings = system_to_organization_mappings
 
     @property
@@ -96,6 +97,7 @@ class UserAggregateQueryResponse(object):
         :type: list[UserAggregateDataContainer]
         """
         
+
         self._results = results
 
     def to_dict(self):

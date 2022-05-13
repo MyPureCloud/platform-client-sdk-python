@@ -85,6 +85,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -131,6 +133,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
         :type: str
         """
         
+
         self._file_state = file_state
 
     @property
@@ -154,6 +157,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
         :type: list[RecordingTranscodeCompleteTopicMediaResult]
         """
         
+
         self._media_uris = media_uris
 
     @property
@@ -177,6 +181,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
         :type: int
         """
         
+
         self._estimated_transcode_time_ms = estimated_transcode_time_ms
 
     @property
@@ -200,6 +205,7 @@ class RecordingTranscodeCompleteTopicRecording(object):
         :type: int
         """
         
+
         self._actual_transcode_time_ms = actual_transcode_time_ms
 
     def to_dict(self):

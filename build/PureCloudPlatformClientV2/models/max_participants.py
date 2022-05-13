@@ -70,6 +70,7 @@ class MaxParticipants(object):
         :type: int
         """
         
+
         self._max_participants = max_participants
 
     def to_dict(self):

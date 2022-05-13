@@ -181,6 +181,7 @@ class CallBasic(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -231,6 +232,7 @@ class CallBasic(object):
         :type: bool
         """
         
+
         self._recording = recording
 
     @property
@@ -281,6 +283,7 @@ class CallBasic(object):
         :type: bool
         """
         
+
         self._muted = muted
 
     @property
@@ -304,6 +307,7 @@ class CallBasic(object):
         :type: bool
         """
         
+
         self._confined = confined
 
     @property
@@ -327,6 +331,7 @@ class CallBasic(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -350,6 +355,7 @@ class CallBasic(object):
         :type: str
         """
         
+
         self._recording_id = recording_id
 
     @property
@@ -373,6 +379,7 @@ class CallBasic(object):
         :type: list[Segment]
         """
         
+
         self._segments = segments
 
     @property
@@ -396,6 +403,7 @@ class CallBasic(object):
         :type: ErrorInfo
         """
         
+
         self._error_info = error_info
 
     @property
@@ -446,6 +454,7 @@ class CallBasic(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -469,6 +478,7 @@ class CallBasic(object):
         :type: str
         """
         
+
         self._document_id = document_id
 
     @property
@@ -492,6 +502,7 @@ class CallBasic(object):
         :type: datetime
         """
         
+
         self._start_alerting_time = start_alerting_time
 
     @property
@@ -515,6 +526,7 @@ class CallBasic(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -538,6 +550,7 @@ class CallBasic(object):
         :type: datetime
         """
         
+
         self._disconnected_time = disconnected_time
 
     @property
@@ -561,6 +574,7 @@ class CallBasic(object):
         :type: list[DisconnectReason]
         """
         
+
         self._disconnect_reasons = disconnect_reasons
 
     @property
@@ -584,6 +598,7 @@ class CallBasic(object):
         :type: FaxStatus
         """
         
+
         self._fax_status = fax_status
 
     @property
@@ -607,6 +622,7 @@ class CallBasic(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -630,6 +646,7 @@ class CallBasic(object):
         :type: str
         """
         
+
         self._script_id = script_id
 
     @property
@@ -653,6 +670,7 @@ class CallBasic(object):
         :type: str
         """
         
+
         self._peer_id = peer_id
 
     @property
@@ -676,6 +694,7 @@ class CallBasic(object):
         :type: str
         """
         
+
         self._uui_data = uui_data
 
     @property
@@ -699,6 +718,7 @@ class CallBasic(object):
         :type: Address
         """
         
+
         self._pcSelf = pcSelf
 
     @property
@@ -722,6 +742,7 @@ class CallBasic(object):
         :type: Address
         """
         
+
         self._other = other
 
     @property
@@ -745,6 +766,7 @@ class CallBasic(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -768,6 +790,7 @@ class CallBasic(object):
         :type: AfterCallWork
         """
         
+
         self._after_call_work = after_call_work
 
     @property
@@ -791,6 +814,7 @@ class CallBasic(object):
         :type: bool
         """
         
+
         self._after_call_work_required = after_call_work_required
 
     @property
@@ -814,6 +838,7 @@ class CallBasic(object):
         :type: str
         """
         
+
         self._agent_assistant_id = agent_assistant_id
 
     def to_dict(self):

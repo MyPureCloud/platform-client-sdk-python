@@ -76,6 +76,7 @@ class AnalyticsConversationQueryResponse(object):
         :type: list[AggregationResult]
         """
         
+
         self._aggregations = aggregations
 
     @property
@@ -99,6 +100,7 @@ class AnalyticsConversationQueryResponse(object):
         :type: list[AnalyticsConversationWithoutAttributes]
         """
         
+
         self._conversations = conversations
 
     @property
@@ -122,6 +124,7 @@ class AnalyticsConversationQueryResponse(object):
         :type: int
         """
         
+
         self._total_hits = total_hits
 
     def to_dict(self):

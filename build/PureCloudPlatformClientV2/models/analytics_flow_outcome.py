@@ -82,6 +82,7 @@ class AnalyticsFlowOutcome(object):
         :type: str
         """
         
+
         self._flow_outcome = flow_outcome
 
     @property
@@ -105,6 +106,7 @@ class AnalyticsFlowOutcome(object):
         :type: datetime
         """
         
+
         self._flow_outcome_end_timestamp = flow_outcome_end_timestamp
 
     @property
@@ -128,6 +130,7 @@ class AnalyticsFlowOutcome(object):
         :type: str
         """
         
+
         self._flow_outcome_id = flow_outcome_id
 
     @property
@@ -151,6 +154,7 @@ class AnalyticsFlowOutcome(object):
         :type: datetime
         """
         
+
         self._flow_outcome_start_timestamp = flow_outcome_start_timestamp
 
     @property
@@ -174,6 +178,7 @@ class AnalyticsFlowOutcome(object):
         :type: str
         """
         
+
         self._flow_outcome_value = flow_outcome_value
 
     def to_dict(self):

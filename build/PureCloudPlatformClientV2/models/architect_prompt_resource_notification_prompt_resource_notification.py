@@ -85,6 +85,7 @@ class ArchitectPromptResourceNotificationPromptResourceNotification(object):
         :type: str
         """
         
+
         self._prompt_id = prompt_id
 
     @property
@@ -108,6 +109,7 @@ class ArchitectPromptResourceNotificationPromptResourceNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -131,6 +133,7 @@ class ArchitectPromptResourceNotificationPromptResourceNotification(object):
         :type: str
         """
         
+
         self._language = language
 
     @property
@@ -154,6 +157,7 @@ class ArchitectPromptResourceNotificationPromptResourceNotification(object):
         :type: str
         """
         
+
         self._media_uri = media_uri
 
     @property
@@ -177,6 +181,7 @@ class ArchitectPromptResourceNotificationPromptResourceNotification(object):
         :type: str
         """
         
+
         self._upload_status = upload_status
 
     @property
@@ -200,6 +205,7 @@ class ArchitectPromptResourceNotificationPromptResourceNotification(object):
         :type: float
         """
         
+
         self._duration_seconds = duration_seconds
 
     def to_dict(self):

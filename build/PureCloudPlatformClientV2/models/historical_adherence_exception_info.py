@@ -94,6 +94,7 @@ class HistoricalAdherenceExceptionInfo(object):
         :type: int
         """
         
+
         self._start_offset_seconds = start_offset_seconds
 
     @property
@@ -117,6 +118,7 @@ class HistoricalAdherenceExceptionInfo(object):
         :type: int
         """
         
+
         self._end_offset_seconds = end_offset_seconds
 
     @property
@@ -140,6 +142,7 @@ class HistoricalAdherenceExceptionInfo(object):
         :type: str
         """
         
+
         self._scheduled_activity_code_id = scheduled_activity_code_id
 
     @property
@@ -298,6 +301,7 @@ class HistoricalAdherenceExceptionInfo(object):
         :type: str
         """
         
+
         self._secondary_presence_lookup_id = secondary_presence_lookup_id
 
     def to_dict(self):

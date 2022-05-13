@@ -73,6 +73,7 @@ class MediaResult(object):
         :type: str
         """
         
+
         self._media_uri = media_uri
 
     @property
@@ -96,6 +97,7 @@ class MediaResult(object):
         :type: list[float]
         """
         
+
         self._waveform_data = waveform_data
 
     def to_dict(self):

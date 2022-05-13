@@ -127,6 +127,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -150,6 +151,10 @@ class WebDeploymentConfigurationVersion(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -173,6 +178,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: str
         """
         
+
         self._version = version
 
     @property
@@ -196,6 +202,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -219,6 +226,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: list[str]
         """
         
+
         self._languages = languages
 
     @property
@@ -242,6 +250,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: str
         """
         
+
         self._default_language = default_language
 
     @property
@@ -265,6 +274,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: MessengerSettings
         """
         
+
         self._messenger = messenger
 
     @property
@@ -288,6 +298,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: PositionSettings
         """
         
+
         self._position = position
 
     @property
@@ -311,6 +322,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: SupportCenterSettings
         """
         
+
         self._support_center = support_center
 
     @property
@@ -334,6 +346,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: CobrowseSettings
         """
         
+
         self._cobrowse = cobrowse
 
     @property
@@ -357,6 +370,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: JourneyEventsSettings
         """
         
+
         self._journey_events = journey_events
 
     @property
@@ -380,6 +394,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: AuthenticationSettings
         """
         
+
         self._authentication_settings = authentication_settings
 
     @property
@@ -403,6 +418,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -426,6 +442,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -449,6 +466,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: datetime
         """
         
+
         self._date_published = date_published
 
     @property
@@ -472,6 +490,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: AddressableEntityRef
         """
         
+
         self._last_modified_user = last_modified_user
 
     @property
@@ -495,6 +514,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: AddressableEntityRef
         """
         
+
         self._created_user = created_user
 
     @property
@@ -518,6 +538,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: AddressableEntityRef
         """
         
+
         self._published_user = published_user
 
     @property
@@ -568,6 +589,7 @@ class WebDeploymentConfigurationVersion(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

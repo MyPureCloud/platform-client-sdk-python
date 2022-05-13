@@ -91,6 +91,7 @@ class Trustee(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,10 @@ class Trustee(object):
         :type: bool
         """
         
+        if not enabled:
+            raise ValueError("Invalid value for `enabled`, must not be `None`")
+
+
         self._enabled = enabled
 
     @property
@@ -137,6 +142,7 @@ class Trustee(object):
         :type: bool
         """
         
+
         self._uses_default_role = uses_default_role
 
     @property
@@ -160,6 +166,7 @@ class Trustee(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -183,6 +190,7 @@ class Trustee(object):
         :type: datetime
         """
         
+
         self._date_expired = date_expired
 
     @property
@@ -206,6 +214,7 @@ class Trustee(object):
         :type: OrgUser
         """
         
+
         self._created_by = created_by
 
     @property
@@ -229,6 +238,7 @@ class Trustee(object):
         :type: Organization
         """
         
+
         self._organization = organization
 
     @property
@@ -252,6 +262,7 @@ class Trustee(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

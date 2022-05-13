@@ -82,6 +82,7 @@ class TextBotFlowOutcome(object):
         :type: str
         """
         
+
         self._outcome_id = outcome_id
 
     @property
@@ -132,6 +133,7 @@ class TextBotFlowOutcome(object):
         :type: datetime
         """
         
+
         self._date_start = date_start
 
     @property
@@ -155,6 +157,7 @@ class TextBotFlowOutcome(object):
         :type: datetime
         """
         
+
         self._date_end = date_end
 
     @property
@@ -178,6 +181,7 @@ class TextBotFlowOutcome(object):
         :type: list[TextBotFlowMilestone]
         """
         
+
         self._milestones = milestones
 
     def to_dict(self):

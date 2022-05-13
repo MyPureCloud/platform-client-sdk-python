@@ -70,6 +70,7 @@ class WhatsAppAvailablePhoneNumberDetailsListing(object):
         :type: list[WhatsAppAvailablePhoneNumberDetails]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

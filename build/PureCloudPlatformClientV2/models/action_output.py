@@ -85,6 +85,7 @@ class ActionOutput(object):
         :type: JsonSchemaDocument
         """
         
+
         self._success_schema = success_schema
 
     @property
@@ -108,6 +109,7 @@ class ActionOutput(object):
         :type: str
         """
         
+
         self._success_schema_uri = success_schema_uri
 
     @property
@@ -131,6 +133,7 @@ class ActionOutput(object):
         :type: JsonSchemaDocument
         """
         
+
         self._error_schema = error_schema
 
     @property
@@ -154,6 +157,7 @@ class ActionOutput(object):
         :type: str
         """
         
+
         self._error_schema_uri = error_schema_uri
 
     @property
@@ -177,6 +181,7 @@ class ActionOutput(object):
         :type: JsonSchemaDocument
         """
         
+
         self._success_schema_flattened = success_schema_flattened
 
     @property
@@ -200,6 +205,7 @@ class ActionOutput(object):
         :type: object
         """
         
+
         self._error_schema_flattened = error_schema_flattened
 
     def to_dict(self):

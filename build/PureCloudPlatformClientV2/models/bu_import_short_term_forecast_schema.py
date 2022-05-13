@@ -82,6 +82,10 @@ class BuImportShortTermForecastSchema(object):
         :type: str
         """
         
+        if not description:
+            raise ValueError("Invalid value for `description`, must not be `None`")
+
+
         self._description = description
 
     @property
@@ -105,6 +109,10 @@ class BuImportShortTermForecastSchema(object):
         :type: int
         """
         
+        if not week_count:
+            raise ValueError("Invalid value for `week_count`, must not be `None`")
+
+
         self._week_count = week_count
 
     @property
@@ -128,6 +136,10 @@ class BuImportShortTermForecastSchema(object):
         :type: list[ForecastPlanningGroupData]
         """
         
+        if not planning_groups:
+            raise ValueError("Invalid value for `planning_groups`, must not be `None`")
+
+
         self._planning_groups = planning_groups
 
     @property
@@ -151,6 +163,7 @@ class BuImportShortTermForecastSchema(object):
         :type: list[LongTermForecastPlanningGroupData]
         """
         
+
         self._long_term_planning_groups = long_term_planning_groups
 
     @property
@@ -174,6 +187,7 @@ class BuImportShortTermForecastSchema(object):
         :type: bool
         """
         
+
         self._can_use_for_scheduling = can_use_for_scheduling
 
     def to_dict(self):

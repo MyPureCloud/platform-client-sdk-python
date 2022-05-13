@@ -100,6 +100,7 @@ class SiteConnection(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class SiteConnection(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class SiteConnection(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -169,6 +172,7 @@ class SiteConnection(object):
         :type: bool
         """
         
+
         self._managed = managed
 
     @property
@@ -219,6 +223,7 @@ class SiteConnection(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -269,6 +274,7 @@ class SiteConnection(object):
         :type: list[ConnectedEdge]
         """
         
+
         self._edge_list = edge_list
 
     @property
@@ -292,6 +298,7 @@ class SiteConnection(object):
         :type: bool
         """
         
+
         self._core_site = core_site
 
     @property
@@ -315,6 +322,7 @@ class SiteConnection(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._primary_core_sites = primary_core_sites
 
     @property
@@ -338,6 +346,7 @@ class SiteConnection(object):
         :type: list[DomainEntityRef]
         """
         
+
         self._secondary_core_sites = secondary_core_sites
 
     def to_dict(self):

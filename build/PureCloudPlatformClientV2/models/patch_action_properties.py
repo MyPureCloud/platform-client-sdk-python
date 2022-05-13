@@ -82,6 +82,7 @@ class PatchActionProperties(object):
         :type: str
         """
         
+
         self._webchat_prompt = webchat_prompt
 
     @property
@@ -105,6 +106,7 @@ class PatchActionProperties(object):
         :type: str
         """
         
+
         self._webchat_title_text = webchat_title_text
 
     @property
@@ -128,6 +130,7 @@ class PatchActionProperties(object):
         :type: str
         """
         
+
         self._webchat_accept_text = webchat_accept_text
 
     @property
@@ -151,6 +154,7 @@ class PatchActionProperties(object):
         :type: str
         """
         
+
         self._webchat_decline_text = webchat_decline_text
 
     @property
@@ -174,6 +178,7 @@ class PatchActionProperties(object):
         :type: PatchActionSurvey
         """
         
+
         self._webchat_survey = webchat_survey
 
     def to_dict(self):

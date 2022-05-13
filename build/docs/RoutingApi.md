@@ -347,7 +347,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
-force_delete = true # bool | forceDelete (optional)
+force_delete = True # bool | forceDelete (optional)
 
 try:
     # Delete a queue
@@ -703,7 +703,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 address_id = 'address_id_example' # str | Address ID
-async = false # bool | Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (optional) (default to false)
+async = False # bool | Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (optional) (default to False)
 
 try:
     # Delete a phone number provisioned for SMS.
@@ -718,7 +718,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
-| **async** | **bool**| Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  | [optional] [default to false] |
+| **async** | **bool**| Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1379,7 +1379,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-exclude_status = false # bool | Exclude MX record data (optional) (default to false)
+exclude_status = False # bool | Exclude MX record data (optional) (default to False)
 
 try:
     # Get domains
@@ -1394,7 +1394,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **exclude_status** | **bool**| Exclude MX record data | [optional] [default to false] |
+| **exclude_status** | **bool**| Exclude MX record data | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1460,7 +1460,7 @@ Get the list of supported languages.
 
 Wraps GET /api/v2/routing/languages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1478,7 +1478,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | id (optional)
 
@@ -1497,7 +1497,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 {: class="table table-striped"}
@@ -2068,7 +2068,7 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
 page_number = 1 # int |  (optional) (default to 1)
 page_size = 25 # int | Max value is 100 (optional) (default to 25)
-sort_order = 'asc' # str | Note: results are sorted by name. (optional) (default to asc)
+sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 name = 'name_example' # str | Filter by queue member name (optional)
 profile_skills = ['profile_skills_example'] # list[str] | Filter by profile skill (optional)
@@ -2077,7 +2077,7 @@ languages = ['languages_example'] # list[str] | Filter by language (optional)
 routing_status = ['routing_status_example'] # list[str] | Filter by routing status (optional)
 presence = ['presence_example'] # list[str] | Filter by presence (optional)
 member_by = 'member_by_example' # str | Filter by member type (optional)
-joined = true # bool | Filter by joined status (optional)
+joined = True # bool | Filter by joined status (optional)
 
 try:
     # Get the members of this queue.
@@ -2095,7 +2095,7 @@ except ApiException as e:
 | **queue_id** | **str**| Queue ID |  |
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
-| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
+| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
@@ -2104,7 +2104,7 @@ except ApiException as e:
 | **routing_status** | [**list[str]**](str.html)| Filter by routing status | [optional]  |
 | **presence** | [**list[str]**](str.html)| Filter by presence | [optional]  |
 | **member_by** | **str**| Filter by member type | [optional] <br />**Values**: user, group |
-| **joined** | **bool**| Filter by joined status | [optional]  |
+| **joined** | **bool**| Filter by joined status | [optional] <br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -2144,9 +2144,9 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
 page_number = 1 # int |  (optional) (default to 1)
 page_size = 25 # int | Max value is 100 (optional) (default to 25)
-sort_order = 'asc' # str | Note: results are sorted by name. (optional) (default to asc)
+sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
-joined = true # bool | Filter by joined status (optional)
+joined = True # bool | Filter by joined status (optional)
 name = 'name_example' # str | Filter by queue member name (optional)
 profile_skills = ['profile_skills_example'] # list[str] | Filter by profile skill (optional)
 skills = ['skills_example'] # list[str] | Filter by skill (optional)
@@ -2170,7 +2170,7 @@ except ApiException as e:
 | **queue_id** | **str**| Queue ID |  |
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
-| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
+| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
@@ -2271,7 +2271,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_order = 'asc' # str | Note: results are sorted by name. (optional) (default to asc)
+sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')
 name = 'name_example' # str | Filter by queue name (optional)
 id = ['id_example'] # list[str] | Filter by queue ID(s) (optional)
 division_id = ['division_id_example'] # list[str] | Filter by queue division ID(s) (optional)
@@ -2291,7 +2291,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
+| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **name** | **str**| Filter by queue name | [optional]  |
 | **id** | [**list[str]**](str.html)| Filter by queue ID(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Filter by queue division ID(s) | [optional]  |
@@ -2332,8 +2332,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size [max value is 100] (optional) (default to 25)
 page_number = 1 # int | Page number [max value is 5] (optional) (default to 1)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | Queue ID(s) (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
@@ -2353,8 +2353,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size [max value is 100] | [optional] [default to 25] |
 | **page_number** | **int**| Page number [max value is 5] | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId |
-| **sort_order** | **str**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, id, divisionId |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| Queue ID(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
@@ -2395,7 +2395,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size [max value is 500] (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'asc' # str | Sort order (optional) (default to asc)
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 
 try:
     # Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
@@ -2412,7 +2412,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size [max value is 500] | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type
@@ -2431,7 +2431,7 @@ Get a paged listing of queues the user is a member of.
 
 Wraps GET /api/v2/routing/queues/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2449,8 +2449,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-joined = true # bool | Filter by joined status. (optional)
-sort_order = 'asc' # str | Note: results are sorted by name. (optional) (default to asc)
+joined = True # bool | Filter by joined status. (optional)
+sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')
 
 try:
     # Get a paged listing of queues the user is a member of.
@@ -2467,8 +2467,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **joined** | **bool**| Filter by joined status. | [optional]  |
-| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
+| **joined** | **bool**| Filter by joined status. | [optional] <br />**Values**: true, false |
+| **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type
@@ -2487,7 +2487,7 @@ Get an organization's routing settings
 
 Wraps GET /api/v2/routing/settings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2533,7 +2533,7 @@ Get Contact Center Settings
 
 Wraps GET /api/v2/routing/settings/contactcenter 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2626,7 +2626,7 @@ Get Routing Skill
 
 Wraps GET /api/v2/routing/skills/{skillId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2676,7 +2676,7 @@ Get the list of routing skills.
 
 Wraps GET /api/v2/routing/skills 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2834,6 +2834,8 @@ Get a list of available phone numbers for SMS provisioning.
 
 This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
 
+
+
 Wraps GET /api/v2/routing/sms/availablephonenumbers 
 
 Requires ALL permissions: 
@@ -2975,7 +2977,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'sort_by_example' # str | Optional field to sort results (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
-language = 'en-US' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional) (default to en-US)
+language = ''en-US'' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional) (default to 'en-US')
 
 try:
     # Get a list of provisioned phone numbers.
@@ -2998,7 +3000,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Optional field to sort results | [optional] <br />**Values**: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice |
 | **sort_order** | **str**| Sort order | [optional] <br />**Values**: ascending, descending |
-| **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to en-US] |
+| **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &#39;en-US&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3187,8 +3189,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 name = 'name_example' # str | Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
 
 try:
@@ -3206,8 +3208,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to name]<br />**Values**: name, id |
-| **sort_order** | **str**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, id |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) | [optional]  |
 {: class="table table-striped"}
 
@@ -3249,7 +3251,7 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 user_id = 'user_id_example' # str | User ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-joined = true # bool | Is joined to the queue (optional) (default to true)
+joined = True # bool | Is joined to the queue (optional) (default to True)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 
 try:
@@ -3268,7 +3270,7 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **joined** | **bool**| Is joined to the queue | [optional] [default to true] |
+| **joined** | **bool**| Is joined to the queue | [optional] [default to True] |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 {: class="table table-striped"}
 
@@ -3288,7 +3290,7 @@ List routing language for user
 
 Wraps GET /api/v2/users/{userId}/routinglanguages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3307,7 +3309,7 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 user_id = 'user_id_example' # str | User ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 
 try:
     # List routing language for user
@@ -3325,7 +3327,7 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -3344,7 +3346,7 @@ List routing skills for user
 
 Wraps GET /api/v2/users/{userId}/routingskills 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3363,7 +3365,7 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 user_id = 'user_id_example' # str | User ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 
 try:
     # List routing skills for user
@@ -3381,7 +3383,7 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -3397,6 +3399,8 @@ except ApiException as e:
 Update attributes of an in-queue conversation
 
 Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+
+
 
 Wraps PATCH /api/v2/routing/conversations/{conversationId} 
 
@@ -4361,6 +4365,8 @@ Tests the custom SMTP server integration connection set on this domain
 
 The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
 
+
+
 Wraps POST /api/v2/routing/email/domains/{domainId}/testconnection 
 
 Requires ALL permissions: 
@@ -4590,7 +4596,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
 body = [PureCloudPlatformClientV2.WritableEntity()] # list[WritableEntity] | Queue Members
-delete = false # bool | True to delete queue members (optional) (default to false)
+delete = False # bool | True to delete queue members (optional) (default to False)
 
 try:
     # Bulk add or delete up to 100 queue members
@@ -4606,7 +4612,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **body** | [**list[WritableEntity]**](WritableEntity.html)| Queue Members |  |
-| **delete** | **bool**| True to delete queue members | [optional] [default to false] |
+| **delete** | **bool**| True to delete queue members | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4645,7 +4651,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
 body = [PureCloudPlatformClientV2.WritableEntity()] # list[WritableEntity] | Queue Members
-delete = false # bool | True to delete queue members (optional) (default to false)
+delete = False # bool | True to delete queue members (optional) (default to False)
 
 try:
     # DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
@@ -4661,7 +4667,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **body** | [**list[WritableEntity]**](WritableEntity.html)| Queue Members |  |
-| **delete** | **bool**| True to delete queue members | [optional] [default to false] |
+| **delete** | **bool**| True to delete queue members | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4904,7 +4910,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 body = PureCloudPlatformClientV2.SmsPhoneNumberProvision() # SmsPhoneNumberProvision | SmsPhoneNumber
-async = false # bool | Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (optional) (default to false)
+async = False # bool | Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (optional) (default to False)
 
 try:
     # Provision a phone number for SMS
@@ -4920,7 +4926,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber |  |
-| **async** | **bool**| Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. | [optional] [default to false] |
+| **async** | **bool**| Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -5379,7 +5385,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 address_id = 'address_id_example' # str | Address ID
 body = PureCloudPlatformClientV2.SmsPhoneNumber() # SmsPhoneNumber | SmsPhoneNumber
-async = false # bool | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (optional) (default to false)
+async = False # bool | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (optional) (default to False)
 
 try:
     # Update a phone number provisioned for SMS.
@@ -5396,7 +5402,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
 | **body** | [**SmsPhoneNumber**](SmsPhoneNumber.html)| SmsPhoneNumber |  |
-| **async** | **bool**| Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. | [optional] [default to false] |
+| **async** | **bool**| Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type

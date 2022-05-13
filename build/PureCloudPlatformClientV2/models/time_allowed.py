@@ -76,6 +76,7 @@ class TimeAllowed(object):
         :type: list[TimeSlot]
         """
         
+
         self._time_slots = time_slots
 
     @property
@@ -99,6 +100,7 @@ class TimeAllowed(object):
         :type: str
         """
         
+
         self._time_zone_id = time_zone_id
 
     @property
@@ -122,6 +124,7 @@ class TimeAllowed(object):
         :type: bool
         """
         
+
         self._empty = empty
 
     def to_dict(self):

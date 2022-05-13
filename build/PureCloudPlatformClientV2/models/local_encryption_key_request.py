@@ -76,6 +76,10 @@ class LocalEncryptionKeyRequest(object):
         :type: str
         """
         
+        if not config_id:
+            raise ValueError("Invalid value for `config_id`, must not be `None`")
+
+
         self._config_id = config_id
 
     @property
@@ -99,6 +103,10 @@ class LocalEncryptionKeyRequest(object):
         :type: str
         """
         
+        if not public_key:
+            raise ValueError("Invalid value for `public_key`, must not be `None`")
+
+
         self._public_key = public_key
 
     @property
@@ -122,6 +130,10 @@ class LocalEncryptionKeyRequest(object):
         :type: str
         """
         
+        if not keypair_id:
+            raise ValueError("Invalid value for `keypair_id`, must not be `None`")
+
+
         self._keypair_id = keypair_id
 
     def to_dict(self):

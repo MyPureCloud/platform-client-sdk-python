@@ -97,6 +97,7 @@ class TranscriptionTopicTranscriptResult(object):
         :type: str
         """
         
+
         self._utterance_id = utterance_id
 
     @property
@@ -120,6 +121,7 @@ class TranscriptionTopicTranscriptResult(object):
         :type: bool
         """
         
+
         self._is_final = is_final
 
     @property
@@ -170,6 +172,7 @@ class TranscriptionTopicTranscriptResult(object):
         :type: list[TranscriptionTopicTranscriptAlternative]
         """
         
+
         self._alternatives = alternatives
 
     @property
@@ -193,6 +196,7 @@ class TranscriptionTopicTranscriptResult(object):
         :type: str
         """
         
+
         self._agent_assistant_id = agent_assistant_id
 
     @property
@@ -216,6 +220,7 @@ class TranscriptionTopicTranscriptResult(object):
         :type: str
         """
         
+
         self._engine_id = engine_id
 
     @property
@@ -239,6 +244,7 @@ class TranscriptionTopicTranscriptResult(object):
         :type: str
         """
         
+
         self._dialect = dialect
 
     @property
@@ -262,6 +268,7 @@ class TranscriptionTopicTranscriptResult(object):
         :type: str
         """
         
+
         self._speech_text_analytics_program_id = speech_text_analytics_program_id
 
     @property
@@ -285,6 +292,7 @@ class TranscriptionTopicTranscriptResult(object):
         :type: bool
         """
         
+
         self._agent_assist_enabled = agent_assist_enabled
 
     @property
@@ -308,6 +316,7 @@ class TranscriptionTopicTranscriptResult(object):
         :type: bool
         """
         
+
         self._voice_transcription_enabled = voice_transcription_enabled
 
     def to_dict(self):

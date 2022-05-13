@@ -172,6 +172,7 @@ class SegmentDetailQueryPredicate(object):
         :type: str
         """
         
+
         self._pcProperty = pcProperty
 
     @property
@@ -249,6 +250,7 @@ class SegmentDetailQueryPredicate(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -272,6 +274,7 @@ class SegmentDetailQueryPredicate(object):
         :type: NumericRange
         """
         
+
         self._range = range
 
     def to_dict(self):

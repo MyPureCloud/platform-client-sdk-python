@@ -73,6 +73,10 @@ class ContactColumnToDataActionFieldMapping(object):
         :type: str
         """
         
+        if not contact_column_name:
+            raise ValueError("Invalid value for `contact_column_name`, must not be `None`")
+
+
         self._contact_column_name = contact_column_name
 
     @property
@@ -96,6 +100,10 @@ class ContactColumnToDataActionFieldMapping(object):
         :type: str
         """
         
+        if not data_action_field:
+            raise ValueError("Invalid value for `data_action_field`, must not be `None`")
+
+
         self._data_action_field = data_action_field
 
     def to_dict(self):

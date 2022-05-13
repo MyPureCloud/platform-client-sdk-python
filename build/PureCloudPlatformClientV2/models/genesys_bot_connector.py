@@ -70,6 +70,7 @@ class GenesysBotConnector(object):
         :type: dict(str, str)
         """
         
+
         self._query_parameters = query_parameters
 
     def to_dict(self):

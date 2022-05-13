@@ -79,6 +79,7 @@ class AuthzGrant(object):
         :type: str
         """
         
+
         self._subject_id = subject_id
 
     @property
@@ -102,6 +103,7 @@ class AuthzGrant(object):
         :type: AuthzDivision
         """
         
+
         self._division = division
 
     @property
@@ -125,6 +127,7 @@ class AuthzGrant(object):
         :type: AuthzGrantRole
         """
         
+
         self._role = role
 
     @property
@@ -148,6 +151,7 @@ class AuthzGrant(object):
         :type: datetime
         """
         
+
         self._grant_made_at = grant_made_at
 
     def to_dict(self):

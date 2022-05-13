@@ -73,6 +73,7 @@ class SupportCenterStyleSetting(object):
         :type: SupportCenterHeroStyle
         """
         
+
         self._hero_style = hero_style
 
     @property
@@ -96,6 +97,7 @@ class SupportCenterStyleSetting(object):
         :type: SupportCenterGlobalStyle
         """
         
+
         self._global_style = global_style
 
     def to_dict(self):

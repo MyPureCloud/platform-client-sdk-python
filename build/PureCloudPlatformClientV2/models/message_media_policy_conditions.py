@@ -88,6 +88,7 @@ class MessageMediaPolicyConditions(object):
         :type: list[User]
         """
         
+
         self._for_users = for_users
 
     @property
@@ -111,6 +112,7 @@ class MessageMediaPolicyConditions(object):
         :type: list[str]
         """
         
+
         self._date_ranges = date_ranges
 
     @property
@@ -134,6 +136,7 @@ class MessageMediaPolicyConditions(object):
         :type: list[Queue]
         """
         
+
         self._for_queues = for_queues
 
     @property
@@ -157,6 +160,7 @@ class MessageMediaPolicyConditions(object):
         :type: list[WrapupCode]
         """
         
+
         self._wrapup_codes = wrapup_codes
 
     @property
@@ -180,6 +184,7 @@ class MessageMediaPolicyConditions(object):
         :type: list[Language]
         """
         
+
         self._languages = languages
 
     @property
@@ -203,6 +208,7 @@ class MessageMediaPolicyConditions(object):
         :type: TimeAllowed
         """
         
+
         self._time_allowed = time_allowed
 
     @property

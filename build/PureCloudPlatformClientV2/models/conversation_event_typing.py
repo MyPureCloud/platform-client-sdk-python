@@ -100,6 +100,7 @@ class ConversationEventTyping(object):
         :type: int
         """
         
+
         self._duration = duration
 
     def to_dict(self):

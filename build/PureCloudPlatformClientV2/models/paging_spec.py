@@ -73,6 +73,10 @@ class PagingSpec(object):
         :type: int
         """
         
+        if not page_size:
+            raise ValueError("Invalid value for `page_size`, must not be `None`")
+
+
         self._page_size = page_size
 
     @property
@@ -96,6 +100,10 @@ class PagingSpec(object):
         :type: int
         """
         
+        if not page_number:
+            raise ValueError("Invalid value for `page_number`, must not be `None`")
+
+
         self._page_number = page_number
 
     def to_dict(self):

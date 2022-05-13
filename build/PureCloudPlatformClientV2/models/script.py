@@ -112,6 +112,7 @@ class Script(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class Script(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -158,6 +160,7 @@ class Script(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -181,6 +184,7 @@ class Script(object):
         :type: str
         """
         
+
         self._version_id = version_id
 
     @property
@@ -204,6 +208,7 @@ class Script(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -227,6 +232,7 @@ class Script(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -250,6 +256,7 @@ class Script(object):
         :type: datetime
         """
         
+
         self._published_date = published_date
 
     @property
@@ -273,6 +280,7 @@ class Script(object):
         :type: datetime
         """
         
+
         self._version_date = version_date
 
     @property
@@ -296,6 +304,7 @@ class Script(object):
         :type: str
         """
         
+
         self._start_page_id = start_page_id
 
     @property
@@ -319,6 +328,7 @@ class Script(object):
         :type: str
         """
         
+
         self._start_page_name = start_page_name
 
     @property
@@ -342,6 +352,7 @@ class Script(object):
         :type: object
         """
         
+
         self._features = features
 
     @property
@@ -365,6 +376,7 @@ class Script(object):
         :type: object
         """
         
+
         self._variables = variables
 
     @property
@@ -388,6 +400,7 @@ class Script(object):
         :type: object
         """
         
+
         self._custom_actions = custom_actions
 
     @property
@@ -411,6 +424,7 @@ class Script(object):
         :type: list[Page]
         """
         
+
         self._pages = pages
 
     @property
@@ -434,6 +448,7 @@ class Script(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

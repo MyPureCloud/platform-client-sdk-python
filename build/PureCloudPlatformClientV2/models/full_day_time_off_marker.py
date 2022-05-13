@@ -85,6 +85,7 @@ class FullDayTimeOffMarker(object):
         :type: date
         """
         
+
         self._business_unit_date = business_unit_date
 
     @property
@@ -108,6 +109,7 @@ class FullDayTimeOffMarker(object):
         :type: int
         """
         
+
         self._length_minutes = length_minutes
 
     @property
@@ -131,6 +133,7 @@ class FullDayTimeOffMarker(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -154,6 +157,7 @@ class FullDayTimeOffMarker(object):
         :type: str
         """
         
+
         self._activity_code_id = activity_code_id
 
     @property
@@ -177,6 +181,7 @@ class FullDayTimeOffMarker(object):
         :type: bool
         """
         
+
         self._paid = paid
 
     @property
@@ -200,6 +205,7 @@ class FullDayTimeOffMarker(object):
         :type: str
         """
         
+
         self._time_off_request_id = time_off_request_id
 
     def to_dict(self):

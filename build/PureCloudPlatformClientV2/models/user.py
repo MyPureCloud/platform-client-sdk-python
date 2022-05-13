@@ -175,6 +175,7 @@ class User(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -198,6 +199,7 @@ class User(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -221,6 +223,7 @@ class User(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -244,6 +247,7 @@ class User(object):
         :type: Chat
         """
         
+
         self._chat = chat
 
     @property
@@ -267,6 +271,7 @@ class User(object):
         :type: str
         """
         
+
         self._department = department
 
     @property
@@ -290,6 +295,7 @@ class User(object):
         :type: str
         """
         
+
         self._email = email
 
     @property
@@ -313,6 +319,7 @@ class User(object):
         :type: list[Contact]
         """
         
+
         self._primary_contact_info = primary_contact_info
 
     @property
@@ -336,6 +343,7 @@ class User(object):
         :type: list[Contact]
         """
         
+
         self._addresses = addresses
 
     @property
@@ -386,6 +394,7 @@ class User(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -409,6 +418,7 @@ class User(object):
         :type: str
         """
         
+
         self._username = username
 
     @property
@@ -432,6 +442,7 @@ class User(object):
         :type: User
         """
         
+
         self._manager = manager
 
     @property
@@ -455,6 +466,7 @@ class User(object):
         :type: list[UserImage]
         """
         
+
         self._images = images
 
     @property
@@ -478,6 +490,10 @@ class User(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -501,6 +517,7 @@ class User(object):
         :type: list[str]
         """
         
+
         self._certifications = certifications
 
     @property
@@ -524,6 +541,7 @@ class User(object):
         :type: Biography
         """
         
+
         self._biography = biography
 
     @property
@@ -547,6 +565,7 @@ class User(object):
         :type: EmployerInfo
         """
         
+
         self._employer_info = employer_info
 
     @property
@@ -570,6 +589,7 @@ class User(object):
         :type: RoutingStatus
         """
         
+
         self._routing_status = routing_status
 
     @property
@@ -593,6 +613,7 @@ class User(object):
         :type: UserPresence
         """
         
+
         self._presence = presence
 
     @property
@@ -616,6 +637,7 @@ class User(object):
         :type: UserPresence
         """
         
+
         self._integration_presence = integration_presence
 
     @property
@@ -639,6 +661,7 @@ class User(object):
         :type: UserConversationSummary
         """
         
+
         self._conversation_summary = conversation_summary
 
     @property
@@ -662,6 +685,7 @@ class User(object):
         :type: OutOfOffice
         """
         
+
         self._out_of_office = out_of_office
 
     @property
@@ -685,6 +709,7 @@ class User(object):
         :type: Geolocation
         """
         
+
         self._geolocation = geolocation
 
     @property
@@ -708,6 +733,7 @@ class User(object):
         :type: UserStations
         """
         
+
         self._station = station
 
     @property
@@ -731,6 +757,7 @@ class User(object):
         :type: UserAuthorization
         """
         
+
         self._authorization = authorization
 
     @property
@@ -754,6 +781,7 @@ class User(object):
         :type: list[str]
         """
         
+
         self._profile_skills = profile_skills
 
     @property
@@ -777,6 +805,7 @@ class User(object):
         :type: list[Location]
         """
         
+
         self._locations = locations
 
     @property
@@ -800,6 +829,7 @@ class User(object):
         :type: list[Group]
         """
         
+
         self._groups = groups
 
     @property
@@ -823,6 +853,7 @@ class User(object):
         :type: Team
         """
         
+
         self._team = team
 
     @property
@@ -846,6 +877,7 @@ class User(object):
         :type: list[UserRoutingSkill]
         """
         
+
         self._skills = skills
 
     @property
@@ -869,6 +901,7 @@ class User(object):
         :type: list[UserRoutingLanguage]
         """
         
+
         self._languages = languages
 
     @property
@@ -892,6 +925,7 @@ class User(object):
         :type: bool
         """
         
+
         self._acd_auto_answer = acd_auto_answer
 
     @property
@@ -915,6 +949,7 @@ class User(object):
         :type: str
         """
         
+
         self._language_preference = language_preference
 
     @property
@@ -938,6 +973,7 @@ class User(object):
         :type: OAuthLastTokenIssued
         """
         
+
         self._last_token_issued = last_token_issued
 
     @property
@@ -961,6 +997,7 @@ class User(object):
         :type: datetime
         """
         
+
         self._date_last_login = date_last_login
 
     @property
@@ -984,6 +1021,7 @@ class User(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

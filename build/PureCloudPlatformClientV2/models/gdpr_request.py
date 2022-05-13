@@ -97,6 +97,7 @@ class GDPRRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class GDPRRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,10 @@ class GDPRRequest(object):
         :type: DomainEntityRef
         """
         
+        if not created_by:
+            raise ValueError("Invalid value for `created_by`, must not be `None`")
+
+
         self._created_by = created_by
 
     @property
@@ -166,6 +172,7 @@ class GDPRRequest(object):
         :type: list[ReplacementTerm]
         """
         
+
         self._replacement_terms = replacement_terms
 
     @property
@@ -216,6 +223,10 @@ class GDPRRequest(object):
         :type: datetime
         """
         
+        if not created_date:
+            raise ValueError("Invalid value for `created_date`, must not be `None`")
+
+
         self._created_date = created_date
 
     @property
@@ -266,6 +277,10 @@ class GDPRRequest(object):
         :type: GDPRSubject
         """
         
+        if not subject:
+            raise ValueError("Invalid value for `subject`, must not be `None`")
+
+
         self._subject = subject
 
     @property
@@ -289,6 +304,7 @@ class GDPRRequest(object):
         :type: str
         """
         
+
         self._results_url = results_url
 
     @property
@@ -312,6 +328,7 @@ class GDPRRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

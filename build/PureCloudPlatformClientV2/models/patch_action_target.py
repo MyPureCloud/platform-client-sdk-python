@@ -82,6 +82,7 @@ class PatchActionTarget(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class PatchActionTarget(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class PatchActionTarget(object):
         :type: ServiceLevel
         """
         
+
         self._service_level = service_level
 
     @property
@@ -151,6 +154,7 @@ class PatchActionTarget(object):
         :type: int
         """
         
+
         self._short_abandon_threshold = short_abandon_threshold
 
     @property
@@ -174,6 +178,7 @@ class PatchActionTarget(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

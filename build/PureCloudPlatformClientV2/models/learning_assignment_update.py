@@ -100,6 +100,7 @@ class LearningAssignmentUpdate(object):
         :type: LearningAssessment
         """
         
+
         self._assessment = assessment
 
     def to_dict(self):

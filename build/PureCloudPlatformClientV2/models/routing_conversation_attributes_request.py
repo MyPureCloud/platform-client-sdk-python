@@ -79,12 +79,12 @@ class RoutingConversationAttributesRequest(object):
         :type: int
         """
         
-        if not priority:
-            raise ValueError("Invalid value for `priority`, must not be `None`")
-        if priority > 25000000: 
+        if priority > 25000000:
             raise ValueError("Invalid value for `priority`, must be a value less than or equal to `25000000`")
-        if priority < -25000000: 
+
+        if priority < -25000000:
             raise ValueError("Invalid value for `priority`, must be a value greater than or equal to `-25000000`")
+
 
         self._priority = priority
 
@@ -109,6 +109,7 @@ class RoutingConversationAttributesRequest(object):
         :type: list[str]
         """
         
+
         self._skill_ids = skill_ids
 
     @property
@@ -132,6 +133,7 @@ class RoutingConversationAttributesRequest(object):
         :type: str
         """
         
+
         self._language_id = language_id
 
     @property
@@ -155,6 +157,7 @@ class RoutingConversationAttributesRequest(object):
         :type: list[RequestScoredAgent]
         """
         
+
         self._request_scored_agents = request_scored_agents
 
     def to_dict(self):

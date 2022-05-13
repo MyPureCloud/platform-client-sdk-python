@@ -100,6 +100,7 @@ class ReportRunEntry(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class ReportRunEntry(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class ReportRunEntry(object):
         :type: str
         """
         
+
         self._report_id = report_id
 
     @property
@@ -169,6 +172,7 @@ class ReportRunEntry(object):
         :type: datetime
         """
         
+
         self._run_time = run_time
 
     @property
@@ -219,6 +223,7 @@ class ReportRunEntry(object):
         :type: str
         """
         
+
         self._error_message = error_message
 
     @property
@@ -242,6 +247,7 @@ class ReportRunEntry(object):
         :type: int
         """
         
+
         self._run_duration_msec = run_duration_msec
 
     @property
@@ -265,6 +271,7 @@ class ReportRunEntry(object):
         :type: str
         """
         
+
         self._report_url = report_url
 
     @property
@@ -288,6 +295,7 @@ class ReportRunEntry(object):
         :type: str
         """
         
+
         self._report_format = report_format
 
     @property
@@ -311,6 +319,7 @@ class ReportRunEntry(object):
         :type: str
         """
         
+
         self._schedule_uri = schedule_uri
 
     @property
@@ -334,6 +343,7 @@ class ReportRunEntry(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

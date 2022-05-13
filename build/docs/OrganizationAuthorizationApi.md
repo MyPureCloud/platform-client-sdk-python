@@ -515,6 +515,8 @@ The list of cloned users from the trustee organization (i.e. users with a native
 
 There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
 
+
+
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers 
 
 Requires ANY permissions: 
@@ -1292,7 +1294,7 @@ except ApiException as e:
 
 <a name="post_orgauthorization_trustees_audits"></a>
 
-## [**AuditQueryResponse**](AuditQueryResponse.html) post_orgauthorization_trustees_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+## object** post_orgauthorization_trustees_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -1322,8 +1324,8 @@ api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
 body = PureCloudPlatformClientV2.TrusteeAuditQueryRequest() # TrusteeAuditQueryRequest | Values to scope the request.
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'timestamp' # str | Sort by (optional) (default to timestamp)
-sort_order = 'descending' # str | Sort order (optional) (default to descending)
+sort_by = ''timestamp'' # str | Sort by (optional) (default to 'timestamp')
+sort_order = ''descending'' # str | Sort order (optional) (default to 'descending')
 
 try:
     # Get Org Trustee Audits
@@ -1341,13 +1343,13 @@ except ApiException as e:
 | **body** | [**TrusteeAuditQueryRequest**](TrusteeAuditQueryRequest.html)| Values to scope the request. |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to timestamp] |
-| **sort_order** | **str**| Sort order | [optional] [default to descending] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;timestamp&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;descending&#39;] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AuditQueryResponse**](AuditQueryResponse.html)
+**object**
 
 <a name="post_orgauthorization_trustees_default"></a>
 
@@ -1379,8 +1381,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
-assign_default_role = true # bool | Assign Admin role to default pairing with Customer Care (optional)
-auto_expire = true # bool | Automatically expire pairing after 30 days (optional)
+assign_default_role = True # bool | Assign Admin role to default pairing with Customer Care (optional)
+auto_expire = True # bool | Automatically expire pairing after 30 days (optional)
 
 try:
     # Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
@@ -1405,7 +1407,7 @@ except ApiException as e:
 
 <a name="post_orgauthorization_trustor_audits"></a>
 
-## [**AuditQueryResponse**](AuditQueryResponse.html) post_orgauthorization_trustor_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+## object** post_orgauthorization_trustor_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -1435,8 +1437,8 @@ api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
 body = PureCloudPlatformClientV2.TrustorAuditQueryRequest() # TrustorAuditQueryRequest | Values to scope the request.
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = 'timestamp' # str | Sort by (optional) (default to timestamp)
-sort_order = 'descending' # str | Sort order (optional) (default to descending)
+sort_by = ''timestamp'' # str | Sort by (optional) (default to 'timestamp')
+sort_order = ''descending'' # str | Sort order (optional) (default to 'descending')
 
 try:
     # Get Org Trustor Audits
@@ -1454,13 +1456,13 @@ except ApiException as e:
 | **body** | [**TrustorAuditQueryRequest**](TrustorAuditQueryRequest.html)| Values to scope the request. |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to timestamp] |
-| **sort_order** | **str**| Sort order | [optional] [default to descending] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;timestamp&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;descending&#39;] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AuditQueryResponse**](AuditQueryResponse.html)
+**object**
 
 <a name="put_orgauthorization_trustee"></a>
 
@@ -1601,7 +1603,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
 trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
 trustee_user_id = 'trustee_user_id_example' # str | Trustee User Id
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | List of roles
+body = ['body_example'] # list[str] | List of roles
 
 try:
     # Update Trustee User Roles
@@ -1618,7 +1620,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
 | **trustee_user_id** | **str**| Trustee User Id |  |
-| **body** | **list[str]**| List of roles |  |
+| **body** | [**list[str]**](str.html)| List of roles |  |
 {: class="table table-striped"}
 
 ### Return type

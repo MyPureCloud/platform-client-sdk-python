@@ -73,6 +73,7 @@ class SpeechTextAnalyticsSettingsRequest(object):
         :type: str
         """
         
+
         self._default_program_id = default_program_id
 
     @property
@@ -96,6 +97,7 @@ class SpeechTextAnalyticsSettingsRequest(object):
         :type: list[str]
         """
         
+
         self._expected_dialects = expected_dialects
 
     def to_dict(self):

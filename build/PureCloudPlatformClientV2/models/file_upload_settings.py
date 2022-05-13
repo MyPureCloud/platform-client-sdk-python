@@ -70,6 +70,7 @@ class FileUploadSettings(object):
         :type: list[FileUploadMode]
         """
         
+
         self._modes = modes
 
     def to_dict(self):

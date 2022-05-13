@@ -73,6 +73,7 @@ class SurveyErrorDetails(object):
         :type: FlowDiagnosticInfo
         """
         
+
         self._flow_diagnostic_info = flow_diagnostic_info
 
     @property
@@ -96,6 +97,7 @@ class SurveyErrorDetails(object):
         :type: str
         """
         
+
         self._survey_error_reason = survey_error_reason
 
     def to_dict(self):

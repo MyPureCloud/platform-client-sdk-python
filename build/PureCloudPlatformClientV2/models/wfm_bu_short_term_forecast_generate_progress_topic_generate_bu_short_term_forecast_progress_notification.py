@@ -106,6 +106,7 @@ class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProg
         :type: WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast
         """
         
+
         self._result = result
 
     @property
@@ -129,6 +130,7 @@ class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProg
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -152,6 +154,7 @@ class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProg
         :type: int
         """
         
+
         self._progress = progress
 
     def to_dict(self):

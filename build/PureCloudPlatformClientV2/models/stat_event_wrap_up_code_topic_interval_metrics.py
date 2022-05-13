@@ -73,6 +73,7 @@ class StatEventWrapUpCodeTopicIntervalMetrics(object):
         :type: str
         """
         
+
         self._interval = interval
 
     @property
@@ -96,6 +97,7 @@ class StatEventWrapUpCodeTopicIntervalMetrics(object):
         :type: list[StatEventWrapUpCodeTopicMetricStats]
         """
         
+
         self._metrics = metrics
 
     def to_dict(self):

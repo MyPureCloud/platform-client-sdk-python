@@ -100,6 +100,7 @@ class AnalyticsSurvey(object):
         :type: datetime
         """
         
+
         self._event_time = event_time
 
     @property
@@ -123,6 +124,7 @@ class AnalyticsSurvey(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -146,6 +148,7 @@ class AnalyticsSurvey(object):
         :type: datetime
         """
         
+
         self._survey_completed_date = survey_completed_date
 
     @property
@@ -169,6 +172,7 @@ class AnalyticsSurvey(object):
         :type: str
         """
         
+
         self._survey_form_context_id = survey_form_context_id
 
     @property
@@ -192,6 +196,7 @@ class AnalyticsSurvey(object):
         :type: str
         """
         
+
         self._survey_form_id = survey_form_id
 
     @property
@@ -215,6 +220,7 @@ class AnalyticsSurvey(object):
         :type: str
         """
         
+
         self._survey_form_name = survey_form_name
 
     @property
@@ -238,6 +244,7 @@ class AnalyticsSurvey(object):
         :type: str
         """
         
+
         self._survey_id = survey_id
 
     @property
@@ -261,6 +268,7 @@ class AnalyticsSurvey(object):
         :type: int
         """
         
+
         self._survey_promoter_score = survey_promoter_score
 
     @property
@@ -284,6 +292,7 @@ class AnalyticsSurvey(object):
         :type: str
         """
         
+
         self._survey_status = survey_status
 
     @property
@@ -307,6 +316,7 @@ class AnalyticsSurvey(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -330,6 +340,7 @@ class AnalyticsSurvey(object):
         :type: int
         """
         
+
         self._o_survey_total_score = o_survey_total_score
 
     def to_dict(self):

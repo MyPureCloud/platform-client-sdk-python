@@ -82,6 +82,7 @@ class SchedulingSettingsResponse(object):
         :type: int
         """
         
+
         self._max_occupancy_percent_for_deferred_work = max_occupancy_percent_for_deferred_work
 
     @property
@@ -105,6 +106,7 @@ class SchedulingSettingsResponse(object):
         :type: float
         """
         
+
         self._default_shrinkage_percent = default_shrinkage_percent
 
     @property
@@ -128,6 +130,7 @@ class SchedulingSettingsResponse(object):
         :type: ShrinkageOverrides
         """
         
+
         self._shrinkage_overrides = shrinkage_overrides
 
     @property
@@ -151,6 +154,7 @@ class SchedulingSettingsResponse(object):
         :type: PlanningPeriodSettings
         """
         
+
         self._planning_period = planning_period
 
     @property

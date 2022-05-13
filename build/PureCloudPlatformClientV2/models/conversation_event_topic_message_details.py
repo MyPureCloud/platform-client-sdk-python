@@ -88,6 +88,7 @@ class ConversationEventTopicMessageDetails(object):
         :type: str
         """
         
+
         self._message_id = message_id
 
     @property
@@ -111,6 +112,7 @@ class ConversationEventTopicMessageDetails(object):
         :type: datetime
         """
         
+
         self._message_time = message_time
 
     @property
@@ -161,6 +163,7 @@ class ConversationEventTopicMessageDetails(object):
         :type: int
         """
         
+
         self._message_segment_count = message_segment_count
 
     @property
@@ -184,6 +187,7 @@ class ConversationEventTopicMessageDetails(object):
         :type: list[ConversationEventTopicMessageMedia]
         """
         
+
         self._media = media
 
     @property
@@ -207,6 +211,7 @@ class ConversationEventTopicMessageDetails(object):
         :type: ConversationEventTopicErrorDetails
         """
         
+
         self._error_info = error_info
 
     @property
@@ -230,6 +235,7 @@ class ConversationEventTopicMessageDetails(object):
         :type: list[ConversationEventTopicMessageSticker]
         """
         
+
         self._stickers = stickers
 
     def to_dict(self):

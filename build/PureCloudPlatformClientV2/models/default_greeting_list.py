@@ -97,6 +97,7 @@ class DefaultGreetingList(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class DefaultGreetingList(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class DefaultGreetingList(object):
         :type: GreetingOwner
         """
         
+
         self._owner = owner
 
     @property
@@ -193,6 +196,7 @@ class DefaultGreetingList(object):
         :type: dict(str, Greeting)
         """
         
+
         self._greetings = greetings
 
     @property
@@ -216,6 +220,7 @@ class DefaultGreetingList(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -239,6 +244,7 @@ class DefaultGreetingList(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -262,6 +268,7 @@ class DefaultGreetingList(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -285,6 +292,7 @@ class DefaultGreetingList(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -308,6 +316,7 @@ class DefaultGreetingList(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

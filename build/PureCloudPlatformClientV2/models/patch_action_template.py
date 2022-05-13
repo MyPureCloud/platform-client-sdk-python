@@ -82,6 +82,10 @@ class PatchActionTemplate(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -105,6 +109,7 @@ class PatchActionTemplate(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -182,6 +187,7 @@ class PatchActionTemplate(object):
         :type: PatchContentOffer
         """
         
+
         self._content_offer = content_offer
 
     def to_dict(self):

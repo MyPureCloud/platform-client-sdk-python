@@ -115,6 +115,7 @@ class Schedule(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -138,6 +139,10 @@ class Schedule(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -161,6 +166,7 @@ class Schedule(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -184,6 +190,7 @@ class Schedule(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -207,6 +214,7 @@ class Schedule(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -230,6 +238,7 @@ class Schedule(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -253,6 +262,7 @@ class Schedule(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -276,6 +286,7 @@ class Schedule(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -299,6 +310,7 @@ class Schedule(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -349,6 +361,7 @@ class Schedule(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -372,6 +385,7 @@ class Schedule(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -395,6 +409,10 @@ class Schedule(object):
         :type: LocalDateTime
         """
         
+        if not start:
+            raise ValueError("Invalid value for `start`, must not be `None`")
+
+
         self._start = start
 
     @property
@@ -418,6 +436,10 @@ class Schedule(object):
         :type: LocalDateTime
         """
         
+        if not end:
+            raise ValueError("Invalid value for `end`, must not be `None`")
+
+
         self._end = end
 
     @property
@@ -441,6 +463,7 @@ class Schedule(object):
         :type: str
         """
         
+
         self._rrule = rrule
 
     @property
@@ -464,6 +487,7 @@ class Schedule(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -76,6 +76,7 @@ class RoutingStatus(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -126,6 +127,7 @@ class RoutingStatus(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     def to_dict(self):

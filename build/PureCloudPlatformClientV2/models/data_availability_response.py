@@ -70,6 +70,7 @@ class DataAvailabilityResponse(object):
         :type: datetime
         """
         
+
         self._data_availability_date = data_availability_date
 
     def to_dict(self):

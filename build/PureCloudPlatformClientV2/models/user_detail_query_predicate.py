@@ -163,6 +163,7 @@ class UserDetailQueryPredicate(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -186,6 +187,7 @@ class UserDetailQueryPredicate(object):
         :type: NumericRange
         """
         
+
         self._range = range
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class WfmIntradayDataUpdateTopicIntradayDataUpdate(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -111,6 +112,7 @@ class WfmIntradayDataUpdateTopicIntradayDataUpdate(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -134,6 +136,7 @@ class WfmIntradayDataUpdateTopicIntradayDataUpdate(object):
         :type: int
         """
         
+
         self._interval_length_minutes = interval_length_minutes
 
     @property
@@ -157,6 +160,7 @@ class WfmIntradayDataUpdateTopicIntradayDataUpdate(object):
         :type: int
         """
         
+
         self._number_of_intervals = number_of_intervals
 
     @property
@@ -180,6 +184,7 @@ class WfmIntradayDataUpdateTopicIntradayDataUpdate(object):
         :type: list[WfmIntradayDataUpdateTopicIntradayMetric]
         """
         
+
         self._metrics = metrics
 
     @property
@@ -203,6 +208,7 @@ class WfmIntradayDataUpdateTopicIntradayDataUpdate(object):
         :type: list[str]
         """
         
+
         self._queue_ids = queue_ids
 
     @property
@@ -226,6 +232,7 @@ class WfmIntradayDataUpdateTopicIntradayDataUpdate(object):
         :type: list[WfmIntradayDataUpdateTopicIntradayDataGroup]
         """
         
+
         self._intraday_data_groupings = intraday_data_groupings
 
     def to_dict(self):

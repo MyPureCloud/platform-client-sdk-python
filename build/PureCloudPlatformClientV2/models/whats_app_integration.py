@@ -121,6 +121,10 @@ class WhatsAppIntegration(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -144,6 +148,10 @@ class WhatsAppIntegration(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -167,6 +175,7 @@ class WhatsAppIntegration(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -190,6 +199,7 @@ class WhatsAppIntegration(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -213,6 +223,10 @@ class WhatsAppIntegration(object):
         :type: str
         """
         
+        if not phone_number:
+            raise ValueError("Invalid value for `phone_number`, must not be `None`")
+
+
         self._phone_number = phone_number
 
     @property
@@ -236,6 +250,7 @@ class WhatsAppIntegration(object):
         :type: WhatsAppAvailablePhoneNumberDetailsListing
         """
         
+
         self._available_phone_numbers = available_phone_numbers
 
     @property
@@ -286,6 +301,7 @@ class WhatsAppIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._recipient = recipient
 
     @property
@@ -309,6 +325,7 @@ class WhatsAppIntegration(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -332,6 +349,7 @@ class WhatsAppIntegration(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -355,6 +373,7 @@ class WhatsAppIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -378,6 +397,7 @@ class WhatsAppIntegration(object):
         :type: DomainEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -401,6 +421,10 @@ class WhatsAppIntegration(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -451,6 +475,7 @@ class WhatsAppIntegration(object):
         :type: ErrorBody
         """
         
+
         self._activation_error_info = activation_error_info
 
     @property
@@ -501,6 +526,7 @@ class WhatsAppIntegration(object):
         :type: ErrorBody
         """
         
+
         self._create_error = create_error
 
     @property
@@ -524,6 +550,7 @@ class WhatsAppIntegration(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

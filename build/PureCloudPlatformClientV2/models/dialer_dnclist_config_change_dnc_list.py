@@ -106,6 +106,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: DialerDnclistConfigChangeImportStatus
         """
         
+
         self._import_status = import_status
 
     @property
@@ -129,6 +130,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: int
         """
         
+
         self._size = size
 
     @property
@@ -179,6 +181,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: str
         """
         
+
         self._login_id = login_id
 
     @property
@@ -202,6 +205,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: list[str]
         """
         
+
         self._dnc_codes = dnc_codes
 
     @property
@@ -225,6 +229,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: str
         """
         
+
         self._license_id = license_id
 
     @property
@@ -275,6 +280,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: DialerDnclistConfigChangeUriReference
         """
         
+
         self._division = division
 
     @property
@@ -298,6 +304,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -321,6 +328,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -344,6 +352,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -367,6 +376,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -390,6 +400,7 @@ class DialerDnclistConfigChangeDncList(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

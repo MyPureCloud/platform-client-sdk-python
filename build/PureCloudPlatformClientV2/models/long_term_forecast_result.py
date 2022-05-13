@@ -76,6 +76,7 @@ class LongTermForecastResult(object):
         :type: list[LongTermForecastPlanningGroupData]
         """
         
+
         self._planning_groups = planning_groups
 
     @property
@@ -99,6 +100,7 @@ class LongTermForecastResult(object):
         :type: date
         """
         
+
         self._reference_start_date = reference_start_date
 
     @property
@@ -122,6 +124,7 @@ class LongTermForecastResult(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     def to_dict(self):

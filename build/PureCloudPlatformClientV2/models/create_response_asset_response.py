@@ -76,6 +76,7 @@ class CreateResponseAssetResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class CreateResponseAssetResponse(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -122,6 +124,7 @@ class CreateResponseAssetResponse(object):
         :type: dict(str, str)
         """
         
+
         self._headers = headers
 
     def to_dict(self):

@@ -133,6 +133,7 @@ class Flow(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -156,6 +157,10 @@ class Flow(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -179,6 +184,7 @@ class Flow(object):
         :type: WritableDivision
         """
         
+
         self._division = division
 
     @property
@@ -202,6 +208,7 @@ class Flow(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -252,6 +259,7 @@ class Flow(object):
         :type: User
         """
         
+
         self._locked_user = locked_user
 
     @property
@@ -275,6 +283,7 @@ class Flow(object):
         :type: DomainEntityRef
         """
         
+
         self._locked_client = locked_client
 
     @property
@@ -298,6 +307,7 @@ class Flow(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property
@@ -321,6 +331,7 @@ class Flow(object):
         :type: bool
         """
         
+
         self._system = system
 
     @property
@@ -344,6 +355,7 @@ class Flow(object):
         :type: bool
         """
         
+
         self._deleted = deleted
 
     @property
@@ -367,6 +379,7 @@ class Flow(object):
         :type: FlowVersion
         """
         
+
         self._published_version = published_version
 
     @property
@@ -390,6 +403,7 @@ class Flow(object):
         :type: FlowVersion
         """
         
+
         self._saved_version = saved_version
 
     @property
@@ -413,6 +427,7 @@ class Flow(object):
         :type: object
         """
         
+
         self._input_schema = input_schema
 
     @property
@@ -436,6 +451,7 @@ class Flow(object):
         :type: object
         """
         
+
         self._output_schema = output_schema
 
     @property
@@ -459,6 +475,7 @@ class Flow(object):
         :type: FlowVersion
         """
         
+
         self._checked_in_version = checked_in_version
 
     @property
@@ -482,6 +499,7 @@ class Flow(object):
         :type: FlowVersion
         """
         
+
         self._debug_version = debug_version
 
     @property
@@ -505,6 +523,7 @@ class Flow(object):
         :type: User
         """
         
+
         self._published_by = published_by
 
     @property
@@ -528,6 +547,7 @@ class Flow(object):
         :type: Operation
         """
         
+
         self._current_operation = current_operation
 
     @property
@@ -551,6 +571,7 @@ class Flow(object):
         :type: NluInfo
         """
         
+
         self._nlu_info = nlu_info
 
     @property
@@ -574,6 +595,7 @@ class Flow(object):
         :type: list[SupportedLanguage]
         """
         
+
         self._supported_languages = supported_languages
 
     @property
@@ -597,6 +619,7 @@ class Flow(object):
         :type: list[str]
         """
         
+
         self._compatible_flow_types = compatible_flow_types
 
     @property
@@ -620,6 +643,7 @@ class Flow(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

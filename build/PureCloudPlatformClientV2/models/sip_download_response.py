@@ -73,6 +73,7 @@ class SipDownloadResponse(object):
         :type: str
         """
         
+
         self._download_id = download_id
 
     @property
@@ -96,6 +97,7 @@ class SipDownloadResponse(object):
         :type: str
         """
         
+
         self._document_id = document_id
 
     def to_dict(self):

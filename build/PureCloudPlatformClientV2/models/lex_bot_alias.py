@@ -94,6 +94,7 @@ class LexBotAlias(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class LexBotAlias(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class LexBotAlias(object):
         :type: LexBot
         """
         
+
         self._bot = bot
 
     @property
@@ -163,6 +166,7 @@ class LexBotAlias(object):
         :type: str
         """
         
+
         self._bot_version = bot_version
 
     @property
@@ -213,6 +217,7 @@ class LexBotAlias(object):
         :type: str
         """
         
+
         self._failure_reason = failure_reason
 
     @property
@@ -263,6 +268,7 @@ class LexBotAlias(object):
         :type: list[LexIntent]
         """
         
+
         self._intents = intents
 
     @property
@@ -286,6 +292,7 @@ class LexBotAlias(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

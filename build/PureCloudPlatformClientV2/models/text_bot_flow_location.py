@@ -76,6 +76,10 @@ class TextBotFlowLocation(object):
         :type: str
         """
         
+        if not action_name:
+            raise ValueError("Invalid value for `action_name`, must not be `None`")
+
+
         self._action_name = action_name
 
     @property
@@ -99,6 +103,10 @@ class TextBotFlowLocation(object):
         :type: int
         """
         
+        if not action_number:
+            raise ValueError("Invalid value for `action_number`, must not be `None`")
+
+
         self._action_number = action_number
 
     @property
@@ -122,6 +130,10 @@ class TextBotFlowLocation(object):
         :type: str
         """
         
+        if not sequence_name:
+            raise ValueError("Invalid value for `sequence_name`, must not be `None`")
+
+
         self._sequence_name = sequence_name
 
     def to_dict(self):

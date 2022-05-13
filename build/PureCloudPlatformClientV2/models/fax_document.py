@@ -121,6 +121,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -144,6 +145,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -167,6 +169,7 @@ class FaxDocument(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -190,6 +193,7 @@ class FaxDocument(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -213,6 +217,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._content_uri = content_uri
 
     @property
@@ -236,6 +241,7 @@ class FaxDocument(object):
         :type: DomainEntityRef
         """
         
+
         self._workspace = workspace
 
     @property
@@ -259,6 +265,7 @@ class FaxDocument(object):
         :type: DomainEntityRef
         """
         
+
         self._created_by = created_by
 
     @property
@@ -282,6 +289,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._sharing_uri = sharing_uri
 
     @property
@@ -305,6 +313,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._content_type = content_type
 
     @property
@@ -328,6 +337,7 @@ class FaxDocument(object):
         :type: int
         """
         
+
         self._content_length = content_length
 
     @property
@@ -351,6 +361,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._filename = filename
 
     @property
@@ -374,6 +385,7 @@ class FaxDocument(object):
         :type: bool
         """
         
+
         self._read = read
 
     @property
@@ -397,6 +409,7 @@ class FaxDocument(object):
         :type: int
         """
         
+
         self._page_count = page_count
 
     @property
@@ -420,6 +433,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._caller_address = caller_address
 
     @property
@@ -443,6 +457,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._receiver_address = receiver_address
 
     @property
@@ -466,6 +481,7 @@ class FaxDocument(object):
         :type: list[DocumentThumbnail]
         """
         
+
         self._thumbnails = thumbnails
 
     @property
@@ -489,6 +505,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._download_sharing_uri = download_sharing_uri
 
     @property
@@ -512,6 +529,7 @@ class FaxDocument(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class ConditionalGroupRouting(object):
         :type: list[ConditionalGroupRoutingRule]
         """
         
+
         self._rules = rules
 
     def to_dict(self):

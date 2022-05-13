@@ -26,7 +26,7 @@ Get a organization's GeolocationSettings
 
 Wraps GET /api/v2/geolocations/settings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -72,7 +72,7 @@ Get a user's Geolocation
 
 Wraps GET /api/v2/users/{userId}/geolocations/{clientId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -173,9 +173,11 @@ Patch a user's Geolocation
 
 The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 
+
+
 Wraps PATCH /api/v2/users/{userId}/geolocations/{clientId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

@@ -82,6 +82,7 @@ class ConversationEventTopicMessageMedia(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -105,6 +106,7 @@ class ConversationEventTopicMessageMedia(object):
         :type: str
         """
         
+
         self._media_type = media_type
 
     @property
@@ -128,6 +130,7 @@ class ConversationEventTopicMessageMedia(object):
         :type: int
         """
         
+
         self._content_length_bytes = content_length_bytes
 
     @property
@@ -151,6 +154,7 @@ class ConversationEventTopicMessageMedia(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -174,6 +178,7 @@ class ConversationEventTopicMessageMedia(object):
         :type: str
         """
         
+
         self._id = id
 
     def to_dict(self):

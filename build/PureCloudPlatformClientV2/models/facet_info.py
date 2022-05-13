@@ -73,6 +73,7 @@ class FacetInfo(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -96,6 +97,7 @@ class FacetInfo(object):
         :type: list[Entry]
         """
         
+
         self._entries = entries
 
     def to_dict(self):

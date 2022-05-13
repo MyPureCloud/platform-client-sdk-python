@@ -73,6 +73,7 @@ class UpdateNotificationResponse(object):
         :type: str
         """
         
+
         self._mutable_group_id = mutable_group_id
 
     @property
@@ -96,6 +97,7 @@ class UpdateNotificationResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     def to_dict(self):

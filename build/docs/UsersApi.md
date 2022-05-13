@@ -245,7 +245,7 @@ void (empty response body)
 
 <a name="delete_user"></a>
 
-## [**Empty**](Empty.html) delete_user(user_id)
+## Empty** delete_user(user_id)
 
 
 
@@ -292,7 +292,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="delete_user_routinglanguage"></a>
 
@@ -411,7 +411,7 @@ Clear associated station
 
 Wraps DELETE /api/v2/users/{userId}/station/associatedstation 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -662,9 +662,11 @@ Returns which divisions the current user has the given permission in.
 
 This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
+
+
 Wraps GET /api/v2/authorization/divisionspermitted/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -716,7 +718,7 @@ Returns which divisions the current user has the given permission in.
 
 Wraps GET /api/v2/authorization/divisionspermitted/paged/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -768,9 +770,11 @@ Returns which divisions the specified user has the given permission in.
 
 This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
+
+
 Wraps GET /api/v2/authorization/divisionspermitted/paged/{subjectId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -877,7 +881,7 @@ Returns a listing of roles and permissions for the currently authenticated user.
 
 Wraps GET /api/v2/authorization/subjects/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -923,7 +927,7 @@ Fetch field config for an entity type
 
 Wraps GET /api/v2/fieldconfig 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -971,9 +975,11 @@ Get a user profile listing
 
 This api is deprecated. User /api/v2/users
 
+
+
 Wraps GET /api/v2/profiles/users 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -993,7 +999,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 id = ['id_example'] # list[str] | id (optional)
 jid = ['jid_example'] # list[str] | jid (optional)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". (optional)
 
@@ -1014,7 +1020,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **jid** | [**list[str]**](str.html)| jid | [optional]  |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization |
 | **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
 {: class="table table-striped"}
@@ -1087,7 +1093,7 @@ Get user.
 
 Wraps GET /api/v2/users/{userId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1106,7 +1112,7 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for a user instead of their default. (optional)
-state = 'active' # str | Search for a user with this state (optional) (default to active)
+state = ''active'' # str | Search for a user with this state (optional) (default to 'active')
 
 try:
     # Get user.
@@ -1124,7 +1130,7 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 | **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
-| **state** | **str**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
+| **state** | **str**| Search for a user with this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
 ### Return type
@@ -1143,7 +1149,7 @@ Get adjacents
 
 Wraps GET /api/v2/users/{userId}/adjacents 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1195,7 +1201,7 @@ Get a user's CallForwarding
 
 Wraps GET /api/v2/users/{userId}/callforwarding 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1245,7 +1251,7 @@ Get direct reports
 
 Wraps GET /api/v2/users/{userId}/directreports 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1297,7 +1303,7 @@ Deprecated; will be revived with new contract
 
 Wraps GET /api/v2/users/{userId}/favorites 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1316,7 +1322,7 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
@@ -1335,7 +1341,7 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
@@ -1355,7 +1361,7 @@ Get a user's Geolocation
 
 Wraps GET /api/v2/users/{userId}/geolocations/{clientId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1407,7 +1413,7 @@ Get a OutOfOffice
 
 Wraps GET /api/v2/users/{userId}/outofoffice 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1455,9 +1461,11 @@ Get user profile
 
 This api has been deprecated. Use api/v2/users instead
 
+
+
 Wraps GET /api/v2/users/{userId}/profile 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1584,7 +1592,7 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-joined = true # bool | Is joined to the queue (optional) (default to true)
+joined = True # bool | Is joined to the queue (optional) (default to True)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 
 try:
@@ -1603,7 +1611,7 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **joined** | **bool**| Is joined to the queue | [optional] [default to true] |
+| **joined** | **bool**| Is joined to the queue | [optional] [default to True] |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 {: class="table table-striped"}
 
@@ -1674,7 +1682,7 @@ List routing language for user
 
 Wraps GET /api/v2/users/{userId}/routinglanguages 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1693,7 +1701,7 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 
 try:
     # List routing language for user
@@ -1711,7 +1719,7 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -1730,7 +1738,7 @@ List routing skills for user
 
 Wraps GET /api/v2/users/{userId}/routingskills 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1749,7 +1757,7 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 
 try:
     # List routing skills for user
@@ -1767,7 +1775,7 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -1786,7 +1794,7 @@ Fetch the routing status of a user
 
 Wraps GET /api/v2/users/{userId}/routingstatus 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1887,7 +1895,7 @@ Get station information for user
 
 Wraps GET /api/v2/users/{userId}/station 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1937,7 +1945,7 @@ Get superiors
 
 Wraps GET /api/v2/users/{userId}/superiors 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2044,7 +2052,7 @@ Get the list of available users.
 
 Wraps GET /api/v2/users 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2064,10 +2072,10 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 id = ['id_example'] # list[str] | A list of user IDs to fetch by bulk (optional)
 jabber_id = ['jabber_id_example'] # list[str] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
-state = 'active' # str | Only list users of this state (optional) (default to active)
+state = ''active'' # str | Only list users of this state (optional) (default to 'active')
 
 try:
     # Get the list of available users.
@@ -2086,10 +2094,10 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **id** | [**list[str]**](str.html)| A list of user IDs to fetch by bulk | [optional]  |
 | **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 | **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
-| **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
+| **state** | **str**| Only list users of this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, inactive, deleted, any |
 {: class="table table-striped"}
 
 ### Return type
@@ -2105,6 +2113,8 @@ except ApiException as e:
 Get list of Development Activities
 
 Either moduleId or userId is required. Results are filtered based on the applicable permissions.
+
+
 
 Wraps GET /api/v2/users/development/activities 
 
@@ -2130,10 +2140,10 @@ user_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be
 module_id = 'module_id_example' # str | Specifies the ID of the learning module. (optional)
 interval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 completion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-overdue = 'Any' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to Any)
+overdue = ''Any'' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to 'Any')
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'Desc' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to Desc)
+sort_order = ''Desc'' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
 types = ['types_example'] # list[str] | Specifies the activity types. (optional)
 statuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)
 relationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
@@ -2155,10 +2165,10 @@ except ApiException as e:
 | **module_id** | **str**| Specifies the ID of the learning module. | [optional]  |
 | **interval** | **str**| Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **completion_interval** | **str**| Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
-| **overdue** | **str**| Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+| **overdue** | **str**| Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
+| **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
@@ -2178,9 +2188,11 @@ Get list of Development Activities for current user
 
 Results are filtered based on the applicable permissions.
 
+
+
 Wraps GET /api/v2/users/development/activities/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2199,10 +2211,10 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 module_id = 'module_id_example' # str | Specifies the ID of the learning module. (optional)
 interval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 completion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-overdue = 'Any' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to Any)
+overdue = ''Any'' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to 'Any')
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'Desc' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to Desc)
+sort_order = ''Desc'' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
 types = ['types_example'] # list[str] | Specifies the activity types. (optional)
 statuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)
 relationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
@@ -2223,10 +2235,10 @@ except ApiException as e:
 | **module_id** | **str**| Specifies the ID of the learning module. | [optional]  |
 | **interval** | **str**| Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **completion_interval** | **str**| Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
-| **overdue** | **str**| Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+| **overdue** | **str**| Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
+| **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
@@ -2245,6 +2257,8 @@ except ApiException as e:
 Get a Development Activity
 
 Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
+
+
 
 Wraps GET /api/v2/users/development/activities/{activityId} 
 
@@ -2300,9 +2314,11 @@ Get current user details.
 
 This request is not valid when using the Client Credentials OAuth grant.
 
+
+
 Wraps GET /api/v2/users/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -2513,9 +2529,11 @@ Patch a user's Geolocation
 
 The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 
+
+
 Wraps PATCH /api/v2/users/{userId}/geolocations/{clientId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3119,7 +3137,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
 body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Pairs of role and division IDs
-subject_type = 'PC_USER' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to PC_USER)
+subject_type = ''PC_USER'' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to 'PC_USER')
 
 try:
     # Bulk-grant roles and divisions to a subject.
@@ -3135,7 +3153,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
-| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3204,6 +3222,8 @@ Replace subject's roles and divisions with the exact list supplied in the reques
 
 This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
 
+
+
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkreplace 
 
 Requires ALL permissions: 
@@ -3226,7 +3246,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
 body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Pairs of role and division IDs
-subject_type = 'PC_USER' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to PC_USER)
+subject_type = ''PC_USER'' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to 'PC_USER')
 
 try:
     # Replace subject's roles and divisions with the exact list supplied in the request.
@@ -3242,7 +3262,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
-| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3281,7 +3301,7 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
 division_id = 'division_id_example' # str | the id of the division to which to make the grant
 role_id = 'role_id_example' # str | the id of the role to grant
-subject_type = 'PC_USER' # str | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (optional) (default to PC_USER)
+subject_type = ''PC_USER'' # str | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (optional) (default to 'PC_USER')
 
 try:
     # Make a grant of a role in a division
@@ -3298,7 +3318,7 @@ except ApiException as e:
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **division_id** | **str**| the id of the division to which to make the grant |  |
 | **role_id** | **str**| the id of the role to grant |  |
-| **subject_type** | **str**| what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to &#39;PC_USER&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3335,7 +3355,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
-force = false # bool | Resend the invitation even if one is already outstanding (optional) (default to false)
+force = False # bool | Resend the invitation even if one is already outstanding (optional) (default to False)
 
 try:
     # Send an activation email to the user
@@ -3350,7 +3370,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **force** | **bool**| Resend the invitation even if one is already outstanding | [optional] [default to false] |
+| **force** | **bool**| Resend the invitation even if one is already outstanding | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3577,6 +3597,8 @@ Retrieve aggregated development activity data
 
 Results are filtered based on the applicable permissions.
 
+
+
 Wraps POST /api/v2/users/development/activities/aggregates/query 
 
 Requires ANY permissions: 
@@ -3631,7 +3653,7 @@ Change your password
 
 Wraps POST /api/v2/users/me/password 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3837,7 +3859,7 @@ Update an OutOfOffice
 
 Wraps PUT /api/v2/users/{userId}/outofoffice 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -3907,7 +3929,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Skills
+body = ['body_example'] # list[str] | Skills
 
 try:
     # Update profile skills for a user
@@ -3923,7 +3945,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | **list[str]**| Skills |  |
+| **body** | [**list[str]**](str.html)| Skills |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3960,7 +3982,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | List of roles
+body = ['body_example'] # list[str] | List of roles
 
 try:
     # Sets the user's roles
@@ -3976,7 +3998,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | **list[str]**| List of roles |  |
+| **body** | [**list[str]**](str.html)| List of roles |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4103,7 +4125,7 @@ Update the routing status of a user
 
 Wraps PUT /api/v2/users/{userId}/routingstatus 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -4208,7 +4230,7 @@ Set associated station
 
 Wraps PUT /api/v2/users/{userId}/station/associatedstation/{stationId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

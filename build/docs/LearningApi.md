@@ -90,6 +90,8 @@ Delete a learning module
 
 This will delete a learning module if it is unpublished or it will delete a published and archived learning module
 
+
+
 Wraps DELETE /api/v2/learning/modules/{moduleId} 
 
 Requires ANY permissions: 
@@ -139,6 +141,8 @@ void (empty response body)
 Get Learning Assignment
 
 Permission not required if you are the assigned user of the learning assignment
+
+
 
 Wraps GET /api/v2/learning/assignments/{assignmentId} 
 
@@ -193,6 +197,8 @@ List of Learning module Assignments
 
 Either moduleId or user value is required
 
+
+
 Wraps GET /api/v2/learning/assignments 
 
 Requires ANY permissions: 
@@ -215,13 +221,13 @@ api_instance = PureCloudPlatformClientV2.LearningApi()
 module_id = 'module_id_example' # str | Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)
 interval = 'interval_example' # str | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 completion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-overdue = 'Any' # str | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to Any)
+overdue = ''Any'' # str | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to 'Any')
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-pcPass = 'Any' # str | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to Any)
+pcPass = ''Any'' # str | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to 'Any')
 min_percentage_score = 3.4 # float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
 max_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
-sort_order = 'Desc' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to Desc)
+sort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
 sort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
 user_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
 types = ['types_example'] # list[str] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
@@ -244,13 +250,13 @@ except ApiException as e:
 | **module_id** | **str**| Specifies the ID of the learning module. Fetch assignments for learning module ID | [optional]  |
 | **interval** | **str**| Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **completion_interval** | **str**| Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
-| **overdue** | **str**| Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+| **overdue** | **str**| Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **pcPass** | **str**| Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+| **pcPass** | **str**| Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
 | **min_percentage_score** | **float**| The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
 | **max_percentage_score** | **float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
-| **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
+| **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **user_id** | [**list[str]**](str.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
 | **types** | [**list[str]**](str.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
@@ -274,7 +280,7 @@ List of Learning Assignments assigned to current user
 
 Wraps GET /api/v2/learning/assignments/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -293,13 +299,13 @@ api_instance = PureCloudPlatformClientV2.LearningApi()
 module_id = 'module_id_example' # str | Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)
 interval = 'interval_example' # str | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 completion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-overdue = 'Any' # str | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to Any)
+overdue = ''Any'' # str | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to 'Any')
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-pcPass = 'Any' # str | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to Any)
+pcPass = ''Any'' # str | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to 'Any')
 min_percentage_score = 3.4 # float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
 max_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
-sort_order = 'Desc' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to Desc)
+sort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
 sort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
 types = ['types_example'] # list[str] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
 states = ['states_example'] # list[str] | Specifies the assignment states to filter by (optional)
@@ -321,13 +327,13 @@ except ApiException as e:
 | **module_id** | **str**| Specifies the ID of the learning module. Fetch assignments for learning module ID | [optional]  |
 | **interval** | **str**| Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **completion_interval** | **str**| Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
-| **overdue** | **str**| Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+| **overdue** | **str**| Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **pcPass** | **str**| Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+| **pcPass** | **str**| Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
 | **min_percentage_score** | **float**| The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
 | **max_percentage_score** | **float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
-| **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
+| **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **types** | [**list[str]**](str.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
 | **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
@@ -526,15 +532,15 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LearningApi()
-is_archived = false # bool | Archive status (optional) (default to false)
+is_archived = False # bool | Archive status (optional) (default to False)
 types = ['types_example'] # list[str] | Specifies the module types. (optional)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
-sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 search_term = 'search_term_example' # str | Search Term (searchable by name) (optional)
 expand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)
-is_published = 'Any' # str | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional) (default to Any)
+is_published = ''Any'' # str | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional) (default to 'Any')
 
 try:
     # Get all learning modules of an organization
@@ -549,15 +555,15 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **is_archived** | **bool**| Archive status | [optional] [default to false] |
+| **is_archived** | **bool**| Archive status | [optional] [default to False] |
 | **types** | [**list[str]**](str.html)| Specifies the module types. | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
-| **sort_by** | **str**| Sort by | [optional] [default to name]<br />**Values**: name |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name |
 | **search_term** | **str**| Search Term (searchable by name) | [optional]  |
 | **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
-| **is_published** | **str**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+| **is_published** | **str**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
 {: class="table table-striped"}
 
 ### Return type
@@ -576,7 +582,7 @@ Update Learning Assignment
 
 Wraps PATCH /api/v2/learning/assignments/{assignmentId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -851,7 +857,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LearningApi()
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | The IDs of the learning assignments to be removed (optional)
+body = ['body_example'] # list[str] | The IDs of the learning assignments to be removed (optional)
 
 try:
     # Remove multiple Learning Assignments
@@ -866,7 +872,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | **list[str]**| The IDs of the learning assignments to be removed | [optional]  |
+| **body** | [**list[str]**](str.html)| The IDs of the learning assignments to be removed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -934,6 +940,8 @@ Create a new learning module
 
 This will create a new unpublished learning module with the specified fields.
 
+
+
 Wraps POST /api/v2/learning/modules 
 
 Requires ANY permissions: 
@@ -984,6 +992,8 @@ except ApiException as e:
 Get users for learning module rule
 
 This will get the users who matches the given rule.
+
+
 
 Wraps POST /api/v2/learning/rules/query 
 
@@ -1040,6 +1050,8 @@ Update a learning module
 
 This will update the name, description, completion time in days and inform steps for a learning module
 
+
+
 Wraps PUT /api/v2/learning/modules/{moduleId} 
 
 Requires ANY permissions: 
@@ -1092,6 +1104,8 @@ except ApiException as e:
 Update a learning module rule
 
 This will update a learning module rule with the specified fields.
+
+
 
 Wraps PUT /api/v2/learning/modules/{moduleId}/rule 
 

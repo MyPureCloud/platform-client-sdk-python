@@ -106,6 +106,7 @@ class ApiUsageRow(object):
         :type: str
         """
         
+
         self._client_id = client_id
 
     @property
@@ -129,6 +130,7 @@ class ApiUsageRow(object):
         :type: str
         """
         
+
         self._client_name = client_name
 
     @property
@@ -152,6 +154,7 @@ class ApiUsageRow(object):
         :type: str
         """
         
+
         self._organization_id = organization_id
 
     @property
@@ -175,6 +178,7 @@ class ApiUsageRow(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -198,6 +202,7 @@ class ApiUsageRow(object):
         :type: str
         """
         
+
         self._template_uri = template_uri
 
     @property
@@ -221,6 +226,7 @@ class ApiUsageRow(object):
         :type: str
         """
         
+
         self._http_method = http_method
 
     @property
@@ -244,6 +250,7 @@ class ApiUsageRow(object):
         :type: int
         """
         
+
         self._status200 = status200
 
     @property
@@ -267,6 +274,7 @@ class ApiUsageRow(object):
         :type: int
         """
         
+
         self._status300 = status300
 
     @property
@@ -290,6 +298,7 @@ class ApiUsageRow(object):
         :type: int
         """
         
+
         self._status400 = status400
 
     @property
@@ -313,6 +322,7 @@ class ApiUsageRow(object):
         :type: int
         """
         
+
         self._status500 = status500
 
     @property
@@ -336,6 +346,7 @@ class ApiUsageRow(object):
         :type: int
         """
         
+
         self._status429 = status429
 
     @property
@@ -359,6 +370,7 @@ class ApiUsageRow(object):
         :type: int
         """
         
+
         self._requests = requests
 
     @property
@@ -382,6 +394,7 @@ class ApiUsageRow(object):
         :type: datetime
         """
         
+
         self._date = date
 
     def to_dict(self):

@@ -100,6 +100,7 @@ class CreatePerformanceProfile(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,10 @@ class CreatePerformanceProfile(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -146,6 +151,10 @@ class CreatePerformanceProfile(object):
         :type: WritableDivision
         """
         
+        if not division:
+            raise ValueError("Invalid value for `division`, must not be `None`")
+
+
         self._division = division
 
     @property
@@ -169,6 +178,10 @@ class CreatePerformanceProfile(object):
         :type: str
         """
         
+        if not description:
+            raise ValueError("Invalid value for `description`, must not be `None`")
+
+
         self._description = description
 
     @property
@@ -192,6 +205,7 @@ class CreatePerformanceProfile(object):
         :type: list[str]
         """
         
+
         self._metric_orders = metric_orders
 
     @property
@@ -215,6 +229,7 @@ class CreatePerformanceProfile(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -238,6 +253,10 @@ class CreatePerformanceProfile(object):
         :type: list[ReportingInterval]
         """
         
+        if not reporting_intervals:
+            raise ValueError("Invalid value for `reporting_intervals`, must not be `None`")
+
+
         self._reporting_intervals = reporting_intervals
 
     @property
@@ -261,6 +280,10 @@ class CreatePerformanceProfile(object):
         :type: bool
         """
         
+        if not active:
+            raise ValueError("Invalid value for `active`, must not be `None`")
+
+
         self._active = active
 
     @property
@@ -284,6 +307,7 @@ class CreatePerformanceProfile(object):
         :type: int
         """
         
+
         self._member_count = member_count
 
     @property
@@ -307,6 +331,10 @@ class CreatePerformanceProfile(object):
         :type: int
         """
         
+        if not max_leaderboard_rank_size:
+            raise ValueError("Invalid value for `max_leaderboard_rank_size`, must not be `None`")
+
+
         self._max_leaderboard_rank_size = max_leaderboard_rank_size
 
     @property
@@ -330,6 +358,7 @@ class CreatePerformanceProfile(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class WorkdayValuesMetricItem(object):
         :type: AddressableEntityRef
         """
         
+
         self._metric = metric
 
     @property
@@ -105,6 +106,7 @@ class WorkdayValuesMetricItem(object):
         :type: DomainEntityRef
         """
         
+
         self._metric_definition = metric_definition
 
     @property
@@ -128,6 +130,7 @@ class WorkdayValuesMetricItem(object):
         :type: float
         """
         
+
         self._average = average
 
     @property
@@ -178,6 +181,7 @@ class WorkdayValuesMetricItem(object):
         :type: list[WorkdayValuesTrendItem]
         """
         
+
         self._trend = trend
 
     def to_dict(self):

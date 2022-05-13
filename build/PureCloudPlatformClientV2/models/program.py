@@ -100,6 +100,7 @@ class Program(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class Program(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class Program(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -169,6 +172,7 @@ class Program(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -192,6 +196,7 @@ class Program(object):
         :type: list[BaseTopicEntitiy]
         """
         
+
         self._topics = topics
 
     @property
@@ -215,6 +220,7 @@ class Program(object):
         :type: list[str]
         """
         
+
         self._tags = tags
 
     @property
@@ -238,6 +244,7 @@ class Program(object):
         :type: AddressableEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -261,6 +268,7 @@ class Program(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -284,6 +292,7 @@ class Program(object):
         :type: AddressableEntityRef
         """
         
+
         self._published_by = published_by
 
     @property
@@ -307,6 +316,7 @@ class Program(object):
         :type: datetime
         """
         
+
         self._date_published = date_published
 
     @property
@@ -330,6 +340,7 @@ class Program(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

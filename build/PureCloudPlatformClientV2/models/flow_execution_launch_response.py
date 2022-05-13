@@ -79,6 +79,7 @@ class FlowExecutionLaunchResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class FlowExecutionLaunchResponse(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -125,6 +127,7 @@ class FlowExecutionLaunchResponse(object):
         :type: DomainEntityRef
         """
         
+
         self._flow_version = flow_version
 
     @property
@@ -148,6 +151,7 @@ class FlowExecutionLaunchResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

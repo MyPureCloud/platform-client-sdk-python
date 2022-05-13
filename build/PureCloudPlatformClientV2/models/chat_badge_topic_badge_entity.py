@@ -70,6 +70,7 @@ class ChatBadgeTopicBadgeEntity(object):
         :type: str
         """
         
+
         self._jabber_id = jabber_id
 
     def to_dict(self):

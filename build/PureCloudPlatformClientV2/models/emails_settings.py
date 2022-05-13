@@ -70,6 +70,7 @@ class EmailsSettings(object):
         :type: int
         """
         
+
         self._sending_size_limit = sending_size_limit
 
     def to_dict(self):

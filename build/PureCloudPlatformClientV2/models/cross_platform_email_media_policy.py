@@ -73,6 +73,7 @@ class CrossPlatformEmailMediaPolicy(object):
         :type: CrossPlatformPolicyActions
         """
         
+
         self._actions = actions
 
     @property
@@ -96,6 +97,7 @@ class CrossPlatformEmailMediaPolicy(object):
         :type: EmailMediaPolicyConditions
         """
         
+
         self._conditions = conditions
 
     def to_dict(self):

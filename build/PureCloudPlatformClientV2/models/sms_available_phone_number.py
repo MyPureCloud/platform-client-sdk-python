@@ -97,6 +97,7 @@ class SmsAvailablePhoneNumber(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class SmsAvailablePhoneNumber(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class SmsAvailablePhoneNumber(object):
         :type: str
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -166,6 +169,7 @@ class SmsAvailablePhoneNumber(object):
         :type: str
         """
         
+
         self._country_code = country_code
 
     @property
@@ -189,6 +193,7 @@ class SmsAvailablePhoneNumber(object):
         :type: str
         """
         
+
         self._region = region
 
     @property
@@ -212,6 +217,7 @@ class SmsAvailablePhoneNumber(object):
         :type: str
         """
         
+
         self._city = city
 
     @property
@@ -235,6 +241,7 @@ class SmsAvailablePhoneNumber(object):
         :type: list[str]
         """
         
+
         self._capabilities = capabilities
 
     @property
@@ -312,6 +319,7 @@ class SmsAvailablePhoneNumber(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -103,6 +103,7 @@ class PatchOutcome(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class PatchOutcome(object):
         :type: bool
         """
         
+
         self._is_active = is_active
 
     @property
@@ -149,6 +151,10 @@ class PatchOutcome(object):
         :type: str
         """
         
+        if not display_name:
+            raise ValueError("Invalid value for `display_name`, must not be `None`")
+
+
         self._display_name = display_name
 
     @property
@@ -172,6 +178,7 @@ class PatchOutcome(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -195,6 +202,7 @@ class PatchOutcome(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -218,6 +226,7 @@ class PatchOutcome(object):
         :type: bool
         """
         
+
         self._is_positive = is_positive
 
     @property
@@ -241,6 +250,7 @@ class PatchOutcome(object):
         :type: Context
         """
         
+
         self._context = context
 
     @property
@@ -264,6 +274,7 @@ class PatchOutcome(object):
         :type: Journey
         """
         
+
         self._journey = journey
 
     @property
@@ -287,6 +298,7 @@ class PatchOutcome(object):
         :type: AssociatedValueField
         """
         
+
         self._associated_value_field = associated_value_field
 
     @property
@@ -310,6 +322,7 @@ class PatchOutcome(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -333,6 +346,7 @@ class PatchOutcome(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -356,6 +370,7 @@ class PatchOutcome(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

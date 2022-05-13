@@ -106,6 +106,7 @@ class DomainSchemaReference(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -129,6 +130,10 @@ class DomainSchemaReference(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -152,6 +157,7 @@ class DomainSchemaReference(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -175,6 +181,7 @@ class DomainSchemaReference(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -198,6 +205,7 @@ class DomainSchemaReference(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -221,6 +229,7 @@ class DomainSchemaReference(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -244,6 +253,7 @@ class DomainSchemaReference(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -267,6 +277,7 @@ class DomainSchemaReference(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -290,6 +301,7 @@ class DomainSchemaReference(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -340,6 +352,7 @@ class DomainSchemaReference(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -363,6 +376,7 @@ class DomainSchemaReference(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -386,6 +400,7 @@ class DomainSchemaReference(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class ContentNotificationTemplate(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class ContentNotificationTemplate(object):
         :type: str
         """
         
+
         self._language = language
 
     @property
@@ -128,6 +130,7 @@ class ContentNotificationTemplate(object):
         :type: NotificationTemplateHeader
         """
         
+
         self._header = header
 
     @property
@@ -151,6 +154,10 @@ class ContentNotificationTemplate(object):
         :type: NotificationTemplateBody
         """
         
+        if not body:
+            raise ValueError("Invalid value for `body`, must not be `None`")
+
+
         self._body = body
 
     @property
@@ -174,6 +181,7 @@ class ContentNotificationTemplate(object):
         :type: NotificationTemplateFooter
         """
         
+
         self._footer = footer
 
     def to_dict(self):

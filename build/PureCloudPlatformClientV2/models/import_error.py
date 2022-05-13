@@ -73,6 +73,7 @@ class ImportError(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -96,6 +97,7 @@ class ImportError(object):
         :type: int
         """
         
+
         self._line = line
 
     def to_dict(self):

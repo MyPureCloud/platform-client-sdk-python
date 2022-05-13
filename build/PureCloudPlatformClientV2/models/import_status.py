@@ -109,6 +109,10 @@ class ImportStatus(object):
         :type: int
         """
         
+        if not total_records:
+            raise ValueError("Invalid value for `total_records`, must not be `None`")
+
+
         self._total_records = total_records
 
     @property
@@ -132,6 +136,10 @@ class ImportStatus(object):
         :type: int
         """
         
+        if not completed_records:
+            raise ValueError("Invalid value for `completed_records`, must not be `None`")
+
+
         self._completed_records = completed_records
 
     @property
@@ -155,6 +163,10 @@ class ImportStatus(object):
         :type: int
         """
         
+        if not percent_complete:
+            raise ValueError("Invalid value for `percent_complete`, must not be `None`")
+
+
         self._percent_complete = percent_complete
 
     @property
@@ -178,6 +190,7 @@ class ImportStatus(object):
         :type: str
         """
         
+
         self._failure_reason = failure_reason
 
     def to_dict(self):

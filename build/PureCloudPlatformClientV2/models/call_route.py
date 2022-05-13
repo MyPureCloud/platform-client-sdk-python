@@ -70,6 +70,7 @@ class CallRoute(object):
         :type: list[CallTarget]
         """
         
+
         self._targets = targets
 
     def to_dict(self):

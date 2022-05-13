@@ -82,6 +82,7 @@ class ScimGroupListResponse(object):
         :type: list[str]
         """
         
+
         self._schemas = schemas
 
     @property
@@ -105,6 +106,7 @@ class ScimGroupListResponse(object):
         :type: int
         """
         
+
         self._total_results = total_results
 
     @property
@@ -128,6 +130,7 @@ class ScimGroupListResponse(object):
         :type: int
         """
         
+
         self._start_index = start_index
 
     @property
@@ -151,6 +154,7 @@ class ScimGroupListResponse(object):
         :type: int
         """
         
+
         self._items_per_page = items_per_page
 
     @property
@@ -174,6 +178,7 @@ class ScimGroupListResponse(object):
         :type: list[ScimV2Group]
         """
         
+
         self._resources = resources
 
     def to_dict(self):

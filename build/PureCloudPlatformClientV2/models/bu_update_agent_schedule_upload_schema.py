@@ -88,6 +88,10 @@ class BuUpdateAgentScheduleUploadSchema(object):
         :type: str
         """
         
+        if not user_id:
+            raise ValueError("Invalid value for `user_id`, must not be `None`")
+
+
         self._user_id = user_id
 
     @property
@@ -111,6 +115,7 @@ class BuUpdateAgentScheduleUploadSchema(object):
         :type: ValueWrapperString
         """
         
+
         self._work_plan_id = work_plan_id
 
     @property
@@ -134,6 +139,7 @@ class BuUpdateAgentScheduleUploadSchema(object):
         :type: ListWrapperString
         """
         
+
         self._work_plan_ids_per_week = work_plan_ids_per_week
 
     @property
@@ -157,6 +163,7 @@ class BuUpdateAgentScheduleUploadSchema(object):
         :type: list[BuAgentScheduleShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -180,6 +187,7 @@ class BuUpdateAgentScheduleUploadSchema(object):
         :type: list[BuFullDayTimeOffMarker]
         """
         
+
         self._full_day_time_off_markers = full_day_time_off_markers
 
     @property
@@ -203,6 +211,7 @@ class BuUpdateAgentScheduleUploadSchema(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -226,6 +235,7 @@ class BuUpdateAgentScheduleUploadSchema(object):
         :type: bool
         """
         
+
         self._delete = delete
 
     def to_dict(self):

@@ -70,6 +70,10 @@ class BulkCallbackPatchRequest(object):
         :type: list[PatchCallbackRequest]
         """
         
+        if not patch_callback_requests:
+            raise ValueError("Invalid value for `patch_callback_requests`, must not be `None`")
+
+
         self._patch_callback_requests = patch_callback_requests
 
     def to_dict(self):

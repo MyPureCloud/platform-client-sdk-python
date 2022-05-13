@@ -121,6 +121,10 @@ class ReportingExportJobRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -144,6 +148,10 @@ class ReportingExportJobRequest(object):
         :type: str
         """
         
+        if not time_zone:
+            raise ValueError("Invalid value for `time_zone`, must not be `None`")
+
+
         self._time_zone = time_zone
 
     @property
@@ -194,6 +202,10 @@ class ReportingExportJobRequest(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -217,6 +229,10 @@ class ReportingExportJobRequest(object):
         :type: str
         """
         
+        if not period:
+            raise ValueError("Invalid value for `period`, must not be `None`")
+
+
         self._period = period
 
     @property
@@ -267,6 +283,10 @@ class ReportingExportJobRequest(object):
         :type: ViewFilter
         """
         
+        if not filter:
+            raise ValueError("Invalid value for `filter`, must not be `None`")
+
+
         self._filter = filter
 
     @property
@@ -290,6 +310,7 @@ class ReportingExportJobRequest(object):
         :type: bool
         """
         
+
         self._read = read
 
     @property
@@ -313,6 +334,10 @@ class ReportingExportJobRequest(object):
         :type: str
         """
         
+        if not locale:
+            raise ValueError("Invalid value for `locale`, must not be `None`")
+
+
         self._locale = locale
 
     @property
@@ -336,6 +361,7 @@ class ReportingExportJobRequest(object):
         :type: bool
         """
         
+
         self._has_format_durations = has_format_durations
 
     @property
@@ -359,6 +385,7 @@ class ReportingExportJobRequest(object):
         :type: bool
         """
         
+
         self._has_split_filters = has_split_filters
 
     @property
@@ -382,6 +409,7 @@ class ReportingExportJobRequest(object):
         :type: bool
         """
         
+
         self._exclude_empty_rows = exclude_empty_rows
 
     @property
@@ -405,6 +433,7 @@ class ReportingExportJobRequest(object):
         :type: bool
         """
         
+
         self._has_split_by_media = has_split_by_media
 
     @property
@@ -428,6 +457,7 @@ class ReportingExportJobRequest(object):
         :type: bool
         """
         
+
         self._has_summary_row = has_summary_row
 
     @property
@@ -478,6 +508,7 @@ class ReportingExportJobRequest(object):
         :type: list[SelectedColumns]
         """
         
+
         self._selected_columns = selected_columns
 
     @property
@@ -501,6 +532,7 @@ class ReportingExportJobRequest(object):
         :type: bool
         """
         
+
         self._has_custom_participant_attributes = has_custom_participant_attributes
 
     @property
@@ -524,6 +556,7 @@ class ReportingExportJobRequest(object):
         :type: list[str]
         """
         
+
         self._recipient_emails = recipient_emails
 
     def to_dict(self):

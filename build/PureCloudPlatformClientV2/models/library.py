@@ -88,6 +88,7 @@ class Library(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,10 @@ class Library(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -134,6 +139,7 @@ class Library(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -157,6 +163,7 @@ class Library(object):
         :type: User
         """
         
+
         self._created_by = created_by
 
     @property
@@ -180,6 +187,7 @@ class Library(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -230,6 +238,7 @@ class Library(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -82,6 +82,7 @@ class GeolocationEventGeolocation(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -105,6 +106,7 @@ class GeolocationEventGeolocation(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -128,6 +130,7 @@ class GeolocationEventGeolocation(object):
         :type: str
         """
         
+
         self._country = country
 
     @property
@@ -151,6 +154,7 @@ class GeolocationEventGeolocation(object):
         :type: str
         """
         
+
         self._region = region
 
     @property
@@ -174,6 +178,7 @@ class GeolocationEventGeolocation(object):
         :type: str
         """
         
+
         self._city = city
 
     def to_dict(self):

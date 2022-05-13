@@ -121,6 +121,7 @@ class BuScheduleRun(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -144,6 +145,7 @@ class BuScheduleRun(object):
         :type: str
         """
         
+
         self._scheduler_run_id = scheduler_run_id
 
     @property
@@ -167,6 +169,7 @@ class BuScheduleRun(object):
         :type: bool
         """
         
+
         self._intraday_rescheduling = intraday_rescheduling
 
     @property
@@ -217,6 +220,7 @@ class BuScheduleRun(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     @property
@@ -240,6 +244,7 @@ class BuScheduleRun(object):
         :type: float
         """
         
+
         self._percent_complete = percent_complete
 
     @property
@@ -263,6 +268,7 @@ class BuScheduleRun(object):
         :type: date
         """
         
+
         self._target_week = target_week
 
     @property
@@ -286,6 +292,7 @@ class BuScheduleRun(object):
         :type: BuScheduleReference
         """
         
+
         self._schedule = schedule
 
     @property
@@ -309,6 +316,7 @@ class BuScheduleRun(object):
         :type: str
         """
         
+
         self._schedule_description = schedule_description
 
     @property
@@ -332,6 +340,7 @@ class BuScheduleRun(object):
         :type: datetime
         """
         
+
         self._scheduling_start_time = scheduling_start_time
 
     @property
@@ -355,6 +364,7 @@ class BuScheduleRun(object):
         :type: UserReference
         """
         
+
         self._scheduling_started_by = scheduling_started_by
 
     @property
@@ -378,6 +388,7 @@ class BuScheduleRun(object):
         :type: UserReference
         """
         
+
         self._scheduling_canceled_by = scheduling_canceled_by
 
     @property
@@ -401,6 +412,7 @@ class BuScheduleRun(object):
         :type: datetime
         """
         
+
         self._scheduling_completed_time = scheduling_completed_time
 
     @property
@@ -424,6 +436,7 @@ class BuScheduleRun(object):
         :type: int
         """
         
+
         self._message_count = message_count
 
     @property
@@ -447,6 +460,7 @@ class BuScheduleRun(object):
         :type: list[SchedulerMessageSeverityCount]
         """
         
+
         self._message_severity_counts = message_severity_counts
 
     @property
@@ -470,6 +484,7 @@ class BuScheduleRun(object):
         :type: ReschedulingOptionsRunResponse
         """
         
+
         self._rescheduling_options = rescheduling_options
 
     @property
@@ -493,6 +508,7 @@ class BuScheduleRun(object):
         :type: datetime
         """
         
+
         self._rescheduling_result_expiration = rescheduling_result_expiration
 
     @property
@@ -516,6 +532,7 @@ class BuScheduleRun(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

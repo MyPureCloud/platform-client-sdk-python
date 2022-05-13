@@ -88,6 +88,7 @@ class WebChatGuestMediaRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class WebChatGuestMediaRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,10 @@ class WebChatGuestMediaRequest(object):
         :type: list[str]
         """
         
+        if not types:
+            raise ValueError("Invalid value for `types`, must not be `None`")
+
+
         self._types = types
 
     @property
@@ -184,6 +190,7 @@ class WebChatGuestMediaRequest(object):
         :type: str
         """
         
+
         self._communication_id = communication_id
 
     @property
@@ -207,6 +214,7 @@ class WebChatGuestMediaRequest(object):
         :type: str
         """
         
+
         self._security_key = security_key
 
     @property
@@ -230,6 +238,7 @@ class WebChatGuestMediaRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -45,7 +45,7 @@ class EventMessage(object):
             'message_with_params': 'str',
             'message_params': 'dict(str, object)',
             'documentation_uri': 'str',
-            'resource_ur_is': 'list[str]'
+            'resource_uris': 'list[str]'
         }
 
         self.attribute_map = {
@@ -54,7 +54,7 @@ class EventMessage(object):
             'message_with_params': 'messageWithParams',
             'message_params': 'messageParams',
             'documentation_uri': 'documentationUri',
-            'resource_ur_is': 'resourceURIs'
+            'resource_uris': 'resourceURIs'
         }
 
         self._code = None
@@ -62,7 +62,7 @@ class EventMessage(object):
         self._message_with_params = None
         self._message_params = None
         self._documentation_uri = None
-        self._resource_ur_is = None
+        self._resource_uris = None
 
     @property
     def code(self):
@@ -112,6 +112,7 @@ class EventMessage(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -135,6 +136,7 @@ class EventMessage(object):
         :type: str
         """
         
+
         self._message_with_params = message_with_params
 
     @property
@@ -158,6 +160,7 @@ class EventMessage(object):
         :type: dict(str, object)
         """
         
+
         self._message_params = message_params
 
     @property
@@ -181,30 +184,32 @@ class EventMessage(object):
         :type: str
         """
         
+
         self._documentation_uri = documentation_uri
 
     @property
-    def resource_ur_is(self):
+    def resource_uris(self):
         """
-        Gets the resource_ur_is of this EventMessage.
+        Gets the resource_uris of this EventMessage.
 
 
-        :return: The resource_ur_is of this EventMessage.
+        :return: The resource_uris of this EventMessage.
         :rtype: list[str]
         """
-        return self._resource_ur_is
+        return self._resource_uris
 
-    @resource_ur_is.setter
-    def resource_ur_is(self, resource_ur_is):
+    @resource_uris.setter
+    def resource_uris(self, resource_uris):
         """
-        Sets the resource_ur_is of this EventMessage.
+        Sets the resource_uris of this EventMessage.
 
 
-        :param resource_ur_is: The resource_ur_is of this EventMessage.
+        :param resource_uris: The resource_uris of this EventMessage.
         :type: list[str]
         """
         
-        self._resource_ur_is = resource_ur_is
+
+        self._resource_uris = resource_uris
 
     def to_dict(self):
         """

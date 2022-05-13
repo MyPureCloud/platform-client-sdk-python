@@ -121,6 +121,7 @@ class Metrics(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -144,6 +145,7 @@ class Metrics(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -167,6 +169,7 @@ class Metrics(object):
         :type: int
         """
         
+
         self._order = order
 
     @property
@@ -190,6 +193,7 @@ class Metrics(object):
         :type: str
         """
         
+
         self._metric_definition_name = metric_definition_name
 
     @property
@@ -213,6 +217,7 @@ class Metrics(object):
         :type: str
         """
         
+
         self._metric_definition_id = metric_definition_id
 
     @property
@@ -236,6 +241,7 @@ class Metrics(object):
         :type: str
         """
         
+
         self._external_metric_definition_id = external_metric_definition_id
 
     @property
@@ -286,6 +292,7 @@ class Metrics(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -309,6 +316,7 @@ class Metrics(object):
         :type: str
         """
         
+
         self._template_name = template_name
 
     @property
@@ -332,6 +340,7 @@ class Metrics(object):
         :type: int
         """
         
+
         self._max_points = max_points
 
     @property
@@ -355,6 +364,7 @@ class Metrics(object):
         :type: str
         """
         
+
         self._performance_profile_id = performance_profile_id
 
     @property
@@ -378,6 +388,7 @@ class Metrics(object):
         :type: AddressableEntityRef
         """
         
+
         self._linked_metric = linked_metric
 
     @property
@@ -401,6 +412,7 @@ class Metrics(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -424,6 +436,7 @@ class Metrics(object):
         :type: date
         """
         
+
         self._date_unlinked = date_unlinked
 
     @property
@@ -447,6 +460,7 @@ class Metrics(object):
         :type: PerformanceProfile
         """
         
+
         self._source_performance_profile = source_performance_profile
 
     @property
@@ -470,6 +484,7 @@ class Metrics(object):
         :type: str
         """
         
+
         self._unit_definition = unit_definition
 
     @property
@@ -493,6 +508,7 @@ class Metrics(object):
         :type: int
         """
         
+
         self._precision = precision
 
     @property
@@ -516,6 +532,7 @@ class Metrics(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

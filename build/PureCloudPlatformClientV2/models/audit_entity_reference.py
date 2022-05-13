@@ -82,6 +82,7 @@ class AuditEntityReference(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class AuditEntityReference(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class AuditEntityReference(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -178,6 +181,7 @@ class AuditEntityReference(object):
         :type: str
         """
         
+
         self._action = action
 
     def to_dict(self):

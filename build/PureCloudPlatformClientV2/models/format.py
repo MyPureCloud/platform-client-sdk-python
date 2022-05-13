@@ -70,6 +70,7 @@ class Format(object):
         :type: list[str]
         """
         
+
         self._flags = flags
 
     def to_dict(self):

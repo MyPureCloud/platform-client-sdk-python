@@ -79,6 +79,7 @@ class PhoneChangeTopicPhone(object):
         :type: PhoneChangeTopicUserAgentInfo
         """
         
+
         self._user_agent_info = user_agent_info
 
     @property
@@ -102,6 +103,7 @@ class PhoneChangeTopicPhone(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -125,6 +127,7 @@ class PhoneChangeTopicPhone(object):
         :type: PhoneChangeTopicPhoneStatus
         """
         
+
         self._status = status
 
     @property
@@ -148,6 +151,7 @@ class PhoneChangeTopicPhone(object):
         :type: PhoneChangeTopicPhoneStatus
         """
         
+
         self._secondary_status = secondary_status
 
     def to_dict(self):

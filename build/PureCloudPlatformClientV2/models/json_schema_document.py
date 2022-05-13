@@ -91,6 +91,7 @@ class JsonSchemaDocument(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class JsonSchemaDocument(object):
         :type: str
         """
         
+
         self._schema = schema
 
     @property
@@ -137,6 +139,7 @@ class JsonSchemaDocument(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -160,6 +163,7 @@ class JsonSchemaDocument(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -183,6 +187,7 @@ class JsonSchemaDocument(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -206,6 +211,7 @@ class JsonSchemaDocument(object):
         :type: list[str]
         """
         
+
         self._required = required
 
     @property
@@ -229,6 +235,7 @@ class JsonSchemaDocument(object):
         :type: dict(str, object)
         """
         
+
         self._properties = properties
 
     @property
@@ -252,6 +259,7 @@ class JsonSchemaDocument(object):
         :type: object
         """
         
+
         self._additional_properties = additional_properties
 
     def to_dict(self):

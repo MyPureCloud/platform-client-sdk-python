@@ -73,6 +73,10 @@ class Ticker(object):
         :type: str
         """
         
+        if not symbol:
+            raise ValueError("Invalid value for `symbol`, must not be `None`")
+
+
         self._symbol = symbol
 
     @property
@@ -96,6 +100,10 @@ class Ticker(object):
         :type: str
         """
         
+        if not exchange:
+            raise ValueError("Invalid value for `exchange`, must not be `None`")
+
+
         self._exchange = exchange
 
     def to_dict(self):

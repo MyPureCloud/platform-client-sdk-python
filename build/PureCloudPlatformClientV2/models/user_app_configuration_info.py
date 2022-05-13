@@ -73,6 +73,7 @@ class UserAppConfigurationInfo(object):
         :type: IntegrationConfiguration
         """
         
+
         self._current = current
 
     @property
@@ -96,6 +97,7 @@ class UserAppConfigurationInfo(object):
         :type: EffectiveConfiguration
         """
         
+
         self._effective = effective
 
     def to_dict(self):

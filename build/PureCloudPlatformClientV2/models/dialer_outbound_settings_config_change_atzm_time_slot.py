@@ -73,6 +73,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlot(object):
         :type: str
         """
         
+
         self._earliest_callable_time = earliest_callable_time
 
     @property
@@ -96,6 +97,7 @@ class DialerOutboundSettingsConfigChangeAtzmTimeSlot(object):
         :type: str
         """
         
+
         self._latest_callable_time = latest_callable_time
 
     def to_dict(self):

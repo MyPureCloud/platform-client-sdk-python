@@ -85,6 +85,7 @@ class BuAgentScheduleQueryResponse(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -108,6 +109,7 @@ class BuAgentScheduleQueryResponse(object):
         :type: list[BuAgentScheduleShift]
         """
         
+
         self._shifts = shifts
 
     @property
@@ -131,6 +133,7 @@ class BuAgentScheduleQueryResponse(object):
         :type: list[BuFullDayTimeOffMarker]
         """
         
+
         self._full_day_time_off_markers = full_day_time_off_markers
 
     @property
@@ -154,6 +157,7 @@ class BuAgentScheduleQueryResponse(object):
         :type: WorkPlanReference
         """
         
+
         self._work_plan = work_plan
 
     @property
@@ -177,6 +181,7 @@ class BuAgentScheduleQueryResponse(object):
         :type: list[WorkPlanReference]
         """
         
+
         self._work_plans_per_week = work_plans_per_week
 
     @property
@@ -200,6 +205,7 @@ class BuAgentScheduleQueryResponse(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

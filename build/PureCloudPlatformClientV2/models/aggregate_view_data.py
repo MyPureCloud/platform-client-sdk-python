@@ -73,6 +73,7 @@ class AggregateViewData(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -96,6 +97,7 @@ class AggregateViewData(object):
         :type: StatisticalSummary
         """
         
+
         self._stats = stats
 
     def to_dict(self):

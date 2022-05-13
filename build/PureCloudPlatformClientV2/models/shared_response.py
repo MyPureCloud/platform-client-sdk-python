@@ -82,6 +82,7 @@ class SharedResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class SharedResponse(object):
         :type: str
         """
         
+
         self._download_uri = download_uri
 
     @property
@@ -128,6 +130,7 @@ class SharedResponse(object):
         :type: str
         """
         
+
         self._view_uri = view_uri
 
     @property
@@ -151,6 +154,7 @@ class SharedResponse(object):
         :type: Document
         """
         
+
         self._document = document
 
     @property
@@ -174,6 +178,7 @@ class SharedResponse(object):
         :type: Share
         """
         
+
         self._share = share
 
     def to_dict(self):

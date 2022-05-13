@@ -73,6 +73,7 @@ class LocationImage(object):
         :type: str
         """
         
+
         self._resolution = resolution
 
     @property
@@ -96,6 +97,7 @@ class LocationImage(object):
         :type: str
         """
         
+
         self._image_uri = image_uri
 
     def to_dict(self):

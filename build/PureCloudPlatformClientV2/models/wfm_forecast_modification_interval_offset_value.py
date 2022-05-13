@@ -73,6 +73,10 @@ class WfmForecastModificationIntervalOffsetValue(object):
         :type: int
         """
         
+        if not interval_index:
+            raise ValueError("Invalid value for `interval_index`, must not be `None`")
+
+
         self._interval_index = interval_index
 
     @property
@@ -96,6 +100,10 @@ class WfmForecastModificationIntervalOffsetValue(object):
         :type: float
         """
         
+        if not value:
+            raise ValueError("Invalid value for `value`, must not be `None`")
+
+
         self._value = value
 
     def to_dict(self):

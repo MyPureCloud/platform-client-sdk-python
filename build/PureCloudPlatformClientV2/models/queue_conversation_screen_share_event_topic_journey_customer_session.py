@@ -73,6 +73,7 @@ class QueueConversationScreenShareEventTopicJourneyCustomerSession(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class QueueConversationScreenShareEventTopicJourneyCustomerSession(object):
         :type: str
         """
         
+
         self._type = type
 
     def to_dict(self):

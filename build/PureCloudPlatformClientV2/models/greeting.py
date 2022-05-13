@@ -103,6 +103,7 @@ class Greeting(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -126,6 +127,7 @@ class Greeting(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -203,6 +205,10 @@ class Greeting(object):
         :type: DomainEntity
         """
         
+        if not owner:
+            raise ValueError("Invalid value for `owner`, must not be `None`")
+
+
         self._owner = owner
 
     @property
@@ -226,6 +232,7 @@ class Greeting(object):
         :type: GreetingAudioFile
         """
         
+
         self._audio_file = audio_file
 
     @property
@@ -249,6 +256,7 @@ class Greeting(object):
         :type: str
         """
         
+
         self._audio_tts = audio_tts
 
     @property
@@ -272,6 +280,7 @@ class Greeting(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -295,6 +304,7 @@ class Greeting(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -318,6 +328,7 @@ class Greeting(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     @property
@@ -341,6 +352,7 @@ class Greeting(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -364,6 +376,7 @@ class Greeting(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

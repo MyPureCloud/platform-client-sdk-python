@@ -97,6 +97,7 @@ class MessagingSticker(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class MessagingSticker(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,10 @@ class MessagingSticker(object):
         :type: int
         """
         
+        if not provider_sticker_id:
+            raise ValueError("Invalid value for `provider_sticker_id`, must not be `None`")
+
+
         self._provider_sticker_id = provider_sticker_id
 
     @property
@@ -166,6 +172,7 @@ class MessagingSticker(object):
         :type: int
         """
         
+
         self._provider_package_id = provider_package_id
 
     @property
@@ -189,6 +196,7 @@ class MessagingSticker(object):
         :type: str
         """
         
+
         self._package_name = package_name
 
     @property
@@ -266,6 +274,7 @@ class MessagingSticker(object):
         :type: int
         """
         
+
         self._provider_version = provider_version
 
     @property
@@ -289,6 +298,7 @@ class MessagingSticker(object):
         :type: str
         """
         
+
         self._uri_location = uri_location
 
     @property
@@ -312,6 +322,7 @@ class MessagingSticker(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

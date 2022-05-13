@@ -97,6 +97,7 @@ class FacebookIntegrationRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,10 @@ class FacebookIntegrationRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -143,6 +148,7 @@ class FacebookIntegrationRequest(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -166,6 +172,7 @@ class FacebookIntegrationRequest(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -189,6 +196,7 @@ class FacebookIntegrationRequest(object):
         :type: str
         """
         
+
         self._page_access_token = page_access_token
 
     @property
@@ -212,6 +220,7 @@ class FacebookIntegrationRequest(object):
         :type: str
         """
         
+
         self._user_access_token = user_access_token
 
     @property
@@ -235,6 +244,7 @@ class FacebookIntegrationRequest(object):
         :type: str
         """
         
+
         self._page_id = page_id
 
     @property
@@ -258,6 +268,7 @@ class FacebookIntegrationRequest(object):
         :type: str
         """
         
+
         self._app_id = app_id
 
     @property
@@ -281,6 +292,7 @@ class FacebookIntegrationRequest(object):
         :type: str
         """
         
+
         self._app_secret = app_secret
 
     @property
@@ -304,6 +316,7 @@ class FacebookIntegrationRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

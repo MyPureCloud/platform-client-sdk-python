@@ -100,6 +100,7 @@ class VoicemailRetentionPolicy(object):
         :type: int
         """
         
+
         self._number_of_days = number_of_days
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class ArchitectPromptNotificationPromptNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class ArchitectPromptNotificationPromptNotification(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -125,6 +127,7 @@ class ArchitectPromptNotificationPromptNotification(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -148,6 +151,7 @@ class ArchitectPromptNotificationPromptNotification(object):
         :type: ArchitectPromptNotificationArchitectOperation
         """
         
+
         self._current_operation = current_operation
 
     def to_dict(self):

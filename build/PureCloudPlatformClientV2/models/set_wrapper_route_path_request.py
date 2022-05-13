@@ -70,6 +70,7 @@ class SetWrapperRoutePathRequest(object):
         :type: list[RoutePathRequest]
         """
         
+
         self._values = values
 
     def to_dict(self):

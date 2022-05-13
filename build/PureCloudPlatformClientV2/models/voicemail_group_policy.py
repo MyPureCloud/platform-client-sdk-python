@@ -97,6 +97,7 @@ class VoicemailGroupPolicy(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -120,6 +121,7 @@ class VoicemailGroupPolicy(object):
         :type: Group
         """
         
+
         self._group = group
 
     @property
@@ -143,6 +145,7 @@ class VoicemailGroupPolicy(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -166,6 +169,7 @@ class VoicemailGroupPolicy(object):
         :type: bool
         """
         
+
         self._send_email_notifications = send_email_notifications
 
     @property
@@ -189,6 +193,7 @@ class VoicemailGroupPolicy(object):
         :type: bool
         """
         
+
         self._disable_email_pii = disable_email_pii
 
     @property
@@ -212,6 +217,7 @@ class VoicemailGroupPolicy(object):
         :type: int
         """
         
+
         self._rotate_calls_secs = rotate_calls_secs
 
     @property
@@ -235,6 +241,7 @@ class VoicemailGroupPolicy(object):
         :type: int
         """
         
+
         self._stop_ringing_after_rotations = stop_ringing_after_rotations
 
     @property
@@ -258,6 +265,7 @@ class VoicemailGroupPolicy(object):
         :type: str
         """
         
+
         self._overflow_group_id = overflow_group_id
 
     @property
@@ -308,6 +316,7 @@ class VoicemailGroupPolicy(object):
         :type: str
         """
         
+
         self._interactive_response_prompt_id = interactive_response_prompt_id
 
     def to_dict(self):

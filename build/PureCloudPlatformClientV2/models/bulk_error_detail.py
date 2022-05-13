@@ -76,6 +76,7 @@ class BulkErrorDetail(object):
         :type: str
         """
         
+
         self._field_name = field_name
 
     @property
@@ -99,6 +100,7 @@ class BulkErrorDetail(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -122,6 +124,7 @@ class BulkErrorDetail(object):
         :type: str
         """
         
+
         self._message = message
 
     def to_dict(self):

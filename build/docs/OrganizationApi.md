@@ -38,7 +38,7 @@ Fetch field config for an entity type
 
 Wraps GET /api/v2/fieldconfig 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -88,7 +88,7 @@ Get the list of domains that will be allowed to embed PureCloud applications
 
 Wraps GET /api/v2/organizations/embeddedintegration 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -230,6 +230,8 @@ Get the available limit change requests
 
 Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
 
+
+
 Wraps GET /api/v2/organizations/limits/changerequests 
 
 Requires ANY permissions: 
@@ -249,8 +251,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OrganizationApi()
-after = 789 # int | Timestamp indicating the date to begin after when searching for requests. (optional)
-before = 789 # int | Timestamp indicating the date to end before when searching for requests. (optional)
+after = 56 # int | Timestamp indicating the date to begin after when searching for requests. (optional)
+before = 56 # int | Timestamp indicating the date to end before when searching for requests. (optional)
 status = 'status_example' # str | Status of the request to be filtered by (optional)
 page_size = 25 # int | Page Size (optional) (default to 25)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
@@ -291,7 +293,7 @@ Get a link to the limit documentation
 
 Wraps GET /api/v2/organizations/limits/docs 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -388,7 +390,7 @@ Get the default limits in a namespace for an organization
 
 Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -428,7 +430,7 @@ except ApiException as e:
 
 <a name="get_organizations_limits_namespaces"></a>
 
-## [**PagedNamespaceListing**](PagedNamespaceListing.html) get_organizations_limits_namespaces(page_size=page_size, page_number=page_number)
+## object** get_organizations_limits_namespaces(page_size=page_size, page_number=page_number)
 
 
 
@@ -477,7 +479,7 @@ except ApiException as e:
 
 ### Return type
 
-[**PagedNamespaceListing**](PagedNamespaceListing.html)
+**object**
 
 <a name="get_organizations_me"></a>
 
@@ -491,7 +493,7 @@ Get organization.
 
 Wraps GET /api/v2/organizations/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -537,7 +539,7 @@ Use PUT /api/v2/organizations/embeddedintegration instead
 
 Wraps GET /api/v2/organizations/whitelist 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

@@ -82,6 +82,7 @@ class CredentialType(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class CredentialType(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class CredentialType(object):
         :type: object
         """
         
+
         self._properties = properties
 
     @property
@@ -151,6 +154,7 @@ class CredentialType(object):
         :type: list[str]
         """
         
+
         self._display_order = display_order
 
     @property
@@ -174,6 +178,7 @@ class CredentialType(object):
         :type: list[str]
         """
         
+
         self._required = required
 
     def to_dict(self):

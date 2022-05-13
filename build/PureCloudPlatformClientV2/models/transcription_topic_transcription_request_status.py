@@ -73,6 +73,7 @@ class TranscriptionTopicTranscriptionRequestStatus(object):
         :type: int
         """
         
+
         self._offset_ms = offset_ms
 
     @property

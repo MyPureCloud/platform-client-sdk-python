@@ -70,6 +70,7 @@ class LineUserId(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     def to_dict(self):

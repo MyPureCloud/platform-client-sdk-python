@@ -130,6 +130,7 @@ class ConversationChannel(object):
         :type: str
         """
         
+
         self._platform = platform
 
     def to_dict(self):

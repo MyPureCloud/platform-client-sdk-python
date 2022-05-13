@@ -79,6 +79,7 @@ class Parameter(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -156,6 +157,7 @@ class Parameter(object):
         :type: bool
         """
         
+
         self._required = required
 
     def to_dict(self):

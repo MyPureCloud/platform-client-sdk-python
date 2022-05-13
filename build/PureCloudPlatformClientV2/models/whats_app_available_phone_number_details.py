@@ -76,6 +76,10 @@ class WhatsAppAvailablePhoneNumberDetails(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -99,6 +103,7 @@ class WhatsAppAvailablePhoneNumberDetails(object):
         :type: str
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -122,6 +127,10 @@ class WhatsAppAvailablePhoneNumberDetails(object):
         :type: str
         """
         
+        if not status:
+            raise ValueError("Invalid value for `status`, must not be `None`")
+
+
         self._status = status
 
     def to_dict(self):

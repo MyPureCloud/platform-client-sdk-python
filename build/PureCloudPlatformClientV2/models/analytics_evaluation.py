@@ -109,6 +109,7 @@ class AnalyticsEvaluation(object):
         :type: str
         """
         
+
         self._calibration_id = calibration_id
 
     @property
@@ -132,6 +133,7 @@ class AnalyticsEvaluation(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     @property
@@ -155,6 +157,7 @@ class AnalyticsEvaluation(object):
         :type: bool
         """
         
+
         self._deleted = deleted
 
     @property
@@ -178,6 +181,7 @@ class AnalyticsEvaluation(object):
         :type: str
         """
         
+
         self._evaluation_id = evaluation_id
 
     @property
@@ -201,6 +205,7 @@ class AnalyticsEvaluation(object):
         :type: str
         """
         
+
         self._evaluator_id = evaluator_id
 
     @property
@@ -224,6 +229,7 @@ class AnalyticsEvaluation(object):
         :type: datetime
         """
         
+
         self._event_time = event_time
 
     @property
@@ -247,6 +253,7 @@ class AnalyticsEvaluation(object):
         :type: str
         """
         
+
         self._form_id = form_id
 
     @property
@@ -270,6 +277,7 @@ class AnalyticsEvaluation(object):
         :type: str
         """
         
+
         self._form_name = form_name
 
     @property
@@ -293,6 +301,7 @@ class AnalyticsEvaluation(object):
         :type: str
         """
         
+
         self._queue_id = queue_id
 
     @property
@@ -316,6 +325,7 @@ class AnalyticsEvaluation(object):
         :type: bool
         """
         
+
         self._released = released
 
     @property
@@ -339,6 +349,7 @@ class AnalyticsEvaluation(object):
         :type: bool
         """
         
+
         self._rescored = rescored
 
     @property
@@ -362,6 +373,7 @@ class AnalyticsEvaluation(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -385,6 +397,7 @@ class AnalyticsEvaluation(object):
         :type: int
         """
         
+
         self._o_total_critical_score = o_total_critical_score
 
     @property
@@ -408,6 +421,7 @@ class AnalyticsEvaluation(object):
         :type: int
         """
         
+
         self._o_total_score = o_total_score
 
     def to_dict(self):

@@ -100,6 +100,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -146,6 +148,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: JourneyWebEventsNotificationExternalContact
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -169,6 +172,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: datetime
         """
         
+
         self._created_date = created_date
 
     @property
@@ -192,6 +196,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: str
         """
         
+
         self._customer_id = customer_id
 
     @property
@@ -215,6 +220,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: str
         """
         
+
         self._customer_id_type = customer_id_type
 
     @property
@@ -238,6 +244,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: JourneyWebEventsNotificationSession
         """
         
+
         self._session = session
 
     @property
@@ -288,6 +295,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: JourneyWebEventsNotificationWebMessage
         """
         
+
         self._web_event = web_event
 
     @property
@@ -311,6 +319,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: JourneyWebEventsNotificationWebActionMessage
         """
         
+
         self._web_action_event = web_action_event
 
     @property
@@ -334,6 +343,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :type: JourneyWebEventsNotificationOutcomeAchievedMessage
         """
         
+
         self._outcome_achieved_event = outcome_achieved_event
 
     def to_dict(self):

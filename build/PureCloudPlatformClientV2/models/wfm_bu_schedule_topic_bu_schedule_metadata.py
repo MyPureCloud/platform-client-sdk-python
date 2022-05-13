@@ -41,6 +41,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'week_date': 'datetime',
             'week_count': 'int',
             'description': 'str',
             'published': 'bool',
@@ -52,6 +53,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
 
         self.attribute_map = {
             'id': 'id',
+            'week_date': 'weekDate',
             'week_count': 'weekCount',
             'description': 'description',
             'published': 'published',
@@ -62,6 +64,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         }
 
         self._id = None
+        self._week_date = None
         self._week_count = None
         self._description = None
         self._published = None
@@ -91,7 +94,32 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         :type: str
         """
         
+
         self._id = id
+
+    @property
+    def week_date(self):
+        """
+        Gets the week_date of this WfmBuScheduleTopicBuScheduleMetadata.
+
+
+        :return: The week_date of this WfmBuScheduleTopicBuScheduleMetadata.
+        :rtype: datetime
+        """
+        return self._week_date
+
+    @week_date.setter
+    def week_date(self, week_date):
+        """
+        Sets the week_date of this WfmBuScheduleTopicBuScheduleMetadata.
+
+
+        :param week_date: The week_date of this WfmBuScheduleTopicBuScheduleMetadata.
+        :type: datetime
+        """
+        
+
+        self._week_date = week_date
 
     @property
     def week_count(self):
@@ -114,6 +142,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         :type: int
         """
         
+
         self._week_count = week_count
 
     @property
@@ -137,6 +166,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -160,6 +190,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -183,6 +214,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         :type: WfmBuScheduleTopicBuShortTermForecastReference
         """
         
+
         self._short_term_forecast = short_term_forecast
 
     @property
@@ -206,6 +238,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         :type: list[WfmBuScheduleTopicBuManagementUnitScheduleSummary]
         """
         
+
         self._management_units = management_units
 
     @property
@@ -229,6 +262,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         :type: WfmBuScheduleTopicBuScheduleGenerationResultSummary
         """
         
+
         self._generation_results = generation_results
 
     @property
@@ -252,6 +286,7 @@ class WfmBuScheduleTopicBuScheduleMetadata(object):
         :type: WfmBuScheduleTopicWfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

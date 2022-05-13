@@ -94,6 +94,7 @@ class SearchCriteria(object):
         :type: str
         """
         
+
         self._end_value = end_value
 
     @property
@@ -117,6 +118,7 @@ class SearchCriteria(object):
         :type: list[str]
         """
         
+
         self._values = values
 
     @property
@@ -140,6 +142,7 @@ class SearchCriteria(object):
         :type: str
         """
         
+
         self._start_value = start_value
 
     @property
@@ -163,6 +166,7 @@ class SearchCriteria(object):
         :type: list[str]
         """
         
+
         self._fields = fields
 
     @property
@@ -186,6 +190,7 @@ class SearchCriteria(object):
         :type: str
         """
         
+
         self._value = value
 
     @property
@@ -236,6 +241,7 @@ class SearchCriteria(object):
         :type: list[SearchCriteria]
         """
         
+
         self._group = group
 
     @property
@@ -259,6 +265,7 @@ class SearchCriteria(object):
         :type: str
         """
         
+
         self._date_format = date_format
 
     @property

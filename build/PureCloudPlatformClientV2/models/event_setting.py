@@ -73,6 +73,7 @@ class EventSetting(object):
         :type: TypingSetting
         """
         
+
         self._typing = typing
 
     @property
@@ -96,6 +97,7 @@ class EventSetting(object):
         :type: PresenceSetting
         """
         
+
         self._presence = presence
 
     def to_dict(self):

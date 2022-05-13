@@ -79,6 +79,10 @@ class UserRoutingSkillPost(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -102,6 +106,10 @@ class UserRoutingSkillPost(object):
         :type: float
         """
         
+        if not proficiency:
+            raise ValueError("Invalid value for `proficiency`, must not be `None`")
+
+
         self._proficiency = proficiency
 
     @property
@@ -125,6 +133,7 @@ class UserRoutingSkillPost(object):
         :type: str
         """
         
+
         self._skill_uri = skill_uri
 
     @property
@@ -148,6 +157,7 @@ class UserRoutingSkillPost(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

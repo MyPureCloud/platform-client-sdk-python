@@ -91,6 +91,7 @@ class ResponseSet(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,10 @@ class ResponseSet(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -137,6 +142,7 @@ class ResponseSet(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -160,6 +166,7 @@ class ResponseSet(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -183,6 +190,7 @@ class ResponseSet(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -206,6 +214,10 @@ class ResponseSet(object):
         :type: dict(str, Reaction)
         """
         
+        if not responses:
+            raise ValueError("Invalid value for `responses`, must not be `None`")
+
+
         self._responses = responses
 
     @property
@@ -229,6 +241,7 @@ class ResponseSet(object):
         :type: bool
         """
         
+
         self._beep_detection_enabled = beep_detection_enabled
 
     @property
@@ -252,6 +265,7 @@ class ResponseSet(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

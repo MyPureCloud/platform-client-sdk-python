@@ -103,6 +103,7 @@ class EvaluationDetailQueryFilter(object):
         :type: list[EvaluationDetailQueryClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -126,6 +127,7 @@ class EvaluationDetailQueryFilter(object):
         :type: list[EvaluationDetailQueryPredicate]
         """
         
+
         self._predicates = predicates
 
     def to_dict(self):

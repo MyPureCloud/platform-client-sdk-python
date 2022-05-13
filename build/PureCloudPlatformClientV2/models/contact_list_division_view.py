@@ -91,6 +91,7 @@ class ContactListDivisionView(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class ContactListDivisionView(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class ContactListDivisionView(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -160,6 +163,10 @@ class ContactListDivisionView(object):
         :type: list[str]
         """
         
+        if not column_names:
+            raise ValueError("Invalid value for `column_names`, must not be `None`")
+
+
         self._column_names = column_names
 
     @property
@@ -183,6 +190,7 @@ class ContactListDivisionView(object):
         :type: list[ContactPhoneNumberColumn]
         """
         
+
         self._phone_columns = phone_columns
 
     @property
@@ -206,6 +214,7 @@ class ContactListDivisionView(object):
         :type: ImportStatus
         """
         
+
         self._import_status = import_status
 
     @property
@@ -229,6 +238,7 @@ class ContactListDivisionView(object):
         :type: int
         """
         
+
         self._size = size
 
     @property
@@ -252,6 +262,7 @@ class ContactListDivisionView(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

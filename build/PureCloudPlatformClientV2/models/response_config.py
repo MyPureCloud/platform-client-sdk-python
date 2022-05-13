@@ -79,6 +79,7 @@ class ResponseConfig(object):
         :type: dict(str, str)
         """
         
+
         self._translation_map = translation_map
 
     @property
@@ -102,6 +103,7 @@ class ResponseConfig(object):
         :type: dict(str, str)
         """
         
+
         self._translation_map_defaults = translation_map_defaults
 
     @property
@@ -125,6 +127,7 @@ class ResponseConfig(object):
         :type: str
         """
         
+
         self._success_template = success_template
 
     @property
@@ -148,6 +151,7 @@ class ResponseConfig(object):
         :type: str
         """
         
+
         self._success_template_uri = success_template_uri
 
     def to_dict(self):

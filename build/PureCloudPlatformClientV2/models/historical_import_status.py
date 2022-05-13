@@ -94,6 +94,7 @@ class HistoricalImportStatus(object):
         :type: str
         """
         
+
         self._request_id = request_id
 
     @property
@@ -117,6 +118,7 @@ class HistoricalImportStatus(object):
         :type: datetime
         """
         
+
         self._date_import_ended = date_import_ended
 
     @property
@@ -140,6 +142,7 @@ class HistoricalImportStatus(object):
         :type: datetime
         """
         
+
         self._date_import_started = date_import_started
 
     @property
@@ -190,6 +193,7 @@ class HistoricalImportStatus(object):
         :type: str
         """
         
+
         self._error = error
 
     @property
@@ -213,6 +217,7 @@ class HistoricalImportStatus(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -236,6 +241,7 @@ class HistoricalImportStatus(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -259,6 +265,7 @@ class HistoricalImportStatus(object):
         :type: bool
         """
         
+
         self._active = active
 
     @property

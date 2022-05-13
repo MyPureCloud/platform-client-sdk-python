@@ -76,7 +76,7 @@ Delete auth token used to make the request.
 
 Wraps DELETE /api/v2/tokens/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -121,7 +121,7 @@ Fetch information about the current token
 
 Wraps GET /api/v2/tokens/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -167,7 +167,7 @@ Verify user token
 
 Wraps HEAD /api/v2/tokens/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example

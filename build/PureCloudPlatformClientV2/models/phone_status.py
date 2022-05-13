@@ -97,6 +97,7 @@ class PhoneStatus(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class PhoneStatus(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -197,6 +199,7 @@ class PhoneStatus(object):
         :type: str
         """
         
+
         self._event_creation_time = event_creation_time
 
     @property
@@ -220,6 +223,7 @@ class PhoneStatus(object):
         :type: ProvisionInfo
         """
         
+
         self._provision = provision
 
     @property
@@ -243,6 +247,7 @@ class PhoneStatus(object):
         :type: list[LineStatus]
         """
         
+
         self._line_statuses = line_statuses
 
     @property
@@ -293,6 +298,7 @@ class PhoneStatus(object):
         :type: DomainEntityRef
         """
         
+
         self._edge = edge
 
     @property
@@ -316,6 +322,7 @@ class PhoneStatus(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

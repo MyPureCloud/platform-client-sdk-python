@@ -94,6 +94,7 @@ class WorkPlanRotationResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class WorkPlanRotationResponse(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class WorkPlanRotationResponse(object):
         :type: bool
         """
         
+
         self._enabled = enabled
 
     @property
@@ -163,6 +166,7 @@ class WorkPlanRotationResponse(object):
         :type: DateRangeWithOptionalEnd
         """
         
+
         self._date_range = date_range
 
     @property
@@ -186,6 +190,7 @@ class WorkPlanRotationResponse(object):
         :type: WorkPlanPatternResponse
         """
         
+
         self._pattern = pattern
 
     @property
@@ -209,6 +214,7 @@ class WorkPlanRotationResponse(object):
         :type: int
         """
         
+
         self._agent_count = agent_count
 
     @property
@@ -232,6 +238,7 @@ class WorkPlanRotationResponse(object):
         :type: list[WorkPlanRotationAgentResponse]
         """
         
+
         self._agents = agents
 
     @property
@@ -255,6 +262,7 @@ class WorkPlanRotationResponse(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     @property
@@ -278,6 +286,7 @@ class WorkPlanRotationResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

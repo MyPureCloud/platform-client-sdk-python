@@ -91,6 +91,7 @@ class UserConversationSummary(object):
         :type: str
         """
         
+
         self._user_id = user_id
 
     @property
@@ -114,6 +115,7 @@ class UserConversationSummary(object):
         :type: MediaSummary
         """
         
+
         self._call = call
 
     @property
@@ -137,6 +139,7 @@ class UserConversationSummary(object):
         :type: MediaSummary
         """
         
+
         self._callback = callback
 
     @property
@@ -160,6 +163,7 @@ class UserConversationSummary(object):
         :type: MediaSummary
         """
         
+
         self._email = email
 
     @property
@@ -183,6 +187,7 @@ class UserConversationSummary(object):
         :type: MediaSummary
         """
         
+
         self._message = message
 
     @property
@@ -206,6 +211,7 @@ class UserConversationSummary(object):
         :type: MediaSummary
         """
         
+
         self._chat = chat
 
     @property
@@ -229,6 +235,7 @@ class UserConversationSummary(object):
         :type: MediaSummary
         """
         
+
         self._social_expression = social_expression
 
     @property
@@ -252,6 +259,7 @@ class UserConversationSummary(object):
         :type: MediaSummary
         """
         
+
         self._video = video
 
     def to_dict(self):

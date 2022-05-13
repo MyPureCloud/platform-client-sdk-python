@@ -91,6 +91,10 @@ class LocationUpdateDefinition(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -114,6 +118,10 @@ class LocationUpdateDefinition(object):
         :type: int
         """
         
+        if not version:
+            raise ValueError("Invalid value for `version`, must not be `None`")
+
+
         self._version = version
 
     @property
@@ -164,6 +172,7 @@ class LocationUpdateDefinition(object):
         :type: list[str]
         """
         
+
         self._path = path
 
     @property
@@ -187,6 +196,7 @@ class LocationUpdateDefinition(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -210,6 +220,7 @@ class LocationUpdateDefinition(object):
         :type: str
         """
         
+
         self._contact_user = contact_user
 
     @property
@@ -233,6 +244,7 @@ class LocationUpdateDefinition(object):
         :type: LocationEmergencyNumber
         """
         
+
         self._emergency_number = emergency_number
 
     @property
@@ -256,6 +268,7 @@ class LocationUpdateDefinition(object):
         :type: LocationAddress
         """
         
+
         self._address = address
 
     def to_dict(self):

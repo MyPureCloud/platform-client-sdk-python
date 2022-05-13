@@ -73,6 +73,7 @@ class ConversationScreenShareEventTopicScoredAgent(object):
         :type: ConversationScreenShareEventTopicUriReference
         """
         
+
         self._agent = agent
 
     @property
@@ -96,6 +97,7 @@ class ConversationScreenShareEventTopicScoredAgent(object):
         :type: int
         """
         
+
         self._score = score
 
     def to_dict(self):

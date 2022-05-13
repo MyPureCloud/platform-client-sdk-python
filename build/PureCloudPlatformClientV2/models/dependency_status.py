@@ -97,6 +97,7 @@ class DependencyStatus(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class DependencyStatus(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class DependencyStatus(object):
         :type: User
         """
         
+
         self._user = user
 
     @property
@@ -166,6 +169,7 @@ class DependencyStatus(object):
         :type: DomainEntityRef
         """
         
+
         self._client = client
 
     @property
@@ -189,6 +193,7 @@ class DependencyStatus(object):
         :type: str
         """
         
+
         self._build_id = build_id
 
     @property
@@ -212,6 +217,7 @@ class DependencyStatus(object):
         :type: datetime
         """
         
+
         self._date_started = date_started
 
     @property
@@ -235,6 +241,7 @@ class DependencyStatus(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -285,6 +292,7 @@ class DependencyStatus(object):
         :type: list[FailedObject]
         """
         
+
         self._failed_objects = failed_objects
 
     @property
@@ -308,6 +316,7 @@ class DependencyStatus(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

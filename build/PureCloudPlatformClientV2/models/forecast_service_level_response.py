@@ -73,6 +73,7 @@ class ForecastServiceLevelResponse(object):
         :type: int
         """
         
+
         self._percent = percent
 
     @property
@@ -96,6 +97,7 @@ class ForecastServiceLevelResponse(object):
         :type: int
         """
         
+
         self._seconds = seconds
 
     def to_dict(self):

@@ -100,6 +100,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -146,6 +148,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: str
         """
         
+
         self._from_address = from_address
 
     @property
@@ -169,6 +172,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: str
         """
         
+
         self._to_address = to_address
 
     @property
@@ -219,6 +223,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: str
         """
         
+
         self._text_body = text_body
 
     @property
@@ -242,6 +247,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: MessagingTemplateRequest
         """
         
+
         self._messaging_template = messaging_template
 
     @property
@@ -265,6 +271,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: bool
         """
         
+
         self._use_existing_active_conversation = use_existing_active_conversation
 
     @property
@@ -288,6 +295,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: datetime
         """
         
+
         self._timestamp = timestamp
 
     @property
@@ -311,6 +319,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -334,6 +343,7 @@ class SendAgentlessOutboundMessageResponse(object):
         :type: AddressableEntityRef
         """
         
+
         self._user = user
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class BenefitAssessment(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class BenefitAssessment(object):
         :type: list[AddressableEntityRef]
         """
         
+
         self._queues = queues
 
     @property
@@ -134,6 +136,7 @@ class BenefitAssessment(object):
         :type: list[KeyPerformanceIndicatorAssessment]
         """
         
+
         self._kpi_assessments = kpi_assessments
 
     @property
@@ -184,6 +187,7 @@ class BenefitAssessment(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -207,6 +211,7 @@ class BenefitAssessment(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -230,6 +235,7 @@ class BenefitAssessment(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -88,6 +88,7 @@ class EdgeConnectionInfo(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -111,6 +112,7 @@ class EdgeConnectionInfo(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -134,6 +136,7 @@ class EdgeConnectionInfo(object):
         :type: str
         """
         
+
         self._interface_name = interface_name
 
     @property
@@ -157,6 +160,7 @@ class EdgeConnectionInfo(object):
         :type: str
         """
         
+
         self._interface_ip_address = interface_ip_address
 
     @property
@@ -180,6 +184,7 @@ class EdgeConnectionInfo(object):
         :type: list[str]
         """
         
+
         self._connection_errors = connection_errors
 
     @property
@@ -203,6 +208,7 @@ class EdgeConnectionInfo(object):
         :type: AddressableEntityRef
         """
         
+
         self._site = site
 
     @property
@@ -226,6 +232,7 @@ class EdgeConnectionInfo(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

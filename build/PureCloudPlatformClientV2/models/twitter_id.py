@@ -82,6 +82,7 @@ class TwitterId(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class TwitterId(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class TwitterId(object):
         :type: str
         """
         
+
         self._screen_name = screen_name
 
     @property
@@ -151,6 +154,7 @@ class TwitterId(object):
         :type: bool
         """
         
+
         self._verified = verified
 
     @property
@@ -174,6 +178,7 @@ class TwitterId(object):
         :type: str
         """
         
+
         self._profile_url = profile_url
 
     def to_dict(self):

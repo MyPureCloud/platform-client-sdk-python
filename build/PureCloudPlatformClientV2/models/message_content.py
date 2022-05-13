@@ -136,6 +136,7 @@ class MessageContent(object):
         :type: ContentLocation
         """
         
+
         self._location = location
 
     @property
@@ -159,6 +160,7 @@ class MessageContent(object):
         :type: ContentAttachment
         """
         
+
         self._attachment = attachment
 
     @property
@@ -182,6 +184,7 @@ class MessageContent(object):
         :type: ContentQuickReply
         """
         
+
         self._quick_reply = quick_reply
 
     @property
@@ -205,6 +208,7 @@ class MessageContent(object):
         :type: ContentButtonResponse
         """
         
+
         self._button_response = button_response
 
     @property
@@ -228,6 +232,7 @@ class MessageContent(object):
         :type: ContentGeneric
         """
         
+
         self._generic = generic
 
     @property
@@ -251,6 +256,7 @@ class MessageContent(object):
         :type: ContentList
         """
         
+
         self._list = list
 
     @property
@@ -274,6 +280,7 @@ class MessageContent(object):
         :type: ContentNotificationTemplate
         """
         
+
         self._template = template
 
     @property
@@ -297,6 +304,7 @@ class MessageContent(object):
         :type: list[ContentReaction]
         """
         
+
         self._reactions = reactions
 
     @property
@@ -320,6 +328,7 @@ class MessageContent(object):
         :type: MessagingRecipient
         """
         
+
         self._mention = mention
 
     @property
@@ -343,6 +352,7 @@ class MessageContent(object):
         :type: ContentPostback
         """
         
+
         self._postback = postback
 
     @property
@@ -366,6 +376,7 @@ class MessageContent(object):
         :type: ContentStory
         """
         
+
         self._story = story
 
     @property
@@ -389,6 +400,7 @@ class MessageContent(object):
         :type: ContentCard
         """
         
+
         self._card = card
 
     @property
@@ -412,6 +424,7 @@ class MessageContent(object):
         :type: ContentCarousel
         """
         
+
         self._carousel = carousel
 
     def to_dict(self):

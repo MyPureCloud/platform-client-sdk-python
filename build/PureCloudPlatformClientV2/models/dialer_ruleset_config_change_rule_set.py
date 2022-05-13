@@ -91,6 +91,7 @@ class DialerRulesetConfigChangeRuleSet(object):
         :type: DialerRulesetConfigChangeUriReference
         """
         
+
         self._contact_list = contact_list
 
     @property
@@ -114,6 +115,7 @@ class DialerRulesetConfigChangeRuleSet(object):
         :type: DialerRulesetConfigChangeUriReference
         """
         
+
         self._queue = queue
 
     @property
@@ -137,6 +139,7 @@ class DialerRulesetConfigChangeRuleSet(object):
         :type: list[DialerRulesetConfigChangeRule]
         """
         
+
         self._rules = rules
 
     @property
@@ -160,6 +163,7 @@ class DialerRulesetConfigChangeRuleSet(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -183,6 +187,7 @@ class DialerRulesetConfigChangeRuleSet(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -206,6 +211,7 @@ class DialerRulesetConfigChangeRuleSet(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -229,6 +235,7 @@ class DialerRulesetConfigChangeRuleSet(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -252,6 +259,7 @@ class DialerRulesetConfigChangeRuleSet(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

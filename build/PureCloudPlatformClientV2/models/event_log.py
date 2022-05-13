@@ -97,6 +97,7 @@ class EventLog(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class EventLog(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class EventLog(object):
         :type: DomainEntityRef
         """
         
+
         self._error_entity = error_entity
 
     @property
@@ -166,6 +169,7 @@ class EventLog(object):
         :type: DomainEntityRef
         """
         
+
         self._related_entity = related_entity
 
     @property
@@ -189,6 +193,7 @@ class EventLog(object):
         :type: datetime
         """
         
+
         self._timestamp = timestamp
 
     @property
@@ -266,6 +271,7 @@ class EventLog(object):
         :type: str
         """
         
+
         self._correlation_id = correlation_id
 
     @property
@@ -289,6 +295,7 @@ class EventLog(object):
         :type: EventMessage
         """
         
+
         self._event_message = event_message
 
     @property
@@ -312,6 +319,7 @@ class EventLog(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

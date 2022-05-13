@@ -79,6 +79,10 @@ class SupportedContentReference(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -102,6 +106,7 @@ class SupportedContentReference(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -125,6 +130,7 @@ class SupportedContentReference(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -148,6 +154,7 @@ class SupportedContentReference(object):
         :type: MediaTypes
         """
         
+
         self._media_types = media_types
 
     def to_dict(self):

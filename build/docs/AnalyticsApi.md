@@ -119,7 +119,7 @@ Delete a scheduled report job.
 
 Wraps DELETE /api/v2/analytics/reporting/schedules/{scheduleId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -237,7 +237,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 bot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.
 after = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
-page_size = '50' # str | Max number of entities to return. Maximum of 250 (optional) (default to 50)
+page_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')
 action_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)
 session_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session (optional)
 
@@ -256,7 +256,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **bot_flow_id** | **str**| ID of the bot flow. |  |
 | **after** | **str**| The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
-| **page_size** | **str**| Max number of entities to return. Maximum of 250 | [optional] [default to 50] |
+| **page_size** | **str**| Max number of entities to return. Maximum of 250 | [optional] [default to &#39;50&#39;] |
 | **action_id** | **str**| Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
 | **session_id** | **str**| Optional session ID to get the reporting turns for a particular session | [optional]  |
 {: class="table table-striped"}
@@ -742,9 +742,11 @@ Get a list of report formats
 
 Get a list of report formats.
 
+
+
 Wraps GET /api/v2/analytics/reporting/reportformats 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -790,7 +792,7 @@ Get a scheduled report job.
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -840,7 +842,7 @@ Get list of completed scheduled report jobs.
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -894,7 +896,7 @@ Get most recently completed scheduled report job.
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -942,9 +944,11 @@ A completed scheduled report job
 
 A completed scheduled report job.
 
+
+
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -993,6 +997,8 @@ except ApiException as e:
 Get a list of scheduled report jobs
 
 Get a list of scheduled report jobs.
+
+
 
 Wraps GET /api/v2/analytics/reporting/schedules 
 
@@ -1049,7 +1055,7 @@ Get AnalyticsReportingSettings for an organization
 
 Wraps GET /api/v2/analytics/reporting/settings 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1095,7 +1101,7 @@ Get a list of report time periods.
 
 Wraps GET /api/v2/analytics/reporting/timeperiods 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1911,6 +1917,8 @@ Generate a view export request
 
 This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
 
+
+
 Wraps POST /api/v2/analytics/reporting/exports 
 
 Requires ALL permissions: 
@@ -2012,6 +2020,8 @@ except ApiException as e:
 Create a scheduled report job
 
 Create a scheduled report job.
+
+
 
 Wraps POST /api/v2/analytics/reporting/schedules 
 

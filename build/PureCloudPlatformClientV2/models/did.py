@@ -118,6 +118,7 @@ class DID(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -141,6 +142,10 @@ class DID(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -164,6 +169,7 @@ class DID(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -187,6 +193,7 @@ class DID(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -210,6 +217,7 @@ class DID(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -233,6 +241,7 @@ class DID(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -256,6 +265,7 @@ class DID(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -279,6 +289,7 @@ class DID(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -302,6 +313,7 @@ class DID(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -352,6 +364,7 @@ class DID(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -375,6 +388,7 @@ class DID(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -398,6 +412,7 @@ class DID(object):
         :type: str
         """
         
+
         self._phone_number = phone_number
 
     @property
@@ -421,6 +436,7 @@ class DID(object):
         :type: DomainEntityRef
         """
         
+
         self._did_pool = did_pool
 
     @property
@@ -444,6 +460,7 @@ class DID(object):
         :type: DomainEntityRef
         """
         
+
         self._owner = owner
 
     @property
@@ -494,6 +511,7 @@ class DID(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

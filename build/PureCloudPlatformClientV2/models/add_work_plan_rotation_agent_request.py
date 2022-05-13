@@ -76,6 +76,10 @@ class AddWorkPlanRotationAgentRequest(object):
         :type: str
         """
         
+        if not user_id:
+            raise ValueError("Invalid value for `user_id`, must not be `None`")
+
+
         self._user_id = user_id
 
     @property
@@ -99,6 +103,10 @@ class AddWorkPlanRotationAgentRequest(object):
         :type: DateRangeWithOptionalEnd
         """
         
+        if not date_range:
+            raise ValueError("Invalid value for `date_range`, must not be `None`")
+
+
         self._date_range = date_range
 
     @property
@@ -122,6 +130,10 @@ class AddWorkPlanRotationAgentRequest(object):
         :type: int
         """
         
+        if not position:
+            raise ValueError("Invalid value for `position`, must not be `None`")
+
+
         self._position = position
 
     def to_dict(self):

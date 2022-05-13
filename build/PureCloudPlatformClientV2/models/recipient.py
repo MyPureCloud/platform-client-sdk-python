@@ -94,6 +94,7 @@ class Recipient(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class Recipient(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class Recipient(object):
         :type: Flow
         """
         
+
         self._flow = flow
 
     @property
@@ -163,6 +166,7 @@ class Recipient(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -186,6 +190,7 @@ class Recipient(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -209,6 +214,7 @@ class Recipient(object):
         :type: User
         """
         
+
         self._created_by = created_by
 
     @property
@@ -232,6 +238,7 @@ class Recipient(object):
         :type: User
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -282,6 +289,7 @@ class Recipient(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

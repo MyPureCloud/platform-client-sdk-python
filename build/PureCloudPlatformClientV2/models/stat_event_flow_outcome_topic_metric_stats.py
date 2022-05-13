@@ -76,6 +76,7 @@ class StatEventFlowOutcomeTopicMetricStats(object):
         :type: str
         """
         
+
         self._metric = metric
 
     @property
@@ -99,6 +100,7 @@ class StatEventFlowOutcomeTopicMetricStats(object):
         :type: str
         """
         
+
         self._qualifier = qualifier
 
     @property
@@ -122,6 +124,7 @@ class StatEventFlowOutcomeTopicMetricStats(object):
         :type: dict(str, float)
         """
         
+
         self._stats = stats
 
     def to_dict(self):

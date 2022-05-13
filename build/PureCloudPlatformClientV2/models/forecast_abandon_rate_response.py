@@ -70,6 +70,7 @@ class ForecastAbandonRateResponse(object):
         :type: int
         """
         
+
         self._percent = percent
 
     def to_dict(self):

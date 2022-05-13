@@ -70,6 +70,7 @@ class BuScheduleListing(object):
         :type: list[BuScheduleListItem]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

@@ -94,6 +94,7 @@ class ContactListFilter(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,10 @@ class ContactListFilter(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -140,6 +145,7 @@ class ContactListFilter(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -163,6 +169,7 @@ class ContactListFilter(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -186,6 +193,7 @@ class ContactListFilter(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -209,6 +217,10 @@ class ContactListFilter(object):
         :type: DomainEntityRef
         """
         
+        if not contact_list:
+            raise ValueError("Invalid value for `contact_list`, must not be `None`")
+
+
         self._contact_list = contact_list
 
     @property
@@ -232,6 +244,7 @@ class ContactListFilter(object):
         :type: list[ContactListFilterClause]
         """
         
+
         self._clauses = clauses
 
     @property
@@ -282,6 +295,7 @@ class ContactListFilter(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

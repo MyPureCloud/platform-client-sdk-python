@@ -97,6 +97,10 @@ class JourneyPage(object):
         :type: str
         """
         
+        if not url:
+            raise ValueError("Invalid value for `url`, must not be `None`")
+
+
         self._url = url
 
     @property
@@ -120,6 +124,7 @@ class JourneyPage(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -143,6 +148,10 @@ class JourneyPage(object):
         :type: str
         """
         
+        if not domain:
+            raise ValueError("Invalid value for `domain`, must not be `None`")
+
+
         self._domain = domain
 
     @property
@@ -166,6 +175,7 @@ class JourneyPage(object):
         :type: str
         """
         
+
         self._fragment = fragment
 
     @property
@@ -189,6 +199,10 @@ class JourneyPage(object):
         :type: str
         """
         
+        if not hostname:
+            raise ValueError("Invalid value for `hostname`, must not be `None`")
+
+
         self._hostname = hostname
 
     @property
@@ -212,6 +226,7 @@ class JourneyPage(object):
         :type: str
         """
         
+
         self._keywords = keywords
 
     @property
@@ -235,6 +250,7 @@ class JourneyPage(object):
         :type: str
         """
         
+
         self._lang = lang
 
     @property
@@ -258,6 +274,10 @@ class JourneyPage(object):
         :type: str
         """
         
+        if not pathname:
+            raise ValueError("Invalid value for `pathname`, must not be `None`")
+
+
         self._pathname = pathname
 
     @property
@@ -281,6 +301,7 @@ class JourneyPage(object):
         :type: str
         """
         
+
         self._query_string = query_string
 
     @property
@@ -304,6 +325,7 @@ class JourneyPage(object):
         :type: list[str]
         """
         
+
         self._breadcrumb = breadcrumb
 
     def to_dict(self):

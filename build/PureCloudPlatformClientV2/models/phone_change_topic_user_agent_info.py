@@ -76,6 +76,7 @@ class PhoneChangeTopicUserAgentInfo(object):
         :type: str
         """
         
+
         self._firmware_version = firmware_version
 
     @property
@@ -99,6 +100,7 @@ class PhoneChangeTopicUserAgentInfo(object):
         :type: str
         """
         
+
         self._manufacturer = manufacturer
 
     @property
@@ -122,6 +124,7 @@ class PhoneChangeTopicUserAgentInfo(object):
         :type: str
         """
         
+
         self._model = model
 
     def to_dict(self):

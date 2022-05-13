@@ -76,6 +76,7 @@ class Transcripts(object):
         :type: list[str]
         """
         
+
         self._exact_match = exact_match
 
     @property
@@ -99,6 +100,7 @@ class Transcripts(object):
         :type: list[str]
         """
         
+
         self._contains = contains
 
     @property
@@ -122,6 +124,7 @@ class Transcripts(object):
         :type: list[str]
         """
         
+
         self._does_not_contain = does_not_contain
 
     def to_dict(self):

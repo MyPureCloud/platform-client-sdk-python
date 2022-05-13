@@ -73,6 +73,7 @@ class JourneyWebActionEventsNotificationActionMapPageUrlCondition(object):
         :type: list[str]
         """
         
+
         self._values = values
 
     @property

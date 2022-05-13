@@ -124,6 +124,7 @@ class RecordingMetadata(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -147,6 +148,7 @@ class RecordingMetadata(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -170,6 +172,7 @@ class RecordingMetadata(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -193,6 +196,7 @@ class RecordingMetadata(object):
         :type: str
         """
         
+
         self._path = path
 
     @property
@@ -216,6 +220,7 @@ class RecordingMetadata(object):
         :type: str
         """
         
+
         self._start_time = start_time
 
     @property
@@ -239,6 +244,7 @@ class RecordingMetadata(object):
         :type: str
         """
         
+
         self._end_time = end_time
 
     @property
@@ -262,6 +268,7 @@ class RecordingMetadata(object):
         :type: str
         """
         
+
         self._media = media
 
     @property
@@ -285,6 +292,7 @@ class RecordingMetadata(object):
         :type: list[Annotation]
         """
         
+
         self._annotations = annotations
 
     @property
@@ -335,6 +343,7 @@ class RecordingMetadata(object):
         :type: datetime
         """
         
+
         self._restore_expiration_time = restore_expiration_time
 
     @property
@@ -358,6 +367,7 @@ class RecordingMetadata(object):
         :type: datetime
         """
         
+
         self._archive_date = archive_date
 
     @property
@@ -408,6 +418,7 @@ class RecordingMetadata(object):
         :type: datetime
         """
         
+
         self._delete_date = delete_date
 
     @property
@@ -431,6 +442,7 @@ class RecordingMetadata(object):
         :type: datetime
         """
         
+
         self._export_date = export_date
 
     @property
@@ -454,6 +466,7 @@ class RecordingMetadata(object):
         :type: datetime
         """
         
+
         self._exported_date = exported_date
 
     @property
@@ -477,6 +490,7 @@ class RecordingMetadata(object):
         :type: int
         """
         
+
         self._max_allowed_restorations_for_org = max_allowed_restorations_for_org
 
     @property
@@ -500,6 +514,7 @@ class RecordingMetadata(object):
         :type: int
         """
         
+
         self._remaining_restorations_allowed_for_org = remaining_restorations_allowed_for_org
 
     @property
@@ -523,6 +538,7 @@ class RecordingMetadata(object):
         :type: str
         """
         
+
         self._session_id = session_id
 
     @property
@@ -546,6 +562,7 @@ class RecordingMetadata(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

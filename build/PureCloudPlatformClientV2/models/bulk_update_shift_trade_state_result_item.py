@@ -85,6 +85,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
         :type: UserReference
         """
         
+
         self._reviewed_by = reviewed_by
 
     @property
@@ -158,6 +160,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
         :type: datetime
         """
         
+
         self._reviewed_date = reviewed_date
 
     @property
@@ -208,6 +211,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
         :type: WfmVersionedEntityMetadata
         """
         
+
         self._metadata = metadata
 
     def to_dict(self):

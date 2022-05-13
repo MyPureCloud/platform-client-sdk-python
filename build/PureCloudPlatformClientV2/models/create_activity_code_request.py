@@ -85,6 +85,10 @@ class CreateActivityCodeRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -135,6 +139,7 @@ class CreateActivityCodeRequest(object):
         :type: int
         """
         
+
         self._length_in_minutes = length_in_minutes
 
     @property
@@ -158,6 +163,7 @@ class CreateActivityCodeRequest(object):
         :type: bool
         """
         
+
         self._counts_as_paid_time = counts_as_paid_time
 
     @property
@@ -181,6 +187,7 @@ class CreateActivityCodeRequest(object):
         :type: bool
         """
         
+
         self._counts_as_work_time = counts_as_work_time
 
     @property
@@ -204,6 +211,7 @@ class CreateActivityCodeRequest(object):
         :type: bool
         """
         
+
         self._agent_time_off_selectable = agent_time_off_selectable
 
     def to_dict(self):

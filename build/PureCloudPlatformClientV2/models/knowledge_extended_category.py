@@ -97,6 +97,7 @@ class KnowledgeExtendedCategory(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,10 @@ class KnowledgeExtendedCategory(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -143,6 +148,7 @@ class KnowledgeExtendedCategory(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -166,6 +172,7 @@ class KnowledgeExtendedCategory(object):
         :type: KnowledgeBase
         """
         
+
         self._knowledge_base = knowledge_base
 
     @property
@@ -216,6 +223,7 @@ class KnowledgeExtendedCategory(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -239,6 +247,7 @@ class KnowledgeExtendedCategory(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -262,6 +271,7 @@ class KnowledgeExtendedCategory(object):
         :type: KnowledgeCategory
         """
         
+
         self._parent = parent
 
     @property
@@ -285,6 +295,7 @@ class KnowledgeExtendedCategory(object):
         :type: list[KnowledgeCategory]
         """
         
+
         self._children = children
 
     @property
@@ -308,6 +319,7 @@ class KnowledgeExtendedCategory(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

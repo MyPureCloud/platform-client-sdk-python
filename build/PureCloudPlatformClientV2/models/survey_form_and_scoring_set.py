@@ -73,6 +73,7 @@ class SurveyFormAndScoringSet(object):
         :type: SurveyForm
         """
         
+
         self._survey_form = survey_form
 
     @property
@@ -96,6 +97,7 @@ class SurveyFormAndScoringSet(object):
         :type: SurveyScoringSet
         """
         
+
         self._answers = answers
 
     def to_dict(self):

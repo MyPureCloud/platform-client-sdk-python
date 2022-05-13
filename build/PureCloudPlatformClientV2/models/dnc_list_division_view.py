@@ -91,6 +91,7 @@ class DncListDivisionView(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class DncListDivisionView(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class DncListDivisionView(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -160,6 +163,7 @@ class DncListDivisionView(object):
         :type: ImportStatus
         """
         
+
         self._import_status = import_status
 
     @property
@@ -183,6 +187,7 @@ class DncListDivisionView(object):
         :type: int
         """
         
+
         self._size = size
 
     @property
@@ -260,6 +265,7 @@ class DncListDivisionView(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -70,6 +70,7 @@ class ShiftTradeListResponse(object):
         :type: list[ShiftTradeResponse]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

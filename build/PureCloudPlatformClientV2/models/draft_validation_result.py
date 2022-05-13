@@ -73,6 +73,7 @@ class DraftValidationResult(object):
         :type: bool
         """
         
+
         self._valid = valid
 
     @property
@@ -96,6 +97,7 @@ class DraftValidationResult(object):
         :type: list[ErrorBody]
         """
         
+
         self._errors = errors
 
     def to_dict(self):

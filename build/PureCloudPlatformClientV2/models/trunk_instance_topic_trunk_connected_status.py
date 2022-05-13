@@ -73,6 +73,7 @@ class TrunkInstanceTopicTrunkConnectedStatus(object):
         :type: bool
         """
         
+
         self._connected = connected
 
     @property
@@ -96,6 +97,7 @@ class TrunkInstanceTopicTrunkConnectedStatus(object):
         :type: datetime
         """
         
+
         self._connected_state_time = connected_state_time
 
     def to_dict(self):

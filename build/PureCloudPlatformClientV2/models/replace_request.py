@@ -76,6 +76,7 @@ class ReplaceRequest(object):
         :type: int
         """
         
+
         self._change_number = change_number
 
     @property
@@ -99,6 +100,7 @@ class ReplaceRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -122,6 +124,7 @@ class ReplaceRequest(object):
         :type: str
         """
         
+
         self._auth_token = auth_token
 
     def to_dict(self):

@@ -97,6 +97,7 @@ class UserDevice(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class UserDevice(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,10 @@ class UserDevice(object):
         :type: str
         """
         
+        if not device_token:
+            raise ValueError("Invalid value for `device_token`, must not be `None`")
+
+
         self._device_token = device_token
 
     @property
@@ -166,6 +172,10 @@ class UserDevice(object):
         :type: str
         """
         
+        if not notification_id:
+            raise ValueError("Invalid value for `notification_id`, must not be `None`")
+
+
         self._notification_id = notification_id
 
     @property
@@ -189,6 +199,10 @@ class UserDevice(object):
         :type: str
         """
         
+        if not make:
+            raise ValueError("Invalid value for `make`, must not be `None`")
+
+
         self._make = make
 
     @property
@@ -212,6 +226,10 @@ class UserDevice(object):
         :type: str
         """
         
+        if not model:
+            raise ValueError("Invalid value for `model`, must not be `None`")
+
+
         self._model = model
 
     @property
@@ -235,6 +253,10 @@ class UserDevice(object):
         :type: bool
         """
         
+        if not accept_notifications:
+            raise ValueError("Invalid value for `accept_notifications`, must not be `None`")
+
+
         self._accept_notifications = accept_notifications
 
     @property
@@ -285,6 +307,7 @@ class UserDevice(object):
         :type: str
         """
         
+
         self._session_hash = session_hash
 
     @property
@@ -308,6 +331,7 @@ class UserDevice(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class OutcomeScoresResult(object):
         :type: list[OutcomeEventScore]
         """
         
+
         self._outcome_scores = outcome_scores
 
     @property
@@ -96,6 +97,7 @@ class OutcomeScoresResult(object):
         :type: datetime
         """
         
+
         self._modified_date = modified_date
 
     def to_dict(self):

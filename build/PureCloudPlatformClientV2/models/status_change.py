@@ -85,6 +85,7 @@ class StatusChange(object):
         :type: datetime
         """
         
+
         self._date_status_changed = date_status_changed
 
     @property
@@ -162,6 +163,7 @@ class StatusChange(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -185,6 +187,7 @@ class StatusChange(object):
         :type: str
         """
         
+
         self._changed_by = changed_by
 
     @property

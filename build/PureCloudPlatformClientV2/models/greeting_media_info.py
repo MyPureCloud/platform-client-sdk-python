@@ -76,6 +76,7 @@ class GreetingMediaInfo(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class GreetingMediaInfo(object):
         :type: str
         """
         
+
         self._media_file_uri = media_file_uri
 
     @property
@@ -122,6 +124,7 @@ class GreetingMediaInfo(object):
         :type: str
         """
         
+
         self._media_image_uri = media_image_uri
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class WfmMoveManagementUnitTopicMoveManagementUnitNotification(object):
         :type: WfmMoveManagementUnitTopicBusinessUnit
         """
         
+
         self._business_unit = business_unit
 
     @property

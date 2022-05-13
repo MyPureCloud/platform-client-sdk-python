@@ -91,6 +91,7 @@ class TranscriptionTopicTranscriptionMessage(object):
         :type: datetime
         """
         
+
         self._event_time = event_time
 
     @property
@@ -114,6 +115,7 @@ class TranscriptionTopicTranscriptionMessage(object):
         :type: str
         """
         
+
         self._organization_id = organization_id
 
     @property
@@ -137,6 +139,7 @@ class TranscriptionTopicTranscriptionMessage(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -160,6 +163,7 @@ class TranscriptionTopicTranscriptionMessage(object):
         :type: str
         """
         
+
         self._communication_id = communication_id
 
     @property
@@ -183,6 +187,7 @@ class TranscriptionTopicTranscriptionMessage(object):
         :type: int
         """
         
+
         self._session_start_time_ms = session_start_time_ms
 
     @property
@@ -206,6 +211,7 @@ class TranscriptionTopicTranscriptionMessage(object):
         :type: int
         """
         
+
         self._transcription_start_time_ms = transcription_start_time_ms
 
     @property
@@ -229,6 +235,7 @@ class TranscriptionTopicTranscriptionMessage(object):
         :type: list[TranscriptionTopicTranscriptResult]
         """
         
+
         self._transcripts = transcripts
 
     @property
@@ -252,6 +259,7 @@ class TranscriptionTopicTranscriptionMessage(object):
         :type: TranscriptionTopicTranscriptionRequestStatus
         """
         
+
         self._status = status
 
     def to_dict(self):

@@ -73,6 +73,10 @@ class LearningAssessmentScoringRequest(object):
         :type: AssessmentForm
         """
         
+        if not assessment_form:
+            raise ValueError("Invalid value for `assessment_form`, must not be `None`")
+
+
         self._assessment_form = assessment_form
 
     @property
@@ -96,6 +100,10 @@ class LearningAssessmentScoringRequest(object):
         :type: AssessmentScoringSet
         """
         
+        if not answers:
+            raise ValueError("Invalid value for `answers`, must not be `None`")
+
+
         self._answers = answers
 
     def to_dict(self):

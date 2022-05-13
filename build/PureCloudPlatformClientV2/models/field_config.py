@@ -91,6 +91,7 @@ class FieldConfig(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class FieldConfig(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -164,6 +166,7 @@ class FieldConfig(object):
         :type: str
         """
         
+
         self._state = state
 
     @property
@@ -187,6 +190,7 @@ class FieldConfig(object):
         :type: list[Section]
         """
         
+
         self._sections = sections
 
     @property
@@ -210,6 +214,7 @@ class FieldConfig(object):
         :type: str
         """
         
+
         self._version = version
 
     @property
@@ -233,6 +238,7 @@ class FieldConfig(object):
         :type: str
         """
         
+
         self._schema_version = schema_version
 
     @property
@@ -256,6 +262,7 @@ class FieldConfig(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

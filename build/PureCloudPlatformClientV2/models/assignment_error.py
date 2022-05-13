@@ -73,6 +73,7 @@ class AssignmentError(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -96,6 +97,7 @@ class AssignmentError(object):
         :type: str
         """
         
+
         self._message = message
 
     def to_dict(self):

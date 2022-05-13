@@ -100,6 +100,7 @@ class WidgetClientConfigV1(object):
         :type: str
         """
         
+
         self._authentication_url = authentication_url
 
     def to_dict(self):

@@ -76,6 +76,10 @@ class ResponseSubstitution(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -99,6 +103,7 @@ class ResponseSubstitution(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -122,6 +127,7 @@ class ResponseSubstitution(object):
         :type: str
         """
         
+
         self._default_value = default_value
 
     def to_dict(self):

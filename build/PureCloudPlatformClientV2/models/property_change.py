@@ -76,6 +76,7 @@ class PropertyChange(object):
         :type: str
         """
         
+
         self._pcProperty = pcProperty
 
     @property
@@ -99,6 +100,7 @@ class PropertyChange(object):
         :type: list[str]
         """
         
+
         self._old_values = old_values
 
     @property
@@ -122,6 +124,7 @@ class PropertyChange(object):
         :type: list[str]
         """
         
+
         self._new_values = new_values
 
     def to_dict(self):

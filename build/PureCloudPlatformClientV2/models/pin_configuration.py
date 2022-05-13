@@ -73,6 +73,7 @@ class PINConfiguration(object):
         :type: int
         """
         
+
         self._minimum_length = minimum_length
 
     @property
@@ -96,6 +97,7 @@ class PINConfiguration(object):
         :type: int
         """
         
+
         self._maximum_length = maximum_length
 
     def to_dict(self):

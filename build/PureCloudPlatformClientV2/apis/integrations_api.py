@@ -3596,19 +3596,19 @@ class IntegrationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration Id (required)
-        :param Integration body: Integration Update
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
         :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
+        :param Integration body: Integration Update
         :return: Integration
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['integration_id', 'body', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params = ['integration_id', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'body']
         all_params.append('callback')
 
         params = locals()

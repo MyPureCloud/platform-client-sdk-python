@@ -82,6 +82,7 @@ class UserApp(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class UserApp(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class UserApp(object):
         :type: IntegrationType
         """
         
+
         self._integration_type = integration_type
 
     @property
@@ -151,6 +154,7 @@ class UserApp(object):
         :type: UserAppConfigurationInfo
         """
         
+
         self._config = config
 
     @property
@@ -174,6 +178,7 @@ class UserApp(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

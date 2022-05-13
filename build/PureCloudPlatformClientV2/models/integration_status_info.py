@@ -106,6 +106,7 @@ class IntegrationStatusInfo(object):
         :type: str
         """
         
+
         self._effective = effective
 
     @property
@@ -129,6 +130,7 @@ class IntegrationStatusInfo(object):
         :type: MessageInfo
         """
         
+
         self._detail = detail
 
     @property
@@ -152,6 +154,7 @@ class IntegrationStatusInfo(object):
         :type: datetime
         """
         
+
         self._last_updated = last_updated
 
     def to_dict(self):

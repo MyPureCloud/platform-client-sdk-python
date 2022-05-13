@@ -91,6 +91,7 @@ class BuIntradayResponse(object):
         :type: datetime
         """
         
+
         self._start_date = start_date
 
     @property
@@ -114,6 +115,7 @@ class BuIntradayResponse(object):
         :type: datetime
         """
         
+
         self._end_date = end_date
 
     @property
@@ -137,6 +139,7 @@ class BuIntradayResponse(object):
         :type: int
         """
         
+
         self._interval_length_minutes = interval_length_minutes
 
     @property
@@ -187,6 +190,7 @@ class BuIntradayResponse(object):
         :type: list[str]
         """
         
+
         self._categories = categories
 
     @property
@@ -210,6 +214,7 @@ class BuIntradayResponse(object):
         :type: BuShortTermForecastReference
         """
         
+
         self._short_term_forecast = short_term_forecast
 
     @property
@@ -233,6 +238,7 @@ class BuIntradayResponse(object):
         :type: BuScheduleReference
         """
         
+
         self._schedule = schedule
 
     @property
@@ -256,6 +262,7 @@ class BuIntradayResponse(object):
         :type: list[BuIntradayDataGroup]
         """
         
+
         self._intraday_data_groupings = intraday_data_groupings
 
     def to_dict(self):

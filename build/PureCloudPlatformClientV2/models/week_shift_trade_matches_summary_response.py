@@ -73,6 +73,7 @@ class WeekShiftTradeMatchesSummaryResponse(object):
         :type: date
         """
         
+
         self._week_date = week_date
 
     @property
@@ -96,6 +97,7 @@ class WeekShiftTradeMatchesSummaryResponse(object):
         :type: int
         """
         
+
         self._count = count
 
     def to_dict(self):

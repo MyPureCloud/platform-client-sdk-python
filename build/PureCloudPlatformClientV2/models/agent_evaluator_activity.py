@@ -91,6 +91,7 @@ class AgentEvaluatorActivity(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class AgentEvaluatorActivity(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class AgentEvaluatorActivity(object):
         :type: User
         """
         
+
         self._agent = agent
 
     @property
@@ -160,6 +163,7 @@ class AgentEvaluatorActivity(object):
         :type: User
         """
         
+
         self._evaluator = evaluator
 
     @property
@@ -183,6 +187,7 @@ class AgentEvaluatorActivity(object):
         :type: int
         """
         
+
         self._num_evaluations = num_evaluations
 
     @property
@@ -206,6 +211,7 @@ class AgentEvaluatorActivity(object):
         :type: int
         """
         
+
         self._average_evaluation_score = average_evaluation_score
 
     @property
@@ -229,6 +235,7 @@ class AgentEvaluatorActivity(object):
         :type: int
         """
         
+
         self._num_evaluations_without_view_permission = num_evaluations_without_view_permission
 
     @property
@@ -252,6 +259,7 @@ class AgentEvaluatorActivity(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

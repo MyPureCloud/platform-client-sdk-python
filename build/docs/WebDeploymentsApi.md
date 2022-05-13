@@ -186,6 +186,8 @@ Get the versions of a configuration
 
 This returns the 50 most recent versions for this configuration
 
+
+
 Wraps GET /api/v2/webdeployments/configurations/{configurationId}/versions 
 
 Requires ALL permissions: 
@@ -307,7 +309,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
-show_only_published = false # bool | Get only configuration drafts with published versions (optional) (default to false)
+show_only_published = False # bool | Get only configuration drafts with published versions (optional) (default to False)
 
 try:
     # View configuration drafts
@@ -322,7 +324,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **show_only_published** | **bool**| Get only configuration drafts with published versions | [optional] [default to false] |
+| **show_only_published** | **bool**| Get only configuration drafts with published versions | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type

@@ -109,6 +109,7 @@ class Group(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,10 @@ class Group(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -155,6 +160,7 @@ class Group(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -178,6 +184,7 @@ class Group(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -201,6 +208,7 @@ class Group(object):
         :type: int
         """
         
+
         self._member_count = member_count
 
     @property
@@ -251,6 +259,7 @@ class Group(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -301,6 +310,7 @@ class Group(object):
         :type: list[UserImage]
         """
         
+
         self._images = images
 
     @property
@@ -324,6 +334,7 @@ class Group(object):
         :type: list[GroupContact]
         """
         
+
         self._addresses = addresses
 
     @property
@@ -347,6 +358,10 @@ class Group(object):
         :type: bool
         """
         
+        if not rules_visible:
+            raise ValueError("Invalid value for `rules_visible`, must not be `None`")
+
+
         self._rules_visible = rules_visible
 
     @property
@@ -397,6 +412,7 @@ class Group(object):
         :type: list[User]
         """
         
+
         self._owners = owners
 
     @property
@@ -420,6 +436,7 @@ class Group(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -85,6 +85,10 @@ class BotConnectorBot(object):
         :type: str
         """
         
+        if not id:
+            raise ValueError("Invalid value for `id`, must not be `None`")
+
+
         self._id = id
 
     @property
@@ -108,6 +112,7 @@ class BotConnectorBot(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +136,7 @@ class BotConnectorBot(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -154,6 +160,10 @@ class BotConnectorBot(object):
         :type: list[BotConnectorBotVersion]
         """
         
+        if not versions:
+            raise ValueError("Invalid value for `versions`, must not be `None`")
+
+
         self._versions = versions
 
     @property
@@ -177,6 +187,7 @@ class BotConnectorBot(object):
         :type: str
         """
         
+
         self._bot_composite_tag = bot_composite_tag
 
     @property
@@ -200,6 +211,7 @@ class BotConnectorBot(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

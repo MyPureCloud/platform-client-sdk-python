@@ -97,6 +97,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :type: int
         """
         
+
         self._max_calls_per_agent = max_calls_per_agent
 
     @property
@@ -120,6 +121,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :type: float
         """
         
+
         self._max_line_utilization = max_line_utilization
 
     @property
@@ -143,6 +145,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :type: float
         """
         
+
         self._abandon_seconds = abandon_seconds
 
     @property
@@ -193,6 +196,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :type: DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings
         """
         
+
         self._automatic_time_zone_mapping = automatic_time_zone_mapping
 
     @property
@@ -216,6 +220,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -239,6 +244,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -262,6 +268,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -285,6 +292,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -308,6 +316,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :type: int
         """
         
+
         self._version = version
 
     def to_dict(self):

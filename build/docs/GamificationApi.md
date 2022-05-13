@@ -390,6 +390,8 @@ All metric definitions
 
 Retrieves the metric definitions and their corresponding default objectives used to create a gamified metric
 
+
+
 Wraps GET /api/v2/gamification/metricdefinitions 
 
 Requires ANY permissions: 
@@ -871,7 +873,7 @@ Performance profile of the requesting user
 
 Wraps GET /api/v2/gamification/profiles/users/me 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -1522,7 +1524,7 @@ api_instance = PureCloudPlatformClientV2.GamificationApi()
 user_id = 'user_id_example' # str | 
 start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
+time_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')
 
 try:
     # Values trends of a user
@@ -1540,7 +1542,7 @@ except ApiException as e:
 | **user_id** | **str**|  |  |
 | **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to &#39;UTC&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1634,7 +1636,7 @@ api_instance = PureCloudPlatformClientV2.GamificationApi()
 filter_type = 'filter_type_example' # str | Filter type for the query request.
 filter_id = 'filter_id_example' # str | ID for the filter type. For example, division Id
 workday = '2013-10-20' # date | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
+time_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')
 
 try:
     # Workday average values by target group
@@ -1652,7 +1654,7 @@ except ApiException as e:
 | **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
 | **filter_id** | **str**| ID for the filter type. For example, division Id |  |
 | **workday** | **date**| The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to &#39;UTC&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1692,7 +1694,7 @@ filter_type = 'filter_type_example' # str | Filter type for the query request.
 filter_id = 'filter_id_example' # str | ID for the filter type.
 start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
+time_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')
 
 try:
     # Values trend by target group
@@ -1711,7 +1713,7 @@ except ApiException as e:
 | **filter_id** | **str**| ID for the filter type. |  |
 | **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to &#39;UTC&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1748,7 +1750,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 workday = '2013-10-20' # date | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
+time_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')
 
 try:
     # Average values of the requesting user's division or performance profile
@@ -1764,7 +1766,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workday** | **date**| The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to &#39;UTC&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1804,7 +1806,7 @@ start_workday = '2013-10-20' # date | Start workday of querying workdays range. 
 end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 filter_type = 'filter_type_example' # str | Filter type for the query request. If not set, then the request is for the requesting user. (optional)
 reference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
-time_zone = 'UTC' # str | Timezone for the workday. Defaults to UTC (optional) (default to UTC)
+time_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')
 
 try:
     # Values trends of the requesting user or group
@@ -1823,7 +1825,7 @@ except ApiException as e:
 | **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **filter_type** | **str**| Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: PerformanceProfile, Division |
 | **reference_workday** | **date**| Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to &#39;UTC&#39;] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2374,7 +2376,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
 body = PureCloudPlatformClientV2.CreatePerformanceProfile() # CreatePerformanceProfile | performanceProfile
-copy_metrics = true # bool | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (optional) (default to true)
+copy_metrics = True # bool | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (optional) (default to True)
 
 try:
     # Create a new custom performance profile
@@ -2390,7 +2392,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**CreatePerformanceProfile**](CreatePerformanceProfile.html)| performanceProfile |  |
-| **copy_metrics** | **bool**| Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. | [optional] [default to true] |
+| **copy_metrics** | **bool**| Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type

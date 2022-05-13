@@ -97,6 +97,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: str
         """
         
+
         self._message = message
 
     @property
@@ -120,6 +121,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: str
         """
         
+
         self._code = code
 
     @property
@@ -143,6 +145,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: int
         """
         
+
         self._status = status
 
     @property
@@ -166,6 +169,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: str
         """
         
+
         self._entity_id = entity_id
 
     @property
@@ -189,6 +193,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: str
         """
         
+
         self._entity_name = entity_name
 
     @property
@@ -212,6 +217,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: str
         """
         
+
         self._message_with_params = message_with_params
 
     @property
@@ -235,6 +241,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: dict(str, str)
         """
         
+
         self._message_params = message_params
 
     @property
@@ -258,6 +265,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: str
         """
         
+
         self._context_id = context_id
 
     @property
@@ -281,6 +289,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: list[QueueConversationMessageEventTopicDetail]
         """
         
+
         self._details = details
 
     @property
@@ -304,6 +313,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         :type: list[QueueConversationMessageEventTopicErrorBody]
         """
         
+
         self._errors = errors
 
     def to_dict(self):

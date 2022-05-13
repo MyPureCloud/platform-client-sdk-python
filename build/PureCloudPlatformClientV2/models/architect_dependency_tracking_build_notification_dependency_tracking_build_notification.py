@@ -79,6 +79,7 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
         :type: str
         """
         
+
         self._status = status
 
     @property
@@ -102,6 +103,7 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
         :type: ArchitectDependencyTrackingBuildNotificationUser
         """
         
+
         self._user = user
 
     @property
@@ -125,6 +127,7 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
         :type: ArchitectDependencyTrackingBuildNotificationClient
         """
         
+
         self._client = client
 
     @property
@@ -148,6 +151,7 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     def to_dict(self):

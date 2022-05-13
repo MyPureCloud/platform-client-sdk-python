@@ -100,6 +100,7 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,10 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -146,6 +151,7 @@ class TwitterIntegrationRequest(object):
         :type: SupportedContentReference
         """
         
+
         self._supported_content = supported_content
 
     @property
@@ -169,6 +175,7 @@ class TwitterIntegrationRequest(object):
         :type: MessagingSettingReference
         """
         
+
         self._messaging_setting = messaging_setting
 
     @property
@@ -192,6 +199,10 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
+        if not access_token_key:
+            raise ValueError("Invalid value for `access_token_key`, must not be `None`")
+
+
         self._access_token_key = access_token_key
 
     @property
@@ -215,6 +226,10 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
+        if not access_token_secret:
+            raise ValueError("Invalid value for `access_token_secret`, must not be `None`")
+
+
         self._access_token_secret = access_token_secret
 
     @property
@@ -238,6 +253,10 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
+        if not consumer_key:
+            raise ValueError("Invalid value for `consumer_key`, must not be `None`")
+
+
         self._consumer_key = consumer_key
 
     @property
@@ -261,6 +280,10 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
+        if not consumer_secret:
+            raise ValueError("Invalid value for `consumer_secret`, must not be `None`")
+
+
         self._consumer_secret = consumer_secret
 
     @property
@@ -311,6 +334,7 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
+
         self._env_name = env_name
 
     @property
@@ -334,6 +358,7 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

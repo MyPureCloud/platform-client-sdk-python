@@ -103,6 +103,7 @@ class RecordingMessagingMessage(object):
         :type: str
         """
         
+
         self._pcFrom = pcFrom
 
     @property
@@ -126,6 +127,7 @@ class RecordingMessagingMessage(object):
         :type: User
         """
         
+
         self._from_user = from_user
 
     @property
@@ -149,6 +151,7 @@ class RecordingMessagingMessage(object):
         :type: ExternalContact
         """
         
+
         self._from_external_contact = from_external_contact
 
     @property
@@ -172,6 +175,7 @@ class RecordingMessagingMessage(object):
         :type: str
         """
         
+
         self._to = to
 
     @property
@@ -195,6 +199,7 @@ class RecordingMessagingMessage(object):
         :type: datetime
         """
         
+
         self._timestamp = timestamp
 
     @property
@@ -218,6 +223,7 @@ class RecordingMessagingMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -241,6 +247,7 @@ class RecordingMessagingMessage(object):
         :type: str
         """
         
+
         self._message_text = message_text
 
     @property
@@ -264,6 +271,7 @@ class RecordingMessagingMessage(object):
         :type: list[MessageMediaAttachment]
         """
         
+
         self._message_media_attachments = message_media_attachments
 
     @property
@@ -287,6 +295,7 @@ class RecordingMessagingMessage(object):
         :type: list[MessageStickerAttachment]
         """
         
+
         self._message_sticker_attachments = message_sticker_attachments
 
     @property
@@ -310,6 +319,7 @@ class RecordingMessagingMessage(object):
         :type: list[QuickReply]
         """
         
+
         self._quick_replies = quick_replies
 
     @property
@@ -333,6 +343,7 @@ class RecordingMessagingMessage(object):
         :type: ButtonResponse
         """
         
+
         self._button_response = button_response
 
     @property
@@ -356,6 +367,7 @@ class RecordingMessagingMessage(object):
         :type: RecordingContentStory
         """
         
+
         self._story = story
 
     def to_dict(self):

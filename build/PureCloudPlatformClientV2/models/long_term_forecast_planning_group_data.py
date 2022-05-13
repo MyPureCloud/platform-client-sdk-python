@@ -76,6 +76,10 @@ class LongTermForecastPlanningGroupData(object):
         :type: str
         """
         
+        if not planning_group_id:
+            raise ValueError("Invalid value for `planning_group_id`, must not be `None`")
+
+
         self._planning_group_id = planning_group_id
 
     @property
@@ -99,6 +103,10 @@ class LongTermForecastPlanningGroupData(object):
         :type: list[float]
         """
         
+        if not offered_per_day:
+            raise ValueError("Invalid value for `offered_per_day`, must not be `None`")
+
+
         self._offered_per_day = offered_per_day
 
     @property
@@ -122,6 +130,10 @@ class LongTermForecastPlanningGroupData(object):
         :type: list[float]
         """
         
+        if not average_handle_time_seconds_per_day:
+            raise ValueError("Invalid value for `average_handle_time_seconds_per_day`, must not be `None`")
+
+
         self._average_handle_time_seconds_per_day = average_handle_time_seconds_per_day
 
     def to_dict(self):

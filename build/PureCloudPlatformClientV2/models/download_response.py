@@ -76,6 +76,7 @@ class DownloadResponse(object):
         :type: str
         """
         
+
         self._content_location_uri = content_location_uri
 
     @property
@@ -99,6 +100,7 @@ class DownloadResponse(object):
         :type: str
         """
         
+
         self._image_uri = image_uri
 
     @property
@@ -122,6 +124,7 @@ class DownloadResponse(object):
         :type: list[DocumentThumbnail]
         """
         
+
         self._thumbnails = thumbnails
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class Language(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,10 @@ class Language(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -131,6 +136,7 @@ class Language(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -181,6 +187,7 @@ class Language(object):
         :type: str
         """
         
+
         self._version = version
 
     @property
@@ -204,6 +211,7 @@ class Language(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

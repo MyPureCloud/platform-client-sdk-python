@@ -79,6 +79,7 @@ class TrunkInstanceTopicTrunkMetricsRegisters(object):
         :type: str
         """
         
+
         self._proxy_address = proxy_address
 
     @property
@@ -102,6 +103,7 @@ class TrunkInstanceTopicTrunkMetricsRegisters(object):
         :type: bool
         """
         
+
         self._register_state = register_state
 
     @property
@@ -125,6 +127,7 @@ class TrunkInstanceTopicTrunkMetricsRegisters(object):
         :type: datetime
         """
         
+
         self._register_state_time = register_state_time
 
     @property
@@ -148,6 +151,7 @@ class TrunkInstanceTopicTrunkMetricsRegisters(object):
         :type: TrunkInstanceTopicTrunkErrorInfo
         """
         
+
         self._error_info = error_info
 
     def to_dict(self):

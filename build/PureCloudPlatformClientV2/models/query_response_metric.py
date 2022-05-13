@@ -100,6 +100,7 @@ class QueryResponseMetric(object):
         :type: QueryResponseStats
         """
         
+
         self._stats = stats
 
     def to_dict(self):

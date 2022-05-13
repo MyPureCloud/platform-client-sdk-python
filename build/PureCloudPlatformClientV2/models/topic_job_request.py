@@ -70,6 +70,10 @@ class TopicJobRequest(object):
         :type: list[str]
         """
         
+        if not topic_ids:
+            raise ValueError("Invalid value for `topic_ids`, must not be `None`")
+
+
         self._topic_ids = topic_ids
 
     def to_dict(self):

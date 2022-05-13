@@ -85,6 +85,7 @@ class WfmUserNotificationTopicTimeOffRequestNotification(object):
         :type: str
         """
         
+
         self._time_off_request_id = time_off_request_id
 
     @property
@@ -108,6 +109,7 @@ class WfmUserNotificationTopicTimeOffRequestNotification(object):
         :type: WfmUserNotificationTopicUserReference
         """
         
+
         self._user = user
 
     @property
@@ -131,6 +133,7 @@ class WfmUserNotificationTopicTimeOffRequestNotification(object):
         :type: bool
         """
         
+
         self._is_full_day_request = is_full_day_request
 
     @property
@@ -181,6 +184,7 @@ class WfmUserNotificationTopicTimeOffRequestNotification(object):
         :type: list[datetime]
         """
         
+
         self._partial_day_start_date_times = partial_day_start_date_times
 
     @property
@@ -204,6 +208,7 @@ class WfmUserNotificationTopicTimeOffRequestNotification(object):
         :type: list[str]
         """
         
+
         self._full_day_management_unit_dates = full_day_management_unit_dates
 
     def to_dict(self):

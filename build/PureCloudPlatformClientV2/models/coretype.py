@@ -100,6 +100,7 @@ class Coretype(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,7 @@ class Coretype(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -146,6 +148,7 @@ class Coretype(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -169,6 +172,7 @@ class Coretype(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -192,6 +196,7 @@ class Coretype(object):
         :type: Schema
         """
         
+
         self._schema = schema
 
     @property
@@ -215,6 +220,7 @@ class Coretype(object):
         :type: bool
         """
         
+
         self._current = current
 
     @property
@@ -238,6 +244,7 @@ class Coretype(object):
         :type: list[str]
         """
         
+
         self._validation_fields = validation_fields
 
     @property
@@ -261,6 +268,7 @@ class Coretype(object):
         :type: ValidationLimits
         """
         
+
         self._validation_limits = validation_limits
 
     @property
@@ -284,6 +292,7 @@ class Coretype(object):
         :type: list[str]
         """
         
+
         self._item_validation_fields = item_validation_fields
 
     @property
@@ -307,6 +316,7 @@ class Coretype(object):
         :type: ItemValidationLimits
         """
         
+
         self._item_validation_limits = item_validation_limits
 
     @property
@@ -330,6 +340,7 @@ class Coretype(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

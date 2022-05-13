@@ -96,7 +96,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UploadsApi()
 miner_id = 'miner_id_example' # str | Miner ID
-body = PureCloudPlatformClientV2.Empty() # Empty | query
+body = NULL # Empty | query
 
 try:
     # Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
@@ -112,7 +112,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
-| **body** | [**Empty**](Empty.html)| query |  |
+| **body** | **Empty**| query |  |
 {: class="table table-striped"}
 
 ### Return type

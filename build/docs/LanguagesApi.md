@@ -30,6 +30,8 @@ Delete Language (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
 
+
+
 Wraps DELETE /api/v2/languages/{languageId} 
 
 Requires ANY permissions: 
@@ -130,6 +132,8 @@ Get language (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
 
+
+
 Wraps GET /api/v2/languages/{languageId} 
 
 Requires ANY permissions: 
@@ -181,6 +185,8 @@ Get the list of supported languages. (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages
 
+
+
 Wraps GET /api/v2/languages 
 
 Requires ANY permissions: 
@@ -202,7 +208,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.LanguagesApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 name = 'name_example' # str | Name (optional)
 
 try:
@@ -220,7 +226,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
 {: class="table table-striped"}
 
@@ -240,7 +246,7 @@ Get all available languages for translation
 
 Wraps GET /api/v2/languages/translations 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -276,7 +282,7 @@ This endpoint does not need any parameters.
 
 <a name="get_languages_translations_builtin"></a>
 
-## [**dict(str, object)**](dict.html) get_languages_translations_builtin(language)
+## dict(str, object)** get_languages_translations_builtin(language)
 
 
 
@@ -286,7 +292,7 @@ Get the builtin translation for a language
 
 Wraps GET /api/v2/languages/translations/builtin 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -322,11 +328,11 @@ except ApiException as e:
 
 ### Return type
 
-[**dict(str, object)**](dict.html)
+**dict(str, object)**
 
 <a name="get_languages_translations_organization"></a>
 
-## [**dict(str, object)**](dict.html) get_languages_translations_organization(language)
+## dict(str, object)** get_languages_translations_organization(language)
 
 
 
@@ -336,7 +342,7 @@ Get effective translation for an organization by language
 
 Wraps GET /api/v2/languages/translations/organization 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -372,11 +378,11 @@ except ApiException as e:
 
 ### Return type
 
-[**dict(str, object)**](dict.html)
+**dict(str, object)**
 
 <a name="get_languages_translations_user"></a>
 
-## [**dict(str, object)**](dict.html) get_languages_translations_user(user_id)
+## dict(str, object)** get_languages_translations_user(user_id)
 
 
 
@@ -386,7 +392,7 @@ Get effective language translation for a user
 
 Wraps GET /api/v2/languages/translations/users/{userId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -422,7 +428,7 @@ except ApiException as e:
 
 ### Return type
 
-[**dict(str, object)**](dict.html)
+**dict(str, object)**
 
 <a name="get_routing_language"></a>
 
@@ -436,7 +442,7 @@ Get language
 
 Wraps GET /api/v2/routing/languages/{languageId} 
 
-Requires NO permissions: 
+Requires no permissions
 
 
 ### Example
@@ -483,6 +489,8 @@ except ApiException as e:
 Create Language (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages
+
+
 
 Wraps POST /api/v2/languages 
 

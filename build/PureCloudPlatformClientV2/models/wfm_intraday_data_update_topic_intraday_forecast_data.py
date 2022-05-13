@@ -76,6 +76,7 @@ class WfmIntradayDataUpdateTopicIntradayForecastData(object):
         :type: float
         """
         
+
         self._offered = offered
 
     @property
@@ -99,6 +100,7 @@ class WfmIntradayDataUpdateTopicIntradayForecastData(object):
         :type: float
         """
         
+
         self._average_talk_time_seconds = average_talk_time_seconds
 
     @property
@@ -122,6 +124,7 @@ class WfmIntradayDataUpdateTopicIntradayForecastData(object):
         :type: float
         """
         
+
         self._average_after_call_work_seconds = average_after_call_work_seconds
 
     def to_dict(self):

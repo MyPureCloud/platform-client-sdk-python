@@ -100,6 +100,7 @@ class FlowDivisionView(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -123,6 +124,10 @@ class FlowDivisionView(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -146,6 +151,7 @@ class FlowDivisionView(object):
         :type: WritableDivision
         """
         
+
         self._division = division
 
     @property
@@ -196,6 +202,7 @@ class FlowDivisionView(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -219,6 +226,7 @@ class FlowDivisionView(object):
         :type: JsonSchemaDocument
         """
         
+
         self._input_schema = input_schema
 
     @property
@@ -242,6 +250,7 @@ class FlowDivisionView(object):
         :type: JsonSchemaDocument
         """
         
+
         self._output_schema = output_schema
 
     @property
@@ -265,6 +274,7 @@ class FlowDivisionView(object):
         :type: list[SupportedLanguage]
         """
         
+
         self._supported_languages = supported_languages
 
     @property
@@ -288,6 +298,7 @@ class FlowDivisionView(object):
         :type: FlowVersion
         """
         
+
         self._published_version = published_version
 
     @property
@@ -311,6 +322,7 @@ class FlowDivisionView(object):
         :type: FlowVersion
         """
         
+
         self._debug_version = debug_version
 
     @property
@@ -334,6 +346,7 @@ class FlowDivisionView(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -73,6 +73,7 @@ class NluDetectionContext(object):
         :type: ContextIntent
         """
         
+
         self._intent = intent
 
     @property
@@ -96,6 +97,7 @@ class NluDetectionContext(object):
         :type: ContextEntity
         """
         
+
         self._entity = entity
 
     def to_dict(self):

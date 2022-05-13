@@ -73,6 +73,7 @@ class V2ConversationMessageTypingEventForUserTopicMessageData(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -96,6 +97,7 @@ class V2ConversationMessageTypingEventForUserTopicMessageData(object):
         :type: V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage
         """
         
+
         self._normalized_message = normalized_message
 
     def to_dict(self):

@@ -85,6 +85,7 @@ class DomainPermission(object):
         :type: str
         """
         
+
         self._domain = domain
 
     @property
@@ -108,6 +109,7 @@ class DomainPermission(object):
         :type: str
         """
         
+
         self._entity_type = entity_type
 
     @property
@@ -131,6 +133,7 @@ class DomainPermission(object):
         :type: str
         """
         
+
         self._action = action
 
     @property
@@ -154,6 +157,7 @@ class DomainPermission(object):
         :type: str
         """
         
+
         self._label = label
 
     @property
@@ -177,6 +181,7 @@ class DomainPermission(object):
         :type: bool
         """
         
+
         self._allows_conditions = allows_conditions
 
     @property
@@ -200,6 +205,7 @@ class DomainPermission(object):
         :type: bool
         """
         
+
         self._division_aware = division_aware
 
     def to_dict(self):

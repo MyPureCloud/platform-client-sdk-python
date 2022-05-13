@@ -73,6 +73,7 @@ class TokenInfoClonedUser(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -96,6 +97,7 @@ class TokenInfoClonedUser(object):
         :type: Entity
         """
         
+
         self._organization = organization
 
     def to_dict(self):

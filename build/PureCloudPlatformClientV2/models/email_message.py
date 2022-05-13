@@ -109,6 +109,7 @@ class EmailMessage(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class EmailMessage(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -155,6 +157,10 @@ class EmailMessage(object):
         :type: list[EmailAddress]
         """
         
+        if not to:
+            raise ValueError("Invalid value for `to`, must not be `None`")
+
+
         self._to = to
 
     @property
@@ -178,6 +184,7 @@ class EmailMessage(object):
         :type: list[EmailAddress]
         """
         
+
         self._cc = cc
 
     @property
@@ -201,6 +208,7 @@ class EmailMessage(object):
         :type: list[EmailAddress]
         """
         
+
         self._bcc = bcc
 
     @property
@@ -224,6 +232,10 @@ class EmailMessage(object):
         :type: EmailAddress
         """
         
+        if not pcFrom:
+            raise ValueError("Invalid value for `pcFrom`, must not be `None`")
+
+
         self._pcFrom = pcFrom
 
     @property
@@ -247,6 +259,7 @@ class EmailMessage(object):
         :type: EmailAddress
         """
         
+
         self._reply_to = reply_to
 
     @property
@@ -270,6 +283,7 @@ class EmailMessage(object):
         :type: str
         """
         
+
         self._subject = subject
 
     @property
@@ -293,6 +307,7 @@ class EmailMessage(object):
         :type: list[Attachment]
         """
         
+
         self._attachments = attachments
 
     @property
@@ -316,6 +331,10 @@ class EmailMessage(object):
         :type: str
         """
         
+        if not text_body:
+            raise ValueError("Invalid value for `text_body`, must not be `None`")
+
+
         self._text_body = text_body
 
     @property
@@ -339,6 +358,7 @@ class EmailMessage(object):
         :type: str
         """
         
+
         self._html_body = html_body
 
     @property
@@ -362,6 +382,7 @@ class EmailMessage(object):
         :type: datetime
         """
         
+
         self._time = time
 
     @property
@@ -385,6 +406,7 @@ class EmailMessage(object):
         :type: bool
         """
         
+
         self._history_included = history_included
 
     @property
@@ -408,6 +430,7 @@ class EmailMessage(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

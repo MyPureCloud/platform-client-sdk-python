@@ -70,6 +70,7 @@ class ContactCenterSettings(object):
         :type: bool
         """
         
+
         self._remove_skills_from_blind_transfer = remove_skills_from_blind_transfer
 
     def to_dict(self):

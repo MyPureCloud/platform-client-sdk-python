@@ -70,6 +70,7 @@ class WorkPlanRotationListResponse(object):
         :type: list[WorkPlanRotationResponse]
         """
         
+
         self._entities = entities
 
     def to_dict(self):

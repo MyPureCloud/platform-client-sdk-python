@@ -73,6 +73,10 @@ class PatchBuReschedulingOptionsManagementUnitRequest(object):
         :type: str
         """
         
+        if not management_unit_id:
+            raise ValueError("Invalid value for `management_unit_id`, must not be `None`")
+
+
         self._management_unit_id = management_unit_id
 
     @property
@@ -96,6 +100,7 @@ class PatchBuReschedulingOptionsManagementUnitRequest(object):
         :type: bool
         """
         
+
         self._applied = applied
 
     def to_dict(self):

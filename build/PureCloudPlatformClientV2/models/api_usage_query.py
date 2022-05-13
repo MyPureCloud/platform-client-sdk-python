@@ -79,6 +79,10 @@ class ApiUsageQuery(object):
         :type: str
         """
         
+        if not interval:
+            raise ValueError("Invalid value for `interval`, must not be `None`")
+
+
         self._interval = interval
 
     @property
@@ -129,6 +133,7 @@ class ApiUsageQuery(object):
         :type: list[str]
         """
         
+
         self._group_by = group_by
 
     @property
@@ -152,6 +157,7 @@ class ApiUsageQuery(object):
         :type: list[str]
         """
         
+
         self._metrics = metrics
 
     def to_dict(self):

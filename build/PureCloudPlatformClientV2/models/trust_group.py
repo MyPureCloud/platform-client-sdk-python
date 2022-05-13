@@ -112,6 +112,7 @@ class TrustGroup(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -135,6 +136,10 @@ class TrustGroup(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -158,6 +163,7 @@ class TrustGroup(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -181,6 +187,7 @@ class TrustGroup(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -204,6 +211,7 @@ class TrustGroup(object):
         :type: int
         """
         
+
         self._member_count = member_count
 
     @property
@@ -254,6 +262,7 @@ class TrustGroup(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -304,6 +313,7 @@ class TrustGroup(object):
         :type: list[UserImage]
         """
         
+
         self._images = images
 
     @property
@@ -327,6 +337,7 @@ class TrustGroup(object):
         :type: list[GroupContact]
         """
         
+
         self._addresses = addresses
 
     @property
@@ -350,6 +361,10 @@ class TrustGroup(object):
         :type: bool
         """
         
+        if not rules_visible:
+            raise ValueError("Invalid value for `rules_visible`, must not be `None`")
+
+
         self._rules_visible = rules_visible
 
     @property
@@ -400,6 +415,7 @@ class TrustGroup(object):
         :type: list[User]
         """
         
+
         self._owners = owners
 
     @property
@@ -423,6 +439,7 @@ class TrustGroup(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -446,6 +463,7 @@ class TrustGroup(object):
         :type: OrgUser
         """
         
+
         self._created_by = created_by
 
     def to_dict(self):

@@ -79,6 +79,7 @@ class TestExecutionResult(object):
         :type: list[TestExecutionOperationResult]
         """
         
+
         self._operations = operations
 
     @property
@@ -102,6 +103,7 @@ class TestExecutionResult(object):
         :type: ErrorBody
         """
         
+
         self._error = error
 
     @property
@@ -125,6 +127,7 @@ class TestExecutionResult(object):
         :type: object
         """
         
+
         self._final_result = final_result
 
     @property
@@ -148,6 +151,7 @@ class TestExecutionResult(object):
         :type: bool
         """
         
+
         self._success = success
 
     def to_dict(self):

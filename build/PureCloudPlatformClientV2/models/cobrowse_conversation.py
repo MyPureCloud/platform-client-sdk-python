@@ -82,6 +82,7 @@ class CobrowseConversation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -105,6 +106,7 @@ class CobrowseConversation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -128,6 +130,7 @@ class CobrowseConversation(object):
         :type: list[CobrowseMediaParticipant]
         """
         
+
         self._participants = participants
 
     @property
@@ -151,6 +154,7 @@ class CobrowseConversation(object):
         :type: list[str]
         """
         
+
         self._other_media_uris = other_media_uris
 
     @property
@@ -174,6 +178,7 @@ class CobrowseConversation(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

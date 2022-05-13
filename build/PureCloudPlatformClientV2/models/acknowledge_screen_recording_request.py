@@ -76,6 +76,7 @@ class AcknowledgeScreenRecordingRequest(object):
         :type: str
         """
         
+
         self._participant_jid = participant_jid
 
     @property
@@ -99,6 +100,7 @@ class AcknowledgeScreenRecordingRequest(object):
         :type: str
         """
         
+
         self._room_id = room_id
 
     @property
@@ -122,6 +124,7 @@ class AcknowledgeScreenRecordingRequest(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     def to_dict(self):

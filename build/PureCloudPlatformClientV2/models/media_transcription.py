@@ -76,6 +76,7 @@ class MediaTranscription(object):
         :type: str
         """
         
+
         self._display_name = display_name
 
     @property
@@ -126,6 +127,7 @@ class MediaTranscription(object):
         :type: str
         """
         
+
         self._integration_id = integration_id
 
     def to_dict(self):

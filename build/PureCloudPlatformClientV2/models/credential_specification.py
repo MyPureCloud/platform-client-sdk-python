@@ -76,6 +76,7 @@ class CredentialSpecification(object):
         :type: bool
         """
         
+
         self._required = required
 
     @property
@@ -99,6 +100,7 @@ class CredentialSpecification(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -122,6 +124,7 @@ class CredentialSpecification(object):
         :type: list[str]
         """
         
+
         self._credential_types = credential_types
 
     def to_dict(self):

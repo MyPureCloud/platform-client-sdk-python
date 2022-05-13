@@ -106,6 +106,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: JourneyWebActionEventsNotificationEventAction
         """
         
+
         self._action = action
 
     @property
@@ -129,6 +130,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: JourneyWebActionEventsNotificationActionTarget
         """
         
+
         self._action_target = action_target
 
     @property
@@ -152,6 +154,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: JourneyWebActionEventsNotificationActionMap
         """
         
+
         self._action_map = action_map
 
     @property
@@ -175,6 +178,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
@@ -198,6 +202,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: str
         """
         
+
         self._error_message = error_message
 
     @property
@@ -221,6 +226,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: str
         """
         
+
         self._user_agent_string = user_agent_string
 
     @property
@@ -244,6 +250,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: str
         """
         
+
         self._ip_address = ip_address
 
     @property
@@ -267,6 +274,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: str
         """
         
+
         self._ip_organization = ip_organization
 
     @property
@@ -290,6 +298,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: JourneyWebActionEventsNotificationBrowser
         """
         
+
         self._browser = browser
 
     @property
@@ -313,6 +322,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: JourneyWebActionEventsNotificationDevice
         """
         
+
         self._device = device
 
     @property
@@ -336,6 +346,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: JourneyWebActionEventsNotificationGeoLocation
         """
         
+
         self._geolocation = geolocation
 
     @property
@@ -359,6 +370,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: JourneyWebActionEventsNotificationMktCampaign
         """
         
+
         self._mkt_campaign = mkt_campaign
 
     @property
@@ -382,6 +394,7 @@ class JourneyWebActionEventsNotificationWebActionMessage(object):
         :type: JourneyWebActionEventsNotificationReferrer
         """
         
+
         self._visit_referrer = visit_referrer
 
     def to_dict(self):

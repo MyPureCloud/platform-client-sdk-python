@@ -76,6 +76,7 @@ class BuAgentScheduleHistoryDeletedChange(object):
         :type: list[str]
         """
         
+
         self._shift_ids = shift_ids
 
     @property
@@ -99,6 +100,7 @@ class BuAgentScheduleHistoryDeletedChange(object):
         :type: list[date]
         """
         
+
         self._full_day_time_off_marker_dates = full_day_time_off_marker_dates
 
     @property
@@ -122,6 +124,7 @@ class BuAgentScheduleHistoryDeletedChange(object):
         :type: bool
         """
         
+
         self._agent_schedule = agent_schedule
 
     def to_dict(self):

@@ -115,6 +115,7 @@ class WfmIntradayDataUpdateTopicIntradayDataGroup(object):
         :type: list[WfmIntradayDataUpdateTopicIntradayForecastData]
         """
         
+
         self._forecast_data_per_interval = forecast_data_per_interval
 
     @property
@@ -138,6 +139,7 @@ class WfmIntradayDataUpdateTopicIntradayDataGroup(object):
         :type: list[WfmIntradayDataUpdateTopicIntradayScheduleData]
         """
         
+
         self._schedule_data_per_interval = schedule_data_per_interval
 
     @property
@@ -161,6 +163,7 @@ class WfmIntradayDataUpdateTopicIntradayDataGroup(object):
         :type: list[WfmIntradayDataUpdateTopicIntradayHistoricalAgentData]
         """
         
+
         self._historical_agent_data_per_interval = historical_agent_data_per_interval
 
     @property
@@ -184,6 +187,7 @@ class WfmIntradayDataUpdateTopicIntradayDataGroup(object):
         :type: list[WfmIntradayDataUpdateTopicIntradayHistoricalQueueData]
         """
         
+
         self._historical_queue_data_per_interval = historical_queue_data_per_interval
 
     @property
@@ -207,6 +211,7 @@ class WfmIntradayDataUpdateTopicIntradayDataGroup(object):
         :type: list[WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData]
         """
         
+
         self._performance_prediction_agent_data_per_interval = performance_prediction_agent_data_per_interval
 
     @property
@@ -230,6 +235,7 @@ class WfmIntradayDataUpdateTopicIntradayDataGroup(object):
         :type: list[WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData]
         """
         
+
         self._performance_prediction_queue_data_per_interval = performance_prediction_queue_data_per_interval
 
     def to_dict(self):

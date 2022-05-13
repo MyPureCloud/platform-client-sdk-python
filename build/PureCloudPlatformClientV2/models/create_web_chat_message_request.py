@@ -73,6 +73,10 @@ class CreateWebChatMessageRequest(object):
         :type: str
         """
         
+        if not body:
+            raise ValueError("Invalid value for `body`, must not be `None`")
+
+
         self._body = body
 
     @property

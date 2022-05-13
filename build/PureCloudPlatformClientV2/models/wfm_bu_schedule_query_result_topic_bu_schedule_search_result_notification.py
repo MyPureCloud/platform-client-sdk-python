@@ -76,6 +76,7 @@ class WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification(object):
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     @property
@@ -99,6 +100,7 @@ class WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification(object):
         :type: str
         """
         
+
         self._business_unit_id = business_unit_id
 
     @property
@@ -122,6 +124,7 @@ class WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification(object):
         :type: str
         """
         
+
         self._download_url = download_url
 
     def to_dict(self):

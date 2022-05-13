@@ -103,6 +103,10 @@ class TranscriptionSettings(object):
         :type: int
         """
         
+        if not transcription_confidence_threshold:
+            raise ValueError("Invalid value for `transcription_confidence_threshold`, must not be `None`")
+
+
         self._transcription_confidence_threshold = transcription_confidence_threshold
 
     @property
@@ -126,6 +130,7 @@ class TranscriptionSettings(object):
         :type: bool
         """
         
+
         self._content_search_enabled = content_search_enabled
 
     def to_dict(self):

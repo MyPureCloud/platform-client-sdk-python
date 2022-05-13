@@ -97,6 +97,7 @@ class DataTableExportJob(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class DataTableExportJob(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -143,6 +145,7 @@ class DataTableExportJob(object):
         :type: AddressableEntityRef
         """
         
+
         self._owner = owner
 
     @property
@@ -193,6 +196,7 @@ class DataTableExportJob(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -216,6 +220,7 @@ class DataTableExportJob(object):
         :type: datetime
         """
         
+
         self._date_completed = date_completed
 
     @property
@@ -239,6 +244,7 @@ class DataTableExportJob(object):
         :type: str
         """
         
+
         self._download_uri = download_uri
 
     @property
@@ -262,6 +268,7 @@ class DataTableExportJob(object):
         :type: ErrorBody
         """
         
+
         self._error_information = error_information
 
     @property
@@ -285,6 +292,7 @@ class DataTableExportJob(object):
         :type: int
         """
         
+
         self._count_records_processed = count_records_processed
 
     @property
@@ -308,6 +316,7 @@ class DataTableExportJob(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

@@ -82,6 +82,10 @@ class CreateOutboundMessagingConversationRequest(object):
         :type: str
         """
         
+        if not queue_id:
+            raise ValueError("Invalid value for `queue_id`, must not be `None`")
+
+
         self._queue_id = queue_id
 
     @property
@@ -105,6 +109,10 @@ class CreateOutboundMessagingConversationRequest(object):
         :type: str
         """
         
+        if not to_address:
+            raise ValueError("Invalid value for `to_address`, must not be `None`")
+
+
         self._to_address = to_address
 
     @property
@@ -155,6 +163,7 @@ class CreateOutboundMessagingConversationRequest(object):
         :type: bool
         """
         
+
         self._use_existing_conversation = use_existing_conversation
 
     @property
@@ -178,6 +187,7 @@ class CreateOutboundMessagingConversationRequest(object):
         :type: str
         """
         
+
         self._external_contact_id = external_contact_id
 
     def to_dict(self):

@@ -91,6 +91,7 @@ class UserStation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class UserStation(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class UserStation(object):
         :type: str
         """
         
+
         self._type = type
 
     @property
@@ -160,6 +163,7 @@ class UserStation(object):
         :type: User
         """
         
+
         self._associated_user = associated_user
 
     @property
@@ -183,6 +187,7 @@ class UserStation(object):
         :type: datetime
         """
         
+
         self._associated_date = associated_date
 
     @property
@@ -206,6 +211,7 @@ class UserStation(object):
         :type: User
         """
         
+
         self._default_user = default_user
 
     @property
@@ -229,6 +235,7 @@ class UserStation(object):
         :type: dict(str, str)
         """
         
+
         self._provider_info = provider_info
 
     @property
@@ -252,6 +259,7 @@ class UserStation(object):
         :type: int
         """
         
+
         self._web_rtc_call_appearances = web_rtc_call_appearances
 
     def to_dict(self):

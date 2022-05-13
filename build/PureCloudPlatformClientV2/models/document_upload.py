@@ -79,6 +79,10 @@ class DocumentUpload(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -102,6 +106,10 @@ class DocumentUpload(object):
         :type: DomainEntityRef
         """
         
+        if not workspace:
+            raise ValueError("Invalid value for `workspace`, must not be `None`")
+
+
         self._workspace = workspace
 
     @property
@@ -125,6 +133,7 @@ class DocumentUpload(object):
         :type: list[str]
         """
         
+
         self._tags = tags
 
     @property
@@ -148,6 +157,7 @@ class DocumentUpload(object):
         :type: list[str]
         """
         
+
         self._tag_ids = tag_ids
 
     def to_dict(self):

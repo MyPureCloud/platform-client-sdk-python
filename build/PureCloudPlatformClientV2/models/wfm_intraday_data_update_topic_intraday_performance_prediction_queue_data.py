@@ -76,6 +76,7 @@ class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData(object):
         :type: float
         """
         
+
         self._service_level_percent = service_level_percent
 
     @property
@@ -99,6 +100,7 @@ class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData(object):
         :type: float
         """
         
+
         self._average_speed_of_answer_seconds = average_speed_of_answer_seconds
 
     @property
@@ -122,6 +124,7 @@ class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData(object):
         :type: float
         """
         
+
         self._number_of_interactions = number_of_interactions
 
     def to_dict(self):

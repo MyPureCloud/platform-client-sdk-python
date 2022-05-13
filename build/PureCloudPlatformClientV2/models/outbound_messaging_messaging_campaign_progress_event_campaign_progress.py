@@ -82,6 +82,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         :type: OutboundMessagingMessagingCampaignProgressEventUriReference
         """
         
+
         self._campaign = campaign
 
     @property
@@ -105,6 +106,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         :type: float
         """
         
+
         self._number_of_contacts_called = number_of_contacts_called
 
     @property
@@ -128,6 +130,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         :type: float
         """
         
+
         self._number_of_contacts_messaged = number_of_contacts_messaged
 
     @property
@@ -151,6 +154,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         :type: float
         """
         
+
         self._total_number_of_contacts = total_number_of_contacts
 
     @property
@@ -174,6 +178,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         :type: int
         """
         
+
         self._percentage = percentage
 
     def to_dict(self):

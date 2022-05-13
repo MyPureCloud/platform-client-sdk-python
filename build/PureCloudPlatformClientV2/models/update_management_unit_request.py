@@ -76,6 +76,7 @@ class UpdateManagementUnitRequest(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -99,6 +100,7 @@ class UpdateManagementUnitRequest(object):
         :type: str
         """
         
+
         self._division_id = division_id
 
     @property
@@ -122,6 +124,7 @@ class UpdateManagementUnitRequest(object):
         :type: ManagementUnitSettingsRequest
         """
         
+
         self._settings = settings
 
     def to_dict(self):

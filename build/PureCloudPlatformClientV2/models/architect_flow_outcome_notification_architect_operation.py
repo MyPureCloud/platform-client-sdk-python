@@ -48,7 +48,7 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
             'action_status': 'str',
             'error_message': 'str',
             'error_code': 'str',
-            'error_message_params': 'ArchitectFlowOutcomeNotificationErrorMessageParams',
+            'error_message_params': 'object',
             'error_details': 'list[ArchitectFlowOutcomeNotificationErrorDetail]'
         }
 
@@ -97,6 +97,7 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -120,6 +121,7 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
         :type: bool
         """
         
+
         self._complete = complete
 
     @property
@@ -143,6 +145,7 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
         :type: ArchitectFlowOutcomeNotificationUser
         """
         
+
         self._user = user
 
     @property
@@ -166,6 +169,7 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
         :type: ArchitectFlowOutcomeNotificationClient
         """
         
+
         self._client = client
 
     @property
@@ -243,6 +247,7 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
         :type: str
         """
         
+
         self._error_message = error_message
 
     @property
@@ -266,16 +271,17 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
         :type: str
         """
         
+
         self._error_code = error_code
 
     @property
     def error_message_params(self):
         """
         Gets the error_message_params of this ArchitectFlowOutcomeNotificationArchitectOperation.
-
+        The error message params, if the action failed
 
         :return: The error_message_params of this ArchitectFlowOutcomeNotificationArchitectOperation.
-        :rtype: ArchitectFlowOutcomeNotificationErrorMessageParams
+        :rtype: object
         """
         return self._error_message_params
 
@@ -283,12 +289,13 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
     def error_message_params(self, error_message_params):
         """
         Sets the error_message_params of this ArchitectFlowOutcomeNotificationArchitectOperation.
-
+        The error message params, if the action failed
 
         :param error_message_params: The error_message_params of this ArchitectFlowOutcomeNotificationArchitectOperation.
-        :type: ArchitectFlowOutcomeNotificationErrorMessageParams
+        :type: object
         """
         
+
         self._error_message_params = error_message_params
 
     @property
@@ -312,6 +319,7 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
         :type: list[ArchitectFlowOutcomeNotificationErrorDetail]
         """
         
+
         self._error_details = error_details
 
     def to_dict(self):

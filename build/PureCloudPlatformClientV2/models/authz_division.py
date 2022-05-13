@@ -85,6 +85,7 @@ class AuthzDivision(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -108,6 +109,7 @@ class AuthzDivision(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -131,6 +133,10 @@ class AuthzDivision(object):
         :type: str
         """
         
+        if not description:
+            raise ValueError("Invalid value for `description`, must not be `None`")
+
+
         self._description = description
 
     @property
@@ -154,6 +160,7 @@ class AuthzDivision(object):
         :type: bool
         """
         
+
         self._home_division = home_division
 
     @property
@@ -177,6 +184,7 @@ class AuthzDivision(object):
         :type: dict(str, int)
         """
         
+
         self._object_counts = object_counts
 
     @property
@@ -200,6 +208,7 @@ class AuthzDivision(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

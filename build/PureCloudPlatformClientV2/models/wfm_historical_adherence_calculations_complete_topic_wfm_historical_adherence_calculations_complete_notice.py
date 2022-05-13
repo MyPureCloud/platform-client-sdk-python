@@ -79,6 +79,7 @@ class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalcu
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -102,6 +103,7 @@ class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalcu
         :type: str
         """
         
+
         self._download_url = download_url
 
     @property
@@ -125,6 +127,7 @@ class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalcu
         :type: list[str]
         """
         
+
         self._download_urls = download_urls
 
     @property

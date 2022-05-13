@@ -91,6 +91,7 @@ class UCIntegration(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class UCIntegration(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,10 @@ class UCIntegration(object):
         :type: str
         """
         
+        if not uc_integration_key:
+            raise ValueError("Invalid value for `uc_integration_key`, must not be `None`")
+
+
         self._uc_integration_key = uc_integration_key
 
     @property
@@ -187,6 +193,10 @@ class UCIntegration(object):
         :type: str
         """
         
+        if not pbx_permission:
+            raise ValueError("Invalid value for `pbx_permission`, must not be `None`")
+
+
         self._pbx_permission = pbx_permission
 
     @property
@@ -210,6 +220,10 @@ class UCIntegration(object):
         :type: UCIcon
         """
         
+        if not icon:
+            raise ValueError("Invalid value for `icon`, must not be `None`")
+
+
         self._icon = icon
 
     @property
@@ -233,6 +247,10 @@ class UCIntegration(object):
         :type: dict(str, UCI10n)
         """
         
+        if not i10n:
+            raise ValueError("Invalid value for `i10n`, must not be `None`")
+
+
         self._i10n = i10n
 
     @property
@@ -256,6 +274,7 @@ class UCIntegration(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

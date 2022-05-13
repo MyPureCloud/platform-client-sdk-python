@@ -91,6 +91,7 @@ class BatchDownloadJobResult(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -114,6 +115,7 @@ class BatchDownloadJobResult(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -137,6 +139,7 @@ class BatchDownloadJobResult(object):
         :type: str
         """
         
+
         self._conversation_id = conversation_id
 
     @property
@@ -160,6 +163,7 @@ class BatchDownloadJobResult(object):
         :type: str
         """
         
+
         self._recording_id = recording_id
 
     @property
@@ -183,6 +187,7 @@ class BatchDownloadJobResult(object):
         :type: str
         """
         
+
         self._result_url = result_url
 
     @property
@@ -206,6 +211,7 @@ class BatchDownloadJobResult(object):
         :type: str
         """
         
+
         self._content_type = content_type
 
     @property
@@ -229,6 +235,7 @@ class BatchDownloadJobResult(object):
         :type: str
         """
         
+
         self._error_msg = error_msg
 
     @property
@@ -252,6 +259,7 @@ class BatchDownloadJobResult(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

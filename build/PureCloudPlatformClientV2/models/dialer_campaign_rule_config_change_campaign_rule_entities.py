@@ -73,6 +73,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleEntities(object):
         :type: list[DialerCampaignRuleConfigChangeUriReference]
         """
         
+
         self._campaigns = campaigns
 
     @property
@@ -96,6 +97,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleEntities(object):
         :type: list[DialerCampaignRuleConfigChangeUriReference]
         """
         
+
         self._sequences = sequences
 
     def to_dict(self):

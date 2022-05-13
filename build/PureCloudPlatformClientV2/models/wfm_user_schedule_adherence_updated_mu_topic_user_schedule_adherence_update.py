@@ -121,6 +121,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: WfmUserScheduleAdherenceUpdatedMuTopicUserReference
         """
         
+
         self._user = user
 
     @property
@@ -144,6 +145,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: str
         """
         
+
         self._management_unit_id = management_unit_id
 
     @property
@@ -167,6 +169,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: WfmUserScheduleAdherenceUpdatedMuTopicUriReference
         """
         
+
         self._team = team
 
     @property
@@ -190,6 +193,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: str
         """
         
+
         self._scheduled_activity_category = scheduled_activity_category
 
     @property
@@ -213,6 +217,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference
         """
         
+
         self._scheduled_activity_code = scheduled_activity_code
 
     @property
@@ -236,6 +241,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: str
         """
         
+
         self._system_presence = system_presence
 
     @property
@@ -259,6 +265,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: str
         """
         
+
         self._organization_secondary_presence_id = organization_secondary_presence_id
 
     @property
@@ -309,6 +316,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: str
         """
         
+
         self._actual_activity_category = actual_activity_category
 
     @property
@@ -332,6 +340,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: bool
         """
         
+
         self._is_out_of_office = is_out_of_office
 
     @property
@@ -382,6 +391,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: str
         """
         
+
         self._impact = impact
 
     @property
@@ -405,6 +415,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation
         """
         
+
         self._adherence_explanation = adherence_explanation
 
     @property
@@ -428,6 +439,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: datetime
         """
         
+
         self._adherence_change_time = adherence_change_time
 
     @property
@@ -451,6 +463,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: datetime
         """
         
+
         self._presence_update_time = presence_update_time
 
     @property
@@ -474,6 +487,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: list[WfmUserScheduleAdherenceUpdatedMuTopicQueueReference]
         """
         
+
         self._active_queues = active_queues
 
     @property
@@ -497,6 +511,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: datetime
         """
         
+
         self._active_queues_modified_time = active_queues_modified_time
 
     @property
@@ -520,6 +535,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         :type: bool
         """
         
+
         self._removed_from_management_unit = removed_from_management_unit
 
     def to_dict(self):

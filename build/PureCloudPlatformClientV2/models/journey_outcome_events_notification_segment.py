@@ -76,6 +76,7 @@ class JourneyOutcomeEventsNotificationSegment(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -99,6 +100,7 @@ class JourneyOutcomeEventsNotificationSegment(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -122,6 +124,7 @@ class JourneyOutcomeEventsNotificationSegment(object):
         :type: datetime
         """
         
+
         self._assigned_date = assigned_date
 
     def to_dict(self):

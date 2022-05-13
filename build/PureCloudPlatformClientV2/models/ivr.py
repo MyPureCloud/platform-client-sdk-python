@@ -121,6 +121,7 @@ class IVR(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -144,6 +145,10 @@ class IVR(object):
         :type: str
         """
         
+        if not name:
+            raise ValueError("Invalid value for `name`, must not be `None`")
+
+
         self._name = name
 
     @property
@@ -167,6 +172,7 @@ class IVR(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -190,6 +196,7 @@ class IVR(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -213,6 +220,7 @@ class IVR(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -236,6 +244,7 @@ class IVR(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -259,6 +268,7 @@ class IVR(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -282,6 +292,7 @@ class IVR(object):
         :type: str
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -305,6 +316,7 @@ class IVR(object):
         :type: str
         """
         
+
         self._created_by = created_by
 
     @property
@@ -355,6 +367,7 @@ class IVR(object):
         :type: str
         """
         
+
         self._modified_by_app = modified_by_app
 
     @property
@@ -378,6 +391,7 @@ class IVR(object):
         :type: str
         """
         
+
         self._created_by_app = created_by_app
 
     @property
@@ -401,6 +415,7 @@ class IVR(object):
         :type: list[str]
         """
         
+
         self._dnis = dnis
 
     @property
@@ -424,6 +439,7 @@ class IVR(object):
         :type: DomainEntityRef
         """
         
+
         self._open_hours_flow = open_hours_flow
 
     @property
@@ -447,6 +463,7 @@ class IVR(object):
         :type: DomainEntityRef
         """
         
+
         self._closed_hours_flow = closed_hours_flow
 
     @property
@@ -470,6 +487,7 @@ class IVR(object):
         :type: DomainEntityRef
         """
         
+
         self._holiday_hours_flow = holiday_hours_flow
 
     @property
@@ -493,6 +511,7 @@ class IVR(object):
         :type: DomainEntityRef
         """
         
+
         self._schedule_group = schedule_group
 
     @property
@@ -516,6 +535,7 @@ class IVR(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

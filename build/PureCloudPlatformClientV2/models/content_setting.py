@@ -70,6 +70,7 @@ class ContentSetting(object):
         :type: StorySetting
         """
         
+
         self._story = story
 
     def to_dict(self):

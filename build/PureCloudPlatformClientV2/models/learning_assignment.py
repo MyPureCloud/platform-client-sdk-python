@@ -121,6 +121,7 @@ class LearningAssignment(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -144,6 +145,7 @@ class LearningAssignment(object):
         :type: LearningAssessment
         """
         
+
         self._assessment = assessment
 
     @property
@@ -167,6 +169,7 @@ class LearningAssignment(object):
         :type: UserReference
         """
         
+
         self._created_by = created_by
 
     @property
@@ -190,6 +193,7 @@ class LearningAssignment(object):
         :type: datetime
         """
         
+
         self._date_created = date_created
 
     @property
@@ -213,6 +217,7 @@ class LearningAssignment(object):
         :type: UserReference
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -236,6 +241,7 @@ class LearningAssignment(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -259,6 +265,7 @@ class LearningAssignment(object):
         :type: bool
         """
         
+
         self._is_overdue = is_overdue
 
     @property
@@ -282,6 +289,7 @@ class LearningAssignment(object):
         :type: float
         """
         
+
         self._percentage_score = percentage_score
 
     @property
@@ -305,6 +313,7 @@ class LearningAssignment(object):
         :type: bool
         """
         
+
         self._is_rule = is_rule
 
     @property
@@ -328,6 +337,7 @@ class LearningAssignment(object):
         :type: bool
         """
         
+
         self._is_manual = is_manual
 
     @property
@@ -351,6 +361,7 @@ class LearningAssignment(object):
         :type: bool
         """
         
+
         self._is_passed = is_passed
 
     @property
@@ -374,6 +385,7 @@ class LearningAssignment(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     @property
@@ -424,6 +436,7 @@ class LearningAssignment(object):
         :type: datetime
         """
         
+
         self._date_recommended_for_completion = date_recommended_for_completion
 
     @property
@@ -447,6 +460,7 @@ class LearningAssignment(object):
         :type: int
         """
         
+
         self._version = version
 
     @property
@@ -470,6 +484,7 @@ class LearningAssignment(object):
         :type: LearningModule
         """
         
+
         self._module = module
 
     @property
@@ -493,6 +508,7 @@ class LearningAssignment(object):
         :type: UserReference
         """
         
+
         self._user = user
 
     @property
@@ -516,6 +532,7 @@ class LearningAssignment(object):
         :type: AssessmentForm
         """
         
+
         self._assessment_form = assessment_form
 
     def to_dict(self):

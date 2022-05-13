@@ -73,6 +73,7 @@ class Number(object):
         :type: str
         """
         
+
         self._start = start
 
     @property
@@ -96,6 +97,7 @@ class Number(object):
         :type: str
         """
         
+
         self._end = end
 
     def to_dict(self):

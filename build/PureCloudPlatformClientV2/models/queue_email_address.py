@@ -73,6 +73,7 @@ class QueueEmailAddress(object):
         :type: DomainEntityRef
         """
         
+
         self._domain = domain
 
     @property
@@ -96,6 +97,7 @@ class QueueEmailAddress(object):
         :type: InboundRoute
         """
         
+
         self._route = route
 
     def to_dict(self):

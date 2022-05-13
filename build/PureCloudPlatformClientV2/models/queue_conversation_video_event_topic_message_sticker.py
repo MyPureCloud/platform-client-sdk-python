@@ -73,6 +73,7 @@ class QueueConversationVideoEventTopicMessageSticker(object):
         :type: str
         """
         
+
         self._url = url
 
     @property
@@ -96,6 +97,7 @@ class QueueConversationVideoEventTopicMessageSticker(object):
         :type: str
         """
         
+
         self._id = id
 
     def to_dict(self):

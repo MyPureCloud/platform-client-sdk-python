@@ -73,6 +73,7 @@ class CoverSheet(object):
         :type: str
         """
         
+
         self._notes = notes
 
     @property
@@ -96,6 +97,7 @@ class CoverSheet(object):
         :type: str
         """
         
+
         self._locale = locale
 
     def to_dict(self):

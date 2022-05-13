@@ -73,6 +73,7 @@ class EdgeNetworkDiagnosticResponse(object):
         :type: str
         """
         
+
         self._command_correlation_id = command_correlation_id
 
     @property
@@ -96,6 +97,7 @@ class EdgeNetworkDiagnosticResponse(object):
         :type: str
         """
         
+
         self._diagnostics = diagnostics
 
     def to_dict(self):

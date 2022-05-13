@@ -109,6 +109,7 @@ class SystemPromptAsset(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -132,6 +133,7 @@ class SystemPromptAsset(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -155,6 +157,7 @@ class SystemPromptAsset(object):
         :type: str
         """
         
+
         self._prompt_id = prompt_id
 
     @property
@@ -178,6 +181,10 @@ class SystemPromptAsset(object):
         :type: str
         """
         
+        if not language:
+            raise ValueError("Invalid value for `language`, must not be `None`")
+
+
         self._language = language
 
     @property
@@ -201,6 +208,7 @@ class SystemPromptAsset(object):
         :type: float
         """
         
+
         self._duration_seconds = duration_seconds
 
     @property
@@ -224,6 +232,7 @@ class SystemPromptAsset(object):
         :type: str
         """
         
+
         self._media_uri = media_uri
 
     @property
@@ -247,6 +256,7 @@ class SystemPromptAsset(object):
         :type: str
         """
         
+
         self._tts_string = tts_string
 
     @property
@@ -270,6 +280,7 @@ class SystemPromptAsset(object):
         :type: str
         """
         
+
         self._text = text
 
     @property
@@ -293,6 +304,7 @@ class SystemPromptAsset(object):
         :type: str
         """
         
+
         self._upload_uri = upload_uri
 
     @property
@@ -343,6 +355,7 @@ class SystemPromptAsset(object):
         :type: bool
         """
         
+
         self._has_default = has_default
 
     @property
@@ -366,6 +379,7 @@ class SystemPromptAsset(object):
         :type: bool
         """
         
+
         self._language_default = language_default
 
     @property
@@ -389,6 +403,7 @@ class SystemPromptAsset(object):
         :type: dict(str, list[str])
         """
         
+
         self._tags = tags
 
     @property
@@ -412,6 +427,7 @@ class SystemPromptAsset(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):

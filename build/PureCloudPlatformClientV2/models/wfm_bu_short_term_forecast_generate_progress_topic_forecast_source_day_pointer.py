@@ -109,6 +109,7 @@ class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer(object
         :type: int
         """
         
+
         self._weight = weight
 
     @property
@@ -132,6 +133,7 @@ class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer(object
         :type: str
         """
         
+
         self._date = date
 
     @property
@@ -155,6 +157,7 @@ class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer(object
         :type: str
         """
         
+
         self._file_name = file_name
 
     @property
@@ -178,6 +181,7 @@ class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer(object
         :type: str
         """
         
+
         self._data_key = data_key
 
     def to_dict(self):

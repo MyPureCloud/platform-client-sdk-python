@@ -73,6 +73,7 @@ class ButtonComponent(object):
         :type: str
         """
         
+
         self._title = title
 
     @property
@@ -96,6 +97,7 @@ class ButtonComponent(object):
         :type: ContentActions
         """
         
+
         self._actions = actions
 
     def to_dict(self):

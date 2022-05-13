@@ -103,6 +103,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecastNotification(obj
         :type: WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast
         """
         
+
         self._result = result
 
     @property
@@ -126,6 +127,7 @@ class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecastNotification(obj
         :type: str
         """
         
+
         self._operation_id = operation_id
 
     def to_dict(self):

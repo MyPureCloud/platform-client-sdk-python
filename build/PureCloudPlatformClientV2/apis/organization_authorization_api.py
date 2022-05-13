@@ -2004,7 +2004,7 @@ class OrganizationAuthorizationApi(object):
         :param int page_number: Page number
         :param str sort_by: Sort by
         :param str sort_order: Sort order
-        :return: AuditQueryResponse
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2069,7 +2069,7 @@ class OrganizationAuthorizationApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AuditQueryResponse',
+                                            response_type='object',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2172,7 +2172,7 @@ class OrganizationAuthorizationApi(object):
         :param int page_number: Page number
         :param str sort_by: Sort by
         :param str sort_order: Sort order
-        :return: AuditQueryResponse
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2237,7 +2237,7 @@ class OrganizationAuthorizationApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AuditQueryResponse',
+                                            response_type='object',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

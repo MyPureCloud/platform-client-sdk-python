@@ -193,6 +193,7 @@ class CallbackMediaParticipant(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -216,6 +217,7 @@ class CallbackMediaParticipant(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -239,6 +241,7 @@ class CallbackMediaParticipant(object):
         :type: str
         """
         
+
         self._address = address
 
     @property
@@ -262,6 +265,7 @@ class CallbackMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_time = start_time
 
     @property
@@ -285,6 +289,7 @@ class CallbackMediaParticipant(object):
         :type: datetime
         """
         
+
         self._connected_time = connected_time
 
     @property
@@ -308,6 +313,7 @@ class CallbackMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_time = end_time
 
     @property
@@ -331,6 +337,7 @@ class CallbackMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_hold_time = start_hold_time
 
     @property
@@ -354,6 +361,7 @@ class CallbackMediaParticipant(object):
         :type: str
         """
         
+
         self._purpose = purpose
 
     @property
@@ -458,6 +466,7 @@ class CallbackMediaParticipant(object):
         :type: bool
         """
         
+
         self._held = held
 
     @property
@@ -481,6 +490,7 @@ class CallbackMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_required = wrapup_required
 
     @property
@@ -504,6 +514,7 @@ class CallbackMediaParticipant(object):
         :type: str
         """
         
+
         self._wrapup_prompt = wrapup_prompt
 
     @property
@@ -527,6 +538,7 @@ class CallbackMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._user = user
 
     @property
@@ -550,6 +562,7 @@ class CallbackMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._queue = queue
 
     @property
@@ -573,6 +586,7 @@ class CallbackMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._team = team
 
     @property
@@ -596,6 +610,7 @@ class CallbackMediaParticipant(object):
         :type: dict(str, str)
         """
         
+
         self._attributes = attributes
 
     @property
@@ -619,6 +634,7 @@ class CallbackMediaParticipant(object):
         :type: ErrorInfo
         """
         
+
         self._error_info = error_info
 
     @property
@@ -642,6 +658,7 @@ class CallbackMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._script = script
 
     @property
@@ -665,6 +682,7 @@ class CallbackMediaParticipant(object):
         :type: int
         """
         
+
         self._wrapup_timeout_ms = wrapup_timeout_ms
 
     @property
@@ -688,6 +706,7 @@ class CallbackMediaParticipant(object):
         :type: bool
         """
         
+
         self._wrapup_skipped = wrapup_skipped
 
     @property
@@ -711,6 +730,7 @@ class CallbackMediaParticipant(object):
         :type: int
         """
         
+
         self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
@@ -734,6 +754,7 @@ class CallbackMediaParticipant(object):
         :type: str
         """
         
+
         self._provider = provider
 
     @property
@@ -757,6 +778,7 @@ class CallbackMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._external_contact = external_contact
 
     @property
@@ -780,6 +802,7 @@ class CallbackMediaParticipant(object):
         :type: DomainEntityRef
         """
         
+
         self._external_organization = external_organization
 
     @property
@@ -803,6 +826,7 @@ class CallbackMediaParticipant(object):
         :type: Wrapup
         """
         
+
         self._wrapup = wrapup
 
     @property
@@ -826,6 +850,7 @@ class CallbackMediaParticipant(object):
         :type: str
         """
         
+
         self._peer = peer
 
     @property
@@ -876,6 +901,7 @@ class CallbackMediaParticipant(object):
         :type: JourneyContext
         """
         
+
         self._journey_context = journey_context
 
     @property
@@ -899,6 +925,7 @@ class CallbackMediaParticipant(object):
         :type: ConversationRoutingData
         """
         
+
         self._conversation_routing_data = conversation_routing_data
 
     @property
@@ -922,6 +949,7 @@ class CallbackMediaParticipant(object):
         :type: datetime
         """
         
+
         self._start_acw_time = start_acw_time
 
     @property
@@ -945,6 +973,7 @@ class CallbackMediaParticipant(object):
         :type: datetime
         """
         
+
         self._end_acw_time = end_acw_time
 
     @property
@@ -968,6 +997,7 @@ class CallbackMediaParticipant(object):
         :type: DialerPreview
         """
         
+
         self._outbound_preview = outbound_preview
 
     @property
@@ -991,6 +1021,7 @@ class CallbackMediaParticipant(object):
         :type: Voicemail
         """
         
+
         self._voicemail = voicemail
 
     @property
@@ -1014,6 +1045,7 @@ class CallbackMediaParticipant(object):
         :type: list[str]
         """
         
+
         self._callback_numbers = callback_numbers
 
     @property
@@ -1037,6 +1069,7 @@ class CallbackMediaParticipant(object):
         :type: str
         """
         
+
         self._callback_user_name = callback_user_name
 
     @property
@@ -1060,6 +1093,7 @@ class CallbackMediaParticipant(object):
         :type: bool
         """
         
+
         self._external_campaign = external_campaign
 
     @property
@@ -1083,6 +1117,7 @@ class CallbackMediaParticipant(object):
         :type: bool
         """
         
+
         self._skip_enabled = skip_enabled
 
     @property
@@ -1106,6 +1141,7 @@ class CallbackMediaParticipant(object):
         :type: int
         """
         
+
         self._timeout_seconds = timeout_seconds
 
     @property
@@ -1129,6 +1165,7 @@ class CallbackMediaParticipant(object):
         :type: str
         """
         
+
         self._automated_callback_config_id = automated_callback_config_id
 
     @property
@@ -1152,6 +1189,7 @@ class CallbackMediaParticipant(object):
         :type: datetime
         """
         
+
         self._callback_scheduled_time = callback_scheduled_time
 
     def to_dict(self):

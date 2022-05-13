@@ -73,6 +73,7 @@ class VoicemailMessagesTopicVoicemailCopyRecord(object):
         :type: VoicemailMessagesTopicOwner
         """
         
+
         self._user = user
 
     @property
@@ -96,6 +97,7 @@ class VoicemailMessagesTopicVoicemailCopyRecord(object):
         :type: VoicemailMessagesTopicOwner
         """
         
+
         self._group = group
 
     def to_dict(self):

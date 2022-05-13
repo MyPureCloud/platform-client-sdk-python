@@ -88,6 +88,7 @@ class Leaderboard(object):
         :type: Division
         """
         
+
         self._division = division
 
     @property
@@ -111,6 +112,7 @@ class Leaderboard(object):
         :type: AddressableEntityRef
         """
         
+
         self._metric = metric
 
     @property
@@ -134,6 +136,7 @@ class Leaderboard(object):
         :type: date
         """
         
+
         self._date_start_workday = date_start_workday
 
     @property
@@ -157,6 +160,7 @@ class Leaderboard(object):
         :type: date
         """
         
+
         self._date_end_workday = date_end_workday
 
     @property
@@ -180,6 +184,7 @@ class Leaderboard(object):
         :type: list[LeaderboardItem]
         """
         
+
         self._leaders = leaders
 
     @property
@@ -203,6 +208,7 @@ class Leaderboard(object):
         :type: LeaderboardItem
         """
         
+
         self._user_rank = user_rank
 
     @property
@@ -226,6 +232,7 @@ class Leaderboard(object):
         :type: AddressableEntityRef
         """
         
+
         self._performance_profile = performance_profile
 
     def to_dict(self):

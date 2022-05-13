@@ -73,6 +73,7 @@ class ApiUsageQueryResult(object):
         :type: list[ApiUsageRow]
         """
         
+
         self._results = results
 
     @property

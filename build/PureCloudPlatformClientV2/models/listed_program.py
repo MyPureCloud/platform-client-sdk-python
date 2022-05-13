@@ -94,6 +94,7 @@ class ListedProgram(object):
         :type: str
         """
         
+
         self._id = id
 
     @property
@@ -117,6 +118,7 @@ class ListedProgram(object):
         :type: str
         """
         
+
         self._name = name
 
     @property
@@ -140,6 +142,7 @@ class ListedProgram(object):
         :type: str
         """
         
+
         self._description = description
 
     @property
@@ -163,6 +166,7 @@ class ListedProgram(object):
         :type: bool
         """
         
+
         self._published = published
 
     @property
@@ -186,6 +190,7 @@ class ListedProgram(object):
         :type: int
         """
         
+
         self._topics_count = topics_count
 
     @property
@@ -209,6 +214,7 @@ class ListedProgram(object):
         :type: list[str]
         """
         
+
         self._tags = tags
 
     @property
@@ -232,6 +238,7 @@ class ListedProgram(object):
         :type: AddressableEntityRef
         """
         
+
         self._modified_by = modified_by
 
     @property
@@ -255,6 +262,7 @@ class ListedProgram(object):
         :type: datetime
         """
         
+
         self._date_modified = date_modified
 
     @property
@@ -278,6 +286,7 @@ class ListedProgram(object):
         :type: str
         """
         
+
         self._self_uri = self_uri
 
     def to_dict(self):
