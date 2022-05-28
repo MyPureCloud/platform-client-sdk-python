@@ -41,16 +41,19 @@ class KeyPerformanceIndicator(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str'
+            'name': 'str',
+            'optimization_type': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name'
+            'name': 'name',
+            'optimization_type': 'optimizationType'
         }
 
         self._id = None
         self._name = None
+        self._optimization_type = None
 
     @property
     def id(self):
@@ -99,6 +102,33 @@ class KeyPerformanceIndicator(object):
         
 
         self._name = name
+
+    @property
+    def optimization_type(self):
+        """
+        Gets the optimization_type of this KeyPerformanceIndicator.
+        The optimization type of the Key Performance Indicator.
+
+        :return: The optimization_type of this KeyPerformanceIndicator.
+        :rtype: str
+        """
+        return self._optimization_type
+
+    @optimization_type.setter
+    def optimization_type(self, optimization_type):
+        """
+        Sets the optimization_type of this KeyPerformanceIndicator.
+        The optimization type of the Key Performance Indicator.
+
+        :param optimization_type: The optimization_type of this KeyPerformanceIndicator.
+        :type: str
+        """
+        allowed_values = ["Maximization", "Minimization"]
+        if optimization_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for optimization_type -> " + optimization_type)
+            self._optimization_type = "outdated_sdk_version"
+        else:
+            self._optimization_type = optimization_type
 
     def to_dict(self):
         """

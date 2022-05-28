@@ -42,7 +42,7 @@ class Survey(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'conversation': 'Conversation',
+            'conversation': 'ConversationReference',
             'survey_form': 'SurveyForm',
             'agent': 'DomainEntityRef',
             'status': 'str',
@@ -134,7 +134,7 @@ class Survey(object):
 
 
         :return: The conversation of this Survey.
-        :rtype: Conversation
+        :rtype: ConversationReference
         """
         return self._conversation
 
@@ -145,7 +145,7 @@ class Survey(object):
 
 
         :param conversation: The conversation of this Survey.
-        :type: Conversation
+        :type: ConversationReference
         """
         
 

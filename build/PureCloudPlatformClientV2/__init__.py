@@ -1148,6 +1148,7 @@ from .models.expired_edge_listing import ExpiredEdgeListing
 from .models.export_script_request import ExportScriptRequest
 from .models.export_script_response import ExportScriptResponse
 from .models.export_uri import ExportUri
+from .models.extended_wrapup import ExtendedWrapup
 from .models.extension import Extension
 from .models.extension_entity_listing import ExtensionEntityListing
 from .models.extension_pool import ExtensionPool
@@ -1492,6 +1493,7 @@ from .models.learning_assignment_user import LearningAssignmentUser
 from .models.learning_assignment_user_listing import LearningAssignmentUserListing
 from .models.learning_assignment_user_query import LearningAssignmentUserQuery
 from .models.learning_assignments_domain_entity import LearningAssignmentsDomainEntity
+from .models.learning_cover_art_thumbnail import LearningCoverArtThumbnail
 from .models.learning_module import LearningModule
 from .models.learning_module_cover_art_request import LearningModuleCoverArtRequest
 from .models.learning_module_cover_art_response import LearningModuleCoverArtResponse
@@ -2414,6 +2416,7 @@ from .models.subscription_overview_usage import SubscriptionOverviewUsage
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
 from .models.support_center_custom_message import SupportCenterCustomMessage
+from .models.support_center_feedback_settings import SupportCenterFeedbackSettings
 from .models.support_center_global_style import SupportCenterGlobalStyle
 from .models.support_center_hero_style import SupportCenterHeroStyle
 from .models.support_center_module_setting import SupportCenterModuleSetting

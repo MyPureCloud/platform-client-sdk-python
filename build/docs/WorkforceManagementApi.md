@@ -5394,8 +5394,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
-force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 body = PureCloudPlatformClientV2.BuSearchAgentSchedulesRequest() # BuSearchAgentSchedulesRequest | body (optional)
 
 try:
@@ -5412,8 +5412,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
-| **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 | **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -5616,8 +5616,8 @@ business_unit_id = 'business_unit_id_example' # str | The ID of the business uni
 week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 schedule_id = 'schedule_id_example' # str | The ID of the schedule
 body = PureCloudPlatformClientV2.BuQueryAgentSchedulesRequest() # BuQueryAgentSchedulesRequest | body
-force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 
 try:
     # Loads agent schedule data from the schedule. Used in combination with the metadata route
@@ -5636,8 +5636,8 @@ except ApiException as e:
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **schedule_id** | **str**| The ID of the schedule |  |
 | **body** | [**BuQueryAgentSchedulesRequest**](BuQueryAgentSchedulesRequest.html)| body |  |
-| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
-| **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6563,8 +6563,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-force_download_service = True # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 body = PureCloudPlatformClientV2.BuSearchAgentSchedulesRequest() # BuSearchAgentSchedulesRequest | body (optional)
 
 try:
@@ -6581,8 +6581,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
-| **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 | **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 

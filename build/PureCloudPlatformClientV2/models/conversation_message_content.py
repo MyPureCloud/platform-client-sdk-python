@@ -251,7 +251,7 @@ class ConversationMessageContent(object):
     def generic(self):
         """
         Gets the generic of this ConversationMessageContent.
-        Generic Template Object
+        Generic Template Object (Deprecated).
 
         :return: The generic of this ConversationMessageContent.
         :rtype: ConversationContentGeneric
@@ -262,7 +262,7 @@ class ConversationMessageContent(object):
     def generic(self, generic):
         """
         Sets the generic of this ConversationMessageContent.
-        Generic Template Object
+        Generic Template Object (Deprecated).
 
         :param generic: The generic of this ConversationMessageContent.
         :type: ConversationContentGeneric

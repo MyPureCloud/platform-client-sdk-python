@@ -48,8 +48,8 @@ class EvaluationQuestion(object):
             'comments_required': 'bool',
             'visibility_condition': 'VisibilityCondition',
             'answer_options': 'list[AnswerOption]',
-            'is_kill': 'bool',
-            'is_critical': 'bool'
+            'is_critical': 'bool',
+            'is_kill': 'bool'
         }
 
         self.attribute_map = {
@@ -61,8 +61,8 @@ class EvaluationQuestion(object):
             'comments_required': 'commentsRequired',
             'visibility_condition': 'visibilityCondition',
             'answer_options': 'answerOptions',
-            'is_kill': 'isKill',
-            'is_critical': 'isCritical'
+            'is_critical': 'isCritical',
+            'is_kill': 'isKill'
         }
 
         self._id = None
@@ -73,8 +73,8 @@ class EvaluationQuestion(object):
         self._comments_required = None
         self._visibility_condition = None
         self._answer_options = None
-        self._is_kill = None
         self._is_critical = None
+        self._is_kill = None
 
     @property
     def id(self):
@@ -272,30 +272,6 @@ class EvaluationQuestion(object):
         self._answer_options = answer_options
 
     @property
-    def is_kill(self):
-        """
-        Gets the is_kill of this EvaluationQuestion.
-
-
-        :return: The is_kill of this EvaluationQuestion.
-        :rtype: bool
-        """
-        return self._is_kill
-
-    @is_kill.setter
-    def is_kill(self, is_kill):
-        """
-        Sets the is_kill of this EvaluationQuestion.
-
-
-        :param is_kill: The is_kill of this EvaluationQuestion.
-        :type: bool
-        """
-        
-
-        self._is_kill = is_kill
-
-    @property
     def is_critical(self):
         """
         Gets the is_critical of this EvaluationQuestion.
@@ -318,6 +294,30 @@ class EvaluationQuestion(object):
         
 
         self._is_critical = is_critical
+
+    @property
+    def is_kill(self):
+        """
+        Gets the is_kill of this EvaluationQuestion.
+
+
+        :return: The is_kill of this EvaluationQuestion.
+        :rtype: bool
+        """
+        return self._is_kill
+
+    @is_kill.setter
+    def is_kill(self, is_kill):
+        """
+        Sets the is_kill of this EvaluationQuestion.
+
+
+        :param is_kill: The is_kill of this EvaluationQuestion.
+        :type: bool
+        """
+        
+
+        self._is_kill = is_kill
 
     def to_dict(self):
         """

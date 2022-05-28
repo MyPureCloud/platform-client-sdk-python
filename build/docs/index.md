@@ -13,6 +13,8 @@ Documentation can be found at [https://developer.genesys.cloud/devapps/sdk/docex
 pip install PureCloudPlatformClientV2
 ```
 
+**Note**: For Windows users, the [maximum path length limitation](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=cmd) must be removed prior to installing to avoid a `No such file or directory error`
+
 Package info can be found at [https://pypi.python.org/pypi/PureCloudPlatformClientV2](https://pypi.python.org/pypi/PureCloudPlatformClientV2)
 
 ## Using the Library

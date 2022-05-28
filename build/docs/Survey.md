@@ -9,7 +9,7 @@ title: Survey
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
-| **conversation** | [**Conversation**](Conversation.html) |  | [optional] |
+| **conversation** | [**ConversationReference**](ConversationReference.html) |  | [optional] |
 | **survey_form** | [**SurveyForm**](SurveyForm.html) | Survey form used for this survey. | [optional] |
 | **agent** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **status** | **str** |  | [optional] |

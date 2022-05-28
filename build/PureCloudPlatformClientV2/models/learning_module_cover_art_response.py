@@ -42,18 +42,21 @@ class LearningModuleCoverArtResponse(object):
         self.swagger_types = {
             'id': 'str',
             'self_uri': 'str',
-            'url': 'str'
+            'url': 'str',
+            'thumbnails': 'list[LearningCoverArtThumbnail]'
         }
 
         self.attribute_map = {
             'id': 'id',
             'self_uri': 'selfUri',
-            'url': 'url'
+            'url': 'url',
+            'thumbnails': 'thumbnails'
         }
 
         self._id = None
         self._self_uri = None
         self._url = None
+        self._thumbnails = None
 
     @property
     def id(self):
@@ -126,6 +129,30 @@ class LearningModuleCoverArtResponse(object):
         
 
         self._url = url
+
+    @property
+    def thumbnails(self):
+        """
+        Gets the thumbnails of this LearningModuleCoverArtResponse.
+        Thumbnails for the cover art
+
+        :return: The thumbnails of this LearningModuleCoverArtResponse.
+        :rtype: list[LearningCoverArtThumbnail]
+        """
+        return self._thumbnails
+
+    @thumbnails.setter
+    def thumbnails(self, thumbnails):
+        """
+        Sets the thumbnails of this LearningModuleCoverArtResponse.
+        Thumbnails for the cover art
+
+        :param thumbnails: The thumbnails of this LearningModuleCoverArtResponse.
+        :type: list[LearningCoverArtThumbnail]
+        """
+        
+
+        self._thumbnails = thumbnails
 
     def to_dict(self):
         """

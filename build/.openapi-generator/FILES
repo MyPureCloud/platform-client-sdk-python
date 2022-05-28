@@ -1215,6 +1215,7 @@ PureCloudPlatformClientV2/models/expired_edge_listing.py
 PureCloudPlatformClientV2/models/export_script_request.py
 PureCloudPlatformClientV2/models/export_script_response.py
 PureCloudPlatformClientV2/models/export_uri.py
+PureCloudPlatformClientV2/models/extended_wrapup.py
 PureCloudPlatformClientV2/models/extension.py
 PureCloudPlatformClientV2/models/extension_entity_listing.py
 PureCloudPlatformClientV2/models/extension_pool.py
@@ -1559,6 +1560,7 @@ PureCloudPlatformClientV2/models/learning_assignment_user.py
 PureCloudPlatformClientV2/models/learning_assignment_user_listing.py
 PureCloudPlatformClientV2/models/learning_assignment_user_query.py
 PureCloudPlatformClientV2/models/learning_assignments_domain_entity.py
+PureCloudPlatformClientV2/models/learning_cover_art_thumbnail.py
 PureCloudPlatformClientV2/models/learning_module.py
 PureCloudPlatformClientV2/models/learning_module_cover_art_request.py
 PureCloudPlatformClientV2/models/learning_module_cover_art_response.py
@@ -2481,6 +2483,7 @@ PureCloudPlatformClientV2/models/subscription_overview_usage.py
 PureCloudPlatformClientV2/models/suggest_search_criteria.py
 PureCloudPlatformClientV2/models/suggest_search_request.py
 PureCloudPlatformClientV2/models/support_center_custom_message.py
+PureCloudPlatformClientV2/models/support_center_feedback_settings.py
 PureCloudPlatformClientV2/models/support_center_global_style.py
 PureCloudPlatformClientV2/models/support_center_hero_style.py
 PureCloudPlatformClientV2/models/support_center_module_setting.py
@@ -4267,6 +4270,7 @@ docs/ExpiredEdgeListing.md
 docs/ExportScriptRequest.md
 docs/ExportScriptResponse.md
 docs/ExportUri.md
+docs/ExtendedWrapup.md
 docs/Extension.md
 docs/ExtensionEntityListing.md
 docs/ExtensionPool.md
@@ -4641,6 +4645,7 @@ docs/LearningAssignmentUser.md
 docs/LearningAssignmentUserListing.md
 docs/LearningAssignmentUserQuery.md
 docs/LearningAssignmentsDomainEntity.md
+docs/LearningCoverArtThumbnail.md
 docs/LearningModule.md
 docs/LearningModuleCoverArtRequest.md
 docs/LearningModuleCoverArtResponse.md
@@ -5605,6 +5610,7 @@ docs/SuggestApi.md
 docs/SuggestSearchCriteria.md
 docs/SuggestSearchRequest.md
 docs/SupportCenterCustomMessage.md
+docs/SupportCenterFeedbackSettings.md
 docs/SupportCenterGlobalStyle.md
 docs/SupportCenterHeroStyle.md
 docs/SupportCenterModuleSetting.md

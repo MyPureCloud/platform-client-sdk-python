@@ -56,7 +56,7 @@ class ConversationReference(object):
     def id(self):
         """
         Gets the id of this ConversationReference.
-        The globally unique identifier for the object.
+
 
         :return: The id of this ConversationReference.
         :rtype: str
@@ -67,7 +67,7 @@ class ConversationReference(object):
     def id(self, id):
         """
         Sets the id of this ConversationReference.
-        The globally unique identifier for the object.
+
 
         :param id: The id of this ConversationReference.
         :type: str
@@ -80,7 +80,7 @@ class ConversationReference(object):
     def self_uri(self):
         """
         Gets the self_uri of this ConversationReference.
-        The URI for this object
+
 
         :return: The self_uri of this ConversationReference.
         :rtype: str
@@ -91,7 +91,7 @@ class ConversationReference(object):
     def self_uri(self, self_uri):
         """
         Sets the self_uri of this ConversationReference.
-        The URI for this object
+
 
         :param self_uri: The self_uri of this ConversationReference.
         :type: str

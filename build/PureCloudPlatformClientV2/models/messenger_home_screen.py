@@ -40,14 +40,17 @@ class MessengerHomeScreen(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'enabled': 'bool'
+            'enabled': 'bool',
+            'logo_url': 'str'
         }
 
         self.attribute_map = {
-            'enabled': 'enabled'
+            'enabled': 'enabled',
+            'logo_url': 'logoUrl'
         }
 
         self._enabled = None
+        self._logo_url = None
 
     @property
     def enabled(self):
@@ -72,6 +75,30 @@ class MessengerHomeScreen(object):
         
 
         self._enabled = enabled
+
+    @property
+    def logo_url(self):
+        """
+        Gets the logo_url of this MessengerHomeScreen.
+        to capture uploaded company logoUrl
+
+        :return: The logo_url of this MessengerHomeScreen.
+        :rtype: str
+        """
+        return self._logo_url
+
+    @logo_url.setter
+    def logo_url(self, logo_url):
+        """
+        Sets the logo_url of this MessengerHomeScreen.
+        to capture uploaded company logoUrl
+
+        :param logo_url: The logo_url of this MessengerHomeScreen.
+        :type: str
+        """
+        
+
+        self._logo_url = logo_url
 
     def to_dict(self):
         """

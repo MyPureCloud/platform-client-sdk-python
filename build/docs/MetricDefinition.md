@@ -15,6 +15,8 @@ title: MetricDefinition
 | **divisor_metrics** | **list[str]** | Metric names used as divisor | [optional] |
 | **default_objective** | [**DefaultObjective**](DefaultObjective.html) | A predefined default objective for this metric | [optional] |
 | **lock_template_id** | **str** | An optional field to specify if this metric definition is locked to certain template. e.g. punctuality | [optional] |
+| **media_type_filtering_allowed** | **bool** | Flag to indicate if this metricDefinition allows filter based on media types | [optional] |
+| **queue_filtering_allowed** | **bool** | Flag to indicate if this metricDefinition allows filter based on queues | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

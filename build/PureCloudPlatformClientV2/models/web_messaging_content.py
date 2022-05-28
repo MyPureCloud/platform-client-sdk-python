@@ -170,7 +170,7 @@ class WebMessagingContent(object):
     def generic(self):
         """
         Gets the generic of this WebMessagingContent.
-        Generic content.
+        Generic content (Deprecated).
 
         :return: The generic of this WebMessagingContent.
         :rtype: WebMessagingGeneric
@@ -181,7 +181,7 @@ class WebMessagingContent(object):
     def generic(self, generic):
         """
         Sets the generic of this WebMessagingContent.
-        Generic content.
+        Generic content (Deprecated).
 
         :param generic: The generic of this WebMessagingContent.
         :type: WebMessagingGeneric

@@ -48,6 +48,8 @@ class MetricDefinition(object):
             'divisor_metrics': 'list[str]',
             'default_objective': 'DefaultObjective',
             'lock_template_id': 'str',
+            'media_type_filtering_allowed': 'bool',
+            'queue_filtering_allowed': 'bool',
             'self_uri': 'str'
         }
 
@@ -60,6 +62,8 @@ class MetricDefinition(object):
             'divisor_metrics': 'divisorMetrics',
             'default_objective': 'defaultObjective',
             'lock_template_id': 'lockTemplateId',
+            'media_type_filtering_allowed': 'mediaTypeFilteringAllowed',
+            'queue_filtering_allowed': 'queueFilteringAllowed',
             'self_uri': 'selfUri'
         }
 
@@ -71,6 +75,8 @@ class MetricDefinition(object):
         self._divisor_metrics = None
         self._default_objective = None
         self._lock_template_id = None
+        self._media_type_filtering_allowed = None
+        self._queue_filtering_allowed = None
         self._self_uri = None
 
     @property
@@ -267,6 +273,54 @@ class MetricDefinition(object):
         
 
         self._lock_template_id = lock_template_id
+
+    @property
+    def media_type_filtering_allowed(self):
+        """
+        Gets the media_type_filtering_allowed of this MetricDefinition.
+        Flag to indicate if this metricDefinition allows filter based on media types
+
+        :return: The media_type_filtering_allowed of this MetricDefinition.
+        :rtype: bool
+        """
+        return self._media_type_filtering_allowed
+
+    @media_type_filtering_allowed.setter
+    def media_type_filtering_allowed(self, media_type_filtering_allowed):
+        """
+        Sets the media_type_filtering_allowed of this MetricDefinition.
+        Flag to indicate if this metricDefinition allows filter based on media types
+
+        :param media_type_filtering_allowed: The media_type_filtering_allowed of this MetricDefinition.
+        :type: bool
+        """
+        
+
+        self._media_type_filtering_allowed = media_type_filtering_allowed
+
+    @property
+    def queue_filtering_allowed(self):
+        """
+        Gets the queue_filtering_allowed of this MetricDefinition.
+        Flag to indicate if this metricDefinition allows filter based on queues
+
+        :return: The queue_filtering_allowed of this MetricDefinition.
+        :rtype: bool
+        """
+        return self._queue_filtering_allowed
+
+    @queue_filtering_allowed.setter
+    def queue_filtering_allowed(self, queue_filtering_allowed):
+        """
+        Sets the queue_filtering_allowed of this MetricDefinition.
+        Flag to indicate if this metricDefinition allows filter based on queues
+
+        :param queue_filtering_allowed: The queue_filtering_allowed of this MetricDefinition.
+        :type: bool
+        """
+        
+
+        self._queue_filtering_allowed = queue_filtering_allowed
 
     @property
     def self_uri(self):

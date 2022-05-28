@@ -660,9 +660,9 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **script_id** | **str**| Script ID |  |
-| **input** | **str**| input | [optional]  |
-| **output** | **str**| output | [optional]  |
-| **type** | **str**| type | [optional]  |
+| **input** | **str**| input | [optional] <br />**Values**: true, false |
+| **output** | **str**| output | [optional] <br />**Values**: true, false |
+| **type** | **str**| type | [optional] <br />**Values**: string, number, boolean |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 

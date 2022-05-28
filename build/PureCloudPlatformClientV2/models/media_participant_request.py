@@ -40,7 +40,7 @@ class MediaParticipantRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'wrapup': 'Wrapup',
+            'wrapup': 'ExtendedWrapup',
             'state': 'str',
             'recording': 'bool',
             'muted': 'bool',
@@ -74,7 +74,7 @@ class MediaParticipantRequest(object):
         Wrap-up to assign to this participant.
 
         :return: The wrapup of this MediaParticipantRequest.
-        :rtype: Wrapup
+        :rtype: ExtendedWrapup
         """
         return self._wrapup
 
@@ -85,7 +85,7 @@ class MediaParticipantRequest(object):
         Wrap-up to assign to this participant.
 
         :param wrapup: The wrapup of this MediaParticipantRequest.
-        :type: Wrapup
+        :type: ExtendedWrapup
         """
         
 

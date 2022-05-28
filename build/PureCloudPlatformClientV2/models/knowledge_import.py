@@ -177,7 +177,7 @@ class KnowledgeImport(object):
         :param file_type: The file_type of this KnowledgeImport.
         :type: str
         """
-        allowed_values = ["Csv", "JsonLines"]
+        allowed_values = ["Csv", "JsonLines", "Json"]
         if file_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for file_type -> " + file_type)
             self._file_type = "outdated_sdk_version"

@@ -62,7 +62,7 @@ class AuditQueryRequest(object):
     def interval(self):
         """
         Gets the interval of this AuditQueryRequest.
-        Date and time range of data to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Date and time range of data to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
 
         :return: The interval of this AuditQueryRequest.
         :rtype: str
@@ -73,7 +73,7 @@ class AuditQueryRequest(object):
     def interval(self, interval):
         """
         Sets the interval of this AuditQueryRequest.
-        Date and time range of data to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Date and time range of data to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
 
         :param interval: The interval of this AuditQueryRequest.
         :type: str

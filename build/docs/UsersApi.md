@@ -1022,7 +1022,7 @@ except ApiException as e:
 | **jid** | [**list[str]**](str.html)| jid | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization |
-| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -1129,7 +1129,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 | **state** | **str**| Search for a user with this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
@@ -1500,7 +1500,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team |
-| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -2096,7 +2096,7 @@ except ApiException as e:
 | **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 | **state** | **str**| Only list users of this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, inactive, deleted, any |
 {: class="table table-striped"}
 
@@ -2351,7 +2351,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture |
-| **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+| **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -2406,7 +2406,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
 | **expand** | [**list[str]**](str.html)| expand | [optional]  |
-| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type

@@ -7718,8 +7718,8 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
         :param BuSearchAgentSchedulesRequest body: body
         :return: BuAsyncAgentSchedulesSearchResponse
                  If the method is called asynchronously,
@@ -8054,8 +8054,8 @@ class WorkforceManagementApi(object):
         :param date week_id: First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str schedule_id: The ID of the schedule (required)
         :param BuQueryAgentSchedulesRequest body: body (required)
-        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
         :return: BuAsyncAgentSchedulesQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9566,8 +9566,8 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
         :param BuSearchAgentSchedulesRequest body: body
         :return: BuAsyncAgentSchedulesSearchResponse
                  If the method is called asynchronously,

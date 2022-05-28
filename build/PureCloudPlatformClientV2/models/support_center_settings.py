@@ -46,7 +46,8 @@ class SupportCenterSettings(object):
             'router_type': 'str',
             'screens': 'list[SupportCenterScreen]',
             'enabled_categories': 'list[AddressableEntityRef]',
-            'style_setting': 'SupportCenterStyleSetting'
+            'style_setting': 'SupportCenterStyleSetting',
+            'feedback': 'SupportCenterFeedbackSettings'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class SupportCenterSettings(object):
             'router_type': 'routerType',
             'screens': 'screens',
             'enabled_categories': 'enabledCategories',
-            'style_setting': 'styleSetting'
+            'style_setting': 'styleSetting',
+            'feedback': 'feedback'
         }
 
         self._enabled = None
@@ -66,6 +68,7 @@ class SupportCenterSettings(object):
         self._screens = None
         self._enabled_categories = None
         self._style_setting = None
+        self._feedback = None
 
     @property
     def enabled(self):
@@ -237,6 +240,30 @@ class SupportCenterSettings(object):
         
 
         self._style_setting = style_setting
+
+    @property
+    def feedback(self):
+        """
+        Gets the feedback of this SupportCenterSettings.
+        Customer feedback settings
+
+        :return: The feedback of this SupportCenterSettings.
+        :rtype: SupportCenterFeedbackSettings
+        """
+        return self._feedback
+
+    @feedback.setter
+    def feedback(self, feedback):
+        """
+        Sets the feedback of this SupportCenterSettings.
+        Customer feedback settings
+
+        :param feedback: The feedback of this SupportCenterSettings.
+        :type: SupportCenterFeedbackSettings
+        """
+        
+
+        self._feedback = feedback
 
     def to_dict(self):
         """
