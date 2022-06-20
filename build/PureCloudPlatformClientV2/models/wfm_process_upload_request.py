@@ -70,9 +70,6 @@ class WfmProcessUploadRequest(object):
         :type: str
         """
         
-        if not upload_key:
-            raise ValueError("Invalid value for `upload_key`, must not be `None`")
-
 
         self._upload_key = upload_key
 

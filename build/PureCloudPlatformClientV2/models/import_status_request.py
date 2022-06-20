@@ -70,9 +70,6 @@ class ImportStatusRequest(object):
         :type: str
         """
         
-        if not status:
-            raise ValueError("Invalid value for `status`, must not be `None`")
-
 
         self._status = status
 

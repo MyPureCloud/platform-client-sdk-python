@@ -118,9 +118,6 @@ class ContactListFilter(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -217,9 +214,6 @@ class ContactListFilter(object):
         :type: DomainEntityRef
         """
         
-        if not contact_list:
-            raise ValueError("Invalid value for `contact_list`, must not be `None`")
-
 
         self._contact_list = contact_list
 

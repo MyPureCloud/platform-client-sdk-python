@@ -79,9 +79,6 @@ class FormsTrackTrigger(object):
         :type: str
         """
         
-        if not selector:
-            raise ValueError("Invalid value for `selector`, must not be `None`")
-
 
         self._selector = selector
 
@@ -106,9 +103,6 @@ class FormsTrackTrigger(object):
         :type: str
         """
         
-        if not form_name:
-            raise ValueError("Invalid value for `form_name`, must not be `None`")
-
 
         self._form_name = form_name
 
@@ -133,9 +127,6 @@ class FormsTrackTrigger(object):
         :type: bool
         """
         
-        if not capture_data_on_form_abandon:
-            raise ValueError("Invalid value for `capture_data_on_form_abandon`, must not be `None`")
-
 
         self._capture_data_on_form_abandon = capture_data_on_form_abandon
 
@@ -160,9 +151,6 @@ class FormsTrackTrigger(object):
         :type: bool
         """
         
-        if not capture_data_on_form_submit:
-            raise ValueError("Invalid value for `capture_data_on_form_submit`, must not be `None`")
-
 
         self._capture_data_on_form_submit = capture_data_on_form_submit
 

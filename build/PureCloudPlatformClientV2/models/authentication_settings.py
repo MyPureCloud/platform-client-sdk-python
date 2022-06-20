@@ -73,9 +73,6 @@ class AuthenticationSettings(object):
         :type: bool
         """
         
-        if not enabled:
-            raise ValueError("Invalid value for `enabled`, must not be `None`")
-
 
         self._enabled = enabled
 
@@ -100,9 +97,6 @@ class AuthenticationSettings(object):
         :type: str
         """
         
-        if not integration_id:
-            raise ValueError("Invalid value for `integration_id`, must not be `None`")
-
 
         self._integration_id = integration_id
 

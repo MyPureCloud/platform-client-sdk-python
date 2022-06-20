@@ -169,9 +169,6 @@ class Phone(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -439,9 +436,6 @@ class Phone(object):
         :type: DomainEntityRef
         """
         
-        if not site:
-            raise ValueError("Invalid value for `site`, must not be `None`")
-
 
         self._site = site
 
@@ -466,9 +460,6 @@ class Phone(object):
         :type: DomainEntityRef
         """
         
-        if not phone_base_settings:
-            raise ValueError("Invalid value for `phone_base_settings`, must not be `None`")
-
 
         self._phone_base_settings = phone_base_settings
 
@@ -541,9 +532,6 @@ class Phone(object):
         :type: list[Line]
         """
         
-        if not lines:
-            raise ValueError("Invalid value for `lines`, must not be `None`")
-
 
         self._lines = lines
 

@@ -76,9 +76,6 @@ class VendorConnectionRequest(object):
         :type: str
         """
         
-        if not publisher:
-            raise ValueError("Invalid value for `publisher`, must not be `None`")
-
 
         self._publisher = publisher
 
@@ -103,9 +100,6 @@ class VendorConnectionRequest(object):
         :type: str
         """
         
-        if not type:
-            raise ValueError("Invalid value for `type`, must not be `None`")
-
 
         self._type = type
 
@@ -130,9 +124,6 @@ class VendorConnectionRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 

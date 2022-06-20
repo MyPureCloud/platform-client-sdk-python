@@ -103,9 +103,6 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -130,9 +127,6 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
-        if not part_number:
-            raise ValueError("Invalid value for `part_number`, must not be `None`")
-
 
         self._part_number = part_number
 
@@ -157,9 +151,6 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
-        if not grouping:
-            raise ValueError("Invalid value for `grouping`, must not be `None`")
-
 
         self._grouping = grouping
 
@@ -184,9 +175,6 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
-        if not unit_of_measure_type:
-            raise ValueError("Invalid value for `unit_of_measure_type`, must not be `None`")
-
 
         self._unit_of_measure_type = unit_of_measure_type
 
@@ -211,9 +199,6 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
-        if not usage_quantity:
-            raise ValueError("Invalid value for `usage_quantity`, must not be `None`")
-
 
         self._usage_quantity = usage_quantity
 
@@ -262,9 +247,6 @@ class SubscriptionOverviewUsage(object):
         :type: str
         """
         
-        if not prepay_quantity:
-            raise ValueError("Invalid value for `prepay_quantity`, must not be `None`")
-
 
         self._prepay_quantity = prepay_quantity
 

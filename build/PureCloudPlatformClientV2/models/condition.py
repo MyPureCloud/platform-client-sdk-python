@@ -114,7 +114,7 @@ class Condition(object):
         :param type: The type of this Condition.
         :type: str
         """
-        allowed_values = ["wrapupCondition", "contactAttributeCondition", "phoneNumberCondition", "phoneNumberTypeCondition", "callAnalysisCondition", "contactPropertyCondition", "dataActionCondition"]
+        allowed_values = ["wrapupCondition", "systemDispositionCondition", "contactAttributeCondition", "phoneNumberCondition", "phoneNumberTypeCondition", "callAnalysisCondition", "contactPropertyCondition", "dataActionCondition"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

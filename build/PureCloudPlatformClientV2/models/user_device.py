@@ -145,9 +145,6 @@ class UserDevice(object):
         :type: str
         """
         
-        if not device_token:
-            raise ValueError("Invalid value for `device_token`, must not be `None`")
-
 
         self._device_token = device_token
 
@@ -172,9 +169,6 @@ class UserDevice(object):
         :type: str
         """
         
-        if not notification_id:
-            raise ValueError("Invalid value for `notification_id`, must not be `None`")
-
 
         self._notification_id = notification_id
 
@@ -199,9 +193,6 @@ class UserDevice(object):
         :type: str
         """
         
-        if not make:
-            raise ValueError("Invalid value for `make`, must not be `None`")
-
 
         self._make = make
 
@@ -226,9 +217,6 @@ class UserDevice(object):
         :type: str
         """
         
-        if not model:
-            raise ValueError("Invalid value for `model`, must not be `None`")
-
 
         self._model = model
 
@@ -253,9 +241,6 @@ class UserDevice(object):
         :type: bool
         """
         
-        if not accept_notifications:
-            raise ValueError("Invalid value for `accept_notifications`, must not be `None`")
-
 
         self._accept_notifications = accept_notifications
 

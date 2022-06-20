@@ -79,9 +79,6 @@ class DocumentUpload(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -106,9 +103,6 @@ class DocumentUpload(object):
         :type: DomainEntityRef
         """
         
-        if not workspace:
-            raise ValueError("Invalid value for `workspace`, must not be `None`")
-
 
         self._workspace = workspace
 

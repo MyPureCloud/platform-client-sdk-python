@@ -79,9 +79,6 @@ class Criteria(object):
         :type: str
         """
         
-        if not key:
-            raise ValueError("Invalid value for `key`, must not be `None`")
-
 
         self._key = key
 
@@ -106,9 +103,6 @@ class Criteria(object):
         :type: list[str]
         """
         
-        if not values:
-            raise ValueError("Invalid value for `values`, must not be `None`")
-
 
         self._values = values
 
@@ -133,9 +127,6 @@ class Criteria(object):
         :type: bool
         """
         
-        if not should_ignore_case:
-            raise ValueError("Invalid value for `should_ignore_case`, must not be `None`")
-
 
         self._should_ignore_case = should_ignore_case
 

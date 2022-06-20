@@ -73,9 +73,6 @@ class NluDetectionRequest(object):
         :type: NluDetectionInput
         """
         
-        if not input:
-            raise ValueError("Invalid value for `input`, must not be `None`")
-
 
         self._input = input
 

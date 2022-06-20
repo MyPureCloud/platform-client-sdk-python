@@ -163,9 +163,6 @@ class AssessmentScoringSet(object):
         :type: list[AssessmentQuestionGroupScore]
         """
         
-        if not question_group_scores:
-            raise ValueError("Invalid value for `question_group_scores`, must not be `None`")
-
 
         self._question_group_scores = question_group_scores
 

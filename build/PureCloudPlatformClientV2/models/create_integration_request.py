@@ -103,9 +103,6 @@ class CreateIntegrationRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -130,9 +127,6 @@ class CreateIntegrationRequest(object):
         :type: IntegrationType
         """
         
-        if not integration_type:
-            raise ValueError("Invalid value for `integration_type`, must not be `None`")
-
 
         self._integration_type = integration_type
 

@@ -73,9 +73,6 @@ class ShiftStartVariance(object):
         :type: list[str]
         """
         
-        if not applicable_days:
-            raise ValueError("Invalid value for `applicable_days`, must not be `None`")
-
 
         self._applicable_days = applicable_days
 
@@ -100,9 +97,6 @@ class ShiftStartVariance(object):
         :type: int
         """
         
-        if not max_shift_start_variance_minutes:
-            raise ValueError("Invalid value for `max_shift_start_variance_minutes`, must not be `None`")
-
 
         self._max_shift_start_variance_minutes = max_shift_start_variance_minutes
 

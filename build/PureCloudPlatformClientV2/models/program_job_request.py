@@ -70,9 +70,6 @@ class ProgramJobRequest(object):
         :type: list[str]
         """
         
-        if not program_ids:
-            raise ValueError("Invalid value for `program_ids`, must not be `None`")
-
 
         self._program_ids = program_ids
 

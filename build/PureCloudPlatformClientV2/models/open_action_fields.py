@@ -73,9 +73,6 @@ class OpenActionFields(object):
         :type: DomainEntityRef
         """
         
-        if not open_action:
-            raise ValueError("Invalid value for `open_action`, must not be `None`")
-
 
         self._open_action = open_action
 

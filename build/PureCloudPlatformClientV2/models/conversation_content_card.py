@@ -85,9 +85,6 @@ class ConversationContentCard(object):
         :type: str
         """
         
-        if not title:
-            raise ValueError("Invalid value for `title`, must not be `None`")
-
 
         self._title = title
 
@@ -208,9 +205,6 @@ class ConversationContentCard(object):
         :type: list[ConversationContentCardAction]
         """
         
-        if not actions:
-            raise ValueError("Invalid value for `actions`, must not be `None`")
-
 
         self._actions = actions
 

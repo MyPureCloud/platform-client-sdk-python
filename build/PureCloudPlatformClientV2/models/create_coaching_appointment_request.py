@@ -97,9 +97,6 @@ class CreateCoachingAppointmentRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -124,9 +121,6 @@ class CreateCoachingAppointmentRequest(object):
         :type: str
         """
         
-        if not description:
-            raise ValueError("Invalid value for `description`, must not be `None`")
-
 
         self._description = description
 
@@ -151,9 +145,6 @@ class CreateCoachingAppointmentRequest(object):
         :type: datetime
         """
         
-        if not date_start:
-            raise ValueError("Invalid value for `date_start`, must not be `None`")
-
 
         self._date_start = date_start
 
@@ -178,9 +169,6 @@ class CreateCoachingAppointmentRequest(object):
         :type: int
         """
         
-        if not length_in_minutes:
-            raise ValueError("Invalid value for `length_in_minutes`, must not be `None`")
-
 
         self._length_in_minutes = length_in_minutes
 
@@ -229,9 +217,6 @@ class CreateCoachingAppointmentRequest(object):
         :type: list[str]
         """
         
-        if not attendee_ids:
-            raise ValueError("Invalid value for `attendee_ids`, must not be `None`")
-
 
         self._attendee_ids = attendee_ids
 

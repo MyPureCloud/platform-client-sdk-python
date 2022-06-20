@@ -103,9 +103,6 @@ class LearningModuleRule(object):
         :type: bool
         """
         
-        if not is_active:
-            raise ValueError("Invalid value for `is_active`, must not be `None`")
-
 
         self._is_active = is_active
 
@@ -130,9 +127,6 @@ class LearningModuleRule(object):
         :type: list[LearningModuleRuleParts]
         """
         
-        if not parts:
-            raise ValueError("Invalid value for `parts`, must not be `None`")
-
 
         self._parts = parts
 

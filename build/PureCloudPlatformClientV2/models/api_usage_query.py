@@ -79,9 +79,6 @@ class ApiUsageQuery(object):
         :type: str
         """
         
-        if not interval:
-            raise ValueError("Invalid value for `interval`, must not be `None`")
-
 
         self._interval = interval
 

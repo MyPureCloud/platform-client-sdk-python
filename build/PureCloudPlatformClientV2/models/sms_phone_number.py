@@ -190,9 +190,6 @@ class SmsPhoneNumber(object):
         :type: str
         """
         
-        if not phone_number:
-            raise ValueError("Invalid value for `phone_number`, must not be `None`")
-
 
         self._phone_number = phone_number
 
@@ -439,9 +436,6 @@ class SmsPhoneNumber(object):
         :type: int
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 

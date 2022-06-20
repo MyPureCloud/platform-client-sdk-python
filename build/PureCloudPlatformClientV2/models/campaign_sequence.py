@@ -220,9 +220,6 @@ class CampaignSequence(object):
         :type: list[DomainEntityRef]
         """
         
-        if not campaigns:
-            raise ValueError("Invalid value for `campaigns`, must not be `None`")
-
 
         self._campaigns = campaigns
 
@@ -247,9 +244,6 @@ class CampaignSequence(object):
         :type: int
         """
         
-        if not current_campaign:
-            raise ValueError("Invalid value for `current_campaign`, must not be `None`")
-
 
         self._current_campaign = current_campaign
 

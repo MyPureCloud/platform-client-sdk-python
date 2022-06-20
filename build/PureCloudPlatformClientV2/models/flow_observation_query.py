@@ -76,9 +76,6 @@ class FlowObservationQuery(object):
         :type: FlowObservationQueryFilter
         """
         
-        if not filter:
-            raise ValueError("Invalid value for `filter`, must not be `None`")
-
 
         self._filter = filter
 
@@ -103,9 +100,6 @@ class FlowObservationQuery(object):
         :type: list[str]
         """
         
-        if not metrics:
-            raise ValueError("Invalid value for `metrics`, must not be `None`")
-
 
         self._metrics = metrics
 

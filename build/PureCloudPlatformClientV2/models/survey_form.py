@@ -127,9 +127,6 @@ class SurveyForm(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -226,9 +223,6 @@ class SurveyForm(object):
         :type: str
         """
         
-        if not context_id:
-            raise ValueError("Invalid value for `context_id`, must not be `None`")
-
 
         self._context_id = context_id
 
@@ -253,9 +247,6 @@ class SurveyForm(object):
         :type: str
         """
         
-        if not language:
-            raise ValueError("Invalid value for `language`, must not be `None`")
-
 
         self._language = language
 
@@ -328,9 +319,6 @@ class SurveyForm(object):
         :type: list[SurveyQuestionGroup]
         """
         
-        if not question_groups:
-            raise ValueError("Invalid value for `question_groups`, must not be `None`")
-
 
         self._question_groups = question_groups
 

@@ -76,9 +76,6 @@ class ResponseFilter(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -130,9 +127,6 @@ class ResponseFilter(object):
         :type: list[str]
         """
         
-        if not values:
-            raise ValueError("Invalid value for `values`, must not be `None`")
-
 
         self._values = values
 

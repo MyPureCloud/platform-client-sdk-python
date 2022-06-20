@@ -115,9 +115,6 @@ class LineIntegration(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -142,9 +139,6 @@ class LineIntegration(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -217,9 +211,6 @@ class LineIntegration(object):
         :type: str
         """
         
-        if not channel_id:
-            raise ValueError("Invalid value for `channel_id`, must not be `None`")
-
 
         self._channel_id = channel_id
 
@@ -244,9 +235,6 @@ class LineIntegration(object):
         :type: str
         """
         
-        if not webhook_uri:
-            raise ValueError("Invalid value for `webhook_uri`, must not be `None`")
-
 
         self._webhook_uri = webhook_uri
 
@@ -415,9 +403,6 @@ class LineIntegration(object):
         :type: int
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 

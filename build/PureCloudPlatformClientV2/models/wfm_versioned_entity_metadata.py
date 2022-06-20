@@ -82,9 +82,6 @@ class WfmVersionedEntityMetadata(object):
         :type: int
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 

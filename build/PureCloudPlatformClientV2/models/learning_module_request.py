@@ -88,9 +88,6 @@ class LearningModuleRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -139,9 +136,6 @@ class LearningModuleRequest(object):
         :type: int
         """
         
-        if not completion_time_in_days:
-            raise ValueError("Invalid value for `completion_time_in_days`, must not be `None`")
-
 
         self._completion_time_in_days = completion_time_in_days
 

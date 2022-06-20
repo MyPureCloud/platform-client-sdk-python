@@ -91,9 +91,6 @@ class TopicRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -217,9 +214,6 @@ class TopicRequest(object):
         :type: str
         """
         
-        if not dialect:
-            raise ValueError("Invalid value for `dialect`, must not be `None`")
-
 
         self._dialect = dialect
 

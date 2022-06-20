@@ -76,9 +76,6 @@ class PropertyIndexRequest(object):
         :type: str
         """
         
-        if not session_id:
-            raise ValueError("Invalid value for `session_id`, must not be `None`")
-
 
         self._session_id = session_id
 
@@ -103,9 +100,6 @@ class PropertyIndexRequest(object):
         :type: datetime
         """
         
-        if not target_date:
-            raise ValueError("Invalid value for `target_date`, must not be `None`")
-
 
         self._target_date = target_date
 
@@ -130,9 +124,6 @@ class PropertyIndexRequest(object):
         :type: list[AnalyticsProperty]
         """
         
-        if not properties:
-            raise ValueError("Invalid value for `properties`, must not be `None`")
-
 
         self._properties = properties
 

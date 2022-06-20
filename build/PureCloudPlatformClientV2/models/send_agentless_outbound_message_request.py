@@ -85,9 +85,6 @@ class SendAgentlessOutboundMessageRequest(object):
         :type: str
         """
         
-        if not from_address:
-            raise ValueError("Invalid value for `from_address`, must not be `None`")
-
 
         self._from_address = from_address
 
@@ -112,9 +109,6 @@ class SendAgentlessOutboundMessageRequest(object):
         :type: str
         """
         
-        if not to_address:
-            raise ValueError("Invalid value for `to_address`, must not be `None`")
-
 
         self._to_address = to_address
 

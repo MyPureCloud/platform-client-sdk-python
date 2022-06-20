@@ -127,9 +127,6 @@ class MailFromResult(object):
         :type: str
         """
         
-        if not mail_from_domain:
-            raise ValueError("Invalid value for `mail_from_domain`, must not be `None`")
-
 
         self._mail_from_domain = mail_from_domain
 

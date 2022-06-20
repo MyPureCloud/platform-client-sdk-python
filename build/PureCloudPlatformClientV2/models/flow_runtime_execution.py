@@ -148,9 +148,6 @@ class FlowRuntimeExecution(object):
         :type: FlowVersion
         """
         
-        if not flow_version:
-            raise ValueError("Invalid value for `flow_version`, must not be `None`")
-
 
         self._flow_version = flow_version
 
@@ -175,9 +172,6 @@ class FlowRuntimeExecution(object):
         :type: datetime
         """
         
-        if not date_launched:
-            raise ValueError("Invalid value for `date_launched`, must not be `None`")
-
 
         self._date_launched = date_launched
 

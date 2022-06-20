@@ -73,9 +73,6 @@ class EdgeServiceStateRequest(object):
         :type: bool
         """
         
-        if not in_service:
-            raise ValueError("Invalid value for `in_service`, must not be `None`")
-
 
         self._in_service = in_service
 

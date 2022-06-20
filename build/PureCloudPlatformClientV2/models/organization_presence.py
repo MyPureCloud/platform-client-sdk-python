@@ -148,9 +148,6 @@ class OrganizationPresence(object):
         :type: dict(str, str)
         """
         
-        if not language_labels:
-            raise ValueError("Invalid value for `language_labels`, must not be `None`")
-
 
         self._language_labels = language_labels
 

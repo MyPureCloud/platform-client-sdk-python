@@ -70,9 +70,6 @@ class TimeOffRequestListing(object):
         :type: list[TimeOffRequest]
         """
         
-        if not entities:
-            raise ValueError("Invalid value for `entities`, must not be `None`")
-
 
         self._entities = entities
 

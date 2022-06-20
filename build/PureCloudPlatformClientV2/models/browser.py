@@ -100,9 +100,6 @@ class Browser(object):
         :type: str
         """
         
-        if not family:
-            raise ValueError("Invalid value for `family`, must not be `None`")
-
 
         self._family = family
 
@@ -127,9 +124,6 @@ class Browser(object):
         :type: str
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 

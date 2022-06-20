@@ -178,9 +178,6 @@ class SurveyAssignment(object):
         :type: str
         """
         
-        if not sending_domain:
-            raise ValueError("Invalid value for `sending_domain`, must not be `None`")
-
 
         self._sending_domain = sending_domain
 

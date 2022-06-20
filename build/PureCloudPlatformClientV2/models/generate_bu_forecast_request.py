@@ -76,9 +76,6 @@ class GenerateBuForecastRequest(object):
         :type: str
         """
         
-        if not description:
-            raise ValueError("Invalid value for `description`, must not be `None`")
-
 
         self._description = description
 

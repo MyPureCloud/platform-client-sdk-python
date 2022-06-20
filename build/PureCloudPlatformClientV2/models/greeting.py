@@ -205,9 +205,6 @@ class Greeting(object):
         :type: DomainEntity
         """
         
-        if not owner:
-            raise ValueError("Invalid value for `owner`, must not be `None`")
-
 
         self._owner = owner
 

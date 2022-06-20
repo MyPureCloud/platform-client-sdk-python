@@ -79,9 +79,6 @@ class LexIntent(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -130,9 +127,6 @@ class LexIntent(object):
         :type: dict(str, LexSlot)
         """
         
-        if not slots:
-            raise ValueError("Invalid value for `slots`, must not be `None`")
-
 
         self._slots = slots
 
@@ -157,9 +151,6 @@ class LexIntent(object):
         :type: str
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 

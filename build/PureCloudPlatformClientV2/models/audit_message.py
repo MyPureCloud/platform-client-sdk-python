@@ -115,9 +115,6 @@ class AuditMessage(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -262,9 +259,6 @@ class AuditMessage(object):
         :type: str
         """
         
-        if not service_name:
-            raise ValueError("Invalid value for `service_name`, must not be `None`")
-
 
         self._service_name = service_name
 
@@ -289,9 +283,6 @@ class AuditMessage(object):
         :type: str
         """
         
-        if not level:
-            raise ValueError("Invalid value for `level`, must not be `None`")
-
 
         self._level = level
 
@@ -340,9 +331,6 @@ class AuditMessage(object):
         :type: str
         """
         
-        if not received_timestamp:
-            raise ValueError("Invalid value for `received_timestamp`, must not be `None`")
-
 
         self._received_timestamp = received_timestamp
 
@@ -367,9 +355,6 @@ class AuditMessage(object):
         :type: str
         """
         
-        if not status:
-            raise ValueError("Invalid value for `status`, must not be `None`")
-
 
         self._status = status
 

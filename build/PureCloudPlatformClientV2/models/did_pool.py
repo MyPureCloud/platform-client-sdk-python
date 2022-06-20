@@ -142,9 +142,6 @@ class DIDPool(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -412,9 +409,6 @@ class DIDPool(object):
         :type: str
         """
         
-        if not start_phone_number:
-            raise ValueError("Invalid value for `start_phone_number`, must not be `None`")
-
 
         self._start_phone_number = start_phone_number
 
@@ -439,9 +433,6 @@ class DIDPool(object):
         :type: str
         """
         
-        if not end_phone_number:
-            raise ValueError("Invalid value for `end_phone_number`, must not be `None`")
-
 
         self._end_phone_number = end_phone_number
 

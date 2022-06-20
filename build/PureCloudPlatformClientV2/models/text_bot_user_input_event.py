@@ -100,9 +100,6 @@ class TextBotUserInputEvent(object):
         :type: list[TextBotUserInputAlternative]
         """
         
-        if not alternatives:
-            raise ValueError("Invalid value for `alternatives`, must not be `None`")
-
 
         self._alternatives = alternatives
 

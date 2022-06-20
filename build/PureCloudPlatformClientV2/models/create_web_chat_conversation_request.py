@@ -85,9 +85,6 @@ class CreateWebChatConversationRequest(object):
         :type: str
         """
         
-        if not organization_id:
-            raise ValueError("Invalid value for `organization_id`, must not be `None`")
-
 
         self._organization_id = organization_id
 
@@ -112,9 +109,6 @@ class CreateWebChatConversationRequest(object):
         :type: str
         """
         
-        if not deployment_id:
-            raise ValueError("Invalid value for `deployment_id`, must not be `None`")
-
 
         self._deployment_id = deployment_id
 
@@ -139,9 +133,6 @@ class CreateWebChatConversationRequest(object):
         :type: WebChatRoutingTarget
         """
         
-        if not routing_target:
-            raise ValueError("Invalid value for `routing_target`, must not be `None`")
-
 
         self._routing_target = routing_target
 
@@ -166,9 +157,6 @@ class CreateWebChatConversationRequest(object):
         :type: GuestMemberInfo
         """
         
-        if not member_info:
-            raise ValueError("Invalid value for `member_info`, must not be `None`")
-
 
         self._member_info = member_info
 

@@ -139,9 +139,6 @@ class EdgeTrunkBase(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -409,9 +406,6 @@ class EdgeTrunkBase(object):
         :type: DomainEntityRef
         """
         
-        if not trunk_metabase:
-            raise ValueError("Invalid value for `trunk_metabase`, must not be `None`")
-
 
         self._trunk_metabase = trunk_metabase
 

@@ -112,9 +112,6 @@ class WhatsAppIntegrationRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -187,9 +184,6 @@ class WhatsAppIntegrationRequest(object):
         :type: str
         """
         
-        if not phone_number:
-            raise ValueError("Invalid value for `phone_number`, must not be `None`")
-
 
         self._phone_number = phone_number
 
@@ -214,9 +208,6 @@ class WhatsAppIntegrationRequest(object):
         :type: str
         """
         
-        if not waba_certificate:
-            raise ValueError("Invalid value for `waba_certificate`, must not be `None`")
-
 
         self._waba_certificate = waba_certificate
 

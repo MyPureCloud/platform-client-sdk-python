@@ -214,9 +214,6 @@ class CampaignSchedule(object):
         :type: list[ScheduleInterval]
         """
         
-        if not intervals:
-            raise ValueError("Invalid value for `intervals`, must not be `None`")
-
 
         self._intervals = intervals
 
@@ -241,9 +238,6 @@ class CampaignSchedule(object):
         :type: str
         """
         
-        if not time_zone:
-            raise ValueError("Invalid value for `time_zone`, must not be `None`")
-
 
         self._time_zone = time_zone
 
@@ -268,9 +262,6 @@ class CampaignSchedule(object):
         :type: DomainEntityRef
         """
         
-        if not campaign:
-            raise ValueError("Invalid value for `campaign`, must not be `None`")
-
 
         self._campaign = campaign
 

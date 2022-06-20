@@ -73,9 +73,6 @@ class TtsSettings(object):
         :type: str
         """
         
-        if not default_engine:
-            raise ValueError("Invalid value for `default_engine`, must not be `None`")
-
 
         self._default_engine = default_engine
 
@@ -100,9 +97,6 @@ class TtsSettings(object):
         :type: list[LanguageOverride]
         """
         
-        if not language_overrides:
-            raise ValueError("Invalid value for `language_overrides`, must not be `None`")
-
 
         self._language_overrides = language_overrides
 

@@ -85,9 +85,6 @@ class PostActionInput(object):
         :type: str
         """
         
-        if not category:
-            raise ValueError("Invalid value for `category`, must not be `None`")
-
 
         self._category = category
 
@@ -112,9 +109,6 @@ class PostActionInput(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -139,9 +133,6 @@ class PostActionInput(object):
         :type: str
         """
         
-        if not integration_id:
-            raise ValueError("Invalid value for `integration_id`, must not be `None`")
-
 
         self._integration_id = integration_id
 
@@ -166,9 +157,6 @@ class PostActionInput(object):
         :type: ActionConfig
         """
         
-        if not config:
-            raise ValueError("Invalid value for `config`, must not be `None`")
-
 
         self._config = config
 
@@ -193,9 +181,6 @@ class PostActionInput(object):
         :type: ActionContractInput
         """
         
-        if not contract:
-            raise ValueError("Invalid value for `contract`, must not be `None`")
-
 
         self._contract = contract
 

@@ -79,9 +79,6 @@ class AddWorkPlanRotationRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -106,9 +103,6 @@ class AddWorkPlanRotationRequest(object):
         :type: DateRangeWithOptionalEnd
         """
         
-        if not date_range:
-            raise ValueError("Invalid value for `date_range`, must not be `None`")
-
 
         self._date_range = date_range
 
@@ -157,9 +151,6 @@ class AddWorkPlanRotationRequest(object):
         :type: WorkPlanPatternRequest
         """
         
-        if not pattern:
-            raise ValueError("Invalid value for `pattern`, must not be `None`")
-
 
         self._pattern = pattern
 

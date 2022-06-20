@@ -157,9 +157,6 @@ class InboundRoute(object):
         :type: str
         """
         
-        if not pattern:
-            raise ValueError("Invalid value for `pattern`, must not be `None`")
-
 
         self._pattern = pattern
 
@@ -280,9 +277,6 @@ class InboundRoute(object):
         :type: str
         """
         
-        if not from_name:
-            raise ValueError("Invalid value for `from_name`, must not be `None`")
-
 
         self._from_name = from_name
 

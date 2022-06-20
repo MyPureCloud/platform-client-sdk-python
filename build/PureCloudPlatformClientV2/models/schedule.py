@@ -139,9 +139,6 @@ class Schedule(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -409,9 +406,6 @@ class Schedule(object):
         :type: LocalDateTime
         """
         
-        if not start:
-            raise ValueError("Invalid value for `start`, must not be `None`")
-
 
         self._start = start
 
@@ -436,9 +430,6 @@ class Schedule(object):
         :type: LocalDateTime
         """
         
-        if not end:
-            raise ValueError("Invalid value for `end`, must not be `None`")
-
 
         self._end = end
 

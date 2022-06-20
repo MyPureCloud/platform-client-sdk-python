@@ -160,9 +160,6 @@ class TrustRequest(object):
         :type: Organization
         """
         
-        if not trustee:
-            raise ValueError("Invalid value for `trustee`, must not be `None`")
-
 
         self._trustee = trustee
 

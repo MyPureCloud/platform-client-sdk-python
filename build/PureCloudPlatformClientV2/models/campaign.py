@@ -190,9 +190,6 @@ class Campaign(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -289,9 +286,6 @@ class Campaign(object):
         :type: DomainEntityRef
         """
         
-        if not contact_list:
-            raise ValueError("Invalid value for `contact_list`, must not be `None`")
-
 
         self._contact_list = contact_list
 
@@ -466,9 +460,6 @@ class Campaign(object):
         :type: list[PhoneColumn]
         """
         
-        if not phone_columns:
-            raise ValueError("Invalid value for `phone_columns`, must not be `None`")
-
 
         self._phone_columns = phone_columns
 
@@ -613,9 +604,6 @@ class Campaign(object):
         :type: str
         """
         
-        if not caller_name:
-            raise ValueError("Invalid value for `caller_name`, must not be `None`")
-
 
         self._caller_name = caller_name
 
@@ -640,9 +628,6 @@ class Campaign(object):
         :type: str
         """
         
-        if not caller_address:
-            raise ValueError("Invalid value for `caller_address`, must not be `None`")
-
 
         self._caller_address = caller_address
 

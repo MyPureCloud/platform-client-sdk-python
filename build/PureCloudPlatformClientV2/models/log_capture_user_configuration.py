@@ -100,9 +100,6 @@ class LogCaptureUserConfiguration(object):
         :type: datetime
         """
         
-        if not date_expired:
-            raise ValueError("Invalid value for `date_expired`, must not be `None`")
-
 
         self._date_expired = date_expired
 

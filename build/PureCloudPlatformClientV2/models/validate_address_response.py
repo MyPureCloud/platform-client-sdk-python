@@ -73,9 +73,6 @@ class ValidateAddressResponse(object):
         :type: bool
         """
         
-        if not valid:
-            raise ValueError("Invalid value for `valid`, must not be `None`")
-
 
         self._valid = valid
 

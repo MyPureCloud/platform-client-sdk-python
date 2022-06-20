@@ -49,7 +49,8 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
             'device': 'JourneyWebEventsNotificationDevice',
             'geolocation': 'JourneyWebEventsNotificationGeoLocation',
             'mkt_campaign': 'JourneyWebEventsNotificationMktCampaign',
-            'visit_referrer': 'JourneyWebEventsNotificationReferrer'
+            'visit_referrer': 'JourneyWebEventsNotificationReferrer',
+            'associated_value': 'JourneyWebEventsNotificationAssociatedValue'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
             'device': 'device',
             'geolocation': 'geolocation',
             'mkt_campaign': 'mktCampaign',
-            'visit_referrer': 'visitReferrer'
+            'visit_referrer': 'visitReferrer',
+            'associated_value': 'associatedValue'
         }
 
         self._outcome = None
@@ -75,6 +77,7 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         self._geolocation = None
         self._mkt_campaign = None
         self._visit_referrer = None
+        self._associated_value = None
 
     @property
     def outcome(self):
@@ -315,6 +318,30 @@ class JourneyWebEventsNotificationOutcomeAchievedMessage(object):
         
 
         self._visit_referrer = visit_referrer
+
+    @property
+    def associated_value(self):
+        """
+        Gets the associated_value of this JourneyWebEventsNotificationOutcomeAchievedMessage.
+
+
+        :return: The associated_value of this JourneyWebEventsNotificationOutcomeAchievedMessage.
+        :rtype: JourneyWebEventsNotificationAssociatedValue
+        """
+        return self._associated_value
+
+    @associated_value.setter
+    def associated_value(self, associated_value):
+        """
+        Sets the associated_value of this JourneyWebEventsNotificationOutcomeAchievedMessage.
+
+
+        :param associated_value: The associated_value of this JourneyWebEventsNotificationOutcomeAchievedMessage.
+        :type: JourneyWebEventsNotificationAssociatedValue
+        """
+        
+
+        self._associated_value = associated_value
 
     def to_dict(self):
         """

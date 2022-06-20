@@ -70,9 +70,6 @@ class ContentCarousel(object):
         :type: list[ContentCard]
         """
         
-        if not cards:
-            raise ValueError("Invalid value for `cards`, must not be `None`")
-
 
         self._cards = cards
 

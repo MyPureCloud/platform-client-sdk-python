@@ -70,9 +70,6 @@ class BotList(object):
         :type: list[BotConnectorBot]
         """
         
-        if not chat_bots:
-            raise ValueError("Invalid value for `chat_bots`, must not be `None`")
-
 
         self._chat_bots = chat_bots
 

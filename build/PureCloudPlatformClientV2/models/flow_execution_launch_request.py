@@ -79,9 +79,6 @@ class FlowExecutionLaunchRequest(object):
         :type: str
         """
         
-        if not flow_id:
-            raise ValueError("Invalid value for `flow_id`, must not be `None`")
-
 
         self._flow_id = flow_id
 

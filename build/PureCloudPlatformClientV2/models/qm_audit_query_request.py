@@ -76,9 +76,6 @@ class QMAuditQueryRequest(object):
         :type: str
         """
         
-        if not interval:
-            raise ValueError("Invalid value for `interval`, must not be `None`")
-
 
         self._interval = interval
 
@@ -103,9 +100,6 @@ class QMAuditQueryRequest(object):
         :type: list[QualityAuditQueryFilter]
         """
         
-        if not filters:
-            raise ValueError("Invalid value for `filters`, must not be `None`")
-
 
         self._filters = filters
 

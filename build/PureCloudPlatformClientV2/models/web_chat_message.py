@@ -139,9 +139,6 @@ class WebChatMessage(object):
         :type: WebChatConversation
         """
         
-        if not conversation:
-            raise ValueError("Invalid value for `conversation`, must not be `None`")
-
 
         self._conversation = conversation
 
@@ -166,9 +163,6 @@ class WebChatMessage(object):
         :type: WebChatMemberInfo
         """
         
-        if not sender:
-            raise ValueError("Invalid value for `sender`, must not be `None`")
-
 
         self._sender = sender
 
@@ -193,9 +187,6 @@ class WebChatMessage(object):
         :type: str
         """
         
-        if not body:
-            raise ValueError("Invalid value for `body`, must not be `None`")
-
 
         self._body = body
 
@@ -247,9 +238,6 @@ class WebChatMessage(object):
         :type: datetime
         """
         
-        if not timestamp:
-            raise ValueError("Invalid value for `timestamp`, must not be `None`")
-
 
         self._timestamp = timestamp
 

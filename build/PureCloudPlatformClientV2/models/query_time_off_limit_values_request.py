@@ -124,9 +124,6 @@ class QueryTimeOffLimitValuesRequest(object):
         :type: list[LocalDateRange]
         """
         
-        if not date_ranges:
-            raise ValueError("Invalid value for `date_ranges`, must not be `None`")
-
 
         self._date_ranges = date_ranges
 

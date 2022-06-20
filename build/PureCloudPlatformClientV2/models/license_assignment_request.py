@@ -76,9 +76,6 @@ class LicenseAssignmentRequest(object):
         :type: str
         """
         
-        if not license_id:
-            raise ValueError("Invalid value for `license_id`, must not be `None`")
-
 
         self._license_id = license_id
 
@@ -103,9 +100,6 @@ class LicenseAssignmentRequest(object):
         :type: list[str]
         """
         
-        if not user_ids_add:
-            raise ValueError("Invalid value for `user_ids_add`, must not be `None`")
-
 
         self._user_ids_add = user_ids_add
 
@@ -130,9 +124,6 @@ class LicenseAssignmentRequest(object):
         :type: list[str]
         """
         
-        if not user_ids_remove:
-            raise ValueError("Invalid value for `user_ids_remove`, must not be `None`")
-
 
         self._user_ids_remove = user_ids_remove
 

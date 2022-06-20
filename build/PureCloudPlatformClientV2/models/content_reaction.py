@@ -100,9 +100,6 @@ class ContentReaction(object):
         :type: int
         """
         
-        if not count:
-            raise ValueError("Invalid value for `count`, must not be `None`")
-
 
         self._count = count
 

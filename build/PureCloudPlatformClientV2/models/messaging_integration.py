@@ -106,9 +106,6 @@ class MessagingIntegration(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -133,9 +130,6 @@ class MessagingIntegration(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -382,9 +376,6 @@ class MessagingIntegration(object):
         :type: int
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 

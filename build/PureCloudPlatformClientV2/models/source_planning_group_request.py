@@ -73,9 +73,6 @@ class SourcePlanningGroupRequest(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -100,9 +97,6 @@ class SourcePlanningGroupRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
-        if not metadata:
-            raise ValueError("Invalid value for `metadata`, must not be `None`")
-
 
         self._metadata = metadata
 

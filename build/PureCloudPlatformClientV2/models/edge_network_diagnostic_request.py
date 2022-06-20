@@ -70,9 +70,6 @@ class EdgeNetworkDiagnosticRequest(object):
         :type: str
         """
         
-        if not host:
-            raise ValueError("Invalid value for `host`, must not be `None`")
-
 
         self._host = host
 

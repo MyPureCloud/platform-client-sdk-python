@@ -91,9 +91,6 @@ class LocationUpdateDefinition(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -118,9 +115,6 @@ class LocationUpdateDefinition(object):
         :type: int
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 

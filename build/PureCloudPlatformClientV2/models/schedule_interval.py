@@ -73,9 +73,6 @@ class ScheduleInterval(object):
         :type: str
         """
         
-        if not start:
-            raise ValueError("Invalid value for `start`, must not be `None`")
-
 
         self._start = start
 
@@ -100,9 +97,6 @@ class ScheduleInterval(object):
         :type: str
         """
         
-        if not end:
-            raise ValueError("Invalid value for `end`, must not be `None`")
-
 
         self._end = end
 

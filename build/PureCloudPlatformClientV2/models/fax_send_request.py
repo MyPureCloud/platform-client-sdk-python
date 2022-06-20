@@ -142,9 +142,6 @@ class FaxSendRequest(object):
         :type: list[str]
         """
         
-        if not addresses:
-            raise ValueError("Invalid value for `addresses`, must not be `None`")
-
 
         self._addresses = addresses
 

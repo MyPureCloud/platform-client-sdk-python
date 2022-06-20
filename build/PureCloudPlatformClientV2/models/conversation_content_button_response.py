@@ -103,9 +103,6 @@ class ConversationContentButtonResponse(object):
         :type: str
         """
         
-        if not text:
-            raise ValueError("Invalid value for `text`, must not be `None`")
-
 
         self._text = text
 
@@ -130,9 +127,6 @@ class ConversationContentButtonResponse(object):
         :type: str
         """
         
-        if not payload:
-            raise ValueError("Invalid value for `payload`, must not be `None`")
-
 
         self._payload = payload
 

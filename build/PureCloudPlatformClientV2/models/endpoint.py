@@ -148,9 +148,6 @@ class Endpoint(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -466,9 +463,6 @@ class Endpoint(object):
         :type: DomainEntityRef
         """
         
-        if not schema:
-            raise ValueError("Invalid value for `schema`, must not be `None`")
-
 
         self._schema = schema
 

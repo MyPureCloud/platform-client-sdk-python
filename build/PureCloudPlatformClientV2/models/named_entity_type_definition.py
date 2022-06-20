@@ -76,9 +76,6 @@ class NamedEntityTypeDefinition(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -127,9 +124,6 @@ class NamedEntityTypeDefinition(object):
         :type: NamedEntityTypeMechanism
         """
         
-        if not mechanism:
-            raise ValueError("Invalid value for `mechanism`, must not be `None`")
-
 
         self._mechanism = mechanism
 

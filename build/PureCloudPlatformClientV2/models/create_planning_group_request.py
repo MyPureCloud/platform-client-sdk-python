@@ -76,9 +76,6 @@ class CreatePlanningGroupRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -103,9 +100,6 @@ class CreatePlanningGroupRequest(object):
         :type: list[RoutePathRequest]
         """
         
-        if not route_paths:
-            raise ValueError("Invalid value for `route_paths`, must not be `None`")
-
 
         self._route_paths = route_paths
 
@@ -130,9 +124,6 @@ class CreatePlanningGroupRequest(object):
         :type: str
         """
         
-        if not service_goal_template_id:
-            raise ValueError("Invalid value for `service_goal_template_id`, must not be `None`")
-
 
         self._service_goal_template_id = service_goal_template_id
 

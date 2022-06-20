@@ -73,9 +73,6 @@ class ItemValidationLimits(object):
         :type: MinLength
         """
         
-        if not min_length:
-            raise ValueError("Invalid value for `min_length`, must not be `None`")
-
 
         self._min_length = min_length
 
@@ -100,9 +97,6 @@ class ItemValidationLimits(object):
         :type: MaxLength
         """
         
-        if not max_length:
-            raise ValueError("Invalid value for `max_length`, must not be `None`")
-
 
         self._max_length = max_length
 

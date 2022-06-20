@@ -151,9 +151,6 @@ class InboundMessageRequest(object):
         :type: str
         """
         
-        if not provider:
-            raise ValueError("Invalid value for `provider`, must not be `None`")
-
 
         self._provider = provider
 

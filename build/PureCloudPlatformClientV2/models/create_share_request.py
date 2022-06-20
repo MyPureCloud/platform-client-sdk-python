@@ -109,9 +109,6 @@ class CreateShareRequest(object):
         :type: SharedEntity
         """
         
-        if not shared_entity:
-            raise ValueError("Invalid value for `shared_entity`, must not be `None`")
-
 
         self._shared_entity = shared_entity
 

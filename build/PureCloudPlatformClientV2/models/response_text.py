@@ -73,9 +73,6 @@ class ResponseText(object):
         :type: str
         """
         
-        if not content:
-            raise ValueError("Invalid value for `content`, must not be `None`")
-
 
         self._content = content
 

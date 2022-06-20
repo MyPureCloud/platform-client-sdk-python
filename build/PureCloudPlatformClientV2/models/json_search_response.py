@@ -88,9 +88,6 @@ class JsonSearchResponse(object):
         :type: int
         """
         
-        if not total:
-            raise ValueError("Invalid value for `total`, must not be `None`")
-
 
         self._total = total
 
@@ -115,9 +112,6 @@ class JsonSearchResponse(object):
         :type: int
         """
         
-        if not page_count:
-            raise ValueError("Invalid value for `page_count`, must not be `None`")
-
 
         self._page_count = page_count
 
@@ -142,9 +136,6 @@ class JsonSearchResponse(object):
         :type: int
         """
         
-        if not page_size:
-            raise ValueError("Invalid value for `page_size`, must not be `None`")
-
 
         self._page_size = page_size
 
@@ -169,9 +160,6 @@ class JsonSearchResponse(object):
         :type: int
         """
         
-        if not page_number:
-            raise ValueError("Invalid value for `page_number`, must not be `None`")
-
 
         self._page_number = page_number
 
@@ -196,9 +184,6 @@ class JsonSearchResponse(object):
         :type: list[str]
         """
         
-        if not types:
-            raise ValueError("Invalid value for `types`, must not be `None`")
-
 
         self._types = types
 
@@ -223,9 +208,6 @@ class JsonSearchResponse(object):
         :type: object
         """
         
-        if not results:
-            raise ValueError("Invalid value for `results`, must not be `None`")
-
 
         self._results = results
 

@@ -79,9 +79,6 @@ class AuditEntity(object):
         :type: str
         """
         
-        if not type:
-            raise ValueError("Invalid value for `type`, must not be `None`")
-
 
         self._type = type
 

@@ -73,9 +73,6 @@ class IdleEventTrigger(object):
         :type: str
         """
         
-        if not event_name:
-            raise ValueError("Invalid value for `event_name`, must not be `None`")
-
 
         self._event_name = event_name
 

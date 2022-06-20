@@ -109,9 +109,6 @@ class PatchSurveyQuestion(object):
         :type: str
         """
         
-        if not label:
-            raise ValueError("Invalid value for `label`, must not be `None`")
-
 
         self._label = label
 

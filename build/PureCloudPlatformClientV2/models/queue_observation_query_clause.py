@@ -100,9 +100,6 @@ class QueueObservationQueryClause(object):
         :type: list[QueueObservationQueryPredicate]
         """
         
-        if not predicates:
-            raise ValueError("Invalid value for `predicates`, must not be `None`")
-
 
         self._predicates = predicates
 

@@ -100,9 +100,6 @@ class QualityAuditQueryFilter(object):
         :type: str
         """
         
-        if not value:
-            raise ValueError("Invalid value for `value`, must not be `None`")
-
 
         self._value = value
 

@@ -70,9 +70,6 @@ class LicenseBatchAssignmentRequest(object):
         :type: list[LicenseAssignmentRequest]
         """
         
-        if not assignments:
-            raise ValueError("Invalid value for `assignments`, must not be `None`")
-
 
         self._assignments = assignments
 

@@ -79,9 +79,6 @@ class UpdateWorkPlanRotationAgentRequest(object):
         :type: str
         """
         
-        if not user_id:
-            raise ValueError("Invalid value for `user_id`, must not be `None`")
-
 
         self._user_id = user_id
 

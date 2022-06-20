@@ -66,7 +66,8 @@ class Message(object):
             'wrapup': 'Wrapup',
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
-            'agent_assistant_id': 'str'
+            'agent_assistant_id': 'str',
+            'initial_state': 'str'
         }
 
         self.attribute_map = {
@@ -96,7 +97,8 @@ class Message(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'agent_assistant_id': 'agentAssistantId'
+            'agent_assistant_id': 'agentAssistantId',
+            'initial_state': 'initialState'
         }
 
         self._state = None
@@ -126,6 +128,7 @@ class Message(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
+        self._initial_state = None
 
     @property
     def state(self):
@@ -786,6 +789,33 @@ class Message(object):
         
 
         self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this Message.
+        The initial connection state of this communication.
+
+        :return: The initial_state of this Message.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this Message.
+        The initial connection state of this communication.
+
+        :param initial_state: The initial_state of this Message.
+        :type: str
+        """
+        allowed_values = ["alerting", "connected", "disconnected"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     def to_dict(self):
         """

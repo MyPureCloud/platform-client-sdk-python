@@ -115,9 +115,6 @@ class EvaluationForm(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -214,9 +211,6 @@ class EvaluationForm(object):
         :type: list[EvaluationQuestionGroup]
         """
         
-        if not question_groups:
-            raise ValueError("Invalid value for `question_groups`, must not be `None`")
-
 
         self._question_groups = question_groups
 

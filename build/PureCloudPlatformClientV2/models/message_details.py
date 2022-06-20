@@ -47,6 +47,7 @@ class MessageDetails(object):
             'message_time': 'datetime',
             'media': 'list[MessageMedia]',
             'stickers': 'list[MessageSticker]',
+            'message_metadata': 'ConversationMessageMetadata',
             'error_info': 'ErrorBody'
         }
 
@@ -58,6 +59,7 @@ class MessageDetails(object):
             'message_time': 'messageTime',
             'media': 'media',
             'stickers': 'stickers',
+            'message_metadata': 'messageMetadata',
             'error_info': 'errorInfo'
         }
 
@@ -68,6 +70,7 @@ class MessageDetails(object):
         self._message_time = None
         self._media = None
         self._stickers = None
+        self._message_metadata = None
         self._error_info = None
 
     @property
@@ -240,6 +243,30 @@ class MessageDetails(object):
         
 
         self._stickers = stickers
+
+    @property
+    def message_metadata(self):
+        """
+        Gets the message_metadata of this MessageDetails.
+        Information that describes the content of the message, if any
+
+        :return: The message_metadata of this MessageDetails.
+        :rtype: ConversationMessageMetadata
+        """
+        return self._message_metadata
+
+    @message_metadata.setter
+    def message_metadata(self, message_metadata):
+        """
+        Sets the message_metadata of this MessageDetails.
+        Information that describes the content of the message, if any
+
+        :param message_metadata: The message_metadata of this MessageDetails.
+        :type: ConversationMessageMetadata
+        """
+        
+
+        self._message_metadata = message_metadata
 
     @property
     def error_info(self):

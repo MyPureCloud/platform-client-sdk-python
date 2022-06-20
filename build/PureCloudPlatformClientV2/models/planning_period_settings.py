@@ -73,9 +73,6 @@ class PlanningPeriodSettings(object):
         :type: int
         """
         
-        if not week_count:
-            raise ValueError("Invalid value for `week_count`, must not be `None`")
-
 
         self._week_count = week_count
 
@@ -100,9 +97,6 @@ class PlanningPeriodSettings(object):
         :type: date
         """
         
-        if not start_date:
-            raise ValueError("Invalid value for `start_date`, must not be `None`")
-
 
         self._start_date = start_date
 

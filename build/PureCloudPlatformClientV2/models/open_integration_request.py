@@ -115,9 +115,6 @@ class OpenIntegrationRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -190,9 +187,6 @@ class OpenIntegrationRequest(object):
         :type: str
         """
         
-        if not outbound_notification_webhook_url:
-            raise ValueError("Invalid value for `outbound_notification_webhook_url`, must not be `None`")
-
 
         self._outbound_notification_webhook_url = outbound_notification_webhook_url
 
@@ -217,9 +211,6 @@ class OpenIntegrationRequest(object):
         :type: str
         """
         
-        if not outbound_notification_webhook_signature_secret_token:
-            raise ValueError("Invalid value for `outbound_notification_webhook_signature_secret_token`, must not be `None`")
-
 
         self._outbound_notification_webhook_signature_secret_token = outbound_notification_webhook_signature_secret_token
 

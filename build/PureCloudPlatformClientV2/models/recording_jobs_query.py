@@ -109,9 +109,6 @@ class RecordingJobsQuery(object):
         :type: datetime
         """
         
-        if not action_date:
-            raise ValueError("Invalid value for `action_date`, must not be `None`")
-
 
         self._action_date = action_date
 
@@ -184,9 +181,6 @@ class RecordingJobsQuery(object):
         :type: AsyncConversationQuery
         """
         
-        if not conversation_query:
-            raise ValueError("Invalid value for `conversation_query`, must not be `None`")
-
 
         self._conversation_query = conversation_query
 

@@ -85,9 +85,6 @@ class EvaluationAggregationQueryMe(object):
         :type: str
         """
         
-        if not interval:
-            raise ValueError("Invalid value for `interval`, must not be `None`")
-
 
         self._interval = interval
 
@@ -160,9 +157,6 @@ class EvaluationAggregationQueryMe(object):
         :type: list[str]
         """
         
-        if not metrics:
-            raise ValueError("Invalid value for `metrics`, must not be `None`")
-
 
         self._metrics = metrics
 

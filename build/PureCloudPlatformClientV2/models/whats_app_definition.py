@@ -76,9 +76,6 @@ class WhatsAppDefinition(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -103,9 +100,6 @@ class WhatsAppDefinition(object):
         :type: str
         """
         
-        if not namespace:
-            raise ValueError("Invalid value for `namespace`, must not be `None`")
-
 
         self._namespace = namespace
 
@@ -130,9 +124,6 @@ class WhatsAppDefinition(object):
         :type: str
         """
         
-        if not language:
-            raise ValueError("Invalid value for `language`, must not be `None`")
-
 
         self._language = language
 

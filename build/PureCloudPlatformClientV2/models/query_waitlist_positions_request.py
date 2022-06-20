@@ -70,9 +70,6 @@ class QueryWaitlistPositionsRequest(object):
         :type: list[UserTimeOffRequestReference]
         """
         
-        if not time_off_requests:
-            raise ValueError("Invalid value for `time_off_requests`, must not be `None`")
-
 
         self._time_off_requests = time_off_requests
 

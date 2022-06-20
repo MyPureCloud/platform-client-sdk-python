@@ -79,9 +79,6 @@ class PatchCallbackRequest(object):
         :type: str
         """
         
-        if not conversation_id:
-            raise ValueError("Invalid value for `conversation_id`, must not be `None`")
-
 
         self._conversation_id = conversation_id
 
@@ -130,9 +127,6 @@ class PatchCallbackRequest(object):
         :type: str
         """
         
-        if not agent_id:
-            raise ValueError("Invalid value for `agent_id`, must not be `None`")
-
 
         self._agent_id = agent_id
 

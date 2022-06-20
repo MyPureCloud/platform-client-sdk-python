@@ -76,9 +76,6 @@ class JourneyContext(object):
         :type: JourneyCustomer
         """
         
-        if not customer:
-            raise ValueError("Invalid value for `customer`, must not be `None`")
-
 
         self._customer = customer
 

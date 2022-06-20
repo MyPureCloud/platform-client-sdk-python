@@ -100,9 +100,6 @@ class LearningAssignmentAggregateQueryRequestFilter(object):
         :type: list[LearningAssignmentAggregateQueryRequestClause]
         """
         
-        if not clauses:
-            raise ValueError("Invalid value for `clauses`, must not be `None`")
-
 
         self._clauses = clauses
 

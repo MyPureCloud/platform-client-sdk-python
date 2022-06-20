@@ -145,9 +145,6 @@ class GDPRRequest(object):
         :type: DomainEntityRef
         """
         
-        if not created_by:
-            raise ValueError("Invalid value for `created_by`, must not be `None`")
-
 
         self._created_by = created_by
 
@@ -223,9 +220,6 @@ class GDPRRequest(object):
         :type: datetime
         """
         
-        if not created_date:
-            raise ValueError("Invalid value for `created_date`, must not be `None`")
-
 
         self._created_date = created_date
 
@@ -277,9 +271,6 @@ class GDPRRequest(object):
         :type: GDPRSubject
         """
         
-        if not subject:
-            raise ValueError("Invalid value for `subject`, must not be `None`")
-
 
         self._subject = subject
 

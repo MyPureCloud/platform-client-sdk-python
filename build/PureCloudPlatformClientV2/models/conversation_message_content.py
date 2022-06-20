@@ -96,7 +96,7 @@ class ConversationMessageContent(object):
         :param content_type: The content_type of this ConversationMessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "Story", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate", "Card", "Carousel"]
+        allowed_values = ["Attachment", "Location", "Story", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "Card", "Carousel", "Unknown"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"

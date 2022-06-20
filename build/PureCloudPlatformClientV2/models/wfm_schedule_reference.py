@@ -79,9 +79,6 @@ class WfmScheduleReference(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -106,9 +103,6 @@ class WfmScheduleReference(object):
         :type: WfmBusinessUnitReference
         """
         
-        if not business_unit:
-            raise ValueError("Invalid value for `business_unit`, must not be `None`")
-
 
         self._business_unit = business_unit
 
@@ -133,9 +127,6 @@ class WfmScheduleReference(object):
         :type: date
         """
         
-        if not week_date:
-            raise ValueError("Invalid value for `week_date`, must not be `None`")
-
 
         self._week_date = week_date
 

@@ -82,9 +82,6 @@ class CreatePredictorRequest(object):
         :type: list[str]
         """
         
-        if not queue_ids:
-            raise ValueError("Invalid value for `queue_ids`, must not be `None`")
-
 
         self._queue_ids = queue_ids
 
@@ -109,9 +106,6 @@ class CreatePredictorRequest(object):
         :type: str
         """
         
-        if not kpi:
-            raise ValueError("Invalid value for `kpi`, must not be `None`")
-
 
         self._kpi = kpi
 

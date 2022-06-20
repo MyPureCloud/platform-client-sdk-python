@@ -118,9 +118,6 @@ class RuleSet(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -265,9 +262,6 @@ class RuleSet(object):
         :type: list[DialerRule]
         """
         
-        if not rules:
-            raise ValueError("Invalid value for `rules`, must not be `None`")
-
 
         self._rules = rules
 

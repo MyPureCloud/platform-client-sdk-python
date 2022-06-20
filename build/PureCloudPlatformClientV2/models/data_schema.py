@@ -142,9 +142,6 @@ class DataSchema(object):
         :type: int
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 
@@ -265,9 +262,6 @@ class DataSchema(object):
         :type: JsonSchemaDocument
         """
         
-        if not json_schema:
-            raise ValueError("Invalid value for `json_schema`, must not be `None`")
-
 
         self._json_schema = json_schema
 

@@ -265,9 +265,6 @@ class SIPSearchPublicRequest(object):
         :type: datetime
         """
         
-        if not date_start:
-            raise ValueError("Invalid value for `date_start`, must not be `None`")
-
 
         self._date_start = date_start
 
@@ -292,9 +289,6 @@ class SIPSearchPublicRequest(object):
         :type: datetime
         """
         
-        if not date_end:
-            raise ValueError("Invalid value for `date_end`, must not be `None`")
-
 
         self._date_end = date_end
 

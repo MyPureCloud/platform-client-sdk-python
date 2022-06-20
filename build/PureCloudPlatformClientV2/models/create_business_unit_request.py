@@ -76,9 +76,6 @@ class CreateBusinessUnitRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -103,9 +100,6 @@ class CreateBusinessUnitRequest(object):
         :type: str
         """
         
-        if not division_id:
-            raise ValueError("Invalid value for `division_id`, must not be `None`")
-
 
         self._division_id = division_id
 
@@ -130,9 +124,6 @@ class CreateBusinessUnitRequest(object):
         :type: CreateBusinessUnitSettings
         """
         
-        if not settings:
-            raise ValueError("Invalid value for `settings`, must not be `None`")
-
 
         self._settings = settings
 

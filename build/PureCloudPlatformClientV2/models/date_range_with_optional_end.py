@@ -73,9 +73,6 @@ class DateRangeWithOptionalEnd(object):
         :type: date
         """
         
-        if not start_business_unit_date:
-            raise ValueError("Invalid value for `start_business_unit_date`, must not be `None`")
-
 
         self._start_business_unit_date = start_business_unit_date
 

@@ -79,9 +79,6 @@ class IntradayPlanningGroupRequest(object):
         :type: date
         """
         
-        if not business_unit_date:
-            raise ValueError("Invalid value for `business_unit_date`, must not be `None`")
-
 
         self._business_unit_date = business_unit_date
 
@@ -106,9 +103,6 @@ class IntradayPlanningGroupRequest(object):
         :type: list[str]
         """
         
-        if not categories:
-            raise ValueError("Invalid value for `categories`, must not be `None`")
-
 
         self._categories = categories
 

@@ -145,9 +145,6 @@ class MessagingSticker(object):
         :type: int
         """
         
-        if not provider_sticker_id:
-            raise ValueError("Invalid value for `provider_sticker_id`, must not be `None`")
-
 
         self._provider_sticker_id = provider_sticker_id
 

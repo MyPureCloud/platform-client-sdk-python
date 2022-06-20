@@ -73,9 +73,6 @@ class RestErrorDetail(object):
         :type: str
         """
         
-        if not error:
-            raise ValueError("Invalid value for `error`, must not be `None`")
-
 
         self._error = error
 

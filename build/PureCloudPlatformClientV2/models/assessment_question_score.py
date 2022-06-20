@@ -136,9 +136,6 @@ class AssessmentQuestionScore(object):
         :type: str
         """
         
-        if not question_id:
-            raise ValueError("Invalid value for `question_id`, must not be `None`")
-
 
         self._question_id = question_id
 

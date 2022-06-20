@@ -73,9 +73,6 @@ class CustomEventAttribute(object):
         :type: str
         """
         
-        if not data_type:
-            raise ValueError("Invalid value for `data_type`, must not be `None`")
-
 
         self._data_type = data_type
 
@@ -100,9 +97,6 @@ class CustomEventAttribute(object):
         :type: str
         """
         
-        if not value:
-            raise ValueError("Invalid value for `value`, must not be `None`")
-
 
         self._value = value
 

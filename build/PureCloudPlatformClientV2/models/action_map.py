@@ -193,9 +193,6 @@ class ActionMap(object):
         :type: str
         """
         
-        if not display_name:
-            raise ValueError("Invalid value for `display_name`, must not be `None`")
-
 
         self._display_name = display_name
 
@@ -220,9 +217,6 @@ class ActionMap(object):
         :type: list[str]
         """
         
-        if not trigger_with_segments:
-            raise ValueError("Invalid value for `trigger_with_segments`, must not be `None`")
-
 
         self._trigger_with_segments = trigger_with_segments
 
@@ -295,9 +289,6 @@ class ActionMap(object):
         :type: list[UrlCondition]
         """
         
-        if not page_url_conditions:
-            raise ValueError("Invalid value for `page_url_conditions`, must not be `None`")
-
 
         self._page_url_conditions = page_url_conditions
 

@@ -79,9 +79,6 @@ class UserListScheduleRequestBody(object):
         :type: list[str]
         """
         
-        if not user_ids:
-            raise ValueError("Invalid value for `user_ids`, must not be `None`")
-
 
         self._user_ids = user_ids
 
@@ -106,9 +103,6 @@ class UserListScheduleRequestBody(object):
         :type: datetime
         """
         
-        if not start_date:
-            raise ValueError("Invalid value for `start_date`, must not be `None`")
-
 
         self._start_date = start_date
 
@@ -133,9 +127,6 @@ class UserListScheduleRequestBody(object):
         :type: datetime
         """
         
-        if not end_date:
-            raise ValueError("Invalid value for `end_date`, must not be `None`")
-
 
         self._end_date = end_date
 

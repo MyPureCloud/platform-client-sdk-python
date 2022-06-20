@@ -82,9 +82,6 @@ class GroupContact(object):
         :type: str
         """
         
-        if not address:
-            raise ValueError("Invalid value for `address`, must not be `None`")
-
 
         self._address = address
 

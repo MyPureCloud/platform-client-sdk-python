@@ -70,9 +70,6 @@ class UploadUrlRequestBody(object):
         :type: int
         """
         
-        if not content_length_bytes:
-            raise ValueError("Invalid value for `content_length_bytes`, must not be `None`")
-
 
         self._content_length_bytes = content_length_bytes
 

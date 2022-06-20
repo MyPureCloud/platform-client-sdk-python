@@ -241,9 +241,6 @@ class Note(object):
         :type: User
         """
         
-        if not created_by:
-            raise ValueError("Invalid value for `created_by`, must not be `None`")
-
 
         self._created_by = created_by
 

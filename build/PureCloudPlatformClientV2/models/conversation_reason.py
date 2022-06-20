@@ -100,9 +100,6 @@ class ConversationReason(object):
         :type: str
         """
         
-        if not message:
-            raise ValueError("Invalid value for `message`, must not be `None`")
-
 
         self._message = message
 

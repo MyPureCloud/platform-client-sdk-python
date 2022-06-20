@@ -73,9 +73,6 @@ class SelectorEventTrigger(object):
         :type: str
         """
         
-        if not selector:
-            raise ValueError("Invalid value for `selector`, must not be `None`")
-
 
         self._selector = selector
 
@@ -100,9 +97,6 @@ class SelectorEventTrigger(object):
         :type: str
         """
         
-        if not event_name:
-            raise ValueError("Invalid value for `event_name`, must not be `None`")
-
 
         self._event_name = event_name
 

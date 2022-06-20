@@ -100,9 +100,6 @@ class SurveyDetailQueryClause(object):
         :type: list[SurveyDetailQueryPredicate]
         """
         
-        if not predicates:
-            raise ValueError("Invalid value for `predicates`, must not be `None`")
-
 
         self._predicates = predicates
 

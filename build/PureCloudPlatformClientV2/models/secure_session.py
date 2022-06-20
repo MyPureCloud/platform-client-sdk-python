@@ -112,9 +112,6 @@ class SecureSession(object):
         :type: DomainEntityRef
         """
         
-        if not flow:
-            raise ValueError("Invalid value for `flow`, must not be `None`")
-
 
         self._flow = flow
 

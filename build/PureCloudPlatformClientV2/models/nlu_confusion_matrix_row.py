@@ -73,9 +73,6 @@ class NluConfusionMatrixRow(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -100,9 +97,6 @@ class NluConfusionMatrixRow(object):
         :type: list[NluConfusionMatrixColumn]
         """
         
-        if not columns:
-            raise ValueError("Invalid value for `columns`, must not be `None`")
-
 
         self._columns = columns
 

@@ -133,9 +133,6 @@ class InteractionStatsRule(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -187,9 +184,6 @@ class InteractionStatsRule(object):
         :type: str
         """
         
-        if not dimension_value:
-            raise ValueError("Invalid value for `dimension_value`, must not be `None`")
-
 
         self._dimension_value = dimension_value
 
@@ -322,9 +316,6 @@ class InteractionStatsRule(object):
         :type: float
         """
         
-        if not value:
-            raise ValueError("Invalid value for `value`, must not be `None`")
-
 
         self._value = value
 
@@ -349,9 +340,6 @@ class InteractionStatsRule(object):
         :type: bool
         """
         
-        if not enabled:
-            raise ValueError("Invalid value for `enabled`, must not be `None`")
-
 
         self._enabled = enabled
 
@@ -400,9 +388,6 @@ class InteractionStatsRule(object):
         :type: list[User]
         """
         
-        if not notification_users:
-            raise ValueError("Invalid value for `notification_users`, must not be `None`")
-
 
         self._notification_users = notification_users
 
@@ -427,9 +412,6 @@ class InteractionStatsRule(object):
         :type: list[str]
         """
         
-        if not alert_types:
-            raise ValueError("Invalid value for `alert_types`, must not be `None`")
-
 
         self._alert_types = alert_types
 

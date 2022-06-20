@@ -70,9 +70,6 @@ class TextBotInputOutputData(object):
         :type: dict(str, object)
         """
         
-        if not variables:
-            raise ValueError("Invalid value for `variables`, must not be `None`")
-
 
         self._variables = variables
 

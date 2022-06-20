@@ -73,9 +73,6 @@ class AvailableTimeOffRequest(object):
         :type: str
         """
         
-        if not activity_code_id:
-            raise ValueError("Invalid value for `activity_code_id`, must not be `None`")
-
 
         self._activity_code_id = activity_code_id
 

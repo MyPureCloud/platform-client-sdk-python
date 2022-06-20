@@ -76,9 +76,6 @@ class BuCreateBlankScheduleRequest(object):
         :type: str
         """
         
-        if not description:
-            raise ValueError("Invalid value for `description`, must not be `None`")
-
 
         self._description = description
 
@@ -127,9 +124,6 @@ class BuCreateBlankScheduleRequest(object):
         :type: int
         """
         
-        if not week_count:
-            raise ValueError("Invalid value for `week_count`, must not be `None`")
-
 
         self._week_count = week_count
 

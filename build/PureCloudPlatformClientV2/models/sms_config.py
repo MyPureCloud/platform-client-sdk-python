@@ -79,9 +79,6 @@ class SmsConfig(object):
         :type: str
         """
         
-        if not message_column:
-            raise ValueError("Invalid value for `message_column`, must not be `None`")
-
 
         self._message_column = message_column
 
@@ -106,9 +103,6 @@ class SmsConfig(object):
         :type: str
         """
         
-        if not phone_column:
-            raise ValueError("Invalid value for `phone_column`, must not be `None`")
-
 
         self._phone_column = phone_column
 
@@ -133,9 +127,6 @@ class SmsConfig(object):
         :type: SmsPhoneNumberRef
         """
         
-        if not sender_sms_phone_number:
-            raise ValueError("Invalid value for `sender_sms_phone_number`, must not be `None`")
-
 
         self._sender_sms_phone_number = sender_sms_phone_number
 

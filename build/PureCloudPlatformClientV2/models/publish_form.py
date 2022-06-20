@@ -73,9 +73,6 @@ class PublishForm(object):
         :type: bool
         """
         
-        if not published:
-            raise ValueError("Invalid value for `published`, must not be `None`")
-
 
         self._published = published
 
@@ -100,9 +97,6 @@ class PublishForm(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 

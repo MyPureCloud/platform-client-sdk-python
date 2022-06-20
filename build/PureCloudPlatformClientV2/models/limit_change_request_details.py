@@ -136,9 +136,6 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
-        if not key:
-            raise ValueError("Invalid value for `key`, must not be `None`")
-
 
         self._key = key
 
@@ -163,9 +160,6 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
-        if not namespace:
-            raise ValueError("Invalid value for `namespace`, must not be `None`")
-
 
         self._namespace = namespace
 
@@ -190,9 +184,6 @@ class LimitChangeRequestDetails(object):
         :type: float
         """
         
-        if not requested_value:
-            raise ValueError("Invalid value for `requested_value`, must not be `None`")
-
 
         self._requested_value = requested_value
 
@@ -217,9 +208,6 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
-        if not description:
-            raise ValueError("Invalid value for `description`, must not be `None`")
-
 
         self._description = description
 
@@ -244,9 +232,6 @@ class LimitChangeRequestDetails(object):
         :type: str
         """
         
-        if not support_case_url:
-            raise ValueError("Invalid value for `support_case_url`, must not be `None`")
-
 
         self._support_case_url = support_case_url
 

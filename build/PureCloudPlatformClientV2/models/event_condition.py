@@ -85,9 +85,6 @@ class EventCondition(object):
         :type: str
         """
         
-        if not key:
-            raise ValueError("Invalid value for `key`, must not be `None`")
-
 
         self._key = key
 
@@ -112,9 +109,6 @@ class EventCondition(object):
         :type: list[str]
         """
         
-        if not values:
-            raise ValueError("Invalid value for `values`, must not be `None`")
-
 
         self._values = values
 
@@ -193,9 +187,6 @@ class EventCondition(object):
         :type: str
         """
         
-        if not session_type:
-            raise ValueError("Invalid value for `session_type`, must not be `None`")
-
 
         self._session_type = session_type
 

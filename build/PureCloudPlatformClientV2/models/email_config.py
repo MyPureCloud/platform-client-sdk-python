@@ -79,9 +79,6 @@ class EmailConfig(object):
         :type: list[str]
         """
         
-        if not email_columns:
-            raise ValueError("Invalid value for `email_columns`, must not be `None`")
-
 
         self._email_columns = email_columns
 
@@ -130,9 +127,6 @@ class EmailConfig(object):
         :type: FromEmailAddress
         """
         
-        if not from_address:
-            raise ValueError("Invalid value for `from_address`, must not be `None`")
-
 
         self._from_address = from_address
 

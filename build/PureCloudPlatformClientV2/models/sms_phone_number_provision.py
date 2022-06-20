@@ -136,9 +136,6 @@ class SmsPhoneNumberProvision(object):
         :type: str
         """
         
-        if not phone_number:
-            raise ValueError("Invalid value for `phone_number`, must not be `None`")
-
 
         self._phone_number = phone_number
 
@@ -190,9 +187,6 @@ class SmsPhoneNumberProvision(object):
         :type: str
         """
         
-        if not country_code:
-            raise ValueError("Invalid value for `country_code`, must not be `None`")
-
 
         self._country_code = country_code
 

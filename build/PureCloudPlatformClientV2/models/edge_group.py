@@ -142,9 +142,6 @@ class EdgeGroup(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -460,9 +457,6 @@ class EdgeGroup(object):
         :type: TrunkBaseAssignment
         """
         
-        if not edge_trunk_base_assignment:
-            raise ValueError("Invalid value for `edge_trunk_base_assignment`, must not be `None`")
-
 
         self._edge_trunk_base_assignment = edge_trunk_base_assignment
 
@@ -487,9 +481,6 @@ class EdgeGroup(object):
         :type: list[TrunkBase]
         """
         
-        if not phone_trunk_bases:
-            raise ValueError("Invalid value for `phone_trunk_bases`, must not be `None`")
-
 
         self._phone_trunk_bases = phone_trunk_bases
 

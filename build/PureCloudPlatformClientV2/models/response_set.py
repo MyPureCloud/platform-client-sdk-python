@@ -115,9 +115,6 @@ class ResponseSet(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -214,9 +211,6 @@ class ResponseSet(object):
         :type: dict(str, Reaction)
         """
         
-        if not responses:
-            raise ValueError("Invalid value for `responses`, must not be `None`")
-
 
         self._responses = responses
 

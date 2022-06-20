@@ -106,9 +106,6 @@ class TextBotChannel(object):
         :type: list[str]
         """
         
-        if not input_modes:
-            raise ValueError("Invalid value for `input_modes`, must not be `None`")
-
 
         self._input_modes = input_modes
 
@@ -133,9 +130,6 @@ class TextBotChannel(object):
         :type: list[str]
         """
         
-        if not output_modes:
-            raise ValueError("Invalid value for `output_modes`, must not be `None`")
-
 
         self._output_modes = output_modes
 
@@ -160,9 +154,6 @@ class TextBotChannel(object):
         :type: TextBotUserAgent
         """
         
-        if not user_agent:
-            raise ValueError("Invalid value for `user_agent`, must not be `None`")
-
 
         self._user_agent = user_agent
 

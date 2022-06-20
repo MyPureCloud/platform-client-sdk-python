@@ -178,9 +178,6 @@ class Conversation(object):
         :type: datetime
         """
         
-        if not start_time:
-            raise ValueError("Invalid value for `start_time`, must not be `None`")
-
 
         self._start_time = start_time
 
@@ -253,9 +250,6 @@ class Conversation(object):
         :type: list[Participant]
         """
         
-        if not participants:
-            raise ValueError("Invalid value for `participants`, must not be `None`")
-
 
         self._participants = participants
 

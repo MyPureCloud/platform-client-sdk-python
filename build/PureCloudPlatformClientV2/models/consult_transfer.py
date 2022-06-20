@@ -100,9 +100,6 @@ class ConsultTransfer(object):
         :type: Destination
         """
         
-        if not destination:
-            raise ValueError("Invalid value for `destination`, must not be `None`")
-
 
         self._destination = destination
 

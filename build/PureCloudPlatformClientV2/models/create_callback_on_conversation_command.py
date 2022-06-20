@@ -196,9 +196,6 @@ class CreateCallbackOnConversationCommand(object):
         :type: list[str]
         """
         
-        if not callback_numbers:
-            raise ValueError("Invalid value for `callback_numbers`, must not be `None`")
-
 
         self._callback_numbers = callback_numbers
 

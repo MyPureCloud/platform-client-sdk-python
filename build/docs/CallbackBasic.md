@@ -34,6 +34,7 @@ title: CallbackBasic
 | **after_call_work_required** | **bool** | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. | [optional] |
 | **caller_id** | **str** | The phone number displayed to recipients of the phone call. The value should conform to the E164 format. | [optional] |
 | **caller_id_name** | **str** | The name displayed to recipients of the phone call. | [optional] |
+| **initial_state** | **str** | The initial connection state of this communication. | [optional] |
 {: class="table table-striped"}
 
 

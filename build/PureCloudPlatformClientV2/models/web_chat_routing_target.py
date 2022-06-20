@@ -109,9 +109,6 @@ class WebChatRoutingTarget(object):
         :type: str
         """
         
-        if not target_address:
-            raise ValueError("Invalid value for `target_address`, must not be `None`")
-
 
         self._target_address = target_address
 

@@ -181,9 +181,6 @@ class Response(object):
         :type: list[DomainEntityRef]
         """
         
-        if not libraries:
-            raise ValueError("Invalid value for `libraries`, must not be `None`")
-
 
         self._libraries = libraries
 
@@ -208,9 +205,6 @@ class Response(object):
         :type: list[ResponseText]
         """
         
-        if not texts:
-            raise ValueError("Invalid value for `texts`, must not be `None`")
-
 
         self._texts = texts
 

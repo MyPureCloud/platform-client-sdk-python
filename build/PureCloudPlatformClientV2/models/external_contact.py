@@ -184,9 +184,6 @@ class ExternalContact(object):
         :type: str
         """
         
-        if not first_name:
-            raise ValueError("Invalid value for `first_name`, must not be `None`")
-
 
         self._first_name = first_name
 
@@ -235,9 +232,6 @@ class ExternalContact(object):
         :type: str
         """
         
-        if not last_name:
-            raise ValueError("Invalid value for `last_name`, must not be `None`")
-
 
         self._last_name = last_name
 

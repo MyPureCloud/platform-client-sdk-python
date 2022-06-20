@@ -136,9 +136,6 @@ class TrustGroup(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -361,9 +358,6 @@ class TrustGroup(object):
         :type: bool
         """
         
-        if not rules_visible:
-            raise ValueError("Invalid value for `rules_visible`, must not be `None`")
-
 
         self._rules_visible = rules_visible
 

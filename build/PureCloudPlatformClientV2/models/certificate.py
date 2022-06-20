@@ -70,9 +70,6 @@ class Certificate(object):
         :type: str
         """
         
-        if not certificate:
-            raise ValueError("Invalid value for `certificate`, must not be `None`")
-
 
         self._certificate = certificate
 

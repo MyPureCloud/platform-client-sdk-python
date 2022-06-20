@@ -214,9 +214,6 @@ class MessagingCampaignSchedule(object):
         :type: list[ScheduleInterval]
         """
         
-        if not intervals:
-            raise ValueError("Invalid value for `intervals`, must not be `None`")
-
 
         self._intervals = intervals
 
@@ -265,9 +262,6 @@ class MessagingCampaignSchedule(object):
         :type: DomainEntityRef
         """
         
-        if not messaging_campaign:
-            raise ValueError("Invalid value for `messaging_campaign`, must not be `None`")
-
 
         self._messaging_campaign = messaging_campaign
 

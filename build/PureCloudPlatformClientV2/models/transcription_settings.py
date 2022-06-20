@@ -42,17 +42,20 @@ class TranscriptionSettings(object):
         self.swagger_types = {
             'transcription': 'str',
             'transcription_confidence_threshold': 'int',
+            'low_latency_transcription_enabled': 'bool',
             'content_search_enabled': 'bool'
         }
 
         self.attribute_map = {
             'transcription': 'transcription',
             'transcription_confidence_threshold': 'transcriptionConfidenceThreshold',
+            'low_latency_transcription_enabled': 'lowLatencyTranscriptionEnabled',
             'content_search_enabled': 'contentSearchEnabled'
         }
 
         self._transcription = None
         self._transcription_confidence_threshold = None
+        self._low_latency_transcription_enabled = None
         self._content_search_enabled = None
 
     @property
@@ -103,11 +106,32 @@ class TranscriptionSettings(object):
         :type: int
         """
         
-        if not transcription_confidence_threshold:
-            raise ValueError("Invalid value for `transcription_confidence_threshold`, must not be `None`")
-
 
         self._transcription_confidence_threshold = transcription_confidence_threshold
+
+    @property
+    def low_latency_transcription_enabled(self):
+        """
+        Gets the low_latency_transcription_enabled of this TranscriptionSettings.
+        Boolean flag indicating whether low latency transcription via Notification API is enabled
+
+        :return: The low_latency_transcription_enabled of this TranscriptionSettings.
+        :rtype: bool
+        """
+        return self._low_latency_transcription_enabled
+
+    @low_latency_transcription_enabled.setter
+    def low_latency_transcription_enabled(self, low_latency_transcription_enabled):
+        """
+        Sets the low_latency_transcription_enabled of this TranscriptionSettings.
+        Boolean flag indicating whether low latency transcription via Notification API is enabled
+
+        :param low_latency_transcription_enabled: The low_latency_transcription_enabled of this TranscriptionSettings.
+        :type: bool
+        """
+        
+
+        self._low_latency_transcription_enabled = low_latency_transcription_enabled
 
     @property
     def content_search_enabled(self):

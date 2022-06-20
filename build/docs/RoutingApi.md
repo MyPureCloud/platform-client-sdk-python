@@ -675,7 +675,7 @@ void (empty response body)
 
 <a name="delete_routing_sms_phonenumber"></a>
 
-##  delete_routing_sms_phonenumber(address_id, async=async)
+##  delete_routing_sms_phonenumber(address_id)
 
 
 
@@ -703,11 +703,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 address_id = 'address_id_example' # str | Address ID
-async = False # bool | Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (optional) (default to False)
 
 try:
     # Delete a phone number provisioned for SMS.
-    api_instance.delete_routing_sms_phonenumber(address_id, async=async)
+    api_instance.delete_routing_sms_phonenumber(address_id)
 except ApiException as e:
     print("Exception when calling RoutingApi->delete_routing_sms_phonenumber: %s\n" % e)
 ```
@@ -718,7 +717,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
-| **async** | **bool**| Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1059,7 +1057,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 queue_id = ['queue_id_example'] # list[str] | Queue ID(s) to filter assessments by. (optional)
 
@@ -1078,7 +1076,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **queue_id** | [**list[str]**](str.html)| Queue ID(s) to filter assessments by. | [optional]  |
 {: class="table table-striped"}
@@ -1695,7 +1693,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 queue_id = ['queue_id_example'] # list[str] | Comma-separated list of queue Ids to filter by. (optional)
 
@@ -1714,7 +1712,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **queue_id** | [**list[str]**](str.html)| Comma-separated list of queue Ids to filter by. | [optional]  |
 {: class="table table-striped"}
@@ -2998,7 +2996,7 @@ except ApiException as e:
 | **country_code** | [**list[str]**](str.html)| Filter on country code | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Optional field to sort results | [optional] <br />**Values**: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice |
+| **sort_by** | **str**| Optional field to sort results | [optional] <br />**Values**: phoneNumber, countryCode, country, dateCreated, dateModified, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice |
 | **sort_order** | **str**| Sort order | [optional] <br />**Values**: ascending, descending |
 | **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &#39;en-US&#39;] |
 {: class="table table-striped"}
@@ -4882,7 +4880,7 @@ except ApiException as e:
 
 <a name="post_routing_sms_phonenumbers"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_phonenumbers(body, async=async)
+## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_phonenumbers(body)
 
 
 
@@ -4910,11 +4908,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 body = PureCloudPlatformClientV2.SmsPhoneNumberProvision() # SmsPhoneNumberProvision | SmsPhoneNumber
-async = False # bool | Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (optional) (default to False)
 
 try:
     # Provision a phone number for SMS
-    api_response = api_instance.post_routing_sms_phonenumbers(body, async=async)
+    api_response = api_instance.post_routing_sms_phonenumbers(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->post_routing_sms_phonenumbers: %s\n" % e)
@@ -4926,7 +4923,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber |  |
-| **async** | **bool**| Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -5356,7 +5352,7 @@ except ApiException as e:
 
 <a name="put_routing_sms_phonenumber"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) put_routing_sms_phonenumber(address_id, body, async=async)
+## [**SmsPhoneNumber**](SmsPhoneNumber.html) put_routing_sms_phonenumber(address_id, body)
 
 
 
@@ -5385,11 +5381,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 address_id = 'address_id_example' # str | Address ID
 body = PureCloudPlatformClientV2.SmsPhoneNumber() # SmsPhoneNumber | SmsPhoneNumber
-async = False # bool | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (optional) (default to False)
 
 try:
     # Update a phone number provisioned for SMS.
-    api_response = api_instance.put_routing_sms_phonenumber(address_id, body, async=async)
+    api_response = api_instance.put_routing_sms_phonenumber(address_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->put_routing_sms_phonenumber: %s\n" % e)
@@ -5402,7 +5397,6 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
 | **body** | [**SmsPhoneNumber**](SmsPhoneNumber.html)| SmsPhoneNumber |  |
-| **async** | **bool**| Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type

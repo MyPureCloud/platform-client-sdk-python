@@ -94,9 +94,6 @@ class DraftTopics(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -265,9 +262,6 @@ class DraftTopics(object):
         :type: list[str]
         """
         
-        if not phrases:
-            raise ValueError("Invalid value for `phrases`, must not be `None`")
-
 
         self._phrases = phrases
 

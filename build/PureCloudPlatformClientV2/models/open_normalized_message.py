@@ -121,9 +121,6 @@ class OpenNormalizedMessage(object):
         :type: OpenMessagingChannel
         """
         
-        if not channel:
-            raise ValueError("Invalid value for `channel`, must not be `None`")
-
 
         self._channel = channel
 

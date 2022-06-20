@@ -264,7 +264,7 @@ class UserSearchRequest(object):
         :param integration_presence_source: The integration_presence_source of this UserSearchRequest.
         :type: str
         """
-        allowed_values = ["MicrosoftTeams", "ZoomPhone"]
+        allowed_values = ["MicrosoftTeams", "ZoomPhone", "EightByEight"]
         if integration_presence_source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for integration_presence_source -> " + integration_presence_source)
             self._integration_presence_source = "outdated_sdk_version"

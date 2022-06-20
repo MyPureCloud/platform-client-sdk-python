@@ -76,9 +76,6 @@ class BotConnectorBotVersion(object):
         :type: str
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 
@@ -103,9 +100,6 @@ class BotConnectorBotVersion(object):
         :type: list[str]
         """
         
-        if not supported_languages:
-            raise ValueError("Invalid value for `supported_languages`, must not be `None`")
-
 
         self._supported_languages = supported_languages
 
@@ -130,9 +124,6 @@ class BotConnectorBotVersion(object):
         :type: list[BotIntent]
         """
         
-        if not intents:
-            raise ValueError("Invalid value for `intents`, must not be `None`")
-
 
         self._intents = intents
 

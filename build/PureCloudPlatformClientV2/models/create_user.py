@@ -91,9 +91,6 @@ class CreateUser(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -142,9 +139,6 @@ class CreateUser(object):
         :type: str
         """
         
-        if not email:
-            raise ValueError("Invalid value for `email`, must not be `None`")
-
 
         self._email = email
 
@@ -217,9 +211,6 @@ class CreateUser(object):
         :type: str
         """
         
-        if not password:
-            raise ValueError("Invalid value for `password`, must not be `None`")
-
 
         self._password = password
 
@@ -244,9 +235,6 @@ class CreateUser(object):
         :type: str
         """
         
-        if not division_id:
-            raise ValueError("Invalid value for `division_id`, must not be `None`")
-
 
         self._division_id = division_id
 

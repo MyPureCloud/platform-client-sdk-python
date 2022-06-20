@@ -85,9 +85,6 @@ class BotConnectorBot(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -160,9 +157,6 @@ class BotConnectorBot(object):
         :type: list[BotConnectorBotVersion]
         """
         
-        if not versions:
-            raise ValueError("Invalid value for `versions`, must not be `None`")
-
 
         self._versions = versions
 

@@ -76,9 +76,6 @@ class DocumentArticle(object):
         :type: str
         """
         
-        if not title:
-            raise ValueError("Invalid value for `title`, must not be `None`")
-
 
         self._title = title
 

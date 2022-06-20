@@ -73,9 +73,6 @@ class PatchActionMapScheduleGroups(object):
         :type: ActionMapScheduleGroup
         """
         
-        if not action_map_schedule_group:
-            raise ValueError("Invalid value for `action_map_schedule_group`, must not be `None`")
-
 
         self._action_map_schedule_group = action_map_schedule_group
 

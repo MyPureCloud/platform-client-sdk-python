@@ -70,9 +70,6 @@ class RoleDivisionGrants(object):
         :type: list[RoleDivisionPair]
         """
         
-        if not grants:
-            raise ValueError("Invalid value for `grants`, must not be `None`")
-
 
         self._grants = grants
 

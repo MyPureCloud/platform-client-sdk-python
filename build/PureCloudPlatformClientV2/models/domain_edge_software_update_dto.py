@@ -97,9 +97,6 @@ class DomainEdgeSoftwareUpdateDto(object):
         :type: DomainEdgeSoftwareVersionDto
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 

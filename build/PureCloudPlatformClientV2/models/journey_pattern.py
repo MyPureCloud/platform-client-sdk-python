@@ -82,9 +82,6 @@ class JourneyPattern(object):
         :type: list[Criteria]
         """
         
-        if not criteria:
-            raise ValueError("Invalid value for `criteria`, must not be `None`")
-
 
         self._criteria = criteria
 
@@ -160,9 +157,6 @@ class JourneyPattern(object):
         :type: str
         """
         
-        if not session_type:
-            raise ValueError("Invalid value for `session_type`, must not be `None`")
-
 
         self._session_type = session_type
 

@@ -70,9 +70,6 @@ class ActionSurvey(object):
         :type: list[JourneySurveyQuestion]
         """
         
-        if not questions:
-            raise ValueError("Invalid value for `questions`, must not be `None`")
-
 
         self._questions = questions
 

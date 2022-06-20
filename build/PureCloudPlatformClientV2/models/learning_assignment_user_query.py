@@ -73,9 +73,6 @@ class LearningAssignmentUserQuery(object):
         :type: LearningModuleRule
         """
         
-        if not rule:
-            raise ValueError("Invalid value for `rule`, must not be `None`")
-
 
         self._rule = rule
 

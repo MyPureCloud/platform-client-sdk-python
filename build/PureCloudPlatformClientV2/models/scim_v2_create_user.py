@@ -154,9 +154,6 @@ class ScimV2CreateUser(object):
         :type: str
         """
         
-        if not user_name:
-            raise ValueError("Invalid value for `user_name`, must not be `None`")
-
 
         self._user_name = user_name
 
@@ -181,9 +178,6 @@ class ScimV2CreateUser(object):
         :type: str
         """
         
-        if not display_name:
-            raise ValueError("Invalid value for `display_name`, must not be `None`")
-
 
         self._display_name = display_name
 

@@ -73,9 +73,6 @@ class SmsPhoneNumberRef(object):
         :type: str
         """
         
-        if not phone_number:
-            raise ValueError("Invalid value for `phone_number`, must not be `None`")
-
 
         self._phone_number = phone_number
 

@@ -539,7 +539,7 @@ except ApiException as e:
 
 <a name="get_gamification_profile_members"></a>
 
-## [**MemberListing**](MemberListing.html) get_gamification_profile_members(performance_profile_id)
+## [**MemberListing**](MemberListing.html) get_gamification_profile_members(profile_id)
 
 
 
@@ -547,7 +547,7 @@ Members of a given performance profile
 
 
 
-Wraps GET /api/v2/gamification/profiles/{performanceProfileId}/members 
+Wraps GET /api/v2/gamification/profiles/{profileId}/members 
 
 Requires ANY permissions: 
 
@@ -566,11 +566,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+profile_id = 'profile_id_example' # str | Profile Id
 
 try:
     # Members of a given performance profile
-    api_response = api_instance.get_gamification_profile_members(performance_profile_id)
+    api_response = api_instance.get_gamification_profile_members(profile_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_profile_members: %s\n" % e)
@@ -581,7 +581,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **performance_profile_id** | **str**| Performance Profile Id |  |
+| **profile_id** | **str**| Profile Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -647,7 +647,7 @@ except ApiException as e:
 
 <a name="get_gamification_profile_metrics"></a>
 
-## [**GetMetricResponse**](GetMetricResponse.html) get_gamification_profile_metrics(profile_id, expand=expand, workday=workday)
+## [**GetMetricResponse**](GetMetricResponse.html) get_gamification_profile_metrics(profile_id, expand=expand, workday=workday, metric_ids=metric_ids)
 
 
 
@@ -679,10 +679,11 @@ api_instance = PureCloudPlatformClientV2.GamificationApi()
 profile_id = 'profile_id_example' # str | Performance Profile Id
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 workday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+metric_ids = 'metric_ids_example' # str | List of metric ids to filter the response (Optional, comma-separated). (optional)
 
 try:
     # All gamified metrics for a given performance profile
-    api_response = api_instance.get_gamification_profile_metrics(profile_id, expand=expand, workday=workday)
+    api_response = api_instance.get_gamification_profile_metrics(profile_id, expand=expand, workday=workday, metric_ids=metric_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_profile_metrics: %s\n" % e)
@@ -696,6 +697,7 @@ except ApiException as e:
 | **profile_id** | **str**| Performance Profile Id |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
 | **workday** | **date**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **metric_ids** | **str**| List of metric ids to filter the response (Optional, comma-separated). | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2134,7 +2136,7 @@ except ApiException as e:
 
 <a name="post_gamification_profile_members"></a>
 
-## [**Assignment**](Assignment.html) post_gamification_profile_members(performance_profile_id, body)
+## [**Assignment**](Assignment.html) post_gamification_profile_members(profile_id, body)
 
 
 
@@ -2142,7 +2144,7 @@ Assign members to a given performance profile
 
 
 
-Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members 
+Wraps POST /api/v2/gamification/profiles/{profileId}/members 
 
 Requires ANY permissions: 
 
@@ -2161,12 +2163,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+profile_id = 'profile_id_example' # str | Profile Id
 body = PureCloudPlatformClientV2.AssignUsers() # AssignUsers | assignUsers
 
 try:
     # Assign members to a given performance profile
-    api_response = api_instance.post_gamification_profile_members(performance_profile_id, body)
+    api_response = api_instance.post_gamification_profile_members(profile_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->post_gamification_profile_members: %s\n" % e)
@@ -2177,7 +2179,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **performance_profile_id** | **str**| Performance Profile Id |  |
+| **profile_id** | **str**| Profile Id |  |
 | **body** | [**AssignUsers**](AssignUsers.html)| assignUsers |  |
 {: class="table table-striped"}
 
@@ -2187,7 +2189,7 @@ except ApiException as e:
 
 <a name="post_gamification_profile_members_validate"></a>
 
-## [**AssignmentValidation**](AssignmentValidation.html) post_gamification_profile_members_validate(performance_profile_id, body)
+## [**AssignmentValidation**](AssignmentValidation.html) post_gamification_profile_members_validate(profile_id, body)
 
 
 
@@ -2195,7 +2197,7 @@ Validate member assignment
 
 
 
-Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members/validate 
+Wraps POST /api/v2/gamification/profiles/{profileId}/members/validate 
 
 Requires ANY permissions: 
 
@@ -2214,12 +2216,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GamificationApi()
-performance_profile_id = 'performance_profile_id_example' # str | Performance Profile Id
+profile_id = 'profile_id_example' # str | Profile Id
 body = PureCloudPlatformClientV2.ValidateAssignUsers() # ValidateAssignUsers | memberAssignments
 
 try:
     # Validate member assignment
-    api_response = api_instance.post_gamification_profile_members_validate(performance_profile_id, body)
+    api_response = api_instance.post_gamification_profile_members_validate(profile_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->post_gamification_profile_members_validate: %s\n" % e)
@@ -2230,7 +2232,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **performance_profile_id** | **str**| Performance Profile Id |  |
+| **profile_id** | **str**| Profile Id |  |
 | **body** | [**ValidateAssignUsers**](ValidateAssignUsers.html)| memberAssignments |  |
 {: class="table table-striped"}
 

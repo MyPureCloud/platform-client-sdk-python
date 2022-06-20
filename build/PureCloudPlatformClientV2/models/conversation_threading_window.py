@@ -100,9 +100,6 @@ class ConversationThreadingWindow(object):
         :type: list[ConversationThreadingWindowSetting]
         """
         
-        if not settings:
-            raise ValueError("Invalid value for `settings`, must not be `None`")
-
 
         self._settings = settings
 

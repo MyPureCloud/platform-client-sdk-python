@@ -79,9 +79,6 @@ class LearningAssignmentAggregateParam(object):
         :type: str
         """
         
-        if not interval:
-            raise ValueError("Invalid value for `interval`, must not be `None`")
-
 
         self._interval = interval
 
@@ -154,9 +151,6 @@ class LearningAssignmentAggregateParam(object):
         :type: LearningAssignmentAggregateQueryRequestFilter
         """
         
-        if not filter:
-            raise ValueError("Invalid value for `filter`, must not be `None`")
-
 
         self._filter = filter
 

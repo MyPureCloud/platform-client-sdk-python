@@ -169,9 +169,6 @@ class OpenMessagingChannel(object):
         :type: str
         """
         
-        if not message_id:
-            raise ValueError("Invalid value for `message_id`, must not be `None`")
-
 
         self._message_id = message_id
 
@@ -196,9 +193,6 @@ class OpenMessagingChannel(object):
         :type: OpenMessagingToRecipient
         """
         
-        if not to:
-            raise ValueError("Invalid value for `to`, must not be `None`")
-
 
         self._to = to
 
@@ -223,9 +217,6 @@ class OpenMessagingChannel(object):
         :type: OpenMessagingFromRecipient
         """
         
-        if not pcFrom:
-            raise ValueError("Invalid value for `pcFrom`, must not be `None`")
-
 
         self._pcFrom = pcFrom
 
@@ -250,9 +241,6 @@ class OpenMessagingChannel(object):
         :type: datetime
         """
         
-        if not time:
-            raise ValueError("Invalid value for `time`, must not be `None`")
-
 
         self._time = time
 

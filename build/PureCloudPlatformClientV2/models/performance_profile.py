@@ -124,9 +124,6 @@ class PerformanceProfile(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -175,9 +172,6 @@ class PerformanceProfile(object):
         :type: str
         """
         
-        if not description:
-            raise ValueError("Invalid value for `description`, must not be `None`")
-
 
         self._description = description
 
@@ -202,9 +196,6 @@ class PerformanceProfile(object):
         :type: list[str]
         """
         
-        if not metric_orders:
-            raise ValueError("Invalid value for `metric_orders`, must not be `None`")
-
 
         self._metric_orders = metric_orders
 

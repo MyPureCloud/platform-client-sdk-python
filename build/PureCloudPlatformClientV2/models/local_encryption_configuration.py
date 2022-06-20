@@ -133,9 +133,6 @@ class LocalEncryptionConfiguration(object):
         :type: str
         """
         
-        if not url:
-            raise ValueError("Invalid value for `url`, must not be `None`")
-
 
         self._url = url
 
@@ -160,9 +157,6 @@ class LocalEncryptionConfiguration(object):
         :type: str
         """
         
-        if not api_id:
-            raise ValueError("Invalid value for `api_id`, must not be `None`")
-
 
         self._api_id = api_id
 
@@ -187,9 +181,6 @@ class LocalEncryptionConfiguration(object):
         :type: str
         """
         
-        if not api_key:
-            raise ValueError("Invalid value for `api_key`, must not be `None`")
-
 
         self._api_key = api_key
 

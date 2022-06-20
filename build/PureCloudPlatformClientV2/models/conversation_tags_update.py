@@ -70,9 +70,6 @@ class ConversationTagsUpdate(object):
         :type: str
         """
         
-        if not external_tag:
-            raise ValueError("Invalid value for `external_tag`, must not be `None`")
-
 
         self._external_tag = external_tag
 

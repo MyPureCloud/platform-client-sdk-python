@@ -190,9 +190,6 @@ class MessageData(object):
         :type: datetime
         """
         
-        if not timestamp:
-            raise ValueError("Invalid value for `timestamp`, must not be `None`")
-
 
         self._timestamp = timestamp
 
@@ -319,9 +316,6 @@ class MessageData(object):
         :type: str
         """
         
-        if not text_body:
-            raise ValueError("Invalid value for `text_body`, must not be `None`")
-
 
         self._text_body = text_body
 

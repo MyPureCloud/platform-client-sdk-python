@@ -66,7 +66,8 @@ class CallbackBasic(object):
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
             'caller_id': 'str',
-            'caller_id_name': 'str'
+            'caller_id_name': 'str',
+            'initial_state': 'str'
         }
 
         self.attribute_map = {
@@ -96,7 +97,8 @@ class CallbackBasic(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'caller_id': 'callerId',
-            'caller_id_name': 'callerIdName'
+            'caller_id_name': 'callerIdName',
+            'initial_state': 'initialState'
         }
 
         self._state = None
@@ -126,6 +128,7 @@ class CallbackBasic(object):
         self._after_call_work_required = None
         self._caller_id = None
         self._caller_id_name = None
+        self._initial_state = None
 
     @property
     def state(self):
@@ -783,6 +786,33 @@ class CallbackBasic(object):
         
 
         self._caller_id_name = caller_id_name
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this CallbackBasic.
+        The initial connection state of this communication.
+
+        :return: The initial_state of this CallbackBasic.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this CallbackBasic.
+        The initial connection state of this communication.
+
+        :param initial_state: The initial_state of this CallbackBasic.
+        :type: str
+        """
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "scheduled", "none"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     def to_dict(self):
         """

@@ -79,9 +79,6 @@ class UserRoutingLanguagePost(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -106,9 +103,6 @@ class UserRoutingLanguagePost(object):
         :type: float
         """
         
-        if not proficiency:
-            raise ValueError("Invalid value for `proficiency`, must not be `None`")
-
 
         self._proficiency = proficiency
 

@@ -73,9 +73,6 @@ class ScimGenesysUserExternalId(object):
         :type: str
         """
         
-        if not authority:
-            raise ValueError("Invalid value for `authority`, must not be `None`")
-
 
         self._authority = authority
 
@@ -100,9 +97,6 @@ class ScimGenesysUserExternalId(object):
         :type: str
         """
         
-        if not value:
-            raise ValueError("Invalid value for `value`, must not be `None`")
-
 
         self._value = value
 

@@ -82,9 +82,6 @@ class RoutePathRequest(object):
         :type: str
         """
         
-        if not queue_id:
-            raise ValueError("Invalid value for `queue_id`, must not be `None`")
-
 
         self._queue_id = queue_id
 

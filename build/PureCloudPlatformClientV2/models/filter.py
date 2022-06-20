@@ -79,9 +79,6 @@ class Filter(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -106,9 +103,6 @@ class Filter(object):
         :type: str
         """
         
-        if not type:
-            raise ValueError("Invalid value for `type`, must not be `None`")
-
 
         self._type = type
 
@@ -133,9 +127,6 @@ class Filter(object):
         :type: str
         """
         
-        if not operator:
-            raise ValueError("Invalid value for `operator`, must not be `None`")
-
 
         self._operator = operator
 
@@ -160,9 +151,6 @@ class Filter(object):
         :type: list[str]
         """
         
-        if not values:
-            raise ValueError("Invalid value for `values`, must not be `None`")
-
 
         self._values = values
 

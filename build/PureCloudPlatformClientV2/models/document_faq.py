@@ -76,9 +76,6 @@ class DocumentFaq(object):
         :type: str
         """
         
-        if not question:
-            raise ValueError("Invalid value for `question`, must not be `None`")
-
 
         self._question = question
 
@@ -103,9 +100,6 @@ class DocumentFaq(object):
         :type: str
         """
         
-        if not answer:
-            raise ValueError("Invalid value for `answer`, must not be `None`")
-
 
         self._answer = answer
 

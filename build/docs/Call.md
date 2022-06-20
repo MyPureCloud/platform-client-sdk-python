@@ -36,6 +36,7 @@ title: Call
 | **after_call_work** | [**AfterCallWork**](AfterCallWork.html) | After-call work for the communication. | [optional] |
 | **after_call_work_required** | **bool** | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. | [optional] |
 | **agent_assistant_id** | **str** | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. | [optional] |
+| **initial_state** | **str** | The initial connection state of this communication. | [optional] |
 {: class="table table-striped"}
 
 

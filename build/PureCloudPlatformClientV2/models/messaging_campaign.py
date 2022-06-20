@@ -313,9 +313,6 @@ class MessagingCampaign(object):
         :type: DomainEntityRef
         """
         
-        if not contact_list:
-            raise ValueError("Invalid value for `contact_list`, must not be `None`")
-
 
         self._contact_list = contact_list
 
@@ -412,9 +409,6 @@ class MessagingCampaign(object):
         :type: int
         """
         
-        if not messages_per_minute:
-            raise ValueError("Invalid value for `messages_per_minute`, must not be `None`")
-
 
         self._messages_per_minute = messages_per_minute
 

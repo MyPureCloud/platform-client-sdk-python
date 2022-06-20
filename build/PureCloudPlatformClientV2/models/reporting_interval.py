@@ -100,9 +100,6 @@ class ReportingInterval(object):
         :type: int
         """
         
-        if not interval_value:
-            raise ValueError("Invalid value for `interval_value`, must not be `None`")
-
 
         self._interval_value = interval_value
 

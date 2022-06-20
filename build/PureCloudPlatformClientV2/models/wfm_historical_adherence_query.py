@@ -82,9 +82,6 @@ class WfmHistoricalAdherenceQuery(object):
         :type: datetime
         """
         
-        if not start_date:
-            raise ValueError("Invalid value for `start_date`, must not be `None`")
-
 
         self._start_date = start_date
 

@@ -941,13 +941,12 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str address_id: Address ID (required)
-        :param bool async: Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number. 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['address_id', 'async']
+        all_params = ['address_id']
         all_params.append('callback')
 
         params = locals()
@@ -971,8 +970,6 @@ class RoutingApi(object):
             path_params['addressId'] = params['address_id']
 
         query_params = {}
-        if 'async' in params:
-            query_params['async'] = params['async']
 
         header_params = {}
 
@@ -1497,7 +1494,7 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
         :param str page_size: Number of entities to return. Maximum of 200.
         :param list[str] queue_id: Queue ID(s) to filter assessments by.
         :return: AssessmentListing
@@ -2457,7 +2454,7 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
         :param str page_size: Number of entities to return. Maximum of 200.
         :param list[str] queue_id: Comma-separated list of queue Ids to filter by.
         :return: PredictorListing
@@ -7376,13 +7373,12 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param SmsPhoneNumberProvision body: SmsPhoneNumber (required)
-        :param bool async: Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request.
         :return: SmsPhoneNumber
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'async']
+        all_params = ['body']
         all_params.append('callback')
 
         params = locals()
@@ -7404,8 +7400,6 @@ class RoutingApi(object):
         path_params = {}
 
         query_params = {}
-        if 'async' in params:
-            query_params['async'] = params['async']
 
         header_params = {}
 
@@ -8118,13 +8112,12 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str address_id: Address ID (required)
         :param SmsPhoneNumber body: SmsPhoneNumber (required)
-        :param bool async: Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request.
         :return: SmsPhoneNumber
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['address_id', 'body', 'async']
+        all_params = ['address_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -8151,8 +8144,6 @@ class RoutingApi(object):
             path_params['addressId'] = params['address_id']
 
         query_params = {}
-        if 'async' in params:
-            query_params['async'] = params['async']
 
         header_params = {}
 

@@ -109,9 +109,6 @@ class BusinessUnitSettings(object):
         :type: str
         """
         
-        if not time_zone:
-            raise ValueError("Invalid value for `time_zone`, must not be `None`")
-
 
         self._time_zone = time_zone
 
@@ -184,9 +181,6 @@ class BusinessUnitSettings(object):
         :type: WfmVersionedEntityMetadata
         """
         
-        if not metadata:
-            raise ValueError("Invalid value for `metadata`, must not be `None`")
-
 
         self._metadata = metadata
 

@@ -85,9 +85,6 @@ class CampaignProgress(object):
         :type: DomainEntityRef
         """
         
-        if not campaign:
-            raise ValueError("Invalid value for `campaign`, must not be `None`")
-
 
         self._campaign = campaign
 
@@ -112,9 +109,6 @@ class CampaignProgress(object):
         :type: DomainEntityRef
         """
         
-        if not contact_list:
-            raise ValueError("Invalid value for `contact_list`, must not be `None`")
-
 
         self._contact_list = contact_list
 

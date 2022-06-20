@@ -10,9 +10,9 @@ title: UserScheduleAdherence
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
 | **user** | [**UserReference**](UserReference.html) | The user for whom this status applies | [optional] |
-| **business_unit** | [**BusinessUnit**](BusinessUnit.html) | The business unit to which this user belongs | [optional] |
-| **management_unit** | [**ManagementUnit**](ManagementUnit.html) | The management unit to which this user belongs | [optional] |
-| **team** | [**Team**](Team.html) | The team to which this user belongs | [optional] |
+| **business_unit** | [**BusinessUnitReference**](BusinessUnitReference.html) | The business unit to which this user belongs | [optional] |
+| **management_unit** | [**ManagementUnitReference**](ManagementUnitReference.html) | The management unit to which this user belongs | [optional] |
+| **team** | [**TeamReference**](TeamReference.html) | The team to which this user belongs | [optional] |
 | **scheduled_activity_category** | **str** | Activity for which the user is scheduled | [optional] |
 | **system_presence** | **str** | Actual underlying system presence value | [optional] |
 | **organization_secondary_presence_id** | **str** | Organization Secondary Presence Id. | [optional] |

@@ -133,9 +133,6 @@ class LearningModuleRuleParts(object):
         :type: list[str]
         """
         
-        if not value:
-            raise ValueError("Invalid value for `value`, must not be `None`")
-
 
         self._value = value
 
@@ -160,9 +157,6 @@ class LearningModuleRuleParts(object):
         :type: int
         """
         
-        if not order:
-            raise ValueError("Invalid value for `order`, must not be `None`")
-
 
         self._order = order
 

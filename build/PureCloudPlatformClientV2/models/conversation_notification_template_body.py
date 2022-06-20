@@ -97,9 +97,6 @@ class ConversationNotificationTemplateBody(object):
         :type: list[ConversationNotificationTemplateParameter]
         """
         
-        if not parameters:
-            raise ValueError("Invalid value for `parameters`, must not be `None`")
-
 
         self._parameters = parameters
 

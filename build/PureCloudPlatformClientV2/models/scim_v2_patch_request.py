@@ -73,9 +73,6 @@ class ScimV2PatchRequest(object):
         :type: list[str]
         """
         
-        if not schemas:
-            raise ValueError("Invalid value for `schemas`, must not be `None`")
-
 
         self._schemas = schemas
 

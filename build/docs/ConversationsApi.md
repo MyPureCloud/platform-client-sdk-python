@@ -163,10 +163,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
 |[**put_conversation_tags**](ConversationsApi.html#put_conversation_tags) | Update the tags on a conversation.|
 |[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
+|[**put_conversations_call_recordingstate**](ConversationsApi.html#put_conversations_call_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_callback_recordingstate**](ConversationsApi.html#put_conversations_callback_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_chat_recordingstate**](ConversationsApi.html#put_conversations_chat_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_cobrowsesession_recordingstate**](ConversationsApi.html#put_conversations_cobrowsesession_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
+|[**put_conversations_email_recordingstate**](ConversationsApi.html#put_conversations_email_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_message_recordingstate**](ConversationsApi.html#put_conversations_message_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#put_conversations_messaging_integrations_line_integration_id) | Update a LINE messenger integration|
 |[**put_conversations_messaging_supportedcontent_default**](ConversationsApi.html#put_conversations_messaging_supportedcontent_default) | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.|
 |[**put_conversations_messaging_threadingtimeline**](ConversationsApi.html#put_conversations_messaging_threadingtimeline) | Update conversation threading window timeline for each messaging type|
+|[**put_conversations_screenshare_recordingstate**](ConversationsApi.html#put_conversations_screenshare_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_social_recordingstate**](ConversationsApi.html#put_conversations_social_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_video_recordingstate**](ConversationsApi.html#put_conversations_video_recordingstate) | Update a conversation by setting its recording state|
 {: class="table table-striped"}
 
 <a name="delete_analytics_conversations_details_job"></a>
@@ -8315,6 +8324,218 @@ except ApiException as e:
 
 **Empty**
 
+<a name="put_conversations_call_recordingstate"></a>
+
+## str** put_conversations_call_recordingstate(conversation_id, body)
+
+
+
+Update a conversation by setting its recording state
+
+
+
+Wraps PUT /api/v2/conversations/calls/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_response = api_instance.put_conversations_call_recordingstate(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_call_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="put_conversations_callback_recordingstate"></a>
+
+## str** put_conversations_callback_recordingstate(conversation_id, body)
+
+
+
+Update a conversation by setting its recording state
+
+
+
+Wraps PUT /api/v2/conversations/callbacks/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_response = api_instance.put_conversations_callback_recordingstate(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_callback_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="put_conversations_chat_recordingstate"></a>
+
+## str** put_conversations_chat_recordingstate(conversation_id, body)
+
+
+
+Update a conversation by setting its recording state
+
+
+
+Wraps PUT /api/v2/conversations/chats/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_response = api_instance.put_conversations_chat_recordingstate(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_chat_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="put_conversations_cobrowsesession_recordingstate"></a>
+
+## str** put_conversations_cobrowsesession_recordingstate(conversation_id, body)
+
+
+
+Update a conversation by setting its recording state
+
+
+
+Wraps PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_response = api_instance.put_conversations_cobrowsesession_recordingstate(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_cobrowsesession_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
 <a name="put_conversations_email_messages_draft"></a>
 
 ## [**EmailMessage**](EmailMessage.html) put_conversations_email_messages_draft(conversation_id, body)
@@ -8366,6 +8587,112 @@ except ApiException as e:
 ### Return type
 
 [**EmailMessage**](EmailMessage.html)
+
+<a name="put_conversations_email_recordingstate"></a>
+
+## str** put_conversations_email_recordingstate(conversation_id, body)
+
+
+
+Update a conversation by setting its recording state
+
+
+
+Wraps PUT /api/v2/conversations/emails/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_response = api_instance.put_conversations_email_recordingstate(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_email_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="put_conversations_message_recordingstate"></a>
+
+## str** put_conversations_message_recordingstate(conversation_id, body)
+
+
+
+Update a conversation by setting its recording state
+
+
+
+Wraps PUT /api/v2/conversations/messages/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_response = api_instance.put_conversations_message_recordingstate(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_message_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
 
 <a name="put_conversations_messaging_integrations_line_integration_id"></a>
 
@@ -8525,4 +8852,163 @@ except ApiException as e:
 ### Return type
 
 [**ConversationThreadingWindow**](ConversationThreadingWindow.html)
+
+<a name="put_conversations_screenshare_recordingstate"></a>
+
+## str** put_conversations_screenshare_recordingstate(conversation_id, body)
+
+
+
+Update a conversation by setting its recording state
+
+
+
+Wraps PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_response = api_instance.put_conversations_screenshare_recordingstate(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_screenshare_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="put_conversations_social_recordingstate"></a>
+
+## str** put_conversations_social_recordingstate(conversation_id, body)
+
+
+
+Update a conversation by setting its recording state
+
+
+
+Wraps PUT /api/v2/conversations/socials/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_response = api_instance.put_conversations_social_recordingstate(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_social_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="put_conversations_video_recordingstate"></a>
+
+## str** put_conversations_video_recordingstate(conversation_id, body)
+
+
+
+Update a conversation by setting its recording state
+
+
+
+Wraps PUT /api/v2/conversations/videos/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_response = api_instance.put_conversations_video_recordingstate(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_video_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
 

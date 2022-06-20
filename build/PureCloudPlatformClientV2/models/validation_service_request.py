@@ -73,9 +73,6 @@ class ValidationServiceRequest(object):
         :type: datetime
         """
         
-        if not date_import_ended:
-            raise ValueError("Invalid value for `date_import_ended`, must not be `None`")
-
 
         self._date_import_ended = date_import_ended
 
@@ -100,9 +97,6 @@ class ValidationServiceRequest(object):
         :type: str
         """
         
-        if not upload_key:
-            raise ValueError("Invalid value for `upload_key`, must not be `None`")
-
 
         self._upload_key = upload_key
 

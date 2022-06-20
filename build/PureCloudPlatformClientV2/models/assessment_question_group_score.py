@@ -112,9 +112,6 @@ class AssessmentQuestionGroupScore(object):
         :type: str
         """
         
-        if not question_group_id:
-            raise ValueError("Invalid value for `question_group_id`, must not be `None`")
-
 
         self._question_group_id = question_group_id
 

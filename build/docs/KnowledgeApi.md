@@ -335,7 +335,7 @@ knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 language_code = 'en-US' # str | Language code, format: iso2-LOCALE
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 name = 'name_example' # str | Filter to return the categories that starts with the given category name. (optional)
 
@@ -356,7 +356,7 @@ except ApiException as e:
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **name** | **str**| Filter to return the categories that starts with the given category name. | [optional]  |
 {: class="table table-striped"}
@@ -508,7 +508,7 @@ knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 language_code = 'en-US' # str | Language code, format: iso2-LOCALE
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 categories = 'categories_example' # str | Filter by categories ids, comma separated values expected. (optional)
 title = 'title_example' # str | Filter by document title. (optional)
@@ -533,7 +533,7 @@ except ApiException as e:
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **categories** | **str**| Filter by categories ids, comma separated values expected. | [optional]  |
 | **title** | **str**| Filter by document title. | [optional]  |
@@ -689,7 +689,7 @@ knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 language_code = 'en-US' # str | Language code, format: iso2-LOCALE
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 knowledge_documents_state = 'knowledge_documents_state_example' # str | Return the training with the specified state of the trained documents. (optional)
 
@@ -710,7 +710,7 @@ except ApiException as e:
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **knowledge_documents_state** | **str**| Return the training with the specified state of the trained documents. | [optional] <br />**Values**: Draft, Active, Discarded, Archived |
 {: class="table table-striped"}
@@ -750,7 +750,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 name = 'name_example' # str | Filter by Name. (optional)
 core_language = 'core_language_example' # str | Filter by core language. (optional)
@@ -773,7 +773,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **name** | **str**| Filter by Name. | [optional]  |
 | **core_language** | **str**| Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |

@@ -124,9 +124,6 @@ class ObservationValue(object):
         :type: datetime
         """
         
-        if not observation_date:
-            raise ValueError("Invalid value for `observation_date`, must not be `None`")
-
 
         self._observation_date = observation_date
 

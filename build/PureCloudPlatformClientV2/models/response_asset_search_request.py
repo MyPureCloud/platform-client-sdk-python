@@ -181,9 +181,6 @@ class ResponseAssetSearchRequest(object):
         :type: list[ResponseAssetFilter]
         """
         
-        if not query:
-            raise ValueError("Invalid value for `query`, must not be `None`")
-
 
         self._query = query
 

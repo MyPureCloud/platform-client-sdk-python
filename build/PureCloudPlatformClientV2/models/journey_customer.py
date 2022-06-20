@@ -73,9 +73,6 @@ class JourneyCustomer(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -100,9 +97,6 @@ class JourneyCustomer(object):
         :type: str
         """
         
-        if not id_type:
-            raise ValueError("Invalid value for `id_type`, must not be `None`")
-
 
         self._id_type = id_type
 

@@ -127,9 +127,6 @@ class ShortTermForecastReference(object):
         :type: str
         """
         
-        if not week_date:
-            raise ValueError("Invalid value for `week_date`, must not be `None`")
-
 
         self._week_date = week_date
 

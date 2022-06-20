@@ -73,9 +73,6 @@ class CallableTime(object):
         :type: list[CampaignTimeSlot]
         """
         
-        if not time_slots:
-            raise ValueError("Invalid value for `time_slots`, must not be `None`")
-
 
         self._time_slots = time_slots
 
@@ -100,9 +97,6 @@ class CallableTime(object):
         :type: str
         """
         
-        if not time_zone_id:
-            raise ValueError("Invalid value for `time_zone_id`, must not be `None`")
-
 
         self._time_zone_id = time_zone_id
 

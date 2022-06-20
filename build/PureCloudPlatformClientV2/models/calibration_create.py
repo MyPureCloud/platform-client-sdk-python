@@ -211,9 +211,6 @@ class CalibrationCreate(object):
         :type: ConversationReference
         """
         
-        if not conversation:
-            raise ValueError("Invalid value for `conversation`, must not be `None`")
-
 
         self._conversation = conversation
 

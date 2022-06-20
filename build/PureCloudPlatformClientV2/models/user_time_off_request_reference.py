@@ -100,9 +100,6 @@ class UserTimeOffRequestReference(object):
         :type: UserReference
         """
         
-        if not user:
-            raise ValueError("Invalid value for `user`, must not be `None`")
-
 
         self._user = user
 

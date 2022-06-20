@@ -76,9 +76,6 @@ class TimeOffLimitRange(object):
         :type: date
         """
         
-        if not start_date:
-            raise ValueError("Invalid value for `start_date`, must not be `None`")
-
 
         self._start_date = start_date
 
@@ -130,9 +127,6 @@ class TimeOffLimitRange(object):
         :type: list[int]
         """
         
-        if not limit_minutes_per_interval:
-            raise ValueError("Invalid value for `limit_minutes_per_interval`, must not be `None`")
-
 
         self._limit_minutes_per_interval = limit_minutes_per_interval
 

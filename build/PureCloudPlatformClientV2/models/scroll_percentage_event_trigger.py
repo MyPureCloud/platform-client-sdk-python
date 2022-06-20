@@ -73,9 +73,6 @@ class ScrollPercentageEventTrigger(object):
         :type: int
         """
         
-        if not percentage:
-            raise ValueError("Invalid value for `percentage`, must not be `None`")
-
 
         self._percentage = percentage
 
@@ -100,9 +97,6 @@ class ScrollPercentageEventTrigger(object):
         :type: str
         """
         
-        if not event_name:
-            raise ValueError("Invalid value for `event_name`, must not be `None`")
-
 
         self._event_name = event_name
 

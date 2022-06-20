@@ -103,9 +103,6 @@ class ContentStory(object):
         :type: str
         """
         
-        if not url:
-            raise ValueError("Invalid value for `url`, must not be `None`")
-
 
         self._url = url
 

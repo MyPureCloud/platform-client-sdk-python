@@ -73,9 +73,6 @@ class SubjectDivisions(object):
         :type: list[str]
         """
         
-        if not subject_ids:
-            raise ValueError("Invalid value for `subject_ids`, must not be `None`")
-
 
         self._subject_ids = subject_ids
 
@@ -100,9 +97,6 @@ class SubjectDivisions(object):
         :type: list[str]
         """
         
-        if not division_ids:
-            raise ValueError("Invalid value for `division_ids`, must not be `None`")
-
 
         self._division_ids = division_ids
 

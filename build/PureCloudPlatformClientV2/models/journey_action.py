@@ -73,9 +73,6 @@ class JourneyAction(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -100,9 +97,6 @@ class JourneyAction(object):
         :type: JourneyActionMap
         """
         
-        if not action_map:
-            raise ValueError("Invalid value for `action_map`, must not be `None`")
-
 
         self._action_map = action_map
 

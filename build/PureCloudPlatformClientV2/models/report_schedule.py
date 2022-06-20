@@ -166,9 +166,6 @@ class ReportSchedule(object):
         :type: str
         """
         
-        if not quartz_cron_expression:
-            raise ValueError("Invalid value for `quartz_cron_expression`, must not be `None`")
-
 
         self._quartz_cron_expression = quartz_cron_expression
 
@@ -337,9 +334,6 @@ class ReportSchedule(object):
         :type: str
         """
         
-        if not interval:
-            raise ValueError("Invalid value for `interval`, must not be `None`")
-
 
         self._interval = interval
 
@@ -436,9 +430,6 @@ class ReportSchedule(object):
         :type: str
         """
         
-        if not report_id:
-            raise ValueError("Invalid value for `report_id`, must not be `None`")
-
 
         self._report_id = report_id
 

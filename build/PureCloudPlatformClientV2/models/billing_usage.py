@@ -76,9 +76,6 @@ class BillingUsage(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -103,9 +100,6 @@ class BillingUsage(object):
         :type: str
         """
         
-        if not total_usage:
-            raise ValueError("Invalid value for `total_usage`, must not be `None`")
-
 
         self._total_usage = total_usage
 
@@ -130,9 +124,6 @@ class BillingUsage(object):
         :type: list[BillingUsageResource]
         """
         
-        if not resources:
-            raise ValueError("Invalid value for `resources`, must not be `None`")
-
 
         self._resources = resources
 

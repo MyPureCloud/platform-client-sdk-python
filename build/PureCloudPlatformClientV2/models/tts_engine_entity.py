@@ -139,9 +139,6 @@ class TtsEngineEntity(object):
         :type: list[str]
         """
         
-        if not languages:
-            raise ValueError("Invalid value for `languages`, must not be `None`")
-
 
         self._languages = languages
 
@@ -166,9 +163,6 @@ class TtsEngineEntity(object):
         :type: list[str]
         """
         
-        if not output_formats:
-            raise ValueError("Invalid value for `output_formats`, must not be `None`")
-
 
         self._output_formats = output_formats
 

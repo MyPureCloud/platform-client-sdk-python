@@ -157,9 +157,6 @@ class EmailMessage(object):
         :type: list[EmailAddress]
         """
         
-        if not to:
-            raise ValueError("Invalid value for `to`, must not be `None`")
-
 
         self._to = to
 
@@ -232,9 +229,6 @@ class EmailMessage(object):
         :type: EmailAddress
         """
         
-        if not pcFrom:
-            raise ValueError("Invalid value for `pcFrom`, must not be `None`")
-
 
         self._pcFrom = pcFrom
 
@@ -331,9 +325,6 @@ class EmailMessage(object):
         :type: str
         """
         
-        if not text_body:
-            raise ValueError("Invalid value for `text_body`, must not be `None`")
-
 
         self._text_body = text_body
 

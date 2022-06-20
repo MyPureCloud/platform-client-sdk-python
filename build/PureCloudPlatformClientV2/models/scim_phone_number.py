@@ -99,7 +99,7 @@ class ScimPhoneNumber(object):
         :param type: The type of this ScimPhoneNumber.
         :type: str
         """
-        allowed_values = ["work", "work2", "work3", "work4", "home", "mobile", "other", "microsoftteams", "zoomphone"]
+        allowed_values = ["work", "work2", "work3", "work4", "home", "mobile", "other", "microsoftteams", "zoomphone", "eighbyeight"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

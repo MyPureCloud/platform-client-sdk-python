@@ -148,9 +148,6 @@ class OutboundRoute(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -418,9 +415,6 @@ class OutboundRoute(object):
         :type: list[str]
         """
         
-        if not classification_types:
-            raise ValueError("Invalid value for `classification_types`, must not be `None`")
-
 
         self._classification_types = classification_types
 

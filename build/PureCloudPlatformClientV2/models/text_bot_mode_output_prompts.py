@@ -70,9 +70,6 @@ class TextBotModeOutputPrompts(object):
         :type: list[TextBotPromptSegment]
         """
         
-        if not segments:
-            raise ValueError("Invalid value for `segments`, must not be `None`")
-
 
         self._segments = segments
 

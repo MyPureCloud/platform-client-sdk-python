@@ -115,9 +115,6 @@ class Trustee(object):
         :type: bool
         """
         
-        if not enabled:
-            raise ValueError("Invalid value for `enabled`, must not be `None`")
-
 
         self._enabled = enabled
 

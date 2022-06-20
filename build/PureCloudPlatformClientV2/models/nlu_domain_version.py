@@ -184,9 +184,6 @@ class NluDomainVersion(object):
         :type: str
         """
         
-        if not language:
-            raise ValueError("Invalid value for `language`, must not be `None`")
-
 
         self._language = language
 

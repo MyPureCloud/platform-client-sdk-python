@@ -97,9 +97,6 @@ class JourneyPage(object):
         :type: str
         """
         
-        if not url:
-            raise ValueError("Invalid value for `url`, must not be `None`")
-
 
         self._url = url
 
@@ -148,9 +145,6 @@ class JourneyPage(object):
         :type: str
         """
         
-        if not domain:
-            raise ValueError("Invalid value for `domain`, must not be `None`")
-
 
         self._domain = domain
 
@@ -199,9 +193,6 @@ class JourneyPage(object):
         :type: str
         """
         
-        if not hostname:
-            raise ValueError("Invalid value for `hostname`, must not be `None`")
-
 
         self._hostname = hostname
 
@@ -274,9 +265,6 @@ class JourneyPage(object):
         :type: str
         """
         
-        if not pathname:
-            raise ValueError("Invalid value for `pathname`, must not be `None`")
-
 
         self._pathname = pathname
 

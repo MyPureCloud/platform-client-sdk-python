@@ -70,9 +70,6 @@ class ConversationDeletionProtectionQuery(object):
         :type: list[str]
         """
         
-        if not conversation_ids:
-            raise ValueError("Invalid value for `conversation_ids`, must not be `None`")
-
 
         self._conversation_ids = conversation_ids
 

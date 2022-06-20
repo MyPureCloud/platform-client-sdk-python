@@ -91,9 +91,6 @@ class StreetAddress(object):
         :type: str
         """
         
-        if not country:
-            raise ValueError("Invalid value for `country`, must not be `None`")
-
 
         self._country = country
 
@@ -118,9 +115,6 @@ class StreetAddress(object):
         :type: str
         """
         
-        if not a1:
-            raise ValueError("Invalid value for `a1`, must not be `None`")
-
 
         self._a1 = a1
 
@@ -145,9 +139,6 @@ class StreetAddress(object):
         :type: str
         """
         
-        if not a3:
-            raise ValueError("Invalid value for `a3`, must not be `None`")
-
 
         self._a3 = a3
 
@@ -172,9 +163,6 @@ class StreetAddress(object):
         :type: str
         """
         
-        if not rd:
-            raise ValueError("Invalid value for `rd`, must not be `None`")
-
 
         self._rd = rd
 
@@ -199,9 +187,6 @@ class StreetAddress(object):
         :type: str
         """
         
-        if not hno:
-            raise ValueError("Invalid value for `hno`, must not be `None`")
-
 
         self._hno = hno
 
@@ -274,9 +259,6 @@ class StreetAddress(object):
         :type: str
         """
         
-        if not pc:
-            raise ValueError("Invalid value for `pc`, must not be `None`")
-
 
         self._pc = pc
 

@@ -150,6 +150,13 @@ title: ViewFilter
 | **conversation_initiators** | **list[str]** | The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation | [optional] |
 | **has_customer_participated** | **bool** | Indicates if the customer has participated in an initiated conversation | [optional] |
 | **is_acd_interaction** | **bool** | Filter to indicate if interaction was ACD or non-ACD | [optional] |
+| **has_fax** | **bool** | Filters to indicate if interaction has FAX | [optional] |
+| **data_action_ids** | **list[str]** | The list of Data Action IDs  | [optional] |
+| **action_category_name** | **str** | Action Category Name | [optional] |
+| **response_statuses** | **list[str]** | The list of Response codes for Data Action | [optional] |
+| **available_dashboard** | **str** | Filter to indicate the availability of the dashboard is public or private. | [optional] |
+| **favourite_dashboard** | **bool** | Filter to indicate whether the dashboard is favorite or unfavorite. | [optional] |
+| **my_dashboard** | **bool** | Filter to indicate the dashboard owned by the user. | [optional] |
 {: class="table table-striped"}
 
 

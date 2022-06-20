@@ -148,9 +148,6 @@ class DialerContact(object):
         :type: str
         """
         
-        if not contact_list_id:
-            raise ValueError("Invalid value for `contact_list_id`, must not be `None`")
-
 
         self._contact_list_id = contact_list_id
 
@@ -175,9 +172,6 @@ class DialerContact(object):
         :type: dict(str, object)
         """
         
-        if not data:
-            raise ValueError("Invalid value for `data`, must not be `None`")
-
 
         self._data = data
 

@@ -142,9 +142,6 @@ class DomainCertificateAuthority(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -412,9 +409,6 @@ class DomainCertificateAuthority(object):
         :type: str
         """
         
-        if not certificate:
-            raise ValueError("Invalid value for `certificate`, must not be `None`")
-
 
         self._certificate = certificate
 
@@ -466,9 +460,6 @@ class DomainCertificateAuthority(object):
         :type: list[str]
         """
         
-        if not services:
-            raise ValueError("Invalid value for `services`, must not be `None`")
-
 
         self._services = services
 

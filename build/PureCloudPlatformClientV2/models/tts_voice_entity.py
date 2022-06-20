@@ -136,9 +136,6 @@ class TtsVoiceEntity(object):
         :type: str
         """
         
-        if not gender:
-            raise ValueError("Invalid value for `gender`, must not be `None`")
-
 
         self._gender = gender
 
@@ -163,9 +160,6 @@ class TtsVoiceEntity(object):
         :type: str
         """
         
-        if not language:
-            raise ValueError("Invalid value for `language`, must not be `None`")
-
 
         self._language = language
 
@@ -190,9 +184,6 @@ class TtsVoiceEntity(object):
         :type: TtsEngineEntity
         """
         
-        if not engine:
-            raise ValueError("Invalid value for `engine`, must not be `None`")
-
 
         self._engine = engine
 

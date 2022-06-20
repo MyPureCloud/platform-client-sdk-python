@@ -82,9 +82,6 @@ class BuImportShortTermForecastSchema(object):
         :type: str
         """
         
-        if not description:
-            raise ValueError("Invalid value for `description`, must not be `None`")
-
 
         self._description = description
 
@@ -109,9 +106,6 @@ class BuImportShortTermForecastSchema(object):
         :type: int
         """
         
-        if not week_count:
-            raise ValueError("Invalid value for `week_count`, must not be `None`")
-
 
         self._week_count = week_count
 
@@ -136,9 +130,6 @@ class BuImportShortTermForecastSchema(object):
         :type: list[ForecastPlanningGroupData]
         """
         
-        if not planning_groups:
-            raise ValueError("Invalid value for `planning_groups`, must not be `None`")
-
 
         self._planning_groups = planning_groups
 

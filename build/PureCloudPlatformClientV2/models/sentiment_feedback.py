@@ -109,9 +109,6 @@ class SentimentFeedback(object):
         :type: str
         """
         
-        if not phrase:
-            raise ValueError("Invalid value for `phrase`, must not be `None`")
-
 
         self._phrase = phrase
 
@@ -136,9 +133,6 @@ class SentimentFeedback(object):
         :type: str
         """
         
-        if not dialect:
-            raise ValueError("Invalid value for `dialect`, must not be `None`")
-
 
         self._dialect = dialect
 

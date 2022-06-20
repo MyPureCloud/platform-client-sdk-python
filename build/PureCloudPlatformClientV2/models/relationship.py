@@ -109,9 +109,6 @@ class Relationship(object):
         :type: User
         """
         
-        if not user:
-            raise ValueError("Invalid value for `user`, must not be `None`")
-
 
         self._user = user
 
@@ -136,9 +133,6 @@ class Relationship(object):
         :type: ExternalOrganization
         """
         
-        if not external_organization:
-            raise ValueError("Invalid value for `external_organization`, must not be `None`")
-
 
         self._external_organization = external_organization
 
@@ -163,9 +157,6 @@ class Relationship(object):
         :type: str
         """
         
-        if not relationship:
-            raise ValueError("Invalid value for `relationship`, must not be `None`")
-
 
         self._relationship = relationship
 

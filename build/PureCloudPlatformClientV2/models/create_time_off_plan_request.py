@@ -85,9 +85,6 @@ class CreateTimeOffPlanRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -211,9 +208,6 @@ class CreateTimeOffPlanRequest(object):
         :type: bool
         """
         
-        if not active:
-            raise ValueError("Invalid value for `active`, must not be `None`")
-
 
         self._active = active
 

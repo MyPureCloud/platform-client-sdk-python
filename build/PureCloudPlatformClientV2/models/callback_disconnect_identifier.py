@@ -73,9 +73,6 @@ class CallbackDisconnectIdentifier(object):
         :type: str
         """
         
-        if not conversation_id:
-            raise ValueError("Invalid value for `conversation_id`, must not be `None`")
-
 
         self._conversation_id = conversation_id
 

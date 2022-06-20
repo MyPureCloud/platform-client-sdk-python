@@ -115,9 +115,6 @@ class IntegrationConfiguration(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -142,9 +139,6 @@ class IntegrationConfiguration(object):
         :type: int
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 
@@ -169,9 +163,6 @@ class IntegrationConfiguration(object):
         :type: object
         """
         
-        if not properties:
-            raise ValueError("Invalid value for `properties`, must not be `None`")
-
 
         self._properties = properties
 
@@ -196,9 +187,6 @@ class IntegrationConfiguration(object):
         :type: object
         """
         
-        if not advanced:
-            raise ValueError("Invalid value for `advanced`, must not be `None`")
-
 
         self._advanced = advanced
 
@@ -223,9 +211,6 @@ class IntegrationConfiguration(object):
         :type: str
         """
         
-        if not notes:
-            raise ValueError("Invalid value for `notes`, must not be `None`")
-
 
         self._notes = notes
 
@@ -250,9 +235,6 @@ class IntegrationConfiguration(object):
         :type: dict(str, CredentialInfo)
         """
         
-        if not credentials:
-            raise ValueError("Invalid value for `credentials`, must not be `None`")
-
 
         self._credentials = credentials
 

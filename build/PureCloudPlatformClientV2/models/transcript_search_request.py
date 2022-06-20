@@ -238,9 +238,6 @@ class TranscriptSearchRequest(object):
         :type: list[str]
         """
         
-        if not types:
-            raise ValueError("Invalid value for `types`, must not be `None`")
-
 
         self._types = types
 

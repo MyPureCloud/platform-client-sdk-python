@@ -127,9 +127,6 @@ class DocumentationResult(object):
         :type: int
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 

@@ -70,9 +70,6 @@ class MoveManagementUnitRequest(object):
         :type: str
         """
         
-        if not business_unit_id:
-            raise ValueError("Invalid value for `business_unit_id`, must not be `None`")
-
 
         self._business_unit_id = business_unit_id
 

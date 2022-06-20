@@ -154,9 +154,6 @@ class ConversationContentNotificationTemplate(object):
         :type: ConversationNotificationTemplateBody
         """
         
-        if not body:
-            raise ValueError("Invalid value for `body`, must not be `None`")
-
 
         self._body = body
 

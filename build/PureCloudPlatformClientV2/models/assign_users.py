@@ -73,9 +73,6 @@ class AssignUsers(object):
         :type: list[str]
         """
         
-        if not members_to_assign:
-            raise ValueError("Invalid value for `members_to_assign`, must not be `None`")
-
 
         self._members_to_assign = members_to_assign
 
@@ -100,9 +97,6 @@ class AssignUsers(object):
         :type: list[str]
         """
         
-        if not members_to_remove:
-            raise ValueError("Invalid value for `members_to_remove`, must not be `None`")
-
 
         self._members_to_remove = members_to_remove
 

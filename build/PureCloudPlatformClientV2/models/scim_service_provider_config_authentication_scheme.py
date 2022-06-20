@@ -85,9 +85,6 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -112,9 +109,6 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
         :type: str
         """
         
-        if not description:
-            raise ValueError("Invalid value for `description`, must not be `None`")
-
 
         self._description = description
 

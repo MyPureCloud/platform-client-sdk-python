@@ -70,9 +70,6 @@ class ChangePasswordRequest(object):
         :type: str
         """
         
-        if not new_password:
-            raise ValueError("Invalid value for `new_password`, must not be `None`")
-
 
         self._new_password = new_password
 

@@ -73,9 +73,6 @@ class MaxLength(object):
         :type: int
         """
         
-        if not min:
-            raise ValueError("Invalid value for `min`, must not be `None`")
-
 
         self._min = min
 
@@ -100,9 +97,6 @@ class MaxLength(object):
         :type: int
         """
         
-        if not max:
-            raise ValueError("Invalid value for `max`, must not be `None`")
-
 
         self._max = max
 

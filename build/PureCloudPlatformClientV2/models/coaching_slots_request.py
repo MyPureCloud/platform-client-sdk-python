@@ -82,9 +82,6 @@ class CoachingSlotsRequest(object):
         :type: str
         """
         
-        if not interval:
-            raise ValueError("Invalid value for `interval`, must not be `None`")
-
 
         self._interval = interval
 
@@ -109,9 +106,6 @@ class CoachingSlotsRequest(object):
         :type: int
         """
         
-        if not length_in_minutes:
-            raise ValueError("Invalid value for `length_in_minutes`, must not be `None`")
-
 
         self._length_in_minutes = length_in_minutes
 
@@ -136,9 +130,6 @@ class CoachingSlotsRequest(object):
         :type: list[str]
         """
         
-        if not attendee_ids:
-            raise ValueError("Invalid value for `attendee_ids`, must not be `None`")
-
 
         self._attendee_ids = attendee_ids
 

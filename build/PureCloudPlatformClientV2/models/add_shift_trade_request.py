@@ -82,9 +82,6 @@ class AddShiftTradeRequest(object):
         :type: str
         """
         
-        if not schedule_id:
-            raise ValueError("Invalid value for `schedule_id`, must not be `None`")
-
 
         self._schedule_id = schedule_id
 
@@ -109,9 +106,6 @@ class AddShiftTradeRequest(object):
         :type: str
         """
         
-        if not initiating_shift_id:
-            raise ValueError("Invalid value for `initiating_shift_id`, must not be `None`")
-
 
         self._initiating_shift_id = initiating_shift_id
 

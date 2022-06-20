@@ -76,9 +76,6 @@ class ForecastPlanningGroupData(object):
         :type: str
         """
         
-        if not planning_group_id:
-            raise ValueError("Invalid value for `planning_group_id`, must not be `None`")
-
 
         self._planning_group_id = planning_group_id
 
@@ -103,9 +100,6 @@ class ForecastPlanningGroupData(object):
         :type: list[float]
         """
         
-        if not offered_per_interval:
-            raise ValueError("Invalid value for `offered_per_interval`, must not be `None`")
-
 
         self._offered_per_interval = offered_per_interval
 
@@ -130,9 +124,6 @@ class ForecastPlanningGroupData(object):
         :type: list[float]
         """
         
-        if not average_handle_time_seconds_per_interval:
-            raise ValueError("Invalid value for `average_handle_time_seconds_per_interval`, must not be `None`")
-
 
         self._average_handle_time_seconds_per_interval = average_handle_time_seconds_per_interval
 

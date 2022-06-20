@@ -85,9 +85,6 @@ class KnowledgeSearchRequest(object):
         :type: str
         """
         
-        if not query:
-            raise ValueError("Invalid value for `query`, must not be `None`")
-
 
         self._query = query
 
@@ -187,9 +184,6 @@ class KnowledgeSearchRequest(object):
         :type: str
         """
         
-        if not language_code:
-            raise ValueError("Invalid value for `language_code`, must not be `None`")
-
 
         self._language_code = language_code
 

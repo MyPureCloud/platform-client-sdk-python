@@ -100,9 +100,6 @@ class DevelopmentActivityAggregateQueryRequestClause(object):
         :type: list[DevelopmentActivityAggregateQueryRequestPredicate]
         """
         
-        if not predicates:
-            raise ValueError("Invalid value for `predicates`, must not be `None`")
-
 
         self._predicates = predicates
 

@@ -76,9 +76,6 @@ class NluFeedbackRequest(object):
         :type: str
         """
         
-        if not text:
-            raise ValueError("Invalid value for `text`, must not be `None`")
-
 
         self._text = text
 
@@ -103,9 +100,6 @@ class NluFeedbackRequest(object):
         :type: list[IntentFeedback]
         """
         
-        if not intents:
-            raise ValueError("Invalid value for `intents`, must not be `None`")
-
 
         self._intents = intents
 
@@ -130,9 +124,6 @@ class NluFeedbackRequest(object):
         :type: str
         """
         
-        if not version_id:
-            raise ValueError("Invalid value for `version_id`, must not be `None`")
-
 
         self._version_id = version_id
 

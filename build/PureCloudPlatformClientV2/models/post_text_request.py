@@ -109,9 +109,6 @@ class PostTextRequest(object):
         :type: str
         """
         
-        if not bot_id:
-            raise ValueError("Invalid value for `bot_id`, must not be `None`")
-
 
         self._bot_id = bot_id
 
@@ -160,9 +157,6 @@ class PostTextRequest(object):
         :type: str
         """
         
-        if not integration_id:
-            raise ValueError("Invalid value for `integration_id`, must not be `None`")
-
 
         self._integration_id = integration_id
 
@@ -187,9 +181,6 @@ class PostTextRequest(object):
         :type: str
         """
         
-        if not bot_session_id:
-            raise ValueError("Invalid value for `bot_session_id`, must not be `None`")
-
 
         self._bot_session_id = bot_session_id
 
@@ -214,9 +205,6 @@ class PostTextRequest(object):
         :type: PostTextMessage
         """
         
-        if not post_text_message:
-            raise ValueError("Invalid value for `post_text_message`, must not be `None`")
-
 
         self._post_text_message = post_text_message
 

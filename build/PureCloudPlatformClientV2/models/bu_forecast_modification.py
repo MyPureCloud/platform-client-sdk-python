@@ -277,9 +277,6 @@ class BuForecastModification(object):
         :type: str
         """
         
-        if not display_granularity:
-            raise ValueError("Invalid value for `display_granularity`, must not be `None`")
-
 
         self._display_granularity = display_granularity
 
@@ -328,9 +325,6 @@ class BuForecastModification(object):
         :type: bool
         """
         
-        if not enabled:
-            raise ValueError("Invalid value for `enabled`, must not be `None`")
-
 
         self._enabled = enabled
 

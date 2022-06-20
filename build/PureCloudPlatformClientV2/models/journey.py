@@ -70,9 +70,6 @@ class Journey(object):
         :type: list[JourneyPattern]
         """
         
-        if not patterns:
-            raise ValueError("Invalid value for `patterns`, must not be `None`")
-
 
         self._patterns = patterns
 

@@ -70,9 +70,6 @@ class Permissions(object):
         :type: list[str]
         """
         
-        if not ids:
-            raise ValueError("Invalid value for `ids`, must not be `None`")
-
 
         self._ids = ids
 

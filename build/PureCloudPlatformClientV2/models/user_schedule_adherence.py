@@ -43,9 +43,9 @@ class UserScheduleAdherence(object):
             'id': 'str',
             'name': 'str',
             'user': 'UserReference',
-            'business_unit': 'BusinessUnit',
-            'management_unit': 'ManagementUnit',
-            'team': 'Team',
+            'business_unit': 'BusinessUnitReference',
+            'management_unit': 'ManagementUnitReference',
+            'team': 'TeamReference',
             'scheduled_activity_category': 'str',
             'system_presence': 'str',
             'organization_secondary_presence_id': 'str',
@@ -185,7 +185,7 @@ class UserScheduleAdherence(object):
         The business unit to which this user belongs
 
         :return: The business_unit of this UserScheduleAdherence.
-        :rtype: BusinessUnit
+        :rtype: BusinessUnitReference
         """
         return self._business_unit
 
@@ -196,7 +196,7 @@ class UserScheduleAdherence(object):
         The business unit to which this user belongs
 
         :param business_unit: The business_unit of this UserScheduleAdherence.
-        :type: BusinessUnit
+        :type: BusinessUnitReference
         """
         
 
@@ -209,7 +209,7 @@ class UserScheduleAdherence(object):
         The management unit to which this user belongs
 
         :return: The management_unit of this UserScheduleAdherence.
-        :rtype: ManagementUnit
+        :rtype: ManagementUnitReference
         """
         return self._management_unit
 
@@ -220,7 +220,7 @@ class UserScheduleAdherence(object):
         The management unit to which this user belongs
 
         :param management_unit: The management_unit of this UserScheduleAdherence.
-        :type: ManagementUnit
+        :type: ManagementUnitReference
         """
         
 
@@ -233,7 +233,7 @@ class UserScheduleAdherence(object):
         The team to which this user belongs
 
         :return: The team of this UserScheduleAdherence.
-        :rtype: Team
+        :rtype: TeamReference
         """
         return self._team
 
@@ -244,7 +244,7 @@ class UserScheduleAdherence(object):
         The team to which this user belongs
 
         :param team: The team of this UserScheduleAdherence.
-        :type: Team
+        :type: TeamReference
         """
         
 

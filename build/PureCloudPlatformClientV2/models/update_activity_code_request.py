@@ -235,9 +235,6 @@ class UpdateActivityCodeRequest(object):
         :type: WfmVersionedEntityMetadata
         """
         
-        if not metadata:
-            raise ValueError("Invalid value for `metadata`, must not be `None`")
-
 
         self._metadata = metadata
 

@@ -73,9 +73,6 @@ class IntegrationExport(object):
         :type: DomainEntityRef
         """
         
-        if not integration:
-            raise ValueError("Invalid value for `integration`, must not be `None`")
-
 
         self._integration = integration
 

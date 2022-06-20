@@ -163,9 +163,6 @@ class ContactListDivisionView(object):
         :type: list[str]
         """
         
-        if not column_names:
-            raise ValueError("Invalid value for `column_names`, must not be `None`")
-
 
         self._column_names = column_names
 

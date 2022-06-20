@@ -118,9 +118,6 @@ class Device(object):
         :type: str
         """
         
-        if not type:
-            raise ValueError("Invalid value for `type`, must not be `None`")
-
 
         self._type = type
 
@@ -241,9 +238,6 @@ class Device(object):
         :type: str
         """
         
-        if not os_family:
-            raise ValueError("Invalid value for `os_family`, must not be `None`")
-
 
         self._os_family = os_family
 
@@ -268,9 +262,6 @@ class Device(object):
         :type: str
         """
         
-        if not os_version:
-            raise ValueError("Invalid value for `os_version`, must not be `None`")
-
 
         self._os_version = os_version
 

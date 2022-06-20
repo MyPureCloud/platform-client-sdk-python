@@ -73,9 +73,6 @@ class HeadcountForecast(object):
         :type: list[HeadcountInterval]
         """
         
-        if not required:
-            raise ValueError("Invalid value for `required`, must not be `None`")
-
 
         self._required = required
 
@@ -100,9 +97,6 @@ class HeadcountForecast(object):
         :type: list[HeadcountInterval]
         """
         
-        if not required_without_shrinkage:
-            raise ValueError("Invalid value for `required_without_shrinkage`, must not be `None`")
-
 
         self._required_without_shrinkage = required_without_shrinkage
 

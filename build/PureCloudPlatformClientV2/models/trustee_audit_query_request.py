@@ -88,9 +88,6 @@ class TrusteeAuditQueryRequest(object):
         :type: list[str]
         """
         
-        if not trustee_organization_ids:
-            raise ValueError("Invalid value for `trustee_organization_ids`, must not be `None`")
-
 
         self._trustee_organization_ids = trustee_organization_ids
 
@@ -115,9 +112,6 @@ class TrusteeAuditQueryRequest(object):
         :type: list[str]
         """
         
-        if not trustee_user_ids:
-            raise ValueError("Invalid value for `trustee_user_ids`, must not be `None`")
-
 
         self._trustee_user_ids = trustee_user_ids
 

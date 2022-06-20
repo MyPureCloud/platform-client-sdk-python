@@ -42,18 +42,21 @@ class JourneyOutcomeEventsNotificationOutcomeAttributionMessage(object):
         self.swagger_types = {
             'outcome': 'JourneyOutcomeEventsNotificationOutcome',
             'outcome_touchpoints': 'list[JourneyOutcomeEventsNotificationOutcomeTouchpoint]',
-            'segment_assignments': 'list[JourneyOutcomeEventsNotificationSegment]'
+            'segment_assignments': 'list[JourneyOutcomeEventsNotificationSegment]',
+            'associated_value': 'JourneyOutcomeEventsNotificationAssociatedValue'
         }
 
         self.attribute_map = {
             'outcome': 'outcome',
             'outcome_touchpoints': 'outcomeTouchpoints',
-            'segment_assignments': 'segmentAssignments'
+            'segment_assignments': 'segmentAssignments',
+            'associated_value': 'associatedValue'
         }
 
         self._outcome = None
         self._outcome_touchpoints = None
         self._segment_assignments = None
+        self._associated_value = None
 
     @property
     def outcome(self):
@@ -126,6 +129,30 @@ class JourneyOutcomeEventsNotificationOutcomeAttributionMessage(object):
         
 
         self._segment_assignments = segment_assignments
+
+    @property
+    def associated_value(self):
+        """
+        Gets the associated_value of this JourneyOutcomeEventsNotificationOutcomeAttributionMessage.
+
+
+        :return: The associated_value of this JourneyOutcomeEventsNotificationOutcomeAttributionMessage.
+        :rtype: JourneyOutcomeEventsNotificationAssociatedValue
+        """
+        return self._associated_value
+
+    @associated_value.setter
+    def associated_value(self, associated_value):
+        """
+        Sets the associated_value of this JourneyOutcomeEventsNotificationOutcomeAttributionMessage.
+
+
+        :param associated_value: The associated_value of this JourneyOutcomeEventsNotificationOutcomeAttributionMessage.
+        :type: JourneyOutcomeEventsNotificationAssociatedValue
+        """
+        
+
+        self._associated_value = associated_value
 
     def to_dict(self):
         """

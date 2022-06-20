@@ -82,9 +82,6 @@ class DataActionConditionPredicate(object):
         :type: str
         """
         
-        if not output_field:
-            raise ValueError("Invalid value for `output_field`, must not be `None`")
-
 
         self._output_field = output_field
 
@@ -136,9 +133,6 @@ class DataActionConditionPredicate(object):
         :type: str
         """
         
-        if not comparison_value:
-            raise ValueError("Invalid value for `comparison_value`, must not be `None`")
-
 
         self._comparison_value = comparison_value
 
@@ -163,9 +157,6 @@ class DataActionConditionPredicate(object):
         :type: bool
         """
         
-        if not inverted:
-            raise ValueError("Invalid value for `inverted`, must not be `None`")
-
 
         self._inverted = inverted
 
@@ -190,9 +181,6 @@ class DataActionConditionPredicate(object):
         :type: bool
         """
         
-        if not output_field_missing_resolution:
-            raise ValueError("Invalid value for `output_field_missing_resolution`, must not be `None`")
-
 
         self._output_field_missing_resolution = output_field_missing_resolution
 

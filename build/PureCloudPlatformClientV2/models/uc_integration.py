@@ -46,6 +46,7 @@ class UCIntegration(object):
             'integration_presence_source': 'str',
             'pbx_permission': 'str',
             'icon': 'UCIcon',
+            'badge_icons': 'dict(str, UCIcon)',
             'i10n': 'dict(str, UCI10n)',
             'self_uri': 'str'
         }
@@ -57,6 +58,7 @@ class UCIntegration(object):
             'integration_presence_source': 'integrationPresenceSource',
             'pbx_permission': 'pbxPermission',
             'icon': 'icon',
+            'badge_icons': 'badgeIcons',
             'i10n': 'i10n',
             'self_uri': 'selfUri'
         }
@@ -67,6 +69,7 @@ class UCIntegration(object):
         self._integration_presence_source = None
         self._pbx_permission = None
         self._icon = None
+        self._badge_icons = None
         self._i10n = None
         self._self_uri = None
 
@@ -139,9 +142,6 @@ class UCIntegration(object):
         :type: str
         """
         
-        if not uc_integration_key:
-            raise ValueError("Invalid value for `uc_integration_key`, must not be `None`")
-
 
         self._uc_integration_key = uc_integration_key
 
@@ -165,7 +165,7 @@ class UCIntegration(object):
         :param integration_presence_source: The integration_presence_source of this UCIntegration.
         :type: str
         """
-        allowed_values = ["MicrosoftTeams", "ZoomPhone"]
+        allowed_values = ["MicrosoftTeams", "ZoomPhone", "EightByEight"]
         if integration_presence_source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for integration_presence_source -> " + integration_presence_source)
             self._integration_presence_source = "outdated_sdk_version"
@@ -193,9 +193,6 @@ class UCIntegration(object):
         :type: str
         """
         
-        if not pbx_permission:
-            raise ValueError("Invalid value for `pbx_permission`, must not be `None`")
-
 
         self._pbx_permission = pbx_permission
 
@@ -220,11 +217,32 @@ class UCIntegration(object):
         :type: UCIcon
         """
         
-        if not icon:
-            raise ValueError("Invalid value for `icon`, must not be `None`")
-
 
         self._icon = icon
+
+    @property
+    def badge_icons(self):
+        """
+        Gets the badge_icons of this UCIntegration.
+        badgeIcon
+
+        :return: The badge_icons of this UCIntegration.
+        :rtype: dict(str, UCIcon)
+        """
+        return self._badge_icons
+
+    @badge_icons.setter
+    def badge_icons(self, badge_icons):
+        """
+        Sets the badge_icons of this UCIntegration.
+        badgeIcon
+
+        :param badge_icons: The badge_icons of this UCIntegration.
+        :type: dict(str, UCIcon)
+        """
+        
+
+        self._badge_icons = badge_icons
 
     @property
     def i10n(self):
@@ -247,9 +265,6 @@ class UCIntegration(object):
         :type: dict(str, UCI10n)
         """
         
-        if not i10n:
-            raise ValueError("Invalid value for `i10n`, must not be `None`")
-
 
         self._i10n = i10n
 

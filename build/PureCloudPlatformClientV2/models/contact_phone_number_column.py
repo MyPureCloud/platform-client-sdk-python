@@ -76,9 +76,6 @@ class ContactPhoneNumberColumn(object):
         :type: str
         """
         
-        if not column_name:
-            raise ValueError("Invalid value for `column_name`, must not be `None`")
-
 
         self._column_name = column_name
 
@@ -103,9 +100,6 @@ class ContactPhoneNumberColumn(object):
         :type: str
         """
         
-        if not type:
-            raise ValueError("Invalid value for `type`, must not be `None`")
-
 
         self._type = type
 

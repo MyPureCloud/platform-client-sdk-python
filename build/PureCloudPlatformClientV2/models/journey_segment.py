@@ -160,9 +160,6 @@ class JourneySegment(object):
         :type: str
         """
         
-        if not display_name:
-            raise ValueError("Invalid value for `display_name`, must not be `None`")
-
 
         self._display_name = display_name
 

@@ -124,9 +124,6 @@ class Predictor(object):
         :type: list[AddressableEntityRef]
         """
         
-        if not queues:
-            raise ValueError("Invalid value for `queues`, must not be `None`")
-
 
         self._queues = queues
 
@@ -151,9 +148,6 @@ class Predictor(object):
         :type: str
         """
         
-        if not kpi:
-            raise ValueError("Invalid value for `kpi`, must not be `None`")
-
 
         self._kpi = kpi
 

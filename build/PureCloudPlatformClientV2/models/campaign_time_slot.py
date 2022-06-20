@@ -76,9 +76,6 @@ class CampaignTimeSlot(object):
         :type: str
         """
         
-        if not start_time:
-            raise ValueError("Invalid value for `start_time`, must not be `None`")
-
 
         self._start_time = start_time
 
@@ -103,9 +100,6 @@ class CampaignTimeSlot(object):
         :type: str
         """
         
-        if not stop_time:
-            raise ValueError("Invalid value for `stop_time`, must not be `None`")
-
 
         self._stop_time = stop_time
 
@@ -130,9 +124,6 @@ class CampaignTimeSlot(object):
         :type: int
         """
         
-        if not day:
-            raise ValueError("Invalid value for `day`, must not be `None`")
-
 
         self._day = day
 

@@ -100,9 +100,6 @@ class ConversationThreadingWindowSetting(object):
         :type: int
         """
         
-        if not timeout_in_minutes:
-            raise ValueError("Invalid value for `timeout_in_minutes`, must not be `None`")
-
 
         self._timeout_in_minutes = timeout_in_minutes
 

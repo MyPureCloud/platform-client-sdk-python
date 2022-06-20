@@ -73,9 +73,6 @@ class CreateCallbackResponse(object):
         :type: DomainEntityRef
         """
         
-        if not conversation:
-            raise ValueError("Invalid value for `conversation`, must not be `None`")
-
 
         self._conversation = conversation
 
@@ -100,9 +97,6 @@ class CreateCallbackResponse(object):
         :type: list[CallbackIdentifier]
         """
         
-        if not callback_identifiers:
-            raise ValueError("Invalid value for `callback_identifiers`, must not be `None`")
-
 
         self._callback_identifiers = callback_identifiers
 

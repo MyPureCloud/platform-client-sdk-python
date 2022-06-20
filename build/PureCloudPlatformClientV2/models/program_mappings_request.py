@@ -73,9 +73,6 @@ class ProgramMappingsRequest(object):
         :type: list[str]
         """
         
-        if not queue_ids:
-            raise ValueError("Invalid value for `queue_ids`, must not be `None`")
-
 
         self._queue_ids = queue_ids
 
@@ -100,9 +97,6 @@ class ProgramMappingsRequest(object):
         :type: list[str]
         """
         
-        if not flow_ids:
-            raise ValueError("Invalid value for `flow_ids`, must not be `None`")
-
 
         self._flow_ids = flow_ids
 

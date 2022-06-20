@@ -121,9 +121,6 @@ class WhatsAppIntegration(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -148,9 +145,6 @@ class WhatsAppIntegration(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -223,9 +217,6 @@ class WhatsAppIntegration(object):
         :type: str
         """
         
-        if not phone_number:
-            raise ValueError("Invalid value for `phone_number`, must not be `None`")
-
 
         self._phone_number = phone_number
 
@@ -421,9 +412,6 @@ class WhatsAppIntegration(object):
         :type: int
         """
         
-        if not version:
-            raise ValueError("Invalid value for `version`, must not be `None`")
-
 
         self._version = version
 

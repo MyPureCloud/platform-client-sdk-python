@@ -112,9 +112,6 @@ class CallableTimeSet(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -211,9 +208,6 @@ class CallableTimeSet(object):
         :type: list[CallableTime]
         """
         
-        if not callable_times:
-            raise ValueError("Invalid value for `callable_times`, must not be `None`")
-
 
         self._callable_times = callable_times
 

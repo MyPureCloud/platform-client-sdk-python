@@ -73,9 +73,6 @@ class DialogflowIntent(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -100,9 +97,6 @@ class DialogflowIntent(object):
         :type: dict(str, DialogflowParameter)
         """
         
-        if not parameters:
-            raise ValueError("Invalid value for `parameters`, must not be `None`")
-
 
         self._parameters = parameters
 

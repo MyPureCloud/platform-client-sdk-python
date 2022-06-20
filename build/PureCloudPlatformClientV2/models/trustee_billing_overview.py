@@ -166,9 +166,6 @@ class TrusteeBillingOverview(object):
         :type: NamedEntity
         """
         
-        if not organization:
-            raise ValueError("Invalid value for `organization`, must not be `None`")
-
 
         self._organization = organization
 
@@ -193,9 +190,6 @@ class TrusteeBillingOverview(object):
         :type: str
         """
         
-        if not currency:
-            raise ValueError("Invalid value for `currency`, must not be `None`")
-
 
         self._currency = currency
 
@@ -220,9 +214,6 @@ class TrusteeBillingOverview(object):
         :type: list[str]
         """
         
-        if not enabled_products:
-            raise ValueError("Invalid value for `enabled_products`, must not be `None`")
-
 
         self._enabled_products = enabled_products
 
@@ -370,9 +361,6 @@ class TrusteeBillingOverview(object):
         :type: list[SubscriptionOverviewUsage]
         """
         
-        if not usages:
-            raise ValueError("Invalid value for `usages`, must not be `None`")
-
 
         self._usages = usages
 

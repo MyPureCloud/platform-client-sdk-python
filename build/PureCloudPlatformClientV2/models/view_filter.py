@@ -182,7 +182,14 @@ class ViewFilter(object):
             'is_assessment_passed': 'bool',
             'conversation_initiators': 'list[str]',
             'has_customer_participated': 'bool',
-            'is_acd_interaction': 'bool'
+            'is_acd_interaction': 'bool',
+            'has_fax': 'bool',
+            'data_action_ids': 'list[str]',
+            'action_category_name': 'str',
+            'response_statuses': 'list[str]',
+            'available_dashboard': 'str',
+            'favourite_dashboard': 'bool',
+            'my_dashboard': 'bool'
         }
 
         self.attribute_map = {
@@ -328,7 +335,14 @@ class ViewFilter(object):
             'is_assessment_passed': 'isAssessmentPassed',
             'conversation_initiators': 'conversationInitiators',
             'has_customer_participated': 'hasCustomerParticipated',
-            'is_acd_interaction': 'isAcdInteraction'
+            'is_acd_interaction': 'isAcdInteraction',
+            'has_fax': 'hasFax',
+            'data_action_ids': 'dataActionIds',
+            'action_category_name': 'actionCategoryName',
+            'response_statuses': 'responseStatuses',
+            'available_dashboard': 'availableDashboard',
+            'favourite_dashboard': 'favouriteDashboard',
+            'my_dashboard': 'myDashboard'
         }
 
         self._media_types = None
@@ -474,6 +488,13 @@ class ViewFilter(object):
         self._conversation_initiators = None
         self._has_customer_participated = None
         self._is_acd_interaction = None
+        self._has_fax = None
+        self._data_action_ids = None
+        self._action_category_name = None
+        self._response_statuses = None
+        self._available_dashboard = None
+        self._favourite_dashboard = None
+        self._my_dashboard = None
 
     @property
     def media_types(self):
@@ -3906,6 +3927,177 @@ class ViewFilter(object):
         
 
         self._is_acd_interaction = is_acd_interaction
+
+    @property
+    def has_fax(self):
+        """
+        Gets the has_fax of this ViewFilter.
+        Filters to indicate if interaction has FAX
+
+        :return: The has_fax of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_fax
+
+    @has_fax.setter
+    def has_fax(self, has_fax):
+        """
+        Sets the has_fax of this ViewFilter.
+        Filters to indicate if interaction has FAX
+
+        :param has_fax: The has_fax of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._has_fax = has_fax
+
+    @property
+    def data_action_ids(self):
+        """
+        Gets the data_action_ids of this ViewFilter.
+        The list of Data Action IDs 
+
+        :return: The data_action_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._data_action_ids
+
+    @data_action_ids.setter
+    def data_action_ids(self, data_action_ids):
+        """
+        Sets the data_action_ids of this ViewFilter.
+        The list of Data Action IDs 
+
+        :param data_action_ids: The data_action_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._data_action_ids = data_action_ids
+
+    @property
+    def action_category_name(self):
+        """
+        Gets the action_category_name of this ViewFilter.
+        Action Category Name
+
+        :return: The action_category_name of this ViewFilter.
+        :rtype: str
+        """
+        return self._action_category_name
+
+    @action_category_name.setter
+    def action_category_name(self, action_category_name):
+        """
+        Sets the action_category_name of this ViewFilter.
+        Action Category Name
+
+        :param action_category_name: The action_category_name of this ViewFilter.
+        :type: str
+        """
+        
+
+        self._action_category_name = action_category_name
+
+    @property
+    def response_statuses(self):
+        """
+        Gets the response_statuses of this ViewFilter.
+        The list of Response codes for Data Action
+
+        :return: The response_statuses of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._response_statuses
+
+    @response_statuses.setter
+    def response_statuses(self, response_statuses):
+        """
+        Sets the response_statuses of this ViewFilter.
+        The list of Response codes for Data Action
+
+        :param response_statuses: The response_statuses of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._response_statuses = response_statuses
+
+    @property
+    def available_dashboard(self):
+        """
+        Gets the available_dashboard of this ViewFilter.
+        Filter to indicate the availability of the dashboard is public or private.
+
+        :return: The available_dashboard of this ViewFilter.
+        :rtype: str
+        """
+        return self._available_dashboard
+
+    @available_dashboard.setter
+    def available_dashboard(self, available_dashboard):
+        """
+        Sets the available_dashboard of this ViewFilter.
+        Filter to indicate the availability of the dashboard is public or private.
+
+        :param available_dashboard: The available_dashboard of this ViewFilter.
+        :type: str
+        """
+        allowed_values = ["Public", "Private"]
+        if available_dashboard.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for available_dashboard -> " + available_dashboard)
+            self._available_dashboard = "outdated_sdk_version"
+        else:
+            self._available_dashboard = available_dashboard
+
+    @property
+    def favourite_dashboard(self):
+        """
+        Gets the favourite_dashboard of this ViewFilter.
+        Filter to indicate whether the dashboard is favorite or unfavorite.
+
+        :return: The favourite_dashboard of this ViewFilter.
+        :rtype: bool
+        """
+        return self._favourite_dashboard
+
+    @favourite_dashboard.setter
+    def favourite_dashboard(self, favourite_dashboard):
+        """
+        Sets the favourite_dashboard of this ViewFilter.
+        Filter to indicate whether the dashboard is favorite or unfavorite.
+
+        :param favourite_dashboard: The favourite_dashboard of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._favourite_dashboard = favourite_dashboard
+
+    @property
+    def my_dashboard(self):
+        """
+        Gets the my_dashboard of this ViewFilter.
+        Filter to indicate the dashboard owned by the user.
+
+        :return: The my_dashboard of this ViewFilter.
+        :rtype: bool
+        """
+        return self._my_dashboard
+
+    @my_dashboard.setter
+    def my_dashboard(self, my_dashboard):
+        """
+        Sets the my_dashboard of this ViewFilter.
+        Filter to indicate the dashboard owned by the user.
+
+        :param my_dashboard: The my_dashboard of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._my_dashboard = my_dashboard
 
     def to_dict(self):
         """

@@ -76,9 +76,6 @@ class FromEmailAddress(object):
         :type: DomainEntityRef
         """
         
-        if not domain:
-            raise ValueError("Invalid value for `domain`, must not be `None`")
-
 
         self._domain = domain
 

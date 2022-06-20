@@ -70,9 +70,6 @@ class BulkShiftTradeStateUpdateRequest(object):
         :type: list[BulkUpdateShiftTradeStateRequestItem]
         """
         
-        if not entities:
-            raise ValueError("Invalid value for `entities`, must not be `None`")
-
 
         self._entities = entities
 

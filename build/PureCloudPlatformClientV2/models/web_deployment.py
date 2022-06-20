@@ -130,9 +130,6 @@ class WebDeployment(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -181,9 +178,6 @@ class WebDeployment(object):
         :type: WebDeploymentConfigurationVersionEntityRef
         """
         
-        if not configuration:
-            raise ValueError("Invalid value for `configuration`, must not be `None`")
-
 
         self._configuration = configuration
 

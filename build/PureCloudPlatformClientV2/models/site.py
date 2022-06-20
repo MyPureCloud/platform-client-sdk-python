@@ -172,9 +172,6 @@ class Site(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -634,9 +631,6 @@ class Site(object):
         :type: LocationDefinition
         """
         
-        if not location:
-            raise ValueError("Invalid value for `location`, must not be `None`")
-
 
         self._location = location
 

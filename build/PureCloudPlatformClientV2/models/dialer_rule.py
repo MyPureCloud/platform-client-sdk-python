@@ -109,9 +109,6 @@ class DialerRule(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -187,9 +184,6 @@ class DialerRule(object):
         :type: list[Condition]
         """
         
-        if not conditions:
-            raise ValueError("Invalid value for `conditions`, must not be `None`")
-
 
         self._conditions = conditions
 

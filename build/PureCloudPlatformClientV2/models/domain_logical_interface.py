@@ -217,9 +217,6 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -535,9 +532,6 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
-        if not friendly_name:
-            raise ValueError("Invalid value for `friendly_name`, must not be `None`")
-
 
         self._friendly_name = friendly_name
 
@@ -586,9 +580,6 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
-        if not hardware_address:
-            raise ValueError("Invalid value for `hardware_address`, must not be `None`")
-
 
         self._hardware_address = hardware_address
 
@@ -613,9 +604,6 @@ class DomainLogicalInterface(object):
         :type: str
         """
         
-        if not physical_adapter_id:
-            raise ValueError("Invalid value for `physical_adapter_id`, must not be `None`")
-
 
         self._physical_adapter_id = physical_adapter_id
 

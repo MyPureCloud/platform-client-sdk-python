@@ -73,9 +73,6 @@ class TextBotOutputPrompts(object):
         :type: str
         """
         
-        if not output_language:
-            raise ValueError("Invalid value for `output_language`, must not be `None`")
-
 
         self._output_language = output_language
 

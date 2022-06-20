@@ -124,9 +124,6 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
-        if not name:
-            raise ValueError("Invalid value for `name`, must not be `None`")
-
 
         self._name = name
 
@@ -199,9 +196,6 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
-        if not access_token_key:
-            raise ValueError("Invalid value for `access_token_key`, must not be `None`")
-
 
         self._access_token_key = access_token_key
 
@@ -226,9 +220,6 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
-        if not access_token_secret:
-            raise ValueError("Invalid value for `access_token_secret`, must not be `None`")
-
 
         self._access_token_secret = access_token_secret
 
@@ -253,9 +244,6 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
-        if not consumer_key:
-            raise ValueError("Invalid value for `consumer_key`, must not be `None`")
-
 
         self._consumer_key = consumer_key
 
@@ -280,9 +268,6 @@ class TwitterIntegrationRequest(object):
         :type: str
         """
         
-        if not consumer_secret:
-            raise ValueError("Invalid value for `consumer_secret`, must not be `None`")
-
 
         self._consumer_secret = consumer_secret
 

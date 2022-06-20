@@ -115,9 +115,6 @@ class CreateAdminTimeOffRequest(object):
         :type: list[UserReference]
         """
         
-        if not users:
-            raise ValueError("Invalid value for `users`, must not be `None`")
-
 
         self._users = users
 
@@ -142,9 +139,6 @@ class CreateAdminTimeOffRequest(object):
         :type: str
         """
         
-        if not activity_code_id:
-            raise ValueError("Invalid value for `activity_code_id`, must not be `None`")
-
 
         self._activity_code_id = activity_code_id
 
@@ -241,9 +235,6 @@ class CreateAdminTimeOffRequest(object):
         :type: int
         """
         
-        if not daily_duration_minutes:
-            raise ValueError("Invalid value for `daily_duration_minutes`, must not be `None`")
-
 
         self._daily_duration_minutes = daily_duration_minutes
 

@@ -97,9 +97,6 @@ class WfmUserNotification(object):
         :type: str
         """
         
-        if not id:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
 
         self._id = id
 
@@ -124,9 +121,6 @@ class WfmUserNotification(object):
         :type: str
         """
         
-        if not mutable_group_id:
-            raise ValueError("Invalid value for `mutable_group_id`, must not be `None`")
-
 
         self._mutable_group_id = mutable_group_id
 
@@ -274,9 +268,6 @@ class WfmUserNotification(object):
         :type: bool
         """
         
-        if not marked_as_read:
-            raise ValueError("Invalid value for `marked_as_read`, must not be `None`")
-
 
         self._marked_as_read = marked_as_read
 

@@ -73,9 +73,6 @@ class BuCopyScheduleRequest(object):
         :type: str
         """
         
-        if not description:
-            raise ValueError("Invalid value for `description`, must not be `None`")
-
 
         self._description = description
 
@@ -100,9 +97,6 @@ class BuCopyScheduleRequest(object):
         :type: date
         """
         
-        if not week_date:
-            raise ValueError("Invalid value for `week_date`, must not be `None`")
-
 
         self._week_date = week_date
 

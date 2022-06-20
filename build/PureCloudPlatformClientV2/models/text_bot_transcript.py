@@ -73,9 +73,6 @@ class TextBotTranscript(object):
         :type: str
         """
         
-        if not text:
-            raise ValueError("Invalid value for `text`, must not be `None`")
-
 
         self._text = text
 
