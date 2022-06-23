@@ -8,7 +8,8 @@ title: ConversationEventTopicMessage
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | A globally unique identifier for this communication. | [optional] |
-| **state** | **str** | The connection state of this communication. | [optional] |
+| **state** | **str** |  | [optional] |
+| **initial_state** | **str** |  | [optional] |
 | **held** | **bool** | True if this call is held and the person on this side hears silence. | [optional] |
 | **error_info** | [**ConversationEventTopicErrorDetails**](ConversationEventTopicErrorDetails.html) | Detailed information about an error response. | [optional] |
 | **provider** | **str** | The source provider of the email. | [optional] |

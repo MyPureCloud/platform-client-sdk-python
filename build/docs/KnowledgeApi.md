@@ -135,7 +135,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type
@@ -190,7 +190,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type
@@ -243,7 +243,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **import_id** | **str**| Import ID |  |
 {: class="table table-striped"}
 
@@ -353,7 +353,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
@@ -413,7 +413,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type
@@ -468,7 +468,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type
@@ -530,7 +530,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
@@ -593,7 +593,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **import_id** | **str**| Import ID |  |
 {: class="table table-striped"}
 
@@ -648,7 +648,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **training_id** | **str**| Training ID |  |
 {: class="table table-striped"}
 
@@ -707,7 +707,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
@@ -776,7 +776,7 @@ except ApiException as e:
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **name** | **str**| Filter by Name. | [optional]  |
-| **core_language** | **str**| Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **core_language** | **str**| Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **published** | **bool**| Filter by published status. | [optional]  |
 | **sort_by** | **str**| Sort by. | [optional] <br />**Values**: Name, Date |
 | **sort_order** | **str**| Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
@@ -888,7 +888,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -945,7 +945,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -1000,7 +1000,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **body** | [**list[KnowledgeDocumentBulkRequest]**](KnowledgeDocumentBulkRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -1057,7 +1057,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **import_id** | **str**| Import ID |  |
 | **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  |  |
 {: class="table table-striped"}
@@ -1164,7 +1164,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -1219,7 +1219,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -1274,7 +1274,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **body** | [**KnowledgeImport**](KnowledgeImport.html)|  |  |
 {: class="table table-striped"}
 
@@ -1329,7 +1329,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 | **training_id** | **str**| Training ID |  |
 {: class="table table-striped"}
 
@@ -1383,7 +1383,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type

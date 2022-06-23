@@ -1540,7 +1540,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
-context_id = ['context_id_example'] # list[str] | A comma-delimited list of valid survey form context ids
+context_id = ['context_id_example'] # list[str] | A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.
 published = True # bool | If true, the latest published version will be included. If false, only the unpublished version will be included. (optional) (default to True)
 
 try:
@@ -1556,7 +1556,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **context_id** | [**list[str]**](str.html)| A comma-delimited list of valid survey form context ids |  |
+| **context_id** | [**list[str]**](str.html)| A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. |  |
 | **published** | **bool**| If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to True] |
 {: class="table table-striped"}
 

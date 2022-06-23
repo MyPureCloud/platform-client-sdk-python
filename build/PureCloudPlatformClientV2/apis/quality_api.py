@@ -2257,7 +2257,7 @@ class QualityApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] context_id: A comma-delimited list of valid survey form context ids (required)
+        :param list[str] context_id: A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. (required)
         :param bool published: If true, the latest published version will be included. If false, only the unpublished version will be included.
         :return: list[SurveyForm]
                  If the method is called asynchronously,

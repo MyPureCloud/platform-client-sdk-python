@@ -46,7 +46,8 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
             'message_segment_count': 'int',
             'media': 'list[QueueConversationSocialExpressionEventTopicMessageMedia]',
             'error_info': 'QueueConversationSocialExpressionEventTopicErrorDetails',
-            'stickers': 'list[QueueConversationSocialExpressionEventTopicMessageSticker]'
+            'stickers': 'list[QueueConversationSocialExpressionEventTopicMessageSticker]',
+            'message_metadata': 'QueueConversationSocialExpressionEventTopicMessageMetadata'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
             'message_segment_count': 'messageSegmentCount',
             'media': 'media',
             'error_info': 'errorInfo',
-            'stickers': 'stickers'
+            'stickers': 'stickers',
+            'message_metadata': 'messageMetadata'
         }
 
         self._message_id = None
@@ -66,6 +68,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         self._media = None
         self._error_info = None
         self._stickers = None
+        self._message_metadata = None
 
     @property
     def message_id(self):
@@ -237,6 +240,30 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         
 
         self._stickers = stickers
+
+    @property
+    def message_metadata(self):
+        """
+        Gets the message_metadata of this QueueConversationSocialExpressionEventTopicMessageDetails.
+
+
+        :return: The message_metadata of this QueueConversationSocialExpressionEventTopicMessageDetails.
+        :rtype: QueueConversationSocialExpressionEventTopicMessageMetadata
+        """
+        return self._message_metadata
+
+    @message_metadata.setter
+    def message_metadata(self, message_metadata):
+        """
+        Sets the message_metadata of this QueueConversationSocialExpressionEventTopicMessageDetails.
+
+
+        :param message_metadata: The message_metadata of this QueueConversationSocialExpressionEventTopicMessageDetails.
+        :type: QueueConversationSocialExpressionEventTopicMessageMetadata
+        """
+        
+
+        self._message_metadata = message_metadata
 
     def to_dict(self):
         """

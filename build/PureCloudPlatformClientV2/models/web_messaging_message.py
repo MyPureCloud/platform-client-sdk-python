@@ -47,7 +47,8 @@ class WebMessagingMessage(object):
             'content': 'list[WebMessagingContent]',
             'events': 'list[WebMessagingEvent]',
             'direction': 'str',
-            'originating_entity': 'str'
+            'originating_entity': 'str',
+            'metadata': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -58,7 +59,8 @@ class WebMessagingMessage(object):
             'content': 'content',
             'events': 'events',
             'direction': 'direction',
-            'originating_entity': 'originatingEntity'
+            'originating_entity': 'originatingEntity',
+            'metadata': 'metadata'
         }
 
         self._id = None
@@ -69,6 +71,7 @@ class WebMessagingMessage(object):
         self._events = None
         self._direction = None
         self._originating_entity = None
+        self._metadata = None
 
     @property
     def id(self):
@@ -270,6 +273,30 @@ class WebMessagingMessage(object):
             self._originating_entity = "outdated_sdk_version"
         else:
             self._originating_entity = originating_entity
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this WebMessagingMessage.
+        Additional metadata about this message.
+
+        :return: The metadata of this WebMessagingMessage.
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this WebMessagingMessage.
+        Additional metadata about this message.
+
+        :param metadata: The metadata of this WebMessagingMessage.
+        :type: dict(str, str)
+        """
+        
+
+        self._metadata = metadata
 
     def to_dict(self):
         """

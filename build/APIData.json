@@ -3934,16 +3934,16 @@
   "get_user_roles": {
     "operationId": "get_user_roles",
     "functionName": "get_user_roles",
-    "signature": "get_user_roles(user_id)",
+    "signature": "get_user_roles(subject_id)",
     "parameters": [
       {
-        "name": "user_id",
+        "name": "subject_id",
         "type": "str",
         "required": "true"
       }
     ],
     "return": "UserAuthorization",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi()\nuser_id = 'user_id_example' # str | User ID\n\ntry:\n    # Returns a listing of roles and permissions for a user.\n    api_response = api_instance.get_user_roles(user_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetUserRolesRequest->get_user_roles: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi()\nsubject_id = 'subject_id_example' # str | User ID\n\ntry:\n    # Returns a listing of roles and permissions for a user.\n    api_response = api_instance.get_user_roles(subject_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetUserRolesRequest->get_user_roles: %s\\n\" % e)"
   },
   "patch_authorization_role": {
     "operationId": "patch_authorization_role",
@@ -4280,10 +4280,10 @@
   "put_user_roles": {
     "operationId": "put_user_roles",
     "functionName": "put_user_roles",
-    "signature": "put_user_roles(user_id, body)",
+    "signature": "put_user_roles(subject_id, body)",
     "parameters": [
       {
-        "name": "user_id",
+        "name": "subject_id",
         "type": "str",
         "required": "true"
       },
@@ -4294,7 +4294,7 @@
       }
     ],
     "return": "UserAuthorization",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi()\nuser_id = 'user_id_example' # str | User ID\nbody = ['body_example'] # list[str] | List of roles\n\ntry:\n    # Sets the user's roles\n    api_response = api_instance.put_user_roles(user_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutUserRolesRequest->put_user_roles: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi()\nsubject_id = 'subject_id_example' # str | User ID\nbody = ['body_example'] # list[str] | List of roles\n\ntry:\n    # Sets the user's roles\n    api_response = api_instance.put_user_roles(subject_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutUserRolesRequest->put_user_roles: %s\\n\" % e)"
   },
   "get_billing_reports_billableusage": {
     "operationId": "get_billing_reports_billableusage",
@@ -15380,6 +15380,25 @@
     "return": "LearningModule",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nmodule_id = 'module_id_example' # str | The ID of the learning module\nexpand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)\n\ntry:\n    # Get a learning module\n    api_response = api_instance.get_learning_module(module_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningModuleRequest->get_learning_module: %s\\n\" % e)"
   },
+  "get_learning_module_job": {
+    "operationId": "get_learning_module_job",
+    "functionName": "get_learning_module_job",
+    "signature": "get_learning_module_job(module_id, job_id)",
+    "parameters": [
+      {
+        "name": "module_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "LearningModuleJobResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nmodule_id = 'module_id_example' # str | The ID of the learning module\njob_id = 'job_id_example' # str | The ID of the learning module job\n\ntry:\n    # Get a specific Learning Module job status\n    api_response = api_instance.get_learning_module_job(module_id, job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningModuleJobRequest->get_learning_module_job: %s\\n\" % e)"
+  },
   "get_learning_module_rule": {
     "operationId": "get_learning_module_rule",
     "functionName": "get_learning_module_rule",
@@ -15505,6 +15524,34 @@
     "return": "AssessmentScoringSet",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nbody = PureCloudPlatformClientV2.LearningAssessmentScoringRequest() # LearningAssessmentScoringRequest | Assessment form and answers to score\n\ntry:\n    # Score learning assessment for preview\n    api_response = api_instance.post_learning_assessments_scoring(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostLearningAssessmentsScoringRequest->post_learning_assessments_scoring: %s\\n\" % e)"
   },
+  "post_learning_assignment_reassign": {
+    "operationId": "post_learning_assignment_reassign",
+    "functionName": "post_learning_assignment_reassign",
+    "signature": "post_learning_assignment_reassign(assignment_id)",
+    "parameters": [
+      {
+        "name": "assignment_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "LearningAssignment",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nassignment_id = 'assignment_id_example' # str | The Learning Assignment ID\n\ntry:\n    # Reassign Learning Assignment\n    api_response = api_instance.post_learning_assignment_reassign(assignment_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostLearningAssignmentReassignRequest->post_learning_assignment_reassign: %s\\n\" % e)"
+  },
+  "post_learning_assignment_reset": {
+    "operationId": "post_learning_assignment_reset",
+    "functionName": "post_learning_assignment_reset",
+    "signature": "post_learning_assignment_reset(assignment_id)",
+    "parameters": [
+      {
+        "name": "assignment_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "LearningAssignment",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nassignment_id = 'assignment_id_example' # str | The Learning Assignment ID\n\ntry:\n    # Reset Learning Assignment\n    api_response = api_instance.post_learning_assignment_reset(assignment_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostLearningAssignmentResetRequest->post_learning_assignment_reset: %s\\n\" % e)"
+  },
   "post_learning_assignments": {
     "operationId": "post_learning_assignments",
     "functionName": "post_learning_assignments",
@@ -15560,6 +15607,25 @@
     ],
     "return": "LearningAssignmentBulkRemoveResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nbody = ['body_example'] # list[str] | The IDs of the learning assignments to be removed (optional)\n\ntry:\n    # Remove multiple Learning Assignments\n    api_response = api_instance.post_learning_assignments_bulkremove(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostLearningAssignmentsBulkremoveRequest->post_learning_assignments_bulkremove: %s\\n\" % e)"
+  },
+  "post_learning_module_jobs": {
+    "operationId": "post_learning_module_jobs",
+    "functionName": "post_learning_module_jobs",
+    "signature": "post_learning_module_jobs(module_id, body)",
+    "parameters": [
+      {
+        "name": "module_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "LearningModuleJobRequest",
+        "required": "true"
+      }
+    ],
+    "return": "LearningModuleJobResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nmodule_id = 'module_id_example' # str | The ID of the learning module\nbody = PureCloudPlatformClientV2.LearningModuleJobRequest() # LearningModuleJobRequest | The learning module job request\n\ntry:\n    # Starts a specified operation on learning module\n    api_response = api_instance.post_learning_module_jobs(module_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostLearningModuleJobsRequest->post_learning_module_jobs: %s\\n\" % e)"
   },
   "post_learning_module_publish": {
     "operationId": "post_learning_module_publish",
@@ -20662,7 +20728,7 @@
       }
     ],
     "return": "list[SurveyForm]",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\ncontext_id = ['context_id_example'] # list[str] | A comma-delimited list of valid survey form context ids\npublished = True # bool | If true, the latest published version will be included. If false, only the unpublished version will be included. (optional) (default to True)\n\ntry:\n    # Retrieve a list of the latest form versions by context ids\n    api_response = api_instance.get_quality_forms_surveys_bulk_contexts(context_id, published=published)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityFormsSurveysBulkContextsRequest->get_quality_forms_surveys_bulk_contexts: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\ncontext_id = ['context_id_example'] # list[str] | A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.\npublished = True # bool | If true, the latest published version will be included. If false, only the unpublished version will be included. (optional) (default to True)\n\ntry:\n    # Retrieve a list of the latest form versions by context ids\n    api_response = api_instance.get_quality_forms_surveys_bulk_contexts(context_id, published=published)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityFormsSurveysBulkContextsRequest->get_quality_forms_surveys_bulk_contexts: %s\\n\" % e)"
   },
   "get_quality_publishedform": {
     "operationId": "get_quality_publishedform",
@@ -23169,9 +23235,16 @@
   "get_routing_predictors_keyperformanceindicators": {
     "operationId": "get_routing_predictors_keyperformanceindicators",
     "functionName": "get_routing_predictors_keyperformanceindicators",
-    "signature": "get_routing_predictors_keyperformanceindicators()",
+    "signature": "get_routing_predictors_keyperformanceindicators(kpi_group)",
+    "parameters": [
+      {
+        "name": "kpi_group",
+        "type": "str",
+        "required": "false"
+      }
+    ],
     "return": "list[KeyPerformanceIndicator]",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\n\ntry:\n    # Get a list of Key Performance Indicators available for the predictors.\n    api_response = api_instance.get_routing_predictors_keyperformanceindicators()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingPredictorsKeyperformanceindicatorsRequest->get_routing_predictors_keyperformanceindicators: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nkpi_group = 'kpi_group_example' # str | The Group of Key Performance Indicators to return (optional)\n\ntry:\n    # Get a list of Key Performance Indicators\n    api_response = api_instance.get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingPredictorsKeyperformanceindicatorsRequest->get_routing_predictors_keyperformanceindicators: %s\\n\" % e)"
   },
   "get_routing_queue": {
     "operationId": "get_routing_queue",

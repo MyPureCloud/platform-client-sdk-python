@@ -1789,7 +1789,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_user_roles(self, user_id, **kwargs):
+    def get_user_roles(self, subject_id, **kwargs):
         """
         Returns a listing of roles and permissions for a user.
         
@@ -1800,17 +1800,17 @@ class AuthorizationApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_user_roles(user_id, callback=callback_function)
+        >>> thread = api.get_user_roles(subject_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id: User ID (required)
+        :param str subject_id: User ID (required)
         :return: UserAuthorization
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id']
+        all_params = ['subject_id']
         all_params.append('callback')
 
         params = locals()
@@ -1823,15 +1823,15 @@ class AuthorizationApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `get_user_roles`")
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `get_user_roles`")
 
 
-        resource_path = '/api/v2/users/{userId}/roles'.replace('{format}', 'json')
+        resource_path = '/api/v2/users/{subjectId}/roles'.replace('{format}', 'json')
         path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
 
         query_params = {}
 
@@ -3298,7 +3298,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_user_roles(self, user_id, body, **kwargs):
+    def put_user_roles(self, subject_id, body, **kwargs):
         """
         Sets the user's roles
         
@@ -3309,18 +3309,18 @@ class AuthorizationApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_user_roles(user_id, body, callback=callback_function)
+        >>> thread = api.put_user_roles(subject_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id: User ID (required)
+        :param str subject_id: User ID (required)
         :param list[str] body: List of roles (required)
         :return: UserAuthorization
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'body']
+        all_params = ['subject_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3333,18 +3333,18 @@ class AuthorizationApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `put_user_roles`")
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `put_user_roles`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `put_user_roles`")
 
 
-        resource_path = '/api/v2/users/{userId}/roles'.replace('{format}', 'json')
+        resource_path = '/api/v2/users/{subjectId}/roles'.replace('{format}', 'json')
         path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
 
         query_params = {}
 

@@ -41,6 +41,7 @@ class ConversationEventTopicSocialExpression(object):
         """
         self.swagger_types = {
             'state': 'str',
+            'initial_state': 'str',
             'id': 'str',
             'social_media_id': 'str',
             'social_media_hub': 'str',
@@ -62,6 +63,7 @@ class ConversationEventTopicSocialExpression(object):
 
         self.attribute_map = {
             'state': 'state',
+            'initial_state': 'initialState',
             'id': 'id',
             'social_media_id': 'socialMediaId',
             'social_media_hub': 'socialMediaHub',
@@ -82,6 +84,7 @@ class ConversationEventTopicSocialExpression(object):
         }
 
         self._state = None
+        self._initial_state = None
         self._id = None
         self._social_media_id = None
         self._social_media_hub = None
@@ -104,7 +107,7 @@ class ConversationEventTopicSocialExpression(object):
     def state(self):
         """
         Gets the state of this ConversationEventTopicSocialExpression.
-        The connection state of this communication.
+
 
         :return: The state of this ConversationEventTopicSocialExpression.
         :rtype: str
@@ -115,7 +118,7 @@ class ConversationEventTopicSocialExpression(object):
     def state(self, state):
         """
         Sets the state of this ConversationEventTopicSocialExpression.
-        The connection state of this communication.
+
 
         :param state: The state of this ConversationEventTopicSocialExpression.
         :type: str
@@ -126,6 +129,33 @@ class ConversationEventTopicSocialExpression(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this ConversationEventTopicSocialExpression.
+
+
+        :return: The initial_state of this ConversationEventTopicSocialExpression.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this ConversationEventTopicSocialExpression.
+
+
+        :param initial_state: The initial_state of this ConversationEventTopicSocialExpression.
+        :type: str
+        """
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     @property
     def id(self):

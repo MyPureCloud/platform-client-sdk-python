@@ -354,7 +354,7 @@ class AuditTopicAuditLogMessage(object):
         :param action: The action of this AuditTopicAuditLogMessage.
         :type: str
         """
-        allowed_values = ["Create", "View", "Update", "Move", "Delete", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "Read", "Write", "ApplyProtection", "RevokeProtection", "UpdateRetention", "ReadAll", "Execute", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword", "Revoke", "Export", "Append", "Recycle", "Purge", "Processed", "Assign", "Unassign", "Reset", "Reassign"]
+        allowed_values = ["Create", "View", "Update", "Move", "Delete", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "Read", "Write", "ApplyProtection", "RevokeProtection", "UpdateRetention", "ReadAll", "Execute", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword", "Revoke", "Export", "Append", "Recycle", "Purge", "Processed", "Assign", "Unassign", "Reset", "Reassign", "Archive", "Unarchive"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"

@@ -42,7 +42,7 @@ class Schedule(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'Division',
+            'division': 'WritableDivision',
             'description': 'str',
             'version': 'int',
             'date_created': 'datetime',
@@ -149,7 +149,7 @@ class Schedule(object):
         The division to which this entity belongs.
 
         :return: The division of this Schedule.
-        :rtype: Division
+        :rtype: WritableDivision
         """
         return self._division
 
@@ -160,7 +160,7 @@ class Schedule(object):
         The division to which this entity belongs.
 
         :param division: The division of this Schedule.
-        :type: Division
+        :type: WritableDivision
         """
         
 

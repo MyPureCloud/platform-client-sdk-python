@@ -42,18 +42,45 @@ class KeyPerformanceIndicator(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'optimization_type': 'str'
+            'optimization_type': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'description': 'str',
+            'kpi_type': 'str',
+            'source': 'str',
+            'wrap_up_code_config': 'WrapUpCodeConfig',
+            'status': 'str',
+            'kpi_group': 'str',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'optimization_type': 'optimizationType'
+            'optimization_type': 'optimizationType',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'description': 'description',
+            'kpi_type': 'kpiType',
+            'source': 'source',
+            'wrap_up_code_config': 'wrapUpCodeConfig',
+            'status': 'status',
+            'kpi_group': 'kpiGroup',
+            'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._optimization_type = None
+        self._date_created = None
+        self._date_modified = None
+        self._description = None
+        self._kpi_type = None
+        self._source = None
+        self._wrap_up_code_config = None
+        self._status = None
+        self._kpi_group = None
+        self._self_uri = None
 
     @property
     def id(self):
@@ -129,6 +156,234 @@ class KeyPerformanceIndicator(object):
             self._optimization_type = "outdated_sdk_version"
         else:
             self._optimization_type = optimization_type
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this KeyPerformanceIndicator.
+        DateTime indicating when the Key Performance Indicator was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this KeyPerformanceIndicator.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this KeyPerformanceIndicator.
+        DateTime indicating when the Key Performance Indicator was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this KeyPerformanceIndicator.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this KeyPerformanceIndicator.
+        DateTime indicating when the Key Performance Indicator was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_modified of this KeyPerformanceIndicator.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this KeyPerformanceIndicator.
+        DateTime indicating when the Key Performance Indicator was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_modified: The date_modified of this KeyPerformanceIndicator.
+        :type: datetime
+        """
+        
+
+        self._date_modified = date_modified
+
+    @property
+    def description(self):
+        """
+        Gets the description of this KeyPerformanceIndicator.
+        The description of the Key Performance Indicator.
+
+        :return: The description of this KeyPerformanceIndicator.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this KeyPerformanceIndicator.
+        The description of the Key Performance Indicator.
+
+        :param description: The description of this KeyPerformanceIndicator.
+        :type: str
+        """
+        
+
+        self._description = description
+
+    @property
+    def kpi_type(self):
+        """
+        Gets the kpi_type of this KeyPerformanceIndicator.
+        The type of Key Performance Indicator.
+
+        :return: The kpi_type of this KeyPerformanceIndicator.
+        :rtype: str
+        """
+        return self._kpi_type
+
+    @kpi_type.setter
+    def kpi_type(self, kpi_type):
+        """
+        Sets the kpi_type of this KeyPerformanceIndicator.
+        The type of Key Performance Indicator.
+
+        :param kpi_type: The kpi_type of this KeyPerformanceIndicator.
+        :type: str
+        """
+        allowed_values = ["SalesConversion", "Churn", "Retention", "HandleTime", "NumberOfTransfers"]
+        if kpi_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for kpi_type -> " + kpi_type)
+            self._kpi_type = "outdated_sdk_version"
+        else:
+            self._kpi_type = kpi_type
+
+    @property
+    def source(self):
+        """
+        Gets the source of this KeyPerformanceIndicator.
+        Source of values for Key Performance Indicator.
+
+        :return: The source of this KeyPerformanceIndicator.
+        :rtype: str
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source):
+        """
+        Sets the source of this KeyPerformanceIndicator.
+        Source of values for Key Performance Indicator.
+
+        :param source: The source of this KeyPerformanceIndicator.
+        :type: str
+        """
+        allowed_values = ["WrapUpCode"]
+        if source.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for source -> " + source)
+            self._source = "outdated_sdk_version"
+        else:
+            self._source = source
+
+    @property
+    def wrap_up_code_config(self):
+        """
+        Gets the wrap_up_code_config of this KeyPerformanceIndicator.
+        Defines what wrap up codes are mapped to Key Performance Indicator.
+
+        :return: The wrap_up_code_config of this KeyPerformanceIndicator.
+        :rtype: WrapUpCodeConfig
+        """
+        return self._wrap_up_code_config
+
+    @wrap_up_code_config.setter
+    def wrap_up_code_config(self, wrap_up_code_config):
+        """
+        Sets the wrap_up_code_config of this KeyPerformanceIndicator.
+        Defines what wrap up codes are mapped to Key Performance Indicator.
+
+        :param wrap_up_code_config: The wrap_up_code_config of this KeyPerformanceIndicator.
+        :type: WrapUpCodeConfig
+        """
+        
+
+        self._wrap_up_code_config = wrap_up_code_config
+
+    @property
+    def status(self):
+        """
+        Gets the status of this KeyPerformanceIndicator.
+        The status of the Key Performance Indicator.
+
+        :return: The status of this KeyPerformanceIndicator.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this KeyPerformanceIndicator.
+        The status of the Key Performance Indicator.
+
+        :param status: The status of this KeyPerformanceIndicator.
+        :type: str
+        """
+        allowed_values = ["Enabled", "Disabled"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status -> " + status)
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
+
+    @property
+    def kpi_group(self):
+        """
+        Gets the kpi_group of this KeyPerformanceIndicator.
+        The group the Key Performance Indicator belongs to.
+
+        :return: The kpi_group of this KeyPerformanceIndicator.
+        :rtype: str
+        """
+        return self._kpi_group
+
+    @kpi_group.setter
+    def kpi_group(self, kpi_group):
+        """
+        Sets the kpi_group of this KeyPerformanceIndicator.
+        The group the Key Performance Indicator belongs to.
+
+        :param kpi_group: The kpi_group of this KeyPerformanceIndicator.
+        :type: str
+        """
+        allowed_values = ["Standard", "Custom"]
+        if kpi_group.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for kpi_group -> " + kpi_group)
+            self._kpi_group = "outdated_sdk_version"
+        else:
+            self._kpi_group = kpi_group
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this KeyPerformanceIndicator.
+        The URI for this object
+
+        :return: The self_uri of this KeyPerformanceIndicator.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this KeyPerformanceIndicator.
+        The URI for this object
+
+        :param self_uri: The self_uri of this KeyPerformanceIndicator.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

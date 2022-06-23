@@ -7,7 +7,8 @@ title: ConversationEventTopicCallback
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **state** | **str** | The connection state of this communication. | [optional] |
+| **state** | **str** |  | [optional] |
+| **initial_state** | **str** |  | [optional] |
 | **id** | **str** | A globally unique identifier for this communication. | [optional] |
 | **direction** | **str** | The direction of the call | [optional] |
 | **held** | **bool** | True if this call is held and the person on this side hears silence. | [optional] |

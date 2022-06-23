@@ -8,7 +8,8 @@ title: ConversationEventTopicCall
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | A globally unique identifier for this communication. | [optional] |
-| **state** | **str** | The connection state of this communication. | [optional] |
+| **state** | **str** |  | [optional] |
+| **initial_state** | **str** |  | [optional] |
 | **recording** | **bool** | True if this call is being recorded. | [optional] |
 | **recording_state** | **str** | State of recording on this call. | [optional] |
 | **muted** | **bool** | True if this call is muted so that remote participants can&#39;t hear any audio from this end. | [optional] |

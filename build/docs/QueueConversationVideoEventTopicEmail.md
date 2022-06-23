@@ -8,7 +8,8 @@ title: QueueConversationVideoEventTopicEmail
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | A globally unique identifier for this communication. | [optional] |
-| **state** | **str** | The connection state of this communication. | [optional] |
+| **state** | **str** |  | [optional] |
+| **initial_state** | **str** |  | [optional] |
 | **held** | **bool** | True if this call is held and the person on this side hears silence. | [optional] |
 | **auto_generated** | **bool** | Indicates that the email was auto-generated like an Out of Office reply. | [optional] |
 | **subject** | **str** | The subject for the initial email that started this conversation. | [optional] |

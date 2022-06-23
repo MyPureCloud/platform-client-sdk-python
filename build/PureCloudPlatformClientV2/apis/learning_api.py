@@ -595,6 +595,90 @@ class LearningApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_learning_module_job(self, module_id, job_id, **kwargs):
+        """
+        Get a specific Learning Module job status
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_learning_module_job(module_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str module_id: The ID of the learning module (required)
+        :param str job_id: The ID of the learning module job (required)
+        :return: LearningModuleJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['module_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_learning_module_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'module_id' is set
+        if ('module_id' not in params) or (params['module_id'] is None):
+            raise ValueError("Missing the required parameter `module_id` when calling `get_learning_module_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_learning_module_job`")
+
+
+        resource_path = '/api/v2/learning/modules/{moduleId}/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'module_id' in params:
+            path_params['moduleId'] = params['module_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningModuleJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_learning_module_rule(self, module_id, **kwargs):
         """
         Get a learning module rule
@@ -1018,6 +1102,162 @@ class LearningApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_learning_assignment_reassign(self, assignment_id, **kwargs):
+        """
+        Reassign Learning Assignment
+        This will reassign the state of the assignment to 'Assigned' and update the assignment to the latest version of the module
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_learning_assignment_reassign(assignment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assignment_id: The Learning Assignment ID (required)
+        :return: LearningAssignment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assignment_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_learning_assignment_reassign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assignment_id' is set
+        if ('assignment_id' not in params) or (params['assignment_id'] is None):
+            raise ValueError("Missing the required parameter `assignment_id` when calling `post_learning_assignment_reassign`")
+
+
+        resource_path = '/api/v2/learning/assignments/{assignmentId}/reassign'.replace('{format}', 'json')
+        path_params = {}
+        if 'assignment_id' in params:
+            path_params['assignmentId'] = params['assignment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningAssignment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_learning_assignment_reset(self, assignment_id, **kwargs):
+        """
+        Reset Learning Assignment
+        This will reset the state of the assignment to 'Assigned' and remove the version of Learning module associated with the assignment
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_learning_assignment_reset(assignment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assignment_id: The Learning Assignment ID (required)
+        :return: LearningAssignment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assignment_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_learning_assignment_reset" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assignment_id' is set
+        if ('assignment_id' not in params) or (params['assignment_id'] is None):
+            raise ValueError("Missing the required parameter `assignment_id` when calling `post_learning_assignment_reset`")
+
+
+        resource_path = '/api/v2/learning/assignments/{assignmentId}/reset'.replace('{format}', 'json')
+        path_params = {}
+        if 'assignment_id' in params:
+            path_params['assignmentId'] = params['assignment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningAssignment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_learning_assignments(self, **kwargs):
         """
         Create Learning Assignment
@@ -1317,6 +1557,90 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningAssignmentBulkRemoveResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_learning_module_jobs(self, module_id, body, **kwargs):
+        """
+        Starts a specified operation on learning module
+        This will initiate operation specified in the request body for a learning module
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_learning_module_jobs(module_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str module_id: The ID of the learning module (required)
+        :param LearningModuleJobRequest body: The learning module job request (required)
+        :return: LearningModuleJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['module_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_learning_module_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'module_id' is set
+        if ('module_id' not in params) or (params['module_id'] is None):
+            raise ValueError("Missing the required parameter `module_id` when calling `post_learning_module_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_learning_module_jobs`")
+
+
+        resource_path = '/api/v2/learning/modules/{moduleId}/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'module_id' in params:
+            path_params['moduleId'] = params['module_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningModuleJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

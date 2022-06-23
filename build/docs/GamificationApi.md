@@ -276,9 +276,11 @@ This endpoint does not need any parameters.
 
 ## [**Metric**](Metric.html) get_gamification_metric(metric_id, workday=workday, performance_profile_id=performance_profile_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Gamified metric by id
+
+This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 
 
 
@@ -433,9 +435,11 @@ This endpoint does not need any parameters.
 
 ## [**GetMetricsResponse**](GetMetricsResponse.html) get_gamification_metrics(performance_profile_id=performance_profile_id, workday=workday)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 All gamified metrics for a given profile
+
+This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 
 
 
@@ -1985,9 +1989,11 @@ This endpoint does not need any parameters.
 
 ## [**Metric**](Metric.html) post_gamification_metrics(body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Creates a gamified metric with a given metric definition and metric objective
+
+This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 
 
 
@@ -2405,9 +2411,11 @@ except ApiException as e:
 
 ## [**Metric**](Metric.html) put_gamification_metric(metric_id, body, performance_profile_id=performance_profile_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Updates a metric
+
+This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 
 
 

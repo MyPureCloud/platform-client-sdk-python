@@ -391,7 +391,7 @@ class GamificationApi(object):
     def get_gamification_metric(self, metric_id, **kwargs):
         """
         Gamified metric by id
-        
+        This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -625,7 +625,7 @@ class GamificationApi(object):
     def get_gamification_metrics(self, **kwargs):
         """
         All gamified metrics for a given profile
-        
+        This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3025,7 +3025,7 @@ class GamificationApi(object):
     def post_gamification_metrics(self, body, **kwargs):
         """
         Creates a gamified metric with a given metric definition and metric objective
-        
+        This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3682,7 +3682,7 @@ class GamificationApi(object):
     def put_gamification_metric(self, metric_id, body, **kwargs):
         """
         Updates a metric
-        
+        This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

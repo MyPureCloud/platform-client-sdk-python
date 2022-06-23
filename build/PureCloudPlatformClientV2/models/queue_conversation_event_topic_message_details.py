@@ -46,7 +46,8 @@ class QueueConversationEventTopicMessageDetails(object):
             'message_segment_count': 'int',
             'media': 'list[QueueConversationEventTopicMessageMedia]',
             'error_info': 'QueueConversationEventTopicErrorDetails',
-            'stickers': 'list[QueueConversationEventTopicMessageSticker]'
+            'stickers': 'list[QueueConversationEventTopicMessageSticker]',
+            'message_metadata': 'QueueConversationEventTopicMessageMetadata'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class QueueConversationEventTopicMessageDetails(object):
             'message_segment_count': 'messageSegmentCount',
             'media': 'media',
             'error_info': 'errorInfo',
-            'stickers': 'stickers'
+            'stickers': 'stickers',
+            'message_metadata': 'messageMetadata'
         }
 
         self._message_id = None
@@ -66,6 +68,7 @@ class QueueConversationEventTopicMessageDetails(object):
         self._media = None
         self._error_info = None
         self._stickers = None
+        self._message_metadata = None
 
     @property
     def message_id(self):
@@ -237,6 +240,30 @@ class QueueConversationEventTopicMessageDetails(object):
         
 
         self._stickers = stickers
+
+    @property
+    def message_metadata(self):
+        """
+        Gets the message_metadata of this QueueConversationEventTopicMessageDetails.
+
+
+        :return: The message_metadata of this QueueConversationEventTopicMessageDetails.
+        :rtype: QueueConversationEventTopicMessageMetadata
+        """
+        return self._message_metadata
+
+    @message_metadata.setter
+    def message_metadata(self, message_metadata):
+        """
+        Sets the message_metadata of this QueueConversationEventTopicMessageDetails.
+
+
+        :param message_metadata: The message_metadata of this QueueConversationEventTopicMessageDetails.
+        :type: QueueConversationEventTopicMessageMetadata
+        """
+        
+
+        self._message_metadata = message_metadata
 
     def to_dict(self):
         """

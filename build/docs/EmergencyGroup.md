@@ -9,7 +9,7 @@ title: EmergencyGroup
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | The name of the entity. | |
-| **division** | [**Division**](Division.html) | The division to which this entity belongs. | [optional] |
+| **division** | [**WritableDivision**](WritableDivision.html) | The division to which this entity belongs. | [optional] |
 | **description** | **str** | The resource&#39;s description. | [optional] |
 | **version** | **int** | The current version of the resource. | [optional] |
 | **date_created** | **datetime** | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |

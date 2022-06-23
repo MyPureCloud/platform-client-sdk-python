@@ -14,15 +14,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_learning_assignments**](LearningApi.html#get_learning_assignments) | List of Learning module Assignments|
 |[**get_learning_assignments_me**](LearningApi.html#get_learning_assignments_me) | List of Learning Assignments assigned to current user|
 |[**get_learning_module**](LearningApi.html#get_learning_module) | Get a learning module|
+|[**get_learning_module_job**](LearningApi.html#get_learning_module_job) | Get a specific Learning Module job status|
 |[**get_learning_module_rule**](LearningApi.html#get_learning_module_rule) | Get a learning module rule|
 |[**get_learning_module_version**](LearningApi.html#get_learning_module_version) | Get specific version of a published module|
 |[**get_learning_modules**](LearningApi.html#get_learning_modules) | Get all learning modules of an organization|
 |[**patch_learning_assignment**](LearningApi.html#patch_learning_assignment) | Update Learning Assignment|
 |[**post_learning_assessments_scoring**](LearningApi.html#post_learning_assessments_scoring) | Score learning assessment for preview|
+|[**post_learning_assignment_reassign**](LearningApi.html#post_learning_assignment_reassign) | Reassign Learning Assignment|
+|[**post_learning_assignment_reset**](LearningApi.html#post_learning_assignment_reset) | Reset Learning Assignment|
 |[**post_learning_assignments**](LearningApi.html#post_learning_assignments) | Create Learning Assignment|
 |[**post_learning_assignments_aggregates_query**](LearningApi.html#post_learning_assignments_aggregates_query) | Retrieve aggregated assignment data|
 |[**post_learning_assignments_bulkadd**](LearningApi.html#post_learning_assignments_bulkadd) | Add multiple learning assignments|
 |[**post_learning_assignments_bulkremove**](LearningApi.html#post_learning_assignments_bulkremove) | Remove multiple Learning Assignments|
+|[**post_learning_module_jobs**](LearningApi.html#post_learning_module_jobs) | Starts a specified operation on learning module|
 |[**post_learning_module_publish**](LearningApi.html#post_learning_module_publish) | Publish a Learning module|
 |[**post_learning_modules**](LearningApi.html#post_learning_modules) | Create a new learning module|
 |[**post_learning_rules_query**](LearningApi.html#post_learning_rules_query) | Get users for learning module rule|
@@ -397,6 +401,59 @@ except ApiException as e:
 
 [**LearningModule**](LearningModule.html)
 
+<a name="get_learning_module_job"></a>
+
+## [**LearningModuleJobResponse**](LearningModuleJobResponse.html) get_learning_module_job(module_id, job_id)
+
+
+
+Get a specific Learning Module job status
+
+
+
+Wraps GET /api/v2/learning/modules/{moduleId}/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* learning:module:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+module_id = 'module_id_example' # str | The ID of the learning module
+job_id = 'job_id_example' # str | The ID of the learning module job
+
+try:
+    # Get a specific Learning Module job status
+    api_response = api_instance.get_learning_module_job(module_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->get_learning_module_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **module_id** | **str**| The ID of the learning module |  |
+| **job_id** | **str**| The ID of the learning module job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningModuleJobResponse**](LearningModuleJobResponse.html)
+
 <a name="get_learning_module_rule"></a>
 
 ## [**LearningModuleRule**](LearningModuleRule.html) get_learning_module_rule(module_id)
@@ -560,7 +617,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
-| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, createddate, percentpassed, averagescore |
 | **search_term** | **str**| Search Term (searchable by name) | [optional]  |
 | **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
 | **is_published** | **str**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
@@ -674,6 +731,112 @@ except ApiException as e:
 ### Return type
 
 [**AssessmentScoringSet**](AssessmentScoringSet.html)
+
+<a name="post_learning_assignment_reassign"></a>
+
+## [**LearningAssignment**](LearningAssignment.html) post_learning_assignment_reassign(assignment_id)
+
+
+
+Reassign Learning Assignment
+
+This will reassign the state of the assignment to 'Assigned' and update the assignment to the latest version of the module
+
+
+
+Wraps POST /api/v2/learning/assignments/{assignmentId}/reassign 
+
+Requires ANY permissions: 
+
+* learning:assignment:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+assignment_id = 'assignment_id_example' # str | The Learning Assignment ID
+
+try:
+    # Reassign Learning Assignment
+    api_response = api_instance.post_learning_assignment_reassign(assignment_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_assignment_reassign: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assignment_id** | **str**| The Learning Assignment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningAssignment**](LearningAssignment.html)
+
+<a name="post_learning_assignment_reset"></a>
+
+## [**LearningAssignment**](LearningAssignment.html) post_learning_assignment_reset(assignment_id)
+
+
+
+Reset Learning Assignment
+
+This will reset the state of the assignment to 'Assigned' and remove the version of Learning module associated with the assignment
+
+
+
+Wraps POST /api/v2/learning/assignments/{assignmentId}/reset 
+
+Requires ANY permissions: 
+
+* learning:assignment:reset
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+assignment_id = 'assignment_id_example' # str | The Learning Assignment ID
+
+try:
+    # Reset Learning Assignment
+    api_response = api_instance.post_learning_assignment_reset(assignment_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_assignment_reset: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assignment_id** | **str**| The Learning Assignment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningAssignment**](LearningAssignment.html)
 
 <a name="post_learning_assignments"></a>
 
@@ -878,6 +1041,61 @@ except ApiException as e:
 ### Return type
 
 [**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse.html)
+
+<a name="post_learning_module_jobs"></a>
+
+## [**LearningModuleJobResponse**](LearningModuleJobResponse.html) post_learning_module_jobs(module_id, body)
+
+
+
+Starts a specified operation on learning module
+
+This will initiate operation specified in the request body for a learning module
+
+
+
+Wraps POST /api/v2/learning/modules/{moduleId}/jobs 
+
+Requires ANY permissions: 
+
+* learning:module:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+module_id = 'module_id_example' # str | The ID of the learning module
+body = PureCloudPlatformClientV2.LearningModuleJobRequest() # LearningModuleJobRequest | The learning module job request
+
+try:
+    # Starts a specified operation on learning module
+    api_response = api_instance.post_learning_module_jobs(module_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_module_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **module_id** | **str**| The ID of the learning module |  |
+| **body** | [**LearningModuleJobRequest**](LearningModuleJobRequest.html)| The learning module job request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningModuleJobResponse**](LearningModuleJobResponse.html)
 
 <a name="post_learning_module_publish"></a>
 

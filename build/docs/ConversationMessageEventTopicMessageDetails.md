@@ -14,6 +14,7 @@ title: ConversationMessageEventTopicMessageDetails
 | **media** | [**list[ConversationMessageEventTopicMessageMedia]**](ConversationMessageEventTopicMessageMedia.html) |  | [optional] |
 | **stickers** | [**list[ConversationMessageEventTopicMessageSticker]**](ConversationMessageEventTopicMessageSticker.html) |  | [optional] |
 | **error_info** | [**ConversationMessageEventTopicErrorDetails**](ConversationMessageEventTopicErrorDetails.html) |  | [optional] |
+| **message_metadata** | [**ConversationMessageEventTopicMessageMetadata**](ConversationMessageEventTopicMessageMetadata.html) |  | [optional] |
 {: class="table table-striped"}
 
 

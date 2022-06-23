@@ -46,7 +46,8 @@ class QueueConversationVideoEventTopicMessageDetails(object):
             'message_segment_count': 'int',
             'media': 'list[QueueConversationVideoEventTopicMessageMedia]',
             'error_info': 'QueueConversationVideoEventTopicErrorDetails',
-            'stickers': 'list[QueueConversationVideoEventTopicMessageSticker]'
+            'stickers': 'list[QueueConversationVideoEventTopicMessageSticker]',
+            'message_metadata': 'QueueConversationVideoEventTopicMessageMetadata'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class QueueConversationVideoEventTopicMessageDetails(object):
             'message_segment_count': 'messageSegmentCount',
             'media': 'media',
             'error_info': 'errorInfo',
-            'stickers': 'stickers'
+            'stickers': 'stickers',
+            'message_metadata': 'messageMetadata'
         }
 
         self._message_id = None
@@ -66,6 +68,7 @@ class QueueConversationVideoEventTopicMessageDetails(object):
         self._media = None
         self._error_info = None
         self._stickers = None
+        self._message_metadata = None
 
     @property
     def message_id(self):
@@ -237,6 +240,30 @@ class QueueConversationVideoEventTopicMessageDetails(object):
         
 
         self._stickers = stickers
+
+    @property
+    def message_metadata(self):
+        """
+        Gets the message_metadata of this QueueConversationVideoEventTopicMessageDetails.
+
+
+        :return: The message_metadata of this QueueConversationVideoEventTopicMessageDetails.
+        :rtype: QueueConversationVideoEventTopicMessageMetadata
+        """
+        return self._message_metadata
+
+    @message_metadata.setter
+    def message_metadata(self, message_metadata):
+        """
+        Sets the message_metadata of this QueueConversationVideoEventTopicMessageDetails.
+
+
+        :param message_metadata: The message_metadata of this QueueConversationVideoEventTopicMessageDetails.
+        :type: QueueConversationVideoEventTopicMessageMetadata
+        """
+        
+
+        self._message_metadata = message_metadata
 
     def to_dict(self):
         """

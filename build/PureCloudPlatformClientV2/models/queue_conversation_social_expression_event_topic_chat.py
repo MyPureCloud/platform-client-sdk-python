@@ -41,6 +41,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         """
         self.swagger_types = {
             'state': 'str',
+            'initial_state': 'str',
             'id': 'str',
             'provider': 'str',
             'script_id': 'str',
@@ -60,6 +61,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
 
         self.attribute_map = {
             'state': 'state',
+            'initial_state': 'initialState',
             'id': 'id',
             'provider': 'provider',
             'script_id': 'scriptId',
@@ -78,6 +80,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         }
 
         self._state = None
+        self._initial_state = None
         self._id = None
         self._provider = None
         self._script_id = None
@@ -98,7 +101,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
     def state(self):
         """
         Gets the state of this QueueConversationSocialExpressionEventTopicChat.
-        The connection state of this communication.
+
 
         :return: The state of this QueueConversationSocialExpressionEventTopicChat.
         :rtype: str
@@ -109,7 +112,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
     def state(self, state):
         """
         Sets the state of this QueueConversationSocialExpressionEventTopicChat.
-        The connection state of this communication.
+
 
         :param state: The state of this QueueConversationSocialExpressionEventTopicChat.
         :type: str
@@ -120,6 +123,33 @@ class QueueConversationSocialExpressionEventTopicChat(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this QueueConversationSocialExpressionEventTopicChat.
+
+
+        :return: The initial_state of this QueueConversationSocialExpressionEventTopicChat.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this QueueConversationSocialExpressionEventTopicChat.
+
+
+        :param initial_state: The initial_state of this QueueConversationSocialExpressionEventTopicChat.
+        :type: str
+        """
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     @property
     def id(self):

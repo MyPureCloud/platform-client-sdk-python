@@ -693,7 +693,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :param used_routing: The used_routing of this AcdEndDetailEventTopicAcdEndEvent.
         :type: str
         """
-        allowed_values = ["UNKNOWN", "MANUAL", "PREDICTIVE", "PREFERRED", "LAST", "BULLSEYE", "STANDARD", "OTHER"]
+        allowed_values = ["UNKNOWN", "MANUAL", "PREDICTIVE", "PREFERRED", "LAST", "BULLSEYE", "STANDARD", "OTHER", "CONDITIONAL"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"

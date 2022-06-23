@@ -41,6 +41,7 @@ class ConversationEventTopicVideo(object):
         """
         self.swagger_types = {
             'state': 'str',
+            'initial_state': 'str',
             'pcSelf': 'ConversationEventTopicAddress',
             'id': 'str',
             'context': 'str',
@@ -62,6 +63,7 @@ class ConversationEventTopicVideo(object):
 
         self.attribute_map = {
             'state': 'state',
+            'initial_state': 'initialState',
             'pcSelf': 'self',
             'id': 'id',
             'context': 'context',
@@ -82,6 +84,7 @@ class ConversationEventTopicVideo(object):
         }
 
         self._state = None
+        self._initial_state = None
         self._pcSelf = None
         self._id = None
         self._context = None
@@ -104,7 +107,7 @@ class ConversationEventTopicVideo(object):
     def state(self):
         """
         Gets the state of this ConversationEventTopicVideo.
-        The connection state of this communication.
+
 
         :return: The state of this ConversationEventTopicVideo.
         :rtype: str
@@ -115,7 +118,7 @@ class ConversationEventTopicVideo(object):
     def state(self, state):
         """
         Sets the state of this ConversationEventTopicVideo.
-        The connection state of this communication.
+
 
         :param state: The state of this ConversationEventTopicVideo.
         :type: str
@@ -126,6 +129,33 @@ class ConversationEventTopicVideo(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this ConversationEventTopicVideo.
+
+
+        :return: The initial_state of this ConversationEventTopicVideo.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this ConversationEventTopicVideo.
+
+
+        :param initial_state: The initial_state of this ConversationEventTopicVideo.
+        :type: str
+        """
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     @property
     def pcSelf(self):

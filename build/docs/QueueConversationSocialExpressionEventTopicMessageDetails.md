@@ -14,6 +14,7 @@ title: QueueConversationSocialExpressionEventTopicMessageDetails
 | **media** | [**list[QueueConversationSocialExpressionEventTopicMessageMedia]**](QueueConversationSocialExpressionEventTopicMessageMedia.html) | The media (images, files, etc) associated with this message, if any | [optional] |
 | **error_info** | [**QueueConversationSocialExpressionEventTopicErrorDetails**](QueueConversationSocialExpressionEventTopicErrorDetails.html) | Detailed information about an error response. | [optional] |
 | **stickers** | [**list[QueueConversationSocialExpressionEventTopicMessageSticker]**](QueueConversationSocialExpressionEventTopicMessageSticker.html) | A list of stickers included in the message | [optional] |
+| **message_metadata** | [**QueueConversationSocialExpressionEventTopicMessageMetadata**](QueueConversationSocialExpressionEventTopicMessageMetadata.html) |  | [optional] |
 {: class="table table-striped"}
 
 

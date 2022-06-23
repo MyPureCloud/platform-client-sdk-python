@@ -1201,7 +1201,7 @@ except ApiException as e:
 
 <a name="get_user_roles"></a>
 
-## [**UserAuthorization**](UserAuthorization.html) get_user_roles(user_id)
+## [**UserAuthorization**](UserAuthorization.html) get_user_roles(subject_id)
 
 
 
@@ -1209,7 +1209,7 @@ Returns a listing of roles and permissions for a user.
 
 
 
-Wraps GET /api/v2/users/{userId}/roles 
+Wraps GET /api/v2/users/{subjectId}/roles 
 
 Requires ANY permissions: 
 
@@ -1228,11 +1228,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
-user_id = 'user_id_example' # str | User ID
+subject_id = 'subject_id_example' # str | User ID
 
 try:
     # Returns a listing of roles and permissions for a user.
-    api_response = api_instance.get_user_roles(user_id)
+    api_response = api_instance.get_user_roles(subject_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuthorizationApi->get_user_roles: %s\n" % e)
@@ -1243,7 +1243,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID |  |
+| **subject_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2166,7 +2166,7 @@ except ApiException as e:
 
 <a name="put_user_roles"></a>
 
-## [**UserAuthorization**](UserAuthorization.html) put_user_roles(user_id, body)
+## [**UserAuthorization**](UserAuthorization.html) put_user_roles(subject_id, body)
 
 
 
@@ -2174,7 +2174,7 @@ Sets the user's roles
 
 
 
-Wraps PUT /api/v2/users/{userId}/roles 
+Wraps PUT /api/v2/users/{subjectId}/roles 
 
 Requires ANY permissions: 
 
@@ -2193,12 +2193,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
-user_id = 'user_id_example' # str | User ID
+subject_id = 'subject_id_example' # str | User ID
 body = ['body_example'] # list[str] | List of roles
 
 try:
     # Sets the user's roles
-    api_response = api_instance.put_user_roles(user_id, body)
+    api_response = api_instance.put_user_roles(subject_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuthorizationApi->put_user_roles: %s\n" % e)
@@ -2209,7 +2209,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID |  |
+| **subject_id** | **str**| User ID |  |
 | **body** | [**list[str]**](str.html)| List of roles |  |
 {: class="table table-striped"}
 

@@ -39,7 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_message_recipients**](RoutingApi.html#get_routing_message_recipients) | Get recipients|
 |[**get_routing_predictor**](RoutingApi.html#get_routing_predictor) | Retrieve a single predictor.|
 |[**get_routing_predictors**](RoutingApi.html#get_routing_predictors) | Retrieve all predictors.|
-|[**get_routing_predictors_keyperformanceindicators**](RoutingApi.html#get_routing_predictors_keyperformanceindicators) | Get a list of Key Performance Indicators available for the predictors.|
+|[**get_routing_predictors_keyperformanceindicators**](RoutingApi.html#get_routing_predictors_keyperformanceindicators) | Get a list of Key Performance Indicators|
 |[**get_routing_queue**](RoutingApi.html#get_routing_queue) | Get details about this queue.|
 |[**get_routing_queue_comparisonperiod**](RoutingApi.html#get_routing_queue_comparisonperiod) | Get a Comparison Period.|
 |[**get_routing_queue_comparisonperiods**](RoutingApi.html#get_routing_queue_comparisonperiods) | Get list of comparison periods|
@@ -1723,11 +1723,11 @@ except ApiException as e:
 
 <a name="get_routing_predictors_keyperformanceindicators"></a>
 
-## [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator.html) get_routing_predictors_keyperformanceindicators()
+## [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator.html) get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group)
 
 
 
-Get a list of Key Performance Indicators available for the predictors.
+Get a list of Key Performance Indicators
 
 
 
@@ -1750,10 +1750,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
+kpi_group = 'kpi_group_example' # str | The Group of Key Performance Indicators to return (optional)
 
 try:
-    # Get a list of Key Performance Indicators available for the predictors.
-    api_response = api_instance.get_routing_predictors_keyperformanceindicators()
+    # Get a list of Key Performance Indicators
+    api_response = api_instance.get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_predictors_keyperformanceindicators: %s\n" % e)
@@ -1761,8 +1762,11 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
 
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **kpi_group** | **str**| The Group of Key Performance Indicators to return | [optional] <br />**Values**: Standard, Custom |
+{: class="table table-striped"}
 
 ### Return type
 

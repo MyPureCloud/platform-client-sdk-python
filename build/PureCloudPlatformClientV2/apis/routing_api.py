@@ -2526,7 +2526,7 @@ class RoutingApi(object):
 
     def get_routing_predictors_keyperformanceindicators(self, **kwargs):
         """
-        Get a list of Key Performance Indicators available for the predictors.
+        Get a list of Key Performance Indicators
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2539,12 +2539,13 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str kpi_group: The Group of Key Performance Indicators to return
         :return: list[KeyPerformanceIndicator]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['kpi_group']
         all_params.append('callback')
 
         params = locals()
@@ -2563,6 +2564,8 @@ class RoutingApi(object):
         path_params = {}
 
         query_params = {}
+        if 'kpi_group' in params:
+            query_params['kpiGroup'] = params['kpi_group']
 
         header_params = {}
 

@@ -7,7 +7,8 @@ title: QueueConversationVideoEventTopicSocialExpression
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **state** | **str** | The connection state of this communication. | [optional] |
+| **state** | **str** |  | [optional] |
+| **initial_state** | **str** |  | [optional] |
 | **id** | **str** | A globally unique identifier for this communication. | [optional] |
 | **social_media_id** | **str** | A globally unique identifier for the social media. | [optional] |
 | **social_media_hub** | **str** | The social network of the communication | [optional] |

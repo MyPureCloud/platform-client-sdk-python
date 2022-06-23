@@ -42,6 +42,7 @@ class QueueConversationVideoEventTopicMessage(object):
         self.swagger_types = {
             'id': 'str',
             'state': 'str',
+            'initial_state': 'str',
             'held': 'bool',
             'error_info': 'QueueConversationVideoEventTopicErrorDetails',
             'provider': 'str',
@@ -68,6 +69,7 @@ class QueueConversationVideoEventTopicMessage(object):
         self.attribute_map = {
             'id': 'id',
             'state': 'state',
+            'initial_state': 'initialState',
             'held': 'held',
             'error_info': 'errorInfo',
             'provider': 'provider',
@@ -93,6 +95,7 @@ class QueueConversationVideoEventTopicMessage(object):
 
         self._id = None
         self._state = None
+        self._initial_state = None
         self._held = None
         self._error_info = None
         self._provider = None
@@ -143,7 +146,7 @@ class QueueConversationVideoEventTopicMessage(object):
     def state(self):
         """
         Gets the state of this QueueConversationVideoEventTopicMessage.
-        The connection state of this communication.
+
 
         :return: The state of this QueueConversationVideoEventTopicMessage.
         :rtype: str
@@ -154,7 +157,7 @@ class QueueConversationVideoEventTopicMessage(object):
     def state(self, state):
         """
         Sets the state of this QueueConversationVideoEventTopicMessage.
-        The connection state of this communication.
+
 
         :param state: The state of this QueueConversationVideoEventTopicMessage.
         :type: str
@@ -165,6 +168,33 @@ class QueueConversationVideoEventTopicMessage(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this QueueConversationVideoEventTopicMessage.
+
+
+        :return: The initial_state of this QueueConversationVideoEventTopicMessage.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this QueueConversationVideoEventTopicMessage.
+
+
+        :param initial_state: The initial_state of this QueueConversationVideoEventTopicMessage.
+        :type: str
+        """
+        allowed_values = ["alerting", "connected", "disconnected"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     @property
     def held(self):
