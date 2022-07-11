@@ -49,6 +49,10 @@ class BusinessUnitActivityCode(object):
             'counts_as_paid_time': 'bool',
             'counts_as_work_time': 'bool',
             'agent_time_off_selectable': 'bool',
+            'counts_toward_shrinkage': 'bool',
+            'planned_shrinkage': 'bool',
+            'interruptible': 'bool',
+            'secondary_presences': 'list[SecondaryPresence]',
             'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
@@ -63,6 +67,10 @@ class BusinessUnitActivityCode(object):
             'counts_as_paid_time': 'countsAsPaidTime',
             'counts_as_work_time': 'countsAsWorkTime',
             'agent_time_off_selectable': 'agentTimeOffSelectable',
+            'counts_toward_shrinkage': 'countsTowardShrinkage',
+            'planned_shrinkage': 'plannedShrinkage',
+            'interruptible': 'interruptible',
+            'secondary_presences': 'secondaryPresences',
             'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
@@ -76,6 +84,10 @@ class BusinessUnitActivityCode(object):
         self._counts_as_paid_time = None
         self._counts_as_work_time = None
         self._agent_time_off_selectable = None
+        self._counts_toward_shrinkage = None
+        self._planned_shrinkage = None
+        self._interruptible = None
+        self._secondary_presences = None
         self._metadata = None
         self._self_uri = None
 
@@ -297,6 +309,102 @@ class BusinessUnitActivityCode(object):
         
 
         self._agent_time_off_selectable = agent_time_off_selectable
+
+    @property
+    def counts_toward_shrinkage(self):
+        """
+        Gets the counts_toward_shrinkage of this BusinessUnitActivityCode.
+        Whether or not this activity code counts toward shrinkage calculations
+
+        :return: The counts_toward_shrinkage of this BusinessUnitActivityCode.
+        :rtype: bool
+        """
+        return self._counts_toward_shrinkage
+
+    @counts_toward_shrinkage.setter
+    def counts_toward_shrinkage(self, counts_toward_shrinkage):
+        """
+        Sets the counts_toward_shrinkage of this BusinessUnitActivityCode.
+        Whether or not this activity code counts toward shrinkage calculations
+
+        :param counts_toward_shrinkage: The counts_toward_shrinkage of this BusinessUnitActivityCode.
+        :type: bool
+        """
+        
+
+        self._counts_toward_shrinkage = counts_toward_shrinkage
+
+    @property
+    def planned_shrinkage(self):
+        """
+        Gets the planned_shrinkage of this BusinessUnitActivityCode.
+        Whether this activity code is considered planned or unplanned shrinkage
+
+        :return: The planned_shrinkage of this BusinessUnitActivityCode.
+        :rtype: bool
+        """
+        return self._planned_shrinkage
+
+    @planned_shrinkage.setter
+    def planned_shrinkage(self, planned_shrinkage):
+        """
+        Sets the planned_shrinkage of this BusinessUnitActivityCode.
+        Whether this activity code is considered planned or unplanned shrinkage
+
+        :param planned_shrinkage: The planned_shrinkage of this BusinessUnitActivityCode.
+        :type: bool
+        """
+        
+
+        self._planned_shrinkage = planned_shrinkage
+
+    @property
+    def interruptible(self):
+        """
+        Gets the interruptible of this BusinessUnitActivityCode.
+        Whether this activity code is considered interruptible
+
+        :return: The interruptible of this BusinessUnitActivityCode.
+        :rtype: bool
+        """
+        return self._interruptible
+
+    @interruptible.setter
+    def interruptible(self, interruptible):
+        """
+        Sets the interruptible of this BusinessUnitActivityCode.
+        Whether this activity code is considered interruptible
+
+        :param interruptible: The interruptible of this BusinessUnitActivityCode.
+        :type: bool
+        """
+        
+
+        self._interruptible = interruptible
+
+    @property
+    def secondary_presences(self):
+        """
+        Gets the secondary_presences of this BusinessUnitActivityCode.
+        The secondary presences of this activity code
+
+        :return: The secondary_presences of this BusinessUnitActivityCode.
+        :rtype: list[SecondaryPresence]
+        """
+        return self._secondary_presences
+
+    @secondary_presences.setter
+    def secondary_presences(self, secondary_presences):
+        """
+        Sets the secondary_presences of this BusinessUnitActivityCode.
+        The secondary presences of this activity code
+
+        :param secondary_presences: The secondary_presences of this BusinessUnitActivityCode.
+        :type: list[SecondaryPresence]
+        """
+        
+
+        self._secondary_presences = secondary_presences
 
     @property
     def metadata(self):

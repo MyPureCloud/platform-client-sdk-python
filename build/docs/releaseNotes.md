@@ -1,166 +1,225 @@
-Platform API version: 5847
+Platform API version: 5888
 
 
-# Major Changes (10 changes)
+# Major Changes (3 changes)
 
-**/api/v2/users/{userId}/roles** (1 change)
+**GET /api/v2/routing/queues** (2 changes)
 
-* Path /api/v2/users/{userId}/roles was removed
-
-**GET /api/v2/gamification/metrics/{metricId}** (1 change)
-
-* Has been deprecated
-
-**PUT /api/v2/gamification/metrics/{metricId}** (1 change)
-
-* Has been deprecated
-
-**GET /api/v2/gamification/metrics** (1 change)
-
-* Has been deprecated
-
-**POST /api/v2/gamification/metrics** (1 change)
-
-* Has been deprecated
-
-**GET /api/v2/routing/predictors/keyperformanceindicators** (1 change)
-
-* Parameter kpiGroup was added
-
-**EmergencyGroup** (1 change)
-
-* Property division was changed from Division to WritableDivision
-
-**IVR** (1 change)
-
-* Property division was changed from Division to WritableDivision
-
-**ScheduleGroup** (1 change)
-
-* Property division was changed from Division to WritableDivision
-
-**Schedule** (1 change)
-
-* Property division was changed from Division to WritableDivision
-
-
-# Minor Changes (35 changes)
-
-**/api/v2/users/{subjectId}/roles** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/learning/assignments/{assignmentId}/reset** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/learning/assignments/{assignmentId}/reassign** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/learning/modules/{moduleId}/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/learning/modules/{moduleId}/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**AuditLogMessage** (1 change)
-
-* Enum value AdherenceExplanation was added to property entityType
-
-**AuditQueryEntity** (1 change)
-
-* Enum value AdherenceExplanation was added to property name
-
-**KnowledgeBase** (1 change)
-
-* Enum value fr-CA was added to property coreLanguage
-
-**KnowledgeCategory** (1 change)
-
-* Enum value fr-CA was added to property languageCode
-
-**KnowledgeSearchDocument** (1 change)
-
-* Enum value fr-CA was added to property languageCode
-
-**KnowledgeExtendedCategory** (1 change)
-
-* Enum value fr-CA was added to property languageCode
-
-**KnowledgeImport** (3 changes)
-
-* Enum value AbortRequested was added to property status
-* Enum value Aborted was added to property status
-* Enum value fr-CA was added to property languageCode
-
-**KnowledgeDocument** (1 change)
-
-* Enum value fr-CA was added to property languageCode
+* Parameter peerId was added
+* Parameter hasPeer was added
 
 **RecordingSettings** (1 change)
 
-* Optional property regionalRecordingStorageEnabled was added
+* Property regionalRecordingStorageEnabled was removed
 
-**KeyPerformanceIndicator** (9 changes)
 
-* Optional property dateCreated was added
-* Optional property dateModified was added
-* Optional property description was added
-* Optional property kpiType was added
-* Optional property source was added
-* Optional property wrapUpCodeConfig was added
-* Optional property status was added
-* Optional property kpiGroup was added
-* Optional property selfUri was added
+# Minor Changes (68 changes)
 
-**WrapUpCodeConfig** (1 change)
+**/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**PUT /api/v2/learning/modules/{moduleId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/learning/modules/{moduleId}/publish** (1 change)
+
+* Response 409 was added
+
+**/api/v2/learning/modules/assignments** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**PUT /api/v2/learning/modules/{moduleId}/rule** (1 change)
+
+* Response 409 was added
+
+**ReportingTurn** (1 change)
+
+* Optional property sessionEndDetails was added
+
+**SessionEndDetails** (1 change)
 
 * Model was added
 
-**WebMessagingMessage** (1 change)
+**ReportingExportJobResponse** (1 change)
 
-* Optional property metadata was added
+* Enum value KNOWLEDGE_PERFORMANCE_VIEW was added to property viewType
 
-**LearningModuleJobResponse** (1 change)
+**ReportingExportMetadataJobResponse** (1 change)
+
+* Enum value KNOWLEDGE_PERFORMANCE_VIEW was added to property viewType
+
+**ReportingExportJobRequest** (1 change)
+
+* Enum value KNOWLEDGE_PERFORMANCE_VIEW was added to property viewType
+
+**AuditQueryExecutionStatusResponse** (1 change)
+
+* Enum value Voicemail was added to property serviceName
+
+**AuditQueryRequest** (1 change)
+
+* Enum value Voicemail was added to property serviceName
+
+**AuditLogMessage** (1 change)
+
+* Enum value Voicemail was added to property serviceName
+
+**AuditRealtimeQueryRequest** (1 change)
+
+* Enum value Voicemail was added to property serviceName
+
+**AuditQueryService** (1 change)
+
+* Enum value Voicemail was added to property name
+
+**BaseMediaSettings** (1 change)
 
 * Model was added
 
-**LearningModuleJobRequest** (1 change)
+**MediaSetting** (2 changes)
+
+* Optional property enableAutoAnswer was added
+* Optional property subTypeSettings was added
+
+**Queue** (1 change)
+
+* Optional property peerId was added
+
+**UploadUrlRequest** (1 change)
+
+* Optional property contentType was added
+
+**MetricValueTrendAverage** (1 change)
 
 * Model was added
 
+**AvailableTopic** (1 change)
 
-# Point Changes (6 changes)
+* Enum value ProcessAutomation was added to property transports
 
-**GET /api/v2/gamification/metrics/{metricId}** (1 change)
+**QueueRequest** (1 change)
 
-* Description was changed
+* Optional property peerId was added
 
-**PUT /api/v2/gamification/metrics/{metricId}** (1 change)
+**UserQueue** (1 change)
 
-* Description was changed
+* Optional property peerId was added
 
-**GET /api/v2/gamification/metrics** (1 change)
+**CreateQueueRequest** (1 change)
 
-* Description was changed
+* Optional property peerId was added
 
-**POST /api/v2/gamification/metrics** (1 change)
+**Check** (3 changes)
 
-* Description was changed
+* Enum value SalesConversionRateValue was added to property type
+* Enum value RetentionRateValue was added to property type
+* Enum value ChurnRateValue was added to property type
 
-**GET /api/v2/quality/forms/surveys/bulk/contexts** (1 change)
+**Dependency** (1 change)
 
-* Description was changed for parameter contextId
+* Enum value STTENGINE was added to property type
 
-**GET /api/v2/routing/predictors/keyperformanceindicators** (1 change)
+**DependencyObject** (1 change)
 
-* Summary was changed
+* Enum value STTENGINE was added to property type
+
+**AssignedLearningModule** (1 change)
+
+* Model was added
+
+**AssignedLearningModuleDomainEntityListing** (1 change)
+
+* Model was added
+
+**BusinessUnitActivityCode** (4 changes)
+
+* Optional property countsTowardShrinkage was added
+* Optional property plannedShrinkage was added
+* Optional property interruptible was added
+* Optional property secondaryPresences was added
+
+**CreateActivityCodeRequest** (4 changes)
+
+* Optional property countsTowardShrinkage was added
+* Optional property plannedShrinkage was added
+* Optional property interruptible was added
+* Optional property secondaryPresences was added
+
+**UpdateActivityCodeRequest** (4 changes)
+
+* Optional property countsTowardShrinkage was added
+* Optional property plannedShrinkage was added
+* Optional property interruptible was added
+* Optional property secondaryPresences was added
+
+**TimeOffRequestResponse** (2 changes)
+
+* Optional property paid was added
+* Optional property substatus was added
+
+**TimeOffRequest** (2 changes)
+
+* Optional property paid was added
+* Optional property substatus was added
+
+**TimeOffRequestQueryBody** (2 changes)
+
+* Optional property ids was added
+* Optional property substatuses was added
+
+**CreateAdminTimeOffRequest** (1 change)
+
+* Optional property paid was added
+
+**WorkPlanShift** (2 changes)
+
+* Optional property constrainDayOff was added
+* Optional property dayOffRule was added
+
+**CreateWorkPlanShift** (2 changes)
+
+* Optional property constrainDayOff was added
+* Optional property dayOffRule was added
+
+**HistoricalAdherenceActuals** (1 change)
+
+* Optional property actualSecondaryPresenceLookupId was added
+
+**HistoricalAdherenceExceptionInfo** (2 changes)
+
+* Optional property scheduledSecondaryPresenceLookupIds was added
+* Optional property actualActivityCodeId was added
+
+**HistoricalAdherenceQueryResult** (1 change)
+
+* Optional property actualsEndsDate was added
+
+**WfmHistoricalAdherenceQuery** (1 change)
+
+* Optional property teamIds was added
+
+**UserScheduleAdherence** (1 change)
+
+* Optional property scheduledActivityCode was added
+
+**BuQueryAgentSchedulesRequest** (1 change)
+
+* Optional property teamIds was added
+
+
+# Point Changes (0 changes)

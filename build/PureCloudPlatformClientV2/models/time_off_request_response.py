@@ -45,7 +45,9 @@ class TimeOffRequestResponse(object):
             'is_full_day_request': 'bool',
             'marked_as_read': 'bool',
             'activity_code_id': 'str',
+            'paid': 'bool',
             'status': 'str',
+            'substatus': 'str',
             'partial_day_start_date_times': 'list[datetime]',
             'full_day_management_unit_dates': 'list[str]',
             'daily_duration_minutes': 'int',
@@ -66,7 +68,9 @@ class TimeOffRequestResponse(object):
             'is_full_day_request': 'isFullDayRequest',
             'marked_as_read': 'markedAsRead',
             'activity_code_id': 'activityCodeId',
+            'paid': 'paid',
             'status': 'status',
+            'substatus': 'substatus',
             'partial_day_start_date_times': 'partialDayStartDateTimes',
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
             'daily_duration_minutes': 'dailyDurationMinutes',
@@ -86,7 +90,9 @@ class TimeOffRequestResponse(object):
         self._is_full_day_request = None
         self._marked_as_read = None
         self._activity_code_id = None
+        self._paid = None
         self._status = None
+        self._substatus = None
         self._partial_day_start_date_times = None
         self._full_day_management_unit_dates = None
         self._daily_duration_minutes = None
@@ -221,6 +227,30 @@ class TimeOffRequestResponse(object):
         self._activity_code_id = activity_code_id
 
     @property
+    def paid(self):
+        """
+        Gets the paid of this TimeOffRequestResponse.
+        Whether this is a paid time off request
+
+        :return: The paid of this TimeOffRequestResponse.
+        :rtype: bool
+        """
+        return self._paid
+
+    @paid.setter
+    def paid(self, paid):
+        """
+        Sets the paid of this TimeOffRequestResponse.
+        Whether this is a paid time off request
+
+        :param paid: The paid of this TimeOffRequestResponse.
+        :type: bool
+        """
+        
+
+        self._paid = paid
+
+    @property
     def status(self):
         """
         Gets the status of this TimeOffRequestResponse.
@@ -248,10 +278,37 @@ class TimeOffRequestResponse(object):
             self._status = status
 
     @property
+    def substatus(self):
+        """
+        Gets the substatus of this TimeOffRequestResponse.
+        The substatus of this time off request
+
+        :return: The substatus of this TimeOffRequestResponse.
+        :rtype: str
+        """
+        return self._substatus
+
+    @substatus.setter
+    def substatus(self, substatus):
+        """
+        Sets the substatus of this TimeOffRequestResponse.
+        The substatus of this time off request
+
+        :param substatus: The substatus of this TimeOffRequestResponse.
+        :type: str
+        """
+        allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "InsufficientBalance", "InvalidDailyDuration", "OutsideShift", "RemovedFromWaitlist", "Waitlisted"]
+        if substatus.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for substatus -> " + substatus)
+            self._substatus = "outdated_sdk_version"
+        else:
+            self._substatus = substatus
+
+    @property
     def partial_day_start_date_times(self):
         """
         Gets the partial_day_start_date_times of this TimeOffRequestResponse.
-        A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false
+        A set of start date-times in ISO-8601 format for partial day requests. Will be not empty if isFullDayRequest == false
 
         :return: The partial_day_start_date_times of this TimeOffRequestResponse.
         :rtype: list[datetime]
@@ -262,7 +319,7 @@ class TimeOffRequestResponse(object):
     def partial_day_start_date_times(self, partial_day_start_date_times):
         """
         Sets the partial_day_start_date_times of this TimeOffRequestResponse.
-        A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false
+        A set of start date-times in ISO-8601 format for partial day requests. Will be not empty if isFullDayRequest == false
 
         :param partial_day_start_date_times: The partial_day_start_date_times of this TimeOffRequestResponse.
         :type: list[datetime]
@@ -275,7 +332,7 @@ class TimeOffRequestResponse(object):
     def full_day_management_unit_dates(self):
         """
         Gets the full_day_management_unit_dates of this TimeOffRequestResponse.
-        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true
+        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone. Will be not empty if isFullDayRequest == true
 
         :return: The full_day_management_unit_dates of this TimeOffRequestResponse.
         :rtype: list[str]
@@ -286,7 +343,7 @@ class TimeOffRequestResponse(object):
     def full_day_management_unit_dates(self, full_day_management_unit_dates):
         """
         Sets the full_day_management_unit_dates of this TimeOffRequestResponse.
-        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true
+        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone. Will be not empty if isFullDayRequest == true
 
         :param full_day_management_unit_dates: The full_day_management_unit_dates of this TimeOffRequestResponse.
         :type: list[str]

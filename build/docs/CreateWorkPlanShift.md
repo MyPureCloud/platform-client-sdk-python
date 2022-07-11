@@ -26,6 +26,8 @@ title: CreateWorkPlanShift
 | **constrain_contiguous_work_time** | **bool** | Whether the contiguous time constraint for the shift is enabled | [optional] |
 | **minimum_contiguous_work_time_minutes** | **int** | Minimum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime &#x3D;&#x3D; true | [optional] |
 | **maximum_contiguous_work_time_minutes** | **int** | Maximum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime &#x3D;&#x3D; true | [optional] |
+| **constrain_day_off** | **bool** | Whether day off rule is enabled | [optional] |
+| **day_off_rule** | **str** | The day off rule for agents to have next day off or previous day off. used if constrainDayOff &#x3D; true | [optional] |
 | **activities** | [**list[CreateWorkPlanActivity]**](CreateWorkPlanActivity.html) | Activities configured for this shift | [optional] |
 {: class="table table-striped"}
 

@@ -10321,6 +10321,143 @@
     "return": "WorkdayPointsTrend",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nstart_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nend_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nday_of_week = 'day_of_week_example' # str | Optional filter to specify which day of weeks to be included in the response (optional)\n\ntry:\n    # Points trends of the requesting user\n    api_response = api_instance.get_gamification_scorecards_points_trends(start_workday, end_workday, day_of_week=day_of_week)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationScorecardsPointsTrendsRequest->get_gamification_scorecards_points_trends: %s\\n\" % e)"
   },
+  "get_gamification_scorecards_profile_metric_user_values_trends": {
+    "operationId": "get_gamification_scorecards_profile_metric_user_values_trends",
+    "functionName": "get_gamification_scorecards_profile_metric_user_values_trends",
+    "signature": "get_gamification_scorecards_profile_metric_user_values_trends(profile_id, metric_id, user_id, start_workday, end_workday, reference_workday, time_zone)",
+    "parameters": [
+      {
+        "name": "profile_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "metric_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "end_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "reference_workday",
+        "type": "date",
+        "required": "false"
+      },
+      {
+        "name": "time_zone",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "MetricValueTrendAverage",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nprofile_id = 'profile_id_example' # str | performanceProfileId\nmetric_id = 'metric_id_example' # str | metricId\nuser_id = 'user_id_example' # str | \nstart_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nend_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nreference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)\ntime_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')\n\ntry:\n    # Average performance values trends by metric of a user\n    api_response = api_instance.get_gamification_scorecards_profile_metric_user_values_trends(profile_id, metric_id, user_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationScorecardsProfileMetricUserValuesTrendsRequest->get_gamification_scorecards_profile_metric_user_values_trends: %s\\n\" % e)"
+  },
+  "get_gamification_scorecards_profile_metric_users_values_trends": {
+    "operationId": "get_gamification_scorecards_profile_metric_users_values_trends",
+    "functionName": "get_gamification_scorecards_profile_metric_users_values_trends",
+    "signature": "get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, reference_workday, time_zone)",
+    "parameters": [
+      {
+        "name": "profile_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "metric_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "end_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "reference_workday",
+        "type": "date",
+        "required": "false"
+      },
+      {
+        "name": "time_zone",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "MetricValueTrendAverage",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nprofile_id = 'profile_id_example' # str | performanceProfileId\nmetric_id = 'metric_id_example' # str | metricId\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type. For example, division Id\nstart_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nend_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nreference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)\ntime_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')\n\ntry:\n    # Average performance values trends by metric of a division or a performance profile\n    api_response = api_instance.get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest->get_gamification_scorecards_profile_metric_users_values_trends: %s\\n\" % e)"
+  },
+  "get_gamification_scorecards_profile_metric_values_trends": {
+    "operationId": "get_gamification_scorecards_profile_metric_values_trends",
+    "functionName": "get_gamification_scorecards_profile_metric_values_trends",
+    "signature": "get_gamification_scorecards_profile_metric_values_trends(profile_id, metric_id, start_workday, end_workday, filter_type, reference_workday, time_zone)",
+    "parameters": [
+      {
+        "name": "profile_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "metric_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "end_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "reference_workday",
+        "type": "date",
+        "required": "false"
+      },
+      {
+        "name": "time_zone",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "MetricValueTrendAverage",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nprofile_id = 'profile_id_example' # str | performanceProfileId\nmetric_id = 'metric_id_example' # str | metricId\nstart_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nend_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nfilter_type = 'filter_type_example' # str | Filter type for the query request. If not set, returns the values trends of the requesting user (optional)\nreference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)\ntime_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')\n\ntry:\n    # Average performance values trends by metric of the requesting user\n    api_response = api_instance.get_gamification_scorecards_profile_metric_values_trends(profile_id, metric_id, start_workday, end_workday, filter_type=filter_type, reference_workday=reference_workday, time_zone=time_zone)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationScorecardsProfileMetricValuesTrendsRequest->get_gamification_scorecards_profile_metric_values_trends: %s\\n\" % e)"
+  },
   "get_gamification_scorecards_user": {
     "operationId": "get_gamification_scorecards_user",
     "functionName": "get_gamification_scorecards_user",
@@ -15490,6 +15627,50 @@
     ],
     "return": "LearningModulesDomainEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nis_archived = False # bool | Archive status (optional) (default to False)\ntypes = ['types_example'] # list[str] | Specifies the module types. (optional)\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')\nsort_by = ''name'' # str | Sort by (optional) (default to 'name')\nsearch_term = 'search_term_example' # str | Search Term (searchable by name) (optional)\nexpand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)\nis_published = ''Any'' # str | Specifies if only the Unpublished (isPublished is \\\"False\\\") or Published (isPublished is \\\"True\\\") modules are returned. If isPublished is \\\"Any\\\" or omitted, both types are returned (optional) (default to 'Any')\n\ntry:\n    # Get all learning modules of an organization\n    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningModulesRequest->get_learning_modules: %s\\n\" % e)"
+  },
+  "get_learning_modules_assignments": {
+    "operationId": "get_learning_modules_assignments",
+    "functionName": "get_learning_modules_assignments",
+    "signature": "get_learning_modules_assignments(user_ids, page_size, page_number, search_term, overdue, assignment_states, expand)",
+    "parameters": [
+      {
+        "name": "user_ids",
+        "type": "list[str]",
+        "required": "true"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "search_term",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "overdue",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "assignment_states",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "list[str]",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedLearningModuleDomainEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nuser_ids = ['user_ids_example'] # list[str] | The IDs of the users to include\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsearch_term = 'search_term_example' # str | Search Term (searches by name and description) (optional)\noverdue = ''Any'' # str | Specifies if only modules with overdue/not overdue (overdue is \\\"True\\\" or \\\"False\\\") assignments are returned. If overdue is \\\"Any\\\" or omitted, both are returned and can including modules that are unassigned. (optional) (default to 'Any')\nassignment_states = ['assignment_states_example'] # list[str] | Specifies the assignment states to return. (optional)\nexpand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)\n\ntry:\n    # Get all learning modules of an organization including assignments for a specific user\n    api_response = api_instance.get_learning_modules_assignments(user_ids, page_size=page_size, page_number=page_number, search_term=search_term, overdue=overdue, assignment_states=assignment_states, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningModulesAssignmentsRequest->get_learning_modules_assignments: %s\\n\" % e)"
   },
   "patch_learning_assignment": {
     "operationId": "patch_learning_assignment",
@@ -23501,7 +23682,7 @@
   "get_routing_queues": {
     "operationId": "get_routing_queues",
     "functionName": "get_routing_queues",
-    "signature": "get_routing_queues(page_number, page_size, sort_order, name, id, division_id)",
+    "signature": "get_routing_queues(page_number, page_size, sort_order, name, id, division_id, peer_id, has_peer)",
     "parameters": [
       {
         "name": "page_number",
@@ -23532,10 +23713,20 @@
         "name": "division_id",
         "type": "list[str]",
         "required": "false"
+      },
+      {
+        "name": "peer_id",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "has_peer",
+        "type": "bool",
+        "required": "false"
       }
     ],
     "return": "QueueEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nsort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')\nname = 'name_example' # str | Filter by queue name (optional)\nid = ['id_example'] # list[str] | Filter by queue ID(s) (optional)\ndivision_id = ['division_id_example'] # list[str] | Filter by queue division ID(s) (optional)\n\ntry:\n    # Get list of queues.\n    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingQueuesRequest->get_routing_queues: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nsort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')\nname = 'name_example' # str | Filter by queue name (optional)\nid = ['id_example'] # list[str] | Filter by queue ID(s) (optional)\ndivision_id = ['division_id_example'] # list[str] | Filter by queue division ID(s) (optional)\npeer_id = ['peer_id_example'] # list[str] | Filter by queue peer ID(s) (optional)\nhas_peer = True # bool | Filter by queues associated with peer (optional)\n\ntry:\n    # Get list of queues.\n    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, has_peer=has_peer)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingQueuesRequest->get_routing_queues: %s\\n\" % e)"
   },
   "get_routing_queues_divisionviews": {
     "operationId": "get_routing_queues_divisionviews",

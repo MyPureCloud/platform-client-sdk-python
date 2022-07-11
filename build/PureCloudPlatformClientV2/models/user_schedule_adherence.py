@@ -47,6 +47,7 @@ class UserScheduleAdherence(object):
             'management_unit': 'ManagementUnitReference',
             'team': 'TeamReference',
             'scheduled_activity_category': 'str',
+            'scheduled_activity_code': 'ActivityCodeReference',
             'system_presence': 'str',
             'organization_secondary_presence_id': 'str',
             'routing_status': 'str',
@@ -70,6 +71,7 @@ class UserScheduleAdherence(object):
             'management_unit': 'managementUnit',
             'team': 'team',
             'scheduled_activity_category': 'scheduledActivityCategory',
+            'scheduled_activity_code': 'scheduledActivityCode',
             'system_presence': 'systemPresence',
             'organization_secondary_presence_id': 'organizationSecondaryPresenceId',
             'routing_status': 'routingStatus',
@@ -92,6 +94,7 @@ class UserScheduleAdherence(object):
         self._management_unit = None
         self._team = None
         self._scheduled_activity_category = None
+        self._scheduled_activity_code = None
         self._system_presence = None
         self._organization_secondary_presence_id = None
         self._routing_status = None
@@ -276,6 +279,30 @@ class UserScheduleAdherence(object):
             self._scheduled_activity_category = "outdated_sdk_version"
         else:
             self._scheduled_activity_category = scheduled_activity_category
+
+    @property
+    def scheduled_activity_code(self):
+        """
+        Gets the scheduled_activity_code of this UserScheduleAdherence.
+        Activity code for which the user is currently scheduled
+
+        :return: The scheduled_activity_code of this UserScheduleAdherence.
+        :rtype: ActivityCodeReference
+        """
+        return self._scheduled_activity_code
+
+    @scheduled_activity_code.setter
+    def scheduled_activity_code(self, scheduled_activity_code):
+        """
+        Sets the scheduled_activity_code of this UserScheduleAdherence.
+        Activity code for which the user is currently scheduled
+
+        :param scheduled_activity_code: The scheduled_activity_code of this UserScheduleAdherence.
+        :type: ActivityCodeReference
+        """
+        
+
+        self._scheduled_activity_code = scheduled_activity_code
 
     @property
     def system_presence(self):

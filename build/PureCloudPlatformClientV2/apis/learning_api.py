@@ -943,6 +943,102 @@ class LearningApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_learning_modules_assignments(self, user_ids, **kwargs):
+        """
+        Get all learning modules of an organization including assignments for a specific user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_learning_modules_assignments(user_ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] user_ids: The IDs of the users to include (required)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str search_term: Search Term (searches by name and description)
+        :param str overdue: Specifies if only modules with overdue/not overdue (overdue is \"True\" or \"False\") assignments are returned. If overdue is \"Any\" or omitted, both are returned and can including modules that are unassigned.
+        :param list[str] assignment_states: Specifies the assignment states to return.
+        :param list[str] expand: Fields to expand in response(case insensitive)
+        :return: AssignedLearningModuleDomainEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_ids', 'page_size', 'page_number', 'search_term', 'overdue', 'assignment_states', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_learning_modules_assignments" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_ids' is set
+        if ('user_ids' not in params) or (params['user_ids'] is None):
+            raise ValueError("Missing the required parameter `user_ids` when calling `get_learning_modules_assignments`")
+
+
+        resource_path = '/api/v2/learning/modules/assignments'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'user_ids' in params:
+            query_params['userIds'] = params['user_ids']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'search_term' in params:
+            query_params['searchTerm'] = params['search_term']
+        if 'overdue' in params:
+            query_params['overdue'] = params['overdue']
+        if 'assignment_states' in params:
+            query_params['assignmentStates'] = params['assignment_states']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AssignedLearningModuleDomainEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_learning_assignment(self, assignment_id, **kwargs):
         """
         Update Learning Assignment

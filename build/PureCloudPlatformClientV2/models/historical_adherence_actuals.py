@@ -41,17 +41,20 @@ class HistoricalAdherenceActuals(object):
         """
         self.swagger_types = {
             'actual_activity_category': 'str',
+            'actual_secondary_presence_lookup_id': 'str',
             'start_offset_seconds': 'int',
             'end_offset_seconds': 'int'
         }
 
         self.attribute_map = {
             'actual_activity_category': 'actualActivityCategory',
+            'actual_secondary_presence_lookup_id': 'actualSecondaryPresenceLookupId',
             'start_offset_seconds': 'startOffsetSeconds',
             'end_offset_seconds': 'endOffsetSeconds'
         }
 
         self._actual_activity_category = None
+        self._actual_secondary_presence_lookup_id = None
         self._start_offset_seconds = None
         self._end_offset_seconds = None
 
@@ -81,6 +84,30 @@ class HistoricalAdherenceActuals(object):
             self._actual_activity_category = "outdated_sdk_version"
         else:
             self._actual_activity_category = actual_activity_category
+
+    @property
+    def actual_secondary_presence_lookup_id(self):
+        """
+        Gets the actual_secondary_presence_lookup_id of this HistoricalAdherenceActuals.
+        The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
+
+        :return: The actual_secondary_presence_lookup_id of this HistoricalAdherenceActuals.
+        :rtype: str
+        """
+        return self._actual_secondary_presence_lookup_id
+
+    @actual_secondary_presence_lookup_id.setter
+    def actual_secondary_presence_lookup_id(self, actual_secondary_presence_lookup_id):
+        """
+        Sets the actual_secondary_presence_lookup_id of this HistoricalAdherenceActuals.
+        The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
+
+        :param actual_secondary_presence_lookup_id: The actual_secondary_presence_lookup_id of this HistoricalAdherenceActuals.
+        :type: str
+        """
+        
+
+        self._actual_secondary_presence_lookup_id = actual_secondary_presence_lookup_id
 
     @property
     def start_offset_seconds(self):

@@ -43,6 +43,7 @@ class UploadUrlRequest(object):
             'file_name': 'str',
             'content_md5': 'str',
             'signed_url_timeout_seconds': 'int',
+            'content_type': 'str',
             'server_side_encryption': 'str'
         }
 
@@ -50,12 +51,14 @@ class UploadUrlRequest(object):
             'file_name': 'fileName',
             'content_md5': 'contentMd5',
             'signed_url_timeout_seconds': 'signedUrlTimeoutSeconds',
+            'content_type': 'contentType',
             'server_side_encryption': 'serverSideEncryption'
         }
 
         self._file_name = None
         self._content_md5 = None
         self._signed_url_timeout_seconds = None
+        self._content_type = None
         self._server_side_encryption = None
 
     @property
@@ -129,6 +132,30 @@ class UploadUrlRequest(object):
         
 
         self._signed_url_timeout_seconds = signed_url_timeout_seconds
+
+    @property
+    def content_type(self):
+        """
+        Gets the content_type of this UploadUrlRequest.
+        The content type of the file to upload. Allows all MIME types
+
+        :return: The content_type of this UploadUrlRequest.
+        :rtype: str
+        """
+        return self._content_type
+
+    @content_type.setter
+    def content_type(self, content_type):
+        """
+        Sets the content_type of this UploadUrlRequest.
+        The content type of the file to upload. Allows all MIME types
+
+        :param content_type: The content_type of this UploadUrlRequest.
+        :type: str
+        """
+        
+
+        self._content_type = content_type
 
     @property
     def server_side_encryption(self):

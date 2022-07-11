@@ -69,6 +69,7 @@ class CreateQueueRequest(object):
             'default_scripts': 'dict(str, Script)',
             'outbound_messaging_addresses': 'QueueMessagingAddresses',
             'outbound_email_address': 'QueueEmailAddress',
+            'peer_id': 'str',
             'source_queue_id': 'str',
             'self_uri': 'str'
         }
@@ -103,6 +104,7 @@ class CreateQueueRequest(object):
             'default_scripts': 'defaultScripts',
             'outbound_messaging_addresses': 'outboundMessagingAddresses',
             'outbound_email_address': 'outboundEmailAddress',
+            'peer_id': 'peerId',
             'source_queue_id': 'sourceQueueId',
             'self_uri': 'selfUri'
         }
@@ -136,6 +138,7 @@ class CreateQueueRequest(object):
         self._default_scripts = None
         self._outbound_messaging_addresses = None
         self._outbound_email_address = None
+        self._peer_id = None
         self._source_queue_id = None
         self._self_uri = None
 
@@ -837,6 +840,30 @@ class CreateQueueRequest(object):
         
 
         self._outbound_email_address = outbound_email_address
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this CreateQueueRequest.
+        The ID of the external Queue
+
+        :return: The peer_id of this CreateQueueRequest.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this CreateQueueRequest.
+        The ID of the external Queue
+
+        :param peer_id: The peer_id of this CreateQueueRequest.
+        :type: str
+        """
+        
+
+        self._peer_id = peer_id
 
     @property
     def source_queue_id(self):

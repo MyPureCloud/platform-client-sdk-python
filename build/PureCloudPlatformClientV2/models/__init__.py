@@ -149,6 +149,8 @@ from .assessment_question_group_score import AssessmentQuestionGroupScore
 from .assessment_question_score import AssessmentQuestionScore
 from .assessment_scoring_set import AssessmentScoringSet
 from .assign_users import AssignUsers
+from .assigned_learning_module import AssignedLearningModule
+from .assigned_learning_module_domain_entity_listing import AssignedLearningModuleDomainEntityListing
 from .assigned_segment import AssignedSegment
 from .assigned_wrapup_code import AssignedWrapupCode
 from .assignment import Assignment
@@ -215,6 +217,7 @@ from .available_time_off_response import AvailableTimeOffResponse
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
 from .available_translations import AvailableTranslations
+from .base_media_settings import BaseMediaSettings
 from .base_program_entity import BaseProgramEntity
 from .base_topic_entitiy import BaseTopicEntitiy
 from .batch_download_job_result import BatchDownloadJobResult
@@ -1681,6 +1684,7 @@ from .metered_assignment_by_agent import MeteredAssignmentByAgent
 from .metered_evaluation_assignment import MeteredEvaluationAssignment
 from .metric import Metric
 from .metric_definition import MetricDefinition
+from .metric_value_trend_average import MetricValueTrendAverage
 from .metrics import Metrics
 from .min_length import MinLength
 from .mined_intents_listing import MinedIntentsListing
@@ -2390,6 +2394,7 @@ from .service_goal_template_list import ServiceGoalTemplateList
 from .service_goal_template_reference import ServiceGoalTemplateReference
 from .service_level import ServiceLevel
 from .session import Session
+from .session_end_details import SessionEndDetails
 from .session_last_event import SessionLastEvent
 from .session_segment_assignment import SessionSegmentAssignment
 from .set_recording_state import SetRecordingState

@@ -14,6 +14,7 @@ title: CreateAdminTimeOffRequest
 | **full_day_management_unit_dates** | **list[str]** | A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone. | [optional] |
 | **partial_day_start_date_times** | **list[datetime]** | A set of start date-times in ISO-8601 format for partial day requests. | [optional] |
 | **daily_duration_minutes** | **int** | The daily duration of this time off request in minutes | |
+| **paid** | **bool** | Whether this is a paid time off request | [optional] |
 {: class="table table-striped"}
 
 

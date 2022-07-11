@@ -40,17 +40,47 @@ class MediaSetting(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'enable_auto_answer': 'bool',
             'alerting_timeout_seconds': 'int',
-            'service_level': 'ServiceLevel'
+            'service_level': 'ServiceLevel',
+            'sub_type_settings': 'dict(str, BaseMediaSettings)'
         }
 
         self.attribute_map = {
+            'enable_auto_answer': 'enableAutoAnswer',
             'alerting_timeout_seconds': 'alertingTimeoutSeconds',
-            'service_level': 'serviceLevel'
+            'service_level': 'serviceLevel',
+            'sub_type_settings': 'subTypeSettings'
         }
 
+        self._enable_auto_answer = None
         self._alerting_timeout_seconds = None
         self._service_level = None
+        self._sub_type_settings = None
+
+    @property
+    def enable_auto_answer(self):
+        """
+        Gets the enable_auto_answer of this MediaSetting.
+        Indicates if auto-answer is enabled for the given media type or subtype (default is false).  Subtype settings take precedence over media type settings.
+
+        :return: The enable_auto_answer of this MediaSetting.
+        :rtype: bool
+        """
+        return self._enable_auto_answer
+
+    @enable_auto_answer.setter
+    def enable_auto_answer(self, enable_auto_answer):
+        """
+        Sets the enable_auto_answer of this MediaSetting.
+        Indicates if auto-answer is enabled for the given media type or subtype (default is false).  Subtype settings take precedence over media type settings.
+
+        :param enable_auto_answer: The enable_auto_answer of this MediaSetting.
+        :type: bool
+        """
+        
+
+        self._enable_auto_answer = enable_auto_answer
 
     @property
     def alerting_timeout_seconds(self):
@@ -99,6 +129,30 @@ class MediaSetting(object):
         
 
         self._service_level = service_level
+
+    @property
+    def sub_type_settings(self):
+        """
+        Gets the sub_type_settings of this MediaSetting.
+        Map of media subtype to media subtype specific settings.
+
+        :return: The sub_type_settings of this MediaSetting.
+        :rtype: dict(str, BaseMediaSettings)
+        """
+        return self._sub_type_settings
+
+    @sub_type_settings.setter
+    def sub_type_settings(self, sub_type_settings):
+        """
+        Sets the sub_type_settings of this MediaSetting.
+        Map of media subtype to media subtype specific settings.
+
+        :param sub_type_settings: The sub_type_settings of this MediaSetting.
+        :type: dict(str, BaseMediaSettings)
+        """
+        
+
+        self._sub_type_settings = sub_type_settings
 
     def to_dict(self):
         """

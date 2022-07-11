@@ -1819,6 +1819,333 @@ class GamificationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_gamification_scorecards_profile_metric_user_values_trends(self, profile_id, metric_id, user_id, start_workday, end_workday, **kwargs):
+        """
+        Average performance values trends by metric of a user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_scorecards_profile_metric_user_values_trends(profile_id, metric_id, user_id, start_workday, end_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str profile_id: performanceProfileId (required)
+        :param str metric_id: metricId (required)
+        :param str user_id:  (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date reference_workday: Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param str time_zone: Timezone for the workday. Defaults to UTC
+        :return: MetricValueTrendAverage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['profile_id', 'metric_id', 'user_id', 'start_workday', 'end_workday', 'reference_workday', 'time_zone']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_scorecards_profile_metric_user_values_trends" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'profile_id' is set
+        if ('profile_id' not in params) or (params['profile_id'] is None):
+            raise ValueError("Missing the required parameter `profile_id` when calling `get_gamification_scorecards_profile_metric_user_values_trends`")
+        # verify the required parameter 'metric_id' is set
+        if ('metric_id' not in params) or (params['metric_id'] is None):
+            raise ValueError("Missing the required parameter `metric_id` when calling `get_gamification_scorecards_profile_metric_user_values_trends`")
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_gamification_scorecards_profile_metric_user_values_trends`")
+        # verify the required parameter 'start_workday' is set
+        if ('start_workday' not in params) or (params['start_workday'] is None):
+            raise ValueError("Missing the required parameter `start_workday` when calling `get_gamification_scorecards_profile_metric_user_values_trends`")
+        # verify the required parameter 'end_workday' is set
+        if ('end_workday' not in params) or (params['end_workday'] is None):
+            raise ValueError("Missing the required parameter `end_workday` when calling `get_gamification_scorecards_profile_metric_user_values_trends`")
+
+
+        resource_path = '/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends'.replace('{format}', 'json')
+        path_params = {}
+        if 'profile_id' in params:
+            path_params['profileId'] = params['profile_id']
+        if 'metric_id' in params:
+            path_params['metricId'] = params['metric_id']
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+        if 'start_workday' in params:
+            query_params['startWorkday'] = params['start_workday']
+        if 'end_workday' in params:
+            query_params['endWorkday'] = params['end_workday']
+        if 'reference_workday' in params:
+            query_params['referenceWorkday'] = params['reference_workday']
+        if 'time_zone' in params:
+            query_params['timeZone'] = params['time_zone']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MetricValueTrendAverage',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_scorecards_profile_metric_users_values_trends(self, profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, **kwargs):
+        """
+        Average performance values trends by metric of a division or a performance profile
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str profile_id: performanceProfileId (required)
+        :param str metric_id: metricId (required)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. For example, division Id (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date reference_workday: Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param str time_zone: Timezone for the workday. Defaults to UTC
+        :return: MetricValueTrendAverage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['profile_id', 'metric_id', 'filter_type', 'filter_id', 'start_workday', 'end_workday', 'reference_workday', 'time_zone']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_scorecards_profile_metric_users_values_trends" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'profile_id' is set
+        if ('profile_id' not in params) or (params['profile_id'] is None):
+            raise ValueError("Missing the required parameter `profile_id` when calling `get_gamification_scorecards_profile_metric_users_values_trends`")
+        # verify the required parameter 'metric_id' is set
+        if ('metric_id' not in params) or (params['metric_id'] is None):
+            raise ValueError("Missing the required parameter `metric_id` when calling `get_gamification_scorecards_profile_metric_users_values_trends`")
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_scorecards_profile_metric_users_values_trends`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_scorecards_profile_metric_users_values_trends`")
+        # verify the required parameter 'start_workday' is set
+        if ('start_workday' not in params) or (params['start_workday'] is None):
+            raise ValueError("Missing the required parameter `start_workday` when calling `get_gamification_scorecards_profile_metric_users_values_trends`")
+        # verify the required parameter 'end_workday' is set
+        if ('end_workday' not in params) or (params['end_workday'] is None):
+            raise ValueError("Missing the required parameter `end_workday` when calling `get_gamification_scorecards_profile_metric_users_values_trends`")
+
+
+        resource_path = '/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends'.replace('{format}', 'json')
+        path_params = {}
+        if 'profile_id' in params:
+            path_params['profileId'] = params['profile_id']
+        if 'metric_id' in params:
+            path_params['metricId'] = params['metric_id']
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'start_workday' in params:
+            query_params['startWorkday'] = params['start_workday']
+        if 'end_workday' in params:
+            query_params['endWorkday'] = params['end_workday']
+        if 'reference_workday' in params:
+            query_params['referenceWorkday'] = params['reference_workday']
+        if 'time_zone' in params:
+            query_params['timeZone'] = params['time_zone']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MetricValueTrendAverage',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_scorecards_profile_metric_values_trends(self, profile_id, metric_id, start_workday, end_workday, **kwargs):
+        """
+        Average performance values trends by metric of the requesting user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_scorecards_profile_metric_values_trends(profile_id, metric_id, start_workday, end_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str profile_id: performanceProfileId (required)
+        :param str metric_id: metricId (required)
+        :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param str filter_type: Filter type for the query request. If not set, returns the values trends of the requesting user
+        :param date reference_workday: Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param str time_zone: Timezone for the workday. Defaults to UTC
+        :return: MetricValueTrendAverage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['profile_id', 'metric_id', 'start_workday', 'end_workday', 'filter_type', 'reference_workday', 'time_zone']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_scorecards_profile_metric_values_trends" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'profile_id' is set
+        if ('profile_id' not in params) or (params['profile_id'] is None):
+            raise ValueError("Missing the required parameter `profile_id` when calling `get_gamification_scorecards_profile_metric_values_trends`")
+        # verify the required parameter 'metric_id' is set
+        if ('metric_id' not in params) or (params['metric_id'] is None):
+            raise ValueError("Missing the required parameter `metric_id` when calling `get_gamification_scorecards_profile_metric_values_trends`")
+        # verify the required parameter 'start_workday' is set
+        if ('start_workday' not in params) or (params['start_workday'] is None):
+            raise ValueError("Missing the required parameter `start_workday` when calling `get_gamification_scorecards_profile_metric_values_trends`")
+        # verify the required parameter 'end_workday' is set
+        if ('end_workday' not in params) or (params['end_workday'] is None):
+            raise ValueError("Missing the required parameter `end_workday` when calling `get_gamification_scorecards_profile_metric_values_trends`")
+
+
+        resource_path = '/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends'.replace('{format}', 'json')
+        path_params = {}
+        if 'profile_id' in params:
+            path_params['profileId'] = params['profile_id']
+        if 'metric_id' in params:
+            path_params['metricId'] = params['metric_id']
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'start_workday' in params:
+            query_params['startWorkday'] = params['start_workday']
+        if 'end_workday' in params:
+            query_params['endWorkday'] = params['end_workday']
+        if 'reference_workday' in params:
+            query_params['referenceWorkday'] = params['reference_workday']
+        if 'time_zone' in params:
+            query_params['timeZone'] = params['time_zone']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MetricValueTrendAverage',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_gamification_scorecards_user(self, user_id, workday, **kwargs):
         """
         Workday performance metrics for a user

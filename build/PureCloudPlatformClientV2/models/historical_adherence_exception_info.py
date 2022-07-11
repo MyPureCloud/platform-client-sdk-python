@@ -44,6 +44,8 @@ class HistoricalAdherenceExceptionInfo(object):
             'end_offset_seconds': 'int',
             'scheduled_activity_code_id': 'str',
             'scheduled_activity_category': 'str',
+            'scheduled_secondary_presence_lookup_ids': 'list[str]',
+            'actual_activity_code_id': 'str',
             'actual_activity_category': 'str',
             'system_presence': 'str',
             'routing_status': 'str',
@@ -56,6 +58,8 @@ class HistoricalAdherenceExceptionInfo(object):
             'end_offset_seconds': 'endOffsetSeconds',
             'scheduled_activity_code_id': 'scheduledActivityCodeId',
             'scheduled_activity_category': 'scheduledActivityCategory',
+            'scheduled_secondary_presence_lookup_ids': 'scheduledSecondaryPresenceLookupIds',
+            'actual_activity_code_id': 'actualActivityCodeId',
             'actual_activity_category': 'actualActivityCategory',
             'system_presence': 'systemPresence',
             'routing_status': 'routingStatus',
@@ -67,6 +71,8 @@ class HistoricalAdherenceExceptionInfo(object):
         self._end_offset_seconds = None
         self._scheduled_activity_code_id = None
         self._scheduled_activity_category = None
+        self._scheduled_secondary_presence_lookup_ids = None
+        self._actual_activity_code_id = None
         self._actual_activity_category = None
         self._system_presence = None
         self._routing_status = None
@@ -171,6 +177,54 @@ class HistoricalAdherenceExceptionInfo(object):
             self._scheduled_activity_category = "outdated_sdk_version"
         else:
             self._scheduled_activity_category = scheduled_activity_category
+
+    @property
+    def scheduled_secondary_presence_lookup_ids(self):
+        """
+        Gets the scheduled_secondary_presence_lookup_ids of this HistoricalAdherenceExceptionInfo.
+        The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID
+
+        :return: The scheduled_secondary_presence_lookup_ids of this HistoricalAdherenceExceptionInfo.
+        :rtype: list[str]
+        """
+        return self._scheduled_secondary_presence_lookup_ids
+
+    @scheduled_secondary_presence_lookup_ids.setter
+    def scheduled_secondary_presence_lookup_ids(self, scheduled_secondary_presence_lookup_ids):
+        """
+        Sets the scheduled_secondary_presence_lookup_ids of this HistoricalAdherenceExceptionInfo.
+        The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID
+
+        :param scheduled_secondary_presence_lookup_ids: The scheduled_secondary_presence_lookup_ids of this HistoricalAdherenceExceptionInfo.
+        :type: list[str]
+        """
+        
+
+        self._scheduled_secondary_presence_lookup_ids = scheduled_secondary_presence_lookup_ids
+
+    @property
+    def actual_activity_code_id(self):
+        """
+        Gets the actual_activity_code_id of this HistoricalAdherenceExceptionInfo.
+        The ID of the actual activity code for this user
+
+        :return: The actual_activity_code_id of this HistoricalAdherenceExceptionInfo.
+        :rtype: str
+        """
+        return self._actual_activity_code_id
+
+    @actual_activity_code_id.setter
+    def actual_activity_code_id(self, actual_activity_code_id):
+        """
+        Sets the actual_activity_code_id of this HistoricalAdherenceExceptionInfo.
+        The ID of the actual activity code for this user
+
+        :param actual_activity_code_id: The actual_activity_code_id of this HistoricalAdherenceExceptionInfo.
+        :type: str
+        """
+        
+
+        self._actual_activity_code_id = actual_activity_code_id
 
     @property
     def actual_activity_category(self):

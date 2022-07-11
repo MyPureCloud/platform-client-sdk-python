@@ -35,6 +35,7 @@ title: UserQueue
 | **default_scripts** | [**dict(str, Script)**](Script.html) | The default script Ids for the communication types. | [optional] |
 | **outbound_messaging_addresses** | [**QueueMessagingAddresses**](QueueMessagingAddresses.html) | The messaging addresses for the queue. | [optional] |
 | **outbound_email_address** | [**QueueEmailAddress**](QueueEmailAddress.html) |  | [optional] |
+| **peer_id** | **str** | The ID of the external Queue | [optional] |
 | **joined** | **bool** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

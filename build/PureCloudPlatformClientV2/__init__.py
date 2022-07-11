@@ -149,6 +149,8 @@ from .models.assessment_question_group_score import AssessmentQuestionGroupScore
 from .models.assessment_question_score import AssessmentQuestionScore
 from .models.assessment_scoring_set import AssessmentScoringSet
 from .models.assign_users import AssignUsers
+from .models.assigned_learning_module import AssignedLearningModule
+from .models.assigned_learning_module_domain_entity_listing import AssignedLearningModuleDomainEntityListing
 from .models.assigned_segment import AssignedSegment
 from .models.assigned_wrapup_code import AssignedWrapupCode
 from .models.assignment import Assignment
@@ -215,6 +217,7 @@ from .models.available_time_off_response import AvailableTimeOffResponse
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
 from .models.available_translations import AvailableTranslations
+from .models.base_media_settings import BaseMediaSettings
 from .models.base_program_entity import BaseProgramEntity
 from .models.base_topic_entitiy import BaseTopicEntitiy
 from .models.batch_download_job_result import BatchDownloadJobResult
@@ -1681,6 +1684,7 @@ from .models.metered_assignment_by_agent import MeteredAssignmentByAgent
 from .models.metered_evaluation_assignment import MeteredEvaluationAssignment
 from .models.metric import Metric
 from .models.metric_definition import MetricDefinition
+from .models.metric_value_trend_average import MetricValueTrendAverage
 from .models.metrics import Metrics
 from .models.min_length import MinLength
 from .models.mined_intents_listing import MinedIntentsListing
@@ -2390,6 +2394,7 @@ from .models.service_goal_template_list import ServiceGoalTemplateList
 from .models.service_goal_template_reference import ServiceGoalTemplateReference
 from .models.service_level import ServiceLevel
 from .models.session import Session
+from .models.session_end_details import SessionEndDetails
 from .models.session_last_event import SessionLastEvent
 from .models.session_segment_assignment import SessionSegmentAssignment
 from .models.set_recording_state import SetRecordingState

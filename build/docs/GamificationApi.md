@@ -30,6 +30,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_gamification_scorecards_points_alltime**](GamificationApi.html#get_gamification_scorecards_points_alltime) | All-time points of the requesting user|
 |[**get_gamification_scorecards_points_average**](GamificationApi.html#get_gamification_scorecards_points_average) | Average points of the requesting user&#39;s division or performance profile|
 |[**get_gamification_scorecards_points_trends**](GamificationApi.html#get_gamification_scorecards_points_trends) | Points trends of the requesting user|
+|[**get_gamification_scorecards_profile_metric_user_values_trends**](GamificationApi.html#get_gamification_scorecards_profile_metric_user_values_trends) | Average performance values trends by metric of a user|
+|[**get_gamification_scorecards_profile_metric_users_values_trends**](GamificationApi.html#get_gamification_scorecards_profile_metric_users_values_trends) | Average performance values trends by metric of a division or a performance profile|
+|[**get_gamification_scorecards_profile_metric_values_trends**](GamificationApi.html#get_gamification_scorecards_profile_metric_values_trends) | Average performance values trends by metric of the requesting user|
 |[**get_gamification_scorecards_user**](GamificationApi.html#get_gamification_scorecards_user) | Workday performance metrics for a user|
 |[**get_gamification_scorecards_user_attendance**](GamificationApi.html#get_gamification_scorecards_user_attendance) | Attendance status metrics for a user|
 |[**get_gamification_scorecards_user_bestpoints**](GamificationApi.html#get_gamification_scorecards_user_bestpoints) | Best points of a user|
@@ -1226,6 +1229,197 @@ except ApiException as e:
 ### Return type
 
 [**WorkdayPointsTrend**](WorkdayPointsTrend.html)
+
+<a name="get_gamification_scorecards_profile_metric_user_values_trends"></a>
+
+## [**MetricValueTrendAverage**](MetricValueTrendAverage.html) get_gamification_scorecards_profile_metric_user_values_trends(profile_id, metric_id, user_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)
+
+
+
+Average performance values trends by metric of a user
+
+
+
+Wraps GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends 
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+profile_id = 'profile_id_example' # str | performanceProfileId
+metric_id = 'metric_id_example' # str | metricId
+user_id = 'user_id_example' # str | 
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+reference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+time_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')
+
+try:
+    # Average performance values trends by metric of a user
+    api_response = api_instance.get_gamification_scorecards_profile_metric_user_values_trends(profile_id, metric_id, user_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_scorecards_profile_metric_user_values_trends: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profile_id** | **str**| performanceProfileId |  |
+| **metric_id** | **str**| metricId |  |
+| **user_id** | **str**|  |  |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **reference_workday** | **date**| Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to &#39;UTC&#39;] |
+{: class="table table-striped"}
+
+### Return type
+
+[**MetricValueTrendAverage**](MetricValueTrendAverage.html)
+
+<a name="get_gamification_scorecards_profile_metric_users_values_trends"></a>
+
+## [**MetricValueTrendAverage**](MetricValueTrendAverage.html) get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)
+
+
+
+Average performance values trends by metric of a division or a performance profile
+
+
+
+Wraps GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends 
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+profile_id = 'profile_id_example' # str | performanceProfileId
+metric_id = 'metric_id_example' # str | metricId
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type. For example, division Id
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+reference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+time_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')
+
+try:
+    # Average performance values trends by metric of a division or a performance profile
+    api_response = api_instance.get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_scorecards_profile_metric_users_values_trends: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profile_id** | **str**| performanceProfileId |  |
+| **metric_id** | **str**| metricId |  |
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. For example, division Id |  |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **reference_workday** | **date**| Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to &#39;UTC&#39;] |
+{: class="table table-striped"}
+
+### Return type
+
+[**MetricValueTrendAverage**](MetricValueTrendAverage.html)
+
+<a name="get_gamification_scorecards_profile_metric_values_trends"></a>
+
+## [**MetricValueTrendAverage**](MetricValueTrendAverage.html) get_gamification_scorecards_profile_metric_values_trends(profile_id, metric_id, start_workday, end_workday, filter_type=filter_type, reference_workday=reference_workday, time_zone=time_zone)
+
+
+
+Average performance values trends by metric of the requesting user
+
+
+
+Wraps GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends 
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+profile_id = 'profile_id_example' # str | performanceProfileId
+metric_id = 'metric_id_example' # str | metricId
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+filter_type = 'filter_type_example' # str | Filter type for the query request. If not set, returns the values trends of the requesting user (optional)
+reference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+time_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')
+
+try:
+    # Average performance values trends by metric of the requesting user
+    api_response = api_instance.get_gamification_scorecards_profile_metric_values_trends(profile_id, metric_id, start_workday, end_workday, filter_type=filter_type, reference_workday=reference_workday, time_zone=time_zone)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_scorecards_profile_metric_values_trends: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profile_id** | **str**| performanceProfileId |  |
+| **metric_id** | **str**| metricId |  |
+| **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **filter_type** | **str**| Filter type for the query request. If not set, returns the values trends of the requesting user | [optional] <br />**Values**: PerformanceProfile, Division |
+| **reference_workday** | **date**| Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to &#39;UTC&#39;] |
+{: class="table table-striped"}
+
+### Return type
+
+[**MetricValueTrendAverage**](MetricValueTrendAverage.html)
 
 <a name="get_gamification_scorecards_user"></a>
 

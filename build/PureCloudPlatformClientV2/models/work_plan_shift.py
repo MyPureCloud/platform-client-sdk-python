@@ -59,6 +59,8 @@ class WorkPlanShift(object):
             'constrain_contiguous_work_time': 'bool',
             'minimum_contiguous_work_time_minutes': 'int',
             'maximum_contiguous_work_time_minutes': 'int',
+            'constrain_day_off': 'bool',
+            'day_off_rule': 'str',
             'activities': 'list[WorkPlanActivity]',
             'id': 'str',
             'delete': 'bool',
@@ -85,6 +87,8 @@ class WorkPlanShift(object):
             'constrain_contiguous_work_time': 'constrainContiguousWorkTime',
             'minimum_contiguous_work_time_minutes': 'minimumContiguousWorkTimeMinutes',
             'maximum_contiguous_work_time_minutes': 'maximumContiguousWorkTimeMinutes',
+            'constrain_day_off': 'constrainDayOff',
+            'day_off_rule': 'dayOffRule',
             'activities': 'activities',
             'id': 'id',
             'delete': 'delete',
@@ -110,6 +114,8 @@ class WorkPlanShift(object):
         self._constrain_contiguous_work_time = None
         self._minimum_contiguous_work_time_minutes = None
         self._maximum_contiguous_work_time_minutes = None
+        self._constrain_day_off = None
+        self._day_off_rule = None
         self._activities = None
         self._id = None
         self._delete = None
@@ -570,6 +576,57 @@ class WorkPlanShift(object):
         
 
         self._maximum_contiguous_work_time_minutes = maximum_contiguous_work_time_minutes
+
+    @property
+    def constrain_day_off(self):
+        """
+        Gets the constrain_day_off of this WorkPlanShift.
+        Whether day off rule is enabled
+
+        :return: The constrain_day_off of this WorkPlanShift.
+        :rtype: bool
+        """
+        return self._constrain_day_off
+
+    @constrain_day_off.setter
+    def constrain_day_off(self, constrain_day_off):
+        """
+        Sets the constrain_day_off of this WorkPlanShift.
+        Whether day off rule is enabled
+
+        :param constrain_day_off: The constrain_day_off of this WorkPlanShift.
+        :type: bool
+        """
+        
+
+        self._constrain_day_off = constrain_day_off
+
+    @property
+    def day_off_rule(self):
+        """
+        Gets the day_off_rule of this WorkPlanShift.
+        The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
+
+        :return: The day_off_rule of this WorkPlanShift.
+        :rtype: str
+        """
+        return self._day_off_rule
+
+    @day_off_rule.setter
+    def day_off_rule(self, day_off_rule):
+        """
+        Sets the day_off_rule of this WorkPlanShift.
+        The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
+
+        :param day_off_rule: The day_off_rule of this WorkPlanShift.
+        :type: str
+        """
+        allowed_values = ["NextDayOff", "PreviousDayOff"]
+        if day_off_rule.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for day_off_rule -> " + day_off_rule)
+            self._day_off_rule = "outdated_sdk_version"
+        else:
+            self._day_off_rule = day_off_rule
 
     @property
     def activities(self):

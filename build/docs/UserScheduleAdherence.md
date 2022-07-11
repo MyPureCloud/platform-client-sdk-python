@@ -14,6 +14,7 @@ title: UserScheduleAdherence
 | **management_unit** | [**ManagementUnitReference**](ManagementUnitReference.html) | The management unit to which this user belongs | [optional] |
 | **team** | [**TeamReference**](TeamReference.html) | The team to which this user belongs | [optional] |
 | **scheduled_activity_category** | **str** | Activity for which the user is scheduled | [optional] |
+| **scheduled_activity_code** | [**ActivityCodeReference**](ActivityCodeReference.html) | Activity code for which the user is currently scheduled | [optional] |
 | **system_presence** | **str** | Actual underlying system presence value | [optional] |
 | **organization_secondary_presence_id** | **str** | Organization Secondary Presence Id. | [optional] |
 | **routing_status** | **str** | Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue | [optional] |

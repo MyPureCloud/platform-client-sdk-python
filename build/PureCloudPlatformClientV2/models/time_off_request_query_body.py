@@ -40,20 +40,50 @@ class TimeOffRequestQueryBody(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'ids': 'list[str]',
             'user_ids': 'list[str]',
             'statuses': 'list[str]',
+            'substatuses': 'list[str]',
             'date_range': 'DateRange'
         }
 
         self.attribute_map = {
+            'ids': 'ids',
             'user_ids': 'userIds',
             'statuses': 'statuses',
+            'substatuses': 'substatuses',
             'date_range': 'dateRange'
         }
 
+        self._ids = None
         self._user_ids = None
         self._statuses = None
+        self._substatuses = None
         self._date_range = None
+
+    @property
+    def ids(self):
+        """
+        Gets the ids of this TimeOffRequestQueryBody.
+        The set of ids to filter time off requests
+
+        :return: The ids of this TimeOffRequestQueryBody.
+        :rtype: list[str]
+        """
+        return self._ids
+
+    @ids.setter
+    def ids(self, ids):
+        """
+        Sets the ids of this TimeOffRequestQueryBody.
+        The set of ids to filter time off requests
+
+        :param ids: The ids of this TimeOffRequestQueryBody.
+        :type: list[str]
+        """
+        
+
+        self._ids = ids
 
     @property
     def user_ids(self):
@@ -102,6 +132,30 @@ class TimeOffRequestQueryBody(object):
         
 
         self._statuses = statuses
+
+    @property
+    def substatuses(self):
+        """
+        Gets the substatuses of this TimeOffRequestQueryBody.
+        The set of substatuses to filter time off requests
+
+        :return: The substatuses of this TimeOffRequestQueryBody.
+        :rtype: list[str]
+        """
+        return self._substatuses
+
+    @substatuses.setter
+    def substatuses(self, substatuses):
+        """
+        Sets the substatuses of this TimeOffRequestQueryBody.
+        The set of substatuses to filter time off requests
+
+        :param substatuses: The substatuses of this TimeOffRequestQueryBody.
+        :type: list[str]
+        """
+        
+
+        self._substatuses = substatuses
 
     @property
     def date_range(self):

@@ -46,7 +46,8 @@ class CreateAdminTimeOffRequest(object):
             'notes': 'str',
             'full_day_management_unit_dates': 'list[str]',
             'partial_day_start_date_times': 'list[datetime]',
-            'daily_duration_minutes': 'int'
+            'daily_duration_minutes': 'int',
+            'paid': 'bool'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class CreateAdminTimeOffRequest(object):
             'notes': 'notes',
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
             'partial_day_start_date_times': 'partialDayStartDateTimes',
-            'daily_duration_minutes': 'dailyDurationMinutes'
+            'daily_duration_minutes': 'dailyDurationMinutes',
+            'paid': 'paid'
         }
 
         self._status = None
@@ -66,6 +68,7 @@ class CreateAdminTimeOffRequest(object):
         self._full_day_management_unit_dates = None
         self._partial_day_start_date_times = None
         self._daily_duration_minutes = None
+        self._paid = None
 
     @property
     def status(self):
@@ -237,6 +240,30 @@ class CreateAdminTimeOffRequest(object):
         
 
         self._daily_duration_minutes = daily_duration_minutes
+
+    @property
+    def paid(self):
+        """
+        Gets the paid of this CreateAdminTimeOffRequest.
+        Whether this is a paid time off request
+
+        :return: The paid of this CreateAdminTimeOffRequest.
+        :rtype: bool
+        """
+        return self._paid
+
+    @paid.setter
+    def paid(self, paid):
+        """
+        Sets the paid of this CreateAdminTimeOffRequest.
+        Whether this is a paid time off request
+
+        :param paid: The paid of this CreateAdminTimeOffRequest.
+        :type: bool
+        """
+        
+
+        self._paid = paid
 
     def to_dict(self):
         """

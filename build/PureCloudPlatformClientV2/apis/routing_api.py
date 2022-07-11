@@ -3334,12 +3334,14 @@ class RoutingApi(object):
         :param str name: Filter by queue name
         :param list[str] id: Filter by queue ID(s)
         :param list[str] division_id: Filter by queue division ID(s)
+        :param list[str] peer_id: Filter by queue peer ID(s)
+        :param bool has_peer: Filter by queues associated with peer
         :return: QueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_order', 'name', 'id', 'division_id']
+        all_params = ['page_number', 'page_size', 'sort_order', 'name', 'id', 'division_id', 'peer_id', 'has_peer']
         all_params.append('callback')
 
         params = locals()
@@ -3370,6 +3372,10 @@ class RoutingApi(object):
             query_params['id'] = params['id']
         if 'division_id' in params:
             query_params['divisionId'] = params['division_id']
+        if 'peer_id' in params:
+            query_params['peerId'] = params['peer_id']
+        if 'has_peer' in params:
+            query_params['hasPeer'] = params['has_peer']
 
         header_params = {}
 

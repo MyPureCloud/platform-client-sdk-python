@@ -48,6 +48,7 @@ class ReportingTurn(object):
             'knowledge': 'ReportingTurnKnowledge',
             'date_created': 'datetime',
             'ask_action_result': 'str',
+            'session_end_details': 'SessionEndDetails',
             'conversation': 'AddressableEntityRef'
         }
 
@@ -60,6 +61,7 @@ class ReportingTurn(object):
             'knowledge': 'knowledge',
             'date_created': 'dateCreated',
             'ask_action_result': 'askActionResult',
+            'session_end_details': 'sessionEndDetails',
             'conversation': 'conversation'
         }
 
@@ -71,6 +73,7 @@ class ReportingTurn(object):
         self._knowledge = None
         self._date_created = None
         self._ask_action_result = None
+        self._session_end_details = None
         self._conversation = None
 
     @property
@@ -267,6 +270,30 @@ class ReportingTurn(object):
             self._ask_action_result = "outdated_sdk_version"
         else:
             self._ask_action_result = ask_action_result
+
+    @property
+    def session_end_details(self):
+        """
+        Gets the session_end_details of this ReportingTurn.
+        The details related to end of bot flow session.
+
+        :return: The session_end_details of this ReportingTurn.
+        :rtype: SessionEndDetails
+        """
+        return self._session_end_details
+
+    @session_end_details.setter
+    def session_end_details(self, session_end_details):
+        """
+        Sets the session_end_details of this ReportingTurn.
+        The details related to end of bot flow session.
+
+        :param session_end_details: The session_end_details of this ReportingTurn.
+        :type: SessionEndDetails
+        """
+        
+
+        self._session_end_details = session_end_details
 
     @property
     def conversation(self):

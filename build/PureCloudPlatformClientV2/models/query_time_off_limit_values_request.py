@@ -107,7 +107,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def date_ranges(self):
         """
         Gets the date_ranges of this QueryTimeOffLimitValuesRequest.
-        The list of the date ranges to return time off limit, allocated and waitlisted minutes.
+        The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
 
         :return: The date_ranges of this QueryTimeOffLimitValuesRequest.
         :rtype: list[LocalDateRange]
@@ -118,7 +118,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def date_ranges(self, date_ranges):
         """
         Sets the date_ranges of this QueryTimeOffLimitValuesRequest.
-        The list of the date ranges to return time off limit, allocated and waitlisted minutes.
+        The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
 
         :param date_ranges: The date_ranges of this QueryTimeOffLimitValuesRequest.
         :type: list[LocalDateRange]

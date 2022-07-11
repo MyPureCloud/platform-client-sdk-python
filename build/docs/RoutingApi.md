@@ -2244,7 +2244,7 @@ except ApiException as e:
 
 <a name="get_routing_queues"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id)
+## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, has_peer=has_peer)
 
 
 
@@ -2277,10 +2277,12 @@ sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (defau
 name = 'name_example' # str | Filter by queue name (optional)
 id = ['id_example'] # list[str] | Filter by queue ID(s) (optional)
 division_id = ['division_id_example'] # list[str] | Filter by queue division ID(s) (optional)
+peer_id = ['peer_id_example'] # list[str] | Filter by queue peer ID(s) (optional)
+has_peer = True # bool | Filter by queues associated with peer (optional)
 
 try:
     # Get list of queues.
-    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id)
+    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, has_peer=has_peer)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queues: %s\n" % e)
@@ -2297,6 +2299,8 @@ except ApiException as e:
 | **name** | **str**| Filter by queue name | [optional]  |
 | **id** | [**list[str]**](str.html)| Filter by queue ID(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Filter by queue division ID(s) | [optional]  |
+| **peer_id** | [**list[str]**](str.html)| Filter by queue peer ID(s) | [optional]  |
+| **has_peer** | **bool**| Filter by queues associated with peer | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

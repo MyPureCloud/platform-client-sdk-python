@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_learning_module_rule**](LearningApi.html#get_learning_module_rule) | Get a learning module rule|
 |[**get_learning_module_version**](LearningApi.html#get_learning_module_version) | Get specific version of a published module|
 |[**get_learning_modules**](LearningApi.html#get_learning_modules) | Get all learning modules of an organization|
+|[**get_learning_modules_assignments**](LearningApi.html#get_learning_modules_assignments) | Get all learning modules of an organization including assignments for a specific user|
 |[**patch_learning_assignment**](LearningApi.html#patch_learning_assignment) | Update Learning Assignment|
 |[**post_learning_assessments_scoring**](LearningApi.html#post_learning_assessments_scoring) | Score learning assessment for preview|
 |[**post_learning_assignment_reassign**](LearningApi.html#post_learning_assignment_reassign) | Reassign Learning Assignment|
@@ -626,6 +627,70 @@ except ApiException as e:
 ### Return type
 
 [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html)
+
+<a name="get_learning_modules_assignments"></a>
+
+## [**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing.html) get_learning_modules_assignments(user_ids, page_size=page_size, page_number=page_number, search_term=search_term, overdue=overdue, assignment_states=assignment_states, expand=expand)
+
+
+
+Get all learning modules of an organization including assignments for a specific user
+
+
+
+Wraps GET /api/v2/learning/modules/assignments 
+
+Requires ALL permissions: 
+
+* learning:module:view
+* learning:assignment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+user_ids = ['user_ids_example'] # list[str] | The IDs of the users to include
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+search_term = 'search_term_example' # str | Search Term (searches by name and description) (optional)
+overdue = ''Any'' # str | Specifies if only modules with overdue/not overdue (overdue is \"True\" or \"False\") assignments are returned. If overdue is \"Any\" or omitted, both are returned and can including modules that are unassigned. (optional) (default to 'Any')
+assignment_states = ['assignment_states_example'] # list[str] | Specifies the assignment states to return. (optional)
+expand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)
+
+try:
+    # Get all learning modules of an organization including assignments for a specific user
+    api_response = api_instance.get_learning_modules_assignments(user_ids, page_size=page_size, page_number=page_number, search_term=search_term, overdue=overdue, assignment_states=assignment_states, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->get_learning_modules_assignments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_ids** | [**list[str]**](str.html)| The IDs of the users to include |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **search_term** | **str**| Search Term (searches by name and description) | [optional]  |
+| **overdue** | **str**| Specifies if only modules with overdue/not overdue (overdue is \&quot;True\&quot; or \&quot;False\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or omitted, both are returned and can including modules that are unassigned. | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
+| **assignment_states** | [**list[str]**](str.html)| Specifies the assignment states to return. | [optional] <br />**Values**: NotAssigned, Assigned, InProgress, Completed |
+| **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: coverArt |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing.html)
 
 <a name="patch_learning_assignment"></a>
 

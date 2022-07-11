@@ -99,7 +99,7 @@ class Check(object):
         :param type: The type of this Check.
         :type: str
         """
-        allowed_values = ["HandleTimeValue", "TransferRateValue", "InteractionVolume", "UserVariance", "DataCoverage", "ModelQuality"]
+        allowed_values = ["HandleTimeValue", "TransferRateValue", "SalesConversionRateValue", "RetentionRateValue", "ChurnRateValue", "InteractionVolume", "UserVariance", "DataCoverage", "ModelQuality"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

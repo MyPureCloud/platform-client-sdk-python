@@ -83,7 +83,7 @@ class CreateTimeOffLimitRequest(object):
     def default_limit_minutes(self):
         """
         Gets the default_limit_minutes of this CreateTimeOffLimitRequest.
-        The default limit value in minutes per granularity.If not specified, then 0 is assumed, which means there are no time off minutes available
+        The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
 
         :return: The default_limit_minutes of this CreateTimeOffLimitRequest.
         :rtype: int
@@ -94,7 +94,7 @@ class CreateTimeOffLimitRequest(object):
     def default_limit_minutes(self, default_limit_minutes):
         """
         Sets the default_limit_minutes of this CreateTimeOffLimitRequest.
-        The default limit value in minutes per granularity.If not specified, then 0 is assumed, which means there are no time off minutes available
+        The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
 
         :param default_limit_minutes: The default_limit_minutes of this CreateTimeOffLimitRequest.
         :type: int

@@ -216,6 +216,8 @@ PureCloudPlatformClientV2/models/assessment_question_group_score.py
 PureCloudPlatformClientV2/models/assessment_question_score.py
 PureCloudPlatformClientV2/models/assessment_scoring_set.py
 PureCloudPlatformClientV2/models/assign_users.py
+PureCloudPlatformClientV2/models/assigned_learning_module.py
+PureCloudPlatformClientV2/models/assigned_learning_module_domain_entity_listing.py
 PureCloudPlatformClientV2/models/assigned_segment.py
 PureCloudPlatformClientV2/models/assigned_wrapup_code.py
 PureCloudPlatformClientV2/models/assignment.py
@@ -282,6 +284,7 @@ PureCloudPlatformClientV2/models/available_time_off_response.py
 PureCloudPlatformClientV2/models/available_topic.py
 PureCloudPlatformClientV2/models/available_topic_entity_listing.py
 PureCloudPlatformClientV2/models/available_translations.py
+PureCloudPlatformClientV2/models/base_media_settings.py
 PureCloudPlatformClientV2/models/base_program_entity.py
 PureCloudPlatformClientV2/models/base_topic_entitiy.py
 PureCloudPlatformClientV2/models/batch_download_job_result.py
@@ -1748,6 +1751,7 @@ PureCloudPlatformClientV2/models/metered_assignment_by_agent.py
 PureCloudPlatformClientV2/models/metered_evaluation_assignment.py
 PureCloudPlatformClientV2/models/metric.py
 PureCloudPlatformClientV2/models/metric_definition.py
+PureCloudPlatformClientV2/models/metric_value_trend_average.py
 PureCloudPlatformClientV2/models/metrics.py
 PureCloudPlatformClientV2/models/min_length.py
 PureCloudPlatformClientV2/models/mined_intents_listing.py
@@ -2455,6 +2459,7 @@ PureCloudPlatformClientV2/models/service_goal_template_list.py
 PureCloudPlatformClientV2/models/service_goal_template_reference.py
 PureCloudPlatformClientV2/models/service_level.py
 PureCloudPlatformClientV2/models/session.py
+PureCloudPlatformClientV2/models/session_end_details.py
 PureCloudPlatformClientV2/models/session_last_event.py
 PureCloudPlatformClientV2/models/session_segment_assignment.py
 PureCloudPlatformClientV2/models/set_recording_state.py
@@ -3320,6 +3325,8 @@ docs/AssessmentQuestionGroupScore.md
 docs/AssessmentQuestionScore.md
 docs/AssessmentScoringSet.md
 docs/AssignUsers.md
+docs/AssignedLearningModule.md
+docs/AssignedLearningModuleDomainEntityListing.md
 docs/AssignedSegment.md
 docs/AssignedWrapupCode.md
 docs/Assignment.md
@@ -3390,6 +3397,7 @@ docs/AvailableTimeOffResponse.md
 docs/AvailableTopic.md
 docs/AvailableTopicEntityListing.md
 docs/AvailableTranslations.md
+docs/BaseMediaSettings.md
 docs/BaseProgramEntity.md
 docs/BaseTopicEntitiy.md
 docs/BatchDownloadJobResult.md
@@ -4904,6 +4912,7 @@ docs/MeteredAssignmentByAgent.md
 docs/MeteredEvaluationAssignment.md
 docs/Metric.md
 docs/MetricDefinition.md
+docs/MetricValueTrendAverage.md
 docs/Metrics.md
 docs/MinLength.md
 docs/MinedIntentsListing.md
@@ -5643,6 +5652,7 @@ docs/ServiceGoalTemplateList.md
 docs/ServiceGoalTemplateReference.md
 docs/ServiceLevel.md
 docs/Session.md
+docs/SessionEndDetails.md
 docs/SessionLastEvent.md
 docs/SessionSegmentAssignment.md
 docs/SetRecordingState.md
@@ -6865,6 +6875,9 @@ docs/get_gamification_scorecards_bestpoints-example.txt
 docs/get_gamification_scorecards_points_alltime-example.txt
 docs/get_gamification_scorecards_points_average-example.txt
 docs/get_gamification_scorecards_points_trends-example.txt
+docs/get_gamification_scorecards_profile_metric_user_values_trends-example.txt
+docs/get_gamification_scorecards_profile_metric_users_values_trends-example.txt
+docs/get_gamification_scorecards_profile_metric_values_trends-example.txt
 docs/get_gamification_scorecards_user-example.txt
 docs/get_gamification_scorecards_user_attendance-example.txt
 docs/get_gamification_scorecards_user_bestpoints-example.txt
@@ -6995,6 +7008,7 @@ docs/get_learning_module_job-example.txt
 docs/get_learning_module_rule-example.txt
 docs/get_learning_module_version-example.txt
 docs/get_learning_modules-example.txt
+docs/get_learning_modules_assignments-example.txt
 docs/get_license_definition-example.txt
 docs/get_license_definitions-example.txt
 docs/get_license_toggle-example.txt
