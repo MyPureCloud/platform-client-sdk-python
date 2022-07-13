@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplan) | Delete a work plan|
 |[**delete_workforcemanagement_managementunit_workplanrotation**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplanrotation) | Delete a work plan rotation|
 |[**get_workforcemanagement_adherence**](WorkforceManagementApi.html#get_workforcemanagement_adherence) | Get a list of UserScheduleAdherence records for the requested users|
+|[**get_workforcemanagement_adherence_historical_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_historical_job) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adhocmodelingjob**](WorkforceManagementApi.html#get_workforcemanagement_adhocmodelingjob) | Get status of the modeling job|
 |[**get_workforcemanagement_agent_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agent_managementunit) | Get the management unit to which the agent belongs|
 |[**get_workforcemanagement_agents_me_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agents_me_managementunit) | Get the management unit to which the currently logged in agent belongs|
@@ -873,6 +874,59 @@ except ApiException as e:
 ### Return type
 
 [**list[UserScheduleAdherence]**](UserScheduleAdherence.html)
+
+<a name="get_workforcemanagement_adherence_historical_job"></a>
+
+## [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html) get_workforcemanagement_adherence_historical_job(job_id)
+
+
+
+Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+
+
+Wraps GET /api/v2/workforcemanagement/adherence/historical/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:historicalAdherence:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_adherence_historical_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_adherence_historical_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
 
 <a name="get_workforcemanagement_adhocmodelingjob"></a>
 

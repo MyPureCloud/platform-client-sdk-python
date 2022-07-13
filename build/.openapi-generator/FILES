@@ -50,6 +50,7 @@ PureCloudPlatformClientV2/apis/search_api.py
 PureCloudPlatformClientV2/apis/speech_text_analytics_api.py
 PureCloudPlatformClientV2/apis/stations_api.py
 PureCloudPlatformClientV2/apis/suggest_api.py
+PureCloudPlatformClientV2/apis/teams_api.py
 PureCloudPlatformClientV2/apis/telephony_api.py
 PureCloudPlatformClientV2/apis/telephony_providers_edge_api.py
 PureCloudPlatformClientV2/apis/textbots_api.py
@@ -141,6 +142,7 @@ PureCloudPlatformClientV2/models/aggregation_result.py
 PureCloudPlatformClientV2/models/aggregation_result_entry.py
 PureCloudPlatformClientV2/models/all_time_points.py
 PureCloudPlatformClientV2/models/amazon_lex_request.py
+PureCloudPlatformClientV2/models/analytics_agent_group.py
 PureCloudPlatformClientV2/models/analytics_conversation.py
 PureCloudPlatformClientV2/models/analytics_conversation_async_query_response.py
 PureCloudPlatformClientV2/models/analytics_conversation_query_response.py
@@ -927,6 +929,7 @@ PureCloudPlatformClientV2/models/cursor_relationship_listing.py
 PureCloudPlatformClientV2/models/cursors.py
 PureCloudPlatformClientV2/models/custom_event_attribute.py
 PureCloudPlatformClientV2/models/custom_event_attribute_list.py
+PureCloudPlatformClientV2/models/custom_i18n_labels.py
 PureCloudPlatformClientV2/models/customer_end_detail_event_topic_customer_end_event.py
 PureCloudPlatformClientV2/models/customer_interaction_center.py
 PureCloudPlatformClientV2/models/customer_start_detail_event_topic_customer_start_event.py
@@ -1665,6 +1668,7 @@ PureCloudPlatformClientV2/models/local_date_range.py
 PureCloudPlatformClientV2/models/local_encryption_configuration.py
 PureCloudPlatformClientV2/models/local_encryption_configuration_listing.py
 PureCloudPlatformClientV2/models/local_encryption_key_request.py
+PureCloudPlatformClientV2/models/localized_labels.py
 PureCloudPlatformClientV2/models/location.py
 PureCloudPlatformClientV2/models/location_address.py
 PureCloudPlatformClientV2/models/location_address_verification_details.py
@@ -2595,7 +2599,11 @@ PureCloudPlatformClientV2/models/tag_value.py
 PureCloudPlatformClientV2/models/tag_value_entity_listing.py
 PureCloudPlatformClientV2/models/target_performance_profile.py
 PureCloudPlatformClientV2/models/team.py
+PureCloudPlatformClientV2/models/team_entity_listing.py
 PureCloudPlatformClientV2/models/team_reference.py
+PureCloudPlatformClientV2/models/team_search_criteria.py
+PureCloudPlatformClientV2/models/team_search_request.py
+PureCloudPlatformClientV2/models/teams_search_response.py
 PureCloudPlatformClientV2/models/template_parameter.py
 PureCloudPlatformClientV2/models/term_attribute.py
 PureCloudPlatformClientV2/models/test_execution_operation_result.py
@@ -3246,6 +3254,7 @@ docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AllTimePoints.md
 docs/AmazonLexRequest.md
+docs/AnalyticsAgentGroup.md
 docs/AnalyticsApi.json
 docs/AnalyticsApi.md
 docs/AnalyticsConversation.md
@@ -4050,6 +4059,7 @@ docs/CursorRelationshipListing.md
 docs/Cursors.md
 docs/CustomEventAttribute.md
 docs/CustomEventAttributeList.md
+docs/CustomI18nLabels.md
 docs/CustomerEndDetailEventTopicCustomerEndEvent.md
 docs/CustomerInteractionCenter.md
 docs/CustomerStartDetailEventTopicCustomerStartEvent.md
@@ -4822,6 +4832,7 @@ docs/LocalDateRange.md
 docs/LocalEncryptionConfiguration.md
 docs/LocalEncryptionConfigurationListing.md
 docs/LocalEncryptionKeyRequest.md
+docs/LocalizedLabels.md
 docs/Location.md
 docs/LocationAddress.md
 docs/LocationAddressVerificationDetails.md
@@ -5792,7 +5803,13 @@ docs/TagValue.md
 docs/TagValueEntityListing.md
 docs/TargetPerformanceProfile.md
 docs/Team.md
+docs/TeamEntityListing.md
 docs/TeamReference.md
+docs/TeamSearchCriteria.md
+docs/TeamSearchRequest.md
+docs/TeamsApi.json
+docs/TeamsApi.md
+docs/TeamsSearchResponse.md
 docs/TelephonyApi.json
 docs/TelephonyApi.md
 docs/TelephonyProvidersEdgeApi.json
@@ -6554,6 +6571,7 @@ docs/delete_speechandtextanalytics_sentimentfeedback-example.txt
 docs/delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id-example.txt
 docs/delete_speechandtextanalytics_topic-example.txt
 docs/delete_station_associateduser-example.txt
+docs/delete_team-example.txt
 docs/delete_telephony_providers_edge-example.txt
 docs/delete_telephony_providers_edge_logicalinterface-example.txt
 docs/delete_telephony_providers_edge_softwareupdate-example.txt
@@ -7270,6 +7288,8 @@ docs/get_station-example.txt
 docs/get_stations-example.txt
 docs/get_stations_settings-example.txt
 docs/get_systempresences-example.txt
+docs/get_team-example.txt
+docs/get_teams-example.txt
 docs/get_telephony_providers_edge-example.txt
 docs/get_telephony_providers_edge_diagnostic_nslookup-example.txt
 docs/get_telephony_providers_edge_diagnostic_ping-example.txt
@@ -7417,6 +7437,7 @@ docs/get_webmessaging_messages-example.txt
 docs/get_widgets_deployment-example.txt
 docs/get_widgets_deployments-example.txt
 docs/get_workforcemanagement_adherence-example.txt
+docs/get_workforcemanagement_adherence_historical_job-example.txt
 docs/get_workforcemanagement_adhocmodelingjob-example.txt
 docs/get_workforcemanagement_agent_managementunit-example.txt
 docs/get_workforcemanagement_agents_me_managementunit-example.txt
@@ -7561,6 +7582,7 @@ docs/patch_scim_v2_group-example.txt
 docs/patch_scim_v2_user-example.txt
 docs/patch_speechandtextanalytics_settings-example.txt
 docs/patch_stations_settings-example.txt
+docs/patch_team-example.txt
 docs/patch_user-example.txt
 docs/patch_user_callforwarding-example.txt
 docs/patch_user_geolocation-example.txt
@@ -7926,6 +7948,9 @@ docs/post_speechandtextanalytics_topics-example.txt
 docs/post_speechandtextanalytics_topics_publishjobs-example.txt
 docs/post_speechandtextanalytics_transcripts_search-example.txt
 docs/post_speechandtextanalytics_transcripts_search-example.txt
+docs/post_teams-example.txt
+docs/post_teams_search-example.txt
+docs/post_teams_search-example.txt
 docs/post_telephony_providers_edge_diagnostic_nslookup-example.txt
 docs/post_telephony_providers_edge_diagnostic_ping-example.txt
 docs/post_telephony_providers_edge_diagnostic_route-example.txt

@@ -74,6 +74,7 @@ from .aggregation_result import AggregationResult
 from .aggregation_result_entry import AggregationResultEntry
 from .all_time_points import AllTimePoints
 from .amazon_lex_request import AmazonLexRequest
+from .analytics_agent_group import AnalyticsAgentGroup
 from .analytics_conversation import AnalyticsConversation
 from .analytics_conversation_async_query_response import AnalyticsConversationAsyncQueryResponse
 from .analytics_conversation_query_response import AnalyticsConversationQueryResponse
@@ -860,6 +861,7 @@ from .cursor_relationship_listing import CursorRelationshipListing
 from .cursors import Cursors
 from .custom_event_attribute import CustomEventAttribute
 from .custom_event_attribute_list import CustomEventAttributeList
+from .custom_i18n_labels import CustomI18nLabels
 from .customer_end_detail_event_topic_customer_end_event import CustomerEndDetailEventTopicCustomerEndEvent
 from .customer_interaction_center import CustomerInteractionCenter
 from .customer_start_detail_event_topic_customer_start_event import CustomerStartDetailEventTopicCustomerStartEvent
@@ -1598,6 +1600,7 @@ from .local_date_range import LocalDateRange
 from .local_encryption_configuration import LocalEncryptionConfiguration
 from .local_encryption_configuration_listing import LocalEncryptionConfigurationListing
 from .local_encryption_key_request import LocalEncryptionKeyRequest
+from .localized_labels import LocalizedLabels
 from .location import Location
 from .location_address import LocationAddress
 from .location_address_verification_details import LocationAddressVerificationDetails
@@ -2528,7 +2531,11 @@ from .tag_value import TagValue
 from .tag_value_entity_listing import TagValueEntityListing
 from .target_performance_profile import TargetPerformanceProfile
 from .team import Team
+from .team_entity_listing import TeamEntityListing
 from .team_reference import TeamReference
+from .team_search_criteria import TeamSearchCriteria
+from .team_search_request import TeamSearchRequest
+from .teams_search_response import TeamsSearchResponse
 from .template_parameter import TemplateParameter
 from .term_attribute import TermAttribute
 from .test_execution_operation_result import TestExecutionOperationResult

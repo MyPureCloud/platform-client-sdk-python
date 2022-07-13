@@ -26205,6 +26205,20 @@
     "return": "JsonSearchResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Speech__Text_AnalyticsApi()\nbody = PureCloudPlatformClientV2.TranscriptSearchRequest() # TranscriptSearchRequest | Search request options\n\ntry:\n    # Search resources.\n    api_response = api_instance.post_speechandtextanalytics_transcripts_search(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostSpeechandtextanalyticsTranscriptsSearchRequest->post_speechandtextanalytics_transcripts_search: %s\\n\" % e)"
   },
+  "post_teams_search": {
+    "operationId": "post_teams_search",
+    "functionName": "post_teams_search",
+    "signature": "post_teams_search(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "TeamSearchRequest",
+        "required": "true"
+      }
+    ],
+    "return": "TeamsSearchResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TeamsApi()\nbody = PureCloudPlatformClientV2.TeamSearchRequest() # TeamSearchRequest | Search request options\n\ntry:\n    # Search resources.\n    api_response = api_instance.post_teams_search(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostTeamsSearchRequest->post_teams_search: %s\\n\" % e)"
+  },
   "post_users_search": {
     "operationId": "post_users_search",
     "functionName": "post_users_search",
@@ -26815,6 +26829,100 @@
     ],
     "return": "StationSettings",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.StationsApi()\nbody = PureCloudPlatformClientV2.StationSettings() # StationSettings | Station settings\n\ntry:\n    # Patch an organization's StationSettings\n    api_response = api_instance.patch_stations_settings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchStationsSettingsRequest->patch_stations_settings: %s\\n\" % e)"
+  },
+  "delete_team": {
+    "operationId": "delete_team",
+    "functionName": "delete_team",
+    "signature": "delete_team(team_id)",
+    "parameters": [
+      {
+        "name": "team_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TeamsApi()\nteam_id = 'team_id_example' # str | Team ID\n\ntry:\n    # Delete team\n    api_instance.delete_team(team_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteTeamRequest->delete_team: %s\\n\" % e)"
+  },
+  "get_team": {
+    "operationId": "get_team",
+    "functionName": "get_team",
+    "signature": "get_team(team_id)",
+    "parameters": [
+      {
+        "name": "team_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "Team",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TeamsApi()\nteam_id = 'team_id_example' # str | Team ID\n\ntry:\n    # Get team\n    api_response = api_instance.get_team(team_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetTeamRequest->get_team: %s\\n\" % e)"
+  },
+  "get_teams": {
+    "operationId": "get_teams",
+    "functionName": "get_teams",
+    "signature": "get_teams(page_size, name, after, before, expand)",
+    "parameters": [
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "name",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "TeamEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TeamsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\nname = 'name_example' # str | Return only teams whose names start with this value (case-insensitive matching) (optional)\nafter = 'after_example' # str | The cursor that points to the next item in the complete list of teams (optional)\nbefore = 'before_example' # str | The cursor that points to the previous item in the complete list of teams (optional)\nexpand = 'expand_example' # str | Expand the name on each user (optional)\n\ntry:\n    # Get Team listing\n    api_response = api_instance.get_teams(page_size=page_size, name=name, after=after, before=before, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetTeamsRequest->get_teams: %s\\n\" % e)"
+  },
+  "patch_team": {
+    "operationId": "patch_team",
+    "functionName": "patch_team",
+    "signature": "patch_team(team_id, body)",
+    "parameters": [
+      {
+        "name": "team_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Team",
+        "required": "true"
+      }
+    ],
+    "return": "Team",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TeamsApi()\nteam_id = 'team_id_example' # str | Team ID\nbody = PureCloudPlatformClientV2.Team() # Team | Team\n\ntry:\n    # Update team\n    api_response = api_instance.patch_team(team_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchTeamRequest->patch_team: %s\\n\" % e)"
+  },
+  "post_teams": {
+    "operationId": "post_teams",
+    "functionName": "post_teams",
+    "signature": "post_teams(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Team",
+        "required": "true"
+      }
+    ],
+    "return": "Team",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TeamsApi()\nbody = PureCloudPlatformClientV2.Team() # Team | Team\n\ntry:\n    # Create a team\n    api_response = api_instance.post_teams(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostTeamsRequest->post_teams: %s\\n\" % e)"
   },
   "get_telephony_siptraces": {
     "operationId": "get_telephony_siptraces",
@@ -31826,6 +31934,20 @@
     ],
     "return": "list[UserScheduleAdherence]",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nuser_id = ['user_id_example'] # list[str] | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request\n\ntry:\n    # Get a list of UserScheduleAdherence records for the requested users\n    api_response = api_instance.get_workforcemanagement_adherence(user_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementAdherenceRequest->get_workforcemanagement_adherence: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_adherence_historical_job": {
+    "operationId": "get_workforcemanagement_adherence_historical_job",
+    "functionName": "get_workforcemanagement_adherence_historical_job",
+    "signature": "get_workforcemanagement_adherence_historical_job(job_id)",
+    "parameters": [
+      {
+        "name": "job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "WfmHistoricalAdherenceResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\njob_id = 'job_id_example' # str | jobId\n\ntry:\n    # Query the status of a historical adherence request operation. Only the user who started the operation can query the status\n    api_response = api_instance.get_workforcemanagement_adherence_historical_job(job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementAdherenceHistoricalJobRequest->get_workforcemanagement_adherence_historical_job: %s\\n\" % e)"
   },
   "get_workforcemanagement_adhocmodelingjob": {
     "operationId": "get_workforcemanagement_adhocmodelingjob",

@@ -110,6 +110,7 @@ class AnalyticsSession(object):
             'video_room_id': 'str',
             'waiting_interaction_counts': 'list[int]',
             'proposed_agents': 'list[AnalyticsProposedAgent]',
+            'agent_groups': 'list[AnalyticsAgentGroup]',
             'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
             'flow': 'AnalyticsFlow',
             'metrics': 'list[AnalyticsSessionMetric]',
@@ -187,6 +188,7 @@ class AnalyticsSession(object):
             'video_room_id': 'videoRoomId',
             'waiting_interaction_counts': 'waitingInteractionCounts',
             'proposed_agents': 'proposedAgents',
+            'agent_groups': 'agentGroups',
             'media_endpoint_stats': 'mediaEndpointStats',
             'flow': 'flow',
             'metrics': 'metrics',
@@ -263,6 +265,7 @@ class AnalyticsSession(object):
         self._video_room_id = None
         self._waiting_interaction_counts = None
         self._proposed_agents = None
+        self._agent_groups = None
         self._media_endpoint_stats = None
         self._flow = None
         self._metrics = None
@@ -926,7 +929,7 @@ class AnalyticsSession(object):
     def extended_delivery_status(self):
         """
         Gets the extended_delivery_status of this AnalyticsSession.
-        Extended email delivery status
+        Extended delivery status
 
         :return: The extended_delivery_status of this AnalyticsSession.
         :rtype: str
@@ -937,7 +940,7 @@ class AnalyticsSession(object):
     def extended_delivery_status(self, extended_delivery_status):
         """
         Sets the extended_delivery_status of this AnalyticsSession.
-        Extended email delivery status
+        Extended delivery status
 
         :param extended_delivery_status: The extended_delivery_status of this AnalyticsSession.
         :type: str
@@ -1959,6 +1962,30 @@ class AnalyticsSession(object):
         
 
         self._proposed_agents = proposed_agents
+
+    @property
+    def agent_groups(self):
+        """
+        Gets the agent_groups of this AnalyticsSession.
+        Conditional group routing agent groups
+
+        :return: The agent_groups of this AnalyticsSession.
+        :rtype: list[AnalyticsAgentGroup]
+        """
+        return self._agent_groups
+
+    @agent_groups.setter
+    def agent_groups(self, agent_groups):
+        """
+        Sets the agent_groups of this AnalyticsSession.
+        Conditional group routing agent groups
+
+        :param agent_groups: The agent_groups of this AnalyticsSession.
+        :type: list[AnalyticsAgentGroup]
+        """
+        
+
+        self._agent_groups = agent_groups
 
     @property
     def media_endpoint_stats(self):

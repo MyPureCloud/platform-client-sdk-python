@@ -46,6 +46,7 @@ class WebDeploymentConfigurationVersion(object):
             'description': 'str',
             'languages': 'list[str]',
             'default_language': 'str',
+            'custom_i18n_labels': 'list[CustomI18nLabels]',
             'messenger': 'MessengerSettings',
             'position': 'PositionSettings',
             'support_center': 'SupportCenterSettings',
@@ -69,6 +70,7 @@ class WebDeploymentConfigurationVersion(object):
             'description': 'description',
             'languages': 'languages',
             'default_language': 'defaultLanguage',
+            'custom_i18n_labels': 'customI18nLabels',
             'messenger': 'messenger',
             'position': 'position',
             'support_center': 'supportCenter',
@@ -91,6 +93,7 @@ class WebDeploymentConfigurationVersion(object):
         self._description = None
         self._languages = None
         self._default_language = None
+        self._custom_i18n_labels = None
         self._messenger = None
         self._position = None
         self._support_center = None
@@ -249,6 +252,30 @@ class WebDeploymentConfigurationVersion(object):
         
 
         self._default_language = default_language
+
+    @property
+    def custom_i18n_labels(self):
+        """
+        Gets the custom_i18n_labels of this WebDeploymentConfigurationVersion.
+        The localization settings for homescreen app
+
+        :return: The custom_i18n_labels of this WebDeploymentConfigurationVersion.
+        :rtype: list[CustomI18nLabels]
+        """
+        return self._custom_i18n_labels
+
+    @custom_i18n_labels.setter
+    def custom_i18n_labels(self, custom_i18n_labels):
+        """
+        Sets the custom_i18n_labels of this WebDeploymentConfigurationVersion.
+        The localization settings for homescreen app
+
+        :param custom_i18n_labels: The custom_i18n_labels of this WebDeploymentConfigurationVersion.
+        :type: list[CustomI18nLabels]
+        """
+        
+
+        self._custom_i18n_labels = custom_i18n_labels
 
     @property
     def messenger(self):

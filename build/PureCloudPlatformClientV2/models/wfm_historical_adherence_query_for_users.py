@@ -113,7 +113,7 @@ class WfmHistoricalAdherenceQueryForUsers(object):
     def time_zone(self):
         """
         Gets the time_zone of this WfmHistoricalAdherenceQueryForUsers.
-        The time zone to use for returned results in olson format. If it is not set, the business unit time zone will be used to compute adherence
+        The time zone, in olson format, to use in defining days when computing adherence. If it is not set, the business unit time zone will be used. The results will be returned as UTC timestamps regardless of the time zone input.
 
         :return: The time_zone of this WfmHistoricalAdherenceQueryForUsers.
         :rtype: str
@@ -124,7 +124,7 @@ class WfmHistoricalAdherenceQueryForUsers(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this WfmHistoricalAdherenceQueryForUsers.
-        The time zone to use for returned results in olson format. If it is not set, the business unit time zone will be used to compute adherence
+        The time zone, in olson format, to use in defining days when computing adherence. If it is not set, the business unit time zone will be used. The results will be returned as UTC timestamps regardless of the time zone input.
 
         :param time_zone: The time_zone of this WfmHistoricalAdherenceQueryForUsers.
         :type: str
