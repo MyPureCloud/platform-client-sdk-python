@@ -13,6 +13,7 @@ title: PunctualityEvent
 | **description** | **str** | The description of the activity | [optional] |
 | **activity_code_id** | **str** | The ID of the activity code associated with this activity | [optional] |
 | **activity_code** | **str** | The activity code | [optional] |
+| **activity_name** | **str** | The activity name | [optional] |
 | **category** | **str** | The category for the activity | [optional] |
 | **points** | **int** | The points earned for this activity | [optional] |
 | **delta** | **float** | Difference between this activity and the last activity in seconds | [optional] |

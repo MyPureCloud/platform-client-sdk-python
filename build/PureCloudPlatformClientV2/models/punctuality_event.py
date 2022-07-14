@@ -46,6 +46,7 @@ class PunctualityEvent(object):
             'description': 'str',
             'activity_code_id': 'str',
             'activity_code': 'str',
+            'activity_name': 'str',
             'category': 'str',
             'points': 'int',
             'delta': 'float',
@@ -59,6 +60,7 @@ class PunctualityEvent(object):
             'description': 'description',
             'activity_code_id': 'activityCodeId',
             'activity_code': 'activityCode',
+            'activity_name': 'activityName',
             'category': 'category',
             'points': 'points',
             'delta': 'delta',
@@ -71,6 +73,7 @@ class PunctualityEvent(object):
         self._description = None
         self._activity_code_id = None
         self._activity_code = None
+        self._activity_name = None
         self._category = None
         self._points = None
         self._delta = None
@@ -219,6 +222,30 @@ class PunctualityEvent(object):
         
 
         self._activity_code = activity_code
+
+    @property
+    def activity_name(self):
+        """
+        Gets the activity_name of this PunctualityEvent.
+        The activity name
+
+        :return: The activity_name of this PunctualityEvent.
+        :rtype: str
+        """
+        return self._activity_name
+
+    @activity_name.setter
+    def activity_name(self, activity_name):
+        """
+        Sets the activity_name of this PunctualityEvent.
+        The activity name
+
+        :param activity_name: The activity_name of this PunctualityEvent.
+        :type: str
+        """
+        
+
+        self._activity_name = activity_name
 
     @property
     def category(self):

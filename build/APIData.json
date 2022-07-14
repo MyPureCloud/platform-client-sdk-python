@@ -26361,7 +26361,7 @@
   "get_speechandtextanalytics_programs": {
     "operationId": "get_speechandtextanalytics_programs",
     "functionName": "get_speechandtextanalytics_programs",
-    "signature": "get_speechandtextanalytics_programs(next_page, page_size)",
+    "signature": "get_speechandtextanalytics_programs(next_page, page_size, state)",
     "parameters": [
       {
         "name": "next_page",
@@ -26372,10 +26372,15 @@
         "name": "page_size",
         "type": "int",
         "required": "false"
+      },
+      {
+        "name": "state",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "ProgramsEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Speech__Text_AnalyticsApi()\nnext_page = 'next_page_example' # str | The key for listing the next page (optional)\npage_size = 20 # int | The page size for the listing (optional) (default to 20)\n\ntry:\n    # Get the list of Speech & Text Analytics programs\n    api_response = api_instance.get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetSpeechandtextanalyticsProgramsRequest->get_speechandtextanalytics_programs: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Speech__Text_AnalyticsApi()\nnext_page = 'next_page_example' # str | The key for listing the next page (optional)\npage_size = 20 # int | The page size for the listing (optional) (default to 20)\nstate = 'state_example' # str | Program state. Defaults to Latest (optional)\n\ntry:\n    # Get the list of Speech & Text Analytics programs\n    api_response = api_instance.get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetSpeechandtextanalyticsProgramsRequest->get_speechandtextanalytics_programs: %s\\n\" % e)"
   },
   "get_speechandtextanalytics_programs_general_job": {
     "operationId": "get_speechandtextanalytics_programs_general_job",

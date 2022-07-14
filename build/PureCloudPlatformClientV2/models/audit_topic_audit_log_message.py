@@ -279,7 +279,7 @@ class AuditTopicAuditLogMessage(object):
         :param service_name: The service_name of this AuditTopicAuditLogMessage.
         :type: str
         """
-        allowed_values = ["Architect", "AnalyticsReporting", "ContactCenter", "ContentManagement", "Directory", "EmployeePerformance", "Gamification", "Groups", "LanguageUnderstanding", "Learning", "Outbound", "PeoplePermissions", "PredictiveEngagement", "Presence", "Quality", "ResponseManagement", "Routing", "SpeechAndTextAnalytics", "Telephony", "TopicsDefinitions", "Triggers", "WebDeployments", "WorkforceManagement"]
+        allowed_values = ["Architect", "AnalyticsReporting", "ContactCenter", "ContentManagement", "Directory", "EmployeePerformance", "Gamification", "Groups", "LanguageUnderstanding", "Learning", "Outbound", "PeoplePermissions", "PredictiveEngagement", "Presence", "Quality", "ResponseManagement", "Routing", "SpeechAndTextAnalytics", "Telephony", "TopicsDefinitions", "Triggers", "Voicemail", "WebDeployments", "WorkforceManagement"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"

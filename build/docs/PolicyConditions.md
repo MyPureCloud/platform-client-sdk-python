@@ -15,6 +15,7 @@ title: PolicyConditions
 | **duration** | [**DurationCondition**](DurationCondition.html) |  | [optional] |
 | **wrapup_codes** | [**list[WrapupCode]**](WrapupCode.html) |  | [optional] |
 | **time_allowed** | [**TimeAllowed**](TimeAllowed.html) |  | [optional] |
+| **customer_participation** | **str** | This condition is to filter out conversation with and without customer participation. | [optional] |
 {: class="table table-striped"}
 
 

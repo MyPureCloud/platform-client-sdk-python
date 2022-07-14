@@ -76,7 +76,8 @@ class QueueConversationVideoEventTopicParticipant(object):
             'messages': 'list[QueueConversationVideoEventTopicMessage]',
             'screenshares': 'list[QueueConversationVideoEventTopicScreenshare]',
             'social_expressions': 'list[QueueConversationVideoEventTopicSocialExpression]',
-            'videos': 'list[QueueConversationVideoEventTopicVideo]'
+            'videos': 'list[QueueConversationVideoEventTopicVideo]',
+            'workflow': 'QueueConversationVideoEventTopicWorkflow'
         }
 
         self.attribute_map = {
@@ -116,7 +117,8 @@ class QueueConversationVideoEventTopicParticipant(object):
             'messages': 'messages',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
-            'videos': 'videos'
+            'videos': 'videos',
+            'workflow': 'workflow'
         }
 
         self._id = None
@@ -156,6 +158,7 @@ class QueueConversationVideoEventTopicParticipant(object):
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
+        self._workflow = None
 
     @property
     def id(self):
@@ -1047,6 +1050,30 @@ class QueueConversationVideoEventTopicParticipant(object):
         
 
         self._videos = videos
+
+    @property
+    def workflow(self):
+        """
+        Gets the workflow of this QueueConversationVideoEventTopicParticipant.
+
+
+        :return: The workflow of this QueueConversationVideoEventTopicParticipant.
+        :rtype: QueueConversationVideoEventTopicWorkflow
+        """
+        return self._workflow
+
+    @workflow.setter
+    def workflow(self, workflow):
+        """
+        Sets the workflow of this QueueConversationVideoEventTopicParticipant.
+
+
+        :param workflow: The workflow of this QueueConversationVideoEventTopicParticipant.
+        :type: QueueConversationVideoEventTopicWorkflow
+        """
+        
+
+        self._workflow = workflow
 
     def to_dict(self):
         """

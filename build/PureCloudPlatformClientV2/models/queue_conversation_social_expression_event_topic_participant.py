@@ -76,7 +76,8 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
             'messages': 'list[QueueConversationSocialExpressionEventTopicMessage]',
             'screenshares': 'list[QueueConversationSocialExpressionEventTopicScreenshare]',
             'social_expressions': 'list[QueueConversationSocialExpressionEventTopicSocialExpression]',
-            'videos': 'list[QueueConversationSocialExpressionEventTopicVideo]'
+            'videos': 'list[QueueConversationSocialExpressionEventTopicVideo]',
+            'workflow': 'QueueConversationSocialExpressionEventTopicWorkflow'
         }
 
         self.attribute_map = {
@@ -116,7 +117,8 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
             'messages': 'messages',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
-            'videos': 'videos'
+            'videos': 'videos',
+            'workflow': 'workflow'
         }
 
         self._id = None
@@ -156,6 +158,7 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
+        self._workflow = None
 
     @property
     def id(self):
@@ -1047,6 +1050,30 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
         
 
         self._videos = videos
+
+    @property
+    def workflow(self):
+        """
+        Gets the workflow of this QueueConversationSocialExpressionEventTopicParticipant.
+
+
+        :return: The workflow of this QueueConversationSocialExpressionEventTopicParticipant.
+        :rtype: QueueConversationSocialExpressionEventTopicWorkflow
+        """
+        return self._workflow
+
+    @workflow.setter
+    def workflow(self, workflow):
+        """
+        Sets the workflow of this QueueConversationSocialExpressionEventTopicParticipant.
+
+
+        :param workflow: The workflow of this QueueConversationSocialExpressionEventTopicParticipant.
+        :type: QueueConversationSocialExpressionEventTopicWorkflow
+        """
+        
+
+        self._workflow = workflow
 
     def to_dict(self):
         """

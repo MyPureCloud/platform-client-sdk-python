@@ -690,12 +690,13 @@ class SpeechTextAnalyticsApi(object):
             for asynchronous request. (optional)
         :param str next_page: The key for listing the next page
         :param int page_size: The page size for the listing
+        :param str state: Program state. Defaults to Latest
         :return: ProgramsEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['next_page', 'page_size']
+        all_params = ['next_page', 'page_size', 'state']
         all_params.append('callback')
 
         params = locals()
@@ -718,6 +719,8 @@ class SpeechTextAnalyticsApi(object):
             query_params['nextPage'] = params['next_page']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'state' in params:
+            query_params['state'] = params['state']
 
         header_params = {}
 

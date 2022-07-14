@@ -76,7 +76,8 @@ class ConversationEventTopicParticipant(object):
             'messages': 'list[ConversationEventTopicMessage]',
             'screenshares': 'list[ConversationEventTopicScreenshare]',
             'social_expressions': 'list[ConversationEventTopicSocialExpression]',
-            'videos': 'list[ConversationEventTopicVideo]'
+            'videos': 'list[ConversationEventTopicVideo]',
+            'workflow': 'ConversationEventTopicWorkflow'
         }
 
         self.attribute_map = {
@@ -116,7 +117,8 @@ class ConversationEventTopicParticipant(object):
             'messages': 'messages',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
-            'videos': 'videos'
+            'videos': 'videos',
+            'workflow': 'workflow'
         }
 
         self._id = None
@@ -156,6 +158,7 @@ class ConversationEventTopicParticipant(object):
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
+        self._workflow = None
 
     @property
     def id(self):
@@ -1047,6 +1050,30 @@ class ConversationEventTopicParticipant(object):
         
 
         self._videos = videos
+
+    @property
+    def workflow(self):
+        """
+        Gets the workflow of this ConversationEventTopicParticipant.
+
+
+        :return: The workflow of this ConversationEventTopicParticipant.
+        :rtype: ConversationEventTopicWorkflow
+        """
+        return self._workflow
+
+    @workflow.setter
+    def workflow(self, workflow):
+        """
+        Sets the workflow of this ConversationEventTopicParticipant.
+
+
+        :param workflow: The workflow of this ConversationEventTopicParticipant.
+        :type: ConversationEventTopicWorkflow
+        """
+        
+
+        self._workflow = workflow
 
     def to_dict(self):
         """

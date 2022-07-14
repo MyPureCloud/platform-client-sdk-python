@@ -449,7 +449,7 @@ except ApiException as e:
 
 <a name="get_speechandtextanalytics_programs"></a>
 
-## [**ProgramsEntityListing**](ProgramsEntityListing.html) get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size)
+## [**ProgramsEntityListing**](ProgramsEntityListing.html) get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state)
 
 
 
@@ -478,10 +478,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
 next_page = 'next_page_example' # str | The key for listing the next page (optional)
 page_size = 20 # int | The page size for the listing (optional) (default to 20)
+state = 'state_example' # str | Program state. Defaults to Latest (optional)
 
 try:
     # Get the list of Speech & Text Analytics programs
-    api_response = api_instance.get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size)
+    api_response = api_instance.get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_programs: %s\n" % e)
@@ -494,6 +495,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **next_page** | **str**| The key for listing the next page | [optional]  |
 | **page_size** | **int**| The page size for the listing | [optional] [default to 20] |
+| **state** | **str**| Program state. Defaults to Latest | [optional] <br />**Values**: Latest, Published |
 {: class="table table-striped"}
 
 ### Return type
