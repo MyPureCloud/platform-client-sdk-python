@@ -15,8 +15,8 @@ title: HistoricalAdherenceQueryResult
 | **impact** | **str** | The impact of the current adherence state for this user | [optional] |
 | **exception_info** | [**list[HistoricalAdherenceExceptionInfo]**](HistoricalAdherenceExceptionInfo.html) | List of adherence exceptions for this user | [optional] |
 | **day_metrics** | [**list[HistoricalAdherenceDayMetrics]**](HistoricalAdherenceDayMetrics.html) | Adherence and conformance metrics for days in query range | [optional] |
+| **actuals_end_date** | **datetime** | The end date of the actual activities in ISO-8601 format. | [optional] |
 | **actuals** | [**list[HistoricalAdherenceActuals]**](HistoricalAdherenceActuals.html) | List of actual activity with offset for this user | [optional] |
-| **actuals_ends_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 {: class="table table-striped"}
 
 

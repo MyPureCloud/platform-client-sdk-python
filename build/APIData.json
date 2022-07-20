@@ -9936,6 +9936,52 @@
     "return": "FaxDocument",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.FaxApi()\ndocument_id = 'document_id_example' # str | Document ID\nbody = PureCloudPlatformClientV2.FaxDocument() # FaxDocument | Document\n\ntry:\n    # Update a fax document.\n    api_response = api_instance.put_fax_document(document_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutFaxDocumentRequest->put_fax_document: %s\\n\" % e)"
   },
+  "delete_employeeperformance_externalmetrics_definition": {
+    "operationId": "delete_employeeperformance_externalmetrics_definition",
+    "functionName": "delete_employeeperformance_externalmetrics_definition",
+    "signature": "delete_employeeperformance_externalmetrics_definition(metric_id)",
+    "parameters": [
+      {
+        "name": "metric_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nmetric_id = 'metric_id_example' # str | Specifies the External Metric Definition ID\n\ntry:\n    # Delete an External Metric Definition\n    api_instance.delete_employeeperformance_externalmetrics_definition(metric_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteEmployeeperformanceExternalmetricsDefinitionRequest->delete_employeeperformance_externalmetrics_definition: %s\\n\" % e)"
+  },
+  "get_employeeperformance_externalmetrics_definition": {
+    "operationId": "get_employeeperformance_externalmetrics_definition",
+    "functionName": "get_employeeperformance_externalmetrics_definition",
+    "signature": "get_employeeperformance_externalmetrics_definition(metric_id)",
+    "parameters": [
+      {
+        "name": "metric_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ExternalMetricDefinition",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nmetric_id = 'metric_id_example' # str | Specifies the External Metric Definition ID\n\ntry:\n    # Get an External Metric Definition\n    api_response = api_instance.get_employeeperformance_externalmetrics_definition(metric_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetEmployeeperformanceExternalmetricsDefinitionRequest->get_employeeperformance_externalmetrics_definition: %s\\n\" % e)"
+  },
+  "get_employeeperformance_externalmetrics_definitions": {
+    "operationId": "get_employeeperformance_externalmetrics_definitions",
+    "functionName": "get_employeeperformance_externalmetrics_definitions",
+    "signature": "get_employeeperformance_externalmetrics_definitions(page_size, page_number)",
+    "parameters": [
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      }
+    ],
+    "return": "ExternalMetricDefinitionListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # Get a list of External Metric Definitions of an organization, sorted by name in ascending order\n    api_response = api_instance.get_employeeperformance_externalmetrics_definitions(page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetEmployeeperformanceExternalmetricsDefinitionsRequest->get_employeeperformance_externalmetrics_definitions: %s\\n\" % e)"
+  },
   "get_gamification_leaderboard": {
     "operationId": "get_gamification_leaderboard",
     "functionName": "get_gamification_leaderboard",
@@ -10764,6 +10810,53 @@
     "signature": "get_gamification_templates()",
     "return": "GetTemplatesResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\n\ntry:\n    # All objective templates\n    api_response = api_instance.get_gamification_templates()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationTemplatesRequest->get_gamification_templates: %s\\n\" % e)"
+  },
+  "patch_employeeperformance_externalmetrics_definition": {
+    "operationId": "patch_employeeperformance_externalmetrics_definition",
+    "functionName": "patch_employeeperformance_externalmetrics_definition",
+    "signature": "patch_employeeperformance_externalmetrics_definition(metric_id, body)",
+    "parameters": [
+      {
+        "name": "metric_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExternalMetricDefinitionUpdateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ExternalMetricDefinition",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nmetric_id = 'metric_id_example' # str | Specifies the metric definition ID\nbody = PureCloudPlatformClientV2.ExternalMetricDefinitionUpdateRequest() # ExternalMetricDefinitionUpdateRequest | The External Metric Definition parameters to be updated\n\ntry:\n    # Update External Metric Definition\n    api_response = api_instance.patch_employeeperformance_externalmetrics_definition(metric_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchEmployeeperformanceExternalmetricsDefinitionRequest->patch_employeeperformance_externalmetrics_definition: %s\\n\" % e)"
+  },
+  "post_employeeperformance_externalmetrics_data": {
+    "operationId": "post_employeeperformance_externalmetrics_data",
+    "functionName": "post_employeeperformance_externalmetrics_data",
+    "signature": "post_employeeperformance_externalmetrics_data(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ExternalMetricDataWriteRequest",
+        "required": "false"
+      }
+    ],
+    "return": "ExternalMetricDataWriteResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nbody = PureCloudPlatformClientV2.ExternalMetricDataWriteRequest() # ExternalMetricDataWriteRequest | The External Metric Data to be added (optional)\n\ntry:\n    # Write External Metric Data\n    api_response = api_instance.post_employeeperformance_externalmetrics_data(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostEmployeeperformanceExternalmetricsDataRequest->post_employeeperformance_externalmetrics_data: %s\\n\" % e)"
+  },
+  "post_employeeperformance_externalmetrics_definitions": {
+    "operationId": "post_employeeperformance_externalmetrics_definitions",
+    "functionName": "post_employeeperformance_externalmetrics_definitions",
+    "signature": "post_employeeperformance_externalmetrics_definitions(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ExternalMetricDefinitionCreateRequest",
+        "required": "false"
+      }
+    ],
+    "return": "ExternalMetricDefinition",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nbody = PureCloudPlatformClientV2.ExternalMetricDefinitionCreateRequest() # ExternalMetricDefinitionCreateRequest | The External Metric Definition to be created (optional)\n\ntry:\n    # Create External Metric Definition\n    api_response = api_instance.post_employeeperformance_externalmetrics_definitions(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostEmployeeperformanceExternalmetricsDefinitionsRequest->post_employeeperformance_externalmetrics_definitions: %s\\n\" % e)"
   },
   "post_gamification_metrics": {
     "operationId": "post_gamification_metrics",

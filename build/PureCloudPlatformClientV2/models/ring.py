@@ -41,16 +41,19 @@ class Ring(object):
         """
         self.swagger_types = {
             'expansion_criteria': 'list[ExpansionCriterium]',
-            'actions': 'Actions'
+            'actions': 'Actions',
+            'member_groups': 'list[MemberGroup]'
         }
 
         self.attribute_map = {
             'expansion_criteria': 'expansionCriteria',
-            'actions': 'actions'
+            'actions': 'actions',
+            'member_groups': 'memberGroups'
         }
 
         self._expansion_criteria = None
         self._actions = None
+        self._member_groups = None
 
     @property
     def expansion_criteria(self):
@@ -99,6 +102,30 @@ class Ring(object):
         
 
         self._actions = actions
+
+    @property
+    def member_groups(self):
+        """
+        Gets the member_groups of this Ring.
+        The groups of agents associated with the ring, if any.  Ring membership will update to match group membership changes.
+
+        :return: The member_groups of this Ring.
+        :rtype: list[MemberGroup]
+        """
+        return self._member_groups
+
+    @member_groups.setter
+    def member_groups(self, member_groups):
+        """
+        Sets the member_groups of this Ring.
+        The groups of agents associated with the ring, if any.  Ring membership will update to match group membership changes.
+
+        :param member_groups: The member_groups of this Ring.
+        :type: list[MemberGroup]
+        """
+        
+
+        self._member_groups = member_groups
 
     def to_dict(self):
         """

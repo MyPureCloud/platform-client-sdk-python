@@ -46,6 +46,240 @@ class GamificationApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def delete_employeeperformance_externalmetrics_definition(self, metric_id, **kwargs):
+        """
+        Delete an External Metric Definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_employeeperformance_externalmetrics_definition(metric_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str metric_id: Specifies the External Metric Definition ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['metric_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_employeeperformance_externalmetrics_definition" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'metric_id' is set
+        if ('metric_id' not in params) or (params['metric_id'] is None):
+            raise ValueError("Missing the required parameter `metric_id` when calling `delete_employeeperformance_externalmetrics_definition`")
+
+
+        resource_path = '/api/v2/employeeperformance/externalmetrics/definitions/{metricId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'metric_id' in params:
+            path_params['metricId'] = params['metric_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_employeeperformance_externalmetrics_definition(self, metric_id, **kwargs):
+        """
+        Get an External Metric Definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_employeeperformance_externalmetrics_definition(metric_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str metric_id: Specifies the External Metric Definition ID (required)
+        :return: ExternalMetricDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['metric_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_employeeperformance_externalmetrics_definition" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'metric_id' is set
+        if ('metric_id' not in params) or (params['metric_id'] is None):
+            raise ValueError("Missing the required parameter `metric_id` when calling `get_employeeperformance_externalmetrics_definition`")
+
+
+        resource_path = '/api/v2/employeeperformance/externalmetrics/definitions/{metricId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'metric_id' in params:
+            path_params['metricId'] = params['metric_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalMetricDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_employeeperformance_externalmetrics_definitions(self, **kwargs):
+        """
+        Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_employeeperformance_externalmetrics_definitions(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :return: ExternalMetricDefinitionListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_employeeperformance_externalmetrics_definitions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/employeeperformance/externalmetrics/definitions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalMetricDefinitionListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_gamification_leaderboard(self, start_workday, end_workday, **kwargs):
         """
         Leaderboard of the requesting user's division or performance profile
@@ -3345,6 +3579,240 @@ class GamificationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='GetTemplatesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_employeeperformance_externalmetrics_definition(self, metric_id, body, **kwargs):
+        """
+        Update External Metric Definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_employeeperformance_externalmetrics_definition(metric_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str metric_id: Specifies the metric definition ID (required)
+        :param ExternalMetricDefinitionUpdateRequest body: The External Metric Definition parameters to be updated (required)
+        :return: ExternalMetricDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['metric_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_employeeperformance_externalmetrics_definition" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'metric_id' is set
+        if ('metric_id' not in params) or (params['metric_id'] is None):
+            raise ValueError("Missing the required parameter `metric_id` when calling `patch_employeeperformance_externalmetrics_definition`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_employeeperformance_externalmetrics_definition`")
+
+
+        resource_path = '/api/v2/employeeperformance/externalmetrics/definitions/{metricId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'metric_id' in params:
+            path_params['metricId'] = params['metric_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalMetricDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_employeeperformance_externalmetrics_data(self, **kwargs):
+        """
+        Write External Metric Data
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_employeeperformance_externalmetrics_data(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ExternalMetricDataWriteRequest body: The External Metric Data to be added
+        :return: ExternalMetricDataWriteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_employeeperformance_externalmetrics_data" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/employeeperformance/externalmetrics/data'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalMetricDataWriteResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_employeeperformance_externalmetrics_definitions(self, **kwargs):
+        """
+        Create External Metric Definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_employeeperformance_externalmetrics_definitions(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ExternalMetricDefinitionCreateRequest body: The External Metric Definition to be created
+        :return: ExternalMetricDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_employeeperformance_externalmetrics_definitions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/employeeperformance/externalmetrics/definitions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalMetricDefinition',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

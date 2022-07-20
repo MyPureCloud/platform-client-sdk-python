@@ -23,6 +23,7 @@ title: QueueRequest
 | **bullseye** | [**Bullseye**](Bullseye.html) | The bullseye settings for the queue. | [optional] |
 | **acw_settings** | [**AcwSettings**](AcwSettings.html) | The ACW settings for the queue. | [optional] |
 | **skill_evaluation_method** | **str** | The skill evaluation method to use when routing conversations. | [optional] |
+| **member_groups** | [**list[MemberGroup]**](MemberGroup.html) | The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes. | [optional] |
 | **queue_flow** | [**DomainEntityRef**](DomainEntityRef.html) | The in-queue flow to use for call conversations waiting in queue. | [optional] |
 | **email_in_queue_flow** | [**DomainEntityRef**](DomainEntityRef.html) | The in-queue flow to use for email conversations waiting in queue. | [optional] |
 | **message_in_queue_flow** | [**DomainEntityRef**](DomainEntityRef.html) | The in-queue flow to use for message conversations waiting in queue. | [optional] |
@@ -31,12 +32,13 @@ title: QueueRequest
 | **auto_answer_only** | **bool** | Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered. | [optional] |
 | **enable_transcription** | **bool** | Indicates whether voice transcription is enabled for this queue. | [optional] |
 | **enable_manual_assignment** | **bool** | Indicates whether manual assignment is enabled for this queue. | [optional] |
+| **agent_owned_routing** | [**AgentOwnedRouting**](AgentOwnedRouting.html) | The Agent Owned Routing settings for the queue | [optional] |
 | **calling_party_name** | **str** | The name to use for caller identification for outbound calls from this queue. | [optional] |
 | **calling_party_number** | **str** | The phone number to use for caller identification for outbound calls from this queue. | [optional] |
 | **default_scripts** | [**dict(str, Script)**](Script.html) | The default script Ids for the communication types. | [optional] |
 | **outbound_messaging_addresses** | [**QueueMessagingAddresses**](QueueMessagingAddresses.html) | The messaging addresses for the queue. | [optional] |
 | **outbound_email_address** | [**QueueEmailAddress**](QueueEmailAddress.html) |  | [optional] |
-| **peer_id** | **str** | The ID of the external Queue | [optional] |
+| **peer_id** | **str** | The ID of an associated external queue. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

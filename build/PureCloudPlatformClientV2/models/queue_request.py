@@ -56,6 +56,7 @@ class QueueRequest(object):
             'bullseye': 'Bullseye',
             'acw_settings': 'AcwSettings',
             'skill_evaluation_method': 'str',
+            'member_groups': 'list[MemberGroup]',
             'queue_flow': 'DomainEntityRef',
             'email_in_queue_flow': 'DomainEntityRef',
             'message_in_queue_flow': 'DomainEntityRef',
@@ -64,6 +65,7 @@ class QueueRequest(object):
             'auto_answer_only': 'bool',
             'enable_transcription': 'bool',
             'enable_manual_assignment': 'bool',
+            'agent_owned_routing': 'AgentOwnedRouting',
             'calling_party_name': 'str',
             'calling_party_number': 'str',
             'default_scripts': 'dict(str, Script)',
@@ -90,6 +92,7 @@ class QueueRequest(object):
             'bullseye': 'bullseye',
             'acw_settings': 'acwSettings',
             'skill_evaluation_method': 'skillEvaluationMethod',
+            'member_groups': 'memberGroups',
             'queue_flow': 'queueFlow',
             'email_in_queue_flow': 'emailInQueueFlow',
             'message_in_queue_flow': 'messageInQueueFlow',
@@ -98,6 +101,7 @@ class QueueRequest(object):
             'auto_answer_only': 'autoAnswerOnly',
             'enable_transcription': 'enableTranscription',
             'enable_manual_assignment': 'enableManualAssignment',
+            'agent_owned_routing': 'agentOwnedRouting',
             'calling_party_name': 'callingPartyName',
             'calling_party_number': 'callingPartyNumber',
             'default_scripts': 'defaultScripts',
@@ -123,6 +127,7 @@ class QueueRequest(object):
         self._bullseye = None
         self._acw_settings = None
         self._skill_evaluation_method = None
+        self._member_groups = None
         self._queue_flow = None
         self._email_in_queue_flow = None
         self._message_in_queue_flow = None
@@ -131,6 +136,7 @@ class QueueRequest(object):
         self._auto_answer_only = None
         self._enable_transcription = None
         self._enable_manual_assignment = None
+        self._agent_owned_routing = None
         self._calling_party_name = None
         self._calling_party_number = None
         self._default_scripts = None
@@ -527,6 +533,30 @@ class QueueRequest(object):
             self._skill_evaluation_method = skill_evaluation_method
 
     @property
+    def member_groups(self):
+        """
+        Gets the member_groups of this QueueRequest.
+        The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes.
+
+        :return: The member_groups of this QueueRequest.
+        :rtype: list[MemberGroup]
+        """
+        return self._member_groups
+
+    @member_groups.setter
+    def member_groups(self, member_groups):
+        """
+        Sets the member_groups of this QueueRequest.
+        The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes.
+
+        :param member_groups: The member_groups of this QueueRequest.
+        :type: list[MemberGroup]
+        """
+        
+
+        self._member_groups = member_groups
+
+    @property
     def queue_flow(self):
         """
         Gets the queue_flow of this QueueRequest.
@@ -719,6 +749,30 @@ class QueueRequest(object):
         self._enable_manual_assignment = enable_manual_assignment
 
     @property
+    def agent_owned_routing(self):
+        """
+        Gets the agent_owned_routing of this QueueRequest.
+        The Agent Owned Routing settings for the queue
+
+        :return: The agent_owned_routing of this QueueRequest.
+        :rtype: AgentOwnedRouting
+        """
+        return self._agent_owned_routing
+
+    @agent_owned_routing.setter
+    def agent_owned_routing(self, agent_owned_routing):
+        """
+        Sets the agent_owned_routing of this QueueRequest.
+        The Agent Owned Routing settings for the queue
+
+        :param agent_owned_routing: The agent_owned_routing of this QueueRequest.
+        :type: AgentOwnedRouting
+        """
+        
+
+        self._agent_owned_routing = agent_owned_routing
+
+    @property
     def calling_party_name(self):
         """
         Gets the calling_party_name of this QueueRequest.
@@ -842,7 +896,7 @@ class QueueRequest(object):
     def peer_id(self):
         """
         Gets the peer_id of this QueueRequest.
-        The ID of the external Queue
+        The ID of an associated external queue.
 
         :return: The peer_id of this QueueRequest.
         :rtype: str
@@ -853,7 +907,7 @@ class QueueRequest(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this QueueRequest.
-        The ID of the external Queue
+        The ID of an associated external queue.
 
         :param peer_id: The peer_id of this QueueRequest.
         :type: str

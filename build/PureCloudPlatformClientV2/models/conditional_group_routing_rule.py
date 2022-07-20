@@ -68,7 +68,7 @@ class ConditionalGroupRoutingRule(object):
     def queue(self):
         """
         Gets the queue of this ConditionalGroupRoutingRule.
-        The queue being evaluated for this rule.  For rule 1, this is always the current queue.
+        The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.
 
         :return: The queue of this ConditionalGroupRoutingRule.
         :rtype: DomainEntityRef
@@ -79,7 +79,7 @@ class ConditionalGroupRoutingRule(object):
     def queue(self, queue):
         """
         Sets the queue of this ConditionalGroupRoutingRule.
-        The queue being evaluated for this rule.  For rule 1, this is always the current queue.
+        The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.
 
         :param queue: The queue of this ConditionalGroupRoutingRule.
         :type: DomainEntityRef
@@ -194,7 +194,7 @@ class ConditionalGroupRoutingRule(object):
     def wait_seconds(self):
         """
         Gets the wait_seconds of this ConditionalGroupRoutingRule.
-        The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule
+        The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule.  For the final rule, this is ignored, so need not be specified.
 
         :return: The wait_seconds of this ConditionalGroupRoutingRule.
         :rtype: int
@@ -205,7 +205,7 @@ class ConditionalGroupRoutingRule(object):
     def wait_seconds(self, wait_seconds):
         """
         Sets the wait_seconds of this ConditionalGroupRoutingRule.
-        The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule
+        The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule.  For the final rule, this is ignored, so need not be specified.
 
         :param wait_seconds: The wait_seconds of this ConditionalGroupRoutingRule.
         :type: int

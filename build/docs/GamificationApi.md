@@ -8,6 +8,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_employeeperformance_externalmetrics_definition**](GamificationApi.html#delete_employeeperformance_externalmetrics_definition) | Delete an External Metric Definition|
+|[**get_employeeperformance_externalmetrics_definition**](GamificationApi.html#get_employeeperformance_externalmetrics_definition) | Get an External Metric Definition|
+|[**get_employeeperformance_externalmetrics_definitions**](GamificationApi.html#get_employeeperformance_externalmetrics_definitions) | Get a list of External Metric Definitions of an organization, sorted by name in ascending order|
 |[**get_gamification_leaderboard**](GamificationApi.html#get_gamification_leaderboard) | Leaderboard of the requesting user&#39;s division or performance profile|
 |[**get_gamification_leaderboard_all**](GamificationApi.html#get_gamification_leaderboard_all) | Leaderboard by filter type|
 |[**get_gamification_leaderboard_all_bestpoints**](GamificationApi.html#get_gamification_leaderboard_all_bestpoints) | Best Points by division or performance profile|
@@ -47,6 +50,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_gamification_status**](GamificationApi.html#get_gamification_status) | Gamification activation status|
 |[**get_gamification_template**](GamificationApi.html#get_gamification_template) | Objective template by id|
 |[**get_gamification_templates**](GamificationApi.html#get_gamification_templates) | All objective templates|
+|[**patch_employeeperformance_externalmetrics_definition**](GamificationApi.html#patch_employeeperformance_externalmetrics_definition) | Update External Metric Definition|
+|[**post_employeeperformance_externalmetrics_data**](GamificationApi.html#post_employeeperformance_externalmetrics_data) | Write External Metric Data|
+|[**post_employeeperformance_externalmetrics_definitions**](GamificationApi.html#post_employeeperformance_externalmetrics_definitions) | Create External Metric Definition|
 |[**post_gamification_metrics**](GamificationApi.html#post_gamification_metrics) | Creates a gamified metric with a given metric definition and metric objective|
 |[**post_gamification_profile_activate**](GamificationApi.html#post_gamification_profile_activate) | Activate a performance profile|
 |[**post_gamification_profile_deactivate**](GamificationApi.html#post_gamification_profile_deactivate) | Deactivate a performance profile|
@@ -60,6 +66,160 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_gamification_profile_metric**](GamificationApi.html#put_gamification_profile_metric) | Updates a metric in performance profile|
 |[**put_gamification_status**](GamificationApi.html#put_gamification_status) | Update gamification activation status|
 {: class="table table-striped"}
+
+<a name="delete_employeeperformance_externalmetrics_definition"></a>
+
+##  delete_employeeperformance_externalmetrics_definition(metric_id)
+
+
+
+Delete an External Metric Definition
+
+
+
+Wraps DELETE /api/v2/employeeperformance/externalmetrics/definitions/{metricId} 
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+metric_id = 'metric_id_example' # str | Specifies the External Metric Definition ID
+
+try:
+    # Delete an External Metric Definition
+    api_instance.delete_employeeperformance_externalmetrics_definition(metric_id)
+except ApiException as e:
+    print("Exception when calling GamificationApi->delete_employeeperformance_externalmetrics_definition: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **metric_id** | **str**| Specifies the External Metric Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="get_employeeperformance_externalmetrics_definition"></a>
+
+## [**ExternalMetricDefinition**](ExternalMetricDefinition.html) get_employeeperformance_externalmetrics_definition(metric_id)
+
+
+
+Get an External Metric Definition
+
+
+
+Wraps GET /api/v2/employeeperformance/externalmetrics/definitions/{metricId} 
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+metric_id = 'metric_id_example' # str | Specifies the External Metric Definition ID
+
+try:
+    # Get an External Metric Definition
+    api_response = api_instance.get_employeeperformance_externalmetrics_definition(metric_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_employeeperformance_externalmetrics_definition: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **metric_id** | **str**| Specifies the External Metric Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalMetricDefinition**](ExternalMetricDefinition.html)
+
+<a name="get_employeeperformance_externalmetrics_definitions"></a>
+
+## [**ExternalMetricDefinitionListing**](ExternalMetricDefinitionListing.html) get_employeeperformance_externalmetrics_definitions(page_size=page_size, page_number=page_number)
+
+
+
+Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+
+
+
+Wraps GET /api/v2/employeeperformance/externalmetrics/definitions 
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+    api_response = api_instance.get_employeeperformance_externalmetrics_definitions(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_employeeperformance_externalmetrics_definitions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalMetricDefinitionListing**](ExternalMetricDefinitionListing.html)
 
 <a name="get_gamification_leaderboard"></a>
 
@@ -2178,6 +2338,161 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**GetTemplatesResponse**](GetTemplatesResponse.html)
+
+<a name="patch_employeeperformance_externalmetrics_definition"></a>
+
+## [**ExternalMetricDefinition**](ExternalMetricDefinition.html) patch_employeeperformance_externalmetrics_definition(metric_id, body)
+
+
+
+Update External Metric Definition
+
+
+
+Wraps PATCH /api/v2/employeeperformance/externalmetrics/definitions/{metricId} 
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+metric_id = 'metric_id_example' # str | Specifies the metric definition ID
+body = PureCloudPlatformClientV2.ExternalMetricDefinitionUpdateRequest() # ExternalMetricDefinitionUpdateRequest | The External Metric Definition parameters to be updated
+
+try:
+    # Update External Metric Definition
+    api_response = api_instance.patch_employeeperformance_externalmetrics_definition(metric_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->patch_employeeperformance_externalmetrics_definition: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **metric_id** | **str**| Specifies the metric definition ID |  |
+| **body** | [**ExternalMetricDefinitionUpdateRequest**](ExternalMetricDefinitionUpdateRequest.html)| The External Metric Definition parameters to be updated |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalMetricDefinition**](ExternalMetricDefinition.html)
+
+<a name="post_employeeperformance_externalmetrics_data"></a>
+
+## [**ExternalMetricDataWriteResponse**](ExternalMetricDataWriteResponse.html) post_employeeperformance_externalmetrics_data(body=body)
+
+
+
+Write External Metric Data
+
+
+
+Wraps POST /api/v2/employeeperformance/externalmetrics/data 
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricData:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+body = PureCloudPlatformClientV2.ExternalMetricDataWriteRequest() # ExternalMetricDataWriteRequest | The External Metric Data to be added (optional)
+
+try:
+    # Write External Metric Data
+    api_response = api_instance.post_employeeperformance_externalmetrics_data(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_employeeperformance_externalmetrics_data: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ExternalMetricDataWriteRequest**](ExternalMetricDataWriteRequest.html)| The External Metric Data to be added | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalMetricDataWriteResponse**](ExternalMetricDataWriteResponse.html)
+
+<a name="post_employeeperformance_externalmetrics_definitions"></a>
+
+## [**ExternalMetricDefinition**](ExternalMetricDefinition.html) post_employeeperformance_externalmetrics_definitions(body=body)
+
+
+
+Create External Metric Definition
+
+
+
+Wraps POST /api/v2/employeeperformance/externalmetrics/definitions 
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+body = PureCloudPlatformClientV2.ExternalMetricDefinitionCreateRequest() # ExternalMetricDefinitionCreateRequest | The External Metric Definition to be created (optional)
+
+try:
+    # Create External Metric Definition
+    api_response = api_instance.post_employeeperformance_externalmetrics_definitions(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_employeeperformance_externalmetrics_definitions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ExternalMetricDefinitionCreateRequest**](ExternalMetricDefinitionCreateRequest.html)| The External Metric Definition to be created | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalMetricDefinition**](ExternalMetricDefinition.html)
 
 <a name="post_gamification_metrics"></a>
 

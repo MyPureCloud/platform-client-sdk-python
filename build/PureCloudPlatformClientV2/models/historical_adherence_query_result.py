@@ -48,8 +48,8 @@ class HistoricalAdherenceQueryResult(object):
             'impact': 'str',
             'exception_info': 'list[HistoricalAdherenceExceptionInfo]',
             'day_metrics': 'list[HistoricalAdherenceDayMetrics]',
-            'actuals': 'list[HistoricalAdherenceActuals]',
-            'actuals_ends_date': 'datetime'
+            'actuals_end_date': 'datetime',
+            'actuals': 'list[HistoricalAdherenceActuals]'
         }
 
         self.attribute_map = {
@@ -61,8 +61,8 @@ class HistoricalAdherenceQueryResult(object):
             'impact': 'impact',
             'exception_info': 'exceptionInfo',
             'day_metrics': 'dayMetrics',
-            'actuals': 'actuals',
-            'actuals_ends_date': 'actualsEndsDate'
+            'actuals_end_date': 'actualsEndDate',
+            'actuals': 'actuals'
         }
 
         self._user_id = None
@@ -73,8 +73,8 @@ class HistoricalAdherenceQueryResult(object):
         self._impact = None
         self._exception_info = None
         self._day_metrics = None
+        self._actuals_end_date = None
         self._actuals = None
-        self._actuals_ends_date = None
 
     @property
     def user_id(self):
@@ -272,6 +272,30 @@ class HistoricalAdherenceQueryResult(object):
         self._day_metrics = day_metrics
 
     @property
+    def actuals_end_date(self):
+        """
+        Gets the actuals_end_date of this HistoricalAdherenceQueryResult.
+        The end date of the actual activities in ISO-8601 format.
+
+        :return: The actuals_end_date of this HistoricalAdherenceQueryResult.
+        :rtype: datetime
+        """
+        return self._actuals_end_date
+
+    @actuals_end_date.setter
+    def actuals_end_date(self, actuals_end_date):
+        """
+        Sets the actuals_end_date of this HistoricalAdherenceQueryResult.
+        The end date of the actual activities in ISO-8601 format.
+
+        :param actuals_end_date: The actuals_end_date of this HistoricalAdherenceQueryResult.
+        :type: datetime
+        """
+        
+
+        self._actuals_end_date = actuals_end_date
+
+    @property
     def actuals(self):
         """
         Gets the actuals of this HistoricalAdherenceQueryResult.
@@ -294,30 +318,6 @@ class HistoricalAdherenceQueryResult(object):
         
 
         self._actuals = actuals
-
-    @property
-    def actuals_ends_date(self):
-        """
-        Gets the actuals_ends_date of this HistoricalAdherenceQueryResult.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The actuals_ends_date of this HistoricalAdherenceQueryResult.
-        :rtype: datetime
-        """
-        return self._actuals_ends_date
-
-    @actuals_ends_date.setter
-    def actuals_ends_date(self, actuals_ends_date):
-        """
-        Sets the actuals_ends_date of this HistoricalAdherenceQueryResult.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param actuals_ends_date: The actuals_ends_date of this HistoricalAdherenceQueryResult.
-        :type: datetime
-        """
-        
-
-        self._actuals_ends_date = actuals_ends_date
 
     def to_dict(self):
         """
