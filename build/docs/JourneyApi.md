@@ -813,6 +813,7 @@ Wraps GET /api/v2/journey/sessions/{sessionId}
 Requires ANY permissions: 
 
 * journey:session:view
+* externalContacts:session:view
 
 ### Example
 

@@ -48,6 +48,8 @@ class UCIntegration(object):
             'icon': 'UCIcon',
             'badge_icons': 'dict(str, UCIcon)',
             'i10n': 'dict(str, UCI10n)',
+            'polled_presence': 'bool',
+            'user_permissions': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -60,6 +62,8 @@ class UCIntegration(object):
             'icon': 'icon',
             'badge_icons': 'badgeIcons',
             'i10n': 'i10n',
+            'polled_presence': 'polledPresence',
+            'user_permissions': 'userPermissions',
             'self_uri': 'selfUri'
         }
 
@@ -71,6 +75,8 @@ class UCIntegration(object):
         self._icon = None
         self._badge_icons = None
         self._i10n = None
+        self._polled_presence = None
+        self._user_permissions = None
         self._self_uri = None
 
     @property
@@ -267,6 +273,54 @@ class UCIntegration(object):
         
 
         self._i10n = i10n
+
+    @property
+    def polled_presence(self):
+        """
+        Gets the polled_presence of this UCIntegration.
+        polledPresence
+
+        :return: The polled_presence of this UCIntegration.
+        :rtype: bool
+        """
+        return self._polled_presence
+
+    @polled_presence.setter
+    def polled_presence(self, polled_presence):
+        """
+        Sets the polled_presence of this UCIntegration.
+        polledPresence
+
+        :param polled_presence: The polled_presence of this UCIntegration.
+        :type: bool
+        """
+        
+
+        self._polled_presence = polled_presence
+
+    @property
+    def user_permissions(self):
+        """
+        Gets the user_permissions of this UCIntegration.
+        userPermissions
+
+        :return: The user_permissions of this UCIntegration.
+        :rtype: list[str]
+        """
+        return self._user_permissions
+
+    @user_permissions.setter
+    def user_permissions(self, user_permissions):
+        """
+        Sets the user_permissions of this UCIntegration.
+        userPermissions
+
+        :param user_permissions: The user_permissions of this UCIntegration.
+        :type: list[str]
+        """
+        
+
+        self._user_permissions = user_permissions
 
     @property
     def self_uri(self):

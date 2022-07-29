@@ -2161,7 +2161,7 @@ class GamificationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_gamification_scorecards_profile_metric_users_values_trends(self, profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, **kwargs):
+    def get_gamification_scorecards_profile_metric_users_values_trends(self, profile_id, metric_id, filter_type, start_workday, end_workday, **kwargs):
         """
         Average performance values trends by metric of a division or a performance profile
         
@@ -2172,16 +2172,16 @@ class GamificationApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, callback=callback_function)
+        >>> thread = api.get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, start_workday, end_workday, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str profile_id: performanceProfileId (required)
         :param str metric_id: metricId (required)
         :param str filter_type: Filter type for the query request. (required)
-        :param str filter_id: ID for the filter type. For example, division Id (required)
         :param date start_workday: Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param date end_workday: End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param str filter_id: ID for the filter type. Only required when filterType is Division.
         :param date reference_workday: Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :param str time_zone: Timezone for the workday. Defaults to UTC
         :return: MetricValueTrendAverage
@@ -2189,7 +2189,7 @@ class GamificationApi(object):
                  returns the request thread.
         """
 
-        all_params = ['profile_id', 'metric_id', 'filter_type', 'filter_id', 'start_workday', 'end_workday', 'reference_workday', 'time_zone']
+        all_params = ['profile_id', 'metric_id', 'filter_type', 'start_workday', 'end_workday', 'filter_id', 'reference_workday', 'time_zone']
         all_params.append('callback')
 
         params = locals()
@@ -2211,9 +2211,6 @@ class GamificationApi(object):
         # verify the required parameter 'filter_type' is set
         if ('filter_type' not in params) or (params['filter_type'] is None):
             raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_scorecards_profile_metric_users_values_trends`")
-        # verify the required parameter 'filter_id' is set
-        if ('filter_id' not in params) or (params['filter_id'] is None):
-            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_scorecards_profile_metric_users_values_trends`")
         # verify the required parameter 'start_workday' is set
         if ('start_workday' not in params) or (params['start_workday'] is None):
             raise ValueError("Missing the required parameter `start_workday` when calling `get_gamification_scorecards_profile_metric_users_values_trends`")

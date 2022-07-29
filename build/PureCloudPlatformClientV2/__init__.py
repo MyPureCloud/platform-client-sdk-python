@@ -1556,6 +1556,7 @@ from .models.learning_assignment_user_listing import LearningAssignmentUserListi
 from .models.learning_assignment_user_query import LearningAssignmentUserQuery
 from .models.learning_assignments_domain_entity import LearningAssignmentsDomainEntity
 from .models.learning_cover_art_thumbnail import LearningCoverArtThumbnail
+from .models.learning_cover_art_upload_url_request import LearningCoverArtUploadUrlRequest
 from .models.learning_module import LearningModule
 from .models.learning_module_cover_art_request import LearningModuleCoverArtRequest
 from .models.learning_module_cover_art_response import LearningModuleCoverArtResponse

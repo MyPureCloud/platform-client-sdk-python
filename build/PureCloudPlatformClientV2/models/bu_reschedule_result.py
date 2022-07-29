@@ -65,7 +65,7 @@ class BuRescheduleResult(object):
     def generation_results(self):
         """
         Gets the generation_results of this BuRescheduleResult.
-        The generation results.  Note the result will always be delivered via the downloadUrl; however the schema is included for documentation
+        The generation results.  Note the result will always be delivered via the generationResultsDownloadUrl; however the schema is included for documentation
 
         :return: The generation_results of this BuRescheduleResult.
         :rtype: ScheduleGenerationResult
@@ -76,7 +76,7 @@ class BuRescheduleResult(object):
     def generation_results(self, generation_results):
         """
         Sets the generation_results of this BuRescheduleResult.
-        The generation results.  Note the result will always be delivered via the downloadUrl; however the schema is included for documentation
+        The generation results.  Note the result will always be delivered via the generationResultsDownloadUrl; however the schema is included for documentation
 
         :param generation_results: The generation_results of this BuRescheduleResult.
         :type: ScheduleGenerationResult
@@ -113,7 +113,7 @@ class BuRescheduleResult(object):
     def headcount_forecast(self):
         """
         Gets the headcount_forecast of this BuRescheduleResult.
-        The headcount forecast.  Note the result will always be delivered via the downloadUrl; however the schema is included for documentation
+        The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
 
         :return: The headcount_forecast of this BuRescheduleResult.
         :rtype: BuHeadcountForecast
@@ -124,7 +124,7 @@ class BuRescheduleResult(object):
     def headcount_forecast(self, headcount_forecast):
         """
         Sets the headcount_forecast of this BuRescheduleResult.
-        The headcount forecast.  Note the result will always be delivered via the downloadUrl; however the schema is included for documentation
+        The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
 
         :param headcount_forecast: The headcount_forecast of this BuRescheduleResult.
         :type: BuHeadcountForecast

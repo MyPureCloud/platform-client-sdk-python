@@ -1624,6 +1624,7 @@ PureCloudPlatformClientV2/models/learning_assignment_user_listing.py
 PureCloudPlatformClientV2/models/learning_assignment_user_query.py
 PureCloudPlatformClientV2/models/learning_assignments_domain_entity.py
 PureCloudPlatformClientV2/models/learning_cover_art_thumbnail.py
+PureCloudPlatformClientV2/models/learning_cover_art_upload_url_request.py
 PureCloudPlatformClientV2/models/learning_module.py
 PureCloudPlatformClientV2/models/learning_module_cover_art_request.py
 PureCloudPlatformClientV2/models/learning_module_cover_art_response.py
@@ -4800,6 +4801,7 @@ docs/LearningAssignmentUserListing.md
 docs/LearningAssignmentUserQuery.md
 docs/LearningAssignmentsDomainEntity.md
 docs/LearningCoverArtThumbnail.md
+docs/LearningCoverArtUploadUrlRequest.md
 docs/LearningModule.md
 docs/LearningModuleCoverArtRequest.md
 docs/LearningModuleCoverArtResponse.md
@@ -7058,6 +7060,7 @@ docs/get_learning_module_rule-example.txt
 docs/get_learning_module_version-example.txt
 docs/get_learning_modules-example.txt
 docs/get_learning_modules_assignments-example.txt
+docs/get_learning_modules_coverart_cover_art_id-example.txt
 docs/get_license_definition-example.txt
 docs/get_license_definitions-example.txt
 docs/get_license_toggle-example.txt
@@ -8015,6 +8018,7 @@ docs/post_telephony_siptraces_download-example.txt
 docs/post_textbots_botflows_session_turns-example.txt
 docs/post_textbots_botflows_sessions-example.txt
 docs/post_textbots_bots_execute-example.txt
+docs/post_uploads_learning_coverart-example.txt
 docs/post_uploads_publicassets_images-example.txt
 docs/post_uploads_recordings-example.txt
 docs/post_uploads_workforcemanagement_historicaldata_csv-example.txt

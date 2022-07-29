@@ -99,7 +99,7 @@ class ConversationMessageMetadataEvent(object):
         :param sub_type: The sub_type of this ConversationMessageMetadataEvent.
         :type: str
         """
-        allowed_values = ["On", "Join", "Offering", "OfferingExpired", "OfferingAccepted", "OfferingRejected", "Unknown"]
+        allowed_values = ["On", "Join", "Disconnect", "Offering", "OfferingExpired", "OfferingAccepted", "OfferingRejected", "Unknown"]
         if sub_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sub_type -> " + sub_type)
             self._sub_type = "outdated_sdk_version"

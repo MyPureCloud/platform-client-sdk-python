@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_learning_module_version**](LearningApi.html#get_learning_module_version) | Get specific version of a published module|
 |[**get_learning_modules**](LearningApi.html#get_learning_modules) | Get all learning modules of an organization|
 |[**get_learning_modules_assignments**](LearningApi.html#get_learning_modules_assignments) | Get all learning modules of an organization including assignments for a specific user|
+|[**get_learning_modules_coverart_cover_art_id**](LearningApi.html#get_learning_modules_coverart_cover_art_id) | Get a specific Learning Module cover art using ID|
 |[**patch_learning_assignment**](LearningApi.html#patch_learning_assignment) | Update Learning Assignment|
 |[**post_learning_assessments_scoring**](LearningApi.html#post_learning_assessments_scoring) | Score learning assessment for preview|
 |[**post_learning_assignment_reassign**](LearningApi.html#post_learning_assignment_reassign) | Reassign Learning Assignment|
@@ -691,6 +692,57 @@ except ApiException as e:
 ### Return type
 
 [**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing.html)
+
+<a name="get_learning_modules_coverart_cover_art_id"></a>
+
+## [**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html) get_learning_modules_coverart_cover_art_id(cover_art_id)
+
+
+
+Get a specific Learning Module cover art using ID
+
+
+
+Wraps GET /api/v2/learning/modules/coverart/{coverArtId} 
+
+Requires ANY permissions: 
+
+* learning:coverart:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+cover_art_id = 'cover_art_id_example' # str | Key identifier for the cover art
+
+try:
+    # Get a specific Learning Module cover art using ID
+    api_response = api_instance.get_learning_modules_coverart_cover_art_id(cover_art_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->get_learning_modules_coverart_cover_art_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **cover_art_id** | **str**| Key identifier for the cover art |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html)
 
 <a name="patch_learning_assignment"></a>
 

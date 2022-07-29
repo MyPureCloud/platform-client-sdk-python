@@ -1455,7 +1455,7 @@ except ApiException as e:
 
 <a name="get_gamification_scorecards_profile_metric_users_values_trends"></a>
 
-## [**MetricValueTrendAverage**](MetricValueTrendAverage.html) get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)
+## [**MetricValueTrendAverage**](MetricValueTrendAverage.html) get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, start_workday, end_workday, filter_id=filter_id, reference_workday=reference_workday, time_zone=time_zone)
 
 
 
@@ -1485,15 +1485,15 @@ api_instance = PureCloudPlatformClientV2.GamificationApi()
 profile_id = 'profile_id_example' # str | performanceProfileId
 metric_id = 'metric_id_example' # str | metricId
 filter_type = 'filter_type_example' # str | Filter type for the query request.
-filter_id = 'filter_id_example' # str | ID for the filter type. For example, division Id
 start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+filter_id = 'filter_id_example' # str | ID for the filter type. Only required when filterType is Division. (optional)
 reference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 time_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')
 
 try:
     # Average performance values trends by metric of a division or a performance profile
-    api_response = api_instance.get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)
+    api_response = api_instance.get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, start_workday, end_workday, filter_id=filter_id, reference_workday=reference_workday, time_zone=time_zone)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_scorecards_profile_metric_users_values_trends: %s\n" % e)
@@ -1507,9 +1507,9 @@ except ApiException as e:
 | **profile_id** | **str**| performanceProfileId |  |
 | **metric_id** | **str**| metricId |  |
 | **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
-| **filter_id** | **str**| ID for the filter type. For example, division Id |  |
 | **start_workday** | **date**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **end_workday** | **date**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **filter_id** | **str**| ID for the filter type. Only required when filterType is Division. | [optional]  |
 | **reference_workday** | **date**| Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **time_zone** | **str**| Timezone for the workday. Defaults to UTC | [optional] [default to &#39;UTC&#39;] |
 {: class="table table-striped"}

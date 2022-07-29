@@ -10414,7 +10414,7 @@
   "get_gamification_scorecards_profile_metric_users_values_trends": {
     "operationId": "get_gamification_scorecards_profile_metric_users_values_trends",
     "functionName": "get_gamification_scorecards_profile_metric_users_values_trends",
-    "signature": "get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, reference_workday, time_zone)",
+    "signature": "get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, start_workday, end_workday, filter_id, reference_workday, time_zone)",
     "parameters": [
       {
         "name": "profile_id",
@@ -10432,11 +10432,6 @@
         "required": "true"
       },
       {
-        "name": "filter_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
         "name": "start_workday",
         "type": "date",
         "required": "true"
@@ -10445,6 +10440,11 @@
         "name": "end_workday",
         "type": "date",
         "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "false"
       },
       {
         "name": "reference_workday",
@@ -10458,7 +10458,7 @@
       }
     ],
     "return": "MetricValueTrendAverage",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nprofile_id = 'profile_id_example' # str | performanceProfileId\nmetric_id = 'metric_id_example' # str | metricId\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type. For example, division Id\nstart_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nend_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nreference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)\ntime_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')\n\ntry:\n    # Average performance values trends by metric of a division or a performance profile\n    api_response = api_instance.get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, filter_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest->get_gamification_scorecards_profile_metric_users_values_trends: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nprofile_id = 'profile_id_example' # str | performanceProfileId\nmetric_id = 'metric_id_example' # str | metricId\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nstart_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nend_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nfilter_id = 'filter_id_example' # str | ID for the filter type. Only required when filterType is Division. (optional)\nreference_workday = '2013-10-20' # date | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)\ntime_zone = ''UTC'' # str | Timezone for the workday. Defaults to UTC (optional) (default to 'UTC')\n\ntry:\n    # Average performance values trends by metric of a division or a performance profile\n    api_response = api_instance.get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, start_workday, end_workday, filter_id=filter_id, reference_workday=reference_workday, time_zone=time_zone)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest->get_gamification_scorecards_profile_metric_users_values_trends: %s\\n\" % e)"
   },
   "get_gamification_scorecards_profile_metric_values_trends": {
     "operationId": "get_gamification_scorecards_profile_metric_values_trends",
@@ -15764,6 +15764,20 @@
     ],
     "return": "AssignedLearningModuleDomainEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nuser_ids = ['user_ids_example'] # list[str] | The IDs of the users to include\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsearch_term = 'search_term_example' # str | Search Term (searches by name and description) (optional)\noverdue = ''Any'' # str | Specifies if only modules with overdue/not overdue (overdue is \\\"True\\\" or \\\"False\\\") assignments are returned. If overdue is \\\"Any\\\" or omitted, both are returned and can including modules that are unassigned. (optional) (default to 'Any')\nassignment_states = ['assignment_states_example'] # list[str] | Specifies the assignment states to return. (optional)\nexpand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)\n\ntry:\n    # Get all learning modules of an organization including assignments for a specific user\n    api_response = api_instance.get_learning_modules_assignments(user_ids, page_size=page_size, page_number=page_number, search_term=search_term, overdue=overdue, assignment_states=assignment_states, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningModulesAssignmentsRequest->get_learning_modules_assignments: %s\\n\" % e)"
+  },
+  "get_learning_modules_coverart_cover_art_id": {
+    "operationId": "get_learning_modules_coverart_cover_art_id",
+    "functionName": "get_learning_modules_coverart_cover_art_id",
+    "signature": "get_learning_modules_coverart_cover_art_id(cover_art_id)",
+    "parameters": [
+      {
+        "name": "cover_art_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "LearningModuleCoverArtResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\ncover_art_id = 'cover_art_id_example' # str | Key identifier for the cover art\n\ntry:\n    # Get a specific Learning Module cover art using ID\n    api_response = api_instance.get_learning_modules_coverart_cover_art_id(cover_art_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningModulesCoverartCoverArtIdRequest->get_learning_modules_coverart_cover_art_id: %s\\n\" % e)"
   },
   "patch_learning_assignment": {
     "operationId": "patch_learning_assignment",
@@ -29815,6 +29829,20 @@
     ],
     "return": "UploadUrlResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UploadsApi()\nminer_id = 'miner_id_example' # str | Miner ID\nbody = NULL # Empty | query\n\ntry:\n    # Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner\n    api_response = api_instance.post_languageunderstanding_miner_uploads(miner_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostLanguageunderstandingMinerUploadsRequest->post_languageunderstanding_miner_uploads: %s\\n\" % e)"
+  },
+  "post_uploads_learning_coverart": {
+    "operationId": "post_uploads_learning_coverart",
+    "functionName": "post_uploads_learning_coverart",
+    "signature": "post_uploads_learning_coverart(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "LearningCoverArtUploadUrlRequest",
+        "required": "true"
+      }
+    ],
+    "return": "UploadUrlResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UploadsApi()\nbody = PureCloudPlatformClientV2.LearningCoverArtUploadUrlRequest() # LearningCoverArtUploadUrlRequest | query\n\ntry:\n    # Generates pre-signed URL to upload cover art for learning modules\n    api_response = api_instance.post_uploads_learning_coverart(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostUploadsLearningCoverartRequest->post_uploads_learning_coverart: %s\\n\" % e)"
   },
   "post_uploads_publicassets_images": {
     "operationId": "post_uploads_publicassets_images",
