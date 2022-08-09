@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_assessments**](RoutingApi.html#get_routing_assessments) | Retrieve all benefit assessments.|
 |[**get_routing_assessments_job**](RoutingApi.html#get_routing_assessments_job) | Retrieve a single benefit assessments job.|
 |[**get_routing_assessments_jobs**](RoutingApi.html#get_routing_assessments_jobs) | Retrieve all benefit assessment jobs.|
+|[**get_routing_availablemediatypes**](RoutingApi.html#get_routing_availablemediatypes) | Get available media types|
 |[**get_routing_email_domain**](RoutingApi.html#get_routing_email_domain) | Get domain|
 |[**get_routing_email_domain_route**](RoutingApi.html#get_routing_email_domain_route) | Get a route|
 |[**get_routing_email_domain_routes**](RoutingApi.html#get_routing_email_domain_routes) | Get routes|
@@ -1186,6 +1187,52 @@ except ApiException as e:
 ### Return type
 
 [**AssessmentJobListing**](AssessmentJobListing.html)
+
+<a name="get_routing_availablemediatypes"></a>
+
+## [**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing.html) get_routing_availablemediatypes()
+
+
+
+Get available media types
+
+
+
+Wraps GET /api/v2/routing/availablemediatypes 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Get available media types
+    api_response = api_instance.get_routing_availablemediatypes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_availablemediatypes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing.html)
 
 <a name="get_routing_email_domain"></a>
 

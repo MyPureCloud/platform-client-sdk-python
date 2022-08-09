@@ -53,6 +53,8 @@ class EmailMessage(object):
             'html_body': 'str',
             'time': 'datetime',
             'history_included': 'bool',
+            'email_size_bytes': 'int',
+            'max_email_size_bytes': 'int',
             'self_uri': 'str'
         }
 
@@ -70,6 +72,8 @@ class EmailMessage(object):
             'html_body': 'htmlBody',
             'time': 'time',
             'history_included': 'historyIncluded',
+            'email_size_bytes': 'emailSizeBytes',
+            'max_email_size_bytes': 'maxEmailSizeBytes',
             'self_uri': 'selfUri'
         }
 
@@ -86,6 +90,8 @@ class EmailMessage(object):
         self._html_body = None
         self._time = None
         self._history_included = None
+        self._email_size_bytes = None
+        self._max_email_size_bytes = None
         self._self_uri = None
 
     @property
@@ -399,6 +405,54 @@ class EmailMessage(object):
         
 
         self._history_included = history_included
+
+    @property
+    def email_size_bytes(self):
+        """
+        Gets the email_size_bytes of this EmailMessage.
+        Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.
+
+        :return: The email_size_bytes of this EmailMessage.
+        :rtype: int
+        """
+        return self._email_size_bytes
+
+    @email_size_bytes.setter
+    def email_size_bytes(self, email_size_bytes):
+        """
+        Sets the email_size_bytes of this EmailMessage.
+        Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.
+
+        :param email_size_bytes: The email_size_bytes of this EmailMessage.
+        :type: int
+        """
+        
+
+        self._email_size_bytes = email_size_bytes
+
+    @property
+    def max_email_size_bytes(self):
+        """
+        Gets the max_email_size_bytes of this EmailMessage.
+        Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration
+
+        :return: The max_email_size_bytes of this EmailMessage.
+        :rtype: int
+        """
+        return self._max_email_size_bytes
+
+    @max_email_size_bytes.setter
+    def max_email_size_bytes(self, max_email_size_bytes):
+        """
+        Sets the max_email_size_bytes of this EmailMessage.
+        Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration
+
+        :param max_email_size_bytes: The max_email_size_bytes of this EmailMessage.
+        :type: int
+        """
+        
+
+        self._max_email_size_bytes = max_email_size_bytes
 
     @property
     def self_uri(self):

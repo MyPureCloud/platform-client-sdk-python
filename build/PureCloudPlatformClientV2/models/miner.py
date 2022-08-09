@@ -162,7 +162,7 @@ class Miner(object):
         :param language: The language of this Miner.
         :type: str
         """
-        allowed_values = ["en-us", "en-gb", "en-au", "en-in", "en-za", "es-us", "es-es", "fr-fr"]
+        allowed_values = ["en-us", "en-gb", "en-au", "en-in", "en-za", "es-us", "es-es", "fr-fr", "fr-ca"]
         if language.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for language -> " + language)
             self._language = "outdated_sdk_version"

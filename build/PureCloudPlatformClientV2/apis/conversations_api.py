@@ -1744,6 +1744,84 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_conversation_secureattributes(self, conversation_id, **kwargs):
+        """
+        Get the secure attributes on a conversation.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversation_secureattributes(conversation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :return: ConversationSecureAttributes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversation_secureattributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversation_secureattributes`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/secureattributes'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationSecureAttributes',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_conversations(self, **kwargs):
         """
         Get active conversations for the logged in user
@@ -4072,6 +4150,156 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_conversations_keyconfiguration(self, keyconfigurations_id, **kwargs):
+        """
+        Get the encryption key configurations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_keyconfiguration(keyconfigurations_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str keyconfigurations_id: Key Configurations Id (required)
+        :return: ConversationEncryptionConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['keyconfigurations_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_keyconfiguration" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'keyconfigurations_id' is set
+        if ('keyconfigurations_id' not in params) or (params['keyconfigurations_id'] is None):
+            raise ValueError("Missing the required parameter `keyconfigurations_id` when calling `get_conversations_keyconfiguration`")
+
+
+        resource_path = '/api/v2/conversations/keyconfigurations/{keyconfigurationsId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'keyconfigurations_id' in params:
+            path_params['keyconfigurationsId'] = params['keyconfigurations_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationEncryptionConfiguration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_keyconfigurations(self, **kwargs):
+        """
+        Get a list of key configurations data
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_keyconfigurations(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: ConversationEncryptionConfigurationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_keyconfigurations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/keyconfigurations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationEncryptionConfigurationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_conversations_message(self, conversation_id, **kwargs):
         """
         Get message conversation
@@ -6186,6 +6414,90 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_conversation_secureattributes(self, conversation_id, body, **kwargs):
+        """
+        Update the secure attributes on a conversation.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversation_secureattributes(conversation_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param ConversationSecureAttributes body: Conversation Secure Attributes (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversation_secureattributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversation_secureattributes`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_conversation_secureattributes`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/secureattributes'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='str',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11602,6 +11914,162 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversations_keyconfigurations(self, body, **kwargs):
+        """
+        Setup configurations for encryption key creation
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_keyconfigurations(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ConversationEncryptionConfiguration body: Encryption Configuration (required)
+        :return: ConversationEncryptionConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_keyconfigurations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_keyconfigurations`")
+
+
+        resource_path = '/api/v2/conversations/keyconfigurations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationEncryptionConfiguration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_keyconfigurations_validate(self, body, **kwargs):
+        """
+        Validate encryption key configurations without saving it
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_keyconfigurations_validate(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ConversationEncryptionConfiguration body: Encryption Configuration (required)
+        :return: ConversationEncryptionConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_keyconfigurations_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_keyconfigurations_validate`")
+
+
+        resource_path = '/api/v2/conversations/keyconfigurations/validate'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationEncryptionConfiguration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_conversations_message_communication_messages(self, conversation_id, communication_id, body, **kwargs):
         """
         Send message
@@ -12733,6 +13201,90 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def put_conversation_secureattributes(self, conversation_id, body, **kwargs):
+        """
+        Set the secure attributes on a conversation.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_conversation_secureattributes(conversation_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param ConversationSecureAttributes body: Conversation Secure Attributes (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_conversation_secureattributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `put_conversation_secureattributes`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_conversation_secureattributes`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/secureattributes'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='str',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_conversation_tags(self, conversation_id, body, **kwargs):
         """
         Update the tags on a conversation.
@@ -13413,6 +13965,90 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='str',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_conversations_keyconfiguration(self, keyconfigurations_id, body, **kwargs):
+        """
+        Update the encryption key configurations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_conversations_keyconfiguration(keyconfigurations_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str keyconfigurations_id: Key Configurations Id (required)
+        :param ConversationEncryptionConfiguration body: Encryption key configuration metadata (required)
+        :return: ConversationEncryptionConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['keyconfigurations_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_conversations_keyconfiguration" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'keyconfigurations_id' is set
+        if ('keyconfigurations_id' not in params) or (params['keyconfigurations_id'] is None):
+            raise ValueError("Missing the required parameter `keyconfigurations_id` when calling `put_conversations_keyconfiguration`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_conversations_keyconfiguration`")
+
+
+        resource_path = '/api/v2/conversations/keyconfigurations/{keyconfigurationsId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'keyconfigurations_id' in params:
+            path_params['keyconfigurationsId'] = params['keyconfigurations_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationEncryptionConfiguration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

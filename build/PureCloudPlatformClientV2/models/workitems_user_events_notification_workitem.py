@@ -65,7 +65,8 @@ class WorkitemsUserEventsNotificationWorkitem(object):
             'changes': 'list[WorkitemsUserEventsNotificationDelta]',
             'assignment_state': 'str',
             'assignment_id': 'str',
-            'alert_timeout_seconds': 'int'
+            'alert_timeout_seconds': 'int',
+            'custom_fields': 'dict(str, WorkitemsUserEventsNotificationCustomAttribute)'
         }
 
         self.attribute_map = {
@@ -94,7 +95,8 @@ class WorkitemsUserEventsNotificationWorkitem(object):
             'changes': 'changes',
             'assignment_state': 'assignmentState',
             'assignment_id': 'assignmentId',
-            'alert_timeout_seconds': 'alertTimeoutSeconds'
+            'alert_timeout_seconds': 'alertTimeoutSeconds',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -123,6 +125,7 @@ class WorkitemsUserEventsNotificationWorkitem(object):
         self._assignment_state = None
         self._assignment_id = None
         self._alert_timeout_seconds = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -753,6 +756,30 @@ class WorkitemsUserEventsNotificationWorkitem(object):
         
 
         self._alert_timeout_seconds = alert_timeout_seconds
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this WorkitemsUserEventsNotificationWorkitem.
+
+
+        :return: The custom_fields of this WorkitemsUserEventsNotificationWorkitem.
+        :rtype: dict(str, WorkitemsUserEventsNotificationCustomAttribute)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this WorkitemsUserEventsNotificationWorkitem.
+
+
+        :param custom_fields: The custom_fields of this WorkitemsUserEventsNotificationWorkitem.
+        :type: dict(str, WorkitemsUserEventsNotificationCustomAttribute)
+        """
+        
+
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

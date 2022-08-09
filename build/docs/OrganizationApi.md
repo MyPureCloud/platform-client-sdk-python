@@ -272,7 +272,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **after** | **int**| Timestamp indicating the date to begin after when searching for requests. | [optional]  |
 | **before** | **int**| Timestamp indicating the date to end before when searching for requests. | [optional]  |
-| **status** | **str**| Status of the request to be filtered by | [optional] <br />**Values**: Open, Approved, ImplementingChange, ChangeImplemented, Rejected, Rollback, ImplementingRollback, RollbackImplemented |
+| **status** | **str**| Status of the request to be filtered by | [optional] <br />**Values**: Approved, Rejected, Rollback, Pending, Open, SecondaryApprovalNamespacesAdded, ReviewerApproved, ReviewerRejected, ReviewerRollback, ImplementingChange, ChangeImplemented, ImplementingRollback, RollbackImplemented |
 | **page_size** | **int**| Page Size | [optional] [default to 25] |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: statusHistory |
 {: class="table table-striped"}

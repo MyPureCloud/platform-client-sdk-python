@@ -43,8 +43,8 @@ class StatusChange(object):
             'date_status_changed': 'datetime',
             'status': 'str',
             'previous_status': 'str',
+            'namespace': 'str',
             'message': 'str',
-            'changed_by': 'str',
             'reject_reason': 'str'
         }
 
@@ -52,16 +52,16 @@ class StatusChange(object):
             'date_status_changed': 'dateStatusChanged',
             'status': 'status',
             'previous_status': 'previousStatus',
+            'namespace': 'namespace',
             'message': 'message',
-            'changed_by': 'changedBy',
             'reject_reason': 'rejectReason'
         }
 
         self._date_status_changed = None
         self._status = None
         self._previous_status = None
+        self._namespace = None
         self._message = None
-        self._changed_by = None
         self._reject_reason = None
 
     @property
@@ -108,7 +108,7 @@ class StatusChange(object):
         :param status: The status of this StatusChange.
         :type: str
         """
-        allowed_values = ["Open", "Approved", "ImplementingChange", "ChangeImplemented", "Rejected", "Rollback", "ImplementingRollback", "RollbackImplemented"]
+        allowed_values = ["Approved", "Rejected", "Rollback", "Pending", "Open", "SecondaryApprovalNamespacesAdded", "ReviewerApproved", "ReviewerRejected", "ReviewerRollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
@@ -135,12 +135,39 @@ class StatusChange(object):
         :param previous_status: The previous_status of this StatusChange.
         :type: str
         """
-        allowed_values = ["Open", "Approved", "ImplementingChange", "ChangeImplemented", "Rejected", "Rollback", "ImplementingRollback", "RollbackImplemented"]
+        allowed_values = ["Approved", "Rejected", "Rollback", "Pending", "Open", "SecondaryApprovalNamespacesAdded", "ReviewerApproved", "ReviewerRejected", "ReviewerRollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented"]
         if previous_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for previous_status -> " + previous_status)
             self._previous_status = "outdated_sdk_version"
         else:
             self._previous_status = previous_status
+
+    @property
+    def namespace(self):
+        """
+        Gets the namespace of this StatusChange.
+        The namespace for the status change
+
+        :return: The namespace of this StatusChange.
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """
+        Sets the namespace of this StatusChange.
+        The namespace for the status change
+
+        :param namespace: The namespace of this StatusChange.
+        :type: str
+        """
+        allowed_values = ["contacts", "agent.assistant", "analytics.alerting", "analytics", "analytics.realtime", "analytics.reporting.settings", "architect", "audiohook", "audit", "auth.api", "authorization", "automation.testing", "bots", "bots.voice", "cobrowse", "content.management", "conversation", "dataactions", "datatables", "directory", "email", "event.orchestration", "external.contacts", "gcv", "gdpr", "groups", "historical.adherence", "infrastructureascode", "integrations", "intent.miner", "journey", "knowledge", "language.understanding", "limit.registry", "marketplace", "messaging", "notifications", "onboarding", "outbound", "platform.api", "predictive.routing", "quality", "recording", "response.management", "routing", "scim", "search", "speech.and.text.analytics", "speech.integration", "supportability", "task.management", "telephony.configuration", "web.deployments", "web.messaging", "webchat", "webhooks", "workforce.management"]
+        if namespace.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for namespace -> " + namespace)
+            self._namespace = "outdated_sdk_version"
+        else:
+            self._namespace = namespace
 
     @property
     def message(self):
@@ -165,30 +192,6 @@ class StatusChange(object):
         
 
         self._message = message
-
-    @property
-    def changed_by(self):
-        """
-        Gets the changed_by of this StatusChange.
-        If applicable, the user who updated the change request to this status
-
-        :return: The changed_by of this StatusChange.
-        :rtype: str
-        """
-        return self._changed_by
-
-    @changed_by.setter
-    def changed_by(self, changed_by):
-        """
-        Sets the changed_by of this StatusChange.
-        If applicable, the user who updated the change request to this status
-
-        :param changed_by: The changed_by of this StatusChange.
-        :type: str
-        """
-        
-
-        self._changed_by = changed_by
 
     @property
     def reject_reason(self):

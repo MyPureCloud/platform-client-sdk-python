@@ -120,7 +120,7 @@ except ApiException as e:
 
 <a name="delete_quality_conversation_evaluation"></a>
 
-## [**Evaluation**](Evaluation.html) delete_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
+## [**EvaluationResponse**](EvaluationResponse.html) delete_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
 
 
 
@@ -171,7 +171,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+[**EvaluationResponse**](EvaluationResponse.html)
 
 <a name="delete_quality_form"></a>
 
@@ -524,7 +524,7 @@ except ApiException as e:
 
 <a name="get_quality_conversation_evaluation"></a>
 
-## [**Evaluation**](Evaluation.html) get_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
+## [**EvaluationResponse**](EvaluationResponse.html) get_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
 
 
 
@@ -575,7 +575,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+[**EvaluationResponse**](EvaluationResponse.html)
 
 <a name="get_quality_conversation_surveys"></a>
 
@@ -2811,7 +2811,7 @@ except ApiException as e:
 
 <a name="put_quality_conversation_evaluation"></a>
 
-## [**Evaluation**](Evaluation.html) put_quality_conversation_evaluation(conversation_id, evaluation_id, body, expand=expand)
+## [**EvaluationResponse**](EvaluationResponse.html) put_quality_conversation_evaluation(conversation_id, evaluation_id, body, expand=expand)
 
 
 
@@ -2868,7 +2868,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+[**EvaluationResponse**](EvaluationResponse.html)
 
 <a name="put_quality_form"></a>
 

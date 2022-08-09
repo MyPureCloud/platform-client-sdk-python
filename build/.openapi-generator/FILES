@@ -279,6 +279,8 @@ PureCloudPlatformClientV2/models/authz_subject.py
 PureCloudPlatformClientV2/models/auto_start.py
 PureCloudPlatformClientV2/models/automatic_time_zone_mapping_settings.py
 PureCloudPlatformClientV2/models/available_language_list.py
+PureCloudPlatformClientV2/models/available_media_type.py
+PureCloudPlatformClientV2/models/available_media_type_entity_listing.py
 PureCloudPlatformClientV2/models/available_time.py
 PureCloudPlatformClientV2/models/available_time_off_range.py
 PureCloudPlatformClientV2/models/available_time_off_request.py
@@ -726,6 +728,8 @@ PureCloudPlatformClientV2/models/conversation_email_event_topic_journey_customer
 PureCloudPlatformClientV2/models/conversation_email_event_topic_scored_agent.py
 PureCloudPlatformClientV2/models/conversation_email_event_topic_uri_reference.py
 PureCloudPlatformClientV2/models/conversation_email_event_topic_wrapup.py
+PureCloudPlatformClientV2/models/conversation_encryption_configuration.py
+PureCloudPlatformClientV2/models/conversation_encryption_configuration_listing.py
 PureCloudPlatformClientV2/models/conversation_entity_listing.py
 PureCloudPlatformClientV2/models/conversation_event_co_browse.py
 PureCloudPlatformClientV2/models/conversation_event_presence.py
@@ -824,6 +828,7 @@ PureCloudPlatformClientV2/models/conversation_screen_share_event_topic_screen_sh
 PureCloudPlatformClientV2/models/conversation_screen_share_event_topic_screen_share_media_participant.py
 PureCloudPlatformClientV2/models/conversation_screen_share_event_topic_uri_reference.py
 PureCloudPlatformClientV2/models/conversation_screen_share_event_topic_wrapup.py
+PureCloudPlatformClientV2/models/conversation_secure_attributes.py
 PureCloudPlatformClientV2/models/conversation_social_expression_event_topic_conversation_routing_data.py
 PureCloudPlatformClientV2/models/conversation_social_expression_event_topic_detail.py
 PureCloudPlatformClientV2/models/conversation_social_expression_event_topic_error_body.py
@@ -1210,6 +1215,7 @@ PureCloudPlatformClientV2/models/evaluation_entity_listing.py
 PureCloudPlatformClientV2/models/evaluation_form.py
 PureCloudPlatformClientV2/models/evaluation_form_and_scoring_set.py
 PureCloudPlatformClientV2/models/evaluation_form_entity_listing.py
+PureCloudPlatformClientV2/models/evaluation_form_response.py
 PureCloudPlatformClientV2/models/evaluation_quality_v2_topic_calibration.py
 PureCloudPlatformClientV2/models/evaluation_quality_v2_topic_evaluation_scoring_set.py
 PureCloudPlatformClientV2/models/evaluation_quality_v2_topic_evaluation_v2.py
@@ -1218,6 +1224,7 @@ PureCloudPlatformClientV2/models/evaluation_question.py
 PureCloudPlatformClientV2/models/evaluation_question_group.py
 PureCloudPlatformClientV2/models/evaluation_question_group_score.py
 PureCloudPlatformClientV2/models/evaluation_question_score.py
+PureCloudPlatformClientV2/models/evaluation_response.py
 PureCloudPlatformClientV2/models/evaluation_scoring_set.py
 PureCloudPlatformClientV2/models/evaluator_activity.py
 PureCloudPlatformClientV2/models/evaluator_activity_entity_listing.py
@@ -3174,6 +3181,10 @@ PureCloudPlatformClientV2/models/workday_points_trend_item.py
 PureCloudPlatformClientV2/models/workday_values_metric_item.py
 PureCloudPlatformClientV2/models/workday_values_trend.py
 PureCloudPlatformClientV2/models/workday_values_trend_item.py
+PureCloudPlatformClientV2/models/workitems_events_notification_custom_attribute.py
+PureCloudPlatformClientV2/models/workitems_events_notification_delta.py
+PureCloudPlatformClientV2/models/workitems_events_notification_workitem.py
+PureCloudPlatformClientV2/models/workitems_user_events_notification_custom_attribute.py
 PureCloudPlatformClientV2/models/workitems_user_events_notification_delta.py
 PureCloudPlatformClientV2/models/workitems_user_events_notification_workitem.py
 PureCloudPlatformClientV2/models/workspace.py
@@ -3414,6 +3425,8 @@ docs/AuthzSubject.md
 docs/AutoStart.md
 docs/AutomaticTimeZoneMappingSettings.md
 docs/AvailableLanguageList.md
+docs/AvailableMediaType.md
+docs/AvailableMediaTypeEntityListing.md
 docs/AvailableTime.md
 docs/AvailableTimeOffRange.md
 docs/AvailableTimeOffRequest.md
@@ -3869,6 +3882,8 @@ docs/ConversationEmailEventTopicJourneyCustomerSession.md
 docs/ConversationEmailEventTopicScoredAgent.md
 docs/ConversationEmailEventTopicUriReference.md
 docs/ConversationEmailEventTopicWrapup.md
+docs/ConversationEncryptionConfiguration.md
+docs/ConversationEncryptionConfigurationListing.md
 docs/ConversationEntityListing.md
 docs/ConversationEventCoBrowse.md
 docs/ConversationEventPresence.md
@@ -3967,6 +3982,7 @@ docs/ConversationScreenShareEventTopicScreenShareConversation.md
 docs/ConversationScreenShareEventTopicScreenShareMediaParticipant.md
 docs/ConversationScreenShareEventTopicUriReference.md
 docs/ConversationScreenShareEventTopicWrapup.md
+docs/ConversationSecureAttributes.md
 docs/ConversationSocialExpressionEventTopicConversationRoutingData.md
 docs/ConversationSocialExpressionEventTopicDetail.md
 docs/ConversationSocialExpressionEventTopicErrorBody.md
@@ -4357,6 +4373,7 @@ docs/EvaluationEntityListing.md
 docs/EvaluationForm.md
 docs/EvaluationFormAndScoringSet.md
 docs/EvaluationFormEntityListing.md
+docs/EvaluationFormResponse.md
 docs/EvaluationQualityV2TopicCalibration.md
 docs/EvaluationQualityV2TopicEvaluationScoringSet.md
 docs/EvaluationQualityV2TopicEvaluationV2.md
@@ -4365,6 +4382,7 @@ docs/EvaluationQuestion.md
 docs/EvaluationQuestionGroup.md
 docs/EvaluationQuestionGroupScore.md
 docs/EvaluationQuestionScore.md
+docs/EvaluationResponse.md
 docs/EvaluationScoringSet.md
 docs/EvaluatorActivity.md
 docs/EvaluatorActivityEntityListing.md
@@ -6425,6 +6443,10 @@ docs/WorkdayValuesTrend.md
 docs/WorkdayValuesTrendItem.md
 docs/WorkforceManagementApi.json
 docs/WorkforceManagementApi.md
+docs/WorkitemsEventsNotificationCustomAttribute.md
+docs/WorkitemsEventsNotificationDelta.md
+docs/WorkitemsEventsNotificationWorkitem.md
+docs/WorkitemsUserEventsNotificationCustomAttribute.md
 docs/WorkitemsUserEventsNotificationDelta.md
 docs/WorkitemsUserEventsNotificationWorkitem.md
 docs/Workspace.md
@@ -6787,6 +6809,7 @@ docs/get_conversation_recording_annotations-example.txt
 docs/get_conversation_recordingmetadata-example.txt
 docs/get_conversation_recordingmetadata_recording_id-example.txt
 docs/get_conversation_recordings-example.txt
+docs/get_conversation_secureattributes-example.txt
 docs/get_conversations-example.txt
 docs/get_conversations_call-example.txt
 docs/get_conversations_call_participant_wrapup-example.txt
@@ -6816,6 +6839,8 @@ docs/get_conversations_email_participant_wrapup-example.txt
 docs/get_conversations_email_participant_wrapupcodes-example.txt
 docs/get_conversations_email_settings-example.txt
 docs/get_conversations_emails-example.txt
+docs/get_conversations_keyconfiguration-example.txt
+docs/get_conversations_keyconfigurations-example.txt
 docs/get_conversations_message-example.txt
 docs/get_conversations_message_communication_messages_media_media_id-example.txt
 docs/get_conversations_message_details-example.txt
@@ -7228,6 +7253,7 @@ docs/get_routing_assessment-example.txt
 docs/get_routing_assessments-example.txt
 docs/get_routing_assessments_job-example.txt
 docs/get_routing_assessments_jobs-example.txt
+docs/get_routing_availablemediatypes-example.txt
 docs/get_routing_email_domain-example.txt
 docs/get_routing_email_domain_route-example.txt
 docs/get_routing_email_domain_routes-example.txt
@@ -7545,6 +7571,7 @@ docs/patch_coaching_appointment_status-example.txt
 docs/patch_coaching_notification-example.txt
 docs/patch_conversation_participant-example.txt
 docs/patch_conversation_participant_attributes-example.txt
+docs/patch_conversation_secureattributes-example.txt
 docs/patch_conversations_call-example.txt
 docs/patch_conversations_call_participant-example.txt
 docs/patch_conversations_call_participant_attributes-example.txt
@@ -7763,6 +7790,8 @@ docs/post_conversations_email_messages_draft_attachments_copy-example.txt
 docs/post_conversations_email_participant_replace-example.txt
 docs/post_conversations_emails-example.txt
 docs/post_conversations_faxes-example.txt
+docs/post_conversations_keyconfigurations-example.txt
+docs/post_conversations_keyconfigurations_validate-example.txt
 docs/post_conversations_message_communication_messages-example.txt
 docs/post_conversations_message_communication_messages_media-example.txt
 docs/post_conversations_message_messages_bulk-example.txt
@@ -8117,6 +8146,7 @@ docs/put_contentmanagement_workspace_tagvalue-example.txt
 docs/put_conversation_participant_flaggedreason-example.txt
 docs/put_conversation_recording-example.txt
 docs/put_conversation_recording_annotation-example.txt
+docs/put_conversation_secureattributes-example.txt
 docs/put_conversation_tags-example.txt
 docs/put_conversations_call_participant_communication_uuidata-example.txt
 docs/put_conversations_call_recordingstate-example.txt
@@ -8125,6 +8155,7 @@ docs/put_conversations_chat_recordingstate-example.txt
 docs/put_conversations_cobrowsesession_recordingstate-example.txt
 docs/put_conversations_email_messages_draft-example.txt
 docs/put_conversations_email_recordingstate-example.txt
+docs/put_conversations_keyconfiguration-example.txt
 docs/put_conversations_message_recordingstate-example.txt
 docs/put_conversations_messaging_integrations_line_integration_id-example.txt
 docs/put_conversations_messaging_supportedcontent_default-example.txt

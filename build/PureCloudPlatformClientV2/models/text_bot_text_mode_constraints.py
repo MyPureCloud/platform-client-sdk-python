@@ -40,14 +40,17 @@ class TextBotTextModeConstraints(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'language_preferences': 'list[str]'
+            'language_preferences': 'list[str]',
+            'no_input_timeout_milliseconds': 'int'
         }
 
         self.attribute_map = {
-            'language_preferences': 'languagePreferences'
+            'language_preferences': 'languagePreferences',
+            'no_input_timeout_milliseconds': 'noInputTimeoutMilliseconds'
         }
 
         self._language_preferences = None
+        self._no_input_timeout_milliseconds = None
 
     @property
     def language_preferences(self):
@@ -72,6 +75,30 @@ class TextBotTextModeConstraints(object):
         
 
         self._language_preferences = language_preferences
+
+    @property
+    def no_input_timeout_milliseconds(self):
+        """
+        Gets the no_input_timeout_milliseconds of this TextBotTextModeConstraints.
+        The amount of time, in milliseconds, before the client should send the 'NoInput' event  to trigger the \"no input\" bot response and handling on digital channels.  Note: This optional field will only be returned for 'Digital Bot Flow' turns.
+
+        :return: The no_input_timeout_milliseconds of this TextBotTextModeConstraints.
+        :rtype: int
+        """
+        return self._no_input_timeout_milliseconds
+
+    @no_input_timeout_milliseconds.setter
+    def no_input_timeout_milliseconds(self, no_input_timeout_milliseconds):
+        """
+        Sets the no_input_timeout_milliseconds of this TextBotTextModeConstraints.
+        The amount of time, in milliseconds, before the client should send the 'NoInput' event  to trigger the \"no input\" bot response and handling on digital channels.  Note: This optional field will only be returned for 'Digital Bot Flow' turns.
+
+        :param no_input_timeout_milliseconds: The no_input_timeout_milliseconds of this TextBotTextModeConstraints.
+        :type: int
+        """
+        
+
+        self._no_input_timeout_milliseconds = no_input_timeout_milliseconds
 
     def to_dict(self):
         """

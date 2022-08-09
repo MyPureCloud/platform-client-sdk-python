@@ -148,7 +148,7 @@ class QualityApi(object):
         :param str conversation_id: conversationId (required)
         :param str evaluation_id: evaluationId (required)
         :param str expand: evaluatorId, evaluationForm
-        :return: Evaluation
+        :return: EvaluationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -212,7 +212,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Evaluation',
+                                            response_type='EvaluationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -766,7 +766,7 @@ class QualityApi(object):
         :param str conversation_id: conversationId (required)
         :param str evaluation_id: evaluationId (required)
         :param str expand: agent, evaluator, evaluationForm
-        :return: Evaluation
+        :return: EvaluationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -830,7 +830,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Evaluation',
+                                            response_type='EvaluationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4256,7 +4256,7 @@ class QualityApi(object):
         :param str evaluation_id: evaluationId (required)
         :param Evaluation body: evaluation (required)
         :param str expand: evaluatorId, evaluationForm
-        :return: Evaluation
+        :return: EvaluationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4325,7 +4325,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Evaluation',
+                                            response_type='EvaluationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

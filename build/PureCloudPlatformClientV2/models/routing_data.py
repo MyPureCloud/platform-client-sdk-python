@@ -191,7 +191,7 @@ class RoutingData(object):
     def scored_agents(self):
         """
         Gets the scored_agents of this RoutingData.
-        A list of scored agents for routing decisions
+        A list of scored agents for routing decisions. For Agent Owned Callbacks use one scored agent with a score of 100.
 
         :return: The scored_agents of this RoutingData.
         :rtype: list[ScoredAgent]
@@ -202,7 +202,7 @@ class RoutingData(object):
     def scored_agents(self, scored_agents):
         """
         Sets the scored_agents of this RoutingData.
-        A list of scored agents for routing decisions
+        A list of scored agents for routing decisions. For Agent Owned Callbacks use one scored agent with a score of 100.
 
         :param scored_agents: The scored_agents of this RoutingData.
         :type: list[ScoredAgent]
@@ -215,7 +215,7 @@ class RoutingData(object):
     def routing_flags(self):
         """
         Gets the routing_flags of this RoutingData.
-        An array of flags indicating how the conversation should be routed
+        An array of flags indicating how the conversation should be routed. Use \"AGENT_OWNED_CALLBACK\" when creating an Agent Owned Callback.
 
         :return: The routing_flags of this RoutingData.
         :rtype: list[str]
@@ -226,7 +226,7 @@ class RoutingData(object):
     def routing_flags(self, routing_flags):
         """
         Sets the routing_flags of this RoutingData.
-        An array of flags indicating how the conversation should be routed
+        An array of flags indicating how the conversation should be routed. Use \"AGENT_OWNED_CALLBACK\" when creating an Agent Owned Callback.
 
         :param routing_flags: The routing_flags of this RoutingData.
         :type: list[str]

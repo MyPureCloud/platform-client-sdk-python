@@ -44,6 +44,7 @@ class DialogflowAgentSummary(object):
             'name': 'str',
             'project': 'DialogflowProject',
             'description': 'str',
+            'integration': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -52,6 +53,7 @@ class DialogflowAgentSummary(object):
             'name': 'name',
             'project': 'project',
             'description': 'description',
+            'integration': 'integration',
             'self_uri': 'selfUri'
         }
 
@@ -59,6 +61,7 @@ class DialogflowAgentSummary(object):
         self._name = None
         self._project = None
         self._description = None
+        self._integration = None
         self._self_uri = None
 
     @property
@@ -113,7 +116,7 @@ class DialogflowAgentSummary(object):
     def project(self):
         """
         Gets the project of this DialogflowAgentSummary.
-        The project this Dialogflow agent belongs to
+        The project this Dialogflow agent belongs to.
 
         :return: The project of this DialogflowAgentSummary.
         :rtype: DialogflowProject
@@ -124,7 +127,7 @@ class DialogflowAgentSummary(object):
     def project(self, project):
         """
         Sets the project of this DialogflowAgentSummary.
-        The project this Dialogflow agent belongs to
+        The project this Dialogflow agent belongs to.
 
         :param project: The project of this DialogflowAgentSummary.
         :type: DialogflowProject
@@ -137,7 +140,7 @@ class DialogflowAgentSummary(object):
     def description(self):
         """
         Gets the description of this DialogflowAgentSummary.
-        A description of the Dialogflow agent
+        A description of the Dialogflow agent.
 
         :return: The description of this DialogflowAgentSummary.
         :rtype: str
@@ -148,7 +151,7 @@ class DialogflowAgentSummary(object):
     def description(self, description):
         """
         Sets the description of this DialogflowAgentSummary.
-        A description of the Dialogflow agent
+        A description of the Dialogflow agent.
 
         :param description: The description of this DialogflowAgentSummary.
         :type: str
@@ -156,6 +159,30 @@ class DialogflowAgentSummary(object):
         
 
         self._description = description
+
+    @property
+    def integration(self):
+        """
+        Gets the integration of this DialogflowAgentSummary.
+        The Integration this Dialogflow agent was referenced from.
+
+        :return: The integration of this DialogflowAgentSummary.
+        :rtype: DomainEntityRef
+        """
+        return self._integration
+
+    @integration.setter
+    def integration(self, integration):
+        """
+        Sets the integration of this DialogflowAgentSummary.
+        The Integration this Dialogflow agent was referenced from.
+
+        :param integration: The integration of this DialogflowAgentSummary.
+        :type: DomainEntityRef
+        """
+        
+
+        self._integration = integration
 
     @property
     def self_uri(self):

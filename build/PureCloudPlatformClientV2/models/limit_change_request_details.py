@@ -46,13 +46,11 @@ class LimitChangeRequestDetails(object):
             'requested_value': 'float',
             'description': 'str',
             'support_case_url': 'str',
-            'created_by': 'str',
             'status': 'str',
             'current_value': 'float',
             'date_created': 'datetime',
             'status_history': 'list[StatusChange]',
             'date_completed': 'datetime',
-            'last_changed_by': 'str',
             'reject_reason': 'str',
             'self_uri': 'str'
         }
@@ -64,13 +62,11 @@ class LimitChangeRequestDetails(object):
             'requested_value': 'requestedValue',
             'description': 'description',
             'support_case_url': 'supportCaseUrl',
-            'created_by': 'createdBy',
             'status': 'status',
             'current_value': 'currentValue',
             'date_created': 'dateCreated',
             'status_history': 'statusHistory',
             'date_completed': 'dateCompleted',
-            'last_changed_by': 'lastChangedBy',
             'reject_reason': 'rejectReason',
             'self_uri': 'selfUri'
         }
@@ -81,13 +77,11 @@ class LimitChangeRequestDetails(object):
         self._requested_value = None
         self._description = None
         self._support_case_url = None
-        self._created_by = None
         self._status = None
         self._current_value = None
         self._date_created = None
         self._status_history = None
         self._date_completed = None
-        self._last_changed_by = None
         self._reject_reason = None
         self._self_uri = None
 
@@ -159,9 +153,12 @@ class LimitChangeRequestDetails(object):
         :param namespace: The namespace of this LimitChangeRequestDetails.
         :type: str
         """
-        
-
-        self._namespace = namespace
+        allowed_values = ["contacts", "agent.assistant", "analytics.alerting", "analytics", "analytics.realtime", "analytics.reporting.settings", "architect", "audiohook", "audit", "auth.api", "authorization", "automation.testing", "bots", "bots.voice", "cobrowse", "content.management", "conversation", "dataactions", "datatables", "directory", "email", "event.orchestration", "external.contacts", "gcv", "gdpr", "groups", "historical.adherence", "infrastructureascode", "integrations", "intent.miner", "journey", "knowledge", "language.understanding", "limit.registry", "marketplace", "messaging", "notifications", "onboarding", "outbound", "platform.api", "predictive.routing", "quality", "recording", "response.management", "routing", "scim", "search", "speech.and.text.analytics", "speech.integration", "supportability", "task.management", "telephony.configuration", "web.deployments", "web.messaging", "webchat", "webhooks", "workforce.management"]
+        if namespace.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for namespace -> " + namespace)
+            self._namespace = "outdated_sdk_version"
+        else:
+            self._namespace = namespace
 
     @property
     def requested_value(self):
@@ -236,30 +233,6 @@ class LimitChangeRequestDetails(object):
         self._support_case_url = support_case_url
 
     @property
-    def created_by(self):
-        """
-        Gets the created_by of this LimitChangeRequestDetails.
-        The user who created the change request
-
-        :return: The created_by of this LimitChangeRequestDetails.
-        :rtype: str
-        """
-        return self._created_by
-
-    @created_by.setter
-    def created_by(self, created_by):
-        """
-        Sets the created_by of this LimitChangeRequestDetails.
-        The user who created the change request
-
-        :param created_by: The created_by of this LimitChangeRequestDetails.
-        :type: str
-        """
-        
-
-        self._created_by = created_by
-
-    @property
     def status(self):
         """
         Gets the status of this LimitChangeRequestDetails.
@@ -279,7 +252,7 @@ class LimitChangeRequestDetails(object):
         :param status: The status of this LimitChangeRequestDetails.
         :type: str
         """
-        allowed_values = ["Open", "Approved", "ImplementingChange", "ChangeImplemented", "Rejected", "Rollback", "ImplementingRollback", "RollbackImplemented"]
+        allowed_values = ["Approved", "Rejected", "Rollback", "Pending", "Open", "SecondaryApprovalNamespacesAdded", "ReviewerApproved", "ReviewerRejected", "ReviewerRollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
@@ -381,30 +354,6 @@ class LimitChangeRequestDetails(object):
         
 
         self._date_completed = date_completed
-
-    @property
-    def last_changed_by(self):
-        """
-        Gets the last_changed_by of this LimitChangeRequestDetails.
-        The user who last updated the status of the limit change request
-
-        :return: The last_changed_by of this LimitChangeRequestDetails.
-        :rtype: str
-        """
-        return self._last_changed_by
-
-    @last_changed_by.setter
-    def last_changed_by(self, last_changed_by):
-        """
-        Sets the last_changed_by of this LimitChangeRequestDetails.
-        The user who last updated the status of the limit change request
-
-        :param last_changed_by: The last_changed_by of this LimitChangeRequestDetails.
-        :type: str
-        """
-        
-
-        self._last_changed_by = last_changed_by
 
     @property
     def reject_reason(self):

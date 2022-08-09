@@ -43,20 +43,23 @@ class CursorOrganizationListing(object):
             'entities': 'list[ExternalOrganization]',
             'next_uri': 'str',
             'self_uri': 'str',
-            'previous_uri': 'str'
+            'previous_uri': 'str',
+            'cursors': 'Cursors'
         }
 
         self.attribute_map = {
             'entities': 'entities',
             'next_uri': 'nextUri',
             'self_uri': 'selfUri',
-            'previous_uri': 'previousUri'
+            'previous_uri': 'previousUri',
+            'cursors': 'cursors'
         }
 
         self._entities = None
         self._next_uri = None
         self._self_uri = None
         self._previous_uri = None
+        self._cursors = None
 
     @property
     def entities(self):
@@ -153,6 +156,30 @@ class CursorOrganizationListing(object):
         
 
         self._previous_uri = previous_uri
+
+    @property
+    def cursors(self):
+        """
+        Gets the cursors of this CursorOrganizationListing.
+        The cursor that points to the next set of entities being returned.
+
+        :return: The cursors of this CursorOrganizationListing.
+        :rtype: Cursors
+        """
+        return self._cursors
+
+    @cursors.setter
+    def cursors(self, cursors):
+        """
+        Sets the cursors of this CursorOrganizationListing.
+        The cursor that points to the next set of entities being returned.
+
+        :param cursors: The cursors of this CursorOrganizationListing.
+        :type: Cursors
+        """
+        
+
+        self._cursors = cursors
 
     def to_dict(self):
         """

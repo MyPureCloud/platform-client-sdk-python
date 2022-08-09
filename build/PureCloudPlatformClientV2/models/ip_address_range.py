@@ -99,7 +99,7 @@ class IpAddressRange(object):
         :param service: The service of this IpAddressRange.
         :type: str
         """
-        allowed_values = ["data-actions", "smtp"]
+        allowed_values = ["data-actions", "smtp", "audiohook"]
         if service.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service -> " + service)
             self._service = "outdated_sdk_version"

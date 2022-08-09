@@ -40,7 +40,7 @@ class BulkIdsRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[Entity]'
+            'entities': 'list[WritableEntity]'
         }
 
         self.attribute_map = {
@@ -56,7 +56,7 @@ class BulkIdsRequest(object):
 
 
         :return: The entities of this BulkIdsRequest.
-        :rtype: list[Entity]
+        :rtype: list[WritableEntity]
         """
         return self._entities
 
@@ -67,7 +67,7 @@ class BulkIdsRequest(object):
 
 
         :param entities: The entities of this BulkIdsRequest.
-        :type: list[Entity]
+        :type: list[WritableEntity]
         """
         
 

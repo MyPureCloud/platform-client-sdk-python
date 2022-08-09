@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_participant_secureivrsessions**](ConversationsApi.html#get_conversation_participant_secureivrsessions) | Get a list of secure sessions for this participant.|
 |[**get_conversation_participant_wrapup**](ConversationsApi.html#get_conversation_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversation_participant_wrapupcodes**](ConversationsApi.html#get_conversation_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversation_secureattributes**](ConversationsApi.html#get_conversation_secureattributes) | Get the secure attributes on a conversation.|
 |[**get_conversations**](ConversationsApi.html#get_conversations) | Get active conversations for the logged in user|
 |[**get_conversations_call**](ConversationsApi.html#get_conversations_call) | Get call conversation|
 |[**get_conversations_call_participant_wrapup**](ConversationsApi.html#get_conversations_call_participant_wrapup) | Get the wrap-up for this conversation participant. |
@@ -58,6 +59,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_email_participant_wrapupcodes**](ConversationsApi.html#get_conversations_email_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_email_settings**](ConversationsApi.html#get_conversations_email_settings) | Get emails settings for a given conversation|
 |[**get_conversations_emails**](ConversationsApi.html#get_conversations_emails) | Get active email conversations for the logged in user|
+|[**get_conversations_keyconfiguration**](ConversationsApi.html#get_conversations_keyconfiguration) | Get the encryption key configurations|
+|[**get_conversations_keyconfigurations**](ConversationsApi.html#get_conversations_keyconfigurations) | Get a list of key configurations data|
 |[**get_conversations_message**](ConversationsApi.html#get_conversations_message) | Get message conversation|
 |[**get_conversations_message_communication_messages_media_media_id**](ConversationsApi.html#get_conversations_message_communication_messages_media_media_id) | Get media|
 |[**get_conversations_message_details**](ConversationsApi.html#get_conversations_message_details) | Get message|
@@ -84,6 +87,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_threadingtimeline**](ConversationsApi.html#get_conversations_messaging_threadingtimeline) | Get conversation threading window timeline for each messaging type|
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversation_secureattributes**](ConversationsApi.html#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
 |[**patch_conversations_call**](ConversationsApi.html#patch_conversations_call) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
 |[**patch_conversations_call_participant**](ConversationsApi.html#patch_conversations_call_participant) | Update conversation participant|
 |[**patch_conversations_call_participant_attributes**](ConversationsApi.html#patch_conversations_call_participant_attributes) | Update the attributes on a conversation participant.|
@@ -147,6 +151,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_email_participant_replace**](ConversationsApi.html#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_emails**](ConversationsApi.html#post_conversations_emails) | Create an email conversation|
 |[**post_conversations_faxes**](ConversationsApi.html#post_conversations_faxes) | Create Fax Conversation|
+|[**post_conversations_keyconfigurations**](ConversationsApi.html#post_conversations_keyconfigurations) | Setup configurations for encryption key creation|
+|[**post_conversations_keyconfigurations_validate**](ConversationsApi.html#post_conversations_keyconfigurations_validate) | Validate encryption key configurations without saving it|
 |[**post_conversations_message_communication_messages**](ConversationsApi.html#post_conversations_message_communication_messages) | Send message|
 |[**post_conversations_message_communication_messages_media**](ConversationsApi.html#post_conversations_message_communication_messages_media) | Create media|
 |[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
@@ -161,6 +167,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp) | Create a WhatsApp Integration|
 |[**post_conversations_messaging_supportedcontent**](ConversationsApi.html#post_conversations_messaging_supportedcontent) | Create a Supported Content profile|
 |[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
+|[**put_conversation_secureattributes**](ConversationsApi.html#put_conversation_secureattributes) | Set the secure attributes on a conversation.|
 |[**put_conversation_tags**](ConversationsApi.html#put_conversation_tags) | Update the tags on a conversation.|
 |[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
 |[**put_conversations_call_recordingstate**](ConversationsApi.html#put_conversations_call_recordingstate) | Update a conversation by setting its recording state|
@@ -169,6 +176,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversations_cobrowsesession_recordingstate**](ConversationsApi.html#put_conversations_cobrowsesession_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
 |[**put_conversations_email_recordingstate**](ConversationsApi.html#put_conversations_email_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_keyconfiguration**](ConversationsApi.html#put_conversations_keyconfiguration) | Update the encryption key configurations|
 |[**put_conversations_message_recordingstate**](ConversationsApi.html#put_conversations_message_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#put_conversations_messaging_integrations_line_integration_id) | Update a LINE messenger integration|
 |[**put_conversations_messaging_supportedcontent_default**](ConversationsApi.html#put_conversations_messaging_supportedcontent_default) | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.|
@@ -1259,6 +1267,57 @@ except ApiException as e:
 ### Return type
 
 [**list[WrapupCode]**](WrapupCode.html)
+
+<a name="get_conversation_secureattributes"></a>
+
+## [**ConversationSecureAttributes**](ConversationSecureAttributes.html) get_conversation_secureattributes(conversation_id)
+
+
+
+Get the secure attributes on a conversation.
+
+
+
+Wraps GET /api/v2/conversations/{conversationId}/secureattributes 
+
+Requires ANY permissions: 
+
+* conversation:participant:attributesview
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+
+try:
+    # Get the secure attributes on a conversation.
+    api_response = api_instance.get_conversation_secureattributes(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_secureattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationSecureAttributes**](ConversationSecureAttributes.html)
 
 <a name="get_conversations"></a>
 
@@ -2738,6 +2797,104 @@ This endpoint does not need any parameters.
 
 [**EmailConversationEntityListing**](EmailConversationEntityListing.html)
 
+<a name="get_conversations_keyconfiguration"></a>
+
+## [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html) get_conversations_keyconfiguration(keyconfigurations_id)
+
+
+
+Get the encryption key configurations
+
+
+
+Wraps GET /api/v2/conversations/keyconfigurations/{keyconfigurationsId} 
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+keyconfigurations_id = 'keyconfigurations_id_example' # str | Key Configurations Id
+
+try:
+    # Get the encryption key configurations
+    api_response = api_instance.get_conversations_keyconfiguration(keyconfigurations_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_keyconfiguration: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **keyconfigurations_id** | **str**| Key Configurations Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+
+<a name="get_conversations_keyconfigurations"></a>
+
+## [**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing.html) get_conversations_keyconfigurations()
+
+
+
+Get a list of key configurations data
+
+
+
+Wraps GET /api/v2/conversations/keyconfigurations 
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get a list of key configurations data
+    api_response = api_instance.get_conversations_keyconfigurations()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_keyconfigurations: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing.html)
+
 <a name="get_conversations_message"></a>
 
 ## [**MessageConversation**](MessageConversation.html) get_conversations_message(conversation_id)
@@ -4126,6 +4283,59 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="patch_conversation_secureattributes"></a>
+
+## str** patch_conversation_secureattributes(conversation_id, body)
+
+
+
+Update the secure attributes on a conversation.
+
+
+
+Wraps PATCH /api/v2/conversations/{conversationId}/secureattributes 
+
+Requires ANY permissions: 
+
+* conversation:participant:attributesedit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = PureCloudPlatformClientV2.ConversationSecureAttributes() # ConversationSecureAttributes | Conversation Secure Attributes
+
+try:
+    # Update the secure attributes on a conversation.
+    api_response = api_instance.patch_conversation_secureattributes(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversation_secureattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes.html)| Conversation Secure Attributes |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
 
 <a name="patch_conversations_call"></a>
 
@@ -7472,6 +7682,108 @@ except ApiException as e:
 
 [**FaxSendResponse**](FaxSendResponse.html)
 
+<a name="post_conversations_keyconfigurations"></a>
+
+## [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html) post_conversations_keyconfigurations(body)
+
+
+
+Setup configurations for encryption key creation
+
+
+
+Wraps POST /api/v2/conversations/keyconfigurations 
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.ConversationEncryptionConfiguration() # ConversationEncryptionConfiguration | Encryption Configuration
+
+try:
+    # Setup configurations for encryption key creation
+    api_response = api_instance.post_conversations_keyconfigurations(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_keyconfigurations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption Configuration |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+
+<a name="post_conversations_keyconfigurations_validate"></a>
+
+## [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html) post_conversations_keyconfigurations_validate(body)
+
+
+
+Validate encryption key configurations without saving it
+
+
+
+Wraps POST /api/v2/conversations/keyconfigurations/validate 
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.ConversationEncryptionConfiguration() # ConversationEncryptionConfiguration | Encryption Configuration
+
+try:
+    # Validate encryption key configurations without saving it
+    api_response = api_instance.post_conversations_keyconfigurations_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_keyconfigurations_validate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption Configuration |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+
 <a name="post_conversations_message_communication_messages"></a>
 
 ## [**MessageData**](MessageData.html) post_conversations_message_communication_messages(conversation_id, communication_id, body)
@@ -8215,6 +8527,59 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="put_conversation_secureattributes"></a>
+
+## str** put_conversation_secureattributes(conversation_id, body)
+
+
+
+Set the secure attributes on a conversation.
+
+
+
+Wraps PUT /api/v2/conversations/{conversationId}/secureattributes 
+
+Requires ANY permissions: 
+
+* conversation:participant:attributesedit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = PureCloudPlatformClientV2.ConversationSecureAttributes() # ConversationSecureAttributes | Conversation Secure Attributes
+
+try:
+    # Set the secure attributes on a conversation.
+    api_response = api_instance.put_conversation_secureattributes(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversation_secureattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes.html)| Conversation Secure Attributes |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
 <a name="put_conversation_tags"></a>
 
 ## str** put_conversation_tags(conversation_id, body)
@@ -8640,6 +9005,59 @@ except ApiException as e:
 ### Return type
 
 **str**
+
+<a name="put_conversations_keyconfiguration"></a>
+
+## [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html) put_conversations_keyconfiguration(keyconfigurations_id, body)
+
+
+
+Update the encryption key configurations
+
+
+
+Wraps PUT /api/v2/conversations/keyconfigurations/{keyconfigurationsId} 
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+keyconfigurations_id = 'keyconfigurations_id_example' # str | Key Configurations Id
+body = PureCloudPlatformClientV2.ConversationEncryptionConfiguration() # ConversationEncryptionConfiguration | Encryption key configuration metadata
+
+try:
+    # Update the encryption key configurations
+    api_response = api_instance.put_conversations_keyconfiguration(keyconfigurations_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_keyconfiguration: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **keyconfigurations_id** | **str**| Key Configurations Id |  |
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption key configuration metadata |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
 
 <a name="put_conversations_message_recordingstate"></a>
 
