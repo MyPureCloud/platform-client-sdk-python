@@ -124,6 +124,516 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_knowledge_knowledgebase_category(self, knowledge_base_id, category_id, **kwargs):
+        """
+        Delete category
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_knowledgebase_category(knowledge_base_id, category_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str category_id: Category ID (required)
+        :return: CategoryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'category_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_knowledgebase_category" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `delete_knowledge_knowledgebase_category`")
+        # verify the required parameter 'category_id' is set
+        if ('category_id' not in params) or (params['category_id'] is None):
+            raise ValueError("Missing the required parameter `category_id` when calling `delete_knowledge_knowledgebase_category`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'category_id' in params:
+            path_params['categoryId'] = params['category_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CategoryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_knowledge_knowledgebase_document(self, knowledge_base_id, document_id, **kwargs):
+        """
+        Delete document.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_knowledgebase_document(knowledge_base_id, document_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID. (required)
+        :param str document_id: Document ID. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_knowledgebase_document" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `delete_knowledge_knowledgebase_document`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `delete_knowledge_knowledgebase_document`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_knowledge_knowledgebase_document_variation(self, document_variation_id, document_id, knowledge_base_id, **kwargs):
+        """
+        Delete a variation for a document.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str document_variation_id: Globally unique identifier for a document variation. (required)
+        :param str document_id: Globally unique identifier for a document. (required)
+        :param str knowledge_base_id: Globally unique identifier for a knowledge base. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['document_variation_id', 'document_id', 'knowledge_base_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_knowledgebase_document_variation" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'document_variation_id' is set
+        if ('document_variation_id' not in params) or (params['document_variation_id'] is None):
+            raise ValueError("Missing the required parameter `document_variation_id` when calling `delete_knowledge_knowledgebase_document_variation`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `delete_knowledge_knowledgebase_document_variation`")
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `delete_knowledge_knowledgebase_document_variation`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'document_variation_id' in params:
+            path_params['documentVariationId'] = params['document_variation_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_knowledge_knowledgebase_export_job(self, knowledge_base_id, export_job_id, **kwargs):
+        """
+        Delete export job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_knowledgebase_export_job(knowledge_base_id, export_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str export_job_id: Export job ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'export_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_knowledgebase_export_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `delete_knowledge_knowledgebase_export_job`")
+        # verify the required parameter 'export_job_id' is set
+        if ('export_job_id' not in params) or (params['export_job_id'] is None):
+            raise ValueError("Missing the required parameter `export_job_id` when calling `delete_knowledge_knowledgebase_export_job`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'export_job_id' in params:
+            path_params['exportJobId'] = params['export_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_knowledge_knowledgebase_import_job(self, knowledge_base_id, import_job_id, **kwargs):
+        """
+        Delete import job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str import_job_id: Import job ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'import_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_knowledgebase_import_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `delete_knowledge_knowledgebase_import_job`")
+        # verify the required parameter 'import_job_id' is set
+        if ('import_job_id' not in params) or (params['import_job_id'] is None):
+            raise ValueError("Missing the required parameter `import_job_id` when calling `delete_knowledge_knowledgebase_import_job`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'import_job_id' in params:
+            path_params['importJobId'] = params['import_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_knowledge_knowledgebase_label(self, knowledge_base_id, label_id, **kwargs):
+        """
+        Delete label
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_knowledgebase_label(knowledge_base_id, label_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str label_id: Label ID (required)
+        :return: LabelResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'label_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_knowledgebase_label" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `delete_knowledge_knowledgebase_label`")
+        # verify the required parameter 'label_id' is set
+        if ('label_id' not in params) or (params['label_id'] is None):
+            raise ValueError("Missing the required parameter `label_id` when calling `delete_knowledge_knowledgebase_label`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'label_id' in params:
+            path_params['labelId'] = params['label_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LabelResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_knowledge_knowledgebase_language_category(self, category_id, knowledge_base_id, language_code, **kwargs):
         """
         Delete category
@@ -394,6 +904,282 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_knowledge_guest_session_categories(self, session_id, **kwargs):
+        """
+        Get categories
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_guest_session_categories(session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str session_id: Knowledge guest session ID. (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str parent_id: If specified, retrieves the children categories by parent category ID.
+        :param bool is_root: If specified, retrieves only the root categories.
+        :param str name: Filter to return the categories that starts with the given category name.
+        :param str sort_by: Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically
+        :param str expand: The specified entity attribute will be filled. Supported value:\"Ancestors\": every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors.
+        :param bool include_document_count: If specified, retrieves the number of documents related to category.
+        :return: GuestCategoryResponseListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['session_id', 'before', 'after', 'page_size', 'parent_id', 'is_root', 'name', 'sort_by', 'expand', 'include_document_count']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_guest_session_categories" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `get_knowledge_guest_session_categories`")
+
+
+        resource_path = '/api/v2/knowledge/guest/sessions/{sessionId}/categories'.replace('{format}', 'json')
+        path_params = {}
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'parent_id' in params:
+            query_params['parentId'] = params['parent_id']
+        if 'is_root' in params:
+            query_params['isRoot'] = params['is_root']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'include_document_count' in params:
+            query_params['includeDocumentCount'] = params['include_document_count']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GuestCategoryResponseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_guest_session_document(self, session_id, document_id, **kwargs):
+        """
+        Get a knowledge document by ID.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_guest_session_document(session_id, document_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str session_id: Knowledge guest session ID. (required)
+        :param str document_id: Document ID (required)
+        :return: KnowledgeGuestDocument
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['session_id', 'document_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_guest_session_document" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `get_knowledge_guest_session_document`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `get_knowledge_guest_session_document`")
+
+
+        resource_path = '/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeGuestDocument',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_guest_session_documents(self, session_id, **kwargs):
+        """
+        Get documents.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_guest_session_documents(session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str session_id: Knowledge guest session ID. (required)
+        :param list[str] category_id: If specified, retrieves documents associated with category ids, comma separated values expected.
+        :param bool include_subcategories: Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :return: KnowledgeGuestDocumentResponseListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['session_id', 'category_id', 'include_subcategories', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_guest_session_documents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `get_knowledge_guest_session_documents`")
+
+
+        resource_path = '/api/v2/knowledge/guest/sessions/{sessionId}/documents'.replace('{format}', 'json')
+        path_params = {}
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+        if 'category_id' in params:
+            query_params['categoryId'] = params['category_id']
+        if 'include_subcategories' in params:
+            query_params['includeSubcategories'] = params['include_subcategories']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeGuestDocumentResponseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_knowledge_knowledgebase(self, knowledge_base_id, **kwargs):
         """
         Get knowledge base
@@ -468,6 +1254,1308 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='KnowledgeBase',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_categories(self, knowledge_base_id, **kwargs):
+        """
+        Get categories
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_categories(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str parent_id: If specified, retrieves the children categories by parent category ID.
+        :param bool is_root: If specified, retrieves only the root categories.
+        :param str name: Filter to return the categories that starts with the given category name.
+        :param str sort_by: Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically
+        :param str expand: The specified entity attribute will be filled. Supported value:\"Ancestors\": every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors.
+        :param bool include_document_count: If specified, retrieves the number of documents related to category.
+        :return: CategoryResponseListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'parent_id', 'is_root', 'name', 'sort_by', 'expand', 'include_document_count']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_categories" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_categories`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'parent_id' in params:
+            query_params['parentId'] = params['parent_id']
+        if 'is_root' in params:
+            query_params['isRoot'] = params['is_root']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'include_document_count' in params:
+            query_params['includeDocumentCount'] = params['include_document_count']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CategoryResponseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_category(self, knowledge_base_id, category_id, **kwargs):
+        """
+        Get category
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_category(knowledge_base_id, category_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str category_id: Category ID (required)
+        :return: CategoryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'category_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_category" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_category`")
+        # verify the required parameter 'category_id' is set
+        if ('category_id' not in params) or (params['category_id'] is None):
+            raise ValueError("Missing the required parameter `category_id` when calling `get_knowledge_knowledgebase_category`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'category_id' in params:
+            path_params['categoryId'] = params['category_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CategoryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_document(self, knowledge_base_id, document_id, **kwargs):
+        """
+        Get document.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_document(knowledge_base_id, document_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID. (required)
+        :param str document_id: Document ID. (required)
+        :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20.
+        :param str state: \"when state is \"Draft\", draft version of the document is returned,otherwise by default published version is returned in the response.
+        :return: KnowledgeDocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id', 'expand', 'state']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_document" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_document`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `get_knowledge_knowledgebase_document`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'state' in params:
+            query_params['state'] = params['state']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_document_variation(self, document_variation_id, document_id, knowledge_base_id, **kwargs):
+        """
+        Get a variation for a document.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str document_variation_id: Globally unique identifier for a document variation. (required)
+        :param str document_id: Globally unique identifier for a document. (required)
+        :param str knowledge_base_id: Globally unique identifier for a knowledge base. (required)
+        :param str document_state: The state of the document.
+        :return: DocumentVariation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['document_variation_id', 'document_id', 'knowledge_base_id', 'document_state']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_document_variation" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'document_variation_id' is set
+        if ('document_variation_id' not in params) or (params['document_variation_id'] is None):
+            raise ValueError("Missing the required parameter `document_variation_id` when calling `get_knowledge_knowledgebase_document_variation`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `get_knowledge_knowledgebase_document_variation`")
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_document_variation`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'document_variation_id' in params:
+            path_params['documentVariationId'] = params['document_variation_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+        if 'document_state' in params:
+            query_params['documentState'] = params['document_state']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DocumentVariation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_document_variations(self, knowledge_base_id, document_id, **kwargs):
+        """
+        Get variations for a document.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Globally unique identifier for the knowledge base. (required)
+        :param str document_id: Globally unique identifier for the document. (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str document_state: The state of the document.
+        :return: DocumentVariationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id', 'before', 'after', 'page_size', 'document_state']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_document_variations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_document_variations`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `get_knowledge_knowledgebase_document_variations`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'document_state' in params:
+            query_params['documentState'] = params['document_state']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DocumentVariationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_document_version(self, knowledge_base_id, document_id, version_id, **kwargs):
+        """
+        Get document version.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_document_version(knowledge_base_id, document_id, version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Globally unique identifier for the knowledge base. (required)
+        :param str document_id: Globally unique identifier for the document. (required)
+        :param str version_id: Globally unique identifier for the document version. (required)
+        :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected.
+        :return: KnowledgeDocumentVersion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id', 'version_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_document_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_document_version`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `get_knowledge_knowledgebase_document_version`")
+        # verify the required parameter 'version_id' is set
+        if ('version_id' not in params) or (params['version_id'] is None):
+            raise ValueError("Missing the required parameter `version_id` when calling `get_knowledge_knowledgebase_document_version`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+        if 'version_id' in params:
+            path_params['versionId'] = params['version_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentVersion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_document_version_variation(self, knowledge_base_id, document_id, version_id, variation_id, **kwargs):
+        """
+        Get variation for the given document version.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_document_version_variation(knowledge_base_id, document_id, version_id, variation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Globally unique identifier for the knowledge base. (required)
+        :param str document_id: Globally unique identifier for the document. (required)
+        :param str version_id: Globally unique identifier for the document version. (required)
+        :param str variation_id: Globally unique identifier for the document version variation. (required)
+        :return: KnowledgeDocumentVersionVariation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id', 'version_id', 'variation_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_document_version_variation" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_document_version_variation`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `get_knowledge_knowledgebase_document_version_variation`")
+        # verify the required parameter 'version_id' is set
+        if ('version_id' not in params) or (params['version_id'] is None):
+            raise ValueError("Missing the required parameter `version_id` when calling `get_knowledge_knowledgebase_document_version_variation`")
+        # verify the required parameter 'variation_id' is set
+        if ('variation_id' not in params) or (params['variation_id'] is None):
+            raise ValueError("Missing the required parameter `variation_id` when calling `get_knowledge_knowledgebase_document_version_variation`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations/{variationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+        if 'version_id' in params:
+            path_params['versionId'] = params['version_id']
+        if 'variation_id' in params:
+            path_params['variationId'] = params['variation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentVersionVariation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_document_version_variations(self, knowledge_base_id, document_id, version_id, **kwargs):
+        """
+        Get variations for the given document version.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_document_version_variations(knowledge_base_id, document_id, version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Globally unique identifier for the knowledge base. (required)
+        :param str document_id: Globally unique identifier for the document. (required)
+        :param str version_id: Globally unique identifier for the document version. (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :return: KnowledgeDocumentVersionVariationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id', 'version_id', 'before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_document_version_variations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_document_version_variations`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `get_knowledge_knowledgebase_document_version_variations`")
+        # verify the required parameter 'version_id' is set
+        if ('version_id' not in params) or (params['version_id'] is None):
+            raise ValueError("Missing the required parameter `version_id` when calling `get_knowledge_knowledgebase_document_version_variations`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+        if 'version_id' in params:
+            path_params['versionId'] = params['version_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentVersionVariationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_document_versions(self, knowledge_base_id, document_id, **kwargs):
+        """
+        Get document versions.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_document_versions(knowledge_base_id, document_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Globally unique identifier for the knowledge base. (required)
+        :param str document_id: Globally unique identifier for the document. (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected.
+        :return: KnowledgeDocumentVersionListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id', 'before', 'after', 'page_size', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_document_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_document_versions`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `get_knowledge_knowledgebase_document_versions`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentVersionListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_documents(self, knowledge_base_id, **kwargs):
+        """
+        Get documents.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_documents(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str interval: Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+        :param list[str] category_id: If specified, retrieves documents associated with category ids, comma separated values expected.
+        :param bool include_subcategories: Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
+        :param bool include_drafts: If includeDrafts is true, Documents in the draft state are also returned in the response.
+        :param list[str] label_ids: If specified, retrieves documents associated with label ids, comma separated values expected.
+        :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected.
+        :return: KnowledgeDocumentResponseListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'interval', 'category_id', 'include_subcategories', 'include_drafts', 'label_ids', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_documents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_documents`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'interval' in params:
+            query_params['interval'] = params['interval']
+        if 'category_id' in params:
+            query_params['categoryId'] = params['category_id']
+        if 'include_subcategories' in params:
+            query_params['includeSubcategories'] = params['include_subcategories']
+        if 'include_drafts' in params:
+            query_params['includeDrafts'] = params['include_drafts']
+        if 'label_ids' in params:
+            query_params['labelIds'] = params['label_ids']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentResponseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_export_job(self, knowledge_base_id, export_job_id, **kwargs):
+        """
+        Get export job report
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_export_job(knowledge_base_id, export_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str export_job_id: Export job ID (required)
+        :return: KnowledgeExportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'export_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_export_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_export_job`")
+        # verify the required parameter 'export_job_id' is set
+        if ('export_job_id' not in params) or (params['export_job_id'] is None):
+            raise ValueError("Missing the required parameter `export_job_id` when calling `get_knowledge_knowledgebase_export_job`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'export_job_id' in params:
+            path_params['exportJobId'] = params['export_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeExportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_import_job(self, knowledge_base_id, import_job_id, **kwargs):
+        """
+        Get import job report
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str import_job_id: Import job ID (required)
+        :return: KnowledgeImportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'import_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_import_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_import_job`")
+        # verify the required parameter 'import_job_id' is set
+        if ('import_job_id' not in params) or (params['import_job_id'] is None):
+            raise ValueError("Missing the required parameter `import_job_id` when calling `get_knowledge_knowledgebase_import_job`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'import_job_id' in params:
+            path_params['importJobId'] = params['import_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeImportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_label(self, knowledge_base_id, label_id, **kwargs):
+        """
+        Get label
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_label(knowledge_base_id, label_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str label_id: Label ID (required)
+        :return: LabelResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'label_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_label" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_label`")
+        # verify the required parameter 'label_id' is set
+        if ('label_id' not in params) or (params['label_id'] is None):
+            raise ValueError("Missing the required parameter `label_id` when calling `get_knowledge_knowledgebase_label`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'label_id' in params:
+            path_params['labelId'] = params['label_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LabelResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_labels(self, knowledge_base_id, **kwargs):
+        """
+        Get labels
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_labels(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str name: Filter to return the labels that contains the given phrase in the name.
+        :param bool include_document_count: If specified, retrieves the number of documents related to label.
+        :return: LabelListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'name', 'include_document_count']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_labels" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_labels`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'include_document_count' in params:
+            query_params['includeDocumentCount'] = params['include_document_count']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LabelListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1141,6 +3229,267 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_knowledge_knowledgebase_unanswered_group(self, knowledge_base_id, group_id, **kwargs):
+        """
+        Get knowledge base unanswered group for a particular groupId
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_unanswered_group(knowledge_base_id, group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str group_id: The ID of the group to be retrieved. (required)
+        :param str app: The app value to be used for filtering phrases.
+        :return: UnansweredGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'group_id', 'app']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_unanswered_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_unanswered_group`")
+        # verify the required parameter 'group_id' is set
+        if ('group_id' not in params) or (params['group_id'] is None):
+            raise ValueError("Missing the required parameter `group_id` when calling `get_knowledge_knowledgebase_unanswered_group`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'group_id' in params:
+            path_params['groupId'] = params['group_id']
+
+        query_params = {}
+        if 'app' in params:
+            query_params['app'] = params['app']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnansweredGroup',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_unanswered_group_phrasegroup(self, knowledge_base_id, group_id, phrase_group_id, **kwargs):
+        """
+        Get knowledge base unanswered phrase group for a particular phraseGroupId
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str group_id: The ID of the group to be retrieved. (required)
+        :param str phrase_group_id: The ID of the phraseGroup to be retrieved. (required)
+        :param str app: The app value to be used for filtering phrases.
+        :return: UnansweredPhraseGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'group_id', 'phrase_group_id', 'app']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_unanswered_group_phrasegroup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_unanswered_group_phrasegroup`")
+        # verify the required parameter 'group_id' is set
+        if ('group_id' not in params) or (params['group_id'] is None):
+            raise ValueError("Missing the required parameter `group_id` when calling `get_knowledge_knowledgebase_unanswered_group_phrasegroup`")
+        # verify the required parameter 'phrase_group_id' is set
+        if ('phrase_group_id' not in params) or (params['phrase_group_id'] is None):
+            raise ValueError("Missing the required parameter `phrase_group_id` when calling `get_knowledge_knowledgebase_unanswered_group_phrasegroup`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'group_id' in params:
+            path_params['groupId'] = params['group_id']
+        if 'phrase_group_id' in params:
+            path_params['phraseGroupId'] = params['phrase_group_id']
+
+        query_params = {}
+        if 'app' in params:
+            query_params['app'] = params['app']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnansweredPhraseGroup',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_unanswered_groups(self, knowledge_base_id, **kwargs):
+        """
+        Get knowledge base unanswered groups
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_unanswered_groups(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str app: The app value to be used for filtering phrases.
+        :return: UnansweredGroups
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'app']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_unanswered_groups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_unanswered_groups`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+        if 'app' in params:
+            query_params['app'] = params['app']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnansweredGroups',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_knowledge_knowledgebases(self, **kwargs):
         """
         Get knowledge bases
@@ -1240,6 +3589,96 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_knowledge_guest_session_documents_search_search_id(self, session_id, search_id, body, **kwargs):
+        """
+        Update search result.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_guest_session_documents_search_search_id(session_id, search_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str session_id: Knowledge guest session ID. (required)
+        :param str search_id: Search Result ID (required)
+        :param SearchUpdateRequest body:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['session_id', 'search_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_guest_session_documents_search_search_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `patch_knowledge_guest_session_documents_search_search_id`")
+        # verify the required parameter 'search_id' is set
+        if ('search_id' not in params) or (params['search_id'] is None):
+            raise ValueError("Missing the required parameter `search_id` when calling `patch_knowledge_guest_session_documents_search_search_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_knowledge_guest_session_documents_search_search_id`")
+
+
+        resource_path = '/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+        if 'search_id' in params:
+            path_params['searchId'] = params['search_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_knowledge_knowledgebase(self, knowledge_base_id, body, **kwargs):
         """
         Update knowledge base
@@ -1320,6 +3759,549 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='KnowledgeBase',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_knowledge_knowledgebase_category(self, knowledge_base_id, category_id, body, **kwargs):
+        """
+        Update category
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_knowledgebase_category(knowledge_base_id, category_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str category_id: Category ID (required)
+        :param CategoryRequest body:  (required)
+        :return: CategoryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'category_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_knowledgebase_category" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `patch_knowledge_knowledgebase_category`")
+        # verify the required parameter 'category_id' is set
+        if ('category_id' not in params) or (params['category_id'] is None):
+            raise ValueError("Missing the required parameter `category_id` when calling `patch_knowledge_knowledgebase_category`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_knowledge_knowledgebase_category`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'category_id' in params:
+            path_params['categoryId'] = params['category_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CategoryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_knowledge_knowledgebase_document(self, knowledge_base_id, document_id, body, **kwargs):
+        """
+        Update document.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_knowledgebase_document(knowledge_base_id, document_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID. (required)
+        :param str document_id: Document ID. (required)
+        :param KnowledgeDocumentReq body:  (required)
+        :return: KnowledgeDocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_knowledgebase_document" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `patch_knowledge_knowledgebase_document`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `patch_knowledge_knowledgebase_document`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_knowledge_knowledgebase_document`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_knowledge_knowledgebase_document_variation(self, document_variation_id, document_id, knowledge_base_id, body, **kwargs):
+        """
+        Update a variation for a document.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str document_variation_id: Globally unique identifier for a document variation. (required)
+        :param str document_id: Globally unique identifier for a document. (required)
+        :param str knowledge_base_id: Globally unique identifier for a knowledge base. (required)
+        :param DocumentVariation body:  (required)
+        :return: DocumentVariation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['document_variation_id', 'document_id', 'knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_knowledgebase_document_variation" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'document_variation_id' is set
+        if ('document_variation_id' not in params) or (params['document_variation_id'] is None):
+            raise ValueError("Missing the required parameter `document_variation_id` when calling `patch_knowledge_knowledgebase_document_variation`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `patch_knowledge_knowledgebase_document_variation`")
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `patch_knowledge_knowledgebase_document_variation`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_knowledge_knowledgebase_document_variation`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'document_variation_id' in params:
+            path_params['documentVariationId'] = params['document_variation_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DocumentVariation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_knowledge_knowledgebase_documents_search_search_id(self, knowledge_base_id, search_id, **kwargs):
+        """
+        Update search result.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_knowledgebase_documents_search_search_id(knowledge_base_id, search_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: The ID of knowledge base containing the documents to query. (required)
+        :param str search_id: Search Result ID (required)
+        :param SearchUpdateRequest body: 
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'search_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_knowledgebase_documents_search_search_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `patch_knowledge_knowledgebase_documents_search_search_id`")
+        # verify the required parameter 'search_id' is set
+        if ('search_id' not in params) or (params['search_id'] is None):
+            raise ValueError("Missing the required parameter `search_id` when calling `patch_knowledge_knowledgebase_documents_search_search_id`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'search_id' in params:
+            path_params['searchId'] = params['search_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_knowledge_knowledgebase_import_job(self, knowledge_base_id, import_job_id, body, **kwargs):
+        """
+        Start import job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str import_job_id: Import job ID (required)
+        :param ImportStatusRequest body:  (required)
+        :return: KnowledgeImportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'import_job_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_knowledgebase_import_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `patch_knowledge_knowledgebase_import_job`")
+        # verify the required parameter 'import_job_id' is set
+        if ('import_job_id' not in params) or (params['import_job_id'] is None):
+            raise ValueError("Missing the required parameter `import_job_id` when calling `patch_knowledge_knowledgebase_import_job`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_knowledge_knowledgebase_import_job`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'import_job_id' in params:
+            path_params['importJobId'] = params['import_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeImportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_knowledge_knowledgebase_label(self, knowledge_base_id, label_id, body, **kwargs):
+        """
+        Update label
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_knowledgebase_label(knowledge_base_id, label_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str label_id: Label ID (required)
+        :param LabelUpdateRequest body:  (required)
+        :return: LabelResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'label_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_knowledgebase_label" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `patch_knowledge_knowledgebase_label`")
+        # verify the required parameter 'label_id' is set
+        if ('label_id' not in params) or (params['label_id'] is None):
+            raise ValueError("Missing the required parameter `label_id` when calling `patch_knowledge_knowledgebase_label`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_knowledge_knowledgebase_label`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'label_id' in params:
+            path_params['labelId'] = params['label_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LabelResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1702,6 +4684,102 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_knowledge_knowledgebase_unanswered_group_phrasegroup(self, knowledge_base_id, group_id, phrase_group_id, body, **kwargs):
+        """
+        Update a Knowledge base unanswered phrase group
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str group_id: The ID of the group to be updated. (required)
+        :param str phrase_group_id: The ID of the phraseGroup to be updated. (required)
+        :param UnansweredPhraseGroupPatchRequestBody body: Request body of the update unanswered group endpoint. (required)
+        :return: UnansweredPhraseGroupUpdateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'group_id', 'phrase_group_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_knowledgebase_unanswered_group_phrasegroup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `patch_knowledge_knowledgebase_unanswered_group_phrasegroup`")
+        # verify the required parameter 'group_id' is set
+        if ('group_id' not in params) or (params['group_id'] is None):
+            raise ValueError("Missing the required parameter `group_id` when calling `patch_knowledge_knowledgebase_unanswered_group_phrasegroup`")
+        # verify the required parameter 'phrase_group_id' is set
+        if ('phrase_group_id' not in params) or (params['phrase_group_id'] is None):
+            raise ValueError("Missing the required parameter `phrase_group_id` when calling `patch_knowledge_knowledgebase_unanswered_group_phrasegroup`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_knowledge_knowledgebase_unanswered_group_phrasegroup`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'group_id' in params:
+            path_params['groupId'] = params['group_id']
+        if 'phrase_group_id' in params:
+            path_params['phraseGroupId'] = params['phrase_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnansweredPhraseGroupUpdateResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_knowledge_documentuploads(self, body, **kwargs):
         """
         Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -1776,6 +4854,1014 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UploadUrlResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_guest_session_documents_search(self, session_id, **kwargs):
+        """
+        Search the documents in a guest session.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_guest_session_documents_search(session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str session_id: Knowledge guest session ID. (required)
+        :param list[str] expand: Fields, if any, to expand for each document in the search result matching the query.
+        :param KnowledgeDocumentGuestSearchRequest body: 
+        :return: KnowledgeDocumentGuestSearch
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['session_id', 'expand', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_guest_session_documents_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `post_knowledge_guest_session_documents_search`")
+
+
+        resource_path = '/api/v2/knowledge/guest/sessions/{sessionId}/documents/search'.replace('{format}', 'json')
+        path_params = {}
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentGuestSearch',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_guest_session_documents_search_suggestions(self, session_id, **kwargs):
+        """
+        Query the knowledge documents to provide suggestions for auto completion.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_guest_session_documents_search_suggestions(session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str session_id: Knowledge guest session ID. (required)
+        :param KnowledgeDocumentSuggestionRequest body: 
+        :return: KnowledgeGuestDocumentSuggestion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['session_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_guest_session_documents_search_suggestions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `post_knowledge_guest_session_documents_search_suggestions`")
+
+
+        resource_path = '/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions'.replace('{format}', 'json')
+        path_params = {}
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeGuestDocumentSuggestion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_guest_sessions(self, body, **kwargs):
+        """
+        Create guest session
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_guest_sessions(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param KnowledgeGuestSession body:  (required)
+        :return: KnowledgeGuestSession
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_guest_sessions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_guest_sessions`")
+
+
+        resource_path = '/api/v2/knowledge/guest/sessions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeGuestSession',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_categories(self, knowledge_base_id, body, **kwargs):
+        """
+        Create new category
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_categories(knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param CategoryRequest body:  (required)
+        :return: CategoryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_categories" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_categories`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_categories`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CategoryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_document_variations(self, knowledge_base_id, document_id, body, **kwargs):
+        """
+        Create a variation for a document.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Globally unique identifier for the knowledge base. (required)
+        :param str document_id: Globally unique identifier for the document. (required)
+        :param DocumentVariation body:  (required)
+        :return: DocumentVariation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_document_variations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_document_variations`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `post_knowledge_knowledgebase_document_variations`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_document_variations`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DocumentVariation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_document_versions(self, knowledge_base_id, document_id, body, **kwargs):
+        """
+        Creates or restores a document version.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_document_versions(knowledge_base_id, document_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Globally unique identifier for the knowledge base. (required)
+        :param str document_id: Globally unique identifier for the document. (required)
+        :param KnowledgeDocumentVersion body:  (required)
+        :return: KnowledgeDocumentVersion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'document_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_document_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_document_versions`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `post_knowledge_knowledgebase_document_versions`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_document_versions`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentVersion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_documents(self, knowledge_base_id, body, **kwargs):
+        """
+        Create document.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_documents(knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param KnowledgeDocumentReq body:  (required)
+        :return: KnowledgeDocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_documents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_documents`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_documents`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_documents_search(self, knowledge_base_id, **kwargs):
+        """
+        Search the documents in a knowledge base.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_documents_search(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: The ID of knowledge base containing the documents to query. (required)
+        :param list[str] expand: Fields, if any, to expand for each document in the search result matching the query.
+        :param KnowledgeDocumentSearchRequest body: 
+        :return: KnowledgeDocumentSearch
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'expand', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_documents_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_documents_search`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentSearch',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_documents_search_suggestions(self, knowledge_base_id, **kwargs):
+        """
+        Query the knowledge documents to provide suggestions for auto completion.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_documents_search_suggestions(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: The ID of knowledge base containing the documents to query. (required)
+        :param KnowledgeDocumentSuggestionRequest body: 
+        :return: KnowledgeDocumentSuggestion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_documents_search_suggestions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_documents_search_suggestions`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentSuggestion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_export_jobs(self, knowledge_base_id, body, **kwargs):
+        """
+        Create export job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_export_jobs(knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param KnowledgeExportJobRequest body:  (required)
+        :return: KnowledgeExportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_export_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_export_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_export_jobs`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeExportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_import_jobs(self, knowledge_base_id, body, **kwargs):
+        """
+        Create import job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_import_jobs(knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param KnowledgeImportJobRequest body:  (required)
+        :return: KnowledgeImportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_import_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_import_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_import_jobs`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeImportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_labels(self, knowledge_base_id, body, **kwargs):
+        """
+        Create new label
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_labels(knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param LabelCreateRequest body:  (required)
+        :return: LabelResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_labels" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_labels`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_labels`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LabelResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

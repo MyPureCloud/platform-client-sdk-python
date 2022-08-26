@@ -44,7 +44,8 @@ class ConversationAppSettings(object):
             'show_user_typing_indicator': 'bool',
             'auto_start_type': 'str',
             'auto_start': 'AutoStart',
-            'markdown': 'Markdown'
+            'markdown': 'Markdown',
+            'conversation_disconnect': 'ConversationDisconnectSettings'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class ConversationAppSettings(object):
             'show_user_typing_indicator': 'showUserTypingIndicator',
             'auto_start_type': 'autoStartType',
             'auto_start': 'autoStart',
-            'markdown': 'markdown'
+            'markdown': 'markdown',
+            'conversation_disconnect': 'conversationDisconnect'
         }
 
         self._show_agent_typing_indicator = None
@@ -60,6 +62,7 @@ class ConversationAppSettings(object):
         self._auto_start_type = None
         self._auto_start = None
         self._markdown = None
+        self._conversation_disconnect = None
 
     @property
     def show_agent_typing_indicator(self):
@@ -183,6 +186,30 @@ class ConversationAppSettings(object):
         
 
         self._markdown = markdown
+
+    @property
+    def conversation_disconnect(self):
+        """
+        Gets the conversation_disconnect of this ConversationAppSettings.
+        The conversation disconnect settings for the messenger app
+
+        :return: The conversation_disconnect of this ConversationAppSettings.
+        :rtype: ConversationDisconnectSettings
+        """
+        return self._conversation_disconnect
+
+    @conversation_disconnect.setter
+    def conversation_disconnect(self, conversation_disconnect):
+        """
+        Sets the conversation_disconnect of this ConversationAppSettings.
+        The conversation disconnect settings for the messenger app
+
+        :param conversation_disconnect: The conversation_disconnect of this ConversationAppSettings.
+        :type: ConversationDisconnectSettings
+        """
+        
+
+        self._conversation_disconnect = conversation_disconnect
 
     def to_dict(self):
         """

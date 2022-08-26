@@ -51,6 +51,8 @@ class FlowVersion(object):
             'created_by_client': 'DomainEntityRef',
             'configuration_uri': 'str',
             'date_created': 'int',
+            'date_checked_in': 'int',
+            'date_saved': 'int',
             'generation_id': 'str',
             'publish_result_uri': 'str',
             'input_schema': 'JsonSchemaDocument',
@@ -73,6 +75,8 @@ class FlowVersion(object):
             'created_by_client': 'createdByClient',
             'configuration_uri': 'configurationUri',
             'date_created': 'dateCreated',
+            'date_checked_in': 'dateCheckedIn',
+            'date_saved': 'dateSaved',
             'generation_id': 'generationId',
             'publish_result_uri': 'publishResultUri',
             'input_schema': 'inputSchema',
@@ -94,6 +98,8 @@ class FlowVersion(object):
         self._created_by_client = None
         self._configuration_uri = None
         self._date_created = None
+        self._date_checked_in = None
+        self._date_saved = None
         self._generation_id = None
         self._publish_result_uri = None
         self._input_schema = None
@@ -369,6 +375,54 @@ class FlowVersion(object):
         
 
         self._date_created = date_created
+
+    @property
+    def date_checked_in(self):
+        """
+        Gets the date_checked_in of this FlowVersion.
+
+
+        :return: The date_checked_in of this FlowVersion.
+        :rtype: int
+        """
+        return self._date_checked_in
+
+    @date_checked_in.setter
+    def date_checked_in(self, date_checked_in):
+        """
+        Sets the date_checked_in of this FlowVersion.
+
+
+        :param date_checked_in: The date_checked_in of this FlowVersion.
+        :type: int
+        """
+        
+
+        self._date_checked_in = date_checked_in
+
+    @property
+    def date_saved(self):
+        """
+        Gets the date_saved of this FlowVersion.
+
+
+        :return: The date_saved of this FlowVersion.
+        :rtype: int
+        """
+        return self._date_saved
+
+    @date_saved.setter
+    def date_saved(self, date_saved):
+        """
+        Sets the date_saved of this FlowVersion.
+
+
+        :param date_saved: The date_saved of this FlowVersion.
+        :type: int
+        """
+        
+
+        self._date_saved = date_saved
 
     @property
     def generation_id(self):

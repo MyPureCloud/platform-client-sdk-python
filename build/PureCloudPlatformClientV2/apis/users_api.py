@@ -5383,7 +5383,7 @@ class UsersApi(object):
     def post_users(self, body, **kwargs):
         """
         Create user
-        
+        If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

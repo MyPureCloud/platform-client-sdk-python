@@ -42,14 +42,20 @@ class PatchAction(object):
         self.swagger_types = {
             'media_type': 'str',
             'action_template': 'ActionMapActionTemplate',
+            'action_target_id': 'str',
+            'is_pacing_enabled': 'bool',
+            'props': 'PatchActionProperties',
             'architect_flow_fields': 'ArchitectFlowFields',
-            'web_messaging_offer_fields': 'WebMessagingOfferFields',
+            'web_messaging_offer_fields': 'PatchWebMessagingOfferFields',
             'open_action_fields': 'OpenActionFields'
         }
 
         self.attribute_map = {
             'media_type': 'mediaType',
             'action_template': 'actionTemplate',
+            'action_target_id': 'actionTargetId',
+            'is_pacing_enabled': 'isPacingEnabled',
+            'props': 'props',
             'architect_flow_fields': 'architectFlowFields',
             'web_messaging_offer_fields': 'webMessagingOfferFields',
             'open_action_fields': 'openActionFields'
@@ -57,6 +63,9 @@ class PatchAction(object):
 
         self._media_type = None
         self._action_template = None
+        self._action_target_id = None
+        self._is_pacing_enabled = None
+        self._props = None
         self._architect_flow_fields = None
         self._web_messaging_offer_fields = None
         self._open_action_fields = None
@@ -113,6 +122,78 @@ class PatchAction(object):
         self._action_template = action_template
 
     @property
+    def action_target_id(self):
+        """
+        Gets the action_target_id of this PatchAction.
+        Action target ID.
+
+        :return: The action_target_id of this PatchAction.
+        :rtype: str
+        """
+        return self._action_target_id
+
+    @action_target_id.setter
+    def action_target_id(self, action_target_id):
+        """
+        Sets the action_target_id of this PatchAction.
+        Action target ID.
+
+        :param action_target_id: The action_target_id of this PatchAction.
+        :type: str
+        """
+        
+
+        self._action_target_id = action_target_id
+
+    @property
+    def is_pacing_enabled(self):
+        """
+        Gets the is_pacing_enabled of this PatchAction.
+        Whether this action should be throttled.
+
+        :return: The is_pacing_enabled of this PatchAction.
+        :rtype: bool
+        """
+        return self._is_pacing_enabled
+
+    @is_pacing_enabled.setter
+    def is_pacing_enabled(self, is_pacing_enabled):
+        """
+        Sets the is_pacing_enabled of this PatchAction.
+        Whether this action should be throttled.
+
+        :param is_pacing_enabled: The is_pacing_enabled of this PatchAction.
+        :type: bool
+        """
+        
+
+        self._is_pacing_enabled = is_pacing_enabled
+
+    @property
+    def props(self):
+        """
+        Gets the props of this PatchAction.
+        Additional properties.
+
+        :return: The props of this PatchAction.
+        :rtype: PatchActionProperties
+        """
+        return self._props
+
+    @props.setter
+    def props(self, props):
+        """
+        Sets the props of this PatchAction.
+        Additional properties.
+
+        :param props: The props of this PatchAction.
+        :type: PatchActionProperties
+        """
+        
+
+        self._props = props
+
+    @property
     def architect_flow_fields(self):
         """
         Gets the architect_flow_fields of this PatchAction.
@@ -143,7 +224,7 @@ class PatchAction(object):
         Admin-configurable fields of a web messaging offer action.
 
         :return: The web_messaging_offer_fields of this PatchAction.
-        :rtype: WebMessagingOfferFields
+        :rtype: PatchWebMessagingOfferFields
         """
         return self._web_messaging_offer_fields
 
@@ -154,7 +235,7 @@ class PatchAction(object):
         Admin-configurable fields of a web messaging offer action.
 
         :param web_messaging_offer_fields: The web_messaging_offer_fields of this PatchAction.
-        :type: WebMessagingOfferFields
+        :type: PatchWebMessagingOfferFields
         """
         
 

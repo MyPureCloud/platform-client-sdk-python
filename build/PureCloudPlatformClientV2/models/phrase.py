@@ -110,7 +110,7 @@ class Phrase(object):
     def sentiment(self):
         """
         Gets the sentiment of this Phrase.
-        The phrase sentiment, default value is Unspecified
+        The phrase sentiment, default value is Unspecified.
 
         :return: The sentiment of this Phrase.
         :rtype: str
@@ -121,7 +121,7 @@ class Phrase(object):
     def sentiment(self, sentiment):
         """
         Sets the sentiment of this Phrase.
-        The phrase sentiment, default value is Unspecified
+        The phrase sentiment, default value is Unspecified.
 
         :param sentiment: The sentiment of this Phrase.
         :type: str

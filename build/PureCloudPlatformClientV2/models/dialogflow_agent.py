@@ -46,6 +46,7 @@ class DialogflowAgent(object):
             'languages': 'list[str]',
             'intents': 'list[DialogflowIntent]',
             'environments': 'list[str]',
+            'integration': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -56,6 +57,7 @@ class DialogflowAgent(object):
             'languages': 'languages',
             'intents': 'intents',
             'environments': 'environments',
+            'integration': 'integration',
             'self_uri': 'selfUri'
         }
 
@@ -65,6 +67,7 @@ class DialogflowAgent(object):
         self._languages = None
         self._intents = None
         self._environments = None
+        self._integration = None
         self._self_uri = None
 
     @property
@@ -210,6 +213,30 @@ class DialogflowAgent(object):
         
 
         self._environments = environments
+
+    @property
+    def integration(self):
+        """
+        Gets the integration of this DialogflowAgent.
+        The Integration this Dialogflow agent was referenced from.
+
+        :return: The integration of this DialogflowAgent.
+        :rtype: DomainEntityRef
+        """
+        return self._integration
+
+    @integration.setter
+    def integration(self, integration):
+        """
+        Sets the integration of this DialogflowAgent.
+        The Integration this Dialogflow agent was referenced from.
+
+        :param integration: The integration of this DialogflowAgent.
+        :type: DomainEntityRef
+        """
+        
+
+        self._integration = integration
 
     @property
     def self_uri(self):

@@ -18,6 +18,8 @@ title: FlowVersion
 | **created_by_client** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **configuration_uri** | **str** |  | [optional] |
 | **date_created** | **int** |  | [optional] |
+| **date_checked_in** | **int** |  | [optional] |
+| **date_saved** | **int** |  | [optional] |
 | **generation_id** | **str** |  | [optional] |
 | **publish_result_uri** | **str** |  | [optional] |
 | **input_schema** | [**JsonSchemaDocument**](JsonSchemaDocument.html) |  | [optional] |

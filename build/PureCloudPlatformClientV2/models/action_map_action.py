@@ -42,6 +42,9 @@ class ActionMapAction(object):
         self.swagger_types = {
             'action_template': 'ActionMapActionTemplate',
             'media_type': 'str',
+            'action_target_id': 'str',
+            'is_pacing_enabled': 'bool',
+            'props': 'ActionProperties',
             'architect_flow_fields': 'ArchitectFlowFields',
             'web_messaging_offer_fields': 'WebMessagingOfferFields',
             'open_action_fields': 'OpenActionFields'
@@ -50,6 +53,9 @@ class ActionMapAction(object):
         self.attribute_map = {
             'action_template': 'actionTemplate',
             'media_type': 'mediaType',
+            'action_target_id': 'actionTargetId',
+            'is_pacing_enabled': 'isPacingEnabled',
+            'props': 'props',
             'architect_flow_fields': 'architectFlowFields',
             'web_messaging_offer_fields': 'webMessagingOfferFields',
             'open_action_fields': 'openActionFields'
@@ -57,6 +63,9 @@ class ActionMapAction(object):
 
         self._action_template = None
         self._media_type = None
+        self._action_target_id = None
+        self._is_pacing_enabled = None
+        self._props = None
         self._architect_flow_fields = None
         self._web_messaging_offer_fields = None
         self._open_action_fields = None
@@ -111,6 +120,78 @@ class ActionMapAction(object):
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
+
+    @property
+    def action_target_id(self):
+        """
+        Gets the action_target_id of this ActionMapAction.
+        Action target ID.
+
+        :return: The action_target_id of this ActionMapAction.
+        :rtype: str
+        """
+        return self._action_target_id
+
+    @action_target_id.setter
+    def action_target_id(self, action_target_id):
+        """
+        Sets the action_target_id of this ActionMapAction.
+        Action target ID.
+
+        :param action_target_id: The action_target_id of this ActionMapAction.
+        :type: str
+        """
+        
+
+        self._action_target_id = action_target_id
+
+    @property
+    def is_pacing_enabled(self):
+        """
+        Gets the is_pacing_enabled of this ActionMapAction.
+        Whether this action should be throttled.
+
+        :return: The is_pacing_enabled of this ActionMapAction.
+        :rtype: bool
+        """
+        return self._is_pacing_enabled
+
+    @is_pacing_enabled.setter
+    def is_pacing_enabled(self, is_pacing_enabled):
+        """
+        Sets the is_pacing_enabled of this ActionMapAction.
+        Whether this action should be throttled.
+
+        :param is_pacing_enabled: The is_pacing_enabled of this ActionMapAction.
+        :type: bool
+        """
+        
+
+        self._is_pacing_enabled = is_pacing_enabled
+
+    @property
+    def props(self):
+        """
+        Gets the props of this ActionMapAction.
+        Additional properties.
+
+        :return: The props of this ActionMapAction.
+        :rtype: ActionProperties
+        """
+        return self._props
+
+    @props.setter
+    def props(self, props):
+        """
+        Sets the props of this ActionMapAction.
+        Additional properties.
+
+        :param props: The props of this ActionMapAction.
+        :type: ActionProperties
+        """
+        
+
+        self._props = props
 
     @property
     def architect_flow_fields(self):

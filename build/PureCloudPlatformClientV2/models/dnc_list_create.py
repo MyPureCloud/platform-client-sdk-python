@@ -50,6 +50,7 @@ class DncListCreate(object):
             'dnc_source_type': 'str',
             'contact_method': 'str',
             'login_id': 'str',
+            'campaign_id': 'str',
             'dnc_codes': 'list[str]',
             'license_id': 'str',
             'division': 'DomainEntityRef',
@@ -67,6 +68,7 @@ class DncListCreate(object):
             'dnc_source_type': 'dncSourceType',
             'contact_method': 'contactMethod',
             'login_id': 'loginId',
+            'campaign_id': 'campaignId',
             'dnc_codes': 'dncCodes',
             'license_id': 'licenseId',
             'division': 'division',
@@ -83,6 +85,7 @@ class DncListCreate(object):
         self._dnc_source_type = None
         self._contact_method = None
         self._login_id = None
+        self._campaign_id = None
         self._dnc_codes = None
         self._license_id = None
         self._division = None
@@ -333,6 +336,30 @@ class DncListCreate(object):
         
 
         self._login_id = login_id
+
+    @property
+    def campaign_id(self):
+        """
+        Gets the campaign_id of this DncListCreate.
+        A dnc.com campaignId. Optional if the dncSourceType is dnc.com.
+
+        :return: The campaign_id of this DncListCreate.
+        :rtype: str
+        """
+        return self._campaign_id
+
+    @campaign_id.setter
+    def campaign_id(self, campaign_id):
+        """
+        Sets the campaign_id of this DncListCreate.
+        A dnc.com campaignId. Optional if the dncSourceType is dnc.com.
+
+        :param campaign_id: The campaign_id of this DncListCreate.
+        :type: str
+        """
+        
+
+        self._campaign_id = campaign_id
 
     @property
     def dnc_codes(self):

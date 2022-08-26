@@ -46,6 +46,7 @@ class AuditLogMessage(object):
             'client': 'AddressableEntityRef',
             'remote_ip': 'list[str]',
             'service_name': 'str',
+            'level': 'str',
             'event_date': 'datetime',
             'message': 'MessageInfo',
             'action': 'str',
@@ -63,6 +64,7 @@ class AuditLogMessage(object):
             'client': 'client',
             'remote_ip': 'remoteIp',
             'service_name': 'serviceName',
+            'level': 'level',
             'event_date': 'eventDate',
             'message': 'message',
             'action': 'action',
@@ -79,6 +81,7 @@ class AuditLogMessage(object):
         self._client = None
         self._remote_ip = None
         self._service_name = None
+        self._level = None
         self._event_date = None
         self._message = None
         self._action = None
@@ -236,6 +239,33 @@ class AuditLogMessage(object):
             self._service_name = service_name
 
     @property
+    def level(self):
+        """
+        Gets the level of this AuditLogMessage.
+        Level of this audit message, USER or SYSTEM.
+
+        :return: The level of this AuditLogMessage.
+        :rtype: str
+        """
+        return self._level
+
+    @level.setter
+    def level(self, level):
+        """
+        Sets the level of this AuditLogMessage.
+        Level of this audit message, USER or SYSTEM.
+
+        :param level: The level of this AuditLogMessage.
+        :type: str
+        """
+        allowed_values = ["USER", "SYSTEM"]
+        if level.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for level -> " + level)
+            self._level = "outdated_sdk_version"
+        else:
+            self._level = level
+
+    @property
     def event_date(self):
         """
         Gets the event_date of this AuditLogMessage.
@@ -303,7 +333,7 @@ class AuditLogMessage(object):
         :param action: The action of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Create", "View", "Update", "Move", "Copy", "Delete", "DeleteAll", "Fax", "VersionCreate", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "ShareAdd", "ShareRemove", "TagAdd", "TagRemove", "TagUpdate", "Read", "ReadAll", "Execute", "ApplyProtection", "RevokeProtection", "UpdateRetention", "Abandon", "Archive", "RestoreRequest", "RestoreComplete", "Promote", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword", "Revoke", "Export", "Append", "Recycle", "Open", "Approved", "Rejected", "Rollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented", "Write", "Purge", "Processed", "Replace", "UpdateInService", "UpdateOutOfService", "Cycle", "Scale", "IpAllowlistClear", "AddPairingRole", "Add", "Verify", "Assign", "Unassign", "Reassign", "Reschedule", "Cancel", "SoftDelete", "HardDelete", "Reset", "Unarchive"]
+        allowed_values = ["Create", "View", "Update", "Move", "Copy", "Delete", "DeleteAll", "Fax", "VersionCreate", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "ShareAdd", "ShareRemove", "TagAdd", "TagRemove", "TagUpdate", "Read", "ReadAll", "Execute", "ApplyProtection", "RevokeProtection", "UpdateRetention", "Abandon", "Archive", "RestoreRequest", "RestoreComplete", "Promote", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword", "Revoke", "Export", "Append", "Recycle", "Open", "Approved", "Rejected", "Rollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented", "Write", "Purge", "Processed", "Replace", "UpdateInService", "UpdateOutOfService", "Cycle", "Scale", "IpAllowlistClear", "AddPairingRole", "Add", "Verify", "Assign", "Unassign", "Reassign", "Reschedule", "Cancel", "SoftDelete", "HardDelete", "Reset", "Rotate", "Restore", "Unarchive"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
@@ -354,7 +384,7 @@ class AuditLogMessage(object):
         :param entity_type: The entity_type of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["AccessToken", "Action", "ActionDraft", "ActionMap", "ActionTemplate", "ActivityCode", "AdherenceExplanation", "AgentRoutingInfo", "AnalyticsReportingSettings", "Annotation", "Appointment", "Assignment", "AttemptLimits", "AuthOrganization", "AuthUser", "Bulk", "BulkActions", "BusinessUnit", "Calibration", "CallableTimeSet", "CallAnalysisResponseSet", "Campaign", "CampaignRule", "CampaignSchedule", "ChangeRequest", "ClickstreamSettings", "Configuration", "ConfigurationVersion", "ContactList", "ContactListFilter", "ContactSchema", "ConversationAttributes", "ConversationAccount", "ConversationDefaultSupportedContent", "ConversationPhoneNumber", "ConversationRecipient", "ConversationThreadingWindow", "Credential", "DashboardSettings", "DependencyTrackingBuild", "Deployment", "DID", "DIDPool", "DNCList", "Document", "DynamicGroup", "DynamicSchema", "Edge", "EdgeGroup", "EdgeLog", "EdgeLogZip", "EdgePcaps", "EdgePreferences", "EdgeTraceLevel", "EmergencyGroup", "EnterpriseAgreement", "Evaluation", "EvaluationForm", "EventType", "Exports", "Extension", "ExtensionPool", "ExternalMetricsData", "ExternalMetricsDefinition", "ExternalOrganizationSchema", "Feedback", "Flow", "FlowMilestone", "FlowOutcome", "Forecast", "HistoricalData", "InsightSettings", "Integration", "IVR", "KnowledgeBase", "KnowledgeCategory", "KnowledgeDocument", "KnowledgeDocumentVariation", "KnowledgeSearchFeedback", "KnowledgeTraining", "Line", "LineBase", "Location", "ManagementUnit", "MaxOrgRoutingUtilizationCapacity", "MediaDiagnosticsTraceFile", "MessagingCampaign", "Metric", "Module", "NumberOrder", "NumberPlan", "OAuthClient", "OAuthClientAuthorization", "OrganizationAuthorizationTrust", "OrganizationAuthorizationUserTrust", "OrganizationFeature", "OrganizationIntegrationsAccess", "OrganizationSettings", "OrphanedRecording", "OutboundRoute", "Outcome", "Pcaps", "Phone", "PhoneBase", "PlanningGroup", "Policy", "Predictor", "Product", "Profile", "ProfileMembers", "Program", "Prompt", "PromptResource", "Queue", "Recording", "RecordingAnnotation", "RecordingSettings", "Response", "ResponseAsset", "Role", "Row", "RoutingTranscriptionSettings", "RoutingUtilizationTag", "Rule", "RuleSet", "Schedule", "ScheduledExports", "ScheduleGroup", "Schema", "ScreenRecording", "Segment", "SentimentFeedback", "Sequence", "SequenceSchedule", "ServiceGoalTemplate", "SessionType", "ShiftTrade", "Site", "SpeechTextAnalyticsSettings", "Status", "SupportedContent", "SupportFile", "Survey", "SurveyForm", "Team", "TimeOffLimit", "TimeOffPlan", "TimeOffRequest", "Topic", "TranscriptionSettings", "Trigger", "Trunk", "TrunkBase", "User", "UserPresence", "VoicemailPolicy", "VoicemailUserPolicy", "Webhook", "Workbin", "Workitem", "WorkPlan", "WorkPlanRotation", "Workspace", "Worktype", "WrapupCode", "WrapUpCodeMapping", "Participant"]
+        allowed_values = ["AccessToken", "Action", "ActionDraft", "ActionMap", "ActionTemplate", "ActivityCode", "AdherenceExplanation", "AgentRoutingInfo", "AnalyticsReportingSettings", "Annotation", "Appointment", "Assignment", "AttemptLimits", "AuthOrganization", "AuthUser", "Bulk", "BulkActions", "BusinessUnit", "Calibration", "CallableTimeSet", "CallAnalysisResponseSet", "Campaign", "CampaignRule", "CampaignSchedule", "ChangeRequest", "ClickstreamSettings", "Configuration", "ConfigurationVersion", "ContactList", "ContactListFilter", "ContactSchema", "ConversationAttributes", "ConversationAccount", "ConversationDefaultSupportedContent", "ConversationPhoneNumber", "ConversationRecipient", "ConversationThreadingWindow", "Credential", "DashboardSettings", "DependencyTrackingBuild", "Deployment", "DID", "DIDPool", "DNCList", "Document", "DynamicGroup", "DynamicSchema", "Edge", "EdgeGroup", "EdgeLog", "EdgeLogZip", "EdgePcaps", "EdgePreferences", "EdgeTraceLevel", "EmergencyGroup", "EnterpriseAgreement", "Evaluation", "EvaluationForm", "EventType", "Exports", "Extension", "ExtensionPool", "ExternalMetricsData", "ExternalMetricsDefinition", "ExternalOrganizationSchema", "Feedback", "Flow", "FlowMilestone", "FlowOutcome", "Forecast", "HistoricalData", "InsightSettings", "Integration", "IVR", "KnowledgeBase", "KnowledgeCategory", "KnowledgeDocument", "KnowledgeDocumentVariation", "KnowledgeSearchFeedback", "KnowledgeTraining", "Line", "LineBase", "Location", "ManagementUnit", "MaxOrgRoutingUtilizationCapacity", "MediaDiagnosticsTraceFile", "MessagingCampaign", "Metric", "Module", "NumberOrder", "NumberPlan", "OAuthClient", "OAuthClientAuthorization", "OrganizationAuthorizationTrust", "OrganizationAuthorizationUserTrust", "OrganizationFeature", "OrganizationIntegrationsAccess", "OrganizationSettings", "OrphanedRecording", "OutboundRoute", "Outcome", "Pcaps", "Phone", "PhoneBase", "PlanningGroup", "Policy", "Predictor", "Product", "Profile", "ProfileMembers", "Program", "Prompt", "PromptResource", "Queue", "Recording", "RecordingAnnotation", "RecordingKey", "RecordingKeyConfig", "RecordingSettings", "Response", "ResponseAsset", "Role", "Row", "RoutingTranscriptionSettings", "RoutingUtilizationTag", "Rule", "RuleSet", "Schedule", "ScheduledExports", "ScheduleGroup", "Schema", "ScreenRecording", "Segment", "SentimentFeedback", "Sequence", "SequenceSchedule", "ServiceGoalTemplate", "SessionType", "ShiftTrade", "Site", "SpeechTextAnalyticsSettings", "Status", "SupportedContent", "SupportFile", "Survey", "SurveyForm", "Team", "TimeOffLimit", "TimeOffPlan", "TimeOffRequest", "Topic", "TranscriptionSettings", "Trigger", "Trunk", "TrunkBase", "User", "UserPresence", "VoicemailPolicy", "VoicemailUserPolicy", "Webhook", "Workbin", "Workitem", "WorkPlan", "WorkPlanRotation", "Workspace", "Worktype", "WrapupCode", "WrapUpCodeMapping", "Participant"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entity_type -> " + entity_type)
             self._entity_type = "outdated_sdk_version"

@@ -1531,7 +1531,7 @@ except ApiException as e:
 
 <a name="get_architect_ivrs"></a>
 
-## [**IVREntityListing**](IVREntityListing.html) get_architect_ivrs(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
+## [**IVREntityListing**](IVREntityListing.html) get_architect_ivrs(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, dnis=dnis)
 
 
 
@@ -1563,10 +1563,11 @@ page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 name = 'name_example' # str | Name of the IVR to filter by. (optional)
+dnis = 'dnis_example' # str | The phone number of the IVR to filter by. (optional)
 
 try:
     # Get IVR configs.
-    api_response = api_instance.get_architect_ivrs(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
+    api_response = api_instance.get_architect_ivrs(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, dnis=dnis)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_architect_ivrs: %s\n" % e)
@@ -1582,6 +1583,7 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **name** | **str**| Name of the IVR to filter by. | [optional]  |
+| **dnis** | **str**| The phone number of the IVR to filter by. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

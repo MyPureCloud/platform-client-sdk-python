@@ -52,6 +52,7 @@ class OrphanRecording(object):
             'recording': 'Recording',
             'orphan_status': 'str',
             'source_orphaning_id': 'str',
+            'region': 'str',
             'self_uri': 'str'
         }
 
@@ -68,6 +69,7 @@ class OrphanRecording(object):
             'recording': 'recording',
             'orphan_status': 'orphanStatus',
             'source_orphaning_id': 'sourceOrphaningId',
+            'region': 'region',
             'self_uri': 'selfUri'
         }
 
@@ -83,6 +85,7 @@ class OrphanRecording(object):
         self._recording = None
         self._orphan_status = None
         self._source_orphaning_id = None
+        self._region = None
         self._self_uri = None
 
     @property
@@ -384,6 +387,33 @@ class OrphanRecording(object):
         
 
         self._source_orphaning_id = source_orphaning_id
+
+    @property
+    def region(self):
+        """
+        Gets the region of this OrphanRecording.
+
+
+        :return: The region of this OrphanRecording.
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """
+        Sets the region of this OrphanRecording.
+
+
+        :param region: The region of this OrphanRecording.
+        :type: str
+        """
+        allowed_values = ["af-south-1", "ap-northeast-1", "ap-northeast-2", "ap-south-1", "ap-southeast-2", "ca-central-1", "eu-central-1", "eu-west-1", "eu-west-2", "sa-east-1", "us-east-1", "us-west-2"]
+        if region.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for region -> " + region)
+            self._region = "outdated_sdk_version"
+        else:
+            self._region = region
 
     @property
     def self_uri(self):

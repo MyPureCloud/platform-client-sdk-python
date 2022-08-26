@@ -64,6 +64,7 @@ class EvaluationResponse(object):
             'redacted': 'bool',
             'is_scoring_index': 'bool',
             'authorized_actions': 'list[str]',
+            'has_assistance_failed': 'bool',
             'self_uri': 'str'
         }
 
@@ -92,6 +93,7 @@ class EvaluationResponse(object):
             'redacted': 'redacted',
             'is_scoring_index': 'isScoringIndex',
             'authorized_actions': 'authorizedActions',
+            'has_assistance_failed': 'hasAssistanceFailed',
             'self_uri': 'selfUri'
         }
 
@@ -119,6 +121,7 @@ class EvaluationResponse(object):
         self._redacted = None
         self._is_scoring_index = None
         self._authorized_actions = None
+        self._has_assistance_failed = None
         self._self_uri = None
 
     @property
@@ -702,6 +705,30 @@ class EvaluationResponse(object):
         
 
         self._authorized_actions = authorized_actions
+
+    @property
+    def has_assistance_failed(self):
+        """
+        Gets the has_assistance_failed of this EvaluationResponse.
+        Is true when evaluation assistance didn't execute successfully
+
+        :return: The has_assistance_failed of this EvaluationResponse.
+        :rtype: bool
+        """
+        return self._has_assistance_failed
+
+    @has_assistance_failed.setter
+    def has_assistance_failed(self, has_assistance_failed):
+        """
+        Sets the has_assistance_failed of this EvaluationResponse.
+        Is true when evaluation assistance didn't execute successfully
+
+        :param has_assistance_failed: The has_assistance_failed of this EvaluationResponse.
+        :type: bool
+        """
+        
+
+        self._has_assistance_failed = has_assistance_failed
 
     @property
     def self_uri(self):
