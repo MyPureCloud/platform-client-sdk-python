@@ -1377,7 +1377,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param flow_type: The flow_type of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
-        allowed_values = ["bot", "commonmodule", "inboundcall", "inboundchat", "inboundemail", "inboundshortmessage", "inqueuecall", "inqueueemail", "inqueueshortmessage", "outboundcall", "securecall", "speech", "surveyinvite", "workflow"]
+        allowed_values = ["bot", "commonmodule", "digitalbot", "inboundcall", "inboundchat", "inboundemail", "inboundshortmessage", "inqueuecall", "inqueueemail", "inqueueshortmessage", "outboundcall", "securecall", "speech", "surveyinvite", "workflow"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flow_type -> " + flow_type)
             self._flow_type = "outdated_sdk_version"

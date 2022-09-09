@@ -47,7 +47,16 @@ class KnowledgeImportJobStatistics(object):
             'count_document_validation_success': 'int',
             'count_document_validation_failure': 'int',
             'count_document_import_success': 'int',
-            'count_document_import_failure': 'int'
+            'count_document_import_failure': 'int',
+            'count_category_validation_success': 'int',
+            'count_category_validation_failure': 'int',
+            'count_category_import_success': 'int',
+            'count_category_import_failure': 'int',
+            'count_label_validation_success': 'int',
+            'count_label_validation_failure': 'int',
+            'count_label_import_success': 'int',
+            'count_label_import_failure': 'int',
+            'migration_detected': 'bool'
         }
 
         self.attribute_map = {
@@ -58,7 +67,16 @@ class KnowledgeImportJobStatistics(object):
             'count_document_validation_success': 'countDocumentValidationSuccess',
             'count_document_validation_failure': 'countDocumentValidationFailure',
             'count_document_import_success': 'countDocumentImportSuccess',
-            'count_document_import_failure': 'countDocumentImportFailure'
+            'count_document_import_failure': 'countDocumentImportFailure',
+            'count_category_validation_success': 'countCategoryValidationSuccess',
+            'count_category_validation_failure': 'countCategoryValidationFailure',
+            'count_category_import_success': 'countCategoryImportSuccess',
+            'count_category_import_failure': 'countCategoryImportFailure',
+            'count_label_validation_success': 'countLabelValidationSuccess',
+            'count_label_validation_failure': 'countLabelValidationFailure',
+            'count_label_import_success': 'countLabelImportSuccess',
+            'count_label_import_failure': 'countLabelImportFailure',
+            'migration_detected': 'migrationDetected'
         }
 
         self._count_document_import_activity_create = None
@@ -69,6 +87,15 @@ class KnowledgeImportJobStatistics(object):
         self._count_document_validation_failure = None
         self._count_document_import_success = None
         self._count_document_import_failure = None
+        self._count_category_validation_success = None
+        self._count_category_validation_failure = None
+        self._count_category_import_success = None
+        self._count_category_import_failure = None
+        self._count_label_validation_success = None
+        self._count_label_validation_failure = None
+        self._count_label_import_success = None
+        self._count_label_import_failure = None
+        self._migration_detected = None
 
     @property
     def count_document_import_activity_create(self):
@@ -261,6 +288,222 @@ class KnowledgeImportJobStatistics(object):
         
 
         self._count_document_import_failure = count_document_import_failure
+
+    @property
+    def count_category_validation_success(self):
+        """
+        Gets the count_category_validation_success of this KnowledgeImportJobStatistics.
+        Number of categories that validated successfully for import.
+
+        :return: The count_category_validation_success of this KnowledgeImportJobStatistics.
+        :rtype: int
+        """
+        return self._count_category_validation_success
+
+    @count_category_validation_success.setter
+    def count_category_validation_success(self, count_category_validation_success):
+        """
+        Sets the count_category_validation_success of this KnowledgeImportJobStatistics.
+        Number of categories that validated successfully for import.
+
+        :param count_category_validation_success: The count_category_validation_success of this KnowledgeImportJobStatistics.
+        :type: int
+        """
+        
+
+        self._count_category_validation_success = count_category_validation_success
+
+    @property
+    def count_category_validation_failure(self):
+        """
+        Gets the count_category_validation_failure of this KnowledgeImportJobStatistics.
+        Number of categories that failed validation for import.
+
+        :return: The count_category_validation_failure of this KnowledgeImportJobStatistics.
+        :rtype: int
+        """
+        return self._count_category_validation_failure
+
+    @count_category_validation_failure.setter
+    def count_category_validation_failure(self, count_category_validation_failure):
+        """
+        Sets the count_category_validation_failure of this KnowledgeImportJobStatistics.
+        Number of categories that failed validation for import.
+
+        :param count_category_validation_failure: The count_category_validation_failure of this KnowledgeImportJobStatistics.
+        :type: int
+        """
+        
+
+        self._count_category_validation_failure = count_category_validation_failure
+
+    @property
+    def count_category_import_success(self):
+        """
+        Gets the count_category_import_success of this KnowledgeImportJobStatistics.
+        Number of imported categories.
+
+        :return: The count_category_import_success of this KnowledgeImportJobStatistics.
+        :rtype: int
+        """
+        return self._count_category_import_success
+
+    @count_category_import_success.setter
+    def count_category_import_success(self, count_category_import_success):
+        """
+        Sets the count_category_import_success of this KnowledgeImportJobStatistics.
+        Number of imported categories.
+
+        :param count_category_import_success: The count_category_import_success of this KnowledgeImportJobStatistics.
+        :type: int
+        """
+        
+
+        self._count_category_import_success = count_category_import_success
+
+    @property
+    def count_category_import_failure(self):
+        """
+        Gets the count_category_import_failure of this KnowledgeImportJobStatistics.
+        Number of categories failed to import.
+
+        :return: The count_category_import_failure of this KnowledgeImportJobStatistics.
+        :rtype: int
+        """
+        return self._count_category_import_failure
+
+    @count_category_import_failure.setter
+    def count_category_import_failure(self, count_category_import_failure):
+        """
+        Sets the count_category_import_failure of this KnowledgeImportJobStatistics.
+        Number of categories failed to import.
+
+        :param count_category_import_failure: The count_category_import_failure of this KnowledgeImportJobStatistics.
+        :type: int
+        """
+        
+
+        self._count_category_import_failure = count_category_import_failure
+
+    @property
+    def count_label_validation_success(self):
+        """
+        Gets the count_label_validation_success of this KnowledgeImportJobStatistics.
+        Number of labels that validated successfully for import.
+
+        :return: The count_label_validation_success of this KnowledgeImportJobStatistics.
+        :rtype: int
+        """
+        return self._count_label_validation_success
+
+    @count_label_validation_success.setter
+    def count_label_validation_success(self, count_label_validation_success):
+        """
+        Sets the count_label_validation_success of this KnowledgeImportJobStatistics.
+        Number of labels that validated successfully for import.
+
+        :param count_label_validation_success: The count_label_validation_success of this KnowledgeImportJobStatistics.
+        :type: int
+        """
+        
+
+        self._count_label_validation_success = count_label_validation_success
+
+    @property
+    def count_label_validation_failure(self):
+        """
+        Gets the count_label_validation_failure of this KnowledgeImportJobStatistics.
+        Number of labels that failed validation for import.
+
+        :return: The count_label_validation_failure of this KnowledgeImportJobStatistics.
+        :rtype: int
+        """
+        return self._count_label_validation_failure
+
+    @count_label_validation_failure.setter
+    def count_label_validation_failure(self, count_label_validation_failure):
+        """
+        Sets the count_label_validation_failure of this KnowledgeImportJobStatistics.
+        Number of labels that failed validation for import.
+
+        :param count_label_validation_failure: The count_label_validation_failure of this KnowledgeImportJobStatistics.
+        :type: int
+        """
+        
+
+        self._count_label_validation_failure = count_label_validation_failure
+
+    @property
+    def count_label_import_success(self):
+        """
+        Gets the count_label_import_success of this KnowledgeImportJobStatistics.
+        Number of imported labels.
+
+        :return: The count_label_import_success of this KnowledgeImportJobStatistics.
+        :rtype: int
+        """
+        return self._count_label_import_success
+
+    @count_label_import_success.setter
+    def count_label_import_success(self, count_label_import_success):
+        """
+        Sets the count_label_import_success of this KnowledgeImportJobStatistics.
+        Number of imported labels.
+
+        :param count_label_import_success: The count_label_import_success of this KnowledgeImportJobStatistics.
+        :type: int
+        """
+        
+
+        self._count_label_import_success = count_label_import_success
+
+    @property
+    def count_label_import_failure(self):
+        """
+        Gets the count_label_import_failure of this KnowledgeImportJobStatistics.
+        Number of labels failed to import.
+
+        :return: The count_label_import_failure of this KnowledgeImportJobStatistics.
+        :rtype: int
+        """
+        return self._count_label_import_failure
+
+    @count_label_import_failure.setter
+    def count_label_import_failure(self, count_label_import_failure):
+        """
+        Sets the count_label_import_failure of this KnowledgeImportJobStatistics.
+        Number of labels failed to import.
+
+        :param count_label_import_failure: The count_label_import_failure of this KnowledgeImportJobStatistics.
+        :type: int
+        """
+        
+
+        self._count_label_import_failure = count_label_import_failure
+
+    @property
+    def migration_detected(self):
+        """
+        Gets the migration_detected of this KnowledgeImportJobStatistics.
+        Shows whether the import treated as migration or not.
+
+        :return: The migration_detected of this KnowledgeImportJobStatistics.
+        :rtype: bool
+        """
+        return self._migration_detected
+
+    @migration_detected.setter
+    def migration_detected(self, migration_detected):
+        """
+        Sets the migration_detected of this KnowledgeImportJobStatistics.
+        Shows whether the import treated as migration or not.
+
+        :param migration_detected: The migration_detected of this KnowledgeImportJobStatistics.
+        :type: bool
+        """
+        
+
+        self._migration_detected = migration_detected
 
     def to_dict(self):
         """

@@ -2130,6 +2130,7 @@ class KnowledgeApi(object):
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str interval: Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+        :param list[str] document_id: Retrieves the specified documents, comma separated values expected.
         :param list[str] category_id: If specified, retrieves documents associated with category ids, comma separated values expected.
         :param bool include_subcategories: Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
         :param bool include_drafts: If includeDrafts is true, Documents in the draft state are also returned in the response.
@@ -2140,7 +2141,7 @@ class KnowledgeApi(object):
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'interval', 'category_id', 'include_subcategories', 'include_drafts', 'label_ids', 'expand']
+        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'interval', 'document_id', 'category_id', 'include_subcategories', 'include_drafts', 'label_ids', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2172,6 +2173,8 @@ class KnowledgeApi(object):
             query_params['pageSize'] = params['page_size']
         if 'interval' in params:
             query_params['interval'] = params['interval']
+        if 'document_id' in params:
+            query_params['documentId'] = params['document_id']
         if 'category_id' in params:
             query_params['categoryId'] = params['category_id']
         if 'include_subcategories' in params:

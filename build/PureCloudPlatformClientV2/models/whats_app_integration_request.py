@@ -43,7 +43,7 @@ class WhatsAppIntegrationRequest(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
-            'messaging_setting': 'MessagingSettingReference',
+            'messaging_setting': 'MessagingSettingRequestReference',
             'phone_number': 'str',
             'waba_certificate': 'str',
             'self_uri': 'str'
@@ -143,10 +143,10 @@ class WhatsAppIntegrationRequest(object):
     def messaging_setting(self):
         """
         Gets the messaging_setting of this WhatsAppIntegrationRequest.
-
+        Defines the message settings to be applied for this integration
 
         :return: The messaging_setting of this WhatsAppIntegrationRequest.
-        :rtype: MessagingSettingReference
+        :rtype: MessagingSettingRequestReference
         """
         return self._messaging_setting
 
@@ -154,10 +154,10 @@ class WhatsAppIntegrationRequest(object):
     def messaging_setting(self, messaging_setting):
         """
         Sets the messaging_setting of this WhatsAppIntegrationRequest.
-
+        Defines the message settings to be applied for this integration
 
         :param messaging_setting: The messaging_setting of this WhatsAppIntegrationRequest.
-        :type: MessagingSettingReference
+        :type: MessagingSettingRequestReference
         """
         
 

@@ -113,7 +113,7 @@ class ConversationContentCardAction(object):
     def payload(self):
         """
         Gets the payload of this ConversationContentCardAction.
-        Text to be returned as the payload from a ButtonResponse when a button is clicked.
+        Text to be returned as the payload from a ButtonResponse when a button is clicked. The payload and text are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
 
         :return: The payload of this ConversationContentCardAction.
         :rtype: str
@@ -124,7 +124,7 @@ class ConversationContentCardAction(object):
     def payload(self, payload):
         """
         Sets the payload of this ConversationContentCardAction.
-        Text to be returned as the payload from a ButtonResponse when a button is clicked.
+        Text to be returned as the payload from a ButtonResponse when a button is clicked. The payload and text are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
 
         :param payload: The payload of this ConversationContentCardAction.
         :type: str

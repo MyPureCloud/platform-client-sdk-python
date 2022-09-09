@@ -43,7 +43,7 @@ class TwitterIntegrationRequest(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
-            'messaging_setting': 'MessagingSettingReference',
+            'messaging_setting': 'MessagingSettingRequestReference',
             'access_token_key': 'str',
             'access_token_secret': 'str',
             'consumer_key': 'str',
@@ -155,10 +155,10 @@ class TwitterIntegrationRequest(object):
     def messaging_setting(self):
         """
         Gets the messaging_setting of this TwitterIntegrationRequest.
-
+        Defines the message settings to be applied for this integration
 
         :return: The messaging_setting of this TwitterIntegrationRequest.
-        :rtype: MessagingSettingReference
+        :rtype: MessagingSettingRequestReference
         """
         return self._messaging_setting
 
@@ -166,10 +166,10 @@ class TwitterIntegrationRequest(object):
     def messaging_setting(self, messaging_setting):
         """
         Sets the messaging_setting of this TwitterIntegrationRequest.
-
+        Defines the message settings to be applied for this integration
 
         :param messaging_setting: The messaging_setting of this TwitterIntegrationRequest.
-        :type: MessagingSettingReference
+        :type: MessagingSettingRequestReference
         """
         
 

@@ -49,6 +49,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'start_hold_time': 'datetime',
             'purpose': 'str',
             'state': 'str',
+            'initial_state': 'str',
             'direction': 'str',
             'disconnect_type': 'str',
             'held': 'bool',
@@ -95,6 +96,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'start_hold_time': 'startHoldTime',
             'purpose': 'purpose',
             'state': 'state',
+            'initial_state': 'initialState',
             'direction': 'direction',
             'disconnect_type': 'disconnectType',
             'held': 'held',
@@ -140,6 +142,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         self._start_hold_time = None
         self._purpose = None
         self._state = None
+        self._initial_state = None
         self._direction = None
         self._disconnect_type = None
         self._held = None
@@ -393,6 +396,33 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :return: The initial_state of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :param initial_state: The initial_state of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :type: str
+        """
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "scheduled", "none"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     @property
     def direction(self):

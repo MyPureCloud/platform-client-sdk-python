@@ -40,7 +40,7 @@ class ExternalMetricDataWriteResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'processed_entities': 'list[ExternalMetricDataItem]',
+            'processed_entities': 'list[ExternalMetricDataProcessedItem]',
             'unprocessed_entities': 'list[ExternalMetricDataUnprocessedItem]'
         }
 
@@ -59,7 +59,7 @@ class ExternalMetricDataWriteResponse(object):
         The list of processed entities
 
         :return: The processed_entities of this ExternalMetricDataWriteResponse.
-        :rtype: list[ExternalMetricDataItem]
+        :rtype: list[ExternalMetricDataProcessedItem]
         """
         return self._processed_entities
 
@@ -70,7 +70,7 @@ class ExternalMetricDataWriteResponse(object):
         The list of processed entities
 
         :param processed_entities: The processed_entities of this ExternalMetricDataWriteResponse.
-        :type: list[ExternalMetricDataItem]
+        :type: list[ExternalMetricDataProcessedItem]
         """
         
 

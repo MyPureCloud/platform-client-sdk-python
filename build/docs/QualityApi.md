@@ -1034,7 +1034,7 @@ page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
-expand = 'expand_example' # str | Expand (optional)
+expand = 'expand_example' # str | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
 name = 'name_example' # str | Name (optional)
 sort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)
 
@@ -1056,7 +1056,7 @@ except ApiException as e:
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
-| **expand** | **str**| Expand | [optional]  |
+| **expand** | **str**| If &#39;expand&#x3D;publishHistory&#39;, then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
 | **name** | **str**| Name | [optional]  |
 | **sort_order** | **str**| Order to sort results, either asc or desc | [optional]  |
 {: class="table table-striped"}
@@ -1207,7 +1207,7 @@ page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
-expand = 'expand_example' # str | Expand (optional)
+expand = 'expand_example' # str | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
 name = 'name_example' # str | Name (optional)
 sort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)
 
@@ -1229,7 +1229,7 @@ except ApiException as e:
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
-| **expand** | **str**| Expand | [optional]  |
+| **expand** | **str**| If &#39;expand&#x3D;publishHistory&#39;, then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
 | **name** | **str**| Name | [optional]  |
 | **sort_order** | **str**| Order to sort results, either asc or desc | [optional]  |
 {: class="table table-striped"}
@@ -1429,7 +1429,7 @@ page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
-expand = 'expand_example' # str | Expand (optional)
+expand = 'expand_example' # str | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
 name = 'name_example' # str | Name (optional)
 sort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)
 
@@ -1451,7 +1451,7 @@ except ApiException as e:
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
-| **expand** | **str**| Expand | [optional]  |
+| **expand** | **str**| If &#39;expand&#x3D;publishHistory&#39;, then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
 | **name** | **str**| Name | [optional]  |
 | **sort_order** | **str**| Order to sort results, either asc or desc | [optional]  |
 {: class="table table-striped"}

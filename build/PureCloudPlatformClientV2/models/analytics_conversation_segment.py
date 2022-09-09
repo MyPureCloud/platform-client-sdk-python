@@ -480,7 +480,7 @@ class AnalyticsConversationSegment(object):
         :param segment_type: The segment_type of this AnalyticsConversationSegment.
         :type: str
         """
-        allowed_values = ["alert", "callback", "coaching", "contacting", "converting", "delay", "dialing", "hold", "interact", "ivr", "monitoring", "scheduled", "sharing", "system", "transmitting", "unknown", "uploading", "voicemail", "wrapup"]
+        allowed_values = ["alert", "barging", "callback", "coaching", "contacting", "converting", "delay", "dialing", "hold", "interact", "ivr", "monitoring", "scheduled", "sharing", "system", "transmitting", "unknown", "uploading", "voicemail", "wrapup"]
         if segment_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for segment_type -> " + segment_type)
             self._segment_type = "outdated_sdk_version"

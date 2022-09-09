@@ -14,6 +14,7 @@ title: ConversationContentAttachment
 | **text** | **str** | Text associated with attachment such as an image caption. | [optional] |
 | **sha256** | **str** | Secure hash of the attachment content. | [optional] |
 | **filename** | **str** | Suggested file name for attachment. | [optional] |
+| **content_size_bytes** | **int** | Size in bytes of the attachment content. | [optional] |
 {: class="table table-striped"}
 
 

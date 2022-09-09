@@ -16,6 +16,7 @@ title: QueueConversationScreenShareEventTopicScreenShareMediaParticipant
 | **start_hold_time** | **datetime** |  | [optional] |
 | **purpose** | **str** |  | [optional] |
 | **state** | **str** |  | [optional] |
+| **initial_state** | **str** |  | [optional] |
 | **direction** | **str** |  | [optional] |
 | **disconnect_type** | **str** |  | [optional] |
 | **held** | **bool** |  | [optional] |

@@ -68,6 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_authorization_subject_bulkremove**](UsersApi.html#post_authorization_subject_bulkremove) | Bulk-remove grants from a subject.|
 |[**post_authorization_subject_bulkreplace**](UsersApi.html#post_authorization_subject_bulkreplace) | Replace subject&#39;s roles and divisions with the exact list supplied in the request.|
 |[**post_authorization_subject_division_role**](UsersApi.html#post_authorization_subject_division_role) | Make a grant of a role in a division|
+|[**post_user_externalid**](UsersApi.html#post_user_externalid) | Create mapping between external identifier and user. Limit 100 per entity.|
 |[**post_user_invite**](UsersApi.html#post_user_invite) | Send an activation email to the user|
 |[**post_user_password**](UsersApi.html#post_user_password) | Change a users password|
 |[**post_user_routinglanguages**](UsersApi.html#post_user_routinglanguages) | Add routing language to user|
@@ -3324,6 +3325,61 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_user_externalid"></a>
+
+## [**list[UserExternalIdentifier]**](UserExternalIdentifier.html) post_user_externalid(user_id, body)
+
+
+
+Create mapping between external identifier and user. Limit 100 per entity.
+
+Authority Name and External key are case sensitive.
+
+
+
+Wraps POST /api/v2/users/{userId}/externalid 
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.UserExternalIdentifier() # UserExternalIdentifier | 
+
+try:
+    # Create mapping between external identifier and user. Limit 100 per entity.
+    api_response = api_instance.post_user_externalid(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_user_externalid: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**UserExternalIdentifier**](UserExternalIdentifier.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[UserExternalIdentifier]**](UserExternalIdentifier.html)
 
 <a name="post_user_invite"></a>
 

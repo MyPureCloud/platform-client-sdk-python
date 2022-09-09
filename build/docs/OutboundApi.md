@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_contactlist_contacts**](OutboundApi.html#delete_outbound_contactlist_contacts) | Delete contacts from a contact list.|
 |[**delete_outbound_contactlistfilter**](OutboundApi.html#delete_outbound_contactlistfilter) | Delete Contact List Filter|
 |[**delete_outbound_contactlists**](OutboundApi.html#delete_outbound_contactlists) | Delete multiple contact lists.|
+|[**delete_outbound_digitalruleset**](OutboundApi.html#delete_outbound_digitalruleset) | Delete an Outbound Digital Rule Set|
 |[**delete_outbound_dnclist**](OutboundApi.html#delete_outbound_dnclist) | Delete dialer DNC list|
 |[**delete_outbound_messagingcampaign**](OutboundApi.html#delete_outbound_messagingcampaign) | Delete an Outbound Messaging Campaign|
 |[**delete_outbound_messagingcampaign_progress**](OutboundApi.html#delete_outbound_messagingcampaign_progress) | Reset messaging campaign progress and recycle the messaging campaign|
@@ -57,6 +58,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_contactlists**](OutboundApi.html#get_outbound_contactlists) | Query a list of contact lists.|
 |[**get_outbound_contactlists_divisionview**](OutboundApi.html#get_outbound_contactlists_divisionview) | Get a basic ContactList information object|
 |[**get_outbound_contactlists_divisionviews**](OutboundApi.html#get_outbound_contactlists_divisionviews) | Query a list of simplified contact list objects.|
+|[**get_outbound_digitalruleset**](OutboundApi.html#get_outbound_digitalruleset) | Get an Outbound Digital Rule Set|
+|[**get_outbound_digitalrulesets**](OutboundApi.html#get_outbound_digitalrulesets) | Query a list of Outbound Digital Rule Sets|
 |[**get_outbound_dnclist**](OutboundApi.html#get_outbound_dnclist) | Get dialer DNC list|
 |[**get_outbound_dnclist_export**](OutboundApi.html#get_outbound_dnclist_export) | Get the URI of a DNC list export.|
 |[**get_outbound_dnclist_importstatus**](OutboundApi.html#get_outbound_dnclist_importstatus) | Get dialer dncList import status.|
@@ -102,6 +105,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_contactlistfilters_preview**](OutboundApi.html#post_outbound_contactlistfilters_preview) | Get a preview of the output of a contact list filter|
 |[**post_outbound_contactlists**](OutboundApi.html#post_outbound_contactlists) | Create a contact List.|
 |[**post_outbound_conversation_dnc**](OutboundApi.html#post_outbound_conversation_dnc) | Add phone numbers to a Dialer DNC list.|
+|[**post_outbound_digitalrulesets**](OutboundApi.html#post_outbound_digitalrulesets) | Create an Outbound Digital Rule Set|
 |[**post_outbound_dnclist_export**](OutboundApi.html#post_outbound_dnclist_export) | Initiate the export of a dnc list.|
 |[**post_outbound_dnclist_phonenumbers**](OutboundApi.html#post_outbound_dnclist_phonenumbers) | Add phone numbers to a DNC list.|
 |[**post_outbound_dnclists**](OutboundApi.html#post_outbound_dnclists) | Create dialer DNC list|
@@ -118,6 +122,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_outbound_contactlist**](OutboundApi.html#put_outbound_contactlist) | Update a contact list.|
 |[**put_outbound_contactlist_contact**](OutboundApi.html#put_outbound_contactlist_contact) | Update a contact.|
 |[**put_outbound_contactlistfilter**](OutboundApi.html#put_outbound_contactlistfilter) | Update Contact List Filter|
+|[**put_outbound_digitalruleset**](OutboundApi.html#put_outbound_digitalruleset) | Update an Outbound Digital Rule Set|
 |[**put_outbound_dnclist**](OutboundApi.html#put_outbound_dnclist) | Update dialer DNC list|
 |[**put_outbound_messagingcampaign**](OutboundApi.html#put_outbound_messagingcampaign) | Update an Outbound Messaging Campaign|
 |[**put_outbound_ruleset**](OutboundApi.html#put_outbound_ruleset) | Update a Rule Set.|
@@ -678,6 +683,56 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**list[str]**](str.html)| contact list id(s) to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_digitalruleset"></a>
+
+##  delete_outbound_digitalruleset(digital_rule_set_id)
+
+
+
+Delete an Outbound Digital Rule Set
+
+
+
+Wraps DELETE /api/v2/outbound/digitalrulesets/{digitalRuleSetId} 
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+digital_rule_set_id = 'digital_rule_set_id_example' # str | The Digital Rule Set ID
+
+try:
+    # Delete an Outbound Digital Rule Set
+    api_instance.delete_outbound_digitalruleset(digital_rule_set_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_digitalruleset: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **digital_rule_set_id** | **str**| The Digital Rule Set ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2800,6 +2855,118 @@ except ApiException as e:
 ### Return type
 
 [**ContactListDivisionViewListing**](ContactListDivisionViewListing.html)
+
+<a name="get_outbound_digitalruleset"></a>
+
+## [**DigitalRuleSet**](DigitalRuleSet.html) get_outbound_digitalruleset(digital_rule_set_id)
+
+
+
+Get an Outbound Digital Rule Set
+
+
+
+Wraps GET /api/v2/outbound/digitalrulesets/{digitalRuleSetId} 
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+digital_rule_set_id = 'digital_rule_set_id_example' # str | The Digital Rule Set ID
+
+try:
+    # Get an Outbound Digital Rule Set
+    api_response = api_instance.get_outbound_digitalruleset(digital_rule_set_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_digitalruleset: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **digital_rule_set_id** | **str**| The Digital Rule Set ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DigitalRuleSet**](DigitalRuleSet.html)
+
+<a name="get_outbound_digitalrulesets"></a>
+
+## [**DigitalRuleSetEntityListing**](DigitalRuleSetEntityListing.html) get_outbound_digitalrulesets(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id)
+
+
+
+Query a list of Outbound Digital Rule Sets
+
+
+
+Wraps GET /api/v2/outbound/digitalrulesets 
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = ''name'' # str | The field to sort by (optional) (default to 'name')
+sort_order = ''ascending'' # str | The direction to sort (optional) (default to 'ascending')
+name = 'name_example' # str | Name (optional)
+id = ['id_example'] # list[str] | A list of digital rule set ids to bulk fetch (optional)
+
+try:
+    # Query a list of Outbound Digital Rule Sets
+    api_response = api_instance.get_outbound_digitalrulesets(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_digitalrulesets: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| The field to sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name |
+| **sort_order** | **str**| The direction to sort | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
+| **name** | **str**| Name | [optional]  |
+| **id** | [**list[str]**](str.html)| A list of digital rule set ids to bulk fetch | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DigitalRuleSetEntityListing**](DigitalRuleSetEntityListing.html)
 
 <a name="get_outbound_dnclist"></a>
 
@@ -5225,6 +5392,57 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="post_outbound_digitalrulesets"></a>
+
+## [**DigitalRuleSet**](DigitalRuleSet.html) post_outbound_digitalrulesets(body)
+
+
+
+Create an Outbound Digital Rule Set
+
+
+
+Wraps POST /api/v2/outbound/digitalrulesets 
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.DigitalRuleSet() # DigitalRuleSet | Digital Rule Set
+
+try:
+    # Create an Outbound Digital Rule Set
+    api_response = api_instance.post_outbound_digitalrulesets(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_digitalrulesets: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DigitalRuleSet**](DigitalRuleSet.html)| Digital Rule Set |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DigitalRuleSet**](DigitalRuleSet.html)
+
 <a name="post_outbound_dnclist_export"></a>
 
 ## [**DomainEntityRef**](DomainEntityRef.html) post_outbound_dnclist_export(dnc_list_id)
@@ -6073,6 +6291,59 @@ except ApiException as e:
 ### Return type
 
 [**ContactListFilter**](ContactListFilter.html)
+
+<a name="put_outbound_digitalruleset"></a>
+
+## [**DigitalRuleSet**](DigitalRuleSet.html) put_outbound_digitalruleset(digital_rule_set_id, body)
+
+
+
+Update an Outbound Digital Rule Set
+
+
+
+Wraps PUT /api/v2/outbound/digitalrulesets/{digitalRuleSetId} 
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+digital_rule_set_id = 'digital_rule_set_id_example' # str | The Digital Rule Set ID
+body = PureCloudPlatformClientV2.DigitalRuleSet() # DigitalRuleSet | Digital Rule Set
+
+try:
+    # Update an Outbound Digital Rule Set
+    api_response = api_instance.put_outbound_digitalruleset(digital_rule_set_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->put_outbound_digitalruleset: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **digital_rule_set_id** | **str**| The Digital Rule Set ID |  |
+| **body** | [**DigitalRuleSet**](DigitalRuleSet.html)| Digital Rule Set |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DigitalRuleSet**](DigitalRuleSet.html)
 
 <a name="put_outbound_dnclist"></a>
 

@@ -52,6 +52,7 @@ class AnalyticsSession(object):
             'ani': 'str',
             'assigner_id': 'str',
             'authenticated': 'bool',
+            'barged_participant_id': 'str',
             'callback_numbers': 'list[str]',
             'callback_scheduled_time': 'datetime',
             'callback_user_name': 'str',
@@ -130,6 +131,7 @@ class AnalyticsSession(object):
             'ani': 'ani',
             'assigner_id': 'assignerId',
             'authenticated': 'authenticated',
+            'barged_participant_id': 'bargedParticipantId',
             'callback_numbers': 'callbackNumbers',
             'callback_scheduled_time': 'callbackScheduledTime',
             'callback_user_name': 'callbackUserName',
@@ -207,6 +209,7 @@ class AnalyticsSession(object):
         self._ani = None
         self._assigner_id = None
         self._authenticated = None
+        self._barged_participant_id = None
         self._callback_numbers = None
         self._callback_scheduled_time = None
         self._callback_user_name = None
@@ -558,6 +561,30 @@ class AnalyticsSession(object):
         
 
         self._authenticated = authenticated
+
+    @property
+    def barged_participant_id(self):
+        """
+        Gets the barged_participant_id of this AnalyticsSession.
+        The participantId being barged in on (if someone (e.g. an agent) is being barged in on, this would correspond to one of the other participantIds present in the conversation)
+
+        :return: The barged_participant_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._barged_participant_id
+
+    @barged_participant_id.setter
+    def barged_participant_id(self, barged_participant_id):
+        """
+        Sets the barged_participant_id of this AnalyticsSession.
+        The participantId being barged in on (if someone (e.g. an agent) is being barged in on, this would correspond to one of the other participantIds present in the conversation)
+
+        :param barged_participant_id: The barged_participant_id of this AnalyticsSession.
+        :type: str
+        """
+        
+
+        self._barged_participant_id = barged_participant_id
 
     @property
     def callback_numbers(self):

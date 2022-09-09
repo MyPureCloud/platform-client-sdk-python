@@ -41,8 +41,9 @@ This will remove any responses associated with the library.
 
 Wraps DELETE /api/v2/responsemanagement/libraries/{libraryId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:library:delete
 
 ### Example
 
@@ -92,8 +93,9 @@ This will remove the response from any libraries associated with it.
 
 Wraps DELETE /api/v2/responsemanagement/responses/{responseId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:response:delete
 
 ### Example
 
@@ -191,8 +193,9 @@ Gets a list of existing response libraries.
 
 Wraps GET /api/v2/responsemanagement/libraries 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:library:view
 
 ### Example
 
@@ -245,8 +248,9 @@ Get details about an existing response library.
 
 Wraps GET /api/v2/responsemanagement/libraries/{libraryId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:library:view
 
 ### Example
 
@@ -295,8 +299,9 @@ Get details about an existing response.
 
 Wraps GET /api/v2/responsemanagement/responses/{responseId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:response:view
 
 ### Example
 
@@ -449,8 +454,9 @@ Gets a list of existing responses.
 
 Wraps GET /api/v2/responsemanagement/responses 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:response:view
 
 ### Example
 
@@ -505,8 +511,9 @@ Create a response library.
 
 Wraps POST /api/v2/responsemanagement/libraries 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:library:add
 
 ### Example
 
@@ -659,8 +666,9 @@ Create a response.
 
 Wraps POST /api/v2/responsemanagement/responses 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:response:add
 
 ### Example
 
@@ -711,8 +719,9 @@ Query responses
 
 Wraps POST /api/v2/responsemanagement/responses/query 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:response:view
 
 ### Example
 
@@ -763,8 +772,9 @@ Fields that can be updated: name. The most recent version is required for update
 
 Wraps PUT /api/v2/responsemanagement/libraries/{libraryId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:library:edit
 
 ### Example
 
@@ -817,8 +827,9 @@ Fields that can be updated: name, libraries, and texts. The most recent version 
 
 Wraps PUT /api/v2/responsemanagement/responses/{responseId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* responses:response:edit
 
 ### Example
 

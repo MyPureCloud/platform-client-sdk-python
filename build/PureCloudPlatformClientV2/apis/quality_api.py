@@ -1491,7 +1491,7 @@ class QualityApi(object):
         :param str sort_by: variable name requested to sort by
         :param str next_page: next page token
         :param str previous_page: Previous page token
-        :param str expand: Expand
+        :param str expand: If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
         :param str name: Name
         :param str sort_order: Order to sort results, either asc or desc
         :return: EvaluationFormEntityListing
@@ -1752,7 +1752,7 @@ class QualityApi(object):
         :param str sort_by: variable name requested to sort by
         :param str next_page: next page token
         :param str previous_page: Previous page token
-        :param str expand: Expand
+        :param str expand: If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
         :param str name: Name
         :param str sort_order: Order to sort results, either asc or desc
         :return: EvaluationFormEntityListing
@@ -2088,7 +2088,7 @@ class QualityApi(object):
         :param str sort_by: variable name requested to sort by
         :param str next_page: next page token
         :param str previous_page: Previous page token
-        :param str expand: Expand
+        :param str expand: If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
         :param str name: Name
         :param str sort_order: Order to sort results, either asc or desc
         :return: SurveyFormEntityListing

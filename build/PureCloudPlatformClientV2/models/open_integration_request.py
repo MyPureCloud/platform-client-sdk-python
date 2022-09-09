@@ -43,7 +43,7 @@ class OpenIntegrationRequest(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
-            'messaging_setting': 'MessagingSettingReference',
+            'messaging_setting': 'MessagingSettingRequestReference',
             'outbound_notification_webhook_url': 'str',
             'outbound_notification_webhook_signature_secret_token': 'str',
             'webhook_headers': 'dict(str, str)',
@@ -146,10 +146,10 @@ class OpenIntegrationRequest(object):
     def messaging_setting(self):
         """
         Gets the messaging_setting of this OpenIntegrationRequest.
-
+        Defines the message settings to be applied for this integration
 
         :return: The messaging_setting of this OpenIntegrationRequest.
-        :rtype: MessagingSettingReference
+        :rtype: MessagingSettingRequestReference
         """
         return self._messaging_setting
 
@@ -157,10 +157,10 @@ class OpenIntegrationRequest(object):
     def messaging_setting(self, messaging_setting):
         """
         Sets the messaging_setting of this OpenIntegrationRequest.
-
+        Defines the message settings to be applied for this integration
 
         :param messaging_setting: The messaging_setting of this OpenIntegrationRequest.
-        :type: MessagingSettingReference
+        :type: MessagingSettingRequestReference
         """
         
 

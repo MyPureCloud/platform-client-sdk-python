@@ -318,6 +318,13 @@
     "return": "DataAvailabilityResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\n\ntry:\n    # Lookup the datalake availability date and time\n    api_response = api_instance.get_analytics_conversations_details_jobs_availability()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetAnalyticsConversationsDetailsJobsAvailabilityRequest->get_analytics_conversations_details_jobs_availability: %s\\n\" % e)"
   },
+  "get_analytics_dataretention_settings": {
+    "operationId": "get_analytics_dataretention_settings",
+    "functionName": "get_analytics_dataretention_settings",
+    "signature": "get_analytics_dataretention_settings()",
+    "return": "AnalyticsDataRetentionResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi()\n\ntry:\n    # Get analytics data retention setting\n    api_response = api_instance.get_analytics_dataretention_settings()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetAnalyticsDataretentionSettingsRequest->get_analytics_dataretention_settings: %s\\n\" % e)"
+  },
   "get_analytics_reporting_exports": {
     "operationId": "get_analytics_reporting_exports",
     "functionName": "get_analytics_reporting_exports",
@@ -841,6 +848,20 @@
     ],
     "return": "UserObservationQueryResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi()\nbody = PureCloudPlatformClientV2.UserObservationQuery() # UserObservationQuery | query\n\ntry:\n    # Query for user observations\n    api_response = api_instance.post_analytics_users_observations_query(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostAnalyticsUsersObservationsQueryRequest->post_analytics_users_observations_query: %s\\n\" % e)"
+  },
+  "put_analytics_dataretention_settings": {
+    "operationId": "put_analytics_dataretention_settings",
+    "functionName": "put_analytics_dataretention_settings",
+    "signature": "put_analytics_dataretention_settings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "UpdateAnalyticsDataRetentionRequest",
+        "required": "true"
+      }
+    ],
+    "return": "AnalyticsDataRetentionResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi()\nbody = PureCloudPlatformClientV2.UpdateAnalyticsDataRetentionRequest() # UpdateAnalyticsDataRetentionRequest | retentionDays\n\ntry:\n    # Update analytics data retention setting\n    api_response = api_instance.put_analytics_dataretention_settings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutAnalyticsDataretentionSettingsRequest->put_analytics_dataretention_settings: %s\\n\" % e)"
   },
   "put_analytics_reporting_schedule": {
     "operationId": "put_analytics_reporting_schedule",
@@ -14701,7 +14722,7 @@
   "get_knowledge_knowledgebase_documents": {
     "operationId": "get_knowledge_knowledgebase_documents",
     "functionName": "get_knowledge_knowledgebase_documents",
-    "signature": "get_knowledge_knowledgebase_documents(knowledge_base_id, before, after, page_size, interval, category_id, include_subcategories, include_drafts, label_ids, expand)",
+    "signature": "get_knowledge_knowledgebase_documents(knowledge_base_id, before, after, page_size, interval, document_id, category_id, include_subcategories, include_drafts, label_ids, expand)",
     "parameters": [
       {
         "name": "knowledge_base_id",
@@ -14726,6 +14747,11 @@
       {
         "name": "interval",
         "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "document_id",
+        "type": "list[str]",
         "required": "false"
       },
       {
@@ -14755,7 +14781,7 @@
       }
     ],
     "return": "KnowledgeDocumentResponseListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi()\nknowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID\nbefore = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\npage_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)\ninterval = 'interval_example' # str | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)\ncategory_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)\ninclude_subcategories = True # bool | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)\ninclude_drafts = True # bool | If includeDrafts is true, Documents in the draft state are also returned in the response. (optional)\nlabel_ids = ['label_ids_example'] # list[str] | If specified, retrieves documents associated with label ids, comma separated values expected. (optional)\nexpand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)\n\ntry:\n    # Get documents.\n    api_response = api_instance.get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetKnowledgeKnowledgebaseDocumentsRequest->get_knowledge_knowledgebase_documents: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi()\nknowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID\nbefore = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\npage_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)\ninterval = 'interval_example' # str | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)\ndocument_id = ['document_id_example'] # list[str] | Retrieves the specified documents, comma separated values expected. (optional)\ncategory_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)\ninclude_subcategories = True # bool | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)\ninclude_drafts = True # bool | If includeDrafts is true, Documents in the draft state are also returned in the response. (optional)\nlabel_ids = ['label_ids_example'] # list[str] | If specified, retrieves documents associated with label ids, comma separated values expected. (optional)\nexpand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)\n\ntry:\n    # Get documents.\n    api_response = api_instance.get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetKnowledgeKnowledgebaseDocumentsRequest->get_knowledge_knowledgebase_documents: %s\\n\" % e)"
   },
   "get_knowledge_knowledgebase_export_job": {
     "operationId": "get_knowledge_knowledgebase_export_job",
@@ -19036,6 +19062,19 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\nid = ['id_example'] # list[str] | contact list id(s) to delete\n\ntry:\n    # Delete multiple contact lists.\n    api_instance.delete_outbound_contactlists(id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOutboundContactlistsRequest->delete_outbound_contactlists: %s\\n\" % e)"
   },
+  "delete_outbound_digitalruleset": {
+    "operationId": "delete_outbound_digitalruleset",
+    "functionName": "delete_outbound_digitalruleset",
+    "signature": "delete_outbound_digitalruleset(digital_rule_set_id)",
+    "parameters": [
+      {
+        "name": "digital_rule_set_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ndigital_rule_set_id = 'digital_rule_set_id_example' # str | The Digital Rule Set ID\n\ntry:\n    # Delete an Outbound Digital Rule Set\n    api_instance.delete_outbound_digitalruleset(digital_rule_set_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOutboundDigitalrulesetRequest->delete_outbound_digitalruleset: %s\\n\" % e)"
+  },
   "delete_outbound_dnclist": {
     "operationId": "delete_outbound_dnclist",
     "functionName": "delete_outbound_dnclist",
@@ -19985,6 +20024,59 @@
     "return": "ContactListDivisionViewListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ninclude_import_status = False # bool | Include import status (optional) (default to False)\ninclude_size = False # bool | Include size (optional) (default to False)\npage_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nfilter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')\nname = 'name_example' # str | Name (optional)\nid = ['id_example'] # list[str] | id (optional)\nsort_by = 'sort_by_example' # str | Sort by (optional)\nsort_order = ''a'' # str | Sort order (optional) (default to 'a')\n\ntry:\n    # Query a list of simplified contact list objects.\n    api_response = api_instance.get_outbound_contactlists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOutboundContactlistsDivisionviewsRequest->get_outbound_contactlists_divisionviews: %s\\n\" % e)"
   },
+  "get_outbound_digitalruleset": {
+    "operationId": "get_outbound_digitalruleset",
+    "functionName": "get_outbound_digitalruleset",
+    "signature": "get_outbound_digitalruleset(digital_rule_set_id)",
+    "parameters": [
+      {
+        "name": "digital_rule_set_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "DigitalRuleSet",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ndigital_rule_set_id = 'digital_rule_set_id_example' # str | The Digital Rule Set ID\n\ntry:\n    # Get an Outbound Digital Rule Set\n    api_response = api_instance.get_outbound_digitalruleset(digital_rule_set_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOutboundDigitalrulesetRequest->get_outbound_digitalruleset: %s\\n\" % e)"
+  },
+  "get_outbound_digitalrulesets": {
+    "operationId": "get_outbound_digitalrulesets",
+    "functionName": "get_outbound_digitalrulesets",
+    "signature": "get_outbound_digitalrulesets(page_size, page_number, sort_by, sort_order, name, id)",
+    "parameters": [
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "sort_by",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "sort_order",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "name",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "id",
+        "type": "list[str]",
+        "required": "false"
+      }
+    ],
+    "return": "DigitalRuleSetEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\npage_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_by = ''name'' # str | The field to sort by (optional) (default to 'name')\nsort_order = ''ascending'' # str | The direction to sort (optional) (default to 'ascending')\nname = 'name_example' # str | Name (optional)\nid = ['id_example'] # list[str] | A list of digital rule set ids to bulk fetch (optional)\n\ntry:\n    # Query a list of Outbound Digital Rule Sets\n    api_response = api_instance.get_outbound_digitalrulesets(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOutboundDigitalrulesetsRequest->get_outbound_digitalrulesets: %s\\n\" % e)"
+  },
   "get_outbound_dnclist": {
     "operationId": "get_outbound_dnclist",
     "functionName": "get_outbound_dnclist",
@@ -20910,6 +21002,20 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\nconversation_id = 'conversation_id_example' # str | Conversation ID\n\ntry:\n    # Add phone numbers to a Dialer DNC list.\n    api_instance.post_outbound_conversation_dnc(conversation_id)\nexcept ApiException as e:\n    print(\"Exception when calling PostOutboundConversationDncRequest->post_outbound_conversation_dnc: %s\\n\" % e)"
   },
+  "post_outbound_digitalrulesets": {
+    "operationId": "post_outbound_digitalrulesets",
+    "functionName": "post_outbound_digitalrulesets",
+    "signature": "post_outbound_digitalrulesets(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "DigitalRuleSet",
+        "required": "true"
+      }
+    ],
+    "return": "DigitalRuleSet",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\nbody = PureCloudPlatformClientV2.DigitalRuleSet() # DigitalRuleSet | Digital Rule Set\n\ntry:\n    # Create an Outbound Digital Rule Set\n    api_response = api_instance.post_outbound_digitalrulesets(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostOutboundDigitalrulesetsRequest->post_outbound_digitalrulesets: %s\\n\" % e)"
+  },
   "post_outbound_dnclist_export": {
     "operationId": "post_outbound_dnclist_export",
     "functionName": "post_outbound_dnclist_export",
@@ -21197,6 +21303,25 @@
     ],
     "return": "ContactListFilter",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ncontact_list_filter_id = 'contact_list_filter_id_example' # str | Contact List Filter ID\nbody = PureCloudPlatformClientV2.ContactListFilter() # ContactListFilter | ContactListFilter\n\ntry:\n    # Update Contact List Filter\n    api_response = api_instance.put_outbound_contactlistfilter(contact_list_filter_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutOutboundContactlistfilterRequest->put_outbound_contactlistfilter: %s\\n\" % e)"
+  },
+  "put_outbound_digitalruleset": {
+    "operationId": "put_outbound_digitalruleset",
+    "functionName": "put_outbound_digitalruleset",
+    "signature": "put_outbound_digitalruleset(digital_rule_set_id, body)",
+    "parameters": [
+      {
+        "name": "digital_rule_set_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "DigitalRuleSet",
+        "required": "true"
+      }
+    ],
+    "return": "DigitalRuleSet",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ndigital_rule_set_id = 'digital_rule_set_id_example' # str | The Digital Rule Set ID\nbody = PureCloudPlatformClientV2.DigitalRuleSet() # DigitalRuleSet | Digital Rule Set\n\ntry:\n    # Update an Outbound Digital Rule Set\n    api_response = api_instance.put_outbound_digitalruleset(digital_rule_set_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutOutboundDigitalrulesetRequest->put_outbound_digitalruleset: %s\\n\" % e)"
   },
   "put_outbound_dnclist": {
     "operationId": "put_outbound_dnclist",
@@ -22118,7 +22243,7 @@
       }
     ],
     "return": "EvaluationFormEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nexpand = 'expand_example' # str | Expand (optional)\nname = 'name_example' # str | Name (optional)\nsort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)\n\ntry:\n    # Get the list of evaluation forms\n    api_response = api_instance.get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityFormsRequest->get_quality_forms: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nexpand = 'expand_example' # str | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)\nname = 'name_example' # str | Name (optional)\nsort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)\n\ntry:\n    # Get the list of evaluation forms\n    api_response = api_instance.get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityFormsRequest->get_quality_forms: %s\\n\" % e)"
   },
   "get_quality_forms_evaluation": {
     "operationId": "get_quality_forms_evaluation",
@@ -22210,7 +22335,7 @@
       }
     ],
     "return": "EvaluationFormEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nexpand = 'expand_example' # str | Expand (optional)\nname = 'name_example' # str | Name (optional)\nsort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)\n\ntry:\n    # Get the list of evaluation forms\n    api_response = api_instance.get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityFormsEvaluationsRequest->get_quality_forms_evaluations: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nexpand = 'expand_example' # str | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)\nname = 'name_example' # str | Name (optional)\nsort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)\n\ntry:\n    # Get the list of evaluation forms\n    api_response = api_instance.get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityFormsEvaluationsRequest->get_quality_forms_evaluations: %s\\n\" % e)"
   },
   "get_quality_forms_evaluations_bulk_contexts": {
     "operationId": "get_quality_forms_evaluations_bulk_contexts",
@@ -22311,7 +22436,7 @@
       }
     ],
     "return": "SurveyFormEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nexpand = 'expand_example' # str | Expand (optional)\nname = 'name_example' # str | Name (optional)\nsort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)\n\ntry:\n    # Get the list of survey forms\n    api_response = api_instance.get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityFormsSurveysRequest->get_quality_forms_surveys: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nexpand = 'expand_example' # str | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)\nname = 'name_example' # str | Name (optional)\nsort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)\n\ntry:\n    # Get the list of survey forms\n    api_response = api_instance.get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityFormsSurveysRequest->get_quality_forms_surveys: %s\\n\" % e)"
   },
   "get_quality_forms_surveys_bulk": {
     "operationId": "get_quality_forms_surveys_bulk",
@@ -23560,6 +23685,30 @@
     ],
     "return": "RecordingSettings",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\ncreate_default = False # bool | If no settings are found, a new one is created with default values (optional) (default to False)\n\ntry:\n    # Get the Recording Settings for the Organization\n    api_response = api_instance.get_recording_settings(create_default=create_default)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRecordingSettingsRequest->get_recording_settings: %s\\n\" % e)"
+  },
+  "get_recordings_retention_query": {
+    "operationId": "get_recordings_retention_query",
+    "functionName": "get_recordings_retention_query",
+    "signature": "get_recordings_retention_query(retention_threshold_days, cursor, page_size)",
+    "parameters": [
+      {
+        "name": "retention_threshold_days",
+        "type": "int",
+        "required": "true"
+      },
+      {
+        "name": "cursor",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      }
+    ],
+    "return": "RecordingRetentionCursorEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nretention_threshold_days = 56 # int | Fetch retention data for recordings retained for more days than the provided value.\ncursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)\npage_size = 25 # int | Page size. Maximum is 500. (optional) (default to 25)\n\ntry:\n    # Query for recording retention data\n    api_response = api_instance.get_recordings_retention_query(retention_threshold_days, cursor=cursor, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRecordingsRetentionQueryRequest->get_recordings_retention_query: %s\\n\" % e)"
   },
   "get_recordings_screensessions": {
     "operationId": "get_recordings_screensessions",
@@ -31953,6 +32102,25 @@
     "return": "UserEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi()\nbody = [PureCloudPlatformClientV2.PatchUser()] # list[PatchUser] | Users\n\ntry:\n    # Update bulk acd autoanswer on users\n    api_response = api_instance.patch_users_bulk(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchUsersBulkRequest->patch_users_bulk: %s\\n\" % e)"
   },
+  "post_user_externalid": {
+    "operationId": "post_user_externalid",
+    "functionName": "post_user_externalid",
+    "signature": "post_user_externalid(user_id, body)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UserExternalIdentifier",
+        "required": "true"
+      }
+    ],
+    "return": "list[UserExternalIdentifier]",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi()\nuser_id = 'user_id_example' # str | User ID\nbody = PureCloudPlatformClientV2.UserExternalIdentifier() # UserExternalIdentifier | \n\ntry:\n    # Create mapping between external identifier and user. Limit 100 per entity.\n    api_response = api_instance.post_user_externalid(user_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostUserExternalidRequest->post_user_externalid: %s\\n\" % e)"
+  },
   "post_user_invite": {
     "operationId": "post_user_invite",
     "functionName": "post_user_invite",
@@ -33004,6 +33172,25 @@
     ],
     "return": "WebDeployment",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\ndeployment_id = 'deployment_id_example' # str | The deployment ID\n\ntry:\n    # Get a deployment\n    api_response = api_instance.get_webdeployments_deployment(deployment_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWebdeploymentsDeploymentRequest->get_webdeployments_deployment: %s\\n\" % e)"
+  },
+  "get_webdeployments_deployment_configurations": {
+    "operationId": "get_webdeployments_deployment_configurations",
+    "functionName": "get_webdeployments_deployment_configurations",
+    "signature": "get_webdeployments_deployment_configurations(deployment_id, type)",
+    "parameters": [
+      {
+        "name": "deployment_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "type",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "WebDeploymentActiveConfigurationOnDeployment",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\ndeployment_id = 'deployment_id_example' # str | The deployment ID\ntype = 'type_example' # str | Get active configuration on a deployment (optional)\n\ntry:\n    # Get active configuration for a given deployment\n    api_response = api_instance.get_webdeployments_deployment_configurations(deployment_id, type=type)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWebdeploymentsDeploymentConfigurationsRequest->get_webdeployments_deployment_configurations: %s\\n\" % e)"
   },
   "get_webdeployments_deployments": {
     "operationId": "get_webdeployments_deployments",

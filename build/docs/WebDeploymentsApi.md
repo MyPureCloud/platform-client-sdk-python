@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_webdeployments_configuration_versions_draft**](WebDeploymentsApi.html#get_webdeployments_configuration_versions_draft) | Get the configuration draft|
 |[**get_webdeployments_configurations**](WebDeploymentsApi.html#get_webdeployments_configurations) | View configuration drafts|
 |[**get_webdeployments_deployment**](WebDeploymentsApi.html#get_webdeployments_deployment) | Get a deployment|
+|[**get_webdeployments_deployment_configurations**](WebDeploymentsApi.html#get_webdeployments_deployment_configurations) | Get active configuration for a given deployment|
 |[**get_webdeployments_deployments**](WebDeploymentsApi.html#get_webdeployments_deployments) | Get deployments|
 |[**post_webdeployments_configuration_versions_draft_publish**](WebDeploymentsApi.html#post_webdeployments_configuration_versions_draft_publish) | Publish the configuration draft and create a new version|
 |[**post_webdeployments_configurations**](WebDeploymentsApi.html#post_webdeployments_configurations) | Create a configuration draft|
@@ -381,6 +382,58 @@ except ApiException as e:
 ### Return type
 
 [**WebDeployment**](WebDeployment.html)
+
+<a name="get_webdeployments_deployment_configurations"></a>
+
+## [**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment.html) get_webdeployments_deployment_configurations(deployment_id, type=type)
+
+
+
+Get active configuration for a given deployment
+
+
+
+Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/configurations 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+deployment_id = 'deployment_id_example' # str | The deployment ID
+type = 'type_example' # str | Get active configuration on a deployment (optional)
+
+try:
+    # Get active configuration for a given deployment
+    api_response = api_instance.get_webdeployments_deployment_configurations(deployment_id, type=type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->get_webdeployments_deployment_configurations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| The deployment ID |  |
+| **type** | **str**| Get active configuration on a deployment | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment.html)
 
 <a name="get_webdeployments_deployments"></a>
 

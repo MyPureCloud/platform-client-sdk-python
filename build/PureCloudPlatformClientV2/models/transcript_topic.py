@@ -46,7 +46,9 @@ class TranscriptTopic(object):
             'transcript_phrase': 'str',
             'confidence': 'int',
             'start_time_milliseconds': 'int',
-            'duration': 'TopicDuration'
+            'duration': 'TopicDuration',
+            'offset': 'TopicOffset',
+            'recording_location': 'int'
         }
 
         self.attribute_map = {
@@ -56,7 +58,9 @@ class TranscriptTopic(object):
             'transcript_phrase': 'transcriptPhrase',
             'confidence': 'confidence',
             'start_time_milliseconds': 'startTimeMilliseconds',
-            'duration': 'duration'
+            'duration': 'duration',
+            'offset': 'offset',
+            'recording_location': 'recordingLocation'
         }
 
         self._id = None
@@ -66,6 +70,8 @@ class TranscriptTopic(object):
         self._confidence = None
         self._start_time_milliseconds = None
         self._duration = None
+        self._offset = None
+        self._recording_location = None
 
     @property
     def id(self):
@@ -234,6 +240,54 @@ class TranscriptTopic(object):
         
 
         self._duration = duration
+
+    @property
+    def offset(self):
+        """
+        Gets the offset of this TranscriptTopic.
+        Location of the phrase
+
+        :return: The offset of this TranscriptTopic.
+        :rtype: TopicOffset
+        """
+        return self._offset
+
+    @offset.setter
+    def offset(self, offset):
+        """
+        Sets the offset of this TranscriptTopic.
+        Location of the phrase
+
+        :param offset: The offset of this TranscriptTopic.
+        :type: TopicOffset
+        """
+        
+
+        self._offset = offset
+
+    @property
+    def recording_location(self):
+        """
+        Gets the recording_location of this TranscriptTopic.
+        Location of the phrase in the recording in milliseconds
+
+        :return: The recording_location of this TranscriptTopic.
+        :rtype: int
+        """
+        return self._recording_location
+
+    @recording_location.setter
+    def recording_location(self, recording_location):
+        """
+        Sets the recording_location of this TranscriptTopic.
+        Location of the phrase in the recording in milliseconds
+
+        :param recording_location: The recording_location of this TranscriptTopic.
+        :type: int
+        """
+        
+
+        self._recording_location = recording_location
 
     def to_dict(self):
         """

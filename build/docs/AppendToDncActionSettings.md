@@ -1,0 +1,14 @@
+---
+title: AppendToDncActionSettings
+---
+## AppendToDncActionSettings
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **expire** | **bool** | Whether to expire the record appended to the DNC list. | |
+| **expiration_duration** | **str** | If &#39;expire&#39; is set to true, how long to keep the record. | [optional] |
+{: class="table table-striped"}
+
+

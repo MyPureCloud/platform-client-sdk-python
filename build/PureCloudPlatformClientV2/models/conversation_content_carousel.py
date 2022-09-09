@@ -53,7 +53,7 @@ class ConversationContentCarousel(object):
     def cards(self):
         """
         Gets the cards of this ConversationContentCarousel.
-        A List of card objects.
+        An array of card objects.
 
         :return: The cards of this ConversationContentCarousel.
         :rtype: list[ConversationContentCard]
@@ -64,7 +64,7 @@ class ConversationContentCarousel(object):
     def cards(self, cards):
         """
         Sets the cards of this ConversationContentCarousel.
-        A List of card objects.
+        An array of card objects.
 
         :param cards: The cards of this ConversationContentCarousel.
         :type: list[ConversationContentCard]

@@ -43,7 +43,7 @@ class FacebookIntegrationUpdateRequest(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
-            'messaging_setting': 'MessagingSettingReference',
+            'messaging_setting': 'MessagingSettingRequestReference',
             'page_access_token': 'str',
             'user_access_token': 'str',
             'self_uri': 'str'
@@ -143,10 +143,10 @@ class FacebookIntegrationUpdateRequest(object):
     def messaging_setting(self):
         """
         Gets the messaging_setting of this FacebookIntegrationUpdateRequest.
-
+        Defines the message settings to be applied for this integration
 
         :return: The messaging_setting of this FacebookIntegrationUpdateRequest.
-        :rtype: MessagingSettingReference
+        :rtype: MessagingSettingRequestReference
         """
         return self._messaging_setting
 
@@ -154,10 +154,10 @@ class FacebookIntegrationUpdateRequest(object):
     def messaging_setting(self, messaging_setting):
         """
         Sets the messaging_setting of this FacebookIntegrationUpdateRequest.
-
+        Defines the message settings to be applied for this integration
 
         :param messaging_setting: The messaging_setting of this FacebookIntegrationUpdateRequest.
-        :type: MessagingSettingReference
+        :type: MessagingSettingRequestReference
         """
         
 

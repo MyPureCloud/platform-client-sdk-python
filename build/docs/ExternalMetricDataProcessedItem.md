@@ -1,0 +1,18 @@
+---
+title: ExternalMetricDataProcessedItem
+---
+## ExternalMetricDataProcessedItem
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **user_id** | **str** | The user ID. Must provide either userId or userEmail, but not both. | [optional] |
+| **user_email** | **str** | The user main email used in user&#39;s GenesysCloud account. Must provide either userId or userEmail, but not both. | [optional] |
+| **metric_id** | **str** | The ID of the external metric definition | |
+| **date_occurred** | **date** | The date of the metric data. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | |
+| **value** | **float** | The value of the metric data. When value is null, the metric data will be deleted. | |
+| **count** | **int** | The number of data points. The default value is 1. | [optional] |
+{: class="table table-striped"}
+
+

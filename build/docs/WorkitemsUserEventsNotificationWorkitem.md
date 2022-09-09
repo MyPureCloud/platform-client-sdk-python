@@ -20,6 +20,7 @@ title: WorkitemsUserEventsNotificationWorkitem
 | **duration_seconds** | **int** |  | [optional] |
 | **ttl** | **int** |  | [optional] |
 | **status_id** | **str** |  | [optional] |
+| **status_category** | **str** |  | [optional] |
 | **date_closed** | **str** |  | [optional] |
 | **workbin_id** | **str** |  | [optional] |
 | **reporter_id** | **str** |  | [optional] |
@@ -33,6 +34,7 @@ title: WorkitemsUserEventsNotificationWorkitem
 | **assignment_state** | **str** |  | [optional] |
 | **assignment_id** | **str** |  | [optional] |
 | **alert_timeout_seconds** | **int** |  | [optional] |
+| **queue_id** | **str** |  | [optional] |
 | **custom_fields** | [**dict(str, WorkitemsUserEventsNotificationCustomAttribute)**](WorkitemsUserEventsNotificationCustomAttribute.html) |  | [optional] |
 {: class="table table-striped"}
 

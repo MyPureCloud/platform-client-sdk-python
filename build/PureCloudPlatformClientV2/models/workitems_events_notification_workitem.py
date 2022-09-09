@@ -53,6 +53,7 @@ class WorkitemsEventsNotificationWorkitem(object):
             'duration_seconds': 'int',
             'ttl': 'int',
             'status_id': 'str',
+            'status_category': 'str',
             'date_closed': 'str',
             'workbin_id': 'str',
             'reporter_id': 'str',
@@ -66,6 +67,7 @@ class WorkitemsEventsNotificationWorkitem(object):
             'assignment_state': 'str',
             'assignment_id': 'str',
             'alert_timeout_seconds': 'int',
+            'queue_id': 'str',
             'custom_fields': 'dict(str, WorkitemsEventsNotificationCustomAttribute)'
         }
 
@@ -83,6 +85,7 @@ class WorkitemsEventsNotificationWorkitem(object):
             'duration_seconds': 'durationSeconds',
             'ttl': 'ttl',
             'status_id': 'statusId',
+            'status_category': 'statusCategory',
             'date_closed': 'dateClosed',
             'workbin_id': 'workbinId',
             'reporter_id': 'reporterId',
@@ -96,6 +99,7 @@ class WorkitemsEventsNotificationWorkitem(object):
             'assignment_state': 'assignmentState',
             'assignment_id': 'assignmentId',
             'alert_timeout_seconds': 'alertTimeoutSeconds',
+            'queue_id': 'queueId',
             'custom_fields': 'customFields'
         }
 
@@ -112,6 +116,7 @@ class WorkitemsEventsNotificationWorkitem(object):
         self._duration_seconds = None
         self._ttl = None
         self._status_id = None
+        self._status_category = None
         self._date_closed = None
         self._workbin_id = None
         self._reporter_id = None
@@ -125,6 +130,7 @@ class WorkitemsEventsNotificationWorkitem(object):
         self._assignment_state = None
         self._assignment_id = None
         self._alert_timeout_seconds = None
+        self._queue_id = None
         self._custom_fields = None
 
     @property
@@ -438,6 +444,33 @@ class WorkitemsEventsNotificationWorkitem(object):
         
 
         self._status_id = status_id
+
+    @property
+    def status_category(self):
+        """
+        Gets the status_category of this WorkitemsEventsNotificationWorkitem.
+
+
+        :return: The status_category of this WorkitemsEventsNotificationWorkitem.
+        :rtype: str
+        """
+        return self._status_category
+
+    @status_category.setter
+    def status_category(self, status_category):
+        """
+        Sets the status_category of this WorkitemsEventsNotificationWorkitem.
+
+
+        :param status_category: The status_category of this WorkitemsEventsNotificationWorkitem.
+        :type: str
+        """
+        allowed_values = ["Unknown", "Open", "InProgress", "Waiting", "Closed"]
+        if status_category.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status_category -> " + status_category)
+            self._status_category = "outdated_sdk_version"
+        else:
+            self._status_category = status_category
 
     @property
     def date_closed(self):
@@ -756,6 +789,30 @@ class WorkitemsEventsNotificationWorkitem(object):
         
 
         self._alert_timeout_seconds = alert_timeout_seconds
+
+    @property
+    def queue_id(self):
+        """
+        Gets the queue_id of this WorkitemsEventsNotificationWorkitem.
+
+
+        :return: The queue_id of this WorkitemsEventsNotificationWorkitem.
+        :rtype: str
+        """
+        return self._queue_id
+
+    @queue_id.setter
+    def queue_id(self, queue_id):
+        """
+        Sets the queue_id of this WorkitemsEventsNotificationWorkitem.
+
+
+        :param queue_id: The queue_id of this WorkitemsEventsNotificationWorkitem.
+        :type: str
+        """
+        
+
+        self._queue_id = queue_id
 
     @property
     def custom_fields(self):

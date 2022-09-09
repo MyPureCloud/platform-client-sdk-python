@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversations_details_job**](AnalyticsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
 |[**get_analytics_conversations_details_job_results**](AnalyticsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async query|
 |[**get_analytics_conversations_details_jobs_availability**](AnalyticsApi.html#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
+|[**get_analytics_dataretention_settings**](AnalyticsApi.html#get_analytics_dataretention_settings) | Get analytics data retention setting|
 |[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
 |[**get_analytics_reporting_exports_metadata**](AnalyticsApi.html#get_analytics_reporting_exports_metadata) | Get all export metadata|
 |[**get_analytics_reporting_metadata**](AnalyticsApi.html#get_analytics_reporting_metadata) | Get list of reporting metadata.|
@@ -53,6 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_users_details_jobs**](AnalyticsApi.html#post_analytics_users_details_jobs) | Query for user details asynchronously|
 |[**post_analytics_users_details_query**](AnalyticsApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](AnalyticsApi.html#post_analytics_users_observations_query) | Query for user observations|
+|[**put_analytics_dataretention_settings**](AnalyticsApi.html#put_analytics_dataretention_settings) | Update analytics data retention setting|
 |[**put_analytics_reporting_schedule**](AnalyticsApi.html#put_analytics_reporting_schedule) | Update a scheduled report job.|
 {: class="table table-striped"}
 
@@ -523,6 +525,53 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+
+<a name="get_analytics_dataretention_settings"></a>
+
+## [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html) get_analytics_dataretention_settings()
+
+
+
+Get analytics data retention setting
+
+
+
+Wraps GET /api/v2/analytics/dataretention/settings 
+
+Requires ANY permissions: 
+
+* analytics:dataRetention:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+
+try:
+    # Get analytics data retention setting
+    api_response = api_instance.get_analytics_dataretention_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_dataretention_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html)
 
 <a name="get_analytics_reporting_exports"></a>
 
@@ -2369,6 +2418,57 @@ except ApiException as e:
 ### Return type
 
 [**UserObservationQueryResponse**](UserObservationQueryResponse.html)
+
+<a name="put_analytics_dataretention_settings"></a>
+
+## [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html) put_analytics_dataretention_settings(body)
+
+
+
+Update analytics data retention setting
+
+
+
+Wraps PUT /api/v2/analytics/dataretention/settings 
+
+Requires ANY permissions: 
+
+* analytics:dataRetention:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.UpdateAnalyticsDataRetentionRequest() # UpdateAnalyticsDataRetentionRequest | retentionDays
+
+try:
+    # Update analytics data retention setting
+    api_response = api_instance.put_analytics_dataretention_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->put_analytics_dataretention_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UpdateAnalyticsDataRetentionRequest**](UpdateAnalyticsDataRetentionRequest.html)| retentionDays |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html)
 
 <a name="put_analytics_reporting_schedule"></a>
 

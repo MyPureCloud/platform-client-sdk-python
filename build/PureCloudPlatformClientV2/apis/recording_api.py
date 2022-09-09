@@ -2644,6 +2644,90 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_recordings_retention_query(self, retention_threshold_days, **kwargs):
+        """
+        Query for recording retention data
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_recordings_retention_query(retention_threshold_days, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int retention_threshold_days: Fetch retention data for recordings retained for more days than the provided value. (required)
+        :param str cursor: Indicates where to resume query results (not required for first page)
+        :param int page_size: Page size. Maximum is 500.
+        :return: RecordingRetentionCursorEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['retention_threshold_days', 'cursor', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_recordings_retention_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'retention_threshold_days' is set
+        if ('retention_threshold_days' not in params) or (params['retention_threshold_days'] is None):
+            raise ValueError("Missing the required parameter `retention_threshold_days` when calling `get_recordings_retention_query`")
+
+
+        resource_path = '/api/v2/recordings/retention/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'retention_threshold_days' in params:
+            query_params['retentionThresholdDays'] = params['retention_threshold_days']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RecordingRetentionCursorEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_recordings_screensessions(self, **kwargs):
         """
         Retrieves a paged listing of screen recording sessions

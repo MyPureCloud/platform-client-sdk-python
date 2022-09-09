@@ -916,6 +916,84 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_outbound_digitalruleset(self, digital_rule_set_id, **kwargs):
+        """
+        Delete an Outbound Digital Rule Set
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_digitalruleset(digital_rule_set_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str digital_rule_set_id: The Digital Rule Set ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['digital_rule_set_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_digitalruleset" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'digital_rule_set_id' is set
+        if ('digital_rule_set_id' not in params) or (params['digital_rule_set_id'] is None):
+            raise ValueError("Missing the required parameter `digital_rule_set_id` when calling `delete_outbound_digitalruleset`")
+
+
+        resource_path = '/api/v2/outbound/digitalrulesets/{digitalRuleSetId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'digital_rule_set_id' in params:
+            path_params['digitalRuleSetId'] = params['digital_rule_set_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_outbound_dnclist(self, dnc_list_id, **kwargs):
         """
         Delete dialer DNC list
@@ -4101,6 +4179,174 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ContactListDivisionViewListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_digitalruleset(self, digital_rule_set_id, **kwargs):
+        """
+        Get an Outbound Digital Rule Set
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_digitalruleset(digital_rule_set_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str digital_rule_set_id: The Digital Rule Set ID (required)
+        :return: DigitalRuleSet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['digital_rule_set_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_digitalruleset" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'digital_rule_set_id' is set
+        if ('digital_rule_set_id' not in params) or (params['digital_rule_set_id'] is None):
+            raise ValueError("Missing the required parameter `digital_rule_set_id` when calling `get_outbound_digitalruleset`")
+
+
+        resource_path = '/api/v2/outbound/digitalrulesets/{digitalRuleSetId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'digital_rule_set_id' in params:
+            path_params['digitalRuleSetId'] = params['digital_rule_set_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DigitalRuleSet',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_digitalrulesets(self, **kwargs):
+        """
+        Query a list of Outbound Digital Rule Sets
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_digitalrulesets(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size. The max that will be returned is 100.
+        :param int page_number: Page number
+        :param str sort_by: The field to sort by
+        :param str sort_order: The direction to sort
+        :param str name: Name
+        :param list[str] id: A list of digital rule set ids to bulk fetch
+        :return: DigitalRuleSetEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_digitalrulesets" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/digitalrulesets'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DigitalRuleSetEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -7771,6 +8017,84 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_outbound_digitalrulesets(self, body, **kwargs):
+        """
+        Create an Outbound Digital Rule Set
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_digitalrulesets(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param DigitalRuleSet body: Digital Rule Set (required)
+        :return: DigitalRuleSet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_digitalrulesets" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_digitalrulesets`")
+
+
+        resource_path = '/api/v2/outbound/digitalrulesets'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DigitalRuleSet',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_outbound_dnclist_export(self, dnc_list_id, **kwargs):
         """
         Initiate the export of a dnc list.
@@ -9090,6 +9414,90 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ContactListFilter',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_outbound_digitalruleset(self, digital_rule_set_id, body, **kwargs):
+        """
+        Update an Outbound Digital Rule Set
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_outbound_digitalruleset(digital_rule_set_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str digital_rule_set_id: The Digital Rule Set ID (required)
+        :param DigitalRuleSet body: Digital Rule Set (required)
+        :return: DigitalRuleSet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['digital_rule_set_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_outbound_digitalruleset" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'digital_rule_set_id' is set
+        if ('digital_rule_set_id' not in params) or (params['digital_rule_set_id'] is None):
+            raise ValueError("Missing the required parameter `digital_rule_set_id` when calling `put_outbound_digitalruleset`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_outbound_digitalruleset`")
+
+
+        resource_path = '/api/v2/outbound/digitalrulesets/{digitalRuleSetId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'digital_rule_set_id' in params:
+            path_params['digitalRuleSetId'] = params['digital_rule_set_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DigitalRuleSet',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -42,12 +42,11 @@ class ConversationMessageContent(object):
         self.swagger_types = {
             'content_type': 'str',
             'location': 'ConversationContentLocation',
-            'story': 'ConversationContentStory',
             'attachment': 'ConversationContentAttachment',
             'quick_reply': 'ConversationContentQuickReply',
-            'template': 'ConversationContentNotificationTemplate',
             'button_response': 'ConversationContentButtonResponse',
-            'generic': 'ConversationContentGeneric',
+            'template': 'ConversationContentNotificationTemplate',
+            'story': 'ConversationContentStory',
             'card': 'ConversationContentCard',
             'carousel': 'ConversationContentCarousel'
         }
@@ -55,24 +54,22 @@ class ConversationMessageContent(object):
         self.attribute_map = {
             'content_type': 'contentType',
             'location': 'location',
-            'story': 'story',
             'attachment': 'attachment',
             'quick_reply': 'quickReply',
-            'template': 'template',
             'button_response': 'buttonResponse',
-            'generic': 'generic',
+            'template': 'template',
+            'story': 'story',
             'card': 'card',
             'carousel': 'carousel'
         }
 
         self._content_type = None
         self._location = None
-        self._story = None
         self._attachment = None
         self._quick_reply = None
-        self._template = None
         self._button_response = None
-        self._generic = None
+        self._template = None
+        self._story = None
         self._card = None
         self._carousel = None
 
@@ -80,7 +77,7 @@ class ConversationMessageContent(object):
     def content_type(self):
         """
         Gets the content_type of this ConversationMessageContent.
-        Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+        Type of this content element.
 
         :return: The content_type of this ConversationMessageContent.
         :rtype: str
@@ -91,12 +88,12 @@ class ConversationMessageContent(object):
     def content_type(self, content_type):
         """
         Sets the content_type of this ConversationMessageContent.
-        Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+        Type of this content element.
 
         :param content_type: The content_type of this ConversationMessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "Story", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "Card", "Carousel", "Unknown"]
+        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Unknown"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -126,30 +123,6 @@ class ConversationMessageContent(object):
         
 
         self._location = location
-
-    @property
-    def story(self):
-        """
-        Gets the story of this ConversationMessageContent.
-        Ephemeral story content.
-
-        :return: The story of this ConversationMessageContent.
-        :rtype: ConversationContentStory
-        """
-        return self._story
-
-    @story.setter
-    def story(self, story):
-        """
-        Sets the story of this ConversationMessageContent.
-        Ephemeral story content.
-
-        :param story: The story of this ConversationMessageContent.
-        :type: ConversationContentStory
-        """
-        
-
-        self._story = story
 
     @property
     def attachment(self):
@@ -200,30 +173,6 @@ class ConversationMessageContent(object):
         self._quick_reply = quick_reply
 
     @property
-    def template(self):
-        """
-        Gets the template of this ConversationMessageContent.
-        Template notification content.
-
-        :return: The template of this ConversationMessageContent.
-        :rtype: ConversationContentNotificationTemplate
-        """
-        return self._template
-
-    @template.setter
-    def template(self, template):
-        """
-        Sets the template of this ConversationMessageContent.
-        Template notification content.
-
-        :param template: The template of this ConversationMessageContent.
-        :type: ConversationContentNotificationTemplate
-        """
-        
-
-        self._template = template
-
-    @property
     def button_response(self):
         """
         Gets the button_response of this ConversationMessageContent.
@@ -248,34 +197,58 @@ class ConversationMessageContent(object):
         self._button_response = button_response
 
     @property
-    def generic(self):
+    def template(self):
         """
-        Gets the generic of this ConversationMessageContent.
-        Generic Template Object (Deprecated).
+        Gets the template of this ConversationMessageContent.
+        Template notification content.
 
-        :return: The generic of this ConversationMessageContent.
-        :rtype: ConversationContentGeneric
+        :return: The template of this ConversationMessageContent.
+        :rtype: ConversationContentNotificationTemplate
         """
-        return self._generic
+        return self._template
 
-    @generic.setter
-    def generic(self, generic):
+    @template.setter
+    def template(self, template):
         """
-        Sets the generic of this ConversationMessageContent.
-        Generic Template Object (Deprecated).
+        Sets the template of this ConversationMessageContent.
+        Template notification content.
 
-        :param generic: The generic of this ConversationMessageContent.
-        :type: ConversationContentGeneric
+        :param template: The template of this ConversationMessageContent.
+        :type: ConversationContentNotificationTemplate
         """
         
 
-        self._generic = generic
+        self._template = template
+
+    @property
+    def story(self):
+        """
+        Gets the story of this ConversationMessageContent.
+        Ephemeral story content.
+
+        :return: The story of this ConversationMessageContent.
+        :rtype: ConversationContentStory
+        """
+        return self._story
+
+    @story.setter
+    def story(self, story):
+        """
+        Sets the story of this ConversationMessageContent.
+        Ephemeral story content.
+
+        :param story: The story of this ConversationMessageContent.
+        :type: ConversationContentStory
+        """
+        
+
+        self._story = story
 
     @property
     def card(self):
         """
         Gets the card of this ConversationMessageContent.
-        Card (Generic Template) Object
+        Card content
 
         :return: The card of this ConversationMessageContent.
         :rtype: ConversationContentCard
@@ -286,7 +259,7 @@ class ConversationMessageContent(object):
     def card(self, card):
         """
         Sets the card of this ConversationMessageContent.
-        Card (Generic Template) Object
+        Card content
 
         :param card: The card of this ConversationMessageContent.
         :type: ConversationContentCard
@@ -299,7 +272,7 @@ class ConversationMessageContent(object):
     def carousel(self):
         """
         Gets the carousel of this ConversationMessageContent.
-        Carousel (Multiple Generic Template) Object
+        Carousel content
 
         :return: The carousel of this ConversationMessageContent.
         :rtype: ConversationContentCarousel
@@ -310,7 +283,7 @@ class ConversationMessageContent(object):
     def carousel(self, carousel):
         """
         Sets the carousel of this ConversationMessageContent.
-        Carousel (Multiple Generic Template) Object
+        Carousel content
 
         :param carousel: The carousel of this ConversationMessageContent.
         :type: ConversationContentCarousel

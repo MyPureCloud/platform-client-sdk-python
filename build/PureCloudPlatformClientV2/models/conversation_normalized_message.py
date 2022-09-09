@@ -185,7 +185,7 @@ class ConversationNormalizedMessage(object):
     def content(self):
         """
         Gets the content of this ConversationNormalizedMessage.
-        List of content elements
+        List of content elements.
 
         :return: The content of this ConversationNormalizedMessage.
         :rtype: list[ConversationMessageContent]
@@ -196,7 +196,7 @@ class ConversationNormalizedMessage(object):
     def content(self, content):
         """
         Sets the content of this ConversationNormalizedMessage.
-        List of content elements
+        List of content elements.
 
         :param content: The content of this ConversationNormalizedMessage.
         :type: list[ConversationMessageContent]

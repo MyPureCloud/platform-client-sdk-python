@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_recording_recordingkeys**](RecordingApi.html#get_recording_recordingkeys) | Get encryption key list|
 |[**get_recording_recordingkeys_rotationschedule**](RecordingApi.html#get_recording_recordingkeys_rotationschedule) | Get key rotation schedule|
 |[**get_recording_settings**](RecordingApi.html#get_recording_settings) | Get the Recording Settings for the Organization|
+|[**get_recordings_retention_query**](RecordingApi.html#get_recordings_retention_query) | Query for recording retention data|
 |[**get_recordings_screensessions**](RecordingApi.html#get_recordings_screensessions) | Retrieves a paged listing of screen recording sessions|
 |[**patch_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#patch_recording_crossplatform_mediaretentionpolicy) | Patch a media retention policy|
 |[**patch_recording_mediaretentionpolicy**](RecordingApi.html#patch_recording_mediaretentionpolicy) | Patch a media retention policy|
@@ -1775,6 +1776,61 @@ except ApiException as e:
 ### Return type
 
 [**RecordingSettings**](RecordingSettings.html)
+
+<a name="get_recordings_retention_query"></a>
+
+## [**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing.html) get_recordings_retention_query(retention_threshold_days, cursor=cursor, page_size=page_size)
+
+
+
+Query for recording retention data
+
+
+
+Wraps GET /api/v2/recordings/retention/query 
+
+Requires ANY permissions: 
+
+* recording:recording:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+retention_threshold_days = 56 # int | Fetch retention data for recordings retained for more days than the provided value.
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
+page_size = 25 # int | Page size. Maximum is 500. (optional) (default to 25)
+
+try:
+    # Query for recording retention data
+    api_response = api_instance.get_recordings_retention_query(retention_threshold_days, cursor=cursor, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recordings_retention_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **retention_threshold_days** | **int**| Fetch retention data for recordings retained for more days than the provided value. |  |
+| **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
+| **page_size** | **int**| Page size. Maximum is 500. | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing.html)
 
 <a name="get_recordings_screensessions"></a>
 

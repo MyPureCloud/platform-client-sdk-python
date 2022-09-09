@@ -43,7 +43,7 @@ class LineIntegrationRequest(object):
             'id': 'str',
             'name': 'str',
             'supported_content': 'SupportedContentReference',
-            'messaging_setting': 'MessagingSettingReference',
+            'messaging_setting': 'MessagingSettingRequestReference',
             'channel_id': 'str',
             'channel_secret': 'str',
             'switcher_secret': 'str',
@@ -149,10 +149,10 @@ class LineIntegrationRequest(object):
     def messaging_setting(self):
         """
         Gets the messaging_setting of this LineIntegrationRequest.
-
+        Defines the message settings to be applied for this integration
 
         :return: The messaging_setting of this LineIntegrationRequest.
-        :rtype: MessagingSettingReference
+        :rtype: MessagingSettingRequestReference
         """
         return self._messaging_setting
 
@@ -160,10 +160,10 @@ class LineIntegrationRequest(object):
     def messaging_setting(self, messaging_setting):
         """
         Sets the messaging_setting of this LineIntegrationRequest.
-
+        Defines the message settings to be applied for this integration
 
         :param messaging_setting: The messaging_setting of this LineIntegrationRequest.
-        :type: MessagingSettingReference
+        :type: MessagingSettingRequestReference
         """
         
 

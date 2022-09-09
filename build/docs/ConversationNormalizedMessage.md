@@ -11,7 +11,7 @@ title: ConversationNormalizedMessage
 | **channel** | [**ConversationMessagingChannel**](ConversationMessagingChannel.html) | Channel-specific information that describes the message and the message channel/provider. | [optional] |
 | **type** | **str** | Message type. | |
 | **text** | **str** | Message text. | [optional] |
-| **content** | [**list[ConversationMessageContent]**](ConversationMessageContent.html) | List of content elements | [optional] |
+| **content** | [**list[ConversationMessageContent]**](ConversationMessageContent.html) | List of content elements. | [optional] |
 | **events** | [**list[ConversationMessageEvent]**](ConversationMessageEvent.html) | List of event elements. | [optional] |
 | **status** | **str** | Message receipt status, only used with type Receipt. | [optional] |
 | **reasons** | [**list[ConversationReason]**](ConversationReason.html) | List of reasons for a message receipt that indicates the message has failed. Only used with Failed status. | [optional] |

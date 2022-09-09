@@ -595,6 +595,87 @@ class WebDeploymentsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_webdeployments_deployment_configurations(self, deployment_id, **kwargs):
+        """
+        Get active configuration for a given deployment
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_webdeployments_deployment_configurations(deployment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str deployment_id: The deployment ID (required)
+        :param str type: Get active configuration on a deployment
+        :return: WebDeploymentActiveConfigurationOnDeployment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['deployment_id', 'type']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_webdeployments_deployment_configurations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'deployment_id' is set
+        if ('deployment_id' not in params) or (params['deployment_id'] is None):
+            raise ValueError("Missing the required parameter `deployment_id` when calling `get_webdeployments_deployment_configurations`")
+
+
+        resource_path = '/api/v2/webdeployments/deployments/{deploymentId}/configurations'.replace('{format}', 'json')
+        path_params = {}
+        if 'deployment_id' in params:
+            path_params['deploymentId'] = params['deployment_id']
+
+        query_params = {}
+        if 'type' in params:
+            query_params['type'] = params['type']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WebDeploymentActiveConfigurationOnDeployment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_webdeployments_deployments(self, **kwargs):
         """
         Get deployments

@@ -12,11 +12,11 @@ title: DivsPermittedEntityListing
 | **page_number** | **int** |  | [optional] |
 | **total** | **int** |  | [optional] |
 | **all_divs_permitted** | **bool** |  | [optional] |
-| **last_uri** | **str** |  | [optional] |
 | **first_uri** | **str** |  | [optional] |
 | **self_uri** | **str** |  | [optional] |
 | **next_uri** | **str** |  | [optional] |
 | **previous_uri** | **str** |  | [optional] |
+| **last_uri** | **str** |  | [optional] |
 | **page_count** | **int** |  | [optional] |
 {: class="table table-striped"}
 

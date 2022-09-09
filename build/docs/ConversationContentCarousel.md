@@ -7,7 +7,7 @@ title: ConversationContentCarousel
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **cards** | [**list[ConversationContentCard]**](ConversationContentCard.html) | A List of card objects. | [optional] |
+| **cards** | [**list[ConversationContentCard]**](ConversationContentCard.html) | An array of card objects. | |
 {: class="table table-striped"}
 
 

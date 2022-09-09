@@ -1367,7 +1367,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_documents"></a>
 
-## [**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing.html) get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand)
+## [**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing.html) get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand)
 
 
 
@@ -1399,6 +1399,7 @@ before = 'before_example' # str | The cursor that points to the start of the set
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 interval = 'interval_example' # str | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+document_id = ['document_id_example'] # list[str] | Retrieves the specified documents, comma separated values expected. (optional)
 category_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
 include_subcategories = True # bool | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)
 include_drafts = True # bool | If includeDrafts is true, Documents in the draft state are also returned in the response. (optional)
@@ -1407,7 +1408,7 @@ expand = ['expand_example'] # list[str] | The specified entity attributes will b
 
 try:
     # Get documents.
-    api_response = api_instance.get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand)
+    api_response = api_instance.get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_documents: %s\n" % e)
@@ -1423,6 +1424,7 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **interval** | **str**| Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional]  |
+| **document_id** | [**list[str]**](str.html)| Retrieves the specified documents, comma separated values expected. | [optional]  |
 | **category_id** | [**list[str]**](str.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
 | **include_subcategories** | **bool**| Works along with &#39;categoryId&#39; query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional]  |
 | **include_drafts** | **bool**| If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional]  |

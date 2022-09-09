@@ -49,6 +49,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
             'start_hold_time': 'datetime',
             'purpose': 'str',
             'state': 'str',
+            'initial_state': 'str',
             'direction': 'str',
             'disconnect_type': 'str',
             'held': 'bool',
@@ -88,6 +89,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
             'start_hold_time': 'startHoldTime',
             'purpose': 'purpose',
             'state': 'state',
+            'initial_state': 'initialState',
             'direction': 'direction',
             'disconnect_type': 'disconnectType',
             'held': 'held',
@@ -126,6 +128,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         self._start_hold_time = None
         self._purpose = None
         self._state = None
+        self._initial_state = None
         self._direction = None
         self._disconnect_type = None
         self._held = None
@@ -372,6 +375,33 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this QueueConversationChatEventTopicChatMediaParticipant.
+
+
+        :return: The initial_state of this QueueConversationChatEventTopicChatMediaParticipant.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this QueueConversationChatEventTopicChatMediaParticipant.
+
+
+        :param initial_state: The initial_state of this QueueConversationChatEventTopicChatMediaParticipant.
+        :type: str
+        """
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "scheduled", "none"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     @property
     def direction(self):
