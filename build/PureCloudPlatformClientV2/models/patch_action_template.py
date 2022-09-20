@@ -42,6 +42,7 @@ class PatchActionTemplate(object):
         self.swagger_types = {
             'name': 'str',
             'description': 'str',
+            'version': 'int',
             'media_type': 'str',
             'state': 'str',
             'content_offer': 'PatchContentOffer'
@@ -50,6 +51,7 @@ class PatchActionTemplate(object):
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
+            'version': 'version',
             'media_type': 'mediaType',
             'state': 'state',
             'content_offer': 'contentOffer'
@@ -57,6 +59,7 @@ class PatchActionTemplate(object):
 
         self._name = None
         self._description = None
+        self._version = None
         self._media_type = None
         self._state = None
         self._content_offer = None
@@ -108,6 +111,30 @@ class PatchActionTemplate(object):
         
 
         self._description = description
+
+    @property
+    def version(self):
+        """
+        Gets the version of this PatchActionTemplate.
+        The version of the action template.
+
+        :return: The version of this PatchActionTemplate.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this PatchActionTemplate.
+        The version of the action template.
+
+        :param version: The version of this PatchActionTemplate.
+        :type: int
+        """
+        
+
+        self._version = version
 
     @property
     def media_type(self):

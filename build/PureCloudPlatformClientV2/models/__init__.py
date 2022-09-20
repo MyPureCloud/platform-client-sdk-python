@@ -15,6 +15,9 @@ from .action_input import ActionInput
 from .action_map import ActionMap
 from .action_map_action import ActionMapAction
 from .action_map_action_template import ActionMapActionTemplate
+from .action_map_estimate_outcome_criteria import ActionMapEstimateOutcomeCriteria
+from .action_map_estimate_request import ActionMapEstimateRequest
+from .action_map_estimate_result import ActionMapEstimateResult
 from .action_map_listing import ActionMapListing
 from .action_map_schedule_group import ActionMapScheduleGroup
 from .action_map_schedule_groups import ActionMapScheduleGroups
@@ -308,7 +311,8 @@ from .bu_schedule_reference import BuScheduleReference
 from .bu_schedule_reference_for_mu_route import BuScheduleReferenceForMuRoute
 from .bu_schedule_run import BuScheduleRun
 from .bu_schedule_run_listing import BuScheduleRunListing
-from .bu_scheduling_settings import BuSchedulingSettings
+from .bu_scheduling_settings_request import BuSchedulingSettingsRequest
+from .bu_scheduling_settings_response import BuSchedulingSettingsResponse
 from .bu_search_agent_schedules_request import BuSearchAgentSchedulesRequest
 from .bu_service_level import BuServiceLevel
 from .bu_short_term_forecast import BuShortTermForecast
@@ -357,13 +361,13 @@ from .bulk_update_shift_trade_state_response import BulkUpdateShiftTradeStateRes
 from .bulk_update_shift_trade_state_result import BulkUpdateShiftTradeStateResult
 from .bulk_update_shift_trade_state_result_item import BulkUpdateShiftTradeStateResultItem
 from .bullseye import Bullseye
-from .business_unit import BusinessUnit
 from .business_unit_activity_code import BusinessUnitActivityCode
 from .business_unit_activity_code_listing import BusinessUnitActivityCodeListing
 from .business_unit_list_item import BusinessUnitListItem
 from .business_unit_listing import BusinessUnitListing
 from .business_unit_reference import BusinessUnitReference
-from .business_unit_settings import BusinessUnitSettings
+from .business_unit_response import BusinessUnitResponse
+from .business_unit_settings_response import BusinessUnitSettingsResponse
 from .button_component import ButtonComponent
 from .button_response import ButtonResponse
 from .calendar_url_response import CalendarUrlResponse
@@ -813,7 +817,7 @@ from .create_agent_time_off_request import CreateAgentTimeOffRequest
 from .create_benefit_assessment_job_request import CreateBenefitAssessmentJobRequest
 from .create_benefit_assessment_request import CreateBenefitAssessmentRequest
 from .create_business_unit_request import CreateBusinessUnitRequest
-from .create_business_unit_settings import CreateBusinessUnitSettings
+from .create_business_unit_settings_request import CreateBusinessUnitSettingsRequest
 from .create_call_request import CreateCallRequest
 from .create_call_response import CreateCallResponse
 from .create_callback_command import CreateCallbackCommand
@@ -841,6 +845,7 @@ from .create_share_request_member import CreateShareRequestMember
 from .create_share_response import CreateShareResponse
 from .create_time_off_limit_request import CreateTimeOffLimitRequest
 from .create_time_off_plan_request import CreateTimeOffPlanRequest
+from .create_trigger_request import CreateTriggerRequest
 from .create_user import CreateUser
 from .create_web_chat_conversation_request import CreateWebChatConversationRequest
 from .create_web_chat_conversation_response import CreateWebChatConversationResponse
@@ -1154,6 +1159,7 @@ from .entry import Entry
 from .error_body import ErrorBody
 from .error_details import ErrorDetails
 from .error_info import ErrorInfo
+from .estimate_job_async_response import EstimateJobAsyncResponse
 from .estimated_wait_time_predictions import EstimatedWaitTimePredictions
 from .evaluation import Evaluation
 from .evaluation_aggregate_data_container import EvaluationAggregateDataContainer
@@ -1187,7 +1193,6 @@ from .evaluator_activity import EvaluatorActivity
 from .evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .event_co_browse import EventCoBrowse
 from .event_condition import EventCondition
-from .event_entity import EventEntity
 from .event_log import EventLog
 from .event_message import EventMessage
 from .event_presence import EventPresence
@@ -1416,8 +1421,6 @@ from .integration_action_fields import IntegrationActionFields
 from .integration_configuration import IntegrationConfiguration
 from .integration_configuration_info import IntegrationConfigurationInfo
 from .integration_entity_listing import IntegrationEntityListing
-from .integration_event import IntegrationEvent
-from .integration_event_entity_listing import IntegrationEventEntityListing
 from .integration_export import IntegrationExport
 from .integration_status_info import IntegrationStatusInfo
 from .integration_type import IntegrationType
@@ -1632,6 +1635,7 @@ from .learning_assignment_bulk_remove_response import LearningAssignmentBulkRemo
 from .learning_assignment_create import LearningAssignmentCreate
 from .learning_assignment_entity import LearningAssignmentEntity
 from .learning_assignment_item import LearningAssignmentItem
+from .learning_assignment_reassign import LearningAssignmentReassign
 from .learning_assignment_reference import LearningAssignmentReference
 from .learning_assignment_rule_run_topic_learning_assignment_rule_run_notification import LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
 from .learning_assignment_rule_run_topic_learning_assignments_created import LearningAssignmentRuleRunTopicLearningAssignmentsCreated
@@ -1728,8 +1732,11 @@ from .manager import Manager
 from .mark_contact_address_uncontactable_action_settings import MarkContactAddressUncontactableActionSettings
 from .mark_contact_uncontactable_action_settings import MarkContactUncontactableActionSettings
 from .markdown import Markdown
+from .match_criteria import MatchCriteria
+from .match_criteria_test_result import MatchCriteriaTestResult
 from .match_shift_trade_request import MatchShiftTradeRequest
 from .match_shift_trade_response import MatchShiftTradeResponse
+from .match_test_result import MatchTestResult
 from .max_length import MaxLength
 from .max_participants import MaxParticipants
 from .media_participant_request import MediaParticipantRequest
@@ -2493,6 +2500,7 @@ from .segment import Segment
 from .segment_detail_query_clause import SegmentDetailQueryClause
 from .segment_detail_query_filter import SegmentDetailQueryFilter
 from .segment_detail_query_predicate import SegmentDetailQueryPredicate
+from .segment_estimate_count import SegmentEstimateCount
 from .segment_listing import SegmentListing
 from .selected_answer import SelectedAnswer
 from .selected_columns import SelectedColumns
@@ -2519,6 +2527,7 @@ from .set_uui_data_request import SetUuiDataRequest
 from .set_wrapper_day_of_week import SetWrapperDayOfWeek
 from .set_wrapper_route_path_request import SetWrapperRoutePathRequest
 from .set_wrapper_string import SetWrapperString
+from .set_wrapper_sync_time_off_property import SetWrapperSyncTimeOffProperty
 from .setting_direction import SettingDirection
 from .share import Share
 from .share_entity_listing import ShareEntityListing
@@ -2653,7 +2662,14 @@ from .template_parameter import TemplateParameter
 from .term_attribute import TermAttribute
 from .test_execution_operation_result import TestExecutionOperationResult
 from .test_execution_result import TestExecutionResult
+from .test_matches_event_operation import TestMatchesEventOperation
+from .test_matches_operation import TestMatchesOperation
 from .test_message import TestMessage
+from .test_mode_event_results import TestModeEventResults
+from .test_mode_results import TestModeResults
+from .test_mode_trigger import TestModeTrigger
+from .test_schema_operation import TestSchemaOperation
+from .test_target_operation import TestTargetOperation
 from .text_bot_channel import TextBotChannel
 from .text_bot_disconnect_action import TextBotDisconnectAction
 from .text_bot_error_input_event import TextBotErrorInputEvent
@@ -2704,6 +2720,7 @@ from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token_info import TokenInfo
 from .token_info_cloned_user import TokenInfoClonedUser
 from .topic import Topic
+from .topic_cursor_entity_listing import TopicCursorEntityListing
 from .topic_duration import TopicDuration
 from .topic_job import TopicJob
 from .topic_job_request import TopicJobRequest
@@ -2733,6 +2750,9 @@ from .transcription_topic_transcription_message import TranscriptionTopicTranscr
 from .transcription_topic_transcription_request_status import TranscriptionTopicTranscriptionRequestStatus
 from .transcripts import Transcripts
 from .transfer_request import TransferRequest
+from .trigger import Trigger
+from .trigger_entity_listing import TriggerEntityListing
+from .trigger_target import TriggerTarget
 from .trunk import Trunk
 from .trunk_base import TrunkBase
 from .trunk_base_assignment import TrunkBaseAssignment
@@ -2805,7 +2825,7 @@ from .update_action_input import UpdateActionInput
 from .update_activity_code_request import UpdateActivityCodeRequest
 from .update_analytics_data_retention_request import UpdateAnalyticsDataRetentionRequest
 from .update_business_unit_request import UpdateBusinessUnitRequest
-from .update_business_unit_settings import UpdateBusinessUnitSettings
+from .update_business_unit_settings_request import UpdateBusinessUnitSettingsRequest
 from .update_coaching_appointment_request import UpdateCoachingAppointmentRequest
 from .update_contact_column_action_settings import UpdateContactColumnActionSettings
 from .update_draft_input import UpdateDraftInput
@@ -2819,6 +2839,7 @@ from .update_schedule_upload_schema import UpdateScheduleUploadSchema
 from .update_service_goal_template import UpdateServiceGoalTemplate
 from .update_time_off_limit_request import UpdateTimeOffLimitRequest
 from .update_time_off_plan_request import UpdateTimeOffPlanRequest
+from .update_trigger_request import UpdateTriggerRequest
 from .update_user import UpdateUser
 from .update_work_plan_rotation_agent_request import UpdateWorkPlanRotationAgentRequest
 from .update_work_plan_rotation_request import UpdateWorkPlanRotationRequest
@@ -2831,8 +2852,6 @@ from .usage import Usage
 from .usage_execution_result import UsageExecutionResult
 from .usage_item import UsageItem
 from .user import User
-from .user_action_category import UserActionCategory
-from .user_action_category_entity_listing import UserActionCategoryEntityListing
 from .user_agent_info import UserAgentInfo
 from .user_aggregate_data_container import UserAggregateDataContainer
 from .user_aggregate_query_clause import UserAggregateQueryClause
@@ -2977,7 +2996,6 @@ from .validation_service_request import ValidationServiceRequest
 from .value_wrapper_date import ValueWrapperDate
 from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .value_wrapper_string import ValueWrapperString
-from .vendor_connection_request import VendorConnectionRequest
 from .video import Video
 from .view_filter import ViewFilter
 from .visibility_condition import VisibilityCondition

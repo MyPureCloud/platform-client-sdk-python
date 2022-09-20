@@ -43,32 +43,32 @@ class SuggestSearchCriteria(object):
             'end_value': 'str',
             'values': 'list[str]',
             'start_value': 'str',
-            'fields': 'list[str]',
             'value': 'str',
             'operator': 'str',
             'group': 'list[SuggestSearchCriteria]',
-            'date_format': 'str'
+            'date_format': 'str',
+            'fields': 'list[str]'
         }
 
         self.attribute_map = {
             'end_value': 'endValue',
             'values': 'values',
             'start_value': 'startValue',
-            'fields': 'fields',
             'value': 'value',
             'operator': 'operator',
             'group': 'group',
-            'date_format': 'dateFormat'
+            'date_format': 'dateFormat',
+            'fields': 'fields'
         }
 
         self._end_value = None
         self._values = None
         self._start_value = None
-        self._fields = None
         self._value = None
         self._operator = None
         self._group = None
         self._date_format = None
+        self._fields = None
 
     @property
     def end_value(self):
@@ -141,30 +141,6 @@ class SuggestSearchCriteria(object):
         
 
         self._start_value = start_value
-
-    @property
-    def fields(self):
-        """
-        Gets the fields of this SuggestSearchCriteria.
-        Field names to search against
-
-        :return: The fields of this SuggestSearchCriteria.
-        :rtype: list[str]
-        """
-        return self._fields
-
-    @fields.setter
-    def fields(self, fields):
-        """
-        Sets the fields of this SuggestSearchCriteria.
-        Field names to search against
-
-        :param fields: The fields of this SuggestSearchCriteria.
-        :type: list[str]
-        """
-        
-
-        self._fields = fields
 
     @property
     def value(self):
@@ -264,6 +240,30 @@ class SuggestSearchCriteria(object):
         
 
         self._date_format = date_format
+
+    @property
+    def fields(self):
+        """
+        Gets the fields of this SuggestSearchCriteria.
+        Field names to search against
+
+        :return: The fields of this SuggestSearchCriteria.
+        :rtype: list[str]
+        """
+        return self._fields
+
+    @fields.setter
+    def fields(self, fields):
+        """
+        Sets the fields of this SuggestSearchCriteria.
+        Field names to search against
+
+        :param fields: The fields of this SuggestSearchCriteria.
+        :type: list[str]
+        """
+        
+
+        self._fields = fields
 
     def to_dict(self):
         """

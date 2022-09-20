@@ -1140,7 +1140,7 @@ This endpoint does not need any parameters.
 
 <a name="get_workforcemanagement_businessunit"></a>
 
-## [**BusinessUnit**](BusinessUnit.html) get_workforcemanagement_businessunit(business_unit_id, expand=expand)
+## [**BusinessUnitResponse**](BusinessUnitResponse.html) get_workforcemanagement_businessunit(business_unit_id, expand=expand)
 
 
 
@@ -1254,7 +1254,7 @@ except ApiException as e:
 
 ### Return type
 
-[**BusinessUnit**](BusinessUnit.html)
+[**BusinessUnitResponse**](BusinessUnitResponse.html)
 
 <a name="get_workforcemanagement_businessunit_activitycode"></a>
 
@@ -4548,7 +4548,7 @@ except ApiException as e:
 
 <a name="patch_workforcemanagement_businessunit"></a>
 
-## [**BusinessUnit**](BusinessUnit.html) patch_workforcemanagement_businessunit(business_unit_id, body=body)
+## [**BusinessUnitResponse**](BusinessUnitResponse.html) patch_workforcemanagement_businessunit(business_unit_id, body=body)
 
 
 
@@ -4597,7 +4597,7 @@ except ApiException as e:
 
 ### Return type
 
-[**BusinessUnit**](BusinessUnit.html)
+[**BusinessUnitResponse**](BusinessUnitResponse.html)
 
 <a name="patch_workforcemanagement_businessunit_activitycode"></a>
 
@@ -6386,7 +6386,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_businessunits"></a>
 
-## [**BusinessUnit**](BusinessUnit.html) post_workforcemanagement_businessunits(body=body)
+## [**BusinessUnitResponse**](BusinessUnitResponse.html) post_workforcemanagement_businessunits(body=body)
 
 
 
@@ -6435,7 +6435,7 @@ except ApiException as e:
 
 ### Return type
 
-[**BusinessUnit**](BusinessUnit.html)
+[**BusinessUnitResponse**](BusinessUnitResponse.html)
 
 <a name="post_workforcemanagement_calendar_url_ics"></a>
 

@@ -119,7 +119,7 @@ except ApiException as e:
 
 <a name="get_userrecording_media"></a>
 
-## [**DownloadResponse**](DownloadResponse.html) get_userrecording_media(recording_id, format_id=format_id)
+## [**DownloadResponse**](DownloadResponse.html) get_userrecording_media(recording_id, format_id=format_id, async=async)
 
 
 
@@ -147,10 +147,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UserRecordingsApi()
 recording_id = 'recording_id_example' # str | User Recording ID
 format_id = ''WEBM'' # str | The desired media format. (optional) (default to 'WEBM')
+async = True # bool | When set to true, api will return 202 response until the recording is ready for download (optional)
 
 try:
     # Download a user recording.
-    api_response = api_instance.get_userrecording_media(recording_id, format_id=format_id)
+    api_response = api_instance.get_userrecording_media(recording_id, format_id=format_id, async=async)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserRecordingsApi->get_userrecording_media: %s\n" % e)
@@ -163,6 +164,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **recording_id** | **str**| User Recording ID |  |
 | **format_id** | **str**| The desired media format. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **async** | **bool**| When set to true, api will return 202 response until the recording is ready for download | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -48,6 +48,7 @@ class DialerContact(object):
             'latest_sms_evaluations': 'dict(str, MessageEvaluation)',
             'callable': 'bool',
             'phone_number_status': 'dict(str, PhoneNumberStatus)',
+            'contactable_status': 'dict(str, ContactableStatus)',
             'contact_column_time_zones': 'dict(str, ContactColumnTimeZone)',
             'configuration_overrides': 'ConfigurationOverrides',
             'self_uri': 'str'
@@ -62,6 +63,7 @@ class DialerContact(object):
             'latest_sms_evaluations': 'latestSmsEvaluations',
             'callable': 'callable',
             'phone_number_status': 'phoneNumberStatus',
+            'contactable_status': 'contactableStatus',
             'contact_column_time_zones': 'contactColumnTimeZones',
             'configuration_overrides': 'configurationOverrides',
             'self_uri': 'selfUri'
@@ -75,6 +77,7 @@ class DialerContact(object):
         self._latest_sms_evaluations = None
         self._callable = None
         self._phone_number_status = None
+        self._contactable_status = None
         self._contact_column_time_zones = None
         self._configuration_overrides = None
         self._self_uri = None
@@ -270,6 +273,30 @@ class DialerContact(object):
         
 
         self._phone_number_status = phone_number_status
+
+    @property
+    def contactable_status(self):
+        """
+        Gets the contactable_status of this DialerContact.
+        A map of media types(voice, sms and email) to ContactableStatus, which indicates where or not the contact can be contacted using the specified media type.
+
+        :return: The contactable_status of this DialerContact.
+        :rtype: dict(str, ContactableStatus)
+        """
+        return self._contactable_status
+
+    @contactable_status.setter
+    def contactable_status(self, contactable_status):
+        """
+        Sets the contactable_status of this DialerContact.
+        A map of media types(voice, sms and email) to ContactableStatus, which indicates where or not the contact can be contacted using the specified media type.
+
+        :param contactable_status: The contactable_status of this DialerContact.
+        :type: dict(str, ContactableStatus)
+        """
+        
+
+        self._contactable_status = contactable_status
 
     @property
     def contact_column_time_zones(self):

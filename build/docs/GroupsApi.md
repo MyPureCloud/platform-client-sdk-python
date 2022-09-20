@@ -500,7 +500,7 @@ except ApiException as e:
 
 <a name="get_profiles_groups"></a>
 
-## [**GroupProfileEntityListing**](GroupProfileEntityListing.html) get_profiles_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
+## [**GroupProfileEntityListing**](GroupProfileEntityListing.html) get_profiles_groups(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -531,11 +531,12 @@ api_instance = PureCloudPlatformClientV2.GroupsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 id = ['id_example'] # list[str] | id (optional)
+jabber_id = ['jabber_id_example'] # list[str] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
 sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 
 try:
     # Get group profile listing
-    api_response = api_instance.get_profiles_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
+    api_response = api_instance.get_profiles_groups(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupsApi->get_profiles_groups: %s\n" % e)
@@ -549,6 +550,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
+| **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 

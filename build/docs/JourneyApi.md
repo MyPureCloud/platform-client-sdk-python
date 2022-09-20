@@ -14,6 +14,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_journey_segment**](JourneyApi.html#delete_journey_segment) | Delete a segment.|
 |[**get_journey_actionmap**](JourneyApi.html#get_journey_actionmap) | Retrieve a single action map.|
 |[**get_journey_actionmaps**](JourneyApi.html#get_journey_actionmaps) | Retrieve all action maps.|
+|[**get_journey_actionmaps_estimates_job**](JourneyApi.html#get_journey_actionmaps_estimates_job) | Get status of job.|
+|[**get_journey_actionmaps_estimates_job_results**](JourneyApi.html#get_journey_actionmaps_estimates_job_results) | Get estimates from completed job.|
 |[**get_journey_actiontarget**](JourneyApi.html#get_journey_actiontarget) | Retrieve a single action target.|
 |[**get_journey_actiontargets**](JourneyApi.html#get_journey_actiontargets) | Retrieve all action targets.|
 |[**get_journey_actiontemplate**](JourneyApi.html#get_journey_actiontemplate) | Retrieve a single action template.|
@@ -31,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_journey_segment**](JourneyApi.html#patch_journey_segment) | Update a segment.|
 |[**post_analytics_journeys_aggregates_query**](JourneyApi.html#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
 |[**post_journey_actionmaps**](JourneyApi.html#post_journey_actionmaps) | Create an action map.|
+|[**post_journey_actionmaps_estimates_jobs**](JourneyApi.html#post_journey_actionmaps_estimates_jobs) | Query for estimates|
 |[**post_journey_actiontemplates**](JourneyApi.html#post_journey_actiontemplates) | Create a single action template.|
 |[**post_journey_outcomes**](JourneyApi.html#post_journey_outcomes) | Create an outcome.|
 |[**post_journey_segments**](JourneyApi.html#post_journey_segments) | Create a segment.|
@@ -353,6 +356,108 @@ except ApiException as e:
 ### Return type
 
 [**ActionMapListing**](ActionMapListing.html)
+
+<a name="get_journey_actionmaps_estimates_job"></a>
+
+## str** get_journey_actionmaps_estimates_job(job_id)
+
+
+
+Get status of job.
+
+
+
+Wraps GET /api/v2/journey/actionmaps/estimates/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* journey:actionmapEstimateJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+job_id = 'job_id_example' # str | ID of the job.
+
+try:
+    # Get status of job.
+    api_response = api_instance.get_journey_actionmaps_estimates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_actionmaps_estimates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="get_journey_actionmaps_estimates_job_results"></a>
+
+## [**ActionMapEstimateResult**](ActionMapEstimateResult.html) get_journey_actionmaps_estimates_job_results(job_id)
+
+
+
+Get estimates from completed job.
+
+
+
+Wraps GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results 
+
+Requires ALL permissions: 
+
+* journey:actionmapEstimate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+job_id = 'job_id_example' # str | ID of the job.
+
+try:
+    # Get estimates from completed job.
+    api_response = api_instance.get_journey_actionmaps_estimates_job_results(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_actionmaps_estimates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionMapEstimateResult**](ActionMapEstimateResult.html)
 
 <a name="get_journey_actiontarget"></a>
 
@@ -1267,6 +1372,57 @@ except ApiException as e:
 ### Return type
 
 [**ActionMap**](ActionMap.html)
+
+<a name="post_journey_actionmaps_estimates_jobs"></a>
+
+## [**EstimateJobAsyncResponse**](EstimateJobAsyncResponse.html) post_journey_actionmaps_estimates_jobs(body)
+
+
+
+Query for estimates
+
+
+
+Wraps POST /api/v2/journey/actionmaps/estimates/jobs 
+
+Requires ANY permissions: 
+
+* journey:actionmapEstimateJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.ActionMapEstimateRequest() # ActionMapEstimateRequest | audience estimator request
+
+try:
+    # Query for estimates
+    api_response = api_instance.post_journey_actionmaps_estimates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_actionmaps_estimates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ActionMapEstimateRequest**](ActionMapEstimateRequest.html)| audience estimator request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EstimateJobAsyncResponse**](EstimateJobAsyncResponse.html)
 
 <a name="post_journey_actiontemplates"></a>
 

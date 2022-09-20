@@ -34,8 +34,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_credential**](IntegrationsApi.html#get_integrations_credential) | Get a single credential with sensitive fields redacted|
 |[**get_integrations_credentials**](IntegrationsApi.html#get_integrations_credentials) | List multiple sets of credentials|
 |[**get_integrations_credentials_types**](IntegrationsApi.html#get_integrations_credentials_types) | List all credential types|
-|[**get_integrations_eventlog**](IntegrationsApi.html#get_integrations_eventlog) | List all events|
-|[**get_integrations_eventlog_event_id**](IntegrationsApi.html#get_integrations_eventlog_event_id) | Get a single event|
 |[**get_integrations_speech_dialogflow_agent**](IntegrationsApi.html#get_integrations_speech_dialogflow_agent) | Get details about a Dialogflow agent|
 |[**get_integrations_speech_dialogflow_agents**](IntegrationsApi.html#get_integrations_speech_dialogflow_agents) | Get a list of Dialogflow agents in the customers&#39; Google accounts|
 |[**get_integrations_speech_lex_bot_alias**](IntegrationsApi.html#get_integrations_speech_lex_bot_alias) | Get details about a Lex bot alias|
@@ -62,7 +60,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_integrations_actions**](IntegrationsApi.html#post_integrations_actions) | Create a new Action|
 |[**post_integrations_actions_drafts**](IntegrationsApi.html#post_integrations_actions_drafts) | Create a new Draft|
 |[**post_integrations_credentials**](IntegrationsApi.html#post_integrations_credentials) | Create a set of credentials|
-|[**post_integrations_workforcemanagement_vendorconnection**](IntegrationsApi.html#post_integrations_workforcemanagement_vendorconnection) | Add a vendor connection|
 |[**put_integration_config_current**](IntegrationsApi.html#put_integration_config_current) | Update integration configuration.|
 |[**put_integrations_botconnector_integration_id_bots**](IntegrationsApi.html#put_integrations_botconnector_integration_id_bots) | Set a list of botConnector bots plus versions for this integration|
 |[**put_integrations_credential**](IntegrationsApi.html#put_integrations_credential) | Update a set of credentials|
@@ -1520,118 +1517,6 @@ This endpoint does not need any parameters.
 
 [**CredentialTypeListing**](CredentialTypeListing.html)
 
-<a name="get_integrations_eventlog"></a>
-
-## [**IntegrationEventEntityListing**](IntegrationEventEntityListing.html) get_integrations_eventlog(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, entity_id=entity_id)
-
-
-
-List all events
-
-
-
-Wraps GET /api/v2/integrations/eventlog 
-
-Requires ANY permissions: 
-
-* integrations:integration:view
-* bridge:notification:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.IntegrationsApi()
-page_size = 25 # int | Page size (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = ''timestamp'' # str | Sort by (optional) (default to 'timestamp')
-sort_order = ''descending'' # str | Order by (optional) (default to 'descending')
-entity_id = 'entity_id_example' # str | Include only events with this entity ID (optional)
-
-try:
-    # List all events
-    api_response = api_instance.get_integrations_eventlog(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, entity_id=entity_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling IntegrationsApi->get_integrations_eventlog: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to &#39;timestamp&#39;] |
-| **sort_order** | **str**| Order by | [optional] [default to &#39;descending&#39;] |
-| **entity_id** | **str**| Include only events with this entity ID | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-[**IntegrationEventEntityListing**](IntegrationEventEntityListing.html)
-
-<a name="get_integrations_eventlog_event_id"></a>
-
-## [**IntegrationEvent**](IntegrationEvent.html) get_integrations_eventlog_event_id(event_id)
-
-
-
-Get a single event
-
-
-
-Wraps GET /api/v2/integrations/eventlog/{eventId} 
-
-Requires ANY permissions: 
-
-* integrations:integration:view
-* bridge:notification:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.IntegrationsApi()
-event_id = 'event_id_example' # str | Event Id
-
-try:
-    # Get a single event
-    api_response = api_instance.get_integrations_eventlog_event_id(event_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling IntegrationsApi->get_integrations_eventlog_event_id: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **event_id** | **str**| Event Id |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**IntegrationEvent**](IntegrationEvent.html)
-
 <a name="get_integrations_speech_dialogflow_agent"></a>
 
 ## [**DialogflowAgent**](DialogflowAgent.html) get_integrations_speech_dialogflow_agent(agent_id)
@@ -3035,56 +2920,6 @@ except ApiException as e:
 ### Return type
 
 [**CredentialInfo**](CredentialInfo.html)
-
-<a name="post_integrations_workforcemanagement_vendorconnection"></a>
-
-## [**UserActionCategoryEntityListing**](UserActionCategoryEntityListing.html) post_integrations_workforcemanagement_vendorconnection(body=body)
-
-
-
-Add a vendor connection
-
-
-
-Wraps POST /api/v2/integrations/workforcemanagement/vendorconnection 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.IntegrationsApi()
-body = PureCloudPlatformClientV2.VendorConnectionRequest() # VendorConnectionRequest |  (optional)
-
-try:
-    # Add a vendor connection
-    api_response = api_instance.post_integrations_workforcemanagement_vendorconnection(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling IntegrationsApi->post_integrations_workforcemanagement_vendorconnection: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**VendorConnectionRequest**](VendorConnectionRequest.html)|  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-[**UserActionCategoryEntityListing**](UserActionCategoryEntityListing.html)
 
 <a name="put_integration_config_current"></a>
 

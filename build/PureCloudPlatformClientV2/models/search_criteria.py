@@ -43,35 +43,35 @@ class SearchCriteria(object):
             'end_value': 'str',
             'values': 'list[str]',
             'start_value': 'str',
-            'fields': 'list[str]',
             'value': 'str',
             'operator': 'str',
             'group': 'list[SearchCriteria]',
             'date_format': 'str',
-            'type': 'str'
+            'type': 'str',
+            'fields': 'list[str]'
         }
 
         self.attribute_map = {
             'end_value': 'endValue',
             'values': 'values',
             'start_value': 'startValue',
-            'fields': 'fields',
             'value': 'value',
             'operator': 'operator',
             'group': 'group',
             'date_format': 'dateFormat',
-            'type': 'type'
+            'type': 'type',
+            'fields': 'fields'
         }
 
         self._end_value = None
         self._values = None
         self._start_value = None
-        self._fields = None
         self._value = None
         self._operator = None
         self._group = None
         self._date_format = None
         self._type = None
+        self._fields = None
 
     @property
     def end_value(self):
@@ -144,30 +144,6 @@ class SearchCriteria(object):
         
 
         self._start_value = start_value
-
-    @property
-    def fields(self):
-        """
-        Gets the fields of this SearchCriteria.
-        Field names to search against
-
-        :return: The fields of this SearchCriteria.
-        :rtype: list[str]
-        """
-        return self._fields
-
-    @fields.setter
-    def fields(self, fields):
-        """
-        Sets the fields of this SearchCriteria.
-        Field names to search against
-
-        :param fields: The fields of this SearchCriteria.
-        :type: list[str]
-        """
-        
-
-        self._fields = fields
 
     @property
     def value(self):
@@ -288,12 +264,36 @@ class SearchCriteria(object):
         :param type: The type of this SearchCriteria.
         :type: str
         """
-        allowed_values = ["EXACT", "CONTAINS", "STARTS_WITH", "REQUIRED_FIELDS", "RANGE", "DATE_RANGE", "LESS_THAN", "LESS_THAN_EQUAL_TO", "GREATER_THAN", "GREATER_THAN_EQUAL_TO", "SIMPLE", "TERM", "TERMS", "QUERY_STRING", "MATCH_ALL"]
+        allowed_values = ["EXACT", "CONTAINS", "STARTS_WITH", "REQUIRED_FIELDS", "RANGE", "DATE_RANGE", "LESS_THAN", "LESS_THAN_EQUAL_TO", "GREATER_THAN", "GREATER_THAN_EQUAL_TO", "SIMPLE", "TERM", "TERMS", "QUERY_STRING", "MATCH_ALL", "REGEX"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def fields(self):
+        """
+        Gets the fields of this SearchCriteria.
+        Field names to search against
+
+        :return: The fields of this SearchCriteria.
+        :rtype: list[str]
+        """
+        return self._fields
+
+    @fields.setter
+    def fields(self, fields):
+        """
+        Sets the fields of this SearchCriteria.
+        Field names to search against
+
+        :param fields: The fields of this SearchCriteria.
+        :type: list[str]
+        """
+        
+
+        self._fields = fields
 
     def to_dict(self):
         """

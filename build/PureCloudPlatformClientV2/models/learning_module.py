@@ -59,7 +59,8 @@ class LearningModule(object):
             'inform_steps': 'list[LearningModuleInformStep]',
             'assessment_form': 'AssessmentForm',
             'summary_data': 'LearningModuleSummary',
-            'cover_art': 'LearningModuleCoverArtResponse'
+            'cover_art': 'LearningModuleCoverArtResponse',
+            'archival_mode': 'str'
         }
 
         self.attribute_map = {
@@ -82,7 +83,8 @@ class LearningModule(object):
             'inform_steps': 'informSteps',
             'assessment_form': 'assessmentForm',
             'summary_data': 'summaryData',
-            'cover_art': 'coverArt'
+            'cover_art': 'coverArt',
+            'archival_mode': 'archivalMode'
         }
 
         self._id = None
@@ -105,6 +107,7 @@ class LearningModule(object):
         self._assessment_form = None
         self._summary_data = None
         self._cover_art = None
+        self._archival_mode = None
 
     @property
     def id(self):
@@ -591,6 +594,33 @@ class LearningModule(object):
         
 
         self._cover_art = cover_art
+
+    @property
+    def archival_mode(self):
+        """
+        Gets the archival_mode of this LearningModule.
+        The mode of archival for learning module
+
+        :return: The archival_mode of this LearningModule.
+        :rtype: str
+        """
+        return self._archival_mode
+
+    @archival_mode.setter
+    def archival_mode(self, archival_mode):
+        """
+        Sets the archival_mode of this LearningModule.
+        The mode of archival for learning module
+
+        :param archival_mode: The archival_mode of this LearningModule.
+        :type: str
+        """
+        allowed_values = ["Graceful", "Immediate"]
+        if archival_mode.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for archival_mode -> " + archival_mode)
+            self._archival_mode = "outdated_sdk_version"
+        else:
+            self._archival_mode = archival_mode
 
     def to_dict(self):
         """

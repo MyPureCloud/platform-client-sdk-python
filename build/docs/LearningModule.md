@@ -27,6 +27,7 @@ title: LearningModule
 | **assessment_form** | [**AssessmentForm**](AssessmentForm.html) | The assessment form for learning module | [optional] |
 | **summary_data** | [**LearningModuleSummary**](LearningModuleSummary.html) | The learning module summary data | [optional] |
 | **cover_art** | [**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html) | The cover art for the learning module | [optional] |
+| **archival_mode** | **str** | The mode of archival for learning module | [optional] |
 {: class="table table-striped"}
 
 

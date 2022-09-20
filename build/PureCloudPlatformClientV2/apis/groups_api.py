@@ -799,13 +799,14 @@ class GroupsApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param list[str] id: id
+        :param list[str] jabber_id: A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
         :param str sort_order: Ascending or descending sort order
         :return: GroupProfileEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'id', 'sort_order']
+        all_params = ['page_size', 'page_number', 'id', 'jabber_id', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -830,6 +831,8 @@ class GroupsApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'id' in params:
             query_params['id'] = params['id']
+        if 'jabber_id' in params:
+            query_params['jabberId'] = params['jabber_id']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
 

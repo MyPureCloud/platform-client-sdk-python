@@ -299,7 +299,7 @@ class MessageData(object):
     def text_body(self):
         """
         Gets the text_body of this MessageData.
-        The body of the text message.
+        The body of the text message. (Deprecated - Instead use normalizedMessage.text)
 
         :return: The text_body of this MessageData.
         :rtype: str
@@ -310,7 +310,7 @@ class MessageData(object):
     def text_body(self, text_body):
         """
         Sets the text_body of this MessageData.
-        The body of the text message.
+        The body of the text message. (Deprecated - Instead use normalizedMessage.text)
 
         :param text_body: The text_body of this MessageData.
         :type: str
@@ -350,7 +350,7 @@ class MessageData(object):
     def media(self):
         """
         Gets the media of this MessageData.
-        The media details associated to a message.
+        The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)
 
         :return: The media of this MessageData.
         :rtype: list[MessageMedia]
@@ -361,7 +361,7 @@ class MessageData(object):
     def media(self, media):
         """
         Sets the media of this MessageData.
-        The media details associated to a message.
+        The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)
 
         :param media: The media of this MessageData.
         :type: list[MessageMedia]
@@ -374,7 +374,7 @@ class MessageData(object):
     def stickers(self):
         """
         Gets the stickers of this MessageData.
-        The sticker details associated to a message.
+        The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment
 
         :return: The stickers of this MessageData.
         :rtype: list[MessageSticker]
@@ -385,7 +385,7 @@ class MessageData(object):
     def stickers(self, stickers):
         """
         Sets the stickers of this MessageData.
-        The sticker details associated to a message.
+        The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment
 
         :param stickers: The stickers of this MessageData.
         :type: list[MessageSticker]

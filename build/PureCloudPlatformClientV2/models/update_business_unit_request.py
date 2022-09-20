@@ -42,7 +42,7 @@ class UpdateBusinessUnitRequest(object):
         self.swagger_types = {
             'name': 'str',
             'division_id': 'str',
-            'settings': 'UpdateBusinessUnitSettings'
+            'settings': 'UpdateBusinessUnitSettingsRequest'
         }
 
         self.attribute_map = {
@@ -110,7 +110,7 @@ class UpdateBusinessUnitRequest(object):
         Configuration for the business unit
 
         :return: The settings of this UpdateBusinessUnitRequest.
-        :rtype: UpdateBusinessUnitSettings
+        :rtype: UpdateBusinessUnitSettingsRequest
         """
         return self._settings
 
@@ -121,7 +121,7 @@ class UpdateBusinessUnitRequest(object):
         Configuration for the business unit
 
         :param settings: The settings of this UpdateBusinessUnitRequest.
-        :type: UpdateBusinessUnitSettings
+        :type: UpdateBusinessUnitSettingsRequest
         """
         
 

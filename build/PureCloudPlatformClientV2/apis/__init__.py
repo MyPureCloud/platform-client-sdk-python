@@ -38,6 +38,7 @@ from .organization_api import OrganizationApi
 from .organization_authorization_api import OrganizationAuthorizationApi
 from .outbound_api import OutboundApi
 from .presence_api import PresenceApi
+from .process_automation_api import ProcessAutomationApi
 from .quality_api import QualityApi
 from .recording_api import RecordingApi
 from .response_management_api import ResponseManagementApi
@@ -101,6 +102,7 @@ from .organization_api import OrganizationApi
 from .organization_authorization_api import OrganizationAuthorizationApi
 from .outbound_api import OutboundApi
 from .presence_api import PresenceApi
+from .process_automation_api import ProcessAutomationApi
 from .quality_api import QualityApi
 from .recording_api import RecordingApi
 from .response_management_api import ResponseManagementApi

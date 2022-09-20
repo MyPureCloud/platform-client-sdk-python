@@ -40,6 +40,7 @@ PureCloudPlatformClientV2/apis/organization_api.py
 PureCloudPlatformClientV2/apis/organization_authorization_api.py
 PureCloudPlatformClientV2/apis/outbound_api.py
 PureCloudPlatformClientV2/apis/presence_api.py
+PureCloudPlatformClientV2/apis/process_automation_api.py
 PureCloudPlatformClientV2/apis/quality_api.py
 PureCloudPlatformClientV2/apis/recording_api.py
 PureCloudPlatformClientV2/apis/response_management_api.py
@@ -82,6 +83,9 @@ PureCloudPlatformClientV2/models/action_input.py
 PureCloudPlatformClientV2/models/action_map.py
 PureCloudPlatformClientV2/models/action_map_action.py
 PureCloudPlatformClientV2/models/action_map_action_template.py
+PureCloudPlatformClientV2/models/action_map_estimate_outcome_criteria.py
+PureCloudPlatformClientV2/models/action_map_estimate_request.py
+PureCloudPlatformClientV2/models/action_map_estimate_result.py
 PureCloudPlatformClientV2/models/action_map_listing.py
 PureCloudPlatformClientV2/models/action_map_schedule_group.py
 PureCloudPlatformClientV2/models/action_map_schedule_groups.py
@@ -376,7 +380,8 @@ PureCloudPlatformClientV2/models/bu_schedule_reference.py
 PureCloudPlatformClientV2/models/bu_schedule_reference_for_mu_route.py
 PureCloudPlatformClientV2/models/bu_schedule_run.py
 PureCloudPlatformClientV2/models/bu_schedule_run_listing.py
-PureCloudPlatformClientV2/models/bu_scheduling_settings.py
+PureCloudPlatformClientV2/models/bu_scheduling_settings_request.py
+PureCloudPlatformClientV2/models/bu_scheduling_settings_response.py
 PureCloudPlatformClientV2/models/bu_search_agent_schedules_request.py
 PureCloudPlatformClientV2/models/bu_service_level.py
 PureCloudPlatformClientV2/models/bu_short_term_forecast.py
@@ -425,13 +430,13 @@ PureCloudPlatformClientV2/models/bulk_update_shift_trade_state_response.py
 PureCloudPlatformClientV2/models/bulk_update_shift_trade_state_result.py
 PureCloudPlatformClientV2/models/bulk_update_shift_trade_state_result_item.py
 PureCloudPlatformClientV2/models/bullseye.py
-PureCloudPlatformClientV2/models/business_unit.py
 PureCloudPlatformClientV2/models/business_unit_activity_code.py
 PureCloudPlatformClientV2/models/business_unit_activity_code_listing.py
 PureCloudPlatformClientV2/models/business_unit_list_item.py
 PureCloudPlatformClientV2/models/business_unit_listing.py
 PureCloudPlatformClientV2/models/business_unit_reference.py
-PureCloudPlatformClientV2/models/business_unit_settings.py
+PureCloudPlatformClientV2/models/business_unit_response.py
+PureCloudPlatformClientV2/models/business_unit_settings_response.py
 PureCloudPlatformClientV2/models/button_component.py
 PureCloudPlatformClientV2/models/button_response.py
 PureCloudPlatformClientV2/models/calendar_url_response.py
@@ -881,7 +886,7 @@ PureCloudPlatformClientV2/models/create_agent_time_off_request.py
 PureCloudPlatformClientV2/models/create_benefit_assessment_job_request.py
 PureCloudPlatformClientV2/models/create_benefit_assessment_request.py
 PureCloudPlatformClientV2/models/create_business_unit_request.py
-PureCloudPlatformClientV2/models/create_business_unit_settings.py
+PureCloudPlatformClientV2/models/create_business_unit_settings_request.py
 PureCloudPlatformClientV2/models/create_call_request.py
 PureCloudPlatformClientV2/models/create_call_response.py
 PureCloudPlatformClientV2/models/create_callback_command.py
@@ -909,6 +914,7 @@ PureCloudPlatformClientV2/models/create_share_request_member.py
 PureCloudPlatformClientV2/models/create_share_response.py
 PureCloudPlatformClientV2/models/create_time_off_limit_request.py
 PureCloudPlatformClientV2/models/create_time_off_plan_request.py
+PureCloudPlatformClientV2/models/create_trigger_request.py
 PureCloudPlatformClientV2/models/create_user.py
 PureCloudPlatformClientV2/models/create_web_chat_conversation_request.py
 PureCloudPlatformClientV2/models/create_web_chat_conversation_response.py
@@ -1222,6 +1228,7 @@ PureCloudPlatformClientV2/models/entry.py
 PureCloudPlatformClientV2/models/error_body.py
 PureCloudPlatformClientV2/models/error_details.py
 PureCloudPlatformClientV2/models/error_info.py
+PureCloudPlatformClientV2/models/estimate_job_async_response.py
 PureCloudPlatformClientV2/models/estimated_wait_time_predictions.py
 PureCloudPlatformClientV2/models/evaluation.py
 PureCloudPlatformClientV2/models/evaluation_aggregate_data_container.py
@@ -1255,7 +1262,6 @@ PureCloudPlatformClientV2/models/evaluator_activity.py
 PureCloudPlatformClientV2/models/evaluator_activity_entity_listing.py
 PureCloudPlatformClientV2/models/event_co_browse.py
 PureCloudPlatformClientV2/models/event_condition.py
-PureCloudPlatformClientV2/models/event_entity.py
 PureCloudPlatformClientV2/models/event_log.py
 PureCloudPlatformClientV2/models/event_message.py
 PureCloudPlatformClientV2/models/event_presence.py
@@ -1482,8 +1488,6 @@ PureCloudPlatformClientV2/models/integration_action_fields.py
 PureCloudPlatformClientV2/models/integration_configuration.py
 PureCloudPlatformClientV2/models/integration_configuration_info.py
 PureCloudPlatformClientV2/models/integration_entity_listing.py
-PureCloudPlatformClientV2/models/integration_event.py
-PureCloudPlatformClientV2/models/integration_event_entity_listing.py
 PureCloudPlatformClientV2/models/integration_export.py
 PureCloudPlatformClientV2/models/integration_status_info.py
 PureCloudPlatformClientV2/models/integration_type.py
@@ -1700,6 +1704,7 @@ PureCloudPlatformClientV2/models/learning_assignment_bulk_remove_response.py
 PureCloudPlatformClientV2/models/learning_assignment_create.py
 PureCloudPlatformClientV2/models/learning_assignment_entity.py
 PureCloudPlatformClientV2/models/learning_assignment_item.py
+PureCloudPlatformClientV2/models/learning_assignment_reassign.py
 PureCloudPlatformClientV2/models/learning_assignment_reference.py
 PureCloudPlatformClientV2/models/learning_assignment_rule_run_topic_learning_assignment_rule_run_notification.py
 PureCloudPlatformClientV2/models/learning_assignment_rule_run_topic_learning_assignments_created.py
@@ -1796,8 +1801,11 @@ PureCloudPlatformClientV2/models/manager.py
 PureCloudPlatformClientV2/models/mark_contact_address_uncontactable_action_settings.py
 PureCloudPlatformClientV2/models/mark_contact_uncontactable_action_settings.py
 PureCloudPlatformClientV2/models/markdown.py
+PureCloudPlatformClientV2/models/match_criteria.py
+PureCloudPlatformClientV2/models/match_criteria_test_result.py
 PureCloudPlatformClientV2/models/match_shift_trade_request.py
 PureCloudPlatformClientV2/models/match_shift_trade_response.py
+PureCloudPlatformClientV2/models/match_test_result.py
 PureCloudPlatformClientV2/models/max_length.py
 PureCloudPlatformClientV2/models/max_participants.py
 PureCloudPlatformClientV2/models/media_participant_request.py
@@ -2559,6 +2567,7 @@ PureCloudPlatformClientV2/models/segment.py
 PureCloudPlatformClientV2/models/segment_detail_query_clause.py
 PureCloudPlatformClientV2/models/segment_detail_query_filter.py
 PureCloudPlatformClientV2/models/segment_detail_query_predicate.py
+PureCloudPlatformClientV2/models/segment_estimate_count.py
 PureCloudPlatformClientV2/models/segment_listing.py
 PureCloudPlatformClientV2/models/selected_answer.py
 PureCloudPlatformClientV2/models/selected_columns.py
@@ -2585,6 +2594,7 @@ PureCloudPlatformClientV2/models/set_uui_data_request.py
 PureCloudPlatformClientV2/models/set_wrapper_day_of_week.py
 PureCloudPlatformClientV2/models/set_wrapper_route_path_request.py
 PureCloudPlatformClientV2/models/set_wrapper_string.py
+PureCloudPlatformClientV2/models/set_wrapper_sync_time_off_property.py
 PureCloudPlatformClientV2/models/setting_direction.py
 PureCloudPlatformClientV2/models/share.py
 PureCloudPlatformClientV2/models/share_entity_listing.py
@@ -2721,7 +2731,14 @@ PureCloudPlatformClientV2/models/template_parameter.py
 PureCloudPlatformClientV2/models/term_attribute.py
 PureCloudPlatformClientV2/models/test_execution_operation_result.py
 PureCloudPlatformClientV2/models/test_execution_result.py
+PureCloudPlatformClientV2/models/test_matches_event_operation.py
+PureCloudPlatformClientV2/models/test_matches_operation.py
 PureCloudPlatformClientV2/models/test_message.py
+PureCloudPlatformClientV2/models/test_mode_event_results.py
+PureCloudPlatformClientV2/models/test_mode_results.py
+PureCloudPlatformClientV2/models/test_mode_trigger.py
+PureCloudPlatformClientV2/models/test_schema_operation.py
+PureCloudPlatformClientV2/models/test_target_operation.py
 PureCloudPlatformClientV2/models/text_bot_channel.py
 PureCloudPlatformClientV2/models/text_bot_disconnect_action.py
 PureCloudPlatformClientV2/models/text_bot_error_input_event.py
@@ -2772,6 +2789,7 @@ PureCloudPlatformClientV2/models/time_zone_mapping_preview.py
 PureCloudPlatformClientV2/models/token_info.py
 PureCloudPlatformClientV2/models/token_info_cloned_user.py
 PureCloudPlatformClientV2/models/topic.py
+PureCloudPlatformClientV2/models/topic_cursor_entity_listing.py
 PureCloudPlatformClientV2/models/topic_duration.py
 PureCloudPlatformClientV2/models/topic_job.py
 PureCloudPlatformClientV2/models/topic_job_request.py
@@ -2801,6 +2819,9 @@ PureCloudPlatformClientV2/models/transcription_topic_transcription_message.py
 PureCloudPlatformClientV2/models/transcription_topic_transcription_request_status.py
 PureCloudPlatformClientV2/models/transcripts.py
 PureCloudPlatformClientV2/models/transfer_request.py
+PureCloudPlatformClientV2/models/trigger.py
+PureCloudPlatformClientV2/models/trigger_entity_listing.py
+PureCloudPlatformClientV2/models/trigger_target.py
 PureCloudPlatformClientV2/models/trunk.py
 PureCloudPlatformClientV2/models/trunk_base.py
 PureCloudPlatformClientV2/models/trunk_base_assignment.py
@@ -2873,7 +2894,7 @@ PureCloudPlatformClientV2/models/update_action_input.py
 PureCloudPlatformClientV2/models/update_activity_code_request.py
 PureCloudPlatformClientV2/models/update_analytics_data_retention_request.py
 PureCloudPlatformClientV2/models/update_business_unit_request.py
-PureCloudPlatformClientV2/models/update_business_unit_settings.py
+PureCloudPlatformClientV2/models/update_business_unit_settings_request.py
 PureCloudPlatformClientV2/models/update_coaching_appointment_request.py
 PureCloudPlatformClientV2/models/update_contact_column_action_settings.py
 PureCloudPlatformClientV2/models/update_draft_input.py
@@ -2887,6 +2908,7 @@ PureCloudPlatformClientV2/models/update_schedule_upload_schema.py
 PureCloudPlatformClientV2/models/update_service_goal_template.py
 PureCloudPlatformClientV2/models/update_time_off_limit_request.py
 PureCloudPlatformClientV2/models/update_time_off_plan_request.py
+PureCloudPlatformClientV2/models/update_trigger_request.py
 PureCloudPlatformClientV2/models/update_user.py
 PureCloudPlatformClientV2/models/update_work_plan_rotation_agent_request.py
 PureCloudPlatformClientV2/models/update_work_plan_rotation_request.py
@@ -2899,8 +2921,6 @@ PureCloudPlatformClientV2/models/usage.py
 PureCloudPlatformClientV2/models/usage_execution_result.py
 PureCloudPlatformClientV2/models/usage_item.py
 PureCloudPlatformClientV2/models/user.py
-PureCloudPlatformClientV2/models/user_action_category.py
-PureCloudPlatformClientV2/models/user_action_category_entity_listing.py
 PureCloudPlatformClientV2/models/user_agent_info.py
 PureCloudPlatformClientV2/models/user_aggregate_data_container.py
 PureCloudPlatformClientV2/models/user_aggregate_query_clause.py
@@ -3045,7 +3065,6 @@ PureCloudPlatformClientV2/models/validation_service_request.py
 PureCloudPlatformClientV2/models/value_wrapper_date.py
 PureCloudPlatformClientV2/models/value_wrapper_planning_period_settings.py
 PureCloudPlatformClientV2/models/value_wrapper_string.py
-PureCloudPlatformClientV2/models/vendor_connection_request.py
 PureCloudPlatformClientV2/models/video.py
 PureCloudPlatformClientV2/models/view_filter.py
 PureCloudPlatformClientV2/models/visibility_condition.py
@@ -3324,6 +3343,9 @@ docs/ActionInput.md
 docs/ActionMap.md
 docs/ActionMapAction.md
 docs/ActionMapActionTemplate.md
+docs/ActionMapEstimateOutcomeCriteria.md
+docs/ActionMapEstimateRequest.md
+docs/ActionMapEstimateResult.md
 docs/ActionMapListing.md
 docs/ActionMapScheduleGroup.md
 docs/ActionMapScheduleGroups.md
@@ -3629,7 +3651,8 @@ docs/BuScheduleReference.md
 docs/BuScheduleReferenceForMuRoute.md
 docs/BuScheduleRun.md
 docs/BuScheduleRunListing.md
-docs/BuSchedulingSettings.md
+docs/BuSchedulingSettingsRequest.md
+docs/BuSchedulingSettingsResponse.md
 docs/BuSearchAgentSchedulesRequest.md
 docs/BuServiceLevel.md
 docs/BuShortTermForecast.md
@@ -3678,13 +3701,13 @@ docs/BulkUpdateShiftTradeStateResponse.md
 docs/BulkUpdateShiftTradeStateResult.md
 docs/BulkUpdateShiftTradeStateResultItem.md
 docs/Bullseye.md
-docs/BusinessUnit.md
 docs/BusinessUnitActivityCode.md
 docs/BusinessUnitActivityCodeListing.md
 docs/BusinessUnitListItem.md
 docs/BusinessUnitListing.md
 docs/BusinessUnitReference.md
-docs/BusinessUnitSettings.md
+docs/BusinessUnitResponse.md
+docs/BusinessUnitSettingsResponse.md
 docs/ButtonComponent.md
 docs/ButtonResponse.md
 docs/CalendarUrlResponse.md
@@ -4142,7 +4165,7 @@ docs/CreateAgentTimeOffRequest.md
 docs/CreateBenefitAssessmentJobRequest.md
 docs/CreateBenefitAssessmentRequest.md
 docs/CreateBusinessUnitRequest.md
-docs/CreateBusinessUnitSettings.md
+docs/CreateBusinessUnitSettingsRequest.md
 docs/CreateCallRequest.md
 docs/CreateCallResponse.md
 docs/CreateCallbackCommand.md
@@ -4170,6 +4193,7 @@ docs/CreateShareRequestMember.md
 docs/CreateShareResponse.md
 docs/CreateTimeOffLimitRequest.md
 docs/CreateTimeOffPlanRequest.md
+docs/CreateTriggerRequest.md
 docs/CreateUser.md
 docs/CreateWebChatConversationRequest.md
 docs/CreateWebChatConversationResponse.md
@@ -4485,6 +4509,7 @@ docs/Entry.md
 docs/ErrorBody.md
 docs/ErrorDetails.md
 docs/ErrorInfo.md
+docs/EstimateJobAsyncResponse.md
 docs/EstimatedWaitTimePredictions.md
 docs/Evaluation.md
 docs/EvaluationAggregateDataContainer.md
@@ -4518,7 +4543,6 @@ docs/EvaluatorActivity.md
 docs/EvaluatorActivityEntityListing.md
 docs/EventCoBrowse.md
 docs/EventCondition.md
-docs/EventEntity.md
 docs/EventLog.md
 docs/EventMessage.md
 docs/EventPresence.md
@@ -4765,8 +4789,6 @@ docs/IntegrationActionFields.md
 docs/IntegrationConfiguration.md
 docs/IntegrationConfigurationInfo.md
 docs/IntegrationEntityListing.md
-docs/IntegrationEvent.md
-docs/IntegrationEventEntityListing.md
 docs/IntegrationExport.md
 docs/IntegrationStatusInfo.md
 docs/IntegrationType.md
@@ -4993,6 +5015,7 @@ docs/LearningAssignmentBulkRemoveResponse.md
 docs/LearningAssignmentCreate.md
 docs/LearningAssignmentEntity.md
 docs/LearningAssignmentItem.md
+docs/LearningAssignmentReassign.md
 docs/LearningAssignmentReference.md
 docs/LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification.md
 docs/LearningAssignmentRuleRunTopicLearningAssignmentsCreated.md
@@ -5093,8 +5116,11 @@ docs/Manager.md
 docs/MarkContactAddressUncontactableActionSettings.md
 docs/MarkContactUncontactableActionSettings.md
 docs/Markdown.md
+docs/MatchCriteria.md
+docs/MatchCriteriaTestResult.md
 docs/MatchShiftTradeRequest.md
 docs/MatchShiftTradeResponse.md
+docs/MatchTestResult.md
 docs/MaxLength.md
 docs/MaxParticipants.md
 docs/MediaParticipantRequest.md
@@ -5395,6 +5421,8 @@ docs/PresenceDetailQueryPredicate.md
 docs/PresenceEventOrganizationPresence.md
 docs/PresenceEventUserPresence.md
 docs/PresenceSetting.md
+docs/ProcessAutomationApi.json
+docs/ProcessAutomationApi.md
 docs/ProcessScheduleUpdateUploadRequest.md
 docs/Program.md
 docs/ProgramJob.md
@@ -5890,6 +5918,7 @@ docs/Segment.md
 docs/SegmentDetailQueryClause.md
 docs/SegmentDetailQueryFilter.md
 docs/SegmentDetailQueryPredicate.md
+docs/SegmentEstimateCount.md
 docs/SegmentListing.md
 docs/SelectedAnswer.md
 docs/SelectedColumns.md
@@ -5916,6 +5945,7 @@ docs/SetUuiDataRequest.md
 docs/SetWrapperDayOfWeek.md
 docs/SetWrapperRoutePathRequest.md
 docs/SetWrapperString.md
+docs/SetWrapperSyncTimeOffProperty.md
 docs/SettingDirection.md
 docs/Share.md
 docs/ShareEntityListing.md
@@ -6062,7 +6092,14 @@ docs/TemplateParameter.md
 docs/TermAttribute.md
 docs/TestExecutionOperationResult.md
 docs/TestExecutionResult.md
+docs/TestMatchesEventOperation.md
+docs/TestMatchesOperation.md
 docs/TestMessage.md
+docs/TestModeEventResults.md
+docs/TestModeResults.md
+docs/TestModeTrigger.md
+docs/TestSchemaOperation.md
+docs/TestTargetOperation.md
 docs/TextBotChannel.md
 docs/TextBotDisconnectAction.md
 docs/TextBotErrorInputEvent.md
@@ -6117,6 +6154,7 @@ docs/TokenInfoClonedUser.md
 docs/TokensApi.json
 docs/TokensApi.md
 docs/Topic.md
+docs/TopicCursorEntityListing.md
 docs/TopicDuration.md
 docs/TopicJob.md
 docs/TopicJobRequest.md
@@ -6146,6 +6184,9 @@ docs/TranscriptionTopicTranscriptionMessage.md
 docs/TranscriptionTopicTranscriptionRequestStatus.md
 docs/Transcripts.md
 docs/TransferRequest.md
+docs/Trigger.md
+docs/TriggerEntityListing.md
+docs/TriggerTarget.md
 docs/Trunk.md
 docs/TrunkBase.md
 docs/TrunkBaseAssignment.md
@@ -6218,7 +6259,7 @@ docs/UpdateActionInput.md
 docs/UpdateActivityCodeRequest.md
 docs/UpdateAnalyticsDataRetentionRequest.md
 docs/UpdateBusinessUnitRequest.md
-docs/UpdateBusinessUnitSettings.md
+docs/UpdateBusinessUnitSettingsRequest.md
 docs/UpdateCoachingAppointmentRequest.md
 docs/UpdateContactColumnActionSettings.md
 docs/UpdateDraftInput.md
@@ -6232,6 +6273,7 @@ docs/UpdateScheduleUploadSchema.md
 docs/UpdateServiceGoalTemplate.md
 docs/UpdateTimeOffLimitRequest.md
 docs/UpdateTimeOffPlanRequest.md
+docs/UpdateTriggerRequest.md
 docs/UpdateUser.md
 docs/UpdateWorkPlanRotationAgentRequest.md
 docs/UpdateWorkPlanRotationRequest.md
@@ -6248,8 +6290,6 @@ docs/UsageApi.md
 docs/UsageExecutionResult.md
 docs/UsageItem.md
 docs/User.md
-docs/UserActionCategory.md
-docs/UserActionCategoryEntityListing.md
 docs/UserAgentInfo.md
 docs/UserAggregateDataContainer.md
 docs/UserAggregateQueryClause.md
@@ -6400,7 +6440,6 @@ docs/ValidationServiceRequest.md
 docs/ValueWrapperDate.md
 docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
-docs/VendorConnectionRequest.md
 docs/Video.md
 docs/ViewFilter.md
 docs/VisibilityCondition.md
@@ -6804,6 +6843,7 @@ docs/delete_outbound_schedules_messagingcampaign-example.txt
 docs/delete_outbound_schedules_sequence-example.txt
 docs/delete_outbound_sequence-example.txt
 docs/delete_presencedefinition-example.txt
+docs/delete_processautomation_trigger-example.txt
 docs/delete_quality_calibration-example.txt
 docs/delete_quality_conversation_evaluation-example.txt
 docs/delete_quality_form-example.txt
@@ -7154,7 +7194,6 @@ docs/get_gamification_leaderboard_bestpoints-example.txt
 docs/get_gamification_metric-example.txt
 docs/get_gamification_metricdefinition-example.txt
 docs/get_gamification_metricdefinitions-example.txt
-docs/get_gamification_metrics-example.txt
 docs/get_gamification_profile-example.txt
 docs/get_gamification_profile_members-example.txt
 docs/get_gamification_profile_metric-example.txt
@@ -7237,8 +7276,6 @@ docs/get_integrations_clientapps_unifiedcommunications-example.txt
 docs/get_integrations_credential-example.txt
 docs/get_integrations_credentials-example.txt
 docs/get_integrations_credentials_types-example.txt
-docs/get_integrations_eventlog-example.txt
-docs/get_integrations_eventlog_event_id-example.txt
 docs/get_integrations_speech_dialogflow_agent-example.txt
 docs/get_integrations_speech_dialogflow_agents-example.txt
 docs/get_integrations_speech_lex_bot_alias-example.txt
@@ -7256,6 +7293,8 @@ docs/get_integrations_userapps-example.txt
 docs/get_ipranges-example.txt
 docs/get_journey_actionmap-example.txt
 docs/get_journey_actionmaps-example.txt
+docs/get_journey_actionmaps_estimates_job-example.txt
+docs/get_journey_actionmaps_estimates_job_results-example.txt
 docs/get_journey_actiontarget-example.txt
 docs/get_journey_actiontargets-example.txt
 docs/get_journey_actiontemplate-example.txt
@@ -7436,6 +7475,9 @@ docs/get_outbound_settings-example.txt
 docs/get_outbound_wrapupcodemappings-example.txt
 docs/get_presencedefinition-example.txt
 docs/get_presencedefinitions-example.txt
+docs/get_processautomation_trigger-example.txt
+docs/get_processautomation_triggers-example.txt
+docs/get_processautomation_triggers_topics-example.txt
 docs/get_profiles_groups-example.txt
 docs/get_profiles_users-example.txt
 docs/get_quality_agents_activity-example.txt
@@ -8099,7 +8141,6 @@ docs/post_flows_executions-example.txt
 docs/post_flows_jobs-example.txt
 docs/post_flows_milestones-example.txt
 docs/post_flows_outcomes-example.txt
-docs/post_gamification_metrics-example.txt
 docs/post_gamification_profile_activate-example.txt
 docs/post_gamification_profile_deactivate-example.txt
 docs/post_gamification_profile_members-example.txt
@@ -8123,8 +8164,8 @@ docs/post_integrations_action_test-example.txt
 docs/post_integrations_actions-example.txt
 docs/post_integrations_actions_drafts-example.txt
 docs/post_integrations_credentials-example.txt
-docs/post_integrations_workforcemanagement_vendorconnection-example.txt
 docs/post_journey_actionmaps-example.txt
+docs/post_journey_actionmaps_estimates_jobs-example.txt
 docs/post_journey_actiontemplates-example.txt
 docs/post_journey_outcomes-example.txt
 docs/post_journey_segments-example.txt
@@ -8218,6 +8259,9 @@ docs/post_outbound_messagingcampaigns_progress-example.txt
 docs/post_outbound_rulesets-example.txt
 docs/post_outbound_sequences-example.txt
 docs/post_presencedefinitions-example.txt
+docs/post_processautomation_trigger_test-example.txt
+docs/post_processautomation_triggers-example.txt
+docs/post_processautomation_triggers_topic_test-example.txt
 docs/post_quality_calibrations-example.txt
 docs/post_quality_conversation_evaluations-example.txt
 docs/post_quality_conversations_audits_query-example.txt
@@ -8502,6 +8546,7 @@ docs/put_outbound_schedules_sequence-example.txt
 docs/put_outbound_sequence-example.txt
 docs/put_outbound_wrapupcodemappings-example.txt
 docs/put_presencedefinition-example.txt
+docs/put_processautomation_trigger-example.txt
 docs/put_quality_calibration-example.txt
 docs/put_quality_conversation_evaluation-example.txt
 docs/put_quality_form-example.txt

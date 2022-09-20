@@ -43,35 +43,35 @@ class GroupSearchCriteria(object):
             'end_value': 'str',
             'values': 'list[str]',
             'start_value': 'str',
-            'fields': 'list[str]',
             'value': 'str',
             'operator': 'str',
             'group': 'list[GroupSearchCriteria]',
             'date_format': 'str',
-            'type': 'str'
+            'type': 'str',
+            'fields': 'list[str]'
         }
 
         self.attribute_map = {
             'end_value': 'endValue',
             'values': 'values',
             'start_value': 'startValue',
-            'fields': 'fields',
             'value': 'value',
             'operator': 'operator',
             'group': 'group',
             'date_format': 'dateFormat',
-            'type': 'type'
+            'type': 'type',
+            'fields': 'fields'
         }
 
         self._end_value = None
         self._values = None
         self._start_value = None
-        self._fields = None
         self._value = None
         self._operator = None
         self._group = None
         self._date_format = None
         self._type = None
+        self._fields = None
 
     @property
     def end_value(self):
@@ -144,30 +144,6 @@ class GroupSearchCriteria(object):
         
 
         self._start_value = start_value
-
-    @property
-    def fields(self):
-        """
-        Gets the fields of this GroupSearchCriteria.
-        Field names to search against
-
-        :return: The fields of this GroupSearchCriteria.
-        :rtype: list[str]
-        """
-        return self._fields
-
-    @fields.setter
-    def fields(self, fields):
-        """
-        Sets the fields of this GroupSearchCriteria.
-        Field names to search against
-
-        :param fields: The fields of this GroupSearchCriteria.
-        :type: list[str]
-        """
-        
-
-        self._fields = fields
 
     @property
     def value(self):
@@ -294,6 +270,30 @@ class GroupSearchCriteria(object):
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def fields(self):
+        """
+        Gets the fields of this GroupSearchCriteria.
+        Field names to search against
+
+        :return: The fields of this GroupSearchCriteria.
+        :rtype: list[str]
+        """
+        return self._fields
+
+    @fields.setter
+    def fields(self, fields):
+        """
+        Sets the fields of this GroupSearchCriteria.
+        Field names to search against
+
+        :param fields: The fields of this GroupSearchCriteria.
+        :type: list[str]
+        """
+        
+
+        self._fields = fields
 
     def to_dict(self):
         """

@@ -43,6 +43,7 @@ class ActionTemplate(object):
             'id': 'str',
             'name': 'str',
             'description': 'str',
+            'version': 'int',
             'media_type': 'str',
             'state': 'str',
             'content_offer': 'ContentOffer',
@@ -55,6 +56,7 @@ class ActionTemplate(object):
             'id': 'id',
             'name': 'name',
             'description': 'description',
+            'version': 'version',
             'media_type': 'mediaType',
             'state': 'state',
             'content_offer': 'contentOffer',
@@ -66,6 +68,7 @@ class ActionTemplate(object):
         self._id = None
         self._name = None
         self._description = None
+        self._version = None
         self._media_type = None
         self._state = None
         self._content_offer = None
@@ -144,6 +147,30 @@ class ActionTemplate(object):
         
 
         self._description = description
+
+    @property
+    def version(self):
+        """
+        Gets the version of this ActionTemplate.
+        The version of the action template.
+
+        :return: The version of this ActionTemplate.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this ActionTemplate.
+        The version of the action template.
+
+        :param version: The version of this ActionTemplate.
+        :type: int
+        """
+        
+
+        self._version = version
 
     @property
     def media_type(self):

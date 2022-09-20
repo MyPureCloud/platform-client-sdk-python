@@ -43,11 +43,11 @@ class TeamSearchCriteria(object):
             'end_value': 'str',
             'values': 'list[str]',
             'start_value': 'str',
-            'fields': 'list[str]',
             'value': 'str',
             'operator': 'str',
             'group': 'list[TeamSearchCriteria]',
             'date_format': 'str',
+            'fields': 'list[str]',
             'type': 'str'
         }
 
@@ -55,22 +55,22 @@ class TeamSearchCriteria(object):
             'end_value': 'endValue',
             'values': 'values',
             'start_value': 'startValue',
-            'fields': 'fields',
             'value': 'value',
             'operator': 'operator',
             'group': 'group',
             'date_format': 'dateFormat',
+            'fields': 'fields',
             'type': 'type'
         }
 
         self._end_value = None
         self._values = None
         self._start_value = None
-        self._fields = None
         self._value = None
         self._operator = None
         self._group = None
         self._date_format = None
+        self._fields = None
         self._type = None
 
     @property
@@ -144,30 +144,6 @@ class TeamSearchCriteria(object):
         
 
         self._start_value = start_value
-
-    @property
-    def fields(self):
-        """
-        Gets the fields of this TeamSearchCriteria.
-        Field names to search against
-
-        :return: The fields of this TeamSearchCriteria.
-        :rtype: list[str]
-        """
-        return self._fields
-
-    @fields.setter
-    def fields(self, fields):
-        """
-        Sets the fields of this TeamSearchCriteria.
-        Field names to search against
-
-        :param fields: The fields of this TeamSearchCriteria.
-        :type: list[str]
-        """
-        
-
-        self._fields = fields
 
     @property
     def value(self):
@@ -267,6 +243,30 @@ class TeamSearchCriteria(object):
         
 
         self._date_format = date_format
+
+    @property
+    def fields(self):
+        """
+        Gets the fields of this TeamSearchCriteria.
+        Field names to search against
+
+        :return: The fields of this TeamSearchCriteria.
+        :rtype: list[str]
+        """
+        return self._fields
+
+    @fields.setter
+    def fields(self, fields):
+        """
+        Sets the fields of this TeamSearchCriteria.
+        Field names to search against
+
+        :param fields: The fields of this TeamSearchCriteria.
+        :type: list[str]
+        """
+        
+
+        self._fields = fields
 
     @property
     def type(self):

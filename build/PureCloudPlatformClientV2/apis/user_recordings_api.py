@@ -222,12 +222,13 @@ class UserRecordingsApi(object):
             for asynchronous request. (optional)
         :param str recording_id: User Recording ID (required)
         :param str format_id: The desired media format.
+        :param bool async: When set to true, api will return 202 response until the recording is ready for download
         :return: DownloadResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['recording_id', 'format_id']
+        all_params = ['recording_id', 'format_id', 'async']
         all_params.append('callback')
 
         params = locals()
@@ -253,6 +254,8 @@ class UserRecordingsApi(object):
         query_params = {}
         if 'format_id' in params:
             query_params['formatId'] = params['format_id']
+        if 'async' in params:
+            query_params['async'] = params['async']
 
         header_params = {}
 

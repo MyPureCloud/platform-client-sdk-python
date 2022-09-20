@@ -15,10 +15,10 @@ title: MessageData
 | **to_address** | **str** | The recipient of the text message. | [optional] |
 | **direction** | **str** | The direction of the message. | [optional] |
 | **messenger_type** | **str** | Type of text messenger. | [optional] |
-| **text_body** | **str** | The body of the text message. | |
+| **text_body** | **str** | The body of the text message. (Deprecated - Instead use normalizedMessage.text) | |
 | **status** | **str** | The status of the message. | |
-| **media** | [**list[MessageMedia]**](MessageMedia.html) | The media details associated to a message. | [optional] |
-| **stickers** | [**list[MessageSticker]**](MessageSticker.html) | The sticker details associated to a message. | [optional] |
+| **media** | [**list[MessageMedia]**](MessageMedia.html) | The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment) | [optional] |
+| **stickers** | [**list[MessageSticker]**](MessageSticker.html) | The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment | [optional] |
 | **normalized_message** | [**ConversationNormalizedMessage**](ConversationNormalizedMessage.html) | The message into normalized format | [optional] |
 | **normalized_receipts** | [**list[ConversationNormalizedMessage]**](ConversationNormalizedMessage.html) | The delivery event associated with this message in normalized format, if the message direction was outbound | [optional] |
 | **created_by** | [**User**](User.html) | User who sent this message. | [optional] |
