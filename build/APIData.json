@@ -24079,7 +24079,7 @@
   "put_conversation_recording": {
     "operationId": "put_conversation_recording",
     "functionName": "put_conversation_recording",
-    "signature": "put_conversation_recording(conversation_id, recording_id, body)",
+    "signature": "put_conversation_recording(conversation_id, recording_id, body, clear_export)",
     "parameters": [
       {
         "name": "conversation_id",
@@ -24095,10 +24095,15 @@
         "name": "body",
         "type": "Recording",
         "required": "true"
+      },
+      {
+        "name": "clear_export",
+        "type": "bool",
+        "required": "false"
       }
     ],
     "return": "Recording",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nconversation_id = 'conversation_id_example' # str | Conversation ID\nrecording_id = 'recording_id_example' # str | Recording ID\nbody = PureCloudPlatformClientV2.Recording() # Recording | recording\n\ntry:\n    # Updates the retention records on a recording.\n    api_response = api_instance.put_conversation_recording(conversation_id, recording_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutConversationRecordingRequest->put_conversation_recording: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nconversation_id = 'conversation_id_example' # str | Conversation ID\nrecording_id = 'recording_id_example' # str | Recording ID\nbody = PureCloudPlatformClientV2.Recording() # Recording | recording\nclear_export = True # bool | Whether to clear the pending export for the recording (optional)\n\ntry:\n    # Updates the retention records on a recording.\n    api_response = api_instance.put_conversation_recording(conversation_id, recording_id, body, clear_export=clear_export)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutConversationRecordingRequest->put_conversation_recording: %s\\n\" % e)"
   },
   "put_conversation_recording_annotation": {
     "operationId": "put_conversation_recording_annotation",
@@ -25077,6 +25082,39 @@
     ],
     "return": "Predictor",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\npredictor_id = 'predictor_id_example' # str | Predictor ID\n\ntry:\n    # Retrieve a single predictor.\n    api_response = api_instance.get_routing_predictor(predictor_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingPredictorRequest->get_routing_predictor: %s\\n\" % e)"
+  },
+  "get_routing_predictor_model_features": {
+    "operationId": "get_routing_predictor_model_features",
+    "functionName": "get_routing_predictor_model_features",
+    "signature": "get_routing_predictor_model_features(predictor_id, model_id)",
+    "parameters": [
+      {
+        "name": "predictor_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "model_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "PredictorModelFeatureListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\npredictor_id = 'predictor_id_example' # str | Predictor ID\nmodel_id = 'model_id_example' # str | Model ID\n\ntry:\n    # Retrieve Predictor Model Features.\n    api_response = api_instance.get_routing_predictor_model_features(predictor_id, model_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingPredictorModelFeaturesRequest->get_routing_predictor_model_features: %s\\n\" % e)"
+  },
+  "get_routing_predictor_models": {
+    "operationId": "get_routing_predictor_models",
+    "functionName": "get_routing_predictor_models",
+    "signature": "get_routing_predictor_models(predictor_id)",
+    "parameters": [
+      {
+        "name": "predictor_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "PredictorModels",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\npredictor_id = 'predictor_id_example' # str | Predictor ID\n\ntry:\n    # Retrieve Predictor Models and Top Features.\n    api_response = api_instance.get_routing_predictor_models(predictor_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingPredictorModelsRequest->get_routing_predictor_models: %s\\n\" % e)"
   },
   "get_routing_predictors": {
     "operationId": "get_routing_predictors",
@@ -33308,9 +33346,16 @@
   "get_webdeployments_deployments": {
     "operationId": "get_webdeployments_deployments",
     "functionName": "get_webdeployments_deployments",
-    "signature": "get_webdeployments_deployments()",
+    "signature": "get_webdeployments_deployments(expand)",
+    "parameters": [
+      {
+        "name": "expand",
+        "type": "list[str]",
+        "required": "false"
+      }
+    ],
     "return": "WebDeploymentEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\n\ntry:\n    # Get deployments\n    api_response = api_instance.get_webdeployments_deployments()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWebdeploymentsDeploymentsRequest->get_webdeployments_deployments: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\nexpand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. Valid values: (optional)\n\ntry:\n    # Get deployments\n    api_response = api_instance.get_webdeployments_deployments(expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWebdeploymentsDeploymentsRequest->get_webdeployments_deployments: %s\\n\" % e)"
   },
   "post_webdeployments_configuration_versions_draft_publish": {
     "operationId": "post_webdeployments_configuration_versions_draft_publish",

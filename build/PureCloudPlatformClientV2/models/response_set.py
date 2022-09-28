@@ -47,6 +47,7 @@ class ResponseSet(object):
             'version': 'int',
             'responses': 'dict(str, Reaction)',
             'beep_detection_enabled': 'bool',
+            'amd_speech_distinguish_enabled': 'bool',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class ResponseSet(object):
             'version': 'version',
             'responses': 'responses',
             'beep_detection_enabled': 'beepDetectionEnabled',
+            'amd_speech_distinguish_enabled': 'amdSpeechDistinguishEnabled',
             'self_uri': 'selfUri'
         }
 
@@ -68,6 +70,7 @@ class ResponseSet(object):
         self._version = None
         self._responses = None
         self._beep_detection_enabled = None
+        self._amd_speech_distinguish_enabled = None
         self._self_uri = None
 
     @property
@@ -237,6 +240,30 @@ class ResponseSet(object):
         
 
         self._beep_detection_enabled = beep_detection_enabled
+
+    @property
+    def amd_speech_distinguish_enabled(self):
+        """
+        Gets the amd_speech_distinguish_enabled of this ResponseSet.
+        Whether to enable answering machine detection
+
+        :return: The amd_speech_distinguish_enabled of this ResponseSet.
+        :rtype: bool
+        """
+        return self._amd_speech_distinguish_enabled
+
+    @amd_speech_distinguish_enabled.setter
+    def amd_speech_distinguish_enabled(self, amd_speech_distinguish_enabled):
+        """
+        Sets the amd_speech_distinguish_enabled of this ResponseSet.
+        Whether to enable answering machine detection
+
+        :param amd_speech_distinguish_enabled: The amd_speech_distinguish_enabled of this ResponseSet.
+        :type: bool
+        """
+        
+
+        self._amd_speech_distinguish_enabled = amd_speech_distinguish_enabled
 
     @property
     def self_uri(self):

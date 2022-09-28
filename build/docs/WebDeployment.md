@@ -10,7 +10,7 @@ title: WebDeployment
 | **id** | **str** | The deployment ID | [optional] |
 | **name** | **str** | The deployment name | |
 | **description** | **str** | The description of the config | [optional] |
-| **configuration** | [**WebDeploymentConfigurationVersionEntityRef**](WebDeploymentConfigurationVersionEntityRef.html) | The config version this deployment uses | |
+| **configuration** | [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html) | The config version this deployment uses | |
 | **allow_all_domains** | **bool** | Property indicates whether all domains are allowed or not. allowedDomains must be empty when this is set as true. | [optional] |
 | **allowed_domains** | **list[str]** | The list of domains that are approved to use this deployment; the list will be added to CORS headers for ease of web use. | [optional] |
 | **snippet** | **str** | Javascript snippet used to load the config | [optional] |

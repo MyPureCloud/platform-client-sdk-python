@@ -20,6 +20,7 @@ title: Response
 | **response_type** | **str** | The response type represented by the response. | [optional] |
 | **messaging_template** | [**MessagingTemplate**](MessagingTemplate.html) | An optional messaging template definition for responseType.MessagingTemplate. | [optional] |
 | **assets** | [**list[AddressableEntityRef]**](AddressableEntityRef.html) | Assets used in the response | [optional] |
+| **footer** | [**FooterTemplate**](FooterTemplate.html) | Footer template definition for responseType.Footer. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

@@ -55,6 +55,7 @@ class MessagingCampaign(object):
             'messages_per_minute': 'int',
             'contact_list_filters': 'list[DomainEntityRef]',
             'errors': 'list[RestErrorDetail]',
+            'email_config': 'EmailConfig',
             'sms_config': 'SmsConfig',
             'self_uri': 'str'
         }
@@ -75,6 +76,7 @@ class MessagingCampaign(object):
             'messages_per_minute': 'messagesPerMinute',
             'contact_list_filters': 'contactListFilters',
             'errors': 'errors',
+            'email_config': 'emailConfig',
             'sms_config': 'smsConfig',
             'self_uri': 'selfUri'
         }
@@ -94,6 +96,7 @@ class MessagingCampaign(object):
         self._messages_per_minute = None
         self._contact_list_filters = None
         self._errors = None
+        self._email_config = None
         self._sms_config = None
         self._self_uri = None
 
@@ -459,6 +462,30 @@ class MessagingCampaign(object):
         
 
         self._errors = errors
+
+    @property
+    def email_config(self):
+        """
+        Gets the email_config of this MessagingCampaign.
+        Configuration for this messaging campaign to send Email messages.
+
+        :return: The email_config of this MessagingCampaign.
+        :rtype: EmailConfig
+        """
+        return self._email_config
+
+    @email_config.setter
+    def email_config(self, email_config):
+        """
+        Sets the email_config of this MessagingCampaign.
+        Configuration for this messaging campaign to send Email messages.
+
+        :param email_config: The email_config of this MessagingCampaign.
+        :type: EmailConfig
+        """
+        
+
+        self._email_config = email_config
 
     @property
     def sms_config(self):

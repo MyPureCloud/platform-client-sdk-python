@@ -437,7 +437,7 @@ except ApiException as e:
 
 <a name="get_webdeployments_deployments"></a>
 
-## [**WebDeploymentEntityListing**](WebDeploymentEntityListing.html) get_webdeployments_deployments()
+## [**WebDeploymentEntityListing**](WebDeploymentEntityListing.html) get_webdeployments_deployments(expand=expand)
 
 
 
@@ -464,10 +464,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. Valid values: (optional)
 
 try:
     # Get deployments
-    api_response = api_instance.get_webdeployments_deployments()
+    api_response = api_instance.get_webdeployments_deployments(expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WebDeploymentsApi->get_webdeployments_deployments: %s\n" % e)
@@ -475,8 +476,11 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
 
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **expand** | [**list[str]**](str.html)| The specified entity attributes will be filled. Comma separated values expected. Valid values: | [optional] <br />**Values**: Configuration |
+{: class="table table-striped"}
 
 ### Return type
 

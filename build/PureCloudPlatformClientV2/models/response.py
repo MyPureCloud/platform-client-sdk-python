@@ -53,6 +53,7 @@ class Response(object):
             'response_type': 'str',
             'messaging_template': 'MessagingTemplate',
             'assets': 'list[AddressableEntityRef]',
+            'footer': 'FooterTemplate',
             'self_uri': 'str'
         }
 
@@ -70,6 +71,7 @@ class Response(object):
             'response_type': 'responseType',
             'messaging_template': 'messagingTemplate',
             'assets': 'assets',
+            'footer': 'footer',
             'self_uri': 'selfUri'
         }
 
@@ -86,6 +88,7 @@ class Response(object):
         self._response_type = None
         self._messaging_template = None
         self._assets = None
+        self._footer = None
         self._self_uri = None
 
     @property
@@ -351,7 +354,7 @@ class Response(object):
         :param response_type: The response_type of this Response.
         :type: str
         """
-        allowed_values = ["MessagingTemplate", "CampaignSmsTemplate", "CampaignEmailTemplate"]
+        allowed_values = ["MessagingTemplate", "CampaignSmsTemplate", "CampaignEmailTemplate", "Footer"]
         if response_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for response_type -> " + response_type)
             self._response_type = "outdated_sdk_version"
@@ -405,6 +408,30 @@ class Response(object):
         
 
         self._assets = assets
+
+    @property
+    def footer(self):
+        """
+        Gets the footer of this Response.
+        Footer template definition for responseType.Footer.
+
+        :return: The footer of this Response.
+        :rtype: FooterTemplate
+        """
+        return self._footer
+
+    @footer.setter
+    def footer(self, footer):
+        """
+        Sets the footer of this Response.
+        Footer template definition for responseType.Footer.
+
+        :param footer: The footer of this Response.
+        :type: FooterTemplate
+        """
+        
+
+        self._footer = footer
 
     @property
     def self_uri(self):

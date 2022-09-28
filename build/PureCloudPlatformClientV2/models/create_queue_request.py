@@ -66,6 +66,7 @@ class CreateQueueRequest(object):
             'enable_transcription': 'bool',
             'enable_manual_assignment': 'bool',
             'agent_owned_routing': 'AgentOwnedRouting',
+            'vip_routing': 'VipRouting',
             'calling_party_name': 'str',
             'calling_party_number': 'str',
             'default_scripts': 'dict(str, Script)',
@@ -103,6 +104,7 @@ class CreateQueueRequest(object):
             'enable_transcription': 'enableTranscription',
             'enable_manual_assignment': 'enableManualAssignment',
             'agent_owned_routing': 'agentOwnedRouting',
+            'vip_routing': 'vipRouting',
             'calling_party_name': 'callingPartyName',
             'calling_party_number': 'callingPartyNumber',
             'default_scripts': 'defaultScripts',
@@ -139,6 +141,7 @@ class CreateQueueRequest(object):
         self._enable_transcription = None
         self._enable_manual_assignment = None
         self._agent_owned_routing = None
+        self._vip_routing = None
         self._calling_party_name = None
         self._calling_party_number = None
         self._default_scripts = None
@@ -774,6 +777,30 @@ class CreateQueueRequest(object):
         
 
         self._agent_owned_routing = agent_owned_routing
+
+    @property
+    def vip_routing(self):
+        """
+        Gets the vip_routing of this CreateQueueRequest.
+        The VIP Routing settings for the queue
+
+        :return: The vip_routing of this CreateQueueRequest.
+        :rtype: VipRouting
+        """
+        return self._vip_routing
+
+    @vip_routing.setter
+    def vip_routing(self, vip_routing):
+        """
+        Sets the vip_routing of this CreateQueueRequest.
+        The VIP Routing settings for the queue
+
+        :param vip_routing: The vip_routing of this CreateQueueRequest.
+        :type: VipRouting
+        """
+        
+
+        self._vip_routing = vip_routing
 
     @property
     def calling_party_name(self):

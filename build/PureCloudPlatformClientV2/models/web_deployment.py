@@ -43,7 +43,7 @@ class WebDeployment(object):
             'id': 'str',
             'name': 'str',
             'description': 'str',
-            'configuration': 'WebDeploymentConfigurationVersionEntityRef',
+            'configuration': 'WebDeploymentConfigurationVersion',
             'allow_all_domains': 'bool',
             'allowed_domains': 'list[str]',
             'snippet': 'str',
@@ -164,7 +164,7 @@ class WebDeployment(object):
         The config version this deployment uses
 
         :return: The configuration of this WebDeployment.
-        :rtype: WebDeploymentConfigurationVersionEntityRef
+        :rtype: WebDeploymentConfigurationVersion
         """
         return self._configuration
 
@@ -175,7 +175,7 @@ class WebDeployment(object):
         The config version this deployment uses
 
         :param configuration: The configuration of this WebDeployment.
-        :type: WebDeploymentConfigurationVersionEntityRef
+        :type: WebDeploymentConfigurationVersion
         """
         
 

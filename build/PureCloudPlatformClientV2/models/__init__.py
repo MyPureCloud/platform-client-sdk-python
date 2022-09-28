@@ -252,6 +252,7 @@ from .bot_connector_bot_version import BotConnectorBotVersion
 from .bot_connector_bot_version_summary_entity_listing import BotConnectorBotVersionSummaryEntityListing
 from .bot_intent import BotIntent
 from .bot_list import BotList
+from .bot_messenger_profile import BotMessengerProfile
 from .bot_search_response import BotSearchResponse
 from .bot_search_response_entity_listing import BotSearchResponseEntityListing
 from .bot_slot import BotSlot
@@ -1312,6 +1313,7 @@ from .flow_runtime_execution import FlowRuntimeExecution
 from .flow_start_detail_event_topic_flow_start_event import FlowStartDetailEventTopicFlowStartEvent
 from .flow_version import FlowVersion
 from .flow_version_entity_listing import FlowVersionEntityListing
+from .footer_template import FooterTemplate
 from .forecast_abandon_rate_response import ForecastAbandonRateResponse
 from .forecast_average_speed_of_answer_response import ForecastAverageSpeedOfAnswerResponse
 from .forecast_planning_group_data import ForecastPlanningGroupData
@@ -1393,6 +1395,7 @@ from .historical_import_status_listing import HistoricalImportStatusListing
 from .history_entry import HistoryEntry
 from .history_listing import HistoryListing
 from .homer_record import HomerRecord
+from .humanize import Humanize
 from .ivr import IVR
 from .ivr_entity_listing import IVREntityListing
 from .identity_now import IdentityNow
@@ -1419,6 +1422,7 @@ from .integration import Integration
 from .integration_action import IntegrationAction
 from .integration_action_fields import IntegrationActionFields
 from .integration_configuration import IntegrationConfiguration
+from .integration_configuration_credential import IntegrationConfigurationCredential
 from .integration_configuration_info import IntegrationConfigurationInfo
 from .integration_entity_listing import IntegrationEntityListing
 from .integration_export import IntegrationExport
@@ -1874,6 +1878,7 @@ from .open_integration_entity_listing import OpenIntegrationEntityListing
 from .open_integration_request import OpenIntegrationRequest
 from .open_integration_update_request import OpenIntegrationUpdateRequest
 from .open_message_content import OpenMessageContent
+from .open_message_event import OpenMessageEvent
 from .open_messaging_channel import OpenMessagingChannel
 from .open_messaging_from_recipient import OpenMessagingFromRecipient
 from .open_messaging_to_recipient import OpenMessagingToRecipient
@@ -2010,6 +2015,10 @@ from .prediction_results import PredictionResults
 from .predictive_routing import PredictiveRouting
 from .predictor import Predictor
 from .predictor_listing import PredictorListing
+from .predictor_model import PredictorModel
+from .predictor_model_feature import PredictorModelFeature
+from .predictor_model_feature_listing import PredictorModelFeatureListing
+from .predictor_models import PredictorModels
 from .predictor_schedule import PredictorSchedule
 from .predictor_workload_balancing import PredictorWorkloadBalancing
 from .presence_definition import PresenceDefinition
@@ -2998,6 +3007,10 @@ from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSe
 from .value_wrapper_string import ValueWrapperString
 from .video import Video
 from .view_filter import ViewFilter
+from .vip_backup import VipBackup
+from .vip_call_media_settings import VipCallMediaSettings
+from .vip_media_settings import VipMediaSettings
+from .vip_routing import VipRouting
 from .visibility_condition import VisibilityCondition
 from .vm_pairing_info import VmPairingInfo
 from .voicemail import Voicemail
@@ -3038,7 +3051,6 @@ from .web_deployment import WebDeployment
 from .web_deployment_active_configuration_on_deployment import WebDeploymentActiveConfigurationOnDeployment
 from .web_deployment_configuration_version import WebDeploymentConfigurationVersion
 from .web_deployment_configuration_version_entity_listing import WebDeploymentConfigurationVersionEntityListing
-from .web_deployment_configuration_version_entity_ref import WebDeploymentConfigurationVersionEntityRef
 from .web_deployment_entity_listing import WebDeploymentEntityListing
 from .web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 from .web_deployments_deployment_topic_web_messaging_config_change_event_body import WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody

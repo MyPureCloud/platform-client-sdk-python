@@ -44,8 +44,8 @@ class TextMessageListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'last_uri': 'str',
             'first_uri': 'str',
+            'last_uri': 'str',
             'self_uri': 'str',
             'page_count': 'int',
             'next_uri': 'str',
@@ -57,8 +57,8 @@ class TextMessageListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'last_uri': 'lastUri',
             'first_uri': 'firstUri',
+            'last_uri': 'lastUri',
             'self_uri': 'selfUri',
             'page_count': 'pageCount',
             'next_uri': 'nextUri',
@@ -69,8 +69,8 @@ class TextMessageListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._last_uri = None
         self._first_uri = None
+        self._last_uri = None
         self._self_uri = None
         self._page_count = None
         self._next_uri = None
@@ -173,30 +173,6 @@ class TextMessageListing(object):
         self._total = total
 
     @property
-    def last_uri(self):
-        """
-        Gets the last_uri of this TextMessageListing.
-
-
-        :return: The last_uri of this TextMessageListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri):
-        """
-        Sets the last_uri of this TextMessageListing.
-
-
-        :param last_uri: The last_uri of this TextMessageListing.
-        :type: str
-        """
-        
-
-        self._last_uri = last_uri
-
-    @property
     def first_uri(self):
         """
         Gets the first_uri of this TextMessageListing.
@@ -219,6 +195,30 @@ class TextMessageListing(object):
         
 
         self._first_uri = first_uri
+
+    @property
+    def last_uri(self):
+        """
+        Gets the last_uri of this TextMessageListing.
+
+
+        :return: The last_uri of this TextMessageListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri):
+        """
+        Sets the last_uri of this TextMessageListing.
+
+
+        :param last_uri: The last_uri of this TextMessageListing.
+        :type: str
+        """
+        
+
+        self._last_uri = last_uri
 
     @property
     def self_uri(self):

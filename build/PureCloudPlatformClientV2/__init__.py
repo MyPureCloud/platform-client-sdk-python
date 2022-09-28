@@ -252,6 +252,7 @@ from .models.bot_connector_bot_version import BotConnectorBotVersion
 from .models.bot_connector_bot_version_summary_entity_listing import BotConnectorBotVersionSummaryEntityListing
 from .models.bot_intent import BotIntent
 from .models.bot_list import BotList
+from .models.bot_messenger_profile import BotMessengerProfile
 from .models.bot_search_response import BotSearchResponse
 from .models.bot_search_response_entity_listing import BotSearchResponseEntityListing
 from .models.bot_slot import BotSlot
@@ -1312,6 +1313,7 @@ from .models.flow_runtime_execution import FlowRuntimeExecution
 from .models.flow_start_detail_event_topic_flow_start_event import FlowStartDetailEventTopicFlowStartEvent
 from .models.flow_version import FlowVersion
 from .models.flow_version_entity_listing import FlowVersionEntityListing
+from .models.footer_template import FooterTemplate
 from .models.forecast_abandon_rate_response import ForecastAbandonRateResponse
 from .models.forecast_average_speed_of_answer_response import ForecastAverageSpeedOfAnswerResponse
 from .models.forecast_planning_group_data import ForecastPlanningGroupData
@@ -1393,6 +1395,7 @@ from .models.historical_import_status_listing import HistoricalImportStatusListi
 from .models.history_entry import HistoryEntry
 from .models.history_listing import HistoryListing
 from .models.homer_record import HomerRecord
+from .models.humanize import Humanize
 from .models.ivr import IVR
 from .models.ivr_entity_listing import IVREntityListing
 from .models.identity_now import IdentityNow
@@ -1419,6 +1422,7 @@ from .models.integration import Integration
 from .models.integration_action import IntegrationAction
 from .models.integration_action_fields import IntegrationActionFields
 from .models.integration_configuration import IntegrationConfiguration
+from .models.integration_configuration_credential import IntegrationConfigurationCredential
 from .models.integration_configuration_info import IntegrationConfigurationInfo
 from .models.integration_entity_listing import IntegrationEntityListing
 from .models.integration_export import IntegrationExport
@@ -1874,6 +1878,7 @@ from .models.open_integration_entity_listing import OpenIntegrationEntityListing
 from .models.open_integration_request import OpenIntegrationRequest
 from .models.open_integration_update_request import OpenIntegrationUpdateRequest
 from .models.open_message_content import OpenMessageContent
+from .models.open_message_event import OpenMessageEvent
 from .models.open_messaging_channel import OpenMessagingChannel
 from .models.open_messaging_from_recipient import OpenMessagingFromRecipient
 from .models.open_messaging_to_recipient import OpenMessagingToRecipient
@@ -2010,6 +2015,10 @@ from .models.prediction_results import PredictionResults
 from .models.predictive_routing import PredictiveRouting
 from .models.predictor import Predictor
 from .models.predictor_listing import PredictorListing
+from .models.predictor_model import PredictorModel
+from .models.predictor_model_feature import PredictorModelFeature
+from .models.predictor_model_feature_listing import PredictorModelFeatureListing
+from .models.predictor_models import PredictorModels
 from .models.predictor_schedule import PredictorSchedule
 from .models.predictor_workload_balancing import PredictorWorkloadBalancing
 from .models.presence_definition import PresenceDefinition
@@ -2998,6 +3007,10 @@ from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningP
 from .models.value_wrapper_string import ValueWrapperString
 from .models.video import Video
 from .models.view_filter import ViewFilter
+from .models.vip_backup import VipBackup
+from .models.vip_call_media_settings import VipCallMediaSettings
+from .models.vip_media_settings import VipMediaSettings
+from .models.vip_routing import VipRouting
 from .models.visibility_condition import VisibilityCondition
 from .models.vm_pairing_info import VmPairingInfo
 from .models.voicemail import Voicemail
@@ -3038,7 +3051,6 @@ from .models.web_deployment import WebDeployment
 from .models.web_deployment_active_configuration_on_deployment import WebDeploymentActiveConfigurationOnDeployment
 from .models.web_deployment_configuration_version import WebDeploymentConfigurationVersion
 from .models.web_deployment_configuration_version_entity_listing import WebDeploymentConfigurationVersionEntityListing
-from .models.web_deployment_configuration_version_entity_ref import WebDeploymentConfigurationVersionEntityRef
 from .models.web_deployment_entity_listing import WebDeploymentEntityListing
 from .models.web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 from .models.web_deployments_deployment_topic_web_messaging_config_change_event_body import WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody

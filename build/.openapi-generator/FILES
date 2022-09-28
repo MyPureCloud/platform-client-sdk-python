@@ -321,6 +321,7 @@ PureCloudPlatformClientV2/models/bot_connector_bot_version.py
 PureCloudPlatformClientV2/models/bot_connector_bot_version_summary_entity_listing.py
 PureCloudPlatformClientV2/models/bot_intent.py
 PureCloudPlatformClientV2/models/bot_list.py
+PureCloudPlatformClientV2/models/bot_messenger_profile.py
 PureCloudPlatformClientV2/models/bot_search_response.py
 PureCloudPlatformClientV2/models/bot_search_response_entity_listing.py
 PureCloudPlatformClientV2/models/bot_slot.py
@@ -1381,6 +1382,7 @@ PureCloudPlatformClientV2/models/flow_runtime_execution.py
 PureCloudPlatformClientV2/models/flow_start_detail_event_topic_flow_start_event.py
 PureCloudPlatformClientV2/models/flow_version.py
 PureCloudPlatformClientV2/models/flow_version_entity_listing.py
+PureCloudPlatformClientV2/models/footer_template.py
 PureCloudPlatformClientV2/models/forecast_abandon_rate_response.py
 PureCloudPlatformClientV2/models/forecast_average_speed_of_answer_response.py
 PureCloudPlatformClientV2/models/forecast_planning_group_data.py
@@ -1462,6 +1464,7 @@ PureCloudPlatformClientV2/models/historical_import_status_listing.py
 PureCloudPlatformClientV2/models/history_entry.py
 PureCloudPlatformClientV2/models/history_listing.py
 PureCloudPlatformClientV2/models/homer_record.py
+PureCloudPlatformClientV2/models/humanize.py
 PureCloudPlatformClientV2/models/identity_now.py
 PureCloudPlatformClientV2/models/idle_event_trigger.py
 PureCloudPlatformClientV2/models/ignored_activity_categories.py
@@ -1486,6 +1489,7 @@ PureCloudPlatformClientV2/models/integration.py
 PureCloudPlatformClientV2/models/integration_action.py
 PureCloudPlatformClientV2/models/integration_action_fields.py
 PureCloudPlatformClientV2/models/integration_configuration.py
+PureCloudPlatformClientV2/models/integration_configuration_credential.py
 PureCloudPlatformClientV2/models/integration_configuration_info.py
 PureCloudPlatformClientV2/models/integration_entity_listing.py
 PureCloudPlatformClientV2/models/integration_export.py
@@ -1943,6 +1947,7 @@ PureCloudPlatformClientV2/models/open_integration_entity_listing.py
 PureCloudPlatformClientV2/models/open_integration_request.py
 PureCloudPlatformClientV2/models/open_integration_update_request.py
 PureCloudPlatformClientV2/models/open_message_content.py
+PureCloudPlatformClientV2/models/open_message_event.py
 PureCloudPlatformClientV2/models/open_messaging_channel.py
 PureCloudPlatformClientV2/models/open_messaging_from_recipient.py
 PureCloudPlatformClientV2/models/open_messaging_to_recipient.py
@@ -2079,6 +2084,10 @@ PureCloudPlatformClientV2/models/prediction_results.py
 PureCloudPlatformClientV2/models/predictive_routing.py
 PureCloudPlatformClientV2/models/predictor.py
 PureCloudPlatformClientV2/models/predictor_listing.py
+PureCloudPlatformClientV2/models/predictor_model.py
+PureCloudPlatformClientV2/models/predictor_model_feature.py
+PureCloudPlatformClientV2/models/predictor_model_feature_listing.py
+PureCloudPlatformClientV2/models/predictor_models.py
 PureCloudPlatformClientV2/models/predictor_schedule.py
 PureCloudPlatformClientV2/models/predictor_workload_balancing.py
 PureCloudPlatformClientV2/models/presence_definition.py
@@ -3067,6 +3076,10 @@ PureCloudPlatformClientV2/models/value_wrapper_planning_period_settings.py
 PureCloudPlatformClientV2/models/value_wrapper_string.py
 PureCloudPlatformClientV2/models/video.py
 PureCloudPlatformClientV2/models/view_filter.py
+PureCloudPlatformClientV2/models/vip_backup.py
+PureCloudPlatformClientV2/models/vip_call_media_settings.py
+PureCloudPlatformClientV2/models/vip_media_settings.py
+PureCloudPlatformClientV2/models/vip_routing.py
 PureCloudPlatformClientV2/models/visibility_condition.py
 PureCloudPlatformClientV2/models/vm_pairing_info.py
 PureCloudPlatformClientV2/models/voicemail.py
@@ -3107,7 +3120,6 @@ PureCloudPlatformClientV2/models/web_deployment.py
 PureCloudPlatformClientV2/models/web_deployment_active_configuration_on_deployment.py
 PureCloudPlatformClientV2/models/web_deployment_configuration_version.py
 PureCloudPlatformClientV2/models/web_deployment_configuration_version_entity_listing.py
-PureCloudPlatformClientV2/models/web_deployment_configuration_version_entity_ref.py
 PureCloudPlatformClientV2/models/web_deployment_entity_listing.py
 PureCloudPlatformClientV2/models/web_deployments_config_topic_web_messaging_config_change_event_body.py
 PureCloudPlatformClientV2/models/web_deployments_deployment_topic_web_messaging_config_change_event_body.py
@@ -3592,6 +3604,7 @@ docs/BotConnectorBotVersion.md
 docs/BotConnectorBotVersionSummaryEntityListing.md
 docs/BotIntent.md
 docs/BotList.md
+docs/BotMessengerProfile.md
 docs/BotSearchResponse.md
 docs/BotSearchResponseEntityListing.md
 docs/BotSlot.md
@@ -4668,6 +4681,7 @@ docs/FlowVersion.md
 docs/FlowVersionEntityListing.md
 docs/FlowsApi.json
 docs/FlowsApi.md
+docs/FooterTemplate.md
 docs/ForecastAbandonRateResponse.md
 docs/ForecastAverageSpeedOfAnswerResponse.md
 docs/ForecastPlanningGroupData.md
@@ -4759,6 +4773,7 @@ docs/HistoricalImportStatusListing.md
 docs/HistoryEntry.md
 docs/HistoryListing.md
 docs/HomerRecord.md
+docs/Humanize.md
 docs/IVR.md
 docs/IVREntityListing.md
 docs/IdentityNow.md
@@ -4787,6 +4802,7 @@ docs/Integration.md
 docs/IntegrationAction.md
 docs/IntegrationActionFields.md
 docs/IntegrationConfiguration.md
+docs/IntegrationConfigurationCredential.md
 docs/IntegrationConfigurationInfo.md
 docs/IntegrationEntityListing.md
 docs/IntegrationExport.md
@@ -5268,6 +5284,7 @@ docs/OpenIntegrationEntityListing.md
 docs/OpenIntegrationRequest.md
 docs/OpenIntegrationUpdateRequest.md
 docs/OpenMessageContent.md
+docs/OpenMessageEvent.md
 docs/OpenMessagingChannel.md
 docs/OpenMessagingFromRecipient.md
 docs/OpenMessagingToRecipient.md
@@ -5410,6 +5427,10 @@ docs/PredictionResults.md
 docs/PredictiveRouting.md
 docs/Predictor.md
 docs/PredictorListing.md
+docs/PredictorModel.md
+docs/PredictorModelFeature.md
+docs/PredictorModelFeatureListing.md
+docs/PredictorModels.md
 docs/PredictorSchedule.md
 docs/PredictorWorkloadBalancing.md
 docs/PresenceApi.json
@@ -6442,6 +6463,10 @@ docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
 docs/Video.md
 docs/ViewFilter.md
+docs/VipBackup.md
+docs/VipCallMediaSettings.md
+docs/VipMediaSettings.md
+docs/VipRouting.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
 docs/Voicemail.md
@@ -6486,7 +6511,6 @@ docs/WebDeployment.md
 docs/WebDeploymentActiveConfigurationOnDeployment.md
 docs/WebDeploymentConfigurationVersion.md
 docs/WebDeploymentConfigurationVersionEntityListing.md
-docs/WebDeploymentConfigurationVersionEntityRef.md
 docs/WebDeploymentEntityListing.md
 docs/WebDeploymentsApi.json
 docs/WebDeploymentsApi.md
@@ -7547,6 +7571,8 @@ docs/get_routing_languages-example.txt
 docs/get_routing_message_recipient-example.txt
 docs/get_routing_message_recipients-example.txt
 docs/get_routing_predictor-example.txt
+docs/get_routing_predictor_model_features-example.txt
+docs/get_routing_predictor_models-example.txt
 docs/get_routing_predictors-example.txt
 docs/get_routing_predictors_keyperformanceindicators-example.txt
 docs/get_routing_queue-example.txt

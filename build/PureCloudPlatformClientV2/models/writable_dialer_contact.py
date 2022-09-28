@@ -215,7 +215,7 @@ class WritableDialerContact(object):
     def contactable_status(self):
         """
         Gets the contactable_status of this WritableDialerContact.
-        A map of media types(voice, sms and email) to ContactableStatus, which indicates where or not the contact can be contacted using the specified media type.
+        A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type.
 
         :return: The contactable_status of this WritableDialerContact.
         :rtype: dict(str, ContactableStatus)
@@ -226,7 +226,7 @@ class WritableDialerContact(object):
     def contactable_status(self, contactable_status):
         """
         Sets the contactable_status of this WritableDialerContact.
-        A map of media types(voice, sms and email) to ContactableStatus, which indicates where or not the contact can be contacted using the specified media type.
+        A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type.
 
         :param contactable_status: The contactable_status of this WritableDialerContact.
         :type: dict(str, ContactableStatus)

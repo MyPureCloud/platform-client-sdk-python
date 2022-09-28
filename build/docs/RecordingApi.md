@@ -2710,7 +2710,7 @@ void (empty response body)
 
 <a name="put_conversation_recording"></a>
 
-## [**Recording**](Recording.html) put_conversation_recording(conversation_id, recording_id, body)
+## [**Recording**](Recording.html) put_conversation_recording(conversation_id, recording_id, body, clear_export=clear_export)
 
 
 
@@ -2744,10 +2744,11 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 recording_id = 'recording_id_example' # str | Recording ID
 body = PureCloudPlatformClientV2.Recording() # Recording | recording
+clear_export = True # bool | Whether to clear the pending export for the recording (optional)
 
 try:
     # Updates the retention records on a recording.
-    api_response = api_instance.put_conversation_recording(conversation_id, recording_id, body)
+    api_response = api_instance.put_conversation_recording(conversation_id, recording_id, body, clear_export=clear_export)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->put_conversation_recording: %s\n" % e)
@@ -2761,6 +2762,7 @@ except ApiException as e:
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
 | **body** | [**Recording**](Recording.html)| recording |  |
+| **clear_export** | **bool**| Whether to clear the pending export for the recording | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -4093,12 +4093,13 @@ class RecordingApi(object):
         :param str conversation_id: Conversation ID (required)
         :param str recording_id: Recording ID (required)
         :param Recording body: recording (required)
+        :param bool clear_export: Whether to clear the pending export for the recording
         :return: Recording
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'recording_id', 'body']
+        all_params = ['conversation_id', 'recording_id', 'body', 'clear_export']
         all_params.append('callback')
 
         params = locals()
@@ -4130,6 +4131,8 @@ class RecordingApi(object):
             path_params['recordingId'] = params['recording_id']
 
         query_params = {}
+        if 'clear_export' in params:
+            query_params['clearExport'] = params['clear_export']
 
         header_params = {}
 

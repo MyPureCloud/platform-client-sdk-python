@@ -39,6 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_message_recipient**](RoutingApi.html#get_routing_message_recipient) | Get a recipient|
 |[**get_routing_message_recipients**](RoutingApi.html#get_routing_message_recipients) | Get recipients|
 |[**get_routing_predictor**](RoutingApi.html#get_routing_predictor) | Retrieve a single predictor.|
+|[**get_routing_predictor_model_features**](RoutingApi.html#get_routing_predictor_model_features) | Retrieve Predictor Model Features.|
+|[**get_routing_predictor_models**](RoutingApi.html#get_routing_predictor_models) | Retrieve Predictor Models and Top Features.|
 |[**get_routing_predictors**](RoutingApi.html#get_routing_predictors) | Retrieve all predictors.|
 |[**get_routing_predictors_keyperformanceindicators**](RoutingApi.html#get_routing_predictors_keyperformanceindicators) | Get a list of Key Performance Indicators|
 |[**get_routing_queue**](RoutingApi.html#get_routing_queue) | Get details about this queue.|
@@ -1707,6 +1709,110 @@ except ApiException as e:
 ### Return type
 
 [**Predictor**](Predictor.html)
+
+<a name="get_routing_predictor_model_features"></a>
+
+## [**PredictorModelFeatureListing**](PredictorModelFeatureListing.html) get_routing_predictor_model_features(predictor_id, model_id)
+
+
+
+Retrieve Predictor Model Features.
+
+
+
+Wraps GET /api/v2/routing/predictors/{predictorId}/models/{modelId}/features 
+
+Requires ALL permissions: 
+
+* routing:predictorModelFeature:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+predictor_id = 'predictor_id_example' # str | Predictor ID
+model_id = 'model_id_example' # str | Model ID
+
+try:
+    # Retrieve Predictor Model Features.
+    api_response = api_instance.get_routing_predictor_model_features(predictor_id, model_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_predictor_model_features: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **predictor_id** | **str**| Predictor ID |  |
+| **model_id** | **str**| Model ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PredictorModelFeatureListing**](PredictorModelFeatureListing.html)
+
+<a name="get_routing_predictor_models"></a>
+
+## [**PredictorModels**](PredictorModels.html) get_routing_predictor_models(predictor_id)
+
+
+
+Retrieve Predictor Models and Top Features.
+
+
+
+Wraps GET /api/v2/routing/predictors/{predictorId}/models 
+
+Requires ALL permissions: 
+
+* routing:predictorModel:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+predictor_id = 'predictor_id_example' # str | Predictor ID
+
+try:
+    # Retrieve Predictor Models and Top Features.
+    api_response = api_instance.get_routing_predictor_models(predictor_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_predictor_models: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **predictor_id** | **str**| Predictor ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PredictorModels**](PredictorModels.html)
 
 <a name="get_routing_predictors"></a>
 

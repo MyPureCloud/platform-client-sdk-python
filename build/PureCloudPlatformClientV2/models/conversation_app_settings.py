@@ -45,7 +45,8 @@ class ConversationAppSettings(object):
             'auto_start_type': 'str',
             'auto_start': 'AutoStart',
             'markdown': 'Markdown',
-            'conversation_disconnect': 'ConversationDisconnectSettings'
+            'conversation_disconnect': 'ConversationDisconnectSettings',
+            'humanize': 'Humanize'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class ConversationAppSettings(object):
             'auto_start_type': 'autoStartType',
             'auto_start': 'autoStart',
             'markdown': 'markdown',
-            'conversation_disconnect': 'conversationDisconnect'
+            'conversation_disconnect': 'conversationDisconnect',
+            'humanize': 'humanize'
         }
 
         self._show_agent_typing_indicator = None
@@ -63,6 +65,7 @@ class ConversationAppSettings(object):
         self._auto_start = None
         self._markdown = None
         self._conversation_disconnect = None
+        self._humanize = None
 
     @property
     def show_agent_typing_indicator(self):
@@ -210,6 +213,30 @@ class ConversationAppSettings(object):
         
 
         self._conversation_disconnect = conversation_disconnect
+
+    @property
+    def humanize(self):
+        """
+        Gets the humanize of this ConversationAppSettings.
+        The humanize conversations settings for the messenger app
+
+        :return: The humanize of this ConversationAppSettings.
+        :rtype: Humanize
+        """
+        return self._humanize
+
+    @humanize.setter
+    def humanize(self, humanize):
+        """
+        Sets the humanize of this ConversationAppSettings.
+        The humanize conversations settings for the messenger app
+
+        :param humanize: The humanize of this ConversationAppSettings.
+        :type: Humanize
+        """
+        
+
+        self._humanize = humanize
 
     def to_dict(self):
         """

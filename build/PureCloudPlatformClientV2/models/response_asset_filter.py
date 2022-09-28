@@ -188,7 +188,7 @@ class ResponseAssetFilter(object):
     def type(self):
         """
         Gets the type of this ResponseAssetFilter.
-        How to apply this search criteria against other criteria
+        How to apply this search criteria against other criteria. Filter type supported for each field:- name:[STARTS_WITH, TERM], divisionId:[TERM, TERMS], contentLength:[RANGE, GREATER_THAN_EQUAL_TO, LESS_THAN_EQUAL_TO], contentType:[STARTS_WITH, TERM] dateCreated:[DATE_RANGE]
 
         :return: The type of this ResponseAssetFilter.
         :rtype: str
@@ -199,7 +199,7 @@ class ResponseAssetFilter(object):
     def type(self, type):
         """
         Sets the type of this ResponseAssetFilter.
-        How to apply this search criteria against other criteria
+        How to apply this search criteria against other criteria. Filter type supported for each field:- name:[STARTS_WITH, TERM], divisionId:[TERM, TERMS], contentLength:[RANGE, GREATER_THAN_EQUAL_TO, LESS_THAN_EQUAL_TO], contentType:[STARTS_WITH, TERM] dateCreated:[DATE_RANGE]
 
         :param type: The type of this ResponseAssetFilter.
         :type: str
