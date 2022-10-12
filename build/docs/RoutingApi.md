@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_assessment**](RoutingApi.html#delete_routing_assessment) | Delete single benefit assessment.|
 |[**delete_routing_email_domain**](RoutingApi.html#delete_routing_email_domain) | Delete a domain|
 |[**delete_routing_email_domain_route**](RoutingApi.html#delete_routing_email_domain_route) | Delete a route|
+|[**delete_routing_email_outbound_domain**](RoutingApi.html#delete_routing_email_outbound_domain) | Delete an outbound domain|
 |[**delete_routing_predictor**](RoutingApi.html#delete_routing_predictor) | Delete single predictor.|
 |[**delete_routing_queue**](RoutingApi.html#delete_routing_queue) | Delete a queue|
 |[**delete_routing_queue_member**](RoutingApi.html#delete_routing_queue_member) | Delete a queue member.|
@@ -34,6 +35,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_email_domain_route**](RoutingApi.html#get_routing_email_domain_route) | Get a route|
 |[**get_routing_email_domain_routes**](RoutingApi.html#get_routing_email_domain_routes) | Get routes|
 |[**get_routing_email_domains**](RoutingApi.html#get_routing_email_domains) | Get domains|
+|[**get_routing_email_outbound_domain**](RoutingApi.html#get_routing_email_outbound_domain) | Get domain|
+|[**get_routing_email_outbound_domain_activation**](RoutingApi.html#get_routing_email_outbound_domain_activation) | Get activation status (cname + dkim) of an outbound domain|
+|[**get_routing_email_outbound_domain_search**](RoutingApi.html#get_routing_email_outbound_domain_search) | Search a domain across organizations|
+|[**get_routing_email_outbound_domains**](RoutingApi.html#get_routing_email_outbound_domains) | Get outbound domains|
 |[**get_routing_email_setup**](RoutingApi.html#get_routing_email_setup) | Get email setup|
 |[**get_routing_languages**](RoutingApi.html#get_routing_languages) | Get the list of supported languages.|
 |[**get_routing_message_recipient**](RoutingApi.html#get_routing_message_recipient) | Get a recipient|
@@ -92,6 +97,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_email_domain_routes**](RoutingApi.html#post_routing_email_domain_routes) | Create a route|
 |[**post_routing_email_domain_testconnection**](RoutingApi.html#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this domain|
 |[**post_routing_email_domains**](RoutingApi.html#post_routing_email_domains) | Create a domain|
+|[**post_routing_email_outbound_domains**](RoutingApi.html#post_routing_email_outbound_domains) | Create a domain|
+|[**post_routing_email_outbound_domains_simulated**](RoutingApi.html#post_routing_email_outbound_domains_simulated) | Create a simulated domain|
 |[**post_routing_languages**](RoutingApi.html#post_routing_languages) | Create Language|
 |[**post_routing_predictors**](RoutingApi.html#post_routing_predictors) | Create a predictor.|
 |[**post_routing_queue_members**](RoutingApi.html#post_routing_queue_members) | Bulk add or delete up to 100 queue members|
@@ -105,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_user_routinglanguages**](RoutingApi.html#post_user_routinglanguages) | Add routing language to user|
 |[**post_user_routingskills**](RoutingApi.html#post_user_routingskills) | Add routing skill to user|
 |[**put_routing_email_domain_route**](RoutingApi.html#put_routing_email_domain_route) | Update a route|
+|[**put_routing_email_outbound_domain_activation**](RoutingApi.html#put_routing_email_outbound_domain_activation) | Request an activation status (cname + dkim) update of an outbound domain|
 |[**put_routing_message_recipient**](RoutingApi.html#put_routing_message_recipient) | Update a recipient|
 |[**put_routing_queue**](RoutingApi.html#put_routing_queue) | Update a queue|
 |[**put_routing_settings**](RoutingApi.html#put_routing_settings) | Update an organization&#39;s routing settings|
@@ -263,6 +271,56 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_name** | **str**| email domain |  |
 | **route_id** | **str**| route ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_email_outbound_domain"></a>
+
+##  delete_routing_email_outbound_domain(domain_id)
+
+
+
+Delete an outbound domain
+
+
+
+Wraps DELETE /api/v2/routing/email/outbound/domains/{domainId} 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Delete an outbound domain
+    api_instance.delete_routing_email_outbound_domain(domain_id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_email_outbound_domain: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1447,6 +1505,206 @@ except ApiException as e:
 ### Return type
 
 [**InboundDomainEntityListing**](InboundDomainEntityListing.html)
+
+<a name="get_routing_email_outbound_domain"></a>
+
+## [**OutboundDomain**](OutboundDomain.html) get_routing_email_outbound_domain(domain_id)
+
+
+
+Get domain
+
+
+
+Wraps GET /api/v2/routing/email/outbound/domains/{domainId} 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Get domain
+    api_response = api_instance.get_routing_email_outbound_domain(domain_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_outbound_domain: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundDomain**](OutboundDomain.html)
+
+<a name="get_routing_email_outbound_domain_activation"></a>
+
+## [**EmailOutboundDomainResult**](EmailOutboundDomainResult.html) get_routing_email_outbound_domain_activation(domain_id)
+
+
+
+Get activation status (cname + dkim) of an outbound domain
+
+
+
+Wraps GET /api/v2/routing/email/outbound/domains/{domainId}/activation 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Get activation status (cname + dkim) of an outbound domain
+    api_response = api_instance.get_routing_email_outbound_domain_activation(domain_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_outbound_domain_activation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+
+<a name="get_routing_email_outbound_domain_search"></a>
+
+## [**OutboundDomain**](OutboundDomain.html) get_routing_email_outbound_domain_search(domain_id)
+
+
+
+Search a domain across organizations
+
+
+
+Wraps GET /api/v2/routing/email/outbound/domains/{domainId}/search 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Search a domain across organizations
+    api_response = api_instance.get_routing_email_outbound_domain_search(domain_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_outbound_domain_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundDomain**](OutboundDomain.html)
+
+<a name="get_routing_email_outbound_domains"></a>
+
+## [**OutboundDomainEntityListing**](OutboundDomainEntityListing.html) get_routing_email_outbound_domains()
+
+
+
+Get outbound domains
+
+
+
+Wraps GET /api/v2/routing/email/outbound/domains 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Get outbound domains
+    api_response = api_instance.get_routing_email_outbound_domains()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_outbound_domains: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**OutboundDomainEntityListing**](OutboundDomainEntityListing.html)
 
 <a name="get_routing_email_setup"></a>
 
@@ -4620,6 +4878,108 @@ except ApiException as e:
 
 [**InboundDomain**](InboundDomain.html)
 
+<a name="post_routing_email_outbound_domains"></a>
+
+## [**EmailOutboundDomainResult**](EmailOutboundDomainResult.html) post_routing_email_outbound_domains(body)
+
+
+
+Create a domain
+
+
+
+Wraps POST /api/v2/routing/email/outbound/domains 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.OutboundDomain() # OutboundDomain | Domain
+
+try:
+    # Create a domain
+    api_response = api_instance.post_routing_email_outbound_domains(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_email_outbound_domains: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OutboundDomain**](OutboundDomain.html)| Domain |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+
+<a name="post_routing_email_outbound_domains_simulated"></a>
+
+## [**EmailOutboundDomainResult**](EmailOutboundDomainResult.html) post_routing_email_outbound_domains_simulated(body)
+
+
+
+Create a simulated domain
+
+
+
+Wraps POST /api/v2/routing/email/outbound/domains/simulated 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.OutboundDomain() # OutboundDomain | Domain
+
+try:
+    # Create a simulated domain
+    api_response = api_instance.post_routing_email_outbound_domains_simulated(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_email_outbound_domains_simulated: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OutboundDomain**](OutboundDomain.html)| Domain |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+
 <a name="post_routing_languages"></a>
 
 ## [**Language**](Language.html) post_routing_languages(body)
@@ -5302,6 +5662,57 @@ except ApiException as e:
 ### Return type
 
 [**InboundRoute**](InboundRoute.html)
+
+<a name="put_routing_email_outbound_domain_activation"></a>
+
+## [**EmailOutboundDomainResult**](EmailOutboundDomainResult.html) put_routing_email_outbound_domain_activation(domain_id)
+
+
+
+Request an activation status (cname + dkim) update of an outbound domain
+
+
+
+Wraps PUT /api/v2/routing/email/outbound/domains/{domainId}/activation 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Request an activation status (cname + dkim) update of an outbound domain
+    api_response = api_instance.put_routing_email_outbound_domain_activation(domain_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->put_routing_email_outbound_domain_activation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
 
 <a name="put_routing_message_recipient"></a>
 

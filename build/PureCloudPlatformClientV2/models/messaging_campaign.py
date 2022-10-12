@@ -53,6 +53,7 @@ class MessagingCampaign(object):
             'always_running': 'bool',
             'contact_sorts': 'list[ContactSort]',
             'messages_per_minute': 'int',
+            'rule_sets': 'list[DomainEntityRef]',
             'contact_list_filters': 'list[DomainEntityRef]',
             'errors': 'list[RestErrorDetail]',
             'email_config': 'EmailConfig',
@@ -74,6 +75,7 @@ class MessagingCampaign(object):
             'always_running': 'alwaysRunning',
             'contact_sorts': 'contactSorts',
             'messages_per_minute': 'messagesPerMinute',
+            'rule_sets': 'ruleSets',
             'contact_list_filters': 'contactListFilters',
             'errors': 'errors',
             'email_config': 'emailConfig',
@@ -94,6 +96,7 @@ class MessagingCampaign(object):
         self._always_running = None
         self._contact_sorts = None
         self._messages_per_minute = None
+        self._rule_sets = None
         self._contact_list_filters = None
         self._errors = None
         self._email_config = None
@@ -414,6 +417,30 @@ class MessagingCampaign(object):
         
 
         self._messages_per_minute = messages_per_minute
+
+    @property
+    def rule_sets(self):
+        """
+        Gets the rule_sets of this MessagingCampaign.
+        Rule Sets to be applied while this campaign is sending messages
+
+        :return: The rule_sets of this MessagingCampaign.
+        :rtype: list[DomainEntityRef]
+        """
+        return self._rule_sets
+
+    @rule_sets.setter
+    def rule_sets(self, rule_sets):
+        """
+        Sets the rule_sets of this MessagingCampaign.
+        Rule Sets to be applied while this campaign is sending messages
+
+        :param rule_sets: The rule_sets of this MessagingCampaign.
+        :type: list[DomainEntityRef]
+        """
+        
+
+        self._rule_sets = rule_sets
 
     @property
     def contact_list_filters(self):

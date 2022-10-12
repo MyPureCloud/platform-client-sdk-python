@@ -50,7 +50,9 @@ class StatisticalSummary(object):
             'ratio': 'float',
             'numerator': 'float',
             'denominator': 'float',
-            'target': 'float'
+            'target': 'float',
+            'p95': 'int',
+            'p99': 'int'
         }
 
         self.attribute_map = {
@@ -64,7 +66,9 @@ class StatisticalSummary(object):
             'ratio': 'ratio',
             'numerator': 'numerator',
             'denominator': 'denominator',
-            'target': 'target'
+            'target': 'target',
+            'p95': 'p95',
+            'p99': 'p99'
         }
 
         self._max = None
@@ -78,6 +82,8 @@ class StatisticalSummary(object):
         self._numerator = None
         self._denominator = None
         self._target = None
+        self._p95 = None
+        self._p99 = None
 
     @property
     def max(self):
@@ -342,6 +348,54 @@ class StatisticalSummary(object):
         
 
         self._target = target
+
+    @property
+    def p95(self):
+        """
+        Gets the p95 of this StatisticalSummary.
+
+
+        :return: The p95 of this StatisticalSummary.
+        :rtype: int
+        """
+        return self._p95
+
+    @p95.setter
+    def p95(self, p95):
+        """
+        Sets the p95 of this StatisticalSummary.
+
+
+        :param p95: The p95 of this StatisticalSummary.
+        :type: int
+        """
+        
+
+        self._p95 = p95
+
+    @property
+    def p99(self):
+        """
+        Gets the p99 of this StatisticalSummary.
+
+
+        :return: The p99 of this StatisticalSummary.
+        :rtype: int
+        """
+        return self._p99
+
+    @p99.setter
+    def p99(self, p99):
+        """
+        Sets the p99 of this StatisticalSummary.
+
+
+        :param p99: The p99 of this StatisticalSummary.
+        :type: int
+        """
+        
+
+        self._p99 = p99
 
     def to_dict(self):
         """

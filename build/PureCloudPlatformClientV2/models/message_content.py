@@ -53,7 +53,9 @@ class MessageContent(object):
             'postback': 'ContentPostback',
             'story': 'ContentStory',
             'card': 'ContentCard',
-            'carousel': 'ContentCarousel'
+            'carousel': 'ContentCarousel',
+            'text': 'ContentText',
+            'quick_reply_v2': 'ContentQuickReplyV2'
         }
 
         self.attribute_map = {
@@ -70,7 +72,9 @@ class MessageContent(object):
             'postback': 'postback',
             'story': 'story',
             'card': 'card',
-            'carousel': 'carousel'
+            'carousel': 'carousel',
+            'text': 'text',
+            'quick_reply_v2': 'quickReplyV2'
         }
 
         self._content_type = None
@@ -87,6 +91,8 @@ class MessageContent(object):
         self._story = None
         self._card = None
         self._carousel = None
+        self._text = None
+        self._quick_reply_v2 = None
 
     @property
     def content_type(self):
@@ -108,7 +114,7 @@ class MessageContent(object):
         :param content_type: The content_type of this MessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "Story", "Card", "Carousel"]
+        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "Story", "Card", "Carousel", "Text", "QuickReplyV2"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -426,6 +432,54 @@ class MessageContent(object):
         
 
         self._carousel = carousel
+
+    @property
+    def text(self):
+        """
+        Gets the text of this MessageContent.
+        Text content.
+
+        :return: The text of this MessageContent.
+        :rtype: ContentText
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """
+        Sets the text of this MessageContent.
+        Text content.
+
+        :param text: The text of this MessageContent.
+        :type: ContentText
+        """
+        
+
+        self._text = text
+
+    @property
+    def quick_reply_v2(self):
+        """
+        Gets the quick_reply_v2 of this MessageContent.
+        Quick reply V2 content.
+
+        :return: The quick_reply_v2 of this MessageContent.
+        :rtype: ContentQuickReplyV2
+        """
+        return self._quick_reply_v2
+
+    @quick_reply_v2.setter
+    def quick_reply_v2(self, quick_reply_v2):
+        """
+        Sets the quick_reply_v2 of this MessageContent.
+        Quick reply V2 content.
+
+        :param quick_reply_v2: The quick_reply_v2 of this MessageContent.
+        :type: ContentQuickReplyV2
+        """
+        
+
+        self._quick_reply_v2 = quick_reply_v2
 
     def to_dict(self):
         """

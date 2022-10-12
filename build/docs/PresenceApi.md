@@ -8,7 +8,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_presence_source**](PresenceApi.html#delete_presence_source) | Delete a Presence Source|
 |[**delete_presencedefinition**](PresenceApi.html#delete_presencedefinition) | Delete a Presence Definition|
+|[**get_presence_source**](PresenceApi.html#get_presence_source) | Get a Presence Source|
+|[**get_presence_sources**](PresenceApi.html#get_presence_sources) | Get a list of Presence Sources|
+|[**get_presence_user_primarysource**](PresenceApi.html#get_presence_user_primarysource) | Get a user&#39;s Primary Presence Source|
 |[**get_presencedefinition**](PresenceApi.html#get_presencedefinition) | Get a Presence Definition|
 |[**get_presencedefinitions**](PresenceApi.html#get_presencedefinitions) | Get an Organization&#39;s list of Presence Definitions|
 |[**get_systempresences**](PresenceApi.html#get_systempresences) | Get the list of SystemPresences|
@@ -16,10 +20,64 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_presences_purecloud**](PresenceApi.html#get_user_presences_purecloud) | Get a user&#39;s Genesys Cloud presence.|
 |[**patch_user_presence**](PresenceApi.html#patch_user_presence) | Patch a user&#39;s Presence|
 |[**patch_user_presences_purecloud**](PresenceApi.html#patch_user_presences_purecloud) | Patch a Genesys Cloud user&#39;s presence|
+|[**post_presence_sources**](PresenceApi.html#post_presence_sources) | Create a Presence Source|
 |[**post_presencedefinitions**](PresenceApi.html#post_presencedefinitions) | Create a Presence Definition|
+|[**put_presence_source**](PresenceApi.html#put_presence_source) | Update a Presence Source|
+|[**put_presence_user_primarysource**](PresenceApi.html#put_presence_user_primarysource) | Update a user&#39;s Primary Presence Source|
 |[**put_presencedefinition**](PresenceApi.html#put_presencedefinition) | Update a Presence Definition|
 |[**put_users_presences_bulk**](PresenceApi.html#put_users_presences_bulk) | Update bulk user Presences|
 {: class="table table-striped"}
+
+<a name="delete_presence_source"></a>
+
+##  delete_presence_source(source_id)
+
+
+
+Delete a Presence Source
+
+
+
+Wraps DELETE /api/v2/presence/sources/{sourceId} 
+
+Requires ANY permissions: 
+
+* presence:source:delete
+* presence:source:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+source_id = 'source_id_example' # str | Presence Source ID
+
+try:
+    # Delete a Presence Source
+    api_instance.delete_presence_source(source_id)
+except ApiException as e:
+    print("Exception when calling PresenceApi->delete_presence_source: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Presence Source ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_presencedefinition"></a>
 
@@ -70,6 +128,159 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_presence_source"></a>
+
+## [**Source**](Source.html) get_presence_source(source_id)
+
+
+
+Get a Presence Source
+
+
+
+Wraps GET /api/v2/presence/sources/{sourceId} 
+
+Requires ALL permissions: 
+
+* presence:source:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+source_id = 'source_id_example' # str | Presence Source ID
+
+try:
+    # Get a Presence Source
+    api_response = api_instance.get_presence_source(source_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_presence_source: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Presence Source ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Source**](Source.html)
+
+<a name="get_presence_sources"></a>
+
+## [**SourceEntityListing**](SourceEntityListing.html) get_presence_sources(deleted=deleted)
+
+
+
+Get a list of Presence Sources
+
+
+
+Wraps GET /api/v2/presence/sources 
+
+Requires ALL permissions: 
+
+* presence:source:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+deleted = ''false'' # str | Deleted query can be TRUE or FALSE (optional) (default to 'false')
+
+try:
+    # Get a list of Presence Sources
+    api_response = api_instance.get_presence_sources(deleted=deleted)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_presence_sources: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deleted** | **str**| Deleted query can be TRUE or FALSE | [optional] [default to &#39;false&#39;] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SourceEntityListing**](SourceEntityListing.html)
+
+<a name="get_presence_user_primarysource"></a>
+
+## [**UserPrimarySource**](UserPrimarySource.html) get_presence_user_primarysource(user_id)
+
+
+
+Get a user's Primary Presence Source
+
+
+
+Wraps GET /api/v2/presence/users/{userId}/primarysource 
+
+Requires ALL permissions: 
+
+* presence:userPrimarySource:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+user_id = 'user_id_example' # str | user ID
+
+try:
+    # Get a user's Primary Presence Source
+    api_response = api_instance.get_presence_user_primarysource(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_presence_user_primarysource: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserPrimarySource**](UserPrimarySource.html)
 
 <a name="get_presencedefinition"></a>
 
@@ -441,6 +652,57 @@ except ApiException as e:
 
 [**UserPresence**](UserPresence.html)
 
+<a name="post_presence_sources"></a>
+
+## [**Source**](Source.html) post_presence_sources(body)
+
+
+
+Create a Presence Source
+
+
+
+Wraps POST /api/v2/presence/sources 
+
+Requires ALL permissions: 
+
+* presence:source:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+body = PureCloudPlatformClientV2.Source() # Source | The Presence Source to create
+
+try:
+    # Create a Presence Source
+    api_response = api_instance.post_presence_sources(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->post_presence_sources: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Source**](Source.html)| The Presence Source to create |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Source**](Source.html)
+
 <a name="post_presencedefinitions"></a>
 
 ## [**OrganizationPresence**](OrganizationPresence.html) post_presencedefinitions(body)
@@ -491,6 +753,112 @@ except ApiException as e:
 ### Return type
 
 [**OrganizationPresence**](OrganizationPresence.html)
+
+<a name="put_presence_source"></a>
+
+## [**Source**](Source.html) put_presence_source(source_id, body)
+
+
+
+Update a Presence Source
+
+
+
+Wraps PUT /api/v2/presence/sources/{sourceId} 
+
+Requires ALL permissions: 
+
+* presence:source:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+source_id = 'source_id_example' # str | Presence Source ID
+body = PureCloudPlatformClientV2.Source() # Source | The updated Presence Source
+
+try:
+    # Update a Presence Source
+    api_response = api_instance.put_presence_source(source_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->put_presence_source: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Presence Source ID |  |
+| **body** | [**Source**](Source.html)| The updated Presence Source |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Source**](Source.html)
+
+<a name="put_presence_user_primarysource"></a>
+
+## [**UserPrimarySource**](UserPrimarySource.html) put_presence_user_primarysource(user_id, body)
+
+
+
+Update a user's Primary Presence Source
+
+
+
+Wraps PUT /api/v2/presence/users/{userId}/primarysource 
+
+Requires ALL permissions: 
+
+* presence:userPrimarySource:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+user_id = 'user_id_example' # str | user ID
+body = PureCloudPlatformClientV2.UserPrimarySource() # UserPrimarySource | Primary Source
+
+try:
+    # Update a user's Primary Presence Source
+    api_response = api_instance.put_presence_user_primarysource(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->put_presence_user_primarysource: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user ID |  |
+| **body** | [**UserPrimarySource**](UserPrimarySource.html)| Primary Source |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserPrimarySource**](UserPrimarySource.html)
 
 <a name="put_presencedefinition"></a>
 

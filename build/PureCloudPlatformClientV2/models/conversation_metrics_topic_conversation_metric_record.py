@@ -303,7 +303,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param metric: The metric of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        allowed_values = ["nBlindTransferred", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nTransferred", "oExternalMediaCount", "oMediaCount", "oMessageTurn", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tBarging", "tCallback", "tCallbackComplete", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tDialing", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
+        allowed_values = ["nBlindTransferred", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nTransferred", "oExternalMediaCount", "oMediaCount", "oMessageTurn", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tBarging", "tCallback", "tCallbackComplete", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tDialing", "tFirstConnect", "tFirstDial", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"

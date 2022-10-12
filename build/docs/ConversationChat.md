@@ -8,6 +8,7 @@ title: ConversationChat
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **state** | **str** | The connection state of this communication. | [optional] |
+| **initial_state** | **str** | The initial connection state of this communication. | [optional] |
 | **id** | **str** | A globally unique identifier for this communication. | [optional] |
 | **room_id** | **str** | The room id for the chat. | [optional] |
 | **recording_id** | **str** | A globally unique identifier for the recording associated with this chat. | [optional] |
@@ -27,7 +28,6 @@ title: ConversationChat
 | **wrapup** | [**Wrapup**](Wrapup.html) | Call wrap up or disposition data. | [optional] |
 | **after_call_work** | [**AfterCallWork**](AfterCallWork.html) | After-call work for the communication. | [optional] |
 | **after_call_work_required** | **bool** | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. | [optional] |
-| **initial_state** | **str** | The initial connection state of this communication. | [optional] |
 {: class="table table-striped"}
 
 

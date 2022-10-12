@@ -692,7 +692,7 @@ class WebDeploymentsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected. Valid values:
-        :return: WebDeploymentEntityListing
+        :return: ExpandableWebDeploymentEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -746,7 +746,7 @@ class WebDeploymentsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='WebDeploymentEntityListing',
+                                            response_type='ExpandableWebDeploymentEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -14,6 +14,8 @@ PureCloudPlatformClientV2/apis/coaching_api.py
 PureCloudPlatformClientV2/apis/content_management_api.py
 PureCloudPlatformClientV2/apis/conversations_api.py
 PureCloudPlatformClientV2/apis/data_extensions_api.py
+PureCloudPlatformClientV2/apis/downloads_api.py
+PureCloudPlatformClientV2/apis/events_api.py
 PureCloudPlatformClientV2/apis/external_contacts_api.py
 PureCloudPlatformClientV2/apis/fax_api.py
 PureCloudPlatformClientV2/apis/flows_api.py
@@ -139,6 +141,8 @@ PureCloudPlatformClientV2/models/agent_owned_mapping_preview.py
 PureCloudPlatformClientV2/models/agent_owned_mapping_preview_listing.py
 PureCloudPlatformClientV2/models/agent_owned_routing.py
 PureCloudPlatformClientV2/models/agent_time_off_request_patch.py
+PureCloudPlatformClientV2/models/agentless_email_send_request_dto.py
+PureCloudPlatformClientV2/models/agentless_email_send_response_dto.py
 PureCloudPlatformClientV2/models/aggregate_metric_data.py
 PureCloudPlatformClientV2/models/aggregate_view_data.py
 PureCloudPlatformClientV2/models/aggregation_range.py
@@ -249,6 +253,8 @@ PureCloudPlatformClientV2/models/attribute_detail_event_topic_attribute_update_e
 PureCloudPlatformClientV2/models/attribute_filter_item.py
 PureCloudPlatformClientV2/models/atzm_time_slot.py
 PureCloudPlatformClientV2/models/atzm_time_slot_with_time_zone.py
+PureCloudPlatformClientV2/models/audio_state.py
+PureCloudPlatformClientV2/models/audio_updated_event.py
 PureCloudPlatformClientV2/models/audit_change.py
 PureCloudPlatformClientV2/models/audit_entity.py
 PureCloudPlatformClientV2/models/audit_entity_reference.py
@@ -297,11 +303,15 @@ PureCloudPlatformClientV2/models/available_translations.py
 PureCloudPlatformClientV2/models/base_media_settings.py
 PureCloudPlatformClientV2/models/base_program_entity.py
 PureCloudPlatformClientV2/models/base_topic_entitiy.py
+PureCloudPlatformClientV2/models/batch_conversation_event_request.py
 PureCloudPlatformClientV2/models/batch_download_job_result.py
 PureCloudPlatformClientV2/models/batch_download_job_status_result.py
 PureCloudPlatformClientV2/models/batch_download_job_submission.py
 PureCloudPlatformClientV2/models/batch_download_job_submission_result.py
 PureCloudPlatformClientV2/models/batch_download_request.py
+PureCloudPlatformClientV2/models/batch_event_response.py
+PureCloudPlatformClientV2/models/batch_user_presence_event_request.py
+PureCloudPlatformClientV2/models/batch_user_routing_status_event_request.py
 PureCloudPlatformClientV2/models/benefit_assessment.py
 PureCloudPlatformClientV2/models/benefit_assessment_job.py
 PureCloudPlatformClientV2/models/billing_usage.py
@@ -564,6 +574,9 @@ PureCloudPlatformClientV2/models/common_campaign.py
 PureCloudPlatformClientV2/models/common_campaign_division_view.py
 PureCloudPlatformClientV2/models/common_campaign_division_view_entity_listing.py
 PureCloudPlatformClientV2/models/common_campaign_entity_listing.py
+PureCloudPlatformClientV2/models/communication_answered_event.py
+PureCloudPlatformClientV2/models/communication_disposition_applied_event.py
+PureCloudPlatformClientV2/models/communication_ended_event.py
 PureCloudPlatformClientV2/models/comparison_period.py
 PureCloudPlatformClientV2/models/comparison_period_listing.py
 PureCloudPlatformClientV2/models/condition.py
@@ -576,6 +589,7 @@ PureCloudPlatformClientV2/models/connected_queue.py
 PureCloudPlatformClientV2/models/connected_user.py
 PureCloudPlatformClientV2/models/constraint_conflict_message.py
 PureCloudPlatformClientV2/models/consult_transfer.py
+PureCloudPlatformClientV2/models/consult_transfer_event.py
 PureCloudPlatformClientV2/models/consult_transfer_response.py
 PureCloudPlatformClientV2/models/consult_transfer_update.py
 PureCloudPlatformClientV2/models/consumed_resources_entity_listing.py
@@ -591,6 +605,7 @@ PureCloudPlatformClientV2/models/contact_column_condition_settings.py
 PureCloudPlatformClientV2/models/contact_column_time_zone.py
 PureCloudPlatformClientV2/models/contact_column_to_data_action_field_mapping.py
 PureCloudPlatformClientV2/models/contact_detail_event_topic_contact_update_event.py
+PureCloudPlatformClientV2/models/contact_identifier.py
 PureCloudPlatformClientV2/models/contact_list.py
 PureCloudPlatformClientV2/models/contact_list_division_view.py
 PureCloudPlatformClientV2/models/contact_list_division_view_listing.py
@@ -634,10 +649,12 @@ PureCloudPlatformClientV2/models/content_position_properties.py
 PureCloudPlatformClientV2/models/content_postback.py
 PureCloudPlatformClientV2/models/content_query_request.py
 PureCloudPlatformClientV2/models/content_quick_reply.py
+PureCloudPlatformClientV2/models/content_quick_reply_v2.py
 PureCloudPlatformClientV2/models/content_reaction.py
 PureCloudPlatformClientV2/models/content_setting.py
 PureCloudPlatformClientV2/models/content_sort_item.py
 PureCloudPlatformClientV2/models/content_story.py
+PureCloudPlatformClientV2/models/content_text.py
 PureCloudPlatformClientV2/models/context.py
 PureCloudPlatformClientV2/models/context_entity.py
 PureCloudPlatformClientV2/models/context_intent.py
@@ -720,7 +737,9 @@ PureCloudPlatformClientV2/models/conversation_content_carousel.py
 PureCloudPlatformClientV2/models/conversation_content_location.py
 PureCloudPlatformClientV2/models/conversation_content_notification_template.py
 PureCloudPlatformClientV2/models/conversation_content_quick_reply.py
+PureCloudPlatformClientV2/models/conversation_content_quick_reply_v2.py
 PureCloudPlatformClientV2/models/conversation_content_story.py
+PureCloudPlatformClientV2/models/conversation_content_text.py
 PureCloudPlatformClientV2/models/conversation_deletion_protection_query.py
 PureCloudPlatformClientV2/models/conversation_detail_query_clause.py
 PureCloudPlatformClientV2/models/conversation_detail_query_filter.py
@@ -1087,6 +1106,7 @@ PureCloudPlatformClientV2/models/dnc_list_division_view_listing.py
 PureCloudPlatformClientV2/models/dnc_list_entity_listing.py
 PureCloudPlatformClientV2/models/dnclist_download_ready_export_uri.py
 PureCloudPlatformClientV2/models/dnclist_import_status_import_status.py
+PureCloudPlatformClientV2/models/dns_record_entry.py
 PureCloudPlatformClientV2/models/do_not_send_action_settings.py
 PureCloudPlatformClientV2/models/document.py
 PureCloudPlatformClientV2/models/document_article.py
@@ -1105,6 +1125,10 @@ PureCloudPlatformClientV2/models/document_content_block.py
 PureCloudPlatformClientV2/models/document_entity_listing.py
 PureCloudPlatformClientV2/models/document_faq.py
 PureCloudPlatformClientV2/models/document_listing.py
+PureCloudPlatformClientV2/models/document_query.py
+PureCloudPlatformClientV2/models/document_query_clause.py
+PureCloudPlatformClientV2/models/document_query_interval.py
+PureCloudPlatformClientV2/models/document_query_predicate.py
 PureCloudPlatformClientV2/models/document_reference.py
 PureCloudPlatformClientV2/models/document_text.py
 PureCloudPlatformClientV2/models/document_thumbnail.py
@@ -1211,6 +1235,7 @@ PureCloudPlatformClientV2/models/email_media_policy.py
 PureCloudPlatformClientV2/models/email_media_policy_conditions.py
 PureCloudPlatformClientV2/models/email_message.py
 PureCloudPlatformClientV2/models/email_message_listing.py
+PureCloudPlatformClientV2/models/email_outbound_domain_result.py
 PureCloudPlatformClientV2/models/email_setup.py
 PureCloudPlatformClientV2/models/emails_settings.py
 PureCloudPlatformClientV2/models/embedded_integration.py
@@ -1221,8 +1246,11 @@ PureCloudPlatformClientV2/models/employer_info.py
 PureCloudPlatformClientV2/models/empty.py
 PureCloudPlatformClientV2/models/encryption_key.py
 PureCloudPlatformClientV2/models/encryption_key_entity_listing.py
+PureCloudPlatformClientV2/models/end_consult_transfer_event.py
+PureCloudPlatformClientV2/models/end_transfer_event.py
 PureCloudPlatformClientV2/models/endpoint.py
 PureCloudPlatformClientV2/models/entity.py
+PureCloudPlatformClientV2/models/entity_change.py
 PureCloudPlatformClientV2/models/entity_listing.py
 PureCloudPlatformClientV2/models/entity_type_criteria.py
 PureCloudPlatformClientV2/models/entry.py
@@ -1263,12 +1291,15 @@ PureCloudPlatformClientV2/models/evaluator_activity.py
 PureCloudPlatformClientV2/models/evaluator_activity_entity_listing.py
 PureCloudPlatformClientV2/models/event_co_browse.py
 PureCloudPlatformClientV2/models/event_condition.py
+PureCloudPlatformClientV2/models/event_error.py
 PureCloudPlatformClientV2/models/event_log.py
 PureCloudPlatformClientV2/models/event_message.py
 PureCloudPlatformClientV2/models/event_presence.py
 PureCloudPlatformClientV2/models/event_setting.py
 PureCloudPlatformClientV2/models/event_typing.py
 PureCloudPlatformClientV2/models/execute_recording_jobs_query.py
+PureCloudPlatformClientV2/models/expandable_web_deployment.py
+PureCloudPlatformClientV2/models/expandable_web_deployment_entity_listing.py
 PureCloudPlatformClientV2/models/expansion_criterium.py
 PureCloudPlatformClientV2/models/expired_edge_listing.py
 PureCloudPlatformClientV2/models/export_script_request.py
@@ -1299,6 +1330,7 @@ PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_to
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_twitter_id.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_whats_app_id.py
 PureCloudPlatformClientV2/models/external_data_source.py
+PureCloudPlatformClientV2/models/external_established_event.py
 PureCloudPlatformClientV2/models/external_metric_data_item.py
 PureCloudPlatformClientV2/models/external_metric_data_processed_item.py
 PureCloudPlatformClientV2/models/external_metric_data_unprocessed_item.py
@@ -1463,8 +1495,10 @@ PureCloudPlatformClientV2/models/historical_import_status.py
 PureCloudPlatformClientV2/models/historical_import_status_listing.py
 PureCloudPlatformClientV2/models/history_entry.py
 PureCloudPlatformClientV2/models/history_listing.py
+PureCloudPlatformClientV2/models/hold_updated_event.py
 PureCloudPlatformClientV2/models/homer_record.py
 PureCloudPlatformClientV2/models/humanize.py
+PureCloudPlatformClientV2/models/identifier_claim_request.py
 PureCloudPlatformClientV2/models/identity_now.py
 PureCloudPlatformClientV2/models/idle_event_trigger.py
 PureCloudPlatformClientV2/models/ignored_activity_categories.py
@@ -1484,12 +1518,13 @@ PureCloudPlatformClientV2/models/inbound_message_request.py
 PureCloudPlatformClientV2/models/inbound_only_setting.py
 PureCloudPlatformClientV2/models/inbound_route.py
 PureCloudPlatformClientV2/models/inbound_route_entity_listing.py
+PureCloudPlatformClientV2/models/initial_configuration.py
 PureCloudPlatformClientV2/models/initiate_screen_recording.py
+PureCloudPlatformClientV2/models/initiating_action.py
 PureCloudPlatformClientV2/models/integration.py
 PureCloudPlatformClientV2/models/integration_action.py
 PureCloudPlatformClientV2/models/integration_action_fields.py
 PureCloudPlatformClientV2/models/integration_configuration.py
-PureCloudPlatformClientV2/models/integration_configuration_credential.py
 PureCloudPlatformClientV2/models/integration_configuration_info.py
 PureCloudPlatformClientV2/models/integration_entity_listing.py
 PureCloudPlatformClientV2/models/integration_export.py
@@ -1513,6 +1548,7 @@ PureCloudPlatformClientV2/models/item_validation_limits.py
 PureCloudPlatformClientV2/models/items.py
 PureCloudPlatformClientV2/models/ivr.py
 PureCloudPlatformClientV2/models/ivr_entity_listing.py
+PureCloudPlatformClientV2/models/ivr_established_event.py
 PureCloudPlatformClientV2/models/journey.py
 PureCloudPlatformClientV2/models/journey_action.py
 PureCloudPlatformClientV2/models/journey_action_map.py
@@ -1658,6 +1694,7 @@ PureCloudPlatformClientV2/models/knowledge_group_statistics.py
 PureCloudPlatformClientV2/models/knowledge_guest_document.py
 PureCloudPlatformClientV2/models/knowledge_guest_document_response_listing.py
 PureCloudPlatformClientV2/models/knowledge_guest_document_suggestion.py
+PureCloudPlatformClientV2/models/knowledge_guest_document_suggestion_request.py
 PureCloudPlatformClientV2/models/knowledge_guest_document_suggestion_result.py
 PureCloudPlatformClientV2/models/knowledge_guest_document_variation.py
 PureCloudPlatformClientV2/models/knowledge_guest_document_variation_context.py
@@ -1828,6 +1865,7 @@ PureCloudPlatformClientV2/models/member_entity.py
 PureCloudPlatformClientV2/models/member_group.py
 PureCloudPlatformClientV2/models/member_listing.py
 PureCloudPlatformClientV2/models/merge_operation.py
+PureCloudPlatformClientV2/models/merge_request.py
 PureCloudPlatformClientV2/models/message.py
 PureCloudPlatformClientV2/models/message_content.py
 PureCloudPlatformClientV2/models/message_conversation.py
@@ -1970,6 +2008,8 @@ PureCloudPlatformClientV2/models/out_of_office.py
 PureCloudPlatformClientV2/models/out_of_office_event_out_of_office.py
 PureCloudPlatformClientV2/models/out_of_office_event_user.py
 PureCloudPlatformClientV2/models/outbound_detail_event_topic_outbound_init_event.py
+PureCloudPlatformClientV2/models/outbound_domain.py
+PureCloudPlatformClientV2/models/outbound_domain_entity_listing.py
 PureCloudPlatformClientV2/models/outbound_messaging_messaging_campaign_config_change_contact_sort.py
 PureCloudPlatformClientV2/models/outbound_messaging_messaging_campaign_config_change_email_config.py
 PureCloudPlatformClientV2/models/outbound_messaging_messaging_campaign_config_change_error_detail.py
@@ -2050,11 +2090,13 @@ PureCloudPlatformClientV2/models/phone_change_topic_provision_info.py
 PureCloudPlatformClientV2/models/phone_change_topic_user_agent_info.py
 PureCloudPlatformClientV2/models/phone_column.py
 PureCloudPlatformClientV2/models/phone_entity_listing.py
+PureCloudPlatformClientV2/models/phone_established_event.py
 PureCloudPlatformClientV2/models/phone_meta_base_entity_listing.py
 PureCloudPlatformClientV2/models/phone_number.py
 PureCloudPlatformClientV2/models/phone_number_column.py
 PureCloudPlatformClientV2/models/phone_number_status.py
 PureCloudPlatformClientV2/models/phone_status.py
+PureCloudPlatformClientV2/models/phone_transfer_event.py
 PureCloudPlatformClientV2/models/phones_reboot.py
 PureCloudPlatformClientV2/models/phrase.py
 PureCloudPlatformClientV2/models/phrase_associations.py
@@ -2106,6 +2148,8 @@ PureCloudPlatformClientV2/models/program_mappings_request.py
 PureCloudPlatformClientV2/models/program_request.py
 PureCloudPlatformClientV2/models/programs_entity_listing.py
 PureCloudPlatformClientV2/models/programs_mappings_entity_listing.py
+PureCloudPlatformClientV2/models/progress_consult_transfer_event.py
+PureCloudPlatformClientV2/models/progress_transfer_event.py
 PureCloudPlatformClientV2/models/prompt.py
 PureCloudPlatformClientV2/models/prompt_asset.py
 PureCloudPlatformClientV2/models/prompt_asset_create.py
@@ -2478,6 +2522,7 @@ PureCloudPlatformClientV2/models/route_path_response.py
 PureCloudPlatformClientV2/models/routing_conversation_attributes_request.py
 PureCloudPlatformClientV2/models/routing_conversation_attributes_response.py
 PureCloudPlatformClientV2/models/routing_data.py
+PureCloudPlatformClientV2/models/routing_established_event.py
 PureCloudPlatformClientV2/models/routing_rule.py
 PureCloudPlatformClientV2/models/routing_settings.py
 PureCloudPlatformClientV2/models/routing_skill.py
@@ -2486,6 +2531,7 @@ PureCloudPlatformClientV2/models/routing_status.py
 PureCloudPlatformClientV2/models/routing_status_detail_query_clause.py
 PureCloudPlatformClientV2/models/routing_status_detail_query_filter.py
 PureCloudPlatformClientV2/models/routing_status_detail_query_predicate.py
+PureCloudPlatformClientV2/models/routing_transfer_event.py
 PureCloudPlatformClientV2/models/rule_set.py
 PureCloudPlatformClientV2/models/rule_set_diagnostic.py
 PureCloudPlatformClientV2/models/rule_set_entity_listing.py
@@ -2625,6 +2671,7 @@ PureCloudPlatformClientV2/models/short_term_forecast_reference.py
 PureCloudPlatformClientV2/models/short_term_forecasting_settings.py
 PureCloudPlatformClientV2/models/shrinkage_override.py
 PureCloudPlatformClientV2/models/shrinkage_overrides.py
+PureCloudPlatformClientV2/models/signature.py
 PureCloudPlatformClientV2/models/signed_url_response.py
 PureCloudPlatformClientV2/models/single_workday_average_points.py
 PureCloudPlatformClientV2/models/single_workday_average_values.py
@@ -2650,6 +2697,9 @@ PureCloudPlatformClientV2/models/sms_provisioning_status.py
 PureCloudPlatformClientV2/models/social_expression.py
 PureCloudPlatformClientV2/models/social_handle.py
 PureCloudPlatformClientV2/models/sort_item.py
+PureCloudPlatformClientV2/models/source.py
+PureCloudPlatformClientV2/models/source_configuration.py
+PureCloudPlatformClientV2/models/source_entity_listing.py
 PureCloudPlatformClientV2/models/source_planning_group_request.py
 PureCloudPlatformClientV2/models/speech_text_analytics_settings_request.py
 PureCloudPlatformClientV2/models/speech_text_analytics_settings_response.py
@@ -2957,6 +3007,7 @@ PureCloudPlatformClientV2/models/user_details_query.py
 PureCloudPlatformClientV2/models/user_device.py
 PureCloudPlatformClientV2/models/user_end_detail_event_topic_user_end_event.py
 PureCloudPlatformClientV2/models/user_entity_listing.py
+PureCloudPlatformClientV2/models/user_established_event.py
 PureCloudPlatformClientV2/models/user_expands.py
 PureCloudPlatformClientV2/models/user_external_identifier.py
 PureCloudPlatformClientV2/models/user_greeting_event_greeting.py
@@ -2976,6 +3027,8 @@ PureCloudPlatformClientV2/models/user_observation_query_predicate.py
 PureCloudPlatformClientV2/models/user_observation_query_response.py
 PureCloudPlatformClientV2/models/user_param.py
 PureCloudPlatformClientV2/models/user_presence.py
+PureCloudPlatformClientV2/models/user_presence_event.py
+PureCloudPlatformClientV2/models/user_primary_source.py
 PureCloudPlatformClientV2/models/user_profile.py
 PureCloudPlatformClientV2/models/user_profile_entity_listing.py
 PureCloudPlatformClientV2/models/user_queue.py
@@ -2988,6 +3041,7 @@ PureCloudPlatformClientV2/models/user_routing_language_post.py
 PureCloudPlatformClientV2/models/user_routing_skill.py
 PureCloudPlatformClientV2/models/user_routing_skill_post.py
 PureCloudPlatformClientV2/models/user_routing_status_error_info.py
+PureCloudPlatformClientV2/models/user_routing_status_event.py
 PureCloudPlatformClientV2/models/user_routing_status_routing_status.py
 PureCloudPlatformClientV2/models/user_routing_status_user_param.py
 PureCloudPlatformClientV2/models/user_routing_status_user_routing_status.py
@@ -3011,6 +3065,7 @@ PureCloudPlatformClientV2/models/user_stations.py
 PureCloudPlatformClientV2/models/user_time_off_request_reference.py
 PureCloudPlatformClientV2/models/user_tokens_topic_token_notification.py
 PureCloudPlatformClientV2/models/user_tokens_topic_uri_reference.py
+PureCloudPlatformClientV2/models/user_transfer_event.py
 PureCloudPlatformClientV2/models/users_search_response.py
 PureCloudPlatformClientV2/models/utilization.py
 PureCloudPlatformClientV2/models/utterance.py
@@ -3074,6 +3129,7 @@ PureCloudPlatformClientV2/models/validation_service_request.py
 PureCloudPlatformClientV2/models/value_wrapper_date.py
 PureCloudPlatformClientV2/models/value_wrapper_planning_period_settings.py
 PureCloudPlatformClientV2/models/value_wrapper_string.py
+PureCloudPlatformClientV2/models/verification_result.py
 PureCloudPlatformClientV2/models/video.py
 PureCloudPlatformClientV2/models/view_filter.py
 PureCloudPlatformClientV2/models/vip_backup.py
@@ -3120,7 +3176,9 @@ PureCloudPlatformClientV2/models/web_deployment.py
 PureCloudPlatformClientV2/models/web_deployment_active_configuration_on_deployment.py
 PureCloudPlatformClientV2/models/web_deployment_configuration_version.py
 PureCloudPlatformClientV2/models/web_deployment_configuration_version_entity_listing.py
-PureCloudPlatformClientV2/models/web_deployment_entity_listing.py
+PureCloudPlatformClientV2/models/web_deployment_configuration_version_entity_ref.py
+PureCloudPlatformClientV2/models/web_deployment_configuration_version_response.py
+PureCloudPlatformClientV2/models/web_deployment_headless_mode.py
 PureCloudPlatformClientV2/models/web_deployments_config_topic_web_messaging_config_change_event_body.py
 PureCloudPlatformClientV2/models/web_deployments_deployment_topic_web_messaging_config_change_event_body.py
 PureCloudPlatformClientV2/models/web_deployments_deployment_topic_web_messaging_deployment_change_event_body.py
@@ -3410,6 +3468,8 @@ docs/AgentOwnedMappingPreview.md
 docs/AgentOwnedMappingPreviewListing.md
 docs/AgentOwnedRouting.md
 docs/AgentTimeOffRequestPatch.md
+docs/AgentlessEmailSendRequestDto.md
+docs/AgentlessEmailSendResponseDto.md
 docs/AggregateMetricData.md
 docs/AggregateViewData.md
 docs/AggregationRange.md
@@ -3526,6 +3586,8 @@ docs/AttributeDetailEventTopicAttributeUpdateEvent.md
 docs/AttributeFilterItem.md
 docs/AtzmTimeSlot.md
 docs/AtzmTimeSlotWithTimeZone.md
+docs/AudioState.md
+docs/AudioUpdatedEvent.md
 docs/AuditApi.json
 docs/AuditApi.md
 docs/AuditChange.md
@@ -3578,11 +3640,15 @@ docs/AvailableTranslations.md
 docs/BaseMediaSettings.md
 docs/BaseProgramEntity.md
 docs/BaseTopicEntitiy.md
+docs/BatchConversationEventRequest.md
 docs/BatchDownloadJobResult.md
 docs/BatchDownloadJobStatusResult.md
 docs/BatchDownloadJobSubmission.md
 docs/BatchDownloadJobSubmissionResult.md
 docs/BatchDownloadRequest.md
+docs/BatchEventResponse.md
+docs/BatchUserPresenceEventRequest.md
+docs/BatchUserRoutingStatusEventRequest.md
 docs/BenefitAssessment.md
 docs/BenefitAssessmentJob.md
 docs/BillingApi.json
@@ -3851,6 +3917,9 @@ docs/CommonCampaign.md
 docs/CommonCampaignDivisionView.md
 docs/CommonCampaignDivisionViewEntityListing.md
 docs/CommonCampaignEntityListing.md
+docs/CommunicationAnsweredEvent.md
+docs/CommunicationDispositionAppliedEvent.md
+docs/CommunicationEndedEvent.md
 docs/ComparisonPeriod.md
 docs/ComparisonPeriodListing.md
 docs/Condition.md
@@ -3863,6 +3932,7 @@ docs/ConnectedQueue.md
 docs/ConnectedUser.md
 docs/ConstraintConflictMessage.md
 docs/ConsultTransfer.md
+docs/ConsultTransferEvent.md
 docs/ConsultTransferResponse.md
 docs/ConsultTransferUpdate.md
 docs/ConsumedResourcesEntityListing.md
@@ -3878,6 +3948,7 @@ docs/ContactColumnConditionSettings.md
 docs/ContactColumnTimeZone.md
 docs/ContactColumnToDataActionFieldMapping.md
 docs/ContactDetailEventTopicContactUpdateEvent.md
+docs/ContactIdentifier.md
 docs/ContactList.md
 docs/ContactListDivisionView.md
 docs/ContactListDivisionViewListing.md
@@ -3923,10 +3994,12 @@ docs/ContentPositionProperties.md
 docs/ContentPostback.md
 docs/ContentQueryRequest.md
 docs/ContentQuickReply.md
+docs/ContentQuickReplyV2.md
 docs/ContentReaction.md
 docs/ContentSetting.md
 docs/ContentSortItem.md
 docs/ContentStory.md
+docs/ContentText.md
 docs/Context.md
 docs/ContextEntity.md
 docs/ContextIntent.md
@@ -4009,7 +4082,9 @@ docs/ConversationContentCarousel.md
 docs/ConversationContentLocation.md
 docs/ConversationContentNotificationTemplate.md
 docs/ConversationContentQuickReply.md
+docs/ConversationContentQuickReplyV2.md
 docs/ConversationContentStory.md
+docs/ConversationContentText.md
 docs/ConversationDeletionProtectionQuery.md
 docs/ConversationDetailQueryClause.md
 docs/ConversationDetailQueryFilter.md
@@ -4380,6 +4455,7 @@ docs/DncListDivisionViewListing.md
 docs/DncListEntityListing.md
 docs/DnclistDownloadReadyExportUri.md
 docs/DnclistImportStatusImportStatus.md
+docs/DnsRecordEntry.md
 docs/DoNotSendActionSettings.md
 docs/Document.md
 docs/DocumentArticle.md
@@ -4398,6 +4474,10 @@ docs/DocumentContentBlock.md
 docs/DocumentEntityListing.md
 docs/DocumentFaq.md
 docs/DocumentListing.md
+docs/DocumentQuery.md
+docs/DocumentQueryClause.md
+docs/DocumentQueryInterval.md
+docs/DocumentQueryPredicate.md
 docs/DocumentReference.md
 docs/DocumentText.md
 docs/DocumentThumbnail.md
@@ -4440,6 +4520,8 @@ docs/DomainResourceConditionValue.md
 docs/DomainRole.md
 docs/DomainSchemaReference.md
 docs/DownloadResponse.md
+docs/DownloadsApi.json
+docs/DownloadsApi.md
 docs/Draft.md
 docs/DraftIntents.md
 docs/DraftListing.md
@@ -4504,6 +4586,7 @@ docs/EmailMediaPolicy.md
 docs/EmailMediaPolicyConditions.md
 docs/EmailMessage.md
 docs/EmailMessageListing.md
+docs/EmailOutboundDomainResult.md
 docs/EmailSetup.md
 docs/EmailsSettings.md
 docs/EmbeddedIntegration.md
@@ -4514,8 +4597,11 @@ docs/EmployerInfo.md
 docs/Empty.md
 docs/EncryptionKey.md
 docs/EncryptionKeyEntityListing.md
+docs/EndConsultTransferEvent.md
+docs/EndTransferEvent.md
 docs/Endpoint.md
 docs/Entity.md
+docs/EntityChange.md
 docs/EntityListing.md
 docs/EntityTypeCriteria.md
 docs/Entry.md
@@ -4556,12 +4642,17 @@ docs/EvaluatorActivity.md
 docs/EvaluatorActivityEntityListing.md
 docs/EventCoBrowse.md
 docs/EventCondition.md
+docs/EventError.md
 docs/EventLog.md
 docs/EventMessage.md
 docs/EventPresence.md
 docs/EventSetting.md
 docs/EventTyping.md
+docs/EventsApi.json
+docs/EventsApi.md
 docs/ExecuteRecordingJobsQuery.md
+docs/ExpandableWebDeployment.md
+docs/ExpandableWebDeploymentEntityListing.md
 docs/ExpansionCriterium.md
 docs/ExpiredEdgeListing.md
 docs/ExportScriptRequest.md
@@ -4594,6 +4685,7 @@ docs/ExternalContactsUnresolvedContactChangedTopicPhoneNumber.md
 docs/ExternalContactsUnresolvedContactChangedTopicTwitterId.md
 docs/ExternalContactsUnresolvedContactChangedTopicWhatsAppId.md
 docs/ExternalDataSource.md
+docs/ExternalEstablishedEvent.md
 docs/ExternalMetricDataItem.md
 docs/ExternalMetricDataProcessedItem.md
 docs/ExternalMetricDataUnprocessedItem.md
@@ -4772,10 +4864,12 @@ docs/HistoricalImportStatus.md
 docs/HistoricalImportStatusListing.md
 docs/HistoryEntry.md
 docs/HistoryListing.md
+docs/HoldUpdatedEvent.md
 docs/HomerRecord.md
 docs/Humanize.md
 docs/IVR.md
 docs/IVREntityListing.md
+docs/IdentifierClaimRequest.md
 docs/IdentityNow.md
 docs/IdentityProviderApi.json
 docs/IdentityProviderApi.md
@@ -4797,12 +4891,13 @@ docs/InboundMessageRequest.md
 docs/InboundOnlySetting.md
 docs/InboundRoute.md
 docs/InboundRouteEntityListing.md
+docs/InitialConfiguration.md
 docs/InitiateScreenRecording.md
+docs/InitiatingAction.md
 docs/Integration.md
 docs/IntegrationAction.md
 docs/IntegrationActionFields.md
 docs/IntegrationConfiguration.md
-docs/IntegrationConfigurationCredential.md
 docs/IntegrationConfigurationInfo.md
 docs/IntegrationEntityListing.md
 docs/IntegrationExport.md
@@ -4826,6 +4921,7 @@ docs/IpAddressRange.md
 docs/IpAddressRangeListing.md
 docs/ItemValidationLimits.md
 docs/Items.md
+docs/IvrEstablishedEvent.md
 docs/Journey.md
 docs/JourneyAction.md
 docs/JourneyActionMap.md
@@ -4975,6 +5071,7 @@ docs/KnowledgeGroupStatistics.md
 docs/KnowledgeGuestDocument.md
 docs/KnowledgeGuestDocumentResponseListing.md
 docs/KnowledgeGuestDocumentSuggestion.md
+docs/KnowledgeGuestDocumentSuggestionRequest.md
 docs/KnowledgeGuestDocumentSuggestionResult.md
 docs/KnowledgeGuestDocumentVariation.md
 docs/KnowledgeGuestDocumentVariationContext.md
@@ -5155,6 +5252,7 @@ docs/MemberEntity.md
 docs/MemberGroup.md
 docs/MemberListing.md
 docs/MergeOperation.md
+docs/MergeRequest.md
 docs/Message.md
 docs/MessageContent.md
 docs/MessageConversation.md
@@ -5313,6 +5411,8 @@ docs/OutOfOfficeEventUser.md
 docs/OutboundApi.json
 docs/OutboundApi.md
 docs/OutboundDetailEventTopicOutboundInitEvent.md
+docs/OutboundDomain.md
+docs/OutboundDomainEntityListing.md
 docs/OutboundMessagingMessagingCampaignConfigChangeContactSort.md
 docs/OutboundMessagingMessagingCampaignConfigChangeEmailConfig.md
 docs/OutboundMessagingMessagingCampaignConfigChangeErrorDetail.md
@@ -5394,11 +5494,13 @@ docs/PhoneChangeTopicProvisionInfo.md
 docs/PhoneChangeTopicUserAgentInfo.md
 docs/PhoneColumn.md
 docs/PhoneEntityListing.md
+docs/PhoneEstablishedEvent.md
 docs/PhoneMetaBaseEntityListing.md
 docs/PhoneNumber.md
 docs/PhoneNumberColumn.md
 docs/PhoneNumberStatus.md
 docs/PhoneStatus.md
+docs/PhoneTransferEvent.md
 docs/PhonesReboot.md
 docs/Phrase.md
 docs/PhraseAssociations.md
@@ -5453,6 +5555,8 @@ docs/ProgramMappingsRequest.md
 docs/ProgramRequest.md
 docs/ProgramsEntityListing.md
 docs/ProgramsMappingsEntityListing.md
+docs/ProgressConsultTransferEvent.md
+docs/ProgressTransferEvent.md
 docs/Prompt.md
 docs/PromptAsset.md
 docs/PromptAssetCreate.md
@@ -5833,6 +5937,7 @@ docs/RoutingApi.md
 docs/RoutingConversationAttributesRequest.md
 docs/RoutingConversationAttributesResponse.md
 docs/RoutingData.md
+docs/RoutingEstablishedEvent.md
 docs/RoutingRule.md
 docs/RoutingSettings.md
 docs/RoutingSkill.md
@@ -5841,6 +5946,7 @@ docs/RoutingStatus.md
 docs/RoutingStatusDetailQueryClause.md
 docs/RoutingStatusDetailQueryFilter.md
 docs/RoutingStatusDetailQueryPredicate.md
+docs/RoutingTransferEvent.md
 docs/RuleSet.md
 docs/RuleSetDiagnostic.md
 docs/RuleSetEntityListing.md
@@ -5988,6 +6094,7 @@ docs/ShortTermForecastReference.md
 docs/ShortTermForecastingSettings.md
 docs/ShrinkageOverride.md
 docs/ShrinkageOverrides.md
+docs/Signature.md
 docs/SignedUrlResponse.md
 docs/SingleWorkdayAveragePoints.md
 docs/SingleWorkdayAverageValues.md
@@ -6011,6 +6118,9 @@ docs/SmsProvisioningStatus.md
 docs/SocialExpression.md
 docs/SocialHandle.md
 docs/SortItem.md
+docs/Source.md
+docs/SourceConfiguration.md
+docs/SourceEntityListing.md
 docs/SourcePlanningGroupRequest.md
 docs/SpeechTextAnalyticsApi.json
 docs/SpeechTextAnalyticsApi.md
@@ -6338,6 +6448,7 @@ docs/UserDetailsQuery.md
 docs/UserDevice.md
 docs/UserEndDetailEventTopicUserEndEvent.md
 docs/UserEntityListing.md
+docs/UserEstablishedEvent.md
 docs/UserExpands.md
 docs/UserExternalIdentifier.md
 docs/UserGreetingEventGreeting.md
@@ -6357,6 +6468,8 @@ docs/UserObservationQueryPredicate.md
 docs/UserObservationQueryResponse.md
 docs/UserParam.md
 docs/UserPresence.md
+docs/UserPresenceEvent.md
+docs/UserPrimarySource.md
 docs/UserProfile.md
 docs/UserProfileEntityListing.md
 docs/UserQueue.md
@@ -6371,6 +6484,7 @@ docs/UserRoutingLanguagePost.md
 docs/UserRoutingSkill.md
 docs/UserRoutingSkillPost.md
 docs/UserRoutingStatusErrorInfo.md
+docs/UserRoutingStatusEvent.md
 docs/UserRoutingStatusRoutingStatus.md
 docs/UserRoutingStatusUserParam.md
 docs/UserRoutingStatusUserRoutingStatus.md
@@ -6394,6 +6508,7 @@ docs/UserStations.md
 docs/UserTimeOffRequestReference.md
 docs/UserTokensTopicTokenNotification.md
 docs/UserTokensTopicUriReference.md
+docs/UserTransferEvent.md
 docs/UsersApi.json
 docs/UsersApi.md
 docs/UsersSearchResponse.md
@@ -6461,6 +6576,7 @@ docs/ValidationServiceRequest.md
 docs/ValueWrapperDate.md
 docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
+docs/VerificationResult.md
 docs/Video.md
 docs/ViewFilter.md
 docs/VipBackup.md
@@ -6511,7 +6627,9 @@ docs/WebDeployment.md
 docs/WebDeploymentActiveConfigurationOnDeployment.md
 docs/WebDeploymentConfigurationVersion.md
 docs/WebDeploymentConfigurationVersionEntityListing.md
-docs/WebDeploymentEntityListing.md
+docs/WebDeploymentConfigurationVersionEntityRef.md
+docs/WebDeploymentConfigurationVersionResponse.md
+docs/WebDeploymentHeadlessMode.md
 docs/WebDeploymentsApi.json
 docs/WebDeploymentsApi.md
 docs/WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.md
@@ -6866,6 +6984,7 @@ docs/delete_outbound_schedules_emailcampaign-example.txt
 docs/delete_outbound_schedules_messagingcampaign-example.txt
 docs/delete_outbound_schedules_sequence-example.txt
 docs/delete_outbound_sequence-example.txt
+docs/delete_presence_source-example.txt
 docs/delete_presencedefinition-example.txt
 docs/delete_processautomation_trigger-example.txt
 docs/delete_quality_calibration-example.txt
@@ -6884,6 +7003,7 @@ docs/delete_responsemanagement_responseasset-example.txt
 docs/delete_routing_assessment-example.txt
 docs/delete_routing_email_domain-example.txt
 docs/delete_routing_email_domain_route-example.txt
+docs/delete_routing_email_outbound_domain-example.txt
 docs/delete_routing_language-example.txt
 docs/delete_routing_predictor-example.txt
 docs/delete_routing_queue-example.txt
@@ -7153,11 +7273,14 @@ docs/get_dataextensions_limits-example.txt
 docs/get_date-example.txt
 docs/get_documentation_gkn_search-example.txt
 docs/get_documentation_search-example.txt
+docs/get_download-example.txt
 docs/get_employeeperformance_externalmetrics_definition-example.txt
 docs/get_employeeperformance_externalmetrics_definitions-example.txt
 docs/get_externalcontacts_contact-example.txt
+docs/get_externalcontacts_contact_identifiers-example.txt
 docs/get_externalcontacts_contact_note-example.txt
 docs/get_externalcontacts_contact_notes-example.txt
+docs/get_externalcontacts_contact_unresolved-example.txt
 docs/get_externalcontacts_contacts-example.txt
 docs/get_externalcontacts_contacts_schema-example.txt
 docs/get_externalcontacts_contacts_schema_version-example.txt
@@ -7497,6 +7620,9 @@ docs/get_outbound_sequence-example.txt
 docs/get_outbound_sequences-example.txt
 docs/get_outbound_settings-example.txt
 docs/get_outbound_wrapupcodemappings-example.txt
+docs/get_presence_source-example.txt
+docs/get_presence_sources-example.txt
+docs/get_presence_user_primarysource-example.txt
 docs/get_presencedefinition-example.txt
 docs/get_presencedefinitions-example.txt
 docs/get_processautomation_trigger-example.txt
@@ -7565,6 +7691,10 @@ docs/get_routing_email_domain-example.txt
 docs/get_routing_email_domain_route-example.txt
 docs/get_routing_email_domain_routes-example.txt
 docs/get_routing_email_domains-example.txt
+docs/get_routing_email_outbound_domain-example.txt
+docs/get_routing_email_outbound_domain_activation-example.txt
+docs/get_routing_email_outbound_domain_search-example.txt
+docs/get_routing_email_outbound_domains-example.txt
 docs/get_routing_email_setup-example.txt
 docs/get_routing_language-example.txt
 docs/get_routing_languages-example.txt
@@ -7914,6 +8044,7 @@ docs/patch_conversations_messaging_integrations_twitter_integration_id-example.t
 docs/patch_conversations_messaging_integrations_whatsapp_integration_id-example.txt
 docs/patch_conversations_messaging_supportedcontent_supported_content_id-example.txt
 docs/patch_employeeperformance_externalmetrics_definition-example.txt
+docs/patch_externalcontacts_contact_identifiers-example.txt
 docs/patch_geolocations_settings-example.txt
 docs/patch_integration-example.txt
 docs/patch_integrations_action-example.txt
@@ -8107,6 +8238,7 @@ docs/post_conversations_email_messages-example.txt
 docs/post_conversations_email_messages_draft_attachments_copy-example.txt
 docs/post_conversations_email_participant_replace-example.txt
 docs/post_conversations_emails-example.txt
+docs/post_conversations_emails_agentless-example.txt
 docs/post_conversations_faxes-example.txt
 docs/post_conversations_keyconfigurations-example.txt
 docs/post_conversations_keyconfigurations_validate-example.txt
@@ -8127,9 +8259,13 @@ docs/post_documentation_gkn_search-example.txt
 docs/post_documentation_search-example.txt
 docs/post_employeeperformance_externalmetrics_data-example.txt
 docs/post_employeeperformance_externalmetrics_definitions-example.txt
+docs/post_events_conversations-example.txt
+docs/post_events_users_presence-example.txt
+docs/post_events_users_routingstatus-example.txt
 docs/post_externalcontacts_bulk_contacts-example.txt
 docs/post_externalcontacts_bulk_contacts_add-example.txt
 docs/post_externalcontacts_bulk_contacts_remove-example.txt
+docs/post_externalcontacts_bulk_contacts_unresolved-example.txt
 docs/post_externalcontacts_bulk_contacts_update-example.txt
 docs/post_externalcontacts_bulk_notes-example.txt
 docs/post_externalcontacts_bulk_notes_add-example.txt
@@ -8144,8 +8280,11 @@ docs/post_externalcontacts_bulk_relationships_add-example.txt
 docs/post_externalcontacts_bulk_relationships_remove-example.txt
 docs/post_externalcontacts_bulk_relationships_update-example.txt
 docs/post_externalcontacts_contact_notes-example.txt
+docs/post_externalcontacts_contact_promotion-example.txt
 docs/post_externalcontacts_contacts-example.txt
 docs/post_externalcontacts_contacts_schemas-example.txt
+docs/post_externalcontacts_identifierlookup-example.txt
+docs/post_externalcontacts_merge_contacts-example.txt
 docs/post_externalcontacts_organization_notes-example.txt
 docs/post_externalcontacts_organizations-example.txt
 docs/post_externalcontacts_organizations_schemas-example.txt
@@ -8284,6 +8423,7 @@ docs/post_outbound_messagingcampaigns-example.txt
 docs/post_outbound_messagingcampaigns_progress-example.txt
 docs/post_outbound_rulesets-example.txt
 docs/post_outbound_sequences-example.txt
+docs/post_presence_sources-example.txt
 docs/post_presencedefinitions-example.txt
 docs/post_processautomation_trigger_test-example.txt
 docs/post_processautomation_triggers-example.txt
@@ -8322,6 +8462,8 @@ docs/post_routing_assessments_jobs-example.txt
 docs/post_routing_email_domain_routes-example.txt
 docs/post_routing_email_domain_testconnection-example.txt
 docs/post_routing_email_domains-example.txt
+docs/post_routing_email_outbound_domains-example.txt
+docs/post_routing_email_outbound_domains_simulated-example.txt
 docs/post_routing_languages-example.txt
 docs/post_routing_predictors-example.txt
 docs/post_routing_queue_members-example.txt
@@ -8571,6 +8713,8 @@ docs/put_outbound_schedules_messagingcampaign-example.txt
 docs/put_outbound_schedules_sequence-example.txt
 docs/put_outbound_sequence-example.txt
 docs/put_outbound_wrapupcodemappings-example.txt
+docs/put_presence_source-example.txt
+docs/put_presence_user_primarysource-example.txt
 docs/put_presencedefinition-example.txt
 docs/put_processautomation_trigger-example.txt
 docs/put_quality_calibration-example.txt
@@ -8591,6 +8735,7 @@ docs/put_responsemanagement_library-example.txt
 docs/put_responsemanagement_response-example.txt
 docs/put_responsemanagement_responseasset-example.txt
 docs/put_routing_email_domain_route-example.txt
+docs/put_routing_email_outbound_domain_activation-example.txt
 docs/put_routing_message_recipient-example.txt
 docs/put_routing_queue-example.txt
 docs/put_routing_settings-example.txt

@@ -186,7 +186,7 @@ class UserDetailsQuery(object):
         :param order: The order of this UserDetailsQuery.
         :type: str
         """
-        allowed_values = ["asc", "desc"]
+        allowed_values = ["asc", "desc", "unordered"]
         if order.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for order -> " + order)
             self._order = "outdated_sdk_version"

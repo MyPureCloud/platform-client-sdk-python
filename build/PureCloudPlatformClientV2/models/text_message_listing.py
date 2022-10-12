@@ -45,9 +45,9 @@ class TextMessageListing(object):
             'page_number': 'int',
             'total': 'int',
             'first_uri': 'str',
+            'page_count': 'int',
             'last_uri': 'str',
             'self_uri': 'str',
-            'page_count': 'int',
             'next_uri': 'str',
             'previous_uri': 'str'
         }
@@ -58,9 +58,9 @@ class TextMessageListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'first_uri': 'firstUri',
+            'page_count': 'pageCount',
             'last_uri': 'lastUri',
             'self_uri': 'selfUri',
-            'page_count': 'pageCount',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri'
         }
@@ -70,9 +70,9 @@ class TextMessageListing(object):
         self._page_number = None
         self._total = None
         self._first_uri = None
+        self._page_count = None
         self._last_uri = None
         self._self_uri = None
-        self._page_count = None
         self._next_uri = None
         self._previous_uri = None
 
@@ -197,6 +197,30 @@ class TextMessageListing(object):
         self._first_uri = first_uri
 
     @property
+    def page_count(self):
+        """
+        Gets the page_count of this TextMessageListing.
+
+
+        :return: The page_count of this TextMessageListing.
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """
+        Sets the page_count of this TextMessageListing.
+
+
+        :param page_count: The page_count of this TextMessageListing.
+        :type: int
+        """
+        
+
+        self._page_count = page_count
+
+    @property
     def last_uri(self):
         """
         Gets the last_uri of this TextMessageListing.
@@ -243,30 +267,6 @@ class TextMessageListing(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def page_count(self):
-        """
-        Gets the page_count of this TextMessageListing.
-
-
-        :return: The page_count of this TextMessageListing.
-        :rtype: int
-        """
-        return self._page_count
-
-    @page_count.setter
-    def page_count(self, page_count):
-        """
-        Sets the page_count of this TextMessageListing.
-
-
-        :param page_count: The page_count of this TextMessageListing.
-        :type: int
-        """
-        
-
-        self._page_count = page_count
 
     @property
     def next_uri(self):

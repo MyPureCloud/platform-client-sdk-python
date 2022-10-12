@@ -21,6 +21,8 @@ title: MessageContent
 | **story** | [**ContentStory**](ContentStory.html) | Ephemeral story content. | [optional] |
 | **card** | [**ContentCard**](ContentCard.html) | Card content | [optional] |
 | **carousel** | [**ContentCarousel**](ContentCarousel.html) | Carousel content | [optional] |
+| **text** | [**ContentText**](ContentText.html) | Text content. | [optional] |
+| **quick_reply_v2** | [**ContentQuickReplyV2**](ContentQuickReplyV2.html) | Quick reply V2 content. | [optional] |
 {: class="table table-striped"}
 
 

@@ -41,6 +41,7 @@ class Email(object):
         """
         self.swagger_types = {
             'state': 'str',
+            'initial_state': 'str',
             'id': 'str',
             'held': 'bool',
             'subject': 'str',
@@ -63,12 +64,12 @@ class Email(object):
             'spam': 'bool',
             'wrapup': 'Wrapup',
             'after_call_work': 'AfterCallWork',
-            'after_call_work_required': 'bool',
-            'initial_state': 'str'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
             'state': 'state',
+            'initial_state': 'initialState',
             'id': 'id',
             'held': 'held',
             'subject': 'subject',
@@ -91,11 +92,11 @@ class Email(object):
             'spam': 'spam',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'initial_state': 'initialState'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
+        self._initial_state = None
         self._id = None
         self._held = None
         self._subject = None
@@ -119,7 +120,6 @@ class Email(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._initial_state = None
 
     @property
     def state(self):
@@ -147,6 +147,33 @@ class Email(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this Email.
+        The initial connection state of this communication.
+
+        :return: The initial_state of this Email.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this Email.
+        The initial connection state of this communication.
+
+        :param initial_state: The initial_state of this Email.
+        :type: str
+        """
+        allowed_values = ["alerting", "connected", "disconnected", "none", "transmitting"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     @property
     def id(self):
@@ -705,33 +732,6 @@ class Email(object):
         
 
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def initial_state(self):
-        """
-        Gets the initial_state of this Email.
-        The initial connection state of this communication.
-
-        :return: The initial_state of this Email.
-        :rtype: str
-        """
-        return self._initial_state
-
-    @initial_state.setter
-    def initial_state(self, initial_state):
-        """
-        Sets the initial_state of this Email.
-        The initial connection state of this communication.
-
-        :param initial_state: The initial_state of this Email.
-        :type: str
-        """
-        allowed_values = ["alerting", "connected", "disconnected", "none", "transmitting"]
-        if initial_state.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for initial_state -> " + initial_state)
-            self._initial_state = "outdated_sdk_version"
-        else:
-            self._initial_state = initial_state
 
     def to_dict(self):
         """

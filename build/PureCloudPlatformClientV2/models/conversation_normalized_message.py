@@ -150,7 +150,7 @@ class ConversationNormalizedMessage(object):
         :param type: The type of this ConversationNormalizedMessage.
         :type: str
         """
-        allowed_values = ["Text", "Structured", "Receipt", "Event", "Unknown"]
+        allowed_values = ["Text", "Structured", "Receipt", "Event", "Message", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

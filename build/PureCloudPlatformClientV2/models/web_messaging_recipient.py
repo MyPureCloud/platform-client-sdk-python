@@ -43,6 +43,7 @@ class WebMessagingRecipient(object):
             'first_name': 'str',
             'last_name': 'str',
             'nickname': 'str',
+            'image': 'str',
             'additional_ids': 'list[RecipientAdditionalIdentifier]'
         }
 
@@ -50,12 +51,14 @@ class WebMessagingRecipient(object):
             'first_name': 'firstName',
             'last_name': 'lastName',
             'nickname': 'nickname',
+            'image': 'image',
             'additional_ids': 'additionalIds'
         }
 
         self._first_name = None
         self._last_name = None
         self._nickname = None
+        self._image = None
         self._additional_ids = None
 
     @property
@@ -129,6 +132,30 @@ class WebMessagingRecipient(object):
         
 
         self._nickname = nickname
+
+    @property
+    def image(self):
+        """
+        Gets the image of this WebMessagingRecipient.
+        URL of an image that represents the recipient.
+
+        :return: The image of this WebMessagingRecipient.
+        :rtype: str
+        """
+        return self._image
+
+    @image.setter
+    def image(self, image):
+        """
+        Sets the image of this WebMessagingRecipient.
+        URL of an image that represents the recipient.
+
+        :param image: The image of this WebMessagingRecipient.
+        :type: str
+        """
+        
+
+        self._image = image
 
     @property
     def additional_ids(self):

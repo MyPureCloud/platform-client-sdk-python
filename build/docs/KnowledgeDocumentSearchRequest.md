@@ -14,6 +14,10 @@ title: KnowledgeDocumentSearchRequest
 | **total** | **int** | The total number of documents matching the query. | [optional] |
 | **page_count** | **int** | Number of pages returned in the result calculated according to the pageSize and the total | [optional] |
 | **include_draft_documents** | **bool** | Indicates whether the search results would also include draft documents. | [optional] |
+| **interval** | [**DocumentQueryInterval**](DocumentQueryInterval.html) | Retrieves the documents created/modified/published in specified date and time range. | [optional] |
+| **filter** | [**DocumentQuery**](DocumentQuery.html) | Filter for the document search. | [optional] |
+| **sort_order** | **str** | The sort order for search results. | [optional] |
+| **sort_by** | **str** | The field in the documents that you want to sort the search results by. | [optional] |
 {: class="table table-striped"}
 
 

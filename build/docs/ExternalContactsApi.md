@@ -16,8 +16,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_externalcontacts_organization_trustor**](ExternalContactsApi.html#delete_externalcontacts_organization_trustor) | Unlink the Trustor for this External Organization|
 |[**delete_externalcontacts_relationship**](ExternalContactsApi.html#delete_externalcontacts_relationship) | Delete a relationship|
 |[**get_externalcontacts_contact**](ExternalContactsApi.html#get_externalcontacts_contact) | Fetch an external contact|
+|[**get_externalcontacts_contact_identifiers**](ExternalContactsApi.html#get_externalcontacts_contact_identifiers) | List the identifiers for a contact|
 |[**get_externalcontacts_contact_note**](ExternalContactsApi.html#get_externalcontacts_contact_note) | Fetch a note for an external contact|
 |[**get_externalcontacts_contact_notes**](ExternalContactsApi.html#get_externalcontacts_contact_notes) | List notes for an external contact|
+|[**get_externalcontacts_contact_unresolved**](ExternalContactsApi.html#get_externalcontacts_contact_unresolved) | Fetch an unresolved external contact|
 |[**get_externalcontacts_contacts**](ExternalContactsApi.html#get_externalcontacts_contacts) | Search for external contacts|
 |[**get_externalcontacts_contacts_schema**](ExternalContactsApi.html#get_externalcontacts_contacts_schema) | Get a schema|
 |[**get_externalcontacts_contacts_schema_version**](ExternalContactsApi.html#get_externalcontacts_contacts_schema_version) | Get a specific version of a schema|
@@ -39,9 +41,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_scan_notes**](ExternalContactsApi.html#get_externalcontacts_scan_notes) | Scan for notes using paging|
 |[**get_externalcontacts_scan_organizations**](ExternalContactsApi.html#get_externalcontacts_scan_organizations) | Scan for external organizations using paging|
 |[**get_externalcontacts_scan_relationships**](ExternalContactsApi.html#get_externalcontacts_scan_relationships) | Scan for relationships|
+|[**patch_externalcontacts_contact_identifiers**](ExternalContactsApi.html#patch_externalcontacts_contact_identifiers) | Claim or release identifiers for a contact|
 |[**post_externalcontacts_bulk_contacts**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts) | Bulk fetch contacts|
 |[**post_externalcontacts_bulk_contacts_add**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_add) | Bulk add contacts|
 |[**post_externalcontacts_bulk_contacts_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_remove) | Bulk remove contacts|
+|[**post_externalcontacts_bulk_contacts_unresolved**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_unresolved) | Bulk fetch unresolved ancestor contacts|
 |[**post_externalcontacts_bulk_contacts_update**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_update) | Bulk update contacts|
 |[**post_externalcontacts_bulk_notes**](ExternalContactsApi.html#post_externalcontacts_bulk_notes) | Bulk fetch notes|
 |[**post_externalcontacts_bulk_notes_add**](ExternalContactsApi.html#post_externalcontacts_bulk_notes_add) | Bulk add notes|
@@ -56,8 +60,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_bulk_relationships_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships_remove) | Bulk remove relationships|
 |[**post_externalcontacts_bulk_relationships_update**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships_update) | Bulk update relationships|
 |[**post_externalcontacts_contact_notes**](ExternalContactsApi.html#post_externalcontacts_contact_notes) | Create a note for an external contact|
+|[**post_externalcontacts_contact_promotion**](ExternalContactsApi.html#post_externalcontacts_contact_promotion) | Promote an observed contact (ephemeral or identified) to a curated contact|
 |[**post_externalcontacts_contacts**](ExternalContactsApi.html#post_externalcontacts_contacts) | Create an external contact|
 |[**post_externalcontacts_contacts_schemas**](ExternalContactsApi.html#post_externalcontacts_contacts_schemas) | Create a schema|
+|[**post_externalcontacts_identifierlookup**](ExternalContactsApi.html#post_externalcontacts_identifierlookup) | Fetch a contact using an identifier type and value.|
+|[**post_externalcontacts_merge_contacts**](ExternalContactsApi.html#post_externalcontacts_merge_contacts) | Merge two contacts into a new contact record|
 |[**post_externalcontacts_organization_notes**](ExternalContactsApi.html#post_externalcontacts_organization_notes) | Create a note for an external organization|
 |[**post_externalcontacts_organizations**](ExternalContactsApi.html#post_externalcontacts_organizations) | Create an external organization|
 |[**post_externalcontacts_organizations_schemas**](ExternalContactsApi.html#post_externalcontacts_organizations_schemas) | Create a schema|
@@ -486,6 +493,57 @@ except ApiException as e:
 
 [**ExternalContact**](ExternalContact.html)
 
+<a name="get_externalcontacts_contact_identifiers"></a>
+
+## [**EntityListing**](EntityListing.html) get_externalcontacts_contact_identifiers(contact_id)
+
+
+
+List the identifiers for a contact
+
+
+
+Wraps GET /api/v2/externalcontacts/contacts/{contactId}/identifiers 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+
+try:
+    # List the identifiers for a contact
+    api_response = api_instance.get_externalcontacts_contact_identifiers(contact_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contact_identifiers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EntityListing**](EntityListing.html)
+
 <a name="get_externalcontacts_contact_note"></a>
 
 ## [**Note**](Note.html) get_externalcontacts_contact_note(contact_id, note_id, expand=expand)
@@ -599,6 +657,59 @@ except ApiException as e:
 ### Return type
 
 [**NoteListing**](NoteListing.html)
+
+<a name="get_externalcontacts_contact_unresolved"></a>
+
+## [**ExternalContact**](ExternalContact.html) get_externalcontacts_contact_unresolved(contact_id, expand=expand)
+
+
+
+Fetch an unresolved external contact
+
+
+
+Wraps GET /api/v2/externalcontacts/contacts/{contactId}/unresolved 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
+
+try:
+    # Fetch an unresolved external contact
+    api_response = api_instance.get_externalcontacts_contact_unresolved(contact_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contact_unresolved: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] <br />**Values**: externalOrganization, externalDataSources |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalContact**](ExternalContact.html)
 
 <a name="get_externalcontacts_contacts"></a>
 
@@ -1737,6 +1848,59 @@ except ApiException as e:
 
 [**CursorRelationshipListing**](CursorRelationshipListing.html)
 
+<a name="patch_externalcontacts_contact_identifiers"></a>
+
+## [**ContactIdentifier**](ContactIdentifier.html) patch_externalcontacts_contact_identifiers(contact_id, body)
+
+
+
+Claim or release identifiers for a contact
+
+
+
+Wraps PATCH /api/v2/externalcontacts/contacts/{contactId}/identifiers 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+body = PureCloudPlatformClientV2.IdentifierClaimRequest() # IdentifierClaimRequest | ClaimRequest
+
+try:
+    # Claim or release identifiers for a contact
+    api_response = api_instance.patch_externalcontacts_contact_identifiers(contact_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->patch_externalcontacts_contact_identifiers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+| **body** | [**IdentifierClaimRequest**](IdentifierClaimRequest.html)| ClaimRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactIdentifier**](ContactIdentifier.html)
+
 <a name="post_externalcontacts_bulk_contacts"></a>
 
 ## [**BulkFetchContactsResponse**](BulkFetchContactsResponse.html) post_externalcontacts_bulk_contacts(body)
@@ -1889,6 +2053,57 @@ except ApiException as e:
 ### Return type
 
 [**BulkDeleteResponse**](BulkDeleteResponse.html)
+
+<a name="post_externalcontacts_bulk_contacts_unresolved"></a>
+
+## [**BulkFetchContactsResponse**](BulkFetchContactsResponse.html) post_externalcontacts_bulk_contacts_unresolved(body)
+
+
+
+Bulk fetch unresolved ancestor contacts
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/contacts/unresolved 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkIdsRequest() # BulkIdsRequest | Contact ids
+
+try:
+    # Bulk fetch unresolved ancestor contacts
+    api_response = api_instance.post_externalcontacts_bulk_contacts_unresolved(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_contacts_unresolved: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Contact ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkFetchContactsResponse**](BulkFetchContactsResponse.html)
 
 <a name="post_externalcontacts_bulk_contacts_update"></a>
 
@@ -2614,6 +2829,57 @@ except ApiException as e:
 
 [**Note**](Note.html)
 
+<a name="post_externalcontacts_contact_promotion"></a>
+
+## [**ExternalContact**](ExternalContact.html) post_externalcontacts_contact_promotion(contact_id)
+
+
+
+Promote an observed contact (ephemeral or identified) to a curated contact
+
+
+
+Wraps POST /api/v2/externalcontacts/contacts/{contactId}/promotion 
+
+Requires ANY permissions: 
+
+* externalContacts:identity:promote
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+
+try:
+    # Promote an observed contact (ephemeral or identified) to a curated contact
+    api_response = api_instance.post_externalcontacts_contact_promotion(contact_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_contact_promotion: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalContact**](ExternalContact.html)
+
 <a name="post_externalcontacts_contacts"></a>
 
 ## [**ExternalContact**](ExternalContact.html) post_externalcontacts_contacts(body)
@@ -2715,6 +2981,112 @@ except ApiException as e:
 ### Return type
 
 [**DataSchema**](DataSchema.html)
+
+<a name="post_externalcontacts_identifierlookup"></a>
+
+## [**ExternalContact**](ExternalContact.html) post_externalcontacts_identifierlookup(identifier)
+
+
+
+Fetch a contact using an identifier type and value.
+
+Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+
+
+
+Wraps POST /api/v2/externalcontacts/identifierlookup 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+* relate:contact:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+identifier = PureCloudPlatformClientV2.ContactIdentifier() # ContactIdentifier | 
+
+try:
+    # Fetch a contact using an identifier type and value.
+    api_response = api_instance.post_externalcontacts_identifierlookup(identifier)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_identifierlookup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **identifier** | [**ContactIdentifier**](ContactIdentifier.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalContact**](ExternalContact.html)
+
+<a name="post_externalcontacts_merge_contacts"></a>
+
+## [**ExternalContact**](ExternalContact.html) post_externalcontacts_merge_contacts(body)
+
+
+
+Merge two contacts into a new contact record
+
+
+
+Wraps POST /api/v2/externalcontacts/merge/contacts 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+* externalContacts:identity:merge
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.MergeRequest() # MergeRequest | MergeRequest
+
+try:
+    # Merge two contacts into a new contact record
+    api_response = api_instance.post_externalcontacts_merge_contacts(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_merge_contacts: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**MergeRequest**](MergeRequest.html)| MergeRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalContact**](ExternalContact.html)
 
 <a name="post_externalcontacts_organization_notes"></a>
 

@@ -70,6 +70,8 @@ from .models.agent_owned_mapping_preview import AgentOwnedMappingPreview
 from .models.agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
 from .models.agent_owned_routing import AgentOwnedRouting
 from .models.agent_time_off_request_patch import AgentTimeOffRequestPatch
+from .models.agentless_email_send_request_dto import AgentlessEmailSendRequestDto
+from .models.agentless_email_send_response_dto import AgentlessEmailSendResponseDto
 from .models.aggregate_metric_data import AggregateMetricData
 from .models.aggregate_view_data import AggregateViewData
 from .models.aggregation_range import AggregationRange
@@ -180,6 +182,8 @@ from .models.attribute_detail_event_topic_attribute_update_event import Attribut
 from .models.attribute_filter_item import AttributeFilterItem
 from .models.atzm_time_slot import AtzmTimeSlot
 from .models.atzm_time_slot_with_time_zone import AtzmTimeSlotWithTimeZone
+from .models.audio_state import AudioState
+from .models.audio_updated_event import AudioUpdatedEvent
 from .models.audit_change import AuditChange
 from .models.audit_entity import AuditEntity
 from .models.audit_entity_reference import AuditEntityReference
@@ -228,11 +232,15 @@ from .models.available_translations import AvailableTranslations
 from .models.base_media_settings import BaseMediaSettings
 from .models.base_program_entity import BaseProgramEntity
 from .models.base_topic_entitiy import BaseTopicEntitiy
+from .models.batch_conversation_event_request import BatchConversationEventRequest
 from .models.batch_download_job_result import BatchDownloadJobResult
 from .models.batch_download_job_status_result import BatchDownloadJobStatusResult
 from .models.batch_download_job_submission import BatchDownloadJobSubmission
 from .models.batch_download_job_submission_result import BatchDownloadJobSubmissionResult
 from .models.batch_download_request import BatchDownloadRequest
+from .models.batch_event_response import BatchEventResponse
+from .models.batch_user_presence_event_request import BatchUserPresenceEventRequest
+from .models.batch_user_routing_status_event_request import BatchUserRoutingStatusEventRequest
 from .models.benefit_assessment import BenefitAssessment
 from .models.benefit_assessment_job import BenefitAssessmentJob
 from .models.billing_usage import BillingUsage
@@ -495,6 +503,9 @@ from .models.common_campaign import CommonCampaign
 from .models.common_campaign_division_view import CommonCampaignDivisionView
 from .models.common_campaign_division_view_entity_listing import CommonCampaignDivisionViewEntityListing
 from .models.common_campaign_entity_listing import CommonCampaignEntityListing
+from .models.communication_answered_event import CommunicationAnsweredEvent
+from .models.communication_disposition_applied_event import CommunicationDispositionAppliedEvent
+from .models.communication_ended_event import CommunicationEndedEvent
 from .models.comparison_period import ComparisonPeriod
 from .models.comparison_period_listing import ComparisonPeriodListing
 from .models.condition import Condition
@@ -507,6 +518,7 @@ from .models.connected_queue import ConnectedQueue
 from .models.connected_user import ConnectedUser
 from .models.constraint_conflict_message import ConstraintConflictMessage
 from .models.consult_transfer import ConsultTransfer
+from .models.consult_transfer_event import ConsultTransferEvent
 from .models.consult_transfer_response import ConsultTransferResponse
 from .models.consult_transfer_update import ConsultTransferUpdate
 from .models.consumed_resources_entity_listing import ConsumedResourcesEntityListing
@@ -522,6 +534,7 @@ from .models.contact_column_condition_settings import ContactColumnConditionSett
 from .models.contact_column_time_zone import ContactColumnTimeZone
 from .models.contact_column_to_data_action_field_mapping import ContactColumnToDataActionFieldMapping
 from .models.contact_detail_event_topic_contact_update_event import ContactDetailEventTopicContactUpdateEvent
+from .models.contact_identifier import ContactIdentifier
 from .models.contact_list import ContactList
 from .models.contact_list_division_view import ContactListDivisionView
 from .models.contact_list_division_view_listing import ContactListDivisionViewListing
@@ -565,10 +578,12 @@ from .models.content_position_properties import ContentPositionProperties
 from .models.content_postback import ContentPostback
 from .models.content_query_request import ContentQueryRequest
 from .models.content_quick_reply import ContentQuickReply
+from .models.content_quick_reply_v2 import ContentQuickReplyV2
 from .models.content_reaction import ContentReaction
 from .models.content_setting import ContentSetting
 from .models.content_sort_item import ContentSortItem
 from .models.content_story import ContentStory
+from .models.content_text import ContentText
 from .models.context import Context
 from .models.context_entity import ContextEntity
 from .models.context_intent import ContextIntent
@@ -651,7 +666,9 @@ from .models.conversation_content_carousel import ConversationContentCarousel
 from .models.conversation_content_location import ConversationContentLocation
 from .models.conversation_content_notification_template import ConversationContentNotificationTemplate
 from .models.conversation_content_quick_reply import ConversationContentQuickReply
+from .models.conversation_content_quick_reply_v2 import ConversationContentQuickReplyV2
 from .models.conversation_content_story import ConversationContentStory
+from .models.conversation_content_text import ConversationContentText
 from .models.conversation_deletion_protection_query import ConversationDeletionProtectionQuery
 from .models.conversation_detail_query_clause import ConversationDetailQueryClause
 from .models.conversation_detail_query_filter import ConversationDetailQueryFilter
@@ -1018,6 +1035,7 @@ from .models.dnc_list_division_view_listing import DncListDivisionViewListing
 from .models.dnc_list_entity_listing import DncListEntityListing
 from .models.dnclist_download_ready_export_uri import DnclistDownloadReadyExportUri
 from .models.dnclist_import_status_import_status import DnclistImportStatusImportStatus
+from .models.dns_record_entry import DnsRecordEntry
 from .models.do_not_send_action_settings import DoNotSendActionSettings
 from .models.document import Document
 from .models.document_article import DocumentArticle
@@ -1036,6 +1054,10 @@ from .models.document_content_block import DocumentContentBlock
 from .models.document_entity_listing import DocumentEntityListing
 from .models.document_faq import DocumentFaq
 from .models.document_listing import DocumentListing
+from .models.document_query import DocumentQuery
+from .models.document_query_clause import DocumentQueryClause
+from .models.document_query_interval import DocumentQueryInterval
+from .models.document_query_predicate import DocumentQueryPredicate
 from .models.document_reference import DocumentReference
 from .models.document_text import DocumentText
 from .models.document_thumbnail import DocumentThumbnail
@@ -1142,6 +1164,7 @@ from .models.email_media_policy import EmailMediaPolicy
 from .models.email_media_policy_conditions import EmailMediaPolicyConditions
 from .models.email_message import EmailMessage
 from .models.email_message_listing import EmailMessageListing
+from .models.email_outbound_domain_result import EmailOutboundDomainResult
 from .models.email_setup import EmailSetup
 from .models.emails_settings import EmailsSettings
 from .models.embedded_integration import EmbeddedIntegration
@@ -1152,8 +1175,11 @@ from .models.employer_info import EmployerInfo
 from .models.empty import Empty
 from .models.encryption_key import EncryptionKey
 from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
+from .models.end_consult_transfer_event import EndConsultTransferEvent
+from .models.end_transfer_event import EndTransferEvent
 from .models.endpoint import Endpoint
 from .models.entity import Entity
+from .models.entity_change import EntityChange
 from .models.entity_listing import EntityListing
 from .models.entity_type_criteria import EntityTypeCriteria
 from .models.entry import Entry
@@ -1194,12 +1220,15 @@ from .models.evaluator_activity import EvaluatorActivity
 from .models.evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .models.event_co_browse import EventCoBrowse
 from .models.event_condition import EventCondition
+from .models.event_error import EventError
 from .models.event_log import EventLog
 from .models.event_message import EventMessage
 from .models.event_presence import EventPresence
 from .models.event_setting import EventSetting
 from .models.event_typing import EventTyping
 from .models.execute_recording_jobs_query import ExecuteRecordingJobsQuery
+from .models.expandable_web_deployment import ExpandableWebDeployment
+from .models.expandable_web_deployment_entity_listing import ExpandableWebDeploymentEntityListing
 from .models.expansion_criterium import ExpansionCriterium
 from .models.expired_edge_listing import ExpiredEdgeListing
 from .models.export_script_request import ExportScriptRequest
@@ -1230,6 +1259,7 @@ from .models.external_contacts_unresolved_contact_changed_topic_phone_number imp
 from .models.external_contacts_unresolved_contact_changed_topic_twitter_id import ExternalContactsUnresolvedContactChangedTopicTwitterId
 from .models.external_contacts_unresolved_contact_changed_topic_whats_app_id import ExternalContactsUnresolvedContactChangedTopicWhatsAppId
 from .models.external_data_source import ExternalDataSource
+from .models.external_established_event import ExternalEstablishedEvent
 from .models.external_metric_data_item import ExternalMetricDataItem
 from .models.external_metric_data_processed_item import ExternalMetricDataProcessedItem
 from .models.external_metric_data_unprocessed_item import ExternalMetricDataUnprocessedItem
@@ -1394,10 +1424,12 @@ from .models.historical_import_status import HistoricalImportStatus
 from .models.historical_import_status_listing import HistoricalImportStatusListing
 from .models.history_entry import HistoryEntry
 from .models.history_listing import HistoryListing
+from .models.hold_updated_event import HoldUpdatedEvent
 from .models.homer_record import HomerRecord
 from .models.humanize import Humanize
 from .models.ivr import IVR
 from .models.ivr_entity_listing import IVREntityListing
+from .models.identifier_claim_request import IdentifierClaimRequest
 from .models.identity_now import IdentityNow
 from .models.idle_event_trigger import IdleEventTrigger
 from .models.ignored_activity_categories import IgnoredActivityCategories
@@ -1417,12 +1449,13 @@ from .models.inbound_message_request import InboundMessageRequest
 from .models.inbound_only_setting import InboundOnlySetting
 from .models.inbound_route import InboundRoute
 from .models.inbound_route_entity_listing import InboundRouteEntityListing
+from .models.initial_configuration import InitialConfiguration
 from .models.initiate_screen_recording import InitiateScreenRecording
+from .models.initiating_action import InitiatingAction
 from .models.integration import Integration
 from .models.integration_action import IntegrationAction
 from .models.integration_action_fields import IntegrationActionFields
 from .models.integration_configuration import IntegrationConfiguration
-from .models.integration_configuration_credential import IntegrationConfigurationCredential
 from .models.integration_configuration_info import IntegrationConfigurationInfo
 from .models.integration_entity_listing import IntegrationEntityListing
 from .models.integration_export import IntegrationExport
@@ -1444,6 +1477,7 @@ from .models.ip_address_range import IpAddressRange
 from .models.ip_address_range_listing import IpAddressRangeListing
 from .models.item_validation_limits import ItemValidationLimits
 from .models.items import Items
+from .models.ivr_established_event import IvrEstablishedEvent
 from .models.journey import Journey
 from .models.journey_action import JourneyAction
 from .models.journey_action_map import JourneyActionMap
@@ -1589,6 +1623,7 @@ from .models.knowledge_group_statistics import KnowledgeGroupStatistics
 from .models.knowledge_guest_document import KnowledgeGuestDocument
 from .models.knowledge_guest_document_response_listing import KnowledgeGuestDocumentResponseListing
 from .models.knowledge_guest_document_suggestion import KnowledgeGuestDocumentSuggestion
+from .models.knowledge_guest_document_suggestion_request import KnowledgeGuestDocumentSuggestionRequest
 from .models.knowledge_guest_document_suggestion_result import KnowledgeGuestDocumentSuggestionResult
 from .models.knowledge_guest_document_variation import KnowledgeGuestDocumentVariation
 from .models.knowledge_guest_document_variation_context import KnowledgeGuestDocumentVariationContext
@@ -1759,6 +1794,7 @@ from .models.member_entity import MemberEntity
 from .models.member_group import MemberGroup
 from .models.member_listing import MemberListing
 from .models.merge_operation import MergeOperation
+from .models.merge_request import MergeRequest
 from .models.message import Message
 from .models.message_content import MessageContent
 from .models.message_conversation import MessageConversation
@@ -1901,6 +1937,8 @@ from .models.out_of_office import OutOfOffice
 from .models.out_of_office_event_out_of_office import OutOfOfficeEventOutOfOffice
 from .models.out_of_office_event_user import OutOfOfficeEventUser
 from .models.outbound_detail_event_topic_outbound_init_event import OutboundDetailEventTopicOutboundInitEvent
+from .models.outbound_domain import OutboundDomain
+from .models.outbound_domain_entity_listing import OutboundDomainEntityListing
 from .models.outbound_messaging_messaging_campaign_config_change_contact_sort import OutboundMessagingMessagingCampaignConfigChangeContactSort
 from .models.outbound_messaging_messaging_campaign_config_change_email_config import OutboundMessagingMessagingCampaignConfigChangeEmailConfig
 from .models.outbound_messaging_messaging_campaign_config_change_error_detail import OutboundMessagingMessagingCampaignConfigChangeErrorDetail
@@ -1982,11 +2020,13 @@ from .models.phone_change_topic_provision_info import PhoneChangeTopicProvisionI
 from .models.phone_change_topic_user_agent_info import PhoneChangeTopicUserAgentInfo
 from .models.phone_column import PhoneColumn
 from .models.phone_entity_listing import PhoneEntityListing
+from .models.phone_established_event import PhoneEstablishedEvent
 from .models.phone_meta_base_entity_listing import PhoneMetaBaseEntityListing
 from .models.phone_number import PhoneNumber
 from .models.phone_number_column import PhoneNumberColumn
 from .models.phone_number_status import PhoneNumberStatus
 from .models.phone_status import PhoneStatus
+from .models.phone_transfer_event import PhoneTransferEvent
 from .models.phones_reboot import PhonesReboot
 from .models.phrase import Phrase
 from .models.phrase_associations import PhraseAssociations
@@ -2037,6 +2077,8 @@ from .models.program_mappings_request import ProgramMappingsRequest
 from .models.program_request import ProgramRequest
 from .models.programs_entity_listing import ProgramsEntityListing
 from .models.programs_mappings_entity_listing import ProgramsMappingsEntityListing
+from .models.progress_consult_transfer_event import ProgressConsultTransferEvent
+from .models.progress_transfer_event import ProgressTransferEvent
 from .models.prompt import Prompt
 from .models.prompt_asset import PromptAsset
 from .models.prompt_asset_create import PromptAssetCreate
@@ -2409,6 +2451,7 @@ from .models.route_path_response import RoutePathResponse
 from .models.routing_conversation_attributes_request import RoutingConversationAttributesRequest
 from .models.routing_conversation_attributes_response import RoutingConversationAttributesResponse
 from .models.routing_data import RoutingData
+from .models.routing_established_event import RoutingEstablishedEvent
 from .models.routing_rule import RoutingRule
 from .models.routing_settings import RoutingSettings
 from .models.routing_skill import RoutingSkill
@@ -2417,6 +2460,7 @@ from .models.routing_status import RoutingStatus
 from .models.routing_status_detail_query_clause import RoutingStatusDetailQueryClause
 from .models.routing_status_detail_query_filter import RoutingStatusDetailQueryFilter
 from .models.routing_status_detail_query_predicate import RoutingStatusDetailQueryPredicate
+from .models.routing_transfer_event import RoutingTransferEvent
 from .models.rule_set import RuleSet
 from .models.rule_set_diagnostic import RuleSetDiagnostic
 from .models.rule_set_entity_listing import RuleSetEntityListing
@@ -2558,6 +2602,7 @@ from .models.short_term_forecast_reference import ShortTermForecastReference
 from .models.short_term_forecasting_settings import ShortTermForecastingSettings
 from .models.shrinkage_override import ShrinkageOverride
 from .models.shrinkage_overrides import ShrinkageOverrides
+from .models.signature import Signature
 from .models.signed_url_response import SignedUrlResponse
 from .models.single_workday_average_points import SingleWorkdayAveragePoints
 from .models.single_workday_average_values import SingleWorkdayAverageValues
@@ -2581,6 +2626,9 @@ from .models.sms_provisioning_status import SmsProvisioningStatus
 from .models.social_expression import SocialExpression
 from .models.social_handle import SocialHandle
 from .models.sort_item import SortItem
+from .models.source import Source
+from .models.source_configuration import SourceConfiguration
+from .models.source_entity_listing import SourceEntityListing
 from .models.source_planning_group_request import SourcePlanningGroupRequest
 from .models.speech_text_analytics_settings_request import SpeechTextAnalyticsSettingsRequest
 from .models.speech_text_analytics_settings_response import SpeechTextAnalyticsSettingsResponse
@@ -2888,6 +2936,7 @@ from .models.user_details_query import UserDetailsQuery
 from .models.user_device import UserDevice
 from .models.user_end_detail_event_topic_user_end_event import UserEndDetailEventTopicUserEndEvent
 from .models.user_entity_listing import UserEntityListing
+from .models.user_established_event import UserEstablishedEvent
 from .models.user_expands import UserExpands
 from .models.user_external_identifier import UserExternalIdentifier
 from .models.user_greeting_event_greeting import UserGreetingEventGreeting
@@ -2907,6 +2956,8 @@ from .models.user_observation_query_predicate import UserObservationQueryPredica
 from .models.user_observation_query_response import UserObservationQueryResponse
 from .models.user_param import UserParam
 from .models.user_presence import UserPresence
+from .models.user_presence_event import UserPresenceEvent
+from .models.user_primary_source import UserPrimarySource
 from .models.user_profile import UserProfile
 from .models.user_profile_entity_listing import UserProfileEntityListing
 from .models.user_queue import UserQueue
@@ -2919,6 +2970,7 @@ from .models.user_routing_language_post import UserRoutingLanguagePost
 from .models.user_routing_skill import UserRoutingSkill
 from .models.user_routing_skill_post import UserRoutingSkillPost
 from .models.user_routing_status_error_info import UserRoutingStatusErrorInfo
+from .models.user_routing_status_event import UserRoutingStatusEvent
 from .models.user_routing_status_routing_status import UserRoutingStatusRoutingStatus
 from .models.user_routing_status_user_param import UserRoutingStatusUserParam
 from .models.user_routing_status_user_routing_status import UserRoutingStatusUserRoutingStatus
@@ -2942,6 +2994,7 @@ from .models.user_stations import UserStations
 from .models.user_time_off_request_reference import UserTimeOffRequestReference
 from .models.user_tokens_topic_token_notification import UserTokensTopicTokenNotification
 from .models.user_tokens_topic_uri_reference import UserTokensTopicUriReference
+from .models.user_transfer_event import UserTransferEvent
 from .models.users_search_response import UsersSearchResponse
 from .models.utilization import Utilization
 from .models.utterance import Utterance
@@ -3005,6 +3058,7 @@ from .models.validation_service_request import ValidationServiceRequest
 from .models.value_wrapper_date import ValueWrapperDate
 from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .models.value_wrapper_string import ValueWrapperString
+from .models.verification_result import VerificationResult
 from .models.video import Video
 from .models.view_filter import ViewFilter
 from .models.vip_backup import VipBackup
@@ -3051,7 +3105,9 @@ from .models.web_deployment import WebDeployment
 from .models.web_deployment_active_configuration_on_deployment import WebDeploymentActiveConfigurationOnDeployment
 from .models.web_deployment_configuration_version import WebDeploymentConfigurationVersion
 from .models.web_deployment_configuration_version_entity_listing import WebDeploymentConfigurationVersionEntityListing
-from .models.web_deployment_entity_listing import WebDeploymentEntityListing
+from .models.web_deployment_configuration_version_entity_ref import WebDeploymentConfigurationVersionEntityRef
+from .models.web_deployment_configuration_version_response import WebDeploymentConfigurationVersionResponse
+from .models.web_deployment_headless_mode import WebDeploymentHeadlessMode
 from .models.web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 from .models.web_deployments_deployment_topic_web_messaging_config_change_event_body import WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody
 from .models.web_deployments_deployment_topic_web_messaging_deployment_change_event_body import WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody
@@ -3283,6 +3339,8 @@ from .apis.coaching_api import CoachingApi
 from .apis.content_management_api import ContentManagementApi
 from .apis.conversations_api import ConversationsApi
 from .apis.data_extensions_api import DataExtensionsApi
+from .apis.downloads_api import DownloadsApi
+from .apis.events_api import EventsApi
 from .apis.external_contacts_api import ExternalContactsApi
 from .apis.fax_api import FaxApi
 from .apis.flows_api import FlowsApi
@@ -3347,6 +3405,8 @@ from .apis.coaching_api import CoachingApi
 from .apis.content_management_api import ContentManagementApi
 from .apis.conversations_api import ConversationsApi
 from .apis.data_extensions_api import DataExtensionsApi
+from .apis.downloads_api import DownloadsApi
+from .apis.events_api import EventsApi
 from .apis.external_contacts_api import ExternalContactsApi
 from .apis.fax_api import FaxApi
 from .apis.flows_api import FlowsApi

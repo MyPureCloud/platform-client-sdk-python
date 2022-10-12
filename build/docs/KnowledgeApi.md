@@ -3152,7 +3152,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 session_id = 'session_id_example' # str | Knowledge guest session ID.
-body = PureCloudPlatformClientV2.KnowledgeDocumentSuggestionRequest() # KnowledgeDocumentSuggestionRequest |  (optional)
+body = PureCloudPlatformClientV2.KnowledgeGuestDocumentSuggestionRequest() # KnowledgeGuestDocumentSuggestionRequest |  (optional)
 
 try:
     # Query the knowledge documents to provide suggestions for auto completion.
@@ -3168,7 +3168,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
-| **body** | [**KnowledgeDocumentSuggestionRequest**](KnowledgeDocumentSuggestionRequest.html)|  | [optional]  |
+| **body** | [**KnowledgeGuestDocumentSuggestionRequest**](KnowledgeGuestDocumentSuggestionRequest.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

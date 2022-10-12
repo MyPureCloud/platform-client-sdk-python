@@ -46,7 +46,11 @@ class KnowledgeDocumentSearchRequest(object):
             'search_id': 'str',
             'total': 'int',
             'page_count': 'int',
-            'include_draft_documents': 'bool'
+            'include_draft_documents': 'bool',
+            'interval': 'DocumentQueryInterval',
+            'filter': 'DocumentQuery',
+            'sort_order': 'str',
+            'sort_by': 'str'
         }
 
         self.attribute_map = {
@@ -56,7 +60,11 @@ class KnowledgeDocumentSearchRequest(object):
             'search_id': 'searchId',
             'total': 'total',
             'page_count': 'pageCount',
-            'include_draft_documents': 'includeDraftDocuments'
+            'include_draft_documents': 'includeDraftDocuments',
+            'interval': 'interval',
+            'filter': 'filter',
+            'sort_order': 'sortOrder',
+            'sort_by': 'sortBy'
         }
 
         self._query = None
@@ -66,6 +74,10 @@ class KnowledgeDocumentSearchRequest(object):
         self._total = None
         self._page_count = None
         self._include_draft_documents = None
+        self._interval = None
+        self._filter = None
+        self._sort_order = None
+        self._sort_by = None
 
     @property
     def query(self):
@@ -240,6 +252,108 @@ class KnowledgeDocumentSearchRequest(object):
         
 
         self._include_draft_documents = include_draft_documents
+
+    @property
+    def interval(self):
+        """
+        Gets the interval of this KnowledgeDocumentSearchRequest.
+        Retrieves the documents created/modified/published in specified date and time range.
+
+        :return: The interval of this KnowledgeDocumentSearchRequest.
+        :rtype: DocumentQueryInterval
+        """
+        return self._interval
+
+    @interval.setter
+    def interval(self, interval):
+        """
+        Sets the interval of this KnowledgeDocumentSearchRequest.
+        Retrieves the documents created/modified/published in specified date and time range.
+
+        :param interval: The interval of this KnowledgeDocumentSearchRequest.
+        :type: DocumentQueryInterval
+        """
+        
+
+        self._interval = interval
+
+    @property
+    def filter(self):
+        """
+        Gets the filter of this KnowledgeDocumentSearchRequest.
+        Filter for the document search.
+
+        :return: The filter of this KnowledgeDocumentSearchRequest.
+        :rtype: DocumentQuery
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter):
+        """
+        Sets the filter of this KnowledgeDocumentSearchRequest.
+        Filter for the document search.
+
+        :param filter: The filter of this KnowledgeDocumentSearchRequest.
+        :type: DocumentQuery
+        """
+        
+
+        self._filter = filter
+
+    @property
+    def sort_order(self):
+        """
+        Gets the sort_order of this KnowledgeDocumentSearchRequest.
+        The sort order for search results.
+
+        :return: The sort_order of this KnowledgeDocumentSearchRequest.
+        :rtype: str
+        """
+        return self._sort_order
+
+    @sort_order.setter
+    def sort_order(self, sort_order):
+        """
+        Sets the sort_order of this KnowledgeDocumentSearchRequest.
+        The sort order for search results.
+
+        :param sort_order: The sort_order of this KnowledgeDocumentSearchRequest.
+        :type: str
+        """
+        allowed_values = ["ASC", "DESC", "SCORE"]
+        if sort_order.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for sort_order -> " + sort_order)
+            self._sort_order = "outdated_sdk_version"
+        else:
+            self._sort_order = sort_order
+
+    @property
+    def sort_by(self):
+        """
+        Gets the sort_by of this KnowledgeDocumentSearchRequest.
+        The field in the documents that you want to sort the search results by.
+
+        :return: The sort_by of this KnowledgeDocumentSearchRequest.
+        :rtype: str
+        """
+        return self._sort_by
+
+    @sort_by.setter
+    def sort_by(self, sort_by):
+        """
+        Sets the sort_by of this KnowledgeDocumentSearchRequest.
+        The field in the documents that you want to sort the search results by.
+
+        :param sort_by: The sort_by of this KnowledgeDocumentSearchRequest.
+        :type: str
+        """
+        allowed_values = ["ConfidenceScore", "DateCreated", "DateModified", "CategoryId", "CategoryName", "ContextId", "ContextName", "ContextValueId", "ContextValueName", "LabelId", "LabelName"]
+        if sort_by.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for sort_by -> " + sort_by)
+            self._sort_by = "outdated_sdk_version"
+        else:
+            self._sort_by = sort_by
 
     def to_dict(self):
         """

@@ -2211,7 +2211,7 @@ except ApiException as e:
 
 Create a recording bulk job.
 
-Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
+Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
 
 
 

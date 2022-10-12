@@ -20,8 +20,12 @@ title: AuditLogMessage
 | **entity** | [**DomainEntityRef**](DomainEntityRef.html) | Entity that was impacted. | [optional] |
 | **entity_type** | **str** | Type of the entity that was impacted. | [optional] |
 | **status** | **str** | Status of the event being audited | [optional] |
+| **application** | **str** | Name of the application used to perform the audit&#39;s action | [optional] |
+| **initiating_action** | [**InitiatingAction**](InitiatingAction.html) | Id and action of the audit initiating the transaction | [optional] |
+| **transaction_initiator** | **bool** | Whether the current audit is the initiator of the transaction | [optional] |
 | **property_changes** | [**list[PropertyChange]**](PropertyChange.html) | List of properties that were changed and changes made to those properties. | [optional] |
 | **context** | **dict(str, str)** | Additional context for this message. | [optional] |
+| **entity_changes** | [**list[EntityChange]**](EntityChange.html) | List of entities that were changed and changes made to those entities. | [optional] |
 {: class="table table-striped"}
 
 

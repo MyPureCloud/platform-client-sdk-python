@@ -48,7 +48,9 @@ class ConversationMessageContent(object):
             'template': 'ConversationContentNotificationTemplate',
             'story': 'ConversationContentStory',
             'card': 'ConversationContentCard',
-            'carousel': 'ConversationContentCarousel'
+            'carousel': 'ConversationContentCarousel',
+            'text': 'ConversationContentText',
+            'quick_reply_v2': 'ConversationContentQuickReplyV2'
         }
 
         self.attribute_map = {
@@ -60,7 +62,9 @@ class ConversationMessageContent(object):
             'template': 'template',
             'story': 'story',
             'card': 'card',
-            'carousel': 'carousel'
+            'carousel': 'carousel',
+            'text': 'text',
+            'quick_reply_v2': 'quickReplyV2'
         }
 
         self._content_type = None
@@ -72,6 +76,8 @@ class ConversationMessageContent(object):
         self._story = None
         self._card = None
         self._carousel = None
+        self._text = None
+        self._quick_reply_v2 = None
 
     @property
     def content_type(self):
@@ -93,7 +99,7 @@ class ConversationMessageContent(object):
         :param content_type: The content_type of this ConversationMessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Unknown"]
+        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Text", "QuickReplyV2", "Unknown"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -291,6 +297,54 @@ class ConversationMessageContent(object):
         
 
         self._carousel = carousel
+
+    @property
+    def text(self):
+        """
+        Gets the text of this ConversationMessageContent.
+        Text content.
+
+        :return: The text of this ConversationMessageContent.
+        :rtype: ConversationContentText
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """
+        Sets the text of this ConversationMessageContent.
+        Text content.
+
+        :param text: The text of this ConversationMessageContent.
+        :type: ConversationContentText
+        """
+        
+
+        self._text = text
+
+    @property
+    def quick_reply_v2(self):
+        """
+        Gets the quick_reply_v2 of this ConversationMessageContent.
+        Quick reply V2 content.
+
+        :return: The quick_reply_v2 of this ConversationMessageContent.
+        :rtype: ConversationContentQuickReplyV2
+        """
+        return self._quick_reply_v2
+
+    @quick_reply_v2.setter
+    def quick_reply_v2(self, quick_reply_v2):
+        """
+        Sets the quick_reply_v2 of this ConversationMessageContent.
+        Quick reply V2 content.
+
+        :param quick_reply_v2: The quick_reply_v2 of this ConversationMessageContent.
+        :type: ConversationContentQuickReplyV2
+        """
+        
+
+        self._quick_reply_v2 = quick_reply_v2
 
     def to_dict(self):
         """

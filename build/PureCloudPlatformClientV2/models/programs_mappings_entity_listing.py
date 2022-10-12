@@ -42,24 +42,24 @@ class ProgramsMappingsEntityListing(object):
         self.swagger_types = {
             'entities': 'list[ProgramMappings]',
             'page_size': 'int',
-            'self_uri': 'str',
             'next_uri': 'str',
-            'page_count': 'int'
+            'page_count': 'int',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'entities': 'entities',
             'page_size': 'pageSize',
-            'self_uri': 'selfUri',
             'next_uri': 'nextUri',
-            'page_count': 'pageCount'
+            'page_count': 'pageCount',
+            'self_uri': 'selfUri'
         }
 
         self._entities = None
         self._page_size = None
-        self._self_uri = None
         self._next_uri = None
         self._page_count = None
+        self._self_uri = None
 
     @property
     def entities(self):
@@ -110,30 +110,6 @@ class ProgramsMappingsEntityListing(object):
         self._page_size = page_size
 
     @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this ProgramsMappingsEntityListing.
-
-
-        :return: The self_uri of this ProgramsMappingsEntityListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this ProgramsMappingsEntityListing.
-
-
-        :param self_uri: The self_uri of this ProgramsMappingsEntityListing.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
     def next_uri(self):
         """
         Gets the next_uri of this ProgramsMappingsEntityListing.
@@ -180,6 +156,30 @@ class ProgramsMappingsEntityListing(object):
         
 
         self._page_count = page_count
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this ProgramsMappingsEntityListing.
+
+
+        :return: The self_uri of this ProgramsMappingsEntityListing.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this ProgramsMappingsEntityListing.
+
+
+        :param self_uri: The self_uri of this ProgramsMappingsEntityListing.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

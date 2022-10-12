@@ -43,7 +43,9 @@ class RecordingJobsQuery(object):
             'action': 'str',
             'action_date': 'datetime',
             'integration_id': 'str',
+            'include_recordings_with_sensitive_data': 'bool',
             'include_screen_recordings': 'bool',
+            'clear_export': 'bool',
             'conversation_query': 'AsyncConversationQuery'
         }
 
@@ -51,14 +53,18 @@ class RecordingJobsQuery(object):
             'action': 'action',
             'action_date': 'actionDate',
             'integration_id': 'integrationId',
+            'include_recordings_with_sensitive_data': 'includeRecordingsWithSensitiveData',
             'include_screen_recordings': 'includeScreenRecordings',
+            'clear_export': 'clearExport',
             'conversation_query': 'conversationQuery'
         }
 
         self._action = None
         self._action_date = None
         self._integration_id = None
+        self._include_recordings_with_sensitive_data = None
         self._include_screen_recordings = None
+        self._clear_export = None
         self._conversation_query = None
 
     @property
@@ -137,6 +143,30 @@ class RecordingJobsQuery(object):
         self._integration_id = integration_id
 
     @property
+    def include_recordings_with_sensitive_data(self):
+        """
+        Gets the include_recordings_with_sensitive_data of this RecordingJobsQuery.
+        Whether to include recordings with PCI DSS and/or PII data, default value = false 
+
+        :return: The include_recordings_with_sensitive_data of this RecordingJobsQuery.
+        :rtype: bool
+        """
+        return self._include_recordings_with_sensitive_data
+
+    @include_recordings_with_sensitive_data.setter
+    def include_recordings_with_sensitive_data(self, include_recordings_with_sensitive_data):
+        """
+        Sets the include_recordings_with_sensitive_data of this RecordingJobsQuery.
+        Whether to include recordings with PCI DSS and/or PII data, default value = false 
+
+        :param include_recordings_with_sensitive_data: The include_recordings_with_sensitive_data of this RecordingJobsQuery.
+        :type: bool
+        """
+        
+
+        self._include_recordings_with_sensitive_data = include_recordings_with_sensitive_data
+
+    @property
     def include_screen_recordings(self):
         """
         Gets the include_screen_recordings of this RecordingJobsQuery.
@@ -159,6 +189,30 @@ class RecordingJobsQuery(object):
         
 
         self._include_screen_recordings = include_screen_recordings
+
+    @property
+    def clear_export(self):
+        """
+        Gets the clear_export of this RecordingJobsQuery.
+        For DELETE action, setting this to true will clear any pending exports for recordings. This field is not used for EXPORT action. Default value = false
+
+        :return: The clear_export of this RecordingJobsQuery.
+        :rtype: bool
+        """
+        return self._clear_export
+
+    @clear_export.setter
+    def clear_export(self, clear_export):
+        """
+        Sets the clear_export of this RecordingJobsQuery.
+        For DELETE action, setting this to true will clear any pending exports for recordings. This field is not used for EXPORT action. Default value = false
+
+        :param clear_export: The clear_export of this RecordingJobsQuery.
+        :type: bool
+        """
+        
+
+        self._clear_export = clear_export
 
     @property
     def conversation_query(self):

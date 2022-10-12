@@ -12,6 +12,8 @@ from .coaching_api import CoachingApi
 from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
+from .downloads_api import DownloadsApi
+from .events_api import EventsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi
 from .flows_api import FlowsApi
@@ -76,6 +78,8 @@ from .coaching_api import CoachingApi
 from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
+from .downloads_api import DownloadsApi
+from .events_api import EventsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi
 from .flows_api import FlowsApi

@@ -42,18 +42,24 @@ class KnowledgeDocumentSuggestionRequest(object):
         self.swagger_types = {
             'query': 'str',
             'page_size': 'int',
-            'include_draft_documents': 'bool'
+            'include_draft_documents': 'bool',
+            'interval': 'DocumentQueryInterval',
+            'filter': 'DocumentQuery'
         }
 
         self.attribute_map = {
             'query': 'query',
             'page_size': 'pageSize',
-            'include_draft_documents': 'includeDraftDocuments'
+            'include_draft_documents': 'includeDraftDocuments',
+            'interval': 'interval',
+            'filter': 'filter'
         }
 
         self._query = None
         self._page_size = None
         self._include_draft_documents = None
+        self._interval = None
+        self._filter = None
 
     @property
     def query(self):
@@ -126,6 +132,54 @@ class KnowledgeDocumentSuggestionRequest(object):
         
 
         self._include_draft_documents = include_draft_documents
+
+    @property
+    def interval(self):
+        """
+        Gets the interval of this KnowledgeDocumentSuggestionRequest.
+        Retrieves the documents created/modified/published in specified date and time range.
+
+        :return: The interval of this KnowledgeDocumentSuggestionRequest.
+        :rtype: DocumentQueryInterval
+        """
+        return self._interval
+
+    @interval.setter
+    def interval(self, interval):
+        """
+        Sets the interval of this KnowledgeDocumentSuggestionRequest.
+        Retrieves the documents created/modified/published in specified date and time range.
+
+        :param interval: The interval of this KnowledgeDocumentSuggestionRequest.
+        :type: DocumentQueryInterval
+        """
+        
+
+        self._interval = interval
+
+    @property
+    def filter(self):
+        """
+        Gets the filter of this KnowledgeDocumentSuggestionRequest.
+        Filter for the document suggestions.
+
+        :return: The filter of this KnowledgeDocumentSuggestionRequest.
+        :rtype: DocumentQuery
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter):
+        """
+        Sets the filter of this KnowledgeDocumentSuggestionRequest.
+        Filter for the document suggestions.
+
+        :param filter: The filter of this KnowledgeDocumentSuggestionRequest.
+        :type: DocumentQuery
+        """
+        
+
+        self._filter = filter
 
     def to_dict(self):
         """

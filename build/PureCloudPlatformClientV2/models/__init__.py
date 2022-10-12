@@ -70,6 +70,8 @@ from .agent_owned_mapping_preview import AgentOwnedMappingPreview
 from .agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
 from .agent_owned_routing import AgentOwnedRouting
 from .agent_time_off_request_patch import AgentTimeOffRequestPatch
+from .agentless_email_send_request_dto import AgentlessEmailSendRequestDto
+from .agentless_email_send_response_dto import AgentlessEmailSendResponseDto
 from .aggregate_metric_data import AggregateMetricData
 from .aggregate_view_data import AggregateViewData
 from .aggregation_range import AggregationRange
@@ -180,6 +182,8 @@ from .attribute_detail_event_topic_attribute_update_event import AttributeDetail
 from .attribute_filter_item import AttributeFilterItem
 from .atzm_time_slot import AtzmTimeSlot
 from .atzm_time_slot_with_time_zone import AtzmTimeSlotWithTimeZone
+from .audio_state import AudioState
+from .audio_updated_event import AudioUpdatedEvent
 from .audit_change import AuditChange
 from .audit_entity import AuditEntity
 from .audit_entity_reference import AuditEntityReference
@@ -228,11 +232,15 @@ from .available_translations import AvailableTranslations
 from .base_media_settings import BaseMediaSettings
 from .base_program_entity import BaseProgramEntity
 from .base_topic_entitiy import BaseTopicEntitiy
+from .batch_conversation_event_request import BatchConversationEventRequest
 from .batch_download_job_result import BatchDownloadJobResult
 from .batch_download_job_status_result import BatchDownloadJobStatusResult
 from .batch_download_job_submission import BatchDownloadJobSubmission
 from .batch_download_job_submission_result import BatchDownloadJobSubmissionResult
 from .batch_download_request import BatchDownloadRequest
+from .batch_event_response import BatchEventResponse
+from .batch_user_presence_event_request import BatchUserPresenceEventRequest
+from .batch_user_routing_status_event_request import BatchUserRoutingStatusEventRequest
 from .benefit_assessment import BenefitAssessment
 from .benefit_assessment_job import BenefitAssessmentJob
 from .billing_usage import BillingUsage
@@ -495,6 +503,9 @@ from .common_campaign import CommonCampaign
 from .common_campaign_division_view import CommonCampaignDivisionView
 from .common_campaign_division_view_entity_listing import CommonCampaignDivisionViewEntityListing
 from .common_campaign_entity_listing import CommonCampaignEntityListing
+from .communication_answered_event import CommunicationAnsweredEvent
+from .communication_disposition_applied_event import CommunicationDispositionAppliedEvent
+from .communication_ended_event import CommunicationEndedEvent
 from .comparison_period import ComparisonPeriod
 from .comparison_period_listing import ComparisonPeriodListing
 from .condition import Condition
@@ -507,6 +518,7 @@ from .connected_queue import ConnectedQueue
 from .connected_user import ConnectedUser
 from .constraint_conflict_message import ConstraintConflictMessage
 from .consult_transfer import ConsultTransfer
+from .consult_transfer_event import ConsultTransferEvent
 from .consult_transfer_response import ConsultTransferResponse
 from .consult_transfer_update import ConsultTransferUpdate
 from .consumed_resources_entity_listing import ConsumedResourcesEntityListing
@@ -522,6 +534,7 @@ from .contact_column_condition_settings import ContactColumnConditionSettings
 from .contact_column_time_zone import ContactColumnTimeZone
 from .contact_column_to_data_action_field_mapping import ContactColumnToDataActionFieldMapping
 from .contact_detail_event_topic_contact_update_event import ContactDetailEventTopicContactUpdateEvent
+from .contact_identifier import ContactIdentifier
 from .contact_list import ContactList
 from .contact_list_division_view import ContactListDivisionView
 from .contact_list_division_view_listing import ContactListDivisionViewListing
@@ -565,10 +578,12 @@ from .content_position_properties import ContentPositionProperties
 from .content_postback import ContentPostback
 from .content_query_request import ContentQueryRequest
 from .content_quick_reply import ContentQuickReply
+from .content_quick_reply_v2 import ContentQuickReplyV2
 from .content_reaction import ContentReaction
 from .content_setting import ContentSetting
 from .content_sort_item import ContentSortItem
 from .content_story import ContentStory
+from .content_text import ContentText
 from .context import Context
 from .context_entity import ContextEntity
 from .context_intent import ContextIntent
@@ -651,7 +666,9 @@ from .conversation_content_carousel import ConversationContentCarousel
 from .conversation_content_location import ConversationContentLocation
 from .conversation_content_notification_template import ConversationContentNotificationTemplate
 from .conversation_content_quick_reply import ConversationContentQuickReply
+from .conversation_content_quick_reply_v2 import ConversationContentQuickReplyV2
 from .conversation_content_story import ConversationContentStory
+from .conversation_content_text import ConversationContentText
 from .conversation_deletion_protection_query import ConversationDeletionProtectionQuery
 from .conversation_detail_query_clause import ConversationDetailQueryClause
 from .conversation_detail_query_filter import ConversationDetailQueryFilter
@@ -1018,6 +1035,7 @@ from .dnc_list_division_view_listing import DncListDivisionViewListing
 from .dnc_list_entity_listing import DncListEntityListing
 from .dnclist_download_ready_export_uri import DnclistDownloadReadyExportUri
 from .dnclist_import_status_import_status import DnclistImportStatusImportStatus
+from .dns_record_entry import DnsRecordEntry
 from .do_not_send_action_settings import DoNotSendActionSettings
 from .document import Document
 from .document_article import DocumentArticle
@@ -1036,6 +1054,10 @@ from .document_content_block import DocumentContentBlock
 from .document_entity_listing import DocumentEntityListing
 from .document_faq import DocumentFaq
 from .document_listing import DocumentListing
+from .document_query import DocumentQuery
+from .document_query_clause import DocumentQueryClause
+from .document_query_interval import DocumentQueryInterval
+from .document_query_predicate import DocumentQueryPredicate
 from .document_reference import DocumentReference
 from .document_text import DocumentText
 from .document_thumbnail import DocumentThumbnail
@@ -1142,6 +1164,7 @@ from .email_media_policy import EmailMediaPolicy
 from .email_media_policy_conditions import EmailMediaPolicyConditions
 from .email_message import EmailMessage
 from .email_message_listing import EmailMessageListing
+from .email_outbound_domain_result import EmailOutboundDomainResult
 from .email_setup import EmailSetup
 from .emails_settings import EmailsSettings
 from .embedded_integration import EmbeddedIntegration
@@ -1152,8 +1175,11 @@ from .employer_info import EmployerInfo
 from .empty import Empty
 from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
+from .end_consult_transfer_event import EndConsultTransferEvent
+from .end_transfer_event import EndTransferEvent
 from .endpoint import Endpoint
 from .entity import Entity
+from .entity_change import EntityChange
 from .entity_listing import EntityListing
 from .entity_type_criteria import EntityTypeCriteria
 from .entry import Entry
@@ -1194,12 +1220,15 @@ from .evaluator_activity import EvaluatorActivity
 from .evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .event_co_browse import EventCoBrowse
 from .event_condition import EventCondition
+from .event_error import EventError
 from .event_log import EventLog
 from .event_message import EventMessage
 from .event_presence import EventPresence
 from .event_setting import EventSetting
 from .event_typing import EventTyping
 from .execute_recording_jobs_query import ExecuteRecordingJobsQuery
+from .expandable_web_deployment import ExpandableWebDeployment
+from .expandable_web_deployment_entity_listing import ExpandableWebDeploymentEntityListing
 from .expansion_criterium import ExpansionCriterium
 from .expired_edge_listing import ExpiredEdgeListing
 from .export_script_request import ExportScriptRequest
@@ -1230,6 +1259,7 @@ from .external_contacts_unresolved_contact_changed_topic_phone_number import Ext
 from .external_contacts_unresolved_contact_changed_topic_twitter_id import ExternalContactsUnresolvedContactChangedTopicTwitterId
 from .external_contacts_unresolved_contact_changed_topic_whats_app_id import ExternalContactsUnresolvedContactChangedTopicWhatsAppId
 from .external_data_source import ExternalDataSource
+from .external_established_event import ExternalEstablishedEvent
 from .external_metric_data_item import ExternalMetricDataItem
 from .external_metric_data_processed_item import ExternalMetricDataProcessedItem
 from .external_metric_data_unprocessed_item import ExternalMetricDataUnprocessedItem
@@ -1394,10 +1424,12 @@ from .historical_import_status import HistoricalImportStatus
 from .historical_import_status_listing import HistoricalImportStatusListing
 from .history_entry import HistoryEntry
 from .history_listing import HistoryListing
+from .hold_updated_event import HoldUpdatedEvent
 from .homer_record import HomerRecord
 from .humanize import Humanize
 from .ivr import IVR
 from .ivr_entity_listing import IVREntityListing
+from .identifier_claim_request import IdentifierClaimRequest
 from .identity_now import IdentityNow
 from .idle_event_trigger import IdleEventTrigger
 from .ignored_activity_categories import IgnoredActivityCategories
@@ -1417,12 +1449,13 @@ from .inbound_message_request import InboundMessageRequest
 from .inbound_only_setting import InboundOnlySetting
 from .inbound_route import InboundRoute
 from .inbound_route_entity_listing import InboundRouteEntityListing
+from .initial_configuration import InitialConfiguration
 from .initiate_screen_recording import InitiateScreenRecording
+from .initiating_action import InitiatingAction
 from .integration import Integration
 from .integration_action import IntegrationAction
 from .integration_action_fields import IntegrationActionFields
 from .integration_configuration import IntegrationConfiguration
-from .integration_configuration_credential import IntegrationConfigurationCredential
 from .integration_configuration_info import IntegrationConfigurationInfo
 from .integration_entity_listing import IntegrationEntityListing
 from .integration_export import IntegrationExport
@@ -1444,6 +1477,7 @@ from .ip_address_range import IpAddressRange
 from .ip_address_range_listing import IpAddressRangeListing
 from .item_validation_limits import ItemValidationLimits
 from .items import Items
+from .ivr_established_event import IvrEstablishedEvent
 from .journey import Journey
 from .journey_action import JourneyAction
 from .journey_action_map import JourneyActionMap
@@ -1589,6 +1623,7 @@ from .knowledge_group_statistics import KnowledgeGroupStatistics
 from .knowledge_guest_document import KnowledgeGuestDocument
 from .knowledge_guest_document_response_listing import KnowledgeGuestDocumentResponseListing
 from .knowledge_guest_document_suggestion import KnowledgeGuestDocumentSuggestion
+from .knowledge_guest_document_suggestion_request import KnowledgeGuestDocumentSuggestionRequest
 from .knowledge_guest_document_suggestion_result import KnowledgeGuestDocumentSuggestionResult
 from .knowledge_guest_document_variation import KnowledgeGuestDocumentVariation
 from .knowledge_guest_document_variation_context import KnowledgeGuestDocumentVariationContext
@@ -1759,6 +1794,7 @@ from .member_entity import MemberEntity
 from .member_group import MemberGroup
 from .member_listing import MemberListing
 from .merge_operation import MergeOperation
+from .merge_request import MergeRequest
 from .message import Message
 from .message_content import MessageContent
 from .message_conversation import MessageConversation
@@ -1901,6 +1937,8 @@ from .out_of_office import OutOfOffice
 from .out_of_office_event_out_of_office import OutOfOfficeEventOutOfOffice
 from .out_of_office_event_user import OutOfOfficeEventUser
 from .outbound_detail_event_topic_outbound_init_event import OutboundDetailEventTopicOutboundInitEvent
+from .outbound_domain import OutboundDomain
+from .outbound_domain_entity_listing import OutboundDomainEntityListing
 from .outbound_messaging_messaging_campaign_config_change_contact_sort import OutboundMessagingMessagingCampaignConfigChangeContactSort
 from .outbound_messaging_messaging_campaign_config_change_email_config import OutboundMessagingMessagingCampaignConfigChangeEmailConfig
 from .outbound_messaging_messaging_campaign_config_change_error_detail import OutboundMessagingMessagingCampaignConfigChangeErrorDetail
@@ -1982,11 +2020,13 @@ from .phone_change_topic_provision_info import PhoneChangeTopicProvisionInfo
 from .phone_change_topic_user_agent_info import PhoneChangeTopicUserAgentInfo
 from .phone_column import PhoneColumn
 from .phone_entity_listing import PhoneEntityListing
+from .phone_established_event import PhoneEstablishedEvent
 from .phone_meta_base_entity_listing import PhoneMetaBaseEntityListing
 from .phone_number import PhoneNumber
 from .phone_number_column import PhoneNumberColumn
 from .phone_number_status import PhoneNumberStatus
 from .phone_status import PhoneStatus
+from .phone_transfer_event import PhoneTransferEvent
 from .phones_reboot import PhonesReboot
 from .phrase import Phrase
 from .phrase_associations import PhraseAssociations
@@ -2037,6 +2077,8 @@ from .program_mappings_request import ProgramMappingsRequest
 from .program_request import ProgramRequest
 from .programs_entity_listing import ProgramsEntityListing
 from .programs_mappings_entity_listing import ProgramsMappingsEntityListing
+from .progress_consult_transfer_event import ProgressConsultTransferEvent
+from .progress_transfer_event import ProgressTransferEvent
 from .prompt import Prompt
 from .prompt_asset import PromptAsset
 from .prompt_asset_create import PromptAssetCreate
@@ -2409,6 +2451,7 @@ from .route_path_response import RoutePathResponse
 from .routing_conversation_attributes_request import RoutingConversationAttributesRequest
 from .routing_conversation_attributes_response import RoutingConversationAttributesResponse
 from .routing_data import RoutingData
+from .routing_established_event import RoutingEstablishedEvent
 from .routing_rule import RoutingRule
 from .routing_settings import RoutingSettings
 from .routing_skill import RoutingSkill
@@ -2417,6 +2460,7 @@ from .routing_status import RoutingStatus
 from .routing_status_detail_query_clause import RoutingStatusDetailQueryClause
 from .routing_status_detail_query_filter import RoutingStatusDetailQueryFilter
 from .routing_status_detail_query_predicate import RoutingStatusDetailQueryPredicate
+from .routing_transfer_event import RoutingTransferEvent
 from .rule_set import RuleSet
 from .rule_set_diagnostic import RuleSetDiagnostic
 from .rule_set_entity_listing import RuleSetEntityListing
@@ -2558,6 +2602,7 @@ from .short_term_forecast_reference import ShortTermForecastReference
 from .short_term_forecasting_settings import ShortTermForecastingSettings
 from .shrinkage_override import ShrinkageOverride
 from .shrinkage_overrides import ShrinkageOverrides
+from .signature import Signature
 from .signed_url_response import SignedUrlResponse
 from .single_workday_average_points import SingleWorkdayAveragePoints
 from .single_workday_average_values import SingleWorkdayAverageValues
@@ -2581,6 +2626,9 @@ from .sms_provisioning_status import SmsProvisioningStatus
 from .social_expression import SocialExpression
 from .social_handle import SocialHandle
 from .sort_item import SortItem
+from .source import Source
+from .source_configuration import SourceConfiguration
+from .source_entity_listing import SourceEntityListing
 from .source_planning_group_request import SourcePlanningGroupRequest
 from .speech_text_analytics_settings_request import SpeechTextAnalyticsSettingsRequest
 from .speech_text_analytics_settings_response import SpeechTextAnalyticsSettingsResponse
@@ -2888,6 +2936,7 @@ from .user_details_query import UserDetailsQuery
 from .user_device import UserDevice
 from .user_end_detail_event_topic_user_end_event import UserEndDetailEventTopicUserEndEvent
 from .user_entity_listing import UserEntityListing
+from .user_established_event import UserEstablishedEvent
 from .user_expands import UserExpands
 from .user_external_identifier import UserExternalIdentifier
 from .user_greeting_event_greeting import UserGreetingEventGreeting
@@ -2907,6 +2956,8 @@ from .user_observation_query_predicate import UserObservationQueryPredicate
 from .user_observation_query_response import UserObservationQueryResponse
 from .user_param import UserParam
 from .user_presence import UserPresence
+from .user_presence_event import UserPresenceEvent
+from .user_primary_source import UserPrimarySource
 from .user_profile import UserProfile
 from .user_profile_entity_listing import UserProfileEntityListing
 from .user_queue import UserQueue
@@ -2919,6 +2970,7 @@ from .user_routing_language_post import UserRoutingLanguagePost
 from .user_routing_skill import UserRoutingSkill
 from .user_routing_skill_post import UserRoutingSkillPost
 from .user_routing_status_error_info import UserRoutingStatusErrorInfo
+from .user_routing_status_event import UserRoutingStatusEvent
 from .user_routing_status_routing_status import UserRoutingStatusRoutingStatus
 from .user_routing_status_user_param import UserRoutingStatusUserParam
 from .user_routing_status_user_routing_status import UserRoutingStatusUserRoutingStatus
@@ -2942,6 +2994,7 @@ from .user_stations import UserStations
 from .user_time_off_request_reference import UserTimeOffRequestReference
 from .user_tokens_topic_token_notification import UserTokensTopicTokenNotification
 from .user_tokens_topic_uri_reference import UserTokensTopicUriReference
+from .user_transfer_event import UserTransferEvent
 from .users_search_response import UsersSearchResponse
 from .utilization import Utilization
 from .utterance import Utterance
@@ -3005,6 +3058,7 @@ from .validation_service_request import ValidationServiceRequest
 from .value_wrapper_date import ValueWrapperDate
 from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .value_wrapper_string import ValueWrapperString
+from .verification_result import VerificationResult
 from .video import Video
 from .view_filter import ViewFilter
 from .vip_backup import VipBackup
@@ -3051,7 +3105,9 @@ from .web_deployment import WebDeployment
 from .web_deployment_active_configuration_on_deployment import WebDeploymentActiveConfigurationOnDeployment
 from .web_deployment_configuration_version import WebDeploymentConfigurationVersion
 from .web_deployment_configuration_version_entity_listing import WebDeploymentConfigurationVersionEntityListing
-from .web_deployment_entity_listing import WebDeploymentEntityListing
+from .web_deployment_configuration_version_entity_ref import WebDeploymentConfigurationVersionEntityRef
+from .web_deployment_configuration_version_response import WebDeploymentConfigurationVersionResponse
+from .web_deployment_headless_mode import WebDeploymentHeadlessMode
 from .web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 from .web_deployments_deployment_topic_web_messaging_config_change_event_body import WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody
 from .web_deployments_deployment_topic_web_messaging_deployment_change_event_body import WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody

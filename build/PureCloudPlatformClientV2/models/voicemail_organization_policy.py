@@ -47,6 +47,7 @@ class VoicemailOrganizationPolicy(object):
             'pin_required': 'bool',
             'interactive_response_required': 'bool',
             'send_email_notifications': 'bool',
+            'include_email_transcriptions': 'bool',
             'disable_email_pii': 'bool',
             'modified_date': 'datetime'
         }
@@ -59,6 +60,7 @@ class VoicemailOrganizationPolicy(object):
             'pin_required': 'pinRequired',
             'interactive_response_required': 'interactiveResponseRequired',
             'send_email_notifications': 'sendEmailNotifications',
+            'include_email_transcriptions': 'includeEmailTranscriptions',
             'disable_email_pii': 'disableEmailPii',
             'modified_date': 'modifiedDate'
         }
@@ -70,6 +72,7 @@ class VoicemailOrganizationPolicy(object):
         self._pin_required = None
         self._interactive_response_required = None
         self._send_email_notifications = None
+        self._include_email_transcriptions = None
         self._disable_email_pii = None
         self._modified_date = None
 
@@ -240,6 +243,30 @@ class VoicemailOrganizationPolicy(object):
         
 
         self._send_email_notifications = send_email_notifications
+
+    @property
+    def include_email_transcriptions(self):
+        """
+        Gets the include_email_transcriptions of this VoicemailOrganizationPolicy.
+        Whether to include the voicemail transcription in the notification email
+
+        :return: The include_email_transcriptions of this VoicemailOrganizationPolicy.
+        :rtype: bool
+        """
+        return self._include_email_transcriptions
+
+    @include_email_transcriptions.setter
+    def include_email_transcriptions(self, include_email_transcriptions):
+        """
+        Sets the include_email_transcriptions of this VoicemailOrganizationPolicy.
+        Whether to include the voicemail transcription in the notification email
+
+        :param include_email_transcriptions: The include_email_transcriptions of this VoicemailOrganizationPolicy.
+        :type: bool
+        """
+        
+
+        self._include_email_transcriptions = include_email_transcriptions
 
     @property
     def disable_email_pii(self):

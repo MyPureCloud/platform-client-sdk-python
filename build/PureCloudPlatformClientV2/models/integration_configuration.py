@@ -46,7 +46,7 @@ class IntegrationConfiguration(object):
             'properties': 'object',
             'advanced': 'object',
             'notes': 'str',
-            'credentials': 'dict(str, IntegrationConfigurationCredential)',
+            'credentials': 'dict(str, CredentialInfo)',
             'self_uri': 'str'
         }
 
@@ -221,7 +221,7 @@ class IntegrationConfiguration(object):
         Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type
 
         :return: The credentials of this IntegrationConfiguration.
-        :rtype: dict(str, IntegrationConfigurationCredential)
+        :rtype: dict(str, CredentialInfo)
         """
         return self._credentials
 
@@ -232,7 +232,7 @@ class IntegrationConfiguration(object):
         Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type
 
         :param credentials: The credentials of this IntegrationConfiguration.
-        :type: dict(str, IntegrationConfigurationCredential)
+        :type: dict(str, CredentialInfo)
         """
         
 

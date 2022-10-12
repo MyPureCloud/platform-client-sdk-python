@@ -43,7 +43,6 @@ class WebDeployment(object):
             'id': 'str',
             'name': 'str',
             'description': 'str',
-            'configuration': 'WebDeploymentConfigurationVersion',
             'allow_all_domains': 'bool',
             'allowed_domains': 'list[str]',
             'snippet': 'str',
@@ -52,6 +51,7 @@ class WebDeployment(object):
             'last_modified_user': 'AddressableEntityRef',
             'flow': 'DomainEntityRef',
             'status': 'str',
+            'configuration': 'WebDeploymentConfigurationVersionEntityRef',
             'self_uri': 'str'
         }
 
@@ -59,7 +59,6 @@ class WebDeployment(object):
             'id': 'id',
             'name': 'name',
             'description': 'description',
-            'configuration': 'configuration',
             'allow_all_domains': 'allowAllDomains',
             'allowed_domains': 'allowedDomains',
             'snippet': 'snippet',
@@ -68,13 +67,13 @@ class WebDeployment(object):
             'last_modified_user': 'lastModifiedUser',
             'flow': 'flow',
             'status': 'status',
+            'configuration': 'configuration',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._description = None
-        self._configuration = None
         self._allow_all_domains = None
         self._allowed_domains = None
         self._snippet = None
@@ -83,6 +82,7 @@ class WebDeployment(object):
         self._last_modified_user = None
         self._flow = None
         self._status = None
+        self._configuration = None
         self._self_uri = None
 
     @property
@@ -156,30 +156,6 @@ class WebDeployment(object):
         
 
         self._description = description
-
-    @property
-    def configuration(self):
-        """
-        Gets the configuration of this WebDeployment.
-        The config version this deployment uses
-
-        :return: The configuration of this WebDeployment.
-        :rtype: WebDeploymentConfigurationVersion
-        """
-        return self._configuration
-
-    @configuration.setter
-    def configuration(self, configuration):
-        """
-        Sets the configuration of this WebDeployment.
-        The config version this deployment uses
-
-        :param configuration: The configuration of this WebDeployment.
-        :type: WebDeploymentConfigurationVersion
-        """
-        
-
-        self._configuration = configuration
 
     @property
     def allow_all_domains(self):
@@ -375,6 +351,30 @@ class WebDeployment(object):
             self._status = "outdated_sdk_version"
         else:
             self._status = status
+
+    @property
+    def configuration(self):
+        """
+        Gets the configuration of this WebDeployment.
+        The config version this deployment uses
+
+        :return: The configuration of this WebDeployment.
+        :rtype: WebDeploymentConfigurationVersionEntityRef
+        """
+        return self._configuration
+
+    @configuration.setter
+    def configuration(self, configuration):
+        """
+        Sets the configuration of this WebDeployment.
+        The config version this deployment uses
+
+        :param configuration: The configuration of this WebDeployment.
+        :type: WebDeploymentConfigurationVersionEntityRef
+        """
+        
+
+        self._configuration = configuration
 
     @property
     def self_uri(self):

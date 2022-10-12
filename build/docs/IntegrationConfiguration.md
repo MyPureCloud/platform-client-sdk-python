@@ -13,7 +13,7 @@ title: IntegrationConfiguration
 | **properties** | **object** | Key-value configuration settings described by the schema in the propertiesSchemaUri field. | |
 | **advanced** | **object** | Advanced configuration described by the schema in the advancedSchemaUri field. | |
 | **notes** | **str** | Notes about the integration. | |
-| **credentials** | [**dict(str, IntegrationConfigurationCredential)**](IntegrationConfigurationCredential.html) | Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type | |
+| **credentials** | [**dict(str, CredentialInfo)**](CredentialInfo.html) | Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type | |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

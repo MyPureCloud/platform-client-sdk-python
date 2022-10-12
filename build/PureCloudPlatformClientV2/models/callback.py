@@ -41,6 +41,7 @@ class Callback(object):
         """
         self.swagger_types = {
             'state': 'str',
+            'initial_state': 'str',
             'id': 'str',
             'segments': 'list[Segment]',
             'direction': 'str',
@@ -66,12 +67,12 @@ class Callback(object):
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
             'caller_id': 'str',
-            'caller_id_name': 'str',
-            'initial_state': 'str'
+            'caller_id_name': 'str'
         }
 
         self.attribute_map = {
             'state': 'state',
+            'initial_state': 'initialState',
             'id': 'id',
             'segments': 'segments',
             'direction': 'direction',
@@ -97,11 +98,11 @@ class Callback(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'caller_id': 'callerId',
-            'caller_id_name': 'callerIdName',
-            'initial_state': 'initialState'
+            'caller_id_name': 'callerIdName'
         }
 
         self._state = None
+        self._initial_state = None
         self._id = None
         self._segments = None
         self._direction = None
@@ -128,7 +129,6 @@ class Callback(object):
         self._after_call_work_required = None
         self._caller_id = None
         self._caller_id_name = None
-        self._initial_state = None
 
     @property
     def state(self):
@@ -156,6 +156,33 @@ class Callback(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def initial_state(self):
+        """
+        Gets the initial_state of this Callback.
+        The initial connection state of this communication.
+
+        :return: The initial_state of this Callback.
+        :rtype: str
+        """
+        return self._initial_state
+
+    @initial_state.setter
+    def initial_state(self, initial_state):
+        """
+        Sets the initial_state of this Callback.
+        The initial connection state of this communication.
+
+        :param initial_state: The initial_state of this Callback.
+        :type: str
+        """
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "scheduled", "none"]
+        if initial_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_state -> " + initial_state)
+            self._initial_state = "outdated_sdk_version"
+        else:
+            self._initial_state = initial_state
 
     @property
     def id(self):
@@ -786,33 +813,6 @@ class Callback(object):
         
 
         self._caller_id_name = caller_id_name
-
-    @property
-    def initial_state(self):
-        """
-        Gets the initial_state of this Callback.
-        The initial connection state of this communication.
-
-        :return: The initial_state of this Callback.
-        :rtype: str
-        """
-        return self._initial_state
-
-    @initial_state.setter
-    def initial_state(self, initial_state):
-        """
-        Sets the initial_state of this Callback.
-        The initial connection state of this communication.
-
-        :param initial_state: The initial_state of this Callback.
-        :type: str
-        """
-        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "scheduled", "none"]
-        if initial_state.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for initial_state -> " + initial_state)
-            self._initial_state = "outdated_sdk_version"
-        else:
-            self._initial_state = initial_state
 
     def to_dict(self):
         """

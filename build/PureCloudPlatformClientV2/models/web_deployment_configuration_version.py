@@ -43,6 +43,7 @@ class WebDeploymentConfigurationVersion(object):
             'id': 'str',
             'name': 'str',
             'version': 'str',
+            'headless_mode': 'WebDeploymentHeadlessMode',
             'description': 'str',
             'languages': 'list[str]',
             'default_language': 'str',
@@ -67,6 +68,7 @@ class WebDeploymentConfigurationVersion(object):
             'id': 'id',
             'name': 'name',
             'version': 'version',
+            'headless_mode': 'headlessMode',
             'description': 'description',
             'languages': 'languages',
             'default_language': 'defaultLanguage',
@@ -90,6 +92,7 @@ class WebDeploymentConfigurationVersion(object):
         self._id = None
         self._name = None
         self._version = None
+        self._headless_mode = None
         self._description = None
         self._languages = None
         self._default_language = None
@@ -180,6 +183,30 @@ class WebDeploymentConfigurationVersion(object):
         
 
         self._version = version
+
+    @property
+    def headless_mode(self):
+        """
+        Gets the headless_mode of this WebDeploymentConfigurationVersion.
+        Headless Mode Support which Controls UI components. When enabled, native UI components will be disabled and allows for custom-built UI.
+
+        :return: The headless_mode of this WebDeploymentConfigurationVersion.
+        :rtype: WebDeploymentHeadlessMode
+        """
+        return self._headless_mode
+
+    @headless_mode.setter
+    def headless_mode(self, headless_mode):
+        """
+        Sets the headless_mode of this WebDeploymentConfigurationVersion.
+        Headless Mode Support which Controls UI components. When enabled, native UI components will be disabled and allows for custom-built UI.
+
+        :param headless_mode: The headless_mode of this WebDeploymentConfigurationVersion.
+        :type: WebDeploymentHeadlessMode
+        """
+        
+
+        self._headless_mode = headless_mode
 
     @property
     def description(self):

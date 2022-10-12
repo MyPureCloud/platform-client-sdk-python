@@ -53,9 +53,11 @@ class AnalyticsSession(object):
             'assigner_id': 'str',
             'authenticated': 'bool',
             'barged_participant_id': 'str',
+            'bcc': 'list[str]',
             'callback_numbers': 'list[str]',
             'callback_scheduled_time': 'datetime',
             'callback_user_name': 'str',
+            'cc': 'list[str]',
             'coached_participant_id': 'str',
             'cobrowse_role': 'str',
             'cobrowse_room_id': 'str',
@@ -132,9 +134,11 @@ class AnalyticsSession(object):
             'assigner_id': 'assignerId',
             'authenticated': 'authenticated',
             'barged_participant_id': 'bargedParticipantId',
+            'bcc': 'bcc',
             'callback_numbers': 'callbackNumbers',
             'callback_scheduled_time': 'callbackScheduledTime',
             'callback_user_name': 'callbackUserName',
+            'cc': 'cc',
             'coached_participant_id': 'coachedParticipantId',
             'cobrowse_role': 'cobrowseRole',
             'cobrowse_room_id': 'cobrowseRoomId',
@@ -210,9 +214,11 @@ class AnalyticsSession(object):
         self._assigner_id = None
         self._authenticated = None
         self._barged_participant_id = None
+        self._bcc = None
         self._callback_numbers = None
         self._callback_scheduled_time = None
         self._callback_user_name = None
+        self._cc = None
         self._coached_participant_id = None
         self._cobrowse_role = None
         self._cobrowse_room_id = None
@@ -587,6 +593,30 @@ class AnalyticsSession(object):
         self._barged_participant_id = barged_participant_id
 
     @property
+    def bcc(self):
+        """
+        Gets the bcc of this AnalyticsSession.
+        Blind carbon copy email address(es)
+
+        :return: The bcc of this AnalyticsSession.
+        :rtype: list[str]
+        """
+        return self._bcc
+
+    @bcc.setter
+    def bcc(self, bcc):
+        """
+        Sets the bcc of this AnalyticsSession.
+        Blind carbon copy email address(es)
+
+        :param bcc: The bcc of this AnalyticsSession.
+        :type: list[str]
+        """
+        
+
+        self._bcc = bcc
+
+    @property
     def callback_numbers(self):
         """
         Gets the callback_numbers of this AnalyticsSession.
@@ -657,6 +687,30 @@ class AnalyticsSession(object):
         
 
         self._callback_user_name = callback_user_name
+
+    @property
+    def cc(self):
+        """
+        Gets the cc of this AnalyticsSession.
+        Carbon copy email address(es)
+
+        :return: The cc of this AnalyticsSession.
+        :rtype: list[str]
+        """
+        return self._cc
+
+    @cc.setter
+    def cc(self, cc):
+        """
+        Sets the cc of this AnalyticsSession.
+        Carbon copy email address(es)
+
+        :param cc: The cc of this AnalyticsSession.
+        :type: list[str]
+        """
+        
+
+        self._cc = cc
 
     @property
     def coached_participant_id(self):

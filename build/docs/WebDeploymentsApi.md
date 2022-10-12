@@ -437,7 +437,7 @@ except ApiException as e:
 
 <a name="get_webdeployments_deployments"></a>
 
-## [**WebDeploymentEntityListing**](WebDeploymentEntityListing.html) get_webdeployments_deployments(expand=expand)
+## [**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing.html) get_webdeployments_deployments(expand=expand)
 
 
 
@@ -484,7 +484,7 @@ except ApiException as e:
 
 ### Return type
 
-[**WebDeploymentEntityListing**](WebDeploymentEntityListing.html)
+[**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing.html)
 
 <a name="post_webdeployments_configuration_versions_draft_publish"></a>
 

@@ -53,6 +53,7 @@ class InboundRoute(object):
             'reply_email_address': 'QueueEmailAddress',
             'auto_bcc': 'list[EmailAddress]',
             'spam_flow': 'DomainEntityRef',
+            'signature': 'Signature',
             'self_uri': 'str'
         }
 
@@ -70,6 +71,7 @@ class InboundRoute(object):
             'reply_email_address': 'replyEmailAddress',
             'auto_bcc': 'autoBcc',
             'spam_flow': 'spamFlow',
+            'signature': 'signature',
             'self_uri': 'selfUri'
         }
 
@@ -86,6 +88,7 @@ class InboundRoute(object):
         self._reply_email_address = None
         self._auto_bcc = None
         self._spam_flow = None
+        self._signature = None
         self._self_uri = None
 
     @property
@@ -356,7 +359,7 @@ class InboundRoute(object):
     def auto_bcc(self):
         """
         Gets the auto_bcc of this InboundRoute.
-        The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.
+        The recipients that should be automatically blind copied on outbound emails associated with this InboundRoute.
 
         :return: The auto_bcc of this InboundRoute.
         :rtype: list[EmailAddress]
@@ -367,7 +370,7 @@ class InboundRoute(object):
     def auto_bcc(self, auto_bcc):
         """
         Sets the auto_bcc of this InboundRoute.
-        The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.
+        The recipients that should be automatically blind copied on outbound emails associated with this InboundRoute.
 
         :param auto_bcc: The auto_bcc of this InboundRoute.
         :type: list[EmailAddress]
@@ -399,6 +402,30 @@ class InboundRoute(object):
         
 
         self._spam_flow = spam_flow
+
+    @property
+    def signature(self):
+        """
+        Gets the signature of this InboundRoute.
+        The configuration for the canned response signature that will be appended to outbound emails sent via this route
+
+        :return: The signature of this InboundRoute.
+        :rtype: Signature
+        """
+        return self._signature
+
+    @signature.setter
+    def signature(self, signature):
+        """
+        Sets the signature of this InboundRoute.
+        The configuration for the canned response signature that will be appended to outbound emails sent via this route
+
+        :param signature: The signature of this InboundRoute.
+        :type: Signature
+        """
+        
+
+        self._signature = signature
 
     @property
     def self_uri(self):

@@ -45,6 +45,7 @@ class VoicemailGroupPolicy(object):
             'enabled': 'bool',
             'send_email_notifications': 'bool',
             'disable_email_pii': 'bool',
+            'language_preference': 'str',
             'rotate_calls_secs': 'int',
             'stop_ringing_after_rotations': 'int',
             'overflow_group_id': 'str',
@@ -58,6 +59,7 @@ class VoicemailGroupPolicy(object):
             'enabled': 'enabled',
             'send_email_notifications': 'sendEmailNotifications',
             'disable_email_pii': 'disableEmailPii',
+            'language_preference': 'languagePreference',
             'rotate_calls_secs': 'rotateCallsSecs',
             'stop_ringing_after_rotations': 'stopRingingAfterRotations',
             'overflow_group_id': 'overflowGroupId',
@@ -70,6 +72,7 @@ class VoicemailGroupPolicy(object):
         self._enabled = None
         self._send_email_notifications = None
         self._disable_email_pii = None
+        self._language_preference = None
         self._rotate_calls_secs = None
         self._stop_ringing_after_rotations = None
         self._overflow_group_id = None
@@ -195,6 +198,30 @@ class VoicemailGroupPolicy(object):
         
 
         self._disable_email_pii = disable_email_pii
+
+    @property
+    def language_preference(self):
+        """
+        Gets the language_preference of this VoicemailGroupPolicy.
+        The language preference for the group.  Used for group voicemail transcription
+
+        :return: The language_preference of this VoicemailGroupPolicy.
+        :rtype: str
+        """
+        return self._language_preference
+
+    @language_preference.setter
+    def language_preference(self, language_preference):
+        """
+        Sets the language_preference of this VoicemailGroupPolicy.
+        The language preference for the group.  Used for group voicemail transcription
+
+        :param language_preference: The language_preference of this VoicemailGroupPolicy.
+        :type: str
+        """
+        
+
+        self._language_preference = language_preference
 
     @property
     def rotate_calls_secs(self):

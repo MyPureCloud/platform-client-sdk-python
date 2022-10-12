@@ -53,8 +53,12 @@ class AuditLogMessage(object):
             'entity': 'DomainEntityRef',
             'entity_type': 'str',
             'status': 'str',
+            'application': 'str',
+            'initiating_action': 'InitiatingAction',
+            'transaction_initiator': 'bool',
             'property_changes': 'list[PropertyChange]',
-            'context': 'dict(str, str)'
+            'context': 'dict(str, str)',
+            'entity_changes': 'list[EntityChange]'
         }
 
         self.attribute_map = {
@@ -71,8 +75,12 @@ class AuditLogMessage(object):
             'entity': 'entity',
             'entity_type': 'entityType',
             'status': 'status',
+            'application': 'application',
+            'initiating_action': 'initiatingAction',
+            'transaction_initiator': 'transactionInitiator',
             'property_changes': 'propertyChanges',
-            'context': 'context'
+            'context': 'context',
+            'entity_changes': 'entityChanges'
         }
 
         self._id = None
@@ -88,8 +96,12 @@ class AuditLogMessage(object):
         self._entity = None
         self._entity_type = None
         self._status = None
+        self._application = None
+        self._initiating_action = None
+        self._transaction_initiator = None
         self._property_changes = None
         self._context = None
+        self._entity_changes = None
 
     @property
     def id(self):
@@ -231,7 +243,7 @@ class AuditLogMessage(object):
         :param service_name: The service_name of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["AnalyticsReporting", "Architect", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Directory", "DynamicSchema", "Gamification", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Learning", "Limits", "LogCapture", "Outbound", "PeoplePermissions", "EmployeePerformance", "PredictiveEngagement", "Presence", "Quality", "ResponseManagement", "Routing", "SpeechAndTextAnalytics", "Telephony", "TopicsDefinitions", "Triggers", "ProcessAutomation", "Voicemail", "WebDeployments", "Webhooks", "WorkforceManagement", "Messaging", "Supportability", "Callback", "Workitems", "SCIM", "NumberPurchasing", "Marketplace"]
+        allowed_values = ["AgentConfig", "AnalyticsReporting", "Architect", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Directory", "DynamicSchema", "Gamification", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Learning", "Limits", "LogCapture", "Outbound", "PeoplePermissions", "EmployeePerformance", "PredictiveEngagement", "Presence", "Quality", "ResponseManagement", "Routing", "SpeechAndTextAnalytics", "Telephony", "TopicsDefinitions", "Triggers", "ProcessAutomation", "Voicemail", "WebDeployments", "Webhooks", "WorkforceManagement", "Messaging", "Supportability", "Callback", "Workitems", "SCIM", "NumberPurchasing", "Marketplace"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"
@@ -384,7 +396,7 @@ class AuditLogMessage(object):
         :param entity_type: The entity_type of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["AccessToken", "Action", "ActionDraft", "ActionMap", "ActionTemplate", "ActivityCode", "AdherenceExplanation", "AgentRoutingInfo", "AnalyticsReportingSettings", "Annotation", "Appointment", "Assignment", "AttemptLimits", "AuthOrganization", "AuthUser", "Bulk", "BulkActions", "BusinessUnit", "Calibration", "CallableTimeSet", "CallAnalysisResponseSet", "Campaign", "CampaignRule", "CampaignSchedule", "ChangeRequest", "ClickstreamSettings", "Configuration", "ConfigurationVersion", "ContactList", "ContactListFilter", "ContactSchema", "ConversationAttributes", "ConversationAccount", "ConversationDefaultSupportedContent", "ConversationPhoneNumber", "ConversationRecipient", "ConversationThreadingWindow", "Credential", "DashboardSettings", "DependencyTrackingBuild", "Deployment", "DID", "DIDPool", "DigitalRuleSet", "DNCList", "Document", "DynamicGroup", "DynamicSchema", "Edge", "EdgeGroup", "EdgeLog", "EdgeLogZip", "EdgePcaps", "EdgePreferences", "EdgeTraceLevel", "EmailCampaignSchedule", "EmergencyGroup", "EnterpriseAgreement", "Evaluation", "EvaluationForm", "EventType", "Exports", "Extension", "ExtensionPool", "ExternalMetricsData", "ExternalMetricsDefinition", "ExternalOrganizationSchema", "Feedback", "Flow", "FlowMilestone", "FlowOutcome", "Forecast", "HistoricalData", "InsightSettings", "Integration", "IVR", "KnowledgeBase", "KnowledgeCategory", "KnowledgeDocument", "KnowledgeDocumentVariation", "KnowledgeSearchFeedback", "KnowledgeTraining", "Line", "LineBase", "Location", "ManagementUnit", "MaxOrgRoutingUtilizationCapacity", "MediaDiagnosticsTraceFile", "MessagingCampaign", "MessagingCampaignSchedule", "Metric", "Module", "NumberOrder", "NumberPlan", "OAuthClient", "OAuthClientAuthorization", "OrganizationAuthorizationTrust", "OrganizationAuthorizationUserTrust", "OrganizationFeature", "OrganizationIntegrationsAccess", "OrganizationSettings", "OrphanedRecording", "OutboundRoute", "Outcome", "Pcaps", "Phone", "PhoneBase", "PlanningGroup", "Policy", "Predictor", "Product", "Profile", "ProfileMembers", "Program", "Prompt", "PromptResource", "Queue", "Recording", "RecordingAnnotation", "RecordingKey", "RecordingKeyConfig", "RecordingSettings", "Response", "ResponseAsset", "Role", "Row", "RoutingTranscriptionSettings", "RoutingUtilizationTag", "Rule", "RuleSet", "Schedule", "ScheduledExports", "ScheduleGroup", "Schema", "ScreenRecording", "Segment", "SentimentFeedback", "Sequence", "SequenceSchedule", "ServiceGoalTemplate", "SessionType", "ShiftTrade", "Site", "SpeechTextAnalyticsSettings", "Status", "SupportedContent", "SupportFile", "Survey", "SurveyForm", "Team", "TimeOffLimit", "TimeOffPlan", "TimeOffRequest", "Topic", "TranscriptionSettings", "Trigger", "Trunk", "TrunkBase", "User", "UserPresence", "VoicemailPolicy", "VoicemailUserPolicy", "Webhook", "Workbin", "Workitem", "WorkPlan", "WorkPlanRotation", "Workspace", "Worktype", "WrapupCode", "WrapUpCodeMapping", "Participant"]
+        allowed_values = ["AccessToken", "Action", "ActionDraft", "ActionMap", "ActionTemplate", "ActivityCode", "AdherenceExplanation", "AgentRoutingInfo", "AnalyticsReportingSettings", "Annotation", "Appointment", "Assignment", "AttemptLimits", "AuthOrganization", "AuthUser", "Bulk", "BulkActions", "BusinessUnit", "Calibration", "CallableTimeSet", "CallAnalysisResponseSet", "Campaign", "CampaignRule", "CampaignSchedule", "ChangeRequest", "ClickstreamSettings", "Configuration", "ConfigurationVersion", "ContactList", "ContactListFilter", "ContactSchema", "ConversationAttributes", "ConversationAccount", "ConversationDefaultSupportedContent", "ConversationPhoneNumber", "ConversationRecipient", "ConversationThreadingWindow", "Credential", "DashboardSettings", "DefaultPanelSettings", "DependencyTrackingBuild", "Deployment", "DID", "DIDPool", "DigitalRuleSet", "DirectoryGroup", "DNCList", "Document", "DynamicGroup", "DynamicSchema", "Edge", "EdgeGroup", "EdgeLog", "EdgeLogZip", "EdgePcaps", "EdgePreferences", "EdgeTraceLevel", "EmailCampaignSchedule", "EmergencyGroup", "EnterpriseAgreement", "Evaluation", "EvaluationForm", "EventType", "Exports", "Extension", "ExtensionPool", "ExternalMetricsData", "ExternalMetricsDefinition", "ExternalOrganizationSchema", "Feedback", "Flow", "FlowMilestone", "FlowOutcome", "Forecast", "GdprRequest", "HistoricalData", "InsightSettings", "Integration", "IVR", "KnowledgeBase", "KnowledgeCategory", "KnowledgeDocument", "KnowledgeDocumentVariation", "KnowledgeLabel", "KnowledgeSearchFeedback", "KnowledgeTraining", "Line", "LineBase", "Location", "ManagementUnit", "MaxOrgRoutingUtilizationCapacity", "MediaDiagnosticsTraceFile", "MessagingCampaign", "MessagingCampaignSchedule", "Metric", "Module", "NumberOrder", "NumberPlan", "OAuthClient", "OAuthClientAuthorization", "OrganizationAuthorizationTrust", "OrganizationAuthorizationUserTrust", "OrganizationFeature", "OrganizationIntegrationsAccess", "OrganizationSettings", "OrphanedRecording", "OutboundRoute", "Outcome", "Pcaps", "Phone", "PhoneBase", "PlanningGroup", "Policy", "Predictor", "Product", "Profile", "ProfileMembers", "Program", "Prompt", "PromptResource", "Queue", "Recording", "RecordingAnnotation", "RecordingKey", "RecordingKeyConfig", "RecordingSettings", "Response", "ResponseAsset", "Role", "Row", "RoutingTranscriptionSettings", "RoutingUtilizationTag", "Rule", "RuleSet", "Schedule", "ScheduledExports", "ScheduleGroup", "Schema", "ScreenRecording", "Segment", "SentimentFeedback", "Sequence", "SequenceSchedule", "ServiceGoalTemplate", "SessionType", "ShiftTrade", "Site", "SkillsGroup", "SpeechTextAnalyticsSettings", "Status", "SupportedContent", "SupportFile", "Survey", "SurveyForm", "Team", "TimeOffLimit", "TimeOffPlan", "TimeOffRequest", "Topic", "TranscriptionSettings", "Trigger", "Trunk", "TrunkBase", "User", "UserPresence", "VoicemailPolicy", "VoicemailUserPolicy", "Webhook", "Workbin", "Workitem", "WorkPlan", "WorkPlanRotation", "Workspace", "Worktype", "WrapupCode", "WrapUpCodeMapping", "Participant"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entity_type -> " + entity_type)
             self._entity_type = "outdated_sdk_version"
@@ -417,6 +429,78 @@ class AuditLogMessage(object):
             self._status = "outdated_sdk_version"
         else:
             self._status = status
+
+    @property
+    def application(self):
+        """
+        Gets the application of this AuditLogMessage.
+        Name of the application used to perform the audit's action
+
+        :return: The application of this AuditLogMessage.
+        :rtype: str
+        """
+        return self._application
+
+    @application.setter
+    def application(self, application):
+        """
+        Sets the application of this AuditLogMessage.
+        Name of the application used to perform the audit's action
+
+        :param application: The application of this AuditLogMessage.
+        :type: str
+        """
+        
+
+        self._application = application
+
+    @property
+    def initiating_action(self):
+        """
+        Gets the initiating_action of this AuditLogMessage.
+        Id and action of the audit initiating the transaction
+
+        :return: The initiating_action of this AuditLogMessage.
+        :rtype: InitiatingAction
+        """
+        return self._initiating_action
+
+    @initiating_action.setter
+    def initiating_action(self, initiating_action):
+        """
+        Sets the initiating_action of this AuditLogMessage.
+        Id and action of the audit initiating the transaction
+
+        :param initiating_action: The initiating_action of this AuditLogMessage.
+        :type: InitiatingAction
+        """
+        
+
+        self._initiating_action = initiating_action
+
+    @property
+    def transaction_initiator(self):
+        """
+        Gets the transaction_initiator of this AuditLogMessage.
+        Whether the current audit is the initiator of the transaction
+
+        :return: The transaction_initiator of this AuditLogMessage.
+        :rtype: bool
+        """
+        return self._transaction_initiator
+
+    @transaction_initiator.setter
+    def transaction_initiator(self, transaction_initiator):
+        """
+        Sets the transaction_initiator of this AuditLogMessage.
+        Whether the current audit is the initiator of the transaction
+
+        :param transaction_initiator: The transaction_initiator of this AuditLogMessage.
+        :type: bool
+        """
+        
+
+        self._transaction_initiator = transaction_initiator
 
     @property
     def property_changes(self):
@@ -465,6 +549,30 @@ class AuditLogMessage(object):
         
 
         self._context = context
+
+    @property
+    def entity_changes(self):
+        """
+        Gets the entity_changes of this AuditLogMessage.
+        List of entities that were changed and changes made to those entities.
+
+        :return: The entity_changes of this AuditLogMessage.
+        :rtype: list[EntityChange]
+        """
+        return self._entity_changes
+
+    @entity_changes.setter
+    def entity_changes(self, entity_changes):
+        """
+        Sets the entity_changes of this AuditLogMessage.
+        List of entities that were changed and changes made to those entities.
+
+        :param entity_changes: The entity_changes of this AuditLogMessage.
+        :type: list[EntityChange]
+        """
+        
+
+        self._entity_changes = entity_changes
 
     def to_dict(self):
         """
