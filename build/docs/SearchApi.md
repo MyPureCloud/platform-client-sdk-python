@@ -27,6 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_speechandtextanalytics_transcripts_search**](SearchApi.html#post_speechandtextanalytics_transcripts_search) | Search resources.|
 |[**post_teams_search**](SearchApi.html#post_teams_search) | Search resources.|
 |[**post_users_search**](SearchApi.html#post_users_search) | Search users|
+|[**post_users_search_teams_assign**](SearchApi.html#post_users_search_teams_assign) | Search users assigned to teams|
 |[**post_voicemail_search**](SearchApi.html#post_voicemail_search) | Search voicemails|
 {: class="table table-striped"}
 
@@ -989,6 +990,57 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SearchApi->post_users_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="post_users_search_teams_assign"></a>
+
+## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search_teams_assign(body)
+
+
+
+Search users assigned to teams
+
+
+
+Wraps POST /api/v2/users/search/teams/assign 
+
+Requires ANY permissions: 
+
+* groups:team:assign
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.UserSearchRequest() # UserSearchRequest | Search request options
+
+try:
+    # Search users assigned to teams
+    api_response = api_instance.post_users_search_teams_assign(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->post_users_search_teams_assign: %s\n" % e)
 ```
 
 ### Parameters

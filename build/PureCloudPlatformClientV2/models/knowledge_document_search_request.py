@@ -50,7 +50,8 @@ class KnowledgeDocumentSearchRequest(object):
             'interval': 'DocumentQueryInterval',
             'filter': 'DocumentQuery',
             'sort_order': 'str',
-            'sort_by': 'str'
+            'sort_by': 'str',
+            'application': 'KnowledgeSearchClientApplication'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class KnowledgeDocumentSearchRequest(object):
             'interval': 'interval',
             'filter': 'filter',
             'sort_order': 'sortOrder',
-            'sort_by': 'sortBy'
+            'sort_by': 'sortBy',
+            'application': 'application'
         }
 
         self._query = None
@@ -78,6 +80,7 @@ class KnowledgeDocumentSearchRequest(object):
         self._filter = None
         self._sort_order = None
         self._sort_by = None
+        self._application = None
 
     @property
     def query(self):
@@ -354,6 +357,30 @@ class KnowledgeDocumentSearchRequest(object):
             self._sort_by = "outdated_sdk_version"
         else:
             self._sort_by = sort_by
+
+    @property
+    def application(self):
+        """
+        Gets the application of this KnowledgeDocumentSearchRequest.
+        The client application details from which search request was sent.
+
+        :return: The application of this KnowledgeDocumentSearchRequest.
+        :rtype: KnowledgeSearchClientApplication
+        """
+        return self._application
+
+    @application.setter
+    def application(self, application):
+        """
+        Sets the application of this KnowledgeDocumentSearchRequest.
+        The client application details from which search request was sent.
+
+        :param application: The application of this KnowledgeDocumentSearchRequest.
+        :type: KnowledgeSearchClientApplication
+        """
+        
+
+        self._application = application
 
     def to_dict(self):
         """

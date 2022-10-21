@@ -9,8 +9,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_processautomation_trigger**](ProcessAutomationApi.html#delete_processautomation_trigger) | Delete a Trigger|
-|[**get_processautomation_trigger**](ProcessAutomationApi.html#get_processautomation_trigger) | Retrieve a single Trigger matching id.|
-|[**get_processautomation_triggers**](ProcessAutomationApi.html#get_processautomation_triggers) | Retrieves all triggers|
+|[**get_processautomation_trigger**](ProcessAutomationApi.html#get_processautomation_trigger) | Retrieve a single Trigger matching id|
+|[**get_processautomation_triggers**](ProcessAutomationApi.html#get_processautomation_triggers) | Retrieves all triggers, optionally filtered by query parameters.|
 |[**get_processautomation_triggers_topics**](ProcessAutomationApi.html#get_processautomation_triggers_topics) | Get topics available for organization|
 |[**post_processautomation_trigger_test**](ProcessAutomationApi.html#post_processautomation_trigger_test) | Test the matching of a Trigger based on provided event body|
 |[**post_processautomation_triggers**](ProcessAutomationApi.html#post_processautomation_triggers) | Create a Trigger|
@@ -74,7 +74,7 @@ void (empty response body)
 
 
 
-Retrieve a single Trigger matching id.
+Retrieve a single Trigger matching id
 
 
 
@@ -101,7 +101,7 @@ api_instance = PureCloudPlatformClientV2.ProcessAutomationApi()
 trigger_id = 'trigger_id_example' # str | triggerId
 
 try:
-    # Retrieve a single Trigger matching id.
+    # Retrieve a single Trigger matching id
     api_response = api_instance.get_processautomation_trigger(trigger_id)
     pprint(api_response)
 except ApiException as e:
@@ -126,7 +126,7 @@ except ApiException as e:
 
 
 
-Retrieves all triggers
+Retrieves all triggers, optionally filtered by query parameters.
 
 
 
@@ -153,11 +153,11 @@ api_instance = PureCloudPlatformClientV2.ProcessAutomationApi()
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
-topic_name = 'topic_name_example' # str | Topic name (optional)
+topic_name = 'topic_name_example' # str | Topic name(s). Separated by commas (optional)
 enabled = True # bool | Boolean indicating desired enabled state of triggers (optional)
 
 try:
-    # Retrieves all triggers
+    # Retrieves all triggers, optionally filtered by query parameters.
     api_response = api_instance.get_processautomation_triggers(before=before, after=after, page_size=page_size, topic_name=topic_name, enabled=enabled)
     pprint(api_response)
 except ApiException as e:
@@ -172,7 +172,7 @@ except ApiException as e:
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **topic_name** | **str**| Topic name | [optional]  |
+| **topic_name** | **str**| Topic name(s). Separated by commas | [optional]  |
 | **enabled** | **bool**| Boolean indicating desired enabled state of triggers | [optional]  |
 {: class="table table-striped"}
 

@@ -126,7 +126,7 @@ class ProcessAutomationApi(object):
 
     def get_processautomation_trigger(self, trigger_id, **kwargs):
         """
-        Retrieve a single Trigger matching id.
+        Retrieve a single Trigger matching id
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -204,7 +204,7 @@ class ProcessAutomationApi(object):
 
     def get_processautomation_triggers(self, **kwargs):
         """
-        Retrieves all triggers
+        Retrieves all triggers, optionally filtered by query parameters.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -220,7 +220,7 @@ class ProcessAutomationApi(object):
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
-        :param str topic_name: Topic name
+        :param str topic_name: Topic name(s). Separated by commas
         :param bool enabled: Boolean indicating desired enabled state of triggers
         :return: TriggerEntityListing
                  If the method is called asynchronously,

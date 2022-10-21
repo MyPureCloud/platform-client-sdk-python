@@ -182,7 +182,7 @@ except ApiException as e:
 
 <a name="get_presence_sources"></a>
 
-## [**SourceEntityListing**](SourceEntityListing.html) get_presence_sources(deleted=deleted)
+## [**SourceEntityListing**](SourceEntityListing.html) get_presence_sources(deactivated=deactivated)
 
 
 
@@ -209,11 +209,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.PresenceApi()
-deleted = ''false'' # str | Deleted query can be TRUE or FALSE (optional) (default to 'false')
+deactivated = ''false'' # str | Deactivated query can be TRUE or FALSE (optional) (default to 'false')
 
 try:
     # Get a list of Presence Sources
-    api_response = api_instance.get_presence_sources(deleted=deleted)
+    api_response = api_instance.get_presence_sources(deactivated=deactivated)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PresenceApi->get_presence_sources: %s\n" % e)
@@ -224,7 +224,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **deleted** | **str**| Deleted query can be TRUE or FALSE | [optional] [default to &#39;false&#39;] |
+| **deactivated** | **str**| Deactivated query can be TRUE or FALSE | [optional] [default to &#39;false&#39;] |
 {: class="table table-striped"}
 
 ### Return type

@@ -44,10 +44,6 @@ class ComparisonPeriod(object):
             'kpi': 'str',
             'date_started': 'datetime',
             'date_ended': 'datetime',
-            'kpi_total_on': 'int',
-            'kpi_total_off': 'int',
-            'interaction_count_on': 'int',
-            'interaction_count_off': 'int',
             'kpi_results': 'list[KpiResult]',
             'self_uri': 'str'
         }
@@ -57,10 +53,6 @@ class ComparisonPeriod(object):
             'kpi': 'kpi',
             'date_started': 'dateStarted',
             'date_ended': 'dateEnded',
-            'kpi_total_on': 'kpiTotalOn',
-            'kpi_total_off': 'kpiTotalOff',
-            'interaction_count_on': 'interactionCountOn',
-            'interaction_count_off': 'interactionCountOff',
             'kpi_results': 'kpiResults',
             'self_uri': 'selfUri'
         }
@@ -69,10 +61,6 @@ class ComparisonPeriod(object):
         self._kpi = None
         self._date_started = None
         self._date_ended = None
-        self._kpi_total_on = None
-        self._kpi_total_off = None
-        self._interaction_count_on = None
-        self._interaction_count_off = None
         self._kpi_results = None
         self._self_uri = None
 
@@ -171,102 +159,6 @@ class ComparisonPeriod(object):
         
 
         self._date_ended = date_ended
-
-    @property
-    def kpi_total_on(self):
-        """
-        Gets the kpi_total_on of this ComparisonPeriod.
-        Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)
-
-        :return: The kpi_total_on of this ComparisonPeriod.
-        :rtype: int
-        """
-        return self._kpi_total_on
-
-    @kpi_total_on.setter
-    def kpi_total_on(self, kpi_total_on):
-        """
-        Sets the kpi_total_on of this ComparisonPeriod.
-        Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)
-
-        :param kpi_total_on: The kpi_total_on of this ComparisonPeriod.
-        :type: int
-        """
-        
-
-        self._kpi_total_on = kpi_total_on
-
-    @property
-    def kpi_total_off(self):
-        """
-        Gets the kpi_total_off of this ComparisonPeriod.
-        Absolute metric (in which the KPI is based) total for the interactions not routed by predictive routing (GPR was off)
-
-        :return: The kpi_total_off of this ComparisonPeriod.
-        :rtype: int
-        """
-        return self._kpi_total_off
-
-    @kpi_total_off.setter
-    def kpi_total_off(self, kpi_total_off):
-        """
-        Sets the kpi_total_off of this ComparisonPeriod.
-        Absolute metric (in which the KPI is based) total for the interactions not routed by predictive routing (GPR was off)
-
-        :param kpi_total_off: The kpi_total_off of this ComparisonPeriod.
-        :type: int
-        """
-        
-
-        self._kpi_total_off = kpi_total_off
-
-    @property
-    def interaction_count_on(self):
-        """
-        Gets the interaction_count_on of this ComparisonPeriod.
-        Total interactions handled by predictive routing (GPR was on)
-
-        :return: The interaction_count_on of this ComparisonPeriod.
-        :rtype: int
-        """
-        return self._interaction_count_on
-
-    @interaction_count_on.setter
-    def interaction_count_on(self, interaction_count_on):
-        """
-        Sets the interaction_count_on of this ComparisonPeriod.
-        Total interactions handled by predictive routing (GPR was on)
-
-        :param interaction_count_on: The interaction_count_on of this ComparisonPeriod.
-        :type: int
-        """
-        
-
-        self._interaction_count_on = interaction_count_on
-
-    @property
-    def interaction_count_off(self):
-        """
-        Gets the interaction_count_off of this ComparisonPeriod.
-        Total interactions not routed by predictive routing (GPR was off)
-
-        :return: The interaction_count_off of this ComparisonPeriod.
-        :rtype: int
-        """
-        return self._interaction_count_off
-
-    @interaction_count_off.setter
-    def interaction_count_off(self, interaction_count_off):
-        """
-        Sets the interaction_count_off of this ComparisonPeriod.
-        Total interactions not routed by predictive routing (GPR was off)
-
-        :param interaction_count_off: The interaction_count_off of this ComparisonPeriod.
-        :type: int
-        """
-        
-
-        self._interaction_count_off = interaction_count_off
 
     @property
     def kpi_results(self):

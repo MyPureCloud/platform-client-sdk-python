@@ -1426,6 +1426,7 @@ from .models.history_entry import HistoryEntry
 from .models.history_listing import HistoryListing
 from .models.hold_updated_event import HoldUpdatedEvent
 from .models.homer_record import HomerRecord
+from .models.hris_time_off_type import HrisTimeOffType
 from .models.humanize import Humanize
 from .models.ivr import IVR
 from .models.ivr_entity_listing import IVREntityListing
@@ -1637,6 +1638,7 @@ from .models.knowledge_import_job_request import KnowledgeImportJobRequest
 from .models.knowledge_import_job_response import KnowledgeImportJobResponse
 from .models.knowledge_import_job_settings import KnowledgeImportJobSettings
 from .models.knowledge_import_job_statistics import KnowledgeImportJobStatistics
+from .models.knowledge_search_client_application import KnowledgeSearchClientApplication
 from .models.knowledge_search_document import KnowledgeSearchDocument
 from .models.knowledge_search_request import KnowledgeSearchRequest
 from .models.knowledge_search_response import KnowledgeSearchResponse
@@ -1812,6 +1814,7 @@ from .models.message_media_policy import MessageMediaPolicy
 from .models.message_media_policy_conditions import MessageMediaPolicyConditions
 from .models.message_sticker import MessageSticker
 from .models.message_sticker_attachment import MessageStickerAttachment
+from .models.message_typing_event_request import MessageTypingEventRequest
 from .models.messaging_campaign import MessagingCampaign
 from .models.messaging_campaign_division_view import MessagingCampaignDivisionView
 from .models.messaging_campaign_division_view_entity_listing import MessagingCampaignDivisionViewEntityListing
@@ -2572,6 +2575,7 @@ from .models.service_level import ServiceLevel
 from .models.session import Session
 from .models.session_end_details import SessionEndDetails
 from .models.session_last_event import SessionLastEvent
+from .models.session_listing import SessionListing
 from .models.session_segment_assignment import SessionSegmentAssignment
 from .models.set_content_template_action_settings import SetContentTemplateActionSettings
 from .models.set_recording_state import SetRecordingState
@@ -2710,7 +2714,11 @@ from .models.tag_value import TagValue
 from .models.tag_value_entity_listing import TagValueEntityListing
 from .models.target_performance_profile import TargetPerformanceProfile
 from .models.team import Team
+from .models.team_add_member_failure import TeamAddMemberFailure
 from .models.team_entity_listing import TeamEntityListing
+from .models.team_member_add_listing_response import TeamMemberAddListingResponse
+from .models.team_member_entity_listing import TeamMemberEntityListing
+from .models.team_members import TeamMembers
 from .models.team_reference import TeamReference
 from .models.team_search_criteria import TeamSearchCriteria
 from .models.team_search_request import TeamSearchRequest
@@ -2756,6 +2764,10 @@ from .models.text_style_properties import TextStyleProperties
 from .models.ticker import Ticker
 from .models.time_allowed import TimeAllowed
 from .models.time_interval import TimeInterval
+from .models.time_off_balance_job_reference import TimeOffBalanceJobReference
+from .models.time_off_balance_request import TimeOffBalanceRequest
+from .models.time_off_balance_response import TimeOffBalanceResponse
+from .models.time_off_balances_response import TimeOffBalancesResponse
 from .models.time_off_limit import TimeOffLimit
 from .models.time_off_limit_listing import TimeOffLimitListing
 from .models.time_off_limit_range import TimeOffLimitRange
@@ -2965,6 +2977,7 @@ from .models.user_queue_entity_listing import UserQueueEntityListing
 from .models.user_recording import UserRecording
 from .models.user_recording_entity_listing import UserRecordingEntityListing
 from .models.user_reference import UserReference
+from .models.user_reference_with_name import UserReferenceWithName
 from .models.user_routing_language import UserRoutingLanguage
 from .models.user_routing_language_post import UserRoutingLanguagePost
 from .models.user_routing_skill import UserRoutingSkill

@@ -156,6 +156,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_keyconfigurations_validate**](ConversationsApi.html#post_conversations_keyconfigurations_validate) | Validate encryption key configurations without saving it|
 |[**post_conversations_message_communication_messages**](ConversationsApi.html#post_conversations_message_communication_messages) | Send message|
 |[**post_conversations_message_communication_messages_media**](ConversationsApi.html#post_conversations_message_communication_messages_media) | Create media|
+|[**post_conversations_message_communication_typing**](ConversationsApi.html#post_conversations_message_communication_typing) | Send message typing event|
 |[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
 |[**post_conversations_message_participant_replace**](ConversationsApi.html#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_messages**](ConversationsApi.html#post_conversations_messages) | Create an outbound messaging conversation.|
@@ -4195,8 +4196,9 @@ Update conversation participant.
 
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -4407,8 +4409,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -4676,8 +4679,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -4942,8 +4946,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -5157,8 +5162,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -5372,8 +5378,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -5587,8 +5594,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -7956,6 +7964,63 @@ except ApiException as e:
 ### Return type
 
 [**MessageMediaData**](MessageMediaData.html)
+
+<a name="post_conversations_message_communication_typing"></a>
+
+##  post_conversations_message_communication_typing(conversation_id, communication_id, body)
+
+
+
+Send message typing event
+
+Send message typing event for existing conversation/communication.
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing 
+
+Requires ANY permissions: 
+
+* conversation:message:create
+* conversation:webmessaging:create
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.MessageTypingEventRequest() # MessageTypingEventRequest | MessageTypingEvent
+
+try:
+    # Send message typing event
+    api_instance.post_conversations_message_communication_typing(conversation_id, communication_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_communication_typing: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**MessageTypingEventRequest**](MessageTypingEventRequest.html)| MessageTypingEvent |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_conversations_message_messages_bulk"></a>
 

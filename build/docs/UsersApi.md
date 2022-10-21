@@ -77,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_users_development_activities_aggregates_query**](UsersApi.html#post_users_development_activities_aggregates_query) | Retrieve aggregated development activity data|
 |[**post_users_me_password**](UsersApi.html#post_users_me_password) | Change your password|
 |[**post_users_search**](UsersApi.html#post_users_search) | Search users|
+|[**post_users_search_teams_assign**](UsersApi.html#post_users_search_teams_assign) | Search users assigned to teams|
 |[**put_routing_user_utilization**](UsersApi.html#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_user_callforwarding**](UsersApi.html#put_user_callforwarding) | Update a user&#39;s CallForwarding|
 |[**put_user_outofoffice**](UsersApi.html#put_user_outofoffice) | Update an OutOfOffice|
@@ -3785,6 +3786,57 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->post_users_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="post_users_search_teams_assign"></a>
+
+## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search_teams_assign(body)
+
+
+
+Search users assigned to teams
+
+
+
+Wraps POST /api/v2/users/search/teams/assign 
+
+Requires ANY permissions: 
+
+* groups:team:assign
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.UserSearchRequest() # UserSearchRequest | Search request options
+
+try:
+    # Search users assigned to teams
+    api_response = api_instance.post_users_search_teams_assign(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_users_search_teams_assign: %s\n" % e)
 ```
 
 ### Parameters

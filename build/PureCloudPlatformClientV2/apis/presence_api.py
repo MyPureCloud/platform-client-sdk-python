@@ -295,13 +295,13 @@ class PresenceApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str deleted: Deleted query can be TRUE or FALSE
+        :param str deactivated: Deactivated query can be TRUE or FALSE
         :return: SourceEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['deleted']
+        all_params = ['deactivated']
         all_params.append('callback')
 
         params = locals()
@@ -320,8 +320,8 @@ class PresenceApi(object):
         path_params = {}
 
         query_params = {}
-        if 'deleted' in params:
-            query_params['deleted'] = params['deleted']
+        if 'deactivated' in params:
+            query_params['deactivated'] = params['deactivated']
 
         header_params = {}
 

@@ -124,6 +124,90 @@ class TeamsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_team_members(self, team_id, id, **kwargs):
+        """
+        Delete team members
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_team_members(team_id, id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str team_id: Team ID (required)
+        :param str id: Comma separated list of member ids to remove (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['team_id', 'id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_team_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'team_id' is set
+        if ('team_id' not in params) or (params['team_id'] is None):
+            raise ValueError("Missing the required parameter `team_id` when calling `delete_team_members`")
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `delete_team_members`")
+
+
+        resource_path = '/api/v2/teams/{teamId}/members'.replace('{format}', 'json')
+        path_params = {}
+        if 'team_id' in params:
+            path_params['teamId'] = params['team_id']
+
+        query_params = {}
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_team(self, team_id, **kwargs):
         """
         Get team
@@ -198,6 +282,96 @@ class TeamsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Team',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_team_members(self, team_id, **kwargs):
+        """
+        Get team membership
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_team_members(team_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str team_id: Team ID (required)
+        :param int page_size: Page size
+        :param str before: The cursor that points to the previous item in the complete list of teams
+        :param str after: The cursor that points to the next item in the complete list of teams
+        :param str expand: Expand the name on each user
+        :return: TeamMemberEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['team_id', 'page_size', 'before', 'after', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_team_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'team_id' is set
+        if ('team_id' not in params) or (params['team_id'] is None):
+            raise ValueError("Missing the required parameter `team_id` when calling `get_team_members`")
+
+
+        resource_path = '/api/v2/teams/{teamId}/members'.replace('{format}', 'json')
+        path_params = {}
+        if 'team_id' in params:
+            path_params['teamId'] = params['team_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TeamMemberEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -369,6 +543,90 @@ class TeamsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Team',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_team_members(self, team_id, body, **kwargs):
+        """
+        Add team members
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_team_members(team_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str team_id: Team ID (required)
+        :param TeamMembers body: TeamMembers (required)
+        :return: TeamMemberAddListingResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['team_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_team_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'team_id' is set
+        if ('team_id' not in params) or (params['team_id'] is None):
+            raise ValueError("Missing the required parameter `team_id` when calling `post_team_members`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_team_members`")
+
+
+        resource_path = '/api/v2/teams/{teamId}/members'.replace('{format}', 'json')
+        path_params = {}
+        if 'team_id' in params:
+            path_params['teamId'] = params['team_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TeamMemberAddListingResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

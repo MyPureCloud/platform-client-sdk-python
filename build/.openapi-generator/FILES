@@ -1497,6 +1497,7 @@ PureCloudPlatformClientV2/models/history_entry.py
 PureCloudPlatformClientV2/models/history_listing.py
 PureCloudPlatformClientV2/models/hold_updated_event.py
 PureCloudPlatformClientV2/models/homer_record.py
+PureCloudPlatformClientV2/models/hris_time_off_type.py
 PureCloudPlatformClientV2/models/humanize.py
 PureCloudPlatformClientV2/models/identifier_claim_request.py
 PureCloudPlatformClientV2/models/identity_now.py
@@ -1708,6 +1709,7 @@ PureCloudPlatformClientV2/models/knowledge_import_job_request.py
 PureCloudPlatformClientV2/models/knowledge_import_job_response.py
 PureCloudPlatformClientV2/models/knowledge_import_job_settings.py
 PureCloudPlatformClientV2/models/knowledge_import_job_statistics.py
+PureCloudPlatformClientV2/models/knowledge_search_client_application.py
 PureCloudPlatformClientV2/models/knowledge_search_document.py
 PureCloudPlatformClientV2/models/knowledge_search_request.py
 PureCloudPlatformClientV2/models/knowledge_search_response.py
@@ -1883,6 +1885,7 @@ PureCloudPlatformClientV2/models/message_media_policy.py
 PureCloudPlatformClientV2/models/message_media_policy_conditions.py
 PureCloudPlatformClientV2/models/message_sticker.py
 PureCloudPlatformClientV2/models/message_sticker_attachment.py
+PureCloudPlatformClientV2/models/message_typing_event_request.py
 PureCloudPlatformClientV2/models/messaging_campaign.py
 PureCloudPlatformClientV2/models/messaging_campaign_division_view.py
 PureCloudPlatformClientV2/models/messaging_campaign_division_view_entity_listing.py
@@ -2641,6 +2644,7 @@ PureCloudPlatformClientV2/models/service_level.py
 PureCloudPlatformClientV2/models/session.py
 PureCloudPlatformClientV2/models/session_end_details.py
 PureCloudPlatformClientV2/models/session_last_event.py
+PureCloudPlatformClientV2/models/session_listing.py
 PureCloudPlatformClientV2/models/session_segment_assignment.py
 PureCloudPlatformClientV2/models/set_content_template_action_settings.py
 PureCloudPlatformClientV2/models/set_recording_state.py
@@ -2781,7 +2785,11 @@ PureCloudPlatformClientV2/models/tag_value.py
 PureCloudPlatformClientV2/models/tag_value_entity_listing.py
 PureCloudPlatformClientV2/models/target_performance_profile.py
 PureCloudPlatformClientV2/models/team.py
+PureCloudPlatformClientV2/models/team_add_member_failure.py
 PureCloudPlatformClientV2/models/team_entity_listing.py
+PureCloudPlatformClientV2/models/team_member_add_listing_response.py
+PureCloudPlatformClientV2/models/team_member_entity_listing.py
+PureCloudPlatformClientV2/models/team_members.py
 PureCloudPlatformClientV2/models/team_reference.py
 PureCloudPlatformClientV2/models/team_search_criteria.py
 PureCloudPlatformClientV2/models/team_search_request.py
@@ -2827,6 +2835,10 @@ PureCloudPlatformClientV2/models/text_style_properties.py
 PureCloudPlatformClientV2/models/ticker.py
 PureCloudPlatformClientV2/models/time_allowed.py
 PureCloudPlatformClientV2/models/time_interval.py
+PureCloudPlatformClientV2/models/time_off_balance_job_reference.py
+PureCloudPlatformClientV2/models/time_off_balance_request.py
+PureCloudPlatformClientV2/models/time_off_balance_response.py
+PureCloudPlatformClientV2/models/time_off_balances_response.py
 PureCloudPlatformClientV2/models/time_off_limit.py
 PureCloudPlatformClientV2/models/time_off_limit_listing.py
 PureCloudPlatformClientV2/models/time_off_limit_range.py
@@ -3036,6 +3048,7 @@ PureCloudPlatformClientV2/models/user_queue_entity_listing.py
 PureCloudPlatformClientV2/models/user_recording.py
 PureCloudPlatformClientV2/models/user_recording_entity_listing.py
 PureCloudPlatformClientV2/models/user_reference.py
+PureCloudPlatformClientV2/models/user_reference_with_name.py
 PureCloudPlatformClientV2/models/user_routing_language.py
 PureCloudPlatformClientV2/models/user_routing_language_post.py
 PureCloudPlatformClientV2/models/user_routing_skill.py
@@ -4866,6 +4879,7 @@ docs/HistoryEntry.md
 docs/HistoryListing.md
 docs/HoldUpdatedEvent.md
 docs/HomerRecord.md
+docs/HrisTimeOffType.md
 docs/Humanize.md
 docs/IVR.md
 docs/IVREntityListing.md
@@ -5085,6 +5099,7 @@ docs/KnowledgeImportJobRequest.md
 docs/KnowledgeImportJobResponse.md
 docs/KnowledgeImportJobSettings.md
 docs/KnowledgeImportJobStatistics.md
+docs/KnowledgeSearchClientApplication.md
 docs/KnowledgeSearchDocument.md
 docs/KnowledgeSearchRequest.md
 docs/KnowledgeSearchResponse.md
@@ -5270,6 +5285,7 @@ docs/MessageMediaPolicy.md
 docs/MessageMediaPolicyConditions.md
 docs/MessageSticker.md
 docs/MessageStickerAttachment.md
+docs/MessageTypingEventRequest.md
 docs/MessagingApi.json
 docs/MessagingApi.md
 docs/MessagingCampaign.md
@@ -6064,6 +6080,7 @@ docs/ServiceLevel.md
 docs/Session.md
 docs/SessionEndDetails.md
 docs/SessionLastEvent.md
+docs/SessionListing.md
 docs/SessionSegmentAssignment.md
 docs/SetContentTemplateActionSettings.md
 docs/SetRecordingState.md
@@ -6208,7 +6225,11 @@ docs/TagValue.md
 docs/TagValueEntityListing.md
 docs/TargetPerformanceProfile.md
 docs/Team.md
+docs/TeamAddMemberFailure.md
 docs/TeamEntityListing.md
+docs/TeamMemberAddListingResponse.md
+docs/TeamMemberEntityListing.md
+docs/TeamMembers.md
 docs/TeamReference.md
 docs/TeamSearchCriteria.md
 docs/TeamSearchRequest.md
@@ -6262,6 +6283,10 @@ docs/TextbotsApi.md
 docs/Ticker.md
 docs/TimeAllowed.md
 docs/TimeInterval.md
+docs/TimeOffBalanceJobReference.md
+docs/TimeOffBalanceRequest.md
+docs/TimeOffBalanceResponse.md
+docs/TimeOffBalancesResponse.md
 docs/TimeOffLimit.md
 docs/TimeOffLimitListing.md
 docs/TimeOffLimitRange.md
@@ -6479,6 +6504,7 @@ docs/UserRecordingEntityListing.md
 docs/UserRecordingsApi.json
 docs/UserRecordingsApi.md
 docs/UserReference.md
+docs/UserReferenceWithName.md
 docs/UserRoutingLanguage.md
 docs/UserRoutingLanguagePost.md
 docs/UserRoutingSkill.md
@@ -7026,6 +7052,7 @@ docs/delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id-examp
 docs/delete_speechandtextanalytics_topic-example.txt
 docs/delete_station_associateduser-example.txt
 docs/delete_team-example.txt
+docs/delete_team_members-example.txt
 docs/delete_telephony_providers_edge-example.txt
 docs/delete_telephony_providers_edge_logicalinterface-example.txt
 docs/delete_telephony_providers_edge_softwareupdate-example.txt
@@ -7278,6 +7305,7 @@ docs/get_employeeperformance_externalmetrics_definition-example.txt
 docs/get_employeeperformance_externalmetrics_definitions-example.txt
 docs/get_externalcontacts_contact-example.txt
 docs/get_externalcontacts_contact_identifiers-example.txt
+docs/get_externalcontacts_contact_journey_sessions-example.txt
 docs/get_externalcontacts_contact_note-example.txt
 docs/get_externalcontacts_contact_notes-example.txt
 docs/get_externalcontacts_contact_unresolved-example.txt
@@ -7788,6 +7816,7 @@ docs/get_stations-example.txt
 docs/get_stations_settings-example.txt
 docs/get_systempresences-example.txt
 docs/get_team-example.txt
+docs/get_team_members-example.txt
 docs/get_teams-example.txt
 docs/get_telephony_providers_edge-example.txt
 docs/get_telephony_providers_edge_diagnostic_nslookup-example.txt
@@ -8244,6 +8273,7 @@ docs/post_conversations_keyconfigurations-example.txt
 docs/post_conversations_keyconfigurations_validate-example.txt
 docs/post_conversations_message_communication_messages-example.txt
 docs/post_conversations_message_communication_messages_media-example.txt
+docs/post_conversations_message_communication_typing-example.txt
 docs/post_conversations_message_messages_bulk-example.txt
 docs/post_conversations_message_participant_replace-example.txt
 docs/post_conversations_messages-example.txt
@@ -8489,6 +8519,7 @@ docs/post_speechandtextanalytics_topics-example.txt
 docs/post_speechandtextanalytics_topics_publishjobs-example.txt
 docs/post_speechandtextanalytics_transcripts_search-example.txt
 docs/post_speechandtextanalytics_transcripts_search-example.txt
+docs/post_team_members-example.txt
 docs/post_teams-example.txt
 docs/post_teams_search-example.txt
 docs/post_teams_search-example.txt
@@ -8540,6 +8571,8 @@ docs/post_users_development_activities_aggregates_query-example.txt
 docs/post_users_me_password-example.txt
 docs/post_users_search-example.txt
 docs/post_users_search-example.txt
+docs/post_users_search_teams_assign-example.txt
+docs/post_users_search_teams_assign-example.txt
 docs/post_voicemail_messages-example.txt
 docs/post_voicemail_search-example.txt
 docs/post_voicemail_search-example.txt
@@ -8585,6 +8618,8 @@ docs/post_workforcemanagement_managementunit_timeoffplans-example.txt
 docs/post_workforcemanagement_managementunit_timeoffrequests-example.txt
 docs/post_workforcemanagement_managementunit_timeoffrequests_query-example.txt
 docs/post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query-example.txt
+docs/post_workforcemanagement_managementunit_user_timeoffbalance_jobs-example.txt
+docs/post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs-example.txt
 docs/post_workforcemanagement_managementunit_week_shifttrade_match-example.txt
 docs/post_workforcemanagement_managementunit_week_shifttrades-example.txt
 docs/post_workforcemanagement_managementunit_week_shifttrades_search-example.txt

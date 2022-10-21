@@ -46,7 +46,8 @@ class KnowledgeDocumentSearch(object):
             'search_id': 'str',
             'total': 'int',
             'page_count': 'int',
-            'results': 'list[KnowledgeDocumentSearchResult]'
+            'results': 'list[KnowledgeDocumentSearchResult]',
+            'application': 'KnowledgeSearchClientApplication'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class KnowledgeDocumentSearch(object):
             'search_id': 'searchId',
             'total': 'total',
             'page_count': 'pageCount',
-            'results': 'results'
+            'results': 'results',
+            'application': 'application'
         }
 
         self._query = None
@@ -66,6 +68,7 @@ class KnowledgeDocumentSearch(object):
         self._total = None
         self._page_count = None
         self._results = None
+        self._application = None
 
     @property
     def query(self):
@@ -240,6 +243,30 @@ class KnowledgeDocumentSearch(object):
         
 
         self._results = results
+
+    @property
+    def application(self):
+        """
+        Gets the application of this KnowledgeDocumentSearch.
+        The client application details from which search happened.
+
+        :return: The application of this KnowledgeDocumentSearch.
+        :rtype: KnowledgeSearchClientApplication
+        """
+        return self._application
+
+    @application.setter
+    def application(self, application):
+        """
+        Sets the application of this KnowledgeDocumentSearch.
+        The client application details from which search happened.
+
+        :param application: The application of this KnowledgeDocumentSearch.
+        :type: KnowledgeSearchClientApplication
+        """
+        
+
+        self._application = application
 
     def to_dict(self):
         """

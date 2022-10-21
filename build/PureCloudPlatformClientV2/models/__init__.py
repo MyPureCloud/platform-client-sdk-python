@@ -1426,6 +1426,7 @@ from .history_entry import HistoryEntry
 from .history_listing import HistoryListing
 from .hold_updated_event import HoldUpdatedEvent
 from .homer_record import HomerRecord
+from .hris_time_off_type import HrisTimeOffType
 from .humanize import Humanize
 from .ivr import IVR
 from .ivr_entity_listing import IVREntityListing
@@ -1637,6 +1638,7 @@ from .knowledge_import_job_request import KnowledgeImportJobRequest
 from .knowledge_import_job_response import KnowledgeImportJobResponse
 from .knowledge_import_job_settings import KnowledgeImportJobSettings
 from .knowledge_import_job_statistics import KnowledgeImportJobStatistics
+from .knowledge_search_client_application import KnowledgeSearchClientApplication
 from .knowledge_search_document import KnowledgeSearchDocument
 from .knowledge_search_request import KnowledgeSearchRequest
 from .knowledge_search_response import KnowledgeSearchResponse
@@ -1812,6 +1814,7 @@ from .message_media_policy import MessageMediaPolicy
 from .message_media_policy_conditions import MessageMediaPolicyConditions
 from .message_sticker import MessageSticker
 from .message_sticker_attachment import MessageStickerAttachment
+from .message_typing_event_request import MessageTypingEventRequest
 from .messaging_campaign import MessagingCampaign
 from .messaging_campaign_division_view import MessagingCampaignDivisionView
 from .messaging_campaign_division_view_entity_listing import MessagingCampaignDivisionViewEntityListing
@@ -2572,6 +2575,7 @@ from .service_level import ServiceLevel
 from .session import Session
 from .session_end_details import SessionEndDetails
 from .session_last_event import SessionLastEvent
+from .session_listing import SessionListing
 from .session_segment_assignment import SessionSegmentAssignment
 from .set_content_template_action_settings import SetContentTemplateActionSettings
 from .set_recording_state import SetRecordingState
@@ -2710,7 +2714,11 @@ from .tag_value import TagValue
 from .tag_value_entity_listing import TagValueEntityListing
 from .target_performance_profile import TargetPerformanceProfile
 from .team import Team
+from .team_add_member_failure import TeamAddMemberFailure
 from .team_entity_listing import TeamEntityListing
+from .team_member_add_listing_response import TeamMemberAddListingResponse
+from .team_member_entity_listing import TeamMemberEntityListing
+from .team_members import TeamMembers
 from .team_reference import TeamReference
 from .team_search_criteria import TeamSearchCriteria
 from .team_search_request import TeamSearchRequest
@@ -2756,6 +2764,10 @@ from .text_style_properties import TextStyleProperties
 from .ticker import Ticker
 from .time_allowed import TimeAllowed
 from .time_interval import TimeInterval
+from .time_off_balance_job_reference import TimeOffBalanceJobReference
+from .time_off_balance_request import TimeOffBalanceRequest
+from .time_off_balance_response import TimeOffBalanceResponse
+from .time_off_balances_response import TimeOffBalancesResponse
 from .time_off_limit import TimeOffLimit
 from .time_off_limit_listing import TimeOffLimitListing
 from .time_off_limit_range import TimeOffLimitRange
@@ -2965,6 +2977,7 @@ from .user_queue_entity_listing import UserQueueEntityListing
 from .user_recording import UserRecording
 from .user_recording_entity_listing import UserRecordingEntityListing
 from .user_reference import UserReference
+from .user_reference_with_name import UserReferenceWithName
 from .user_routing_language import UserRoutingLanguage
 from .user_routing_language_post import UserRoutingLanguagePost
 from .user_routing_skill import UserRoutingSkill

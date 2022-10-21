@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_externalcontacts_relationship**](ExternalContactsApi.html#delete_externalcontacts_relationship) | Delete a relationship|
 |[**get_externalcontacts_contact**](ExternalContactsApi.html#get_externalcontacts_contact) | Fetch an external contact|
 |[**get_externalcontacts_contact_identifiers**](ExternalContactsApi.html#get_externalcontacts_contact_identifiers) | List the identifiers for a contact|
+|[**get_externalcontacts_contact_journey_sessions**](ExternalContactsApi.html#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
 |[**get_externalcontacts_contact_note**](ExternalContactsApi.html#get_externalcontacts_contact_note) | Fetch a note for an external contact|
 |[**get_externalcontacts_contact_notes**](ExternalContactsApi.html#get_externalcontacts_contact_notes) | List notes for an external contact|
 |[**get_externalcontacts_contact_unresolved**](ExternalContactsApi.html#get_externalcontacts_contact_unresolved) | Fetch an unresolved external contact|
@@ -543,6 +544,63 @@ except ApiException as e:
 ### Return type
 
 [**EntityListing**](EntityListing.html)
+
+<a name="get_externalcontacts_contact_journey_sessions"></a>
+
+## [**SessionListing**](SessionListing.html) get_externalcontacts_contact_journey_sessions(contact_id, page_size=page_size, after=after, include_merged=include_merged)
+
+
+
+Retrieve all sessions for a given external contact.
+
+
+
+Wraps GET /api/v2/externalcontacts/contacts/{contactId}/journey/sessions 
+
+Requires ANY permissions: 
+
+* externalContacts:session:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+include_merged = True # bool | Indicates whether to return sessions from all external contacts in the merge-set of the given one. (optional)
+
+try:
+    # Retrieve all sessions for a given external contact.
+    api_response = api_instance.get_externalcontacts_contact_journey_sessions(contact_id, page_size=page_size, after=after, include_merged=include_merged)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contact_journey_sessions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **include_merged** | **bool**| Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SessionListing**](SessionListing.html)
 
 <a name="get_externalcontacts_contact_note"></a>
 

@@ -40,14 +40,20 @@ class PredictorWorkloadBalancing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'enabled': 'bool'
+            'enabled': 'bool',
+            'minimum_occupancy': 'int',
+            'maximum_occupancy': 'int'
         }
 
         self.attribute_map = {
-            'enabled': 'enabled'
+            'enabled': 'enabled',
+            'minimum_occupancy': 'minimumOccupancy',
+            'maximum_occupancy': 'maximumOccupancy'
         }
 
         self._enabled = None
+        self._minimum_occupancy = None
+        self._maximum_occupancy = None
 
     @property
     def enabled(self):
@@ -72,6 +78,54 @@ class PredictorWorkloadBalancing(object):
         
 
         self._enabled = enabled
+
+    @property
+    def minimum_occupancy(self):
+        """
+        Gets the minimum_occupancy of this PredictorWorkloadBalancing.
+        Desired minimum occupancy threshold of agents. Must be between 0 and 100.
+
+        :return: The minimum_occupancy of this PredictorWorkloadBalancing.
+        :rtype: int
+        """
+        return self._minimum_occupancy
+
+    @minimum_occupancy.setter
+    def minimum_occupancy(self, minimum_occupancy):
+        """
+        Sets the minimum_occupancy of this PredictorWorkloadBalancing.
+        Desired minimum occupancy threshold of agents. Must be between 0 and 100.
+
+        :param minimum_occupancy: The minimum_occupancy of this PredictorWorkloadBalancing.
+        :type: int
+        """
+        
+
+        self._minimum_occupancy = minimum_occupancy
+
+    @property
+    def maximum_occupancy(self):
+        """
+        Gets the maximum_occupancy of this PredictorWorkloadBalancing.
+        Desired maximum occupancy threshold of agents. Must be between 0 and 100.
+
+        :return: The maximum_occupancy of this PredictorWorkloadBalancing.
+        :rtype: int
+        """
+        return self._maximum_occupancy
+
+    @maximum_occupancy.setter
+    def maximum_occupancy(self, maximum_occupancy):
+        """
+        Sets the maximum_occupancy of this PredictorWorkloadBalancing.
+        Desired maximum occupancy threshold of agents. Must be between 0 and 100.
+
+        :param maximum_occupancy: The maximum_occupancy of this PredictorWorkloadBalancing.
+        :type: int
+        """
+        
+
+        self._maximum_occupancy = maximum_occupancy
 
     def to_dict(self):
         """

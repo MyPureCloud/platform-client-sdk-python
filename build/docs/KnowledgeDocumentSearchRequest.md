@@ -18,6 +18,7 @@ title: KnowledgeDocumentSearchRequest
 | **filter** | [**DocumentQuery**](DocumentQuery.html) | Filter for the document search. | [optional] |
 | **sort_order** | **str** | The sort order for search results. | [optional] |
 | **sort_by** | **str** | The field in the documents that you want to sort the search results by. | [optional] |
+| **application** | [**KnowledgeSearchClientApplication**](KnowledgeSearchClientApplication.html) | The client application details from which search request was sent. | [optional] |
 {: class="table table-striped"}
 
 

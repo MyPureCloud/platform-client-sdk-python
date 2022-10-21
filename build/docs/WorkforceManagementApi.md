@@ -132,6 +132,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunit_timeoffrequests**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests) | Create a new time off request|
 |[**post_workforcemanagement_managementunit_timeoffrequests_query**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests_query) | Fetches time off requests matching the conditions specified in the request body|
 |[**post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query) | Retrieves daily waitlist position for a list of time off requests|
+|[**post_workforcemanagement_managementunit_user_timeoffbalance_jobs**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_user_timeoffbalance_jobs) | Query time off balances for a given user for specified activity code and dates|
+|[**post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs) | Query time off balances for dates spanned by a given time off request|
 |[**post_workforcemanagement_managementunit_week_shifttrade_match**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrade_match) | Matches a shift trade. This route can only be called by the receiving agent|
 |[**post_workforcemanagement_managementunit_week_shifttrades**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades) | Adds a shift trade|
 |[**post_workforcemanagement_managementunit_week_shifttrades_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades_search) | Searches for potential shift trade matches for the current agent|
@@ -7133,6 +7135,116 @@ except ApiException as e:
 ### Return type
 
 [**WaitlistPositionListing**](WaitlistPositionListing.html)
+
+<a name="post_workforcemanagement_managementunit_user_timeoffbalance_jobs"></a>
+
+## [**TimeOffBalancesResponse**](TimeOffBalancesResponse.html) post_workforcemanagement_managementunit_user_timeoffbalance_jobs(management_unit_id, user_id, body)
+
+
+
+Query time off balances for a given user for specified activity code and dates
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs 
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
+user_id = 'user_id_example' # str | The ID of the user
+body = PureCloudPlatformClientV2.TimeOffBalanceRequest() # TimeOffBalanceRequest | The request body
+
+try:
+    # Query time off balances for a given user for specified activity code and dates
+    api_response = api_instance.post_workforcemanagement_managementunit_user_timeoffbalance_jobs(management_unit_id, user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_user_timeoffbalance_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit |  |
+| **user_id** | **str**| The ID of the user |  |
+| **body** | [**TimeOffBalanceRequest**](TimeOffBalanceRequest.html)| The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffBalancesResponse**](TimeOffBalancesResponse.html)
+
+<a name="post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs"></a>
+
+## [**TimeOffBalancesResponse**](TimeOffBalancesResponse.html) post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs(management_unit_id, user_id, time_off_request_id)
+
+
+
+Query time off balances for dates spanned by a given time off request
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs 
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
+user_id = 'user_id_example' # str | The userId to whom the time off request applies.
+time_off_request_id = 'time_off_request_id_example' # str | The time off request id.
+
+try:
+    # Query time off balances for dates spanned by a given time off request
+    api_response = api_instance.post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs(management_unit_id, user_id, time_off_request_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit. |  |
+| **user_id** | **str**| The userId to whom the time off request applies. |  |
+| **time_off_request_id** | **str**| The time off request id. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffBalancesResponse**](TimeOffBalancesResponse.html)
 
 <a name="post_workforcemanagement_managementunit_week_shifttrade_match"></a>
 
