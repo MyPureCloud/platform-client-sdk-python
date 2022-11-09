@@ -43,20 +43,23 @@ class NluInfo(object):
             'domain': 'AddressableEntityRef',
             'version': 'NluDomainVersion',
             'intents': 'list[Intent]',
-            'engine_version': 'str'
+            'engine_version': 'str',
+            'nlu_data': 'NluDomainVersion'
         }
 
         self.attribute_map = {
             'domain': 'domain',
             'version': 'version',
             'intents': 'intents',
-            'engine_version': 'engineVersion'
+            'engine_version': 'engineVersion',
+            'nlu_data': 'nluData'
         }
 
         self._domain = None
         self._version = None
         self._intents = None
         self._engine_version = None
+        self._nlu_data = None
 
     @property
     def domain(self):
@@ -153,6 +156,30 @@ class NluInfo(object):
         
 
         self._engine_version = engine_version
+
+    @property
+    def nlu_data(self):
+        """
+        Gets the nlu_data of this NluInfo.
+
+
+        :return: The nlu_data of this NluInfo.
+        :rtype: NluDomainVersion
+        """
+        return self._nlu_data
+
+    @nlu_data.setter
+    def nlu_data(self, nlu_data):
+        """
+        Sets the nlu_data of this NluInfo.
+
+
+        :param nlu_data: The nlu_data of this NluInfo.
+        :type: NluDomainVersion
+        """
+        
+
+        self._nlu_data = nlu_data
 
     def to_dict(self):
         """

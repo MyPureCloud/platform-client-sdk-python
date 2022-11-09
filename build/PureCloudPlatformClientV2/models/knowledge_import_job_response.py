@@ -128,7 +128,7 @@ class KnowledgeImportJobResponse(object):
     def file_type(self):
         """
         Gets the file_type of this KnowledgeImportJobResponse.
-        file type of the document
+        File type of the document
 
         :return: The file_type of this KnowledgeImportJobResponse.
         :rtype: str
@@ -139,12 +139,12 @@ class KnowledgeImportJobResponse(object):
     def file_type(self, file_type):
         """
         Sets the file_type of this KnowledgeImportJobResponse.
-        file type of the document
+        File type of the document
 
         :param file_type: The file_type of this KnowledgeImportJobResponse.
         :type: str
         """
-        allowed_values = ["Json", "Csv"]
+        allowed_values = ["Json", "Csv", "Xlsx"]
         if file_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for file_type -> " + file_type)
             self._file_type = "outdated_sdk_version"

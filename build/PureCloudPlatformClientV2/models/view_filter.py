@@ -186,6 +186,7 @@ class ViewFilter(object):
             'has_fax': 'bool',
             'data_action_ids': 'list[str]',
             'action_category_name': 'str',
+            'integration_ids': 'list[str]',
             'response_statuses': 'list[str]',
             'available_dashboard': 'str',
             'favourite_dashboard': 'bool',
@@ -339,6 +340,7 @@ class ViewFilter(object):
             'has_fax': 'hasFax',
             'data_action_ids': 'dataActionIds',
             'action_category_name': 'actionCategoryName',
+            'integration_ids': 'integrationIds',
             'response_statuses': 'responseStatuses',
             'available_dashboard': 'availableDashboard',
             'favourite_dashboard': 'favouriteDashboard',
@@ -491,6 +493,7 @@ class ViewFilter(object):
         self._has_fax = None
         self._data_action_ids = None
         self._action_category_name = None
+        self._integration_ids = None
         self._response_statuses = None
         self._available_dashboard = None
         self._favourite_dashboard = None
@@ -3999,6 +4002,30 @@ class ViewFilter(object):
         
 
         self._action_category_name = action_category_name
+
+    @property
+    def integration_ids(self):
+        """
+        Gets the integration_ids of this ViewFilter.
+        The list of integration IDs for Data Action
+
+        :return: The integration_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._integration_ids
+
+    @integration_ids.setter
+    def integration_ids(self, integration_ids):
+        """
+        Sets the integration_ids of this ViewFilter.
+        The list of integration IDs for Data Action
+
+        :param integration_ids: The integration_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._integration_ids = integration_ids
 
     @property
     def response_statuses(self):

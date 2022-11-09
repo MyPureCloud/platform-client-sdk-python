@@ -12,8 +12,8 @@ title: QueueMemberEntityListing
 | **page_size** | **int** |  | [optional] |
 | **first_uri** | **str** |  | [optional] |
 | **next_uri** | **str** |  | [optional] |
-| **previous_uri** | **str** |  | [optional] |
 | **self_uri** | **str** |  | [optional] |
+| **previous_uri** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

@@ -471,7 +471,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         :param flow_type: The flow_type of this FlowEndDetailEventTopicFlowEndEvent.
         :type: str
         """
-        allowed_values = ["UNKNOWN", "INBOUNDCALL", "OUTBOUNDCALL", "INQUEUECALL", "SECURECALL", "INBOUNDEMAIL", "SURVEYINVITE", "INBOUNDSHORTMESSAGE", "INBOUNDCHAT", "WORKFLOW", "BOT", "DIGITALBOT"]
+        allowed_values = ["UNKNOWN", "INBOUNDCALL", "OUTBOUNDCALL", "INQUEUECALL", "SECURECALL", "INBOUNDEMAIL", "SURVEYINVITE", "INBOUNDSHORTMESSAGE", "INBOUNDCHAT", "WORKFLOW", "BOT", "DIGITALBOT", "COMMONMODULE", "INQUEUEEMAIL", "INQUEUESHORTMESSAGE", "VOICE", "VOICEMAIL", "WORKITEM"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flow_type -> " + flow_type)
             self._flow_type = "outdated_sdk_version"

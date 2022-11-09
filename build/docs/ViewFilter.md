@@ -153,6 +153,7 @@ title: ViewFilter
 | **has_fax** | **bool** | Filters to indicate if interaction has FAX | [optional] |
 | **data_action_ids** | **list[str]** | The list of Data Action IDs  | [optional] |
 | **action_category_name** | **str** | Action Category Name | [optional] |
+| **integration_ids** | **list[str]** | The list of integration IDs for Data Action | [optional] |
 | **response_statuses** | **list[str]** | The list of Response codes for Data Action | [optional] |
 | **available_dashboard** | **str** | Filter to indicate the availability of the dashboard is public or private. | [optional] |
 | **favourite_dashboard** | **bool** | Filter to indicate whether the dashboard is favorite or unfavorite. | [optional] |

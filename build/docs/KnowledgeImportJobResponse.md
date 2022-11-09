@@ -9,7 +9,7 @@ title: KnowledgeImportJobResponse
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | Id of the import job | [optional] |
 | **upload_key** | **str** | Upload key | |
-| **file_type** | **str** | file type of the document | |
+| **file_type** | **str** | File type of the document | |
 | **settings** | [**KnowledgeImportJobSettings**](KnowledgeImportJobSettings.html) | Additional optional settings | [optional] |
 | **status** | **str** | Status of the import job | [optional] |
 | **report** | [**KnowledgeImportJobReport**](KnowledgeImportJobReport.html) | Report of the import job | [optional] |

@@ -46,6 +46,7 @@ class ExternalMetricDataUnprocessedItem(object):
             'date_occurred': 'date',
             'value': 'float',
             'count': 'int',
+            'type': 'str',
             'message': 'str',
             'code': 'str'
         }
@@ -57,6 +58,7 @@ class ExternalMetricDataUnprocessedItem(object):
             'date_occurred': 'dateOccurred',
             'value': 'value',
             'count': 'count',
+            'type': 'type',
             'message': 'message',
             'code': 'code'
         }
@@ -67,6 +69,7 @@ class ExternalMetricDataUnprocessedItem(object):
         self._date_occurred = None
         self._value = None
         self._count = None
+        self._type = None
         self._message = None
         self._code = None
 
@@ -194,7 +197,7 @@ class ExternalMetricDataUnprocessedItem(object):
     def count(self):
         """
         Gets the count of this ExternalMetricDataUnprocessedItem.
-        The number of data points. The default value is 1.
+        The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted.
 
         :return: The count of this ExternalMetricDataUnprocessedItem.
         :rtype: int
@@ -205,7 +208,7 @@ class ExternalMetricDataUnprocessedItem(object):
     def count(self, count):
         """
         Sets the count of this ExternalMetricDataUnprocessedItem.
-        The number of data points. The default value is 1.
+        The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted.
 
         :param count: The count of this ExternalMetricDataUnprocessedItem.
         :type: int
@@ -213,6 +216,33 @@ class ExternalMetricDataUnprocessedItem(object):
         
 
         self._count = count
+
+    @property
+    def type(self):
+        """
+        Gets the type of this ExternalMetricDataUnprocessedItem.
+        The type of the metric data. The default value is Total.
+
+        :return: The type of this ExternalMetricDataUnprocessedItem.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this ExternalMetricDataUnprocessedItem.
+        The type of the metric data. The default value is Total.
+
+        :param type: The type of this ExternalMetricDataUnprocessedItem.
+        :type: str
+        """
+        allowed_values = ["Total", "Cumulative"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
 
     @property
     def message(self):

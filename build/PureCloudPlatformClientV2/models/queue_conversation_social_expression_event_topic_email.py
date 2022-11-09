@@ -509,7 +509,7 @@ class QueueConversationSocialExpressionEventTopicEmail(object):
     def direction(self):
         """
         Gets the direction of this QueueConversationSocialExpressionEventTopicEmail.
-        Whether a call is inbound or outbound.
+        Whether an email is inbound or outbound.
 
         :return: The direction of this QueueConversationSocialExpressionEventTopicEmail.
         :rtype: str
@@ -520,7 +520,7 @@ class QueueConversationSocialExpressionEventTopicEmail(object):
     def direction(self, direction):
         """
         Sets the direction of this QueueConversationSocialExpressionEventTopicEmail.
-        Whether a call is inbound or outbound.
+        Whether an email is inbound or outbound.
 
         :param direction: The direction of this QueueConversationSocialExpressionEventTopicEmail.
         :type: str

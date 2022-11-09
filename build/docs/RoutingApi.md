@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_queue_wrapupcode**](RoutingApi.html#delete_routing_queue_wrapupcode) | Delete a wrap-up code from a queue|
 |[**delete_routing_settings**](RoutingApi.html#delete_routing_settings) | Delete an organization&#39;s routing settings|
 |[**delete_routing_skill**](RoutingApi.html#delete_routing_skill) | Delete Routing Skill|
+|[**delete_routing_skillgroup**](RoutingApi.html#delete_routing_skillgroup) | Remove skill group definition|
 |[**delete_routing_sms_address**](RoutingApi.html#delete_routing_sms_address) | Delete an Address by Id for SMS|
 |[**delete_routing_sms_phonenumber**](RoutingApi.html#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
 |[**delete_routing_user_utilization**](RoutingApi.html#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
@@ -64,6 +65,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_settings_contactcenter**](RoutingApi.html#get_routing_settings_contactcenter) | Get Contact Center Settings|
 |[**get_routing_settings_transcription**](RoutingApi.html#get_routing_settings_transcription) | Get Transcription Settings|
 |[**get_routing_skill**](RoutingApi.html#get_routing_skill) | Get Routing Skill|
+|[**get_routing_skillgroup**](RoutingApi.html#get_routing_skillgroup) | Get skill group|
+|[**get_routing_skillgroup_members**](RoutingApi.html#get_routing_skillgroup_members) | Get skill group members|
+|[**get_routing_skillgroup_members_divisions**](RoutingApi.html#get_routing_skillgroup_members_divisions) | Get list of member divisions for this skill group.|
+|[**get_routing_skillgroups**](RoutingApi.html#get_routing_skillgroups) | Get skill group listing|
 |[**get_routing_skills**](RoutingApi.html#get_routing_skills) | Get the list of routing skills.|
 |[**get_routing_sms_address**](RoutingApi.html#get_routing_sms_address) | Get an Address by Id for SMS|
 |[**get_routing_sms_addresses**](RoutingApi.html#get_routing_sms_addresses) | Get a list of Addresses for SMS|
@@ -86,6 +91,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.|
 |[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.|
 |[**patch_routing_settings_contactcenter**](RoutingApi.html#patch_routing_settings_contactcenter) | Update Contact Center Settings|
+|[**patch_routing_skillgroup**](RoutingApi.html#patch_routing_skillgroup) | Update skill group definition|
 |[**patch_user_queue**](RoutingApi.html#patch_user_queue) | Join or unjoin a queue for a user|
 |[**patch_user_queues**](RoutingApi.html#patch_user_queues) | Join or unjoin a set of queues for a user|
 |[**patch_user_routinglanguage**](RoutingApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
@@ -105,6 +111,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_queue_users**](RoutingApi.html#post_routing_queue_users) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.|
 |[**post_routing_queue_wrapupcodes**](RoutingApi.html#post_routing_queue_wrapupcodes) | Add up to 100 wrap-up codes to a queue|
 |[**post_routing_queues**](RoutingApi.html#post_routing_queues) | Create a queue|
+|[**post_routing_skillgroup_members_divisions**](RoutingApi.html#post_routing_skillgroup_members_divisions) | Add or remove member divisions for this skill group.|
+|[**post_routing_skillgroups**](RoutingApi.html#post_routing_skillgroups) | Create a skill group|
 |[**post_routing_skills**](RoutingApi.html#post_routing_skills) | Create Skill|
 |[**post_routing_sms_addresses**](RoutingApi.html#post_routing_sms_addresses) | Provision an Address for SMS|
 |[**post_routing_sms_phonenumbers**](RoutingApi.html#post_routing_sms_phonenumbers) | Provision a phone number for SMS|
@@ -678,6 +686,56 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **skill_id** | **str**| Skill ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_skillgroup"></a>
+
+##  delete_routing_skillgroup(skill_group_id)
+
+
+
+Remove skill group definition
+
+
+
+Wraps DELETE /api/v2/routing/skillgroups/{skillGroupId} 
+
+Requires ANY permissions: 
+
+* routing:skillGroup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+skill_group_id = 'skill_group_id_example' # str | Skill Group ID
+
+try:
+    # Remove skill group definition
+    api_instance.delete_routing_skillgroup(skill_group_id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_skillgroup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **skill_group_id** | **str**| Skill Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3081,6 +3139,226 @@ except ApiException as e:
 
 [**RoutingSkill**](RoutingSkill.html)
 
+<a name="get_routing_skillgroup"></a>
+
+## [**SkillGroup**](SkillGroup.html) get_routing_skillgroup(skill_group_id)
+
+
+
+Get skill group
+
+
+
+Wraps GET /api/v2/routing/skillgroups/{skillGroupId} 
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+skill_group_id = 'skill_group_id_example' # str | Skill Group ID
+
+try:
+    # Get skill group
+    api_response = api_instance.get_routing_skillgroup(skill_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_skillgroup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **skill_group_id** | **str**| Skill Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SkillGroup**](SkillGroup.html)
+
+<a name="get_routing_skillgroup_members"></a>
+
+## [**SkillGroupMemberEntityListing**](SkillGroupMemberEntityListing.html) get_routing_skillgroup_members(skill_group_id, page_size=page_size, after=after, before=before, expand=expand)
+
+
+
+Get skill group members
+
+
+
+Wraps GET /api/v2/routing/skillgroups/{skillGroupId}/members 
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+skill_group_id = 'skill_group_id_example' # str | Skill Group ID
+page_size = 25 # int | Page size (optional) (default to 25)
+after = 'after_example' # str | The cursor that points to the next item (optional)
+before = 'before_example' # str | The cursor that points to the previous item (optional)
+expand = 'expand_example' # str | Expand the name on each user (optional)
+
+try:
+    # Get skill group members
+    api_response = api_instance.get_routing_skillgroup_members(skill_group_id, page_size=page_size, after=after, before=before, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_skillgroup_members: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **skill_group_id** | **str**| Skill Group ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **after** | **str**| The cursor that points to the next item | [optional]  |
+| **before** | **str**| The cursor that points to the previous item | [optional]  |
+| **expand** | **str**| Expand the name on each user | [optional] <br />**Values**: entities |
+{: class="table table-striped"}
+
+### Return type
+
+[**SkillGroupMemberEntityListing**](SkillGroupMemberEntityListing.html)
+
+<a name="get_routing_skillgroup_members_divisions"></a>
+
+## [**SkillGroupMemberDivisionList**](SkillGroupMemberDivisionList.html) get_routing_skillgroup_members_divisions(skill_group_id, expand=expand)
+
+
+
+Get list of member divisions for this skill group.
+
+
+
+Wraps GET /api/v2/routing/skillgroups/{skillGroupId}/members/divisions 
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+skill_group_id = 'skill_group_id_example' # str | Skill Group ID
+expand = 'expand_example' # str | Expand the name on each user (optional)
+
+try:
+    # Get list of member divisions for this skill group.
+    api_response = api_instance.get_routing_skillgroup_members_divisions(skill_group_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_skillgroup_members_divisions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **skill_group_id** | **str**| Skill Group ID |  |
+| **expand** | **str**| Expand the name on each user | [optional] <br />**Values**: entities |
+{: class="table table-striped"}
+
+### Return type
+
+[**SkillGroupMemberDivisionList**](SkillGroupMemberDivisionList.html)
+
+<a name="get_routing_skillgroups"></a>
+
+## [**SkillGroupEntityListing**](SkillGroupEntityListing.html) get_routing_skillgroups(page_size=page_size, name=name, after=after, before=before)
+
+
+
+Get skill group listing
+
+
+
+Wraps GET /api/v2/routing/skillgroups 
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+name = 'name_example' # str | Return only skill group names whose names start with this value (case-insensitive matching) (optional)
+after = 'after_example' # str | The cursor that points to the next item (optional)
+before = 'before_example' # str | The cursor that points to the previous item (optional)
+
+try:
+    # Get skill group listing
+    api_response = api_instance.get_routing_skillgroups(page_size=page_size, name=name, after=after, before=before)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_skillgroups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **name** | **str**| Return only skill group names whose names start with this value (case-insensitive matching) | [optional]  |
+| **after** | **str**| The cursor that points to the next item | [optional]  |
+| **before** | **str**| The cursor that points to the previous item | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SkillGroupEntityListing**](SkillGroupEntityListing.html)
+
 <a name="get_routing_skills"></a>
 
 ## [**SkillEntityListing**](SkillEntityListing.html) get_routing_skills(page_size=page_size, page_number=page_number, name=name, id=id)
@@ -4290,6 +4568,59 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="patch_routing_skillgroup"></a>
+
+## [**SkillGroup**](SkillGroup.html) patch_routing_skillgroup(skill_group_id, body)
+
+
+
+Update skill group definition
+
+
+
+Wraps PATCH /api/v2/routing/skillgroups/{skillGroupId} 
+
+Requires ANY permissions: 
+
+* routing:skillGroup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+skill_group_id = 'skill_group_id_example' # str | Skill Group ID
+body = PureCloudPlatformClientV2.SkillGroup() # SkillGroup | Update skill groups
+
+try:
+    # Update skill group definition
+    api_response = api_instance.patch_routing_skillgroup(skill_group_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_skillgroup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **skill_group_id** | **str**| Skill Group ID |  |
+| **body** | [**SkillGroup**](SkillGroup.html)| Update skill groups |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SkillGroup**](SkillGroup.html)
+
 <a name="patch_user_queue"></a>
 
 ## [**UserQueue**](UserQueue.html) patch_user_queue(queue_id, user_id, body)
@@ -5296,6 +5627,109 @@ except ApiException as e:
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="post_routing_skillgroup_members_divisions"></a>
+
+##  post_routing_skillgroup_members_divisions(skill_group_id, body=body)
+
+
+
+Add or remove member divisions for this skill group.
+
+
+
+Wraps POST /api/v2/routing/skillgroups/{skillGroupId}/members/divisions 
+
+Requires ALL permissions: 
+
+* routing:skillGroup:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+skill_group_id = 'skill_group_id_example' # str | Skill Group ID
+body = PureCloudPlatformClientV2.SkillGroupMemberDivisions() # SkillGroupMemberDivisions |  (optional)
+
+try:
+    # Add or remove member divisions for this skill group.
+    api_instance.post_routing_skillgroup_members_divisions(skill_group_id, body=body)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_skillgroup_members_divisions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **skill_group_id** | **str**| Skill Group ID |  |
+| **body** | [**SkillGroupMemberDivisions**](SkillGroupMemberDivisions.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_routing_skillgroups"></a>
+
+## [**SkillGroup**](SkillGroup.html) post_routing_skillgroups(body)
+
+
+
+Create a skill group
+
+
+
+Wraps POST /api/v2/routing/skillgroups 
+
+Requires ANY permissions: 
+
+* routing:skillGroup:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.SkillGroup() # SkillGroup | Create skill group
+
+try:
+    # Create a skill group
+    api_response = api_instance.post_routing_skillgroups(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_skillgroups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SkillGroup**](SkillGroup.html)| Create skill group |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SkillGroup**](SkillGroup.html)
 
 <a name="post_routing_skills"></a>
 

@@ -45,7 +45,10 @@ class ExternalMetricDataProcessedItem(object):
             'metric_id': 'str',
             'date_occurred': 'date',
             'value': 'float',
-            'count': 'int'
+            'count': 'int',
+            'type': 'str',
+            'total_value': 'float',
+            'total_count': 'int'
         }
 
         self.attribute_map = {
@@ -54,7 +57,10 @@ class ExternalMetricDataProcessedItem(object):
             'metric_id': 'metricId',
             'date_occurred': 'dateOccurred',
             'value': 'value',
-            'count': 'count'
+            'count': 'count',
+            'type': 'type',
+            'total_value': 'totalValue',
+            'total_count': 'totalCount'
         }
 
         self._user_id = None
@@ -63,6 +69,9 @@ class ExternalMetricDataProcessedItem(object):
         self._date_occurred = None
         self._value = None
         self._count = None
+        self._type = None
+        self._total_value = None
+        self._total_count = None
 
     @property
     def user_id(self):
@@ -188,7 +197,7 @@ class ExternalMetricDataProcessedItem(object):
     def count(self):
         """
         Gets the count of this ExternalMetricDataProcessedItem.
-        The number of data points. The default value is 1.
+        The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted.
 
         :return: The count of this ExternalMetricDataProcessedItem.
         :rtype: int
@@ -199,7 +208,7 @@ class ExternalMetricDataProcessedItem(object):
     def count(self, count):
         """
         Sets the count of this ExternalMetricDataProcessedItem.
-        The number of data points. The default value is 1.
+        The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted.
 
         :param count: The count of this ExternalMetricDataProcessedItem.
         :type: int
@@ -207,6 +216,81 @@ class ExternalMetricDataProcessedItem(object):
         
 
         self._count = count
+
+    @property
+    def type(self):
+        """
+        Gets the type of this ExternalMetricDataProcessedItem.
+        The type of the metric data. The default value is Total.
+
+        :return: The type of this ExternalMetricDataProcessedItem.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this ExternalMetricDataProcessedItem.
+        The type of the metric data. The default value is Total.
+
+        :param type: The type of this ExternalMetricDataProcessedItem.
+        :type: str
+        """
+        allowed_values = ["Total", "Cumulative"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def total_value(self):
+        """
+        Gets the total_value of this ExternalMetricDataProcessedItem.
+        The total value of the metric data.
+
+        :return: The total_value of this ExternalMetricDataProcessedItem.
+        :rtype: float
+        """
+        return self._total_value
+
+    @total_value.setter
+    def total_value(self, total_value):
+        """
+        Sets the total_value of this ExternalMetricDataProcessedItem.
+        The total value of the metric data.
+
+        :param total_value: The total_value of this ExternalMetricDataProcessedItem.
+        :type: float
+        """
+        
+
+        self._total_value = total_value
+
+    @property
+    def total_count(self):
+        """
+        Gets the total_count of this ExternalMetricDataProcessedItem.
+        The total number of data points.
+
+        :return: The total_count of this ExternalMetricDataProcessedItem.
+        :rtype: int
+        """
+        return self._total_count
+
+    @total_count.setter
+    def total_count(self, total_count):
+        """
+        Sets the total_count of this ExternalMetricDataProcessedItem.
+        The total number of data points.
+
+        :param total_count: The total_count of this ExternalMetricDataProcessedItem.
+        :type: int
+        """
+        
+
+        self._total_count = total_count
 
     def to_dict(self):
         """

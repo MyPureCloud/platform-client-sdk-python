@@ -45,7 +45,8 @@ class ExternalMetricDataItem(object):
             'metric_id': 'str',
             'date_occurred': 'date',
             'value': 'float',
-            'count': 'int'
+            'count': 'int',
+            'type': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class ExternalMetricDataItem(object):
             'metric_id': 'metricId',
             'date_occurred': 'dateOccurred',
             'value': 'value',
-            'count': 'count'
+            'count': 'count',
+            'type': 'type'
         }
 
         self._user_id = None
@@ -63,6 +65,7 @@ class ExternalMetricDataItem(object):
         self._date_occurred = None
         self._value = None
         self._count = None
+        self._type = None
 
     @property
     def user_id(self):
@@ -188,7 +191,7 @@ class ExternalMetricDataItem(object):
     def count(self):
         """
         Gets the count of this ExternalMetricDataItem.
-        The number of data points. The default value is 1.
+        The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted.
 
         :return: The count of this ExternalMetricDataItem.
         :rtype: int
@@ -199,7 +202,7 @@ class ExternalMetricDataItem(object):
     def count(self, count):
         """
         Sets the count of this ExternalMetricDataItem.
-        The number of data points. The default value is 1.
+        The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted.
 
         :param count: The count of this ExternalMetricDataItem.
         :type: int
@@ -207,6 +210,33 @@ class ExternalMetricDataItem(object):
         
 
         self._count = count
+
+    @property
+    def type(self):
+        """
+        Gets the type of this ExternalMetricDataItem.
+        The type of the metric data. The default value is Total.
+
+        :return: The type of this ExternalMetricDataItem.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this ExternalMetricDataItem.
+        The type of the metric data. The default value is Total.
+
+        :param type: The type of this ExternalMetricDataItem.
+        :type: str
+        """
+        allowed_values = ["Total", "Cumulative"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
 
     def to_dict(self):
         """

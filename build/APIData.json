@@ -214,7 +214,7 @@
   "get_analytics_botflow_reportingturns": {
     "operationId": "get_analytics_botflow_reportingturns",
     "functionName": "get_analytics_botflow_reportingturns",
-    "signature": "get_analytics_botflow_reportingturns(bot_flow_id, after, page_size, action_id, session_id)",
+    "signature": "get_analytics_botflow_reportingturns(bot_flow_id, after, page_size, action_id, session_id, language)",
     "parameters": [
       {
         "name": "bot_flow_id",
@@ -240,10 +240,15 @@
         "name": "session_id",
         "type": "str",
         "required": "false"
+      },
+      {
+        "name": "language",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "ReportingTurnsResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi()\nbot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.\nafter = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)\npage_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')\naction_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)\nsession_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session (optional)\n\ntry:\n    # Get Reporting Turns.\n    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetAnalyticsBotflowReportingturnsRequest->get_analytics_botflow_reportingturns: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi()\nbot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.\nafter = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)\npage_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')\naction_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)\nsession_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session (optional)\nlanguage = 'en-us' # str | Optional language code to get the reporting turns for a particular language (optional)\n\ntry:\n    # Get Reporting Turns.\n    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetAnalyticsBotflowReportingturnsRequest->get_analytics_botflow_reportingturns: %s\\n\" % e)"
   },
   "get_analytics_conversation_details": {
     "operationId": "get_analytics_conversation_details",
@@ -563,6 +568,20 @@
     ],
     "return": "AnalyticsReportingSettings",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi()\nbody = PureCloudPlatformClientV2.AnalyticsReportingSettings() # AnalyticsReportingSettings | AnalyticsReportingSettingsRequest\n\ntry:\n    # Patch AnalyticsReportingSettings values for an organization\n    api_response = api_instance.patch_analytics_reporting_settings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchAnalyticsReportingSettingsRequest->patch_analytics_reporting_settings: %s\\n\" % e)"
+  },
+  "post_analytics_actions_aggregates_query": {
+    "operationId": "post_analytics_actions_aggregates_query",
+    "functionName": "post_analytics_actions_aggregates_query",
+    "signature": "post_analytics_actions_aggregates_query(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ActionAggregationQuery",
+        "required": "true"
+      }
+    ],
+    "return": "ActionAggregateQueryResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi()\nbody = PureCloudPlatformClientV2.ActionAggregationQuery() # ActionAggregationQuery | query\n\ntry:\n    # Query for action aggregates\n    api_response = api_instance.post_analytics_actions_aggregates_query(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostAnalyticsActionsAggregatesQueryRequest->post_analytics_actions_aggregates_query: %s\\n\" % e)"
   },
   "post_analytics_bots_aggregates_query": {
     "operationId": "post_analytics_bots_aggregates_query",
@@ -2284,7 +2303,7 @@
   "get_flows_datatable_rows": {
     "operationId": "get_flows_datatable_rows",
     "functionName": "get_flows_datatable_rows",
-    "signature": "get_flows_datatable_rows(datatable_id, page_number, page_size, showbrief)",
+    "signature": "get_flows_datatable_rows(datatable_id, page_number, page_size, showbrief, sort_order)",
     "parameters": [
       {
         "name": "datatable_id",
@@ -2305,10 +2324,15 @@
         "name": "showbrief",
         "type": "bool",
         "required": "false"
+      },
+      {
+        "name": "sort_order",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "DataTableRowEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi()\ndatatable_id = 'datatable_id_example' # str | id of datatable\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nshowbrief = True # bool | If true returns just the key value of the row (optional) (default to True)\n\ntry:\n    # Returns the rows for the datatable with the given id\n    api_response = api_instance.get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFlowsDatatableRowsRequest->get_flows_datatable_rows: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi()\ndatatable_id = 'datatable_id_example' # str | id of datatable\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nshowbrief = True # bool | If true returns just the key value of the row (optional) (default to True)\nsort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')\n\ntry:\n    # Returns the rows for the datatable with the given id\n    api_response = api_instance.get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFlowsDatatableRowsRequest->get_flows_datatable_rows: %s\\n\" % e)"
   },
   "get_flows_datatables": {
     "operationId": "get_flows_datatables",
@@ -2352,7 +2376,7 @@
       }
     ],
     "return": "DataTablesDomainEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi()\nexpand = 'expand_example' # str | Expand instructions for the result (optional)\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nsort_by = ''id'' # str | Sort by (optional) (default to 'id')\nsort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')\ndivision_id = ['division_id_example'] # list[str] | division ID(s) (optional)\nname = 'name_example' # str | Name to filter by (optional)\n\ntry:\n    # Retrieve a list of datatables for the org\n    api_response = api_instance.get_flows_datatables(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, division_id=division_id, name=name)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFlowsDatatablesRequest->get_flows_datatables: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi()\nexpand = 'expand_example' # str | Expand instructions for the result (optional)\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nsort_by = ''id'' # str | Sort by (optional) (default to 'id')\nsort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')\ndivision_id = ['division_id_example'] # list[str] | division ID(s) (optional)\nname = 'exactMatch, beginsWith*, *endsWith, *contains*' # str | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. (optional)\n\ntry:\n    # Retrieve a list of datatables for the org\n    api_response = api_instance.get_flows_datatables(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, division_id=division_id, name=name)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFlowsDatatablesRequest->get_flows_datatables: %s\\n\" % e)"
   },
   "get_flows_datatables_divisionview": {
     "operationId": "get_flows_datatables_divisionview",
@@ -2415,7 +2439,7 @@
       }
     ],
     "return": "DataTablesDomainEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi()\nexpand = 'expand_example' # str | Expand instructions for the result (optional)\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nsort_by = ''id'' # str | Sort by (optional) (default to 'id')\nsort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')\ndivision_id = ['division_id_example'] # list[str] | division ID(s) (optional)\nname = 'name_example' # str | Name to filter by (optional)\n\ntry:\n    # Retrieve a list of datatables for the org\n    api_response = api_instance.get_flows_datatables_divisionviews(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, division_id=division_id, name=name)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFlowsDatatablesDivisionviewsRequest->get_flows_datatables_divisionviews: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi()\nexpand = 'expand_example' # str | Expand instructions for the result (optional)\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nsort_by = ''id'' # str | Sort by (optional) (default to 'id')\nsort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')\ndivision_id = ['division_id_example'] # list[str] | division ID(s) (optional)\nname = 'exactMatch, beginsWith*, *endsWith, *contains*' # str | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. (optional)\n\ntry:\n    # Retrieve a list of datatables for the org\n    api_response = api_instance.get_flows_datatables_divisionviews(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, division_id=division_id, name=name)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetFlowsDatatablesDivisionviewsRequest->get_flows_datatables_divisionviews: %s\\n\" % e)"
   },
   "get_flows_divisionviews": {
     "operationId": "get_flows_divisionviews",
@@ -6613,7 +6637,7 @@
   "get_conversations_messaging_integrations": {
     "operationId": "get_conversations_messaging_integrations",
     "functionName": "get_conversations_messaging_integrations",
-    "signature": "get_conversations_messaging_integrations(page_size, page_number, expand, supported_content_id)",
+    "signature": "get_conversations_messaging_integrations(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
     "parameters": [
       {
         "name": "page_size",
@@ -6627,22 +6651,27 @@
       },
       {
         "name": "expand",
-        "type": "str",
+        "type": "list[str]",
         "required": "false"
       },
       {
         "name": "supported_content_id",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "messaging_setting_id",
         "type": "str",
         "required": "false"
       }
     ],
     "return": "MessagingIntegrationEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\n\ntry:\n    # Get a list of Integrations\n    api_response = api_instance.get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsRequest->get_conversations_messaging_integrations: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = ['expand_example'] # list[str] | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\nmessaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)\n\ntry:\n    # Get a list of Integrations\n    api_response = api_instance.get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsRequest->get_conversations_messaging_integrations: %s\\n\" % e)"
   },
   "get_conversations_messaging_integrations_facebook": {
     "operationId": "get_conversations_messaging_integrations_facebook",
     "functionName": "get_conversations_messaging_integrations_facebook",
-    "signature": "get_conversations_messaging_integrations_facebook(page_size, page_number, expand, supported_content_id)",
+    "signature": "get_conversations_messaging_integrations_facebook(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
     "parameters": [
       {
         "name": "page_size",
@@ -6663,10 +6692,15 @@
         "name": "supported_content_id",
         "type": "str",
         "required": "false"
+      },
+      {
+        "name": "messaging_setting_id",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "FacebookIntegrationEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\n\ntry:\n    # Get a list of Facebook Integrations\n    api_response = api_instance.get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsFacebookRequest->get_conversations_messaging_integrations_facebook: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\nmessaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)\n\ntry:\n    # Get a list of Facebook Integrations\n    api_response = api_instance.get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsFacebookRequest->get_conversations_messaging_integrations_facebook: %s\\n\" % e)"
   },
   "get_conversations_messaging_integrations_facebook_integration_id": {
     "operationId": "get_conversations_messaging_integrations_facebook_integration_id",
@@ -6690,7 +6724,7 @@
   "get_conversations_messaging_integrations_line": {
     "operationId": "get_conversations_messaging_integrations_line",
     "functionName": "get_conversations_messaging_integrations_line",
-    "signature": "get_conversations_messaging_integrations_line(page_size, page_number, expand, supported_content_id)",
+    "signature": "get_conversations_messaging_integrations_line(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
     "parameters": [
       {
         "name": "page_size",
@@ -6711,10 +6745,15 @@
         "name": "supported_content_id",
         "type": "str",
         "required": "false"
+      },
+      {
+        "name": "messaging_setting_id",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "LineIntegrationEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\n\ntry:\n    # Get a list of LINE messenger Integrations\n    api_response = api_instance.get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsLineRequest->get_conversations_messaging_integrations_line: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\nmessaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)\n\ntry:\n    # Get a list of LINE messenger Integrations\n    api_response = api_instance.get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsLineRequest->get_conversations_messaging_integrations_line: %s\\n\" % e)"
   },
   "get_conversations_messaging_integrations_line_integration_id": {
     "operationId": "get_conversations_messaging_integrations_line_integration_id",
@@ -6738,7 +6777,7 @@
   "get_conversations_messaging_integrations_open": {
     "operationId": "get_conversations_messaging_integrations_open",
     "functionName": "get_conversations_messaging_integrations_open",
-    "signature": "get_conversations_messaging_integrations_open(page_size, page_number, expand, supported_content_id)",
+    "signature": "get_conversations_messaging_integrations_open(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
     "parameters": [
       {
         "name": "page_size",
@@ -6759,10 +6798,15 @@
         "name": "supported_content_id",
         "type": "str",
         "required": "false"
+      },
+      {
+        "name": "messaging_setting_id",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "OpenIntegrationEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\n\ntry:\n    # Get a list of Open messaging integrations\n    api_response = api_instance.get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsOpenRequest->get_conversations_messaging_integrations_open: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\nmessaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)\n\ntry:\n    # Get a list of Open messaging integrations\n    api_response = api_instance.get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsOpenRequest->get_conversations_messaging_integrations_open: %s\\n\" % e)"
   },
   "get_conversations_messaging_integrations_open_integration_id": {
     "operationId": "get_conversations_messaging_integrations_open_integration_id",
@@ -6786,7 +6830,7 @@
   "get_conversations_messaging_integrations_twitter": {
     "operationId": "get_conversations_messaging_integrations_twitter",
     "functionName": "get_conversations_messaging_integrations_twitter",
-    "signature": "get_conversations_messaging_integrations_twitter(page_size, page_number, expand, supported_content_id)",
+    "signature": "get_conversations_messaging_integrations_twitter(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
     "parameters": [
       {
         "name": "page_size",
@@ -6807,10 +6851,15 @@
         "name": "supported_content_id",
         "type": "str",
         "required": "false"
+      },
+      {
+        "name": "messaging_setting_id",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "TwitterIntegrationEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\n\ntry:\n    # Get a list of Twitter Integrations\n    api_response = api_instance.get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsTwitterRequest->get_conversations_messaging_integrations_twitter: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\nmessaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)\n\ntry:\n    # Get a list of Twitter Integrations\n    api_response = api_instance.get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsTwitterRequest->get_conversations_messaging_integrations_twitter: %s\\n\" % e)"
   },
   "get_conversations_messaging_integrations_twitter_integration_id": {
     "operationId": "get_conversations_messaging_integrations_twitter_integration_id",
@@ -6834,7 +6883,7 @@
   "get_conversations_messaging_integrations_whatsapp": {
     "operationId": "get_conversations_messaging_integrations_whatsapp",
     "functionName": "get_conversations_messaging_integrations_whatsapp",
-    "signature": "get_conversations_messaging_integrations_whatsapp(page_size, page_number, expand, supported_content_id)",
+    "signature": "get_conversations_messaging_integrations_whatsapp(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
     "parameters": [
       {
         "name": "page_size",
@@ -6855,10 +6904,15 @@
         "name": "supported_content_id",
         "type": "str",
         "required": "false"
+      },
+      {
+        "name": "messaging_setting_id",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "WhatsAppIntegrationEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\n\ntry:\n    # Get a list of WhatsApp Integrations\n    api_response = api_instance.get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsWhatsappRequest->get_conversations_messaging_integrations_whatsapp: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexpand = 'expand_example' # str | Expand instructions for the return value. (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)\nmessaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)\n\ntry:\n    # Get a list of WhatsApp Integrations\n    api_response = api_instance.get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingIntegrationsWhatsappRequest->get_conversations_messaging_integrations_whatsapp: %s\\n\" % e)"
   },
   "get_conversations_messaging_integrations_whatsapp_integration_id": {
     "operationId": "get_conversations_messaging_integrations_whatsapp_integration_id",
@@ -10477,30 +10531,6 @@
     "return": "OverallBestPoints",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\n\ntry:\n    # Best Points of the requesting user's current performance profile or division\n    api_response = api_instance.get_gamification_leaderboard_bestpoints()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationLeaderboardBestpointsRequest->get_gamification_leaderboard_bestpoints: %s\\n\" % e)"
   },
-  "get_gamification_metric": {
-    "operationId": "get_gamification_metric",
-    "functionName": "get_gamification_metric",
-    "signature": "get_gamification_metric(metric_id, workday, performance_profile_id)",
-    "parameters": [
-      {
-        "name": "metric_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "workday",
-        "type": "date",
-        "required": "false"
-      },
-      {
-        "name": "performance_profile_id",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "Metric",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nmetric_id = 'metric_id_example' # str | metric Id\nworkday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)\nperformance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)\n\ntry:\n    # Gamified metric by id\n    api_response = api_instance.get_gamification_metric(metric_id, workday=workday, performance_profile_id=performance_profile_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetGamificationMetricRequest->get_gamification_metric: %s\\n\" % e)"
-  },
   "get_gamification_metricdefinition": {
     "operationId": "get_gamification_metricdefinition",
     "functionName": "get_gamification_metricdefinition",
@@ -11377,30 +11407,6 @@
     ],
     "return": "PerformanceProfile",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nbody = PureCloudPlatformClientV2.CreatePerformanceProfile() # CreatePerformanceProfile | performanceProfile\ncopy_metrics = True # bool | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (optional) (default to True)\n\ntry:\n    # Create a new custom performance profile\n    api_response = api_instance.post_gamification_profiles(body, copy_metrics=copy_metrics)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostGamificationProfilesRequest->post_gamification_profiles: %s\\n\" % e)"
-  },
-  "put_gamification_metric": {
-    "operationId": "put_gamification_metric",
-    "functionName": "put_gamification_metric",
-    "signature": "put_gamification_metric(metric_id, body, performance_profile_id)",
-    "parameters": [
-      {
-        "name": "metric_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "CreateMetric",
-        "required": "true"
-      },
-      {
-        "name": "performance_profile_id",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "Metric",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi()\nmetric_id = 'metric_id_example' # str | metric Id\nbody = PureCloudPlatformClientV2.CreateMetric() # CreateMetric | Metric\nperformance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)\n\ntry:\n    # Updates a metric\n    api_response = api_instance.put_gamification_metric(metric_id, body, performance_profile_id=performance_profile_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutGamificationMetricRequest->put_gamification_metric: %s\\n\" % e)"
   },
   "put_gamification_profile": {
     "operationId": "put_gamification_profile",
@@ -14604,12 +14610,12 @@
       },
       {
         "name": "page_size",
-        "type": "str",
+        "type": "int",
         "required": "false"
       }
     ],
     "return": "KnowledgeGuestDocumentResponseListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi()\nsession_id = 'session_id_example' # str | Knowledge guest session ID.\ncategory_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)\ninclude_subcategories = True # bool | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)\npage_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)\n\ntry:\n    # Get documents.\n    api_response = api_instance.get_knowledge_guest_session_documents(session_id, category_id=category_id, include_subcategories=include_subcategories, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetKnowledgeGuestSessionDocumentsRequest->get_knowledge_guest_session_documents: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi()\nsession_id = 'session_id_example' # str | Knowledge guest session ID.\ncategory_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)\ninclude_subcategories = True # bool | Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)\npage_size = 10 # int | Number of entities to return. Maximum of 200. (optional) (default to 10)\n\ntry:\n    # Get documents.\n    api_response = api_instance.get_knowledge_guest_session_documents(session_id, category_id=category_id, include_subcategories=include_subcategories, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetKnowledgeGuestSessionDocumentsRequest->get_knowledge_guest_session_documents: %s\\n\" % e)"
   },
   "get_knowledge_knowledgebase": {
     "operationId": "get_knowledge_knowledgebase",
@@ -25122,6 +25128,19 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nskill_id = 'skill_id_example' # str | Skill ID\n\ntry:\n    # Delete Routing Skill\n    api_instance.delete_routing_skill(skill_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteRoutingSkillRequest->delete_routing_skill: %s\\n\" % e)"
   },
+  "delete_routing_skillgroup": {
+    "operationId": "delete_routing_skillgroup",
+    "functionName": "delete_routing_skillgroup",
+    "signature": "delete_routing_skillgroup(skill_group_id)",
+    "parameters": [
+      {
+        "name": "skill_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nskill_group_id = 'skill_group_id_example' # str | Skill Group ID\n\ntry:\n    # Remove skill group definition\n    api_instance.delete_routing_skillgroup(skill_group_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteRoutingSkillgroupRequest->delete_routing_skillgroup: %s\\n\" % e)"
+  },
   "delete_routing_sms_address": {
     "operationId": "delete_routing_sms_address",
     "functionName": "delete_routing_sms_address",
@@ -26031,6 +26050,102 @@
     "return": "RoutingSkill",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nskill_id = 'skill_id_example' # str | Skill ID\n\ntry:\n    # Get Routing Skill\n    api_response = api_instance.get_routing_skill(skill_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingSkillRequest->get_routing_skill: %s\\n\" % e)"
   },
+  "get_routing_skillgroup": {
+    "operationId": "get_routing_skillgroup",
+    "functionName": "get_routing_skillgroup",
+    "signature": "get_routing_skillgroup(skill_group_id)",
+    "parameters": [
+      {
+        "name": "skill_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "SkillGroup",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nskill_group_id = 'skill_group_id_example' # str | Skill Group ID\n\ntry:\n    # Get skill group\n    api_response = api_instance.get_routing_skillgroup(skill_group_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingSkillgroupRequest->get_routing_skillgroup: %s\\n\" % e)"
+  },
+  "get_routing_skillgroup_members": {
+    "operationId": "get_routing_skillgroup_members",
+    "functionName": "get_routing_skillgroup_members",
+    "signature": "get_routing_skillgroup_members(skill_group_id, page_size, after, before, expand)",
+    "parameters": [
+      {
+        "name": "skill_group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "SkillGroupMemberEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nskill_group_id = 'skill_group_id_example' # str | Skill Group ID\npage_size = 25 # int | Page size (optional) (default to 25)\nafter = 'after_example' # str | The cursor that points to the next item (optional)\nbefore = 'before_example' # str | The cursor that points to the previous item (optional)\nexpand = 'expand_example' # str | Expand the name on each user (optional)\n\ntry:\n    # Get skill group members\n    api_response = api_instance.get_routing_skillgroup_members(skill_group_id, page_size=page_size, after=after, before=before, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingSkillgroupMembersRequest->get_routing_skillgroup_members: %s\\n\" % e)"
+  },
+  "get_routing_skillgroup_members_divisions": {
+    "operationId": "get_routing_skillgroup_members_divisions",
+    "functionName": "get_routing_skillgroup_members_divisions",
+    "signature": "get_routing_skillgroup_members_divisions(skill_group_id, expand)",
+    "parameters": [
+      {
+        "name": "skill_group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "SkillGroupMemberDivisionList",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nskill_group_id = 'skill_group_id_example' # str | Skill Group ID\nexpand = 'expand_example' # str | Expand the name on each user (optional)\n\ntry:\n    # Get list of member divisions for this skill group.\n    api_response = api_instance.get_routing_skillgroup_members_divisions(skill_group_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingSkillgroupMembersDivisionsRequest->get_routing_skillgroup_members_divisions: %s\\n\" % e)"
+  },
+  "get_routing_skillgroups": {
+    "operationId": "get_routing_skillgroups",
+    "functionName": "get_routing_skillgroups",
+    "signature": "get_routing_skillgroups(page_size, name, after, before)",
+    "parameters": [
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "name",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "SkillGroupEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\npage_size = 25 # int | Page size (optional) (default to 25)\nname = 'name_example' # str | Return only skill group names whose names start with this value (case-insensitive matching) (optional)\nafter = 'after_example' # str | The cursor that points to the next item (optional)\nbefore = 'before_example' # str | The cursor that points to the previous item (optional)\n\ntry:\n    # Get skill group listing\n    api_response = api_instance.get_routing_skillgroups(page_size=page_size, name=name, after=after, before=before)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingSkillgroupsRequest->get_routing_skillgroups: %s\\n\" % e)"
+  },
   "get_routing_skills": {
     "operationId": "get_routing_skills",
     "functionName": "get_routing_skills",
@@ -26539,6 +26654,25 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nbody = PureCloudPlatformClientV2.ContactCenterSettings() # ContactCenterSettings | Contact Center Settings\n\ntry:\n    # Update Contact Center Settings\n    api_instance.patch_routing_settings_contactcenter(body)\nexcept ApiException as e:\n    print(\"Exception when calling PatchRoutingSettingsContactcenterRequest->patch_routing_settings_contactcenter: %s\\n\" % e)"
   },
+  "patch_routing_skillgroup": {
+    "operationId": "patch_routing_skillgroup",
+    "functionName": "patch_routing_skillgroup",
+    "signature": "patch_routing_skillgroup(skill_group_id, body)",
+    "parameters": [
+      {
+        "name": "skill_group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "SkillGroup",
+        "required": "true"
+      }
+    ],
+    "return": "SkillGroup",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nskill_group_id = 'skill_group_id_example' # str | Skill Group ID\nbody = PureCloudPlatformClientV2.SkillGroup() # SkillGroup | Update skill groups\n\ntry:\n    # Update skill group definition\n    api_response = api_instance.patch_routing_skillgroup(skill_group_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchRoutingSkillgroupRequest->patch_routing_skillgroup: %s\\n\" % e)"
+  },
   "patch_user_queue": {
     "operationId": "patch_user_queue",
     "functionName": "patch_user_queue",
@@ -26863,6 +26997,38 @@
     ],
     "return": "Queue",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nbody = PureCloudPlatformClientV2.CreateQueueRequest() # CreateQueueRequest | Queue\n\ntry:\n    # Create a queue\n    api_response = api_instance.post_routing_queues(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostRoutingQueuesRequest->post_routing_queues: %s\\n\" % e)"
+  },
+  "post_routing_skillgroup_members_divisions": {
+    "operationId": "post_routing_skillgroup_members_divisions",
+    "functionName": "post_routing_skillgroup_members_divisions",
+    "signature": "post_routing_skillgroup_members_divisions(skill_group_id, body)",
+    "parameters": [
+      {
+        "name": "skill_group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "SkillGroupMemberDivisions",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nskill_group_id = 'skill_group_id_example' # str | Skill Group ID\nbody = PureCloudPlatformClientV2.SkillGroupMemberDivisions() # SkillGroupMemberDivisions |  (optional)\n\ntry:\n    # Add or remove member divisions for this skill group.\n    api_instance.post_routing_skillgroup_members_divisions(skill_group_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostRoutingSkillgroupMembersDivisionsRequest->post_routing_skillgroup_members_divisions: %s\\n\" % e)"
+  },
+  "post_routing_skillgroups": {
+    "operationId": "post_routing_skillgroups",
+    "functionName": "post_routing_skillgroups",
+    "signature": "post_routing_skillgroups(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "SkillGroup",
+        "required": "true"
+      }
+    ],
+    "return": "SkillGroup",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nbody = PureCloudPlatformClientV2.SkillGroup() # SkillGroup | Create skill group\n\ntry:\n    # Create a skill group\n    api_response = api_instance.post_routing_skillgroups(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostRoutingSkillgroupsRequest->post_routing_skillgroups: %s\\n\" % e)"
   },
   "post_routing_skills": {
     "operationId": "post_routing_skills",

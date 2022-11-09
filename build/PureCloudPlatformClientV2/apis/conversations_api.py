@@ -4968,14 +4968,15 @@ class ConversationsApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size
         :param int page_number: Page number
-        :param str expand: Expand instructions for the return value.
+        :param list[str] expand: Expand instructions for the return value.
         :param str supported_content_id: Filter integrations returned based on the supported content ID
+        :param str messaging_setting_id: Filter integrations returned based on the setting ID
         :return: MessagingIntegrationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id']
+        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id', 'messaging_setting_id']
         all_params.append('callback')
 
         params = locals()
@@ -5002,6 +5003,8 @@ class ConversationsApi(object):
             query_params['expand'] = params['expand']
         if 'supported_content_id' in params:
             query_params['supportedContent.id'] = params['supported_content_id']
+        if 'messaging_setting_id' in params:
+            query_params['messagingSetting.id'] = params['messaging_setting_id']
 
         header_params = {}
 
@@ -5054,12 +5057,13 @@ class ConversationsApi(object):
         :param int page_number: Page number
         :param str expand: Expand instructions for the return value.
         :param str supported_content_id: Filter integrations returned based on the supported content ID
+        :param str messaging_setting_id: Filter integrations returned based on the setting ID
         :return: FacebookIntegrationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id']
+        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id', 'messaging_setting_id']
         all_params.append('callback')
 
         params = locals()
@@ -5086,6 +5090,8 @@ class ConversationsApi(object):
             query_params['expand'] = params['expand']
         if 'supported_content_id' in params:
             query_params['supportedContent.id'] = params['supported_content_id']
+        if 'messaging_setting_id' in params:
+            query_params['messagingSetting.id'] = params['messaging_setting_id']
 
         header_params = {}
 
@@ -5219,12 +5225,13 @@ class ConversationsApi(object):
         :param int page_number: Page number
         :param str expand: Expand instructions for the return value.
         :param str supported_content_id: Filter integrations returned based on the supported content ID
+        :param str messaging_setting_id: Filter integrations returned based on the setting ID
         :return: LineIntegrationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id']
+        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id', 'messaging_setting_id']
         all_params.append('callback')
 
         params = locals()
@@ -5251,6 +5258,8 @@ class ConversationsApi(object):
             query_params['expand'] = params['expand']
         if 'supported_content_id' in params:
             query_params['supportedContent.id'] = params['supported_content_id']
+        if 'messaging_setting_id' in params:
+            query_params['messagingSetting.id'] = params['messaging_setting_id']
 
         header_params = {}
 
@@ -5384,12 +5393,13 @@ class ConversationsApi(object):
         :param int page_number: Page number
         :param str expand: Expand instructions for the return value.
         :param str supported_content_id: Filter integrations returned based on the supported content ID
+        :param str messaging_setting_id: Filter integrations returned based on the setting ID
         :return: OpenIntegrationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id']
+        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id', 'messaging_setting_id']
         all_params.append('callback')
 
         params = locals()
@@ -5416,6 +5426,8 @@ class ConversationsApi(object):
             query_params['expand'] = params['expand']
         if 'supported_content_id' in params:
             query_params['supportedContent.id'] = params['supported_content_id']
+        if 'messaging_setting_id' in params:
+            query_params['messagingSetting.id'] = params['messaging_setting_id']
 
         header_params = {}
 
@@ -5549,12 +5561,13 @@ class ConversationsApi(object):
         :param int page_number: Page number
         :param str expand: Expand instructions for the return value.
         :param str supported_content_id: Filter integrations returned based on the supported content ID
+        :param str messaging_setting_id: Filter integrations returned based on the setting ID
         :return: TwitterIntegrationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id']
+        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id', 'messaging_setting_id']
         all_params.append('callback')
 
         params = locals()
@@ -5581,6 +5594,8 @@ class ConversationsApi(object):
             query_params['expand'] = params['expand']
         if 'supported_content_id' in params:
             query_params['supportedContent.id'] = params['supported_content_id']
+        if 'messaging_setting_id' in params:
+            query_params['messagingSetting.id'] = params['messaging_setting_id']
 
         header_params = {}
 
@@ -5714,12 +5729,13 @@ class ConversationsApi(object):
         :param int page_number: Page number
         :param str expand: Expand instructions for the return value.
         :param str supported_content_id: Filter integrations returned based on the supported content ID
+        :param str messaging_setting_id: Filter integrations returned based on the setting ID
         :return: WhatsAppIntegrationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id']
+        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id', 'messaging_setting_id']
         all_params.append('callback')
 
         params = locals()
@@ -5746,6 +5762,8 @@ class ConversationsApi(object):
             query_params['expand'] = params['expand']
         if 'supported_content_id' in params:
             query_params['supportedContent.id'] = params['supported_content_id']
+        if 'messaging_setting_id' in params:
+            query_params['messagingSetting.id'] = params['messaging_setting_id']
 
         header_params = {}
 

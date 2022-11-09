@@ -324,7 +324,7 @@ class KnowledgeDocumentSearchRequest(object):
         :param sort_order: The sort_order of this KnowledgeDocumentSearchRequest.
         :type: str
         """
-        allowed_values = ["ASC", "DESC", "SCORE"]
+        allowed_values = ["Asc", "Desc"]
         if sort_order.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sort_order -> " + sort_order)
             self._sort_order = "outdated_sdk_version"

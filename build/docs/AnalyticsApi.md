@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_users_details_job_results**](AnalyticsApi.html#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
 |[**get_analytics_users_details_jobs_availability**](AnalyticsApi.html#get_analytics_users_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**patch_analytics_reporting_settings**](AnalyticsApi.html#patch_analytics_reporting_settings) | Patch AnalyticsReportingSettings values for an organization|
+|[**post_analytics_actions_aggregates_query**](AnalyticsApi.html#post_analytics_actions_aggregates_query) | Query for action aggregates|
 |[**post_analytics_bots_aggregates_query**](AnalyticsApi.html#post_analytics_bots_aggregates_query) | Query for bot aggregates|
 |[**post_analytics_conversation_details_properties**](AnalyticsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
 |[**post_analytics_conversations_aggregates_query**](AnalyticsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
@@ -210,7 +211,7 @@ void (empty response body)
 
 <a name="get_analytics_botflow_reportingturns"></a>
 
-## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id)
+## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language)
 
 
 
@@ -242,10 +243,11 @@ after = 'after_example' # str | The cursor that points to the ID of the last ite
 page_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')
 action_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)
 session_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session (optional)
+language = 'en-us' # str | Optional language code to get the reporting turns for a particular language (optional)
 
 try:
     # Get Reporting Turns.
-    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id)
+    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->get_analytics_botflow_reportingturns: %s\n" % e)
@@ -261,6 +263,7 @@ except ApiException as e:
 | **page_size** | **str**| Max number of entities to return. Maximum of 250 | [optional] [default to &#39;50&#39;] |
 | **action_id** | **str**| Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
 | **session_id** | **str**| Optional session ID to get the reporting turns for a particular session | [optional]  |
+| **language** | **str**| Optional language code to get the reporting turns for a particular language | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1390,6 +1393,58 @@ except ApiException as e:
 ### Return type
 
 [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
+
+<a name="post_analytics_actions_aggregates_query"></a>
+
+## [**ActionAggregateQueryResponse**](ActionAggregateQueryResponse.html) post_analytics_actions_aggregates_query(body)
+
+
+
+Query for action aggregates
+
+
+
+Wraps POST /api/v2/analytics/actions/aggregates/query 
+
+Requires ANY permissions: 
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.ActionAggregationQuery() # ActionAggregationQuery | query
+
+try:
+    # Query for action aggregates
+    api_response = api_instance.post_analytics_actions_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_actions_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ActionAggregationQuery**](ActionAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionAggregateQueryResponse**](ActionAggregateQueryResponse.html)
 
 <a name="post_analytics_bots_aggregates_query"></a>
 

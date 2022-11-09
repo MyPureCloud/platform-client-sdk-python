@@ -4619,12 +4619,13 @@ class ArchitectApi(object):
         :param int page_number: Page number
         :param int page_size: Page size
         :param bool showbrief: If true returns just the key value of the row
+        :param str sort_order: Sort order
         :return: DataTableRowEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['datatable_id', 'page_number', 'page_size', 'showbrief']
+        all_params = ['datatable_id', 'page_number', 'page_size', 'showbrief', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -4654,6 +4655,8 @@ class ArchitectApi(object):
             query_params['pageSize'] = params['page_size']
         if 'showbrief' in params:
             query_params['showbrief'] = params['showbrief']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 
@@ -4708,7 +4711,7 @@ class ArchitectApi(object):
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :param list[str] division_id: division ID(s)
-        :param str name: Name to filter by
+        :param str name: Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
         :return: DataTablesDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4882,7 +4885,7 @@ class ArchitectApi(object):
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :param list[str] division_id: division ID(s)
-        :param str name: Name to filter by
+        :param str name: Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
         :return: DataTablesDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

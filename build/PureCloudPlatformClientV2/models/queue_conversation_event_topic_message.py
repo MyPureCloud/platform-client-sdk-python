@@ -43,6 +43,7 @@ class QueueConversationEventTopicMessage(object):
             'id': 'str',
             'state': 'str',
             'initial_state': 'str',
+            'direction': 'str',
             'held': 'bool',
             'error_info': 'QueueConversationEventTopicErrorDetails',
             'provider': 'str',
@@ -70,6 +71,7 @@ class QueueConversationEventTopicMessage(object):
             'id': 'id',
             'state': 'state',
             'initial_state': 'initialState',
+            'direction': 'direction',
             'held': 'held',
             'error_info': 'errorInfo',
             'provider': 'provider',
@@ -96,6 +98,7 @@ class QueueConversationEventTopicMessage(object):
         self._id = None
         self._state = None
         self._initial_state = None
+        self._direction = None
         self._held = None
         self._error_info = None
         self._provider = None
@@ -195,6 +198,33 @@ class QueueConversationEventTopicMessage(object):
             self._initial_state = "outdated_sdk_version"
         else:
             self._initial_state = initial_state
+
+    @property
+    def direction(self):
+        """
+        Gets the direction of this QueueConversationEventTopicMessage.
+        Whether a message is inbound or outbound.
+
+        :return: The direction of this QueueConversationEventTopicMessage.
+        :rtype: str
+        """
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction):
+        """
+        Sets the direction of this QueueConversationEventTopicMessage.
+        Whether a message is inbound or outbound.
+
+        :param direction: The direction of this QueueConversationEventTopicMessage.
+        :type: str
+        """
+        allowed_values = ["outbound", "inbound"]
+        if direction.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for direction -> " + direction)
+            self._direction = "outdated_sdk_version"
+        else:
+            self._direction = direction
 
     @property
     def held(self):

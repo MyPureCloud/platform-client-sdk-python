@@ -50,6 +50,7 @@ class Predictor(object):
             'date_modified': 'datetime',
             'workload_balancing_config': 'PredictorWorkloadBalancing',
             'error_code': 'str',
+            'models': 'list[PredictorModelBrief]',
             'self_uri': 'str'
         }
 
@@ -64,6 +65,7 @@ class Predictor(object):
             'date_modified': 'dateModified',
             'workload_balancing_config': 'workloadBalancingConfig',
             'error_code': 'errorCode',
+            'models': 'models',
             'self_uri': 'selfUri'
         }
 
@@ -77,6 +79,7 @@ class Predictor(object):
         self._date_modified = None
         self._workload_balancing_config = None
         self._error_code = None
+        self._models = None
         self._self_uri = None
 
     @property
@@ -321,6 +324,30 @@ class Predictor(object):
         
 
         self._error_code = error_code
+
+    @property
+    def models(self):
+        """
+        Gets the models of this Predictor.
+        Predictor's models
+
+        :return: The models of this Predictor.
+        :rtype: list[PredictorModelBrief]
+        """
+        return self._models
+
+    @models.setter
+    def models(self, models):
+        """
+        Sets the models of this Predictor.
+        Predictor's models
+
+        :param models: The models of this Predictor.
+        :type: list[PredictorModelBrief]
+        """
+        
+
+        self._models = models
 
     @property
     def self_uri(self):

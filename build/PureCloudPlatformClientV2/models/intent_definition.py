@@ -40,6 +40,7 @@ class IntentDefinition(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'name': 'str',
             'entity_type_bindings': 'list[NamedEntityTypeBinding]',
             'entity_name_references': 'list[str]',
@@ -47,16 +48,42 @@ class IntentDefinition(object):
         }
 
         self.attribute_map = {
+            'id': 'id',
             'name': 'name',
             'entity_type_bindings': 'entityTypeBindings',
             'entity_name_references': 'entityNameReferences',
             'utterances': 'utterances'
         }
 
+        self._id = None
         self._name = None
         self._entity_type_bindings = None
         self._entity_name_references = None
         self._utterances = None
+
+    @property
+    def id(self):
+        """
+        Gets the id of this IntentDefinition.
+        ID of the intent.
+
+        :return: The id of this IntentDefinition.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this IntentDefinition.
+        ID of the intent.
+
+        :param id: The id of this IntentDefinition.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def name(self):

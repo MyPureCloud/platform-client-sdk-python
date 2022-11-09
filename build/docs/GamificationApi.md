@@ -15,7 +15,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_gamification_leaderboard_all**](GamificationApi.html#get_gamification_leaderboard_all) | Leaderboard by filter type|
 |[**get_gamification_leaderboard_all_bestpoints**](GamificationApi.html#get_gamification_leaderboard_all_bestpoints) | Best Points by division or performance profile|
 |[**get_gamification_leaderboard_bestpoints**](GamificationApi.html#get_gamification_leaderboard_bestpoints) | Best Points of the requesting user&#39;s current performance profile or division|
-|[**get_gamification_metric**](GamificationApi.html#get_gamification_metric) | Gamified metric by id|
 |[**get_gamification_metricdefinition**](GamificationApi.html#get_gamification_metricdefinition) | Metric definition by id|
 |[**get_gamification_metricdefinitions**](GamificationApi.html#get_gamification_metricdefinitions) | All metric definitions|
 |[**get_gamification_profile**](GamificationApi.html#get_gamification_profile) | Performance profile by id|
@@ -59,7 +58,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_gamification_profile_metric_link**](GamificationApi.html#post_gamification_profile_metric_link) | Creates a linked metric|
 |[**post_gamification_profile_metrics**](GamificationApi.html#post_gamification_profile_metrics) | Creates a gamified metric with a given metric definition and metric objective under in a performance profile|
 |[**post_gamification_profiles**](GamificationApi.html#post_gamification_profiles) | Create a new custom performance profile|
-|[**put_gamification_metric**](GamificationApi.html#put_gamification_metric) | Updates a metric|
 |[**put_gamification_profile**](GamificationApi.html#put_gamification_profile) | Updates a performance profile|
 |[**put_gamification_profile_metric**](GamificationApi.html#put_gamification_profile_metric) | Updates a metric in performance profile|
 |[**put_gamification_status**](GamificationApi.html#put_gamification_status) | Update gamification activation status|
@@ -432,65 +430,6 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**OverallBestPoints**](OverallBestPoints.html)
-
-<a name="get_gamification_metric"></a>
-
-## [**Metric**](Metric.html) get_gamification_metric(metric_id, workday=workday, performance_profile_id=performance_profile_id)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Gamified metric by id
-
-This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
-
-
-
-Wraps GET /api/v2/gamification/metrics/{metricId} 
-
-Requires ANY permissions: 
-
-* gamification:profile:view
-* gamification:leaderboard:view
-* gamification:scorecard:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.GamificationApi()
-metric_id = 'metric_id_example' # str | metric Id
-workday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
-performance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
-
-try:
-    # Gamified metric by id
-    api_response = api_instance.get_gamification_metric(metric_id, workday=workday, performance_profile_id=performance_profile_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamificationApi->get_gamification_metric: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **metric_id** | **str**| metric Id |  |
-| **workday** | **date**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-| **performance_profile_id** | **str**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-[**Metric**](Metric.html)
 
 <a name="get_gamification_metricdefinition"></a>
 
@@ -2803,63 +2742,6 @@ except ApiException as e:
 ### Return type
 
 [**PerformanceProfile**](PerformanceProfile.html)
-
-<a name="put_gamification_metric"></a>
-
-## [**Metric**](Metric.html) put_gamification_metric(metric_id, body, performance_profile_id=performance_profile_id)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Updates a metric
-
-This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
-
-
-
-Wraps PUT /api/v2/gamification/metrics/{metricId} 
-
-Requires ALL permissions: 
-
-* gamification:profile:update
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.GamificationApi()
-metric_id = 'metric_id_example' # str | metric Id
-body = PureCloudPlatformClientV2.CreateMetric() # CreateMetric | Metric
-performance_profile_id = 'performance_profile_id_example' # str | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
-
-try:
-    # Updates a metric
-    api_response = api_instance.put_gamification_metric(metric_id, body, performance_profile_id=performance_profile_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamificationApi->put_gamification_metric: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **metric_id** | **str**| metric Id |  |
-| **body** | [**CreateMetric**](CreateMetric.html)| Metric |  |
-| **performance_profile_id** | **str**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-[**Metric**](Metric.html)
 
 <a name="put_gamification_profile"></a>
 

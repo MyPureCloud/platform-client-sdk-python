@@ -509,7 +509,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def direction(self):
         """
         Gets the direction of this QueueConversationVideoEventTopicEmail.
-        Whether a call is inbound or outbound.
+        Whether an email is inbound or outbound.
 
         :return: The direction of this QueueConversationVideoEventTopicEmail.
         :rtype: str
@@ -520,7 +520,7 @@ class QueueConversationVideoEventTopicEmail(object):
     def direction(self, direction):
         """
         Sets the direction of this QueueConversationVideoEventTopicEmail.
-        Whether a call is inbound or outbound.
+        Whether an email is inbound or outbound.
 
         :param direction: The direction of this QueueConversationVideoEventTopicEmail.
         :type: str

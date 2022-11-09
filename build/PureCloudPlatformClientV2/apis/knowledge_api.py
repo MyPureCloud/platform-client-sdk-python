@@ -1110,8 +1110,8 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str session_id: Knowledge guest session ID. (required)
         :param list[str] category_id: If specified, retrieves documents associated with category ids, comma separated values expected.
-        :param bool include_subcategories: Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
-        :param str page_size: Number of entities to return. Maximum of 200.
+        :param bool include_subcategories: Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
+        :param int page_size: Number of entities to return. Maximum of 200.
         :return: KnowledgeGuestDocumentResponseListing
                  If the method is called asynchronously,
                  returns the request thread.

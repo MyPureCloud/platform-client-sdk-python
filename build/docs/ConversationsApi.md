@@ -3316,7 +3316,7 @@ This endpoint does not need any parameters.
 
 <a name="get_conversations_messaging_integrations"></a>
 
-## [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+## [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 
@@ -3345,12 +3345,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+expand = ['expand_example'] # list[str] | Expand instructions for the return value. (optional)
 supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
 
 try:
     # Get a list of Integrations
-    api_response = api_instance.get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+    api_response = api_instance.get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations: %s\n" % e)
@@ -3363,8 +3364,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | [**list[str]**](str.html)| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+| **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3373,7 +3375,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_facebook"></a>
 
-## [**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html) get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+## [**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html) get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 
@@ -3404,10 +3406,11 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
 
 try:
     # Get a list of Facebook Integrations
-    api_response = api_instance.get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+    api_response = api_instance.get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_facebook: %s\n" % e)
@@ -3420,8 +3423,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+| **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3474,7 +3478,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type
@@ -3483,7 +3487,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_line"></a>
 
-## [**LineIntegrationEntityListing**](LineIntegrationEntityListing.html) get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+## [**LineIntegrationEntityListing**](LineIntegrationEntityListing.html) get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 
@@ -3514,10 +3518,11 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
 
 try:
     # Get a list of LINE messenger Integrations
-    api_response = api_instance.get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+    api_response = api_instance.get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_line: %s\n" % e)
@@ -3530,8 +3535,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+| **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3584,7 +3590,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type
@@ -3593,7 +3599,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_open"></a>
 
-## [**OpenIntegrationEntityListing**](OpenIntegrationEntityListing.html) get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+## [**OpenIntegrationEntityListing**](OpenIntegrationEntityListing.html) get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 
@@ -3626,10 +3632,11 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
 
 try:
     # Get a list of Open messaging integrations
-    api_response = api_instance.get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+    api_response = api_instance.get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_open: %s\n" % e)
@@ -3642,8 +3649,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+| **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3698,7 +3706,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type
@@ -3707,7 +3715,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_twitter"></a>
 
-## [**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing.html) get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+## [**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing.html) get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 
@@ -3738,10 +3746,11 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
 
 try:
     # Get a list of Twitter Integrations
-    api_response = api_instance.get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+    api_response = api_instance.get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter: %s\n" % e)
@@ -3754,8 +3763,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+| **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3808,7 +3818,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type
@@ -3817,7 +3827,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_whatsapp"></a>
 
-## [**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing.html) get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+## [**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing.html) get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 
@@ -3848,10 +3858,11 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
 
 try:
     # Get a list of WhatsApp Integrations
-    api_response = api_instance.get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
+    api_response = api_instance.get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_whatsapp: %s\n" % e)
@@ -3864,8 +3875,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+| **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3918,7 +3930,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type

@@ -3104,7 +3104,7 @@ except ApiException as e:
 
 <a name="get_flows_datatable_rows"></a>
 
-## [**DataTableRowEntityListing**](DataTableRowEntityListing.html) get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief)
+## [**DataTableRowEntityListing**](DataTableRowEntityListing.html) get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief, sort_order=sort_order)
 
 
 
@@ -3138,10 +3138,11 @@ datatable_id = 'datatable_id_example' # str | id of datatable
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 showbrief = True # bool | If true returns just the key value of the row (optional) (default to True)
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 
 try:
     # Returns the rows for the datatable with the given id
-    api_response = api_instance.get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief)
+    api_response = api_instance.get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_flows_datatable_rows: %s\n" % e)
@@ -3156,6 +3157,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **showbrief** | **bool**| If true returns just the key value of the row | [optional] [default to True] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -3199,7 +3201,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = ''id'' # str | Sort by (optional) (default to 'id')
 sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
-name = 'name_example' # str | Name to filter by (optional)
+name = 'exactMatch, beginsWith*, *endsWith, *contains*' # str | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. (optional)
 
 try:
     # Retrieve a list of datatables for the org
@@ -3220,7 +3222,7 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;]<br />**Values**: id, name |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;] |
 | **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
-| **name** | **str**| Name to filter by | [optional]  |
+| **name** | **str**| Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3319,7 +3321,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = ''id'' # str | Sort by (optional) (default to 'id')
 sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
-name = 'name_example' # str | Name to filter by (optional)
+name = 'exactMatch, beginsWith*, *endsWith, *contains*' # str | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. (optional)
 
 try:
     # Retrieve a list of datatables for the org
@@ -3340,7 +3342,7 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;]<br />**Values**: id, name |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;] |
 | **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
-| **name** | **str**| Name to filter by | [optional]  |
+| **name** | **str**| Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

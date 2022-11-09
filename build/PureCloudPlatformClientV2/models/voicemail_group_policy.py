@@ -45,6 +45,7 @@ class VoicemailGroupPolicy(object):
             'enabled': 'bool',
             'send_email_notifications': 'bool',
             'disable_email_pii': 'bool',
+            'include_email_transcriptions': 'bool',
             'language_preference': 'str',
             'rotate_calls_secs': 'int',
             'stop_ringing_after_rotations': 'int',
@@ -59,6 +60,7 @@ class VoicemailGroupPolicy(object):
             'enabled': 'enabled',
             'send_email_notifications': 'sendEmailNotifications',
             'disable_email_pii': 'disableEmailPii',
+            'include_email_transcriptions': 'includeEmailTranscriptions',
             'language_preference': 'languagePreference',
             'rotate_calls_secs': 'rotateCallsSecs',
             'stop_ringing_after_rotations': 'stopRingingAfterRotations',
@@ -72,6 +74,7 @@ class VoicemailGroupPolicy(object):
         self._enabled = None
         self._send_email_notifications = None
         self._disable_email_pii = None
+        self._include_email_transcriptions = None
         self._language_preference = None
         self._rotate_calls_secs = None
         self._stop_ringing_after_rotations = None
@@ -198,6 +201,30 @@ class VoicemailGroupPolicy(object):
         
 
         self._disable_email_pii = disable_email_pii
+
+    @property
+    def include_email_transcriptions(self):
+        """
+        Gets the include_email_transcriptions of this VoicemailGroupPolicy.
+        Whether to include the voicemail transcription in a group notification email
+
+        :return: The include_email_transcriptions of this VoicemailGroupPolicy.
+        :rtype: bool
+        """
+        return self._include_email_transcriptions
+
+    @include_email_transcriptions.setter
+    def include_email_transcriptions(self, include_email_transcriptions):
+        """
+        Sets the include_email_transcriptions of this VoicemailGroupPolicy.
+        Whether to include the voicemail transcription in a group notification email
+
+        :param include_email_transcriptions: The include_email_transcriptions of this VoicemailGroupPolicy.
+        :type: bool
+        """
+        
+
+        self._include_email_transcriptions = include_email_transcriptions
 
     @property
     def language_preference(self):

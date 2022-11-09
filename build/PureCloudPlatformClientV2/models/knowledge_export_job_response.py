@@ -42,6 +42,7 @@ class KnowledgeExportJobResponse(object):
         self.swagger_types = {
             'id': 'str',
             'download_url': 'str',
+            'file_type': 'str',
             'count_document_processed': 'int',
             'export_filter': 'KnowledgeExportJobFilter',
             'status': 'str',
@@ -55,6 +56,7 @@ class KnowledgeExportJobResponse(object):
         self.attribute_map = {
             'id': 'id',
             'download_url': 'downloadURL',
+            'file_type': 'fileType',
             'count_document_processed': 'countDocumentProcessed',
             'export_filter': 'exportFilter',
             'status': 'status',
@@ -67,6 +69,7 @@ class KnowledgeExportJobResponse(object):
 
         self._id = None
         self._download_url = None
+        self._file_type = None
         self._count_document_processed = None
         self._export_filter = None
         self._status = None
@@ -123,6 +126,33 @@ class KnowledgeExportJobResponse(object):
         
 
         self._download_url = download_url
+
+    @property
+    def file_type(self):
+        """
+        Gets the file_type of this KnowledgeExportJobResponse.
+        File type of the document
+
+        :return: The file_type of this KnowledgeExportJobResponse.
+        :rtype: str
+        """
+        return self._file_type
+
+    @file_type.setter
+    def file_type(self, file_type):
+        """
+        Sets the file_type of this KnowledgeExportJobResponse.
+        File type of the document
+
+        :param file_type: The file_type of this KnowledgeExportJobResponse.
+        :type: str
+        """
+        allowed_values = ["Json", "Csv", "Xlsx"]
+        if file_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for file_type -> " + file_type)
+            self._file_type = "outdated_sdk_version"
+        else:
+            self._file_type = file_type
 
     @property
     def count_document_processed(self):

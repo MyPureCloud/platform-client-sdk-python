@@ -40,14 +40,17 @@ class KnowledgeExportJobRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'export_filter': 'KnowledgeExportJobFilter'
+            'export_filter': 'KnowledgeExportJobFilter',
+            'file_type': 'str'
         }
 
         self.attribute_map = {
-            'export_filter': 'exportFilter'
+            'export_filter': 'exportFilter',
+            'file_type': 'fileType'
         }
 
         self._export_filter = None
+        self._file_type = None
 
     @property
     def export_filter(self):
@@ -72,6 +75,33 @@ class KnowledgeExportJobRequest(object):
         
 
         self._export_filter = export_filter
+
+    @property
+    def file_type(self):
+        """
+        Gets the file_type of this KnowledgeExportJobRequest.
+        File type of the document
+
+        :return: The file_type of this KnowledgeExportJobRequest.
+        :rtype: str
+        """
+        return self._file_type
+
+    @file_type.setter
+    def file_type(self, file_type):
+        """
+        Sets the file_type of this KnowledgeExportJobRequest.
+        File type of the document
+
+        :param file_type: The file_type of this KnowledgeExportJobRequest.
+        :type: str
+        """
+        allowed_values = ["Json", "Csv", "Xlsx"]
+        if file_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for file_type -> " + file_type)
+            self._file_type = "outdated_sdk_version"
+        else:
+            self._file_type = file_type
 
     def to_dict(self):
         """

@@ -40,14 +40,41 @@ class NluUtterance(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'segments': 'list[NluUtteranceSegment]'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'segments': 'segments'
         }
 
+        self._id = None
         self._segments = None
+
+    @property
+    def id(self):
+        """
+        Gets the id of this NluUtterance.
+        ID of the utterance.
+
+        :return: The id of this NluUtterance.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this NluUtterance.
+        ID of the utterance.
+
+        :param id: The id of this NluUtterance.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def segments(self):

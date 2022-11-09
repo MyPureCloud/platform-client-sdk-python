@@ -44,7 +44,8 @@ class TextBotFlowLaunchRequest(object):
             'external_session_id': 'str',
             'conversation_id': 'str',
             'input_data': 'TextBotInputOutputData',
-            'channel': 'TextBotChannel'
+            'channel': 'TextBotChannel',
+            'language': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class TextBotFlowLaunchRequest(object):
             'external_session_id': 'externalSessionId',
             'conversation_id': 'conversationId',
             'input_data': 'inputData',
-            'channel': 'channel'
+            'channel': 'channel',
+            'language': 'language'
         }
 
         self._flow = None
@@ -60,6 +62,7 @@ class TextBotFlowLaunchRequest(object):
         self._conversation_id = None
         self._input_data = None
         self._channel = None
+        self._language = None
 
     @property
     def flow(self):
@@ -180,6 +183,30 @@ class TextBotFlowLaunchRequest(object):
         
 
         self._channel = channel
+
+    @property
+    def language(self):
+        """
+        Gets the language of this TextBotFlowLaunchRequest.
+        The language that the bot will use in the session. Validated against list of supported languages and if the value is omitted or is invalid, the default language will be used.
+
+        :return: The language of this TextBotFlowLaunchRequest.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """
+        Sets the language of this TextBotFlowLaunchRequest.
+        The language that the bot will use in the session. Validated against list of supported languages and if the value is omitted or is invalid, the default language will be used.
+
+        :param language: The language of this TextBotFlowLaunchRequest.
+        :type: str
+        """
+        
+
+        self._language = language
 
     def to_dict(self):
         """

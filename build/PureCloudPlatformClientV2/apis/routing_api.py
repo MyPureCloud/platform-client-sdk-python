@@ -925,6 +925,84 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_routing_skillgroup(self, skill_group_id, **kwargs):
+        """
+        Remove skill group definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_routing_skillgroup(skill_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str skill_group_id: Skill Group ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['skill_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_routing_skillgroup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'skill_group_id' is set
+        if ('skill_group_id' not in params) or (params['skill_group_id'] is None):
+            raise ValueError("Missing the required parameter `skill_group_id` when calling `delete_routing_skillgroup`")
+
+
+        resource_path = '/api/v2/routing/skillgroups/{skillGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'skill_group_id' in params:
+            path_params['skillGroupId'] = params['skill_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_routing_sms_address(self, address_id, **kwargs):
         """
         Delete an Address by Id for SMS
@@ -4579,6 +4657,339 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_routing_skillgroup(self, skill_group_id, **kwargs):
+        """
+        Get skill group
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_skillgroup(skill_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str skill_group_id: Skill Group ID (required)
+        :return: SkillGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['skill_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_skillgroup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'skill_group_id' is set
+        if ('skill_group_id' not in params) or (params['skill_group_id'] is None):
+            raise ValueError("Missing the required parameter `skill_group_id` when calling `get_routing_skillgroup`")
+
+
+        resource_path = '/api/v2/routing/skillgroups/{skillGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'skill_group_id' in params:
+            path_params['skillGroupId'] = params['skill_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillGroup',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_skillgroup_members(self, skill_group_id, **kwargs):
+        """
+        Get skill group members
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_skillgroup_members(skill_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str skill_group_id: Skill Group ID (required)
+        :param int page_size: Page size
+        :param str after: The cursor that points to the next item
+        :param str before: The cursor that points to the previous item
+        :param str expand: Expand the name on each user
+        :return: SkillGroupMemberEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['skill_group_id', 'page_size', 'after', 'before', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_skillgroup_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'skill_group_id' is set
+        if ('skill_group_id' not in params) or (params['skill_group_id'] is None):
+            raise ValueError("Missing the required parameter `skill_group_id` when calling `get_routing_skillgroup_members`")
+
+
+        resource_path = '/api/v2/routing/skillgroups/{skillGroupId}/members'.replace('{format}', 'json')
+        path_params = {}
+        if 'skill_group_id' in params:
+            path_params['skillGroupId'] = params['skill_group_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillGroupMemberEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_skillgroup_members_divisions(self, skill_group_id, **kwargs):
+        """
+        Get list of member divisions for this skill group.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_skillgroup_members_divisions(skill_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str skill_group_id: Skill Group ID (required)
+        :param str expand: Expand the name on each user
+        :return: SkillGroupMemberDivisionList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['skill_group_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_skillgroup_members_divisions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'skill_group_id' is set
+        if ('skill_group_id' not in params) or (params['skill_group_id'] is None):
+            raise ValueError("Missing the required parameter `skill_group_id` when calling `get_routing_skillgroup_members_divisions`")
+
+
+        resource_path = '/api/v2/routing/skillgroups/{skillGroupId}/members/divisions'.replace('{format}', 'json')
+        path_params = {}
+        if 'skill_group_id' in params:
+            path_params['skillGroupId'] = params['skill_group_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillGroupMemberDivisionList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_skillgroups(self, **kwargs):
+        """
+        Get skill group listing
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_skillgroups(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param str name: Return only skill group names whose names start with this value (case-insensitive matching)
+        :param str after: The cursor that points to the next item
+        :param str before: The cursor that points to the previous item
+        :return: SkillGroupEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'name', 'after', 'before']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_skillgroups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/skillgroups'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'before' in params:
+            query_params['before'] = params['before']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillGroupEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_routing_skills(self, **kwargs):
         """
         Get the list of routing skills.
@@ -6433,6 +6844,90 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_routing_skillgroup(self, skill_group_id, body, **kwargs):
+        """
+        Update skill group definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_routing_skillgroup(skill_group_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str skill_group_id: Skill Group ID (required)
+        :param SkillGroup body: Update skill groups (required)
+        :return: SkillGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['skill_group_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_routing_skillgroup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'skill_group_id' is set
+        if ('skill_group_id' not in params) or (params['skill_group_id'] is None):
+            raise ValueError("Missing the required parameter `skill_group_id` when calling `patch_routing_skillgroup`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_routing_skillgroup`")
+
+
+        resource_path = '/api/v2/routing/skillgroups/{skillGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'skill_group_id' in params:
+            path_params['skillGroupId'] = params['skill_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillGroup',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_user_queue(self, queue_id, user_id, body, **kwargs):
         """
         Join or unjoin a queue for a user
@@ -7980,6 +8475,165 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Queue',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_routing_skillgroup_members_divisions(self, skill_group_id, **kwargs):
+        """
+        Add or remove member divisions for this skill group.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_skillgroup_members_divisions(skill_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str skill_group_id: Skill Group ID (required)
+        :param SkillGroupMemberDivisions body: 
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['skill_group_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_skillgroup_members_divisions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'skill_group_id' is set
+        if ('skill_group_id' not in params) or (params['skill_group_id'] is None):
+            raise ValueError("Missing the required parameter `skill_group_id` when calling `post_routing_skillgroup_members_divisions`")
+
+
+        resource_path = '/api/v2/routing/skillgroups/{skillGroupId}/members/divisions'.replace('{format}', 'json')
+        path_params = {}
+        if 'skill_group_id' in params:
+            path_params['skillGroupId'] = params['skill_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_routing_skillgroups(self, body, **kwargs):
+        """
+        Create a skill group
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_skillgroups(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SkillGroup body: Create skill group (required)
+        :return: SkillGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_skillgroups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_routing_skillgroups`")
+
+
+        resource_path = '/api/v2/routing/skillgroups'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillGroup',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
