@@ -41,6 +41,7 @@ class HistoricalAdherenceQueryResult(object):
         """
         self.swagger_types = {
             'user_id': 'str',
+            'management_unit_id': 'str',
             'start_date': 'datetime',
             'end_date': 'datetime',
             'adherence_percentage': 'float',
@@ -54,6 +55,7 @@ class HistoricalAdherenceQueryResult(object):
 
         self.attribute_map = {
             'user_id': 'userId',
+            'management_unit_id': 'managementUnitId',
             'start_date': 'startDate',
             'end_date': 'endDate',
             'adherence_percentage': 'adherencePercentage',
@@ -66,6 +68,7 @@ class HistoricalAdherenceQueryResult(object):
         }
 
         self._user_id = None
+        self._management_unit_id = None
         self._start_date = None
         self._end_date = None
         self._adherence_percentage = None
@@ -99,6 +102,30 @@ class HistoricalAdherenceQueryResult(object):
         
 
         self._user_id = user_id
+
+    @property
+    def management_unit_id(self):
+        """
+        Gets the management_unit_id of this HistoricalAdherenceQueryResult.
+        The ID of the management unit of the user for whom the adherence is queried
+
+        :return: The management_unit_id of this HistoricalAdherenceQueryResult.
+        :rtype: str
+        """
+        return self._management_unit_id
+
+    @management_unit_id.setter
+    def management_unit_id(self, management_unit_id):
+        """
+        Sets the management_unit_id of this HistoricalAdherenceQueryResult.
+        The ID of the management unit of the user for whom the adherence is queried
+
+        :param management_unit_id: The management_unit_id of this HistoricalAdherenceQueryResult.
+        :type: str
+        """
+        
+
+        self._management_unit_id = management_unit_id
 
     @property
     def start_date(self):

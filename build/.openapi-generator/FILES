@@ -113,6 +113,8 @@ PureCloudPlatformClientV2/models/activity_code_container.py
 PureCloudPlatformClientV2/models/activity_code_reference.py
 PureCloudPlatformClientV2/models/acw_detail_event_topic_after_call_work_event.py
 PureCloudPlatformClientV2/models/acw_settings.py
+PureCloudPlatformClientV2/models/add_adherence_explanation_admin_request.py
+PureCloudPlatformClientV2/models/add_adherence_explanation_agent_request.py
 PureCloudPlatformClientV2/models/add_conversation_request.py
 PureCloudPlatformClientV2/models/add_conversation_response.py
 PureCloudPlatformClientV2/models/add_shift_trade_request.py
@@ -123,7 +125,14 @@ PureCloudPlatformClientV2/models/address.py
 PureCloudPlatformClientV2/models/addressable_entity_ref.py
 PureCloudPlatformClientV2/models/addressable_license_definition.py
 PureCloudPlatformClientV2/models/adfs.py
+PureCloudPlatformClientV2/models/adherence_explanation_async_response.py
+PureCloudPlatformClientV2/models/adherence_explanation_job.py
+PureCloudPlatformClientV2/models/adherence_explanation_job_reference.py
+PureCloudPlatformClientV2/models/adherence_explanation_listing.py
+PureCloudPlatformClientV2/models/adherence_explanation_listing_agent_query_response.py
+PureCloudPlatformClientV2/models/adherence_explanation_listing_bu_query_response.py
 PureCloudPlatformClientV2/models/adherence_explanation_notification.py
+PureCloudPlatformClientV2/models/adherence_explanation_response.py
 PureCloudPlatformClientV2/models/adherence_settings.py
 PureCloudPlatformClientV2/models/adhoc_recording_topic_conversation_data.py
 PureCloudPlatformClientV2/models/adhoc_recording_topic_lock_data.py
@@ -147,6 +156,8 @@ PureCloudPlatformClientV2/models/agent_max_utilization.py
 PureCloudPlatformClientV2/models/agent_owned_mapping_preview.py
 PureCloudPlatformClientV2/models/agent_owned_mapping_preview_listing.py
 PureCloudPlatformClientV2/models/agent_owned_routing.py
+PureCloudPlatformClientV2/models/agent_query_adherence_explanations_request.py
+PureCloudPlatformClientV2/models/agent_query_adherence_explanations_response.py
 PureCloudPlatformClientV2/models/agent_time_off_request_patch.py
 PureCloudPlatformClientV2/models/agentless_email_send_request_dto.py
 PureCloudPlatformClientV2/models/agentless_email_send_response_dto.py
@@ -288,6 +299,7 @@ PureCloudPlatformClientV2/models/audit_topic_message_info.py
 PureCloudPlatformClientV2/models/audit_topic_property_change.py
 PureCloudPlatformClientV2/models/audit_user.py
 PureCloudPlatformClientV2/models/authentication_settings.py
+PureCloudPlatformClientV2/models/authorization_settings.py
 PureCloudPlatformClientV2/models/authz_division.py
 PureCloudPlatformClientV2/models/authz_division_entity_listing.py
 PureCloudPlatformClientV2/models/authz_division_grant_entity_listing.py
@@ -387,6 +399,8 @@ PureCloudPlatformClientV2/models/bu_intraday_response.py
 PureCloudPlatformClientV2/models/bu_intraday_schedule_data.py
 PureCloudPlatformClientV2/models/bu_management_unit_schedule_summary.py
 PureCloudPlatformClientV2/models/bu_planning_group_headcount_forecast.py
+PureCloudPlatformClientV2/models/bu_query_adherence_explanations_request.py
+PureCloudPlatformClientV2/models/bu_query_adherence_explanations_response.py
 PureCloudPlatformClientV2/models/bu_query_agent_schedules_request.py
 PureCloudPlatformClientV2/models/bu_reschedule_agent_schedule_result.py
 PureCloudPlatformClientV2/models/bu_reschedule_request.py
@@ -980,6 +994,8 @@ PureCloudPlatformClientV2/models/customer_end_detail_event_topic_customer_end_ev
 PureCloudPlatformClientV2/models/customer_interaction_center.py
 PureCloudPlatformClientV2/models/customer_start_detail_event_topic_customer_start_event.py
 PureCloudPlatformClientV2/models/data_action_condition_predicate.py
+PureCloudPlatformClientV2/models/data_action_condition_settings.py
+PureCloudPlatformClientV2/models/data_action_contact_column_field_mapping.py
 PureCloudPlatformClientV2/models/data_availability_response.py
 PureCloudPlatformClientV2/models/data_schema.py
 PureCloudPlatformClientV2/models/data_schema_listing.py
@@ -1095,6 +1111,7 @@ PureCloudPlatformClientV2/models/did_pool_entity_listing.py
 PureCloudPlatformClientV2/models/digit_length.py
 PureCloudPlatformClientV2/models/digital_action.py
 PureCloudPlatformClientV2/models/digital_condition.py
+PureCloudPlatformClientV2/models/digital_data_action_condition_predicate.py
 PureCloudPlatformClientV2/models/digital_rule.py
 PureCloudPlatformClientV2/models/digital_rule_set.py
 PureCloudPlatformClientV2/models/digital_rule_set_entity_listing.py
@@ -1500,6 +1517,11 @@ PureCloudPlatformClientV2/models/historical_adherence_query_result.py
 PureCloudPlatformClientV2/models/historical_import_delete_job_response.py
 PureCloudPlatformClientV2/models/historical_import_status.py
 PureCloudPlatformClientV2/models/historical_import_status_listing.py
+PureCloudPlatformClientV2/models/historical_shrinkage_activity_category_response.py
+PureCloudPlatformClientV2/models/historical_shrinkage_activity_code_response.py
+PureCloudPlatformClientV2/models/historical_shrinkage_aggregate_response.py
+PureCloudPlatformClientV2/models/historical_shrinkage_result.py
+PureCloudPlatformClientV2/models/historical_shrinkage_result_listing.py
 PureCloudPlatformClientV2/models/history_entry.py
 PureCloudPlatformClientV2/models/history_listing.py
 PureCloudPlatformClientV2/models/hold_updated_event.py
@@ -2183,6 +2205,7 @@ PureCloudPlatformClientV2/models/quality_audit_log_message.py
 PureCloudPlatformClientV2/models/quality_audit_query_execution_results_response.py
 PureCloudPlatformClientV2/models/quality_audit_query_execution_status_response.py
 PureCloudPlatformClientV2/models/quality_audit_query_filter.py
+PureCloudPlatformClientV2/models/query_adherence_explanations_response.py
 PureCloudPlatformClientV2/models/query_division.py
 PureCloudPlatformClientV2/models/query_facet_info.py
 PureCloudPlatformClientV2/models/query_request.py
@@ -2980,6 +3003,7 @@ PureCloudPlatformClientV2/models/unread_metric.py
 PureCloudPlatformClientV2/models/unread_status.py
 PureCloudPlatformClientV2/models/update_action_input.py
 PureCloudPlatformClientV2/models/update_activity_code_request.py
+PureCloudPlatformClientV2/models/update_adherence_explanation_status_request.py
 PureCloudPlatformClientV2/models/update_analytics_data_retention_request.py
 PureCloudPlatformClientV2/models/update_business_unit_request.py
 PureCloudPlatformClientV2/models/update_business_unit_settings_request.py
@@ -3312,6 +3336,8 @@ PureCloudPlatformClientV2/models/wfm_historical_adherence_response.py
 PureCloudPlatformClientV2/models/wfm_historical_adherence_result_wrapper.py
 PureCloudPlatformClientV2/models/wfm_historical_data_upload_purge_request_status_topic_historical_data_upload_purge_request_update.py
 PureCloudPlatformClientV2/models/wfm_historical_data_upload_request_status_topic_historical_data_upload_request_update.py
+PureCloudPlatformClientV2/models/wfm_historical_shrinkage_request.py
+PureCloudPlatformClientV2/models/wfm_historical_shrinkage_response.py
 PureCloudPlatformClientV2/models/wfm_intraday_data_update_topic_intraday_data_group.py
 PureCloudPlatformClientV2/models/wfm_intraday_data_update_topic_intraday_data_update.py
 PureCloudPlatformClientV2/models/wfm_intraday_data_update_topic_intraday_forecast_data.py
@@ -3471,6 +3497,8 @@ docs/ActivityCodeContainer.md
 docs/ActivityCodeReference.md
 docs/AcwDetailEventTopicAfterCallWorkEvent.md
 docs/AcwSettings.md
+docs/AddAdherenceExplanationAdminRequest.md
+docs/AddAdherenceExplanationAgentRequest.md
 docs/AddConversationRequest.md
 docs/AddConversationResponse.md
 docs/AddShiftTradeRequest.md
@@ -3480,7 +3508,14 @@ docs/AdditionalMessage.md
 docs/Address.md
 docs/AddressableEntityRef.md
 docs/AddressableLicenseDefinition.md
+docs/AdherenceExplanationAsyncResponse.md
+docs/AdherenceExplanationJob.md
+docs/AdherenceExplanationJobReference.md
+docs/AdherenceExplanationListing.md
+docs/AdherenceExplanationListingAgentQueryResponse.md
+docs/AdherenceExplanationListingBuQueryResponse.md
 docs/AdherenceExplanationNotification.md
+docs/AdherenceExplanationResponse.md
 docs/AdherenceSettings.md
 docs/AdhocRecordingTopicConversationData.md
 docs/AdhocRecordingTopicLockData.md
@@ -3504,6 +3539,8 @@ docs/AgentMaxUtilization.md
 docs/AgentOwnedMappingPreview.md
 docs/AgentOwnedMappingPreviewListing.md
 docs/AgentOwnedRouting.md
+docs/AgentQueryAdherenceExplanationsRequest.md
+docs/AgentQueryAdherenceExplanationsResponse.md
 docs/AgentTimeOffRequestPatch.md
 docs/AgentlessEmailSendRequestDto.md
 docs/AgentlessEmailSendResponseDto.md
@@ -3655,6 +3692,7 @@ docs/AuditUser.md
 docs/AuthenticationSettings.md
 docs/AuthorizationApi.json
 docs/AuthorizationApi.md
+docs/AuthorizationSettings.md
 docs/AuthzDivision.md
 docs/AuthzDivisionEntityListing.md
 docs/AuthzDivisionGrantEntityListing.md
@@ -3756,6 +3794,8 @@ docs/BuIntradayResponse.md
 docs/BuIntradayScheduleData.md
 docs/BuManagementUnitScheduleSummary.md
 docs/BuPlanningGroupHeadcountForecast.md
+docs/BuQueryAdherenceExplanationsRequest.md
+docs/BuQueryAdherenceExplanationsResponse.md
 docs/BuQueryAgentSchedulesRequest.md
 docs/BuRescheduleAgentScheduleResult.md
 docs/BuRescheduleRequest.md
@@ -4363,6 +4403,8 @@ docs/DIDNumberEntityListing.md
 docs/DIDPool.md
 docs/DIDPoolEntityListing.md
 docs/DataActionConditionPredicate.md
+docs/DataActionConditionSettings.md
+docs/DataActionContactColumnFieldMapping.md
 docs/DataAvailabilityResponse.md
 docs/DataExtensionsApi.json
 docs/DataExtensionsApi.md
@@ -4474,6 +4516,7 @@ docs/DialogflowProject.md
 docs/DigitLength.md
 docs/DigitalAction.md
 docs/DigitalCondition.md
+docs/DigitalDataActionConditionPredicate.md
 docs/DigitalRule.md
 docs/DigitalRuleSet.md
 docs/DigitalRuleSetEntityListing.md
@@ -4899,6 +4942,11 @@ docs/HistoricalAdherenceQueryResult.md
 docs/HistoricalImportDeleteJobResponse.md
 docs/HistoricalImportStatus.md
 docs/HistoricalImportStatusListing.md
+docs/HistoricalShrinkageActivityCategoryResponse.md
+docs/HistoricalShrinkageActivityCodeResponse.md
+docs/HistoricalShrinkageAggregateResponse.md
+docs/HistoricalShrinkageResult.md
+docs/HistoricalShrinkageResultListing.md
 docs/HistoryEntry.md
 docs/HistoryListing.md
 docs/HoldUpdatedEvent.md
@@ -5622,6 +5670,7 @@ docs/QualityAuditLogMessage.md
 docs/QualityAuditQueryExecutionResultsResponse.md
 docs/QualityAuditQueryExecutionStatusResponse.md
 docs/QualityAuditQueryFilter.md
+docs/QueryAdherenceExplanationsResponse.md
 docs/QueryDivision.md
 docs/QueryFacetInfo.md
 docs/QueryRequest.md
@@ -6447,6 +6496,7 @@ docs/UnreadMetric.md
 docs/UnreadStatus.md
 docs/UpdateActionInput.md
 docs/UpdateActivityCodeRequest.md
+docs/UpdateAdherenceExplanationStatusRequest.md
 docs/UpdateAnalyticsDataRetentionRequest.md
 docs/UpdateBusinessUnitRequest.md
 docs/UpdateBusinessUnitSettingsRequest.md
@@ -6797,6 +6847,8 @@ docs/WfmHistoricalAdherenceResponse.md
 docs/WfmHistoricalAdherenceResultWrapper.md
 docs/WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRequestUpdate.md
 docs/WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.md
+docs/WfmHistoricalShrinkageRequest.md
+docs/WfmHistoricalShrinkageResponse.md
 docs/WfmIntradayDataUpdateTopicIntradayDataGroup.md
 docs/WfmIntradayDataUpdateTopicIntradayDataUpdate.md
 docs/WfmIntradayDataUpdateTopicIntradayForecastData.md
@@ -7221,6 +7273,7 @@ docs/get_authorization_role_comparedefault_right_role_id-example.txt
 docs/get_authorization_role_subjectgrants-example.txt
 docs/get_authorization_role_users-example.txt
 docs/get_authorization_roles-example.txt
+docs/get_authorization_settings-example.txt
 docs/get_authorization_subject-example.txt
 docs/get_authorization_subject-example.txt
 docs/get_authorization_subjects_me-example.txt
@@ -8004,8 +8057,11 @@ docs/get_webmessaging_messages-example.txt
 docs/get_widgets_deployment-example.txt
 docs/get_widgets_deployments-example.txt
 docs/get_workforcemanagement_adherence-example.txt
+docs/get_workforcemanagement_adherence_explanation-example.txt
+docs/get_workforcemanagement_adherence_explanations_job-example.txt
 docs/get_workforcemanagement_adherence_historical_job-example.txt
 docs/get_workforcemanagement_adhocmodelingjob-example.txt
+docs/get_workforcemanagement_agent_adherence_explanation-example.txt
 docs/get_workforcemanagement_agent_managementunit-example.txt
 docs/get_workforcemanagement_agents_me_managementunit-example.txt
 docs/get_workforcemanagement_businessunit-example.txt
@@ -8064,6 +8120,7 @@ docs/get_workforcemanagement_managementunits_divisionviews-example.txt
 docs/get_workforcemanagement_notifications-example.txt
 docs/get_workforcemanagement_schedulingjob-example.txt
 docs/get_workforcemanagement_shifttrades-example.txt
+docs/get_workforcemanagement_shrinkage_job-example.txt
 docs/get_workforcemanagement_timeoffrequest-example.txt
 docs/get_workforcemanagement_timeoffrequest_waitlistpositions-example.txt
 docs/get_workforcemanagement_timeoffrequests-example.txt
@@ -8071,6 +8128,7 @@ docs/head_notifications_channel-example.txt
 docs/head_tokens_me-example.txt
 docs/patch_analytics_reporting_settings-example.txt
 docs/patch_authorization_role-example.txt
+docs/patch_authorization_settings-example.txt
 docs/patch_chat_settings-example.txt
 docs/patch_coaching_appointment-example.txt
 docs/patch_coaching_appointment_annotation-example.txt
@@ -8184,6 +8242,7 @@ docs/patch_voicemail_me_policy-example.txt
 docs/patch_voicemail_message-example.txt
 docs/patch_voicemail_userpolicy-example.txt
 docs/patch_webchat_guest_conversation_mediarequest-example.txt
+docs/patch_workforcemanagement_agent_adherence_explanation-example.txt
 docs/patch_workforcemanagement_businessunit-example.txt
 docs/patch_workforcemanagement_businessunit_activitycode-example.txt
 docs/patch_workforcemanagement_businessunit_planninggroup-example.txt
@@ -8626,9 +8685,14 @@ docs/post_webdeployments_configuration_versions_draft_publish-example.txt
 docs/post_webdeployments_configurations-example.txt
 docs/post_webdeployments_deployments-example.txt
 docs/post_widgets_deployments-example.txt
+docs/post_workforcemanagement_adherence_explanations-example.txt
+docs/post_workforcemanagement_adherence_explanations_query-example.txt
 docs/post_workforcemanagement_adherence_historical-example.txt
+docs/post_workforcemanagement_agent_adherence_explanations-example.txt
+docs/post_workforcemanagement_agent_adherence_explanations_query-example.txt
 docs/post_workforcemanagement_agentschedules_mine-example.txt
 docs/post_workforcemanagement_businessunit_activitycodes-example.txt
+docs/post_workforcemanagement_businessunit_adherence_explanations_query-example.txt
 docs/post_workforcemanagement_businessunit_agentschedules_search-example.txt
 docs/post_workforcemanagement_businessunit_intraday-example.txt
 docs/post_workforcemanagement_businessunit_planninggroups-example.txt
@@ -8654,6 +8718,7 @@ docs/post_workforcemanagement_managementunit_agentschedules_search-example.txt
 docs/post_workforcemanagement_managementunit_historicaladherencequery-example.txt
 docs/post_workforcemanagement_managementunit_move-example.txt
 docs/post_workforcemanagement_managementunit_schedules_search-example.txt
+docs/post_workforcemanagement_managementunit_shrinkage_jobs-example.txt
 docs/post_workforcemanagement_managementunit_timeofflimits-example.txt
 docs/post_workforcemanagement_managementunit_timeofflimits_values_query-example.txt
 docs/post_workforcemanagement_managementunit_timeoffplans-example.txt

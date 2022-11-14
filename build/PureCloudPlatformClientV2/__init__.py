@@ -43,6 +43,8 @@ from .models.activity_code_container import ActivityCodeContainer
 from .models.activity_code_reference import ActivityCodeReference
 from .models.acw_detail_event_topic_after_call_work_event import AcwDetailEventTopicAfterCallWorkEvent
 from .models.acw_settings import AcwSettings
+from .models.add_adherence_explanation_admin_request import AddAdherenceExplanationAdminRequest
+from .models.add_adherence_explanation_agent_request import AddAdherenceExplanationAgentRequest
 from .models.add_conversation_request import AddConversationRequest
 from .models.add_conversation_response import AddConversationResponse
 from .models.add_shift_trade_request import AddShiftTradeRequest
@@ -52,7 +54,14 @@ from .models.additional_message import AdditionalMessage
 from .models.address import Address
 from .models.addressable_entity_ref import AddressableEntityRef
 from .models.addressable_license_definition import AddressableLicenseDefinition
+from .models.adherence_explanation_async_response import AdherenceExplanationAsyncResponse
+from .models.adherence_explanation_job import AdherenceExplanationJob
+from .models.adherence_explanation_job_reference import AdherenceExplanationJobReference
+from .models.adherence_explanation_listing import AdherenceExplanationListing
+from .models.adherence_explanation_listing_agent_query_response import AdherenceExplanationListingAgentQueryResponse
+from .models.adherence_explanation_listing_bu_query_response import AdherenceExplanationListingBuQueryResponse
 from .models.adherence_explanation_notification import AdherenceExplanationNotification
+from .models.adherence_explanation_response import AdherenceExplanationResponse
 from .models.adherence_settings import AdherenceSettings
 from .models.adhoc_recording_topic_conversation_data import AdhocRecordingTopicConversationData
 from .models.adhoc_recording_topic_lock_data import AdhocRecordingTopicLockData
@@ -76,6 +85,8 @@ from .models.agent_max_utilization import AgentMaxUtilization
 from .models.agent_owned_mapping_preview import AgentOwnedMappingPreview
 from .models.agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
 from .models.agent_owned_routing import AgentOwnedRouting
+from .models.agent_query_adherence_explanations_request import AgentQueryAdherenceExplanationsRequest
+from .models.agent_query_adherence_explanations_response import AgentQueryAdherenceExplanationsResponse
 from .models.agent_time_off_request_patch import AgentTimeOffRequestPatch
 from .models.agentless_email_send_request_dto import AgentlessEmailSendRequestDto
 from .models.agentless_email_send_response_dto import AgentlessEmailSendResponseDto
@@ -217,6 +228,7 @@ from .models.audit_topic_message_info import AuditTopicMessageInfo
 from .models.audit_topic_property_change import AuditTopicPropertyChange
 from .models.audit_user import AuditUser
 from .models.authentication_settings import AuthenticationSettings
+from .models.authorization_settings import AuthorizationSettings
 from .models.authz_division import AuthzDivision
 from .models.authz_division_entity_listing import AuthzDivisionEntityListing
 from .models.authz_division_grant_entity_listing import AuthzDivisionGrantEntityListing
@@ -316,6 +328,8 @@ from .models.bu_intraday_response import BuIntradayResponse
 from .models.bu_intraday_schedule_data import BuIntradayScheduleData
 from .models.bu_management_unit_schedule_summary import BuManagementUnitScheduleSummary
 from .models.bu_planning_group_headcount_forecast import BuPlanningGroupHeadcountForecast
+from .models.bu_query_adherence_explanations_request import BuQueryAdherenceExplanationsRequest
+from .models.bu_query_adherence_explanations_response import BuQueryAdherenceExplanationsResponse
 from .models.bu_query_agent_schedules_request import BuQueryAgentSchedulesRequest
 from .models.bu_reschedule_agent_schedule_result import BuRescheduleAgentScheduleResult
 from .models.bu_reschedule_request import BuRescheduleRequest
@@ -915,6 +929,8 @@ from .models.did_number_entity_listing import DIDNumberEntityListing
 from .models.did_pool import DIDPool
 from .models.did_pool_entity_listing import DIDPoolEntityListing
 from .models.data_action_condition_predicate import DataActionConditionPredicate
+from .models.data_action_condition_settings import DataActionConditionSettings
+from .models.data_action_contact_column_field_mapping import DataActionContactColumnFieldMapping
 from .models.data_availability_response import DataAvailabilityResponse
 from .models.data_schema import DataSchema
 from .models.data_schema_listing import DataSchemaListing
@@ -1024,6 +1040,7 @@ from .models.dialogflow_project import DialogflowProject
 from .models.digit_length import DigitLength
 from .models.digital_action import DigitalAction
 from .models.digital_condition import DigitalCondition
+from .models.digital_data_action_condition_predicate import DigitalDataActionConditionPredicate
 from .models.digital_rule import DigitalRule
 from .models.digital_rule_set import DigitalRuleSet
 from .models.digital_rule_set_entity_listing import DigitalRuleSetEntityListing
@@ -1429,6 +1446,11 @@ from .models.historical_adherence_query_result import HistoricalAdherenceQueryRe
 from .models.historical_import_delete_job_response import HistoricalImportDeleteJobResponse
 from .models.historical_import_status import HistoricalImportStatus
 from .models.historical_import_status_listing import HistoricalImportStatusListing
+from .models.historical_shrinkage_activity_category_response import HistoricalShrinkageActivityCategoryResponse
+from .models.historical_shrinkage_activity_code_response import HistoricalShrinkageActivityCodeResponse
+from .models.historical_shrinkage_aggregate_response import HistoricalShrinkageAggregateResponse
+from .models.historical_shrinkage_result import HistoricalShrinkageResult
+from .models.historical_shrinkage_result_listing import HistoricalShrinkageResultListing
 from .models.history_entry import HistoryEntry
 from .models.history_listing import HistoryListing
 from .models.hold_updated_event import HoldUpdatedEvent
@@ -2112,6 +2134,7 @@ from .models.quality_audit_log_message import QualityAuditLogMessage
 from .models.quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
 from .models.quality_audit_query_execution_status_response import QualityAuditQueryExecutionStatusResponse
 from .models.quality_audit_query_filter import QualityAuditQueryFilter
+from .models.query_adherence_explanations_response import QueryAdherenceExplanationsResponse
 from .models.query_division import QueryDivision
 from .models.query_facet_info import QueryFacetInfo
 from .models.query_request import QueryRequest
@@ -2909,6 +2932,7 @@ from .models.unread_metric import UnreadMetric
 from .models.unread_status import UnreadStatus
 from .models.update_action_input import UpdateActionInput
 from .models.update_activity_code_request import UpdateActivityCodeRequest
+from .models.update_adherence_explanation_status_request import UpdateAdherenceExplanationStatusRequest
 from .models.update_analytics_data_retention_request import UpdateAnalyticsDataRetentionRequest
 from .models.update_business_unit_request import UpdateBusinessUnitRequest
 from .models.update_business_unit_settings_request import UpdateBusinessUnitSettingsRequest
@@ -3241,6 +3265,8 @@ from .models.wfm_historical_adherence_response import WfmHistoricalAdherenceResp
 from .models.wfm_historical_adherence_result_wrapper import WfmHistoricalAdherenceResultWrapper
 from .models.wfm_historical_data_upload_purge_request_status_topic_historical_data_upload_purge_request_update import WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRequestUpdate
 from .models.wfm_historical_data_upload_request_status_topic_historical_data_upload_request_update import WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
+from .models.wfm_historical_shrinkage_request import WfmHistoricalShrinkageRequest
+from .models.wfm_historical_shrinkage_response import WfmHistoricalShrinkageResponse
 from .models.wfm_intraday_data_update_topic_intraday_data_group import WfmIntradayDataUpdateTopicIntradayDataGroup
 from .models.wfm_intraday_data_update_topic_intraday_data_update import WfmIntradayDataUpdateTopicIntradayDataUpdate
 from .models.wfm_intraday_data_update_topic_intraday_forecast_data import WfmIntradayDataUpdateTopicIntradayForecastData

@@ -55,6 +55,7 @@ class UserScheduleAdherence(object):
             'is_out_of_office': 'bool',
             'adherence_state': 'str',
             'impact': 'str',
+            'adherence_explanation': 'RealTimeAdherenceExplanation',
             'time_of_adherence_change': 'datetime',
             'presence_update_time': 'datetime',
             'active_queues': 'list[QueueReference]',
@@ -79,6 +80,7 @@ class UserScheduleAdherence(object):
             'is_out_of_office': 'isOutOfOffice',
             'adherence_state': 'adherenceState',
             'impact': 'impact',
+            'adherence_explanation': 'adherenceExplanation',
             'time_of_adherence_change': 'timeOfAdherenceChange',
             'presence_update_time': 'presenceUpdateTime',
             'active_queues': 'activeQueues',
@@ -102,6 +104,7 @@ class UserScheduleAdherence(object):
         self._is_out_of_office = None
         self._adherence_state = None
         self._impact = None
+        self._adherence_explanation = None
         self._time_of_adherence_change = None
         self._presence_update_time = None
         self._active_queues = None
@@ -486,6 +489,30 @@ class UserScheduleAdherence(object):
             self._impact = "outdated_sdk_version"
         else:
             self._impact = impact
+
+    @property
+    def adherence_explanation(self):
+        """
+        Gets the adherence_explanation of this UserScheduleAdherence.
+        Currently applicable explanation for the adherence state
+
+        :return: The adherence_explanation of this UserScheduleAdherence.
+        :rtype: RealTimeAdherenceExplanation
+        """
+        return self._adherence_explanation
+
+    @adherence_explanation.setter
+    def adherence_explanation(self, adherence_explanation):
+        """
+        Sets the adherence_explanation of this UserScheduleAdherence.
+        Currently applicable explanation for the adherence state
+
+        :param adherence_explanation: The adherence_explanation of this UserScheduleAdherence.
+        :type: RealTimeAdherenceExplanation
+        """
+        
+
+        self._adherence_explanation = adherence_explanation
 
     @property
     def time_of_adherence_change(self):

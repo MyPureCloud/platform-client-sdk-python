@@ -8,6 +8,7 @@ title: HistoricalAdherenceQueryResult
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **user_id** | **str** | The ID of the user for whom the adherence is queried | [optional] |
+| **management_unit_id** | **str** | The ID of the management unit of the user for whom the adherence is queried | [optional] |
 | **start_date** | **datetime** | Beginning of the date range that was queried, in ISO-8601 format | [optional] |
 | **end_date** | **datetime** | End of the date range that was queried, in ISO-8601 format. If it was not set, end date will be set to the queried time | [optional] |
 | **adherence_percentage** | **float** | Adherence percentage for this user, in the scale of 0 - 100 | [optional] |

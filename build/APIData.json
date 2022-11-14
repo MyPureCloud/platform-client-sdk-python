@@ -183,7 +183,7 @@
         "required": "true"
       }
     ],
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\njob_id = 'job_id_example' # str | jobId\n\ntry:\n    # Delete/cancel an async request\n    api_instance.delete_analytics_conversations_details_job(job_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteAnalyticsConversationsDetailsJobRequest->delete_analytics_conversations_details_job: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\njob_id = 'job_id_example' # str | jobId\n\ntry:\n    # Delete/cancel an async details job\n    api_instance.delete_analytics_conversations_details_job(job_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteAnalyticsConversationsDetailsJobRequest->delete_analytics_conversations_details_job: %s\\n\" % e)"
   },
   "delete_analytics_reporting_schedule": {
     "operationId": "delete_analytics_reporting_schedule",
@@ -314,7 +314,7 @@
       }
     ],
     "return": "AnalyticsConversationAsyncQueryResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\njob_id = 'job_id_example' # str | jobId\ncursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)\npage_size = 56 # int | The desired maximum number of results (optional)\n\ntry:\n    # Fetch a page of results for an async query\n    api_response = api_instance.get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetAnalyticsConversationsDetailsJobResultsRequest->get_analytics_conversations_details_job_results: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\njob_id = 'job_id_example' # str | jobId\ncursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)\npage_size = 56 # int | The desired maximum number of results (optional)\n\ntry:\n    # Fetch a page of results for an async details job\n    api_response = api_instance.get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetAnalyticsConversationsDetailsJobResultsRequest->get_analytics_conversations_details_job_results: %s\\n\" % e)"
   },
   "get_analytics_conversations_details_jobs_availability": {
     "operationId": "get_analytics_conversations_details_jobs_availability",
@@ -3946,6 +3946,13 @@
     "return": "OrganizationRoleEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuthorizationApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nname = 'name_example' # str |  (optional)\npermission = ['permission_example'] # list[str] |  (optional)\ndefault_role_id = ['default_role_id_example'] # list[str] |  (optional)\nuser_count = True # bool |  (optional) (default to True)\nid = ['id_example'] # list[str] | id (optional)\n\ntry:\n    # Retrieve a list of all roles defined for the organization\n    api_response = api_instance.get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count, id=id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetAuthorizationRolesRequest->get_authorization_roles: %s\\n\" % e)"
   },
+  "get_authorization_settings": {
+    "operationId": "get_authorization_settings",
+    "functionName": "get_authorization_settings",
+    "signature": "get_authorization_settings()",
+    "return": "AuthorizationSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuthorizationApi()\n\ntry:\n    # Get authorization settings\n    api_response = api_instance.get_authorization_settings()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetAuthorizationSettingsRequest->get_authorization_settings: %s\\n\" % e)"
+  },
   "get_authorization_subject": {
     "operationId": "get_authorization_subject",
     "functionName": "get_authorization_subject",
@@ -4013,6 +4020,20 @@
     ],
     "return": "DomainOrganizationRole",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuthorizationApi()\nrole_id = 'role_id_example' # str | Role ID\nbody = PureCloudPlatformClientV2.DomainOrganizationRole() # DomainOrganizationRole | Organization role\n\ntry:\n    # Patch Organization Role for needsUpdate Field\n    api_response = api_instance.patch_authorization_role(role_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchAuthorizationRoleRequest->patch_authorization_role: %s\\n\" % e)"
+  },
+  "patch_authorization_settings": {
+    "operationId": "patch_authorization_settings",
+    "functionName": "patch_authorization_settings",
+    "signature": "patch_authorization_settings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "AuthorizationSettings",
+        "required": "true"
+      }
+    ],
+    "return": "AuthorizationSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuthorizationApi()\nbody = PureCloudPlatformClientV2.AuthorizationSettings() # AuthorizationSettings | Authorization Settings\n\ntry:\n    # Change authorization settings\n    api_response = api_instance.patch_authorization_settings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchAuthorizationSettingsRequest->patch_authorization_settings: %s\\n\" % e)"
   },
   "post_authorization_division_object": {
     "operationId": "post_authorization_division_object",
@@ -25383,8 +25404,18 @@
   "get_routing_email_domains": {
     "operationId": "get_routing_email_domains",
     "functionName": "get_routing_email_domains",
-    "signature": "get_routing_email_domains(exclude_status)",
+    "signature": "get_routing_email_domains(page_size, page_number, exclude_status)",
     "parameters": [
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      },
       {
         "name": "exclude_status",
         "type": "bool",
@@ -25392,7 +25423,7 @@
       }
     ],
     "return": "InboundDomainEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nexclude_status = False # bool | Exclude MX record data (optional) (default to False)\n\ntry:\n    # Get domains\n    api_response = api_instance.get_routing_email_domains(exclude_status=exclude_status)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingEmailDomainsRequest->get_routing_email_domains: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nexclude_status = False # bool | Exclude MX record data (optional) (default to False)\n\ntry:\n    # Get domains\n    api_response = api_instance.get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingEmailDomainsRequest->get_routing_email_domains: %s\\n\" % e)"
   },
   "get_routing_email_outbound_domain": {
     "operationId": "get_routing_email_outbound_domain",
@@ -34468,6 +34499,34 @@
     "return": "list[UserScheduleAdherence]",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nuser_id = ['user_id_example'] # list[str] | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request\n\ntry:\n    # Get a list of UserScheduleAdherence records for the requested users\n    api_response = api_instance.get_workforcemanagement_adherence(user_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementAdherenceRequest->get_workforcemanagement_adherence: %s\\n\" % e)"
   },
+  "get_workforcemanagement_adherence_explanation": {
+    "operationId": "get_workforcemanagement_adherence_explanation",
+    "functionName": "get_workforcemanagement_adherence_explanation",
+    "signature": "get_workforcemanagement_adherence_explanation(explanation_id)",
+    "parameters": [
+      {
+        "name": "explanation_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "AdherenceExplanationResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nexplanation_id = 'explanation_id_example' # str | The ID of the explanation to update\n\ntry:\n    # Get an adherence explanation for the current user\n    api_response = api_instance.get_workforcemanagement_adherence_explanation(explanation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementAdherenceExplanationRequest->get_workforcemanagement_adherence_explanation: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_adherence_explanations_job": {
+    "operationId": "get_workforcemanagement_adherence_explanations_job",
+    "functionName": "get_workforcemanagement_adherence_explanations_job",
+    "signature": "get_workforcemanagement_adherence_explanations_job(job_id)",
+    "parameters": [
+      {
+        "name": "job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "AdherenceExplanationJob",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\njob_id = 'job_id_example' # str | The ID of the job\n\ntry:\n    # Query the status of an adherence explanation operation. Only the user who started the operation can query the status\n    api_response = api_instance.get_workforcemanagement_adherence_explanations_job(job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementAdherenceExplanationsJobRequest->get_workforcemanagement_adherence_explanations_job: %s\\n\" % e)"
+  },
   "get_workforcemanagement_adherence_historical_job": {
     "operationId": "get_workforcemanagement_adherence_historical_job",
     "functionName": "get_workforcemanagement_adherence_historical_job",
@@ -34495,6 +34554,25 @@
     ],
     "return": "ModelingStatusResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\njob_id = 'job_id_example' # str | The id of the modeling job\n\ntry:\n    # Get status of the modeling job\n    api_response = api_instance.get_workforcemanagement_adhocmodelingjob(job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementAdhocmodelingjobRequest->get_workforcemanagement_adhocmodelingjob: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_agent_adherence_explanation": {
+    "operationId": "get_workforcemanagement_agent_adherence_explanation",
+    "functionName": "get_workforcemanagement_agent_adherence_explanation",
+    "signature": "get_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id)",
+    "parameters": [
+      {
+        "name": "agent_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "explanation_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "AdherenceExplanationResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nagent_id = 'agent_id_example' # str | The ID of the agent to query\nexplanation_id = 'explanation_id_example' # str | The ID of the explanation to update\n\ntry:\n    # Get an adherence explanation\n    api_response = api_instance.get_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementAgentAdherenceExplanationRequest->get_workforcemanagement_agent_adherence_explanation: %s\\n\" % e)"
   },
   "get_workforcemanagement_agent_managementunit": {
     "operationId": "get_workforcemanagement_agent_managementunit",
@@ -35631,6 +35709,20 @@
     "return": "ShiftTradeListResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\n\ntry:\n    # Gets all of my shift trades\n    api_response = api_instance.get_workforcemanagement_shifttrades()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementShifttradesRequest->get_workforcemanagement_shifttrades: %s\\n\" % e)"
   },
+  "get_workforcemanagement_shrinkage_job": {
+    "operationId": "get_workforcemanagement_shrinkage_job",
+    "functionName": "get_workforcemanagement_shrinkage_job",
+    "signature": "get_workforcemanagement_shrinkage_job(job_id)",
+    "parameters": [
+      {
+        "name": "job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "WfmHistoricalShrinkageResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\njob_id = 'job_id_example' # str | jobId\n\ntry:\n    # Request to fetch the status of the historical shrinkage query\n    api_response = api_instance.get_workforcemanagement_shrinkage_job(job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementShrinkageJobRequest->get_workforcemanagement_shrinkage_job: %s\\n\" % e)"
+  },
   "get_workforcemanagement_timeoffrequest": {
     "operationId": "get_workforcemanagement_timeoffrequest",
     "functionName": "get_workforcemanagement_timeoffrequest",
@@ -35672,6 +35764,30 @@
     ],
     "return": "TimeOffRequestList",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nrecently_reviewed = False # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to False)\n\ntry:\n    # Get a list of time off requests for the current user\n    api_response = api_instance.get_workforcemanagement_timeoffrequests(recently_reviewed=recently_reviewed)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementTimeoffrequestsRequest->get_workforcemanagement_timeoffrequests: %s\\n\" % e)"
+  },
+  "patch_workforcemanagement_agent_adherence_explanation": {
+    "operationId": "patch_workforcemanagement_agent_adherence_explanation",
+    "functionName": "patch_workforcemanagement_agent_adherence_explanation",
+    "signature": "patch_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id, body)",
+    "parameters": [
+      {
+        "name": "agent_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "explanation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UpdateAdherenceExplanationStatusRequest",
+        "required": "true"
+      }
+    ],
+    "return": "AdherenceExplanationAsyncResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nagent_id = 'agent_id_example' # str | The ID of the agent to query\nexplanation_id = 'explanation_id_example' # str | The ID of the explanation to update\nbody = PureCloudPlatformClientV2.UpdateAdherenceExplanationStatusRequest() # UpdateAdherenceExplanationStatusRequest | The request body\n\ntry:\n    # Update an adherence explanation\n    api_response = api_instance.patch_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchWorkforcemanagementAgentAdherenceExplanationRequest->patch_workforcemanagement_agent_adherence_explanation: %s\\n\" % e)"
   },
   "patch_workforcemanagement_businessunit": {
     "operationId": "patch_workforcemanagement_businessunit",
@@ -35984,6 +36100,44 @@
     "return": "TimeOffRequestResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\ntime_off_request_id = 'time_off_request_id_example' # str | The ID of the time off request\nbody = PureCloudPlatformClientV2.AgentTimeOffRequestPatch() # AgentTimeOffRequestPatch | body (optional)\n\ntry:\n    # Update a time off request for the current user\n    api_response = api_instance.patch_workforcemanagement_timeoffrequest(time_off_request_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchWorkforcemanagementTimeoffrequestRequest->patch_workforcemanagement_timeoffrequest: %s\\n\" % e)"
   },
+  "post_workforcemanagement_adherence_explanations": {
+    "operationId": "post_workforcemanagement_adherence_explanations",
+    "functionName": "post_workforcemanagement_adherence_explanations",
+    "signature": "post_workforcemanagement_adherence_explanations(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "AddAdherenceExplanationAgentRequest",
+        "required": "true"
+      }
+    ],
+    "return": "AdherenceExplanationAsyncResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nbody = PureCloudPlatformClientV2.AddAdherenceExplanationAgentRequest() # AddAdherenceExplanationAgentRequest | The request body\n\ntry:\n    # Submit an adherence explanation for the current user\n    api_response = api_instance.post_workforcemanagement_adherence_explanations(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementAdherenceExplanationsRequest->post_workforcemanagement_adherence_explanations: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_adherence_explanations_query": {
+    "operationId": "post_workforcemanagement_adherence_explanations_query",
+    "functionName": "post_workforcemanagement_adherence_explanations_query",
+    "signature": "post_workforcemanagement_adherence_explanations_query(body, force_async, force_download_service)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "AgentQueryAdherenceExplanationsRequest",
+        "required": "true"
+      },
+      {
+        "name": "force_async",
+        "type": "bool",
+        "required": "false"
+      },
+      {
+        "name": "force_download_service",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "QueryAdherenceExplanationsResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nbody = PureCloudPlatformClientV2.AgentQueryAdherenceExplanationsRequest() # AgentQueryAdherenceExplanationsRequest | The request body\nforce_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)\nforce_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)\n\ntry:\n    # Query adherence explanations for the current user\n    api_response = api_instance.post_workforcemanagement_adherence_explanations_query(body, force_async=force_async, force_download_service=force_download_service)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementAdherenceExplanationsQueryRequest->post_workforcemanagement_adherence_explanations_query: %s\\n\" % e)"
+  },
   "post_workforcemanagement_adherence_historical": {
     "operationId": "post_workforcemanagement_adherence_historical",
     "functionName": "post_workforcemanagement_adherence_historical",
@@ -35997,6 +36151,54 @@
     ],
     "return": "WfmHistoricalAdherenceResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nbody = PureCloudPlatformClientV2.WfmHistoricalAdherenceQueryForUsers() # WfmHistoricalAdherenceQueryForUsers | body (optional)\n\ntry:\n    # Request a historical adherence report for users across management units\n    api_response = api_instance.post_workforcemanagement_adherence_historical(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementAdherenceHistoricalRequest->post_workforcemanagement_adherence_historical: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_agent_adherence_explanations": {
+    "operationId": "post_workforcemanagement_agent_adherence_explanations",
+    "functionName": "post_workforcemanagement_agent_adherence_explanations",
+    "signature": "post_workforcemanagement_agent_adherence_explanations(agent_id, body)",
+    "parameters": [
+      {
+        "name": "agent_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "AddAdherenceExplanationAdminRequest",
+        "required": "true"
+      }
+    ],
+    "return": "AdherenceExplanationAsyncResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nagent_id = 'agent_id_example' # str | The ID of the agent to query\nbody = PureCloudPlatformClientV2.AddAdherenceExplanationAdminRequest() # AddAdherenceExplanationAdminRequest | The request body\n\ntry:\n    # Add an adherence explanation for the requested user\n    api_response = api_instance.post_workforcemanagement_agent_adherence_explanations(agent_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementAgentAdherenceExplanationsRequest->post_workforcemanagement_agent_adherence_explanations: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_agent_adherence_explanations_query": {
+    "operationId": "post_workforcemanagement_agent_adherence_explanations_query",
+    "functionName": "post_workforcemanagement_agent_adherence_explanations_query",
+    "signature": "post_workforcemanagement_agent_adherence_explanations_query(agent_id, body, force_async, force_download_service)",
+    "parameters": [
+      {
+        "name": "agent_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "AgentQueryAdherenceExplanationsRequest",
+        "required": "true"
+      },
+      {
+        "name": "force_async",
+        "type": "bool",
+        "required": "false"
+      },
+      {
+        "name": "force_download_service",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AgentQueryAdherenceExplanationsResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nagent_id = 'agent_id_example' # str | The ID of the agent to query\nbody = PureCloudPlatformClientV2.AgentQueryAdherenceExplanationsRequest() # AgentQueryAdherenceExplanationsRequest | The request body\nforce_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)\nforce_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)\n\ntry:\n    # Query adherence explanations for the given agent across a specified range\n    api_response = api_instance.post_workforcemanagement_agent_adherence_explanations_query(agent_id, body, force_async=force_async, force_download_service=force_download_service)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest->post_workforcemanagement_agent_adherence_explanations_query: %s\\n\" % e)"
   },
   "post_workforcemanagement_agentschedules_mine": {
     "operationId": "post_workforcemanagement_agentschedules_mine",
@@ -36030,6 +36232,35 @@
     ],
     "return": "BusinessUnitActivityCode",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.\nbody = PureCloudPlatformClientV2.CreateActivityCodeRequest() # CreateActivityCodeRequest | body (optional)\n\ntry:\n    # Create a new activity code\n    api_response = api_instance.post_workforcemanagement_businessunit_activitycodes(business_unit_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitActivitycodesRequest->post_workforcemanagement_businessunit_activitycodes: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_adherence_explanations_query": {
+    "operationId": "post_workforcemanagement_businessunit_adherence_explanations_query",
+    "functionName": "post_workforcemanagement_businessunit_adherence_explanations_query",
+    "signature": "post_workforcemanagement_businessunit_adherence_explanations_query(business_unit_id, body, force_async, force_download_service)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "BuQueryAdherenceExplanationsRequest",
+        "required": "true"
+      },
+      {
+        "name": "force_async",
+        "type": "bool",
+        "required": "false"
+      },
+      {
+        "name": "force_download_service",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "BuQueryAdherenceExplanationsResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbody = PureCloudPlatformClientV2.BuQueryAdherenceExplanationsRequest() # BuQueryAdherenceExplanationsRequest | The request body\nforce_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)\nforce_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)\n\ntry:\n    # Query adherence explanations across an entire business unit for the requested period\n    api_response = api_instance.post_workforcemanagement_businessunit_adherence_explanations_query(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest->post_workforcemanagement_businessunit_adherence_explanations_query: %s\\n\" % e)"
   },
   "post_workforcemanagement_businessunit_agentschedules_search": {
     "operationId": "post_workforcemanagement_businessunit_agentschedules_search",
@@ -36617,6 +36848,25 @@
     ],
     "return": "UserScheduleContainer",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nmanagement_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.\nbody = PureCloudPlatformClientV2.UserListScheduleRequestBody() # UserListScheduleRequestBody | body (optional)\n\ntry:\n    # Query published schedules for given given time range for set of users\n    api_response = api_instance.post_workforcemanagement_managementunit_schedules_search(management_unit_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementManagementunitSchedulesSearchRequest->post_workforcemanagement_managementunit_schedules_search: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_managementunit_shrinkage_jobs": {
+    "operationId": "post_workforcemanagement_managementunit_shrinkage_jobs",
+    "functionName": "post_workforcemanagement_managementunit_shrinkage_jobs",
+    "signature": "post_workforcemanagement_managementunit_shrinkage_jobs(management_unit_id, body)",
+    "parameters": [
+      {
+        "name": "management_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "WfmHistoricalShrinkageRequest",
+        "required": "false"
+      }
+    ],
+    "return": "WfmHistoricalShrinkageResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nmanagement_unit_id = 'management_unit_id_example' # str | The ID of the management unit\nbody = PureCloudPlatformClientV2.WfmHistoricalShrinkageRequest() # WfmHistoricalShrinkageRequest | body (optional)\n\ntry:\n    # Request a historical shrinkage report\n    api_response = api_instance.post_workforcemanagement_managementunit_shrinkage_jobs(management_unit_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementManagementunitShrinkageJobsRequest->post_workforcemanagement_managementunit_shrinkage_jobs: %s\\n\" % e)"
   },
   "post_workforcemanagement_managementunit_timeofflimits": {
     "operationId": "post_workforcemanagement_managementunit_timeofflimits",

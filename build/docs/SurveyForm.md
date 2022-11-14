@@ -16,7 +16,7 @@ title: SurveyForm
 | **language** | **str** | Language for survey viewer localization. Currently localized languages: da, de, en-US, es, fi, fr, it, ja, ko, nl, no, pl, pt-BR, sv, th, tr, zh-CH, zh-TW | |
 | **header** | **str** | Markdown text for the top of the form. | [optional] |
 | **footer** | **str** | Markdown text for the bottom of the form. | [optional] |
-| **question_groups** | [**list[SurveyQuestionGroup]**](SurveyQuestionGroup.html) | A list of question groups | |
+| **question_groups** | [**list[SurveyQuestionGroup]**](SurveyQuestionGroup.html) | A list of question groups | [optional] |
 | **published_versions** | [**DomainEntityListingSurveyForm**](DomainEntityListingSurveyForm.html) | List of published version of this form | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

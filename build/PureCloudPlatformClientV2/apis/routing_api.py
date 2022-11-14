@@ -2209,13 +2209,15 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
         :param bool exclude_status: Exclude MX record data
         :return: InboundDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['exclude_status']
+        all_params = ['page_size', 'page_number', 'exclude_status']
         all_params.append('callback')
 
         params = locals()
@@ -2234,6 +2236,10 @@ class RoutingApi(object):
         path_params = {}
 
         query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
         if 'exclude_status' in params:
             query_params['excludeStatus'] = params['exclude_status']
 

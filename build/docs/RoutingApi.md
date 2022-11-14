@@ -1515,7 +1515,7 @@ except ApiException as e:
 
 <a name="get_routing_email_domains"></a>
 
-## [**InboundDomainEntityListing**](InboundDomainEntityListing.html) get_routing_email_domains(exclude_status=exclude_status)
+## [**InboundDomainEntityListing**](InboundDomainEntityListing.html) get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status)
 
 
 
@@ -1542,11 +1542,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
 exclude_status = False # bool | Exclude MX record data (optional) (default to False)
 
 try:
     # Get domains
-    api_response = api_instance.get_routing_email_domains(exclude_status=exclude_status)
+    api_response = api_instance.get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_domains: %s\n" % e)
@@ -1557,6 +1559,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 | **exclude_status** | **bool**| Exclude MX record data | [optional] [default to False] |
 {: class="table table-striped"}
 

@@ -26,11 +26,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_authorization_role_subjectgrants**](AuthorizationApi.html#get_authorization_role_subjectgrants) | Get the subjects&#39; granted divisions in the specified role.|
 |[**get_authorization_role_users**](AuthorizationApi.html#get_authorization_role_users) | Get a list of the users in a specified role.|
 |[**get_authorization_roles**](AuthorizationApi.html#get_authorization_roles) | Retrieve a list of all roles defined for the organization|
+|[**get_authorization_settings**](AuthorizationApi.html#get_authorization_settings) | Get authorization settings|
 |[**get_authorization_subject**](AuthorizationApi.html#get_authorization_subject) | Returns a listing of roles and permissions for a user.|
 |[**get_authorization_subjects_me**](AuthorizationApi.html#get_authorization_subjects_me) | Returns a listing of roles and permissions for the currently authenticated user.|
 |[**get_authorization_subjects_rolecounts**](AuthorizationApi.html#get_authorization_subjects_rolecounts) | Get the count of roles granted to a list of subjects|
 |[**get_user_roles**](AuthorizationApi.html#get_user_roles) | Returns a listing of roles and permissions for a user.|
 |[**patch_authorization_role**](AuthorizationApi.html#patch_authorization_role) | Patch Organization Role for needsUpdate Field|
+|[**patch_authorization_settings**](AuthorizationApi.html#patch_authorization_settings) | Change authorization settings|
 |[**post_authorization_division_object**](AuthorizationApi.html#post_authorization_division_object) | Assign a list of objects to a division|
 |[**post_authorization_division_restore**](AuthorizationApi.html#post_authorization_division_restore) | Recreate a previously deleted division.|
 |[**post_authorization_divisions**](AuthorizationApi.html#post_authorization_divisions) | Create a division.|
@@ -1051,6 +1053,54 @@ except ApiException as e:
 
 [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
 
+<a name="get_authorization_settings"></a>
+
+## [**AuthorizationSettings**](AuthorizationSettings.html) get_authorization_settings()
+
+
+
+Get authorization settings
+
+
+
+Wraps GET /api/v2/authorization/settings 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* authorization:settings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+
+try:
+    # Get authorization settings
+    api_response = api_instance.get_authorization_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**AuthorizationSettings**](AuthorizationSettings.html)
+
 <a name="get_authorization_subject"></a>
 
 ## [**AuthzSubject**](AuthzSubject.html) get_authorization_subject(subject_id)
@@ -1304,6 +1354,60 @@ except ApiException as e:
 ### Return type
 
 [**DomainOrganizationRole**](DomainOrganizationRole.html)
+
+<a name="patch_authorization_settings"></a>
+
+## [**AuthorizationSettings**](AuthorizationSettings.html) patch_authorization_settings(body)
+
+
+
+Change authorization settings
+
+Change authorization settings
+
+
+
+Wraps PATCH /api/v2/authorization/settings 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* authorization:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+body = PureCloudPlatformClientV2.AuthorizationSettings() # AuthorizationSettings | Authorization Settings
+
+try:
+    # Change authorization settings
+    api_response = api_instance.patch_authorization_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->patch_authorization_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AuthorizationSettings**](AuthorizationSettings.html)| Authorization Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthorizationSettings**](AuthorizationSettings.html)
 
 <a name="post_authorization_division_object"></a>
 

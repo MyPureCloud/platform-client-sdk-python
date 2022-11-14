@@ -102,7 +102,7 @@ class TextBotFlowTurnRequest(object):
         :param input_event_type: The input_event_type of this TextBotFlowTurnRequest.
         :type: str
         """
-        allowed_values = ["NoOp", "UserInput", "Error", "NoMatch", "NoInput", "UserDisconnect"]
+        allowed_values = ["NoOp", "UserInput", "Error", "NoMatch", "NoInput", "UserDisconnect", "ClientSessionExpired"]
         if input_event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for input_event_type -> " + input_event_type)
             self._input_event_type = "outdated_sdk_version"

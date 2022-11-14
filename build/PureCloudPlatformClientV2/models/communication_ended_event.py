@@ -180,7 +180,7 @@ class CommunicationEndedEvent(object):
         :param disconnect_type: The disconnect_type of this CommunicationEndedEvent.
         :type: str
         """
-        allowed_values = ["Self", "Peer", "System", "Error", "Transfer", "TransferACD", "TransferConsult", "TransferConference", "TransferUser"]
+        allowed_values = ["Self", "Peer", "System", "Error", "Transfer", "TransferConsult", "TransferConference"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"

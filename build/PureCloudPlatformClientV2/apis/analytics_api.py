@@ -48,7 +48,7 @@ class AnalyticsApi(object):
 
     def delete_analytics_conversations_details_job(self, job_id, **kwargs):
         """
-        Delete/cancel an async request
+        Delete/cancel an async details job
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -606,7 +606,7 @@ class AnalyticsApi(object):
 
     def get_analytics_conversations_details_job_results(self, job_id, **kwargs):
         """
-        Fetch a page of results for an async query
+        Fetch a page of results for an async details job
         
 
         This method makes a synchronous HTTP request by default. To make an

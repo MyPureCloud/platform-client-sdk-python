@@ -8,7 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_analytics_conversations_details_job**](ConversationsApi.html#delete_analytics_conversations_details_job) | Delete/cancel an async request|
+|[**delete_analytics_conversations_details_job**](ConversationsApi.html#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
 |[**delete_conversation_participant_code**](ConversationsApi.html#delete_conversation_participant_code) | Delete a code used to add a communication to this participant|
 |[**delete_conversation_participant_flaggedreason**](ConversationsApi.html#delete_conversation_participant_flaggedreason) | Remove flagged reason from conversation participant.|
 |[**delete_conversations_call_participant_consult**](ConversationsApi.html#delete_conversations_call_participant_consult) | Cancel the transfer|
@@ -22,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
 |[**get_analytics_conversations_details**](ConversationsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_analytics_conversations_details_job**](ConversationsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
-|[**get_analytics_conversations_details_job_results**](ConversationsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async query|
+|[**get_analytics_conversations_details_job_results**](ConversationsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
 |[**get_analytics_conversations_details_jobs_availability**](ConversationsApi.html#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_conversation**](ConversationsApi.html#get_conversation) | Get conversation|
 |[**get_conversation_participant_secureivrsession**](ConversationsApi.html#get_conversation_participant_secureivrsession) | Fetch info on a secure session|
@@ -194,7 +194,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-Delete/cancel an async request
+Delete/cancel an async details job
 
 
 
@@ -221,7 +221,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 job_id = 'job_id_example' # str | jobId
 
 try:
-    # Delete/cancel an async request
+    # Delete/cancel an async details job
     api_instance.delete_analytics_conversations_details_job(job_id)
 except ApiException as e:
     print("Exception when calling ConversationsApi->delete_analytics_conversations_details_job: %s\n" % e)
@@ -910,7 +910,7 @@ except ApiException as e:
 
 
 
-Fetch a page of results for an async query
+Fetch a page of results for an async details job
 
 
 
@@ -939,7 +939,7 @@ cursor = 'cursor_example' # str | Indicates where to resume query results (not r
 page_size = 56 # int | The desired maximum number of results (optional)
 
 try:
-    # Fetch a page of results for an async query
+    # Fetch a page of results for an async details job
     api_response = api_instance.get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
     pprint(api_response)
 except ApiException as e:

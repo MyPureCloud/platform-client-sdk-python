@@ -8,14 +8,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_analytics_conversations_details_job**](AnalyticsApi.html#delete_analytics_conversations_details_job) | Delete/cancel an async request|
+|[**delete_analytics_conversations_details_job**](AnalyticsApi.html#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
 |[**delete_analytics_reporting_schedule**](AnalyticsApi.html#delete_analytics_reporting_schedule) | Delete a scheduled report job.|
 |[**delete_analytics_users_details_job**](AnalyticsApi.html#delete_analytics_users_details_job) | Delete/cancel an async request|
 |[**get_analytics_botflow_reportingturns**](AnalyticsApi.html#get_analytics_botflow_reportingturns) | Get Reporting Turns.|
 |[**get_analytics_conversation_details**](AnalyticsApi.html#get_analytics_conversation_details) | Get a conversation by id|
 |[**get_analytics_conversations_details**](AnalyticsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_analytics_conversations_details_job**](AnalyticsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
-|[**get_analytics_conversations_details_job_results**](AnalyticsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async query|
+|[**get_analytics_conversations_details_job_results**](AnalyticsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
 |[**get_analytics_conversations_details_jobs_availability**](AnalyticsApi.html#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_analytics_dataretention_settings**](AnalyticsApi.html#get_analytics_dataretention_settings) | Get analytics data retention setting|
 |[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
@@ -65,7 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-Delete/cancel an async request
+Delete/cancel an async details job
 
 
 
@@ -92,7 +92,7 @@ api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 job_id = 'job_id_example' # str | jobId
 
 try:
-    # Delete/cancel an async request
+    # Delete/cancel an async details job
     api_instance.delete_analytics_conversations_details_job(job_id)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->delete_analytics_conversations_details_job: %s\n" % e)
@@ -432,7 +432,7 @@ except ApiException as e:
 
 
 
-Fetch a page of results for an async query
+Fetch a page of results for an async details job
 
 
 
@@ -461,7 +461,7 @@ cursor = 'cursor_example' # str | Indicates where to resume query results (not r
 page_size = 56 # int | The desired maximum number of results (optional)
 
 try:
-    # Fetch a page of results for an async query
+    # Fetch a page of results for an async details job
     api_response = api_instance.get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
     pprint(api_response)
 except ApiException as e:

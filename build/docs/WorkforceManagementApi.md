@@ -22,8 +22,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplan) | Delete a work plan|
 |[**delete_workforcemanagement_managementunit_workplanrotation**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplanrotation) | Delete a work plan rotation|
 |[**get_workforcemanagement_adherence**](WorkforceManagementApi.html#get_workforcemanagement_adherence) | Get a list of UserScheduleAdherence records for the requested users|
+|[**get_workforcemanagement_adherence_explanation**](WorkforceManagementApi.html#get_workforcemanagement_adherence_explanation) | Get an adherence explanation for the current user|
+|[**get_workforcemanagement_adherence_explanations_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_explanations_job) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adherence_historical_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_historical_job) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adhocmodelingjob**](WorkforceManagementApi.html#get_workforcemanagement_adhocmodelingjob) | Get status of the modeling job|
+|[**get_workforcemanagement_agent_adherence_explanation**](WorkforceManagementApi.html#get_workforcemanagement_agent_adherence_explanation) | Get an adherence explanation|
 |[**get_workforcemanagement_agent_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agent_managementunit) | Get the management unit to which the agent belongs|
 |[**get_workforcemanagement_agents_me_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agents_me_managementunit) | Get the management unit to which the currently logged in agent belongs|
 |[**get_workforcemanagement_businessunit**](WorkforceManagementApi.html#get_workforcemanagement_businessunit) | Get business unit|
@@ -82,9 +85,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_notifications**](WorkforceManagementApi.html#get_workforcemanagement_notifications) | Get a list of notifications for the current user|
 |[**get_workforcemanagement_schedulingjob**](WorkforceManagementApi.html#get_workforcemanagement_schedulingjob) | Get status of the scheduling job|
 |[**get_workforcemanagement_shifttrades**](WorkforceManagementApi.html#get_workforcemanagement_shifttrades) | Gets all of my shift trades|
+|[**get_workforcemanagement_shrinkage_job**](WorkforceManagementApi.html#get_workforcemanagement_shrinkage_job) | Request to fetch the status of the historical shrinkage query|
 |[**get_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequest_waitlistpositions**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest_waitlistpositions) | Get the daily waitlist positions of a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequests) | Get a list of time off requests for the current user|
+|[**patch_workforcemanagement_agent_adherence_explanation**](WorkforceManagementApi.html#patch_workforcemanagement_agent_adherence_explanation) | Update an adherence explanation|
 |[**patch_workforcemanagement_businessunit**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit) | Update business unit|
 |[**patch_workforcemanagement_businessunit_activitycode**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_activitycode) | Update an activity code|
 |[**patch_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_planninggroup) | Updates the planning group|
@@ -98,9 +103,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_workplan) | Update a work plan|
 |[**patch_workforcemanagement_managementunit_workplanrotation**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_workplanrotation) | Update a work plan rotation|
 |[**patch_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_timeoffrequest) | Update a time off request for the current user|
+|[**post_workforcemanagement_adherence_explanations**](WorkforceManagementApi.html#post_workforcemanagement_adherence_explanations) | Submit an adherence explanation for the current user|
+|[**post_workforcemanagement_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_adherence_explanations_query) | Query adherence explanations for the current user|
 |[**post_workforcemanagement_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical) | Request a historical adherence report for users across management units|
+|[**post_workforcemanagement_agent_adherence_explanations**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations) | Add an adherence explanation for the requested user|
+|[**post_workforcemanagement_agent_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
 |[**post_workforcemanagement_agentschedules_mine**](WorkforceManagementApi.html#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
 |[**post_workforcemanagement_businessunit_activitycodes**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_activitycodes) | Create a new activity code|
+|[**post_workforcemanagement_businessunit_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_adherence_explanations_query) | Query adherence explanations across an entire business unit for the requested period|
 |[**post_workforcemanagement_businessunit_agentschedules_search**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_agentschedules_search) | Search published schedules|
 |[**post_workforcemanagement_businessunit_intraday**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_intraday) | Get intraday data for the given date for the requested planningGroupIds|
 |[**post_workforcemanagement_businessunit_planninggroups**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_planninggroups) | Adds a new planning group|
@@ -126,6 +136,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunit_historicaladherencequery**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_historicaladherencequery) | Request a historical adherence report|
 |[**post_workforcemanagement_managementunit_move**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_move) | Move the requested management unit to a new business unit|
 |[**post_workforcemanagement_managementunit_schedules_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_schedules_search) | Query published schedules for given given time range for set of users|
+|[**post_workforcemanagement_managementunit_shrinkage_jobs**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_shrinkage_jobs) | Request a historical shrinkage report|
 |[**post_workforcemanagement_managementunit_timeofflimits**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeofflimits) | Creates a new time off limit object under management unit.|
 |[**post_workforcemanagement_managementunit_timeofflimits_values_query**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeofflimits_values_query) | Retrieves time off limit related values based on a given set of filters.|
 |[**post_workforcemanagement_managementunit_timeoffplans**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffplans) | Creates a new time off plan|
@@ -877,6 +888,109 @@ except ApiException as e:
 
 [**list[UserScheduleAdherence]**](UserScheduleAdherence.html)
 
+<a name="get_workforcemanagement_adherence_explanation"></a>
+
+## [**AdherenceExplanationResponse**](AdherenceExplanationResponse.html) get_workforcemanagement_adherence_explanation(explanation_id)
+
+
+
+Get an adherence explanation for the current user
+
+
+
+Wraps GET /api/v2/workforcemanagement/adherence/explanations/{explanationId} 
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceExplanation:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+explanation_id = 'explanation_id_example' # str | The ID of the explanation to update
+
+try:
+    # Get an adherence explanation for the current user
+    api_response = api_instance.get_workforcemanagement_adherence_explanation(explanation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_adherence_explanation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **explanation_id** | **str**| The ID of the explanation to update |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AdherenceExplanationResponse**](AdherenceExplanationResponse.html)
+
+<a name="get_workforcemanagement_adherence_explanations_job"></a>
+
+## [**AdherenceExplanationJob**](AdherenceExplanationJob.html) get_workforcemanagement_adherence_explanations_job(job_id)
+
+
+
+Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+
+
+Wraps GET /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_adherence_explanations_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_adherence_explanations_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AdherenceExplanationJob**](AdherenceExplanationJob.html)
+
 <a name="get_workforcemanagement_adherence_historical_job"></a>
 
 ## [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html) get_workforcemanagement_adherence_historical_job(job_id)
@@ -980,6 +1094,59 @@ except ApiException as e:
 ### Return type
 
 [**ModelingStatusResponse**](ModelingStatusResponse.html)
+
+<a name="get_workforcemanagement_agent_adherence_explanation"></a>
+
+## [**AdherenceExplanationResponse**](AdherenceExplanationResponse.html) get_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id)
+
+
+
+Get an adherence explanation
+
+
+
+Wraps GET /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} 
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent to query
+explanation_id = 'explanation_id_example' # str | The ID of the explanation to update
+
+try:
+    # Get an adherence explanation
+    api_response = api_instance.get_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_agent_adherence_explanation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent to query |  |
+| **explanation_id** | **str**| The ID of the explanation to update |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AdherenceExplanationResponse**](AdherenceExplanationResponse.html)
 
 <a name="get_workforcemanagement_agent_managementunit"></a>
 
@@ -4397,6 +4564,56 @@ This endpoint does not need any parameters.
 
 [**ShiftTradeListResponse**](ShiftTradeListResponse.html)
 
+<a name="get_workforcemanagement_shrinkage_job"></a>
+
+## [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html) get_workforcemanagement_shrinkage_job(job_id)
+
+
+
+Request to fetch the status of the historical shrinkage query
+
+
+
+Wraps GET /api/v2/workforcemanagement/shrinkage/jobs/{jobId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Request to fetch the status of the historical shrinkage query
+    api_response = api_instance.get_workforcemanagement_shrinkage_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_shrinkage_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
+
 <a name="get_workforcemanagement_timeoffrequest"></a>
 
 ## [**TimeOffRequestResponse**](TimeOffRequestResponse.html) get_workforcemanagement_timeoffrequest(time_off_request_id)
@@ -4551,6 +4768,61 @@ except ApiException as e:
 ### Return type
 
 [**TimeOffRequestList**](TimeOffRequestList.html)
+
+<a name="patch_workforcemanagement_agent_adherence_explanation"></a>
+
+## [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html) patch_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id, body)
+
+
+
+Update an adherence explanation
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} 
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent to query
+explanation_id = 'explanation_id_example' # str | The ID of the explanation to update
+body = PureCloudPlatformClientV2.UpdateAdherenceExplanationStatusRequest() # UpdateAdherenceExplanationStatusRequest | The request body
+
+try:
+    # Update an adherence explanation
+    api_response = api_instance.patch_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_agent_adherence_explanation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent to query |  |
+| **explanation_id** | **str**| The ID of the explanation to update |  |
+| **body** | [**UpdateAdherenceExplanationStatusRequest**](UpdateAdherenceExplanationStatusRequest.html)| The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
 
 <a name="patch_workforcemanagement_businessunit"></a>
 
@@ -5268,6 +5540,112 @@ except ApiException as e:
 
 [**TimeOffRequestResponse**](TimeOffRequestResponse.html)
 
+<a name="post_workforcemanagement_adherence_explanations"></a>
+
+## [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html) post_workforcemanagement_adherence_explanations(body)
+
+
+
+Submit an adherence explanation for the current user
+
+
+
+Wraps POST /api/v2/workforcemanagement/adherence/explanations 
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceExplanation:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AddAdherenceExplanationAgentRequest() # AddAdherenceExplanationAgentRequest | The request body
+
+try:
+    # Submit an adherence explanation for the current user
+    api_response = api_instance.post_workforcemanagement_adherence_explanations(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_explanations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AddAdherenceExplanationAgentRequest**](AddAdherenceExplanationAgentRequest.html)| The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
+
+<a name="post_workforcemanagement_adherence_explanations_query"></a>
+
+## [**QueryAdherenceExplanationsResponse**](QueryAdherenceExplanationsResponse.html) post_workforcemanagement_adherence_explanations_query(body, force_async=force_async, force_download_service=force_download_service)
+
+
+
+Query adherence explanations for the current user
+
+
+
+Wraps POST /api/v2/workforcemanagement/adherence/explanations/query 
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceExplanation:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AgentQueryAdherenceExplanationsRequest() # AgentQueryAdherenceExplanationsRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Query adherence explanations for the current user
+    api_response = api_instance.post_workforcemanagement_adherence_explanations_query(body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_explanations_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentQueryAdherenceExplanationsRequest**](AgentQueryAdherenceExplanationsRequest.html)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**QueryAdherenceExplanationsResponse**](QueryAdherenceExplanationsResponse.html)
+
 <a name="post_workforcemanagement_adherence_historical"></a>
 
 ## [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html) post_workforcemanagement_adherence_historical(body=body)
@@ -5318,6 +5696,116 @@ except ApiException as e:
 ### Return type
 
 [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+
+<a name="post_workforcemanagement_agent_adherence_explanations"></a>
+
+## [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html) post_workforcemanagement_agent_adherence_explanations(agent_id, body)
+
+
+
+Add an adherence explanation for the requested user
+
+
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations 
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent to query
+body = PureCloudPlatformClientV2.AddAdherenceExplanationAdminRequest() # AddAdherenceExplanationAdminRequest | The request body
+
+try:
+    # Add an adherence explanation for the requested user
+    api_response = api_instance.post_workforcemanagement_agent_adherence_explanations(agent_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agent_adherence_explanations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent to query |  |
+| **body** | [**AddAdherenceExplanationAdminRequest**](AddAdherenceExplanationAdminRequest.html)| The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
+
+<a name="post_workforcemanagement_agent_adherence_explanations_query"></a>
+
+## [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse.html) post_workforcemanagement_agent_adherence_explanations_query(agent_id, body, force_async=force_async, force_download_service=force_download_service)
+
+
+
+Query adherence explanations for the given agent across a specified range
+
+
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query 
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent to query
+body = PureCloudPlatformClientV2.AgentQueryAdherenceExplanationsRequest() # AgentQueryAdherenceExplanationsRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Query adherence explanations for the given agent across a specified range
+    api_response = api_instance.post_workforcemanagement_agent_adherence_explanations_query(agent_id, body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agent_adherence_explanations_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent to query |  |
+| **body** | [**AgentQueryAdherenceExplanationsRequest**](AgentQueryAdherenceExplanationsRequest.html)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse.html)
 
 <a name="post_workforcemanagement_agentschedules_mine"></a>
 
@@ -5422,6 +5910,63 @@ except ApiException as e:
 ### Return type
 
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+
+<a name="post_workforcemanagement_businessunit_adherence_explanations_query"></a>
+
+## [**BuQueryAdherenceExplanationsResponse**](BuQueryAdherenceExplanationsResponse.html) post_workforcemanagement_businessunit_adherence_explanations_query(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+
+
+
+Query adherence explanations across an entire business unit for the requested period
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query 
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BuQueryAdherenceExplanationsRequest() # BuQueryAdherenceExplanationsRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Query adherence explanations across an entire business unit for the requested period
+    api_response = api_instance.post_workforcemanagement_businessunit_adherence_explanations_query(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_adherence_explanations_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BuQueryAdherenceExplanationsRequest**](BuQueryAdherenceExplanationsRequest.html)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuQueryAdherenceExplanationsResponse**](BuQueryAdherenceExplanationsResponse.html)
 
 <a name="post_workforcemanagement_businessunit_agentschedules_search"></a>
 
@@ -6813,6 +7358,61 @@ except ApiException as e:
 ### Return type
 
 [**UserScheduleContainer**](UserScheduleContainer.html)
+
+<a name="post_workforcemanagement_managementunit_shrinkage_jobs"></a>
+
+## [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html) post_workforcemanagement_managementunit_shrinkage_jobs(management_unit_id, body=body)
+
+
+
+Request a historical shrinkage report
+
+The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs 
+
+Requires ANY permissions: 
+
+* wfm:shrinkage:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
+body = PureCloudPlatformClientV2.WfmHistoricalShrinkageRequest() # WfmHistoricalShrinkageRequest | body (optional)
+
+try:
+    # Request a historical shrinkage report
+    api_response = api_instance.post_workforcemanagement_managementunit_shrinkage_jobs(management_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_shrinkage_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit |  |
+| **body** | [**WfmHistoricalShrinkageRequest**](WfmHistoricalShrinkageRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
 
 <a name="post_workforcemanagement_managementunit_timeofflimits"></a>
 
