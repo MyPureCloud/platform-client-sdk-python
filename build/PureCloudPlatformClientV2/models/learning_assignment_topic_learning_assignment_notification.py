@@ -50,7 +50,8 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
             'date_created': 'datetime',
             'modified_by': 'LearningAssignmentTopicUserReference',
             'date_modified': 'datetime',
-            'is_overdue': 'bool'
+            'is_overdue': 'bool',
+            'length_in_minutes': 'int'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
             'date_created': 'dateCreated',
             'modified_by': 'modifiedBy',
             'date_modified': 'dateModified',
-            'is_overdue': 'isOverdue'
+            'is_overdue': 'isOverdue',
+            'length_in_minutes': 'lengthInMinutes'
         }
 
         self._id = None
@@ -78,6 +80,7 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         self._modified_by = None
         self._date_modified = None
         self._is_overdue = None
+        self._length_in_minutes = None
 
     @property
     def id(self):
@@ -345,6 +348,30 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         
 
         self._is_overdue = is_overdue
+
+    @property
+    def length_in_minutes(self):
+        """
+        Gets the length_in_minutes of this LearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :return: The length_in_minutes of this LearningAssignmentTopicLearningAssignmentNotification.
+        :rtype: int
+        """
+        return self._length_in_minutes
+
+    @length_in_minutes.setter
+    def length_in_minutes(self, length_in_minutes):
+        """
+        Sets the length_in_minutes of this LearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :param length_in_minutes: The length_in_minutes of this LearningAssignmentTopicLearningAssignmentNotification.
+        :type: int
+        """
+        
+
+        self._length_in_minutes = length_in_minutes
 
     def to_dict(self):
         """

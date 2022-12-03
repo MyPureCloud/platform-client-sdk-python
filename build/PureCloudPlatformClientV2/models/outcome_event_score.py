@@ -42,18 +42,24 @@ class OutcomeEventScore(object):
         self.swagger_types = {
             'outcome': 'AddressableEntityRef',
             'session_max_probability': 'float',
-            'probability': 'float'
+            'probability': 'float',
+            'percentile': 'int',
+            'session_max_percentile': 'int'
         }
 
         self.attribute_map = {
             'outcome': 'outcome',
             'session_max_probability': 'sessionMaxProbability',
-            'probability': 'probability'
+            'probability': 'probability',
+            'percentile': 'percentile',
+            'session_max_percentile': 'sessionMaxPercentile'
         }
 
         self._outcome = None
         self._session_max_probability = None
         self._probability = None
+        self._percentile = None
+        self._session_max_percentile = None
 
     @property
     def outcome(self):
@@ -126,6 +132,54 @@ class OutcomeEventScore(object):
         
 
         self._probability = probability
+
+    @property
+    def percentile(self):
+        """
+        Gets the percentile of this OutcomeEventScore.
+        Represents the predicted probability's percentile score when compared with all other generated probabilities for a given outcome.
+
+        :return: The percentile of this OutcomeEventScore.
+        :rtype: int
+        """
+        return self._percentile
+
+    @percentile.setter
+    def percentile(self, percentile):
+        """
+        Sets the percentile of this OutcomeEventScore.
+        Represents the predicted probability's percentile score when compared with all other generated probabilities for a given outcome.
+
+        :param percentile: The percentile of this OutcomeEventScore.
+        :type: int
+        """
+        
+
+        self._percentile = percentile
+
+    @property
+    def session_max_percentile(self):
+        """
+        Gets the session_max_percentile of this OutcomeEventScore.
+        Represents the maximum likelihood percentile score reached for a given outcome by the current session.
+
+        :return: The session_max_percentile of this OutcomeEventScore.
+        :rtype: int
+        """
+        return self._session_max_percentile
+
+    @session_max_percentile.setter
+    def session_max_percentile(self, session_max_percentile):
+        """
+        Sets the session_max_percentile of this OutcomeEventScore.
+        Represents the maximum likelihood percentile score reached for a given outcome by the current session.
+
+        :param session_max_percentile: The session_max_percentile of this OutcomeEventScore.
+        :type: int
+        """
+        
+
+        self._session_max_percentile = session_max_percentile
 
     def to_dict(self):
         """

@@ -44,8 +44,7 @@ class DigitalDataActionConditionPredicate(object):
             'output_operator': 'str',
             'comparison_value': 'str',
             'inverted': 'bool',
-            'output_field_missing_resolution': 'bool',
-            'value_type': 'str'
+            'output_field_missing_resolution': 'bool'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class DigitalDataActionConditionPredicate(object):
             'output_operator': 'outputOperator',
             'comparison_value': 'comparisonValue',
             'inverted': 'inverted',
-            'output_field_missing_resolution': 'outputFieldMissingResolution',
-            'value_type': 'valueType'
+            'output_field_missing_resolution': 'outputFieldMissingResolution'
         }
 
         self._output_field = None
@@ -62,7 +60,6 @@ class DigitalDataActionConditionPredicate(object):
         self._comparison_value = None
         self._inverted = None
         self._output_field_missing_resolution = None
-        self._value_type = None
 
     @property
     def output_field(self):
@@ -186,33 +183,6 @@ class DigitalDataActionConditionPredicate(object):
         
 
         self._output_field_missing_resolution = output_field_missing_resolution
-
-    @property
-    def value_type(self):
-        """
-        Gets the value_type of this DigitalDataActionConditionPredicate.
-        The data type the value should be treated as.
-
-        :return: The value_type of this DigitalDataActionConditionPredicate.
-        :rtype: str
-        """
-        return self._value_type
-
-    @value_type.setter
-    def value_type(self, value_type):
-        """
-        Sets the value_type of this DigitalDataActionConditionPredicate.
-        The data type the value should be treated as.
-
-        :param value_type: The value_type of this DigitalDataActionConditionPredicate.
-        :type: str
-        """
-        allowed_values = ["DateTime", "Numeric", "Period", "String"]
-        if value_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for value_type -> " + value_type)
-            self._value_type = "outdated_sdk_version"
-        else:
-            self._value_type = value_type
 
     def to_dict(self):
         """

@@ -45,6 +45,8 @@ class PhoneEstablishedEvent(object):
             'conversation_id': 'str',
             'communication_id': 'str',
             'phone_number': 'str',
+            'ani': 'str',
+            'dnis': 'str',
             'initial_configuration': 'InitialConfiguration',
             'source_configuration': 'SourceConfiguration'
         }
@@ -55,6 +57,8 @@ class PhoneEstablishedEvent(object):
             'conversation_id': 'conversationId',
             'communication_id': 'communicationId',
             'phone_number': 'phoneNumber',
+            'ani': 'ani',
+            'dnis': 'dnis',
             'initial_configuration': 'initialConfiguration',
             'source_configuration': 'sourceConfiguration'
         }
@@ -64,6 +68,8 @@ class PhoneEstablishedEvent(object):
         self._conversation_id = None
         self._communication_id = None
         self._phone_number = None
+        self._ani = None
+        self._dnis = None
         self._initial_configuration = None
         self._source_configuration = None
 
@@ -186,6 +192,54 @@ class PhoneEstablishedEvent(object):
         
 
         self._phone_number = phone_number
+
+    @property
+    def ani(self):
+        """
+        Gets the ani of this PhoneEstablishedEvent.
+        The automatic number identification if it is available for this conversation.
+
+        :return: The ani of this PhoneEstablishedEvent.
+        :rtype: str
+        """
+        return self._ani
+
+    @ani.setter
+    def ani(self, ani):
+        """
+        Sets the ani of this PhoneEstablishedEvent.
+        The automatic number identification if it is available for this conversation.
+
+        :param ani: The ani of this PhoneEstablishedEvent.
+        :type: str
+        """
+        
+
+        self._ani = ani
+
+    @property
+    def dnis(self):
+        """
+        Gets the dnis of this PhoneEstablishedEvent.
+        The dialed number identification if it is available for this conversation.
+
+        :return: The dnis of this PhoneEstablishedEvent.
+        :rtype: str
+        """
+        return self._dnis
+
+    @dnis.setter
+    def dnis(self, dnis):
+        """
+        Sets the dnis of this PhoneEstablishedEvent.
+        The dialed number identification if it is available for this conversation.
+
+        :param dnis: The dnis of this PhoneEstablishedEvent.
+        :type: str
+        """
+        
+
+        self._dnis = dnis
 
     @property
     def initial_configuration(self):

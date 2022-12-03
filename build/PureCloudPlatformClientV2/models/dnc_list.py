@@ -279,7 +279,7 @@ class DncList(object):
         :param dnc_source_type: The dnc_source_type of this DncList.
         :type: str
         """
-        allowed_values = ["rds", "dnc.com", "gryphon"]
+        allowed_values = ["rds", "rds_custom", "dnc.com", "gryphon"]
         if dnc_source_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dnc_source_type -> " + dnc_source_type)
             self._dnc_source_type = "outdated_sdk_version"
@@ -306,7 +306,7 @@ class DncList(object):
         :param contact_method: The contact_method of this DncList.
         :type: str
         """
-        allowed_values = ["Email", "Phone"]
+        allowed_values = ["Email", "Phone", "Any"]
         if contact_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for contact_method -> " + contact_method)
             self._contact_method = "outdated_sdk_version"

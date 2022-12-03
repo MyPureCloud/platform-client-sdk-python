@@ -46,6 +46,8 @@ class IvrEstablishedEvent(object):
             'communication_id': 'str',
             'ivr_phone_number': 'str',
             'ivr_name': 'str',
+            'ani': 'str',
+            'dnis': 'str',
             'initial_configuration': 'InitialConfiguration',
             'source_configuration': 'SourceConfiguration'
         }
@@ -57,6 +59,8 @@ class IvrEstablishedEvent(object):
             'communication_id': 'communicationId',
             'ivr_phone_number': 'ivrPhoneNumber',
             'ivr_name': 'ivrName',
+            'ani': 'ani',
+            'dnis': 'dnis',
             'initial_configuration': 'initialConfiguration',
             'source_configuration': 'sourceConfiguration'
         }
@@ -67,6 +71,8 @@ class IvrEstablishedEvent(object):
         self._communication_id = None
         self._ivr_phone_number = None
         self._ivr_name = None
+        self._ani = None
+        self._dnis = None
         self._initial_configuration = None
         self._source_configuration = None
 
@@ -213,6 +219,54 @@ class IvrEstablishedEvent(object):
         
 
         self._ivr_name = ivr_name
+
+    @property
+    def ani(self):
+        """
+        Gets the ani of this IvrEstablishedEvent.
+        The automatic number identification if it is available for this conversation.
+
+        :return: The ani of this IvrEstablishedEvent.
+        :rtype: str
+        """
+        return self._ani
+
+    @ani.setter
+    def ani(self, ani):
+        """
+        Sets the ani of this IvrEstablishedEvent.
+        The automatic number identification if it is available for this conversation.
+
+        :param ani: The ani of this IvrEstablishedEvent.
+        :type: str
+        """
+        
+
+        self._ani = ani
+
+    @property
+    def dnis(self):
+        """
+        Gets the dnis of this IvrEstablishedEvent.
+        The dialed number identification if it is available for this conversation.
+
+        :return: The dnis of this IvrEstablishedEvent.
+        :rtype: str
+        """
+        return self._dnis
+
+    @dnis.setter
+    def dnis(self, dnis):
+        """
+        Sets the dnis of this IvrEstablishedEvent.
+        The dialed number identification if it is available for this conversation.
+
+        :param dnis: The dnis of this IvrEstablishedEvent.
+        :type: str
+        """
+        
+
+        self._dnis = dnis
 
     @property
     def initial_configuration(self):

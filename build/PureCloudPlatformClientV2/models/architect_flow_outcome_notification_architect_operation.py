@@ -48,7 +48,7 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
             'action_status': 'str',
             'error_message': 'str',
             'error_code': 'str',
-            'error_message_params': 'object',
+            'error_message_params': 'ArchitectFlowOutcomeNotificationErrorMessageParams',
             'error_details': 'list[ArchitectFlowOutcomeNotificationErrorDetail]'
         }
 
@@ -278,10 +278,10 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
     def error_message_params(self):
         """
         Gets the error_message_params of this ArchitectFlowOutcomeNotificationArchitectOperation.
-        The error message params, if the action failed
+
 
         :return: The error_message_params of this ArchitectFlowOutcomeNotificationArchitectOperation.
-        :rtype: object
+        :rtype: ArchitectFlowOutcomeNotificationErrorMessageParams
         """
         return self._error_message_params
 
@@ -289,10 +289,10 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
     def error_message_params(self, error_message_params):
         """
         Sets the error_message_params of this ArchitectFlowOutcomeNotificationArchitectOperation.
-        The error message params, if the action failed
+
 
         :param error_message_params: The error_message_params of this ArchitectFlowOutcomeNotificationArchitectOperation.
-        :type: object
+        :type: ArchitectFlowOutcomeNotificationErrorMessageParams
         """
         
 

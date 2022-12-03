@@ -41,16 +41,19 @@ class DialerAttemptLimitsConfigChangeRecallEntry(object):
         """
         self.swagger_types = {
             'nbr_attempts': 'int',
-            'minutes_between_attempts': 'int'
+            'minutes_between_attempts': 'int',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'nbr_attempts': 'nbrAttempts',
-            'minutes_between_attempts': 'minutesBetweenAttempts'
+            'minutes_between_attempts': 'minutesBetweenAttempts',
+            'additional_properties': 'additionalProperties'
         }
 
         self._nbr_attempts = None
         self._minutes_between_attempts = None
+        self._additional_properties = None
 
     @property
     def nbr_attempts(self):
@@ -99,6 +102,30 @@ class DialerAttemptLimitsConfigChangeRecallEntry(object):
         
 
         self._minutes_between_attempts = minutes_between_attempts
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerAttemptLimitsConfigChangeRecallEntry.
+
+
+        :return: The additional_properties of this DialerAttemptLimitsConfigChangeRecallEntry.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerAttemptLimitsConfigChangeRecallEntry.
+
+
+        :param additional_properties: The additional_properties of this DialerAttemptLimitsConfigChangeRecallEntry.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

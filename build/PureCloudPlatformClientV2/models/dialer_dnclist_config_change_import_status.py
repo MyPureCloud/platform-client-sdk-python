@@ -44,7 +44,8 @@ class DialerDnclistConfigChangeImportStatus(object):
             'total_records': 'int',
             'completed_records': 'int',
             'percentage_complete': 'int',
-            'failure_reason': 'str'
+            'failure_reason': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class DialerDnclistConfigChangeImportStatus(object):
             'total_records': 'totalRecords',
             'completed_records': 'completedRecords',
             'percentage_complete': 'percentageComplete',
-            'failure_reason': 'failureReason'
+            'failure_reason': 'failureReason',
+            'additional_properties': 'additionalProperties'
         }
 
         self._import_state = None
@@ -60,6 +62,7 @@ class DialerDnclistConfigChangeImportStatus(object):
         self._completed_records = None
         self._percentage_complete = None
         self._failure_reason = None
+        self._additional_properties = None
 
     @property
     def import_state(self):
@@ -183,6 +186,30 @@ class DialerDnclistConfigChangeImportStatus(object):
         
 
         self._failure_reason = failure_reason
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerDnclistConfigChangeImportStatus.
+
+
+        :return: The additional_properties of this DialerDnclistConfigChangeImportStatus.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerDnclistConfigChangeImportStatus.
+
+
+        :param additional_properties: The additional_properties of this DialerDnclistConfigChangeImportStatus.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

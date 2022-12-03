@@ -44,7 +44,8 @@ class ConversationEventTopicAddress(object):
             'name_raw': 'str',
             'address_normalized': 'str',
             'address_raw': 'str',
-            'address_displayable': 'str'
+            'address_displayable': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class ConversationEventTopicAddress(object):
             'name_raw': 'nameRaw',
             'address_normalized': 'addressNormalized',
             'address_raw': 'addressRaw',
-            'address_displayable': 'addressDisplayable'
+            'address_displayable': 'addressDisplayable',
+            'additional_properties': 'additionalProperties'
         }
 
         self._name = None
@@ -60,6 +62,7 @@ class ConversationEventTopicAddress(object):
         self._address_normalized = None
         self._address_raw = None
         self._address_displayable = None
+        self._additional_properties = None
 
     @property
     def name(self):
@@ -180,6 +183,30 @@ class ConversationEventTopicAddress(object):
         
 
         self._address_displayable = address_displayable
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this ConversationEventTopicAddress.
+
+
+        :return: The additional_properties of this ConversationEventTopicAddress.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this ConversationEventTopicAddress.
+
+
+        :param additional_properties: The additional_properties of this ConversationEventTopicAddress.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

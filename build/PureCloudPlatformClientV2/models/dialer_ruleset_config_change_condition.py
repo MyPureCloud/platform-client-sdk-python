@@ -41,6 +41,7 @@ class DialerRulesetConfigChangeCondition(object):
         """
         self.swagger_types = {
             'data_action': 'DialerRulesetConfigChangeUriReference',
+            'additional_properties': 'dict(str, object)',
             'type': 'str',
             'inverted': 'bool',
             'attribute_name': 'str',
@@ -60,6 +61,7 @@ class DialerRulesetConfigChangeCondition(object):
 
         self.attribute_map = {
             'data_action': 'dataAction',
+            'additional_properties': 'additionalProperties',
             'type': 'type',
             'inverted': 'inverted',
             'attribute_name': 'attributeName',
@@ -78,6 +80,7 @@ class DialerRulesetConfigChangeCondition(object):
         }
 
         self._data_action = None
+        self._additional_properties = None
         self._type = None
         self._inverted = None
         self._attribute_name = None
@@ -117,6 +120,30 @@ class DialerRulesetConfigChangeCondition(object):
         
 
         self._data_action = data_action
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerRulesetConfigChangeCondition.
+
+
+        :return: The additional_properties of this DialerRulesetConfigChangeCondition.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerRulesetConfigChangeCondition.
+
+
+        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeCondition.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def type(self):

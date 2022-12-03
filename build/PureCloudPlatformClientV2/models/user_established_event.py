@@ -47,6 +47,8 @@ class UserEstablishedEvent(object):
             'phone_number': 'str',
             'user_id': 'str',
             'station_id': 'str',
+            'ani': 'str',
+            'dnis': 'str',
             'after_call_work_required': 'bool',
             'queue_id': 'str',
             'initial_configuration': 'InitialConfiguration',
@@ -61,6 +63,8 @@ class UserEstablishedEvent(object):
             'phone_number': 'phoneNumber',
             'user_id': 'userId',
             'station_id': 'stationId',
+            'ani': 'ani',
+            'dnis': 'dnis',
             'after_call_work_required': 'afterCallWorkRequired',
             'queue_id': 'queueId',
             'initial_configuration': 'initialConfiguration',
@@ -74,6 +78,8 @@ class UserEstablishedEvent(object):
         self._phone_number = None
         self._user_id = None
         self._station_id = None
+        self._ani = None
+        self._dnis = None
         self._after_call_work_required = None
         self._queue_id = None
         self._initial_configuration = None
@@ -246,6 +252,54 @@ class UserEstablishedEvent(object):
         
 
         self._station_id = station_id
+
+    @property
+    def ani(self):
+        """
+        Gets the ani of this UserEstablishedEvent.
+        The automatic number identification if it is available for this conversation.
+
+        :return: The ani of this UserEstablishedEvent.
+        :rtype: str
+        """
+        return self._ani
+
+    @ani.setter
+    def ani(self, ani):
+        """
+        Sets the ani of this UserEstablishedEvent.
+        The automatic number identification if it is available for this conversation.
+
+        :param ani: The ani of this UserEstablishedEvent.
+        :type: str
+        """
+        
+
+        self._ani = ani
+
+    @property
+    def dnis(self):
+        """
+        Gets the dnis of this UserEstablishedEvent.
+        The dialed number identification if it is available for this conversation.
+
+        :return: The dnis of this UserEstablishedEvent.
+        :rtype: str
+        """
+        return self._dnis
+
+    @dnis.setter
+    def dnis(self, dnis):
+        """
+        Sets the dnis of this UserEstablishedEvent.
+        The dialed number identification if it is available for this conversation.
+
+        :param dnis: The dnis of this UserEstablishedEvent.
+        :type: str
+        """
+        
+
+        self._dnis = dnis
 
     @property
     def after_call_work_required(self):

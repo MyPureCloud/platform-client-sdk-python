@@ -301,12 +301,13 @@ class AnalyticsApi(object):
         :param str action_id: Optional action ID to get the reporting turns associated to a particular flow action
         :param str session_id: Optional session ID to get the reporting turns for a particular session
         :param str language: Optional language code to get the reporting turns for a particular language
+        :param str ask_action_results: Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
         :return: ReportingTurnsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bot_flow_id', 'after', 'page_size', 'action_id', 'session_id', 'language']
+        all_params = ['bot_flow_id', 'after', 'page_size', 'action_id', 'session_id', 'language', 'ask_action_results']
         all_params.append('callback')
 
         params = locals()
@@ -340,6 +341,8 @@ class AnalyticsApi(object):
             query_params['sessionId'] = params['session_id']
         if 'language' in params:
             query_params['language'] = params['language']
+        if 'ask_action_results' in params:
+            query_params['askActionResults'] = params['ask_action_results']
 
         header_params = {}
 

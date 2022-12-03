@@ -12,6 +12,7 @@ title: DnclistImportStatusImportStatus
 | **completed_records** | **int** | number of records finished importing | [optional] |
 | **percentage_complete** | **int** | percentage of records finished importing | [optional] |
 | **failure_reason** | **str** | if the import has failed, the reason for the failure | [optional] |
+| **additional_properties** | **dict(str, object)** |  | [optional] |
 {: class="table table-striped"}
 
 

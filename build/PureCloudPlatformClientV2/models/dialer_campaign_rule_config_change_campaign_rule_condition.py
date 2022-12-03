@@ -42,18 +42,21 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
         self.swagger_types = {
             'id': 'str',
             'parameters': 'dict(str, str)',
-            'condition_type': 'str'
+            'condition_type': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
             'parameters': 'parameters',
-            'condition_type': 'conditionType'
+            'condition_type': 'conditionType',
+            'additional_properties': 'additionalProperties'
         }
 
         self._id = None
         self._parameters = None
         self._condition_type = None
+        self._additional_properties = None
 
     @property
     def id(self):
@@ -129,6 +132,30 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
             self._condition_type = "outdated_sdk_version"
         else:
             self._condition_type = condition_type
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
+
+
+        :return: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
+
+
+        :param additional_properties: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

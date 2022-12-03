@@ -43,20 +43,23 @@ class DialerRulesetConfigChangeAction(object):
             'type': 'str',
             'action_type_name': 'str',
             'update_option': 'str',
-            'properties': 'dict(str, str)'
+            'properties': 'dict(str, str)',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'type': 'type',
             'action_type_name': 'actionTypeName',
             'update_option': 'updateOption',
-            'properties': 'properties'
+            'properties': 'properties',
+            'additional_properties': 'additionalProperties'
         }
 
         self._type = None
         self._action_type_name = None
         self._update_option = None
         self._properties = None
+        self._additional_properties = None
 
     @property
     def type(self):
@@ -153,6 +156,30 @@ class DialerRulesetConfigChangeAction(object):
         
 
         self._properties = properties
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerRulesetConfigChangeAction.
+
+
+        :return: The additional_properties of this DialerRulesetConfigChangeAction.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerRulesetConfigChangeAction.
+
+
+        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeAction.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

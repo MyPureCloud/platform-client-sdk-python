@@ -44,7 +44,8 @@ class QueueConversationEventTopicDialerPreview(object):
             'contact_id': 'str',
             'contact_list_id': 'str',
             'campaign_id': 'str',
-            'phone_number_columns': 'list[QueueConversationEventTopicPhoneNumberColumn]'
+            'phone_number_columns': 'list[QueueConversationEventTopicPhoneNumberColumn]',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class QueueConversationEventTopicDialerPreview(object):
             'contact_id': 'contactId',
             'contact_list_id': 'contactListId',
             'campaign_id': 'campaignId',
-            'phone_number_columns': 'phoneNumberColumns'
+            'phone_number_columns': 'phoneNumberColumns',
+            'additional_properties': 'additionalProperties'
         }
 
         self._id = None
@@ -60,6 +62,7 @@ class QueueConversationEventTopicDialerPreview(object):
         self._contact_list_id = None
         self._campaign_id = None
         self._phone_number_columns = None
+        self._additional_properties = None
 
     @property
     def id(self):
@@ -180,6 +183,30 @@ class QueueConversationEventTopicDialerPreview(object):
         
 
         self._phone_number_columns = phone_number_columns
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this QueueConversationEventTopicDialerPreview.
+
+
+        :return: The additional_properties of this QueueConversationEventTopicDialerPreview.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this QueueConversationEventTopicDialerPreview.
+
+
+        :param additional_properties: The additional_properties of this QueueConversationEventTopicDialerPreview.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

@@ -45,6 +45,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
             'campaign_rule_actions': 'list[DialerCampaignRuleConfigChangeCampaignRuleAction]',
             'match_any_conditions': 'bool',
             'enabled': 'bool',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -58,6 +59,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
             'campaign_rule_actions': 'campaignRuleActions',
             'match_any_conditions': 'matchAnyConditions',
             'enabled': 'enabled',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -70,6 +72,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         self._campaign_rule_actions = None
         self._match_any_conditions = None
         self._enabled = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -195,6 +198,30 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         
 
         self._enabled = enabled
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
+
+
+        :return: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
+
+
+        :param additional_properties: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

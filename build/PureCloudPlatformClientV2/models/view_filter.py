@@ -3983,7 +3983,7 @@ class ViewFilter(object):
     def action_category_name(self):
         """
         Gets the action_category_name of this ViewFilter.
-        Action Category Name
+        Deprecated - Please use integrationIds instead
 
         :return: The action_category_name of this ViewFilter.
         :rtype: str
@@ -3994,7 +3994,7 @@ class ViewFilter(object):
     def action_category_name(self, action_category_name):
         """
         Sets the action_category_name of this ViewFilter.
-        Action Category Name
+        Deprecated - Please use integrationIds instead
 
         :param action_category_name: The action_category_name of this ViewFilter.
         :type: str

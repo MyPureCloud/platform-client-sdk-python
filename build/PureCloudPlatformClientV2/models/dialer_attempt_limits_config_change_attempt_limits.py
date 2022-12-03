@@ -46,6 +46,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
             'reset_period': 'str',
             'recall_entries': 'dict(str, DialerAttemptLimitsConfigChangeRecallEntry)',
             'breadth_first_recalls': 'bool',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -60,6 +61,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
             'reset_period': 'resetPeriod',
             'recall_entries': 'recallEntries',
             'breadth_first_recalls': 'breadthFirstRecalls',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -73,6 +75,7 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         self._reset_period = None
         self._recall_entries = None
         self._breadth_first_recalls = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -225,6 +228,30 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         
 
         self._breadth_first_recalls = breadth_first_recalls
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerAttemptLimitsConfigChangeAttemptLimits.
+
+
+        :return: The additional_properties of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerAttemptLimitsConfigChangeAttemptLimits.
+
+
+        :param additional_properties: The additional_properties of this DialerAttemptLimitsConfigChangeAttemptLimits.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

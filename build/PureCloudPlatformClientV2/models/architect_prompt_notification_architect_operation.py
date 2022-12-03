@@ -48,7 +48,7 @@ class ArchitectPromptNotificationArchitectOperation(object):
             'action_status': 'str',
             'error_message': 'str',
             'error_code': 'str',
-            'error_message_params': 'object',
+            'error_message_params': 'ArchitectPromptNotificationErrorMessageParams',
             'error_details': 'list[ArchitectPromptNotificationErrorDetail]'
         }
 
@@ -278,10 +278,10 @@ class ArchitectPromptNotificationArchitectOperation(object):
     def error_message_params(self):
         """
         Gets the error_message_params of this ArchitectPromptNotificationArchitectOperation.
-        The error message params, if the action failed
+
 
         :return: The error_message_params of this ArchitectPromptNotificationArchitectOperation.
-        :rtype: object
+        :rtype: ArchitectPromptNotificationErrorMessageParams
         """
         return self._error_message_params
 
@@ -289,10 +289,10 @@ class ArchitectPromptNotificationArchitectOperation(object):
     def error_message_params(self, error_message_params):
         """
         Sets the error_message_params of this ArchitectPromptNotificationArchitectOperation.
-        The error message params, if the action failed
+
 
         :param error_message_params: The error_message_params of this ArchitectPromptNotificationArchitectOperation.
-        :type: object
+        :type: ArchitectPromptNotificationErrorMessageParams
         """
         
 

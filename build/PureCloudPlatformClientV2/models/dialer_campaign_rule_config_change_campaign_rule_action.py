@@ -43,20 +43,23 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
             'id': 'str',
             'parameters': 'dict(str, str)',
             'action_type': 'str',
-            'campaign_rule_action_entities': 'DialerCampaignRuleConfigChangeCampaignRuleActionEntities'
+            'campaign_rule_action_entities': 'DialerCampaignRuleConfigChangeCampaignRuleActionEntities',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
             'parameters': 'parameters',
             'action_type': 'actionType',
-            'campaign_rule_action_entities': 'campaignRuleActionEntities'
+            'campaign_rule_action_entities': 'campaignRuleActionEntities',
+            'additional_properties': 'additionalProperties'
         }
 
         self._id = None
         self._parameters = None
         self._action_type = None
         self._campaign_rule_action_entities = None
+        self._additional_properties = None
 
     @property
     def id(self):
@@ -156,6 +159,30 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
         
 
         self._campaign_rule_action_entities = campaign_rule_action_entities
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
+
+
+        :return: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
+
+
+        :param additional_properties: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

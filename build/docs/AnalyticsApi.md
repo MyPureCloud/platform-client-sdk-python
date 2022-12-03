@@ -211,7 +211,7 @@ void (empty response body)
 
 <a name="get_analytics_botflow_reportingturns"></a>
 
-## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language)
+## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
 
 
 
@@ -244,10 +244,11 @@ page_size = ''50'' # str | Max number of entities to return. Maximum of 250 (opt
 action_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)
 session_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session (optional)
 language = 'en-us' # str | Optional language code to get the reporting turns for a particular language (optional)
+ask_action_results = 'ask_action_results_example' # str | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)
 
 try:
     # Get Reporting Turns.
-    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language)
+    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->get_analytics_botflow_reportingturns: %s\n" % e)
@@ -264,6 +265,7 @@ except ApiException as e:
 | **action_id** | **str**| Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
 | **session_id** | **str**| Optional session ID to get the reporting turns for a particular session | [optional]  |
 | **language** | **str**| Optional language code to get the reporting turns for a particular language | [optional]  |
+| **ask_action_results** | **str**| Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
 {: class="table table-striped"}
 
 ### Return type

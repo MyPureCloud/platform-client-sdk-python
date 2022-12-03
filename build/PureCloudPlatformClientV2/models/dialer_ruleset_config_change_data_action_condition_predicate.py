@@ -44,7 +44,8 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
             'output_operator': 'str',
             'comparison_value': 'str',
             'output_field_missing_resolution': 'bool',
-            'inverted': 'bool'
+            'inverted': 'bool',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
             'output_operator': 'outputOperator',
             'comparison_value': 'comparisonValue',
             'output_field_missing_resolution': 'outputFieldMissingResolution',
-            'inverted': 'inverted'
+            'inverted': 'inverted',
+            'additional_properties': 'additionalProperties'
         }
 
         self._output_field = None
@@ -60,6 +62,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         self._comparison_value = None
         self._output_field_missing_resolution = None
         self._inverted = None
+        self._additional_properties = None
 
     @property
     def output_field(self):
@@ -183,6 +186,30 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         
 
         self._inverted = inverted
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerRulesetConfigChangeDataActionConditionPredicate.
+
+
+        :return: The additional_properties of this DialerRulesetConfigChangeDataActionConditionPredicate.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerRulesetConfigChangeDataActionConditionPredicate.
+
+
+        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeDataActionConditionPredicate.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

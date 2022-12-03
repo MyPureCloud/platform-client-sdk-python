@@ -51,6 +51,7 @@ class DialerContactlistConfigChangeContactList(object):
             'automatic_time_zone_mapping': 'bool',
             'zip_code_column_name': 'str',
             'division': 'DialerContactlistConfigChangeUriReference',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -70,6 +71,7 @@ class DialerContactlistConfigChangeContactList(object):
             'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
             'zip_code_column_name': 'zipCodeColumnName',
             'division': 'division',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -88,6 +90,7 @@ class DialerContactlistConfigChangeContactList(object):
         self._automatic_time_zone_mapping = None
         self._zip_code_column_name = None
         self._division = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -357,6 +360,30 @@ class DialerContactlistConfigChangeContactList(object):
         
 
         self._division = division
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerContactlistConfigChangeContactList.
+
+
+        :return: The additional_properties of this DialerContactlistConfigChangeContactList.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerContactlistConfigChangeContactList.
+
+
+        :param additional_properties: The additional_properties of this DialerContactlistConfigChangeContactList.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

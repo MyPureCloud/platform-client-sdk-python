@@ -106,6 +106,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_contactlists**](OutboundApi.html#post_outbound_contactlists) | Create a contact List.|
 |[**post_outbound_conversation_dnc**](OutboundApi.html#post_outbound_conversation_dnc) | Add phone numbers to a Dialer DNC list.|
 |[**post_outbound_digitalrulesets**](OutboundApi.html#post_outbound_digitalrulesets) | Create an Outbound Digital Rule Set|
+|[**post_outbound_dnclist_emailaddresses**](OutboundApi.html#post_outbound_dnclist_emailaddresses) | Add email addresses to a DNC list.|
 |[**post_outbound_dnclist_export**](OutboundApi.html#post_outbound_dnclist_export) | Initiate the export of a dnc list.|
 |[**post_outbound_dnclist_phonenumbers**](OutboundApi.html#post_outbound_dnclist_phonenumbers) | Add phone numbers to a DNC list.|
 |[**post_outbound_dnclists**](OutboundApi.html#post_outbound_dnclists) | Create dialer DNC list|
@@ -3189,7 +3190,7 @@ except ApiException as e:
 | **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
 | **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
-| **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
+| **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, rds_custom, dnc.com, gryphon |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] <br />**Values**: ascending, descending |
@@ -3317,7 +3318,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
-| **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
+| **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, rds_custom, dnc.com, gryphon |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
@@ -5442,6 +5443,60 @@ except ApiException as e:
 ### Return type
 
 [**DigitalRuleSet**](DigitalRuleSet.html)
+
+<a name="post_outbound_dnclist_emailaddresses"></a>
+
+##  post_outbound_dnclist_emailaddresses(dnc_list_id, body)
+
+
+
+Add email addresses to a DNC list.
+
+Only Internal DNC lists may be appended to
+
+
+
+Wraps POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses 
+
+Requires ANY permissions: 
+
+* outbound:dnc:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+dnc_list_id = 'dnc_list_id_example' # str | DncList ID
+body = ['body_example'] # list[str] | DNC email addresses
+
+try:
+    # Add email addresses to a DNC list.
+    api_instance.post_outbound_dnclist_emailaddresses(dnc_list_id, body)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_dnclist_emailaddresses: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dnc_list_id** | **str**| DncList ID |  |
+| **body** | [**list[str]**](str.html)| DNC email addresses |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_outbound_dnclist_export"></a>
 

@@ -40,13 +40,38 @@ class ArchitectFlowNotificationErrorMessageParams(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'additional_properties': 'dict(str, str)'
         }
 
         self.attribute_map = {
-            
+            'additional_properties': 'additionalProperties'
         }
 
+        self._additional_properties = None
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this ArchitectFlowNotificationErrorMessageParams.
+
+
+        :return: The additional_properties of this ArchitectFlowNotificationErrorMessageParams.
+        :rtype: dict(str, str)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this ArchitectFlowNotificationErrorMessageParams.
+
+
+        :param additional_properties: The additional_properties of this ArchitectFlowNotificationErrorMessageParams.
+        :type: dict(str, str)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

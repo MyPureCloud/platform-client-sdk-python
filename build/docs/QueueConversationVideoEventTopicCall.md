@@ -35,6 +35,7 @@ title: QueueConversationVideoEventTopicCall
 | **after_call_work** | [**QueueConversationVideoEventTopicAfterCallWork**](QueueConversationVideoEventTopicAfterCallWork.html) |  | [optional] |
 | **after_call_work_required** | **bool** | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. | [optional] |
 | **agent_assistant_id** | **str** | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. | [optional] |
+| **additional_properties** | **dict(str, object)** |  | [optional] |
 {: class="table table-striped"}
 
 

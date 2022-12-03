@@ -15,6 +15,7 @@ title: DialerDnclistConfigChangeDncList
 | **license_id** | **str** | the license number if the dncSourceType is gryphon | [optional] |
 | **contact_method** | **str** |  | [optional] |
 | **division** | [**DialerDnclistConfigChangeUriReference**](DialerDnclistConfigChangeUriReference.html) |  | [optional] |
+| **additional_properties** | **dict(str, object)** |  | [optional] |
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | The UI-visible name of the object | [optional] |
 | **date_created** | **datetime** | Creation time of the entity | [optional] |

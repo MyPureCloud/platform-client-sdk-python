@@ -48,6 +48,7 @@ class ContactList(object):
             'division': 'DomainEntityRef',
             'column_names': 'list[str]',
             'phone_columns': 'list[ContactPhoneNumberColumn]',
+            'email_columns': 'list[EmailColumn]',
             'import_status': 'ImportStatus',
             'preview_mode_column_name': 'str',
             'preview_mode_accepted_values': 'list[str]',
@@ -67,6 +68,7 @@ class ContactList(object):
             'division': 'division',
             'column_names': 'columnNames',
             'phone_columns': 'phoneColumns',
+            'email_columns': 'emailColumns',
             'import_status': 'importStatus',
             'preview_mode_column_name': 'previewModeColumnName',
             'preview_mode_accepted_values': 'previewModeAcceptedValues',
@@ -85,6 +87,7 @@ class ContactList(object):
         self._division = None
         self._column_names = None
         self._phone_columns = None
+        self._email_columns = None
         self._import_status = None
         self._preview_mode_column_name = None
         self._preview_mode_accepted_values = None
@@ -285,6 +288,30 @@ class ContactList(object):
         
 
         self._phone_columns = phone_columns
+
+    @property
+    def email_columns(self):
+        """
+        Gets the email_columns of this ContactList.
+        Indicates which columns are email addresses
+
+        :return: The email_columns of this ContactList.
+        :rtype: list[EmailColumn]
+        """
+        return self._email_columns
+
+    @email_columns.setter
+    def email_columns(self, email_columns):
+        """
+        Sets the email_columns of this ContactList.
+        Indicates which columns are email addresses
+
+        :param email_columns: The email_columns of this ContactList.
+        :type: list[EmailColumn]
+        """
+        
+
+        self._email_columns = email_columns
 
     @property
     def import_status(self):

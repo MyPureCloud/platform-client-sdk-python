@@ -84,7 +84,7 @@ class OverallBestPointsItem(object):
         :param granularity_type: The granularity_type of this OverallBestPointsItem.
         :type: str
         """
-        allowed_values = ["Monthly", "Weekly", "Daily"]
+        allowed_values = ["Daily", "Weekly", "Monthly"]
         if granularity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for granularity_type -> " + granularity_type)
             self._granularity_type = "outdated_sdk_version"

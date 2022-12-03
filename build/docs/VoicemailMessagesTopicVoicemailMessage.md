@@ -13,6 +13,7 @@ title: VoicemailMessagesTopicVoicemailMessage
 | **audio_recording_size_bytes** | **int** |  | [optional] |
 | **created_date** | **datetime** |  | [optional] |
 | **modified_date** | **datetime** |  | [optional] |
+| **created_date_string** | **str** |  | [optional] |
 | **caller_address** | **str** |  | [optional] |
 | **caller_name** | **str** |  | [optional] |
 | **action** | **str** |  | [optional] |
@@ -21,6 +22,7 @@ title: VoicemailMessagesTopicVoicemailMessage
 | **modified_by_user_id** | **str** |  | [optional] |
 | **copied_to** | [**list[VoicemailMessagesTopicVoicemailCopyRecord]**](VoicemailMessagesTopicVoicemailCopyRecord.html) |  | [optional] |
 | **copied_from** | [**VoicemailMessagesTopicVoicemailCopyRecord**](VoicemailMessagesTopicVoicemailCopyRecord.html) |  | [optional] |
+| **modified_date_string** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

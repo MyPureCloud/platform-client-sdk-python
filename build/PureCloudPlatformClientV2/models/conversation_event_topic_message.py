@@ -64,7 +64,8 @@ class ConversationEventTopicMessage(object):
             'wrapup': 'ConversationEventTopicWrapup',
             'after_call_work': 'ConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
-            'agent_assistant_id': 'str'
+            'agent_assistant_id': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -92,7 +93,8 @@ class ConversationEventTopicMessage(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'agent_assistant_id': 'agentAssistantId'
+            'agent_assistant_id': 'agentAssistantId',
+            'additional_properties': 'additionalProperties'
         }
 
         self._id = None
@@ -120,6 +122,7 @@ class ConversationEventTopicMessage(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
+        self._additional_properties = None
 
     @property
     def id(self):
@@ -735,6 +738,30 @@ class ConversationEventTopicMessage(object):
         
 
         self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this ConversationEventTopicMessage.
+
+
+        :return: The additional_properties of this ConversationEventTopicMessage.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this ConversationEventTopicMessage.
+
+
+        :param additional_properties: The additional_properties of this ConversationEventTopicMessage.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

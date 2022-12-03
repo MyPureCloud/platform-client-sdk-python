@@ -68,6 +68,7 @@ class DialerCampaignConfigChangeCampaign(object):
             'contact_list_filters': 'list[DialerCampaignConfigChangeUriReference]',
             'division': 'DialerCampaignConfigChangeUriReference',
             'agent_owned_column': 'str',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -104,6 +105,7 @@ class DialerCampaignConfigChangeCampaign(object):
             'contact_list_filters': 'contactListFilters',
             'division': 'division',
             'agent_owned_column': 'agentOwnedColumn',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -139,6 +141,7 @@ class DialerCampaignConfigChangeCampaign(object):
         self._contact_list_filters = None
         self._division = None
         self._agent_owned_column = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -822,6 +825,30 @@ class DialerCampaignConfigChangeCampaign(object):
         
 
         self._agent_owned_column = agent_owned_column
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerCampaignConfigChangeCampaign.
+
+
+        :return: The additional_properties of this DialerCampaignConfigChangeCampaign.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerCampaignConfigChangeCampaign.
+
+
+        :param additional_properties: The additional_properties of this DialerCampaignConfigChangeCampaign.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

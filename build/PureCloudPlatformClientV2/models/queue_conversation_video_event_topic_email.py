@@ -61,7 +61,8 @@ class QueueConversationVideoEventTopicEmail(object):
             'spam': 'bool',
             'wrapup': 'QueueConversationVideoEventTopicWrapup',
             'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
-            'after_call_work_required': 'bool'
+            'after_call_work_required': 'bool',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -86,7 +87,8 @@ class QueueConversationVideoEventTopicEmail(object):
             'spam': 'spam',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired'
+            'after_call_work_required': 'afterCallWorkRequired',
+            'additional_properties': 'additionalProperties'
         }
 
         self._id = None
@@ -111,6 +113,7 @@ class QueueConversationVideoEventTopicEmail(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._additional_properties = None
 
     @property
     def id(self):
@@ -651,6 +654,30 @@ class QueueConversationVideoEventTopicEmail(object):
         
 
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this QueueConversationVideoEventTopicEmail.
+
+
+        :return: The additional_properties of this QueueConversationVideoEventTopicEmail.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this QueueConversationVideoEventTopicEmail.
+
+
+        :param additional_properties: The additional_properties of this QueueConversationVideoEventTopicEmail.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

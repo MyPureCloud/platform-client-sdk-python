@@ -48,6 +48,7 @@ class DialerDnclistConfigChangeDncList(object):
             'license_id': 'str',
             'contact_method': 'str',
             'division': 'DialerDnclistConfigChangeUriReference',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -64,6 +65,7 @@ class DialerDnclistConfigChangeDncList(object):
             'license_id': 'licenseId',
             'contact_method': 'contactMethod',
             'division': 'division',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -79,6 +81,7 @@ class DialerDnclistConfigChangeDncList(object):
         self._license_id = None
         self._contact_method = None
         self._division = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -282,6 +285,30 @@ class DialerDnclistConfigChangeDncList(object):
         
 
         self._division = division
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerDnclistConfigChangeDncList.
+
+
+        :return: The additional_properties of this DialerDnclistConfigChangeDncList.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerDnclistConfigChangeDncList.
+
+
+        :param additional_properties: The additional_properties of this DialerDnclistConfigChangeDncList.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

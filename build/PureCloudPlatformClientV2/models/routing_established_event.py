@@ -46,6 +46,8 @@ class RoutingEstablishedEvent(object):
             'communication_id': 'str',
             'phone_number': 'str',
             'queue_id': 'str',
+            'ani': 'str',
+            'dnis': 'str',
             'skill_ids': 'list[str]',
             'language_id': 'str',
             'initial_configuration': 'InitialConfiguration',
@@ -59,6 +61,8 @@ class RoutingEstablishedEvent(object):
             'communication_id': 'communicationId',
             'phone_number': 'phoneNumber',
             'queue_id': 'queueId',
+            'ani': 'ani',
+            'dnis': 'dnis',
             'skill_ids': 'skillIds',
             'language_id': 'languageId',
             'initial_configuration': 'initialConfiguration',
@@ -71,6 +75,8 @@ class RoutingEstablishedEvent(object):
         self._communication_id = None
         self._phone_number = None
         self._queue_id = None
+        self._ani = None
+        self._dnis = None
         self._skill_ids = None
         self._language_id = None
         self._initial_configuration = None
@@ -219,6 +225,54 @@ class RoutingEstablishedEvent(object):
         
 
         self._queue_id = queue_id
+
+    @property
+    def ani(self):
+        """
+        Gets the ani of this RoutingEstablishedEvent.
+        The automatic number identification if it is available for this conversation.
+
+        :return: The ani of this RoutingEstablishedEvent.
+        :rtype: str
+        """
+        return self._ani
+
+    @ani.setter
+    def ani(self, ani):
+        """
+        Sets the ani of this RoutingEstablishedEvent.
+        The automatic number identification if it is available for this conversation.
+
+        :param ani: The ani of this RoutingEstablishedEvent.
+        :type: str
+        """
+        
+
+        self._ani = ani
+
+    @property
+    def dnis(self):
+        """
+        Gets the dnis of this RoutingEstablishedEvent.
+        The dialed number identification if it is available for this conversation.
+
+        :return: The dnis of this RoutingEstablishedEvent.
+        :rtype: str
+        """
+        return self._dnis
+
+    @dnis.setter
+    def dnis(self, dnis):
+        """
+        Sets the dnis of this RoutingEstablishedEvent.
+        The dialed number identification if it is available for this conversation.
+
+        :param dnis: The dnis of this RoutingEstablishedEvent.
+        :type: str
+        """
+        
+
+        self._dnis = dnis
 
     @property
     def skill_ids(self):

@@ -43,6 +43,7 @@ class DialerRulesetConfigChangeRuleSet(object):
             'contact_list': 'DialerRulesetConfigChangeUriReference',
             'queue': 'DialerRulesetConfigChangeUriReference',
             'rules': 'list[DialerRulesetConfigChangeRule]',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -54,6 +55,7 @@ class DialerRulesetConfigChangeRuleSet(object):
             'contact_list': 'contactList',
             'queue': 'queue',
             'rules': 'rules',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -64,6 +66,7 @@ class DialerRulesetConfigChangeRuleSet(object):
         self._contact_list = None
         self._queue = None
         self._rules = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -141,6 +144,30 @@ class DialerRulesetConfigChangeRuleSet(object):
         
 
         self._rules = rules
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerRulesetConfigChangeRuleSet.
+
+
+        :return: The additional_properties of this DialerRulesetConfigChangeRuleSet.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerRulesetConfigChangeRuleSet.
+
+
+        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeRuleSet.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

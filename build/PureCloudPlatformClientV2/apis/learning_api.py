@@ -868,12 +868,13 @@ class LearningApi(object):
         :param str search_term: Search Term (searchable by name)
         :param list[str] expand: Fields to expand in response(case insensitive)
         :param str is_published: Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
+        :param list[str] statuses: Specifies the module statuses to filter by
         :return: LearningModulesDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['is_archived', 'types', 'page_size', 'page_number', 'sort_order', 'sort_by', 'search_term', 'expand', 'is_published']
+        all_params = ['is_archived', 'types', 'page_size', 'page_number', 'sort_order', 'sort_by', 'search_term', 'expand', 'is_published', 'statuses']
         all_params.append('callback')
 
         params = locals()
@@ -910,6 +911,8 @@ class LearningApi(object):
             query_params['expand'] = params['expand']
         if 'is_published' in params:
             query_params['isPublished'] = params['is_published']
+        if 'statuses' in params:
+            query_params['statuses'] = params['statuses']
 
         header_params = {}
 

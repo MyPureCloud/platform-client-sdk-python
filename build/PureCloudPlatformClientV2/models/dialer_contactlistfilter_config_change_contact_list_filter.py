@@ -44,6 +44,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
             'contact_list_columns': 'list[str]',
             'clauses': 'list[DialerContactlistfilterConfigChangeFilterClause]',
             'filter_type': 'str',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -56,6 +57,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
             'contact_list_columns': 'contactListColumns',
             'clauses': 'clauses',
             'filter_type': 'filterType',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -67,6 +69,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         self._contact_list_columns = None
         self._clauses = None
         self._filter_type = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -171,6 +174,30 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
             self._filter_type = "outdated_sdk_version"
         else:
             self._filter_type = filter_type
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+
+
+        :return: The additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+
+
+        :param additional_properties: The additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

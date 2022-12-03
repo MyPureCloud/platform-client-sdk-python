@@ -43,6 +43,7 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
             'intervals': 'list[DialerSequenceScheduleConfigChangeScheduleInterval]',
             'time_zone': 'str',
             'sequence': 'DialerSequenceScheduleConfigChangeUriReference',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -54,6 +55,7 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
             'intervals': 'intervals',
             'time_zone': 'timeZone',
             'sequence': 'sequence',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -64,6 +66,7 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
         self._intervals = None
         self._time_zone = None
         self._sequence = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -141,6 +144,30 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
         
 
         self._sequence = sequence
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+
+
+        :return: The additional_properties of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+
+
+        :param additional_properties: The additional_properties of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

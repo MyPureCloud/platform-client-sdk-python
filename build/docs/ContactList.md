@@ -15,6 +15,7 @@ title: ContactList
 | **division** | [**DomainEntityRef**](DomainEntityRef.html) | The division this entity belongs to. | [optional] |
 | **column_names** | **list[str]** | The names of the contact data columns. | |
 | **phone_columns** | [**list[ContactPhoneNumberColumn]**](ContactPhoneNumberColumn.html) | Indicates which columns are phone numbers. | [optional] |
+| **email_columns** | [**list[EmailColumn]**](EmailColumn.html) | Indicates which columns are email addresses | [optional] |
 | **import_status** | [**ImportStatus**](ImportStatus.html) | The status of the import process. | [optional] |
 | **preview_mode_column_name** | **str** | A column to check if a contact should always be dialed in preview mode. | [optional] |
 | **preview_mode_accepted_values** | **list[str]** | The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode. | [optional] |

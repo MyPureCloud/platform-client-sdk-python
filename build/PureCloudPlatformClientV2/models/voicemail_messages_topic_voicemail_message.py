@@ -46,6 +46,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
             'audio_recording_size_bytes': 'int',
             'created_date': 'datetime',
             'modified_date': 'datetime',
+            'created_date_string': 'str',
             'caller_address': 'str',
             'caller_name': 'str',
             'action': 'str',
@@ -53,7 +54,8 @@ class VoicemailMessagesTopicVoicemailMessage(object):
             'deleted': 'bool',
             'modified_by_user_id': 'str',
             'copied_to': 'list[VoicemailMessagesTopicVoicemailCopyRecord]',
-            'copied_from': 'VoicemailMessagesTopicVoicemailCopyRecord'
+            'copied_from': 'VoicemailMessagesTopicVoicemailCopyRecord',
+            'modified_date_string': 'str'
         }
 
         self.attribute_map = {
@@ -63,6 +65,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
             'audio_recording_size_bytes': 'audioRecordingSizeBytes',
             'created_date': 'createdDate',
             'modified_date': 'modifiedDate',
+            'created_date_string': 'createdDateString',
             'caller_address': 'callerAddress',
             'caller_name': 'callerName',
             'action': 'action',
@@ -70,7 +73,8 @@ class VoicemailMessagesTopicVoicemailMessage(object):
             'deleted': 'deleted',
             'modified_by_user_id': 'modifiedByUserId',
             'copied_to': 'copiedTo',
-            'copied_from': 'copiedFrom'
+            'copied_from': 'copiedFrom',
+            'modified_date_string': 'modifiedDateString'
         }
 
         self._id = None
@@ -79,6 +83,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         self._audio_recording_size_bytes = None
         self._created_date = None
         self._modified_date = None
+        self._created_date_string = None
         self._caller_address = None
         self._caller_name = None
         self._action = None
@@ -87,6 +92,7 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         self._modified_by_user_id = None
         self._copied_to = None
         self._copied_from = None
+        self._modified_date_string = None
 
     @property
     def id(self):
@@ -231,6 +237,30 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         
 
         self._modified_date = modified_date
+
+    @property
+    def created_date_string(self):
+        """
+        Gets the created_date_string of this VoicemailMessagesTopicVoicemailMessage.
+
+
+        :return: The created_date_string of this VoicemailMessagesTopicVoicemailMessage.
+        :rtype: str
+        """
+        return self._created_date_string
+
+    @created_date_string.setter
+    def created_date_string(self, created_date_string):
+        """
+        Sets the created_date_string of this VoicemailMessagesTopicVoicemailMessage.
+
+
+        :param created_date_string: The created_date_string of this VoicemailMessagesTopicVoicemailMessage.
+        :type: str
+        """
+        
+
+        self._created_date_string = created_date_string
 
     @property
     def caller_address(self):
@@ -423,6 +453,30 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         
 
         self._copied_from = copied_from
+
+    @property
+    def modified_date_string(self):
+        """
+        Gets the modified_date_string of this VoicemailMessagesTopicVoicemailMessage.
+
+
+        :return: The modified_date_string of this VoicemailMessagesTopicVoicemailMessage.
+        :rtype: str
+        """
+        return self._modified_date_string
+
+    @modified_date_string.setter
+    def modified_date_string(self, modified_date_string):
+        """
+        Sets the modified_date_string of this VoicemailMessagesTopicVoicemailMessage.
+
+
+        :param modified_date_string: The modified_date_string of this VoicemailMessagesTopicVoicemailMessage.
+        :type: str
+        """
+        
+
+        self._modified_date_string = modified_date_string
 
     def to_dict(self):
         """

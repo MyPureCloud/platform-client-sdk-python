@@ -2088,7 +2088,7 @@ class RecordingApi(object):
 
     def get_recording_localkeys_setting(self, settings_id, **kwargs):
         """
-        Get the local encryption settings
+        Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2166,7 +2166,7 @@ class RecordingApi(object):
 
     def get_recording_localkeys_settings(self, **kwargs):
         """
-        gets a list local key settings data
+        gets a list local key settings data. Replaced by API recording/keyconfigurations
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3537,7 +3537,7 @@ class RecordingApi(object):
 
     def post_recording_localkeys(self, body, **kwargs):
         """
-        create a local recording key
+        create a local key management recording key
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3615,7 +3615,7 @@ class RecordingApi(object):
 
     def post_recording_localkeys_settings(self, body, **kwargs):
         """
-        create settings for local key creation
+        create settings for local key creation. Replaced by API recording/keyconfigurations
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4599,7 +4599,7 @@ class RecordingApi(object):
 
     def put_recording_localkeys_setting(self, settings_id, body, **kwargs):
         """
-        Update the local encryption settings
+        Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
         
 
         This method makes a synchronous HTTP request by default. To make an

@@ -41,16 +41,19 @@ class DialerContactlistfilterConfigChangeFilterClause(object):
         """
         self.swagger_types = {
             'filter_type': 'str',
-            'predicates': 'list[DialerContactlistfilterConfigChangeFilterPredicate]'
+            'predicates': 'list[DialerContactlistfilterConfigChangeFilterPredicate]',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'filter_type': 'filterType',
-            'predicates': 'predicates'
+            'predicates': 'predicates',
+            'additional_properties': 'additionalProperties'
         }
 
         self._filter_type = None
         self._predicates = None
+        self._additional_properties = None
 
     @property
     def filter_type(self):
@@ -102,6 +105,30 @@ class DialerContactlistfilterConfigChangeFilterClause(object):
         
 
         self._predicates = predicates
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerContactlistfilterConfigChangeFilterClause.
+
+
+        :return: The additional_properties of this DialerContactlistfilterConfigChangeFilterClause.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerContactlistfilterConfigChangeFilterClause.
+
+
+        :param additional_properties: The additional_properties of this DialerContactlistfilterConfigChangeFilterClause.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

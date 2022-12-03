@@ -77,7 +77,8 @@ class QueueConversationEventTopicParticipant(object):
             'screenshares': 'list[QueueConversationEventTopicScreenshare]',
             'social_expressions': 'list[QueueConversationEventTopicSocialExpression]',
             'videos': 'list[QueueConversationEventTopicVideo]',
-            'workflow': 'QueueConversationEventTopicWorkflow'
+            'workflow': 'QueueConversationEventTopicWorkflow',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -118,7 +119,8 @@ class QueueConversationEventTopicParticipant(object):
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
-            'workflow': 'workflow'
+            'workflow': 'workflow',
+            'additional_properties': 'additionalProperties'
         }
 
         self._id = None
@@ -159,6 +161,7 @@ class QueueConversationEventTopicParticipant(object):
         self._social_expressions = None
         self._videos = None
         self._workflow = None
+        self._additional_properties = None
 
     @property
     def id(self):
@@ -1074,6 +1077,30 @@ class QueueConversationEventTopicParticipant(object):
         
 
         self._workflow = workflow
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this QueueConversationEventTopicParticipant.
+
+
+        :return: The additional_properties of this QueueConversationEventTopicParticipant.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this QueueConversationEventTopicParticipant.
+
+
+        :param additional_properties: The additional_properties of this QueueConversationEventTopicParticipant.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

@@ -41,6 +41,7 @@ class DialerRulesetConfigChangeRule(object):
         """
         self.swagger_types = {
             'conditions': 'list[DialerRulesetConfigChangeCondition]',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'order': 'int',
@@ -50,6 +51,7 @@ class DialerRulesetConfigChangeRule(object):
 
         self.attribute_map = {
             'conditions': 'conditions',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'order': 'order',
@@ -58,6 +60,7 @@ class DialerRulesetConfigChangeRule(object):
         }
 
         self._conditions = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._order = None
@@ -87,6 +90,30 @@ class DialerRulesetConfigChangeRule(object):
         
 
         self._conditions = conditions
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerRulesetConfigChangeRule.
+
+
+        :return: The additional_properties of this DialerRulesetConfigChangeRule.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerRulesetConfigChangeRule.
+
+
+        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeRule.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

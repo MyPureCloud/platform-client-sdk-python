@@ -2082,7 +2082,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param used_routing: The used_routing of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
-        allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard"]
+        allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"

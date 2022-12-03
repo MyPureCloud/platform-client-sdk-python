@@ -44,7 +44,8 @@ class ConversationEmailEventTopicWrapup(object):
             'notes': 'str',
             'tags': 'list[str]',
             'duration_seconds': 'int',
-            'end_time': 'datetime'
+            'end_time': 'datetime',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class ConversationEmailEventTopicWrapup(object):
             'notes': 'notes',
             'tags': 'tags',
             'duration_seconds': 'durationSeconds',
-            'end_time': 'endTime'
+            'end_time': 'endTime',
+            'additional_properties': 'additionalProperties'
         }
 
         self._code = None
@@ -60,6 +62,7 @@ class ConversationEmailEventTopicWrapup(object):
         self._tags = None
         self._duration_seconds = None
         self._end_time = None
+        self._additional_properties = None
 
     @property
     def code(self):
@@ -180,6 +183,30 @@ class ConversationEmailEventTopicWrapup(object):
         
 
         self._end_time = end_time
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this ConversationEmailEventTopicWrapup.
+
+
+        :return: The additional_properties of this ConversationEmailEventTopicWrapup.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this ConversationEmailEventTopicWrapup.
+
+
+        :param additional_properties: The additional_properties of this ConversationEmailEventTopicWrapup.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

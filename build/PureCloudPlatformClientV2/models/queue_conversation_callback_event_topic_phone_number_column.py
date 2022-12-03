@@ -41,16 +41,19 @@ class QueueConversationCallbackEventTopicPhoneNumberColumn(object):
         """
         self.swagger_types = {
             'column_name': 'str',
-            'type': 'str'
+            'type': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'column_name': 'columnName',
-            'type': 'type'
+            'type': 'type',
+            'additional_properties': 'additionalProperties'
         }
 
         self._column_name = None
         self._type = None
+        self._additional_properties = None
 
     @property
     def column_name(self):
@@ -99,6 +102,30 @@ class QueueConversationCallbackEventTopicPhoneNumberColumn(object):
         
 
         self._type = type
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this QueueConversationCallbackEventTopicPhoneNumberColumn.
+
+
+        :return: The additional_properties of this QueueConversationCallbackEventTopicPhoneNumberColumn.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this QueueConversationCallbackEventTopicPhoneNumberColumn.
+
+
+        :param additional_properties: The additional_properties of this QueueConversationCallbackEventTopicPhoneNumberColumn.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

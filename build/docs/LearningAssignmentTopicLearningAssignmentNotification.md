@@ -18,6 +18,7 @@ title: LearningAssignmentTopicLearningAssignmentNotification
 | **modified_by** | [**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference.html) |  | [optional] |
 | **date_modified** | **datetime** |  | [optional] |
 | **is_overdue** | **bool** |  | [optional] |
+| **length_in_minutes** | **int** |  | [optional] |
 {: class="table table-striped"}
 
 

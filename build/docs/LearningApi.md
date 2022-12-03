@@ -564,7 +564,7 @@ except ApiException as e:
 
 <a name="get_learning_modules"></a>
 
-## [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published)
+## [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses)
 
 
 
@@ -600,10 +600,11 @@ sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 search_term = 'search_term_example' # str | Search Term (searchable by name) (optional)
 expand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)
 is_published = ''Any'' # str | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional) (default to 'Any')
+statuses = ['statuses_example'] # list[str] | Specifies the module statuses to filter by (optional)
 
 try:
     # Get all learning modules of an organization
-    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published)
+    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->get_learning_modules: %s\n" % e)
@@ -623,6 +624,7 @@ except ApiException as e:
 | **search_term** | **str**| Search Term (searchable by name) | [optional]  |
 | **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
 | **is_published** | **str**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
+| **statuses** | [**list[str]**](str.html)| Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
 {: class="table table-striped"}
 
 ### Return type

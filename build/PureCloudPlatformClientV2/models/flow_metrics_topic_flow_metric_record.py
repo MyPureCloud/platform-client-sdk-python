@@ -1377,7 +1377,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param flow_type: The flow_type of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
-        allowed_values = ["bot", "commonmodule", "digitalbot", "inboundcall", "inboundchat", "inboundemail", "inboundshortmessage", "inqueuecall", "inqueueemail", "inqueueshortmessage", "outboundcall", "securecall", "speech", "surveyinvite", "workflow"]
+        allowed_values = ["bot", "commonmodule", "digitalbot", "inboundcall", "inboundchat", "inboundemail", "inboundshortmessage", "inqueuecall", "inqueueemail", "inqueueshortmessage", "outboundcall", "securecall", "speech", "surveyinvite", "voice", "voicemail", "workflow", "workitem"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flow_type -> " + flow_type)
             self._flow_type = "outdated_sdk_version"
@@ -2469,7 +2469,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param used_routing: The used_routing of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
-        allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard"]
+        allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"

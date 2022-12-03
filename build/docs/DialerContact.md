@@ -13,6 +13,7 @@ title: DialerContact
 | **data** | **dict(str, object)** | An ordered map of the contact&#39;s columns and corresponding values. | |
 | **call_records** | [**dict(str, CallRecord)**](CallRecord.html) | A map of call records for the contact phone columns. | [optional] |
 | **latest_sms_evaluations** | [**dict(str, MessageEvaluation)**](MessageEvaluation.html) | A map of SMS records for the contact phone columns. | [optional] |
+| **latest_email_evaluations** | [**dict(str, MessageEvaluation)**](MessageEvaluation.html) | A map of email records for the contact email columns. | [optional] |
 | **callable** | **bool** | Indicates whether or not the contact can be called. | [optional] |
 | **phone_number_status** | [**dict(str, PhoneNumberStatus)**](PhoneNumberStatus.html) | A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not. | [optional] |
 | **contactable_status** | [**dict(str, ContactableStatus)**](ContactableStatus.html) | A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type. | [optional] |

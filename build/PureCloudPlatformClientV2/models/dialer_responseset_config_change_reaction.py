@@ -42,18 +42,21 @@ class DialerResponsesetConfigChangeReaction(object):
         self.swagger_types = {
             'data': 'str',
             'name': 'str',
-            'reaction_type': 'str'
+            'reaction_type': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'data': 'data',
             'name': 'name',
-            'reaction_type': 'reactionType'
+            'reaction_type': 'reactionType',
+            'additional_properties': 'additionalProperties'
         }
 
         self._data = None
         self._name = None
         self._reaction_type = None
+        self._additional_properties = None
 
     @property
     def data(self):
@@ -129,6 +132,30 @@ class DialerResponsesetConfigChangeReaction(object):
             self._reaction_type = "outdated_sdk_version"
         else:
             self._reaction_type = reaction_type
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerResponsesetConfigChangeReaction.
+
+
+        :return: The additional_properties of this DialerResponsesetConfigChangeReaction.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerResponsesetConfigChangeReaction.
+
+
+        :param additional_properties: The additional_properties of this DialerResponsesetConfigChangeReaction.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

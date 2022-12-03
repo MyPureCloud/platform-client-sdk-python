@@ -45,7 +45,6 @@ class OpenNormalizedMessage(object):
             'type': 'str',
             'text': 'str',
             'content': 'list[OpenMessageContent]',
-            'events': 'list[OpenMessageEvent]',
             'status': 'str',
             'reasons': 'list[Reason]',
             'is_final_receipt': 'bool',
@@ -59,7 +58,6 @@ class OpenNormalizedMessage(object):
             'type': 'type',
             'text': 'text',
             'content': 'content',
-            'events': 'events',
             'status': 'status',
             'reasons': 'reasons',
             'is_final_receipt': 'isFinalReceipt',
@@ -72,7 +70,6 @@ class OpenNormalizedMessage(object):
         self._type = None
         self._text = None
         self._content = None
-        self._events = None
         self._status = None
         self._reasons = None
         self._is_final_receipt = None
@@ -147,7 +144,7 @@ class OpenNormalizedMessage(object):
         :param type: The type of this OpenNormalizedMessage.
         :type: str
         """
-        allowed_values = ["Text", "Receipt", "Event"]
+        allowed_values = ["Text", "Receipt"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -201,30 +198,6 @@ class OpenNormalizedMessage(object):
         
 
         self._content = content
-
-    @property
-    def events(self):
-        """
-        Gets the events of this OpenNormalizedMessage.
-        List of event elements.
-
-        :return: The events of this OpenNormalizedMessage.
-        :rtype: list[OpenMessageEvent]
-        """
-        return self._events
-
-    @events.setter
-    def events(self, events):
-        """
-        Sets the events of this OpenNormalizedMessage.
-        List of event elements.
-
-        :param events: The events of this OpenNormalizedMessage.
-        :type: list[OpenMessageEvent]
-        """
-        
-
-        self._events = events
 
     @property
     def status(self):

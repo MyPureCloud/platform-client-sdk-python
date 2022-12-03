@@ -41,16 +41,19 @@ class DialerCampaignScheduleConfigChangeScheduleInterval(object):
         """
         self.swagger_types = {
             'start': 'str',
-            'end': 'str'
+            'end': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'start': 'start',
-            'end': 'end'
+            'end': 'end',
+            'additional_properties': 'additionalProperties'
         }
 
         self._start = None
         self._end = None
+        self._additional_properties = None
 
     @property
     def start(self):
@@ -99,6 +102,30 @@ class DialerCampaignScheduleConfigChangeScheduleInterval(object):
         
 
         self._end = end
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerCampaignScheduleConfigChangeScheduleInterval.
+
+
+        :return: The additional_properties of this DialerCampaignScheduleConfigChangeScheduleInterval.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerCampaignScheduleConfigChangeScheduleInterval.
+
+
+        :param additional_properties: The additional_properties of this DialerCampaignScheduleConfigChangeScheduleInterval.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

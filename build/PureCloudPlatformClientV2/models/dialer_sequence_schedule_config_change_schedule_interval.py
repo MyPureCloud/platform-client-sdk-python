@@ -41,16 +41,19 @@ class DialerSequenceScheduleConfigChangeScheduleInterval(object):
         """
         self.swagger_types = {
             'start': 'str',
-            'end': 'str'
+            'end': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'start': 'start',
-            'end': 'end'
+            'end': 'end',
+            'additional_properties': 'additionalProperties'
         }
 
         self._start = None
         self._end = None
+        self._additional_properties = None
 
     @property
     def start(self):
@@ -99,6 +102,30 @@ class DialerSequenceScheduleConfigChangeScheduleInterval(object):
         
 
         self._end = end
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerSequenceScheduleConfigChangeScheduleInterval.
+
+
+        :return: The additional_properties of this DialerSequenceScheduleConfigChangeScheduleInterval.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerSequenceScheduleConfigChangeScheduleInterval.
+
+
+        :param additional_properties: The additional_properties of this DialerSequenceScheduleConfigChangeScheduleInterval.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

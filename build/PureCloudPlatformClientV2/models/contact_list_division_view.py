@@ -45,6 +45,7 @@ class ContactListDivisionView(object):
             'division': 'Division',
             'column_names': 'list[str]',
             'phone_columns': 'list[ContactPhoneNumberColumn]',
+            'email_columns': 'list[EmailColumn]',
             'import_status': 'ImportStatus',
             'size': 'int',
             'self_uri': 'str'
@@ -56,6 +57,7 @@ class ContactListDivisionView(object):
             'division': 'division',
             'column_names': 'columnNames',
             'phone_columns': 'phoneColumns',
+            'email_columns': 'emailColumns',
             'import_status': 'importStatus',
             'size': 'size',
             'self_uri': 'selfUri'
@@ -66,6 +68,7 @@ class ContactListDivisionView(object):
         self._division = None
         self._column_names = None
         self._phone_columns = None
+        self._email_columns = None
         self._import_status = None
         self._size = None
         self._self_uri = None
@@ -189,6 +192,30 @@ class ContactListDivisionView(object):
         
 
         self._phone_columns = phone_columns
+
+    @property
+    def email_columns(self):
+        """
+        Gets the email_columns of this ContactListDivisionView.
+        Indicates which columns are email addresses.
+
+        :return: The email_columns of this ContactListDivisionView.
+        :rtype: list[EmailColumn]
+        """
+        return self._email_columns
+
+    @email_columns.setter
+    def email_columns(self, email_columns):
+        """
+        Sets the email_columns of this ContactListDivisionView.
+        Indicates which columns are email addresses.
+
+        :param email_columns: The email_columns of this ContactListDivisionView.
+        :type: list[EmailColumn]
+        """
+        
+
+        self._email_columns = email_columns
 
     @property
     def import_status(self):

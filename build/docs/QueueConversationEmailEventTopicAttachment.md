@@ -12,6 +12,7 @@ title: QueueConversationEmailEventTopicAttachment
 | **content_uri** | **str** | The content uri of the attachment. If set, this is commonly a public api download location. | [optional] |
 | **content_type** | **str** | The type of file the attachment is. | [optional] |
 | **content_length** | **int** | The length of the attachment file. | [optional] |
+| **additional_properties** | **dict(str, object)** |  | [optional] |
 {: class="table table-striped"}
 
 

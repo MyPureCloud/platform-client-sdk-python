@@ -41,16 +41,19 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
         """
         self.swagger_types = {
             'time_slots': 'list[DialerCallabletimesetConfigChangeTimeSlot]',
-            'time_zone_id': 'str'
+            'time_zone_id': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'time_slots': 'timeSlots',
-            'time_zone_id': 'timeZoneId'
+            'time_zone_id': 'timeZoneId',
+            'additional_properties': 'additionalProperties'
         }
 
         self._time_slots = None
         self._time_zone_id = None
+        self._additional_properties = None
 
     @property
     def time_slots(self):
@@ -99,6 +102,30 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
         
 
         self._time_zone_id = time_zone_id
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
+
+
+        :return: The additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
+
+
+        :param additional_properties: The additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

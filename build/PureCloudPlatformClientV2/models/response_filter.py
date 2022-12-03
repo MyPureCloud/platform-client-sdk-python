@@ -59,7 +59,7 @@ class ResponseFilter(object):
     def name(self):
         """
         Gets the name of this ResponseFilter.
-        Field to filter on. Allowed values are 'name' and 'libraryId.
+        Field to filter on. Allowed values are 'name', 'libraryId', 'text.contentType', 'messagingTemplate' and 'responseType'
 
         :return: The name of this ResponseFilter.
         :rtype: str
@@ -70,7 +70,7 @@ class ResponseFilter(object):
     def name(self, name):
         """
         Sets the name of this ResponseFilter.
-        Field to filter on. Allowed values are 'name' and 'libraryId.
+        Field to filter on. Allowed values are 'name', 'libraryId', 'text.contentType', 'messagingTemplate' and 'responseType'
 
         :param name: The name of this ResponseFilter.
         :type: str
@@ -110,7 +110,7 @@ class ResponseFilter(object):
     def values(self):
         """
         Gets the values of this ResponseFilter.
-        Values to filter on.
+        Values to filter on. If name is 'responseType' then allowed values are 'CampaignSmsTemplate', 'CampaignEmailTemplate', 'Footer' and 'Signature'
 
         :return: The values of this ResponseFilter.
         :rtype: list[str]
@@ -121,7 +121,7 @@ class ResponseFilter(object):
     def values(self, values):
         """
         Sets the values of this ResponseFilter.
-        Values to filter on.
+        Values to filter on. If name is 'responseType' then allowed values are 'CampaignSmsTemplate', 'CampaignEmailTemplate', 'Footer' and 'Signature'
 
         :param values: The values of this ResponseFilter.
         :type: list[str]

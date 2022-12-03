@@ -13,6 +13,7 @@ title: DialerContactlistfilterConfigChangeFilterPredicate
 | **value** | **str** | The value the predicate applies to | [optional] |
 | **range** | [**DialerContactlistfilterConfigChangeRange**](DialerContactlistfilterConfigChangeRange.html) |  | [optional] |
 | **inverted** | **bool** | Whether or not to invert to result of evaluating the predicate | [optional] |
+| **additional_properties** | **dict(str, object)** |  | [optional] |
 {: class="table table-striped"}
 
 

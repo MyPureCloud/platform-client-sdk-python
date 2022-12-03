@@ -41,16 +41,19 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
         """
         self.swagger_types = {
             'contact_column_name': 'str',
-            'data_action_field': 'str'
+            'data_action_field': 'str',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'contact_column_name': 'contactColumnName',
-            'data_action_field': 'dataActionField'
+            'data_action_field': 'dataActionField',
+            'additional_properties': 'additionalProperties'
         }
 
         self._contact_column_name = None
         self._data_action_field = None
+        self._additional_properties = None
 
     @property
     def contact_column_name(self):
@@ -99,6 +102,30 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
         
 
         self._data_action_field = data_action_field
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
+
+
+        :return: The additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
+
+
+        :param additional_properties: The additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

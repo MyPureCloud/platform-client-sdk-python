@@ -44,7 +44,8 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
             'number_of_contacts_called': 'float',
             'number_of_contacts_messaged': 'float',
             'total_number_of_contacts': 'float',
-            'percentage': 'int'
+            'percentage': 'int',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
             'number_of_contacts_called': 'numberOfContactsCalled',
             'number_of_contacts_messaged': 'numberOfContactsMessaged',
             'total_number_of_contacts': 'totalNumberOfContacts',
-            'percentage': 'percentage'
+            'percentage': 'percentage',
+            'additional_properties': 'additionalProperties'
         }
 
         self._campaign = None
@@ -60,6 +62,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         self._number_of_contacts_messaged = None
         self._total_number_of_contacts = None
         self._percentage = None
+        self._additional_properties = None
 
     @property
     def campaign(self):
@@ -180,6 +183,30 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         
 
         self._percentage = percentage
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
+
+
+        :return: The additional_properties of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
+
+
+        :param additional_properties: The additional_properties of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

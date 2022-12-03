@@ -52,6 +52,7 @@ class LimitChangeRequestDetails(object):
             'status_history': 'list[StatusChange]',
             'date_completed': 'datetime',
             'reject_reason': 'str',
+            'approval_namespaces': 'list[ApprovalNamespace]',
             'self_uri': 'str'
         }
 
@@ -68,6 +69,7 @@ class LimitChangeRequestDetails(object):
             'status_history': 'statusHistory',
             'date_completed': 'dateCompleted',
             'reject_reason': 'rejectReason',
+            'approval_namespaces': 'approvalNamespaces',
             'self_uri': 'selfUri'
         }
 
@@ -83,6 +85,7 @@ class LimitChangeRequestDetails(object):
         self._status_history = None
         self._date_completed = None
         self._reject_reason = None
+        self._approval_namespaces = None
         self._self_uri = None
 
     @property
@@ -381,6 +384,30 @@ class LimitChangeRequestDetails(object):
             self._reject_reason = "outdated_sdk_version"
         else:
             self._reject_reason = reject_reason
+
+    @property
+    def approval_namespaces(self):
+        """
+        Gets the approval_namespaces of this LimitChangeRequestDetails.
+        The approval breakdown for this override request.
+
+        :return: The approval_namespaces of this LimitChangeRequestDetails.
+        :rtype: list[ApprovalNamespace]
+        """
+        return self._approval_namespaces
+
+    @approval_namespaces.setter
+    def approval_namespaces(self, approval_namespaces):
+        """
+        Sets the approval_namespaces of this LimitChangeRequestDetails.
+        The approval breakdown for this override request.
+
+        :param approval_namespaces: The approval_namespaces of this LimitChangeRequestDetails.
+        :type: list[ApprovalNamespace]
+        """
+        
+
+        self._approval_namespaces = approval_namespaces
 
     @property
     def self_uri(self):

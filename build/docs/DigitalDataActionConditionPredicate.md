@@ -12,7 +12,6 @@ title: DigitalDataActionConditionPredicate
 | **comparison_value** | **str** | The value to compare against for this condition | |
 | **inverted** | **bool** | If true, inverts the result of evaluating this Predicate. Default is false. | |
 | **output_field_missing_resolution** | **bool** | The result of this predicate if the requested output field is missing from the data action&#39;s result | |
-| **value_type** | **str** | The data type the value should be treated as. | |
 {: class="table table-striped"}
 
 

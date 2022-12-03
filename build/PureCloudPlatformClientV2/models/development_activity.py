@@ -46,6 +46,7 @@ class DevelopmentActivity(object):
             'date_created': 'datetime',
             'percentage_score': 'float',
             'is_passed': 'bool',
+            'is_latest': 'bool',
             'self_uri': 'str',
             'name': 'str',
             'type': 'str',
@@ -63,6 +64,7 @@ class DevelopmentActivity(object):
             'date_created': 'dateCreated',
             'percentage_score': 'percentageScore',
             'is_passed': 'isPassed',
+            'is_latest': 'isLatest',
             'self_uri': 'selfUri',
             'name': 'name',
             'type': 'type',
@@ -79,6 +81,7 @@ class DevelopmentActivity(object):
         self._date_created = None
         self._percentage_score = None
         self._is_passed = None
+        self._is_latest = None
         self._self_uri = None
         self._name = None
         self._type = None
@@ -231,6 +234,30 @@ class DevelopmentActivity(object):
         
 
         self._is_passed = is_passed
+
+    @property
+    def is_latest(self):
+        """
+        Gets the is_latest of this DevelopmentActivity.
+        True if this is the latest version of assignment assigned to the user
+
+        :return: The is_latest of this DevelopmentActivity.
+        :rtype: bool
+        """
+        return self._is_latest
+
+    @is_latest.setter
+    def is_latest(self, is_latest):
+        """
+        Sets the is_latest of this DevelopmentActivity.
+        True if this is the latest version of assignment assigned to the user
+
+        :param is_latest: The is_latest of this DevelopmentActivity.
+        :type: bool
+        """
+        
+
+        self._is_latest = is_latest
 
     @property
     def self_uri(self):

@@ -42,18 +42,21 @@ class PredictorModelBrief(object):
         self.swagger_types = {
             'media_type': 'str',
             'date_modified': 'datetime',
-            'retraining_errors': 'list[PredictorModelRetrainingError]'
+            'retraining_errors': 'list[PredictorModelRetrainingError]',
+            'state': 'str'
         }
 
         self.attribute_map = {
             'media_type': 'mediaType',
             'date_modified': 'dateModified',
-            'retraining_errors': 'retrainingErrors'
+            'retraining_errors': 'retrainingErrors',
+            'state': 'state'
         }
 
         self._media_type = None
         self._date_modified = None
         self._retraining_errors = None
+        self._state = None
 
     @property
     def media_type(self):
@@ -129,6 +132,33 @@ class PredictorModelBrief(object):
         
 
         self._retraining_errors = retraining_errors
+
+    @property
+    def state(self):
+        """
+        Gets the state of this PredictorModelBrief.
+        The state of the model
+
+        :return: The state of this PredictorModelBrief.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this PredictorModelBrief.
+        The state of the model
+
+        :param state: The state of this PredictorModelBrief.
+        :type: str
+        """
+        allowed_values = ["Trained", "Error", "InvalidDataset", "Inactive"]
+        if state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for state -> " + state)
+            self._state = "outdated_sdk_version"
+        else:
+            self._state = state
 
     def to_dict(self):
         """

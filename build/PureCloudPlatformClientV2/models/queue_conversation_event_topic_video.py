@@ -58,7 +58,8 @@ class QueueConversationEventTopicVideo(object):
             'msids': 'list[str]',
             'wrapup': 'QueueConversationEventTopicWrapup',
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
-            'after_call_work_required': 'bool'
+            'after_call_work_required': 'bool',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -80,7 +81,8 @@ class QueueConversationEventTopicVideo(object):
             'msids': 'msids',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired'
+            'after_call_work_required': 'afterCallWorkRequired',
+            'additional_properties': 'additionalProperties'
         }
 
         self._state = None
@@ -102,6 +104,7 @@ class QueueConversationEventTopicVideo(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._additional_properties = None
 
     @property
     def state(self):
@@ -567,6 +570,30 @@ class QueueConversationEventTopicVideo(object):
         
 
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this QueueConversationEventTopicVideo.
+
+
+        :return: The additional_properties of this QueueConversationEventTopicVideo.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this QueueConversationEventTopicVideo.
+
+
+        :param additional_properties: The additional_properties of this QueueConversationEventTopicVideo.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

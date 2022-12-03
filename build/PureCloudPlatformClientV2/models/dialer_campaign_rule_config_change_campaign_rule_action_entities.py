@@ -41,17 +41,20 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
         """
         self.swagger_types = {
             'use_triggering_entity': 'bool',
+            'additional_properties': 'dict(str, object)',
             'campaigns': 'list[DialerCampaignRuleConfigChangeUriReference]',
             'sequences': 'list[DialerCampaignRuleConfigChangeUriReference]'
         }
 
         self.attribute_map = {
             'use_triggering_entity': 'useTriggeringEntity',
+            'additional_properties': 'additionalProperties',
             'campaigns': 'campaigns',
             'sequences': 'sequences'
         }
 
         self._use_triggering_entity = None
+        self._additional_properties = None
         self._campaigns = None
         self._sequences = None
 
@@ -78,6 +81,30 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
         
 
         self._use_triggering_entity = use_triggering_entity
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+
+
+        :return: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+
+
+        :param additional_properties: The additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def campaigns(self):

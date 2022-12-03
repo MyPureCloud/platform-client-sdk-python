@@ -12,6 +12,7 @@ title: ConversationEventTopicDialerPreview
 | **contact_list_id** | **str** | The contactList associated with this preview data pop. | [optional] |
 | **campaign_id** | **str** | The campaignId associated with this preview data pop. | [optional] |
 | **phone_number_columns** | [**list[ConversationEventTopicPhoneNumberColumn]**](ConversationEventTopicPhoneNumberColumn.html) | The phone number columns associated with this campaign | [optional] |
+| **additional_properties** | **dict(str, object)** |  | [optional] |
 {: class="table table-striped"}
 
 

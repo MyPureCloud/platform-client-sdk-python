@@ -42,6 +42,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         self.swagger_types = {
             'responses': 'dict(str, DialerResponsesetConfigChangeReaction)',
             'beep_detection_enabled': 'bool',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -52,6 +53,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         self.attribute_map = {
             'responses': 'responses',
             'beep_detection_enabled': 'beepDetectionEnabled',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -61,6 +63,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
 
         self._responses = None
         self._beep_detection_enabled = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -114,6 +117,30 @@ class DialerResponsesetConfigChangeResponseSet(object):
         
 
         self._beep_detection_enabled = beep_detection_enabled
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerResponsesetConfigChangeResponseSet.
+
+
+        :return: The additional_properties of this DialerResponsesetConfigChangeResponseSet.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerResponsesetConfigChangeResponseSet.
+
+
+        :param additional_properties: The additional_properties of this DialerResponsesetConfigChangeResponseSet.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

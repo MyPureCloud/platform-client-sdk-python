@@ -10,6 +10,7 @@ title: DialerCampaignRuleConfigChangeCampaignRuleCondition
 | **id** | **str** | The globally unique identifier for the condition | [optional] |
 | **parameters** | **dict(str, str)** | The parameters to match this condition | [optional] |
 | **condition_type** | **str** | The type of this condition | [optional] |
+| **additional_properties** | **dict(str, object)** |  | [optional] |
 {: class="table table-striped"}
 
 

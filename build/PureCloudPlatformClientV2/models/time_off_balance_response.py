@@ -42,6 +42,7 @@ class TimeOffBalanceResponse(object):
         self.swagger_types = {
             'activity_code_id': 'str',
             'hris_time_off_type_id': 'str',
+            'hris_time_off_type_secondary_id': 'str',
             'start_date': 'date',
             'balance_minutes_per_day': 'list[int]'
         }
@@ -49,12 +50,14 @@ class TimeOffBalanceResponse(object):
         self.attribute_map = {
             'activity_code_id': 'activityCodeId',
             'hris_time_off_type_id': 'hrisTimeOffTypeId',
+            'hris_time_off_type_secondary_id': 'hrisTimeOffTypeSecondaryId',
             'start_date': 'startDate',
             'balance_minutes_per_day': 'balanceMinutesPerDay'
         }
 
         self._activity_code_id = None
         self._hris_time_off_type_id = None
+        self._hris_time_off_type_secondary_id = None
         self._start_date = None
         self._balance_minutes_per_day = None
 
@@ -105,6 +108,30 @@ class TimeOffBalanceResponse(object):
         
 
         self._hris_time_off_type_id = hris_time_off_type_id
+
+    @property
+    def hris_time_off_type_secondary_id(self):
+        """
+        Gets the hris_time_off_type_secondary_id of this TimeOffBalanceResponse.
+        The secondary ID of the time off type configured in HRIS integration
+
+        :return: The hris_time_off_type_secondary_id of this TimeOffBalanceResponse.
+        :rtype: str
+        """
+        return self._hris_time_off_type_secondary_id
+
+    @hris_time_off_type_secondary_id.setter
+    def hris_time_off_type_secondary_id(self, hris_time_off_type_secondary_id):
+        """
+        Sets the hris_time_off_type_secondary_id of this TimeOffBalanceResponse.
+        The secondary ID of the time off type configured in HRIS integration
+
+        :param hris_time_off_type_secondary_id: The hris_time_off_type_secondary_id of this TimeOffBalanceResponse.
+        :type: str
+        """
+        
+
+        self._hris_time_off_type_secondary_id = hris_time_off_type_secondary_id
 
     @property
     def start_date(self):

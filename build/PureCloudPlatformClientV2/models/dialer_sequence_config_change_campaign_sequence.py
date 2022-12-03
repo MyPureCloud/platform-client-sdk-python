@@ -45,6 +45,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
             'status': 'str',
             'stop_message': 'str',
             'repeat': 'bool',
+            'additional_properties': 'dict(str, object)',
             'id': 'str',
             'name': 'str',
             'date_created': 'datetime',
@@ -58,6 +59,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
             'status': 'status',
             'stop_message': 'stopMessage',
             'repeat': 'repeat',
+            'additional_properties': 'additionalProperties',
             'id': 'id',
             'name': 'name',
             'date_created': 'dateCreated',
@@ -70,6 +72,7 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         self._status = None
         self._stop_message = None
         self._repeat = None
+        self._additional_properties = None
         self._id = None
         self._name = None
         self._date_created = None
@@ -198,6 +201,30 @@ class DialerSequenceConfigChangeCampaignSequence(object):
         
 
         self._repeat = repeat
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerSequenceConfigChangeCampaignSequence.
+
+
+        :return: The additional_properties of this DialerSequenceConfigChangeCampaignSequence.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerSequenceConfigChangeCampaignSequence.
+
+
+        :param additional_properties: The additional_properties of this DialerSequenceConfigChangeCampaignSequence.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     @property
     def id(self):

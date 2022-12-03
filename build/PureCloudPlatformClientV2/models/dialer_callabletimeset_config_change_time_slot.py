@@ -42,18 +42,21 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
         self.swagger_types = {
             'start_time': 'str',
             'stop_time': 'str',
-            'day': 'int'
+            'day': 'int',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'start_time': 'startTime',
             'stop_time': 'stopTime',
-            'day': 'day'
+            'day': 'day',
+            'additional_properties': 'additionalProperties'
         }
 
         self._start_time = None
         self._stop_time = None
         self._day = None
+        self._additional_properties = None
 
     @property
     def start_time(self):
@@ -126,6 +129,30 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
         
 
         self._day = day
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
+
+
+        :return: The additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
+
+
+        :param additional_properties: The additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

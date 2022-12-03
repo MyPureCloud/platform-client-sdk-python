@@ -40,14 +40,17 @@ class DocumentBodyImage(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'url': 'str'
+            'url': 'str',
+            'hyperlink': 'str'
         }
 
         self.attribute_map = {
-            'url': 'url'
+            'url': 'url',
+            'hyperlink': 'hyperlink'
         }
 
         self._url = None
+        self._hyperlink = None
 
     @property
     def url(self):
@@ -72,6 +75,30 @@ class DocumentBodyImage(object):
         
 
         self._url = url
+
+    @property
+    def hyperlink(self):
+        """
+        Gets the hyperlink of this DocumentBodyImage.
+        The URL of the page that the hyperlink goes to.
+
+        :return: The hyperlink of this DocumentBodyImage.
+        :rtype: str
+        """
+        return self._hyperlink
+
+    @hyperlink.setter
+    def hyperlink(self, hyperlink):
+        """
+        Sets the hyperlink of this DocumentBodyImage.
+        The URL of the page that the hyperlink goes to.
+
+        :param hyperlink: The hyperlink of this DocumentBodyImage.
+        :type: str
+        """
+        
+
+        self._hyperlink = hyperlink
 
     def to_dict(self):
         """

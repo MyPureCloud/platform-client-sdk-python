@@ -44,7 +44,8 @@ class QueueConversationSocialExpressionEventTopicAttachment(object):
             'name': 'str',
             'content_uri': 'str',
             'content_type': 'str',
-            'content_length': 'int'
+            'content_length': 'int',
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class QueueConversationSocialExpressionEventTopicAttachment(object):
             'name': 'name',
             'content_uri': 'contentUri',
             'content_type': 'contentType',
-            'content_length': 'contentLength'
+            'content_length': 'contentLength',
+            'additional_properties': 'additionalProperties'
         }
 
         self._attachment_id = None
@@ -60,6 +62,7 @@ class QueueConversationSocialExpressionEventTopicAttachment(object):
         self._content_uri = None
         self._content_type = None
         self._content_length = None
+        self._additional_properties = None
 
     @property
     def attachment_id(self):
@@ -180,6 +183,30 @@ class QueueConversationSocialExpressionEventTopicAttachment(object):
         
 
         self._content_length = content_length
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this QueueConversationSocialExpressionEventTopicAttachment.
+
+
+        :return: The additional_properties of this QueueConversationSocialExpressionEventTopicAttachment.
+        :rtype: dict(str, object)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this QueueConversationSocialExpressionEventTopicAttachment.
+
+
+        :param additional_properties: The additional_properties of this QueueConversationSocialExpressionEventTopicAttachment.
+        :type: dict(str, object)
+        """
+        
+
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

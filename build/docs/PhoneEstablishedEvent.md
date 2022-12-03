@@ -12,6 +12,8 @@ title: PhoneEstablishedEvent
 | **conversation_id** | **str** | A unique Id (V4 UUID) identifying this conversation | |
 | **communication_id** | **str** | A unique Id (V4 UUID) identifying this communication | |
 | **phone_number** | **str** | The phone number for this phone. | [optional] |
+| **ani** | **str** | The automatic number identification if it is available for this conversation. | [optional] |
+| **dnis** | **str** | The dialed number identification if it is available for this conversation. | [optional] |
 | **initial_configuration** | [**InitialConfiguration**](InitialConfiguration.html) | Metadata about this communication. | |
 | **source_configuration** | [**SourceConfiguration**](SourceConfiguration.html) | Metadata about the source of this communication&#39;s interaction. | |
 {: class="table table-striped"}

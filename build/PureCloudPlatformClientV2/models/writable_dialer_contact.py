@@ -44,6 +44,7 @@ class WritableDialerContact(object):
             'contact_list_id': 'str',
             'data': 'dict(str, object)',
             'latest_sms_evaluations': 'dict(str, MessageEvaluation)',
+            'latest_email_evaluations': 'dict(str, MessageEvaluation)',
             'callable': 'bool',
             'phone_number_status': 'dict(str, PhoneNumberStatus)',
             'contactable_status': 'dict(str, ContactableStatus)'
@@ -54,6 +55,7 @@ class WritableDialerContact(object):
             'contact_list_id': 'contactListId',
             'data': 'data',
             'latest_sms_evaluations': 'latestSmsEvaluations',
+            'latest_email_evaluations': 'latestEmailEvaluations',
             'callable': 'callable',
             'phone_number_status': 'phoneNumberStatus',
             'contactable_status': 'contactableStatus'
@@ -63,6 +65,7 @@ class WritableDialerContact(object):
         self._contact_list_id = None
         self._data = None
         self._latest_sms_evaluations = None
+        self._latest_email_evaluations = None
         self._callable = None
         self._phone_number_status = None
         self._contactable_status = None
@@ -162,6 +165,30 @@ class WritableDialerContact(object):
         
 
         self._latest_sms_evaluations = latest_sms_evaluations
+
+    @property
+    def latest_email_evaluations(self):
+        """
+        Gets the latest_email_evaluations of this WritableDialerContact.
+        A map of email records for the contact email columns.
+
+        :return: The latest_email_evaluations of this WritableDialerContact.
+        :rtype: dict(str, MessageEvaluation)
+        """
+        return self._latest_email_evaluations
+
+    @latest_email_evaluations.setter
+    def latest_email_evaluations(self, latest_email_evaluations):
+        """
+        Sets the latest_email_evaluations of this WritableDialerContact.
+        A map of email records for the contact email columns.
+
+        :param latest_email_evaluations: The latest_email_evaluations of this WritableDialerContact.
+        :type: dict(str, MessageEvaluation)
+        """
+        
+
+        self._latest_email_evaluations = latest_email_evaluations
 
     @property
     def callable(self):
