@@ -10,6 +10,7 @@ title: NluFeedbackRequest
 | **text** | **str** | The feedback text. | |
 | **intents** | [**list[IntentFeedback]**](IntentFeedback.html) | Detected intent of the utterance | |
 | **version_id** | **str** | The domain version ID of the feedback. | |
+| **language** | **str** | The language of the version to which feedback is linked, e.g. en-us, de-de | [optional] |
 {: class="table table-striped"}
 
 

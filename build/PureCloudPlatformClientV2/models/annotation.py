@@ -206,7 +206,7 @@ class Annotation(object):
     def absolute_location(self):
         """
         Gets the absolute_location of this Annotation.
-        Offset of annotation (milliseconds) from start of recording.
+        Offset of annotation (milliseconds) from start of recording (after removing the cumulative duration of all pauses).
 
         :return: The absolute_location of this Annotation.
         :rtype: int
@@ -217,7 +217,7 @@ class Annotation(object):
     def absolute_location(self, absolute_location):
         """
         Sets the absolute_location of this Annotation.
-        Offset of annotation (milliseconds) from start of recording.
+        Offset of annotation (milliseconds) from start of recording (after removing the cumulative duration of all pauses).
 
         :param absolute_location: The absolute_location of this Annotation.
         :type: int

@@ -158,6 +158,7 @@ title: ViewFilter
 | **available_dashboard** | **str** | Filter to indicate the availability of the dashboard is public or private. | [optional] |
 | **favourite_dashboard** | **bool** | Filter to indicate whether the dashboard is favorite or unfavorite. | [optional] |
 | **my_dashboard** | **bool** | Filter to indicate the dashboard owned by the user. | [optional] |
+| **station_errors** | **list[str]** | The list of agent errors that are related to station | [optional] |
 {: class="table table-striped"}
 
 

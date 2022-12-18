@@ -43,18 +43,25 @@ class Miner(object):
             'id': 'str',
             'name': 'str',
             'language': 'str',
+            'miner_type': 'str',
             'date_created': 'datetime',
             'status': 'str',
             'conversations_date_range_start': 'date',
             'conversations_date_range_end': 'date',
             'date_completed': 'datetime',
             'message': 'str',
+            'error_info': 'ErrorInfo',
+            'warning_info': 'ErrorInfo',
             'conversation_data_uploaded': 'bool',
             'media_type': 'str',
+            'participant_type': 'str',
             'queue_ids': 'list[str]',
             'date_triggered': 'datetime',
             'date_modified': 'datetime',
             'latest_draft_version': 'Draft',
+            'conversations_fetched_count': 'int',
+            'conversations_valid_count': 'int',
+            'getmined_item_count': 'int',
             'self_uri': 'str'
         }
 
@@ -62,36 +69,50 @@ class Miner(object):
             'id': 'id',
             'name': 'name',
             'language': 'language',
+            'miner_type': 'minerType',
             'date_created': 'dateCreated',
             'status': 'status',
             'conversations_date_range_start': 'conversationsDateRangeStart',
             'conversations_date_range_end': 'conversationsDateRangeEnd',
             'date_completed': 'dateCompleted',
             'message': 'message',
+            'error_info': 'errorInfo',
+            'warning_info': 'warningInfo',
             'conversation_data_uploaded': 'conversationDataUploaded',
             'media_type': 'mediaType',
+            'participant_type': 'participantType',
             'queue_ids': 'queueIds',
             'date_triggered': 'dateTriggered',
             'date_modified': 'dateModified',
             'latest_draft_version': 'latestDraftVersion',
+            'conversations_fetched_count': 'conversationsFetchedCount',
+            'conversations_valid_count': 'conversationsValidCount',
+            'getmined_item_count': 'getminedItemCount',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._language = None
+        self._miner_type = None
         self._date_created = None
         self._status = None
         self._conversations_date_range_start = None
         self._conversations_date_range_end = None
         self._date_completed = None
         self._message = None
+        self._error_info = None
+        self._warning_info = None
         self._conversation_data_uploaded = None
         self._media_type = None
+        self._participant_type = None
         self._queue_ids = None
         self._date_triggered = None
         self._date_modified = None
         self._latest_draft_version = None
+        self._conversations_fetched_count = None
+        self._conversations_valid_count = None
+        self._getmined_item_count = None
         self._self_uri = None
 
     @property
@@ -168,6 +189,33 @@ class Miner(object):
             self._language = "outdated_sdk_version"
         else:
             self._language = language
+
+    @property
+    def miner_type(self):
+        """
+        Gets the miner_type of this Miner.
+        Type of the miner, intent or topic.
+
+        :return: The miner_type of this Miner.
+        :rtype: str
+        """
+        return self._miner_type
+
+    @miner_type.setter
+    def miner_type(self, miner_type):
+        """
+        Sets the miner_type of this Miner.
+        Type of the miner, intent or topic.
+
+        :param miner_type: The miner_type of this Miner.
+        :type: str
+        """
+        allowed_values = ["Intent", "Topic"]
+        if miner_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for miner_type -> " + miner_type)
+            self._miner_type = "outdated_sdk_version"
+        else:
+            self._miner_type = miner_type
 
     @property
     def date_created(self):
@@ -317,6 +365,54 @@ class Miner(object):
         self._message = message
 
     @property
+    def error_info(self):
+        """
+        Gets the error_info of this Miner.
+        Error Information
+
+        :return: The error_info of this Miner.
+        :rtype: ErrorInfo
+        """
+        return self._error_info
+
+    @error_info.setter
+    def error_info(self, error_info):
+        """
+        Sets the error_info of this Miner.
+        Error Information
+
+        :param error_info: The error_info of this Miner.
+        :type: ErrorInfo
+        """
+        
+
+        self._error_info = error_info
+
+    @property
+    def warning_info(self):
+        """
+        Gets the warning_info of this Miner.
+        Warning Information
+
+        :return: The warning_info of this Miner.
+        :rtype: ErrorInfo
+        """
+        return self._warning_info
+
+    @warning_info.setter
+    def warning_info(self, warning_info):
+        """
+        Sets the warning_info of this Miner.
+        Warning Information
+
+        :param warning_info: The warning_info of this Miner.
+        :type: ErrorInfo
+        """
+        
+
+        self._warning_info = warning_info
+
+    @property
     def conversation_data_uploaded(self):
         """
         Gets the conversation_data_uploaded of this Miner.
@@ -366,6 +462,33 @@ class Miner(object):
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
+
+    @property
+    def participant_type(self):
+        """
+        Gets the participant_type of this Miner.
+        Type of the participant, either agent, customer or both.
+
+        :return: The participant_type of this Miner.
+        :rtype: str
+        """
+        return self._participant_type
+
+    @participant_type.setter
+    def participant_type(self, participant_type):
+        """
+        Sets the participant_type of this Miner.
+        Type of the participant, either agent, customer or both.
+
+        :param participant_type: The participant_type of this Miner.
+        :type: str
+        """
+        allowed_values = ["Customer", "Agent", "Both"]
+        if participant_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for participant_type -> " + participant_type)
+            self._participant_type = "outdated_sdk_version"
+        else:
+            self._participant_type = participant_type
 
     @property
     def queue_ids(self):
@@ -462,6 +585,78 @@ class Miner(object):
         
 
         self._latest_draft_version = latest_draft_version
+
+    @property
+    def conversations_fetched_count(self):
+        """
+        Gets the conversations_fetched_count of this Miner.
+        Number of conversations/transcripts fetched.
+
+        :return: The conversations_fetched_count of this Miner.
+        :rtype: int
+        """
+        return self._conversations_fetched_count
+
+    @conversations_fetched_count.setter
+    def conversations_fetched_count(self, conversations_fetched_count):
+        """
+        Sets the conversations_fetched_count of this Miner.
+        Number of conversations/transcripts fetched.
+
+        :param conversations_fetched_count: The conversations_fetched_count of this Miner.
+        :type: int
+        """
+        
+
+        self._conversations_fetched_count = conversations_fetched_count
+
+    @property
+    def conversations_valid_count(self):
+        """
+        Gets the conversations_valid_count of this Miner.
+        Number of conversations/recordings/transcripts that were found valid for mining purposes.
+
+        :return: The conversations_valid_count of this Miner.
+        :rtype: int
+        """
+        return self._conversations_valid_count
+
+    @conversations_valid_count.setter
+    def conversations_valid_count(self, conversations_valid_count):
+        """
+        Sets the conversations_valid_count of this Miner.
+        Number of conversations/recordings/transcripts that were found valid for mining purposes.
+
+        :param conversations_valid_count: The conversations_valid_count of this Miner.
+        :type: int
+        """
+        
+
+        self._conversations_valid_count = conversations_valid_count
+
+    @property
+    def getmined_item_count(self):
+        """
+        Gets the getmined_item_count of this Miner.
+        Number of intents or topics based on the miner type.
+
+        :return: The getmined_item_count of this Miner.
+        :rtype: int
+        """
+        return self._getmined_item_count
+
+    @getmined_item_count.setter
+    def getmined_item_count(self, getmined_item_count):
+        """
+        Sets the getmined_item_count of this Miner.
+        Number of intents or topics based on the miner type.
+
+        :param getmined_item_count: The getmined_item_count of this Miner.
+        :type: int
+        """
+        
+
+        self._getmined_item_count = getmined_item_count
 
     @property
     def self_uri(self):

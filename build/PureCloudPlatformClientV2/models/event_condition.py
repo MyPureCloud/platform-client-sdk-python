@@ -159,7 +159,7 @@ class EventCondition(object):
         :param stream_type: The stream_type of this EventCondition.
         :type: str
         """
-        allowed_values = ["Web", "Custom", "Conversation"]
+        allowed_values = ["Web", "Custom", "Conversation", "App"]
         if stream_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for stream_type -> " + stream_type)
             self._stream_type = "outdated_sdk_version"

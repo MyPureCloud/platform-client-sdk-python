@@ -16339,7 +16339,7 @@
   "get_languageunderstanding_domain_feedback": {
     "operationId": "get_languageunderstanding_domain_feedback",
     "functionName": "get_languageunderstanding_domain_feedback",
-    "signature": "get_languageunderstanding_domain_feedback(domain_id, intent_name, assessment, date_start, date_end, include_deleted, page_number, page_size, enable_cursor_pagination, after, fields)",
+    "signature": "get_languageunderstanding_domain_feedback(domain_id, intent_name, assessment, date_start, date_end, include_deleted, language, page_number, page_size, enable_cursor_pagination, after, fields)",
     "parameters": [
       {
         "name": "domain_id",
@@ -16372,6 +16372,11 @@
         "required": "false"
       },
       {
+        "name": "language",
+        "type": "str",
+        "required": "false"
+      },
+      {
         "name": "page_number",
         "type": "int",
         "required": "false"
@@ -16398,7 +16403,7 @@
       }
     ],
     "return": "NluFeedbackListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\ndomain_id = 'domain_id_example' # str | ID of the NLU domain.\nintent_name = 'intent_name_example' # str | The top intent name to retrieve feedback for. (optional)\nassessment = 'assessment_example' # str | The top assessment to retrieve feedback for. (optional)\ndate_start = '2013-10-20' # date | Begin of time window as ISO-8601 date. (optional)\ndate_end = '2013-10-20' # date | End of time window as ISO-8601 date. (optional)\ninclude_deleted = True # bool | Whether to include soft-deleted items in the result. (optional)\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nenable_cursor_pagination = False # bool | Enable Cursor Pagination (optional) (default to False)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)\nfields = ['fields_example'] # list[str] | Fields and properties to get, comma-separated (optional)\n\ntry:\n    # Get all feedback in the given NLU Domain Version.\n    api_response = api_instance.get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, after=after, fields=fields)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingDomainFeedbackRequest->get_languageunderstanding_domain_feedback: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\ndomain_id = 'domain_id_example' # str | ID of the NLU domain.\nintent_name = 'intent_name_example' # str | The top intent name to retrieve feedback for. (optional)\nassessment = 'assessment_example' # str | The top assessment to retrieve feedback for. (optional)\ndate_start = '2013-10-20' # date | Begin of time window as ISO-8601 date. (optional)\ndate_end = '2013-10-20' # date | End of time window as ISO-8601 date. (optional)\ninclude_deleted = True # bool | Whether to include soft-deleted items in the result. (optional)\nlanguage = 'language_example' # str | Whether to filter response based on the language, e.g. en-us, pt-br. (optional)\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nenable_cursor_pagination = False # bool | Enable Cursor Pagination (optional) (default to False)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)\nfields = ['fields_example'] # list[str] | Fields and properties to get, comma-separated (optional)\n\ntry:\n    # Get all feedback in the given NLU Domain Version.\n    api_response = api_instance.get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, after=after, fields=fields)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingDomainFeedbackRequest->get_languageunderstanding_domain_feedback: %s\\n\" % e)"
   },
   "get_languageunderstanding_domain_feedback_feedback_id": {
     "operationId": "get_languageunderstanding_domain_feedback_feedback_id",
@@ -16532,7 +16537,7 @@
   "get_languageunderstanding_miner_draft": {
     "operationId": "get_languageunderstanding_miner_draft",
     "functionName": "get_languageunderstanding_miner_draft",
-    "signature": "get_languageunderstanding_miner_draft(miner_id, draft_id)",
+    "signature": "get_languageunderstanding_miner_draft(miner_id, draft_id, draft_intent_id, draft_topic_id)",
     "parameters": [
       {
         "name": "miner_id",
@@ -16543,10 +16548,20 @@
         "name": "draft_id",
         "type": "str",
         "required": "true"
+      },
+      {
+        "name": "draft_intent_id",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "draft_topic_id",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "Draft",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\nminer_id = 'miner_id_example' # str | Miner ID\ndraft_id = 'draft_id_example' # str | Draft ID\n\ntry:\n    # Get information about a draft.\n    api_response = api_instance.get_languageunderstanding_miner_draft(miner_id, draft_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingMinerDraftRequest->get_languageunderstanding_miner_draft: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\nminer_id = 'miner_id_example' # str | Miner ID\ndraft_id = 'draft_id_example' # str | Draft ID\ndraft_intent_id = 'draft_intent_id_example' # str | Parameter to filter a specific intent. (optional)\ndraft_topic_id = 'draft_topic_id_example' # str | Parameter to filter a specific topic. (optional)\n\ntry:\n    # Get information about a draft.\n    api_response = api_instance.get_languageunderstanding_miner_draft(miner_id, draft_id, draft_intent_id=draft_intent_id, draft_topic_id=draft_topic_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingMinerDraftRequest->get_languageunderstanding_miner_draft: %s\\n\" % e)"
   },
   "get_languageunderstanding_miner_drafts": {
     "operationId": "get_languageunderstanding_miner_drafts",
@@ -16605,12 +16620,81 @@
     "return": "MinedIntentsListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\nminer_id = 'miner_id_example' # str | Miner ID\nexpand = 'expand_example' # str | Option to fetch utterances. (optional)\n\ntry:\n    # Retrieve a list of mined intents.\n    api_response = api_instance.get_languageunderstanding_miner_intents(miner_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingMinerIntentsRequest->get_languageunderstanding_miner_intents: %s\\n\" % e)"
   },
+  "get_languageunderstanding_miner_topic": {
+    "operationId": "get_languageunderstanding_miner_topic",
+    "functionName": "get_languageunderstanding_miner_topic",
+    "signature": "get_languageunderstanding_miner_topic(miner_id, topic_id, expand)",
+    "parameters": [
+      {
+        "name": "miner_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "topic_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "MinerTopic",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\nminer_id = 'miner_id_example' # str | Miner ID\ntopic_id = 'topic_id_example' # str | The ID of the topic to be retrieved.\nexpand = 'expand_example' # str | Option to fetch phrases (optional)\n\ntry:\n    # Retrieves details of a particular topic.\n    api_response = api_instance.get_languageunderstanding_miner_topic(miner_id, topic_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingMinerTopicRequest->get_languageunderstanding_miner_topic: %s\\n\" % e)"
+  },
+  "get_languageunderstanding_miner_topic_phrase": {
+    "operationId": "get_languageunderstanding_miner_topic_phrase",
+    "functionName": "get_languageunderstanding_miner_topic_phrase",
+    "signature": "get_languageunderstanding_miner_topic_phrase(miner_id, topic_id, phrase_id)",
+    "parameters": [
+      {
+        "name": "miner_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "topic_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "phrase_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "MinerTopicPhrase",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\nminer_id = 'miner_id_example' # str | Miner ID\ntopic_id = 'topic_id_example' # str | The ID of the topic to be retrieved.\nphrase_id = 'phrase_id_example' # str | The ID of the phrase to be retrieved.\n\ntry:\n    # Retrieves utterances related to a phrase in a topic.\n    api_response = api_instance.get_languageunderstanding_miner_topic_phrase(miner_id, topic_id, phrase_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingMinerTopicPhraseRequest->get_languageunderstanding_miner_topic_phrase: %s\\n\" % e)"
+  },
+  "get_languageunderstanding_miner_topics": {
+    "operationId": "get_languageunderstanding_miner_topics",
+    "functionName": "get_languageunderstanding_miner_topics",
+    "signature": "get_languageunderstanding_miner_topics(miner_id)",
+    "parameters": [
+      {
+        "name": "miner_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "MinerTopicsListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\nminer_id = 'miner_id_example' # str | Miner ID\n\ntry:\n    # Retrieve a list of mined topics.\n    api_response = api_instance.get_languageunderstanding_miner_topics(miner_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingMinerTopicsRequest->get_languageunderstanding_miner_topics: %s\\n\" % e)"
+  },
   "get_languageunderstanding_miners": {
     "operationId": "get_languageunderstanding_miners",
     "functionName": "get_languageunderstanding_miners",
-    "signature": "get_languageunderstanding_miners()",
+    "signature": "get_languageunderstanding_miners(miner_type)",
+    "parameters": [
+      {
+        "name": "miner_type",
+        "type": "str",
+        "required": "false"
+      }
+    ],
     "return": "MinerListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\n\ntry:\n    # Retrieve the list of miners created.\n    api_response = api_instance.get_languageunderstanding_miners()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingMinersRequest->get_languageunderstanding_miners: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\nminer_type = 'miner_type_example' # str | Type of miner, either intent or topic (optional)\n\ntry:\n    # Retrieve the list of miners created.\n    api_response = api_instance.get_languageunderstanding_miners(miner_type=miner_type)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingMinersRequest->get_languageunderstanding_miners: %s\\n\" % e)"
   },
   "patch_languageunderstanding_domain": {
     "operationId": "patch_languageunderstanding_domain",
@@ -16739,7 +16823,7 @@
   "post_languageunderstanding_domain_versions": {
     "operationId": "post_languageunderstanding_domain_versions",
     "functionName": "post_languageunderstanding_domain_versions",
-    "signature": "post_languageunderstanding_domain_versions(domain_id, body)",
+    "signature": "post_languageunderstanding_domain_versions(domain_id, body, include_utterances)",
     "parameters": [
       {
         "name": "domain_id",
@@ -16750,10 +16834,15 @@
         "name": "body",
         "type": "NluDomainVersion",
         "required": "true"
+      },
+      {
+        "name": "include_utterances",
+        "type": "bool",
+        "required": "false"
       }
     ],
     "return": "NluDomainVersion",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\ndomain_id = 'domain_id_example' # str | ID of the NLU domain.\nbody = PureCloudPlatformClientV2.NluDomainVersion() # NluDomainVersion | The NLU Domain Version to create.\n\ntry:\n    # Create an NLU Domain Version.\n    api_response = api_instance.post_languageunderstanding_domain_versions(domain_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostLanguageunderstandingDomainVersionsRequest->post_languageunderstanding_domain_versions: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\ndomain_id = 'domain_id_example' # str | ID of the NLU domain.\nbody = PureCloudPlatformClientV2.NluDomainVersion() # NluDomainVersion | The NLU Domain Version to create.\ninclude_utterances = True # bool | Whether utterances for intent definition should be included when marshalling response. (optional)\n\ntry:\n    # Create an NLU Domain Version.\n    api_response = api_instance.post_languageunderstanding_domain_versions(domain_id, body, include_utterances=include_utterances)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostLanguageunderstandingDomainVersionsRequest->post_languageunderstanding_domain_versions: %s\\n\" % e)"
   },
   "post_languageunderstanding_domains": {
     "operationId": "post_languageunderstanding_domains",
@@ -19347,6 +19436,42 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ndnc_list_id = 'dnc_list_id_example' # str | DncList ID\n\ntry:\n    # Delete dialer DNC list\n    api_instance.delete_outbound_dnclist(dnc_list_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOutboundDnclistRequest->delete_outbound_dnclist: %s\\n\" % e)"
   },
+  "delete_outbound_dnclist_emailaddresses": {
+    "operationId": "delete_outbound_dnclist_emailaddresses",
+    "functionName": "delete_outbound_dnclist_emailaddresses",
+    "signature": "delete_outbound_dnclist_emailaddresses(dnc_list_id, expired_only)",
+    "parameters": [
+      {
+        "name": "dnc_list_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "expired_only",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ndnc_list_id = 'dnc_list_id_example' # str | DncList ID\nexpired_only = False # bool | Set to true to only remove DNC entries that are expired (optional) (default to False)\n\ntry:\n    # Deletes all or expired email addresses from a DNC list.\n    api_instance.delete_outbound_dnclist_emailaddresses(dnc_list_id, expired_only=expired_only)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOutboundDnclistEmailaddressesRequest->delete_outbound_dnclist_emailaddresses: %s\\n\" % e)"
+  },
+  "delete_outbound_dnclist_phonenumbers": {
+    "operationId": "delete_outbound_dnclist_phonenumbers",
+    "functionName": "delete_outbound_dnclist_phonenumbers",
+    "signature": "delete_outbound_dnclist_phonenumbers(dnc_list_id, expired_only)",
+    "parameters": [
+      {
+        "name": "dnc_list_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "expired_only",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ndnc_list_id = 'dnc_list_id_example' # str | DncList ID\nexpired_only = False # bool | Set to true to only remove DNC entries that are expired (optional) (default to False)\n\ntry:\n    # Deletes all or expired phone numbers from a DNC list.\n    api_instance.delete_outbound_dnclist_phonenumbers(dnc_list_id, expired_only=expired_only)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOutboundDnclistPhonenumbersRequest->delete_outbound_dnclist_phonenumbers: %s\\n\" % e)"
+  },
   "delete_outbound_messagingcampaign": {
     "operationId": "delete_outbound_messagingcampaign",
     "functionName": "delete_outbound_messagingcampaign",
@@ -20956,6 +21081,42 @@
     "signature": "get_outbound_wrapupcodemappings()",
     "return": "WrapUpCodeMapping",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\n\ntry:\n    # Get the Dialer wrap up code mapping.\n    api_response = api_instance.get_outbound_wrapupcodemappings()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOutboundWrapupcodemappingsRequest->get_outbound_wrapupcodemappings: %s\\n\" % e)"
+  },
+  "patch_outbound_dnclist_emailaddresses": {
+    "operationId": "patch_outbound_dnclist_emailaddresses",
+    "functionName": "patch_outbound_dnclist_emailaddresses",
+    "signature": "patch_outbound_dnclist_emailaddresses(dnc_list_id, body)",
+    "parameters": [
+      {
+        "name": "dnc_list_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "DncPatchEmailsRequest",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ndnc_list_id = 'dnc_list_id_example' # str | DncList ID\nbody = PureCloudPlatformClientV2.DncPatchEmailsRequest() # DncPatchEmailsRequest | DNC Emails\n\ntry:\n    # Add emails to or Delete emails from a DNC list.\n    api_instance.patch_outbound_dnclist_emailaddresses(dnc_list_id, body)\nexcept ApiException as e:\n    print(\"Exception when calling PatchOutboundDnclistEmailaddressesRequest->patch_outbound_dnclist_emailaddresses: %s\\n\" % e)"
+  },
+  "patch_outbound_dnclist_phonenumbers": {
+    "operationId": "patch_outbound_dnclist_phonenumbers",
+    "functionName": "patch_outbound_dnclist_phonenumbers",
+    "signature": "patch_outbound_dnclist_phonenumbers(dnc_list_id, body)",
+    "parameters": [
+      {
+        "name": "dnc_list_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "DncPatchPhoneNumbersRequest",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi()\ndnc_list_id = 'dnc_list_id_example' # str | DncList ID\nbody = PureCloudPlatformClientV2.DncPatchPhoneNumbersRequest() # DncPatchPhoneNumbersRequest | DNC Phone Numbers\n\ntry:\n    # Add numbers to or delete numbers from a DNC list.\n    api_instance.patch_outbound_dnclist_phonenumbers(dnc_list_id, body)\nexcept ApiException as e:\n    print(\"Exception when calling PatchOutboundDnclistPhonenumbersRequest->patch_outbound_dnclist_phonenumbers: %s\\n\" % e)"
   },
   "patch_outbound_settings": {
     "operationId": "patch_outbound_settings",
@@ -29456,6 +29617,13 @@
     ],
     "return": "Team",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TeamsApi()\nbody = PureCloudPlatformClientV2.Team() # Team | Team\n\ntry:\n    # Create a team\n    api_response = api_instance.post_teams(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostTeamsRequest->post_teams: %s\\n\" % e)"
+  },
+  "get_telephony_mediaregions": {
+    "operationId": "get_telephony_mediaregions",
+    "functionName": "get_telephony_mediaregions",
+    "signature": "get_telephony_mediaregions()",
+    "return": "MediaRegions",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyApi()\n\ntry:\n    # Retrieve the list of AWS regions media can stream through.\n    api_response = api_instance.get_telephony_mediaregions()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetTelephonyMediaregionsRequest->get_telephony_mediaregions: %s\\n\" % e)"
   },
   "get_telephony_siptraces": {
     "operationId": "get_telephony_siptraces",

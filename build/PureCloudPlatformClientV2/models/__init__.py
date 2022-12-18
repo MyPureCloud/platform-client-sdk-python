@@ -50,6 +50,8 @@ from .add_conversation_response import AddConversationResponse
 from .add_shift_trade_request import AddShiftTradeRequest
 from .add_work_plan_rotation_agent_request import AddWorkPlanRotationAgentRequest
 from .add_work_plan_rotation_request import AddWorkPlanRotationRequest
+from .additional_languages_intent import AdditionalLanguagesIntent
+from .additional_languages_synonyms import AdditionalLanguagesSynonyms
 from .additional_message import AdditionalMessage
 from .address import Address
 from .addressable_entity_ref import AddressableEntityRef
@@ -1070,6 +1072,9 @@ from .digital_rule import DigitalRule
 from .digital_rule_set import DigitalRuleSet
 from .digital_rule_set_entity_listing import DigitalRuleSetEntityListing
 from .digits import Digits
+from .direct_routing import DirectRouting
+from .direct_routing_call_media_settings import DirectRoutingCallMediaSettings
+from .direct_routing_media_settings import DirectRoutingMediaSettings
 from .directory_user_devices_listing import DirectoryUserDevicesListing
 from .disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
 from .disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
@@ -1082,6 +1087,8 @@ from .dnc_list_create import DncListCreate
 from .dnc_list_division_view import DncListDivisionView
 from .dnc_list_division_view_listing import DncListDivisionViewListing
 from .dnc_list_entity_listing import DncListEntityListing
+from .dnc_patch_emails_request import DncPatchEmailsRequest
+from .dnc_patch_phone_numbers_request import DncPatchPhoneNumbersRequest
 from .dnclist_download_ready_export_uri import DnclistDownloadReadyExportUri
 from .dnclist_download_ready_object import DnclistDownloadReadyObject
 from .dnclist_import_status_import_status import DnclistImportStatusImportStatus
@@ -1545,6 +1552,7 @@ from .journey_aggregate_query_predicate import JourneyAggregateQueryPredicate
 from .journey_aggregate_query_response import JourneyAggregateQueryResponse
 from .journey_aggregation_query import JourneyAggregationQuery
 from .journey_aggregation_view import JourneyAggregationView
+from .journey_app import JourneyApp
 from .journey_campaign import JourneyCampaign
 from .journey_context import JourneyContext
 from .journey_customer import JourneyCustomer
@@ -1838,6 +1846,7 @@ from .max_length import MaxLength
 from .max_participants import MaxParticipants
 from .media_participant_request import MediaParticipantRequest
 from .media_policies import MediaPolicies
+from .media_regions import MediaRegions
 from .media_result import MediaResult
 from .media_setting import MediaSetting
 from .media_summary import MediaSummary
@@ -1904,6 +1913,9 @@ from .miner import Miner
 from .miner_execute_request import MinerExecuteRequest
 from .miner_intent import MinerIntent
 from .miner_listing import MinerListing
+from .miner_topic import MinerTopic
+from .miner_topic_phrase import MinerTopicPhrase
+from .miner_topics_listing import MinerTopicsListing
 from .modeling_processing_error import ModelingProcessingError
 from .modeling_status_response import ModelingStatusResponse
 from .move_management_unit_request import MoveManagementUnitRequest
@@ -1917,6 +1929,7 @@ from .named_entity_type_binding import NamedEntityTypeBinding
 from .named_entity_type_definition import NamedEntityTypeDefinition
 from .named_entity_type_item import NamedEntityTypeItem
 from .named_entity_type_mechanism import NamedEntityTypeMechanism
+from .network_connectivity import NetworkConnectivity
 from .nlu_confusion_matrix_column import NluConfusionMatrixColumn
 from .nlu_confusion_matrix_row import NluConfusionMatrixRow
 from .nlu_detection_context import NluDetectionContext
@@ -2428,6 +2441,8 @@ from .recipient_additional_identifier import RecipientAdditionalIdentifier
 from .recipient_listing import RecipientListing
 from .record import Record
 from .recording import Recording
+from .recording_annotation_flow import RecordingAnnotationFlow
+from .recording_annotation_queue import RecordingAnnotationQueue
 from .recording_archive_restore_topic_media_result import RecordingArchiveRestoreTopicMediaResult
 from .recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
 from .recording_button_component import RecordingButtonComponent
@@ -2605,6 +2620,7 @@ from .screenshare import Screenshare
 from .script import Script
 from .script_entity_listing import ScriptEntityListing
 from .scroll_percentage_event_trigger import ScrollPercentageEventTrigger
+from .sdk_library import SdkLibrary
 from .search_aggregation import SearchAggregation
 from .search_criteria import SearchCriteria
 from .search_request import SearchRequest
@@ -2869,6 +2885,7 @@ from .topic_duration import TopicDuration
 from .topic_job import TopicJob
 from .topic_job_request import TopicJobRequest
 from .topic_offset import TopicOffset
+from .topic_phrase import TopicPhrase
 from .topic_request import TopicRequest
 from .topics_entity_listing import TopicsEntityListing
 from .training_listing import TrainingListing
@@ -3162,10 +3179,6 @@ from .value_wrapper_string import ValueWrapperString
 from .verification_result import VerificationResult
 from .video import Video
 from .view_filter import ViewFilter
-from .vip_backup import VipBackup
-from .vip_call_media_settings import VipCallMediaSettings
-from .vip_media_settings import VipMediaSettings
-from .vip_routing import VipRouting
 from .visibility_condition import VisibilityCondition
 from .vm_pairing_info import VmPairingInfo
 from .voicemail import Voicemail
@@ -3315,6 +3328,9 @@ from .wfm_historical_data_upload_request_status_topic_historical_data_upload_req
 from .wfm_historical_shrinkage_calculations_complete_topic_historical_shrinkage_calculations_complete_notification import WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification
 from .wfm_historical_shrinkage_request import WfmHistoricalShrinkageRequest
 from .wfm_historical_shrinkage_response import WfmHistoricalShrinkageResponse
+from .wfm_integrations_hris_time_off_types_job_topic_error_body import WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody
+from .wfm_integrations_hris_time_off_types_job_topic_hris_time_off_type import WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType
+from .wfm_integrations_hris_time_off_types_job_topic_hris_time_off_types_job_notification import WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification
 from .wfm_intraday_data_update_topic_intraday_data_group import WfmIntradayDataUpdateTopicIntradayDataGroup
 from .wfm_intraday_data_update_topic_intraday_data_update import WfmIntradayDataUpdateTopicIntradayDataUpdate
 from .wfm_intraday_data_update_topic_intraday_forecast_data import WfmIntradayDataUpdateTopicIntradayForecastData
@@ -3335,6 +3351,9 @@ from .wfm_process_upload_request import WfmProcessUploadRequest
 from .wfm_schedule_activity import WfmScheduleActivity
 from .wfm_schedule_reference import WfmScheduleReference
 from .wfm_schedule_topic_wfm_schedule_notification import WfmScheduleTopicWfmScheduleNotification
+from .wfm_time_off_balance_job_topic_error_body import WfmTimeOffBalanceJobTopicErrorBody
+from .wfm_time_off_balance_job_topic_time_off_balance import WfmTimeOffBalanceJobTopicTimeOffBalance
+from .wfm_time_off_balance_job_topic_time_off_balance_job_notification import WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification
 from .wfm_time_off_request_update_topic_time_off_request_update import WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 from .wfm_time_off_request_update_topic_user_reference import WfmTimeOffRequestUpdateTopicUserReference
 from .wfm_update_agent_details_topic_wfm_update_agent_details_complete import WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete

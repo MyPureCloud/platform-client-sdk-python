@@ -112,8 +112,8 @@ class AnalyticsSession(object):
             'video_address_self': 'str',
             'video_room_id': 'str',
             'waiting_interaction_counts': 'list[int]',
-            'proposed_agents': 'list[AnalyticsProposedAgent]',
             'agent_groups': 'list[AnalyticsAgentGroup]',
+            'proposed_agents': 'list[AnalyticsProposedAgent]',
             'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
             'flow': 'AnalyticsFlow',
             'metrics': 'list[AnalyticsSessionMetric]',
@@ -193,8 +193,8 @@ class AnalyticsSession(object):
             'video_address_self': 'videoAddressSelf',
             'video_room_id': 'videoRoomId',
             'waiting_interaction_counts': 'waitingInteractionCounts',
-            'proposed_agents': 'proposedAgents',
             'agent_groups': 'agentGroups',
+            'proposed_agents': 'proposedAgents',
             'media_endpoint_stats': 'mediaEndpointStats',
             'flow': 'flow',
             'metrics': 'metrics',
@@ -273,8 +273,8 @@ class AnalyticsSession(object):
         self._video_address_self = None
         self._video_room_id = None
         self._waiting_interaction_counts = None
-        self._proposed_agents = None
         self._agent_groups = None
+        self._proposed_agents = None
         self._media_endpoint_stats = None
         self._flow = None
         self._metrics = None
@@ -2021,30 +2021,6 @@ class AnalyticsSession(object):
         self._waiting_interaction_counts = waiting_interaction_counts
 
     @property
-    def proposed_agents(self):
-        """
-        Gets the proposed_agents of this AnalyticsSession.
-        Proposed agents
-
-        :return: The proposed_agents of this AnalyticsSession.
-        :rtype: list[AnalyticsProposedAgent]
-        """
-        return self._proposed_agents
-
-    @proposed_agents.setter
-    def proposed_agents(self, proposed_agents):
-        """
-        Sets the proposed_agents of this AnalyticsSession.
-        Proposed agents
-
-        :param proposed_agents: The proposed_agents of this AnalyticsSession.
-        :type: list[AnalyticsProposedAgent]
-        """
-        
-
-        self._proposed_agents = proposed_agents
-
-    @property
     def agent_groups(self):
         """
         Gets the agent_groups of this AnalyticsSession.
@@ -2067,6 +2043,30 @@ class AnalyticsSession(object):
         
 
         self._agent_groups = agent_groups
+
+    @property
+    def proposed_agents(self):
+        """
+        Gets the proposed_agents of this AnalyticsSession.
+        Proposed agents
+
+        :return: The proposed_agents of this AnalyticsSession.
+        :rtype: list[AnalyticsProposedAgent]
+        """
+        return self._proposed_agents
+
+    @proposed_agents.setter
+    def proposed_agents(self, proposed_agents):
+        """
+        Sets the proposed_agents of this AnalyticsSession.
+        Proposed agents
+
+        :param proposed_agents: The proposed_agents of this AnalyticsSession.
+        :type: list[AnalyticsProposedAgent]
+        """
+        
+
+        self._proposed_agents = proposed_agents
 
     @property
     def media_endpoint_stats(self):

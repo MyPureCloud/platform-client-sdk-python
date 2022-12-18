@@ -66,7 +66,7 @@ class QueueRequest(object):
             'enable_transcription': 'bool',
             'enable_manual_assignment': 'bool',
             'agent_owned_routing': 'AgentOwnedRouting',
-            'vip_routing': 'VipRouting',
+            'direct_routing': 'DirectRouting',
             'calling_party_name': 'str',
             'calling_party_number': 'str',
             'default_scripts': 'dict(str, Script)',
@@ -103,7 +103,7 @@ class QueueRequest(object):
             'enable_transcription': 'enableTranscription',
             'enable_manual_assignment': 'enableManualAssignment',
             'agent_owned_routing': 'agentOwnedRouting',
-            'vip_routing': 'vipRouting',
+            'direct_routing': 'directRouting',
             'calling_party_name': 'callingPartyName',
             'calling_party_number': 'callingPartyNumber',
             'default_scripts': 'defaultScripts',
@@ -139,7 +139,7 @@ class QueueRequest(object):
         self._enable_transcription = None
         self._enable_manual_assignment = None
         self._agent_owned_routing = None
-        self._vip_routing = None
+        self._direct_routing = None
         self._calling_party_name = None
         self._calling_party_number = None
         self._default_scripts = None
@@ -776,28 +776,28 @@ class QueueRequest(object):
         self._agent_owned_routing = agent_owned_routing
 
     @property
-    def vip_routing(self):
+    def direct_routing(self):
         """
-        Gets the vip_routing of this QueueRequest.
-        The VIP Routing settings for the queue
+        Gets the direct_routing of this QueueRequest.
+        The Direct Routing settings for the queue
 
-        :return: The vip_routing of this QueueRequest.
-        :rtype: VipRouting
+        :return: The direct_routing of this QueueRequest.
+        :rtype: DirectRouting
         """
-        return self._vip_routing
+        return self._direct_routing
 
-    @vip_routing.setter
-    def vip_routing(self, vip_routing):
+    @direct_routing.setter
+    def direct_routing(self, direct_routing):
         """
-        Sets the vip_routing of this QueueRequest.
-        The VIP Routing settings for the queue
+        Sets the direct_routing of this QueueRequest.
+        The Direct Routing settings for the queue
 
-        :param vip_routing: The vip_routing of this QueueRequest.
-        :type: VipRouting
+        :param direct_routing: The direct_routing of this QueueRequest.
+        :type: DirectRouting
         """
         
 
-        self._vip_routing = vip_routing
+        self._direct_routing = direct_routing
 
     @property
     def calling_party_name(self):

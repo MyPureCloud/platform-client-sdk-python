@@ -192,7 +192,7 @@ class ArchitectFlowOutcomeNotificationArchitectOperation(object):
         :param action_name: The action_name of this ArchitectFlowOutcomeNotificationArchitectOperation.
         :type: str
         """
-        allowed_values = ["CREATE", "CHECKIN", "DEBUG", "DELETE", "HISTORY", "PUBLISH", "STATE_CHANGE", "UPDATE", "VALIDATE"]
+        allowed_values = ["CREATE", "CHECKIN", "CHECKOUT", "DEBUG", "DELETE", "HISTORY", "PUBLISH", "REVERT", "SAVE", "STATE_CHANGE", "UPDATE", "VALIDATE"]
         if action_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_name -> " + action_name)
             self._action_name = "outdated_sdk_version"

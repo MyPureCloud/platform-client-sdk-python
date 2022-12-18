@@ -40,14 +40,17 @@ class NluDetectionInput(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'text': 'str'
+            'text': 'str',
+            'language': 'str'
         }
 
         self.attribute_map = {
-            'text': 'text'
+            'text': 'text',
+            'language': 'language'
         }
 
         self._text = None
+        self._language = None
 
     @property
     def text(self):
@@ -72,6 +75,30 @@ class NluDetectionInput(object):
         
 
         self._text = text
+
+    @property
+    def language(self):
+        """
+        Gets the language of this NluDetectionInput.
+        Language of the version for multilingual detection, e.g. `en-us`, `de-de`
+
+        :return: The language of this NluDetectionInput.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """
+        Sets the language of this NluDetectionInput.
+        Language of the version for multilingual detection, e.g. `en-us`, `de-de`
+
+        :param language: The language of this NluDetectionInput.
+        :type: str
+        """
+        
+
+        self._language = language
 
     def to_dict(self):
         """

@@ -8,10 +8,58 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**get_telephony_mediaregions**](TelephonyApi.html#get_telephony_mediaregions) | Retrieve the list of AWS regions media can stream through.|
 |[**get_telephony_siptraces**](TelephonyApi.html#get_telephony_siptraces) | Fetch SIP metadata|
 |[**get_telephony_siptraces_download_download_id**](TelephonyApi.html#get_telephony_siptraces_download_download_id) | Get signed S3 URL for a pcap download|
 |[**post_telephony_siptraces_download**](TelephonyApi.html#post_telephony_siptraces_download) | Request a download of a pcap file to S3|
 {: class="table table-striped"}
+
+<a name="get_telephony_mediaregions"></a>
+
+## [**MediaRegions**](MediaRegions.html) get_telephony_mediaregions()
+
+
+
+Retrieve the list of AWS regions media can stream through.
+
+
+
+Wraps GET /api/v2/telephony/mediaregions 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+
+try:
+    # Retrieve the list of AWS regions media can stream through.
+    api_response = api_instance.get_telephony_mediaregions()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->get_telephony_mediaregions: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**MediaRegions**](MediaRegions.html)
 
 <a name="get_telephony_siptraces"></a>
 

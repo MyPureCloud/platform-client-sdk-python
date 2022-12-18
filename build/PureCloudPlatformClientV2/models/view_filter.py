@@ -190,7 +190,8 @@ class ViewFilter(object):
             'response_statuses': 'list[str]',
             'available_dashboard': 'str',
             'favourite_dashboard': 'bool',
-            'my_dashboard': 'bool'
+            'my_dashboard': 'bool',
+            'station_errors': 'list[str]'
         }
 
         self.attribute_map = {
@@ -344,7 +345,8 @@ class ViewFilter(object):
             'response_statuses': 'responseStatuses',
             'available_dashboard': 'availableDashboard',
             'favourite_dashboard': 'favouriteDashboard',
-            'my_dashboard': 'myDashboard'
+            'my_dashboard': 'myDashboard',
+            'station_errors': 'stationErrors'
         }
 
         self._media_types = None
@@ -498,6 +500,7 @@ class ViewFilter(object):
         self._available_dashboard = None
         self._favourite_dashboard = None
         self._my_dashboard = None
+        self._station_errors = None
 
     @property
     def media_types(self):
@@ -4125,6 +4128,30 @@ class ViewFilter(object):
         
 
         self._my_dashboard = my_dashboard
+
+    @property
+    def station_errors(self):
+        """
+        Gets the station_errors of this ViewFilter.
+        The list of agent errors that are related to station
+
+        :return: The station_errors of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._station_errors
+
+    @station_errors.setter
+    def station_errors(self, station_errors):
+        """
+        Sets the station_errors of this ViewFilter.
+        The list of agent errors that are related to station
+
+        :param station_errors: The station_errors of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._station_errors = station_errors
 
     def to_dict(self):
         """

@@ -44,6 +44,7 @@ class MinerExecuteRequest(object):
             'date_end': 'date',
             'upload_key': 'str',
             'media_type': 'str',
+            'participant_type': 'str',
             'queue_ids': 'list[str]'
         }
 
@@ -52,6 +53,7 @@ class MinerExecuteRequest(object):
             'date_end': 'dateEnd',
             'upload_key': 'uploadKey',
             'media_type': 'mediaType',
+            'participant_type': 'participantType',
             'queue_ids': 'queueIds'
         }
 
@@ -59,6 +61,7 @@ class MinerExecuteRequest(object):
         self._date_end = None
         self._upload_key = None
         self._media_type = None
+        self._participant_type = None
         self._queue_ids = None
 
     @property
@@ -159,6 +162,33 @@ class MinerExecuteRequest(object):
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
+
+    @property
+    def participant_type(self):
+        """
+        Gets the participant_type of this MinerExecuteRequest.
+        Type of the participant, either agent, customer or both.
+
+        :return: The participant_type of this MinerExecuteRequest.
+        :rtype: str
+        """
+        return self._participant_type
+
+    @participant_type.setter
+    def participant_type(self, participant_type):
+        """
+        Sets the participant_type of this MinerExecuteRequest.
+        Type of the participant, either agent, customer or both.
+
+        :param participant_type: The participant_type of this MinerExecuteRequest.
+        :type: str
+        """
+        allowed_values = ["Customer", "Agent", "Both"]
+        if participant_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for participant_type -> " + participant_type)
+            self._participant_type = "outdated_sdk_version"
+        else:
+            self._participant_type = participant_type
 
     @property
     def queue_ids(self):

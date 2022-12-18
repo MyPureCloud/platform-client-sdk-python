@@ -72,6 +72,7 @@ class Campaign(object):
             'priority': 'int',
             'contact_list_filters': 'list[DomainEntityRef]',
             'division': 'DomainEntityRef',
+            'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
             'self_uri': 'str'
         }
 
@@ -108,6 +109,7 @@ class Campaign(object):
             'priority': 'priority',
             'contact_list_filters': 'contactListFilters',
             'division': 'division',
+            'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
             'self_uri': 'selfUri'
         }
 
@@ -143,6 +145,7 @@ class Campaign(object):
         self._priority = None
         self._contact_list_filters = None
         self._division = None
+        self._dynamic_contact_queueing_settings = None
         self._self_uri = None
 
     @property
@@ -918,6 +921,30 @@ class Campaign(object):
         
 
         self._division = division
+
+    @property
+    def dynamic_contact_queueing_settings(self):
+        """
+        Gets the dynamic_contact_queueing_settings of this Campaign.
+        Settings for dynamic queueing of contacts.
+
+        :return: The dynamic_contact_queueing_settings of this Campaign.
+        :rtype: DynamicContactQueueingSettings
+        """
+        return self._dynamic_contact_queueing_settings
+
+    @dynamic_contact_queueing_settings.setter
+    def dynamic_contact_queueing_settings(self, dynamic_contact_queueing_settings):
+        """
+        Sets the dynamic_contact_queueing_settings of this Campaign.
+        Settings for dynamic queueing of contacts.
+
+        :param dynamic_contact_queueing_settings: The dynamic_contact_queueing_settings of this Campaign.
+        :type: DynamicContactQueueingSettings
+        """
+        
+
+        self._dynamic_contact_queueing_settings = dynamic_contact_queueing_settings
 
     @property
     def self_uri(self):

@@ -25,6 +25,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_languageunderstanding_miner_drafts**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_drafts) | Retrieve the list of drafts created.|
 |[**get_languageunderstanding_miner_intent**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_intent) | Get information about a mined intent|
 |[**get_languageunderstanding_miner_intents**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_intents) | Retrieve a list of mined intents.|
+|[**get_languageunderstanding_miner_topic**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_topic) | Retrieves details of a particular topic.|
+|[**get_languageunderstanding_miner_topic_phrase**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_topic_phrase) | Retrieves utterances related to a phrase in a topic.|
+|[**get_languageunderstanding_miner_topics**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_topics) | Retrieve a list of mined topics.|
 |[**get_languageunderstanding_miners**](LanguageUnderstandingApi.html#get_languageunderstanding_miners) | Retrieve the list of miners created.|
 |[**patch_languageunderstanding_domain**](LanguageUnderstandingApi.html#patch_languageunderstanding_domain) | Update an NLU Domain.|
 |[**patch_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#patch_languageunderstanding_miner_draft) | Save information for the draft. Either topic draft or intent draft should be sent.|
@@ -353,7 +356,7 @@ except ApiException as e:
 
 <a name="get_languageunderstanding_domain_feedback"></a>
 
-## [**NluFeedbackListing**](NluFeedbackListing.html) get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, after=after, fields=fields)
+## [**NluFeedbackListing**](NluFeedbackListing.html) get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, after=after, fields=fields)
 
 
 
@@ -387,6 +390,7 @@ assessment = 'assessment_example' # str | The top assessment to retrieve feedbac
 date_start = '2013-10-20' # date | Begin of time window as ISO-8601 date. (optional)
 date_end = '2013-10-20' # date | End of time window as ISO-8601 date. (optional)
 include_deleted = True # bool | Whether to include soft-deleted items in the result. (optional)
+language = 'language_example' # str | Whether to filter response based on the language, e.g. en-us, pt-br. (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 enable_cursor_pagination = False # bool | Enable Cursor Pagination (optional) (default to False)
@@ -395,7 +399,7 @@ fields = ['fields_example'] # list[str] | Fields and properties to get, comma-se
 
 try:
     # Get all feedback in the given NLU Domain Version.
-    api_response = api_instance.get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, after=after, fields=fields)
+    api_response = api_instance.get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, after=after, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_feedback: %s\n" % e)
@@ -412,6 +416,7 @@ except ApiException as e:
 | **date_start** | **date**| Begin of time window as ISO-8601 date. | [optional]  |
 | **date_end** | **date**| End of time window as ISO-8601 date. | [optional]  |
 | **include_deleted** | **bool**| Whether to include soft-deleted items in the result. | [optional]  |
+| **language** | **str**| Whether to filter response based on the language, e.g. en-us, pt-br. | [optional]  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **enable_cursor_pagination** | **bool**| Enable Cursor Pagination | [optional] [default to False] |
@@ -754,7 +759,7 @@ except ApiException as e:
 
 <a name="get_languageunderstanding_miner_draft"></a>
 
-## [**Draft**](Draft.html) get_languageunderstanding_miner_draft(miner_id, draft_id)
+## [**Draft**](Draft.html) get_languageunderstanding_miner_draft(miner_id, draft_id, draft_intent_id=draft_intent_id, draft_topic_id=draft_topic_id)
 
 
 
@@ -783,10 +788,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
 miner_id = 'miner_id_example' # str | Miner ID
 draft_id = 'draft_id_example' # str | Draft ID
+draft_intent_id = 'draft_intent_id_example' # str | Parameter to filter a specific intent. (optional)
+draft_topic_id = 'draft_topic_id_example' # str | Parameter to filter a specific topic. (optional)
 
 try:
     # Get information about a draft.
-    api_response = api_instance.get_languageunderstanding_miner_draft(miner_id, draft_id)
+    api_response = api_instance.get_languageunderstanding_miner_draft(miner_id, draft_id, draft_intent_id=draft_intent_id, draft_topic_id=draft_topic_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miner_draft: %s\n" % e)
@@ -799,6 +806,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
 | **draft_id** | **str**| Draft ID |  |
+| **draft_intent_id** | **str**| Parameter to filter a specific intent. | [optional]  |
+| **draft_topic_id** | **str**| Parameter to filter a specific topic. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -964,9 +973,170 @@ except ApiException as e:
 
 [**MinedIntentsListing**](MinedIntentsListing.html)
 
+<a name="get_languageunderstanding_miner_topic"></a>
+
+## [**MinerTopic**](MinerTopic.html) get_languageunderstanding_miner_topic(miner_id, topic_id, expand=expand)
+
+
+
+Retrieves details of a particular topic.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+topic_id = 'topic_id_example' # str | The ID of the topic to be retrieved.
+expand = 'expand_example' # str | Option to fetch phrases (optional)
+
+try:
+    # Retrieves details of a particular topic.
+    api_response = api_instance.get_languageunderstanding_miner_topic(miner_id, topic_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miner_topic: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **topic_id** | **str**| The ID of the topic to be retrieved. |  |
+| **expand** | **str**| Option to fetch phrases | [optional] <br />**Values**: phrases, utterances |
+{: class="table table-striped"}
+
+### Return type
+
+[**MinerTopic**](MinerTopic.html)
+
+<a name="get_languageunderstanding_miner_topic_phrase"></a>
+
+## [**MinerTopicPhrase**](MinerTopicPhrase.html) get_languageunderstanding_miner_topic_phrase(miner_id, topic_id, phrase_id)
+
+
+
+Retrieves utterances related to a phrase in a topic.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+topic_id = 'topic_id_example' # str | The ID of the topic to be retrieved.
+phrase_id = 'phrase_id_example' # str | The ID of the phrase to be retrieved.
+
+try:
+    # Retrieves utterances related to a phrase in a topic.
+    api_response = api_instance.get_languageunderstanding_miner_topic_phrase(miner_id, topic_id, phrase_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miner_topic_phrase: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+| **topic_id** | **str**| The ID of the topic to be retrieved. |  |
+| **phrase_id** | **str**| The ID of the phrase to be retrieved. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MinerTopicPhrase**](MinerTopicPhrase.html)
+
+<a name="get_languageunderstanding_miner_topics"></a>
+
+## [**MinerTopicsListing**](MinerTopicsListing.html) get_languageunderstanding_miner_topics(miner_id)
+
+
+
+Retrieve a list of mined topics.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/topics 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_id = 'miner_id_example' # str | Miner ID
+
+try:
+    # Retrieve a list of mined topics.
+    api_response = api_instance.get_languageunderstanding_miner_topics(miner_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miner_topics: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_id** | **str**| Miner ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MinerTopicsListing**](MinerTopicsListing.html)
+
 <a name="get_languageunderstanding_miners"></a>
 
-## [**MinerListing**](MinerListing.html) get_languageunderstanding_miners()
+## [**MinerListing**](MinerListing.html) get_languageunderstanding_miners(miner_type=miner_type)
 
 
 
@@ -993,10 +1163,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+miner_type = 'miner_type_example' # str | Type of miner, either intent or topic (optional)
 
 try:
     # Retrieve the list of miners created.
-    api_response = api_instance.get_languageunderstanding_miners()
+    api_response = api_instance.get_languageunderstanding_miners(miner_type=miner_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_miners: %s\n" % e)
@@ -1004,8 +1175,11 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
 
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **miner_type** | **str**| Type of miner, either intent or topic | [optional]  |
+{: class="table table-striped"}
 
 ### Return type
 
@@ -1340,7 +1514,7 @@ except ApiException as e:
 
 <a name="post_languageunderstanding_domain_versions"></a>
 
-## [**NluDomainVersion**](NluDomainVersion.html) post_languageunderstanding_domain_versions(domain_id, body)
+## [**NluDomainVersion**](NluDomainVersion.html) post_languageunderstanding_domain_versions(domain_id, body, include_utterances=include_utterances)
 
 
 
@@ -1370,10 +1544,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
 domain_id = 'domain_id_example' # str | ID of the NLU domain.
 body = PureCloudPlatformClientV2.NluDomainVersion() # NluDomainVersion | The NLU Domain Version to create.
+include_utterances = True # bool | Whether utterances for intent definition should be included when marshalling response. (optional)
 
 try:
     # Create an NLU Domain Version.
-    api_response = api_instance.post_languageunderstanding_domain_versions(domain_id, body)
+    api_response = api_instance.post_languageunderstanding_domain_versions(domain_id, body, include_utterances=include_utterances)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_versions: %s\n" % e)
@@ -1386,6 +1561,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **body** | [**NluDomainVersion**](NluDomainVersion.html)| The NLU Domain Version to create. |  |
+| **include_utterances** | **bool**| Whether utterances for intent definition should be included when marshalling response. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

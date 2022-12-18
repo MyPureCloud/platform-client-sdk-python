@@ -1072,6 +1072,168 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_outbound_dnclist_emailaddresses(self, dnc_list_id, **kwargs):
+        """
+        Deletes all or expired email addresses from a DNC list.
+        This operation is Only for Internal DNC lists of email addresses
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_dnclist_emailaddresses(dnc_list_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dnc_list_id: DncList ID (required)
+        :param bool expired_only: Set to true to only remove DNC entries that are expired
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dnc_list_id', 'expired_only']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_dnclist_emailaddresses" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'dnc_list_id' is set
+        if ('dnc_list_id' not in params) or (params['dnc_list_id'] is None):
+            raise ValueError("Missing the required parameter `dnc_list_id` when calling `delete_outbound_dnclist_emailaddresses`")
+
+
+        resource_path = '/api/v2/outbound/dnclists/{dncListId}/emailaddresses'.replace('{format}', 'json')
+        path_params = {}
+        if 'dnc_list_id' in params:
+            path_params['dncListId'] = params['dnc_list_id']
+
+        query_params = {}
+        if 'expired_only' in params:
+            query_params['expiredOnly'] = params['expired_only']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_outbound_dnclist_phonenumbers(self, dnc_list_id, **kwargs):
+        """
+        Deletes all or expired phone numbers from a DNC list.
+        This operation is Only for Internal DNC lists of phone numbers
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_dnclist_phonenumbers(dnc_list_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dnc_list_id: DncList ID (required)
+        :param bool expired_only: Set to true to only remove DNC entries that are expired
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dnc_list_id', 'expired_only']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_dnclist_phonenumbers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'dnc_list_id' is set
+        if ('dnc_list_id' not in params) or (params['dnc_list_id'] is None):
+            raise ValueError("Missing the required parameter `dnc_list_id` when calling `delete_outbound_dnclist_phonenumbers`")
+
+
+        resource_path = '/api/v2/outbound/dnclists/{dncListId}/phonenumbers'.replace('{format}', 'json')
+        path_params = {}
+        if 'dnc_list_id' in params:
+            path_params['dncListId'] = params['dnc_list_id']
+
+        query_params = {}
+        if 'expired_only' in params:
+            query_params['expiredOnly'] = params['expired_only']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_outbound_messagingcampaign(self, messaging_campaign_id, **kwargs):
         """
         Delete an Outbound Messaging Campaign
@@ -6567,6 +6729,174 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='WrapUpCodeMapping',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_outbound_dnclist_emailaddresses(self, dnc_list_id, body, **kwargs):
+        """
+        Add emails to or Delete emails from a DNC list.
+        Only Internal DNC lists may be added to or deleted from
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_outbound_dnclist_emailaddresses(dnc_list_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dnc_list_id: DncList ID (required)
+        :param DncPatchEmailsRequest body: DNC Emails (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dnc_list_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_outbound_dnclist_emailaddresses" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'dnc_list_id' is set
+        if ('dnc_list_id' not in params) or (params['dnc_list_id'] is None):
+            raise ValueError("Missing the required parameter `dnc_list_id` when calling `patch_outbound_dnclist_emailaddresses`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_outbound_dnclist_emailaddresses`")
+
+
+        resource_path = '/api/v2/outbound/dnclists/{dncListId}/emailaddresses'.replace('{format}', 'json')
+        path_params = {}
+        if 'dnc_list_id' in params:
+            path_params['dncListId'] = params['dnc_list_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_outbound_dnclist_phonenumbers(self, dnc_list_id, body, **kwargs):
+        """
+        Add numbers to or delete numbers from a DNC list.
+        Only Internal DNC lists may be added to deleted from
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_outbound_dnclist_phonenumbers(dnc_list_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dnc_list_id: DncList ID (required)
+        :param DncPatchPhoneNumbersRequest body: DNC Phone Numbers (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dnc_list_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_outbound_dnclist_phonenumbers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'dnc_list_id' is set
+        if ('dnc_list_id' not in params) or (params['dnc_list_id'] is None):
+            raise ValueError("Missing the required parameter `dnc_list_id` when calling `patch_outbound_dnclist_phonenumbers`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_outbound_dnclist_phonenumbers`")
+
+
+        resource_path = '/api/v2/outbound/dnclists/{dncListId}/phonenumbers'.replace('{format}', 'json')
+        path_params = {}
+        if 'dnc_list_id' in params:
+            path_params['dncListId'] = params['dnc_list_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

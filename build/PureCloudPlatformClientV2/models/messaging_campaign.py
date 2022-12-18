@@ -56,6 +56,7 @@ class MessagingCampaign(object):
             'rule_sets': 'list[DomainEntityRef]',
             'contact_list_filters': 'list[DomainEntityRef]',
             'errors': 'list[RestErrorDetail]',
+            'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
             'email_config': 'EmailConfig',
             'sms_config': 'SmsConfig',
             'self_uri': 'str'
@@ -78,6 +79,7 @@ class MessagingCampaign(object):
             'rule_sets': 'ruleSets',
             'contact_list_filters': 'contactListFilters',
             'errors': 'errors',
+            'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
             'email_config': 'emailConfig',
             'sms_config': 'smsConfig',
             'self_uri': 'selfUri'
@@ -99,6 +101,7 @@ class MessagingCampaign(object):
         self._rule_sets = None
         self._contact_list_filters = None
         self._errors = None
+        self._dynamic_contact_queueing_settings = None
         self._email_config = None
         self._sms_config = None
         self._self_uri = None
@@ -489,6 +492,30 @@ class MessagingCampaign(object):
         
 
         self._errors = errors
+
+    @property
+    def dynamic_contact_queueing_settings(self):
+        """
+        Gets the dynamic_contact_queueing_settings of this MessagingCampaign.
+        Indicates (when true) that the campaign supports dynamic queueing of the contact list at the time of a request for contacts.
+
+        :return: The dynamic_contact_queueing_settings of this MessagingCampaign.
+        :rtype: DynamicContactQueueingSettings
+        """
+        return self._dynamic_contact_queueing_settings
+
+    @dynamic_contact_queueing_settings.setter
+    def dynamic_contact_queueing_settings(self, dynamic_contact_queueing_settings):
+        """
+        Sets the dynamic_contact_queueing_settings of this MessagingCampaign.
+        Indicates (when true) that the campaign supports dynamic queueing of the contact list at the time of a request for contacts.
+
+        :param dynamic_contact_queueing_settings: The dynamic_contact_queueing_settings of this MessagingCampaign.
+        :type: DynamicContactQueueingSettings
+        """
+        
+
+        self._dynamic_contact_queueing_settings = dynamic_contact_queueing_settings
 
     @property
     def email_config(self):

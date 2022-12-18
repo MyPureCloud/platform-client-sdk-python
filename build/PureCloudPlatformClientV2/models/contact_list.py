@@ -56,6 +56,7 @@ class ContactList(object):
             'attempt_limits': 'DomainEntityRef',
             'automatic_time_zone_mapping': 'bool',
             'zip_code_column_name': 'str',
+            'column_data_type_specifications': 'list[ColumnDataTypeSpecification]',
             'self_uri': 'str'
         }
 
@@ -76,6 +77,7 @@ class ContactList(object):
             'attempt_limits': 'attemptLimits',
             'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
             'zip_code_column_name': 'zipCodeColumnName',
+            'column_data_type_specifications': 'columnDataTypeSpecifications',
             'self_uri': 'selfUri'
         }
 
@@ -95,6 +97,7 @@ class ContactList(object):
         self._attempt_limits = None
         self._automatic_time_zone_mapping = None
         self._zip_code_column_name = None
+        self._column_data_type_specifications = None
         self._self_uri = None
 
     @property
@@ -480,6 +483,30 @@ class ContactList(object):
         
 
         self._zip_code_column_name = zip_code_column_name
+
+    @property
+    def column_data_type_specifications(self):
+        """
+        Gets the column_data_type_specifications of this ContactList.
+        The settings of the columns selected for dynamic queueing
+
+        :return: The column_data_type_specifications of this ContactList.
+        :rtype: list[ColumnDataTypeSpecification]
+        """
+        return self._column_data_type_specifications
+
+    @column_data_type_specifications.setter
+    def column_data_type_specifications(self, column_data_type_specifications):
+        """
+        Sets the column_data_type_specifications of this ContactList.
+        The settings of the columns selected for dynamic queueing
+
+        :param column_data_type_specifications: The column_data_type_specifications of this ContactList.
+        :type: list[ColumnDataTypeSpecification]
+        """
+        
+
+        self._column_data_type_specifications = column_data_type_specifications
 
     @property
     def self_uri(self):

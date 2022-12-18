@@ -44,6 +44,7 @@ class Draft(object):
             'name': 'str',
             'miner': 'Miner',
             'intents': 'list[DraftIntents]',
+            'topics': 'list[DraftTopics]',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'self_uri': 'str'
@@ -54,6 +55,7 @@ class Draft(object):
             'name': 'name',
             'miner': 'miner',
             'intents': 'intents',
+            'topics': 'topics',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'self_uri': 'selfUri'
@@ -63,6 +65,7 @@ class Draft(object):
         self._name = None
         self._miner = None
         self._intents = None
+        self._topics = None
         self._date_created = None
         self._date_modified = None
         self._self_uri = None
@@ -162,6 +165,30 @@ class Draft(object):
         
 
         self._intents = intents
+
+    @property
+    def topics(self):
+        """
+        Gets the topics of this Draft.
+        Draft topic object.
+
+        :return: The topics of this Draft.
+        :rtype: list[DraftTopics]
+        """
+        return self._topics
+
+    @topics.setter
+    def topics(self, topics):
+        """
+        Sets the topics of this Draft.
+        Draft topic object.
+
+        :param topics: The topics of this Draft.
+        :type: list[DraftTopics]
+        """
+        
+
+        self._topics = topics
 
     @property
     def date_created(self):

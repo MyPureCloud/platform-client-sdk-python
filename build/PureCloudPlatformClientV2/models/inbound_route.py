@@ -54,6 +54,7 @@ class InboundRoute(object):
             'auto_bcc': 'list[EmailAddress]',
             'spam_flow': 'DomainEntityRef',
             'signature': 'Signature',
+            'history_inclusion': 'str',
             'self_uri': 'str'
         }
 
@@ -72,6 +73,7 @@ class InboundRoute(object):
             'auto_bcc': 'autoBcc',
             'spam_flow': 'spamFlow',
             'signature': 'signature',
+            'history_inclusion': 'historyInclusion',
             'self_uri': 'selfUri'
         }
 
@@ -89,6 +91,7 @@ class InboundRoute(object):
         self._auto_bcc = None
         self._spam_flow = None
         self._signature = None
+        self._history_inclusion = None
         self._self_uri = None
 
     @property
@@ -426,6 +429,33 @@ class InboundRoute(object):
         
 
         self._signature = signature
+
+    @property
+    def history_inclusion(self):
+        """
+        Gets the history_inclusion of this InboundRoute.
+        The configuration to indicate how the history of a conversation has to be included in a draft
+
+        :return: The history_inclusion of this InboundRoute.
+        :rtype: str
+        """
+        return self._history_inclusion
+
+    @history_inclusion.setter
+    def history_inclusion(self, history_inclusion):
+        """
+        Sets the history_inclusion of this InboundRoute.
+        The configuration to indicate how the history of a conversation has to be included in a draft
+
+        :param history_inclusion: The history_inclusion of this InboundRoute.
+        :type: str
+        """
+        allowed_values = ["Include", "Exclude", "Optional"]
+        if history_inclusion.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for history_inclusion -> " + history_inclusion)
+            self._history_inclusion = "outdated_sdk_version"
+        else:
+            self._history_inclusion = history_inclusion
 
     @property
     def self_uri(self):

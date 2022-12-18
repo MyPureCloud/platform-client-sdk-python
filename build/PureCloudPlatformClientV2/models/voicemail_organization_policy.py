@@ -49,6 +49,7 @@ class VoicemailOrganizationPolicy(object):
             'send_email_notifications': 'bool',
             'include_email_transcriptions': 'bool',
             'disable_email_pii': 'bool',
+            'maximum_recording_time_seconds': 'int',
             'modified_date': 'datetime'
         }
 
@@ -62,6 +63,7 @@ class VoicemailOrganizationPolicy(object):
             'send_email_notifications': 'sendEmailNotifications',
             'include_email_transcriptions': 'includeEmailTranscriptions',
             'disable_email_pii': 'disableEmailPii',
+            'maximum_recording_time_seconds': 'maximumRecordingTimeSeconds',
             'modified_date': 'modifiedDate'
         }
 
@@ -74,6 +76,7 @@ class VoicemailOrganizationPolicy(object):
         self._send_email_notifications = None
         self._include_email_transcriptions = None
         self._disable_email_pii = None
+        self._maximum_recording_time_seconds = None
         self._modified_date = None
 
     @property
@@ -291,6 +294,30 @@ class VoicemailOrganizationPolicy(object):
         
 
         self._disable_email_pii = disable_email_pii
+
+    @property
+    def maximum_recording_time_seconds(self):
+        """
+        Gets the maximum_recording_time_seconds of this VoicemailOrganizationPolicy.
+        Default value for the maximum length of time in seconds of a recorded voicemail
+
+        :return: The maximum_recording_time_seconds of this VoicemailOrganizationPolicy.
+        :rtype: int
+        """
+        return self._maximum_recording_time_seconds
+
+    @maximum_recording_time_seconds.setter
+    def maximum_recording_time_seconds(self, maximum_recording_time_seconds):
+        """
+        Sets the maximum_recording_time_seconds of this VoicemailOrganizationPolicy.
+        Default value for the maximum length of time in seconds of a recorded voicemail
+
+        :param maximum_recording_time_seconds: The maximum_recording_time_seconds of this VoicemailOrganizationPolicy.
+        :type: int
+        """
+        
+
+        self._maximum_recording_time_seconds = maximum_recording_time_seconds
 
     @property
     def modified_date(self):

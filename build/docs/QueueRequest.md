@@ -33,7 +33,7 @@ title: QueueRequest
 | **enable_transcription** | **bool** | Indicates whether voice transcription is enabled for this queue. | [optional] |
 | **enable_manual_assignment** | **bool** | Indicates whether manual assignment is enabled for this queue. | [optional] |
 | **agent_owned_routing** | [**AgentOwnedRouting**](AgentOwnedRouting.html) | The Agent Owned Routing settings for the queue | [optional] |
-| **vip_routing** | [**VipRouting**](VipRouting.html) | The VIP Routing settings for the queue | [optional] |
+| **direct_routing** | [**DirectRouting**](DirectRouting.html) | The Direct Routing settings for the queue | [optional] |
 | **calling_party_name** | **str** | The name to use for caller identification for outbound calls from this queue. | [optional] |
 | **calling_party_number** | **str** | The phone number to use for caller identification for outbound calls from this queue. | [optional] |
 | **default_scripts** | [**dict(str, Script)**](Script.html) | The default script Ids for the communication types. | [optional] |

@@ -41,16 +41,19 @@ class NamedEntityTypeItem(object):
         """
         self.swagger_types = {
             'value': 'str',
-            'synonyms': 'list[str]'
+            'synonyms': 'list[str]',
+            'additional_languages': 'dict(str, AdditionalLanguagesSynonyms)'
         }
 
         self.attribute_map = {
             'value': 'value',
-            'synonyms': 'synonyms'
+            'synonyms': 'synonyms',
+            'additional_languages': 'additionalLanguages'
         }
 
         self._value = None
         self._synonyms = None
+        self._additional_languages = None
 
     @property
     def value(self):
@@ -99,6 +102,30 @@ class NamedEntityTypeItem(object):
         
 
         self._synonyms = synonyms
+
+    @property
+    def additional_languages(self):
+        """
+        Gets the additional_languages of this NamedEntityTypeItem.
+        Additional Language Synonyms for the given named entity value.
+
+        :return: The additional_languages of this NamedEntityTypeItem.
+        :rtype: dict(str, AdditionalLanguagesSynonyms)
+        """
+        return self._additional_languages
+
+    @additional_languages.setter
+    def additional_languages(self, additional_languages):
+        """
+        Sets the additional_languages of this NamedEntityTypeItem.
+        Additional Language Synonyms for the given named entity value.
+
+        :param additional_languages: The additional_languages of this NamedEntityTypeItem.
+        :type: dict(str, AdditionalLanguagesSynonyms)
+        """
+        
+
+        self._additional_languages = additional_languages
 
     def to_dict(self):
         """

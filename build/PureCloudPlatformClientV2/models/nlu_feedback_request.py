@@ -42,18 +42,21 @@ class NluFeedbackRequest(object):
         self.swagger_types = {
             'text': 'str',
             'intents': 'list[IntentFeedback]',
-            'version_id': 'str'
+            'version_id': 'str',
+            'language': 'str'
         }
 
         self.attribute_map = {
             'text': 'text',
             'intents': 'intents',
-            'version_id': 'versionId'
+            'version_id': 'versionId',
+            'language': 'language'
         }
 
         self._text = None
         self._intents = None
         self._version_id = None
+        self._language = None
 
     @property
     def text(self):
@@ -126,6 +129,30 @@ class NluFeedbackRequest(object):
         
 
         self._version_id = version_id
+
+    @property
+    def language(self):
+        """
+        Gets the language of this NluFeedbackRequest.
+        The language of the version to which feedback is linked, e.g. en-us, de-de
+
+        :return: The language of this NluFeedbackRequest.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """
+        Sets the language of this NluFeedbackRequest.
+        The language of the version to which feedback is linked, e.g. en-us, de-de
+
+        :param language: The language of this NluFeedbackRequest.
+        :type: str
+        """
+        
+
+        self._language = language
 
     def to_dict(self):
         """

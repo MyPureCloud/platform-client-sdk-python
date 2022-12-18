@@ -45,6 +45,7 @@ class NluFeedbackResponse(object):
             'intents': 'list[IntentFeedback]',
             'version': 'NluDomainVersion',
             'date_created': 'datetime',
+            'language': 'str',
             'self_uri': 'str'
         }
 
@@ -54,6 +55,7 @@ class NluFeedbackResponse(object):
             'intents': 'intents',
             'version': 'version',
             'date_created': 'dateCreated',
+            'language': 'language',
             'self_uri': 'selfUri'
         }
 
@@ -62,6 +64,7 @@ class NluFeedbackResponse(object):
         self._intents = None
         self._version = None
         self._date_created = None
+        self._language = None
         self._self_uri = None
 
     @property
@@ -183,6 +186,30 @@ class NluFeedbackResponse(object):
         
 
         self._date_created = date_created
+
+    @property
+    def language(self):
+        """
+        Gets the language of this NluFeedbackResponse.
+        The language of the version to which feedback is linked, e.g. en-us, de-de
+
+        :return: The language of this NluFeedbackResponse.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """
+        Sets the language of this NluFeedbackResponse.
+        The language of the version to which feedback is linked, e.g. en-us, de-de
+
+        :param language: The language of this NluFeedbackResponse.
+        :type: str
+        """
+        
+
+        self._language = language
 
     @property
     def self_uri(self):

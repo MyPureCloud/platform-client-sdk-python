@@ -44,7 +44,8 @@ class IntentDefinition(object):
             'name': 'str',
             'entity_type_bindings': 'list[NamedEntityTypeBinding]',
             'entity_name_references': 'list[str]',
-            'utterances': 'list[NluUtterance]'
+            'utterances': 'list[NluUtterance]',
+            'additional_languages': 'dict(str, AdditionalLanguagesIntent)'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class IntentDefinition(object):
             'name': 'name',
             'entity_type_bindings': 'entityTypeBindings',
             'entity_name_references': 'entityNameReferences',
-            'utterances': 'utterances'
+            'utterances': 'utterances',
+            'additional_languages': 'additionalLanguages'
         }
 
         self._id = None
@@ -60,6 +62,7 @@ class IntentDefinition(object):
         self._entity_type_bindings = None
         self._entity_name_references = None
         self._utterances = None
+        self._additional_languages = None
 
     @property
     def id(self):
@@ -180,6 +183,30 @@ class IntentDefinition(object):
         
 
         self._utterances = utterances
+
+    @property
+    def additional_languages(self):
+        """
+        Gets the additional_languages of this IntentDefinition.
+        Additional languages for intents
+
+        :return: The additional_languages of this IntentDefinition.
+        :rtype: dict(str, AdditionalLanguagesIntent)
+        """
+        return self._additional_languages
+
+    @additional_languages.setter
+    def additional_languages(self, additional_languages):
+        """
+        Sets the additional_languages of this IntentDefinition.
+        Additional languages for intents
+
+        :param additional_languages: The additional_languages of this IntentDefinition.
+        :type: dict(str, AdditionalLanguagesIntent)
+        """
+        
+
+        self._additional_languages = additional_languages
 
     def to_dict(self):
         """

@@ -120,6 +120,8 @@ PureCloudPlatformClientV2/models/add_conversation_response.py
 PureCloudPlatformClientV2/models/add_shift_trade_request.py
 PureCloudPlatformClientV2/models/add_work_plan_rotation_agent_request.py
 PureCloudPlatformClientV2/models/add_work_plan_rotation_request.py
+PureCloudPlatformClientV2/models/additional_languages_intent.py
+PureCloudPlatformClientV2/models/additional_languages_synonyms.py
 PureCloudPlatformClientV2/models/additional_message.py
 PureCloudPlatformClientV2/models/address.py
 PureCloudPlatformClientV2/models/addressable_entity_ref.py
@@ -1141,6 +1143,9 @@ PureCloudPlatformClientV2/models/digital_rule.py
 PureCloudPlatformClientV2/models/digital_rule_set.py
 PureCloudPlatformClientV2/models/digital_rule_set_entity_listing.py
 PureCloudPlatformClientV2/models/digits.py
+PureCloudPlatformClientV2/models/direct_routing.py
+PureCloudPlatformClientV2/models/direct_routing_call_media_settings.py
+PureCloudPlatformClientV2/models/direct_routing_media_settings.py
 PureCloudPlatformClientV2/models/directory_user_devices_listing.py
 PureCloudPlatformClientV2/models/disallowed_entity_learning_assignment_item.py
 PureCloudPlatformClientV2/models/disallowed_entity_learning_assignment_reference.py
@@ -1153,6 +1158,8 @@ PureCloudPlatformClientV2/models/dnc_list_create.py
 PureCloudPlatformClientV2/models/dnc_list_division_view.py
 PureCloudPlatformClientV2/models/dnc_list_division_view_listing.py
 PureCloudPlatformClientV2/models/dnc_list_entity_listing.py
+PureCloudPlatformClientV2/models/dnc_patch_emails_request.py
+PureCloudPlatformClientV2/models/dnc_patch_phone_numbers_request.py
 PureCloudPlatformClientV2/models/dnclist_download_ready_export_uri.py
 PureCloudPlatformClientV2/models/dnclist_download_ready_object.py
 PureCloudPlatformClientV2/models/dnclist_import_status_import_status.py
@@ -1616,6 +1623,7 @@ PureCloudPlatformClientV2/models/journey_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/journey_aggregate_query_response.py
 PureCloudPlatformClientV2/models/journey_aggregation_query.py
 PureCloudPlatformClientV2/models/journey_aggregation_view.py
+PureCloudPlatformClientV2/models/journey_app.py
 PureCloudPlatformClientV2/models/journey_campaign.py
 PureCloudPlatformClientV2/models/journey_context.py
 PureCloudPlatformClientV2/models/journey_customer.py
@@ -1909,6 +1917,7 @@ PureCloudPlatformClientV2/models/max_length.py
 PureCloudPlatformClientV2/models/max_participants.py
 PureCloudPlatformClientV2/models/media_participant_request.py
 PureCloudPlatformClientV2/models/media_policies.py
+PureCloudPlatformClientV2/models/media_regions.py
 PureCloudPlatformClientV2/models/media_result.py
 PureCloudPlatformClientV2/models/media_setting.py
 PureCloudPlatformClientV2/models/media_summary.py
@@ -1975,6 +1984,9 @@ PureCloudPlatformClientV2/models/miner.py
 PureCloudPlatformClientV2/models/miner_execute_request.py
 PureCloudPlatformClientV2/models/miner_intent.py
 PureCloudPlatformClientV2/models/miner_listing.py
+PureCloudPlatformClientV2/models/miner_topic.py
+PureCloudPlatformClientV2/models/miner_topic_phrase.py
+PureCloudPlatformClientV2/models/miner_topics_listing.py
 PureCloudPlatformClientV2/models/modeling_processing_error.py
 PureCloudPlatformClientV2/models/modeling_status_response.py
 PureCloudPlatformClientV2/models/move_management_unit_request.py
@@ -1987,6 +1999,7 @@ PureCloudPlatformClientV2/models/named_entity_type_binding.py
 PureCloudPlatformClientV2/models/named_entity_type_definition.py
 PureCloudPlatformClientV2/models/named_entity_type_item.py
 PureCloudPlatformClientV2/models/named_entity_type_mechanism.py
+PureCloudPlatformClientV2/models/network_connectivity.py
 PureCloudPlatformClientV2/models/nlu_confusion_matrix_column.py
 PureCloudPlatformClientV2/models/nlu_confusion_matrix_row.py
 PureCloudPlatformClientV2/models/nlu_detection_context.py
@@ -2499,6 +2512,8 @@ PureCloudPlatformClientV2/models/recipient_additional_identifier.py
 PureCloudPlatformClientV2/models/recipient_listing.py
 PureCloudPlatformClientV2/models/record.py
 PureCloudPlatformClientV2/models/recording.py
+PureCloudPlatformClientV2/models/recording_annotation_flow.py
+PureCloudPlatformClientV2/models/recording_annotation_queue.py
 PureCloudPlatformClientV2/models/recording_archive_restore_topic_media_result.py
 PureCloudPlatformClientV2/models/recording_archive_restore_topic_recording.py
 PureCloudPlatformClientV2/models/recording_button_component.py
@@ -2674,6 +2689,7 @@ PureCloudPlatformClientV2/models/screenshare.py
 PureCloudPlatformClientV2/models/script.py
 PureCloudPlatformClientV2/models/script_entity_listing.py
 PureCloudPlatformClientV2/models/scroll_percentage_event_trigger.py
+PureCloudPlatformClientV2/models/sdk_library.py
 PureCloudPlatformClientV2/models/search_aggregation.py
 PureCloudPlatformClientV2/models/search_criteria.py
 PureCloudPlatformClientV2/models/search_request.py
@@ -2940,6 +2956,7 @@ PureCloudPlatformClientV2/models/topic_duration.py
 PureCloudPlatformClientV2/models/topic_job.py
 PureCloudPlatformClientV2/models/topic_job_request.py
 PureCloudPlatformClientV2/models/topic_offset.py
+PureCloudPlatformClientV2/models/topic_phrase.py
 PureCloudPlatformClientV2/models/topic_request.py
 PureCloudPlatformClientV2/models/topics_entity_listing.py
 PureCloudPlatformClientV2/models/training_listing.py
@@ -3233,10 +3250,6 @@ PureCloudPlatformClientV2/models/value_wrapper_string.py
 PureCloudPlatformClientV2/models/verification_result.py
 PureCloudPlatformClientV2/models/video.py
 PureCloudPlatformClientV2/models/view_filter.py
-PureCloudPlatformClientV2/models/vip_backup.py
-PureCloudPlatformClientV2/models/vip_call_media_settings.py
-PureCloudPlatformClientV2/models/vip_media_settings.py
-PureCloudPlatformClientV2/models/vip_routing.py
 PureCloudPlatformClientV2/models/visibility_condition.py
 PureCloudPlatformClientV2/models/vm_pairing_info.py
 PureCloudPlatformClientV2/models/voicemail.py
@@ -3386,6 +3399,9 @@ PureCloudPlatformClientV2/models/wfm_historical_data_upload_request_status_topic
 PureCloudPlatformClientV2/models/wfm_historical_shrinkage_calculations_complete_topic_historical_shrinkage_calculations_complete_notification.py
 PureCloudPlatformClientV2/models/wfm_historical_shrinkage_request.py
 PureCloudPlatformClientV2/models/wfm_historical_shrinkage_response.py
+PureCloudPlatformClientV2/models/wfm_integrations_hris_time_off_types_job_topic_error_body.py
+PureCloudPlatformClientV2/models/wfm_integrations_hris_time_off_types_job_topic_hris_time_off_type.py
+PureCloudPlatformClientV2/models/wfm_integrations_hris_time_off_types_job_topic_hris_time_off_types_job_notification.py
 PureCloudPlatformClientV2/models/wfm_intraday_data_update_topic_intraday_data_group.py
 PureCloudPlatformClientV2/models/wfm_intraday_data_update_topic_intraday_data_update.py
 PureCloudPlatformClientV2/models/wfm_intraday_data_update_topic_intraday_forecast_data.py
@@ -3406,6 +3422,9 @@ PureCloudPlatformClientV2/models/wfm_process_upload_request.py
 PureCloudPlatformClientV2/models/wfm_schedule_activity.py
 PureCloudPlatformClientV2/models/wfm_schedule_reference.py
 PureCloudPlatformClientV2/models/wfm_schedule_topic_wfm_schedule_notification.py
+PureCloudPlatformClientV2/models/wfm_time_off_balance_job_topic_error_body.py
+PureCloudPlatformClientV2/models/wfm_time_off_balance_job_topic_time_off_balance.py
+PureCloudPlatformClientV2/models/wfm_time_off_balance_job_topic_time_off_balance_job_notification.py
 PureCloudPlatformClientV2/models/wfm_time_off_request_update_topic_time_off_request_update.py
 PureCloudPlatformClientV2/models/wfm_time_off_request_update_topic_user_reference.py
 PureCloudPlatformClientV2/models/wfm_update_agent_details_topic_wfm_update_agent_details_complete.py
@@ -3552,6 +3571,8 @@ docs/AddConversationResponse.md
 docs/AddShiftTradeRequest.md
 docs/AddWorkPlanRotationAgentRequest.md
 docs/AddWorkPlanRotationRequest.md
+docs/AdditionalLanguagesIntent.md
+docs/AdditionalLanguagesSynonyms.md
 docs/AdditionalMessage.md
 docs/Address.md
 docs/AddressableEntityRef.md
@@ -4594,6 +4615,9 @@ docs/DigitalRule.md
 docs/DigitalRuleSet.md
 docs/DigitalRuleSetEntityListing.md
 docs/Digits.md
+docs/DirectRouting.md
+docs/DirectRoutingCallMediaSettings.md
+docs/DirectRoutingMediaSettings.md
 docs/DirectoryUserDevicesListing.md
 docs/DisallowedEntityLearningAssignmentItem.md
 docs/DisallowedEntityLearningAssignmentReference.md
@@ -4606,6 +4630,8 @@ docs/DncListCreate.md
 docs/DncListDivisionView.md
 docs/DncListDivisionViewListing.md
 docs/DncListEntityListing.md
+docs/DncPatchEmailsRequest.md
+docs/DncPatchPhoneNumbersRequest.md
 docs/DnclistDownloadReadyExportUri.md
 docs/DnclistDownloadReadyObject.md
 docs/DnclistImportStatusImportStatus.md
@@ -5095,6 +5121,7 @@ docs/JourneyAggregationQuery.md
 docs/JourneyAggregationView.md
 docs/JourneyApi.json
 docs/JourneyApi.md
+docs/JourneyApp.md
 docs/JourneyCampaign.md
 docs/JourneyContext.md
 docs/JourneyCustomer.md
@@ -5400,6 +5427,7 @@ docs/MaxLength.md
 docs/MaxParticipants.md
 docs/MediaParticipantRequest.md
 docs/MediaPolicies.md
+docs/MediaRegions.md
 docs/MediaResult.md
 docs/MediaSetting.md
 docs/MediaSummary.md
@@ -5468,6 +5496,9 @@ docs/Miner.md
 docs/MinerExecuteRequest.md
 docs/MinerIntent.md
 docs/MinerListing.md
+docs/MinerTopic.md
+docs/MinerTopicPhrase.md
+docs/MinerTopicsListing.md
 docs/MobileDevicesApi.json
 docs/MobileDevicesApi.md
 docs/ModelingProcessingError.md
@@ -5483,6 +5514,7 @@ docs/NamedEntityTypeBinding.md
 docs/NamedEntityTypeDefinition.md
 docs/NamedEntityTypeItem.md
 docs/NamedEntityTypeMechanism.md
+docs/NetworkConnectivity.md
 docs/NluConfusionMatrixColumn.md
 docs/NluConfusionMatrixRow.md
 docs/NluDetectionContext.md
@@ -6012,6 +6044,8 @@ docs/RecipientAdditionalIdentifier.md
 docs/RecipientListing.md
 docs/Record.md
 docs/Recording.md
+docs/RecordingAnnotationFlow.md
+docs/RecordingAnnotationQueue.md
 docs/RecordingApi.json
 docs/RecordingApi.md
 docs/RecordingArchiveRestoreTopicMediaResult.md
@@ -6199,6 +6233,7 @@ docs/ScriptEntityListing.md
 docs/ScriptsApi.json
 docs/ScriptsApi.md
 docs/ScrollPercentageEventTrigger.md
+docs/SdkLibrary.md
 docs/SearchAggregation.md
 docs/SearchApi.json
 docs/SearchApi.md
@@ -6481,6 +6516,7 @@ docs/TopicDuration.md
 docs/TopicJob.md
 docs/TopicJobRequest.md
 docs/TopicOffset.md
+docs/TopicPhrase.md
 docs/TopicRequest.md
 docs/TopicsEntityListing.md
 docs/TrainingListing.md
@@ -6784,10 +6820,6 @@ docs/ValueWrapperString.md
 docs/VerificationResult.md
 docs/Video.md
 docs/ViewFilter.md
-docs/VipBackup.md
-docs/VipCallMediaSettings.md
-docs/VipMediaSettings.md
-docs/VipRouting.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
 docs/Voicemail.md
@@ -6945,6 +6977,9 @@ docs/WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
 docs/WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification.md
 docs/WfmHistoricalShrinkageRequest.md
 docs/WfmHistoricalShrinkageResponse.md
+docs/WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody.md
+docs/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType.md
+docs/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification.md
 docs/WfmIntradayDataUpdateTopicIntradayDataGroup.md
 docs/WfmIntradayDataUpdateTopicIntradayDataUpdate.md
 docs/WfmIntradayDataUpdateTopicIntradayForecastData.md
@@ -6965,6 +7000,9 @@ docs/WfmProcessUploadRequest.md
 docs/WfmScheduleActivity.md
 docs/WfmScheduleReference.md
 docs/WfmScheduleTopicWfmScheduleNotification.md
+docs/WfmTimeOffBalanceJobTopicErrorBody.md
+docs/WfmTimeOffBalanceJobTopicTimeOffBalance.md
+docs/WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification.md
 docs/WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.md
 docs/WfmTimeOffRequestUpdateTopicUserReference.md
 docs/WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete.md
@@ -7184,6 +7222,8 @@ docs/delete_outbound_contactlistfilter-example.txt
 docs/delete_outbound_contactlists-example.txt
 docs/delete_outbound_digitalruleset-example.txt
 docs/delete_outbound_dnclist-example.txt
+docs/delete_outbound_dnclist_emailaddresses-example.txt
+docs/delete_outbound_dnclist_phonenumbers-example.txt
 docs/delete_outbound_messagingcampaign-example.txt
 docs/delete_outbound_messagingcampaign_progress-example.txt
 docs/delete_outbound_ruleset-example.txt
@@ -7710,6 +7750,9 @@ docs/get_languageunderstanding_miner_draft-example.txt
 docs/get_languageunderstanding_miner_drafts-example.txt
 docs/get_languageunderstanding_miner_intent-example.txt
 docs/get_languageunderstanding_miner_intents-example.txt
+docs/get_languageunderstanding_miner_topic-example.txt
+docs/get_languageunderstanding_miner_topic_phrase-example.txt
+docs/get_languageunderstanding_miner_topics-example.txt
 docs/get_languageunderstanding_miners-example.txt
 docs/get_learning_assignment-example.txt
 docs/get_learning_assignments-example.txt
@@ -8005,6 +8048,7 @@ docs/get_systempresences-example.txt
 docs/get_team-example.txt
 docs/get_team_members-example.txt
 docs/get_teams-example.txt
+docs/get_telephony_mediaregions-example.txt
 docs/get_telephony_providers_edge-example.txt
 docs/get_telephony_providers_edge_diagnostic_nslookup-example.txt
 docs/get_telephony_providers_edge_diagnostic_ping-example.txt
@@ -8294,6 +8338,8 @@ docs/patch_learning_assignment-example.txt
 docs/patch_location-example.txt
 docs/patch_messaging_supportedcontent_supported_content_id-example.txt
 docs/patch_organizations_feature-example.txt
+docs/patch_outbound_dnclist_emailaddresses-example.txt
+docs/patch_outbound_dnclist_phonenumbers-example.txt
 docs/patch_outbound_settings-example.txt
 docs/patch_quality_forms_survey-example.txt
 docs/patch_recording_crossplatform_mediaretentionpolicy-example.txt

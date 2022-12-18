@@ -267,7 +267,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         :param event_type: The event_type of this JourneyWebEventsNotificationWebEventsNotification.
         :type: str
         """
-        allowed_values = ["WebEvent", "WebActionEvent", "OutcomeAchievedEvent"]
+        allowed_values = ["WebEvent", "WebActionEvent", "OutcomeAchievedEvent", "SegmentAssignmentEvent"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
