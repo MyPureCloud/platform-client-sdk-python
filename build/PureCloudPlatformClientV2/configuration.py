@@ -202,7 +202,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 160.0.3".\
+               "SDK Package Version: 160.0.4".\
                format(env=sys.platform, pyversion=sys.version)
 
     def _update_config_from_file(self):
