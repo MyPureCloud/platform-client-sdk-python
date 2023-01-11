@@ -45,7 +45,8 @@ class HistoricalShrinkageResult(object):
             'total_scheduled_duration_seconds': 'int',
             'total_logged_in_duration_seconds': 'int',
             'aggregated_shrinkage': 'HistoricalShrinkageAggregateResponse',
-            'shrinkage_for_activity_categories': 'list[HistoricalShrinkageActivityCategoryResponse]'
+            'shrinkage_for_activity_categories': 'list[HistoricalShrinkageActivityCategoryResponse]',
+            'business_unit_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class HistoricalShrinkageResult(object):
             'total_scheduled_duration_seconds': 'totalScheduledDurationSeconds',
             'total_logged_in_duration_seconds': 'totalLoggedInDurationSeconds',
             'aggregated_shrinkage': 'aggregatedShrinkage',
-            'shrinkage_for_activity_categories': 'shrinkageForActivityCategories'
+            'shrinkage_for_activity_categories': 'shrinkageForActivityCategories',
+            'business_unit_ids': 'businessUnitIds'
         }
 
         self._start_date = None
@@ -63,6 +65,7 @@ class HistoricalShrinkageResult(object):
         self._total_logged_in_duration_seconds = None
         self._aggregated_shrinkage = None
         self._shrinkage_for_activity_categories = None
+        self._business_unit_ids = None
 
     @property
     def start_date(self):
@@ -207,6 +210,30 @@ class HistoricalShrinkageResult(object):
         
 
         self._shrinkage_for_activity_categories = shrinkage_for_activity_categories
+
+    @property
+    def business_unit_ids(self):
+        """
+        Gets the business_unit_ids of this HistoricalShrinkageResult.
+        List of all business units of all the agents in response
+
+        :return: The business_unit_ids of this HistoricalShrinkageResult.
+        :rtype: list[str]
+        """
+        return self._business_unit_ids
+
+    @business_unit_ids.setter
+    def business_unit_ids(self, business_unit_ids):
+        """
+        Sets the business_unit_ids of this HistoricalShrinkageResult.
+        List of all business units of all the agents in response
+
+        :param business_unit_ids: The business_unit_ids of this HistoricalShrinkageResult.
+        :type: list[str]
+        """
+        
+
+        self._business_unit_ids = business_unit_ids
 
     def to_dict(self):
         """

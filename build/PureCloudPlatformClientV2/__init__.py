@@ -1657,6 +1657,8 @@ from .models.knowledge_category import KnowledgeCategory
 from .models.knowledge_category_request import KnowledgeCategoryRequest
 from .models.knowledge_context_reference import KnowledgeContextReference
 from .models.knowledge_context_value_reference import KnowledgeContextValueReference
+from .models.knowledge_conversation_context import KnowledgeConversationContext
+from .models.knowledge_conversation_context_response import KnowledgeConversationContextResponse
 from .models.knowledge_document import KnowledgeDocument
 from .models.knowledge_document_alternative import KnowledgeDocumentAlternative
 from .models.knowledge_document_bulk_request import KnowledgeDocumentBulkRequest
@@ -2464,6 +2466,8 @@ from .models.recording_retention_cursor_entity_listing import RecordingRetention
 from .models.recording_settings import RecordingSettings
 from .models.recording_transcode_complete_topic_media_result import RecordingTranscodeCompleteTopicMediaResult
 from .models.recording_transcode_complete_topic_recording import RecordingTranscodeCompleteTopicRecording
+from .models.recording_upload_report import RecordingUploadReport
+from .models.recording_upload_report_request import RecordingUploadReportRequest
 from .models.referrer import Referrer
 from .models.region_time_zone import RegionTimeZone
 from .models.register_architect_job_response import RegisterArchitectJobResponse
@@ -3174,6 +3178,7 @@ from .models.validate_work_plan_response import ValidateWorkPlanResponse
 from .models.validation_limits import ValidationLimits
 from .models.validation_service_request import ValidationServiceRequest
 from .models.value_wrapper_date import ValueWrapperDate
+from .models.value_wrapper_hris_time_off_type import ValueWrapperHrisTimeOffType
 from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .models.value_wrapper_string import ValueWrapperString
 from .models.verification_result import VerificationResult

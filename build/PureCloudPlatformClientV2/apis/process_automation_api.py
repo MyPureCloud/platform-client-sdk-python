@@ -222,12 +222,13 @@ class ProcessAutomationApi(object):
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str topic_name: Topic name(s). Separated by commas
         :param bool enabled: Boolean indicating desired enabled state of triggers
+        :param bool has_delay_by: Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set.
         :return: TriggerEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'page_size', 'topic_name', 'enabled']
+        all_params = ['before', 'after', 'page_size', 'topic_name', 'enabled', 'has_delay_by']
         all_params.append('callback')
 
         params = locals()
@@ -256,6 +257,8 @@ class ProcessAutomationApi(object):
             query_params['topicName'] = params['topic_name']
         if 'enabled' in params:
             query_params['enabled'] = params['enabled']
+        if 'has_delay_by' in params:
+            query_params['hasDelayBy'] = params['has_delay_by']
 
         header_params = {}
 

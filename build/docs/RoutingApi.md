@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_email_domain**](RoutingApi.html#delete_routing_email_domain) | Delete a domain|
 |[**delete_routing_email_domain_route**](RoutingApi.html#delete_routing_email_domain_route) | Delete a route|
 |[**delete_routing_email_outbound_domain**](RoutingApi.html#delete_routing_email_outbound_domain) | Delete an outbound domain|
+|[**delete_routing_language**](RoutingApi.html#delete_routing_language) | Delete a routing language|
 |[**delete_routing_predictor**](RoutingApi.html#delete_routing_predictor) | Delete single predictor.|
 |[**delete_routing_queue**](RoutingApi.html#delete_routing_queue) | Delete a queue|
 |[**delete_routing_queue_member**](RoutingApi.html#delete_routing_queue_member) | Delete a queue member.|
@@ -41,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_email_outbound_domain_search**](RoutingApi.html#get_routing_email_outbound_domain_search) | Search a domain across organizations|
 |[**get_routing_email_outbound_domains**](RoutingApi.html#get_routing_email_outbound_domains) | Get outbound domains|
 |[**get_routing_email_setup**](RoutingApi.html#get_routing_email_setup) | Get email setup|
+|[**get_routing_language**](RoutingApi.html#get_routing_language) | Get a routing language|
 |[**get_routing_languages**](RoutingApi.html#get_routing_languages) | Get the list of supported languages.|
 |[**get_routing_message_recipient**](RoutingApi.html#get_routing_message_recipient) | Get a recipient|
 |[**get_routing_message_recipients**](RoutingApi.html#get_routing_message_recipients) | Get recipients|
@@ -329,6 +331,56 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_language"></a>
+
+##  delete_routing_language(language_id)
+
+
+
+Delete a routing language
+
+
+
+Wraps DELETE /api/v2/routing/languages/{languageId} 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+language_id = 'language_id_example' # str | Language ID
+
+try:
+    # Delete a routing language
+    api_instance.delete_routing_language(language_id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_language: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language_id** | **str**| Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1814,6 +1866,56 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**EmailSetup**](EmailSetup.html)
+
+<a name="get_routing_language"></a>
+
+## [**Language**](Language.html) get_routing_language(language_id)
+
+
+
+Get a routing language
+
+
+
+Wraps GET /api/v2/routing/languages/{languageId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+language_id = 'language_id_example' # str | Language ID
+
+try:
+    # Get a routing language
+    api_response = api_instance.get_routing_language(language_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_language: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language_id** | **str**| Language ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Language**](Language.html)
 
 <a name="get_routing_languages"></a>
 

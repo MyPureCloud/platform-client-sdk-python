@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_recording_recordingkeys**](RecordingApi.html#get_recording_recordingkeys) | Get encryption key list|
 |[**get_recording_recordingkeys_rotationschedule**](RecordingApi.html#get_recording_recordingkeys_rotationschedule) | Get key rotation schedule|
 |[**get_recording_settings**](RecordingApi.html#get_recording_settings) | Get the Recording Settings for the Organization|
+|[**get_recording_uploads_report**](RecordingApi.html#get_recording_uploads_report) | Get the status of a recording upload status report|
 |[**get_recordings_retention_query**](RecordingApi.html#get_recordings_retention_query) | Query for recording retention data|
 |[**get_recordings_screensessions**](RecordingApi.html#get_recordings_screensessions) | Retrieves a paged listing of screen recording sessions|
 |[**patch_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#patch_recording_crossplatform_mediaretentionpolicy) | Patch a media retention policy|
@@ -54,6 +55,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_recording_localkeys_settings**](RecordingApi.html#post_recording_localkeys_settings) | create settings for local key creation. Replaced by API recording/keyconfigurations|
 |[**post_recording_mediaretentionpolicies**](RecordingApi.html#post_recording_mediaretentionpolicies) | Create media retention policy|
 |[**post_recording_recordingkeys**](RecordingApi.html#post_recording_recordingkeys) | Create encryption key|
+|[**post_recording_uploads_reports**](RecordingApi.html#post_recording_uploads_reports) | Creates a recording upload status report|
 |[**post_recordings_deletionprotection**](RecordingApi.html#post_recordings_deletionprotection) | Get a list of conversations with protected recordings|
 |[**post_recordings_screensessions_acknowledge**](RecordingApi.html#post_recordings_screensessions_acknowledge) | Acknowledge a screen recording.|
 |[**post_recordings_screensessions_metadata**](RecordingApi.html#post_recordings_screensessions_metadata) | Provide meta-data a screen recording.|
@@ -1777,6 +1779,57 @@ except ApiException as e:
 
 [**RecordingSettings**](RecordingSettings.html)
 
+<a name="get_recording_uploads_report"></a>
+
+## [**RecordingUploadReport**](RecordingUploadReport.html) get_recording_uploads_report(report_id)
+
+
+
+Get the status of a recording upload status report
+
+
+
+Wraps GET /api/v2/recording/uploads/reports/{reportId} 
+
+Requires ALL permissions: 
+
+* recording:uploadReport:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+report_id = 'report_id_example' # str | reportId
+
+try:
+    # Get the status of a recording upload status report
+    api_response = api_instance.get_recording_uploads_report(report_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recording_uploads_report: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **report_id** | **str**| reportId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingUploadReport**](RecordingUploadReport.html)
+
 <a name="get_recordings_retention_query"></a>
 
 ## [**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing.html) get_recordings_retention_query(retention_threshold_days, cursor=cursor, page_size=page_size)
@@ -2559,6 +2612,57 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**EncryptionKey**](EncryptionKey.html)
+
+<a name="post_recording_uploads_reports"></a>
+
+## [**RecordingUploadReport**](RecordingUploadReport.html) post_recording_uploads_reports(body)
+
+
+
+Creates a recording upload status report
+
+
+
+Wraps POST /api/v2/recording/uploads/reports 
+
+Requires ALL permissions: 
+
+* recording:uploadReport:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+body = PureCloudPlatformClientV2.RecordingUploadReportRequest() # RecordingUploadReportRequest | Report parameters
+
+try:
+    # Creates a recording upload status report
+    api_response = api_instance.post_recording_uploads_reports(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->post_recording_uploads_reports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RecordingUploadReportRequest**](RecordingUploadReportRequest.html)| Report parameters |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingUploadReport**](RecordingUploadReport.html)
 
 <a name="post_recordings_deletionprotection"></a>
 

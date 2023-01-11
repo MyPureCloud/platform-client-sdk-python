@@ -9,14 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_language**](LanguagesApi.html#delete_language) | Delete Language (Deprecated)|
-|[**delete_routing_language**](LanguagesApi.html#delete_routing_language) | Delete Language|
-|[**get_language**](LanguagesApi.html#get_language) | Get language (Deprecated)|
+|[**get_language**](LanguagesApi.html#get_language) | Get Language (Deprecated)|
 |[**get_languages**](LanguagesApi.html#get_languages) | Get the list of supported languages. (Deprecated)|
 |[**get_languages_translations**](LanguagesApi.html#get_languages_translations) | Get all available languages for translation|
 |[**get_languages_translations_builtin**](LanguagesApi.html#get_languages_translations_builtin) | Get the builtin translation for a language|
 |[**get_languages_translations_organization**](LanguagesApi.html#get_languages_translations_organization) | Get effective translation for an organization by language|
 |[**get_languages_translations_user**](LanguagesApi.html#get_languages_translations_user) | Get effective language translation for a user|
-|[**get_routing_language**](LanguagesApi.html#get_routing_language) | Get language|
 |[**post_languages**](LanguagesApi.html#post_languages) | Create Language (Deprecated)|
 {: class="table table-striped"}
 
@@ -28,7 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete Language (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 
 
 
@@ -72,65 +70,15 @@ except ApiException as e:
 
 void (empty response body)
 
-<a name="delete_routing_language"></a>
-
-##  delete_routing_language(language_id)
-
-
-
-Delete Language
-
-
-
-Wraps DELETE /api/v2/routing/languages/{languageId} 
-
-Requires ANY permissions: 
-
-* routing:skill:manage
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.LanguagesApi()
-language_id = 'language_id_example' # str | Language ID
-
-try:
-    # Delete Language
-    api_instance.delete_routing_language(language_id)
-except ApiException as e:
-    print("Exception when calling LanguagesApi->delete_routing_language: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **language_id** | **str**| Language ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
-
 <a name="get_language"></a>
 
 ## [**Language**](Language.html) get_language(language_id)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-Get language (Deprecated)
+Get Language (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 
 
 
@@ -156,7 +104,7 @@ api_instance = PureCloudPlatformClientV2.LanguagesApi()
 language_id = 'language_id_example' # str | Language ID
 
 try:
-    # Get language (Deprecated)
+    # Get Language (Deprecated)
     api_response = api_instance.get_language(language_id)
     pprint(api_response)
 except ApiException as e:
@@ -183,7 +131,7 @@ except ApiException as e:
 
 Get the list of supported languages. (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages
+This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
 
 
 
@@ -430,56 +378,6 @@ except ApiException as e:
 
 **dict(str, object)**
 
-<a name="get_routing_language"></a>
-
-## [**Language**](Language.html) get_routing_language(language_id)
-
-
-
-Get language
-
-
-
-Wraps GET /api/v2/routing/languages/{languageId} 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.LanguagesApi()
-language_id = 'language_id_example' # str | Language ID
-
-try:
-    # Get language
-    api_response = api_instance.get_routing_language(language_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LanguagesApi->get_routing_language: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **language_id** | **str**| Language ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**Language**](Language.html)
-
 <a name="post_languages"></a>
 
 ## [**Language**](Language.html) post_languages(body)
@@ -488,7 +386,7 @@ except ApiException as e:
 
 Create Language (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages
+This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 
 
 

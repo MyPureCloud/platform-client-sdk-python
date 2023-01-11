@@ -51,7 +51,8 @@ class VoicemailGroupPolicy(object):
             'stop_ringing_after_rotations': 'int',
             'overflow_group_id': 'str',
             'group_alert_type': 'str',
-            'interactive_response_prompt_id': 'str'
+            'interactive_response_prompt_id': 'str',
+            'interactive_response_required': 'bool'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class VoicemailGroupPolicy(object):
             'stop_ringing_after_rotations': 'stopRingingAfterRotations',
             'overflow_group_id': 'overflowGroupId',
             'group_alert_type': 'groupAlertType',
-            'interactive_response_prompt_id': 'interactiveResponsePromptId'
+            'interactive_response_prompt_id': 'interactiveResponsePromptId',
+            'interactive_response_required': 'interactiveResponseRequired'
         }
 
         self._name = None
@@ -81,6 +83,7 @@ class VoicemailGroupPolicy(object):
         self._overflow_group_id = None
         self._group_alert_type = None
         self._interactive_response_prompt_id = None
+        self._interactive_response_required = None
 
     @property
     def name(self):
@@ -372,6 +375,30 @@ class VoicemailGroupPolicy(object):
         
 
         self._interactive_response_prompt_id = interactive_response_prompt_id
+
+    @property
+    def interactive_response_required(self):
+        """
+        Gets the interactive_response_required of this VoicemailGroupPolicy.
+        Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
+
+        :return: The interactive_response_required of this VoicemailGroupPolicy.
+        :rtype: bool
+        """
+        return self._interactive_response_required
+
+    @interactive_response_required.setter
+    def interactive_response_required(self, interactive_response_required):
+        """
+        Sets the interactive_response_required of this VoicemailGroupPolicy.
+        Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
+
+        :param interactive_response_required: The interactive_response_required of this VoicemailGroupPolicy.
+        :type: bool
+        """
+        
+
+        self._interactive_response_required = interactive_response_required
 
     def to_dict(self):
         """

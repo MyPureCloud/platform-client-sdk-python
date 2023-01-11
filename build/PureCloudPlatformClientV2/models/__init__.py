@@ -1657,6 +1657,8 @@ from .knowledge_category import KnowledgeCategory
 from .knowledge_category_request import KnowledgeCategoryRequest
 from .knowledge_context_reference import KnowledgeContextReference
 from .knowledge_context_value_reference import KnowledgeContextValueReference
+from .knowledge_conversation_context import KnowledgeConversationContext
+from .knowledge_conversation_context_response import KnowledgeConversationContextResponse
 from .knowledge_document import KnowledgeDocument
 from .knowledge_document_alternative import KnowledgeDocumentAlternative
 from .knowledge_document_bulk_request import KnowledgeDocumentBulkRequest
@@ -2464,6 +2466,8 @@ from .recording_retention_cursor_entity_listing import RecordingRetentionCursorE
 from .recording_settings import RecordingSettings
 from .recording_transcode_complete_topic_media_result import RecordingTranscodeCompleteTopicMediaResult
 from .recording_transcode_complete_topic_recording import RecordingTranscodeCompleteTopicRecording
+from .recording_upload_report import RecordingUploadReport
+from .recording_upload_report_request import RecordingUploadReportRequest
 from .referrer import Referrer
 from .region_time_zone import RegionTimeZone
 from .register_architect_job_response import RegisterArchitectJobResponse
@@ -3174,6 +3178,7 @@ from .validate_work_plan_response import ValidateWorkPlanResponse
 from .validation_limits import ValidationLimits
 from .validation_service_request import ValidationServiceRequest
 from .value_wrapper_date import ValueWrapperDate
+from .value_wrapper_hris_time_off_type import ValueWrapperHrisTimeOffType
 from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .value_wrapper_string import ValueWrapperString
 from .verification_result import VerificationResult

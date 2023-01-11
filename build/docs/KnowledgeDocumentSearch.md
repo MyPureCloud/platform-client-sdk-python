@@ -13,8 +13,10 @@ title: KnowledgeDocumentSearch
 | **search_id** | **str** | The globally unique identifier for the search. | [optional] |
 | **total** | **int** | The total number of documents matching the query. | [optional] |
 | **page_count** | **int** | Number of pages returned in the result calculated according to the pageSize and the total | [optional] |
+| **query_type** | **str** | The type of the query that initiates the search. | [optional] |
 | **results** | [**list[KnowledgeDocumentSearchResult]**](KnowledgeDocumentSearchResult.html) | Documents matching the search query. | [optional] |
 | **application** | [**KnowledgeSearchClientApplication**](KnowledgeSearchClientApplication.html) | The client application details from which search happened. | [optional] |
+| **conversation_context** | [**KnowledgeConversationContextResponse**](KnowledgeConversationContextResponse.html) | Conversation context information if the search is initiated in the context of a conversation. | [optional] |
 {: class="table table-striped"}
 
 

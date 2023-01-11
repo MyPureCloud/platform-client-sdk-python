@@ -13,12 +13,14 @@ title: KnowledgeDocumentSearchRequest
 | **search_id** | **str** | The globally unique identifier for the search. | [optional] |
 | **total** | **int** | The total number of documents matching the query. | [optional] |
 | **page_count** | **int** | Number of pages returned in the result calculated according to the pageSize and the total | [optional] |
+| **query_type** | **str** | The type of the query that initiates the search. | [optional] |
 | **include_draft_documents** | **bool** | Indicates whether the search results would also include draft documents. | [optional] |
 | **interval** | [**DocumentQueryInterval**](DocumentQueryInterval.html) | Retrieves the documents created/modified/published in specified date and time range. | [optional] |
 | **filter** | [**DocumentQuery**](DocumentQuery.html) | Filter for the document search. | [optional] |
 | **sort_order** | **str** | The sort order for search results. | [optional] |
 | **sort_by** | **str** | The field in the documents that you want to sort the search results by. | [optional] |
 | **application** | [**KnowledgeSearchClientApplication**](KnowledgeSearchClientApplication.html) | The client application details from which search request was sent. | [optional] |
+| **conversation_context** | [**KnowledgeConversationContext**](KnowledgeConversationContext.html) | Conversation context information if the search is initiated in the context of a conversation. | [optional] |
 {: class="table table-striped"}
 
 

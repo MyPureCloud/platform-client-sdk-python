@@ -66,6 +66,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'dnis': 'str',
             'edge_id': 'str',
             'eligible_agent_counts': 'list[int]',
+            'error_code': 'str',
             'extended_delivery_status': 'str',
             'external_contact_id': 'str',
             'external_media_count': 'int',
@@ -148,6 +149,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'dnis': 'dnis',
             'edge_id': 'edgeId',
             'eligible_agent_counts': 'eligibleAgentCounts',
+            'error_code': 'errorCode',
             'extended_delivery_status': 'extendedDeliveryStatus',
             'external_contact_id': 'externalContactId',
             'external_media_count': 'externalMediaCount',
@@ -229,6 +231,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         self._dnis = None
         self._edge_id = None
         self._eligible_agent_counts = None
+        self._error_code = None
         self._extended_delivery_status = None
         self._external_contact_id = None
         self._external_media_count = None
@@ -921,6 +924,30 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         
 
         self._eligible_agent_counts = eligible_agent_counts
+
+    @property
+    def error_code(self):
+        """
+        Gets the error_code of this ConversationMetricsTopicConversationMetricRecord.
+        A code corresponding to the error that occurred
+
+        :return: The error_code of this ConversationMetricsTopicConversationMetricRecord.
+        :rtype: str
+        """
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code):
+        """
+        Sets the error_code of this ConversationMetricsTopicConversationMetricRecord.
+        A code corresponding to the error that occurred
+
+        :param error_code: The error_code of this ConversationMetricsTopicConversationMetricRecord.
+        :type: str
+        """
+        
+
+        self._error_code = error_code
 
     @property
     def extended_delivery_status(self):

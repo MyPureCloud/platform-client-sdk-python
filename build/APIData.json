@@ -16947,19 +16947,6 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LanguagesApi()\nlanguage_id = 'language_id_example' # str | Language ID\n\ntry:\n    # Delete Language (Deprecated)\n    api_instance.delete_language(language_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteLanguageRequest->delete_language: %s\\n\" % e)"
   },
-  "delete_routing_language": {
-    "operationId": "delete_routing_language",
-    "functionName": "delete_routing_language",
-    "signature": "delete_routing_language(language_id)",
-    "parameters": [
-      {
-        "name": "language_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LanguagesApi()\nlanguage_id = 'language_id_example' # str | Language ID\n\ntry:\n    # Delete Language\n    api_instance.delete_routing_language(language_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteRoutingLanguageRequest->delete_routing_language: %s\\n\" % e)"
-  },
   "get_language": {
     "operationId": "get_language",
     "functionName": "get_language",
@@ -16972,7 +16959,7 @@
       }
     ],
     "return": "Language",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LanguagesApi()\nlanguage_id = 'language_id_example' # str | Language ID\n\ntry:\n    # Get language (Deprecated)\n    api_response = api_instance.get_language(language_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageRequest->get_language: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LanguagesApi()\nlanguage_id = 'language_id_example' # str | Language ID\n\ntry:\n    # Get Language (Deprecated)\n    api_response = api_instance.get_language(language_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageRequest->get_language: %s\\n\" % e)"
   },
   "get_languages": {
     "operationId": "get_languages",
@@ -17051,20 +17038,6 @@
     ],
     "return": "dict(str, object)",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LanguagesApi()\nuser_id = 'user_id_example' # str | The user id\n\ntry:\n    # Get effective language translation for a user\n    api_response = api_instance.get_languages_translations_user(user_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguagesTranslationsUserRequest->get_languages_translations_user: %s\\n\" % e)"
-  },
-  "get_routing_language": {
-    "operationId": "get_routing_language",
-    "functionName": "get_routing_language",
-    "signature": "get_routing_language(language_id)",
-    "parameters": [
-      {
-        "name": "language_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "return": "Language",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LanguagesApi()\nlanguage_id = 'language_id_example' # str | Language ID\n\ntry:\n    # Get language\n    api_response = api_instance.get_routing_language(language_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingLanguageRequest->get_routing_language: %s\\n\" % e)"
   },
   "post_languages": {
     "operationId": "post_languages",
@@ -22255,7 +22228,7 @@
   "get_processautomation_triggers": {
     "operationId": "get_processautomation_triggers",
     "functionName": "get_processautomation_triggers",
-    "signature": "get_processautomation_triggers(before, after, page_size, topic_name, enabled)",
+    "signature": "get_processautomation_triggers(before, after, page_size, topic_name, enabled, has_delay_by)",
     "parameters": [
       {
         "name": "before",
@@ -22281,10 +22254,15 @@
         "name": "enabled",
         "type": "bool",
         "required": "false"
+      },
+      {
+        "name": "has_delay_by",
+        "type": "bool",
+        "required": "false"
       }
     ],
     "return": "TriggerEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Process_AutomationApi()\nbefore = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\npage_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)\ntopic_name = 'topic_name_example' # str | Topic name(s). Separated by commas (optional)\nenabled = True # bool | Boolean indicating desired enabled state of triggers (optional)\n\ntry:\n    # Retrieves all triggers, optionally filtered by query parameters.\n    api_response = api_instance.get_processautomation_triggers(before=before, after=after, page_size=page_size, topic_name=topic_name, enabled=enabled)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetProcessautomationTriggersRequest->get_processautomation_triggers: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Process_AutomationApi()\nbefore = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\npage_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)\ntopic_name = 'topic_name_example' # str | Topic name(s). Separated by commas (optional)\nenabled = True # bool | Boolean indicating desired enabled state of triggers (optional)\nhas_delay_by = True # bool | Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set. (optional)\n\ntry:\n    # Retrieves all triggers, optionally filtered by query parameters.\n    api_response = api_instance.get_processautomation_triggers(before=before, after=after, page_size=page_size, topic_name=topic_name, enabled=enabled, has_delay_by=has_delay_by)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetProcessautomationTriggersRequest->get_processautomation_triggers: %s\\n\" % e)"
   },
   "get_processautomation_triggers_topics": {
     "operationId": "get_processautomation_triggers_topics",
@@ -24387,6 +24365,20 @@
     "return": "RecordingSettings",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\ncreate_default = False # bool | If no settings are found, a new one is created with default values (optional) (default to False)\n\ntry:\n    # Get the Recording Settings for the Organization\n    api_response = api_instance.get_recording_settings(create_default=create_default)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRecordingSettingsRequest->get_recording_settings: %s\\n\" % e)"
   },
+  "get_recording_uploads_report": {
+    "operationId": "get_recording_uploads_report",
+    "functionName": "get_recording_uploads_report",
+    "signature": "get_recording_uploads_report(report_id)",
+    "parameters": [
+      {
+        "name": "report_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingUploadReport",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nreport_id = 'report_id_example' # str | reportId\n\ntry:\n    # Get the status of a recording upload status report\n    api_response = api_instance.get_recording_uploads_report(report_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRecordingUploadsReportRequest->get_recording_uploads_report: %s\\n\" % e)"
+  },
   "get_recordings_retention_query": {
     "operationId": "get_recordings_retention_query",
     "functionName": "get_recordings_retention_query",
@@ -24628,6 +24620,20 @@
     "signature": "post_recording_recordingkeys()",
     "return": "EncryptionKey",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\n\ntry:\n    # Create encryption key\n    api_response = api_instance.post_recording_recordingkeys()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostRecordingRecordingkeysRequest->post_recording_recordingkeys: %s\\n\" % e)"
+  },
+  "post_recording_uploads_reports": {
+    "operationId": "post_recording_uploads_reports",
+    "functionName": "post_recording_uploads_reports",
+    "signature": "post_recording_uploads_reports(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "RecordingUploadReportRequest",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingUploadReport",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi()\nbody = PureCloudPlatformClientV2.RecordingUploadReportRequest() # RecordingUploadReportRequest | Report parameters\n\ntry:\n    # Creates a recording upload status report\n    api_response = api_instance.post_recording_uploads_reports(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostRecordingUploadsReportsRequest->post_recording_uploads_reports: %s\\n\" % e)"
   },
   "post_recordings_deletionprotection": {
     "operationId": "post_recordings_deletionprotection",
@@ -25239,6 +25245,19 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\ndomain_id = 'domain_id_example' # str | domain ID\n\ntry:\n    # Delete an outbound domain\n    api_instance.delete_routing_email_outbound_domain(domain_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteRoutingEmailOutboundDomainRequest->delete_routing_email_outbound_domain: %s\\n\" % e)"
   },
+  "delete_routing_language": {
+    "operationId": "delete_routing_language",
+    "functionName": "delete_routing_language",
+    "signature": "delete_routing_language(language_id)",
+    "parameters": [
+      {
+        "name": "language_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nlanguage_id = 'language_id_example' # str | Language ID\n\ntry:\n    # Delete a routing language\n    api_instance.delete_routing_language(language_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteRoutingLanguageRequest->delete_routing_language: %s\\n\" % e)"
+  },
   "delete_routing_predictor": {
     "operationId": "delete_routing_predictor",
     "functionName": "delete_routing_predictor",
@@ -25674,6 +25693,20 @@
     "signature": "get_routing_email_setup()",
     "return": "EmailSetup",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\n\ntry:\n    # Get email setup\n    api_response = api_instance.get_routing_email_setup()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingEmailSetupRequest->get_routing_email_setup: %s\\n\" % e)"
+  },
+  "get_routing_language": {
+    "operationId": "get_routing_language",
+    "functionName": "get_routing_language",
+    "signature": "get_routing_language(language_id)",
+    "parameters": [
+      {
+        "name": "language_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "Language",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi()\nlanguage_id = 'language_id_example' # str | Language ID\n\ntry:\n    # Get a routing language\n    api_response = api_instance.get_routing_language(language_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetRoutingLanguageRequest->get_routing_language: %s\\n\" % e)"
   },
   "get_routing_languages": {
     "operationId": "get_routing_languages",

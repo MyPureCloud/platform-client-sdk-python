@@ -49,7 +49,7 @@ class LanguagesApi(object):
     def delete_language(self, language_id, **kwargs):
         """
         Delete Language (Deprecated)
-        This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+        This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -124,88 +124,10 @@ class LanguagesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_language(self, language_id, **kwargs):
-        """
-        Delete Language
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_routing_language(language_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str language_id: Language ID (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['language_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_routing_language" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'language_id' is set
-        if ('language_id' not in params) or (params['language_id'] is None):
-            raise ValueError("Missing the required parameter `language_id` when calling `delete_routing_language`")
-
-
-        resource_path = '/api/v2/routing/languages/{languageId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'language_id' in params:
-            path_params['languageId'] = params['language_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def get_language(self, language_id, **kwargs):
         """
-        Get language (Deprecated)
-        This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+        Get Language (Deprecated)
+        This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -283,7 +205,7 @@ class LanguagesApi(object):
     def get_languages(self, **kwargs):
         """
         Get the list of supported languages. (Deprecated)
-        This endpoint is deprecated. It has been moved to /routing/languages
+        This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -670,88 +592,10 @@ class LanguagesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_language(self, language_id, **kwargs):
-        """
-        Get language
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_routing_language(language_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str language_id: Language ID (required)
-        :return: Language
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['language_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_routing_language" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'language_id' is set
-        if ('language_id' not in params) or (params['language_id'] is None):
-            raise ValueError("Missing the required parameter `language_id` when calling `get_routing_language`")
-
-
-        resource_path = '/api/v2/routing/languages/{languageId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'language_id' in params:
-            path_params['languageId'] = params['language_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='Language',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def post_languages(self, body, **kwargs):
         """
         Create Language (Deprecated)
-        This endpoint is deprecated. It has been moved to /routing/languages
+        This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

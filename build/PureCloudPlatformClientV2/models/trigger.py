@@ -48,6 +48,7 @@ class Trigger(object):
             'enabled': 'bool',
             'match_criteria': 'list[MatchCriteria]',
             'event_ttl_seconds': 'int',
+            'delay_by_seconds': 'int',
             'description': 'str',
             'self_uri': 'str'
         }
@@ -61,6 +62,7 @@ class Trigger(object):
             'enabled': 'enabled',
             'match_criteria': 'matchCriteria',
             'event_ttl_seconds': 'eventTTLSeconds',
+            'delay_by_seconds': 'delayBySeconds',
             'description': 'description',
             'self_uri': 'selfUri'
         }
@@ -73,6 +75,7 @@ class Trigger(object):
         self._enabled = None
         self._match_criteria = None
         self._event_ttl_seconds = None
+        self._delay_by_seconds = None
         self._description = None
         self._self_uri = None
 
@@ -248,7 +251,7 @@ class Trigger(object):
     def event_ttl_seconds(self):
         """
         Gets the event_ttl_seconds of this Trigger.
-        How long each event is meaningful after origination, in seconds. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely.
+        Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
 
         :return: The event_ttl_seconds of this Trigger.
         :rtype: int
@@ -259,7 +262,7 @@ class Trigger(object):
     def event_ttl_seconds(self, event_ttl_seconds):
         """
         Sets the event_ttl_seconds of this Trigger.
-        How long each event is meaningful after origination, in seconds. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely.
+        Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
 
         :param event_ttl_seconds: The event_ttl_seconds of this Trigger.
         :type: int
@@ -267,6 +270,30 @@ class Trigger(object):
         
 
         self._event_ttl_seconds = event_ttl_seconds
+
+    @property
+    def delay_by_seconds(self):
+        """
+        Gets the delay_by_seconds of this Trigger.
+        Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+
+        :return: The delay_by_seconds of this Trigger.
+        :rtype: int
+        """
+        return self._delay_by_seconds
+
+    @delay_by_seconds.setter
+    def delay_by_seconds(self, delay_by_seconds):
+        """
+        Sets the delay_by_seconds of this Trigger.
+        Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+
+        :param delay_by_seconds: The delay_by_seconds of this Trigger.
+        :type: int
+        """
+        
+
+        self._delay_by_seconds = delay_by_seconds
 
     @property
     def description(self):

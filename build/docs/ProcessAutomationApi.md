@@ -122,7 +122,7 @@ except ApiException as e:
 
 <a name="get_processautomation_triggers"></a>
 
-## [**TriggerEntityListing**](TriggerEntityListing.html) get_processautomation_triggers(before=before, after=after, page_size=page_size, topic_name=topic_name, enabled=enabled)
+## [**TriggerEntityListing**](TriggerEntityListing.html) get_processautomation_triggers(before=before, after=after, page_size=page_size, topic_name=topic_name, enabled=enabled, has_delay_by=has_delay_by)
 
 
 
@@ -155,10 +155,11 @@ after = 'after_example' # str | The cursor that points to the end of the set of 
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 topic_name = 'topic_name_example' # str | Topic name(s). Separated by commas (optional)
 enabled = True # bool | Boolean indicating desired enabled state of triggers (optional)
+has_delay_by = True # bool | Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set. (optional)
 
 try:
     # Retrieves all triggers, optionally filtered by query parameters.
-    api_response = api_instance.get_processautomation_triggers(before=before, after=after, page_size=page_size, topic_name=topic_name, enabled=enabled)
+    api_response = api_instance.get_processautomation_triggers(before=before, after=after, page_size=page_size, topic_name=topic_name, enabled=enabled, has_delay_by=has_delay_by)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProcessAutomationApi->get_processautomation_triggers: %s\n" % e)
@@ -174,6 +175,7 @@ except ApiException as e:
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **topic_name** | **str**| Topic name(s). Separated by commas | [optional]  |
 | **enabled** | **bool**| Boolean indicating desired enabled state of triggers | [optional]  |
+| **has_delay_by** | **bool**| Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

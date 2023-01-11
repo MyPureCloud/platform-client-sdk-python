@@ -46,6 +46,7 @@ class KnowledgeDocumentGuestSearch(object):
             'search_id': 'str',
             'total': 'int',
             'page_count': 'int',
+            'query_type': 'str',
             'session_id': 'str',
             'results': 'list[KnowledgeDocumentGuestSearchResult]'
         }
@@ -57,6 +58,7 @@ class KnowledgeDocumentGuestSearch(object):
             'search_id': 'searchId',
             'total': 'total',
             'page_count': 'pageCount',
+            'query_type': 'queryType',
             'session_id': 'sessionId',
             'results': 'results'
         }
@@ -67,6 +69,7 @@ class KnowledgeDocumentGuestSearch(object):
         self._search_id = None
         self._total = None
         self._page_count = None
+        self._query_type = None
         self._session_id = None
         self._results = None
 
@@ -219,6 +222,33 @@ class KnowledgeDocumentGuestSearch(object):
         
 
         self._page_count = page_count
+
+    @property
+    def query_type(self):
+        """
+        Gets the query_type of this KnowledgeDocumentGuestSearch.
+        The type of the query that initiates the search.
+
+        :return: The query_type of this KnowledgeDocumentGuestSearch.
+        :rtype: str
+        """
+        return self._query_type
+
+    @query_type.setter
+    def query_type(self, query_type):
+        """
+        Sets the query_type of this KnowledgeDocumentGuestSearch.
+        The type of the query that initiates the search.
+
+        :param query_type: The query_type of this KnowledgeDocumentGuestSearch.
+        :type: str
+        """
+        allowed_values = ["AutoSearch", "ManualSearch", "Suggestion"]
+        if query_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for query_type -> " + query_type)
+            self._query_type = "outdated_sdk_version"
+        else:
+            self._query_type = query_type
 
     @property
     def session_id(self):

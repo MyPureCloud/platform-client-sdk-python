@@ -42,7 +42,7 @@ class PostTextMessage(object):
         self.swagger_types = {
             'type': 'str',
             'text': 'str',
-            'content': 'list[MessageContent]'
+            'content': 'list[ConversationMessageContent]'
         }
 
         self.attribute_map = {
@@ -75,7 +75,7 @@ class PostTextMessage(object):
         :param type: The type of this PostTextMessage.
         :type: str
         """
-        allowed_values = ["Text", "Structured", "Receipt", "Message"]
+        allowed_values = ["Text", "Structured", "Receipt", "Event", "Message", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -113,7 +113,7 @@ class PostTextMessage(object):
         A list of content elements in message
 
         :return: The content of this PostTextMessage.
-        :rtype: list[MessageContent]
+        :rtype: list[ConversationMessageContent]
         """
         return self._content
 
@@ -124,7 +124,7 @@ class PostTextMessage(object):
         A list of content elements in message
 
         :param content: The content of this PostTextMessage.
-        :type: list[MessageContent]
+        :type: list[ConversationMessageContent]
         """
         
 

@@ -46,8 +46,10 @@ class KnowledgeDocumentSearch(object):
             'search_id': 'str',
             'total': 'int',
             'page_count': 'int',
+            'query_type': 'str',
             'results': 'list[KnowledgeDocumentSearchResult]',
-            'application': 'KnowledgeSearchClientApplication'
+            'application': 'KnowledgeSearchClientApplication',
+            'conversation_context': 'KnowledgeConversationContextResponse'
         }
 
         self.attribute_map = {
@@ -57,8 +59,10 @@ class KnowledgeDocumentSearch(object):
             'search_id': 'searchId',
             'total': 'total',
             'page_count': 'pageCount',
+            'query_type': 'queryType',
             'results': 'results',
-            'application': 'application'
+            'application': 'application',
+            'conversation_context': 'conversationContext'
         }
 
         self._query = None
@@ -67,8 +71,10 @@ class KnowledgeDocumentSearch(object):
         self._search_id = None
         self._total = None
         self._page_count = None
+        self._query_type = None
         self._results = None
         self._application = None
+        self._conversation_context = None
 
     @property
     def query(self):
@@ -221,6 +227,33 @@ class KnowledgeDocumentSearch(object):
         self._page_count = page_count
 
     @property
+    def query_type(self):
+        """
+        Gets the query_type of this KnowledgeDocumentSearch.
+        The type of the query that initiates the search.
+
+        :return: The query_type of this KnowledgeDocumentSearch.
+        :rtype: str
+        """
+        return self._query_type
+
+    @query_type.setter
+    def query_type(self, query_type):
+        """
+        Sets the query_type of this KnowledgeDocumentSearch.
+        The type of the query that initiates the search.
+
+        :param query_type: The query_type of this KnowledgeDocumentSearch.
+        :type: str
+        """
+        allowed_values = ["AutoSearch", "ManualSearch", "Suggestion"]
+        if query_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for query_type -> " + query_type)
+            self._query_type = "outdated_sdk_version"
+        else:
+            self._query_type = query_type
+
+    @property
     def results(self):
         """
         Gets the results of this KnowledgeDocumentSearch.
@@ -267,6 +300,30 @@ class KnowledgeDocumentSearch(object):
         
 
         self._application = application
+
+    @property
+    def conversation_context(self):
+        """
+        Gets the conversation_context of this KnowledgeDocumentSearch.
+        Conversation context information if the search is initiated in the context of a conversation.
+
+        :return: The conversation_context of this KnowledgeDocumentSearch.
+        :rtype: KnowledgeConversationContextResponse
+        """
+        return self._conversation_context
+
+    @conversation_context.setter
+    def conversation_context(self, conversation_context):
+        """
+        Sets the conversation_context of this KnowledgeDocumentSearch.
+        Conversation context information if the search is initiated in the context of a conversation.
+
+        :param conversation_context: The conversation_context of this KnowledgeDocumentSearch.
+        :type: KnowledgeConversationContextResponse
+        """
+        
+
+        self._conversation_context = conversation_context
 
     def to_dict(self):
         """

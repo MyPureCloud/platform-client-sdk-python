@@ -1728,6 +1728,8 @@ PureCloudPlatformClientV2/models/knowledge_category.py
 PureCloudPlatformClientV2/models/knowledge_category_request.py
 PureCloudPlatformClientV2/models/knowledge_context_reference.py
 PureCloudPlatformClientV2/models/knowledge_context_value_reference.py
+PureCloudPlatformClientV2/models/knowledge_conversation_context.py
+PureCloudPlatformClientV2/models/knowledge_conversation_context_response.py
 PureCloudPlatformClientV2/models/knowledge_document.py
 PureCloudPlatformClientV2/models/knowledge_document_alternative.py
 PureCloudPlatformClientV2/models/knowledge_document_bulk_request.py
@@ -2535,6 +2537,8 @@ PureCloudPlatformClientV2/models/recording_retention_cursor_entity_listing.py
 PureCloudPlatformClientV2/models/recording_settings.py
 PureCloudPlatformClientV2/models/recording_transcode_complete_topic_media_result.py
 PureCloudPlatformClientV2/models/recording_transcode_complete_topic_recording.py
+PureCloudPlatformClientV2/models/recording_upload_report.py
+PureCloudPlatformClientV2/models/recording_upload_report_request.py
 PureCloudPlatformClientV2/models/referrer.py
 PureCloudPlatformClientV2/models/region_time_zone.py
 PureCloudPlatformClientV2/models/register_architect_job_response.py
@@ -3245,6 +3249,7 @@ PureCloudPlatformClientV2/models/validate_work_plan_response.py
 PureCloudPlatformClientV2/models/validation_limits.py
 PureCloudPlatformClientV2/models/validation_service_request.py
 PureCloudPlatformClientV2/models/value_wrapper_date.py
+PureCloudPlatformClientV2/models/value_wrapper_hris_time_off_type.py
 PureCloudPlatformClientV2/models/value_wrapper_planning_period_settings.py
 PureCloudPlatformClientV2/models/value_wrapper_string.py
 PureCloudPlatformClientV2/models/verification_result.py
@@ -5228,6 +5233,8 @@ docs/KnowledgeCategory.md
 docs/KnowledgeCategoryRequest.md
 docs/KnowledgeContextReference.md
 docs/KnowledgeContextValueReference.md
+docs/KnowledgeConversationContext.md
+docs/KnowledgeConversationContextResponse.md
 docs/KnowledgeDocument.md
 docs/KnowledgeDocumentAlternative.md
 docs/KnowledgeDocumentBulkRequest.md
@@ -6069,6 +6076,8 @@ docs/RecordingRetentionCursorEntityListing.md
 docs/RecordingSettings.md
 docs/RecordingTranscodeCompleteTopicMediaResult.md
 docs/RecordingTranscodeCompleteTopicRecording.md
+docs/RecordingUploadReport.md
+docs/RecordingUploadReportRequest.md
 docs/Referrer.md
 docs/RegionTimeZone.md
 docs/RegisterArchitectJobResponse.md
@@ -6815,6 +6824,7 @@ docs/ValidateWorkPlanResponse.md
 docs/ValidationLimits.md
 docs/ValidationServiceRequest.md
 docs/ValueWrapperDate.md
+docs/ValueWrapperHrisTimeOffType.md
 docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
 docs/VerificationResult.md
@@ -7928,6 +7938,7 @@ docs/get_recording_mediaretentionpolicy-example.txt
 docs/get_recording_recordingkeys-example.txt
 docs/get_recording_recordingkeys_rotationschedule-example.txt
 docs/get_recording_settings-example.txt
+docs/get_recording_uploads_report-example.txt
 docs/get_recordings_retention_query-example.txt
 docs/get_recordings_screensessions-example.txt
 docs/get_responsemanagement_libraries-example.txt
@@ -8721,6 +8732,7 @@ docs/post_recording_localkeys-example.txt
 docs/post_recording_localkeys_settings-example.txt
 docs/post_recording_mediaretentionpolicies-example.txt
 docs/post_recording_recordingkeys-example.txt
+docs/post_recording_uploads_reports-example.txt
 docs/post_recordings_deletionprotection-example.txt
 docs/post_recordings_screensessions_acknowledge-example.txt
 docs/post_recordings_screensessions_metadata-example.txt

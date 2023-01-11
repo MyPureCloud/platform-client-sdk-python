@@ -191,7 +191,8 @@ class ViewFilter(object):
             'available_dashboard': 'str',
             'favourite_dashboard': 'bool',
             'my_dashboard': 'bool',
-            'station_errors': 'list[str]'
+            'station_errors': 'list[str]',
+            'canonical_contact_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -346,7 +347,8 @@ class ViewFilter(object):
             'available_dashboard': 'availableDashboard',
             'favourite_dashboard': 'favouriteDashboard',
             'my_dashboard': 'myDashboard',
-            'station_errors': 'stationErrors'
+            'station_errors': 'stationErrors',
+            'canonical_contact_ids': 'canonicalContactIds'
         }
 
         self._media_types = None
@@ -501,6 +503,7 @@ class ViewFilter(object):
         self._favourite_dashboard = None
         self._my_dashboard = None
         self._station_errors = None
+        self._canonical_contact_ids = None
 
     @property
     def media_types(self):
@@ -4152,6 +4155,30 @@ class ViewFilter(object):
         
 
         self._station_errors = station_errors
+
+    @property
+    def canonical_contact_ids(self):
+        """
+        Gets the canonical_contact_ids of this ViewFilter.
+        The canonical contact ids are used to filter the view
+
+        :return: The canonical_contact_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._canonical_contact_ids
+
+    @canonical_contact_ids.setter
+    def canonical_contact_ids(self, canonical_contact_ids):
+        """
+        Sets the canonical_contact_ids of this ViewFilter.
+        The canonical contact ids are used to filter the view
+
+        :param canonical_contact_ids: The canonical_contact_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._canonical_contact_ids = canonical_contact_ids
 
     def to_dict(self):
         """

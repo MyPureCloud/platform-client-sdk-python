@@ -46,6 +46,7 @@ class CreateTriggerRequest(object):
             'name': 'str',
             'topic_name': 'str',
             'event_ttl_seconds': 'int',
+            'delay_by_seconds': 'int',
             'description': 'str'
         }
 
@@ -56,6 +57,7 @@ class CreateTriggerRequest(object):
             'name': 'name',
             'topic_name': 'topicName',
             'event_ttl_seconds': 'eventTTLSeconds',
+            'delay_by_seconds': 'delayBySeconds',
             'description': 'description'
         }
 
@@ -65,6 +67,7 @@ class CreateTriggerRequest(object):
         self._name = None
         self._topic_name = None
         self._event_ttl_seconds = None
+        self._delay_by_seconds = None
         self._description = None
 
     @property
@@ -191,7 +194,7 @@ class CreateTriggerRequest(object):
     def event_ttl_seconds(self):
         """
         Gets the event_ttl_seconds of this CreateTriggerRequest.
-        How long each event is meaningful after origination, in seconds. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely.
+        Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
 
         :return: The event_ttl_seconds of this CreateTriggerRequest.
         :rtype: int
@@ -202,7 +205,7 @@ class CreateTriggerRequest(object):
     def event_ttl_seconds(self, event_ttl_seconds):
         """
         Sets the event_ttl_seconds of this CreateTriggerRequest.
-        How long each event is meaningful after origination, in seconds. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely.
+        Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
 
         :param event_ttl_seconds: The event_ttl_seconds of this CreateTriggerRequest.
         :type: int
@@ -210,6 +213,30 @@ class CreateTriggerRequest(object):
         
 
         self._event_ttl_seconds = event_ttl_seconds
+
+    @property
+    def delay_by_seconds(self):
+        """
+        Gets the delay_by_seconds of this CreateTriggerRequest.
+        Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+
+        :return: The delay_by_seconds of this CreateTriggerRequest.
+        :rtype: int
+        """
+        return self._delay_by_seconds
+
+    @delay_by_seconds.setter
+    def delay_by_seconds(self, delay_by_seconds):
+        """
+        Sets the delay_by_seconds of this CreateTriggerRequest.
+        Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+
+        :param delay_by_seconds: The delay_by_seconds of this CreateTriggerRequest.
+        :type: int
+        """
+        
+
+        self._delay_by_seconds = delay_by_seconds
 
     @property
     def description(self):

@@ -69,6 +69,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'ending_language': 'str',
             'entry_reason': 'str',
             'entry_type': 'str',
+            'error_code': 'str',
             'exit_reason': 'str',
             'extended_delivery_status': 'str',
             'external_contact_id': 'str',
@@ -166,6 +167,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'ending_language': 'endingLanguage',
             'entry_reason': 'entryReason',
             'entry_type': 'entryType',
+            'error_code': 'errorCode',
             'exit_reason': 'exitReason',
             'extended_delivery_status': 'extendedDeliveryStatus',
             'external_contact_id': 'externalContactId',
@@ -262,6 +264,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         self._ending_language = None
         self._entry_reason = None
         self._entry_type = None
+        self._error_code = None
         self._exit_reason = None
         self._extended_delivery_status = None
         self._external_contact_id = None
@@ -1041,6 +1044,30 @@ class FlowMetricsTopicFlowMetricRecord(object):
             self._entry_type = "outdated_sdk_version"
         else:
             self._entry_type = entry_type
+
+    @property
+    def error_code(self):
+        """
+        Gets the error_code of this FlowMetricsTopicFlowMetricRecord.
+        A code corresponding to the error that occurred
+
+        :return: The error_code of this FlowMetricsTopicFlowMetricRecord.
+        :rtype: str
+        """
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code):
+        """
+        Sets the error_code of this FlowMetricsTopicFlowMetricRecord.
+        A code corresponding to the error that occurred
+
+        :param error_code: The error_code of this FlowMetricsTopicFlowMetricRecord.
+        :type: str
+        """
+        
+
+        self._error_code = error_code
 
     @property
     def exit_reason(self):

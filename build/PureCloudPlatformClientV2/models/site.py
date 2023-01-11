@@ -66,6 +66,10 @@ class Site(object):
             'media_model': 'str',
             'core_site': 'bool',
             'site_connections': 'list[SiteConnection]',
+            'media_regions': 'list[str]',
+            'caller_id': 'str',
+            'caller_name': 'str',
+            'cloud_proxy_force_turn': 'bool',
             'self_uri': 'str'
         }
 
@@ -96,6 +100,10 @@ class Site(object):
             'media_model': 'mediaModel',
             'core_site': 'coreSite',
             'site_connections': 'siteConnections',
+            'media_regions': 'mediaRegions',
+            'caller_id': 'callerId',
+            'caller_name': 'callerName',
+            'cloud_proxy_force_turn': 'cloudProxyForceTurn',
             'self_uri': 'selfUri'
         }
 
@@ -125,6 +133,10 @@ class Site(object):
         self._media_model = None
         self._core_site = None
         self._site_connections = None
+        self._media_regions = None
+        self._caller_id = None
+        self._caller_name = None
+        self._cloud_proxy_force_turn = None
         self._self_uri = None
 
     @property
@@ -756,6 +768,102 @@ class Site(object):
         
 
         self._site_connections = site_connections
+
+    @property
+    def media_regions(self):
+        """
+        Gets the media_regions of this Site.
+        The ordered list of AWS regions through which media can stream.
+
+        :return: The media_regions of this Site.
+        :rtype: list[str]
+        """
+        return self._media_regions
+
+    @media_regions.setter
+    def media_regions(self, media_regions):
+        """
+        Sets the media_regions of this Site.
+        The ordered list of AWS regions through which media can stream.
+
+        :param media_regions: The media_regions of this Site.
+        :type: list[str]
+        """
+        
+
+        self._media_regions = media_regions
+
+    @property
+    def caller_id(self):
+        """
+        Gets the caller_id of this Site.
+        The caller ID value for the site.
+
+        :return: The caller_id of this Site.
+        :rtype: str
+        """
+        return self._caller_id
+
+    @caller_id.setter
+    def caller_id(self, caller_id):
+        """
+        Sets the caller_id of this Site.
+        The caller ID value for the site.
+
+        :param caller_id: The caller_id of this Site.
+        :type: str
+        """
+        
+
+        self._caller_id = caller_id
+
+    @property
+    def caller_name(self):
+        """
+        Gets the caller_name of this Site.
+        The caller name for the site.
+
+        :return: The caller_name of this Site.
+        :rtype: str
+        """
+        return self._caller_name
+
+    @caller_name.setter
+    def caller_name(self, caller_name):
+        """
+        Sets the caller_name of this Site.
+        The caller name for the site.
+
+        :param caller_name: The caller_name of this Site.
+        :type: str
+        """
+        
+
+        self._caller_name = caller_name
+
+    @property
+    def cloud_proxy_force_turn(self):
+        """
+        Gets the cloud_proxy_force_turn of this Site.
+        Enables premises Edge Force Turn 
+
+        :return: The cloud_proxy_force_turn of this Site.
+        :rtype: bool
+        """
+        return self._cloud_proxy_force_turn
+
+    @cloud_proxy_force_turn.setter
+    def cloud_proxy_force_turn(self, cloud_proxy_force_turn):
+        """
+        Sets the cloud_proxy_force_turn of this Site.
+        Enables premises Edge Force Turn 
+
+        :param cloud_proxy_force_turn: The cloud_proxy_force_turn of this Site.
+        :type: bool
+        """
+        
+
+        self._cloud_proxy_force_turn = cloud_proxy_force_turn
 
     @property
     def self_uri(self):
