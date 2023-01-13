@@ -53,7 +53,7 @@ class Phone(object):
             'modified_by_app': 'str',
             'created_by_app': 'str',
             'site': 'DomainEntityRef',
-            'phone_base_settings': 'DomainEntityRef',
+            'phone_base_settings': 'PhoneBaseSettings',
             'line_base_settings': 'DomainEntityRef',
             'phone_meta_base': 'DomainEntityRef',
             'lines': 'list[Line]',
@@ -446,7 +446,7 @@ class Phone(object):
         Phone Base Settings
 
         :return: The phone_base_settings of this Phone.
-        :rtype: DomainEntityRef
+        :rtype: PhoneBaseSettings
         """
         return self._phone_base_settings
 
@@ -457,7 +457,7 @@ class Phone(object):
         Phone Base Settings
 
         :param phone_base_settings: The phone_base_settings of this Phone.
-        :type: DomainEntityRef
+        :type: PhoneBaseSettings
         """
         
 

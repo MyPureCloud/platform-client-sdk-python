@@ -20,7 +20,7 @@ title: Phone
 | **modified_by_app** | **str** | The application that last modified the resource. | [optional] |
 | **created_by_app** | **str** | The application that created the resource. | [optional] |
 | **site** | [**DomainEntityRef**](DomainEntityRef.html) | The site associated to the phone. | |
-| **phone_base_settings** | [**DomainEntityRef**](DomainEntityRef.html) | Phone Base Settings | |
+| **phone_base_settings** | [**PhoneBaseSettings**](PhoneBaseSettings.html) | Phone Base Settings | |
 | **line_base_settings** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **phone_meta_base** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **lines** | [**list[Line]**](Line.html) | Lines | |

@@ -15,8 +15,6 @@ title: JourneySessionEventsNotificationSessionEvent
 | **customer_id** | **str** |  | [optional] |
 | **customer_id_type** | **str** |  | [optional] |
 | **type** | **str** |  | [optional] |
-| **external_id** | **str** |  | [optional] |
-| **external_url** | **str** |  | [optional] |
 | **outcome_achievements** | [**list[JourneySessionEventsNotificationOutcomeAchievement]**](JourneySessionEventsNotificationOutcomeAchievement.html) |  | [optional] |
 | **segment_assignments** | [**list[JourneySessionEventsNotificationSegmentAssignment]**](JourneySessionEventsNotificationSegmentAssignment.html) |  | [optional] |
 | **attributes** | [**dict(str, JourneySessionEventsNotificationCustomEventAttribute)**](JourneySessionEventsNotificationCustomEventAttribute.html) |  | [optional] |

@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_webdeployments_configuration**](WebDeploymentsApi.html#delete_webdeployments_configuration) | Delete all versions of a configuration|
 |[**delete_webdeployments_deployment**](WebDeploymentsApi.html#delete_webdeployments_deployment) | Delete a deployment|
+|[**delete_webdeployments_token_revoke**](WebDeploymentsApi.html#delete_webdeployments_token_revoke) | Invalidate JWT|
 |[**get_webdeployments_configuration_version**](WebDeploymentsApi.html#get_webdeployments_configuration_version) | Get a configuration version|
 |[**get_webdeployments_configuration_versions**](WebDeploymentsApi.html#get_webdeployments_configuration_versions) | Get the versions of a configuration|
 |[**get_webdeployments_configuration_versions_draft**](WebDeploymentsApi.html#get_webdeployments_configuration_versions_draft) | Get the configuration draft|
@@ -20,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_webdeployments_configuration_versions_draft_publish**](WebDeploymentsApi.html#post_webdeployments_configuration_versions_draft_publish) | Publish the configuration draft and create a new version|
 |[**post_webdeployments_configurations**](WebDeploymentsApi.html#post_webdeployments_configurations) | Create a configuration draft|
 |[**post_webdeployments_deployments**](WebDeploymentsApi.html#post_webdeployments_deployments) | Create a deployment|
+|[**post_webdeployments_token_oauthcodegrantjwtexchange**](WebDeploymentsApi.html#post_webdeployments_token_oauthcodegrantjwtexchange) | Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.|
+|[**post_webdeployments_token_refresh**](WebDeploymentsApi.html#post_webdeployments_token_refresh) | Refresh a JWT.|
 |[**put_webdeployments_configuration_versions_draft**](WebDeploymentsApi.html#put_webdeployments_configuration_versions_draft) | Update the configuration draft|
 |[**put_webdeployments_deployment**](WebDeploymentsApi.html#put_webdeployments_deployment) | Update a deployment|
 {: class="table table-striped"}
@@ -118,6 +121,54 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The deployment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_webdeployments_token_revoke"></a>
+
+##  delete_webdeployments_token_revoke(x_journey_session_id=x_journey_session_id, x_journey_session_type=x_journey_session_type)
+
+
+
+Invalidate JWT
+
+
+
+Wraps DELETE /api/v2/webdeployments/token/revoke 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+x_journey_session_id = 'x_journey_session_id_example' # str | The Customer's journey sessionId. (optional)
+x_journey_session_type = 'x_journey_session_type_example' # str | The Customer's journey session type. (optional)
+
+try:
+    # Invalidate JWT
+    api_instance.delete_webdeployments_token_revoke(x_journey_session_id=x_journey_session_id, x_journey_session_type=x_journey_session_type)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->delete_webdeployments_token_revoke: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **x_journey_session_id** | **str**| The Customer&#39;s journey sessionId. | [optional]  |
+| **x_journey_session_type** | **str**| The Customer&#39;s journey session type. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -639,6 +690,100 @@ except ApiException as e:
 ### Return type
 
 [**WebDeployment**](WebDeployment.html)
+
+<a name="post_webdeployments_token_oauthcodegrantjwtexchange"></a>
+
+## [**WebDeploymentsAuthorizationResponse**](WebDeploymentsAuthorizationResponse.html) post_webdeployments_token_oauthcodegrantjwtexchange(body)
+
+
+
+Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+
+
+
+Wraps POST /api/v2/webdeployments/token/oauthcodegrantjwtexchange 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+body = PureCloudPlatformClientV2.WebDeploymentsOAuthExchangeRequest() # WebDeploymentsOAuthExchangeRequest | webDeploymentsOAuthExchangeRequest
+
+try:
+    # Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+    api_response = api_instance.post_webdeployments_token_oauthcodegrantjwtexchange(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->post_webdeployments_token_oauthcodegrantjwtexchange: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**WebDeploymentsOAuthExchangeRequest**](WebDeploymentsOAuthExchangeRequest.html)| webDeploymentsOAuthExchangeRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WebDeploymentsAuthorizationResponse**](WebDeploymentsAuthorizationResponse.html)
+
+<a name="post_webdeployments_token_refresh"></a>
+
+## [**SignedData**](SignedData.html) post_webdeployments_token_refresh(body=body)
+
+
+
+Refresh a JWT.
+
+
+
+Wraps POST /api/v2/webdeployments/token/refresh 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+body = PureCloudPlatformClientV2.WebDeploymentsRefreshJWTRequest() # WebDeploymentsRefreshJWTRequest |  (optional)
+
+try:
+    # Refresh a JWT.
+    api_response = api_instance.post_webdeployments_token_refresh(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->post_webdeployments_token_refresh: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**WebDeploymentsRefreshJWTRequest**](WebDeploymentsRefreshJWTRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SignedData**](SignedData.html)
 
 <a name="put_webdeployments_configuration_versions_draft"></a>
 

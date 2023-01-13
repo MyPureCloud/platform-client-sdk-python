@@ -384,7 +384,7 @@ class KnowledgeDocumentSearchRequest(object):
         :param sort_by: The sort_by of this KnowledgeDocumentSearchRequest.
         :type: str
         """
-        allowed_values = ["ConfidenceScore", "DateCreated", "DateModified", "CategoryId", "CategoryName", "ContextId", "ContextName", "ContextValueId", "ContextValueName", "LabelId", "LabelName"]
+        allowed_values = ["ConfidenceScore", "DateCreated", "DateModified", "CategoryName", "LabelName"]
         if sort_by.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sort_by -> " + sort_by)
             self._sort_by = "outdated_sdk_version"

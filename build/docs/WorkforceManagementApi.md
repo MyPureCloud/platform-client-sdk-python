@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_adherence**](WorkforceManagementApi.html#get_workforcemanagement_adherence) | Get a list of UserScheduleAdherence records for the requested users|
 |[**get_workforcemanagement_adherence_explanation**](WorkforceManagementApi.html#get_workforcemanagement_adherence_explanation) | Get an adherence explanation for the current user|
 |[**get_workforcemanagement_adherence_explanations_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_explanations_job) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_adherence_historical_bulk_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_historical_bulk_job) | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adherence_historical_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_historical_job) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adhocmodelingjob**](WorkforceManagementApi.html#get_workforcemanagement_adhocmodelingjob) | Get status of the modeling job|
 |[**get_workforcemanagement_agent_adherence_explanation**](WorkforceManagementApi.html#get_workforcemanagement_agent_adherence_explanation) | Get an adherence explanation|
@@ -106,6 +107,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_adherence_explanations**](WorkforceManagementApi.html#post_workforcemanagement_adherence_explanations) | Submit an adherence explanation for the current user|
 |[**post_workforcemanagement_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_adherence_explanations_query) | Query adherence explanations for the current user|
 |[**post_workforcemanagement_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical) | Request a historical adherence report for users across management units|
+|[**post_workforcemanagement_adherence_historical_bulk**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical_bulk) | Request a historical adherence report in bulk|
 |[**post_workforcemanagement_agent_adherence_explanations**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations) | Add an adherence explanation for the requested user|
 |[**post_workforcemanagement_agent_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
 |[**post_workforcemanagement_agentschedules_mine**](WorkforceManagementApi.html#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
@@ -990,6 +992,58 @@ except ApiException as e:
 ### Return type
 
 [**AdherenceExplanationJob**](AdherenceExplanationJob.html)
+
+<a name="get_workforcemanagement_adherence_historical_bulk_job"></a>
+
+## [**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse.html) get_workforcemanagement_adherence_historical_bulk_job(job_id)
+
+
+
+Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+
+
+Wraps GET /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | ID of the job to get
+
+try:
+    # Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_adherence_historical_bulk_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_adherence_historical_bulk_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| ID of the job to get |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse.html)
 
 <a name="get_workforcemanagement_adherence_historical_job"></a>
 
@@ -5696,6 +5750,57 @@ except ApiException as e:
 ### Return type
 
 [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+
+<a name="post_workforcemanagement_adherence_historical_bulk"></a>
+
+## [**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse.html) post_workforcemanagement_adherence_historical_bulk(body=body)
+
+
+
+Request a historical adherence report in bulk
+
+
+
+Wraps POST /api/v2/workforcemanagement/adherence/historical/bulk 
+
+Requires ANY permissions: 
+
+* wfm:historicalAdherence:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.WfmHistoricalAdherenceBulkQuery() # WfmHistoricalAdherenceBulkQuery | body (optional)
+
+try:
+    # Request a historical adherence report in bulk
+    api_response = api_instance.post_workforcemanagement_adherence_historical_bulk(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_historical_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**WfmHistoricalAdherenceBulkQuery**](WfmHistoricalAdherenceBulkQuery.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse.html)
 
 <a name="post_workforcemanagement_agent_adherence_explanations"></a>
 

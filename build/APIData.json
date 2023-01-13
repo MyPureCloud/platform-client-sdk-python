@@ -34241,6 +34241,24 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\ndeployment_id = 'deployment_id_example' # str | The deployment ID\n\ntry:\n    # Delete a deployment\n    api_instance.delete_webdeployments_deployment(deployment_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteWebdeploymentsDeploymentRequest->delete_webdeployments_deployment: %s\\n\" % e)"
   },
+  "delete_webdeployments_token_revoke": {
+    "operationId": "delete_webdeployments_token_revoke",
+    "functionName": "delete_webdeployments_token_revoke",
+    "signature": "delete_webdeployments_token_revoke(x_journey_session_id, x_journey_session_type)",
+    "parameters": [
+      {
+        "name": "x_journey_session_id",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "x_journey_session_type",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\nx_journey_session_id = 'x_journey_session_id_example' # str | The Customer's journey sessionId. (optional)\nx_journey_session_type = 'x_journey_session_type_example' # str | The Customer's journey session type. (optional)\n\ntry:\n    # Invalidate JWT\n    api_instance.delete_webdeployments_token_revoke(x_journey_session_id=x_journey_session_id, x_journey_session_type=x_journey_session_type)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteWebdeploymentsTokenRevokeRequest->delete_webdeployments_token_revoke: %s\\n\" % e)"
+  },
   "get_webdeployments_configuration_version": {
     "operationId": "get_webdeployments_configuration_version",
     "functionName": "get_webdeployments_configuration_version",
@@ -34390,6 +34408,34 @@
     ],
     "return": "WebDeployment",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\ndeployment = PureCloudPlatformClientV2.WebDeployment() # WebDeployment | \n\ntry:\n    # Create a deployment\n    api_response = api_instance.post_webdeployments_deployments(deployment)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWebdeploymentsDeploymentsRequest->post_webdeployments_deployments: %s\\n\" % e)"
+  },
+  "post_webdeployments_token_oauthcodegrantjwtexchange": {
+    "operationId": "post_webdeployments_token_oauthcodegrantjwtexchange",
+    "functionName": "post_webdeployments_token_oauthcodegrantjwtexchange",
+    "signature": "post_webdeployments_token_oauthcodegrantjwtexchange(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "WebDeploymentsOAuthExchangeRequest",
+        "required": "true"
+      }
+    ],
+    "return": "WebDeploymentsAuthorizationResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\nbody = PureCloudPlatformClientV2.WebDeploymentsOAuthExchangeRequest() # WebDeploymentsOAuthExchangeRequest | webDeploymentsOAuthExchangeRequest\n\ntry:\n    # Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.\n    api_response = api_instance.post_webdeployments_token_oauthcodegrantjwtexchange(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest->post_webdeployments_token_oauthcodegrantjwtexchange: %s\\n\" % e)"
+  },
+  "post_webdeployments_token_refresh": {
+    "operationId": "post_webdeployments_token_refresh",
+    "functionName": "post_webdeployments_token_refresh",
+    "signature": "post_webdeployments_token_refresh(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "WebDeploymentsRefreshJWTRequest",
+        "required": "false"
+      }
+    ],
+    "return": "SignedData",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\nbody = PureCloudPlatformClientV2.WebDeploymentsRefreshJWTRequest() # WebDeploymentsRefreshJWTRequest |  (optional)\n\ntry:\n    # Refresh a JWT.\n    api_response = api_instance.post_webdeployments_token_refresh(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWebdeploymentsTokenRefreshRequest->post_webdeployments_token_refresh: %s\\n\" % e)"
   },
   "put_webdeployments_configuration_versions_draft": {
     "operationId": "put_webdeployments_configuration_versions_draft",
@@ -34760,6 +34806,20 @@
     ],
     "return": "AdherenceExplanationJob",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\njob_id = 'job_id_example' # str | The ID of the job\n\ntry:\n    # Query the status of an adherence explanation operation. Only the user who started the operation can query the status\n    api_response = api_instance.get_workforcemanagement_adherence_explanations_job(job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementAdherenceExplanationsJobRequest->get_workforcemanagement_adherence_explanations_job: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_adherence_historical_bulk_job": {
+    "operationId": "get_workforcemanagement_adherence_historical_bulk_job",
+    "functionName": "get_workforcemanagement_adherence_historical_bulk_job",
+    "signature": "get_workforcemanagement_adherence_historical_bulk_job(job_id)",
+    "parameters": [
+      {
+        "name": "job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "WfmHistoricalAdherenceBulkResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\njob_id = 'job_id_example' # str | ID of the job to get\n\ntry:\n    # Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status\n    api_response = api_instance.get_workforcemanagement_adherence_historical_bulk_job(job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWorkforcemanagementAdherenceHistoricalBulkJobRequest->get_workforcemanagement_adherence_historical_bulk_job: %s\\n\" % e)"
   },
   "get_workforcemanagement_adherence_historical_job": {
     "operationId": "get_workforcemanagement_adherence_historical_job",
@@ -36385,6 +36445,20 @@
     ],
     "return": "WfmHistoricalAdherenceResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nbody = PureCloudPlatformClientV2.WfmHistoricalAdherenceQueryForUsers() # WfmHistoricalAdherenceQueryForUsers | body (optional)\n\ntry:\n    # Request a historical adherence report for users across management units\n    api_response = api_instance.post_workforcemanagement_adherence_historical(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementAdherenceHistoricalRequest->post_workforcemanagement_adherence_historical: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_adherence_historical_bulk": {
+    "operationId": "post_workforcemanagement_adherence_historical_bulk",
+    "functionName": "post_workforcemanagement_adherence_historical_bulk",
+    "signature": "post_workforcemanagement_adherence_historical_bulk(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "WfmHistoricalAdherenceBulkQuery",
+        "required": "false"
+      }
+    ],
+    "return": "WfmHistoricalAdherenceBulkResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Workforce_ManagementApi()\nbody = PureCloudPlatformClientV2.WfmHistoricalAdherenceBulkQuery() # WfmHistoricalAdherenceBulkQuery | body (optional)\n\ntry:\n    # Request a historical adherence report in bulk\n    api_response = api_instance.post_workforcemanagement_adherence_historical_bulk(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostWorkforcemanagementAdherenceHistoricalBulkRequest->post_workforcemanagement_adherence_historical_bulk: %s\\n\" % e)"
   },
   "post_workforcemanagement_agent_adherence_explanations": {
     "operationId": "post_workforcemanagement_agent_adherence_explanations",

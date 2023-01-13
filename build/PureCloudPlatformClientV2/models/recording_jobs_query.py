@@ -42,6 +42,9 @@ class RecordingJobsQuery(object):
         self.swagger_types = {
             'action': 'str',
             'action_date': 'datetime',
+            'action_age': 'int',
+            'screen_recording_action_date': 'datetime',
+            'screen_recording_action_age': 'int',
             'integration_id': 'str',
             'include_recordings_with_sensitive_data': 'bool',
             'include_screen_recordings': 'bool',
@@ -52,6 +55,9 @@ class RecordingJobsQuery(object):
         self.attribute_map = {
             'action': 'action',
             'action_date': 'actionDate',
+            'action_age': 'actionAge',
+            'screen_recording_action_date': 'screenRecordingActionDate',
+            'screen_recording_action_age': 'screenRecordingActionAge',
             'integration_id': 'integrationId',
             'include_recordings_with_sensitive_data': 'includeRecordingsWithSensitiveData',
             'include_screen_recordings': 'includeScreenRecordings',
@@ -61,6 +67,9 @@ class RecordingJobsQuery(object):
 
         self._action = None
         self._action_date = None
+        self._action_age = None
+        self._screen_recording_action_date = None
+        self._screen_recording_action_age = None
         self._integration_id = None
         self._include_recordings_with_sensitive_data = None
         self._include_screen_recordings = None
@@ -98,7 +107,7 @@ class RecordingJobsQuery(object):
     def action_date(self):
         """
         Gets the action_date of this RecordingJobsQuery.
-        The date when the action will be performed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The date when the action will be performed. If screenRecordingActionDate is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The action_date of this RecordingJobsQuery.
         :rtype: datetime
@@ -109,7 +118,7 @@ class RecordingJobsQuery(object):
     def action_date(self, action_date):
         """
         Sets the action_date of this RecordingJobsQuery.
-        The date when the action will be performed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The date when the action will be performed. If screenRecordingActionDate is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param action_date: The action_date of this RecordingJobsQuery.
         :type: datetime
@@ -117,6 +126,78 @@ class RecordingJobsQuery(object):
         
 
         self._action_date = action_date
+
+    @property
+    def action_age(self):
+        """
+        Gets the action_age of this RecordingJobsQuery.
+        The number of days after each recording's creation date when the action will be performed. If screenRecordingActionAge is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings.
+
+        :return: The action_age of this RecordingJobsQuery.
+        :rtype: int
+        """
+        return self._action_age
+
+    @action_age.setter
+    def action_age(self, action_age):
+        """
+        Sets the action_age of this RecordingJobsQuery.
+        The number of days after each recording's creation date when the action will be performed. If screenRecordingActionAge is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings.
+
+        :param action_age: The action_age of this RecordingJobsQuery.
+        :type: int
+        """
+        
+
+        self._action_age = action_age
+
+    @property
+    def screen_recording_action_date(self):
+        """
+        Gets the screen_recording_action_date of this RecordingJobsQuery.
+        The date when the action will be performed for screen recordings. If this is provided then includeScreenRecordings must be true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The screen_recording_action_date of this RecordingJobsQuery.
+        :rtype: datetime
+        """
+        return self._screen_recording_action_date
+
+    @screen_recording_action_date.setter
+    def screen_recording_action_date(self, screen_recording_action_date):
+        """
+        Sets the screen_recording_action_date of this RecordingJobsQuery.
+        The date when the action will be performed for screen recordings. If this is provided then includeScreenRecordings must be true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param screen_recording_action_date: The screen_recording_action_date of this RecordingJobsQuery.
+        :type: datetime
+        """
+        
+
+        self._screen_recording_action_date = screen_recording_action_date
+
+    @property
+    def screen_recording_action_age(self):
+        """
+        Gets the screen_recording_action_age of this RecordingJobsQuery.
+        The number of days after each screen recording's creation date when the action will be performed. If this is provided then includeScreenRecordings must be true.
+
+        :return: The screen_recording_action_age of this RecordingJobsQuery.
+        :rtype: int
+        """
+        return self._screen_recording_action_age
+
+    @screen_recording_action_age.setter
+    def screen_recording_action_age(self, screen_recording_action_age):
+        """
+        Sets the screen_recording_action_age of this RecordingJobsQuery.
+        The number of days after each screen recording's creation date when the action will be performed. If this is provided then includeScreenRecordings must be true.
+
+        :param screen_recording_action_age: The screen_recording_action_age of this RecordingJobsQuery.
+        :type: int
+        """
+        
+
+        self._screen_recording_action_age = screen_recording_action_age
 
     @property
     def integration_id(self):

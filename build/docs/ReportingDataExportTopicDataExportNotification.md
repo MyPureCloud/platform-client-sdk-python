@@ -22,6 +22,7 @@ title: ReportingDataExportTopicDataExportNotification
 | **email_statuses** | **dict(str, str)** |  | [optional] |
 | **email_error_description** | **str** |  | [optional] |
 | **schedule_expression** | **str** |  | [optional] |
+| **schedule_static_link_url** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

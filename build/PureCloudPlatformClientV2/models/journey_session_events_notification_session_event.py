@@ -48,8 +48,6 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'customer_id': 'str',
             'customer_id_type': 'str',
             'type': 'str',
-            'external_id': 'str',
-            'external_url': 'str',
             'outcome_achievements': 'list[JourneySessionEventsNotificationOutcomeAchievement]',
             'segment_assignments': 'list[JourneySessionEventsNotificationSegmentAssignment]',
             'attributes': 'dict(str, JourneySessionEventsNotificationCustomEventAttribute)',
@@ -92,8 +90,6 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'customer_id': 'customerId',
             'customer_id_type': 'customerIdType',
             'type': 'type',
-            'external_id': 'externalId',
-            'external_url': 'externalUrl',
             'outcome_achievements': 'outcomeAchievements',
             'segment_assignments': 'segmentAssignments',
             'attributes': 'attributes',
@@ -135,8 +131,6 @@ class JourneySessionEventsNotificationSessionEvent(object):
         self._customer_id = None
         self._customer_id_type = None
         self._type = None
-        self._external_id = None
-        self._external_url = None
         self._outcome_achievements = None
         self._segment_assignments = None
         self._attributes = None
@@ -360,54 +354,6 @@ class JourneySessionEventsNotificationSessionEvent(object):
         
 
         self._type = type
-
-    @property
-    def external_id(self):
-        """
-        Gets the external_id of this JourneySessionEventsNotificationSessionEvent.
-
-
-        :return: The external_id of this JourneySessionEventsNotificationSessionEvent.
-        :rtype: str
-        """
-        return self._external_id
-
-    @external_id.setter
-    def external_id(self, external_id):
-        """
-        Sets the external_id of this JourneySessionEventsNotificationSessionEvent.
-
-
-        :param external_id: The external_id of this JourneySessionEventsNotificationSessionEvent.
-        :type: str
-        """
-        
-
-        self._external_id = external_id
-
-    @property
-    def external_url(self):
-        """
-        Gets the external_url of this JourneySessionEventsNotificationSessionEvent.
-
-
-        :return: The external_url of this JourneySessionEventsNotificationSessionEvent.
-        :rtype: str
-        """
-        return self._external_url
-
-    @external_url.setter
-    def external_url(self, external_url):
-        """
-        Sets the external_url of this JourneySessionEventsNotificationSessionEvent.
-
-
-        :param external_url: The external_url of this JourneySessionEventsNotificationSessionEvent.
-        :type: str
-        """
-        
-
-        self._external_url = external_url
 
     @property
     def outcome_achievements(self):
