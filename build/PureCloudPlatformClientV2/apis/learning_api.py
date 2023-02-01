@@ -310,7 +310,7 @@ class LearningApi(object):
         :param str sort_order: Specifies result set sort order; if not specified, default sort order is descending (Desc)
         :param str sort_by: Specifies which field to sort the results by, default sort is by recommendedCompletionDate
         :param list[str] user_id: Specifies the list of user IDs to be queried, up to 100 user IDs.
-        :param list[str] types: Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+        :param list[str] types: Specifies the module types to filter by
         :param list[str] states: Specifies the assignment states to filter by
         :param list[str] expand: Specifies the expand option for returning additional information
         :return: LearningAssignmentsDomainEntity
@@ -426,7 +426,7 @@ class LearningApi(object):
         :param float max_percentage_score: The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
         :param str sort_order: Specifies result set sort order; if not specified, default sort order is descending (Desc)
         :param str sort_by: Specifies which field to sort the results by, default sort is by recommendedCompletionDate
-        :param list[str] types: Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+        :param list[str] types: Specifies the module types to filter by
         :param list[str] states: Specifies the assignment states to filter by
         :param list[str] expand: Specifies the expand option for returning additional information
         :return: LearningAssignmentsDomainEntity

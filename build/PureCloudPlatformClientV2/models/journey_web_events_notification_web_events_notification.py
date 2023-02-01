@@ -50,7 +50,8 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
             'event_type': 'str',
             'web_event': 'JourneyWebEventsNotificationWebMessage',
             'web_action_event': 'JourneyWebEventsNotificationWebActionMessage',
-            'outcome_achieved_event': 'JourneyWebEventsNotificationOutcomeAchievedMessage'
+            'outcome_achieved_event': 'JourneyWebEventsNotificationOutcomeAchievedMessage',
+            'segment_assignment_event': 'JourneyWebEventsNotificationSegmentAssignmentMessage'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
             'event_type': 'eventType',
             'web_event': 'webEvent',
             'web_action_event': 'webActionEvent',
-            'outcome_achieved_event': 'outcomeAchievedEvent'
+            'outcome_achieved_event': 'outcomeAchievedEvent',
+            'segment_assignment_event': 'segmentAssignmentEvent'
         }
 
         self._id = None
@@ -78,6 +80,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         self._web_event = None
         self._web_action_event = None
         self._outcome_achieved_event = None
+        self._segment_assignment_event = None
 
     @property
     def id(self):
@@ -345,6 +348,30 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         
 
         self._outcome_achieved_event = outcome_achieved_event
+
+    @property
+    def segment_assignment_event(self):
+        """
+        Gets the segment_assignment_event of this JourneyWebEventsNotificationWebEventsNotification.
+
+
+        :return: The segment_assignment_event of this JourneyWebEventsNotificationWebEventsNotification.
+        :rtype: JourneyWebEventsNotificationSegmentAssignmentMessage
+        """
+        return self._segment_assignment_event
+
+    @segment_assignment_event.setter
+    def segment_assignment_event(self, segment_assignment_event):
+        """
+        Sets the segment_assignment_event of this JourneyWebEventsNotificationWebEventsNotification.
+
+
+        :param segment_assignment_event: The segment_assignment_event of this JourneyWebEventsNotificationWebEventsNotification.
+        :type: JourneyWebEventsNotificationSegmentAssignmentMessage
+        """
+        
+
+        self._segment_assignment_event = segment_assignment_event
 
     def to_dict(self):
         """

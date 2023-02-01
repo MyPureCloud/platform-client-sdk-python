@@ -75,6 +75,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'journey_context': 'ConversationCallEventTopicJourneyContext',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'media_roles': 'list[str]',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -127,6 +128,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'journey_context': 'journeyContext',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'media_roles': 'mediaRoles',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -178,6 +180,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         self._journey_context = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._media_roles = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -1047,6 +1050,30 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def media_roles(self):
+        """
+        Gets the media_roles of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The media_roles of this ConversationCallEventTopicCallMediaParticipant.
+        :rtype: list[str]
+        """
+        return self._media_roles
+
+    @media_roles.setter
+    def media_roles(self, media_roles):
+        """
+        Sets the media_roles of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :param media_roles: The media_roles of this ConversationCallEventTopicCallMediaParticipant.
+        :type: list[str]
+        """
+        
+
+        self._media_roles = media_roles
 
     @property
     def muted(self):

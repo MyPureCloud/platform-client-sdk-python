@@ -7816,6 +7816,20 @@
     "return": "str",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversation ID\nbody = PureCloudPlatformClientV2.ConversationUser() # ConversationUser | Targeted user\n\ntry:\n    # Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.\n    api_response = api_instance.post_conversation_assign(conversation_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationAssignRequest->post_conversation_assign: %s\\n\" % e)"
   },
+  "post_conversation_cobrowse": {
+    "operationId": "post_conversation_cobrowse",
+    "functionName": "post_conversation_cobrowse",
+    "signature": "post_conversation_cobrowse(conversation_id)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "CobrowseWebMessagingSession",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | Conversation ID\n\ntry:\n    # Creates a cobrowse session\n    api_response = api_instance.post_conversation_cobrowse(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationCobrowseRequest->post_conversation_cobrowse: %s\\n\" % e)"
+  },
   "post_conversation_disconnect": {
     "operationId": "post_conversation_disconnect",
     "functionName": "post_conversation_disconnect",
@@ -8260,7 +8274,7 @@
         "required": "true"
       }
     ],
-    "return": "EmailMessage",
+    "return": "EmailMessageReply",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nbody = PureCloudPlatformClientV2.EmailMessage() # EmailMessage | Reply\n\ntry:\n    # Send an email reply\n    api_response = api_instance.post_conversations_email_messages(conversation_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsEmailMessagesRequest->post_conversations_email_messages: %s\\n\" % e)"
   },
   "post_conversations_email_messages_draft_attachments_copy": {
@@ -16339,7 +16353,7 @@
   "get_languageunderstanding_domain_feedback": {
     "operationId": "get_languageunderstanding_domain_feedback",
     "functionName": "get_languageunderstanding_domain_feedback",
-    "signature": "get_languageunderstanding_domain_feedback(domain_id, intent_name, assessment, date_start, date_end, include_deleted, language, page_number, page_size, enable_cursor_pagination, after, fields)",
+    "signature": "get_languageunderstanding_domain_feedback(domain_id, intent_name, assessment, date_start, date_end, include_deleted, language, page_number, page_size, enable_cursor_pagination, include_training_utterances, after, fields)",
     "parameters": [
       {
         "name": "domain_id",
@@ -16392,6 +16406,11 @@
         "required": "false"
       },
       {
+        "name": "include_training_utterances",
+        "type": "bool",
+        "required": "false"
+      },
+      {
         "name": "after",
         "type": "str",
         "required": "false"
@@ -16403,7 +16422,7 @@
       }
     ],
     "return": "NluFeedbackListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\ndomain_id = 'domain_id_example' # str | ID of the NLU domain.\nintent_name = 'intent_name_example' # str | The top intent name to retrieve feedback for. (optional)\nassessment = 'assessment_example' # str | The top assessment to retrieve feedback for. (optional)\ndate_start = '2013-10-20' # date | Begin of time window as ISO-8601 date. (optional)\ndate_end = '2013-10-20' # date | End of time window as ISO-8601 date. (optional)\ninclude_deleted = True # bool | Whether to include soft-deleted items in the result. (optional)\nlanguage = 'language_example' # str | Whether to filter response based on the language, e.g. en-us, pt-br. (optional)\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nenable_cursor_pagination = False # bool | Enable Cursor Pagination (optional) (default to False)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)\nfields = ['fields_example'] # list[str] | Fields and properties to get, comma-separated (optional)\n\ntry:\n    # Get all feedback in the given NLU Domain Version.\n    api_response = api_instance.get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, after=after, fields=fields)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingDomainFeedbackRequest->get_languageunderstanding_domain_feedback: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Language_UnderstandingApi()\ndomain_id = 'domain_id_example' # str | ID of the NLU domain.\nintent_name = 'intent_name_example' # str | The top intent name to retrieve feedback for. (optional)\nassessment = 'assessment_example' # str | The top assessment to retrieve feedback for. (optional)\ndate_start = '2013-10-20' # date | Begin of time window as ISO-8601 date. (optional)\ndate_end = '2013-10-20' # date | End of time window as ISO-8601 date. (optional)\ninclude_deleted = True # bool | Whether to include soft-deleted items in the result. (optional)\nlanguage = 'language_example' # str | Whether to filter response based on the language, e.g. en-us, pt-br. (optional)\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nenable_cursor_pagination = False # bool | Enable Cursor Pagination (optional) (default to False)\ninclude_training_utterances = True # bool | Include Training Utterances. By default they're included. (optional) (default to True)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)\nfields = ['fields_example'] # list[str] | Fields and properties to get, comma-separated (optional)\n\ntry:\n    # Get all feedback in the given NLU Domain Version.\n    api_response = api_instance.get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, include_training_utterances=include_training_utterances, after=after, fields=fields)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLanguageunderstandingDomainFeedbackRequest->get_languageunderstanding_domain_feedback: %s\\n\" % e)"
   },
   "get_languageunderstanding_domain_feedback_feedback_id": {
     "operationId": "get_languageunderstanding_domain_feedback_feedback_id",
@@ -17180,7 +17199,7 @@
       }
     ],
     "return": "LearningAssignmentsDomainEntity",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nmodule_id = 'module_id_example' # str | Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)\ninterval = 'interval_example' # str | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\ncompletion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\noverdue = ''Any'' # str | Specifies if only the non-overdue (overdue is \\\"False\\\") or overdue (overdue is \\\"True\\\") assignments are returned. If overdue is \\\"Any\\\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to 'Any')\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\npcPass = ''Any'' # str | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") assignments (completed with assessment)are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to 'Any')\nmin_percentage_score = 3.4 # float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)\nmax_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)\nsort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')\nsort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)\nuser_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)\ntypes = ['types_example'] # list[str] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)\nstates = ['states_example'] # list[str] | Specifies the assignment states to filter by (optional)\nexpand = ['expand_example'] # list[str] | Specifies the expand option for returning additional information (optional)\n\ntry:\n    # List of Learning module Assignments\n    api_response = api_instance.get_learning_assignments(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, user_id=user_id, types=types, states=states, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningAssignmentsRequest->get_learning_assignments: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nmodule_id = 'module_id_example' # str | Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)\ninterval = 'interval_example' # str | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\ncompletion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\noverdue = ''Any'' # str | Specifies if only the non-overdue (overdue is \\\"False\\\") or overdue (overdue is \\\"True\\\") assignments are returned. If overdue is \\\"Any\\\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to 'Any')\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\npcPass = ''Any'' # str | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") assignments (completed with assessment)are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to 'Any')\nmin_percentage_score = 3.4 # float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)\nmax_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)\nsort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')\nsort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)\nuser_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)\ntypes = ['types_example'] # list[str] | Specifies the module types to filter by (optional)\nstates = ['states_example'] # list[str] | Specifies the assignment states to filter by (optional)\nexpand = ['expand_example'] # list[str] | Specifies the expand option for returning additional information (optional)\n\ntry:\n    # List of Learning module Assignments\n    api_response = api_instance.get_learning_assignments(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, user_id=user_id, types=types, states=states, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningAssignmentsRequest->get_learning_assignments: %s\\n\" % e)"
   },
   "get_learning_assignments_me": {
     "operationId": "get_learning_assignments_me",
@@ -17259,7 +17278,7 @@
       }
     ],
     "return": "LearningAssignmentsDomainEntity",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nmodule_id = 'module_id_example' # str | Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)\ninterval = 'interval_example' # str | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\ncompletion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\noverdue = ''Any'' # str | Specifies if only the non-overdue (overdue is \\\"False\\\") or overdue (overdue is \\\"True\\\") assignments are returned. If overdue is \\\"Any\\\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to 'Any')\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\npcPass = ''Any'' # str | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") assignments (completed with assessment)are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to 'Any')\nmin_percentage_score = 3.4 # float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)\nmax_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)\nsort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')\nsort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)\ntypes = ['types_example'] # list[str] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)\nstates = ['states_example'] # list[str] | Specifies the assignment states to filter by (optional)\nexpand = ['expand_example'] # list[str] | Specifies the expand option for returning additional information (optional)\n\ntry:\n    # List of Learning Assignments assigned to current user\n    api_response = api_instance.get_learning_assignments_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, types=types, states=states, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningAssignmentsMeRequest->get_learning_assignments_me: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi()\nmodule_id = 'module_id_example' # str | Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)\ninterval = 'interval_example' # str | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\ncompletion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\noverdue = ''Any'' # str | Specifies if only the non-overdue (overdue is \\\"False\\\") or overdue (overdue is \\\"True\\\") assignments are returned. If overdue is \\\"Any\\\" or if the overdue parameter is not supplied, all assignments are returned (optional) (default to 'Any')\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\npcPass = ''Any'' # str | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") assignments (completed with assessment)are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all assignments are returned (optional) (default to 'Any')\nmin_percentage_score = 3.4 # float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)\nmax_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)\nsort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')\nsort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)\ntypes = ['types_example'] # list[str] | Specifies the module types to filter by (optional)\nstates = ['states_example'] # list[str] | Specifies the assignment states to filter by (optional)\nexpand = ['expand_example'] # list[str] | Specifies the expand option for returning additional information (optional)\n\ntry:\n    # List of Learning Assignments assigned to current user\n    api_response = api_instance.get_learning_assignments_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, types=types, states=states, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetLearningAssignmentsMeRequest->get_learning_assignments_me: %s\\n\" % e)"
   },
   "get_learning_module": {
     "operationId": "get_learning_module",
@@ -18666,6 +18685,42 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\ntrustee_user_id = 'trustee_user_id_example' # str | Id of the cloned user to delete\n\ntry:\n    # Deletes cloned user\n    api_instance.delete_orgauthorization_trustee_cloneduser(trustee_org_id, trustee_user_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOrgauthorizationTrusteeCloneduserRequest->delete_orgauthorization_trustee_cloneduser: %s\\n\" % e)"
   },
+  "delete_orgauthorization_trustee_group": {
+    "operationId": "delete_orgauthorization_trustee_group",
+    "functionName": "delete_orgauthorization_trustee_group",
+    "signature": "delete_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)",
+    "parameters": [
+      {
+        "name": "trustee_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "trustee_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\ntrustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id\n\ntry:\n    # Delete Trustee Group\n    api_instance.delete_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOrgauthorizationTrusteeGroupRequest->delete_orgauthorization_trustee_group: %s\\n\" % e)"
+  },
+  "delete_orgauthorization_trustee_group_roles": {
+    "operationId": "delete_orgauthorization_trustee_group_roles",
+    "functionName": "delete_orgauthorization_trustee_group_roles",
+    "signature": "delete_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)",
+    "parameters": [
+      {
+        "name": "trustee_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "trustee_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\ntrustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id\n\ntry:\n    # Delete Trustee Group Roles\n    api_instance.delete_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOrgauthorizationTrusteeGroupRolesRequest->delete_orgauthorization_trustee_group_roles: %s\\n\" % e)"
+  },
   "delete_orgauthorization_trustee_user": {
     "operationId": "delete_orgauthorization_trustee_user",
     "functionName": "delete_orgauthorization_trustee_user",
@@ -18733,6 +18788,24 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id\ntrustee_user_id = 'trustee_user_id_example' # str | Trustee User Id\n\ntry:\n    # Delete Cloned User\n    api_instance.delete_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOrgauthorizationTrustorCloneduserRequest->delete_orgauthorization_trustor_cloneduser: %s\\n\" % e)"
   },
+  "delete_orgauthorization_trustor_group": {
+    "operationId": "delete_orgauthorization_trustor_group",
+    "functionName": "delete_orgauthorization_trustor_group",
+    "signature": "delete_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)",
+    "parameters": [
+      {
+        "name": "trustor_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "trustor_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id\ntrustor_group_id = 'trustor_group_id_example' # str | Trustor Group Id\n\ntry:\n    # Delete Trustee Group\n    api_instance.delete_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteOrgauthorizationTrustorGroupRequest->delete_orgauthorization_trustor_group: %s\\n\" % e)"
+  },
   "delete_orgauthorization_trustor_user": {
     "operationId": "delete_orgauthorization_trustor_user",
     "functionName": "delete_orgauthorization_trustor_user",
@@ -18792,6 +18865,68 @@
     ],
     "return": "ClonedUserEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\n\ntry:\n    # The list of cloned users from the trustee organization (i.e. users with a native user record).\n    api_response = api_instance.get_orgauthorization_trustee_clonedusers(trustee_org_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOrgauthorizationTrusteeClonedusersRequest->get_orgauthorization_trustee_clonedusers: %s\\n\" % e)"
+  },
+  "get_orgauthorization_trustee_group": {
+    "operationId": "get_orgauthorization_trustee_group",
+    "functionName": "get_orgauthorization_trustee_group",
+    "signature": "get_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)",
+    "parameters": [
+      {
+        "name": "trustee_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "trustee_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\ntrustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id\n\ntry:\n    # Get Trustee Group\n    api_response = api_instance.get_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOrgauthorizationTrusteeGroupRequest->get_orgauthorization_trustee_group: %s\\n\" % e)"
+  },
+  "get_orgauthorization_trustee_group_roles": {
+    "operationId": "get_orgauthorization_trustee_group_roles",
+    "functionName": "get_orgauthorization_trustee_group_roles",
+    "signature": "get_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)",
+    "parameters": [
+      {
+        "name": "trustee_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "trustee_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "UserAuthorization",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\ntrustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id\n\ntry:\n    # Get Trustee Group Roles\n    api_response = api_instance.get_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOrgauthorizationTrusteeGroupRolesRequest->get_orgauthorization_trustee_group_roles: %s\\n\" % e)"
+  },
+  "get_orgauthorization_trustee_groups": {
+    "operationId": "get_orgauthorization_trustee_groups",
+    "functionName": "get_orgauthorization_trustee_groups",
+    "signature": "get_orgauthorization_trustee_groups(trustee_org_id, page_size, page_number)",
+    "parameters": [
+      {
+        "name": "trustee_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      }
+    ],
+    "return": "TrustGroupEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # The list of trustee groups for this organization (i.e. groups granted access to this organization).\n    api_response = api_instance.get_orgauthorization_trustee_groups(trustee_org_id, page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOrgauthorizationTrusteeGroupsRequest->get_orgauthorization_trustee_groups: %s\\n\" % e)"
   },
   "get_orgauthorization_trustee_user": {
     "operationId": "get_orgauthorization_trustee_user",
@@ -18928,6 +19063,49 @@
     "return": "ClonedUserEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id\n\ntry:\n    # The list of cloned users in the trustor organization (i.e. users with a native user record).\n    api_response = api_instance.get_orgauthorization_trustor_clonedusers(trustor_org_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOrgauthorizationTrustorClonedusersRequest->get_orgauthorization_trustor_clonedusers: %s\\n\" % e)"
   },
+  "get_orgauthorization_trustor_group": {
+    "operationId": "get_orgauthorization_trustor_group",
+    "functionName": "get_orgauthorization_trustor_group",
+    "signature": "get_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)",
+    "parameters": [
+      {
+        "name": "trustor_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "trustor_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id\ntrustor_group_id = 'trustor_group_id_example' # str | Trustor Group Id\n\ntry:\n    # Get Trustee Group\n    api_response = api_instance.get_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOrgauthorizationTrustorGroupRequest->get_orgauthorization_trustor_group: %s\\n\" % e)"
+  },
+  "get_orgauthorization_trustor_groups": {
+    "operationId": "get_orgauthorization_trustor_groups",
+    "functionName": "get_orgauthorization_trustor_groups",
+    "signature": "get_orgauthorization_trustor_groups(trustor_org_id, page_size, page_number)",
+    "parameters": [
+      {
+        "name": "trustor_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      }
+    ],
+    "return": "TrustGroupEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustor_org_id = 'trustor_org_id_example' # str | Trustee Organization Id\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # The list of groups in the trustor organization (i.e. groups granted access).\n    api_response = api_instance.get_orgauthorization_trustor_groups(trustor_org_id, page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetOrgauthorizationTrustorGroupsRequest->get_orgauthorization_trustor_groups: %s\\n\" % e)"
+  },
   "get_orgauthorization_trustor_user": {
     "operationId": "get_orgauthorization_trustor_user",
     "functionName": "get_orgauthorization_trustor_user",
@@ -19003,6 +19181,25 @@
     ],
     "return": "TrustRequest",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\nbody = PureCloudPlatformClientV2.TrustRequestCreate() # TrustRequestCreate | Pairing Info\n\ntry:\n    # A pairing id is created by the trustee and given to the trustor to create a trust.\n    api_response = api_instance.post_orgauthorization_pairings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostOrgauthorizationPairingsRequest->post_orgauthorization_pairings: %s\\n\" % e)"
+  },
+  "post_orgauthorization_trustee_groups": {
+    "operationId": "post_orgauthorization_trustee_groups",
+    "functionName": "post_orgauthorization_trustee_groups",
+    "signature": "post_orgauthorization_trustee_groups(trustee_org_id, body)",
+    "parameters": [
+      {
+        "name": "trustee_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "TrustMemberCreate",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\nbody = PureCloudPlatformClientV2.TrustMemberCreate() # TrustMemberCreate | Trust\n\ntry:\n    # Add a group to the trust.\n    api_response = api_instance.post_orgauthorization_trustee_groups(trustee_org_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostOrgauthorizationTrusteeGroupsRequest->post_orgauthorization_trustee_groups: %s\\n\" % e)"
   },
   "post_orgauthorization_trustee_users": {
     "operationId": "post_orgauthorization_trustee_users",
@@ -19143,6 +19340,54 @@
     "return": "Trustee",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\nbody = PureCloudPlatformClientV2.TrustUpdate() # TrustUpdate | Client\n\ntry:\n    # Update Org Trust\n    api_response = api_instance.put_orgauthorization_trustee(trustee_org_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutOrgauthorizationTrusteeRequest->put_orgauthorization_trustee: %s\\n\" % e)"
   },
+  "put_orgauthorization_trustee_group_roledivisions": {
+    "operationId": "put_orgauthorization_trustee_group_roledivisions",
+    "functionName": "put_orgauthorization_trustee_group_roledivisions",
+    "signature": "put_orgauthorization_trustee_group_roledivisions(trustee_org_id, trustee_group_id, body)",
+    "parameters": [
+      {
+        "name": "trustee_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "trustee_group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "RoleDivisionGrants",
+        "required": "true"
+      }
+    ],
+    "return": "UserAuthorization",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\ntrustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id\nbody = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Set of roles with corresponding divisions to apply\n\ntry:\n    # Update Trustee Group Roles\n    api_response = api_instance.put_orgauthorization_trustee_group_roledivisions(trustee_org_id, trustee_group_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutOrgauthorizationTrusteeGroupRoledivisionsRequest->put_orgauthorization_trustee_group_roledivisions: %s\\n\" % e)"
+  },
+  "put_orgauthorization_trustee_group_roles": {
+    "operationId": "put_orgauthorization_trustee_group_roles",
+    "functionName": "put_orgauthorization_trustee_group_roles",
+    "signature": "put_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id, body)",
+    "parameters": [
+      {
+        "name": "trustee_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "trustee_group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "list[str]",
+        "required": "true"
+      }
+    ],
+    "return": "UserAuthorization",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id\ntrustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id\nbody = ['body_example'] # list[str] | List of roles\n\ntry:\n    # Update Trustee Group Roles\n    api_response = api_instance.put_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutOrgauthorizationTrusteeGroupRolesRequest->put_orgauthorization_trustee_group_roles: %s\\n\" % e)"
+  },
   "put_orgauthorization_trustee_user_roledivisions": {
     "operationId": "put_orgauthorization_trustee_user_roledivisions",
     "functionName": "put_orgauthorization_trustee_user_roledivisions",
@@ -19209,6 +19454,25 @@
     ],
     "return": "ClonedUser",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id\ntrustee_user_id = 'trustee_user_id_example' # str | Trustee User Id\n\ntry:\n    # Creates a clone of the trustee user in the trustor org.\n    api_response = api_instance.put_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutOrgauthorizationTrustorCloneduserRequest->put_orgauthorization_trustor_cloneduser: %s\\n\" % e)"
+  },
+  "put_orgauthorization_trustor_group": {
+    "operationId": "put_orgauthorization_trustor_group",
+    "functionName": "put_orgauthorization_trustor_group",
+    "signature": "put_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)",
+    "parameters": [
+      {
+        "name": "trustor_org_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "trustor_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Organization_AuthorizationApi()\ntrustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id\ntrustor_group_id = 'trustor_group_id_example' # str | Trustor Group Id\n\ntry:\n    # Add a Trustee Group to the trust.\n    api_response = api_instance.put_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PutOrgauthorizationTrustorGroupRequest->put_orgauthorization_trustor_group: %s\\n\" % e)"
   },
   "put_orgauthorization_trustor_user": {
     "operationId": "put_orgauthorization_trustor_user",
@@ -34241,6 +34505,25 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\ndeployment_id = 'deployment_id_example' # str | The deployment ID\n\ntry:\n    # Delete a deployment\n    api_instance.delete_webdeployments_deployment(deployment_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteWebdeploymentsDeploymentRequest->delete_webdeployments_deployment: %s\\n\" % e)"
   },
+  "delete_webdeployments_deployment_cobrowse_session_id": {
+    "operationId": "delete_webdeployments_deployment_cobrowse_session_id",
+    "functionName": "delete_webdeployments_deployment_cobrowse_session_id",
+    "signature": "delete_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)",
+    "parameters": [
+      {
+        "name": "deployment_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "session_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "Empty",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\ndeployment_id = 'deployment_id_example' # str | WebMessaging deployment ID\nsession_id = 'session_id_example' # str | Cobrowse session id or join code\n\ntry:\n    # Deletes a cobrowse session\n    api_response = api_instance.delete_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteWebdeploymentsDeploymentCobrowseSessionIdRequest->delete_webdeployments_deployment_cobrowse_session_id: %s\\n\" % e)"
+  },
   "delete_webdeployments_token_revoke": {
     "operationId": "delete_webdeployments_token_revoke",
     "functionName": "delete_webdeployments_token_revoke",
@@ -34333,6 +34616,25 @@
     ],
     "return": "WebDeployment",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\ndeployment_id = 'deployment_id_example' # str | The deployment ID\n\ntry:\n    # Get a deployment\n    api_response = api_instance.get_webdeployments_deployment(deployment_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWebdeploymentsDeploymentRequest->get_webdeployments_deployment: %s\\n\" % e)"
+  },
+  "get_webdeployments_deployment_cobrowse_session_id": {
+    "operationId": "get_webdeployments_deployment_cobrowse_session_id",
+    "functionName": "get_webdeployments_deployment_cobrowse_session_id",
+    "signature": "get_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)",
+    "parameters": [
+      {
+        "name": "deployment_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "session_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "CobrowseWebMessagingSession",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Web_DeploymentsApi()\ndeployment_id = 'deployment_id_example' # str | WebMessaging deployment ID\nsession_id = 'session_id_example' # str | Cobrowse session id or join code\n\ntry:\n    # Retrieves a cobrowse session\n    api_response = api_instance.get_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetWebdeploymentsDeploymentCobrowseSessionIdRequest->get_webdeployments_deployment_cobrowse_session_id: %s\\n\" % e)"
   },
   "get_webdeployments_deployment_configurations": {
     "operationId": "get_webdeployments_deployment_configurations",

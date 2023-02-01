@@ -10,12 +10,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_webdeployments_configuration**](WebDeploymentsApi.html#delete_webdeployments_configuration) | Delete all versions of a configuration|
 |[**delete_webdeployments_deployment**](WebDeploymentsApi.html#delete_webdeployments_deployment) | Delete a deployment|
+|[**delete_webdeployments_deployment_cobrowse_session_id**](WebDeploymentsApi.html#delete_webdeployments_deployment_cobrowse_session_id) | Deletes a cobrowse session|
 |[**delete_webdeployments_token_revoke**](WebDeploymentsApi.html#delete_webdeployments_token_revoke) | Invalidate JWT|
 |[**get_webdeployments_configuration_version**](WebDeploymentsApi.html#get_webdeployments_configuration_version) | Get a configuration version|
 |[**get_webdeployments_configuration_versions**](WebDeploymentsApi.html#get_webdeployments_configuration_versions) | Get the versions of a configuration|
 |[**get_webdeployments_configuration_versions_draft**](WebDeploymentsApi.html#get_webdeployments_configuration_versions_draft) | Get the configuration draft|
 |[**get_webdeployments_configurations**](WebDeploymentsApi.html#get_webdeployments_configurations) | View configuration drafts|
 |[**get_webdeployments_deployment**](WebDeploymentsApi.html#get_webdeployments_deployment) | Get a deployment|
+|[**get_webdeployments_deployment_cobrowse_session_id**](WebDeploymentsApi.html#get_webdeployments_deployment_cobrowse_session_id) | Retrieves a cobrowse session|
 |[**get_webdeployments_deployment_configurations**](WebDeploymentsApi.html#get_webdeployments_deployment_configurations) | Get active configuration for a given deployment|
 |[**get_webdeployments_deployments**](WebDeploymentsApi.html#get_webdeployments_deployments) | Get deployments|
 |[**post_webdeployments_configuration_versions_draft_publish**](WebDeploymentsApi.html#post_webdeployments_configuration_versions_draft_publish) | Publish the configuration draft and create a new version|
@@ -126,6 +128,55 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="delete_webdeployments_deployment_cobrowse_session_id"></a>
+
+## Empty** delete_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
+
+
+
+Deletes a cobrowse session
+
+
+
+Wraps DELETE /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+deployment_id = 'deployment_id_example' # str | WebMessaging deployment ID
+session_id = 'session_id_example' # str | Cobrowse session id or join code
+
+try:
+    # Deletes a cobrowse session
+    api_response = api_instance.delete_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->delete_webdeployments_deployment_cobrowse_session_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| WebMessaging deployment ID |  |
+| **session_id** | **str**| Cobrowse session id or join code |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Empty**
 
 <a name="delete_webdeployments_token_revoke"></a>
 
@@ -433,6 +484,55 @@ except ApiException as e:
 ### Return type
 
 [**WebDeployment**](WebDeployment.html)
+
+<a name="get_webdeployments_deployment_cobrowse_session_id"></a>
+
+## [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html) get_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
+
+
+
+Retrieves a cobrowse session
+
+
+
+Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+deployment_id = 'deployment_id_example' # str | WebMessaging deployment ID
+session_id = 'session_id_example' # str | Cobrowse session id or join code
+
+try:
+    # Retrieves a cobrowse session
+    api_response = api_instance.get_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->get_webdeployments_deployment_cobrowse_session_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| WebMessaging deployment ID |  |
+| **session_id** | **str**| Cobrowse session id or join code |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html)
 
 <a name="get_webdeployments_deployment_configurations"></a>
 

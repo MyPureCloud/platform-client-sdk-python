@@ -42,6 +42,7 @@ title: ConversationSocialExpressionEventTopicSocialMediaParticipant
 | **journey_context** | [**ConversationSocialExpressionEventTopicJourneyContext**](ConversationSocialExpressionEventTopicJourneyContext.html) |  | [optional] |
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
+| **media_roles** | **list[str]** |  | [optional] |
 | **social_media_id** | **str** |  | [optional] |
 | **social_media_hub** | **str** |  | [optional] |
 | **social_user_name** | **str** |  | [optional] |

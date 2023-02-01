@@ -42,6 +42,7 @@ title: QueueConversationCallEventTopicCallMediaParticipant
 | **journey_context** | [**QueueConversationCallEventTopicJourneyContext**](QueueConversationCallEventTopicJourneyContext.html) |  | [optional] |
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
+| **media_roles** | **list[str]** |  | [optional] |
 | **muted** | **bool** |  | [optional] |
 | **confined** | **bool** |  | [optional] |
 | **recording** | **bool** |  | [optional] |

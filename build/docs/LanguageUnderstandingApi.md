@@ -356,7 +356,7 @@ except ApiException as e:
 
 <a name="get_languageunderstanding_domain_feedback"></a>
 
-## [**NluFeedbackListing**](NluFeedbackListing.html) get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, after=after, fields=fields)
+## [**NluFeedbackListing**](NluFeedbackListing.html) get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, include_training_utterances=include_training_utterances, after=after, fields=fields)
 
 
 
@@ -394,12 +394,13 @@ language = 'language_example' # str | Whether to filter response based on the la
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 enable_cursor_pagination = False # bool | Enable Cursor Pagination (optional) (default to False)
+include_training_utterances = True # bool | Include Training Utterances. By default they're included. (optional) (default to True)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)
 fields = ['fields_example'] # list[str] | Fields and properties to get, comma-separated (optional)
 
 try:
     # Get all feedback in the given NLU Domain Version.
-    api_response = api_instance.get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, after=after, fields=fields)
+    api_response = api_instance.get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, include_training_utterances=include_training_utterances, after=after, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_feedback: %s\n" % e)
@@ -420,6 +421,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **enable_cursor_pagination** | **bool**| Enable Cursor Pagination | [optional] [default to False] |
+| **include_training_utterances** | **bool**| Include Training Utterances. By default they&#39;re included. | [optional] [default to True] |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination&#x3D;true | [optional]  |
 | **fields** | [**list[str]**](str.html)| Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
 {: class="table table-striped"}

@@ -518,6 +518,7 @@ from .models.cobrowse_conversation import CobrowseConversation
 from .models.cobrowse_conversation_entity_listing import CobrowseConversationEntityListing
 from .models.cobrowse_media_participant import CobrowseMediaParticipant
 from .models.cobrowse_settings import CobrowseSettings
+from .models.cobrowse_web_messaging_session import CobrowseWebMessagingSession
 from .models.cobrowsesession import Cobrowsesession
 from .models.column_data_type_specification import ColumnDataTypeSpecification
 from .models.column_status import ColumnStatus
@@ -532,6 +533,8 @@ from .models.communication_disposition_applied_event import CommunicationDisposi
 from .models.communication_ended_event import CommunicationEndedEvent
 from .models.comparison_period import ComparisonPeriod
 from .models.comparison_period_listing import ComparisonPeriodListing
+from .models.compliance import Compliance
+from .models.compliance_response import ComplianceResponse
 from .models.condition import Condition
 from .models.conditional_group_routing import ConditionalGroupRouting
 from .models.conditional_group_routing_rule import ConditionalGroupRoutingRule
@@ -1222,6 +1225,7 @@ from .models.email_media_policy import EmailMediaPolicy
 from .models.email_media_policy_conditions import EmailMediaPolicyConditions
 from .models.email_message import EmailMessage
 from .models.email_message_listing import EmailMessageListing
+from .models.email_message_reply import EmailMessageReply
 from .models.email_outbound_domain_result import EmailOutboundDomainResult
 from .models.email_setup import EmailSetup
 from .models.emails_settings import EmailsSettings
@@ -1473,6 +1477,7 @@ from .models.guest_member_info import GuestMemberInfo
 from .models.headcount_forecast import HeadcountForecast
 from .models.headcount_interval import HeadcountInterval
 from .models.help_link import HelpLink
+from .models.help_settings import HelpSettings
 from .models.historical_adherence_actuals import HistoricalAdherenceActuals
 from .models.historical_adherence_day_metrics import HistoricalAdherenceDayMetrics
 from .models.historical_adherence_exception_info import HistoricalAdherenceExceptionInfo
@@ -1629,6 +1634,8 @@ from .models.journey_web_events_notification_outcome import JourneyWebEventsNoti
 from .models.journey_web_events_notification_outcome_achieved_message import JourneyWebEventsNotificationOutcomeAchievedMessage
 from .models.journey_web_events_notification_page import JourneyWebEventsNotificationPage
 from .models.journey_web_events_notification_referrer import JourneyWebEventsNotificationReferrer
+from .models.journey_web_events_notification_segment import JourneyWebEventsNotificationSegment
+from .models.journey_web_events_notification_segment_assignment_message import JourneyWebEventsNotificationSegmentAssignmentMessage
 from .models.journey_web_events_notification_session import JourneyWebEventsNotificationSession
 from .models.journey_web_events_notification_web_action_message import JourneyWebEventsNotificationWebActionMessage
 from .models.journey_web_events_notification_web_events_notification import JourneyWebEventsNotificationWebEventsNotification
@@ -1993,6 +2000,7 @@ from .models.open_messaging_from_recipient import OpenMessagingFromRecipient
 from .models.open_messaging_to_recipient import OpenMessagingToRecipient
 from .models.open_normalized_message import OpenNormalizedMessage
 from .models.operation import Operation
+from .models.opt_in_settings import OptInSettings
 from .models.org_o_auth_client import OrgOAuthClient
 from .models.org_user import OrgUser
 from .models.org_whitelist_settings import OrgWhitelistSettings
@@ -2033,6 +2041,7 @@ from .models.outbound_route_entity_listing import OutboundRouteEntityListing
 from .models.outbound_settings import OutboundSettings
 from .models.outcome import Outcome
 from .models.outcome_achievement import OutcomeAchievement
+from .models.outcome_config import OutcomeConfig
 from .models.outcome_event_score import OutcomeEventScore
 from .models.outcome_listing import OutcomeListing
 from .models.outcome_probability_condition import OutcomeProbabilityCondition
@@ -2757,6 +2766,7 @@ from .models.station_settings import StationSettings
 from .models.statistical_response import StatisticalResponse
 from .models.statistical_summary import StatisticalSummary
 from .models.status_change import StatusChange
+from .models.stop_settings import StopSettings
 from .models.story_setting import StorySetting
 from .models.street_address import StreetAddress
 from .models.subject_division_grants import SubjectDivisionGrants
@@ -2950,6 +2960,7 @@ from .models.trunk_recording_enabled_count import TrunkRecordingEnabledCount
 from .models.trust_create import TrustCreate
 from .models.trust_entity_listing import TrustEntityListing
 from .models.trust_group import TrustGroup
+from .models.trust_group_entity_listing import TrustGroupEntityListing
 from .models.trust_member_create import TrustMemberCreate
 from .models.trust_request import TrustRequest
 from .models.trust_request_create import TrustRequestCreate

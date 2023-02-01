@@ -75,6 +75,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
             'journey_context': 'QueueConversationChatEventTopicJourneyContext',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'media_roles': 'list[str]',
             'room_id': 'str',
             'avatar_image_url': 'str'
         }
@@ -115,6 +116,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
             'journey_context': 'journeyContext',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'media_roles': 'mediaRoles',
             'room_id': 'roomId',
             'avatar_image_url': 'avatarImageUrl'
         }
@@ -154,6 +156,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         self._journey_context = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._media_roles = None
         self._room_id = None
         self._avatar_image_url = None
 
@@ -1011,6 +1014,30 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def media_roles(self):
+        """
+        Gets the media_roles of this QueueConversationChatEventTopicChatMediaParticipant.
+
+
+        :return: The media_roles of this QueueConversationChatEventTopicChatMediaParticipant.
+        :rtype: list[str]
+        """
+        return self._media_roles
+
+    @media_roles.setter
+    def media_roles(self, media_roles):
+        """
+        Sets the media_roles of this QueueConversationChatEventTopicChatMediaParticipant.
+
+
+        :param media_roles: The media_roles of this QueueConversationChatEventTopicChatMediaParticipant.
+        :type: list[str]
+        """
+        
+
+        self._media_roles = media_roles
 
     @property
     def room_id(self):

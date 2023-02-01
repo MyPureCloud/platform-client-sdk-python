@@ -42,6 +42,7 @@ title: ConversationScreenShareEventTopicScreenShareMediaParticipant
 | **journey_context** | [**ConversationScreenShareEventTopicJourneyContext**](ConversationScreenShareEventTopicJourneyContext.html) |  | [optional] |
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
+| **media_roles** | **list[str]** |  | [optional] |
 | **context** | **str** |  | [optional] |
 | **peer_count** | **int** |  | [optional] |
 | **sharing** | **bool** |  | [optional] |

@@ -54,6 +54,7 @@ class MessageMediaParticipant(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
+            'media_roles': 'list[str]',
             'user': 'DomainEntityRef',
             'queue': 'DomainEntityRef',
             'team': 'DomainEntityRef',
@@ -97,6 +98,7 @@ class MessageMediaParticipant(object):
             'held': 'held',
             'wrapup_required': 'wrapupRequired',
             'wrapup_prompt': 'wrapupPrompt',
+            'media_roles': 'mediaRoles',
             'user': 'user',
             'queue': 'queue',
             'team': 'team',
@@ -139,6 +141,7 @@ class MessageMediaParticipant(object):
         self._held = None
         self._wrapup_required = None
         self._wrapup_prompt = None
+        self._media_roles = None
         self._user = None
         self._queue = None
         self._team = None
@@ -510,6 +513,30 @@ class MessageMediaParticipant(object):
         
 
         self._wrapup_prompt = wrapup_prompt
+
+    @property
+    def media_roles(self):
+        """
+        Gets the media_roles of this MessageMediaParticipant.
+        List of roles this participant's media has had on the conversation, ie monitor, coach, etc
+
+        :return: The media_roles of this MessageMediaParticipant.
+        :rtype: list[str]
+        """
+        return self._media_roles
+
+    @media_roles.setter
+    def media_roles(self, media_roles):
+        """
+        Sets the media_roles of this MessageMediaParticipant.
+        List of roles this participant's media has had on the conversation, ie monitor, coach, etc
+
+        :param media_roles: The media_roles of this MessageMediaParticipant.
+        :type: list[str]
+        """
+        
+
+        self._media_roles = media_roles
 
     @property
     def user(self):

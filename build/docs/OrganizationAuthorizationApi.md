@@ -10,14 +10,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_orgauthorization_trustee**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee) | Delete Org Trust|
 |[**delete_orgauthorization_trustee_cloneduser**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_cloneduser) | Deletes cloned user|
+|[**delete_orgauthorization_trustee_group**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_group) | Delete Trustee Group|
+|[**delete_orgauthorization_trustee_group_roles**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_group_roles) | Delete Trustee Group Roles|
 |[**delete_orgauthorization_trustee_user**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_user) | Delete Trustee User|
 |[**delete_orgauthorization_trustee_user_roles**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_user_roles) | Delete Trustee User Roles|
 |[**delete_orgauthorization_trustor**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor) | Delete Org Trust|
 |[**delete_orgauthorization_trustor_cloneduser**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor_cloneduser) | Delete Cloned User|
+|[**delete_orgauthorization_trustor_group**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor_group) | Delete Trustee Group|
 |[**delete_orgauthorization_trustor_user**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor_user) | Delete Trustee User|
 |[**get_orgauthorization_pairing**](OrganizationAuthorizationApi.html#get_orgauthorization_pairing) | Get Pairing Info|
 |[**get_orgauthorization_trustee**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee) | Get Org Trust|
 |[**get_orgauthorization_trustee_clonedusers**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_clonedusers) | The list of cloned users from the trustee organization (i.e. users with a native user record).|
+|[**get_orgauthorization_trustee_group**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_group) | Get Trustee Group|
+|[**get_orgauthorization_trustee_group_roles**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_group_roles) | Get Trustee Group Roles|
+|[**get_orgauthorization_trustee_groups**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_groups) | The list of trustee groups for this organization (i.e. groups granted access to this organization).|
 |[**get_orgauthorization_trustee_user**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_user) | Get Trustee User|
 |[**get_orgauthorization_trustee_user_roles**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_user_roles) | Get Trustee User Roles|
 |[**get_orgauthorization_trustee_users**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_users) | The list of trustee users for this organization (i.e. users granted access to this organization).|
@@ -26,19 +32,25 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_orgauthorization_trustor**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor) | Get Org Trust|
 |[**get_orgauthorization_trustor_cloneduser**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_cloneduser) | Get Cloned User|
 |[**get_orgauthorization_trustor_clonedusers**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_clonedusers) | The list of cloned users in the trustor organization (i.e. users with a native user record).|
+|[**get_orgauthorization_trustor_group**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_group) | Get Trustee Group|
+|[**get_orgauthorization_trustor_groups**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_groups) | The list of groups in the trustor organization (i.e. groups granted access).|
 |[**get_orgauthorization_trustor_user**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_user) | Get Trustee User|
 |[**get_orgauthorization_trustor_users**](OrganizationAuthorizationApi.html#get_orgauthorization_trustor_users) | The list of users in the trustor organization (i.e. users granted access).|
 |[**get_orgauthorization_trustors**](OrganizationAuthorizationApi.html#get_orgauthorization_trustors) | The list of organizations that have authorized/trusted your organization.|
 |[**post_orgauthorization_pairings**](OrganizationAuthorizationApi.html#post_orgauthorization_pairings) | A pairing id is created by the trustee and given to the trustor to create a trust.|
+|[**post_orgauthorization_trustee_groups**](OrganizationAuthorizationApi.html#post_orgauthorization_trustee_groups) | Add a group to the trust.|
 |[**post_orgauthorization_trustee_users**](OrganizationAuthorizationApi.html#post_orgauthorization_trustee_users) | Add a user to the trust.|
 |[**post_orgauthorization_trustees**](OrganizationAuthorizationApi.html#post_orgauthorization_trustees) | Create a new organization authorization trust. This is required to grant other organizations access to your organization.|
 |[**post_orgauthorization_trustees_audits**](OrganizationAuthorizationApi.html#post_orgauthorization_trustees_audits) | Get Org Trustee Audits|
 |[**post_orgauthorization_trustees_default**](OrganizationAuthorizationApi.html#post_orgauthorization_trustees_default) | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.|
 |[**post_orgauthorization_trustor_audits**](OrganizationAuthorizationApi.html#post_orgauthorization_trustor_audits) | Get Org Trustor Audits|
 |[**put_orgauthorization_trustee**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee) | Update Org Trust|
+|[**put_orgauthorization_trustee_group_roledivisions**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee_group_roledivisions) | Update Trustee Group Roles|
+|[**put_orgauthorization_trustee_group_roles**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee_group_roles) | Update Trustee Group Roles|
 |[**put_orgauthorization_trustee_user_roledivisions**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee_user_roledivisions) | Update Trustee User Roles|
 |[**put_orgauthorization_trustee_user_roles**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee_user_roles) | Update Trustee User Roles|
 |[**put_orgauthorization_trustor_cloneduser**](OrganizationAuthorizationApi.html#put_orgauthorization_trustor_cloneduser) | Creates a clone of the trustee user in the trustor org.|
+|[**put_orgauthorization_trustor_group**](OrganizationAuthorizationApi.html#put_orgauthorization_trustor_group) | Add a Trustee Group to the trust.|
 |[**put_orgauthorization_trustor_user**](OrganizationAuthorizationApi.html#put_orgauthorization_trustor_user) | Add a Trustee user to the trust.|
 {: class="table table-striped"}
 
@@ -138,6 +150,110 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
 | **trustee_user_id** | **str**| Id of the cloned user to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_orgauthorization_trustee_group"></a>
+
+##  delete_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)
+
+
+
+Delete Trustee Group
+
+
+
+Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+trustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id
+
+try:
+    # Delete Trustee Group
+    api_instance.delete_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **trustee_group_id** | **str**| Trustee Group Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_orgauthorization_trustee_group_roles"></a>
+
+##  delete_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)
+
+
+
+Delete Trustee Group Roles
+
+
+
+Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+trustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id
+
+try:
+    # Delete Trustee Group Roles
+    api_instance.delete_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee_group_roles: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **trustee_group_id** | **str**| Trustee Group Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -344,6 +460,58 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **trustor_org_id** | **str**| Trustor Organization Id |  |
 | **trustee_user_id** | **str**| Trustee User Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_orgauthorization_trustor_group"></a>
+
+##  delete_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)
+
+
+
+Delete Trustee Group
+
+
+
+Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id
+trustor_group_id = 'trustor_group_id_example' # str | Trustor Group Id
+
+try:
+    # Delete Trustee Group
+    api_instance.delete_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustor_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustor_org_id** | **str**| Trustor Organization Id |  |
+| **trustor_group_id** | **str**| Trustor Group Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -557,6 +725,167 @@ except ApiException as e:
 ### Return type
 
 [**ClonedUserEntityListing**](ClonedUserEntityListing.html)
+
+<a name="get_orgauthorization_trustee_group"></a>
+
+## [**TrustGroup**](TrustGroup.html) get_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)
+
+
+
+Get Trustee Group
+
+
+
+Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+trustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id
+
+try:
+    # Get Trustee Group
+    api_response = api_instance.get_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **trustee_group_id** | **str**| Trustee Group Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrustGroup**](TrustGroup.html)
+
+<a name="get_orgauthorization_trustee_group_roles"></a>
+
+## [**UserAuthorization**](UserAuthorization.html) get_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)
+
+
+
+Get Trustee Group Roles
+
+
+
+Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+trustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id
+
+try:
+    # Get Trustee Group Roles
+    api_response = api_instance.get_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_group_roles: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **trustee_group_id** | **str**| Trustee Group Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserAuthorization**](UserAuthorization.html)
+
+<a name="get_orgauthorization_trustee_groups"></a>
+
+## [**TrustGroupEntityListing**](TrustGroupEntityListing.html) get_orgauthorization_trustee_groups(trustee_org_id, page_size=page_size, page_number=page_number)
+
+
+
+The list of trustee groups for this organization (i.e. groups granted access to this organization).
+
+
+
+Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # The list of trustee groups for this organization (i.e. groups granted access to this organization).
+    api_response = api_instance.get_orgauthorization_trustee_groups(trustee_org_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_groups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrustGroupEntityListing**](TrustGroupEntityListing.html)
 
 <a name="get_orgauthorization_trustee_user"></a>
 
@@ -975,6 +1304,114 @@ except ApiException as e:
 
 [**ClonedUserEntityListing**](ClonedUserEntityListing.html)
 
+<a name="get_orgauthorization_trustor_group"></a>
+
+## [**TrustGroup**](TrustGroup.html) get_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)
+
+
+
+Get Trustee Group
+
+
+
+Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id
+trustor_group_id = 'trustor_group_id_example' # str | Trustor Group Id
+
+try:
+    # Get Trustee Group
+    api_response = api_instance.get_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustor_org_id** | **str**| Trustor Organization Id |  |
+| **trustor_group_id** | **str**| Trustor Group Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrustGroup**](TrustGroup.html)
+
+<a name="get_orgauthorization_trustor_groups"></a>
+
+## [**TrustGroupEntityListing**](TrustGroupEntityListing.html) get_orgauthorization_trustor_groups(trustor_org_id, page_size=page_size, page_number=page_number)
+
+
+
+The list of groups in the trustor organization (i.e. groups granted access).
+
+
+
+Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/groups 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustor_org_id = 'trustor_org_id_example' # str | Trustee Organization Id
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # The list of groups in the trustor organization (i.e. groups granted access).
+    api_response = api_instance.get_orgauthorization_trustor_groups(trustor_org_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_groups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustor_org_id** | **str**| Trustee Organization Id |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrustGroupEntityListing**](TrustGroupEntityListing.html)
+
 <a name="get_orgauthorization_trustor_user"></a>
 
 ## [**TrustUser**](TrustUser.html) get_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
@@ -1186,6 +1623,59 @@ except ApiException as e:
 ### Return type
 
 [**TrustRequest**](TrustRequest.html)
+
+<a name="post_orgauthorization_trustee_groups"></a>
+
+## [**TrustGroup**](TrustGroup.html) post_orgauthorization_trustee_groups(trustee_org_id, body)
+
+
+
+Add a group to the trust.
+
+
+
+Wraps POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+body = PureCloudPlatformClientV2.TrustMemberCreate() # TrustMemberCreate | Trust
+
+try:
+    # Add a group to the trust.
+    api_response = api_instance.post_orgauthorization_trustee_groups(trustee_org_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustee_groups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **body** | [**TrustMemberCreate**](TrustMemberCreate.html)| Trust |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrustGroup**](TrustGroup.html)
 
 <a name="post_orgauthorization_trustee_users"></a>
 
@@ -1517,6 +2007,116 @@ except ApiException as e:
 
 [**Trustee**](Trustee.html)
 
+<a name="put_orgauthorization_trustee_group_roledivisions"></a>
+
+## [**UserAuthorization**](UserAuthorization.html) put_orgauthorization_trustee_group_roledivisions(trustee_org_id, trustee_group_id, body)
+
+
+
+Update Trustee Group Roles
+
+
+
+Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+trustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id
+body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Set of roles with corresponding divisions to apply
+
+try:
+    # Update Trustee Group Roles
+    api_response = api_instance.put_orgauthorization_trustee_group_roledivisions(trustee_org_id, trustee_group_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee_group_roledivisions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **trustee_group_id** | **str**| Trustee Group Id |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Set of roles with corresponding divisions to apply |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserAuthorization**](UserAuthorization.html)
+
+<a name="put_orgauthorization_trustee_group_roles"></a>
+
+## [**UserAuthorization**](UserAuthorization.html) put_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id, body)
+
+
+
+Update Trustee Group Roles
+
+
+
+Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeGroup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+trustee_group_id = 'trustee_group_id_example' # str | Trustee Group Id
+body = ['body_example'] # list[str] | List of roles
+
+try:
+    # Update Trustee Group Roles
+    api_response = api_instance.put_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee_group_roles: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **trustee_group_id** | **str**| Trustee Group Id |  |
+| **body** | [**list[str]**](str.html)| List of roles |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserAuthorization**](UserAuthorization.html)
+
 <a name="put_orgauthorization_trustee_user_roledivisions"></a>
 
 ## [**UserAuthorization**](UserAuthorization.html) put_orgauthorization_trustee_user_roledivisions(trustee_org_id, trustee_user_id, body)
@@ -1679,6 +2279,59 @@ except ApiException as e:
 ### Return type
 
 [**ClonedUser**](ClonedUser.html)
+
+<a name="put_orgauthorization_trustor_group"></a>
+
+## [**TrustGroup**](TrustGroup.html) put_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)
+
+
+
+Add a Trustee Group to the trust.
+
+
+
+Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId} 
+
+Requires ALL permissions: 
+
+* authorization:orgTrusteeGroup:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustor_org_id = 'trustor_org_id_example' # str | Trustor Organization Id
+trustor_group_id = 'trustor_group_id_example' # str | Trustor Group Id
+
+try:
+    # Add a Trustee Group to the trust.
+    api_response = api_instance.put_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustor_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustor_org_id** | **str**| Trustor Organization Id |  |
+| **trustor_group_id** | **str**| Trustor Group Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrustGroup**](TrustGroup.html)
 
 <a name="put_orgauthorization_trustor_user"></a>
 

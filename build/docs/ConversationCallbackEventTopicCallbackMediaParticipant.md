@@ -42,6 +42,7 @@ title: ConversationCallbackEventTopicCallbackMediaParticipant
 | **journey_context** | [**ConversationCallbackEventTopicJourneyContext**](ConversationCallbackEventTopicJourneyContext.html) |  | [optional] |
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
+| **media_roles** | **list[str]** |  | [optional] |
 | **outbound_preview** | [**ConversationCallbackEventTopicDialerPreview**](ConversationCallbackEventTopicDialerPreview.html) |  | [optional] |
 | **voicemail** | [**ConversationCallbackEventTopicVoicemail**](ConversationCallbackEventTopicVoicemail.html) |  | [optional] |
 | **callback_numbers** | **list[str]** |  | [optional] |

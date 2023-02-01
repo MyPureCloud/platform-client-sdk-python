@@ -301,7 +301,7 @@ class StationsApi(object):
     def get_stations_settings(self, **kwargs):
         """
         Get an organization's StationSettings
-        
+        This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -373,7 +373,7 @@ class StationsApi(object):
     def patch_stations_settings(self, body, **kwargs):
         """
         Patch an organization's StationSettings
-        
+        This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

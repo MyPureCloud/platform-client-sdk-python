@@ -44,6 +44,7 @@ class AnalyticsEvaluation(object):
             'context_id': 'str',
             'deleted': 'bool',
             'evaluation_id': 'str',
+            'evaluation_status': 'str',
             'evaluator_id': 'str',
             'event_time': 'datetime',
             'form_id': 'str',
@@ -61,6 +62,7 @@ class AnalyticsEvaluation(object):
             'context_id': 'contextId',
             'deleted': 'deleted',
             'evaluation_id': 'evaluationId',
+            'evaluation_status': 'evaluationStatus',
             'evaluator_id': 'evaluatorId',
             'event_time': 'eventTime',
             'form_id': 'formId',
@@ -77,6 +79,7 @@ class AnalyticsEvaluation(object):
         self._context_id = None
         self._deleted = None
         self._evaluation_id = None
+        self._evaluation_status = None
         self._evaluator_id = None
         self._event_time = None
         self._form_id = None
@@ -183,6 +186,33 @@ class AnalyticsEvaluation(object):
         
 
         self._evaluation_id = evaluation_id
+
+    @property
+    def evaluation_status(self):
+        """
+        Gets the evaluation_status of this AnalyticsEvaluation.
+        Status of evaluation
+
+        :return: The evaluation_status of this AnalyticsEvaluation.
+        :rtype: str
+        """
+        return self._evaluation_status
+
+    @evaluation_status.setter
+    def evaluation_status(self, evaluation_status):
+        """
+        Sets the evaluation_status of this AnalyticsEvaluation.
+        Status of evaluation
+
+        :param evaluation_status: The evaluation_status of this AnalyticsEvaluation.
+        :type: str
+        """
+        allowed_values = ["Finished", "InProgress", "InReview", "Pending", "Retracted"]
+        if evaluation_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for evaluation_status -> " + evaluation_status)
+            self._evaluation_status = "outdated_sdk_version"
+        else:
+            self._evaluation_status = evaluation_status
 
     @property
     def evaluator_id(self):

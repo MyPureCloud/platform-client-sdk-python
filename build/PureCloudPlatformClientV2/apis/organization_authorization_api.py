@@ -208,6 +208,174 @@ class OrganizationAuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_orgauthorization_trustee_group(self, trustee_org_id, trustee_group_id, **kwargs):
+        """
+        Delete Trustee Group
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_orgauthorization_trustee_group(trustee_org_id, trustee_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :param str trustee_group_id: Trustee Group Id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id', 'trustee_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_orgauthorization_trustee_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `delete_orgauthorization_trustee_group`")
+        # verify the required parameter 'trustee_group_id' is set
+        if ('trustee_group_id' not in params) or (params['trustee_group_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_group_id` when calling `delete_orgauthorization_trustee_group`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+        if 'trustee_group_id' in params:
+            path_params['trusteeGroupId'] = params['trustee_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_orgauthorization_trustee_group_roles(self, trustee_org_id, trustee_group_id, **kwargs):
+        """
+        Delete Trustee Group Roles
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :param str trustee_group_id: Trustee Group Id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id', 'trustee_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_orgauthorization_trustee_group_roles" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `delete_orgauthorization_trustee_group_roles`")
+        # verify the required parameter 'trustee_group_id' is set
+        if ('trustee_group_id' not in params) or (params['trustee_group_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_group_id` when calling `delete_orgauthorization_trustee_group_roles`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+        if 'trustee_group_id' in params:
+            path_params['trusteeGroupId'] = params['trustee_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_orgauthorization_trustee_user(self, trustee_org_id, trustee_user_id, **kwargs):
         """
         Delete Trustee User
@@ -503,6 +671,90 @@ class OrganizationAuthorizationApi(object):
             path_params['trustorOrgId'] = params['trustor_org_id']
         if 'trustee_user_id' in params:
             path_params['trusteeUserId'] = params['trustee_user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_orgauthorization_trustor_group(self, trustor_org_id, trustor_group_id, **kwargs):
+        """
+        Delete Trustee Group
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_orgauthorization_trustor_group(trustor_org_id, trustor_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustor_org_id: Trustor Organization Id (required)
+        :param str trustor_group_id: Trustor Group Id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustor_org_id', 'trustor_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_orgauthorization_trustor_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustor_org_id' is set
+        if ('trustor_org_id' not in params) or (params['trustor_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_org_id` when calling `delete_orgauthorization_trustor_group`")
+        # verify the required parameter 'trustor_group_id' is set
+        if ('trustor_group_id' not in params) or (params['trustor_group_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_group_id` when calling `delete_orgauthorization_trustor_group`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustor_org_id' in params:
+            path_params['trustorOrgId'] = params['trustor_org_id']
+        if 'trustor_group_id' in params:
+            path_params['trustorGroupId'] = params['trustor_group_id']
 
         query_params = {}
 
@@ -852,6 +1104,258 @@ class OrganizationAuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ClonedUserEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_orgauthorization_trustee_group(self, trustee_org_id, trustee_group_id, **kwargs):
+        """
+        Get Trustee Group
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_orgauthorization_trustee_group(trustee_org_id, trustee_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :param str trustee_group_id: Trustee Group Id (required)
+        :return: TrustGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id', 'trustee_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orgauthorization_trustee_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `get_orgauthorization_trustee_group`")
+        # verify the required parameter 'trustee_group_id' is set
+        if ('trustee_group_id' not in params) or (params['trustee_group_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_group_id` when calling `get_orgauthorization_trustee_group`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+        if 'trustee_group_id' in params:
+            path_params['trusteeGroupId'] = params['trustee_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrustGroup',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_orgauthorization_trustee_group_roles(self, trustee_org_id, trustee_group_id, **kwargs):
+        """
+        Get Trustee Group Roles
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :param str trustee_group_id: Trustee Group Id (required)
+        :return: UserAuthorization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id', 'trustee_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orgauthorization_trustee_group_roles" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `get_orgauthorization_trustee_group_roles`")
+        # verify the required parameter 'trustee_group_id' is set
+        if ('trustee_group_id' not in params) or (params['trustee_group_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_group_id` when calling `get_orgauthorization_trustee_group_roles`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+        if 'trustee_group_id' in params:
+            path_params['trusteeGroupId'] = params['trustee_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserAuthorization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_orgauthorization_trustee_groups(self, trustee_org_id, **kwargs):
+        """
+        The list of trustee groups for this organization (i.e. groups granted access to this organization).
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_orgauthorization_trustee_groups(trustee_org_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :return: TrustGroupEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id', 'page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orgauthorization_trustee_groups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `get_orgauthorization_trustee_groups`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrustGroupEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1498,6 +2002,174 @@ class OrganizationAuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_orgauthorization_trustor_group(self, trustor_org_id, trustor_group_id, **kwargs):
+        """
+        Get Trustee Group
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_orgauthorization_trustor_group(trustor_org_id, trustor_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustor_org_id: Trustor Organization Id (required)
+        :param str trustor_group_id: Trustor Group Id (required)
+        :return: TrustGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustor_org_id', 'trustor_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orgauthorization_trustor_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustor_org_id' is set
+        if ('trustor_org_id' not in params) or (params['trustor_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_org_id` when calling `get_orgauthorization_trustor_group`")
+        # verify the required parameter 'trustor_group_id' is set
+        if ('trustor_group_id' not in params) or (params['trustor_group_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_group_id` when calling `get_orgauthorization_trustor_group`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustor_org_id' in params:
+            path_params['trustorOrgId'] = params['trustor_org_id']
+        if 'trustor_group_id' in params:
+            path_params['trustorGroupId'] = params['trustor_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrustGroup',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_orgauthorization_trustor_groups(self, trustor_org_id, **kwargs):
+        """
+        The list of groups in the trustor organization (i.e. groups granted access).
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_orgauthorization_trustor_groups(trustor_org_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustor_org_id: Trustee Organization Id (required)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :return: TrustGroupEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustor_org_id', 'page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orgauthorization_trustor_groups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustor_org_id' is set
+        if ('trustor_org_id' not in params) or (params['trustor_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_org_id` when calling `get_orgauthorization_trustor_groups`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustors/{trustorOrgId}/groups'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustor_org_id' in params:
+            path_params['trustorOrgId'] = params['trustor_org_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrustGroupEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_orgauthorization_trustor_user(self, trustor_org_id, trustee_user_id, **kwargs):
         """
         Get Trustee User
@@ -1818,6 +2490,90 @@ class OrganizationAuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TrustRequest',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_orgauthorization_trustee_groups(self, trustee_org_id, body, **kwargs):
+        """
+        Add a group to the trust.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_orgauthorization_trustee_groups(trustee_org_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :param TrustMemberCreate body: Trust (required)
+        :return: TrustGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_orgauthorization_trustee_groups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `post_orgauthorization_trustee_groups`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_orgauthorization_trustee_groups`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrustGroup',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2326,6 +3082,186 @@ class OrganizationAuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def put_orgauthorization_trustee_group_roledivisions(self, trustee_org_id, trustee_group_id, body, **kwargs):
+        """
+        Update Trustee Group Roles
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_orgauthorization_trustee_group_roledivisions(trustee_org_id, trustee_group_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :param str trustee_group_id: Trustee Group Id (required)
+        :param RoleDivisionGrants body: Set of roles with corresponding divisions to apply (required)
+        :return: UserAuthorization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id', 'trustee_group_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_orgauthorization_trustee_group_roledivisions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `put_orgauthorization_trustee_group_roledivisions`")
+        # verify the required parameter 'trustee_group_id' is set
+        if ('trustee_group_id' not in params) or (params['trustee_group_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_group_id` when calling `put_orgauthorization_trustee_group_roledivisions`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_orgauthorization_trustee_group_roledivisions`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+        if 'trustee_group_id' in params:
+            path_params['trusteeGroupId'] = params['trustee_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserAuthorization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_orgauthorization_trustee_group_roles(self, trustee_org_id, trustee_group_id, body, **kwargs):
+        """
+        Update Trustee Group Roles
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustee_org_id: Trustee Organization Id (required)
+        :param str trustee_group_id: Trustee Group Id (required)
+        :param list[str] body: List of roles (required)
+        :return: UserAuthorization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustee_org_id', 'trustee_group_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_orgauthorization_trustee_group_roles" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustee_org_id' is set
+        if ('trustee_org_id' not in params) or (params['trustee_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_org_id` when calling `put_orgauthorization_trustee_group_roles`")
+        # verify the required parameter 'trustee_group_id' is set
+        if ('trustee_group_id' not in params) or (params['trustee_group_id'] is None):
+            raise ValueError("Missing the required parameter `trustee_group_id` when calling `put_orgauthorization_trustee_group_roles`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_orgauthorization_trustee_group_roles`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustee_org_id' in params:
+            path_params['trusteeOrgId'] = params['trustee_org_id']
+        if 'trustee_group_id' in params:
+            path_params['trusteeGroupId'] = params['trustee_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserAuthorization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_orgauthorization_trustee_user_roledivisions(self, trustee_org_id, trustee_user_id, body, **kwargs):
         """
         Update Trustee User Roles
@@ -2586,6 +3522,90 @@ class OrganizationAuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ClonedUser',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_orgauthorization_trustor_group(self, trustor_org_id, trustor_group_id, **kwargs):
+        """
+        Add a Trustee Group to the trust.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_orgauthorization_trustor_group(trustor_org_id, trustor_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustor_org_id: Trustor Organization Id (required)
+        :param str trustor_group_id: Trustor Group Id (required)
+        :return: TrustGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustor_org_id', 'trustor_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_orgauthorization_trustor_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustor_org_id' is set
+        if ('trustor_org_id' not in params) or (params['trustor_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_org_id` when calling `put_orgauthorization_trustor_group`")
+        # verify the required parameter 'trustor_group_id' is set
+        if ('trustor_group_id' not in params) or (params['trustor_group_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_group_id` when calling `put_orgauthorization_trustor_group`")
+
+
+        resource_path = '/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustor_org_id' in params:
+            path_params['trustorOrgId'] = params['trustor_org_id']
+        if 'trustor_group_id' in params:
+            path_params['trustorGroupId'] = params['trustor_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrustGroup',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

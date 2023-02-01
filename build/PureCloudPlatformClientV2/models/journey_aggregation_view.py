@@ -78,7 +78,7 @@ class JourneyAggregationView(object):
         :param target: The target of this JourneyAggregationView.
         :type: str
         """
-        allowed_values = ["nDistinctJourneyActions", "nDistinctJourneySessions", "nJourneyActionsBlocked", "nJourneyOutcomesAchieved", "nJourneyOutcomesAttributed", "nJourneySegmentsAssigned", "nJourneySessions", "nWebActionsAbandoned", "nWebActionsAccepted", "nWebActionsEngaged", "nWebActionsErrored", "nWebActionsFrequencyCapReached", "nWebActionsIgnored", "nWebActionsOffered", "nWebActionsOfferedOutsideSchedule", "nWebActionsQualified", "nWebActionsQualifiedOutsideSchedule", "nWebActionsRejected", "nWebActionsStarted", "nWebActionsTimedout", "oJourneyOutcomeValue"]
+        allowed_values = ["nDistinctJourneyActions", "nDistinctJourneySessions", "nJourneyActionsBlocked", "nJourneyOutcomesAchieved", "nJourneyOutcomesAttributed", "nJourneySegmentsAssigned", "nJourneySessions", "nWebActionsAbandoned", "nWebActionsAccepted", "nWebActionsEngaged", "nWebActionsErrored", "nWebActionsFrequencyCapReached", "nWebActionsIgnored", "nWebActionsOffered", "nWebActionsOfferedOutsideSchedule", "nWebActionsQualified", "nWebActionsQualifiedOutsideSchedule", "nWebActionsRejected", "nWebActionsStarted", "nWebActionsTimedout", "oJourneyOutcomeTouchpointValue", "oJourneyOutcomeValue"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

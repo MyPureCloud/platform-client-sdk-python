@@ -49,6 +49,7 @@ class KeyPerformanceIndicator(object):
             'kpi_type': 'str',
             'source': 'str',
             'wrap_up_code_config': 'WrapUpCodeConfig',
+            'outcome_config': 'OutcomeConfig',
             'status': 'str',
             'kpi_group': 'str',
             'self_uri': 'str'
@@ -64,6 +65,7 @@ class KeyPerformanceIndicator(object):
             'kpi_type': 'kpiType',
             'source': 'source',
             'wrap_up_code_config': 'wrapUpCodeConfig',
+            'outcome_config': 'outcomeConfig',
             'status': 'status',
             'kpi_group': 'kpiGroup',
             'self_uri': 'selfUri'
@@ -78,6 +80,7 @@ class KeyPerformanceIndicator(object):
         self._kpi_type = None
         self._source = None
         self._wrap_up_code_config = None
+        self._outcome_config = None
         self._status = None
         self._kpi_group = None
         self._self_uri = None
@@ -249,7 +252,7 @@ class KeyPerformanceIndicator(object):
         :param kpi_type: The kpi_type of this KeyPerformanceIndicator.
         :type: str
         """
-        allowed_values = ["SalesConversion", "Churn", "Retention", "HandleTime", "NumberOfTransfers"]
+        allowed_values = ["SalesConversion", "Churn", "Retention", "SalesValue", "HandleTime", "NumberOfTransfers"]
         if kpi_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for kpi_type -> " + kpi_type)
             self._kpi_type = "outdated_sdk_version"
@@ -276,7 +279,7 @@ class KeyPerformanceIndicator(object):
         :param source: The source of this KeyPerformanceIndicator.
         :type: str
         """
-        allowed_values = ["WrapUpCode"]
+        allowed_values = ["WrapUpCode", "Outcome", "None"]
         if source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for source -> " + source)
             self._source = "outdated_sdk_version"
@@ -306,6 +309,30 @@ class KeyPerformanceIndicator(object):
         
 
         self._wrap_up_code_config = wrap_up_code_config
+
+    @property
+    def outcome_config(self):
+        """
+        Gets the outcome_config of this KeyPerformanceIndicator.
+        Defines what outcome ids are mapped to Key Performance Indicator.
+
+        :return: The outcome_config of this KeyPerformanceIndicator.
+        :rtype: OutcomeConfig
+        """
+        return self._outcome_config
+
+    @outcome_config.setter
+    def outcome_config(self, outcome_config):
+        """
+        Sets the outcome_config of this KeyPerformanceIndicator.
+        Defines what outcome ids are mapped to Key Performance Indicator.
+
+        :param outcome_config: The outcome_config of this KeyPerformanceIndicator.
+        :type: OutcomeConfig
+        """
+        
+
+        self._outcome_config = outcome_config
 
     @property
     def status(self):

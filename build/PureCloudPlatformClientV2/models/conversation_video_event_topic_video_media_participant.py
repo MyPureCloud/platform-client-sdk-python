@@ -75,6 +75,7 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
             'journey_context': 'ConversationVideoEventTopicJourneyContext',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'media_roles': 'list[str]',
             'audio_muted': 'bool',
             'video_muted': 'bool',
             'sharing_screen': 'bool',
@@ -119,6 +120,7 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
             'journey_context': 'journeyContext',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'media_roles': 'mediaRoles',
             'audio_muted': 'audioMuted',
             'video_muted': 'videoMuted',
             'sharing_screen': 'sharingScreen',
@@ -162,6 +164,7 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
         self._journey_context = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._media_roles = None
         self._audio_muted = None
         self._video_muted = None
         self._sharing_screen = None
@@ -1023,6 +1026,30 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def media_roles(self):
+        """
+        Gets the media_roles of this ConversationVideoEventTopicVideoMediaParticipant.
+
+
+        :return: The media_roles of this ConversationVideoEventTopicVideoMediaParticipant.
+        :rtype: list[str]
+        """
+        return self._media_roles
+
+    @media_roles.setter
+    def media_roles(self, media_roles):
+        """
+        Sets the media_roles of this ConversationVideoEventTopicVideoMediaParticipant.
+
+
+        :param media_roles: The media_roles of this ConversationVideoEventTopicVideoMediaParticipant.
+        :type: list[str]
+        """
+        
+
+        self._media_roles = media_roles
 
     @property
     def audio_muted(self):

@@ -32,6 +32,7 @@ title: ConversationEventTopicParticipant
 | **monitored_participant_id** | **str** | If this participant is a monitor, then this will be the id of the participant that is being monitored. | [optional] |
 | **coached_participant_id** | **str** | If this participant is a coach, then this will be the id of the participant that is being coached. | [optional] |
 | **barged_participant_id** | **str** | If this participant created a barge in conference, then this will be the id of the participant that is barged in. | [optional] |
+| **media_roles** | **list[str]** | List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc. | [optional] |
 | **screen_recording_state** | **str** | The current screen recording state for this participant. | [optional] |
 | **flagged_reason** | **str** | If this participant has flagged the conversation, the reason code given. | [optional] |
 | **attributes** | **dict(str, str)** | Additional participant attributes | [optional] |

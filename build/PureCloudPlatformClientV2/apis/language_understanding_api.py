@@ -557,6 +557,7 @@ class LanguageUnderstandingApi(object):
         :param int page_number: Page number
         :param int page_size: Page size
         :param bool enable_cursor_pagination: Enable Cursor Pagination
+        :param bool include_training_utterances: Include Training Utterances. By default they're included.
         :param str after: The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
         :param list[str] fields: Fields and properties to get, comma-separated
         :return: NluFeedbackListing
@@ -564,7 +565,7 @@ class LanguageUnderstandingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['domain_id', 'intent_name', 'assessment', 'date_start', 'date_end', 'include_deleted', 'language', 'page_number', 'page_size', 'enable_cursor_pagination', 'after', 'fields']
+        all_params = ['domain_id', 'intent_name', 'assessment', 'date_start', 'date_end', 'include_deleted', 'language', 'page_number', 'page_size', 'enable_cursor_pagination', 'include_training_utterances', 'after', 'fields']
         all_params.append('callback')
 
         params = locals()
@@ -606,6 +607,8 @@ class LanguageUnderstandingApi(object):
             query_params['pageSize'] = params['page_size']
         if 'enable_cursor_pagination' in params:
             query_params['enableCursorPagination'] = params['enable_cursor_pagination']
+        if 'include_training_utterances' in params:
+            query_params['includeTrainingUtterances'] = params['include_training_utterances']
         if 'after' in params:
             query_params['after'] = params['after']
         if 'fields' in params:

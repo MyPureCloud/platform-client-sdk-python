@@ -236,7 +236,7 @@ max_percentage_score = 3.4 # float | The maximum assessment score for an assignm
 sort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
 sort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
 user_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
-types = ['types_example'] # list[str] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
+types = ['types_example'] # list[str] | Specifies the module types to filter by (optional)
 states = ['states_example'] # list[str] | Specifies the assignment states to filter by (optional)
 expand = ['expand_example'] # list[str] | Specifies the expand option for returning additional information (optional)
 
@@ -265,7 +265,7 @@ except ApiException as e:
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **user_id** | [**list[str]**](str.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
-| **types** | [**list[str]**](str.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
+| **types** | [**list[str]**](str.html)| Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
 | **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
 | **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
@@ -313,7 +313,7 @@ min_percentage_score = 3.4 # float | The minimum assessment score for an assignm
 max_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
 sort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
 sort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
-types = ['types_example'] # list[str] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
+types = ['types_example'] # list[str] | Specifies the module types to filter by (optional)
 states = ['states_example'] # list[str] | Specifies the assignment states to filter by (optional)
 expand = ['expand_example'] # list[str] | Specifies the expand option for returning additional information (optional)
 
@@ -341,7 +341,7 @@ except ApiException as e:
 | **max_percentage_score** | **float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
-| **types** | [**list[str]**](str.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
+| **types** | [**list[str]**](str.html)| Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
 | **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
 | **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}

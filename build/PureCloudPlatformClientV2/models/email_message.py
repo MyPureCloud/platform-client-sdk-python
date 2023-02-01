@@ -53,6 +53,7 @@ class EmailMessage(object):
             'html_body': 'str',
             'time': 'datetime',
             'history_included': 'bool',
+            'state': 'str',
             'email_size_bytes': 'int',
             'max_email_size_bytes': 'int',
             'self_uri': 'str'
@@ -72,6 +73,7 @@ class EmailMessage(object):
             'html_body': 'htmlBody',
             'time': 'time',
             'history_included': 'historyIncluded',
+            'state': 'state',
             'email_size_bytes': 'emailSizeBytes',
             'max_email_size_bytes': 'maxEmailSizeBytes',
             'self_uri': 'selfUri'
@@ -90,6 +92,7 @@ class EmailMessage(object):
         self._html_body = None
         self._time = None
         self._history_included = None
+        self._state = None
         self._email_size_bytes = None
         self._max_email_size_bytes = None
         self._self_uri = None
@@ -405,6 +408,33 @@ class EmailMessage(object):
         
 
         self._history_included = history_included
+
+    @property
+    def state(self):
+        """
+        Gets the state of this EmailMessage.
+
+
+        :return: The state of this EmailMessage.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this EmailMessage.
+
+
+        :param state: The state of this EmailMessage.
+        :type: str
+        """
+        allowed_values = ["Created", "Ready"]
+        if state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for state -> " + state)
+            self._state = "outdated_sdk_version"
+        else:
+            self._state = state
 
     @property
     def email_size_bytes(self):

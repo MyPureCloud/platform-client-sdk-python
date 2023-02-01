@@ -42,6 +42,7 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 | **journey_context** | [**ConversationMessageEventTopicJourneyContext**](ConversationMessageEventTopicJourneyContext.html) |  | [optional] |
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
+| **media_roles** | **list[str]** |  | [optional] |
 | **messages** | [**list[ConversationMessageEventTopicMessageDetails]**](ConversationMessageEventTopicMessageDetails.html) |  | [optional] |
 | **type** | **str** |  | [optional] |
 | **recipient_country** | **str** |  | [optional] |

@@ -33,6 +33,7 @@ title: Participant
 | **wrapup_timeout_ms** | **int** | Specifies how long a timed ACW session will last. | [optional] |
 | **wrapup_skipped** | **bool** | The UI sets this field when the agent chooses to skip entering a wrapup for this participant. | [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Call wrap up or disposition data. | [optional] |
+| **media_roles** | **list[str]** | List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc. | [optional] |
 | **conversation_routing_data** | [**ConversationRoutingData**](ConversationRoutingData.html) | Information on how a communication should be routed to an agent. | [optional] |
 | **alerting_timeout_ms** | **int** | Specifies how long the agent has to answer an interaction before being marked as not responding. | [optional] |
 | **monitored_participant_id** | **str** | If this participant is a monitor, then this will be the id of the participant that is being monitored. | [optional] |

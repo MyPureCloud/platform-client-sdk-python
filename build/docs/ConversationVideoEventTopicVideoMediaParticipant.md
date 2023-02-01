@@ -42,6 +42,7 @@ title: ConversationVideoEventTopicVideoMediaParticipant
 | **journey_context** | [**ConversationVideoEventTopicJourneyContext**](ConversationVideoEventTopicJourneyContext.html) |  | [optional] |
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
+| **media_roles** | **list[str]** |  | [optional] |
 | **audio_muted** | **bool** |  | [optional] |
 | **video_muted** | **bool** |  | [optional] |
 | **sharing_screen** | **bool** |  | [optional] |

@@ -75,6 +75,7 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'journey_context': 'QueueConversationCobrowseEventTopicJourneyContext',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'media_roles': 'list[str]',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'viewer_url': 'str',
@@ -118,6 +119,7 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'journey_context': 'journeyContext',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'media_roles': 'mediaRoles',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'viewer_url': 'viewerUrl',
@@ -160,6 +162,7 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         self._journey_context = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._media_roles = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._viewer_url = None
@@ -1020,6 +1023,30 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def media_roles(self):
+        """
+        Gets the media_roles of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :return: The media_roles of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :rtype: list[str]
+        """
+        return self._media_roles
+
+    @media_roles.setter
+    def media_roles(self, media_roles):
+        """
+        Sets the media_roles of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :param media_roles: The media_roles of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :type: list[str]
+        """
+        
+
+        self._media_roles = media_roles
 
     @property
     def cobrowse_session_id(self):

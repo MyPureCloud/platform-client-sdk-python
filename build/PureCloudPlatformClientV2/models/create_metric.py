@@ -44,7 +44,9 @@ class CreateMetric(object):
             'external_metric_definition_id': 'str',
             'objective': 'CreateObjective',
             'performance_profile_id': 'str',
-            'name': 'str'
+            'name': 'str',
+            'precision': 'int',
+            'time_display_unit': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +54,9 @@ class CreateMetric(object):
             'external_metric_definition_id': 'externalMetricDefinitionId',
             'objective': 'objective',
             'performance_profile_id': 'performanceProfileId',
-            'name': 'name'
+            'name': 'name',
+            'precision': 'precision',
+            'time_display_unit': 'timeDisplayUnit'
         }
 
         self._metric_definition_id = None
@@ -60,6 +64,8 @@ class CreateMetric(object):
         self._objective = None
         self._performance_profile_id = None
         self._name = None
+        self._precision = None
+        self._time_display_unit = None
 
     @property
     def metric_definition_id(self):
@@ -180,6 +186,57 @@ class CreateMetric(object):
         
 
         self._name = name
+
+    @property
+    def precision(self):
+        """
+        Gets the precision of this CreateMetric.
+        The precision of the metric, must be between 0 and 5
+
+        :return: The precision of this CreateMetric.
+        :rtype: int
+        """
+        return self._precision
+
+    @precision.setter
+    def precision(self, precision):
+        """
+        Sets the precision of this CreateMetric.
+        The precision of the metric, must be between 0 and 5
+
+        :param precision: The precision of this CreateMetric.
+        :type: int
+        """
+        
+
+        self._precision = precision
+
+    @property
+    def time_display_unit(self):
+        """
+        Gets the time_display_unit of this CreateMetric.
+        The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+
+        :return: The time_display_unit of this CreateMetric.
+        :rtype: str
+        """
+        return self._time_display_unit
+
+    @time_display_unit.setter
+    def time_display_unit(self, time_display_unit):
+        """
+        Sets the time_display_unit of this CreateMetric.
+        The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+
+        :param time_display_unit: The time_display_unit of this CreateMetric.
+        :type: str
+        """
+        allowed_values = ["None", "Seconds", "Minutes", "Hours"]
+        if time_display_unit.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for time_display_unit -> " + time_display_unit)
+            self._time_display_unit = "outdated_sdk_version"
+        else:
+            self._time_display_unit = time_display_unit
 
     def to_dict(self):
         """

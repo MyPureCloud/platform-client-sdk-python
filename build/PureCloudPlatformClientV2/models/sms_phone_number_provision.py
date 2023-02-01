@@ -41,29 +41,29 @@ class SmsPhoneNumberProvision(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'phone_number': 'str',
             'phone_number_type': 'str',
             'country_code': 'str',
+            'name': 'str',
             'address_id': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'phone_number': 'phoneNumber',
             'phone_number_type': 'phoneNumberType',
             'country_code': 'countryCode',
+            'name': 'name',
             'address_id': 'addressId',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._name = None
         self._phone_number = None
         self._phone_number_type = None
         self._country_code = None
+        self._name = None
         self._address_id = None
         self._self_uri = None
 
@@ -90,30 +90,6 @@ class SmsPhoneNumberProvision(object):
         
 
         self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this SmsPhoneNumberProvision.
-
-
-        :return: The name of this SmsPhoneNumberProvision.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this SmsPhoneNumberProvision.
-
-
-        :param name: The name of this SmsPhoneNumberProvision.
-        :type: str
-        """
-        
-
-        self._name = name
 
     @property
     def phone_number(self):
@@ -189,6 +165,30 @@ class SmsPhoneNumberProvision(object):
         
 
         self._country_code = country_code
+
+    @property
+    def name(self):
+        """
+        Gets the name of this SmsPhoneNumberProvision.
+
+
+        :return: The name of this SmsPhoneNumberProvision.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this SmsPhoneNumberProvision.
+
+
+        :param name: The name of this SmsPhoneNumberProvision.
+        :type: str
+        """
+        
+
+        self._name = name
 
     @property
     def address_id(self):

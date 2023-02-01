@@ -66,6 +66,7 @@ class Participant(object):
             'wrapup_timeout_ms': 'int',
             'wrapup_skipped': 'bool',
             'wrapup': 'Wrapup',
+            'media_roles': 'list[str]',
             'conversation_routing_data': 'ConversationRoutingData',
             'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
@@ -115,6 +116,7 @@ class Participant(object):
             'wrapup_timeout_ms': 'wrapupTimeoutMs',
             'wrapup_skipped': 'wrapupSkipped',
             'wrapup': 'wrapup',
+            'media_roles': 'mediaRoles',
             'conversation_routing_data': 'conversationRoutingData',
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
@@ -163,6 +165,7 @@ class Participant(object):
         self._wrapup_timeout_ms = None
         self._wrapup_skipped = None
         self._wrapup = None
+        self._media_roles = None
         self._conversation_routing_data = None
         self._alerting_timeout_ms = None
         self._monitored_participant_id = None
@@ -810,6 +813,30 @@ class Participant(object):
         
 
         self._wrapup = wrapup
+
+    @property
+    def media_roles(self):
+        """
+        Gets the media_roles of this Participant.
+        List of roles this participant's media has had on the conversation, ie monitor, coach, etc.
+
+        :return: The media_roles of this Participant.
+        :rtype: list[str]
+        """
+        return self._media_roles
+
+    @media_roles.setter
+    def media_roles(self, media_roles):
+        """
+        Sets the media_roles of this Participant.
+        List of roles this participant's media has had on the conversation, ie monitor, coach, etc.
+
+        :param media_roles: The media_roles of this Participant.
+        :type: list[str]
+        """
+        
+
+        self._media_roles = media_roles
 
     @property
     def conversation_routing_data(self):

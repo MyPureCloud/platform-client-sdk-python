@@ -202,6 +202,90 @@ class WebDeploymentsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_webdeployments_deployment_cobrowse_session_id(self, deployment_id, session_id, **kwargs):
+        """
+        Deletes a cobrowse session
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str deployment_id: WebMessaging deployment ID (required)
+        :param str session_id: Cobrowse session id or join code (required)
+        :return: Empty
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['deployment_id', 'session_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_webdeployments_deployment_cobrowse_session_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'deployment_id' is set
+        if ('deployment_id' not in params) or (params['deployment_id'] is None):
+            raise ValueError("Missing the required parameter `deployment_id` when calling `delete_webdeployments_deployment_cobrowse_session_id`")
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `delete_webdeployments_deployment_cobrowse_session_id`")
+
+
+        resource_path = '/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'deployment_id' in params:
+            path_params['deploymentId'] = params['deployment_id']
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Empty',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_webdeployments_token_revoke(self, **kwargs):
         """
         Invalidate JWT
@@ -669,6 +753,90 @@ class WebDeploymentsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='WebDeployment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_webdeployments_deployment_cobrowse_session_id(self, deployment_id, session_id, **kwargs):
+        """
+        Retrieves a cobrowse session
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str deployment_id: WebMessaging deployment ID (required)
+        :param str session_id: Cobrowse session id or join code (required)
+        :return: CobrowseWebMessagingSession
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['deployment_id', 'session_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_webdeployments_deployment_cobrowse_session_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'deployment_id' is set
+        if ('deployment_id' not in params) or (params['deployment_id'] is None):
+            raise ValueError("Missing the required parameter `deployment_id` when calling `get_webdeployments_deployment_cobrowse_session_id`")
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `get_webdeployments_deployment_cobrowse_session_id`")
+
+
+        resource_path = '/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'deployment_id' in params:
+            path_params['deploymentId'] = params['deployment_id']
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CobrowseWebMessagingSession',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

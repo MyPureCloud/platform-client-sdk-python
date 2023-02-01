@@ -49,6 +49,8 @@ class Metric(object):
             'linked_metric': 'AddressableEntityRef',
             'date_created': 'datetime',
             'date_unlinked': 'date',
+            'precision': 'int',
+            'time_display_unit': 'str',
             'source_performance_profile': 'PerformanceProfile',
             'self_uri': 'str'
         }
@@ -63,6 +65,8 @@ class Metric(object):
             'linked_metric': 'linkedMetric',
             'date_created': 'dateCreated',
             'date_unlinked': 'dateUnlinked',
+            'precision': 'precision',
+            'time_display_unit': 'timeDisplayUnit',
             'source_performance_profile': 'sourcePerformanceProfile',
             'self_uri': 'selfUri'
         }
@@ -76,6 +80,8 @@ class Metric(object):
         self._linked_metric = None
         self._date_created = None
         self._date_unlinked = None
+        self._precision = None
+        self._time_display_unit = None
         self._source_performance_profile = None
         self._self_uri = None
 
@@ -294,6 +300,57 @@ class Metric(object):
         
 
         self._date_unlinked = date_unlinked
+
+    @property
+    def precision(self):
+        """
+        Gets the precision of this Metric.
+        The precision of the metric, must be between 0 and 5
+
+        :return: The precision of this Metric.
+        :rtype: int
+        """
+        return self._precision
+
+    @precision.setter
+    def precision(self, precision):
+        """
+        Sets the precision of this Metric.
+        The precision of the metric, must be between 0 and 5
+
+        :param precision: The precision of this Metric.
+        :type: int
+        """
+        
+
+        self._precision = precision
+
+    @property
+    def time_display_unit(self):
+        """
+        Gets the time_display_unit of this Metric.
+        The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+
+        :return: The time_display_unit of this Metric.
+        :rtype: str
+        """
+        return self._time_display_unit
+
+    @time_display_unit.setter
+    def time_display_unit(self, time_display_unit):
+        """
+        Sets the time_display_unit of this Metric.
+        The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+
+        :param time_display_unit: The time_display_unit of this Metric.
+        :type: str
+        """
+        allowed_values = ["None", "Seconds", "Minutes", "Hours"]
+        if time_display_unit.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for time_display_unit -> " + time_display_unit)
+            self._time_display_unit = "outdated_sdk_version"
+        else:
+            self._time_display_unit = time_display_unit
 
     @property
     def source_performance_profile(self):

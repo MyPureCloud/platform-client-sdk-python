@@ -64,6 +64,8 @@ class SmsPhoneNumber(object):
             'supports_sms': 'bool',
             'supports_mms': 'bool',
             'supports_voice': 'bool',
+            'integration': 'DomainEntityRef',
+            'compliance': 'Compliance',
             'self_uri': 'str'
         }
 
@@ -92,6 +94,8 @@ class SmsPhoneNumber(object):
             'supports_sms': 'supportsSms',
             'supports_mms': 'supportsMms',
             'supports_voice': 'supportsVoice',
+            'integration': 'integration',
+            'compliance': 'compliance',
             'self_uri': 'selfUri'
         }
 
@@ -119,6 +123,8 @@ class SmsPhoneNumber(object):
         self._supports_sms = None
         self._supports_mms = None
         self._supports_voice = None
+        self._integration = None
+        self._compliance = None
         self._self_uri = None
 
     @property
@@ -708,6 +714,54 @@ class SmsPhoneNumber(object):
         
 
         self._supports_voice = supports_voice
+
+    @property
+    def integration(self):
+        """
+        Gets the integration of this SmsPhoneNumber.
+        The Genesys Cloud integration this phone number belongs to.
+
+        :return: The integration of this SmsPhoneNumber.
+        :rtype: DomainEntityRef
+        """
+        return self._integration
+
+    @integration.setter
+    def integration(self, integration):
+        """
+        Sets the integration of this SmsPhoneNumber.
+        The Genesys Cloud integration this phone number belongs to.
+
+        :param integration: The integration of this SmsPhoneNumber.
+        :type: DomainEntityRef
+        """
+        
+
+        self._integration = integration
+
+    @property
+    def compliance(self):
+        """
+        Gets the compliance of this SmsPhoneNumber.
+        Compliance configuration for short codes, including help, stop and opt in.
+
+        :return: The compliance of this SmsPhoneNumber.
+        :rtype: Compliance
+        """
+        return self._compliance
+
+    @compliance.setter
+    def compliance(self, compliance):
+        """
+        Sets the compliance of this SmsPhoneNumber.
+        Compliance configuration for short codes, including help, stop and opt in.
+
+        :param compliance: The compliance of this SmsPhoneNumber.
+        :type: Compliance
+        """
+        
+
+        self._compliance = compliance
 
     @property
     def self_uri(self):

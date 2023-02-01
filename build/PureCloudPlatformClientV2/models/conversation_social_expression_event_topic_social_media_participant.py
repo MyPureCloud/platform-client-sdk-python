@@ -75,6 +75,7 @@ class ConversationSocialExpressionEventTopicSocialMediaParticipant(object):
             'journey_context': 'ConversationSocialExpressionEventTopicJourneyContext',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'media_roles': 'list[str]',
             'social_media_id': 'str',
             'social_media_hub': 'str',
             'social_user_name': 'str',
@@ -117,6 +118,7 @@ class ConversationSocialExpressionEventTopicSocialMediaParticipant(object):
             'journey_context': 'journeyContext',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'media_roles': 'mediaRoles',
             'social_media_id': 'socialMediaId',
             'social_media_hub': 'socialMediaHub',
             'social_user_name': 'socialUserName',
@@ -158,6 +160,7 @@ class ConversationSocialExpressionEventTopicSocialMediaParticipant(object):
         self._journey_context = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._media_roles = None
         self._social_media_id = None
         self._social_media_hub = None
         self._social_user_name = None
@@ -1017,6 +1020,30 @@ class ConversationSocialExpressionEventTopicSocialMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def media_roles(self):
+        """
+        Gets the media_roles of this ConversationSocialExpressionEventTopicSocialMediaParticipant.
+
+
+        :return: The media_roles of this ConversationSocialExpressionEventTopicSocialMediaParticipant.
+        :rtype: list[str]
+        """
+        return self._media_roles
+
+    @media_roles.setter
+    def media_roles(self, media_roles):
+        """
+        Sets the media_roles of this ConversationSocialExpressionEventTopicSocialMediaParticipant.
+
+
+        :param media_roles: The media_roles of this ConversationSocialExpressionEventTopicSocialMediaParticipant.
+        :type: list[str]
+        """
+        
+
+        self._media_roles = media_roles
 
     @property
     def social_media_id(self):

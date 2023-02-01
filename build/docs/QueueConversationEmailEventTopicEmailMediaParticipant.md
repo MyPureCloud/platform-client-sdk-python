@@ -42,6 +42,7 @@ title: QueueConversationEmailEventTopicEmailMediaParticipant
 | **journey_context** | [**QueueConversationEmailEventTopicJourneyContext**](QueueConversationEmailEventTopicJourneyContext.html) |  | [optional] |
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
+| **media_roles** | **list[str]** |  | [optional] |
 | **subject** | **str** |  | [optional] |
 | **messages_sent** | **int** |  | [optional] |
 | **auto_generated** | **bool** |  | [optional] |

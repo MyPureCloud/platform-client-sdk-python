@@ -589,6 +589,7 @@ PureCloudPlatformClientV2/models/cobrowse_conversation.py
 PureCloudPlatformClientV2/models/cobrowse_conversation_entity_listing.py
 PureCloudPlatformClientV2/models/cobrowse_media_participant.py
 PureCloudPlatformClientV2/models/cobrowse_settings.py
+PureCloudPlatformClientV2/models/cobrowse_web_messaging_session.py
 PureCloudPlatformClientV2/models/cobrowsesession.py
 PureCloudPlatformClientV2/models/column_data_type_specification.py
 PureCloudPlatformClientV2/models/column_status.py
@@ -603,6 +604,8 @@ PureCloudPlatformClientV2/models/communication_disposition_applied_event.py
 PureCloudPlatformClientV2/models/communication_ended_event.py
 PureCloudPlatformClientV2/models/comparison_period.py
 PureCloudPlatformClientV2/models/comparison_period_listing.py
+PureCloudPlatformClientV2/models/compliance.py
+PureCloudPlatformClientV2/models/compliance_response.py
 PureCloudPlatformClientV2/models/condition.py
 PureCloudPlatformClientV2/models/conditional_group_routing.py
 PureCloudPlatformClientV2/models/conditional_group_routing_rule.py
@@ -1293,6 +1296,7 @@ PureCloudPlatformClientV2/models/email_media_policy.py
 PureCloudPlatformClientV2/models/email_media_policy_conditions.py
 PureCloudPlatformClientV2/models/email_message.py
 PureCloudPlatformClientV2/models/email_message_listing.py
+PureCloudPlatformClientV2/models/email_message_reply.py
 PureCloudPlatformClientV2/models/email_outbound_domain_result.py
 PureCloudPlatformClientV2/models/email_setup.py
 PureCloudPlatformClientV2/models/emails_settings.py
@@ -1544,6 +1548,7 @@ PureCloudPlatformClientV2/models/guest_member_info.py
 PureCloudPlatformClientV2/models/headcount_forecast.py
 PureCloudPlatformClientV2/models/headcount_interval.py
 PureCloudPlatformClientV2/models/help_link.py
+PureCloudPlatformClientV2/models/help_settings.py
 PureCloudPlatformClientV2/models/historical_adherence_actuals.py
 PureCloudPlatformClientV2/models/historical_adherence_day_metrics.py
 PureCloudPlatformClientV2/models/historical_adherence_exception_info.py
@@ -1700,6 +1705,8 @@ PureCloudPlatformClientV2/models/journey_web_events_notification_outcome.py
 PureCloudPlatformClientV2/models/journey_web_events_notification_outcome_achieved_message.py
 PureCloudPlatformClientV2/models/journey_web_events_notification_page.py
 PureCloudPlatformClientV2/models/journey_web_events_notification_referrer.py
+PureCloudPlatformClientV2/models/journey_web_events_notification_segment.py
+PureCloudPlatformClientV2/models/journey_web_events_notification_segment_assignment_message.py
 PureCloudPlatformClientV2/models/journey_web_events_notification_session.py
 PureCloudPlatformClientV2/models/journey_web_events_notification_web_action_message.py
 PureCloudPlatformClientV2/models/journey_web_events_notification_web_events_notification.py
@@ -2064,6 +2071,7 @@ PureCloudPlatformClientV2/models/open_messaging_from_recipient.py
 PureCloudPlatformClientV2/models/open_messaging_to_recipient.py
 PureCloudPlatformClientV2/models/open_normalized_message.py
 PureCloudPlatformClientV2/models/operation.py
+PureCloudPlatformClientV2/models/opt_in_settings.py
 PureCloudPlatformClientV2/models/org_o_auth_client.py
 PureCloudPlatformClientV2/models/org_user.py
 PureCloudPlatformClientV2/models/org_whitelist_settings.py
@@ -2104,6 +2112,7 @@ PureCloudPlatformClientV2/models/outbound_route_entity_listing.py
 PureCloudPlatformClientV2/models/outbound_settings.py
 PureCloudPlatformClientV2/models/outcome.py
 PureCloudPlatformClientV2/models/outcome_achievement.py
+PureCloudPlatformClientV2/models/outcome_config.py
 PureCloudPlatformClientV2/models/outcome_event_score.py
 PureCloudPlatformClientV2/models/outcome_listing.py
 PureCloudPlatformClientV2/models/outcome_probability_condition.py
@@ -2828,6 +2837,7 @@ PureCloudPlatformClientV2/models/station_settings.py
 PureCloudPlatformClientV2/models/statistical_response.py
 PureCloudPlatformClientV2/models/statistical_summary.py
 PureCloudPlatformClientV2/models/status_change.py
+PureCloudPlatformClientV2/models/stop_settings.py
 PureCloudPlatformClientV2/models/story_setting.py
 PureCloudPlatformClientV2/models/street_address.py
 PureCloudPlatformClientV2/models/subject_division_grants.py
@@ -3021,6 +3031,7 @@ PureCloudPlatformClientV2/models/trunk_recording_enabled_count.py
 PureCloudPlatformClientV2/models/trust_create.py
 PureCloudPlatformClientV2/models/trust_entity_listing.py
 PureCloudPlatformClientV2/models/trust_group.py
+PureCloudPlatformClientV2/models/trust_group_entity_listing.py
 PureCloudPlatformClientV2/models/trust_member_create.py
 PureCloudPlatformClientV2/models/trust_request.py
 PureCloudPlatformClientV2/models/trust_request_create.py
@@ -4075,6 +4086,7 @@ docs/CobrowseConversation.md
 docs/CobrowseConversationEntityListing.md
 docs/CobrowseMediaParticipant.md
 docs/CobrowseSettings.md
+docs/CobrowseWebMessagingSession.md
 docs/Cobrowsesession.md
 docs/ColumnDataTypeSpecification.md
 docs/ColumnStatus.md
@@ -4089,6 +4101,8 @@ docs/CommunicationDispositionAppliedEvent.md
 docs/CommunicationEndedEvent.md
 docs/ComparisonPeriod.md
 docs/ComparisonPeriodListing.md
+docs/Compliance.md
+docs/ComplianceResponse.md
 docs/Condition.md
 docs/ConditionalGroupRouting.md
 docs/ConditionalGroupRoutingRule.md
@@ -4787,6 +4801,7 @@ docs/EmailMediaPolicy.md
 docs/EmailMediaPolicyConditions.md
 docs/EmailMessage.md
 docs/EmailMessageListing.md
+docs/EmailMessageReply.md
 docs/EmailOutboundDomainResult.md
 docs/EmailSetup.md
 docs/EmailsSettings.md
@@ -5056,6 +5071,7 @@ docs/GuestMemberInfo.md
 docs/HeadcountForecast.md
 docs/HeadcountInterval.md
 docs/HelpLink.md
+docs/HelpSettings.md
 docs/HistoricalAdherenceActuals.md
 docs/HistoricalAdherenceDayMetrics.md
 docs/HistoricalAdherenceExceptionInfo.md
@@ -5218,6 +5234,8 @@ docs/JourneyWebEventsNotificationOutcome.md
 docs/JourneyWebEventsNotificationOutcomeAchievedMessage.md
 docs/JourneyWebEventsNotificationPage.md
 docs/JourneyWebEventsNotificationReferrer.md
+docs/JourneyWebEventsNotificationSegment.md
+docs/JourneyWebEventsNotificationSegmentAssignmentMessage.md
 docs/JourneyWebEventsNotificationSession.md
 docs/JourneyWebEventsNotificationWebActionMessage.md
 docs/JourneyWebEventsNotificationWebEventsNotification.md
@@ -5604,6 +5622,7 @@ docs/OpenMessagingFromRecipient.md
 docs/OpenMessagingToRecipient.md
 docs/OpenNormalizedMessage.md
 docs/Operation.md
+docs/OptInSettings.md
 docs/OrgOAuthClient.md
 docs/OrgUser.md
 docs/OrgWhitelistSettings.md
@@ -5650,6 +5669,7 @@ docs/OutboundRouteEntityListing.md
 docs/OutboundSettings.md
 docs/Outcome.md
 docs/OutcomeAchievement.md
+docs/OutcomeConfig.md
 docs/OutcomeEventScore.md
 docs/OutcomeListing.md
 docs/OutcomeProbabilityCondition.md
@@ -6396,6 +6416,7 @@ docs/StationsApi.md
 docs/StatisticalResponse.md
 docs/StatisticalSummary.md
 docs/StatusChange.md
+docs/StopSettings.md
 docs/StorySetting.md
 docs/StreetAddress.md
 docs/SubjectDivisionGrants.md
@@ -6601,6 +6622,7 @@ docs/TrunkRecordingEnabledCount.md
 docs/TrustCreate.md
 docs/TrustEntityListing.md
 docs/TrustGroup.md
+docs/TrustGroupEntityListing.md
 docs/TrustMemberCreate.md
 docs/TrustRequest.md
 docs/TrustRequestCreate.md
@@ -7243,10 +7265,13 @@ docs/delete_notifications_channel_subscriptions-example.txt
 docs/delete_oauth_client-example.txt
 docs/delete_orgauthorization_trustee-example.txt
 docs/delete_orgauthorization_trustee_cloneduser-example.txt
+docs/delete_orgauthorization_trustee_group-example.txt
+docs/delete_orgauthorization_trustee_group_roles-example.txt
 docs/delete_orgauthorization_trustee_user-example.txt
 docs/delete_orgauthorization_trustee_user_roles-example.txt
 docs/delete_orgauthorization_trustor-example.txt
 docs/delete_orgauthorization_trustor_cloneduser-example.txt
+docs/delete_orgauthorization_trustor_group-example.txt
 docs/delete_orgauthorization_trustor_user-example.txt
 docs/delete_orphanrecording-example.txt
 docs/delete_outbound_attemptlimit-example.txt
@@ -7346,6 +7371,7 @@ docs/delete_webchat_guest_conversation_member-example.txt
 docs/delete_webchat_settings-example.txt
 docs/delete_webdeployments_configuration-example.txt
 docs/delete_webdeployments_deployment-example.txt
+docs/delete_webdeployments_deployment_cobrowse_session_id-example.txt
 docs/delete_webdeployments_token_revoke-example.txt
 docs/delete_widgets_deployment-example.txt
 docs/delete_workforcemanagement_businessunit-example.txt
@@ -7843,6 +7869,9 @@ docs/get_organizations_whitelist-example.txt
 docs/get_orgauthorization_pairing-example.txt
 docs/get_orgauthorization_trustee-example.txt
 docs/get_orgauthorization_trustee_clonedusers-example.txt
+docs/get_orgauthorization_trustee_group-example.txt
+docs/get_orgauthorization_trustee_group_roles-example.txt
+docs/get_orgauthorization_trustee_groups-example.txt
 docs/get_orgauthorization_trustee_user-example.txt
 docs/get_orgauthorization_trustee_user_roles-example.txt
 docs/get_orgauthorization_trustee_users-example.txt
@@ -7851,6 +7880,8 @@ docs/get_orgauthorization_trustees_default-example.txt
 docs/get_orgauthorization_trustor-example.txt
 docs/get_orgauthorization_trustor_cloneduser-example.txt
 docs/get_orgauthorization_trustor_clonedusers-example.txt
+docs/get_orgauthorization_trustor_group-example.txt
+docs/get_orgauthorization_trustor_groups-example.txt
 docs/get_orgauthorization_trustor_user-example.txt
 docs/get_orgauthorization_trustor_users-example.txt
 docs/get_orgauthorization_trustors-example.txt
@@ -8233,6 +8264,7 @@ docs/get_webdeployments_configuration_versions-example.txt
 docs/get_webdeployments_configuration_versions_draft-example.txt
 docs/get_webdeployments_configurations-example.txt
 docs/get_webdeployments_deployment-example.txt
+docs/get_webdeployments_deployment_cobrowse_session_id-example.txt
 docs/get_webdeployments_deployment_configurations-example.txt
 docs/get_webdeployments_deployments-example.txt
 docs/get_webmessaging_messages-example.txt
@@ -8524,6 +8556,7 @@ docs/post_contentmanagement_workspace_tagvalues-example.txt
 docs/post_contentmanagement_workspace_tagvalues_query-example.txt
 docs/post_contentmanagement_workspaces-example.txt
 docs/post_conversation_assign-example.txt
+docs/post_conversation_cobrowse-example.txt
 docs/post_conversation_disconnect-example.txt
 docs/post_conversation_participant_callbacks-example.txt
 docs/post_conversation_participant_digits-example.txt
@@ -8707,6 +8740,7 @@ docs/post_oauth_client_secret-example.txt
 docs/post_oauth_client_usage_query-example.txt
 docs/post_oauth_clients-example.txt
 docs/post_orgauthorization_pairings-example.txt
+docs/post_orgauthorization_trustee_groups-example.txt
 docs/post_orgauthorization_trustee_users-example.txt
 docs/post_orgauthorization_trustees-example.txt
 docs/post_orgauthorization_trustees_audits-example.txt
@@ -9020,9 +9054,12 @@ docs/put_organizations_ipaddressauthentication-example.txt
 docs/put_organizations_me-example.txt
 docs/put_organizations_whitelist-example.txt
 docs/put_orgauthorization_trustee-example.txt
+docs/put_orgauthorization_trustee_group_roledivisions-example.txt
+docs/put_orgauthorization_trustee_group_roles-example.txt
 docs/put_orgauthorization_trustee_user_roledivisions-example.txt
 docs/put_orgauthorization_trustee_user_roles-example.txt
 docs/put_orgauthorization_trustor_cloneduser-example.txt
+docs/put_orgauthorization_trustor_group-example.txt
 docs/put_orgauthorization_trustor_user-example.txt
 docs/put_orphanrecording-example.txt
 docs/put_outbound_attemptlimit-example.txt

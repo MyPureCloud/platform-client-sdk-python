@@ -65,6 +65,7 @@ class QueueConversationEventTopicParticipant(object):
             'monitored_participant_id': 'str',
             'coached_participant_id': 'str',
             'barged_participant_id': 'str',
+            'media_roles': 'list[str]',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
             'attributes': 'dict(str, str)',
@@ -107,6 +108,7 @@ class QueueConversationEventTopicParticipant(object):
             'monitored_participant_id': 'monitoredParticipantId',
             'coached_participant_id': 'coachedParticipantId',
             'barged_participant_id': 'bargedParticipantId',
+            'media_roles': 'mediaRoles',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
             'attributes': 'attributes',
@@ -148,6 +150,7 @@ class QueueConversationEventTopicParticipant(object):
         self._monitored_participant_id = None
         self._coached_participant_id = None
         self._barged_participant_id = None
+        self._media_roles = None
         self._screen_recording_state = None
         self._flagged_reason = None
         self._attributes = None
@@ -762,6 +765,30 @@ class QueueConversationEventTopicParticipant(object):
         
 
         self._barged_participant_id = barged_participant_id
+
+    @property
+    def media_roles(self):
+        """
+        Gets the media_roles of this QueueConversationEventTopicParticipant.
+        List of roles this participant's media has had on the conversation, ie monitor, coach, etc.
+
+        :return: The media_roles of this QueueConversationEventTopicParticipant.
+        :rtype: list[str]
+        """
+        return self._media_roles
+
+    @media_roles.setter
+    def media_roles(self, media_roles):
+        """
+        Sets the media_roles of this QueueConversationEventTopicParticipant.
+        List of roles this participant's media has had on the conversation, ie monitor, coach, etc.
+
+        :param media_roles: The media_roles of this QueueConversationEventTopicParticipant.
+        :type: list[str]
+        """
+        
+
+        self._media_roles = media_roles
 
     @property
     def screen_recording_state(self):
