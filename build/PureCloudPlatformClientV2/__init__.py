@@ -1278,6 +1278,7 @@ from .models.evaluation_question_group_score import EvaluationQuestionGroupScore
 from .models.evaluation_question_score import EvaluationQuestionScore
 from .models.evaluation_response import EvaluationResponse
 from .models.evaluation_scoring_set import EvaluationScoringSet
+from .models.evaluation_source import EvaluationSource
 from .models.evaluator_activity import EvaluatorActivity
 from .models.evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .models.event_co_browse import EventCoBrowse
@@ -2044,7 +2045,12 @@ from .models.outcome_achievement import OutcomeAchievement
 from .models.outcome_config import OutcomeConfig
 from .models.outcome_event_score import OutcomeEventScore
 from .models.outcome_listing import OutcomeListing
+from .models.outcome_predictor import OutcomePredictor
+from .models.outcome_predictor_listing import OutcomePredictorListing
+from .models.outcome_predictor_request import OutcomePredictorRequest
 from .models.outcome_probability_condition import OutcomeProbabilityCondition
+from .models.outcome_ref import OutcomeRef
+from .models.outcome_ref_request import OutcomeRefRequest
 from .models.outcome_scores_result import OutcomeScoresResult
 from .models.overall_best_points import OverallBestPoints
 from .models.overall_best_points_item import OverallBestPointsItem
@@ -2926,7 +2932,10 @@ from .models.transcription_topic_transcript_word import TranscriptionTopicTransc
 from .models.transcription_topic_transcription_message import TranscriptionTopicTranscriptionMessage
 from .models.transcription_topic_transcription_request_status import TranscriptionTopicTranscriptionRequestStatus
 from .models.transcripts import Transcripts
+from .models.transfer_destination import TransferDestination
+from .models.transfer_initiator import TransferInitiator
 from .models.transfer_request import TransferRequest
+from .models.transfer_response import TransferResponse
 from .models.trigger import Trigger
 from .models.trigger_entity_listing import TriggerEntityListing
 from .models.trigger_target import TriggerTarget

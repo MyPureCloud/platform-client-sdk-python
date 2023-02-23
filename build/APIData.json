@@ -7828,7 +7828,7 @@
       }
     ],
     "return": "CobrowseWebMessagingSession",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | Conversation ID\n\ntry:\n    # Creates a cobrowse session\n    api_response = api_instance.post_conversation_cobrowse(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationCobrowseRequest->post_conversation_cobrowse: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | Conversation ID\n\ntry:\n    # Creates a cobrowse session. Requires \\\"conversation:cobrowse:add\\\" (for web messaging) or \\\"conversation:cobrowsevoice:add\\\" permission.\n    api_response = api_instance.post_conversation_cobrowse(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationCobrowseRequest->post_conversation_cobrowse: %s\\n\" % e)"
   },
   "post_conversation_disconnect": {
     "operationId": "post_conversation_disconnect",
@@ -13856,6 +13856,19 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi()\noutcome_id = 'outcome_id_example' # str | ID of the outcome.\n\ntry:\n    # Delete an outcome.\n    api_instance.delete_journey_outcome(outcome_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteJourneyOutcomeRequest->delete_journey_outcome: %s\\n\" % e)"
   },
+  "delete_journey_outcomes_predictor": {
+    "operationId": "delete_journey_outcomes_predictor",
+    "functionName": "delete_journey_outcomes_predictor",
+    "signature": "delete_journey_outcomes_predictor(predictor_id)",
+    "parameters": [
+      {
+        "name": "predictor_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi()\npredictor_id = 'predictor_id_example' # str | ID of predictor\n\ntry:\n    # Delete an outcome predictor.\n    api_instance.delete_journey_outcomes_predictor(predictor_id)\nexcept ApiException as e:\n    print(\"Exception when calling DeleteJourneyOutcomesPredictorRequest->delete_journey_outcomes_predictor: %s\\n\" % e)"
+  },
   "delete_journey_segment": {
     "operationId": "delete_journey_segment",
     "functionName": "delete_journey_segment",
@@ -14104,6 +14117,27 @@
     "return": "OutcomeListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi()\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nsort_by = 'sort_by_example' # str | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)\noutcome_ids = ['outcome_ids_example'] # list[str] | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)\nquery_fields = ['query_fields_example'] # list[str] | Outcome field(s) to query on. Requires 'queryValue' to also be set. (optional)\nquery_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)\n\ntry:\n    # Retrieve all outcomes.\n    api_response = api_instance.get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids, query_fields=query_fields, query_value=query_value)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetJourneyOutcomesRequest->get_journey_outcomes: %s\\n\" % e)"
   },
+  "get_journey_outcomes_predictor": {
+    "operationId": "get_journey_outcomes_predictor",
+    "functionName": "get_journey_outcomes_predictor",
+    "signature": "get_journey_outcomes_predictor(predictor_id)",
+    "parameters": [
+      {
+        "name": "predictor_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "OutcomePredictor",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi()\npredictor_id = 'predictor_id_example' # str | ID of predictor\n\ntry:\n    # Retrieve a single outcome predictor.\n    api_response = api_instance.get_journey_outcomes_predictor(predictor_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetJourneyOutcomesPredictorRequest->get_journey_outcomes_predictor: %s\\n\" % e)"
+  },
+  "get_journey_outcomes_predictors": {
+    "operationId": "get_journey_outcomes_predictors",
+    "functionName": "get_journey_outcomes_predictors",
+    "signature": "get_journey_outcomes_predictors()",
+    "return": "OutcomePredictorListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi()\n\ntry:\n    # Retrieve all outcome predictors.\n    api_response = api_instance.get_journey_outcomes_predictors()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetJourneyOutcomesPredictorsRequest->get_journey_outcomes_predictors: %s\\n\" % e)"
+  },
   "get_journey_segment": {
     "operationId": "get_journey_segment",
     "functionName": "get_journey_segment",
@@ -14340,6 +14374,20 @@
     ],
     "return": "Outcome",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi()\nbody = PureCloudPlatformClientV2.Outcome() # Outcome |  (optional)\n\ntry:\n    # Create an outcome.\n    api_response = api_instance.post_journey_outcomes(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostJourneyOutcomesRequest->post_journey_outcomes: %s\\n\" % e)"
+  },
+  "post_journey_outcomes_predictors": {
+    "operationId": "post_journey_outcomes_predictors",
+    "functionName": "post_journey_outcomes_predictors",
+    "signature": "post_journey_outcomes_predictors(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "OutcomePredictorRequest",
+        "required": "false"
+      }
+    ],
+    "return": "OutcomePredictor",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi()\nbody = PureCloudPlatformClientV2.OutcomePredictorRequest() # OutcomePredictorRequest |  (optional)\n\ntry:\n    # Create an outcome predictor.\n    api_response = api_instance.post_journey_outcomes_predictors(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostJourneyOutcomesPredictorsRequest->post_journey_outcomes_predictors: %s\\n\" % e)"
   },
   "post_journey_segments": {
     "operationId": "post_journey_segments",
@@ -14636,7 +14684,7 @@
   "get_knowledge_guest_session_documents": {
     "operationId": "get_knowledge_guest_session_documents",
     "functionName": "get_knowledge_guest_session_documents",
-    "signature": "get_knowledge_guest_session_documents(session_id, category_id, include_subcategories, page_size)",
+    "signature": "get_knowledge_guest_session_documents(session_id, category_id, page_size)",
     "parameters": [
       {
         "name": "session_id",
@@ -14649,18 +14697,13 @@
         "required": "false"
       },
       {
-        "name": "include_subcategories",
-        "type": "bool",
-        "required": "false"
-      },
-      {
         "name": "page_size",
         "type": "int",
         "required": "false"
       }
     ],
     "return": "KnowledgeGuestDocumentResponseListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi()\nsession_id = 'session_id_example' # str | Knowledge guest session ID.\ncategory_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)\ninclude_subcategories = True # bool | Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)\npage_size = 10 # int | Number of entities to return. Maximum of 200. (optional) (default to 10)\n\ntry:\n    # Get documents.\n    api_response = api_instance.get_knowledge_guest_session_documents(session_id, category_id=category_id, include_subcategories=include_subcategories, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetKnowledgeGuestSessionDocumentsRequest->get_knowledge_guest_session_documents: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi()\nsession_id = 'session_id_example' # str | Knowledge guest session ID.\ncategory_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)\npage_size = 10 # int | Number of entities to return. Maximum of 200. (optional) (default to 10)\n\ntry:\n    # Get documents.\n    api_response = api_instance.get_knowledge_guest_session_documents(session_id, category_id=category_id, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetKnowledgeGuestSessionDocumentsRequest->get_knowledge_guest_session_documents: %s\\n\" % e)"
   },
   "get_knowledge_knowledgebase": {
     "operationId": "get_knowledge_knowledgebase",
@@ -22879,7 +22922,7 @@
       }
     ],
     "return": "EvaluationResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nevaluation_id = 'evaluation_id_example' # str | evaluationId\nexpand = 'expand_example' # str | agent, evaluator, evaluationForm (optional)\n\ntry:\n    # Get an evaluation\n    api_response = api_instance.get_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityConversationEvaluationRequest->get_quality_conversation_evaluation: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nevaluation_id = 'evaluation_id_example' # str | evaluationId\nexpand = 'expand_example' # str | agent, assignee, evaluator, evaluationForm (optional)\n\ntry:\n    # Get an evaluation\n    api_response = api_instance.get_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityConversationEvaluationRequest->get_quality_conversation_evaluation: %s\\n\" % e)"
   },
   "get_quality_conversation_surveys": {
     "operationId": "get_quality_conversation_surveys",
@@ -22941,7 +22984,7 @@
   "get_quality_evaluations_query": {
     "operationId": "get_quality_evaluations_query",
     "functionName": "get_quality_evaluations_query",
-    "signature": "get_quality_evaluations_query(page_size, page_number, sort_by, expand, next_page, previous_page, conversation_id, agent_user_id, evaluator_user_id, queue_id, start_time, end_time, evaluation_state, is_released, agent_has_read, expand_answer_total_scores, maximum, sort_order)",
+    "signature": "get_quality_evaluations_query(page_size, page_number, sort_by, expand, next_page, previous_page, conversation_id, agent_user_id, evaluator_user_id, assignee_user_id, queue_id, start_time, end_time, evaluation_state, is_released, agent_has_read, expand_answer_total_scores, maximum, sort_order)",
     "parameters": [
       {
         "name": "page_size",
@@ -22985,6 +23028,11 @@
       },
       {
         "name": "evaluator_user_id",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "assignee_user_id",
         "type": "str",
         "required": "false"
       },
@@ -23035,7 +23083,7 @@
       }
     ],
     "return": "EvaluationEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nconversation_id = 'conversation_id_example' # str | conversationId specified (optional)\nagent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)\nevaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optional)\nqueue_id = 'queue_id_example' # str | queue id (optional)\nstart_time = 'start_time_example' # str | start time of the evaluation query (optional)\nend_time = 'end_time_example' # str | end time of the evaluation query (optional)\nevaluation_state = ['evaluation_state_example'] # list[str] |  (optional)\nis_released = True # bool | the evaluation has been released (optional)\nagent_has_read = True # bool | agent has the evaluation (optional)\nexpand_answer_total_scores = True # bool | get the total scores for evaluations (optional)\nmaximum = 56 # int | maximum (optional)\nsort_order = 'sort_order_example' # str | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending' (optional)\n\ntry:\n    # Queries Evaluations and returns a paged list\n    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityEvaluationsQueryRequest->get_quality_evaluations_query: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi()\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nconversation_id = 'conversation_id_example' # str | conversationId specified (optional)\nagent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)\nevaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optional)\nassignee_user_id = 'assignee_user_id_example' # str | assignee user id (optional)\nqueue_id = 'queue_id_example' # str | queue id (optional)\nstart_time = 'start_time_example' # str | start time of the evaluation query (optional)\nend_time = 'end_time_example' # str | end time of the evaluation query (optional)\nevaluation_state = ['evaluation_state_example'] # list[str] |  (optional)\nis_released = True # bool | the evaluation has been released (optional)\nagent_has_read = True # bool | agent has the evaluation (optional)\nexpand_answer_total_scores = True # bool | get the total scores for evaluations (optional)\nmaximum = 56 # int | maximum (optional)\nsort_order = 'sort_order_example' # str | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending' (optional)\n\ntry:\n    # Queries Evaluations and returns a paged list\n    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetQualityEvaluationsQueryRequest->get_quality_evaluations_query: %s\\n\" % e)"
   },
   "get_quality_evaluators_activity": {
     "operationId": "get_quality_evaluators_activity",
@@ -30619,7 +30667,7 @@
   "get_telephony_providers_edges": {
     "operationId": "get_telephony_providers_edges",
     "functionName": "get_telephony_providers_edges",
-    "signature": "get_telephony_providers_edges(page_size, page_number, name, site_id, edge_group_id, sort_by, managed)",
+    "signature": "get_telephony_providers_edges(page_size, page_number, name, site_id, edge_group_id, sort_by, managed, show_cloud_media)",
     "parameters": [
       {
         "name": "page_size",
@@ -30655,10 +30703,15 @@
         "name": "managed",
         "type": "bool",
         "required": "false"
+      },
+      {
+        "name": "show_cloud_media",
+        "type": "bool",
+        "required": "false"
       }
     ],
     "return": "EdgeEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Telephony_Providers_EdgeApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nname = 'name_example' # str | Name (optional)\nsite_id = 'site_id_example' # str | Filter by site.id (optional)\nedge_group_id = 'edge_group_id_example' # str | Filter by edgeGroup.id (optional)\nsort_by = ''name'' # str | Sort by (optional) (default to 'name')\nmanaged = True # bool | Filter by managed (optional)\n\ntry:\n    # Get the list of edges.\n    api_response = api_instance.get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetTelephonyProvidersEdgesRequest->get_telephony_providers_edges: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.Telephony_Providers_EdgeApi()\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nname = 'name_example' # str | Name (optional)\nsite_id = 'site_id_example' # str | Filter by site.id (optional)\nedge_group_id = 'edge_group_id_example' # str | Filter by edgeGroup.id (optional)\nsort_by = ''name'' # str | Sort by (optional) (default to 'name')\nmanaged = True # bool | Filter by managed (optional)\nshow_cloud_media = True # bool | True to show the cloud media devices in the result. (optional) (default to True)\n\ntry:\n    # Get the list of edges.\n    api_response = api_instance.get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed, show_cloud_media=show_cloud_media)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetTelephonyProvidersEdgesRequest->get_telephony_providers_edges: %s\\n\" % e)"
   },
   "get_telephony_providers_edges_availablelanguages": {
     "operationId": "get_telephony_providers_edges_availablelanguages",

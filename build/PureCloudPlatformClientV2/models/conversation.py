@@ -52,6 +52,7 @@ class Conversation(object):
             'recording_state': 'str',
             'state': 'str',
             'divisions': 'list[ConversationDivisionMembership]',
+            'recent_transfers': 'list[TransferResponse]',
             'self_uri': 'str'
         }
 
@@ -68,6 +69,7 @@ class Conversation(object):
             'recording_state': 'recordingState',
             'state': 'state',
             'divisions': 'divisions',
+            'recent_transfers': 'recentTransfers',
             'self_uri': 'selfUri'
         }
 
@@ -83,6 +85,7 @@ class Conversation(object):
         self._recording_state = None
         self._state = None
         self._divisions = None
+        self._recent_transfers = None
         self._self_uri = None
 
     @property
@@ -378,6 +381,30 @@ class Conversation(object):
         
 
         self._divisions = divisions
+
+    @property
+    def recent_transfers(self):
+        """
+        Gets the recent_transfers of this Conversation.
+        The list of the most recent 20 transfer commands applied to this conversation.
+
+        :return: The recent_transfers of this Conversation.
+        :rtype: list[TransferResponse]
+        """
+        return self._recent_transfers
+
+    @recent_transfers.setter
+    def recent_transfers(self, recent_transfers):
+        """
+        Sets the recent_transfers of this Conversation.
+        The list of the most recent 20 transfer commands applied to this conversation.
+
+        :param recent_transfers: The recent_transfers of this Conversation.
+        :type: list[TransferResponse]
+        """
+        
+
+        self._recent_transfers = recent_transfers
 
     @property
     def self_uri(self):

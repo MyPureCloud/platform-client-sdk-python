@@ -19,6 +19,7 @@ title: Conversation
 | **recording_state** | **str** | On update, &#39;paused&#39; initiates a secure pause, &#39;active&#39; resumes any paused recordings; otherwise indicates state of conversation recording. | [optional] |
 | **state** | **str** | The conversation&#39;s state | [optional] |
 | **divisions** | [**list[ConversationDivisionMembership]**](ConversationDivisionMembership.html) | Identifiers of divisions associated with this conversation | [optional] |
+| **recent_transfers** | [**list[TransferResponse]**](TransferResponse.html) | The list of the most recent 20 transfer commands applied to this conversation. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

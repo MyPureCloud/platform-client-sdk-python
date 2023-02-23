@@ -2924,12 +2924,13 @@ class TelephonyProvidersEdgeApi(object):
         :param str edge_group_id: Filter by edgeGroup.id
         :param str sort_by: Sort by
         :param bool managed: Filter by managed
+        :param bool show_cloud_media: True to show the cloud media devices in the result.
         :return: EdgeEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'name', 'site_id', 'edge_group_id', 'sort_by', 'managed']
+        all_params = ['page_size', 'page_number', 'name', 'site_id', 'edge_group_id', 'sort_by', 'managed', 'show_cloud_media']
         all_params.append('callback')
 
         params = locals()
@@ -2962,6 +2963,8 @@ class TelephonyProvidersEdgeApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'managed' in params:
             query_params['managed'] = params['managed']
+        if 'show_cloud_media' in params:
+            query_params['showCloudMedia'] = params['show_cloud_media']
 
         header_params = {}
 

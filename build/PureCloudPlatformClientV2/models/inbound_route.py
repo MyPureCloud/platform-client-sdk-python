@@ -55,6 +55,7 @@ class InboundRoute(object):
             'spam_flow': 'DomainEntityRef',
             'signature': 'Signature',
             'history_inclusion': 'str',
+            'allow_multiple_actions': 'bool',
             'self_uri': 'str'
         }
 
@@ -74,6 +75,7 @@ class InboundRoute(object):
             'spam_flow': 'spamFlow',
             'signature': 'signature',
             'history_inclusion': 'historyInclusion',
+            'allow_multiple_actions': 'allowMultipleActions',
             'self_uri': 'selfUri'
         }
 
@@ -92,6 +94,7 @@ class InboundRoute(object):
         self._spam_flow = None
         self._signature = None
         self._history_inclusion = None
+        self._allow_multiple_actions = None
         self._self_uri = None
 
     @property
@@ -456,6 +459,30 @@ class InboundRoute(object):
             self._history_inclusion = "outdated_sdk_version"
         else:
             self._history_inclusion = history_inclusion
+
+    @property
+    def allow_multiple_actions(self):
+        """
+        Gets the allow_multiple_actions of this InboundRoute.
+        Control if multiple actions are allowed on this route. When true the disconnect has to be done manually. When false a conversation will be disconnected by the system after every action
+
+        :return: The allow_multiple_actions of this InboundRoute.
+        :rtype: bool
+        """
+        return self._allow_multiple_actions
+
+    @allow_multiple_actions.setter
+    def allow_multiple_actions(self, allow_multiple_actions):
+        """
+        Sets the allow_multiple_actions of this InboundRoute.
+        Control if multiple actions are allowed on this route. When true the disconnect has to be done manually. When false a conversation will be disconnected by the system after every action
+
+        :param allow_multiple_actions: The allow_multiple_actions of this InboundRoute.
+        :type: bool
+        """
+        
+
+        self._allow_multiple_actions = allow_multiple_actions
 
     @property
     def self_uri(self):

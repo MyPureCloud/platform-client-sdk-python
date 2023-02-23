@@ -44,6 +44,7 @@ class CallConversation(object):
             'name': 'str',
             'participants': 'list[CallMediaParticipant]',
             'other_media_uris': 'list[str]',
+            'recent_transfers': 'list[TransferResponse]',
             'recording_state': 'str',
             'max_participants': 'int',
             'self_uri': 'str'
@@ -54,6 +55,7 @@ class CallConversation(object):
             'name': 'name',
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
+            'recent_transfers': 'recentTransfers',
             'recording_state': 'recordingState',
             'max_participants': 'maxParticipants',
             'self_uri': 'selfUri'
@@ -63,6 +65,7 @@ class CallConversation(object):
         self._name = None
         self._participants = None
         self._other_media_uris = None
+        self._recent_transfers = None
         self._recording_state = None
         self._max_participants = None
         self._self_uri = None
@@ -162,6 +165,30 @@ class CallConversation(object):
         
 
         self._other_media_uris = other_media_uris
+
+    @property
+    def recent_transfers(self):
+        """
+        Gets the recent_transfers of this CallConversation.
+        The list of the most recent 20 transfer commands applied to this conversation.
+
+        :return: The recent_transfers of this CallConversation.
+        :rtype: list[TransferResponse]
+        """
+        return self._recent_transfers
+
+    @recent_transfers.setter
+    def recent_transfers(self, recent_transfers):
+        """
+        Sets the recent_transfers of this CallConversation.
+        The list of the most recent 20 transfer commands applied to this conversation.
+
+        :param recent_transfers: The recent_transfers of this CallConversation.
+        :type: list[TransferResponse]
+        """
+        
+
+        self._recent_transfers = recent_transfers
 
     @property
     def recording_state(self):

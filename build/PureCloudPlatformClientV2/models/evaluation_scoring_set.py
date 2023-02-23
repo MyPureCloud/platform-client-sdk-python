@@ -46,6 +46,7 @@ class EvaluationScoringSet(object):
             'question_group_scores': 'list[EvaluationQuestionGroupScore]',
             'any_failed_kill_questions': 'bool',
             'comments': 'str',
+            'private_comments': 'str',
             'agent_comments': 'str',
             'transcript_topics': 'list[TranscriptTopic]'
         }
@@ -57,6 +58,7 @@ class EvaluationScoringSet(object):
             'question_group_scores': 'questionGroupScores',
             'any_failed_kill_questions': 'anyFailedKillQuestions',
             'comments': 'comments',
+            'private_comments': 'privateComments',
             'agent_comments': 'agentComments',
             'transcript_topics': 'transcriptTopics'
         }
@@ -67,6 +69,7 @@ class EvaluationScoringSet(object):
         self._question_group_scores = None
         self._any_failed_kill_questions = None
         self._comments = None
+        self._private_comments = None
         self._agent_comments = None
         self._transcript_topics = None
 
@@ -213,6 +216,30 @@ class EvaluationScoringSet(object):
         
 
         self._comments = comments
+
+    @property
+    def private_comments(self):
+        """
+        Gets the private_comments of this EvaluationScoringSet.
+        Overall private comments from the evaluator
+
+        :return: The private_comments of this EvaluationScoringSet.
+        :rtype: str
+        """
+        return self._private_comments
+
+    @private_comments.setter
+    def private_comments(self, private_comments):
+        """
+        Sets the private_comments of this EvaluationScoringSet.
+        Overall private comments from the evaluator
+
+        :param private_comments: The private_comments of this EvaluationScoringSet.
+        :type: str
+        """
+        
+
+        self._private_comments = private_comments
 
     @property
     def agent_comments(self):

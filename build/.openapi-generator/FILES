@@ -1349,6 +1349,7 @@ PureCloudPlatformClientV2/models/evaluation_question_group_score.py
 PureCloudPlatformClientV2/models/evaluation_question_score.py
 PureCloudPlatformClientV2/models/evaluation_response.py
 PureCloudPlatformClientV2/models/evaluation_scoring_set.py
+PureCloudPlatformClientV2/models/evaluation_source.py
 PureCloudPlatformClientV2/models/evaluator_activity.py
 PureCloudPlatformClientV2/models/evaluator_activity_entity_listing.py
 PureCloudPlatformClientV2/models/event_co_browse.py
@@ -2115,7 +2116,12 @@ PureCloudPlatformClientV2/models/outcome_achievement.py
 PureCloudPlatformClientV2/models/outcome_config.py
 PureCloudPlatformClientV2/models/outcome_event_score.py
 PureCloudPlatformClientV2/models/outcome_listing.py
+PureCloudPlatformClientV2/models/outcome_predictor.py
+PureCloudPlatformClientV2/models/outcome_predictor_listing.py
+PureCloudPlatformClientV2/models/outcome_predictor_request.py
 PureCloudPlatformClientV2/models/outcome_probability_condition.py
+PureCloudPlatformClientV2/models/outcome_ref.py
+PureCloudPlatformClientV2/models/outcome_ref_request.py
 PureCloudPlatformClientV2/models/outcome_scores_result.py
 PureCloudPlatformClientV2/models/overall_best_points.py
 PureCloudPlatformClientV2/models/overall_best_points_item.py
@@ -2997,7 +3003,10 @@ PureCloudPlatformClientV2/models/transcription_topic_transcript_word.py
 PureCloudPlatformClientV2/models/transcription_topic_transcription_message.py
 PureCloudPlatformClientV2/models/transcription_topic_transcription_request_status.py
 PureCloudPlatformClientV2/models/transcripts.py
+PureCloudPlatformClientV2/models/transfer_destination.py
+PureCloudPlatformClientV2/models/transfer_initiator.py
 PureCloudPlatformClientV2/models/transfer_request.py
+PureCloudPlatformClientV2/models/transfer_response.py
 PureCloudPlatformClientV2/models/trigger.py
 PureCloudPlatformClientV2/models/trigger_entity_listing.py
 PureCloudPlatformClientV2/models/trigger_target.py
@@ -4854,6 +4863,7 @@ docs/EvaluationQuestionGroupScore.md
 docs/EvaluationQuestionScore.md
 docs/EvaluationResponse.md
 docs/EvaluationScoringSet.md
+docs/EvaluationSource.md
 docs/EvaluatorActivity.md
 docs/EvaluatorActivityEntityListing.md
 docs/EventCoBrowse.md
@@ -5672,7 +5682,12 @@ docs/OutcomeAchievement.md
 docs/OutcomeConfig.md
 docs/OutcomeEventScore.md
 docs/OutcomeListing.md
+docs/OutcomePredictor.md
+docs/OutcomePredictorListing.md
+docs/OutcomePredictorRequest.md
 docs/OutcomeProbabilityCondition.md
+docs/OutcomeRef.md
+docs/OutcomeRefRequest.md
 docs/OutcomeScoresResult.md
 docs/OverallBestPoints.md
 docs/OverallBestPointsItem.md
@@ -6588,7 +6603,10 @@ docs/TranscriptionTopicTranscriptWord.md
 docs/TranscriptionTopicTranscriptionMessage.md
 docs/TranscriptionTopicTranscriptionRequestStatus.md
 docs/Transcripts.md
+docs/TransferDestination.md
+docs/TransferInitiator.md
 docs/TransferRequest.md
+docs/TransferResponse.md
 docs/Trigger.md
 docs/TriggerEntityListing.md
 docs/TriggerTarget.md
@@ -7239,6 +7257,7 @@ docs/delete_integrations_credential-example.txt
 docs/delete_journey_actionmap-example.txt
 docs/delete_journey_actiontemplate-example.txt
 docs/delete_journey_outcome-example.txt
+docs/delete_journey_outcomes_predictor-example.txt
 docs/delete_journey_segment-example.txt
 docs/delete_knowledge_knowledgebase-example.txt
 docs/delete_knowledge_knowledgebase_category-example.txt
@@ -7766,6 +7785,8 @@ docs/get_journey_actiontemplate-example.txt
 docs/get_journey_actiontemplates-example.txt
 docs/get_journey_outcome-example.txt
 docs/get_journey_outcomes-example.txt
+docs/get_journey_outcomes_predictor-example.txt
+docs/get_journey_outcomes_predictors-example.txt
 docs/get_journey_segment-example.txt
 docs/get_journey_segments-example.txt
 docs/get_journey_session-example.txt
@@ -8680,6 +8701,7 @@ docs/post_journey_actionmaps-example.txt
 docs/post_journey_actionmaps_estimates_jobs-example.txt
 docs/post_journey_actiontemplates-example.txt
 docs/post_journey_outcomes-example.txt
+docs/post_journey_outcomes_predictors-example.txt
 docs/post_journey_segments-example.txt
 docs/post_knowledge_documentuploads-example.txt
 docs/post_knowledge_documentuploads-example.txt

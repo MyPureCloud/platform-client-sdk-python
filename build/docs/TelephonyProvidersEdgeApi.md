@@ -1974,7 +1974,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges"></a>
 
-## [**EdgeEntityListing**](EdgeEntityListing.html) get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed)
+## [**EdgeEntityListing**](EdgeEntityListing.html) get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed, show_cloud_media=show_cloud_media)
 
 
 
@@ -2008,10 +2008,11 @@ site_id = 'site_id_example' # str | Filter by site.id (optional)
 edge_group_id = 'edge_group_id_example' # str | Filter by edgeGroup.id (optional)
 sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 managed = True # bool | Filter by managed (optional)
+show_cloud_media = True # bool | True to show the cloud media devices in the result. (optional) (default to True)
 
 try:
     # Get the list of edges.
-    api_response = api_instance.get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed)
+    api_response = api_instance.get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed, show_cloud_media=show_cloud_media)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges: %s\n" % e)
@@ -2029,6 +2030,7 @@ except ApiException as e:
 | **edge_group_id** | **str**| Filter by edgeGroup.id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
 | **managed** | **bool**| Filter by managed | [optional]  |
+| **show_cloud_media** | **bool**| True to show the cloud media devices in the result. | [optional] [default to True] |
 {: class="table table-striped"}
 
 ### Return type

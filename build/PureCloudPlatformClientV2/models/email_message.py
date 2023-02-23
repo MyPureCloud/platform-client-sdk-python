@@ -54,6 +54,7 @@ class EmailMessage(object):
             'time': 'datetime',
             'history_included': 'bool',
             'state': 'str',
+            'draft_type': 'str',
             'email_size_bytes': 'int',
             'max_email_size_bytes': 'int',
             'self_uri': 'str'
@@ -74,6 +75,7 @@ class EmailMessage(object):
             'time': 'time',
             'history_included': 'historyIncluded',
             'state': 'state',
+            'draft_type': 'draftType',
             'email_size_bytes': 'emailSizeBytes',
             'max_email_size_bytes': 'maxEmailSizeBytes',
             'self_uri': 'selfUri'
@@ -93,6 +95,7 @@ class EmailMessage(object):
         self._time = None
         self._history_included = None
         self._state = None
+        self._draft_type = None
         self._email_size_bytes = None
         self._max_email_size_bytes = None
         self._self_uri = None
@@ -413,7 +416,7 @@ class EmailMessage(object):
     def state(self):
         """
         Gets the state of this EmailMessage.
-
+        The state of the current draft.
 
         :return: The state of this EmailMessage.
         :rtype: str
@@ -424,17 +427,44 @@ class EmailMessage(object):
     def state(self, state):
         """
         Sets the state of this EmailMessage.
-
+        The state of the current draft.
 
         :param state: The state of this EmailMessage.
         :type: str
         """
-        allowed_values = ["Created", "Ready"]
+        allowed_values = ["Created", "Ready", "Edited"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def draft_type(self):
+        """
+        Gets the draft_type of this EmailMessage.
+        The type of draft that need to be treated.
+
+        :return: The draft_type of this EmailMessage.
+        :rtype: str
+        """
+        return self._draft_type
+
+    @draft_type.setter
+    def draft_type(self, draft_type):
+        """
+        Sets the draft_type of this EmailMessage.
+        The type of draft that need to be treated.
+
+        :param draft_type: The draft_type of this EmailMessage.
+        :type: str
+        """
+        allowed_values = ["Reply", "ReplyAll", "Forward"]
+        if draft_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for draft_type -> " + draft_type)
+            self._draft_type = "outdated_sdk_version"
+        else:
+            self._draft_type = draft_type
 
     @property
     def email_size_bytes(self):

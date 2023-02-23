@@ -408,7 +408,7 @@ class OrphanRecording(object):
         :param region: The region of this OrphanRecording.
         :type: str
         """
-        allowed_values = ["af-south-1", "ap-northeast-1", "ap-northeast-2", "ap-south-1", "ap-southeast-2", "ca-central-1", "eu-central-1", "eu-west-1", "eu-west-2", "sa-east-1", "us-east-1", "us-west-2"]
+        allowed_values = ["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-south-1", "ap-southeast-2", "ap-southeast-3", "ca-central-1", "eu-central-1", "eu-west-1", "eu-west-2", "eu-west-3", "sa-east-1", "us-east-1", "us-west-2"]
         if region.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for region -> " + region)
             self._region = "outdated_sdk_version"

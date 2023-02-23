@@ -537,6 +537,8 @@ Wraps GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluation
 Requires ANY permissions: 
 
 * quality:evaluation:view
+* quality:evaluation:assign
+* quality:evaluation:release
 
 ### Example
 
@@ -553,7 +555,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.QualityApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 evaluation_id = 'evaluation_id_example' # str | evaluationId
-expand = 'expand_example' # str | agent, evaluator, evaluationForm (optional)
+expand = 'expand_example' # str | agent, assignee, evaluator, evaluationForm (optional)
 
 try:
     # Get an evaluation
@@ -570,7 +572,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **evaluation_id** | **str**| evaluationId |  |
-| **expand** | **str**| agent, evaluator, evaluationForm | [optional]  |
+| **expand** | **str**| agent, assignee, evaluator, evaluationForm | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -738,13 +740,13 @@ except ApiException as e:
 
 <a name="get_quality_evaluations_query"></a>
 
-## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
 
 
 
 Queries Evaluations and returns a paged list
 
-Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
 
 
 
@@ -776,6 +778,7 @@ previous_page = 'previous_page_example' # str | Previous page token (optional)
 conversation_id = 'conversation_id_example' # str | conversationId specified (optional)
 agent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)
 evaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optional)
+assignee_user_id = 'assignee_user_id_example' # str | assignee user id (optional)
 queue_id = 'queue_id_example' # str | queue id (optional)
 start_time = 'start_time_example' # str | start time of the evaluation query (optional)
 end_time = 'end_time_example' # str | end time of the evaluation query (optional)
@@ -788,7 +791,7 @@ sort_order = 'sort_order_example' # str | sort order options for agentUserId or 
 
 try:
     # Queries Evaluations and returns a paged list
-    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_evaluations_query: %s\n" % e)
@@ -808,6 +811,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId specified | [optional]  |
 | **agent_user_id** | **str**| user id of the agent | [optional]  |
 | **evaluator_user_id** | **str**| evaluator user id | [optional]  |
+| **assignee_user_id** | **str**| assignee user id | [optional]  |
 | **queue_id** | **str**| queue id | [optional]  |
 | **start_time** | **str**| start time of the evaluation query | [optional]  |
 | **end_time** | **str**| end time of the evaluation query | [optional]  |

@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_journey_actionmap**](JourneyApi.html#delete_journey_actionmap) | Delete single action map.|
 |[**delete_journey_actiontemplate**](JourneyApi.html#delete_journey_actiontemplate) | Delete a single action template.|
 |[**delete_journey_outcome**](JourneyApi.html#delete_journey_outcome) | Delete an outcome.|
+|[**delete_journey_outcomes_predictor**](JourneyApi.html#delete_journey_outcomes_predictor) | Delete an outcome predictor.|
 |[**delete_journey_segment**](JourneyApi.html#delete_journey_segment) | Delete a segment.|
 |[**get_journey_actionmap**](JourneyApi.html#get_journey_actionmap) | Retrieve a single action map.|
 |[**get_journey_actionmaps**](JourneyApi.html#get_journey_actionmaps) | Retrieve all action maps.|
@@ -22,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_actiontemplates**](JourneyApi.html#get_journey_actiontemplates) | Retrieve all action templates.|
 |[**get_journey_outcome**](JourneyApi.html#get_journey_outcome) | Retrieve a single outcome.|
 |[**get_journey_outcomes**](JourneyApi.html#get_journey_outcomes) | Retrieve all outcomes.|
+|[**get_journey_outcomes_predictor**](JourneyApi.html#get_journey_outcomes_predictor) | Retrieve a single outcome predictor.|
+|[**get_journey_outcomes_predictors**](JourneyApi.html#get_journey_outcomes_predictors) | Retrieve all outcome predictors.|
 |[**get_journey_segment**](JourneyApi.html#get_journey_segment) | Retrieve a single segment.|
 |[**get_journey_segments**](JourneyApi.html#get_journey_segments) | Retrieve all segments.|
 |[**get_journey_session**](JourneyApi.html#get_journey_session) | Retrieve a single session.|
@@ -36,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_actionmaps_estimates_jobs**](JourneyApi.html#post_journey_actionmaps_estimates_jobs) | Query for estimates|
 |[**post_journey_actiontemplates**](JourneyApi.html#post_journey_actiontemplates) | Create a single action template.|
 |[**post_journey_outcomes**](JourneyApi.html#post_journey_outcomes) | Create an outcome.|
+|[**post_journey_outcomes_predictors**](JourneyApi.html#post_journey_outcomes_predictors) | Create an outcome predictor.|
 |[**post_journey_segments**](JourneyApi.html#post_journey_segments) | Create a segment.|
 {: class="table table-striped"}
 
@@ -185,6 +189,56 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **outcome_id** | **str**| ID of the outcome. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_journey_outcomes_predictor"></a>
+
+##  delete_journey_outcomes_predictor(predictor_id)
+
+
+
+Delete an outcome predictor.
+
+
+
+Wraps DELETE /api/v2/journey/outcomes/predictors/{predictorId} 
+
+Requires ANY permissions: 
+
+* journey:outcomepredictor:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+predictor_id = 'predictor_id_example' # str | ID of predictor
+
+try:
+    # Delete an outcome predictor.
+    api_instance.delete_journey_outcomes_predictor(predictor_id)
+except ApiException as e:
+    print("Exception when calling JourneyApi->delete_journey_outcomes_predictor: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **predictor_id** | **str**| ID of predictor |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -788,6 +842,104 @@ except ApiException as e:
 ### Return type
 
 [**OutcomeListing**](OutcomeListing.html)
+
+<a name="get_journey_outcomes_predictor"></a>
+
+## [**OutcomePredictor**](OutcomePredictor.html) get_journey_outcomes_predictor(predictor_id)
+
+
+
+Retrieve a single outcome predictor.
+
+
+
+Wraps GET /api/v2/journey/outcomes/predictors/{predictorId} 
+
+Requires ANY permissions: 
+
+* journey:outcomepredictor:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+predictor_id = 'predictor_id_example' # str | ID of predictor
+
+try:
+    # Retrieve a single outcome predictor.
+    api_response = api_instance.get_journey_outcomes_predictor(predictor_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_outcomes_predictor: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **predictor_id** | **str**| ID of predictor |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutcomePredictor**](OutcomePredictor.html)
+
+<a name="get_journey_outcomes_predictors"></a>
+
+## [**OutcomePredictorListing**](OutcomePredictorListing.html) get_journey_outcomes_predictors()
+
+
+
+Retrieve all outcome predictors.
+
+
+
+Wraps GET /api/v2/journey/outcomes/predictors 
+
+Requires ANY permissions: 
+
+* journey:outcomepredictor:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+
+try:
+    # Retrieve all outcome predictors.
+    api_response = api_instance.get_journey_outcomes_predictors()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_outcomes_predictors: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**OutcomePredictorListing**](OutcomePredictorListing.html)
 
 <a name="get_journey_segment"></a>
 
@@ -1525,6 +1677,57 @@ except ApiException as e:
 ### Return type
 
 [**Outcome**](Outcome.html)
+
+<a name="post_journey_outcomes_predictors"></a>
+
+## [**OutcomePredictor**](OutcomePredictor.html) post_journey_outcomes_predictors(body=body)
+
+
+
+Create an outcome predictor.
+
+
+
+Wraps POST /api/v2/journey/outcomes/predictors 
+
+Requires ANY permissions: 
+
+* journey:outcomepredictor:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.OutcomePredictorRequest() # OutcomePredictorRequest |  (optional)
+
+try:
+    # Create an outcome predictor.
+    api_response = api_instance.post_journey_outcomes_predictors(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_outcomes_predictors: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OutcomePredictorRequest**](OutcomePredictorRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutcomePredictor**](OutcomePredictor.html)
 
 <a name="post_journey_segments"></a>
 

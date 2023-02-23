@@ -120,7 +120,7 @@ class DialerAction(object):
         :param action_type_name: The action_type_name of this DialerAction.
         :type: str
         """
-        allowed_values = ["DO_NOT_DIAL", "MODIFY_CONTACT_ATTRIBUTE", "SWITCH_TO_PREVIEW", "APPEND_NUMBER_TO_DNC_LIST", "SCHEDULE_CALLBACK", "CONTACT_UNCALLABLE", "NUMBER_UNCALLABLE", "SET_CALLER_ID", "SET_SKILLS", "DATA_ACTION"]
+        allowed_values = ["DO_NOT_DIAL", "MODIFY_CONTACT_ATTRIBUTE", "SWITCH_TO_PREVIEW", "APPEND_NUMBER_TO_DNC_LIST", "APPEND_CUSTOM_ENTRY_TO_DNC_LIST", "SCHEDULE_CALLBACK", "CONTACT_UNCALLABLE", "NUMBER_UNCALLABLE", "SET_CALLER_ID", "SET_SKILLS", "DATA_ACTION"]
         if action_type_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_type_name -> " + action_type_name)
             self._action_type_name = "outdated_sdk_version"

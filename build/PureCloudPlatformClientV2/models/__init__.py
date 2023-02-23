@@ -1278,6 +1278,7 @@ from .evaluation_question_group_score import EvaluationQuestionGroupScore
 from .evaluation_question_score import EvaluationQuestionScore
 from .evaluation_response import EvaluationResponse
 from .evaluation_scoring_set import EvaluationScoringSet
+from .evaluation_source import EvaluationSource
 from .evaluator_activity import EvaluatorActivity
 from .evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .event_co_browse import EventCoBrowse
@@ -2044,7 +2045,12 @@ from .outcome_achievement import OutcomeAchievement
 from .outcome_config import OutcomeConfig
 from .outcome_event_score import OutcomeEventScore
 from .outcome_listing import OutcomeListing
+from .outcome_predictor import OutcomePredictor
+from .outcome_predictor_listing import OutcomePredictorListing
+from .outcome_predictor_request import OutcomePredictorRequest
 from .outcome_probability_condition import OutcomeProbabilityCondition
+from .outcome_ref import OutcomeRef
+from .outcome_ref_request import OutcomeRefRequest
 from .outcome_scores_result import OutcomeScoresResult
 from .overall_best_points import OverallBestPoints
 from .overall_best_points_item import OverallBestPointsItem
@@ -2926,7 +2932,10 @@ from .transcription_topic_transcript_word import TranscriptionTopicTranscriptWor
 from .transcription_topic_transcription_message import TranscriptionTopicTranscriptionMessage
 from .transcription_topic_transcription_request_status import TranscriptionTopicTranscriptionRequestStatus
 from .transcripts import Transcripts
+from .transfer_destination import TransferDestination
+from .transfer_initiator import TransferInitiator
 from .transfer_request import TransferRequest
+from .transfer_response import TransferResponse
 from .trigger import Trigger
 from .trigger_entity_listing import TriggerEntityListing
 from .trigger_target import TriggerTarget

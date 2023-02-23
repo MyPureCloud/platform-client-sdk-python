@@ -124,7 +124,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_conversations_details_jobs**](ConversationsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
 |[**post_analytics_conversations_details_query**](ConversationsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
 |[**post_conversation_assign**](ConversationsApi.html#post_conversation_assign) | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.|
-|[**post_conversation_cobrowse**](ConversationsApi.html#post_conversation_cobrowse) | Creates a cobrowse session|
+|[**post_conversation_cobrowse**](ConversationsApi.html#post_conversation_cobrowse) | Creates a cobrowse session. Requires \&quot;conversation:cobrowse:add\&quot; (for web messaging) or \&quot;conversation:cobrowsevoice:add\&quot; permission.|
 |[**post_conversation_disconnect**](ConversationsApi.html#post_conversation_disconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.|
 |[**post_conversation_participant_callbacks**](ConversationsApi.html#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
 |[**post_conversation_participant_digits**](ConversationsApi.html#post_conversation_participant_digits) | Sends DTMF to the participant|
@@ -6303,7 +6303,7 @@ except ApiException as e:
 
 
 
-Creates a cobrowse session
+Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
 
 
 
@@ -6312,6 +6312,7 @@ Wraps POST /api/v2/conversations/{conversationId}/cobrowse
 Requires ANY permissions: 
 
 * conversation:cobrowse:add
+* conversation:cobrowseVoice:add
 
 ### Example
 
@@ -6329,7 +6330,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 
 try:
-    # Creates a cobrowse session
+    # Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
     api_response = api_instance.post_conversation_cobrowse(conversation_id)
     pprint(api_response)
 except ApiException as e:

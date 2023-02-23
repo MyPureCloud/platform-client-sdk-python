@@ -54,6 +54,7 @@ class Station(object):
             'web_rtc_persistent_enabled': 'bool',
             'web_rtc_force_turn': 'bool',
             'web_rtc_call_appearances': 'int',
+            'web_rtc_require_media_helper': 'bool',
             'self_uri': 'str'
         }
 
@@ -72,6 +73,7 @@ class Station(object):
             'web_rtc_persistent_enabled': 'webRtcPersistentEnabled',
             'web_rtc_force_turn': 'webRtcForceTurn',
             'web_rtc_call_appearances': 'webRtcCallAppearances',
+            'web_rtc_require_media_helper': 'webRtcRequireMediaHelper',
             'self_uri': 'selfUri'
         }
 
@@ -89,6 +91,7 @@ class Station(object):
         self._web_rtc_persistent_enabled = None
         self._web_rtc_force_turn = None
         self._web_rtc_call_appearances = None
+        self._web_rtc_require_media_helper = None
         self._self_uri = None
 
     @property
@@ -429,6 +432,30 @@ class Station(object):
         
 
         self._web_rtc_call_appearances = web_rtc_call_appearances
+
+    @property
+    def web_rtc_require_media_helper(self):
+        """
+        Gets the web_rtc_require_media_helper of this Station.
+        True when the media helper required.
+
+        :return: The web_rtc_require_media_helper of this Station.
+        :rtype: bool
+        """
+        return self._web_rtc_require_media_helper
+
+    @web_rtc_require_media_helper.setter
+    def web_rtc_require_media_helper(self, web_rtc_require_media_helper):
+        """
+        Sets the web_rtc_require_media_helper of this Station.
+        True when the media helper required.
+
+        :param web_rtc_require_media_helper: The web_rtc_require_media_helper of this Station.
+        :type: bool
+        """
+        
+
+        self._web_rtc_require_media_helper = web_rtc_require_media_helper
 
     @property
     def self_uri(self):

@@ -9666,7 +9666,7 @@ class ConversationsApi(object):
 
     def post_conversation_cobrowse(self, conversation_id, **kwargs):
         """
-        Creates a cobrowse session
+        Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
         
 
         This method makes a synchronous HTTP request by default. To make an

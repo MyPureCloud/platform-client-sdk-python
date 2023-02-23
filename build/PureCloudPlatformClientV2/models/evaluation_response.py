@@ -50,6 +50,7 @@ class EvaluationResponse(object):
             'status': 'str',
             'answers': 'EvaluationScoringSet',
             'agent_has_read': 'bool',
+            'assignee': 'User',
             'release_date': 'datetime',
             'assigned_date': 'datetime',
             'changed_date': 'datetime',
@@ -65,6 +66,7 @@ class EvaluationResponse(object):
             'is_scoring_index': 'bool',
             'authorized_actions': 'list[str]',
             'has_assistance_failed': 'bool',
+            'evaluation_source': 'EvaluationSource',
             'self_uri': 'str'
         }
 
@@ -79,6 +81,7 @@ class EvaluationResponse(object):
             'status': 'status',
             'answers': 'answers',
             'agent_has_read': 'agentHasRead',
+            'assignee': 'assignee',
             'release_date': 'releaseDate',
             'assigned_date': 'assignedDate',
             'changed_date': 'changedDate',
@@ -94,6 +97,7 @@ class EvaluationResponse(object):
             'is_scoring_index': 'isScoringIndex',
             'authorized_actions': 'authorizedActions',
             'has_assistance_failed': 'hasAssistanceFailed',
+            'evaluation_source': 'evaluationSource',
             'self_uri': 'selfUri'
         }
 
@@ -107,6 +111,7 @@ class EvaluationResponse(object):
         self._status = None
         self._answers = None
         self._agent_has_read = None
+        self._assignee = None
         self._release_date = None
         self._assigned_date = None
         self._changed_date = None
@@ -122,6 +127,7 @@ class EvaluationResponse(object):
         self._is_scoring_index = None
         self._authorized_actions = None
         self._has_assistance_failed = None
+        self._evaluation_source = None
         self._self_uri = None
 
     @property
@@ -366,6 +372,30 @@ class EvaluationResponse(object):
         
 
         self._agent_has_read = agent_has_read
+
+    @property
+    def assignee(self):
+        """
+        Gets the assignee of this EvaluationResponse.
+
+
+        :return: The assignee of this EvaluationResponse.
+        :rtype: User
+        """
+        return self._assignee
+
+    @assignee.setter
+    def assignee(self, assignee):
+        """
+        Sets the assignee of this EvaluationResponse.
+
+
+        :param assignee: The assignee of this EvaluationResponse.
+        :type: User
+        """
+        
+
+        self._assignee = assignee
 
     @property
     def release_date(self):
@@ -686,7 +716,7 @@ class EvaluationResponse(object):
     def authorized_actions(self):
         """
         Gets the authorized_actions of this EvaluationResponse.
-        List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit
+        List of user authorized actions on evaluation. Possible values: assign, edit, editScore, editAgentSignoff, delete, release, viewAudit
 
         :return: The authorized_actions of this EvaluationResponse.
         :rtype: list[str]
@@ -697,7 +727,7 @@ class EvaluationResponse(object):
     def authorized_actions(self, authorized_actions):
         """
         Sets the authorized_actions of this EvaluationResponse.
-        List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit
+        List of user authorized actions on evaluation. Possible values: assign, edit, editScore, editAgentSignoff, delete, release, viewAudit
 
         :param authorized_actions: The authorized_actions of this EvaluationResponse.
         :type: list[str]
@@ -729,6 +759,30 @@ class EvaluationResponse(object):
         
 
         self._has_assistance_failed = has_assistance_failed
+
+    @property
+    def evaluation_source(self):
+        """
+        Gets the evaluation_source of this EvaluationResponse.
+        The source that created the evaluation.
+
+        :return: The evaluation_source of this EvaluationResponse.
+        :rtype: EvaluationSource
+        """
+        return self._evaluation_source
+
+    @evaluation_source.setter
+    def evaluation_source(self, evaluation_source):
+        """
+        Sets the evaluation_source of this EvaluationResponse.
+        The source that created the evaluation.
+
+        :param evaluation_source: The evaluation_source of this EvaluationResponse.
+        :type: EvaluationSource
+        """
+        
+
+        self._evaluation_source = evaluation_source
 
     @property
     def self_uri(self):

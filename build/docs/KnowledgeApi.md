@@ -730,7 +730,7 @@ except ApiException as e:
 
 <a name="get_knowledge_guest_session_documents"></a>
 
-## [**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing.html) get_knowledge_guest_session_documents(session_id, category_id=category_id, include_subcategories=include_subcategories, page_size=page_size)
+## [**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing.html) get_knowledge_guest_session_documents(session_id, category_id=category_id, page_size=page_size)
 
 
 
@@ -755,12 +755,11 @@ from pprint import pprint
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 session_id = 'session_id_example' # str | Knowledge guest session ID.
 category_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
-include_subcategories = True # bool | Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)
 page_size = 10 # int | Number of entities to return. Maximum of 200. (optional) (default to 10)
 
 try:
     # Get documents.
-    api_response = api_instance.get_knowledge_guest_session_documents(session_id, category_id=category_id, include_subcategories=include_subcategories, page_size=page_size)
+    api_response = api_instance.get_knowledge_guest_session_documents(session_id, category_id=category_id, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_guest_session_documents: %s\n" % e)
@@ -773,7 +772,6 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
 | **category_id** | [**list[str]**](str.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
-| **include_subcategories** | **bool**| Deprecated - Do Not Use. Works along with &#39;categoryId&#39; query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional]  |
 | **page_size** | **int**| Number of entities to return. Maximum of 200. | [optional] [default to 10] |
 {: class="table table-striped"}
 

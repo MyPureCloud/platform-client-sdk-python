@@ -1110,14 +1110,13 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str session_id: Knowledge guest session ID. (required)
         :param list[str] category_id: If specified, retrieves documents associated with category ids, comma separated values expected.
-        :param bool include_subcategories: Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
         :param int page_size: Number of entities to return. Maximum of 200.
         :return: KnowledgeGuestDocumentResponseListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['session_id', 'category_id', 'include_subcategories', 'page_size']
+        all_params = ['session_id', 'category_id', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -1143,8 +1142,6 @@ class KnowledgeApi(object):
         query_params = {}
         if 'category_id' in params:
             query_params['categoryId'] = params['category_id']
-        if 'include_subcategories' in params:
-            query_params['includeSubcategories'] = params['include_subcategories']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
 

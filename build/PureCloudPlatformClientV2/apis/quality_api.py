@@ -765,7 +765,7 @@ class QualityApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
         :param str evaluation_id: evaluationId (required)
-        :param str expand: agent, evaluator, evaluationForm
+        :param str expand: agent, assignee, evaluator, evaluationForm
         :return: EvaluationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1081,7 +1081,7 @@ class QualityApi(object):
     def get_quality_evaluations_query(self, **kwargs):
         """
         Queries Evaluations and returns a paged list
-        Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+        Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1102,6 +1102,7 @@ class QualityApi(object):
         :param str conversation_id: conversationId specified
         :param str agent_user_id: user id of the agent
         :param str evaluator_user_id: evaluator user id
+        :param str assignee_user_id: assignee user id
         :param str queue_id: queue id
         :param str start_time: start time of the evaluation query
         :param str end_time: end time of the evaluation query
@@ -1116,7 +1117,7 @@ class QualityApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'conversation_id', 'agent_user_id', 'evaluator_user_id', 'queue_id', 'start_time', 'end_time', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'conversation_id', 'agent_user_id', 'evaluator_user_id', 'assignee_user_id', 'queue_id', 'start_time', 'end_time', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1153,6 +1154,8 @@ class QualityApi(object):
             query_params['agentUserId'] = params['agent_user_id']
         if 'evaluator_user_id' in params:
             query_params['evaluatorUserId'] = params['evaluator_user_id']
+        if 'assignee_user_id' in params:
+            query_params['assigneeUserId'] = params['assignee_user_id']
         if 'queue_id' in params:
             query_params['queueId'] = params['queue_id']
         if 'start_time' in params:
