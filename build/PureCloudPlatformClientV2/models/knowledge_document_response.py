@@ -125,7 +125,7 @@ class KnowledgeDocumentResponse(object):
     def title(self):
         """
         Gets the title of this KnowledgeDocumentResponse.
-        Document title.
+        Document title, having a limit of 500 words.
 
         :return: The title of this KnowledgeDocumentResponse.
         :rtype: str
@@ -136,7 +136,7 @@ class KnowledgeDocumentResponse(object):
     def title(self, title):
         """
         Sets the title of this KnowledgeDocumentResponse.
-        Document title.
+        Document title, having a limit of 500 words.
 
         :param title: The title of this KnowledgeDocumentResponse.
         :type: str

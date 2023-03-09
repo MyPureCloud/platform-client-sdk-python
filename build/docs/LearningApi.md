@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_learning_modules_assignments**](LearningApi.html#get_learning_modules_assignments) | Get all learning modules of an organization including assignments for a specific user|
 |[**get_learning_modules_coverart_cover_art_id**](LearningApi.html#get_learning_modules_coverart_cover_art_id) | Get a specific Learning Module cover art using ID|
 |[**patch_learning_assignment**](LearningApi.html#patch_learning_assignment) | Update Learning Assignment|
+|[**patch_learning_assignment_reschedule**](LearningApi.html#patch_learning_assignment_reschedule) | Reschedule Learning Assignment|
 |[**post_learning_assessments_scoring**](LearningApi.html#post_learning_assessments_scoring) | Score learning assessment for preview|
 |[**post_learning_assignment_reassign**](LearningApi.html#post_learning_assignment_reassign) | Reassign Learning Assignment|
 |[**post_learning_assignment_reset**](LearningApi.html#post_learning_assignment_reset) | Reset Learning Assignment|
@@ -32,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_learning_module_publish**](LearningApi.html#post_learning_module_publish) | Publish a Learning module|
 |[**post_learning_modules**](LearningApi.html#post_learning_modules) | Create a new learning module|
 |[**post_learning_rules_query**](LearningApi.html#post_learning_rules_query) | Get users for learning module rule|
+|[**post_learning_scheduleslots_query**](LearningApi.html#post_learning_scheduleslots_query) | Get list of possible slots where a learning activity can be scheduled.|
 |[**put_learning_module**](LearningApi.html#put_learning_module) | Update a learning module|
 |[**put_learning_module_rule**](LearningApi.html#put_learning_module_rule) | Update a learning module rule|
 {: class="table table-striped"}
@@ -266,7 +268,7 @@ except ApiException as e:
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **user_id** | [**list[str]**](str.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
 | **types** | [**list[str]**](str.html)| Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
-| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
+| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
 | **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
 
@@ -342,7 +344,7 @@ except ApiException as e:
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **types** | [**list[str]**](str.html)| Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
-| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
+| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
 | **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
 
@@ -687,7 +689,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **search_term** | **str**| Search Term (searches by name and description) | [optional]  |
 | **overdue** | **str**| Specifies if only modules with overdue/not overdue (overdue is \&quot;True\&quot; or \&quot;False\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or omitted, both are returned and can including modules that are unassigned. | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
-| **assignment_states** | [**list[str]**](str.html)| Specifies the assignment states to return. | [optional] <br />**Values**: NotAssigned, Assigned, InProgress, Completed |
+| **assignment_states** | [**list[str]**](str.html)| Specifies the assignment states to return. | [optional] <br />**Values**: NotAssigned, Assigned, InProgress, Completed, InvalidSchedule |
 | **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: coverArt |
 {: class="table table-striped"}
 
@@ -792,6 +794,59 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assignment_id** | **str**| The ID of Learning Assignment |  |
 | **body** | [**LearningAssignmentUpdate**](LearningAssignmentUpdate.html)| The Learning Assignment to be updated | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningAssignment**](LearningAssignment.html)
+
+<a name="patch_learning_assignment_reschedule"></a>
+
+## [**LearningAssignment**](LearningAssignment.html) patch_learning_assignment_reschedule(assignment_id, body=body)
+
+
+
+Reschedule Learning Assignment
+
+
+
+Wraps PATCH /api/v2/learning/assignments/{assignmentId}/reschedule 
+
+Requires ANY permissions: 
+
+* learning:assignment:reschedule
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+assignment_id = 'assignment_id_example' # str | The ID of Learning Assignment
+body = PureCloudPlatformClientV2.LearningAssignmentReschedule() # LearningAssignmentReschedule | The Learning assignment reschedule model (optional)
+
+try:
+    # Reschedule Learning Assignment
+    api_response = api_instance.patch_learning_assignment_reschedule(assignment_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->patch_learning_assignment_reschedule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assignment_id** | **str**| The ID of Learning Assignment |  |
+| **body** | [**LearningAssignmentReschedule**](LearningAssignmentReschedule.html)| The Learning assignment reschedule model | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1376,6 +1431,57 @@ except ApiException as e:
 ### Return type
 
 [**LearningAssignmentUserListing**](LearningAssignmentUserListing.html)
+
+<a name="post_learning_scheduleslots_query"></a>
+
+## [**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse.html) post_learning_scheduleslots_query(body)
+
+
+
+Get list of possible slots where a learning activity can be scheduled.
+
+
+
+Wraps POST /api/v2/learning/scheduleslots/query 
+
+Requires ANY permissions: 
+
+* learning:scheduleSlot:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+body = PureCloudPlatformClientV2.LearningScheduleSlotsQueryRequest() # LearningScheduleSlotsQueryRequest | The slot search request
+
+try:
+    # Get list of possible slots where a learning activity can be scheduled.
+    api_response = api_instance.post_learning_scheduleslots_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_scheduleslots_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**LearningScheduleSlotsQueryRequest**](LearningScheduleSlotsQueryRequest.html)| The slot search request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse.html)
 
 <a name="put_learning_module"></a>
 

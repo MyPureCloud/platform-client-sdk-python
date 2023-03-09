@@ -21,6 +21,7 @@ title: DncListCreate
 | **dnc_codes** | **list[str]** | The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com. | [optional] |
 | **license_id** | **str** | A gryphon license number. Required if the dncSourceType is gryphon. | [optional] |
 | **division** | [**DomainEntityRef**](DomainEntityRef.html) | The division this DncList belongs to. | [optional] |
+| **custom_exclusion_column** | **str** | The column to evaluate exclusion against. Required if the dncSourceType is rds_custom. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

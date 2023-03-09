@@ -673,6 +673,84 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_speechandtextanalytics_program_transcriptionengines(self, program_id, **kwargs):
+        """
+        Get transcription engine settings of a program
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_program_transcriptionengines(program_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: The id of the program (required)
+        :return: ProgramTranscriptionEngines
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_program_transcriptionengines" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `get_speechandtextanalytics_program_transcriptionengines`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProgramTranscriptionEngines',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_speechandtextanalytics_programs(self, **kwargs):
         """
         Get the list of Speech & Text Analytics programs
@@ -984,6 +1062,78 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ProgramJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_programs_transcriptionengines_dialects(self, **kwargs):
+        """
+        Get supported dialects for each transcription engine
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_programs_transcriptionengines_dialects(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: SupportedDialectsEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_programs_transcriptionengines_dialects" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/transcriptionengines/dialects'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SupportedDialectsEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2469,6 +2619,90 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ProgramMappings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_speechandtextanalytics_program_transcriptionengines(self, program_id, body, **kwargs):
+        """
+        Update transcription engine settings of a program
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_speechandtextanalytics_program_transcriptionengines(program_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: The id of the program (required)
+        :param TranscriptionEnginesRequest body: Program transcription engine setting (required)
+        :return: ProgramTranscriptionEngines
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_speechandtextanalytics_program_transcriptionengines" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `put_speechandtextanalytics_program_transcriptionengines`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_speechandtextanalytics_program_transcriptionengines`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProgramTranscriptionEngines',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

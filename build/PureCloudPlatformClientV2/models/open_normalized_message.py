@@ -46,7 +46,7 @@ class OpenNormalizedMessage(object):
             'text': 'str',
             'content': 'list[OpenMessageContent]',
             'status': 'str',
-            'reasons': 'list[Reason]',
+            'reasons': 'list[ConversationReason]',
             'is_final_receipt': 'bool',
             'direction': 'str',
             'metadata': 'dict(str, str)'
@@ -233,7 +233,7 @@ class OpenNormalizedMessage(object):
         List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
 
         :return: The reasons of this OpenNormalizedMessage.
-        :rtype: list[Reason]
+        :rtype: list[ConversationReason]
         """
         return self._reasons
 
@@ -244,7 +244,7 @@ class OpenNormalizedMessage(object):
         List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
 
         :param reasons: The reasons of this OpenNormalizedMessage.
-        :type: list[Reason]
+        :type: list[ConversationReason]
         """
         
 

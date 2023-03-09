@@ -735,7 +735,7 @@ class WorkitemsUserEventsNotificationWorkitem(object):
         :param assignment_state: The assignment_state of this WorkitemsUserEventsNotificationWorkitem.
         :type: str
         """
-        allowed_values = ["Unknown", "Idle", "AcdStarted", "Alerting", "AlertTimeout", "Declined", "Connected", "Disconnected", "Parked", "Held", "AcdCancelled", "Terminated"]
+        allowed_values = ["Unknown", "Idle", "AcdStarted", "Alerting", "AlertTimeout", "Declined", "Connected", "Disconnected", "Parked", "Held", "AcdCancelled", "Terminated", "AcdExpired"]
         if assignment_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for assignment_state -> " + assignment_state)
             self._assignment_state = "outdated_sdk_version"

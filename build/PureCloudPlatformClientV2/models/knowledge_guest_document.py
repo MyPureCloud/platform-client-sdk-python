@@ -122,7 +122,7 @@ class KnowledgeGuestDocument(object):
     def title(self):
         """
         Gets the title of this KnowledgeGuestDocument.
-        Document title.
+        Document title, having a limit of 500 words.
 
         :return: The title of this KnowledgeGuestDocument.
         :rtype: str
@@ -133,7 +133,7 @@ class KnowledgeGuestDocument(object):
     def title(self, title):
         """
         Sets the title of this KnowledgeGuestDocument.
-        Document title.
+        Document title, having a limit of 500 words.
 
         :param title: The title of this KnowledgeGuestDocument.
         :type: str

@@ -41,7 +41,7 @@ class OpenMessageContent(object):
         """
         self.swagger_types = {
             'content_type': 'str',
-            'attachment': 'ContentAttachment'
+            'attachment': 'ConversationContentAttachment'
         }
 
         self.attribute_map = {
@@ -86,7 +86,7 @@ class OpenMessageContent(object):
         Attachment content.
 
         :return: The attachment of this OpenMessageContent.
-        :rtype: ContentAttachment
+        :rtype: ConversationContentAttachment
         """
         return self._attachment
 
@@ -97,7 +97,7 @@ class OpenMessageContent(object):
         Attachment content.
 
         :param attachment: The attachment of this OpenMessageContent.
-        :type: ContentAttachment
+        :type: ConversationContentAttachment
         """
         
 

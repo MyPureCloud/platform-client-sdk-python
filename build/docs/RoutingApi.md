@@ -84,6 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_queues**](RoutingApi.html#get_user_queues) | Get queues for user|
 |[**get_user_routinglanguages**](RoutingApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
+|[**get_user_skillgroups**](RoutingApi.html#get_user_skillgroups) | Get skill groups for a user|
 |[**patch_routing_conversation**](RoutingApi.html#patch_routing_conversation) | Update attributes of an in-queue conversation|
 |[**patch_routing_email_domain**](RoutingApi.html#patch_routing_email_domain) | Update domain settings|
 |[**patch_routing_email_domain_validate**](RoutingApi.html#patch_routing_email_domain_validate) | Validate domain settings|
@@ -3692,7 +3693,7 @@ except ApiException as e:
 
 <a name="get_routing_sms_phonenumber"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) get_routing_sms_phonenumber(address_id)
+## [**SmsPhoneNumber**](SmsPhoneNumber.html) get_routing_sms_phonenumber(address_id, expand=expand)
 
 
 
@@ -3720,10 +3721,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 address_id = 'address_id_example' # str | Address ID
+expand = 'expand_example' # str | Expand response with additional information (optional)
 
 try:
     # Get a phone number provisioned for SMS.
-    api_response = api_instance.get_routing_sms_phonenumber(address_id)
+    api_response = api_instance.get_routing_sms_phonenumber(address_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_sms_phonenumber: %s\n" % e)
@@ -3735,6 +3737,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
+| **expand** | **str**| Expand response with additional information | [optional] <br />**Values**: compliance |
 {: class="table table-striped"}
 
 ### Return type
@@ -4190,6 +4193,63 @@ except ApiException as e:
 ### Return type
 
 [**UserSkillEntityListing**](UserSkillEntityListing.html)
+
+<a name="get_user_skillgroups"></a>
+
+## [**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html) get_user_skillgroups(user_id, page_size=page_size, after=after, before=before)
+
+
+
+Get skill groups for a user
+
+
+
+Wraps GET /api/v2/users/{userId}/skillgroups 
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+page_size = 25 # int | Page size (optional) (default to 25)
+after = 'after_example' # str | The cursor that points to the next page (optional)
+before = 'before_example' # str | The cursor that points to the previous page (optional)
+
+try:
+    # Get skill groups for a user
+    api_response = api_instance.get_user_skillgroups(user_id, page_size=page_size, after=after, before=before)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_user_skillgroups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **after** | **str**| The cursor that points to the next page | [optional]  |
+| **before** | **str**| The cursor that points to the previous page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html)
 
 <a name="patch_routing_conversation"></a>
 

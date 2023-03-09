@@ -12,7 +12,6 @@ title: QueueConversationVideoEventTopicAddress
 | **address_normalized** | **str** | The normalized address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table. | [optional] |
 | **address_raw** | **str** | The address as close to the bits on the wire as possible. | [optional] |
 | **address_displayable** | **str** | The displayable address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table. | [optional] |
-| **additional_properties** | **dict(str, object)** |  | [optional] |
 {: class="table table-striped"}
 
 

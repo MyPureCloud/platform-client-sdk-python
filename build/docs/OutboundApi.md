@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_contactlists**](OutboundApi.html#delete_outbound_contactlists) | Delete multiple contact lists.|
 |[**delete_outbound_digitalruleset**](OutboundApi.html#delete_outbound_digitalruleset) | Delete an Outbound Digital Rule Set|
 |[**delete_outbound_dnclist**](OutboundApi.html#delete_outbound_dnclist) | Delete dialer DNC list|
+|[**delete_outbound_dnclist_customexclusioncolumns**](OutboundApi.html#delete_outbound_dnclist_customexclusioncolumns) | Deletes all or expired custom exclusion column entries from a DNC list.|
 |[**delete_outbound_dnclist_emailaddresses**](OutboundApi.html#delete_outbound_dnclist_emailaddresses) | Deletes all or expired email addresses from a DNC list.|
 |[**delete_outbound_dnclist_phonenumbers**](OutboundApi.html#delete_outbound_dnclist_phonenumbers) | Deletes all or expired phone numbers from a DNC list.|
 |[**delete_outbound_messagingcampaign**](OutboundApi.html#delete_outbound_messagingcampaign) | Delete an Outbound Messaging Campaign|
@@ -89,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_sequences**](OutboundApi.html#get_outbound_sequences) | Query a list of dialer campaign sequences.|
 |[**get_outbound_settings**](OutboundApi.html#get_outbound_settings) | Get the outbound settings for this organization|
 |[**get_outbound_wrapupcodemappings**](OutboundApi.html#get_outbound_wrapupcodemappings) | Get the Dialer wrap up code mapping.|
+|[**patch_outbound_dnclist_customexclusioncolumns**](OutboundApi.html#patch_outbound_dnclist_customexclusioncolumns) | Add entries to or delete entries from a DNC list.|
 |[**patch_outbound_dnclist_emailaddresses**](OutboundApi.html#patch_outbound_dnclist_emailaddresses) | Add emails to or Delete emails from a DNC list.|
 |[**patch_outbound_dnclist_phonenumbers**](OutboundApi.html#patch_outbound_dnclist_phonenumbers) | Add numbers to or delete numbers from a DNC list.|
 |[**patch_outbound_settings**](OutboundApi.html#patch_outbound_settings) | Update the outbound settings for this organization|
@@ -788,6 +790,60 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_dnclist_customexclusioncolumns"></a>
+
+##  delete_outbound_dnclist_customexclusioncolumns(dnc_list_id, expired_only=expired_only)
+
+
+
+Deletes all or expired custom exclusion column entries from a DNC list.
+
+This operation is only for Internal DNC lists of custom exclusion column entries
+
+
+
+Wraps DELETE /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns 
+
+Requires ANY permissions: 
+
+* outbound:dnc:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+dnc_list_id = 'dnc_list_id_example' # str | DncList ID
+expired_only = False # bool | Set to true to only remove DNC entries that are expired (optional) (default to False)
+
+try:
+    # Deletes all or expired custom exclusion column entries from a DNC list.
+    api_instance.delete_outbound_dnclist_customexclusioncolumns(dnc_list_id, expired_only=expired_only)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_dnclist_customexclusioncolumns: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dnc_list_id** | **str**| DncList ID |  |
+| **expired_only** | **bool**| Set to true to only remove DNC entries that are expired | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4561,6 +4617,60 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+
+<a name="patch_outbound_dnclist_customexclusioncolumns"></a>
+
+##  patch_outbound_dnclist_customexclusioncolumns(dnc_list_id, body)
+
+
+
+Add entries to or delete entries from a DNC list.
+
+Only Internal DNC lists may be deleted from
+
+
+
+Wraps PATCH /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns 
+
+Requires ANY permissions: 
+
+* outbound:dnc:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+dnc_list_id = 'dnc_list_id_example' # str | DncList ID
+body = PureCloudPlatformClientV2.DncPatchCustomExclusionColumnsRequest() # DncPatchCustomExclusionColumnsRequest | DNC Custom exclusion column entries
+
+try:
+    # Add entries to or delete entries from a DNC list.
+    api_instance.patch_outbound_dnclist_customexclusioncolumns(dnc_list_id, body)
+except ApiException as e:
+    print("Exception when calling OutboundApi->patch_outbound_dnclist_customexclusioncolumns: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dnc_list_id** | **str**| DncList ID |  |
+| **body** | [**DncPatchCustomExclusionColumnsRequest**](DncPatchCustomExclusionColumnsRequest.html)| DNC Custom exclusion column entries |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="patch_outbound_dnclist_emailaddresses"></a>
 

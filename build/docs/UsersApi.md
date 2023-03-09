@@ -41,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_routinglanguages**](UsersApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](UsersApi.html#get_user_routingskills) | List routing skills for user|
 |[**get_user_routingstatus**](UsersApi.html#get_user_routingstatus) | Fetch the routing status of a user|
+|[**get_user_skillgroups**](UsersApi.html#get_user_skillgroups) | Get skill groups for a user|
 |[**get_user_state**](UsersApi.html#get_user_state) | Get user state information.|
 |[**get_user_station**](UsersApi.html#get_user_station) | Get station information for user|
 |[**get_user_superiors**](UsersApi.html#get_user_superiors) | Get superiors|
@@ -1834,6 +1835,63 @@ except ApiException as e:
 
 [**RoutingStatus**](RoutingStatus.html)
 
+<a name="get_user_skillgroups"></a>
+
+## [**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html) get_user_skillgroups(user_id, page_size=page_size, after=after, before=before)
+
+
+
+Get skill groups for a user
+
+
+
+Wraps GET /api/v2/users/{userId}/skillgroups 
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+page_size = 25 # int | Page size (optional) (default to 25)
+after = 'after_example' # str | The cursor that points to the next page (optional)
+before = 'before_example' # str | The cursor that points to the previous page (optional)
+
+try:
+    # Get skill groups for a user
+    api_response = api_instance.get_user_skillgroups(user_id, page_size=page_size, after=after, before=before)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_user_skillgroups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **after** | **str**| The cursor that points to the next page | [optional]  |
+| **before** | **str**| The cursor that points to the previous page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html)
+
 <a name="get_user_state"></a>
 
 ## [**UserState**](UserState.html) get_user_state(user_id)
@@ -2299,7 +2357,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **activity_id** | **str**| Specifies the activity ID, maps to either assignment or appointment ID |  |
-| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
+| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External |
 {: class="table table-striped"}
 
 ### Return type

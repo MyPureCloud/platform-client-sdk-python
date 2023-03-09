@@ -41,16 +41,19 @@ class AppendToDncActionSettings(object):
         """
         self.swagger_types = {
             'expire': 'bool',
-            'expiration_duration': 'str'
+            'expiration_duration': 'str',
+            'list_type': 'str'
         }
 
         self.attribute_map = {
             'expire': 'expire',
-            'expiration_duration': 'expirationDuration'
+            'expiration_duration': 'expirationDuration',
+            'list_type': 'listType'
         }
 
         self._expire = None
         self._expiration_duration = None
+        self._list_type = None
 
     @property
     def expire(self):
@@ -99,6 +102,33 @@ class AppendToDncActionSettings(object):
         
 
         self._expiration_duration = expiration_duration
+
+    @property
+    def list_type(self):
+        """
+        Gets the list_type of this AppendToDncActionSettings.
+        The Dnc List Type to append entries to
+
+        :return: The list_type of this AppendToDncActionSettings.
+        :rtype: str
+        """
+        return self._list_type
+
+    @list_type.setter
+    def list_type(self, list_type):
+        """
+        Sets the list_type of this AppendToDncActionSettings.
+        The Dnc List Type to append entries to
+
+        :param list_type: The list_type of this AppendToDncActionSettings.
+        :type: str
+        """
+        allowed_values = ["Rds", "RdsCustom"]
+        if list_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for list_type -> " + list_type)
+            self._list_type = "outdated_sdk_version"
+        else:
+            self._list_type = list_type
 
     def to_dict(self):
         """

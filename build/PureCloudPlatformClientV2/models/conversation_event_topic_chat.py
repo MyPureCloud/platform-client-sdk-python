@@ -56,8 +56,7 @@ class ConversationEventTopicChat(object):
             'journey_context': 'ConversationEventTopicJourneyContext',
             'wrapup': 'ConversationEventTopicWrapup',
             'after_call_work': 'ConversationEventTopicAfterCallWork',
-            'after_call_work_required': 'bool',
-            'additional_properties': 'dict(str, object)'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -77,8 +76,7 @@ class ConversationEventTopicChat(object):
             'journey_context': 'journeyContext',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'additional_properties': 'additionalProperties'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -98,7 +96,6 @@ class ConversationEventTopicChat(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._additional_properties = None
 
     @property
     def state(self):
@@ -516,30 +513,6 @@ class ConversationEventTopicChat(object):
         
 
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationEventTopicChat.
-
-
-        :return: The additional_properties of this ConversationEventTopicChat.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationEventTopicChat.
-
-
-        :param additional_properties: The additional_properties of this ConversationEventTopicChat.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

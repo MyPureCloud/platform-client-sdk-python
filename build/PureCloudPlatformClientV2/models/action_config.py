@@ -40,17 +40,44 @@ class ActionConfig(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'timeout_seconds': 'int',
             'request': 'RequestConfig',
             'response': 'ResponseConfig'
         }
 
         self.attribute_map = {
+            'timeout_seconds': 'timeoutSeconds',
             'request': 'request',
             'response': 'response'
         }
 
+        self._timeout_seconds = None
         self._request = None
         self._response = None
+
+    @property
+    def timeout_seconds(self):
+        """
+        Gets the timeout_seconds of this ActionConfig.
+        Optional 1-60 second timeout enforced on the execution or test of this action. This setting is invalid for Custom Authentication Actions.
+
+        :return: The timeout_seconds of this ActionConfig.
+        :rtype: int
+        """
+        return self._timeout_seconds
+
+    @timeout_seconds.setter
+    def timeout_seconds(self, timeout_seconds):
+        """
+        Sets the timeout_seconds of this ActionConfig.
+        Optional 1-60 second timeout enforced on the execution or test of this action. This setting is invalid for Custom Authentication Actions.
+
+        :param timeout_seconds: The timeout_seconds of this ActionConfig.
+        :type: int
+        """
+        
+
+        self._timeout_seconds = timeout_seconds
 
     @property
     def request(self):

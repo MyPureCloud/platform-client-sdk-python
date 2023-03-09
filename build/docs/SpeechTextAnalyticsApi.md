@@ -16,10 +16,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_conversation_communication_transcripturl**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation_communication_transcripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation|
 |[**get_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program) | Get a Speech &amp; Text Analytics program by id|
 |[**get_speechandtextanalytics_program_mappings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program_mappings) | Get Speech &amp; Text Analytics program mappings to queues and flows by id|
+|[**get_speechandtextanalytics_program_transcriptionengines**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program_transcriptionengines) | Get transcription engine settings of a program|
 |[**get_speechandtextanalytics_programs**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs) | Get the list of Speech &amp; Text Analytics programs|
 |[**get_speechandtextanalytics_programs_general_job**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_general_job) | Get a Speech &amp; Text Analytics general program job by id|
 |[**get_speechandtextanalytics_programs_mappings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_mappings) | Get the list of Speech &amp; Text Analytics programs mappings to queues and flows|
 |[**get_speechandtextanalytics_programs_publishjob**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_publishjob) | Get a Speech &amp; Text Analytics publish programs job by id|
+|[**get_speechandtextanalytics_programs_transcriptionengines_dialects**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_transcriptionengines_dialects) | Get supported dialects for each transcription engine|
 |[**get_speechandtextanalytics_programs_unpublished**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_programs_unpublished) | Get the list of Speech &amp; Text Analytics unpublished programs|
 |[**get_speechandtextanalytics_sentiment_dialects**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_sentiment_dialects) | Get the list of Speech &amp; Text Analytics sentiment supported dialects|
 |[**get_speechandtextanalytics_sentimentfeedback**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_sentimentfeedback) | Get the list of Speech &amp; Text Analytics SentimentFeedback|
@@ -39,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_speechandtextanalytics_transcripts_search**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_transcripts_search) | Search resources.|
 |[**put_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program) | Update existing Speech &amp; Text Analytics program|
 |[**put_speechandtextanalytics_program_mappings**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program_mappings) | Set Speech &amp; Text Analytics program mappings to queues and flows|
+|[**put_speechandtextanalytics_program_transcriptionengines**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program_transcriptionengines) | Update transcription engine settings of a program|
 |[**put_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_settings) | Update Speech And Text Analytics Settings|
 |[**put_speechandtextanalytics_topic**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_topic) | Update existing Speech &amp; Text Analytics topic|
 {: class="table table-striped"}
@@ -447,6 +450,57 @@ except ApiException as e:
 
 [**ProgramMappings**](ProgramMappings.html)
 
+<a name="get_speechandtextanalytics_program_transcriptionengines"></a>
+
+## [**ProgramTranscriptionEngines**](ProgramTranscriptionEngines.html) get_speechandtextanalytics_program_transcriptionengines(program_id)
+
+
+
+Get transcription engine settings of a program
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+program_id = 'program_id_example' # str | The id of the program
+
+try:
+    # Get transcription engine settings of a program
+    api_response = api_instance.get_speechandtextanalytics_program_transcriptionengines(program_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_program_transcriptionengines: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| The id of the program |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ProgramTranscriptionEngines**](ProgramTranscriptionEngines.html)
+
 <a name="get_speechandtextanalytics_programs"></a>
 
 ## [**ProgramsEntityListing**](ProgramsEntityListing.html) get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state)
@@ -659,6 +713,52 @@ except ApiException as e:
 ### Return type
 
 [**ProgramJob**](ProgramJob.html)
+
+<a name="get_speechandtextanalytics_programs_transcriptionengines_dialects"></a>
+
+## [**SupportedDialectsEntityListing**](SupportedDialectsEntityListing.html) get_speechandtextanalytics_programs_transcriptionengines_dialects()
+
+
+
+Get supported dialects for each transcription engine
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+
+try:
+    # Get supported dialects for each transcription engine
+    api_response = api_instance.get_speechandtextanalytics_programs_transcriptionengines_dialects()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_programs_transcriptionengines_dialects: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**SupportedDialectsEntityListing**](SupportedDialectsEntityListing.html)
 
 <a name="get_speechandtextanalytics_programs_unpublished"></a>
 
@@ -1636,6 +1736,59 @@ except ApiException as e:
 ### Return type
 
 [**ProgramMappings**](ProgramMappings.html)
+
+<a name="put_speechandtextanalytics_program_transcriptionengines"></a>
+
+## [**ProgramTranscriptionEngines**](ProgramTranscriptionEngines.html) put_speechandtextanalytics_program_transcriptionengines(program_id, body)
+
+
+
+Update transcription engine settings of a program
+
+
+
+Wraps PUT /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+program_id = 'program_id_example' # str | The id of the program
+body = PureCloudPlatformClientV2.TranscriptionEnginesRequest() # TranscriptionEnginesRequest | Program transcription engine setting
+
+try:
+    # Update transcription engine settings of a program
+    api_response = api_instance.put_speechandtextanalytics_program_transcriptionengines(program_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->put_speechandtextanalytics_program_transcriptionengines: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| The id of the program |  |
+| **body** | [**TranscriptionEnginesRequest**](TranscriptionEnginesRequest.html)| Program transcription engine setting |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ProgramTranscriptionEngines**](ProgramTranscriptionEngines.html)
 
 <a name="put_speechandtextanalytics_settings"></a>
 

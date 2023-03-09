@@ -272,7 +272,7 @@ void (empty response body)
 
 <a name="post_notifications_channel_subscriptions"></a>
 
-## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) post_notifications_channel_subscriptions(channel_id, body)
+## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) post_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
 
 
 
@@ -300,10 +300,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.NotificationsApi()
 channel_id = 'channel_id_example' # str | Channel ID
 body = [PureCloudPlatformClientV2.ChannelTopic()] # list[ChannelTopic] | Body
+ignore_errors = False # bool | Optionally prevent throwing of errors for failed permissions checks. (optional) (default to False)
 
 try:
     # Add a list of subscriptions to the existing list of subscriptions
-    api_response = api_instance.post_notifications_channel_subscriptions(channel_id, body)
+    api_response = api_instance.post_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling NotificationsApi->post_notifications_channel_subscriptions: %s\n" % e)
@@ -316,6 +317,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **channel_id** | **str**| Channel ID |  |
 | **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body |  |
+| **ignore_errors** | **bool**| Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -372,7 +374,7 @@ This endpoint does not need any parameters.
 
 <a name="put_notifications_channel_subscriptions"></a>
 
-## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) put_notifications_channel_subscriptions(channel_id, body)
+## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) put_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
 
 
 
@@ -400,10 +402,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.NotificationsApi()
 channel_id = 'channel_id_example' # str | Channel ID
 body = [PureCloudPlatformClientV2.ChannelTopic()] # list[ChannelTopic] | Body
+ignore_errors = False # bool | Optionally prevent throwing of errors for failed permissions checks. (optional) (default to False)
 
 try:
     # Replace the current list of subscriptions with a new list.
-    api_response = api_instance.put_notifications_channel_subscriptions(channel_id, body)
+    api_response = api_instance.put_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling NotificationsApi->put_notifications_channel_subscriptions: %s\n" % e)
@@ -416,6 +419,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **channel_id** | **str**| Channel ID |  |
 | **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body |  |
+| **ignore_errors** | **bool**| Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type

@@ -169,6 +169,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messaging_integrations_twitter**](ConversationsApi.html#post_conversations_messaging_integrations_twitter) | Create a Twitter Integration|
 |[**post_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp) | Create a WhatsApp Integration|
 |[**post_conversations_messaging_supportedcontent**](ConversationsApi.html#post_conversations_messaging_supportedcontent) | Create a Supported Content profile|
+|[**post_conversations_participants_attributes_search**](ConversationsApi.html#post_conversations_participants_attributes_search) | Search conversations|
 |[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
 |[**put_conversation_secureattributes**](ConversationsApi.html#put_conversation_secureattributes) | Set the secure attributes on a conversation.|
 |[**put_conversation_tags**](ConversationsApi.html#put_conversation_tags) | Update the tags on a conversation.|
@@ -8666,6 +8667,57 @@ except ApiException as e:
 ### Return type
 
 [**SupportedContent**](SupportedContent.html)
+
+<a name="post_conversations_participants_attributes_search"></a>
+
+## [**JsonCursorSearchResponse**](JsonCursorSearchResponse.html) post_conversations_participants_attributes_search(body)
+
+
+
+Search conversations
+
+
+
+Wraps POST /api/v2/conversations/participants/attributes/search 
+
+Requires ANY permissions: 
+
+* conversation:participant:attributesview
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.ConversationParticipantSearchRequest() # ConversationParticipantSearchRequest | Search request options
+
+try:
+    # Search conversations
+    api_response = api_instance.post_conversations_participants_attributes_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_participants_attributes_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
 
 <a name="put_conversation_participant_flaggedreason"></a>
 

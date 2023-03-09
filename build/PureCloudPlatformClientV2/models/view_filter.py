@@ -192,7 +192,10 @@ class ViewFilter(object):
             'favourite_dashboard': 'bool',
             'my_dashboard': 'bool',
             'station_errors': 'list[str]',
-            'canonical_contact_ids': 'list[str]'
+            'canonical_contact_ids': 'list[str]',
+            'alert_rule_ids': 'list[str]',
+            'evaluation_form_context_ids': 'list[str]',
+            'evaluation_statuses': 'list[str]'
         }
 
         self.attribute_map = {
@@ -348,7 +351,10 @@ class ViewFilter(object):
             'favourite_dashboard': 'favouriteDashboard',
             'my_dashboard': 'myDashboard',
             'station_errors': 'stationErrors',
-            'canonical_contact_ids': 'canonicalContactIds'
+            'canonical_contact_ids': 'canonicalContactIds',
+            'alert_rule_ids': 'alertRuleIds',
+            'evaluation_form_context_ids': 'evaluationFormContextIds',
+            'evaluation_statuses': 'evaluationStatuses'
         }
 
         self._media_types = None
@@ -504,6 +510,9 @@ class ViewFilter(object):
         self._my_dashboard = None
         self._station_errors = None
         self._canonical_contact_ids = None
+        self._alert_rule_ids = None
+        self._evaluation_form_context_ids = None
+        self._evaluation_statuses = None
 
     @property
     def media_types(self):
@@ -4179,6 +4188,78 @@ class ViewFilter(object):
         
 
         self._canonical_contact_ids = canonical_contact_ids
+
+    @property
+    def alert_rule_ids(self):
+        """
+        Gets the alert_rule_ids of this ViewFilter.
+        The list of Alert Rule IDs
+
+        :return: The alert_rule_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._alert_rule_ids
+
+    @alert_rule_ids.setter
+    def alert_rule_ids(self, alert_rule_ids):
+        """
+        Sets the alert_rule_ids of this ViewFilter.
+        The list of Alert Rule IDs
+
+        :param alert_rule_ids: The alert_rule_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._alert_rule_ids = alert_rule_ids
+
+    @property
+    def evaluation_form_context_ids(self):
+        """
+        Gets the evaluation_form_context_ids of this ViewFilter.
+        The list of Evaluation Form Context IDs
+
+        :return: The evaluation_form_context_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._evaluation_form_context_ids
+
+    @evaluation_form_context_ids.setter
+    def evaluation_form_context_ids(self, evaluation_form_context_ids):
+        """
+        Sets the evaluation_form_context_ids of this ViewFilter.
+        The list of Evaluation Form Context IDs
+
+        :param evaluation_form_context_ids: The evaluation_form_context_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._evaluation_form_context_ids = evaluation_form_context_ids
+
+    @property
+    def evaluation_statuses(self):
+        """
+        Gets the evaluation_statuses of this ViewFilter.
+        The evaluation statuses that are used to filter the view
+
+        :return: The evaluation_statuses of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._evaluation_statuses
+
+    @evaluation_statuses.setter
+    def evaluation_statuses(self, evaluation_statuses):
+        """
+        Sets the evaluation_statuses of this ViewFilter.
+        The evaluation statuses that are used to filter the view
+
+        :param evaluation_statuses: The evaluation_statuses of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._evaluation_statuses = evaluation_statuses
 
     def to_dict(self):
         """

@@ -46,8 +46,7 @@ class QueueConversationSocialExpressionEventTopicErrorDetails(object):
             'message_with_params': 'str',
             'message_params': 'dict(str, str)',
             'context_id': 'str',
-            'uri': 'str',
-            'additional_properties': 'dict(str, object)'
+            'uri': 'str'
         }
 
         self.attribute_map = {
@@ -57,8 +56,7 @@ class QueueConversationSocialExpressionEventTopicErrorDetails(object):
             'message_with_params': 'messageWithParams',
             'message_params': 'messageParams',
             'context_id': 'contextId',
-            'uri': 'uri',
-            'additional_properties': 'additionalProperties'
+            'uri': 'uri'
         }
 
         self._status = None
@@ -68,7 +66,6 @@ class QueueConversationSocialExpressionEventTopicErrorDetails(object):
         self._message_params = None
         self._context_id = None
         self._uri = None
-        self._additional_properties = None
 
     @property
     def status(self):
@@ -237,30 +234,6 @@ class QueueConversationSocialExpressionEventTopicErrorDetails(object):
         
 
         self._uri = uri
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationSocialExpressionEventTopicErrorDetails.
-
-
-        :return: The additional_properties of this QueueConversationSocialExpressionEventTopicErrorDetails.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationSocialExpressionEventTopicErrorDetails.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationSocialExpressionEventTopicErrorDetails.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

@@ -40,17 +40,14 @@ class EventSetting(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'typing': 'TypingSetting',
-            'presence': 'PresenceSetting'
+            'typing': 'TypingSetting'
         }
 
         self.attribute_map = {
-            'typing': 'typing',
-            'presence': 'presence'
+            'typing': 'typing'
         }
 
         self._typing = None
-        self._presence = None
 
     @property
     def typing(self):
@@ -75,30 +72,6 @@ class EventSetting(object):
         
 
         self._typing = typing
-
-    @property
-    def presence(self):
-        """
-        Gets the presence of this EventSetting.
-        Settings regarding presence events
-
-        :return: The presence of this EventSetting.
-        :rtype: PresenceSetting
-        """
-        return self._presence
-
-    @presence.setter
-    def presence(self, presence):
-        """
-        Sets the presence of this EventSetting.
-        Settings regarding presence events
-
-        :param presence: The presence of this EventSetting.
-        :type: PresenceSetting
-        """
-        
-
-        self._presence = presence
 
     def to_dict(self):
         """

@@ -41,15 +41,21 @@ class ChannelTopic(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'state': 'str',
+            'rejection_reason': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'state': 'state',
+            'rejection_reason': 'rejectionReason',
             'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._state = None
+        self._rejection_reason = None
         self._self_uri = None
 
     @property
@@ -75,6 +81,57 @@ class ChannelTopic(object):
         
 
         self._id = id
+
+    @property
+    def state(self):
+        """
+        Gets the state of this ChannelTopic.
+
+
+        :return: The state of this ChannelTopic.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this ChannelTopic.
+
+
+        :param state: The state of this ChannelTopic.
+        :type: str
+        """
+        allowed_values = ["Permitted", "Rejected"]
+        if state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for state -> " + state)
+            self._state = "outdated_sdk_version"
+        else:
+            self._state = state
+
+    @property
+    def rejection_reason(self):
+        """
+        Gets the rejection_reason of this ChannelTopic.
+
+
+        :return: The rejection_reason of this ChannelTopic.
+        :rtype: str
+        """
+        return self._rejection_reason
+
+    @rejection_reason.setter
+    def rejection_reason(self, rejection_reason):
+        """
+        Sets the rejection_reason of this ChannelTopic.
+
+
+        :param rejection_reason: The rejection_reason of this ChannelTopic.
+        :type: str
+        """
+        
+
+        self._rejection_reason = rejection_reason
 
     @property
     def self_uri(self):

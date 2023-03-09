@@ -1201,6 +1201,87 @@ class LearningApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_learning_assignment_reschedule(self, assignment_id, **kwargs):
+        """
+        Reschedule Learning Assignment
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_learning_assignment_reschedule(assignment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assignment_id: The ID of Learning Assignment (required)
+        :param LearningAssignmentReschedule body: The Learning assignment reschedule model
+        :return: LearningAssignment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assignment_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_learning_assignment_reschedule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assignment_id' is set
+        if ('assignment_id' not in params) or (params['assignment_id'] is None):
+            raise ValueError("Missing the required parameter `assignment_id` when calling `patch_learning_assignment_reschedule`")
+
+
+        resource_path = '/api/v2/learning/assignments/{assignmentId}/reschedule'.replace('{format}', 'json')
+        path_params = {}
+        if 'assignment_id' in params:
+            path_params['assignmentId'] = params['assignment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningAssignment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_learning_assessments_scoring(self, body, **kwargs):
         """
         Score learning assessment for preview
@@ -2064,6 +2145,84 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningAssignmentUserListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_learning_scheduleslots_query(self, body, **kwargs):
+        """
+        Get list of possible slots where a learning activity can be scheduled.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_learning_scheduleslots_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param LearningScheduleSlotsQueryRequest body: The slot search request (required)
+        :return: LearningScheduleSlotsQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_learning_scheduleslots_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_learning_scheduleslots_query`")
+
+
+        resource_path = '/api/v2/learning/scheduleslots/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningScheduleSlotsQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -65,8 +65,7 @@ class ConversationEventTopicCallback(object):
             'after_call_work': 'ConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
             'caller_id': 'str',
-            'caller_id_name': 'str',
-            'additional_properties': 'dict(str, object)'
+            'caller_id_name': 'str'
         }
 
         self.attribute_map = {
@@ -95,8 +94,7 @@ class ConversationEventTopicCallback(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'caller_id': 'callerId',
-            'caller_id_name': 'callerIdName',
-            'additional_properties': 'additionalProperties'
+            'caller_id_name': 'callerIdName'
         }
 
         self._state = None
@@ -125,7 +123,6 @@ class ConversationEventTopicCallback(object):
         self._after_call_work_required = None
         self._caller_id = None
         self._caller_id_name = None
-        self._additional_properties = None
 
     @property
     def state(self):
@@ -762,30 +759,6 @@ class ConversationEventTopicCallback(object):
         
 
         self._caller_id_name = caller_id_name
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationEventTopicCallback.
-
-
-        :return: The additional_properties of this ConversationEventTopicCallback.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationEventTopicCallback.
-
-
-        :param additional_properties: The additional_properties of this ConversationEventTopicCallback.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

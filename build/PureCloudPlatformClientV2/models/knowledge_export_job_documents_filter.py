@@ -40,20 +40,23 @@ class KnowledgeExportJobDocumentsFilter(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'interval': 'str'
+            'interval': 'str',
+            'entities': 'list[Entity]'
         }
 
         self.attribute_map = {
-            'interval': 'interval'
+            'interval': 'interval',
+            'entities': 'entities'
         }
 
         self._interval = None
+        self._entities = None
 
     @property
     def interval(self):
         """
         Gets the interval of this KnowledgeExportJobDocumentsFilter.
-        Retrieves the documents modified in specified date and time range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Retrieves the documents modified in specified date and time range. Cannot be used together with entities filter. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :return: The interval of this KnowledgeExportJobDocumentsFilter.
         :rtype: str
@@ -64,7 +67,7 @@ class KnowledgeExportJobDocumentsFilter(object):
     def interval(self, interval):
         """
         Sets the interval of this KnowledgeExportJobDocumentsFilter.
-        Retrieves the documents modified in specified date and time range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Retrieves the documents modified in specified date and time range. Cannot be used together with entities filter. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :param interval: The interval of this KnowledgeExportJobDocumentsFilter.
         :type: str
@@ -72,6 +75,30 @@ class KnowledgeExportJobDocumentsFilter(object):
         
 
         self._interval = interval
+
+    @property
+    def entities(self):
+        """
+        Gets the entities of this KnowledgeExportJobDocumentsFilter.
+        Retrieves the documents with the given ids. Cannot be used together with internal filter.
+
+        :return: The entities of this KnowledgeExportJobDocumentsFilter.
+        :rtype: list[Entity]
+        """
+        return self._entities
+
+    @entities.setter
+    def entities(self, entities):
+        """
+        Sets the entities of this KnowledgeExportJobDocumentsFilter.
+        Retrieves the documents with the given ids. Cannot be used together with internal filter.
+
+        :param entities: The entities of this KnowledgeExportJobDocumentsFilter.
+        :type: list[Entity]
+        """
+        
+
+        self._entities = entities
 
     def to_dict(self):
         """

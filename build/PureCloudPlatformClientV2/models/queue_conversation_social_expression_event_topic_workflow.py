@@ -40,17 +40,14 @@ class QueueConversationSocialExpressionEventTopicWorkflow(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'workflow_id': 'str',
-            'additional_properties': 'dict(str, object)'
+            'workflow_id': 'str'
         }
 
         self.attribute_map = {
-            'workflow_id': 'workflowId',
-            'additional_properties': 'additionalProperties'
+            'workflow_id': 'workflowId'
         }
 
         self._workflow_id = None
-        self._additional_properties = None
 
     @property
     def workflow_id(self):
@@ -75,30 +72,6 @@ class QueueConversationSocialExpressionEventTopicWorkflow(object):
         
 
         self._workflow_id = workflow_id
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationSocialExpressionEventTopicWorkflow.
-
-
-        :return: The additional_properties of this QueueConversationSocialExpressionEventTopicWorkflow.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationSocialExpressionEventTopicWorkflow.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationSocialExpressionEventTopicWorkflow.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

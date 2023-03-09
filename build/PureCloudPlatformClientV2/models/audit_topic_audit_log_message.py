@@ -48,6 +48,7 @@ class AuditTopicAuditLogMessage(object):
             'client_id': 'AuditTopicAddressableEntityRef',
             'remote_ip': 'list[str]',
             'service_name': 'str',
+            'level': 'str',
             'event_time': 'datetime',
             'message': 'AuditTopicMessageInfo',
             'action': 'str',
@@ -66,6 +67,7 @@ class AuditTopicAuditLogMessage(object):
             'client_id': 'clientId',
             'remote_ip': 'remoteIp',
             'service_name': 'serviceName',
+            'level': 'level',
             'event_time': 'eventTime',
             'message': 'message',
             'action': 'action',
@@ -83,6 +85,7 @@ class AuditTopicAuditLogMessage(object):
         self._client_id = None
         self._remote_ip = None
         self._service_name = None
+        self._level = None
         self._event_time = None
         self._message = None
         self._action = None
@@ -285,6 +288,30 @@ class AuditTopicAuditLogMessage(object):
             self._service_name = "outdated_sdk_version"
         else:
             self._service_name = service_name
+
+    @property
+    def level(self):
+        """
+        Gets the level of this AuditTopicAuditLogMessage.
+
+
+        :return: The level of this AuditTopicAuditLogMessage.
+        :rtype: str
+        """
+        return self._level
+
+    @level.setter
+    def level(self, level):
+        """
+        Sets the level of this AuditTopicAuditLogMessage.
+
+
+        :param level: The level of this AuditTopicAuditLogMessage.
+        :type: str
+        """
+        
+
+        self._level = level
 
     @property
     def event_time(self):

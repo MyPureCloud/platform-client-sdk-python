@@ -8,7 +8,7 @@ title: KnowledgeDocumentResponse
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
-| **title** | **str** | Document title. | [optional] |
+| **title** | **str** | Document title, having a limit of 500 words. | [optional] |
 | **visible** | **bool** | Indicates if the knowledge document should be included in search results. | [optional] |
 | **alternatives** | [**list[KnowledgeDocumentAlternative]**](KnowledgeDocumentAlternative.html) | List of alternate phrases related to the title which improves search results. | [optional] |
 | **state** | **str** | State of the document. | [optional] |

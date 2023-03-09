@@ -450,12 +450,13 @@ class NotificationsApi(object):
             for asynchronous request. (optional)
         :param str channel_id: Channel ID (required)
         :param list[ChannelTopic] body: Body (required)
+        :param bool ignore_errors: Optionally prevent throwing of errors for failed permissions checks.
         :return: ChannelTopicEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['channel_id', 'body']
+        all_params = ['channel_id', 'body', 'ignore_errors']
         all_params.append('callback')
 
         params = locals()
@@ -482,6 +483,8 @@ class NotificationsApi(object):
             path_params['channelId'] = params['channel_id']
 
         query_params = {}
+        if 'ignore_errors' in params:
+            query_params['ignoreErrors'] = params['ignore_errors']
 
         header_params = {}
 
@@ -606,12 +609,13 @@ class NotificationsApi(object):
             for asynchronous request. (optional)
         :param str channel_id: Channel ID (required)
         :param list[ChannelTopic] body: Body (required)
+        :param bool ignore_errors: Optionally prevent throwing of errors for failed permissions checks.
         :return: ChannelTopicEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['channel_id', 'body']
+        all_params = ['channel_id', 'body', 'ignore_errors']
         all_params.append('callback')
 
         params = locals()
@@ -638,6 +642,8 @@ class NotificationsApi(object):
             path_params['channelId'] = params['channel_id']
 
         query_params = {}
+        if 'ignore_errors' in params:
+            query_params['ignoreErrors'] = params['ignore_errors']
 
         header_params = {}
 

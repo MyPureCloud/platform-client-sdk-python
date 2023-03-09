@@ -54,6 +54,7 @@ class DncList(object):
             'dnc_codes': 'list[str]',
             'license_id': 'str',
             'division': 'DomainEntityRef',
+            'custom_exclusion_column': 'str',
             'self_uri': 'str'
         }
 
@@ -72,6 +73,7 @@ class DncList(object):
             'dnc_codes': 'dncCodes',
             'license_id': 'licenseId',
             'division': 'division',
+            'custom_exclusion_column': 'customExclusionColumn',
             'self_uri': 'selfUri'
         }
 
@@ -89,6 +91,7 @@ class DncList(object):
         self._dnc_codes = None
         self._license_id = None
         self._division = None
+        self._custom_exclusion_column = None
         self._self_uri = None
 
     @property
@@ -432,6 +435,30 @@ class DncList(object):
         
 
         self._division = division
+
+    @property
+    def custom_exclusion_column(self):
+        """
+        Gets the custom_exclusion_column of this DncList.
+        The column to evaluate exclusion against. Required if the dncSourceType is rds_custom.
+
+        :return: The custom_exclusion_column of this DncList.
+        :rtype: str
+        """
+        return self._custom_exclusion_column
+
+    @custom_exclusion_column.setter
+    def custom_exclusion_column(self, custom_exclusion_column):
+        """
+        Sets the custom_exclusion_column of this DncList.
+        The column to evaluate exclusion against. Required if the dncSourceType is rds_custom.
+
+        :param custom_exclusion_column: The custom_exclusion_column of this DncList.
+        :type: str
+        """
+        
+
+        self._custom_exclusion_column = custom_exclusion_column
 
     @property
     def self_uri(self):

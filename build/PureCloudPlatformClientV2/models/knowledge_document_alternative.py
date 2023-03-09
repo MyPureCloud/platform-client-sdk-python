@@ -56,7 +56,7 @@ class KnowledgeDocumentAlternative(object):
     def phrase(self):
         """
         Gets the phrase of this KnowledgeDocumentAlternative.
-        Alternate phrasing to the document title.
+        Alternate phrasing to the document title, having a limit of 500 words.
 
         :return: The phrase of this KnowledgeDocumentAlternative.
         :rtype: str
@@ -67,7 +67,7 @@ class KnowledgeDocumentAlternative(object):
     def phrase(self, phrase):
         """
         Sets the phrase of this KnowledgeDocumentAlternative.
-        Alternate phrasing to the document title.
+        Alternate phrasing to the document title, having a limit of 500 words.
 
         :param phrase: The phrase of this KnowledgeDocumentAlternative.
         :type: str

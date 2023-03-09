@@ -44,8 +44,7 @@ class ConversationMessageEventTopicWrapup(object):
             'notes': 'str',
             'tags': 'list[str]',
             'duration_seconds': 'int',
-            'end_time': 'datetime',
-            'additional_properties': 'dict(str, object)'
+            'end_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class ConversationMessageEventTopicWrapup(object):
             'notes': 'notes',
             'tags': 'tags',
             'duration_seconds': 'durationSeconds',
-            'end_time': 'endTime',
-            'additional_properties': 'additionalProperties'
+            'end_time': 'endTime'
         }
 
         self._code = None
@@ -62,7 +60,6 @@ class ConversationMessageEventTopicWrapup(object):
         self._tags = None
         self._duration_seconds = None
         self._end_time = None
-        self._additional_properties = None
 
     @property
     def code(self):
@@ -183,30 +180,6 @@ class ConversationMessageEventTopicWrapup(object):
         
 
         self._end_time = end_time
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationMessageEventTopicWrapup.
-
-
-        :return: The additional_properties of this ConversationMessageEventTopicWrapup.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationMessageEventTopicWrapup.
-
-
-        :param additional_properties: The additional_properties of this ConversationMessageEventTopicWrapup.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

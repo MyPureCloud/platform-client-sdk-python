@@ -32,8 +32,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_recording_jobs**](RecordingApi.html#get_recording_jobs) | Get the status of all jobs within the user&#39;s organization|
 |[**get_recording_keyconfiguration**](RecordingApi.html#get_recording_keyconfiguration) | Get the encryption key configurations|
 |[**get_recording_keyconfigurations**](RecordingApi.html#get_recording_keyconfigurations) | Get a list of key configurations data|
-|[**get_recording_localkeys_setting**](RecordingApi.html#get_recording_localkeys_setting) | Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}|
-|[**get_recording_localkeys_settings**](RecordingApi.html#get_recording_localkeys_settings) | gets a list local key settings data. Replaced by API recording/keyconfigurations|
 |[**get_recording_mediaretentionpolicies**](RecordingApi.html#get_recording_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
 |[**get_recording_mediaretentionpolicy**](RecordingApi.html#get_recording_mediaretentionpolicy) | Get a media retention policy|
 |[**get_recording_recordingkeys**](RecordingApi.html#get_recording_recordingkeys) | Get encryption key list|
@@ -52,7 +50,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_recording_keyconfigurations**](RecordingApi.html#post_recording_keyconfigurations) | Setup configurations for encryption key creation|
 |[**post_recording_keyconfigurations_validate**](RecordingApi.html#post_recording_keyconfigurations_validate) | Validate encryption key configurations without saving it|
 |[**post_recording_localkeys**](RecordingApi.html#post_recording_localkeys) | create a local key management recording key|
-|[**post_recording_localkeys_settings**](RecordingApi.html#post_recording_localkeys_settings) | create settings for local key creation. Replaced by API recording/keyconfigurations|
 |[**post_recording_mediaretentionpolicies**](RecordingApi.html#post_recording_mediaretentionpolicies) | Create media retention policy|
 |[**post_recording_recordingkeys**](RecordingApi.html#post_recording_recordingkeys) | Create encryption key|
 |[**post_recording_uploads_reports**](RecordingApi.html#post_recording_uploads_reports) | Creates a recording upload status report|
@@ -65,7 +62,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#put_recording_crossplatform_mediaretentionpolicy) | Update a media retention policy|
 |[**put_recording_job**](RecordingApi.html#put_recording_job) | Execute the recording bulk job.|
 |[**put_recording_keyconfiguration**](RecordingApi.html#put_recording_keyconfiguration) | Update the encryption key configurations|
-|[**put_recording_localkeys_setting**](RecordingApi.html#put_recording_localkeys_setting) | Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}|
 |[**put_recording_mediaretentionpolicy**](RecordingApi.html#put_recording_mediaretentionpolicy) | Update a media retention policy|
 |[**put_recording_recordingkeys_rotationschedule**](RecordingApi.html#put_recording_recordingkeys_rotationschedule) | Update key rotation schedule|
 |[**put_recording_settings**](RecordingApi.html#put_recording_settings) | Update the Recording Settings for the Organization|
@@ -1405,104 +1401,6 @@ This endpoint does not need any parameters.
 
 [**RecordingEncryptionConfigurationListing**](RecordingEncryptionConfigurationListing.html)
 
-<a name="get_recording_localkeys_setting"></a>
-
-## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) get_recording_localkeys_setting(settings_id)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-
-
-
-Wraps GET /api/v2/recording/localkeys/settings/{settingsId} 
-
-Requires ANY permissions: 
-
-* recording:encryptionKey:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RecordingApi()
-settings_id = 'settings_id_example' # str | Settings Id
-
-try:
-    # Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-    api_response = api_instance.get_recording_localkeys_setting(settings_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecordingApi->get_recording_localkeys_setting: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **settings_id** | **str**| Settings Id |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)
-
-<a name="get_recording_localkeys_settings"></a>
-
-## [**LocalEncryptionConfigurationListing**](LocalEncryptionConfigurationListing.html) get_recording_localkeys_settings()
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-gets a list local key settings data. Replaced by API recording/keyconfigurations
-
-
-
-Wraps GET /api/v2/recording/localkeys/settings 
-
-Requires ANY permissions: 
-
-* recording:encryptionKey:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RecordingApi()
-
-try:
-    # gets a list local key settings data. Replaced by API recording/keyconfigurations
-    api_response = api_instance.get_recording_localkeys_settings()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecordingApi->get_recording_localkeys_settings: %s\n" % e)
-```
-
-### Parameters
-
-This endpoint does not need any parameters.
-
-
-### Return type
-
-[**LocalEncryptionConfigurationListing**](LocalEncryptionConfigurationListing.html)
-
 <a name="get_recording_mediaretentionpolicies"></a>
 
 ## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
@@ -2462,57 +2360,6 @@ except ApiException as e:
 
 [**EncryptionKey**](EncryptionKey.html)
 
-<a name="post_recording_localkeys_settings"></a>
-
-## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) post_recording_localkeys_settings(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-create settings for local key creation. Replaced by API recording/keyconfigurations
-
-
-
-Wraps POST /api/v2/recording/localkeys/settings 
-
-Requires ANY permissions: 
-
-* recording:encryptionKey:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RecordingApi()
-body = PureCloudPlatformClientV2.LocalEncryptionConfiguration() # LocalEncryptionConfiguration | Local Encryption Configuration
-
-try:
-    # create settings for local key creation. Replaced by API recording/keyconfigurations
-    api_response = api_instance.post_recording_localkeys_settings(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecordingApi->post_recording_localkeys_settings: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption Configuration |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)
-
 <a name="post_recording_mediaretentionpolicies"></a>
 
 ## [**Policy**](Policy.html) post_recording_mediaretentionpolicies(body)
@@ -3151,59 +2998,6 @@ except ApiException as e:
 ### Return type
 
 [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
-
-<a name="put_recording_localkeys_setting"></a>
-
-## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) put_recording_localkeys_setting(settings_id, body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-
-
-
-Wraps PUT /api/v2/recording/localkeys/settings/{settingsId} 
-
-Requires ANY permissions: 
-
-* recording:encryptionKey:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RecordingApi()
-settings_id = 'settings_id_example' # str | Settings Id
-body = PureCloudPlatformClientV2.LocalEncryptionConfiguration() # LocalEncryptionConfiguration | Local Encryption metadata
-
-try:
-    # Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-    api_response = api_instance.put_recording_localkeys_setting(settings_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecordingApi->put_recording_localkeys_setting: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **settings_id** | **str**| Settings Id |  |
-| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption metadata |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)
 
 <a name="put_recording_mediaretentionpolicy"></a>
 

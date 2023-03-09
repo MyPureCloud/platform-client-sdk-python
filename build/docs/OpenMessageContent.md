@@ -8,7 +8,7 @@ title: OpenMessageContent
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **content_type** | **str** | Type of this content element. If contentType &#x3D; \&quot;Attachment\&quot; only one item is allowed. | |
-| **attachment** | [**ContentAttachment**](ContentAttachment.html) | Attachment content. | [optional] |
+| **attachment** | [**ConversationContentAttachment**](ConversationContentAttachment.html) | Attachment content. | [optional] |
 {: class="table table-striped"}
 
 

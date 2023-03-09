@@ -78,8 +78,7 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
             'screenshares': 'list[QueueConversationSocialExpressionEventTopicScreenshare]',
             'social_expressions': 'list[QueueConversationSocialExpressionEventTopicSocialExpression]',
             'videos': 'list[QueueConversationSocialExpressionEventTopicVideo]',
-            'workflow': 'QueueConversationSocialExpressionEventTopicWorkflow',
-            'additional_properties': 'dict(str, object)'
+            'workflow': 'QueueConversationSocialExpressionEventTopicWorkflow'
         }
 
         self.attribute_map = {
@@ -121,8 +120,7 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
-            'workflow': 'workflow',
-            'additional_properties': 'additionalProperties'
+            'workflow': 'workflow'
         }
 
         self._id = None
@@ -164,7 +162,6 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
         self._social_expressions = None
         self._videos = None
         self._workflow = None
-        self._additional_properties = None
 
     @property
     def id(self):
@@ -1104,30 +1101,6 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
         
 
         self._workflow = workflow
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationSocialExpressionEventTopicParticipant.
-
-
-        :return: The additional_properties of this QueueConversationSocialExpressionEventTopicParticipant.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationSocialExpressionEventTopicParticipant.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationSocialExpressionEventTopicParticipant.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

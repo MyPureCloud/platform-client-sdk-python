@@ -58,8 +58,7 @@ class ConversationEventTopicVideo(object):
             'msids': 'list[str]',
             'wrapup': 'ConversationEventTopicWrapup',
             'after_call_work': 'ConversationEventTopicAfterCallWork',
-            'after_call_work_required': 'bool',
-            'additional_properties': 'dict(str, object)'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -81,8 +80,7 @@ class ConversationEventTopicVideo(object):
             'msids': 'msids',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'additional_properties': 'additionalProperties'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -104,7 +102,6 @@ class ConversationEventTopicVideo(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._additional_properties = None
 
     @property
     def state(self):
@@ -570,30 +567,6 @@ class ConversationEventTopicVideo(object):
         
 
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationEventTopicVideo.
-
-
-        :return: The additional_properties of this ConversationEventTopicVideo.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationEventTopicVideo.
-
-
-        :param additional_properties: The additional_properties of this ConversationEventTopicVideo.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

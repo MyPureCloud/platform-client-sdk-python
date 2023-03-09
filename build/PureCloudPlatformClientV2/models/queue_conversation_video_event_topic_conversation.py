@@ -43,6 +43,7 @@ class QueueConversationVideoEventTopicConversation(object):
             'id': 'str',
             'max_participants': 'int',
             'participants': 'list[QueueConversationVideoEventTopicParticipant]',
+            'recent_transfers': 'list[QueueConversationVideoEventTopicRecentTransfer]',
             'recording_state': 'str',
             'address': 'str',
             'external_tag': 'str'
@@ -52,6 +53,7 @@ class QueueConversationVideoEventTopicConversation(object):
             'id': 'id',
             'max_participants': 'maxParticipants',
             'participants': 'participants',
+            'recent_transfers': 'recentTransfers',
             'recording_state': 'recordingState',
             'address': 'address',
             'external_tag': 'externalTag'
@@ -60,6 +62,7 @@ class QueueConversationVideoEventTopicConversation(object):
         self._id = None
         self._max_participants = None
         self._participants = None
+        self._recent_transfers = None
         self._recording_state = None
         self._address = None
         self._external_tag = None
@@ -135,6 +138,30 @@ class QueueConversationVideoEventTopicConversation(object):
         
 
         self._participants = participants
+
+    @property
+    def recent_transfers(self):
+        """
+        Gets the recent_transfers of this QueueConversationVideoEventTopicConversation.
+
+
+        :return: The recent_transfers of this QueueConversationVideoEventTopicConversation.
+        :rtype: list[QueueConversationVideoEventTopicRecentTransfer]
+        """
+        return self._recent_transfers
+
+    @recent_transfers.setter
+    def recent_transfers(self, recent_transfers):
+        """
+        Sets the recent_transfers of this QueueConversationVideoEventTopicConversation.
+
+
+        :param recent_transfers: The recent_transfers of this QueueConversationVideoEventTopicConversation.
+        :type: list[QueueConversationVideoEventTopicRecentTransfer]
+        """
+        
+
+        self._recent_transfers = recent_transfers
 
     @property
     def recording_state(self):

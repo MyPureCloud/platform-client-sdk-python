@@ -41,19 +41,16 @@ class ConversationEventTopicPhoneNumberColumn(object):
         """
         self.swagger_types = {
             'column_name': 'str',
-            'type': 'str',
-            'additional_properties': 'dict(str, object)'
+            'type': 'str'
         }
 
         self.attribute_map = {
             'column_name': 'columnName',
-            'type': 'type',
-            'additional_properties': 'additionalProperties'
+            'type': 'type'
         }
 
         self._column_name = None
         self._type = None
-        self._additional_properties = None
 
     @property
     def column_name(self):
@@ -102,30 +99,6 @@ class ConversationEventTopicPhoneNumberColumn(object):
         
 
         self._type = type
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this ConversationEventTopicPhoneNumberColumn.
-
-
-        :return: The additional_properties of this ConversationEventTopicPhoneNumberColumn.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this ConversationEventTopicPhoneNumberColumn.
-
-
-        :param additional_properties: The additional_properties of this ConversationEventTopicPhoneNumberColumn.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

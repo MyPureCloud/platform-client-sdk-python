@@ -61,8 +61,7 @@ class QueueConversationEventTopicEmail(object):
             'spam': 'bool',
             'wrapup': 'QueueConversationEventTopicWrapup',
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
-            'after_call_work_required': 'bool',
-            'additional_properties': 'dict(str, object)'
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -87,8 +86,7 @@ class QueueConversationEventTopicEmail(object):
             'spam': 'spam',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired',
-            'additional_properties': 'additionalProperties'
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._id = None
@@ -113,7 +111,6 @@ class QueueConversationEventTopicEmail(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
-        self._additional_properties = None
 
     @property
     def id(self):
@@ -654,30 +651,6 @@ class QueueConversationEventTopicEmail(object):
         
 
         self._after_call_work_required = after_call_work_required
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueConversationEventTopicEmail.
-
-
-        :return: The additional_properties of this QueueConversationEventTopicEmail.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueConversationEventTopicEmail.
-
-
-        :param additional_properties: The additional_properties of this QueueConversationEventTopicEmail.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

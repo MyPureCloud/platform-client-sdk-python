@@ -492,7 +492,7 @@ class LearningModule(object):
         :param type: The type of this LearningModule.
         :type: str
         """
-        allowed_values = ["Informational", "AssessedContent", "Assessment"]
+        allowed_values = ["Informational", "AssessedContent", "Assessment", "External"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

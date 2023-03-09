@@ -386,7 +386,7 @@ class ExtensionPool(object):
     def start_number(self):
         """
         Gets the start_number of this ExtensionPool.
-        The starting phone number for the range of this Extension pool. Must be in E.164 format
+        The starting phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the endNumber.
 
         :return: The start_number of this ExtensionPool.
         :rtype: str
@@ -397,7 +397,7 @@ class ExtensionPool(object):
     def start_number(self, start_number):
         """
         Sets the start_number of this ExtensionPool.
-        The starting phone number for the range of this Extension pool. Must be in E.164 format
+        The starting phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the endNumber.
 
         :param start_number: The start_number of this ExtensionPool.
         :type: str
@@ -410,7 +410,7 @@ class ExtensionPool(object):
     def end_number(self):
         """
         Gets the end_number of this ExtensionPool.
-        The ending phone number for the range of this Extension pool. Must be in E.164 format
+        The ending phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the startNumber.
 
         :return: The end_number of this ExtensionPool.
         :rtype: str
@@ -421,7 +421,7 @@ class ExtensionPool(object):
     def end_number(self, end_number):
         """
         Sets the end_number of this ExtensionPool.
-        The ending phone number for the range of this Extension pool. Must be in E.164 format
+        The ending phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the startNumber.
 
         :param end_number: The end_number of this ExtensionPool.
         :type: str
