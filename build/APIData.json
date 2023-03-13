@@ -6050,6 +6050,35 @@
     "return": "CallConversation",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\n\ntry:\n    # Get call conversation\n    api_response = api_instance.get_conversations_call(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsCallRequest->get_conversations_call: %s\\n\" % e)"
   },
+  "get_conversations_call_participant_communication_wrapup": {
+    "operationId": "get_conversations_call_participant_communication_wrapup",
+    "functionName": "get_conversations_call_participant_communication_wrapup",
+    "signature": "get_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsCallParticipantCommunicationWrapupRequest->get_conversations_call_participant_communication_wrapup: %s\\n\" % e)"
+  },
   "get_conversations_call_participant_wrapup": {
     "operationId": "get_conversations_call_participant_wrapup",
     "functionName": "get_conversations_call_participant_wrapup",
@@ -6106,6 +6135,35 @@
     ],
     "return": "CallbackConversation",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\n\ntry:\n    # Get callback conversation\n    api_response = api_instance.get_conversations_callback(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsCallbackRequest->get_conversations_callback: %s\\n\" % e)"
+  },
+  "get_conversations_callback_participant_communication_wrapup": {
+    "operationId": "get_conversations_callback_participant_communication_wrapup",
+    "functionName": "get_conversations_callback_participant_communication_wrapup",
+    "signature": "get_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsCallbackParticipantCommunicationWrapupRequest->get_conversations_callback_participant_communication_wrapup: %s\\n\" % e)"
   },
   "get_conversations_callback_participant_wrapup": {
     "operationId": "get_conversations_callback_participant_wrapup",
@@ -6267,6 +6325,35 @@
     "return": "WebChatMessageEntityList",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nafter = 'after_example' # str | If specified, get the messages chronologically after the id of this message (optional)\nbefore = 'before_example' # str | If specified, get the messages chronologically before the id of this message (optional)\nsort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')\nmax_results = 100 # int | Limit the returned number of messages, up to a maximum of 100 (optional) (default to 100)\n\ntry:\n    # Get the messages of a chat conversation.\n    api_response = api_instance.get_conversations_chat_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsChatMessagesRequest->get_conversations_chat_messages: %s\\n\" % e)"
   },
+  "get_conversations_chat_participant_communication_wrapup": {
+    "operationId": "get_conversations_chat_participant_communication_wrapup",
+    "functionName": "get_conversations_chat_participant_communication_wrapup",
+    "signature": "get_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsChatParticipantCommunicationWrapupRequest->get_conversations_chat_participant_communication_wrapup: %s\\n\" % e)"
+  },
   "get_conversations_chat_participant_wrapup": {
     "operationId": "get_conversations_chat_participant_wrapup",
     "functionName": "get_conversations_chat_participant_wrapup",
@@ -6330,6 +6417,35 @@
     ],
     "return": "CobrowseConversation",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\n\ntry:\n    # Get cobrowse conversation\n    api_response = api_instance.get_conversations_cobrowsesession(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsCobrowsesessionRequest->get_conversations_cobrowsesession: %s\\n\" % e)"
+  },
+  "get_conversations_cobrowsesession_participant_communication_wrapup": {
+    "operationId": "get_conversations_cobrowsesession_participant_communication_wrapup",
+    "functionName": "get_conversations_cobrowsesession_participant_communication_wrapup",
+    "signature": "get_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsCobrowsesessionParticipantCommunicationWrapupRequest->get_conversations_cobrowsesession_participant_communication_wrapup: %s\\n\" % e)"
   },
   "get_conversations_cobrowsesession_participant_wrapup": {
     "operationId": "get_conversations_cobrowsesession_participant_wrapup",
@@ -6441,6 +6557,35 @@
     ],
     "return": "EmailMessage",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\n\ntry:\n    # Get conversation draft reply\n    api_response = api_instance.get_conversations_email_messages_draft(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsEmailMessagesDraftRequest->get_conversations_email_messages_draft: %s\\n\" % e)"
+  },
+  "get_conversations_email_participant_communication_wrapup": {
+    "operationId": "get_conversations_email_participant_communication_wrapup",
+    "functionName": "get_conversations_email_participant_communication_wrapup",
+    "signature": "get_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsEmailParticipantCommunicationWrapupRequest->get_conversations_email_participant_communication_wrapup: %s\\n\" % e)"
   },
   "get_conversations_email_participant_wrapup": {
     "operationId": "get_conversations_email_participant_wrapup",
@@ -6607,6 +6752,35 @@
     ],
     "return": "MessageData",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nmessage_id = 'message_id_example' # str | messageId\nuse_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media, stickers) (optional) (default to False)\n\ntry:\n    # Get conversation message\n    api_response = api_instance.get_conversations_message_message(conversation_id, message_id, use_normalized_message=use_normalized_message)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessageMessageRequest->get_conversations_message_message: %s\\n\" % e)"
+  },
+  "get_conversations_message_participant_communication_wrapup": {
+    "operationId": "get_conversations_message_participant_communication_wrapup",
+    "functionName": "get_conversations_message_participant_communication_wrapup",
+    "signature": "get_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessageParticipantCommunicationWrapupRequest->get_conversations_message_participant_communication_wrapup: %s\\n\" % e)"
   },
   "get_conversations_message_participant_wrapup": {
     "operationId": "get_conversations_message_participant_wrapup",
@@ -7034,6 +7208,100 @@
     "signature": "get_conversations_messaging_threadingtimeline()",
     "return": "ConversationThreadingWindow",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\n\ntry:\n    # Get conversation threading window timeline for each messaging type\n    api_response = api_instance.get_conversations_messaging_threadingtimeline()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsMessagingThreadingtimelineRequest->get_conversations_messaging_threadingtimeline: %s\\n\" % e)"
+  },
+  "get_conversations_screenshare_participant_communication_wrapup": {
+    "operationId": "get_conversations_screenshare_participant_communication_wrapup",
+    "functionName": "get_conversations_screenshare_participant_communication_wrapup",
+    "signature": "get_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsScreenshareParticipantCommunicationWrapupRequest->get_conversations_screenshare_participant_communication_wrapup: %s\\n\" % e)"
+  },
+  "get_conversations_settings": {
+    "operationId": "get_conversations_settings",
+    "functionName": "get_conversations_settings",
+    "signature": "get_conversations_settings()",
+    "return": "Settings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\n\ntry:\n    # Get Settings\n    api_response = api_instance.get_conversations_settings()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsSettingsRequest->get_conversations_settings: %s\\n\" % e)"
+  },
+  "get_conversations_social_participant_communication_wrapup": {
+    "operationId": "get_conversations_social_participant_communication_wrapup",
+    "functionName": "get_conversations_social_participant_communication_wrapup",
+    "signature": "get_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsSocialParticipantCommunicationWrapupRequest->get_conversations_social_participant_communication_wrapup: %s\\n\" % e)"
+  },
+  "get_conversations_video_participant_communication_wrapup": {
+    "operationId": "get_conversations_video_participant_communication_wrapup",
+    "functionName": "get_conversations_video_participant_communication_wrapup",
+    "signature": "get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GetConversationsVideoParticipantCommunicationWrapupRequest->get_conversations_video_participant_communication_wrapup: %s\\n\" % e)"
   },
   "patch_conversation_participant": {
     "operationId": "patch_conversation_participant",
@@ -7797,6 +8065,19 @@
     "return": "SupportedContent",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nsupported_content_id = 'supported_content_id_example' # str | Supported Content ID\nbody = PureCloudPlatformClientV2.SupportedContent() # SupportedContent | SupportedContent\n\ntry:\n    # Update a supported content profile\n    api_response = api_instance.patch_conversations_messaging_supportedcontent_supported_content_id(supported_content_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PatchConversationsMessagingSupportedcontentSupportedContentIdRequest->patch_conversations_messaging_supportedcontent_supported_content_id: %s\\n\" % e)"
   },
+  "patch_conversations_settings": {
+    "operationId": "patch_conversations_settings",
+    "functionName": "patch_conversations_settings",
+    "signature": "patch_conversations_settings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Settings",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nbody = PureCloudPlatformClientV2.Settings() # Settings | Settings\n\ntry:\n    # Update Settings\n    api_instance.patch_conversations_settings(body)\nexcept ApiException as e:\n    print(\"Exception when calling PatchConversationsSettingsRequest->patch_conversations_settings: %s\\n\" % e)"
+  },
   "post_conversation_assign": {
     "operationId": "post_conversation_assign",
     "functionName": "post_conversation_assign",
@@ -7974,6 +8255,34 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\n\ntry:\n    # Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.\n    api_instance.post_conversations_call_participant_coach(conversation_id, participant_id)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsCallParticipantCoachRequest->post_conversations_call_participant_coach: %s\\n\" % e)"
   },
+  "post_conversations_call_participant_communication_wrapup": {
+    "operationId": "post_conversations_call_participant_communication_wrapup",
+    "functionName": "post_conversations_call_participant_communication_wrapup",
+    "signature": "post_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExtendedWrapup",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsCallParticipantCommunicationWrapupRequest->post_conversations_call_participant_communication_wrapup: %s\\n\" % e)"
+  },
   "post_conversations_call_participant_consult": {
     "operationId": "post_conversations_call_participant_consult",
     "functionName": "post_conversations_call_participant_consult",
@@ -8057,6 +8366,34 @@
     ],
     "return": "Conversation",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nbody = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation\n\ntry:\n    # Add participants to a conversation\n    api_response = api_instance.post_conversations_call_participants(conversation_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsCallParticipantsRequest->post_conversations_call_participants: %s\\n\" % e)"
+  },
+  "post_conversations_callback_participant_communication_wrapup": {
+    "operationId": "post_conversations_callback_participant_communication_wrapup",
+    "functionName": "post_conversations_callback_participant_communication_wrapup",
+    "signature": "post_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExtendedWrapup",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsCallbackParticipantCommunicationWrapupRequest->post_conversations_callback_participant_communication_wrapup: %s\\n\" % e)"
   },
   "post_conversations_callback_participant_replace": {
     "operationId": "post_conversations_callback_participant_replace",
@@ -8179,6 +8516,34 @@
     "return": "WebChatTyping",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\ncommunication_id = 'communication_id_example' # str | communicationId\n\ntry:\n    # Send a typing-indicator on behalf of a communication in a chat conversation.\n    api_response = api_instance.post_conversations_chat_communication_typing(conversation_id, communication_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsChatCommunicationTypingRequest->post_conversations_chat_communication_typing: %s\\n\" % e)"
   },
+  "post_conversations_chat_participant_communication_wrapup": {
+    "operationId": "post_conversations_chat_participant_communication_wrapup",
+    "functionName": "post_conversations_chat_participant_communication_wrapup",
+    "signature": "post_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExtendedWrapup",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsChatParticipantCommunicationWrapupRequest->post_conversations_chat_participant_communication_wrapup: %s\\n\" % e)"
+  },
   "post_conversations_chat_participant_replace": {
     "operationId": "post_conversations_chat_participant_replace",
     "functionName": "post_conversations_chat_participant_replace",
@@ -8215,6 +8580,34 @@
     ],
     "return": "ChatConversation",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nbody = PureCloudPlatformClientV2.CreateWebChatRequest() # CreateWebChatRequest | Create web chat request\n\ntry:\n    # Create a web chat conversation\n    api_response = api_instance.post_conversations_chats(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsChatsRequest->post_conversations_chats: %s\\n\" % e)"
+  },
+  "post_conversations_cobrowsesession_participant_communication_wrapup": {
+    "operationId": "post_conversations_cobrowsesession_participant_communication_wrapup",
+    "functionName": "post_conversations_cobrowsesession_participant_communication_wrapup",
+    "signature": "post_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExtendedWrapup",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest->post_conversations_cobrowsesession_participant_communication_wrapup: %s\\n\" % e)"
   },
   "post_conversations_cobrowsesession_participant_replace": {
     "operationId": "post_conversations_cobrowsesession_participant_replace",
@@ -8295,6 +8688,34 @@
     ],
     "return": "EmailMessage",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nbody = PureCloudPlatformClientV2.CopyAttachmentsRequest() # CopyAttachmentsRequest | Copy Attachment Request\n\ntry:\n    # Copy attachments from an email message to the current draft.\n    api_response = api_instance.post_conversations_email_messages_draft_attachments_copy(conversation_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsEmailMessagesDraftAttachmentsCopyRequest->post_conversations_email_messages_draft_attachments_copy: %s\\n\" % e)"
+  },
+  "post_conversations_email_participant_communication_wrapup": {
+    "operationId": "post_conversations_email_participant_communication_wrapup",
+    "functionName": "post_conversations_email_participant_communication_wrapup",
+    "signature": "post_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExtendedWrapup",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsEmailParticipantCommunicationWrapupRequest->post_conversations_email_participant_communication_wrapup: %s\\n\" % e)"
   },
   "post_conversations_email_participant_replace": {
     "operationId": "post_conversations_email_participant_replace",
@@ -8484,6 +8905,34 @@
     "return": "TextMessageListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | \nuse_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media, stickers) (optional) (default to False)\nbody = ['body_example'] # list[str] | messageIds (optional)\n\ntry:\n    # Get messages in batch\n    api_response = api_instance.post_conversations_message_messages_bulk(conversation_id, use_normalized_message=use_normalized_message, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsMessageMessagesBulkRequest->post_conversations_message_messages_bulk: %s\\n\" % e)"
   },
+  "post_conversations_message_participant_communication_wrapup": {
+    "operationId": "post_conversations_message_participant_communication_wrapup",
+    "functionName": "post_conversations_message_participant_communication_wrapup",
+    "signature": "post_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExtendedWrapup",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsMessageParticipantCommunicationWrapupRequest->post_conversations_message_participant_communication_wrapup: %s\\n\" % e)"
+  },
   "post_conversations_message_participant_replace": {
     "operationId": "post_conversations_message_participant_replace",
     "functionName": "post_conversations_message_participant_replace",
@@ -8646,6 +9095,90 @@
     ],
     "return": "JsonCursorSearchResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SearchApi()\nbody = PureCloudPlatformClientV2.ConversationParticipantSearchRequest() # ConversationParticipantSearchRequest | Search request options\n\ntry:\n    # Search conversations\n    api_response = api_instance.post_conversations_participants_attributes_search(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsParticipantsAttributesSearchRequest->post_conversations_participants_attributes_search: %s\\n\" % e)"
+  },
+  "post_conversations_screenshare_participant_communication_wrapup": {
+    "operationId": "post_conversations_screenshare_participant_communication_wrapup",
+    "functionName": "post_conversations_screenshare_participant_communication_wrapup",
+    "signature": "post_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExtendedWrapup",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsScreenshareParticipantCommunicationWrapupRequest->post_conversations_screenshare_participant_communication_wrapup: %s\\n\" % e)"
+  },
+  "post_conversations_social_participant_communication_wrapup": {
+    "operationId": "post_conversations_social_participant_communication_wrapup",
+    "functionName": "post_conversations_social_participant_communication_wrapup",
+    "signature": "post_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExtendedWrapup",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsSocialParticipantCommunicationWrapupRequest->post_conversations_social_participant_communication_wrapup: %s\\n\" % e)"
+  },
+  "post_conversations_video_participant_communication_wrapup": {
+    "operationId": "post_conversations_video_participant_communication_wrapup",
+    "functionName": "post_conversations_video_participant_communication_wrapup",
+    "signature": "post_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "participant_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExtendedWrapup",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi()\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling PostConversationsVideoParticipantCommunicationWrapupRequest->post_conversations_video_participant_communication_wrapup: %s\\n\" % e)"
   },
   "put_conversation_participant_flaggedreason": {
     "operationId": "put_conversation_participant_flaggedreason",

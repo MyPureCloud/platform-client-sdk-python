@@ -32,9 +32,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_secureattributes**](ConversationsApi.html#get_conversation_secureattributes) | Get the secure attributes on a conversation.|
 |[**get_conversations**](ConversationsApi.html#get_conversations) | Get active conversations for the logged in user|
 |[**get_conversations_call**](ConversationsApi.html#get_conversations_call) | Get call conversation|
+|[**get_conversations_call_participant_communication_wrapup**](ConversationsApi.html#get_conversations_call_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_call_participant_wrapup**](ConversationsApi.html#get_conversations_call_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_call_participant_wrapupcodes**](ConversationsApi.html#get_conversations_call_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_callback**](ConversationsApi.html#get_conversations_callback) | Get callback conversation|
+|[**get_conversations_callback_participant_communication_wrapup**](ConversationsApi.html#get_conversations_callback_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_callback_participant_wrapup**](ConversationsApi.html#get_conversations_callback_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_callback_participant_wrapupcodes**](ConversationsApi.html#get_conversations_callback_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_callbacks**](ConversationsApi.html#get_conversations_callbacks) | Get active callback conversations for the logged in user|
@@ -44,10 +46,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_chat**](ConversationsApi.html#get_conversations_chat) | Get chat conversation|
 |[**get_conversations_chat_message**](ConversationsApi.html#get_conversations_chat_message) | Get a web chat conversation message|
 |[**get_conversations_chat_messages**](ConversationsApi.html#get_conversations_chat_messages) | Get the messages of a chat conversation.|
+|[**get_conversations_chat_participant_communication_wrapup**](ConversationsApi.html#get_conversations_chat_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_chat_participant_wrapup**](ConversationsApi.html#get_conversations_chat_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_chat_participant_wrapupcodes**](ConversationsApi.html#get_conversations_chat_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_chats**](ConversationsApi.html#get_conversations_chats) | Get active chat conversations for the logged in user|
 |[**get_conversations_cobrowsesession**](ConversationsApi.html#get_conversations_cobrowsesession) | Get cobrowse conversation|
+|[**get_conversations_cobrowsesession_participant_communication_wrapup**](ConversationsApi.html#get_conversations_cobrowsesession_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_cobrowsesession_participant_wrapup**](ConversationsApi.html#get_conversations_cobrowsesession_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_cobrowsesession_participant_wrapupcodes**](ConversationsApi.html#get_conversations_cobrowsesession_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_cobrowsesessions**](ConversationsApi.html#get_conversations_cobrowsesessions) | Get active cobrowse conversations for the logged in user|
@@ -55,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_email_message**](ConversationsApi.html#get_conversations_email_message) | Get conversation message|
 |[**get_conversations_email_messages**](ConversationsApi.html#get_conversations_email_messages) | Get conversation messages|
 |[**get_conversations_email_messages_draft**](ConversationsApi.html#get_conversations_email_messages_draft) | Get conversation draft reply|
+|[**get_conversations_email_participant_communication_wrapup**](ConversationsApi.html#get_conversations_email_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_email_participant_wrapup**](ConversationsApi.html#get_conversations_email_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_email_participant_wrapupcodes**](ConversationsApi.html#get_conversations_email_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_email_settings**](ConversationsApi.html#get_conversations_email_settings) | Get emails settings for a given conversation|
@@ -65,6 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_message_communication_messages_media_media_id**](ConversationsApi.html#get_conversations_message_communication_messages_media_media_id) | Get media|
 |[**get_conversations_message_details**](ConversationsApi.html#get_conversations_message_details) | Get message|
 |[**get_conversations_message_message**](ConversationsApi.html#get_conversations_message_message) | Get conversation message|
+|[**get_conversations_message_participant_communication_wrapup**](ConversationsApi.html#get_conversations_message_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_message_participant_wrapup**](ConversationsApi.html#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_message_participant_wrapupcodes**](ConversationsApi.html#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_messages**](ConversationsApi.html#get_conversations_messages) | Get active message conversations for the logged in user|
@@ -85,6 +91,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_supportedcontent_default**](ConversationsApi.html#get_conversations_messaging_supportedcontent_default) | Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.|
 |[**get_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#get_conversations_messaging_supportedcontent_supported_content_id) | Get a supported content profile|
 |[**get_conversations_messaging_threadingtimeline**](ConversationsApi.html#get_conversations_messaging_threadingtimeline) | Get conversation threading window timeline for each messaging type|
+|[**get_conversations_screenshare_participant_communication_wrapup**](ConversationsApi.html#get_conversations_screenshare_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_settings**](ConversationsApi.html#get_conversations_settings) | Get Settings|
+|[**get_conversations_social_participant_communication_wrapup**](ConversationsApi.html#get_conversations_social_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_video_participant_communication_wrapup**](ConversationsApi.html#get_conversations_video_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversation_secureattributes**](ConversationsApi.html#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
@@ -119,6 +129,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_twitter_integration_id) | Update Twitter messaging integration|
 |[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update or activate a WhatsApp messaging integration|
 |[**patch_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#patch_conversations_messaging_supportedcontent_supported_content_id) | Update a supported content profile|
+|[**patch_conversations_settings**](ConversationsApi.html#patch_conversations_settings) | Update Settings|
 |[**post_analytics_conversation_details_properties**](ConversationsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
 |[**post_analytics_conversations_aggregates_query**](ConversationsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](ConversationsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
@@ -132,10 +143,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_participant_secureivrsessions**](ConversationsApi.html#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
 |[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
 |[**post_conversations_call_participant_coach**](ConversationsApi.html#post_conversations_call_participant_coach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.|
+|[**post_conversations_call_participant_communication_wrapup**](ConversationsApi.html#post_conversations_call_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_call_participant_consult**](ConversationsApi.html#post_conversations_call_participant_consult) | Initiate and update consult transfer|
 |[**post_conversations_call_participant_monitor**](ConversationsApi.html#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_call_participant_replace**](ConversationsApi.html#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_call_participants**](ConversationsApi.html#post_conversations_call_participants) | Add participants to a conversation|
+|[**post_conversations_callback_participant_communication_wrapup**](ConversationsApi.html#post_conversations_callback_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_callback_participant_replace**](ConversationsApi.html#post_conversations_callback_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_callbacks**](ConversationsApi.html#post_conversations_callbacks) | Create a Callback|
 |[**post_conversations_callbacks_bulk_disconnect**](ConversationsApi.html#post_conversations_callbacks_bulk_disconnect) | Disconnect multiple scheduled callbacks|
@@ -143,12 +156,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_calls**](ConversationsApi.html#post_conversations_calls) | Create a call conversation|
 |[**post_conversations_chat_communication_messages**](ConversationsApi.html#post_conversations_chat_communication_messages) | Send a message on behalf of a communication in a chat conversation.|
 |[**post_conversations_chat_communication_typing**](ConversationsApi.html#post_conversations_chat_communication_typing) | Send a typing-indicator on behalf of a communication in a chat conversation.|
+|[**post_conversations_chat_participant_communication_wrapup**](ConversationsApi.html#post_conversations_chat_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_chat_participant_replace**](ConversationsApi.html#post_conversations_chat_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_chats**](ConversationsApi.html#post_conversations_chats) | Create a web chat conversation|
+|[**post_conversations_cobrowsesession_participant_communication_wrapup**](ConversationsApi.html#post_conversations_cobrowsesession_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_cobrowsesession_participant_replace**](ConversationsApi.html#post_conversations_cobrowsesession_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_email_inboundmessages**](ConversationsApi.html#post_conversations_email_inboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.|
 |[**post_conversations_email_messages**](ConversationsApi.html#post_conversations_email_messages) | Send an email reply|
 |[**post_conversations_email_messages_draft_attachments_copy**](ConversationsApi.html#post_conversations_email_messages_draft_attachments_copy) | Copy attachments from an email message to the current draft.|
+|[**post_conversations_email_participant_communication_wrapup**](ConversationsApi.html#post_conversations_email_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_email_participant_replace**](ConversationsApi.html#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_emails**](ConversationsApi.html#post_conversations_emails) | Create an email conversation|
 |[**post_conversations_emails_agentless**](ConversationsApi.html#post_conversations_emails_agentless) | Create an email conversation, per API|
@@ -159,6 +175,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_communication_messages_media**](ConversationsApi.html#post_conversations_message_communication_messages_media) | Create media|
 |[**post_conversations_message_communication_typing**](ConversationsApi.html#post_conversations_message_communication_typing) | Send message typing event|
 |[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
+|[**post_conversations_message_participant_communication_wrapup**](ConversationsApi.html#post_conversations_message_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_message_participant_replace**](ConversationsApi.html#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_messages**](ConversationsApi.html#post_conversations_messages) | Create an outbound messaging conversation.|
 |[**post_conversations_messages_agentless**](ConversationsApi.html#post_conversations_messages_agentless) | Send an agentless outbound message|
@@ -170,6 +187,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp) | Create a WhatsApp Integration|
 |[**post_conversations_messaging_supportedcontent**](ConversationsApi.html#post_conversations_messaging_supportedcontent) | Create a Supported Content profile|
 |[**post_conversations_participants_attributes_search**](ConversationsApi.html#post_conversations_participants_attributes_search) | Search conversations|
+|[**post_conversations_screenshare_participant_communication_wrapup**](ConversationsApi.html#post_conversations_screenshare_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_social_participant_communication_wrapup**](ConversationsApi.html#post_conversations_social_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_video_participant_communication_wrapup**](ConversationsApi.html#post_conversations_video_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
 |[**put_conversation_secureattributes**](ConversationsApi.html#put_conversation_secureattributes) | Set the secure attributes on a conversation.|
 |[**put_conversation_tags**](ConversationsApi.html#put_conversation_tags) | Update the tags on a conversation.|
@@ -1423,6 +1443,62 @@ except ApiException as e:
 
 [**CallConversation**](CallConversation.html)
 
+<a name="get_conversations_call_participant_communication_wrapup"></a>
+
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+
+
+Get the wrap-up for this conversation communication. 
+
+
+
+Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation communication. 
+    api_response = api_instance.get_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_call_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
+
 <a name="get_conversations_call_participant_wrapup"></a>
 
 ## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
@@ -1578,6 +1654,62 @@ except ApiException as e:
 ### Return type
 
 [**CallbackConversation**](CallbackConversation.html)
+
+<a name="get_conversations_callback_participant_communication_wrapup"></a>
+
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+
+
+Get the wrap-up for this conversation communication. 
+
+
+
+Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation communication. 
+    api_response = api_instance.get_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_callback_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_callback_participant_wrapup"></a>
 
@@ -2043,6 +2175,62 @@ except ApiException as e:
 
 [**WebChatMessageEntityList**](WebChatMessageEntityList.html)
 
+<a name="get_conversations_chat_participant_communication_wrapup"></a>
+
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+
+
+Get the wrap-up for this conversation communication. 
+
+
+
+Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation communication. 
+    api_response = api_instance.get_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_chat_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
+
 <a name="get_conversations_chat_participant_wrapup"></a>
 
 ## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional=provisional)
@@ -2244,6 +2432,62 @@ except ApiException as e:
 ### Return type
 
 [**CobrowseConversation**](CobrowseConversation.html)
+
+<a name="get_conversations_cobrowsesession_participant_communication_wrapup"></a>
+
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+
+
+Get the wrap-up for this conversation communication. 
+
+
+
+Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation communication. 
+    api_response = api_instance.get_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_cobrowsesession_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_cobrowsesession_participant_wrapup"></a>
 
@@ -2598,6 +2842,62 @@ except ApiException as e:
 ### Return type
 
 [**EmailMessage**](EmailMessage.html)
+
+<a name="get_conversations_email_participant_communication_wrapup"></a>
+
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+
+
+Get the wrap-up for this conversation communication. 
+
+
+
+Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation communication. 
+    api_response = api_instance.get_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_email_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_email_participant_wrapup"></a>
 
@@ -3116,6 +3416,62 @@ except ApiException as e:
 ### Return type
 
 [**MessageData**](MessageData.html)
+
+<a name="get_conversations_message_participant_communication_wrapup"></a>
+
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+
+
+Get the wrap-up for this conversation communication. 
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation communication. 
+    api_response = api_instance.get_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_message_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_message_participant_wrapup"></a>
 
@@ -4195,6 +4551,221 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**ConversationThreadingWindow**](ConversationThreadingWindow.html)
+
+<a name="get_conversations_screenshare_participant_communication_wrapup"></a>
+
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+
+
+Get the wrap-up for this conversation communication. 
+
+
+
+Wraps GET /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation communication. 
+    api_response = api_instance.get_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_screenshare_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
+
+<a name="get_conversations_settings"></a>
+
+## [**Settings**](Settings.html) get_conversations_settings()
+
+
+
+Get Settings
+
+
+
+Wraps GET /api/v2/conversations/settings 
+
+Requires ANY permissions: 
+
+* conversation:settings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get Settings
+    api_response = api_instance.get_conversations_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**Settings**](Settings.html)
+
+<a name="get_conversations_social_participant_communication_wrapup"></a>
+
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+
+
+Get the wrap-up for this conversation communication. 
+
+
+
+Wraps GET /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation communication. 
+    api_response = api_instance.get_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_social_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
+
+<a name="get_conversations_video_participant_communication_wrapup"></a>
+
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+
+
+Get the wrap-up for this conversation communication. 
+
+
+
+Wraps GET /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation communication. 
+    api_response = api_instance.get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_video_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="patch_conversation_participant"></a>
 
@@ -6028,6 +6599,56 @@ except ApiException as e:
 
 [**SupportedContent**](SupportedContent.html)
 
+<a name="patch_conversations_settings"></a>
+
+##  patch_conversations_settings(body)
+
+
+
+Update Settings
+
+
+
+Wraps PATCH /api/v2/conversations/settings 
+
+Requires ANY permissions: 
+
+* conversation:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.Settings() # Settings | Settings
+
+try:
+    # Update Settings
+    api_instance.patch_conversations_settings(body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Settings**](Settings.html)| Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_analytics_conversation_details_properties"></a>
 
 ## [**PropertyIndexRequest**](PropertyIndexRequest.html) post_analytics_conversation_details_properties(conversation_id, body)
@@ -6719,6 +7340,62 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="post_conversations_call_participant_communication_wrapup"></a>
+
+##  post_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+
+
+Apply wrap-up for this conversation communication
+
+
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+
+try:
+    # Apply wrap-up for this conversation communication
+    api_instance.post_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_conversations_call_participant_consult"></a>
 
 ## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult(conversation_id, participant_id, body)
@@ -6929,6 +7606,62 @@ except ApiException as e:
 ### Return type
 
 [**Conversation**](Conversation.html)
+
+<a name="post_conversations_callback_participant_communication_wrapup"></a>
+
+##  post_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+
+
+Apply wrap-up for this conversation communication
+
+
+
+Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+
+try:
+    # Apply wrap-up for this conversation communication
+    api_instance.post_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_callback_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_conversations_callback_participant_replace"></a>
 
@@ -7292,6 +8025,62 @@ except ApiException as e:
 
 [**WebChatTyping**](WebChatTyping.html)
 
+<a name="post_conversations_chat_participant_communication_wrapup"></a>
+
+##  post_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+
+
+Apply wrap-up for this conversation communication
+
+
+
+Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+
+try:
+    # Apply wrap-up for this conversation communication
+    api_instance.post_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_chat_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_conversations_chat_participant_replace"></a>
 
 ##  post_conversations_chat_participant_replace(conversation_id, participant_id, body)
@@ -7395,6 +8184,62 @@ except ApiException as e:
 ### Return type
 
 [**ChatConversation**](ChatConversation.html)
+
+<a name="post_conversations_cobrowsesession_participant_communication_wrapup"></a>
+
+##  post_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+
+
+Apply wrap-up for this conversation communication
+
+
+
+Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+
+try:
+    # Apply wrap-up for this conversation communication
+    api_instance.post_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_cobrowsesession_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_conversations_cobrowsesession_participant_replace"></a>
 
@@ -7604,6 +8449,62 @@ except ApiException as e:
 ### Return type
 
 [**EmailMessage**](EmailMessage.html)
+
+<a name="post_conversations_email_participant_communication_wrapup"></a>
+
+##  post_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+
+
+Apply wrap-up for this conversation communication
+
+
+
+Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+
+try:
+    # Apply wrap-up for this conversation communication
+    api_instance.post_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_email_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_conversations_email_participant_replace"></a>
 
@@ -8145,6 +9046,62 @@ except ApiException as e:
 ### Return type
 
 [**TextMessageListing**](TextMessageListing.html)
+
+<a name="post_conversations_message_participant_communication_wrapup"></a>
+
+##  post_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+
+
+Apply wrap-up for this conversation communication
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+
+try:
+    # Apply wrap-up for this conversation communication
+    api_instance.post_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_conversations_message_participant_replace"></a>
 
@@ -8718,6 +9675,174 @@ except ApiException as e:
 ### Return type
 
 [**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
+
+<a name="post_conversations_screenshare_participant_communication_wrapup"></a>
+
+##  post_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+
+
+Apply wrap-up for this conversation communication
+
+
+
+Wraps POST /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+
+try:
+    # Apply wrap-up for this conversation communication
+    api_instance.post_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_screenshare_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_conversations_social_participant_communication_wrapup"></a>
+
+##  post_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+
+
+Apply wrap-up for this conversation communication
+
+
+
+Wraps POST /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+
+try:
+    # Apply wrap-up for this conversation communication
+    api_instance.post_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_social_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_conversations_video_participant_communication_wrapup"></a>
+
+##  post_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+
+
+Apply wrap-up for this conversation communication
+
+
+
+Wraps POST /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+
+try:
+    # Apply wrap-up for this conversation communication
+    api_instance.post_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_video_participant_communication_wrapup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="put_conversation_participant_flaggedreason"></a>
 

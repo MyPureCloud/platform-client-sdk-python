@@ -2702,6 +2702,7 @@ from .models.set_wrapper_route_path_request import SetWrapperRoutePathRequest
 from .models.set_wrapper_string import SetWrapperString
 from .models.set_wrapper_sync_time_off_property import SetWrapperSyncTimeOffProperty
 from .models.setting_direction import SettingDirection
+from .models.settings import Settings
 from .models.share import Share
 from .models.share_entity_listing import ShareEntityListing
 from .models.shared_entity import SharedEntity
@@ -3486,6 +3487,7 @@ from .models.workday_points_trend_item import WorkdayPointsTrendItem
 from .models.workday_values_metric_item import WorkdayValuesMetricItem
 from .models.workday_values_trend import WorkdayValuesTrend
 from .models.workday_values_trend_item import WorkdayValuesTrendItem
+from .models.workflow_target_settings import WorkflowTargetSettings
 from .models.workitems_events_notification_custom_attribute import WorkitemsEventsNotificationCustomAttribute
 from .models.workitems_events_notification_delta import WorkitemsEventsNotificationDelta
 from .models.workitems_events_notification_workitem import WorkitemsEventsNotificationWorkitem

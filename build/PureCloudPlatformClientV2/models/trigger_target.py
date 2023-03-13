@@ -41,16 +41,19 @@ class TriggerTarget(object):
         """
         self.swagger_types = {
             'type': 'str',
-            'id': 'str'
+            'id': 'str',
+            'workflow_target_settings': 'WorkflowTargetSettings'
         }
 
         self.attribute_map = {
             'type': 'type',
-            'id': 'id'
+            'id': 'id',
+            'workflow_target_settings': 'workflowTargetSettings'
         }
 
         self._type = None
         self._id = None
+        self._workflow_target_settings = None
 
     @property
     def type(self):
@@ -102,6 +105,30 @@ class TriggerTarget(object):
         
 
         self._id = id
+
+    @property
+    def workflow_target_settings(self):
+        """
+        Gets the workflow_target_settings of this TriggerTarget.
+        Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.
+
+        :return: The workflow_target_settings of this TriggerTarget.
+        :rtype: WorkflowTargetSettings
+        """
+        return self._workflow_target_settings
+
+    @workflow_target_settings.setter
+    def workflow_target_settings(self, workflow_target_settings):
+        """
+        Sets the workflow_target_settings of this TriggerTarget.
+        Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.
+
+        :param workflow_target_settings: The workflow_target_settings of this TriggerTarget.
+        :type: WorkflowTargetSettings
+        """
+        
+
+        self._workflow_target_settings = workflow_target_settings
 
     def to_dict(self):
         """
