@@ -42,18 +42,21 @@ class Signature(object):
         self.swagger_types = {
             'enabled': 'bool',
             'canned_response_id': 'str',
-            'always_included': 'bool'
+            'always_included': 'bool',
+            'inclusion_type': 'str'
         }
 
         self.attribute_map = {
             'enabled': 'enabled',
             'canned_response_id': 'cannedResponseId',
-            'always_included': 'alwaysIncluded'
+            'always_included': 'alwaysIncluded',
+            'inclusion_type': 'inclusionType'
         }
 
         self._enabled = None
         self._canned_response_id = None
         self._always_included = None
+        self._inclusion_type = None
 
     @property
     def enabled(self):
@@ -126,6 +129,33 @@ class Signature(object):
         
 
         self._always_included = always_included
+
+    @property
+    def inclusion_type(self):
+        """
+        Gets the inclusion_type of this Signature.
+        The configuration to indicate when the signature of a conversation has to be included
+
+        :return: The inclusion_type of this Signature.
+        :rtype: str
+        """
+        return self._inclusion_type
+
+    @inclusion_type.setter
+    def inclusion_type(self, inclusion_type):
+        """
+        Sets the inclusion_type of this Signature.
+        The configuration to indicate when the signature of a conversation has to be included
+
+        :param inclusion_type: The inclusion_type of this Signature.
+        :type: str
+        """
+        allowed_values = ["Draft", "Send", "SendOnce"]
+        if inclusion_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for inclusion_type -> " + inclusion_type)
+            self._inclusion_type = "outdated_sdk_version"
+        else:
+            self._inclusion_type = inclusion_type
 
     def to_dict(self):
         """

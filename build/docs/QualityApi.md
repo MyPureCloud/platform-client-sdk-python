@@ -787,7 +787,7 @@ is_released = True # bool | the evaluation has been released (optional)
 agent_has_read = True # bool | agent has the evaluation (optional)
 expand_answer_total_scores = True # bool | get the total scores for evaluations (optional)
 maximum = 56 # int | maximum (optional)
-sort_order = 'sort_order_example' # str | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending' (optional)
+sort_order = 'sort_order_example' # str | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId (optional)
 
 try:
     # Queries Evaluations and returns a paged list
@@ -820,7 +820,7 @@ except ApiException as e:
 | **agent_has_read** | **bool**| agent has the evaluation | [optional]  |
 | **expand_answer_total_scores** | **bool**| get the total scores for evaluations | [optional]  |
 | **maximum** | **int**| maximum | [optional]  |
-| **sort_order** | **str**| sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; | [optional]  |
+| **sort_order** | **str**| sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39;. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

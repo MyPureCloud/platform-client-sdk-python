@@ -42,29 +42,32 @@ class WrapupCode(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'StarrableDivision',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'modified_by': 'str',
             'created_by': 'str',
+            'modified_by': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'modified_by': 'modifiedBy',
             'created_by': 'createdBy',
+            'modified_by': 'modifiedBy',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._division = None
         self._date_created = None
         self._date_modified = None
-        self._modified_by = None
         self._created_by = None
+        self._modified_by = None
         self._self_uri = None
 
     @property
@@ -116,10 +119,34 @@ class WrapupCode(object):
         self._name = name
 
     @property
+    def division(self):
+        """
+        Gets the division of this WrapupCode.
+        The division to which this entity belongs.
+
+        :return: The division of this WrapupCode.
+        :rtype: StarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this WrapupCode.
+        The division to which this entity belongs.
+
+        :param division: The division of this WrapupCode.
+        :type: StarrableDivision
+        """
+        
+
+        self._division = division
+
+    @property
     def date_created(self):
         """
         Gets the date_created of this WrapupCode.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date when the assistant wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this WrapupCode.
         :rtype: datetime
@@ -130,7 +157,7 @@ class WrapupCode(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this WrapupCode.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date when the assistant wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this WrapupCode.
         :type: datetime
@@ -143,7 +170,7 @@ class WrapupCode(object):
     def date_modified(self):
         """
         Gets the date_modified of this WrapupCode.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date when the wrapup-code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this WrapupCode.
         :rtype: datetime
@@ -154,7 +181,7 @@ class WrapupCode(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this WrapupCode.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date when the wrapup-code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this WrapupCode.
         :type: datetime
@@ -162,6 +189,30 @@ class WrapupCode(object):
         
 
         self._date_modified = date_modified
+
+    @property
+    def created_by(self):
+        """
+        Gets the created_by of this WrapupCode.
+        The wrap-up code name.
+
+        :return: The created_by of this WrapupCode.
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """
+        Sets the created_by of this WrapupCode.
+        The wrap-up code name.
+
+        :param created_by: The created_by of this WrapupCode.
+        :type: str
+        """
+        
+
+        self._created_by = created_by
 
     @property
     def modified_by(self):
@@ -186,30 +237,6 @@ class WrapupCode(object):
         
 
         self._modified_by = modified_by
-
-    @property
-    def created_by(self):
-        """
-        Gets the created_by of this WrapupCode.
-
-
-        :return: The created_by of this WrapupCode.
-        :rtype: str
-        """
-        return self._created_by
-
-    @created_by.setter
-    def created_by(self, created_by):
-        """
-        Sets the created_by of this WrapupCode.
-
-
-        :param created_by: The created_by of this WrapupCode.
-        :type: str
-        """
-        
-
-        self._created_by = created_by
 
     @property
     def self_uri(self):

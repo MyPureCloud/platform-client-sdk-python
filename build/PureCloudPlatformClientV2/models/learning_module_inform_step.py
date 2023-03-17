@@ -84,7 +84,7 @@ class LearningModuleInformStep(object):
         :param type: The type of this LearningModuleInformStep.
         :type: str
         """
-        allowed_values = ["Url", "Content", "GenesysBuiltInCourse", "RichText"]
+        allowed_values = ["Url", "Content", "GenesysBuiltInCourse", "RichText", "Scorm"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

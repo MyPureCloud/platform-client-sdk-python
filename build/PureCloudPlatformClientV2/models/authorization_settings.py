@@ -43,6 +43,8 @@ class AuthorizationSettings(object):
             'id': 'str',
             'analysis_enabled': 'bool',
             'analysis_days': 'int',
+            'date_last_calculated': 'datetime',
+            'date_last_active': 'date',
             'self_uri': 'str'
         }
 
@@ -50,12 +52,16 @@ class AuthorizationSettings(object):
             'id': 'id',
             'analysis_enabled': 'analysisEnabled',
             'analysis_days': 'analysisDays',
+            'date_last_calculated': 'dateLastCalculated',
+            'date_last_active': 'dateLastActive',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._analysis_enabled = None
         self._analysis_days = None
+        self._date_last_calculated = None
+        self._date_last_active = None
         self._self_uri = None
 
     @property
@@ -129,6 +135,54 @@ class AuthorizationSettings(object):
         
 
         self._analysis_days = analysis_days
+
+    @property
+    def date_last_calculated(self):
+        """
+        Gets the date_last_calculated of this AuthorizationSettings.
+        The date and time of the most recent unused role calculation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_last_calculated of this AuthorizationSettings.
+        :rtype: datetime
+        """
+        return self._date_last_calculated
+
+    @date_last_calculated.setter
+    def date_last_calculated(self, date_last_calculated):
+        """
+        Sets the date_last_calculated of this AuthorizationSettings.
+        The date and time of the most recent unused role calculation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_last_calculated: The date_last_calculated of this AuthorizationSettings.
+        :type: datetime
+        """
+        
+
+        self._date_last_calculated = date_last_calculated
+
+    @property
+    def date_last_active(self):
+        """
+        Gets the date_last_active of this AuthorizationSettings.
+        The date of the most recent org activity used for analysis. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :return: The date_last_active of this AuthorizationSettings.
+        :rtype: date
+        """
+        return self._date_last_active
+
+    @date_last_active.setter
+    def date_last_active(self, date_last_active):
+        """
+        Sets the date_last_active of this AuthorizationSettings.
+        The date of the most recent org activity used for analysis. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :param date_last_active: The date_last_active of this AuthorizationSettings.
+        :type: date
+        """
+        
+
+        self._date_last_active = date_last_active
 
     @property
     def self_uri(self):

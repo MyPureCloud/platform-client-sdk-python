@@ -5919,12 +5919,13 @@ class RoutingApi(object):
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :param str name: Wrapup code's name ('Sort by' param is ignored unless this field is provided)
+        :param list[str] division_id: Filter by division ID(s)
         :return: WrapupCodeEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name']
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -5953,6 +5954,8 @@ class RoutingApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 
@@ -9139,7 +9142,7 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param WrapupCode body: WrapupCode (required)
+        :param WrapupCodeRequest body: WrapupCode (required)
         :return: WrapupCode
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10124,7 +10127,7 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str code_id: Wrapup Code ID (required)
-        :param WrapupCode body: WrapupCode (required)
+        :param WrapupCodeRequest body: WrapupCode (required)
         :return: WrapupCode
                  If the method is called asynchronously,
                  returns the request thread.

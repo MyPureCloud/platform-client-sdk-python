@@ -1111,7 +1111,7 @@ class QualityApi(object):
         :param bool agent_has_read: agent has the evaluation
         :param bool expand_answer_total_scores: get the total scores for evaluations
         :param int maximum: maximum
-        :param str sort_order: sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
+        :param str sort_order: sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId
         :return: EvaluationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

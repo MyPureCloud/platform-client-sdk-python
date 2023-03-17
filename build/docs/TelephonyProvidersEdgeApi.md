@@ -118,7 +118,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edges_phones**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phones) | Create a new Phone|
 |[**post_telephony_providers_edges_phones_reboot**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phones_reboot) | Reboot Multiple Phones|
 |[**post_telephony_providers_edges_site_outboundroutes**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_site_outboundroutes) | Create outbound route|
-|[**post_telephony_providers_edges_site_rebalance**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_site_rebalance) | Triggers the rebalance operation.|
 |[**post_telephony_providers_edges_sites**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_sites) | Create a Site.|
 |[**post_telephony_providers_edges_trunkbasesettings**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_trunkbasesettings) | Create a Trunk Base Settings object|
 |[**put_telephony_providers_edge**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edge) | Update a edge.|
@@ -6022,56 +6021,6 @@ except ApiException as e:
 ### Return type
 
 [**OutboundRouteBase**](OutboundRouteBase.html)
-
-<a name="post_telephony_providers_edges_site_rebalance"></a>
-
-##  post_telephony_providers_edges_site_rebalance(site_id)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Triggers the rebalance operation.
-
-
-
-Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-site_id = 'site_id_example' # str | Site ID
-
-try:
-    # Triggers the rebalance operation.
-    api_instance.post_telephony_providers_edges_site_rebalance(site_id)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_rebalance: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
 
 <a name="post_telephony_providers_edges_sites"></a>
 

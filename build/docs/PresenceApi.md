@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_presence_source**](PresenceApi.html#delete_presence_source) | Delete a Presence Source|
 |[**delete_presencedefinition**](PresenceApi.html#delete_presencedefinition) | Delete a Presence Definition|
+|[**get_presence_settings**](PresenceApi.html#get_presence_settings) | Get the presence settings|
 |[**get_presence_source**](PresenceApi.html#get_presence_source) | Get a Presence Source|
 |[**get_presence_sources**](PresenceApi.html#get_presence_sources) | Get a list of Presence Sources|
 |[**get_presence_user_primarysource**](PresenceApi.html#get_presence_user_primarysource) | Get a user&#39;s Primary Presence Source|
@@ -22,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_presences_purecloud**](PresenceApi.html#patch_user_presences_purecloud) | Patch a Genesys Cloud user&#39;s presence|
 |[**post_presence_sources**](PresenceApi.html#post_presence_sources) | Create a Presence Source|
 |[**post_presencedefinitions**](PresenceApi.html#post_presencedefinitions) | Create a Presence Definition|
+|[**put_presence_settings**](PresenceApi.html#put_presence_settings) | Update the presence settings|
 |[**put_presence_source**](PresenceApi.html#put_presence_source) | Update a Presence Source|
 |[**put_presence_user_primarysource**](PresenceApi.html#put_presence_user_primarysource) | Update a user&#39;s Primary Presence Source|
 |[**put_presencedefinition**](PresenceApi.html#put_presencedefinition) | Update a Presence Definition|
@@ -128,6 +130,53 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_presence_settings"></a>
+
+## [**PresenceSettings**](PresenceSettings.html) get_presence_settings()
+
+
+
+Get the presence settings
+
+
+
+Wraps GET /api/v2/presence/settings 
+
+Requires ALL permissions: 
+
+* presence:settings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+
+try:
+    # Get the presence settings
+    api_response = api_instance.get_presence_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_presence_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**PresenceSettings**](PresenceSettings.html)
 
 <a name="get_presence_source"></a>
 
@@ -754,6 +803,57 @@ except ApiException as e:
 ### Return type
 
 [**OrganizationPresence**](OrganizationPresence.html)
+
+<a name="put_presence_settings"></a>
+
+## [**PresenceSettings**](PresenceSettings.html) put_presence_settings(body)
+
+
+
+Update the presence settings
+
+
+
+Wraps PUT /api/v2/presence/settings 
+
+Requires ALL permissions: 
+
+* presence:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+body = PureCloudPlatformClientV2.PresenceSettings() # PresenceSettings | Presence Settings
+
+try:
+    # Update the presence settings
+    api_response = api_instance.put_presence_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->put_presence_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**PresenceSettings**](PresenceSettings.html)| Presence Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PresenceSettings**](PresenceSettings.html)
 
 <a name="put_presence_source"></a>
 

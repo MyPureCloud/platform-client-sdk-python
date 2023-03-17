@@ -1351,7 +1351,10 @@ PureCloudPlatformClientV2/models/evaluation_question_group_score.py
 PureCloudPlatformClientV2/models/evaluation_question_score.py
 PureCloudPlatformClientV2/models/evaluation_response.py
 PureCloudPlatformClientV2/models/evaluation_scoring_set.py
+PureCloudPlatformClientV2/models/evaluation_settings.py
+PureCloudPlatformClientV2/models/evaluation_settings_assignee.py
 PureCloudPlatformClientV2/models/evaluation_source.py
+PureCloudPlatformClientV2/models/evaluation_version.py
 PureCloudPlatformClientV2/models/evaluator_activity.py
 PureCloudPlatformClientV2/models/evaluator_activity_entity_listing.py
 PureCloudPlatformClientV2/models/event_co_browse.py
@@ -2139,6 +2142,7 @@ PureCloudPlatformClientV2/models/overall_best_points.py
 PureCloudPlatformClientV2/models/overall_best_points_item.py
 PureCloudPlatformClientV2/models/page.py
 PureCloudPlatformClientV2/models/paged_namespace_listing.py
+PureCloudPlatformClientV2/models/pageless_domain_entity_listing_evaluation_version.py
 PureCloudPlatformClientV2/models/paging_spec.py
 PureCloudPlatformClientV2/models/parameter.py
 PureCloudPlatformClientV2/models/parsed_certificate.py
@@ -2244,6 +2248,7 @@ PureCloudPlatformClientV2/models/presence_detail_query_filter.py
 PureCloudPlatformClientV2/models/presence_detail_query_predicate.py
 PureCloudPlatformClientV2/models/presence_event_organization_presence.py
 PureCloudPlatformClientV2/models/presence_event_user_presence.py
+PureCloudPlatformClientV2/models/presence_settings.py
 PureCloudPlatformClientV2/models/process_schedule_update_upload_request.py
 PureCloudPlatformClientV2/models/program.py
 PureCloudPlatformClientV2/models/program_job.py
@@ -2629,6 +2634,7 @@ PureCloudPlatformClientV2/models/response_set_entity_listing.py
 PureCloudPlatformClientV2/models/response_substitution.py
 PureCloudPlatformClientV2/models/response_text.py
 PureCloudPlatformClientV2/models/rest_error_detail.py
+PureCloudPlatformClientV2/models/restore_presence_settings.py
 PureCloudPlatformClientV2/models/result_counters.py
 PureCloudPlatformClientV2/models/retention_duration.py
 PureCloudPlatformClientV2/models/reverse_whitepages_lookup_result.py
@@ -2765,6 +2771,7 @@ PureCloudPlatformClientV2/models/session_listing.py
 PureCloudPlatformClientV2/models/session_segment_assignment.py
 PureCloudPlatformClientV2/models/set_content_template_action_settings.py
 PureCloudPlatformClientV2/models/set_recording_state.py
+PureCloudPlatformClientV2/models/set_sms_phone_number_action_settings.py
 PureCloudPlatformClientV2/models/set_time_off_limit_values_request.py
 PureCloudPlatformClientV2/models/set_uui_data_request.py
 PureCloudPlatformClientV2/models/set_wrapper_day_of_week.py
@@ -2834,6 +2841,7 @@ PureCloudPlatformClientV2/models/source_entity_listing.py
 PureCloudPlatformClientV2/models/source_planning_group_request.py
 PureCloudPlatformClientV2/models/speech_text_analytics_settings_request.py
 PureCloudPlatformClientV2/models/speech_text_analytics_settings_response.py
+PureCloudPlatformClientV2/models/starrable_division.py
 PureCloudPlatformClientV2/models/stat_event_campaign_topic_interval_metrics.py
 PureCloudPlatformClientV2/models/stat_event_campaign_topic_metric_stats.py
 PureCloudPlatformClientV2/models/stat_event_campaign_topic_stats_notification.py
@@ -3581,10 +3589,12 @@ PureCloudPlatformClientV2/models/wrap_up_code_reference.py
 PureCloudPlatformClientV2/models/wrapup.py
 PureCloudPlatformClientV2/models/wrapup_code.py
 PureCloudPlatformClientV2/models/wrapup_code_entity_listing.py
+PureCloudPlatformClientV2/models/wrapup_code_request.py
 PureCloudPlatformClientV2/models/wrapup_detail_event_topic_wrapup_event.py
 PureCloudPlatformClientV2/models/writable_dialer_contact.py
 PureCloudPlatformClientV2/models/writable_division.py
 PureCloudPlatformClientV2/models/writable_entity.py
+PureCloudPlatformClientV2/models/writable_starrable_division.py
 PureCloudPlatformClientV2/rest.py
 README.md
 docs/ADFS.md
@@ -4889,7 +4899,10 @@ docs/EvaluationQuestionGroupScore.md
 docs/EvaluationQuestionScore.md
 docs/EvaluationResponse.md
 docs/EvaluationScoringSet.md
+docs/EvaluationSettings.md
+docs/EvaluationSettingsAssignee.md
 docs/EvaluationSource.md
+docs/EvaluationVersion.md
 docs/EvaluatorActivity.md
 docs/EvaluatorActivityEntityListing.md
 docs/EventCoBrowse.md
@@ -5732,6 +5745,7 @@ docs/OverallBestPointsItem.md
 docs/PINConfiguration.md
 docs/Page.md
 docs/PagedNamespaceListing.md
+docs/PagelessDomainEntityListingEvaluationVersion.md
 docs/PagingSpec.md
 docs/Parameter.md
 docs/ParsedCertificate.md
@@ -5838,6 +5852,7 @@ docs/PresenceDetailQueryFilter.md
 docs/PresenceDetailQueryPredicate.md
 docs/PresenceEventOrganizationPresence.md
 docs/PresenceEventUserPresence.md
+docs/PresenceSettings.md
 docs/ProcessAutomationApi.json
 docs/ProcessAutomationApi.md
 docs/ProcessScheduleUpdateUploadRequest.md
@@ -6231,6 +6246,7 @@ docs/ResponseSetEntityListing.md
 docs/ResponseSubstitution.md
 docs/ResponseText.md
 docs/RestErrorDetail.md
+docs/RestorePresenceSettings.md
 docs/ResultCounters.md
 docs/RetentionDuration.md
 docs/ReverseWhitepagesLookupResult.md
@@ -6377,6 +6393,7 @@ docs/SessionListing.md
 docs/SessionSegmentAssignment.md
 docs/SetContentTemplateActionSettings.md
 docs/SetRecordingState.md
+docs/SetSmsPhoneNumberActionSettings.md
 docs/SetTimeOffLimitValuesRequest.md
 docs/SetUuiDataRequest.md
 docs/SetWrapperDayOfWeek.md
@@ -6446,6 +6463,7 @@ docs/SpeechTextAnalyticsApi.json
 docs/SpeechTextAnalyticsApi.md
 docs/SpeechTextAnalyticsSettingsRequest.md
 docs/SpeechTextAnalyticsSettingsResponse.md
+docs/StarrableDivision.md
 docs/StatEventCampaignTopicIntervalMetrics.md
 docs/StatEventCampaignTopicMetricStats.md
 docs/StatEventCampaignTopicStatsNotification.md
@@ -7229,10 +7247,12 @@ docs/WrapUpCodeReference.md
 docs/Wrapup.md
 docs/WrapupCode.md
 docs/WrapupCodeEntityListing.md
+docs/WrapupCodeRequest.md
 docs/WrapupDetailEventTopicWrapupEvent.md
 docs/WritableDialerContact.md
 docs/WritableDivision.md
 docs/WritableEntity.md
+docs/WritableStarrableDivision.md
 docs/delete_alerting_interactionstats_alert-example.txt
 docs/delete_alerting_interactionstats_rule-example.txt
 docs/delete_analytics_conversations_details_job-example.txt
@@ -8031,6 +8051,7 @@ docs/get_outbound_sequence-example.txt
 docs/get_outbound_sequences-example.txt
 docs/get_outbound_settings-example.txt
 docs/get_outbound_wrapupcodemappings-example.txt
+docs/get_presence_settings-example.txt
 docs/get_presence_source-example.txt
 docs/get_presence_sources-example.txt
 docs/get_presence_user_primarysource-example.txt
@@ -8971,7 +8992,6 @@ docs/post_telephony_providers_edges_phonebasesettings-example.txt
 docs/post_telephony_providers_edges_phones-example.txt
 docs/post_telephony_providers_edges_phones_reboot-example.txt
 docs/post_telephony_providers_edges_site_outboundroutes-example.txt
-docs/post_telephony_providers_edges_site_rebalance-example.txt
 docs/post_telephony_providers_edges_sites-example.txt
 docs/post_telephony_providers_edges_trunkbasesettings-example.txt
 docs/post_telephony_siptraces_download-example.txt
@@ -9185,6 +9205,7 @@ docs/put_outbound_schedules_messagingcampaign-example.txt
 docs/put_outbound_schedules_sequence-example.txt
 docs/put_outbound_sequence-example.txt
 docs/put_outbound_wrapupcodemappings-example.txt
+docs/put_presence_settings-example.txt
 docs/put_presence_source-example.txt
 docs/put_presence_user_primarysource-example.txt
 docs/put_presencedefinition-example.txt

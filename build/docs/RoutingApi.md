@@ -3964,7 +3964,7 @@ except ApiException as e:
 
 <a name="get_routing_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
+## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, division_id=division_id)
 
 
 
@@ -3996,10 +3996,11 @@ page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
 name = 'name_example' # str | Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
+division_id = ['division_id_example'] # list[str] | Filter by division ID(s) (optional)
 
 try:
     # Get list of wrapup codes.
-    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
+    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_wrapupcodes: %s\n" % e)
@@ -4015,6 +4016,7 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, id |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Filter by division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6079,7 +6081,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.WrapupCode() # WrapupCode | WrapupCode
+body = PureCloudPlatformClientV2.WrapupCodeRequest() # WrapupCodeRequest | WrapupCode
 
 try:
     # Create a wrap-up code
@@ -6094,7 +6096,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode |  |
+| **body** | [**WrapupCodeRequest**](WrapupCodeRequest.html)| WrapupCode |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6709,7 +6711,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 code_id = 'code_id_example' # str | Wrapup Code ID
-body = PureCloudPlatformClientV2.WrapupCode() # WrapupCode | WrapupCode
+body = PureCloudPlatformClientV2.WrapupCodeRequest() # WrapupCodeRequest | WrapupCode
 
 try:
     # Update wrap-up code
@@ -6725,7 +6727,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **code_id** | **str**| Wrapup Code ID |  |
-| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode |  |
+| **body** | [**WrapupCodeRequest**](WrapupCodeRequest.html)| WrapupCode |  |
 {: class="table table-striped"}
 
 ### Return type

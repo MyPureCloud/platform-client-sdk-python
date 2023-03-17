@@ -1279,7 +1279,10 @@ from .evaluation_question_group_score import EvaluationQuestionGroupScore
 from .evaluation_question_score import EvaluationQuestionScore
 from .evaluation_response import EvaluationResponse
 from .evaluation_scoring_set import EvaluationScoringSet
+from .evaluation_settings import EvaluationSettings
+from .evaluation_settings_assignee import EvaluationSettingsAssignee
 from .evaluation_source import EvaluationSource
+from .evaluation_version import EvaluationVersion
 from .evaluator_activity import EvaluatorActivity
 from .evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .event_co_browse import EventCoBrowse
@@ -2068,6 +2071,7 @@ from .overall_best_points_item import OverallBestPointsItem
 from .pin_configuration import PINConfiguration
 from .page import Page
 from .paged_namespace_listing import PagedNamespaceListing
+from .pageless_domain_entity_listing_evaluation_version import PagelessDomainEntityListingEvaluationVersion
 from .paging_spec import PagingSpec
 from .parameter import Parameter
 from .parsed_certificate import ParsedCertificate
@@ -2172,6 +2176,7 @@ from .presence_detail_query_filter import PresenceDetailQueryFilter
 from .presence_detail_query_predicate import PresenceDetailQueryPredicate
 from .presence_event_organization_presence import PresenceEventOrganizationPresence
 from .presence_event_user_presence import PresenceEventUserPresence
+from .presence_settings import PresenceSettings
 from .process_schedule_update_upload_request import ProcessScheduleUpdateUploadRequest
 from .program import Program
 from .program_job import ProgramJob
@@ -2557,6 +2562,7 @@ from .response_set_entity_listing import ResponseSetEntityListing
 from .response_substitution import ResponseSubstitution
 from .response_text import ResponseText
 from .rest_error_detail import RestErrorDetail
+from .restore_presence_settings import RestorePresenceSettings
 from .result_counters import ResultCounters
 from .retention_duration import RetentionDuration
 from .reverse_whitepages_lookup_result import ReverseWhitepagesLookupResult
@@ -2695,6 +2701,7 @@ from .session_listing import SessionListing
 from .session_segment_assignment import SessionSegmentAssignment
 from .set_content_template_action_settings import SetContentTemplateActionSettings
 from .set_recording_state import SetRecordingState
+from .set_sms_phone_number_action_settings import SetSmsPhoneNumberActionSettings
 from .set_time_off_limit_values_request import SetTimeOffLimitValuesRequest
 from .set_uui_data_request import SetUuiDataRequest
 from .set_wrapper_day_of_week import SetWrapperDayOfWeek
@@ -2762,6 +2769,7 @@ from .source_entity_listing import SourceEntityListing
 from .source_planning_group_request import SourcePlanningGroupRequest
 from .speech_text_analytics_settings_request import SpeechTextAnalyticsSettingsRequest
 from .speech_text_analytics_settings_response import SpeechTextAnalyticsSettingsResponse
+from .starrable_division import StarrableDivision
 from .stat_event_campaign_topic_interval_metrics import StatEventCampaignTopicIntervalMetrics
 from .stat_event_campaign_topic_metric_stats import StatEventCampaignTopicMetricStats
 from .stat_event_campaign_topic_stats_notification import StatEventCampaignTopicStatsNotification
@@ -3509,7 +3517,9 @@ from .wrap_up_code_reference import WrapUpCodeReference
 from .wrapup import Wrapup
 from .wrapup_code import WrapupCode
 from .wrapup_code_entity_listing import WrapupCodeEntityListing
+from .wrapup_code_request import WrapupCodeRequest
 from .wrapup_detail_event_topic_wrapup_event import WrapupDetailEventTopicWrapupEvent
 from .writable_dialer_contact import WritableDialerContact
 from .writable_division import WritableDivision
 from .writable_entity import WritableEntity
+from .writable_starrable_division import WritableStarrableDivision

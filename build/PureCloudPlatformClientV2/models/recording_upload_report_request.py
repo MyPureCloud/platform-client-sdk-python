@@ -96,7 +96,7 @@ class RecordingUploadReportRequest(object):
         :param upload_status: The upload_status of this RecordingUploadReportRequest.
         :type: str
         """
-        allowed_values = ["Pending", "Success", "Failure"]
+        allowed_values = ["Pending", "Success", "Failure", "WaitForConversation"]
         if upload_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for upload_status -> " + upload_status)
             self._upload_status = "outdated_sdk_version"

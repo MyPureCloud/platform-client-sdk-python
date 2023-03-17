@@ -1279,7 +1279,10 @@ from .models.evaluation_question_group_score import EvaluationQuestionGroupScore
 from .models.evaluation_question_score import EvaluationQuestionScore
 from .models.evaluation_response import EvaluationResponse
 from .models.evaluation_scoring_set import EvaluationScoringSet
+from .models.evaluation_settings import EvaluationSettings
+from .models.evaluation_settings_assignee import EvaluationSettingsAssignee
 from .models.evaluation_source import EvaluationSource
+from .models.evaluation_version import EvaluationVersion
 from .models.evaluator_activity import EvaluatorActivity
 from .models.evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .models.event_co_browse import EventCoBrowse
@@ -2068,6 +2071,7 @@ from .models.overall_best_points_item import OverallBestPointsItem
 from .models.pin_configuration import PINConfiguration
 from .models.page import Page
 from .models.paged_namespace_listing import PagedNamespaceListing
+from .models.pageless_domain_entity_listing_evaluation_version import PagelessDomainEntityListingEvaluationVersion
 from .models.paging_spec import PagingSpec
 from .models.parameter import Parameter
 from .models.parsed_certificate import ParsedCertificate
@@ -2172,6 +2176,7 @@ from .models.presence_detail_query_filter import PresenceDetailQueryFilter
 from .models.presence_detail_query_predicate import PresenceDetailQueryPredicate
 from .models.presence_event_organization_presence import PresenceEventOrganizationPresence
 from .models.presence_event_user_presence import PresenceEventUserPresence
+from .models.presence_settings import PresenceSettings
 from .models.process_schedule_update_upload_request import ProcessScheduleUpdateUploadRequest
 from .models.program import Program
 from .models.program_job import ProgramJob
@@ -2557,6 +2562,7 @@ from .models.response_set_entity_listing import ResponseSetEntityListing
 from .models.response_substitution import ResponseSubstitution
 from .models.response_text import ResponseText
 from .models.rest_error_detail import RestErrorDetail
+from .models.restore_presence_settings import RestorePresenceSettings
 from .models.result_counters import ResultCounters
 from .models.retention_duration import RetentionDuration
 from .models.reverse_whitepages_lookup_result import ReverseWhitepagesLookupResult
@@ -2695,6 +2701,7 @@ from .models.session_listing import SessionListing
 from .models.session_segment_assignment import SessionSegmentAssignment
 from .models.set_content_template_action_settings import SetContentTemplateActionSettings
 from .models.set_recording_state import SetRecordingState
+from .models.set_sms_phone_number_action_settings import SetSmsPhoneNumberActionSettings
 from .models.set_time_off_limit_values_request import SetTimeOffLimitValuesRequest
 from .models.set_uui_data_request import SetUuiDataRequest
 from .models.set_wrapper_day_of_week import SetWrapperDayOfWeek
@@ -2762,6 +2769,7 @@ from .models.source_entity_listing import SourceEntityListing
 from .models.source_planning_group_request import SourcePlanningGroupRequest
 from .models.speech_text_analytics_settings_request import SpeechTextAnalyticsSettingsRequest
 from .models.speech_text_analytics_settings_response import SpeechTextAnalyticsSettingsResponse
+from .models.starrable_division import StarrableDivision
 from .models.stat_event_campaign_topic_interval_metrics import StatEventCampaignTopicIntervalMetrics
 from .models.stat_event_campaign_topic_metric_stats import StatEventCampaignTopicMetricStats
 from .models.stat_event_campaign_topic_stats_notification import StatEventCampaignTopicStatsNotification
@@ -3509,10 +3517,12 @@ from .models.wrap_up_code_reference import WrapUpCodeReference
 from .models.wrapup import Wrapup
 from .models.wrapup_code import WrapupCode
 from .models.wrapup_code_entity_listing import WrapupCodeEntityListing
+from .models.wrapup_code_request import WrapupCodeRequest
 from .models.wrapup_detail_event_topic_wrapup_event import WrapupDetailEventTopicWrapupEvent
 from .models.writable_dialer_contact import WritableDialerContact
 from .models.writable_division import WritableDivision
 from .models.writable_entity import WritableEntity
+from .models.writable_starrable_division import WritableStarrableDivision
 
 # import apis into sdk package
 from .apis.alerting_api import AlertingApi
