@@ -50,8 +50,6 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'type': 'str',
             'outcome_achievements': 'list[JourneySessionEventsNotificationOutcomeAchievement]',
             'segment_assignments': 'list[JourneySessionEventsNotificationSegmentAssignment]',
-            'attributes': 'dict(str, JourneySessionEventsNotificationCustomEventAttribute)',
-            'attribute_lists': 'dict(str, JourneySessionEventsNotificationCustomEventAttributeList)',
             'away_date': 'datetime',
             'browser': 'JourneySessionEventsNotificationBrowser',
             'device': 'JourneySessionEventsNotificationDevice',
@@ -92,8 +90,6 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'type': 'type',
             'outcome_achievements': 'outcomeAchievements',
             'segment_assignments': 'segmentAssignments',
-            'attributes': 'attributes',
-            'attribute_lists': 'attributeLists',
             'away_date': 'awayDate',
             'browser': 'browser',
             'device': 'device',
@@ -133,8 +129,6 @@ class JourneySessionEventsNotificationSessionEvent(object):
         self._type = None
         self._outcome_achievements = None
         self._segment_assignments = None
-        self._attributes = None
-        self._attribute_lists = None
         self._away_date = None
         self._browser = None
         self._device = None
@@ -402,54 +396,6 @@ class JourneySessionEventsNotificationSessionEvent(object):
         
 
         self._segment_assignments = segment_assignments
-
-    @property
-    def attributes(self):
-        """
-        Gets the attributes of this JourneySessionEventsNotificationSessionEvent.
-
-
-        :return: The attributes of this JourneySessionEventsNotificationSessionEvent.
-        :rtype: dict(str, JourneySessionEventsNotificationCustomEventAttribute)
-        """
-        return self._attributes
-
-    @attributes.setter
-    def attributes(self, attributes):
-        """
-        Sets the attributes of this JourneySessionEventsNotificationSessionEvent.
-
-
-        :param attributes: The attributes of this JourneySessionEventsNotificationSessionEvent.
-        :type: dict(str, JourneySessionEventsNotificationCustomEventAttribute)
-        """
-        
-
-        self._attributes = attributes
-
-    @property
-    def attribute_lists(self):
-        """
-        Gets the attribute_lists of this JourneySessionEventsNotificationSessionEvent.
-
-
-        :return: The attribute_lists of this JourneySessionEventsNotificationSessionEvent.
-        :rtype: dict(str, JourneySessionEventsNotificationCustomEventAttributeList)
-        """
-        return self._attribute_lists
-
-    @attribute_lists.setter
-    def attribute_lists(self, attribute_lists):
-        """
-        Sets the attribute_lists of this JourneySessionEventsNotificationSessionEvent.
-
-
-        :param attribute_lists: The attribute_lists of this JourneySessionEventsNotificationSessionEvent.
-        :type: dict(str, JourneySessionEventsNotificationCustomEventAttributeList)
-        """
-        
-
-        self._attribute_lists = attribute_lists
 
     @property
     def away_date(self):

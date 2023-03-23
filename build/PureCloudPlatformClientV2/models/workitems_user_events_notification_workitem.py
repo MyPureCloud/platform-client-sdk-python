@@ -68,7 +68,8 @@ class WorkitemsUserEventsNotificationWorkitem(object):
             'assignment_id': 'str',
             'alert_timeout_seconds': 'int',
             'queue_id': 'str',
-            'custom_fields': 'dict(str, WorkitemsUserEventsNotificationCustomAttribute)'
+            'custom_fields': 'dict(str, WorkitemsUserEventsNotificationCustomAttribute)',
+            'wrapup': 'WorkitemsUserEventsNotificationWrapup'
         }
 
         self.attribute_map = {
@@ -100,7 +101,8 @@ class WorkitemsUserEventsNotificationWorkitem(object):
             'assignment_id': 'assignmentId',
             'alert_timeout_seconds': 'alertTimeoutSeconds',
             'queue_id': 'queueId',
-            'custom_fields': 'customFields'
+            'custom_fields': 'customFields',
+            'wrapup': 'wrapup'
         }
 
         self._id = None
@@ -132,6 +134,7 @@ class WorkitemsUserEventsNotificationWorkitem(object):
         self._alert_timeout_seconds = None
         self._queue_id = None
         self._custom_fields = None
+        self._wrapup = None
 
     @property
     def id(self):
@@ -837,6 +840,30 @@ class WorkitemsUserEventsNotificationWorkitem(object):
         
 
         self._custom_fields = custom_fields
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this WorkitemsUserEventsNotificationWorkitem.
+
+
+        :return: The wrapup of this WorkitemsUserEventsNotificationWorkitem.
+        :rtype: WorkitemsUserEventsNotificationWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this WorkitemsUserEventsNotificationWorkitem.
+
+
+        :param wrapup: The wrapup of this WorkitemsUserEventsNotificationWorkitem.
+        :type: WorkitemsUserEventsNotificationWrapup
+        """
+        
+
+        self._wrapup = wrapup
 
     def to_dict(self):
         """

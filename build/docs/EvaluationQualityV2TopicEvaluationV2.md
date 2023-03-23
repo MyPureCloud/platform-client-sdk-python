@@ -29,6 +29,9 @@ title: EvaluationQualityV2TopicEvaluationV2
 | **conversation_date** | **datetime** |  | [optional] |
 | **media_type** | **list[str]** |  | [optional] |
 | **calibration** | [**EvaluationQualityV2TopicCalibration**](EvaluationQualityV2TopicCalibration.html) |  | [optional] |
+| **evaluation_source** | [**EvaluationQualityV2TopicEvaluationSource**](EvaluationQualityV2TopicEvaluationSource.html) |  | [optional] |
+| **assignee_user_id** | **str** |  | [optional] |
+| **previous_assignee_user_id** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

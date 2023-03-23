@@ -61,7 +61,10 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'rescore': 'bool',
             'conversation_date': 'datetime',
             'media_type': 'list[str]',
-            'calibration': 'EvaluationQualityV2TopicCalibration'
+            'calibration': 'EvaluationQualityV2TopicCalibration',
+            'evaluation_source': 'EvaluationQualityV2TopicEvaluationSource',
+            'assignee_user_id': 'str',
+            'previous_assignee_user_id': 'str'
         }
 
         self.attribute_map = {
@@ -86,7 +89,10 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'rescore': 'rescore',
             'conversation_date': 'conversationDate',
             'media_type': 'mediaType',
-            'calibration': 'calibration'
+            'calibration': 'calibration',
+            'evaluation_source': 'evaluationSource',
+            'assignee_user_id': 'assigneeUserId',
+            'previous_assignee_user_id': 'previousAssigneeUserId'
         }
 
         self._id = None
@@ -111,6 +117,9 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         self._conversation_date = None
         self._media_type = None
         self._calibration = None
+        self._evaluation_source = None
+        self._assignee_user_id = None
+        self._previous_assignee_user_id = None
 
     @property
     def id(self):
@@ -642,6 +651,78 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         
 
         self._calibration = calibration
+
+    @property
+    def evaluation_source(self):
+        """
+        Gets the evaluation_source of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The evaluation_source of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: EvaluationQualityV2TopicEvaluationSource
+        """
+        return self._evaluation_source
+
+    @evaluation_source.setter
+    def evaluation_source(self, evaluation_source):
+        """
+        Sets the evaluation_source of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param evaluation_source: The evaluation_source of this EvaluationQualityV2TopicEvaluationV2.
+        :type: EvaluationQualityV2TopicEvaluationSource
+        """
+        
+
+        self._evaluation_source = evaluation_source
+
+    @property
+    def assignee_user_id(self):
+        """
+        Gets the assignee_user_id of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The assignee_user_id of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: str
+        """
+        return self._assignee_user_id
+
+    @assignee_user_id.setter
+    def assignee_user_id(self, assignee_user_id):
+        """
+        Sets the assignee_user_id of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param assignee_user_id: The assignee_user_id of this EvaluationQualityV2TopicEvaluationV2.
+        :type: str
+        """
+        
+
+        self._assignee_user_id = assignee_user_id
+
+    @property
+    def previous_assignee_user_id(self):
+        """
+        Gets the previous_assignee_user_id of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The previous_assignee_user_id of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: str
+        """
+        return self._previous_assignee_user_id
+
+    @previous_assignee_user_id.setter
+    def previous_assignee_user_id(self, previous_assignee_user_id):
+        """
+        Sets the previous_assignee_user_id of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param previous_assignee_user_id: The previous_assignee_user_id of this EvaluationQualityV2TopicEvaluationV2.
+        :type: str
+        """
+        
+
+        self._previous_assignee_user_id = previous_assignee_user_id
 
     def to_dict(self):
         """

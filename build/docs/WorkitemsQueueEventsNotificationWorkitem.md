@@ -36,6 +36,7 @@ title: WorkitemsQueueEventsNotificationWorkitem
 | **alert_timeout_seconds** | **int** |  | [optional] |
 | **queue_id** | **str** |  | [optional] |
 | **custom_fields** | [**dict(str, WorkitemsQueueEventsNotificationCustomAttribute)**](WorkitemsQueueEventsNotificationCustomAttribute.html) |  | [optional] |
+| **wrapup** | [**WorkitemsQueueEventsNotificationWrapup**](WorkitemsQueueEventsNotificationWrapup.html) |  | [optional] |
 {: class="table table-striped"}
 
 
