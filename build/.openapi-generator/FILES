@@ -516,6 +516,7 @@ PureCloudPlatformClientV2/models/callback_conversation_entity_listing.py
 PureCloudPlatformClientV2/models/callback_disconnect_identifier.py
 PureCloudPlatformClientV2/models/callback_identifier.py
 PureCloudPlatformClientV2/models/callback_media_participant.py
+PureCloudPlatformClientV2/models/callback_media_settings.py
 PureCloudPlatformClientV2/models/campaign.py
 PureCloudPlatformClientV2/models/campaign_diagnostics.py
 PureCloudPlatformClientV2/models/campaign_division_view.py
@@ -1943,7 +1944,7 @@ PureCloudPlatformClientV2/models/media_participant_request.py
 PureCloudPlatformClientV2/models/media_policies.py
 PureCloudPlatformClientV2/models/media_regions.py
 PureCloudPlatformClientV2/models/media_result.py
-PureCloudPlatformClientV2/models/media_setting.py
+PureCloudPlatformClientV2/models/media_settings.py
 PureCloudPlatformClientV2/models/media_summary.py
 PureCloudPlatformClientV2/models/media_summary_detail.py
 PureCloudPlatformClientV2/models/media_transcription.py
@@ -2523,6 +2524,7 @@ PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_workflow.p
 PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_wrapup.py
 PureCloudPlatformClientV2/models/queue_email_address.py
 PureCloudPlatformClientV2/models/queue_entity_listing.py
+PureCloudPlatformClientV2/models/queue_media_settings.py
 PureCloudPlatformClientV2/models/queue_member.py
 PureCloudPlatformClientV2/models/queue_member_entity_listing.py
 PureCloudPlatformClientV2/models/queue_member_entity_listing_v1.py
@@ -2760,6 +2762,7 @@ PureCloudPlatformClientV2/models/sequence_schedule.py
 PureCloudPlatformClientV2/models/server_date.py
 PureCloudPlatformClientV2/models/service_context.py
 PureCloudPlatformClientV2/models/service_goal_template.py
+PureCloudPlatformClientV2/models/service_goal_template_impact_override.py
 PureCloudPlatformClientV2/models/service_goal_template_list.py
 PureCloudPlatformClientV2/models/service_goal_template_reference.py
 PureCloudPlatformClientV2/models/service_level.py
@@ -4054,6 +4057,7 @@ docs/CallbackConversationEntityListing.md
 docs/CallbackDisconnectIdentifier.md
 docs/CallbackIdentifier.md
 docs/CallbackMediaParticipant.md
+docs/CallbackMediaSettings.md
 docs/Campaign.md
 docs/CampaignDiagnostics.md
 docs/CampaignDivisionView.md
@@ -5531,7 +5535,7 @@ docs/MediaParticipantRequest.md
 docs/MediaPolicies.md
 docs/MediaRegions.md
 docs/MediaResult.md
-docs/MediaSetting.md
+docs/MediaSettings.md
 docs/MediaSummary.md
 docs/MediaSummaryDetail.md
 docs/MediaTranscription.md
@@ -6133,6 +6137,7 @@ docs/QueueConversationVideoEventTopicWorkflow.md
 docs/QueueConversationVideoEventTopicWrapup.md
 docs/QueueEmailAddress.md
 docs/QueueEntityListing.md
+docs/QueueMediaSettings.md
 docs/QueueMember.md
 docs/QueueMemberEntityListing.md
 docs/QueueMemberEntityListingV1.md
@@ -6384,6 +6389,7 @@ docs/SequenceSchedule.md
 docs/ServerDate.md
 docs/ServiceContext.md
 docs/ServiceGoalTemplate.md
+docs/ServiceGoalTemplateImpactOverride.md
 docs/ServiceGoalTemplateList.md
 docs/ServiceGoalTemplateReference.md
 docs/ServiceLevel.md
@@ -7580,6 +7586,7 @@ docs/get_authorization_subjects_rolecounts-example.txt
 docs/get_billing_reports_billableusage-example.txt
 docs/get_billing_trusteebillingoverview_trustor_org_id-example.txt
 docs/get_chat_settings-example.txt
+docs/get_chats_settings-example.txt
 docs/get_coaching_appointment-example.txt
 docs/get_coaching_appointment_annotation-example.txt
 docs/get_coaching_appointment_annotations-example.txt
@@ -8457,6 +8464,7 @@ docs/patch_analytics_reporting_settings-example.txt
 docs/patch_authorization_role-example.txt
 docs/patch_authorization_settings-example.txt
 docs/patch_chat_settings-example.txt
+docs/patch_chats_settings-example.txt
 docs/patch_coaching_appointment-example.txt
 docs/patch_coaching_appointment_annotation-example.txt
 docs/patch_coaching_appointment_status-example.txt
@@ -9111,6 +9119,7 @@ docs/put_authorization_role_users_add-example.txt
 docs/put_authorization_role_users_remove-example.txt
 docs/put_authorization_roles_default-example.txt
 docs/put_chat_settings-example.txt
+docs/put_chats_settings-example.txt
 docs/put_contentmanagement_workspace-example.txt
 docs/put_contentmanagement_workspace_member-example.txt
 docs/put_contentmanagement_workspace_tagvalue-example.txt

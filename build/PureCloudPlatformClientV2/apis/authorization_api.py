@@ -1130,13 +1130,14 @@ class AuthorizationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str role_id: Role ID (required)
+        :param bool user_count: Fetch the count of users who have this role granted in at least one division
         :param list[str] expand: Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role
         :return: DomainOrganizationRole
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['role_id', 'expand']
+        all_params = ['role_id', 'user_count', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -1160,6 +1161,8 @@ class AuthorizationApi(object):
             path_params['roleId'] = params['role_id']
 
         query_params = {}
+        if 'user_count' in params:
+            query_params['userCount'] = params['user_count']
         if 'expand' in params:
             query_params['expand'] = params['expand']
 

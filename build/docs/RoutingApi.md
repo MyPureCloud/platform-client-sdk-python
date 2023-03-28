@@ -1568,7 +1568,7 @@ except ApiException as e:
 
 <a name="get_routing_email_domains"></a>
 
-## [**InboundDomainEntityListing**](InboundDomainEntityListing.html) get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status)
+## [**InboundDomainEntityListing**](InboundDomainEntityListing.html) get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status, filter=filter)
 
 
 
@@ -1598,10 +1598,11 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 exclude_status = False # bool | Exclude MX record data (optional) (default to False)
+filter = 'filter_example' # str | Optional search filter (optional)
 
 try:
     # Get domains
-    api_response = api_instance.get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status)
+    api_response = api_instance.get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_domains: %s\n" % e)
@@ -1615,6 +1616,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **exclude_status** | **bool**| Exclude MX record data | [optional] [default to False] |
+| **filter** | **str**| Optional search filter | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1776,7 +1778,7 @@ except ApiException as e:
 
 <a name="get_routing_email_outbound_domains"></a>
 
-## [**OutboundDomainEntityListing**](OutboundDomainEntityListing.html) get_routing_email_outbound_domains()
+## [**OutboundDomainEntityListing**](OutboundDomainEntityListing.html) get_routing_email_outbound_domains(filter=filter)
 
 
 
@@ -1803,10 +1805,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
+filter = 'filter_example' # str | Optional search filter (optional)
 
 try:
     # Get outbound domains
-    api_response = api_instance.get_routing_email_outbound_domains()
+    api_response = api_instance.get_routing_email_outbound_domains(filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_outbound_domains: %s\n" % e)
@@ -1814,8 +1817,11 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
 
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter** | **str**| Optional search filter | [optional]  |
+{: class="table table-striped"}
 
 ### Return type
 

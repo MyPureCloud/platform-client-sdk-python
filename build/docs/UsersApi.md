@@ -154,7 +154,7 @@ Delete a grant of a role in a division
 
 Wraps DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:grant:delete
 
@@ -3178,7 +3178,7 @@ Bulk-grant roles and divisions to a subject.
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkadd 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:grant:add
 
@@ -3232,7 +3232,7 @@ Bulk-remove grants from a subject.
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkremove 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:grant:delete
 
@@ -3341,7 +3341,7 @@ Make a grant of a role in a division
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:grant:add
 

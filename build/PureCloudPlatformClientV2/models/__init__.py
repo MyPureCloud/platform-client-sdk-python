@@ -444,6 +444,7 @@ from .callback_conversation_entity_listing import CallbackConversationEntityList
 from .callback_disconnect_identifier import CallbackDisconnectIdentifier
 from .callback_identifier import CallbackIdentifier
 from .callback_media_participant import CallbackMediaParticipant
+from .callback_media_settings import CallbackMediaSettings
 from .campaign import Campaign
 from .campaign_diagnostics import CampaignDiagnostics
 from .campaign_division_view import CampaignDivisionView
@@ -1871,7 +1872,7 @@ from .media_participant_request import MediaParticipantRequest
 from .media_policies import MediaPolicies
 from .media_regions import MediaRegions
 from .media_result import MediaResult
-from .media_setting import MediaSetting
+from .media_settings import MediaSettings
 from .media_summary import MediaSummary
 from .media_summary_detail import MediaSummaryDetail
 from .media_transcription import MediaTranscription
@@ -2451,6 +2452,7 @@ from .queue_conversation_video_event_topic_workflow import QueueConversationVide
 from .queue_conversation_video_event_topic_wrapup import QueueConversationVideoEventTopicWrapup
 from .queue_email_address import QueueEmailAddress
 from .queue_entity_listing import QueueEntityListing
+from .queue_media_settings import QueueMediaSettings
 from .queue_member import QueueMember
 from .queue_member_entity_listing import QueueMemberEntityListing
 from .queue_member_entity_listing_v1 import QueueMemberEntityListingV1
@@ -2690,6 +2692,7 @@ from .sequence_schedule import SequenceSchedule
 from .server_date import ServerDate
 from .service_context import ServiceContext
 from .service_goal_template import ServiceGoalTemplate
+from .service_goal_template_impact_override import ServiceGoalTemplateImpactOverride
 from .service_goal_template_list import ServiceGoalTemplateList
 from .service_goal_template_reference import ServiceGoalTemplateReference
 from .service_level import ServiceLevel

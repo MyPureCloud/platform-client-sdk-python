@@ -108,7 +108,7 @@ class AuditRealtimeQueryRequest(object):
         :param service_name: The service_name of this AuditRealtimeQueryRequest.
         :type: str
         """
-        allowed_values = ["AgentConfig", "AnalyticsReporting", "Architect", "Callback", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Directory", "DynamicSchema", "Emails", "EmployeePerformance", "Gamification", "GDPR", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Learning", "Limits", "LogCapture", "Marketplace", "Messaging", "NumberPurchasing", "Outbound", "PeoplePermissions", "PredictiveEngagement", "Presence", "ProcessAutomation", "Quality", "ResponseManagement", "Routing", "SCIM", "Scripter", "SpeechAndTextAnalytics", "Supportability", "Telephony", "Triggers", "Voicemail", "WebDeployments", "Webhooks", "WorkforceManagement", "Workitems"]
+        allowed_values = ["AgentConfig", "AnalyticsReporting", "Architect", "Callback", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Directory", "DynamicSchema", "Emails", "EmployeePerformance", "ExternalContacts", "Gamification", "GDPR", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Learning", "Limits", "LogCapture", "Marketplace", "Messaging", "NumberPurchasing", "Outbound", "PeoplePermissions", "PredictiveEngagement", "Presence", "ProcessAutomation", "Quality", "ResponseManagement", "Routing", "SCIM", "Scripter", "SpeechAndTextAnalytics", "Supportability", "Telephony", "Triggers", "Voicemail", "WebDeployments", "Webhooks", "WorkforceManagement", "Workitems"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"

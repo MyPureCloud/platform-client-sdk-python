@@ -283,7 +283,7 @@ class AnalyticsApi(object):
     def get_analytics_botflow_reportingturns(self, bot_flow_id, **kwargs):
         """
         Get Reporting Turns.
-        
+        Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

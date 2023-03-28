@@ -444,6 +444,7 @@ from .models.callback_conversation_entity_listing import CallbackConversationEnt
 from .models.callback_disconnect_identifier import CallbackDisconnectIdentifier
 from .models.callback_identifier import CallbackIdentifier
 from .models.callback_media_participant import CallbackMediaParticipant
+from .models.callback_media_settings import CallbackMediaSettings
 from .models.campaign import Campaign
 from .models.campaign_diagnostics import CampaignDiagnostics
 from .models.campaign_division_view import CampaignDivisionView
@@ -1871,7 +1872,7 @@ from .models.media_participant_request import MediaParticipantRequest
 from .models.media_policies import MediaPolicies
 from .models.media_regions import MediaRegions
 from .models.media_result import MediaResult
-from .models.media_setting import MediaSetting
+from .models.media_settings import MediaSettings
 from .models.media_summary import MediaSummary
 from .models.media_summary_detail import MediaSummaryDetail
 from .models.media_transcription import MediaTranscription
@@ -2451,6 +2452,7 @@ from .models.queue_conversation_video_event_topic_workflow import QueueConversat
 from .models.queue_conversation_video_event_topic_wrapup import QueueConversationVideoEventTopicWrapup
 from .models.queue_email_address import QueueEmailAddress
 from .models.queue_entity_listing import QueueEntityListing
+from .models.queue_media_settings import QueueMediaSettings
 from .models.queue_member import QueueMember
 from .models.queue_member_entity_listing import QueueMemberEntityListing
 from .models.queue_member_entity_listing_v1 import QueueMemberEntityListingV1
@@ -2690,6 +2692,7 @@ from .models.sequence_schedule import SequenceSchedule
 from .models.server_date import ServerDate
 from .models.service_context import ServiceContext
 from .models.service_goal_template import ServiceGoalTemplate
+from .models.service_goal_template_impact_override import ServiceGoalTemplateImpactOverride
 from .models.service_goal_template_list import ServiceGoalTemplateList
 from .models.service_goal_template_reference import ServiceGoalTemplateReference
 from .models.service_level import ServiceLevel

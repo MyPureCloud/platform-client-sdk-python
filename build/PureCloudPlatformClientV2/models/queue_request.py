@@ -51,7 +51,7 @@ class QueueRequest(object):
             'member_count': 'int',
             'user_member_count': 'int',
             'joined_member_count': 'int',
-            'media_settings': 'dict(str, MediaSetting)',
+            'media_settings': 'QueueMediaSettings',
             'routing_rules': 'list[RoutingRule]',
             'bullseye': 'Bullseye',
             'acw_settings': 'AcwSettings',
@@ -416,10 +416,10 @@ class QueueRequest(object):
     def media_settings(self):
         """
         Gets the media_settings of this QueueRequest.
-        The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
+        The media settings for the queue.
 
         :return: The media_settings of this QueueRequest.
-        :rtype: dict(str, MediaSetting)
+        :rtype: QueueMediaSettings
         """
         return self._media_settings
 
@@ -427,10 +427,10 @@ class QueueRequest(object):
     def media_settings(self, media_settings):
         """
         Sets the media_settings of this QueueRequest.
-        The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
+        The media settings for the queue.
 
         :param media_settings: The media_settings of this QueueRequest.
-        :type: dict(str, MediaSetting)
+        :type: QueueMediaSettings
         """
         
 

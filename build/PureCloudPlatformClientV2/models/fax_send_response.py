@@ -44,6 +44,7 @@ class FaxSendResponse(object):
             'name': 'str',
             'upload_destination_uri': 'str',
             'upload_method_type': 'str',
+            'headers': 'dict(str, str)',
             'self_uri': 'str'
         }
 
@@ -52,6 +53,7 @@ class FaxSendResponse(object):
             'name': 'name',
             'upload_destination_uri': 'uploadDestinationUri',
             'upload_method_type': 'uploadMethodType',
+            'headers': 'headers',
             'self_uri': 'selfUri'
         }
 
@@ -59,6 +61,7 @@ class FaxSendResponse(object):
         self._name = None
         self._upload_destination_uri = None
         self._upload_method_type = None
+        self._headers = None
         self._self_uri = None
 
     @property
@@ -159,6 +162,30 @@ class FaxSendResponse(object):
             self._upload_method_type = "outdated_sdk_version"
         else:
             self._upload_method_type = upload_method_type
+
+    @property
+    def headers(self):
+        """
+        Gets the headers of this FaxSendResponse.
+
+
+        :return: The headers of this FaxSendResponse.
+        :rtype: dict(str, str)
+        """
+        return self._headers
+
+    @headers.setter
+    def headers(self, headers):
+        """
+        Sets the headers of this FaxSendResponse.
+
+
+        :param headers: The headers of this FaxSendResponse.
+        :type: dict(str, str)
+        """
+        
+
+        self._headers = headers
 
     @property
     def self_uri(self):
