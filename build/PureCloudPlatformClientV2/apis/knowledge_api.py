@@ -23,12 +23,77 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import CategoryListing
+from ..models import CategoryRequest
+from ..models import CategoryResponse
+from ..models import CategoryResponseListing
+from ..models import DocumentListing
+from ..models import DocumentVariation
+from ..models import DocumentVariationListing
+from ..models import ErrorBody
+from ..models import GuestCategoryResponseListing
+from ..models import ImportStatusRequest
+from ..models import KnowledgeBase
+from ..models import KnowledgeBaseListing
+from ..models import KnowledgeCategory
+from ..models import KnowledgeCategoryRequest
+from ..models import KnowledgeDocument
+from ..models import KnowledgeDocumentBulkRequest
+from ..models import KnowledgeDocumentGuestSearch
+from ..models import KnowledgeDocumentGuestSearchRequest
+from ..models import KnowledgeDocumentReq
+from ..models import KnowledgeDocumentRequest
+from ..models import KnowledgeDocumentResponse
+from ..models import KnowledgeDocumentResponseListing
+from ..models import KnowledgeDocumentSearch
+from ..models import KnowledgeDocumentSearchRequest
+from ..models import KnowledgeDocumentSuggestion
+from ..models import KnowledgeDocumentSuggestionRequest
+from ..models import KnowledgeDocumentVersion
+from ..models import KnowledgeDocumentVersionListing
+from ..models import KnowledgeDocumentVersionVariation
+from ..models import KnowledgeDocumentVersionVariationListing
+from ..models import KnowledgeExportJobRequest
+from ..models import KnowledgeExportJobResponse
+from ..models import KnowledgeExtendedCategory
+from ..models import KnowledgeGuestDocument
+from ..models import KnowledgeGuestDocumentResponseListing
+from ..models import KnowledgeGuestDocumentSuggestion
+from ..models import KnowledgeGuestDocumentSuggestionRequest
+from ..models import KnowledgeGuestSession
+from ..models import KnowledgeImport
+from ..models import KnowledgeImportJobRequest
+from ..models import KnowledgeImportJobResponse
+from ..models import KnowledgeSearchRequest
+from ..models import KnowledgeSearchResponse
+from ..models import KnowledgeTraining
+from ..models import LabelCreateRequest
+from ..models import LabelListing
+from ..models import LabelResponse
+from ..models import LabelUpdateRequest
+from ..models import SearchUpdateRequest
+from ..models import TrainingListing
+from ..models import UnansweredGroup
+from ..models import UnansweredGroups
+from ..models import UnansweredPhraseGroup
+from ..models import UnansweredPhraseGroupPatchRequestBody
+from ..models import UnansweredPhraseGroupUpdateResponse
+from ..models import UploadUrlRequest
+from ..models import UploadUrlResponse
 
 class KnowledgeApi(object):
     """
@@ -46,7 +111,7 @@ class KnowledgeApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_knowledge_knowledgebase(self, knowledge_base_id, **kwargs):
+    def delete_knowledge_knowledgebase(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeBase':
         """
         Delete knowledge base
         
@@ -124,7 +189,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_knowledge_knowledgebase_category(self, knowledge_base_id, category_id, **kwargs):
+    def delete_knowledge_knowledgebase_category(self, knowledge_base_id: str, category_id: str, **kwargs) -> 'CategoryResponse':
         """
         Delete category
         
@@ -208,7 +273,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_knowledge_knowledgebase_document(self, knowledge_base_id, document_id, **kwargs):
+    def delete_knowledge_knowledgebase_document(self, knowledge_base_id: str, document_id: str, **kwargs) -> None:
         """
         Delete document.
         
@@ -292,7 +357,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_knowledge_knowledgebase_document_variation(self, document_variation_id, document_id, knowledge_base_id, **kwargs):
+    def delete_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, **kwargs) -> None:
         """
         Delete a variation for a document.
         
@@ -382,7 +447,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_knowledge_knowledgebase_export_job(self, knowledge_base_id, export_job_id, **kwargs):
+    def delete_knowledge_knowledgebase_export_job(self, knowledge_base_id: str, export_job_id: str, **kwargs) -> None:
         """
         Delete export job
         
@@ -466,7 +531,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_knowledge_knowledgebase_import_job(self, knowledge_base_id, import_job_id, **kwargs):
+    def delete_knowledge_knowledgebase_import_job(self, knowledge_base_id: str, import_job_id: str, **kwargs) -> None:
         """
         Delete import job
         
@@ -550,7 +615,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_knowledge_knowledgebase_label(self, knowledge_base_id, label_id, **kwargs):
+    def delete_knowledge_knowledgebase_label(self, knowledge_base_id: str, label_id: str, **kwargs) -> 'LabelResponse':
         """
         Delete label
         
@@ -634,7 +699,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_knowledge_knowledgebase_language_category(self, category_id, knowledge_base_id, language_code, **kwargs):
+    def delete_knowledge_knowledgebase_language_category(self, category_id: str, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeCategory':
         """
         Delete category
         
@@ -724,7 +789,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_knowledge_knowledgebase_language_document(self, document_id, knowledge_base_id, language_code, **kwargs):
+    def delete_knowledge_knowledgebase_language_document(self, document_id: str, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeDocument':
         """
         Delete document
         
@@ -814,7 +879,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id, language_code, import_id, **kwargs):
+    def delete_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id: str, language_code: str, import_id: str, **kwargs) -> None:
         """
         Delete import operation
         
@@ -904,7 +969,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_guest_session_categories(self, session_id, **kwargs):
+    def get_knowledge_guest_session_categories(self, session_id: str, **kwargs) -> 'GuestCategoryResponseListing':
         """
         Get categories
         
@@ -1009,7 +1074,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_guest_session_document(self, session_id, document_id, **kwargs):
+    def get_knowledge_guest_session_document(self, session_id: str, document_id: str, **kwargs) -> 'KnowledgeGuestDocument':
         """
         Get a knowledge document by ID.
         
@@ -1093,7 +1158,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_guest_session_documents(self, session_id, **kwargs):
+    def get_knowledge_guest_session_documents(self, session_id: str, **kwargs) -> 'KnowledgeGuestDocumentResponseListing':
         """
         Get documents.
         
@@ -1177,7 +1242,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase(self, knowledge_base_id, **kwargs):
+    def get_knowledge_knowledgebase(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeBase':
         """
         Get knowledge base
         
@@ -1255,7 +1320,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_categories(self, knowledge_base_id, **kwargs):
+    def get_knowledge_knowledgebase_categories(self, knowledge_base_id: str, **kwargs) -> 'CategoryResponseListing':
         """
         Get categories
         
@@ -1360,7 +1425,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_category(self, knowledge_base_id, category_id, **kwargs):
+    def get_knowledge_knowledgebase_category(self, knowledge_base_id: str, category_id: str, **kwargs) -> 'CategoryResponse':
         """
         Get category
         
@@ -1444,7 +1509,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_document(self, knowledge_base_id, document_id, **kwargs):
+    def get_knowledge_knowledgebase_document(self, knowledge_base_id: str, document_id: str, **kwargs) -> 'KnowledgeDocumentResponse':
         """
         Get document.
         
@@ -1534,7 +1599,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_document_variation(self, document_variation_id, document_id, knowledge_base_id, **kwargs):
+    def get_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, **kwargs) -> 'DocumentVariation':
         """
         Get a variation for a document.
         
@@ -1627,7 +1692,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_document_variations(self, knowledge_base_id, document_id, **kwargs):
+    def get_knowledge_knowledgebase_document_variations(self, knowledge_base_id: str, document_id: str, **kwargs) -> 'DocumentVariationListing':
         """
         Get variations for a document.
         
@@ -1723,7 +1788,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_document_version(self, knowledge_base_id, document_id, version_id, **kwargs):
+    def get_knowledge_knowledgebase_document_version(self, knowledge_base_id: str, document_id: str, version_id: str, **kwargs) -> 'KnowledgeDocumentVersion':
         """
         Get document version.
         
@@ -1816,7 +1881,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_document_version_variation(self, knowledge_base_id, document_id, version_id, variation_id, **kwargs):
+    def get_knowledge_knowledgebase_document_version_variation(self, knowledge_base_id: str, document_id: str, version_id: str, variation_id: str, **kwargs) -> 'KnowledgeDocumentVersionVariation':
         """
         Get variation for the given document version.
         
@@ -1912,7 +1977,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_document_version_variations(self, knowledge_base_id, document_id, version_id, **kwargs):
+    def get_knowledge_knowledgebase_document_version_variations(self, knowledge_base_id: str, document_id: str, version_id: str, **kwargs) -> 'KnowledgeDocumentVersionVariationListing':
         """
         Get variations for the given document version.
         
@@ -2011,7 +2076,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_document_versions(self, knowledge_base_id, document_id, **kwargs):
+    def get_knowledge_knowledgebase_document_versions(self, knowledge_base_id: str, document_id: str, **kwargs) -> 'KnowledgeDocumentVersionListing':
         """
         Get document versions.
         
@@ -2107,7 +2172,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_documents(self, knowledge_base_id, **kwargs):
+    def get_knowledge_knowledgebase_documents(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeDocumentResponseListing':
         """
         Get documents.
         
@@ -2215,7 +2280,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_export_job(self, knowledge_base_id, export_job_id, **kwargs):
+    def get_knowledge_knowledgebase_export_job(self, knowledge_base_id: str, export_job_id: str, **kwargs) -> 'KnowledgeExportJobResponse':
         """
         Get export job report
         
@@ -2299,7 +2364,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_import_job(self, knowledge_base_id, import_job_id, **kwargs):
+    def get_knowledge_knowledgebase_import_job(self, knowledge_base_id: str, import_job_id: str, **kwargs) -> 'KnowledgeImportJobResponse':
         """
         Get import job report
         
@@ -2383,7 +2448,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_label(self, knowledge_base_id, label_id, **kwargs):
+    def get_knowledge_knowledgebase_label(self, knowledge_base_id: str, label_id: str, **kwargs) -> 'LabelResponse':
         """
         Get label
         
@@ -2467,7 +2532,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_labels(self, knowledge_base_id, **kwargs):
+    def get_knowledge_knowledgebase_labels(self, knowledge_base_id: str, **kwargs) -> 'LabelListing':
         """
         Get labels
         
@@ -2560,7 +2625,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_language_categories(self, knowledge_base_id, language_code, **kwargs):
+    def get_knowledge_knowledgebase_language_categories(self, knowledge_base_id: str, language_code: str, **kwargs) -> 'CategoryListing':
         """
         Get categories
         
@@ -2659,7 +2724,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_language_category(self, category_id, knowledge_base_id, language_code, **kwargs):
+    def get_knowledge_knowledgebase_language_category(self, category_id: str, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeExtendedCategory':
         """
         Get category
         
@@ -2749,7 +2814,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_language_document(self, document_id, knowledge_base_id, language_code, **kwargs):
+    def get_knowledge_knowledgebase_language_document(self, document_id: str, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeDocument':
         """
         Get document
         
@@ -2839,7 +2904,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_language_documents(self, knowledge_base_id, language_code, **kwargs):
+    def get_knowledge_knowledgebase_language_documents(self, knowledge_base_id: str, language_code: str, **kwargs) -> 'DocumentListing':
         """
         Get documents
         
@@ -2950,7 +3015,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id, language_code, import_id, **kwargs):
+    def get_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id: str, language_code: str, import_id: str, **kwargs) -> 'KnowledgeImport':
         """
         Get import operation report
         
@@ -3040,7 +3105,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_language_training(self, knowledge_base_id, language_code, training_id, **kwargs):
+    def get_knowledge_knowledgebase_language_training(self, knowledge_base_id: str, language_code: str, training_id: str, **kwargs) -> 'KnowledgeTraining':
         """
         Get training detail
         
@@ -3130,7 +3195,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_language_trainings(self, knowledge_base_id, language_code, **kwargs):
+    def get_knowledge_knowledgebase_language_trainings(self, knowledge_base_id: str, language_code: str, **kwargs) -> 'TrainingListing':
         """
         Get all trainings information for a knowledgebase
         
@@ -3229,7 +3294,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_unanswered_group(self, knowledge_base_id, group_id, **kwargs):
+    def get_knowledge_knowledgebase_unanswered_group(self, knowledge_base_id: str, group_id: str, **kwargs) -> 'UnansweredGroup':
         """
         Get knowledge base unanswered group for a particular groupId
         
@@ -3316,7 +3381,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_unanswered_group_phrasegroup(self, knowledge_base_id, group_id, phrase_group_id, **kwargs):
+    def get_knowledge_knowledgebase_unanswered_group_phrasegroup(self, knowledge_base_id: str, group_id: str, phrase_group_id: str, **kwargs) -> 'UnansweredPhraseGroup':
         """
         Get knowledge base unanswered phrase group for a particular phraseGroupId
         
@@ -3409,7 +3474,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_unanswered_groups(self, knowledge_base_id, **kwargs):
+    def get_knowledge_knowledgebase_unanswered_groups(self, knowledge_base_id: str, **kwargs) -> 'UnansweredGroups':
         """
         Get knowledge base unanswered groups
         
@@ -3490,7 +3555,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebases(self, **kwargs):
+    def get_knowledge_knowledgebases(self, **kwargs) -> 'KnowledgeBaseListing':
         """
         Get knowledge bases
         
@@ -3589,7 +3654,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_guest_session_documents_search_search_id(self, session_id, search_id, body, **kwargs):
+    def patch_knowledge_guest_session_documents_search_search_id(self, session_id: str, search_id: str, body: 'SearchUpdateRequest', **kwargs) -> None:
         """
         Update search result.
         
@@ -3679,7 +3744,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase(self, knowledge_base_id, body, **kwargs):
+    def patch_knowledge_knowledgebase(self, knowledge_base_id: str, body: 'KnowledgeBase', **kwargs) -> 'KnowledgeBase':
         """
         Update knowledge base
         
@@ -3763,7 +3828,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_category(self, knowledge_base_id, category_id, body, **kwargs):
+    def patch_knowledge_knowledgebase_category(self, knowledge_base_id: str, category_id: str, body: 'CategoryRequest', **kwargs) -> 'CategoryResponse':
         """
         Update category
         
@@ -3853,7 +3918,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_document(self, knowledge_base_id, document_id, body, **kwargs):
+    def patch_knowledge_knowledgebase_document(self, knowledge_base_id: str, document_id: str, body: 'KnowledgeDocumentReq', **kwargs) -> 'KnowledgeDocumentResponse':
         """
         Update document.
         
@@ -3943,7 +4008,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_document_variation(self, document_variation_id, document_id, knowledge_base_id, body, **kwargs):
+    def patch_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, body: 'DocumentVariation', **kwargs) -> 'DocumentVariation':
         """
         Update a variation for a document.
         
@@ -4039,7 +4104,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_documents_search_search_id(self, knowledge_base_id, search_id, **kwargs):
+    def patch_knowledge_knowledgebase_documents_search_search_id(self, knowledge_base_id: str, search_id: str, **kwargs) -> None:
         """
         Update search result.
         
@@ -4126,7 +4191,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_import_job(self, knowledge_base_id, import_job_id, body, **kwargs):
+    def patch_knowledge_knowledgebase_import_job(self, knowledge_base_id: str, import_job_id: str, body: 'ImportStatusRequest', **kwargs) -> 'KnowledgeImportJobResponse':
         """
         Start import job
         
@@ -4216,7 +4281,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_label(self, knowledge_base_id, label_id, body, **kwargs):
+    def patch_knowledge_knowledgebase_label(self, knowledge_base_id: str, label_id: str, body: 'LabelUpdateRequest', **kwargs) -> 'LabelResponse':
         """
         Update label
         
@@ -4306,7 +4371,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_language_category(self, category_id, knowledge_base_id, language_code, body, **kwargs):
+    def patch_knowledge_knowledgebase_language_category(self, category_id: str, knowledge_base_id: str, language_code: str, body: 'KnowledgeCategoryRequest', **kwargs) -> 'KnowledgeExtendedCategory':
         """
         Update category
         
@@ -4402,7 +4467,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_language_document(self, document_id, knowledge_base_id, language_code, body, **kwargs):
+    def patch_knowledge_knowledgebase_language_document(self, document_id: str, knowledge_base_id: str, language_code: str, body: 'KnowledgeDocumentRequest', **kwargs) -> 'KnowledgeDocument':
         """
         Update document
         
@@ -4498,7 +4563,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_language_documents(self, knowledge_base_id, language_code, body, **kwargs):
+    def patch_knowledge_knowledgebase_language_documents(self, knowledge_base_id: str, language_code: str, body: List['KnowledgeDocumentBulkRequest'], **kwargs) -> 'DocumentListing':
         """
         Update documents collection
         
@@ -4588,7 +4653,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id, language_code, import_id, body, **kwargs):
+    def patch_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id: str, language_code: str, import_id: str, body: 'ImportStatusRequest', **kwargs) -> 'KnowledgeImport':
         """
         Start import operation
         
@@ -4684,7 +4749,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_unanswered_group_phrasegroup(self, knowledge_base_id, group_id, phrase_group_id, body, **kwargs):
+    def patch_knowledge_knowledgebase_unanswered_group_phrasegroup(self, knowledge_base_id: str, group_id: str, phrase_group_id: str, body: 'UnansweredPhraseGroupPatchRequestBody', **kwargs) -> 'UnansweredPhraseGroupUpdateResponse':
         """
         Update a Knowledge base unanswered phrase group
         
@@ -4780,7 +4845,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_documentuploads(self, body, **kwargs):
+    def post_knowledge_documentuploads(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates a presigned URL for uploading a knowledge import file with a set of documents
         
@@ -4858,7 +4923,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_guest_session_documents_search(self, session_id, **kwargs):
+    def post_knowledge_guest_session_documents_search(self, session_id: str, **kwargs) -> 'KnowledgeDocumentGuestSearch':
         """
         Search the documents in a guest session.
         
@@ -4942,7 +5007,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_guest_session_documents_search_suggestions(self, session_id, **kwargs):
+    def post_knowledge_guest_session_documents_search_suggestions(self, session_id: str, **kwargs) -> 'KnowledgeGuestDocumentSuggestion':
         """
         Query the knowledge documents to provide suggestions for auto completion.
         
@@ -5023,7 +5088,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_guest_sessions(self, body, **kwargs):
+    def post_knowledge_guest_sessions(self, body: 'KnowledgeGuestSession', **kwargs) -> 'KnowledgeGuestSession':
         """
         Create guest session
         
@@ -5101,7 +5166,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_categories(self, knowledge_base_id, body, **kwargs):
+    def post_knowledge_knowledgebase_categories(self, knowledge_base_id: str, body: 'CategoryRequest', **kwargs) -> 'CategoryResponse':
         """
         Create new category
         
@@ -5185,7 +5250,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_document_variations(self, knowledge_base_id, document_id, body, **kwargs):
+    def post_knowledge_knowledgebase_document_variations(self, knowledge_base_id: str, document_id: str, body: 'DocumentVariation', **kwargs) -> 'DocumentVariation':
         """
         Create a variation for a document.
         
@@ -5275,7 +5340,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_document_versions(self, knowledge_base_id, document_id, body, **kwargs):
+    def post_knowledge_knowledgebase_document_versions(self, knowledge_base_id: str, document_id: str, body: 'KnowledgeDocumentVersion', **kwargs) -> 'KnowledgeDocumentVersion':
         """
         Creates or restores a document version.
         
@@ -5365,7 +5430,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_documents(self, knowledge_base_id, body, **kwargs):
+    def post_knowledge_knowledgebase_documents(self, knowledge_base_id: str, body: 'KnowledgeDocumentReq', **kwargs) -> 'KnowledgeDocumentResponse':
         """
         Create document.
         
@@ -5449,7 +5514,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_documents_search(self, knowledge_base_id, **kwargs):
+    def post_knowledge_knowledgebase_documents_search(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeDocumentSearch':
         """
         Search the documents in a knowledge base.
         
@@ -5533,7 +5598,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_documents_search_suggestions(self, knowledge_base_id, **kwargs):
+    def post_knowledge_knowledgebase_documents_search_suggestions(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeDocumentSuggestion':
         """
         Query the knowledge documents to provide suggestions for auto completion.
         
@@ -5614,7 +5679,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_export_jobs(self, knowledge_base_id, body, **kwargs):
+    def post_knowledge_knowledgebase_export_jobs(self, knowledge_base_id: str, body: 'KnowledgeExportJobRequest', **kwargs) -> 'KnowledgeExportJobResponse':
         """
         Create export job
         
@@ -5698,7 +5763,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_import_jobs(self, knowledge_base_id, body, **kwargs):
+    def post_knowledge_knowledgebase_import_jobs(self, knowledge_base_id: str, body: 'KnowledgeImportJobRequest', **kwargs) -> 'KnowledgeImportJobResponse':
         """
         Create import job
         
@@ -5782,7 +5847,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_labels(self, knowledge_base_id, body, **kwargs):
+    def post_knowledge_knowledgebase_labels(self, knowledge_base_id: str, body: 'LabelCreateRequest', **kwargs) -> 'LabelResponse':
         """
         Create new label
         
@@ -5866,7 +5931,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_language_categories(self, knowledge_base_id, language_code, body, **kwargs):
+    def post_knowledge_knowledgebase_language_categories(self, knowledge_base_id: str, language_code: str, body: 'KnowledgeCategoryRequest', **kwargs) -> 'KnowledgeExtendedCategory':
         """
         Create new category
         
@@ -5956,7 +6021,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_language_documents(self, knowledge_base_id, language_code, body, **kwargs):
+    def post_knowledge_knowledgebase_language_documents(self, knowledge_base_id: str, language_code: str, body: 'KnowledgeDocumentRequest', **kwargs) -> 'KnowledgeDocument':
         """
         Create document
         
@@ -6046,7 +6111,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_language_documents_imports(self, knowledge_base_id, language_code, body, **kwargs):
+    def post_knowledge_knowledgebase_language_documents_imports(self, knowledge_base_id: str, language_code: str, body: 'KnowledgeImport', **kwargs) -> 'KnowledgeImport':
         """
         Create import operation
         
@@ -6136,7 +6201,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_language_training_promote(self, knowledge_base_id, language_code, training_id, **kwargs):
+    def post_knowledge_knowledgebase_language_training_promote(self, knowledge_base_id: str, language_code: str, training_id: str, **kwargs) -> 'KnowledgeTraining':
         """
         Promote trained documents from draft state to active.
         
@@ -6226,7 +6291,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_language_trainings(self, knowledge_base_id, language_code, **kwargs):
+    def post_knowledge_knowledgebase_language_trainings(self, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeTraining':
         """
         Trigger training
         
@@ -6310,7 +6375,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_search(self, knowledge_base_id, **kwargs):
+    def post_knowledge_knowledgebase_search(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeSearchResponse':
         """
         Search Documents
         
@@ -6391,7 +6456,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebases(self, body, **kwargs):
+    def post_knowledge_knowledgebases(self, body: 'KnowledgeBase', **kwargs) -> 'KnowledgeBase':
         """
         Create new knowledge base
         

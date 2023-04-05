@@ -23,12 +23,26 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import MediaRegions
+from ..models import SIPSearchPublicRequest
+from ..models import SignedUrlResponse
+from ..models import SipDownloadResponse
+from ..models import SipSearchResult
 
 class TelephonyApi(object):
     """
@@ -46,7 +60,7 @@ class TelephonyApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_telephony_mediaregions(self, **kwargs):
+    def get_telephony_mediaregions(self, **kwargs) -> 'MediaRegions':
         """
         Retrieve the list of AWS regions media can stream through.
         
@@ -118,7 +132,7 @@ class TelephonyApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_telephony_siptraces(self, date_start, date_end, **kwargs):
+    def get_telephony_siptraces(self, date_start: datetime, date_end: datetime, **kwargs) -> 'SipSearchResult':
         """
         Fetch SIP metadata
         Fetch SIP metadata that matches a given parameter. If exactMatch is passed as a parameter only sip records that have exactly that value will be returned. For example, some records contain conversationId but not all relevant records for that call may contain the conversationId so only a partial view of the call will be reflected
@@ -214,7 +228,7 @@ class TelephonyApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_telephony_siptraces_download_download_id(self, download_id, **kwargs):
+    def get_telephony_siptraces_download_download_id(self, download_id: str, **kwargs) -> 'SignedUrlResponse':
         """
         Get signed S3 URL for a pcap download
         
@@ -292,7 +306,7 @@ class TelephonyApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_telephony_siptraces_download(self, sip_search_public_request, **kwargs):
+    def post_telephony_siptraces_download(self, sip_search_public_request: 'SIPSearchPublicRequest', **kwargs) -> 'SipDownloadResponse':
         """
         Request a download of a pcap file to S3
         

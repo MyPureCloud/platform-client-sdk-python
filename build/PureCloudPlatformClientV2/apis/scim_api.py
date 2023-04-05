@@ -23,12 +23,33 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import ScimConfigResourceType
+from ..models import ScimConfigResourceTypesListResponse
+from ..models import ScimError
+from ..models import ScimGroupListResponse
+from ..models import ScimServiceProviderConfig
+from ..models import ScimUserListResponse
+from ..models import ScimV2CreateUser
+from ..models import ScimV2Group
+from ..models import ScimV2PatchRequest
+from ..models import ScimV2SchemaDefinition
+from ..models import ScimV2SchemaListResponse
+from ..models import ScimV2User
 
 class SCIMApi(object):
     """
@@ -46,7 +67,7 @@ class SCIMApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_scim_user(self, user_id, **kwargs):
+    def delete_scim_user(self, user_id: str, **kwargs) -> object:
         """
         Delete a user
         
@@ -63,7 +84,7 @@ class SCIMApi(object):
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/users. (required)
         :param str if_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
-        :return: Empty
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -122,12 +143,12 @@ class SCIMApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Empty',
+                                            response_type='object',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def delete_scim_v2_user(self, user_id, **kwargs):
+    def delete_scim_v2_user(self, user_id: str, **kwargs) -> object:
         """
         Delete a user
         
@@ -144,7 +165,7 @@ class SCIMApi(object):
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
         :param str if_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
-        :return: Empty
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -203,12 +224,12 @@ class SCIMApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Empty',
+                                            response_type='object',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_group(self, group_id, **kwargs):
+    def get_scim_group(self, group_id: str, **kwargs) -> 'ScimV2Group':
         """
         Get a group
         
@@ -295,7 +316,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_groups(self, **kwargs):
+    def get_scim_groups(self, **kwargs) -> 'ScimGroupListResponse':
         """
         Get a list of groups
         
@@ -382,7 +403,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_resourcetype(self, resource_type, **kwargs):
+    def get_scim_resourcetype(self, resource_type: str, **kwargs) -> 'ScimConfigResourceType':
         """
         Get a resource type
         
@@ -460,7 +481,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_resourcetypes(self, **kwargs):
+    def get_scim_resourcetypes(self, **kwargs) -> 'ScimConfigResourceTypesListResponse':
         """
         Get a list of resource types
         
@@ -532,7 +553,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_schema(self, schema_id, **kwargs):
+    def get_scim_schema(self, schema_id: str, **kwargs) -> 'ScimV2SchemaDefinition':
         """
         Get a SCIM schema
         
@@ -610,7 +631,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_schemas(self, **kwargs):
+    def get_scim_schemas(self, **kwargs) -> 'ScimV2SchemaListResponse':
         """
         Get a list of SCIM schemas
         
@@ -685,7 +706,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_serviceproviderconfig(self, **kwargs):
+    def get_scim_serviceproviderconfig(self, **kwargs) -> 'ScimServiceProviderConfig':
         """
         Get a service provider's configuration
         
@@ -760,7 +781,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_user(self, user_id, **kwargs):
+    def get_scim_user(self, user_id: str, **kwargs) -> 'ScimV2User':
         """
         Get a user
         
@@ -847,7 +868,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_users(self, **kwargs):
+    def get_scim_users(self, **kwargs) -> 'ScimUserListResponse':
         """
         Get a list of users
         To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
@@ -934,7 +955,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_group(self, group_id, **kwargs):
+    def get_scim_v2_group(self, group_id: str, **kwargs) -> 'ScimV2Group':
         """
         Get a group
         
@@ -1021,7 +1042,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_groups(self, filter, **kwargs):
+    def get_scim_v2_groups(self, filter: str, **kwargs) -> 'ScimGroupListResponse':
         """
         Get a list of groups
         
@@ -1111,7 +1132,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_resourcetype(self, resource_type, **kwargs):
+    def get_scim_v2_resourcetype(self, resource_type: str, **kwargs) -> 'ScimConfigResourceType':
         """
         Get a resource type
         
@@ -1189,7 +1210,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_resourcetypes(self, **kwargs):
+    def get_scim_v2_resourcetypes(self, **kwargs) -> 'ScimConfigResourceTypesListResponse':
         """
         Get a list of resource types
         
@@ -1261,7 +1282,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_schema(self, schema_id, **kwargs):
+    def get_scim_v2_schema(self, schema_id: str, **kwargs) -> 'ScimV2SchemaDefinition':
         """
         Get a SCIM schema
         
@@ -1339,7 +1360,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_schemas(self, **kwargs):
+    def get_scim_v2_schemas(self, **kwargs) -> 'ScimV2SchemaListResponse':
         """
         Get a list of SCIM schemas
         
@@ -1414,7 +1435,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_serviceproviderconfig(self, **kwargs):
+    def get_scim_v2_serviceproviderconfig(self, **kwargs) -> 'ScimServiceProviderConfig':
         """
         Get a service provider's configuration
         
@@ -1489,7 +1510,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_user(self, user_id, **kwargs):
+    def get_scim_v2_user(self, user_id: str, **kwargs) -> 'ScimV2User':
         """
         Get a user
         
@@ -1576,7 +1597,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_users(self, **kwargs):
+    def get_scim_v2_users(self, **kwargs) -> 'ScimUserListResponse':
         """
         Get a list of users
         To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
@@ -1663,7 +1684,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_scim_group(self, group_id, body, **kwargs):
+    def patch_scim_group(self, group_id: str, body: 'ScimV2PatchRequest', **kwargs) -> 'ScimV2Group':
         """
         Modify a group
         
@@ -1750,7 +1771,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_scim_user(self, user_id, body, **kwargs):
+    def patch_scim_user(self, user_id: str, body: 'ScimV2PatchRequest', **kwargs) -> 'ScimV2User':
         """
         Modify a user
         
@@ -1837,7 +1858,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_scim_v2_group(self, group_id, body, **kwargs):
+    def patch_scim_v2_group(self, group_id: str, body: 'ScimV2PatchRequest', **kwargs) -> 'ScimV2Group':
         """
         Modify a group
         
@@ -1924,7 +1945,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_scim_v2_user(self, user_id, body, **kwargs):
+    def patch_scim_v2_user(self, user_id: str, body: 'ScimV2PatchRequest', **kwargs) -> 'ScimV2User':
         """
         Modify a user
         
@@ -2011,7 +2032,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_scim_users(self, body, **kwargs):
+    def post_scim_users(self, body: 'ScimV2CreateUser', **kwargs) -> 'ScimV2User':
         """
         Create a user
         
@@ -2089,7 +2110,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_scim_v2_users(self, body, **kwargs):
+    def post_scim_v2_users(self, body: 'ScimV2CreateUser', **kwargs) -> 'ScimV2User':
         """
         Create a user
         
@@ -2167,7 +2188,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_scim_group(self, group_id, body, **kwargs):
+    def put_scim_group(self, group_id: str, body: 'ScimV2Group', **kwargs) -> 'ScimV2Group':
         """
         Replace a group
         
@@ -2254,7 +2275,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_scim_user(self, user_id, body, **kwargs):
+    def put_scim_user(self, user_id: str, body: 'ScimV2User', **kwargs) -> 'ScimV2User':
         """
         Replace a user
         
@@ -2341,7 +2362,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_scim_v2_group(self, group_id, body, **kwargs):
+    def put_scim_v2_group(self, group_id: str, body: 'ScimV2Group', **kwargs) -> 'ScimV2Group':
         """
         Replace a group
         
@@ -2428,7 +2449,7 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_scim_v2_user(self, user_id, body, **kwargs):
+    def put_scim_v2_user(self, user_id: str, body: 'ScimV2User', **kwargs) -> 'ScimV2User':
         """
         Replace a user
         

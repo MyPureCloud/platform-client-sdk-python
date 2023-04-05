@@ -23,12 +23,22 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import WebMessagingMessageEntityList
 
 class WebMessagingApi(object):
     """
@@ -46,7 +56,7 @@ class WebMessagingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_webmessaging_messages(self, **kwargs):
+    def get_webmessaging_messages(self, **kwargs) -> 'WebMessagingMessageEntityList':
         """
         Get the messages for a web messaging session.
         

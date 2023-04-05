@@ -23,12 +23,22 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import TokenInfo
 
 class TokensApi(object):
     """
@@ -46,7 +56,7 @@ class TokensApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_token(self, user_id, **kwargs):
+    def delete_token(self, user_id: str, **kwargs) -> None:
         """
         Delete all auth tokens for the specified user.
         
@@ -124,7 +134,7 @@ class TokensApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_tokens_me(self, **kwargs):
+    def delete_tokens_me(self, **kwargs) -> None:
         """
         Delete auth token used to make the request.
         
@@ -196,7 +206,7 @@ class TokensApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_tokens_me(self, **kwargs):
+    def get_tokens_me(self, **kwargs) -> 'TokenInfo':
         """
         Fetch information about the current token
         
@@ -268,7 +278,7 @@ class TokensApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def head_tokens_me(self, **kwargs):
+    def head_tokens_me(self, **kwargs) -> None:
         """
         Verify user token
         

@@ -23,12 +23,75 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ActionAggregateQueryResponse
+from ..models import ActionAggregationQuery
+from ..models import AnalyticsConversationAsyncQueryResponse
+from ..models import AnalyticsConversationQueryResponse
+from ..models import AnalyticsConversationWithoutAttributes
+from ..models import AnalyticsConversationWithoutAttributesMultiGetResponse
+from ..models import AnalyticsDataRetentionResponse
+from ..models import AnalyticsReportingSettings
+from ..models import AnalyticsUserDetailsAsyncQueryResponse
+from ..models import AnalyticsUserDetailsQueryResponse
+from ..models import AsyncConversationQuery
+from ..models import AsyncQueryResponse
+from ..models import AsyncQueryStatus
+from ..models import AsyncUserDetailsQuery
+from ..models import BotAggregateQueryResponse
+from ..models import BotAggregationQuery
+from ..models import ConversationAggregateQueryResponse
+from ..models import ConversationAggregationQuery
+from ..models import ConversationQuery
+from ..models import DataAvailabilityResponse
+from ..models import ErrorBody
+from ..models import EvaluationAggregateQueryResponse
+from ..models import EvaluationAggregationQuery
+from ..models import FlowAggregateQueryResponse
+from ..models import FlowAggregationQuery
+from ..models import FlowObservationQuery
+from ..models import FlowObservationQueryResponse
+from ..models import JourneyAggregateQueryResponse
+from ..models import JourneyAggregationQuery
+from ..models import PropertyIndexRequest
+from ..models import QueueObservationQuery
+from ..models import QueueObservationQueryResponse
+from ..models import ReportMetaData
+from ..models import ReportMetaDataEntityListing
+from ..models import ReportRunEntry
+from ..models import ReportRunEntryEntityDomainListing
+from ..models import ReportSchedule
+from ..models import ReportScheduleEntityListing
+from ..models import ReportingExportJobListing
+from ..models import ReportingExportJobRequest
+from ..models import ReportingExportJobResponse
+from ..models import ReportingExportMetadataJobListing
+from ..models import ReportingTurnsResponse
+from ..models import RunNowResponse
+from ..models import SurveyAggregateQueryResponse
+from ..models import SurveyAggregationQuery
+from ..models import TranscriptAggregateQueryResponse
+from ..models import TranscriptAggregationQuery
+from ..models import TranscriptConversationDetailSearchRequest
+from ..models import UpdateAnalyticsDataRetentionRequest
+from ..models import UserAggregateQueryResponse
+from ..models import UserAggregationQuery
+from ..models import UserDetailsQuery
+from ..models import UserObservationQuery
+from ..models import UserObservationQueryResponse
 
 class AnalyticsApi(object):
     """
@@ -46,7 +109,7 @@ class AnalyticsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_analytics_conversations_details_job(self, job_id, **kwargs):
+    def delete_analytics_conversations_details_job(self, job_id: str, **kwargs) -> None:
         """
         Delete/cancel an async details job
         
@@ -124,7 +187,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_analytics_reporting_schedule(self, schedule_id, **kwargs):
+    def delete_analytics_reporting_schedule(self, schedule_id: str, **kwargs) -> None:
         """
         Delete a scheduled report job.
         
@@ -202,7 +265,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_analytics_users_details_job(self, job_id, **kwargs):
+    def delete_analytics_users_details_job(self, job_id: str, **kwargs) -> None:
         """
         Delete/cancel an async request
         
@@ -280,7 +343,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_botflow_reportingturns(self, bot_flow_id, **kwargs):
+    def get_analytics_botflow_reportingturns(self, bot_flow_id: str, **kwargs) -> 'ReportingTurnsResponse':
         """
         Get Reporting Turns.
         Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
@@ -376,7 +439,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_conversation_details(self, conversation_id, **kwargs):
+    def get_analytics_conversation_details(self, conversation_id: str, **kwargs) -> 'AnalyticsConversationWithoutAttributes':
         """
         Get a conversation by id
         
@@ -454,7 +517,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_conversations_details(self, **kwargs):
+    def get_analytics_conversations_details(self, **kwargs) -> 'AnalyticsConversationWithoutAttributesMultiGetResponse':
         """
         Gets multiple conversations by id
         
@@ -529,7 +592,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_conversations_details_job(self, job_id, **kwargs):
+    def get_analytics_conversations_details_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
         """
         Get status for async query for conversation details
         
@@ -607,7 +670,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_conversations_details_job_results(self, job_id, **kwargs):
+    def get_analytics_conversations_details_job_results(self, job_id: str, **kwargs) -> 'AnalyticsConversationAsyncQueryResponse':
         """
         Fetch a page of results for an async details job
         
@@ -691,7 +754,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_conversations_details_jobs_availability(self, **kwargs):
+    def get_analytics_conversations_details_jobs_availability(self, **kwargs) -> 'DataAvailabilityResponse':
         """
         Lookup the datalake availability date and time
         
@@ -763,7 +826,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_dataretention_settings(self, **kwargs):
+    def get_analytics_dataretention_settings(self, **kwargs) -> 'AnalyticsDataRetentionResponse':
         """
         Get analytics data retention setting
         
@@ -835,7 +898,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_exports(self, **kwargs):
+    def get_analytics_reporting_exports(self, **kwargs) -> 'ReportingExportJobListing':
         """
         Get all view export requests for a user
         
@@ -913,7 +976,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_exports_metadata(self, **kwargs):
+    def get_analytics_reporting_exports_metadata(self, **kwargs) -> 'ReportingExportMetadataJobListing':
         """
         Get all export metadata
         
@@ -985,7 +1048,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_metadata(self, **kwargs):
+    def get_analytics_reporting_metadata(self, **kwargs) -> 'ReportMetaDataEntityListing':
         """
         Get list of reporting metadata.
         
@@ -1066,7 +1129,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_report_id_metadata(self, report_id, **kwargs):
+    def get_analytics_reporting_report_id_metadata(self, report_id: str, **kwargs) -> 'ReportMetaData':
         """
         Get a reporting metadata.
         
@@ -1147,7 +1210,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_reportformats(self, **kwargs):
+    def get_analytics_reporting_reportformats(self, **kwargs) -> List[str]:
         """
         Get a list of report formats
         Get a list of report formats.
@@ -1219,7 +1282,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_schedule(self, schedule_id, **kwargs):
+    def get_analytics_reporting_schedule(self, schedule_id: str, **kwargs) -> 'ReportSchedule':
         """
         Get a scheduled report job.
         
@@ -1297,7 +1360,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_schedule_history(self, schedule_id, **kwargs):
+    def get_analytics_reporting_schedule_history(self, schedule_id: str, **kwargs) -> 'ReportRunEntryEntityDomainListing':
         """
         Get list of completed scheduled report jobs.
         
@@ -1381,7 +1444,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_schedule_history_latest(self, schedule_id, **kwargs):
+    def get_analytics_reporting_schedule_history_latest(self, schedule_id: str, **kwargs) -> 'ReportRunEntry':
         """
         Get most recently completed scheduled report job.
         
@@ -1459,7 +1522,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_schedule_history_run_id(self, run_id, schedule_id, **kwargs):
+    def get_analytics_reporting_schedule_history_run_id(self, run_id: str, schedule_id: str, **kwargs) -> 'ReportRunEntry':
         """
         A completed scheduled report job
         A completed scheduled report job.
@@ -1543,7 +1606,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_schedules(self, **kwargs):
+    def get_analytics_reporting_schedules(self, **kwargs) -> 'ReportScheduleEntityListing':
         """
         Get a list of scheduled report jobs
         Get a list of scheduled report jobs.
@@ -1621,7 +1684,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_settings(self, **kwargs):
+    def get_analytics_reporting_settings(self, **kwargs) -> 'AnalyticsReportingSettings':
         """
         Get AnalyticsReportingSettings for an organization
         
@@ -1693,7 +1756,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_timeperiods(self, **kwargs):
+    def get_analytics_reporting_timeperiods(self, **kwargs) -> List[str]:
         """
         Get a list of report time periods.
         
@@ -1765,7 +1828,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_users_details_job(self, job_id, **kwargs):
+    def get_analytics_users_details_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
         """
         Get status for async query for user details
         
@@ -1843,7 +1906,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_users_details_job_results(self, job_id, **kwargs):
+    def get_analytics_users_details_job_results(self, job_id: str, **kwargs) -> 'AnalyticsUserDetailsAsyncQueryResponse':
         """
         Fetch a page of results for an async query
         
@@ -1927,7 +1990,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_users_details_jobs_availability(self, **kwargs):
+    def get_analytics_users_details_jobs_availability(self, **kwargs) -> 'DataAvailabilityResponse':
         """
         Lookup the datalake availability date and time
         
@@ -1999,7 +2062,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_analytics_reporting_settings(self, body, **kwargs):
+    def patch_analytics_reporting_settings(self, body: 'AnalyticsReportingSettings', **kwargs) -> 'AnalyticsReportingSettings':
         """
         Patch AnalyticsReportingSettings values for an organization
         
@@ -2077,7 +2140,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_actions_aggregates_query(self, body, **kwargs):
+    def post_analytics_actions_aggregates_query(self, body: 'ActionAggregationQuery', **kwargs) -> 'ActionAggregateQueryResponse':
         """
         Query for action aggregates
         
@@ -2155,7 +2218,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_bots_aggregates_query(self, body, **kwargs):
+    def post_analytics_bots_aggregates_query(self, body: 'BotAggregationQuery', **kwargs) -> 'BotAggregateQueryResponse':
         """
         Query for bot aggregates
         
@@ -2233,7 +2296,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_conversation_details_properties(self, conversation_id, body, **kwargs):
+    def post_analytics_conversation_details_properties(self, conversation_id: str, body: 'PropertyIndexRequest', **kwargs) -> 'PropertyIndexRequest':
         """
         Index conversation properties
         
@@ -2317,7 +2380,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_conversations_aggregates_query(self, body, **kwargs):
+    def post_analytics_conversations_aggregates_query(self, body: 'ConversationAggregationQuery', **kwargs) -> 'ConversationAggregateQueryResponse':
         """
         Query for conversation aggregates
         
@@ -2395,7 +2458,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_conversations_details_jobs(self, body, **kwargs):
+    def post_analytics_conversations_details_jobs(self, body: 'AsyncConversationQuery', **kwargs) -> 'AsyncQueryResponse':
         """
         Query for conversation details asynchronously
         
@@ -2473,7 +2536,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_conversations_details_query(self, body, **kwargs):
+    def post_analytics_conversations_details_query(self, body: 'ConversationQuery', **kwargs) -> 'AnalyticsConversationQueryResponse':
         """
         Query for conversation details
         
@@ -2551,7 +2614,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_conversations_transcripts_query(self, body, **kwargs):
+    def post_analytics_conversations_transcripts_query(self, body: 'TranscriptConversationDetailSearchRequest', **kwargs) -> 'AnalyticsConversationWithoutAttributesMultiGetResponse':
         """
         Search resources.
         
@@ -2629,7 +2692,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_evaluations_aggregates_query(self, body, **kwargs):
+    def post_analytics_evaluations_aggregates_query(self, body: 'EvaluationAggregationQuery', **kwargs) -> 'EvaluationAggregateQueryResponse':
         """
         Query for evaluation aggregates
         
@@ -2707,7 +2770,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_flows_aggregates_query(self, body, **kwargs):
+    def post_analytics_flows_aggregates_query(self, body: 'FlowAggregationQuery', **kwargs) -> 'FlowAggregateQueryResponse':
         """
         Query for flow aggregates
         
@@ -2785,7 +2848,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_flows_observations_query(self, body, **kwargs):
+    def post_analytics_flows_observations_query(self, body: 'FlowObservationQuery', **kwargs) -> 'FlowObservationQueryResponse':
         """
         Query for flow observations
         
@@ -2863,7 +2926,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_journeys_aggregates_query(self, body, **kwargs):
+    def post_analytics_journeys_aggregates_query(self, body: 'JourneyAggregationQuery', **kwargs) -> 'JourneyAggregateQueryResponse':
         """
         Query for journey aggregates
         
@@ -2941,7 +3004,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_queues_observations_query(self, body, **kwargs):
+    def post_analytics_queues_observations_query(self, body: 'QueueObservationQuery', **kwargs) -> 'QueueObservationQueryResponse':
         """
         Query for queue observations
         
@@ -3019,7 +3082,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_reporting_exports(self, body, **kwargs):
+    def post_analytics_reporting_exports(self, body: 'ReportingExportJobRequest', **kwargs) -> 'ReportingExportJobResponse':
         """
         Generate a view export request
         This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
@@ -3097,7 +3160,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_reporting_schedule_runreport(self, schedule_id, **kwargs):
+    def post_analytics_reporting_schedule_runreport(self, schedule_id: str, **kwargs) -> 'RunNowResponse':
         """
         Place a scheduled report immediately into the reporting queue
         
@@ -3175,7 +3238,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_reporting_schedules(self, body, **kwargs):
+    def post_analytics_reporting_schedules(self, body: 'ReportSchedule', **kwargs) -> 'ReportSchedule':
         """
         Create a scheduled report job
         Create a scheduled report job.
@@ -3253,7 +3316,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_surveys_aggregates_query(self, body, **kwargs):
+    def post_analytics_surveys_aggregates_query(self, body: 'SurveyAggregationQuery', **kwargs) -> 'SurveyAggregateQueryResponse':
         """
         Query for survey aggregates
         
@@ -3331,7 +3394,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_transcripts_aggregates_query(self, body, **kwargs):
+    def post_analytics_transcripts_aggregates_query(self, body: 'TranscriptAggregationQuery', **kwargs) -> 'TranscriptAggregateQueryResponse':
         """
         Query for transcript aggregates
         
@@ -3409,7 +3472,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_users_aggregates_query(self, body, **kwargs):
+    def post_analytics_users_aggregates_query(self, body: 'UserAggregationQuery', **kwargs) -> 'UserAggregateQueryResponse':
         """
         Query for user aggregates
         
@@ -3487,7 +3550,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_users_details_jobs(self, body, **kwargs):
+    def post_analytics_users_details_jobs(self, body: 'AsyncUserDetailsQuery', **kwargs) -> 'AsyncQueryResponse':
         """
         Query for user details asynchronously
         
@@ -3565,7 +3628,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_users_details_query(self, body, **kwargs):
+    def post_analytics_users_details_query(self, body: 'UserDetailsQuery', **kwargs) -> 'AnalyticsUserDetailsQueryResponse':
         """
         Query for user details
         
@@ -3643,7 +3706,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_users_observations_query(self, body, **kwargs):
+    def post_analytics_users_observations_query(self, body: 'UserObservationQuery', **kwargs) -> 'UserObservationQueryResponse':
         """
         Query for user observations
         
@@ -3721,7 +3784,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_analytics_dataretention_settings(self, body, **kwargs):
+    def put_analytics_dataretention_settings(self, body: 'UpdateAnalyticsDataRetentionRequest', **kwargs) -> 'AnalyticsDataRetentionResponse':
         """
         Update analytics data retention setting
         
@@ -3799,7 +3862,7 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_analytics_reporting_schedule(self, schedule_id, body, **kwargs):
+    def put_analytics_reporting_schedule(self, schedule_id: str, body: 'ReportSchedule', **kwargs) -> 'ReportSchedule':
         """
         Update a scheduled report job.
         

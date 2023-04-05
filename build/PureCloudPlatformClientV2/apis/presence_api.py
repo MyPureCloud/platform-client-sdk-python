@@ -23,12 +23,29 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import OrganizationPresence
+from ..models import OrganizationPresenceEntityListing
+from ..models import PresenceSettings
+from ..models import Source
+from ..models import SourceEntityListing
+from ..models import SystemPresence
+from ..models import UserPresence
+from ..models import UserPrimarySource
 
 class PresenceApi(object):
     """
@@ -46,7 +63,7 @@ class PresenceApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_presence_source(self, source_id, **kwargs):
+    def delete_presence_source(self, source_id: str, **kwargs) -> None:
         """
         Delete a Presence Source
         
@@ -124,7 +141,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_presencedefinition(self, presence_id, **kwargs):
+    def delete_presencedefinition(self, presence_id: str, **kwargs) -> None:
         """
         Delete a Presence Definition
         
@@ -202,7 +219,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_presence_settings(self, **kwargs):
+    def get_presence_settings(self, **kwargs) -> 'PresenceSettings':
         """
         Get the presence settings
         
@@ -274,7 +291,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_presence_source(self, source_id, **kwargs):
+    def get_presence_source(self, source_id: str, **kwargs) -> 'Source':
         """
         Get a Presence Source
         
@@ -352,7 +369,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_presence_sources(self, **kwargs):
+    def get_presence_sources(self, **kwargs) -> 'SourceEntityListing':
         """
         Get a list of Presence Sources
         
@@ -427,7 +444,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_presence_user_primarysource(self, user_id, **kwargs):
+    def get_presence_user_primarysource(self, user_id: str, **kwargs) -> 'UserPrimarySource':
         """
         Get a user's Primary Presence Source
         
@@ -505,7 +522,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_presencedefinition(self, presence_id, **kwargs):
+    def get_presencedefinition(self, presence_id: str, **kwargs) -> 'OrganizationPresence':
         """
         Get a Presence Definition
         
@@ -586,7 +603,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_presencedefinitions(self, **kwargs):
+    def get_presencedefinitions(self, **kwargs) -> 'OrganizationPresenceEntityListing':
         """
         Get an Organization's list of Presence Definitions
         
@@ -670,7 +687,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_systempresences(self, **kwargs):
+    def get_systempresences(self, **kwargs) -> List['SystemPresence']:
         """
         Get the list of SystemPresences
         
@@ -742,7 +759,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_user_presence(self, user_id, source_id, **kwargs):
+    def get_user_presence(self, user_id: str, source_id: str, **kwargs) -> 'UserPresence':
         """
         Get a user's Presence
         Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources. This endpoint does not support registered presence sources.
@@ -826,7 +843,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_user_presences_purecloud(self, user_id, **kwargs):
+    def get_user_presences_purecloud(self, user_id: str, **kwargs) -> 'UserPresence':
         """
         Get a user's Genesys Cloud presence.
         Get the default Genesys Cloud user presence source PURECLOUD
@@ -904,7 +921,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_user_presence(self, user_id, source_id, body, **kwargs):
+    def patch_user_presence(self, user_id: str, source_id: str, body: 'UserPresence', **kwargs) -> 'UserPresence':
         """
         Patch a user's Presence
         Patch a user's presence for the specified source that is not specifically listed. This endpoint does not support registered presence sources. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
@@ -994,7 +1011,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_user_presences_purecloud(self, user_id, body, **kwargs):
+    def patch_user_presences_purecloud(self, user_id: str, body: 'UserPresence', **kwargs) -> 'UserPresence':
         """
         Patch a Genesys Cloud user's presence
         The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
@@ -1078,7 +1095,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_presence_sources(self, body, **kwargs):
+    def post_presence_sources(self, body: 'Source', **kwargs) -> 'Source':
         """
         Create a Presence Source
         
@@ -1156,7 +1173,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_presencedefinitions(self, body, **kwargs):
+    def post_presencedefinitions(self, body: 'OrganizationPresence', **kwargs) -> 'OrganizationPresence':
         """
         Create a Presence Definition
         
@@ -1234,7 +1251,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_presence_settings(self, body, **kwargs):
+    def put_presence_settings(self, body: 'PresenceSettings', **kwargs) -> 'PresenceSettings':
         """
         Update the presence settings
         
@@ -1312,7 +1329,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_presence_source(self, source_id, body, **kwargs):
+    def put_presence_source(self, source_id: str, body: 'Source', **kwargs) -> 'Source':
         """
         Update a Presence Source
         
@@ -1396,7 +1413,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_presence_user_primarysource(self, user_id, body, **kwargs):
+    def put_presence_user_primarysource(self, user_id: str, body: 'UserPrimarySource', **kwargs) -> 'UserPrimarySource':
         """
         Update a user's Primary Presence Source
         
@@ -1480,7 +1497,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_presencedefinition(self, presence_id, body, **kwargs):
+    def put_presencedefinition(self, presence_id: str, body: 'OrganizationPresence', **kwargs) -> 'OrganizationPresence':
         """
         Update a Presence Definition
         
@@ -1564,7 +1581,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_users_presences_bulk(self, body, **kwargs):
+    def put_users_presences_bulk(self, body: List['UserPresence'], **kwargs) -> List['UserPresence']:
         """
         Update bulk user Presences
         

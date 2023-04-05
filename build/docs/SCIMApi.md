@@ -42,7 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_scim_user"></a>
 
-## Empty** delete_scim_user(user_id, if_match=if_match)
+## object** delete_scim_user(user_id, if_match=if_match)
 
 
 
@@ -91,11 +91,11 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="delete_scim_v2_user"></a>
 
-## Empty** delete_scim_v2_user(user_id, if_match=if_match)
+## object** delete_scim_v2_user(user_id, if_match=if_match)
 
 
 
@@ -144,7 +144,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="get_scim_group"></a>
 

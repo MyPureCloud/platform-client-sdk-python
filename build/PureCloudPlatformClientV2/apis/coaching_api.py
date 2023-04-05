@@ -23,12 +23,40 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import AddConversationRequest
+from ..models import AddConversationResponse
+from ..models import CoachingAnnotation
+from ..models import CoachingAnnotationCreateRequest
+from ..models import CoachingAnnotationList
+from ..models import CoachingAppointmentAggregateRequest
+from ..models import CoachingAppointmentAggregateResponse
+from ..models import CoachingAppointmentReference
+from ..models import CoachingAppointmentResponse
+from ..models import CoachingAppointmentResponseList
+from ..models import CoachingAppointmentStatusRequest
+from ..models import CoachingAppointmentStatusResponse
+from ..models import CoachingAppointmentStatusResponseList
+from ..models import CoachingNotification
+from ..models import CoachingNotificationList
+from ..models import CoachingSlotsRequest
+from ..models import CoachingSlotsResponse
+from ..models import CreateCoachingAppointmentRequest
+from ..models import ErrorBody
+from ..models import UpdateCoachingAppointmentRequest
 
 class CoachingApi(object):
     """
@@ -46,7 +74,7 @@ class CoachingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_coaching_appointment(self, appointment_id, **kwargs):
+    def delete_coaching_appointment(self, appointment_id: str, **kwargs) -> 'CoachingAppointmentReference':
         """
         Delete an existing appointment
         Permission not required if you are the creator of the appointment
@@ -124,7 +152,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_coaching_appointment_annotation(self, appointment_id, annotation_id, **kwargs):
+    def delete_coaching_appointment_annotation(self, appointment_id: str, annotation_id: str, **kwargs) -> None:
         """
         Delete an existing annotation
         You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
@@ -208,7 +236,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_coaching_appointment(self, appointment_id, **kwargs):
+    def get_coaching_appointment(self, appointment_id: str, **kwargs) -> 'CoachingAppointmentResponse':
         """
         Retrieve an appointment
         Permission not required if you are the attendee, creator or facilitator of the appointment
@@ -286,7 +314,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_coaching_appointment_annotation(self, appointment_id, annotation_id, **kwargs):
+    def get_coaching_appointment_annotation(self, appointment_id: str, annotation_id: str, **kwargs) -> 'CoachingAnnotation':
         """
         Retrieve an annotation.
         You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
@@ -370,7 +398,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_coaching_appointment_annotations(self, appointment_id, **kwargs):
+    def get_coaching_appointment_annotations(self, appointment_id: str, **kwargs) -> 'CoachingAnnotationList':
         """
         Get a list of annotations.
         You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
@@ -454,7 +482,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_coaching_appointment_statuses(self, appointment_id, **kwargs):
+    def get_coaching_appointment_statuses(self, appointment_id: str, **kwargs) -> 'CoachingAppointmentStatusResponseList':
         """
         Get the list of status changes for a coaching appointment.
         Permission not required if you are an attendee, creator or facilitator of the appointment
@@ -538,7 +566,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_coaching_appointments(self, user_ids, **kwargs):
+    def get_coaching_appointments(self, user_ids: List['str'], **kwargs) -> 'CoachingAppointmentResponseList':
         """
         Get appointments for users and optional date range
         
@@ -646,7 +674,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_coaching_appointments_me(self, **kwargs):
+    def get_coaching_appointments_me(self, **kwargs) -> 'CoachingAppointmentResponseList':
         """
         Get my appointments for a given date range
         
@@ -748,7 +776,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_coaching_notification(self, notification_id, **kwargs):
+    def get_coaching_notification(self, notification_id: str, **kwargs) -> 'CoachingNotification':
         """
         Get an existing notification
         Permission not required if you are the owner of the notification.
@@ -829,7 +857,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_coaching_notifications(self, **kwargs):
+    def get_coaching_notifications(self, **kwargs) -> 'CoachingNotificationList':
         """
         Retrieve the list of your notifications.
         
@@ -910,7 +938,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_coaching_appointment(self, appointment_id, body, **kwargs):
+    def patch_coaching_appointment(self, appointment_id: str, body: 'UpdateCoachingAppointmentRequest', **kwargs) -> 'CoachingAppointmentResponse':
         """
         Update an existing appointment
         Permission not required if you are the creator or facilitator of the appointment
@@ -994,7 +1022,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_coaching_appointment_annotation(self, appointment_id, annotation_id, body, **kwargs):
+    def patch_coaching_appointment_annotation(self, appointment_id: str, annotation_id: str, body: 'CoachingAnnotation', **kwargs) -> 'CoachingAnnotation':
         """
         Update an existing annotation.
         You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
@@ -1084,7 +1112,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_coaching_appointment_status(self, appointment_id, body, **kwargs):
+    def patch_coaching_appointment_status(self, appointment_id: str, body: 'CoachingAppointmentStatusRequest', **kwargs) -> 'CoachingAppointmentStatusResponse':
         """
         Update the status of a coaching appointment
         Permission not required if you are an attendee, creator or facilitator of the appointment
@@ -1168,7 +1196,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_coaching_notification(self, notification_id, body, **kwargs):
+    def patch_coaching_notification(self, notification_id: str, body: 'CoachingNotification', **kwargs) -> 'CoachingNotification':
         """
         Update an existing notification.
         Can only update your own notifications.
@@ -1252,7 +1280,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_coaching_appointment_annotations(self, appointment_id, body, **kwargs):
+    def post_coaching_appointment_annotations(self, appointment_id: str, body: 'CoachingAnnotationCreateRequest', **kwargs) -> 'CoachingAnnotation':
         """
         Create a new annotation.
         You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can create private annotations).
@@ -1336,7 +1364,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_coaching_appointment_conversations(self, appointment_id, body, **kwargs):
+    def post_coaching_appointment_conversations(self, appointment_id: str, body: 'AddConversationRequest', **kwargs) -> 'AddConversationResponse':
         """
         Add a conversation to an appointment
         Permission not required if you are the creator or facilitator of the appointment
@@ -1420,7 +1448,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_coaching_appointments(self, body, **kwargs):
+    def post_coaching_appointments(self, body: 'CreateCoachingAppointmentRequest', **kwargs) -> 'CoachingAppointmentResponse':
         """
         Create a new appointment
         
@@ -1498,7 +1526,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_coaching_appointments_aggregates_query(self, body, **kwargs):
+    def post_coaching_appointments_aggregates_query(self, body: 'CoachingAppointmentAggregateRequest', **kwargs) -> 'CoachingAppointmentAggregateResponse':
         """
         Retrieve aggregated appointment data
         
@@ -1576,7 +1604,7 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_coaching_scheduleslots_query(self, body, **kwargs):
+    def post_coaching_scheduleslots_query(self, body: 'CoachingSlotsRequest', **kwargs) -> 'CoachingSlotsResponse':
         """
         Get list of possible slots where a coaching appointment can be scheduled.
         

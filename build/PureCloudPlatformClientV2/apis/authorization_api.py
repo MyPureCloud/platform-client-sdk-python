@@ -23,12 +23,39 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import AuthorizationSettings
+from ..models import AuthzDivision
+from ..models import AuthzDivisionEntityListing
+from ..models import AuthzDivisionGrantEntityListing
+from ..models import AuthzSubject
+from ..models import DivsPermittedEntityListing
+from ..models import DomainOrgRoleDifference
+from ..models import DomainOrganizationRole
+from ..models import DomainOrganizationRoleCreate
+from ..models import DomainOrganizationRoleUpdate
+from ..models import ErrorBody
+from ..models import OrganizationProductEntityListing
+from ..models import OrganizationRoleEntityListing
+from ..models import PermissionCollectionEntityListing
+from ..models import RoleDivisionGrants
+from ..models import SubjectDivisionGrantsEntityListing
+from ..models import SubjectDivisions
+from ..models import UserAuthorization
+from ..models import UserEntityListing
 
 class AuthorizationApi(object):
     """
@@ -46,7 +73,7 @@ class AuthorizationApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_authorization_division(self, division_id, **kwargs):
+    def delete_authorization_division(self, division_id: str, **kwargs) -> None:
         """
         Delete a division.
         
@@ -127,7 +154,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_authorization_role(self, role_id, **kwargs):
+    def delete_authorization_role(self, role_id: str, **kwargs) -> None:
         """
         Delete an organization role.
         
@@ -205,7 +232,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_authorization_subject_division_role(self, subject_id, division_id, role_id, **kwargs):
+    def delete_authorization_subject_division_role(self, subject_id: str, division_id: str, role_id: str, **kwargs) -> None:
         """
         Delete a grant of a role in a division
         
@@ -295,7 +322,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_division(self, division_id, **kwargs):
+    def get_authorization_division(self, division_id: str, **kwargs) -> 'AuthzDivision':
         """
         Returns an authorization division.
         
@@ -376,7 +403,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_division_grants(self, division_id, **kwargs):
+    def get_authorization_division_grants(self, division_id: str, **kwargs) -> 'AuthzDivisionGrantEntityListing':
         """
         Gets all grants for a given division.
         Returns all grants assigned to a given division. Maximum page size is 500.
@@ -460,7 +487,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_divisions(self, **kwargs):
+    def get_authorization_divisions(self, **kwargs) -> 'AuthzDivisionEntityListing':
         """
         Retrieve a list of all divisions defined for the organization
         Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
@@ -559,7 +586,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_divisions_home(self, **kwargs):
+    def get_authorization_divisions_home(self, **kwargs) -> 'AuthzDivision':
         """
         Retrieve the home division for the organization.
         Will not include object counts.
@@ -631,7 +658,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_divisions_limit(self, **kwargs):
+    def get_authorization_divisions_limit(self, **kwargs) -> int:
         """
         Returns the maximum allowed number of divisions.
         
@@ -703,7 +730,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_divisionspermitted_me(self, permission, **kwargs):
+    def get_authorization_divisionspermitted_me(self, permission: str, **kwargs) -> List['AuthzDivision']:
         """
         Returns which divisions the current user has the given permission in.
         This route is deprecated, use authorization/divisionspermitted/paged/me instead.
@@ -784,7 +811,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_divisionspermitted_paged_me(self, permission, **kwargs):
+    def get_authorization_divisionspermitted_paged_me(self, permission: str, **kwargs) -> 'DivsPermittedEntityListing':
         """
         Returns which divisions the current user has the given permission in.
         
@@ -868,7 +895,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_divisionspermitted_paged_subject_id(self, subject_id, permission, **kwargs):
+    def get_authorization_divisionspermitted_paged_subject_id(self, subject_id: str, permission: str, **kwargs) -> 'DivsPermittedEntityListing':
         """
         Returns which divisions the specified user has the given permission in.
         This route is deprecated, use authorization/divisionspermitted/paged/me instead.
@@ -958,7 +985,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_permissions(self, **kwargs):
+    def get_authorization_permissions(self, **kwargs) -> 'PermissionCollectionEntityListing':
         """
         Get all permissions.
         Retrieve a list of all permission defined in the system.
@@ -1042,7 +1069,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_products(self, **kwargs):
+    def get_authorization_products(self, **kwargs) -> 'OrganizationProductEntityListing':
         """
         Get the list of enabled products
         Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
@@ -1114,7 +1141,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_role(self, role_id, **kwargs):
+    def get_authorization_role(self, role_id: str, **kwargs) -> 'DomainOrganizationRole':
         """
         Get a single organization role.
         Get the organization role specified by its ID.
@@ -1198,7 +1225,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_role_comparedefault_right_role_id(self, left_role_id, right_role_id, **kwargs):
+    def get_authorization_role_comparedefault_right_role_id(self, left_role_id: str, right_role_id: str, **kwargs) -> 'DomainOrgRoleDifference':
         """
         Get an org role to default role comparison
         Compares any organization role to a default role id and show differences
@@ -1282,7 +1309,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_role_subjectgrants(self, role_id, **kwargs):
+    def get_authorization_role_subjectgrants(self, role_id: str, **kwargs) -> 'SubjectDivisionGrantsEntityListing':
         """
         Get the subjects' granted divisions in the specified role.
         Includes the divisions for which the subject has a grant.
@@ -1378,7 +1405,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_role_users(self, role_id, **kwargs):
+    def get_authorization_role_users(self, role_id: str, **kwargs) -> 'UserEntityListing':
         """
         Get a list of the users in a specified role.
         Get an array of the UUIDs of the users in the specified role.
@@ -1462,7 +1489,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_roles(self, **kwargs):
+    def get_authorization_roles(self, **kwargs) -> 'OrganizationRoleEntityListing':
         """
         Retrieve a list of all roles defined for the organization
         
@@ -1567,7 +1594,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_settings(self, **kwargs):
+    def get_authorization_settings(self, **kwargs) -> 'AuthorizationSettings':
         """
         Get authorization settings
         
@@ -1639,7 +1666,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_subject(self, subject_id, **kwargs):
+    def get_authorization_subject(self, subject_id: str, **kwargs) -> 'AuthzSubject':
         """
         Returns a listing of roles and permissions for a user.
         
@@ -1717,7 +1744,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_subjects_me(self, **kwargs):
+    def get_authorization_subjects_me(self, **kwargs) -> 'AuthzSubject':
         """
         Returns a listing of roles and permissions for the currently authenticated user.
         
@@ -1789,7 +1816,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_subjects_rolecounts(self, **kwargs):
+    def get_authorization_subjects_rolecounts(self, **kwargs) -> Dict[str, object]:
         """
         Get the count of roles granted to a list of subjects
         
@@ -1864,7 +1891,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_user_roles(self, subject_id, **kwargs):
+    def get_user_roles(self, subject_id: str, **kwargs) -> 'UserAuthorization':
         """
         Returns a listing of roles and permissions for a user.
         
@@ -1942,7 +1969,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_authorization_role(self, role_id, body, **kwargs):
+    def patch_authorization_role(self, role_id: str, body: 'DomainOrganizationRole', **kwargs) -> 'DomainOrganizationRole':
         """
         Patch Organization Role for needsUpdate Field
         Patch Organization Role for needsUpdate Field
@@ -2026,7 +2053,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_authorization_settings(self, body, **kwargs):
+    def patch_authorization_settings(self, body: 'AuthorizationSettings', **kwargs) -> 'AuthorizationSettings':
         """
         Change authorization settings
         Change authorization settings
@@ -2104,7 +2131,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_division_object(self, division_id, object_type, body, **kwargs):
+    def post_authorization_division_object(self, division_id: str, object_type: str, body: List['str'], **kwargs) -> None:
         """
         Assign a list of objects to a division
         Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
@@ -2194,7 +2221,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_division_restore(self, division_id, body, **kwargs):
+    def post_authorization_division_restore(self, division_id: str, body: 'AuthzDivision', **kwargs) -> 'AuthzDivision':
         """
         Recreate a previously deleted division.
         
@@ -2278,7 +2305,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_divisions(self, body, **kwargs):
+    def post_authorization_divisions(self, body: 'AuthzDivision', **kwargs) -> 'AuthzDivision':
         """
         Create a division.
         
@@ -2356,7 +2383,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_role(self, role_id, body, **kwargs):
+    def post_authorization_role(self, role_id: str, body: 'SubjectDivisions', **kwargs) -> None:
         """
         Bulk-grant subjects and divisions with an organization role.
         
@@ -2443,7 +2470,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_role_comparedefault_right_role_id(self, left_role_id, right_role_id, body, **kwargs):
+    def post_authorization_role_comparedefault_right_role_id(self, left_role_id: str, right_role_id: str, body: 'DomainOrganizationRole', **kwargs) -> 'DomainOrgRoleDifference':
         """
         Get an unsaved org role to default role comparison
         Allows users to compare their existing roles in an unsaved state to its default role
@@ -2533,7 +2560,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_roles(self, body, **kwargs):
+    def post_authorization_roles(self, body: 'DomainOrganizationRoleCreate', **kwargs) -> 'DomainOrganizationRole':
         """
         Create an organization role.
         
@@ -2611,7 +2638,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_roles_default(self, **kwargs):
+    def post_authorization_roles_default(self, **kwargs) -> 'OrganizationRoleEntityListing':
         """
         Restores all default roles
         This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
@@ -2686,7 +2713,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_subject_bulkadd(self, subject_id, body, **kwargs):
+    def post_authorization_subject_bulkadd(self, subject_id: str, body: 'RoleDivisionGrants', **kwargs) -> None:
         """
         Bulk-grant roles and divisions to a subject.
         
@@ -2773,7 +2800,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_subject_bulkremove(self, subject_id, body, **kwargs):
+    def post_authorization_subject_bulkremove(self, subject_id: str, body: 'RoleDivisionGrants', **kwargs) -> None:
         """
         Bulk-remove grants from a subject.
         
@@ -2857,7 +2884,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_subject_bulkreplace(self, subject_id, body, **kwargs):
+    def post_authorization_subject_bulkreplace(self, subject_id: str, body: 'RoleDivisionGrants', **kwargs) -> None:
         """
         Replace subject's roles and divisions with the exact list supplied in the request.
         This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
@@ -2944,7 +2971,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_subject_division_role(self, subject_id, division_id, role_id, **kwargs):
+    def post_authorization_subject_division_role(self, subject_id: str, division_id: str, role_id: str, **kwargs) -> None:
         """
         Make a grant of a role in a division
         
@@ -3037,7 +3064,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_authorization_division(self, division_id, body, **kwargs):
+    def put_authorization_division(self, division_id: str, body: 'AuthzDivision', **kwargs) -> 'AuthzDivision':
         """
         Update a division.
         
@@ -3121,7 +3148,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_authorization_role(self, role_id, body, **kwargs):
+    def put_authorization_role(self, role_id: str, body: 'DomainOrganizationRoleUpdate', **kwargs) -> 'DomainOrganizationRole':
         """
         Update an organization role.
         Update
@@ -3205,7 +3232,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_authorization_role_users_add(self, role_id, body, **kwargs):
+    def put_authorization_role_users_add(self, role_id: str, body: List['str'], **kwargs) -> List[str]:
         """
         Sets the users for the role
         
@@ -3289,7 +3316,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_authorization_role_users_remove(self, role_id, body, **kwargs):
+    def put_authorization_role_users_remove(self, role_id: str, body: List['str'], **kwargs) -> List[str]:
         """
         Removes the users from the role
         
@@ -3373,7 +3400,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_authorization_roles_default(self, body, **kwargs):
+    def put_authorization_roles_default(self, body: List['DomainOrganizationRole'], **kwargs) -> 'OrganizationRoleEntityListing':
         """
         Restore specified default roles
         
@@ -3451,7 +3478,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_user_roles(self, subject_id, body, **kwargs):
+    def put_user_roles(self, subject_id: str, body: List['str'], **kwargs) -> 'UserAuthorization':
         """
         Sets the user's roles
         

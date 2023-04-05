@@ -23,12 +23,24 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ApiUsageQuery
+from ..models import ApiUsageQueryResult
+from ..models import ErrorBody
+from ..models import UsageExecutionResult
 
 class UsageApi(object):
     """
@@ -46,7 +58,7 @@ class UsageApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_usage_query_execution_id_results(self, execution_id, **kwargs):
+    def get_usage_query_execution_id_results(self, execution_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
         
@@ -124,7 +136,7 @@ class UsageApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_usage_query(self, body, **kwargs):
+    def post_usage_query(self, body: 'ApiUsageQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query organization API Usage - 
         After calling this method, you will then need to poll for the query results based on the returned execution Id

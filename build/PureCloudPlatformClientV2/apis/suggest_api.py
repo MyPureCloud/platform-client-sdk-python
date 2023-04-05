@@ -23,12 +23,24 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import JsonNodeSearchResponse
+from ..models import SearchRequest
+from ..models import SuggestSearchRequest
 
 class SuggestApi(object):
     """
@@ -46,7 +58,7 @@ class SuggestApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_search(self, q64, **kwargs):
+    def get_search(self, q64: str, **kwargs) -> 'JsonNodeSearchResponse':
         """
         Search using the q64 value returned from a previous search.
         
@@ -130,7 +142,7 @@ class SuggestApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_search_suggest(self, q64, **kwargs):
+    def get_search_suggest(self, q64: str, **kwargs) -> 'JsonNodeSearchResponse':
         """
         Suggest resources using the q64 value returned from a previous suggest query.
         
@@ -214,7 +226,7 @@ class SuggestApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_search(self, body, **kwargs):
+    def post_search(self, body: 'SearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
         """
         Search resources.
         
@@ -295,7 +307,7 @@ class SuggestApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_search_suggest(self, body, **kwargs):
+    def post_search_suggest(self, body: 'SuggestSearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
         """
         Suggest resources.
         

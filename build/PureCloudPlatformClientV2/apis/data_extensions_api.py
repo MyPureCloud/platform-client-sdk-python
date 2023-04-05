@@ -23,12 +23,24 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import Coretype
+from ..models import CoretypeListing
+from ..models import ErrorBody
+from ..models import SchemaQuantityLimits
 
 class DataExtensionsApi(object):
     """
@@ -46,7 +58,7 @@ class DataExtensionsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_dataextensions_coretype(self, coretype_name, **kwargs):
+    def get_dataextensions_coretype(self, coretype_name: str, **kwargs) -> 'Coretype':
         """
         Get a specific named core type.
         
@@ -124,7 +136,7 @@ class DataExtensionsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_dataextensions_coretypes(self, **kwargs):
+    def get_dataextensions_coretypes(self, **kwargs) -> 'CoretypeListing':
         """
         Get the core types from which all schemas are built.
         
@@ -196,7 +208,7 @@ class DataExtensionsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_dataextensions_limits(self, **kwargs):
+    def get_dataextensions_limits(self, **kwargs) -> 'SchemaQuantityLimits':
         """
         Get quantitative limits on schemas
         

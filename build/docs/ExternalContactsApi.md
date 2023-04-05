@@ -83,7 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_externalcontacts_contact"></a>
 
-## Empty** delete_externalcontacts_contact(contact_id)
+## object** delete_externalcontacts_contact(contact_id)
 
 
 
@@ -130,11 +130,11 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="delete_externalcontacts_contact_note"></a>
 
-## Empty** delete_externalcontacts_contact_note(contact_id, note_id)
+## object** delete_externalcontacts_contact_note(contact_id, note_id)
 
 
 
@@ -183,7 +183,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="delete_externalcontacts_contacts_schema"></a>
 
@@ -237,7 +237,7 @@ void (empty response body)
 
 <a name="delete_externalcontacts_organization"></a>
 
-## Empty** delete_externalcontacts_organization(external_organization_id)
+## object** delete_externalcontacts_organization(external_organization_id)
 
 
 
@@ -285,11 +285,11 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="delete_externalcontacts_organization_note"></a>
 
-## Empty** delete_externalcontacts_organization_note(external_organization_id, note_id)
+## object** delete_externalcontacts_organization_note(external_organization_id, note_id)
 
 
 
@@ -338,7 +338,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="delete_externalcontacts_organization_trustor"></a>
 
@@ -392,7 +392,7 @@ void (empty response body)
 
 <a name="delete_externalcontacts_relationship"></a>
 
-## Empty** delete_externalcontacts_relationship(relationship_id)
+## object** delete_externalcontacts_relationship(relationship_id)
 
 
 
@@ -439,7 +439,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="get_externalcontacts_contact"></a>
 

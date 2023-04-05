@@ -23,12 +23,23 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import Geolocation
+from ..models import GeolocationSettings
 
 class GeolocationApi(object):
     """
@@ -46,7 +57,7 @@ class GeolocationApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_geolocations_settings(self, **kwargs):
+    def get_geolocations_settings(self, **kwargs) -> 'GeolocationSettings':
         """
         Get a organization's GeolocationSettings
         
@@ -118,7 +129,7 @@ class GeolocationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_user_geolocation(self, user_id, client_id, **kwargs):
+    def get_user_geolocation(self, user_id: str, client_id: str, **kwargs) -> 'Geolocation':
         """
         Get a user's Geolocation
         
@@ -202,7 +213,7 @@ class GeolocationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_geolocations_settings(self, body, **kwargs):
+    def patch_geolocations_settings(self, body: 'GeolocationSettings', **kwargs) -> 'GeolocationSettings':
         """
         Patch a organization's GeolocationSettings
         
@@ -280,7 +291,7 @@ class GeolocationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_user_geolocation(self, user_id, client_id, body, **kwargs):
+    def patch_user_geolocation(self, user_id: str, client_id: str, body: 'Geolocation', **kwargs) -> 'Geolocation':
         """
         Patch a user's Geolocation
         The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.

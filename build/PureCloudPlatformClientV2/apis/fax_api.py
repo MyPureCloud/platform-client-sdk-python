@@ -23,12 +23,25 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import DownloadResponse
+from ..models import ErrorBody
+from ..models import FaxDocument
+from ..models import FaxDocumentEntityListing
+from ..models import FaxSummary
 
 class FaxApi(object):
     """
@@ -46,7 +59,7 @@ class FaxApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_fax_document(self, document_id, **kwargs):
+    def delete_fax_document(self, document_id: str, **kwargs) -> None:
         """
         Delete a fax document.
         
@@ -124,7 +137,7 @@ class FaxApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_fax_document(self, document_id, **kwargs):
+    def get_fax_document(self, document_id: str, **kwargs) -> 'FaxDocument':
         """
         Get a document.
         
@@ -202,7 +215,7 @@ class FaxApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_fax_document_content(self, document_id, **kwargs):
+    def get_fax_document_content(self, document_id: str, **kwargs) -> 'DownloadResponse':
         """
         Download a fax document.
         
@@ -280,7 +293,7 @@ class FaxApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_fax_documents(self, **kwargs):
+    def get_fax_documents(self, **kwargs) -> 'FaxDocumentEntityListing':
         """
         Get a list of fax documents.
         
@@ -358,7 +371,7 @@ class FaxApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_fax_summary(self, **kwargs):
+    def get_fax_summary(self, **kwargs) -> 'FaxSummary':
         """
         Get fax summary
         
@@ -430,7 +443,7 @@ class FaxApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_fax_document(self, document_id, body, **kwargs):
+    def put_fax_document(self, document_id: str, body: 'FaxDocument', **kwargs) -> 'FaxDocument':
         """
         Update a fax document.
         

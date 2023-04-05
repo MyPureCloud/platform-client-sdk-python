@@ -5091,7 +5091,7 @@ void (empty response body)
 
 <a name="patch_conversations_call_participant_communication"></a>
 
-## Empty** patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
+## object** patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -5143,7 +5143,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="patch_conversations_call_participant_consult"></a>
 
@@ -5361,7 +5361,7 @@ void (empty response body)
 
 <a name="patch_conversations_callback_participant_communication"></a>
 
-## Empty** patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
+## object** patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -5413,7 +5413,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="patch_conversations_callbacks"></a>
 
@@ -5628,7 +5628,7 @@ void (empty response body)
 
 <a name="patch_conversations_chat_participant_communication"></a>
 
-## Empty** patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
+## object** patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -5680,7 +5680,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="patch_conversations_cobrowsesession"></a>
 
@@ -5844,7 +5844,7 @@ void (empty response body)
 
 <a name="patch_conversations_cobrowsesession_participant_communication"></a>
 
-## Empty** patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
+## object** patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -5896,7 +5896,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="patch_conversations_email"></a>
 
@@ -6060,7 +6060,7 @@ void (empty response body)
 
 <a name="patch_conversations_email_participant_communication"></a>
 
-## Empty** patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
+## object** patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -6112,7 +6112,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="patch_conversations_message"></a>
 
@@ -6276,7 +6276,7 @@ void (empty response body)
 
 <a name="patch_conversations_message_participant_communication"></a>
 
-## Empty** patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
+## object** patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -6328,7 +6328,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="patch_conversations_messaging_integrations_facebook_integration_id"></a>
 
@@ -10003,7 +10003,7 @@ except ApiException as e:
 
 <a name="put_conversations_call_participant_communication_uuidata"></a>
 
-## Empty** put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
+## object** put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
 
 
 
@@ -10055,7 +10055,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="put_conversations_call_recordingstate"></a>
 

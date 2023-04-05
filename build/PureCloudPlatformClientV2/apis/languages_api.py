@@ -23,12 +23,24 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import AvailableTranslations
+from ..models import ErrorBody
+from ..models import Language
+from ..models import LanguageEntityListing
 
 class LanguagesApi(object):
     """
@@ -46,7 +58,7 @@ class LanguagesApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_language(self, language_id, **kwargs):
+    def delete_language(self, language_id: str, **kwargs) -> None:
         """
         Delete Language (Deprecated)
         This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
@@ -124,7 +136,7 @@ class LanguagesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_language(self, language_id, **kwargs):
+    def get_language(self, language_id: str, **kwargs) -> 'Language':
         """
         Get Language (Deprecated)
         This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
@@ -202,7 +214,7 @@ class LanguagesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_languages(self, **kwargs):
+    def get_languages(self, **kwargs) -> 'LanguageEntityListing':
         """
         Get the list of supported languages. (Deprecated)
         This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
@@ -286,7 +298,7 @@ class LanguagesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_languages_translations(self, **kwargs):
+    def get_languages_translations(self, **kwargs) -> 'AvailableTranslations':
         """
         Get all available languages for translation
         
@@ -358,7 +370,7 @@ class LanguagesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_languages_translations_builtin(self, language, **kwargs):
+    def get_languages_translations_builtin(self, language: str, **kwargs) -> Dict[str, object]:
         """
         Get the builtin translation for a language
         
@@ -436,7 +448,7 @@ class LanguagesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_languages_translations_organization(self, language, **kwargs):
+    def get_languages_translations_organization(self, language: str, **kwargs) -> Dict[str, object]:
         """
         Get effective translation for an organization by language
         
@@ -514,7 +526,7 @@ class LanguagesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_languages_translations_user(self, user_id, **kwargs):
+    def get_languages_translations_user(self, user_id: str, **kwargs) -> Dict[str, object]:
         """
         Get effective language translation for a user
         
@@ -592,7 +604,7 @@ class LanguagesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_languages(self, body, **kwargs):
+    def post_languages(self, body: 'Language', **kwargs) -> 'Language':
         """
         Create Language (Deprecated)
         This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages

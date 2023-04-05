@@ -23,12 +23,34 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import CreateWebChatConversationRequest
+from ..models import CreateWebChatConversationResponse
+from ..models import CreateWebChatMessageRequest
+from ..models import ErrorBody
+from ..models import WebChatDeployment
+from ..models import WebChatDeploymentEntityListing
+from ..models import WebChatGuestMediaRequest
+from ..models import WebChatGuestMediaRequestEntityList
+from ..models import WebChatMemberInfo
+from ..models import WebChatMemberInfoEntityList
+from ..models import WebChatMessage
+from ..models import WebChatMessageEntityList
+from ..models import WebChatSettings
+from ..models import WebChatTyping
 
 class WebChatApi(object):
     """
@@ -46,7 +68,7 @@ class WebChatApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_webchat_deployment(self, deployment_id, **kwargs):
+    def delete_webchat_deployment(self, deployment_id: str, **kwargs) -> None:
         """
         Delete a WebChat deployment
         
@@ -124,7 +146,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_webchat_guest_conversation_member(self, conversation_id, member_id, **kwargs):
+    def delete_webchat_guest_conversation_member(self, conversation_id: str, member_id: str, **kwargs) -> None:
         """
         Remove a member from a chat conversation
         
@@ -208,7 +230,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_webchat_settings(self, **kwargs):
+    def delete_webchat_settings(self, **kwargs) -> None:
         """
         Remove WebChat deployment settings
         
@@ -280,7 +302,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webchat_deployment(self, deployment_id, **kwargs):
+    def get_webchat_deployment(self, deployment_id: str, **kwargs) -> 'WebChatDeployment':
         """
         Get a WebChat deployment
         
@@ -358,7 +380,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webchat_deployments(self, **kwargs):
+    def get_webchat_deployments(self, **kwargs) -> 'WebChatDeploymentEntityListing':
         """
         List WebChat deployments
         
@@ -430,7 +452,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webchat_guest_conversation_mediarequest(self, conversation_id, media_request_id, **kwargs):
+    def get_webchat_guest_conversation_mediarequest(self, conversation_id: str, media_request_id: str, **kwargs) -> 'WebChatGuestMediaRequest':
         """
         Get a media request in the conversation
         
@@ -514,7 +536,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webchat_guest_conversation_mediarequests(self, conversation_id, **kwargs):
+    def get_webchat_guest_conversation_mediarequests(self, conversation_id: str, **kwargs) -> 'WebChatGuestMediaRequestEntityList':
         """
         Get all media requests to the guest in the conversation
         
@@ -592,7 +614,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webchat_guest_conversation_member(self, conversation_id, member_id, **kwargs):
+    def get_webchat_guest_conversation_member(self, conversation_id: str, member_id: str, **kwargs) -> 'WebChatMemberInfo':
         """
         Get a web chat conversation member
         
@@ -676,7 +698,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webchat_guest_conversation_members(self, conversation_id, **kwargs):
+    def get_webchat_guest_conversation_members(self, conversation_id: str, **kwargs) -> 'WebChatMemberInfoEntityList':
         """
         Get the members of a chat conversation.
         
@@ -763,7 +785,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webchat_guest_conversation_message(self, conversation_id, message_id, **kwargs):
+    def get_webchat_guest_conversation_message(self, conversation_id: str, message_id: str, **kwargs) -> 'WebChatMessage':
         """
         Get a web chat conversation message
         
@@ -847,7 +869,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webchat_guest_conversation_messages(self, conversation_id, **kwargs):
+    def get_webchat_guest_conversation_messages(self, conversation_id: str, **kwargs) -> 'WebChatMessageEntityList':
         """
         Get the messages of a chat conversation.
         
@@ -937,7 +959,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webchat_settings(self, **kwargs):
+    def get_webchat_settings(self, **kwargs) -> 'WebChatSettings':
         """
         Get WebChat deployment settings
         
@@ -1009,7 +1031,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_webchat_guest_conversation_mediarequest(self, conversation_id, media_request_id, body, **kwargs):
+    def patch_webchat_guest_conversation_mediarequest(self, conversation_id: str, media_request_id: str, body: 'WebChatGuestMediaRequest', **kwargs) -> 'WebChatGuestMediaRequest':
         """
         Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
         
@@ -1099,7 +1121,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_webchat_deployments(self, body, **kwargs):
+    def post_webchat_deployments(self, body: 'WebChatDeployment', **kwargs) -> 'WebChatDeployment':
         """
         Create WebChat deployment
         
@@ -1177,7 +1199,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_webchat_guest_conversation_member_messages(self, conversation_id, member_id, body, **kwargs):
+    def post_webchat_guest_conversation_member_messages(self, conversation_id: str, member_id: str, body: 'CreateWebChatMessageRequest', **kwargs) -> 'WebChatMessage':
         """
         Send a message in a chat conversation.
         
@@ -1267,7 +1289,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_webchat_guest_conversation_member_typing(self, conversation_id, member_id, **kwargs):
+    def post_webchat_guest_conversation_member_typing(self, conversation_id: str, member_id: str, **kwargs) -> 'WebChatTyping':
         """
         Send a typing-indicator in a chat conversation.
         
@@ -1351,7 +1373,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_webchat_guest_conversations(self, body, **kwargs):
+    def post_webchat_guest_conversations(self, body: 'CreateWebChatConversationRequest', **kwargs) -> 'CreateWebChatConversationResponse':
         """
         Create an ACD chat conversation from an external customer.
         This endpoint will create a new ACD Chat conversation under the specified Chat Deployment.  The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the 'memberAuthToken' field should include his JWT as generated by the 'POST /api/v2/signeddata' resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted.  The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the 'eventStreamUri' field of the response; the conversation is not routed until the event stream is attached.
@@ -1429,7 +1451,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_webchat_deployment(self, deployment_id, body, **kwargs):
+    def put_webchat_deployment(self, deployment_id: str, body: 'WebChatDeployment', **kwargs) -> 'WebChatDeployment':
         """
         Update a WebChat deployment
         
@@ -1513,7 +1535,7 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_webchat_settings(self, body, **kwargs):
+    def put_webchat_settings(self, body: 'WebChatSettings', **kwargs) -> 'WebChatSettings':
         """
         Update WebChat deployment settings
         

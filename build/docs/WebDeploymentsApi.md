@@ -131,7 +131,7 @@ void (empty response body)
 
 <a name="delete_webdeployments_deployment_cobrowse_session_id"></a>
 
-## Empty** delete_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
+## object** delete_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
 
 
 
@@ -176,7 +176,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="delete_webdeployments_token_revoke"></a>
 

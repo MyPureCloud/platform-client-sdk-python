@@ -23,12 +23,23 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import BillingUsageReport
+from ..models import ErrorBody
+from ..models import TrusteeBillingOverview
 
 class BillingApi(object):
     """
@@ -46,7 +57,7 @@ class BillingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_billing_reports_billableusage(self, start_date, end_date, **kwargs):
+    def get_billing_reports_billableusage(self, start_date: datetime, end_date: datetime, **kwargs) -> 'BillingUsageReport':
         """
         Get a report of the billable license usages
         Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
@@ -130,7 +141,7 @@ class BillingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_billing_trusteebillingoverview_trustor_org_id(self, trustor_org_id, **kwargs):
+    def get_billing_trusteebillingoverview_trustor_org_id(self, trustor_org_id: str, **kwargs) -> 'TrusteeBillingOverview':
         """
         Get the billing overview for an organization that is managed by a partner.
         Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/

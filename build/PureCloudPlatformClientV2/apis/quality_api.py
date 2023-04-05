@@ -23,12 +23,48 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import AgentActivityEntityListing
+from ..models import Calibration
+from ..models import CalibrationCreate
+from ..models import CalibrationEntityListing
+from ..models import ErrorBody
+from ..models import Evaluation
+from ..models import EvaluationAggregateQueryResponse
+from ..models import EvaluationAggregationQuery
+from ..models import EvaluationAggregationQueryMe
+from ..models import EvaluationEntityListing
+from ..models import EvaluationForm
+from ..models import EvaluationFormAndScoringSet
+from ..models import EvaluationFormEntityListing
+from ..models import EvaluationResponse
+from ..models import EvaluationScoringSet
+from ..models import EvaluatorActivityEntityListing
+from ..models import PublishForm
+from ..models import QMAuditQueryRequest
+from ..models import QualityAuditQueryExecutionResultsResponse
+from ..models import QualityAuditQueryExecutionStatusResponse
+from ..models import ScorableSurvey
+from ..models import Survey
+from ..models import SurveyAggregateQueryResponse
+from ..models import SurveyAggregationQuery
+from ..models import SurveyForm
+from ..models import SurveyFormAndScoringSet
+from ..models import SurveyFormEntityListing
+from ..models import SurveyScoringSet
 
 class QualityApi(object):
     """
@@ -46,7 +82,7 @@ class QualityApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_quality_calibration(self, calibration_id, calibrator_id, **kwargs):
+    def delete_quality_calibration(self, calibration_id: str, calibrator_id: str, **kwargs) -> 'Calibration':
         """
         Delete a calibration by id.
         
@@ -130,7 +166,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_quality_conversation_evaluation(self, conversation_id, evaluation_id, **kwargs):
+    def delete_quality_conversation_evaluation(self, conversation_id: str, evaluation_id: str, **kwargs) -> 'EvaluationResponse':
         """
         Delete an evaluation
         
@@ -217,7 +253,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_quality_form(self, form_id, **kwargs):
+    def delete_quality_form(self, form_id: str, **kwargs) -> None:
         """
         Delete an evaluation form.
         
@@ -295,7 +331,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_quality_forms_evaluation(self, form_id, **kwargs):
+    def delete_quality_forms_evaluation(self, form_id: str, **kwargs) -> None:
         """
         Delete an evaluation form.
         
@@ -373,7 +409,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_quality_forms_survey(self, form_id, **kwargs):
+    def delete_quality_forms_survey(self, form_id: str, **kwargs) -> None:
         """
         Delete a survey form.
         
@@ -451,7 +487,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_agents_activity(self, **kwargs):
+    def get_quality_agents_activity(self, **kwargs) -> 'AgentActivityEntityListing':
         """
         Gets a list of Agent Activities
         Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
@@ -559,7 +595,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_calibration(self, calibration_id, **kwargs):
+    def get_quality_calibration(self, calibration_id: str, **kwargs) -> 'Calibration':
         """
         Get a calibration by id.  Requires either calibrator id or conversation id
         
@@ -643,7 +679,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_calibrations(self, calibrator_id, **kwargs):
+    def get_quality_calibrations(self, calibrator_id: str, **kwargs) -> 'CalibrationEntityListing':
         """
         Get the list of calibrations
         
@@ -748,7 +784,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_conversation_evaluation(self, conversation_id, evaluation_id, **kwargs):
+    def get_quality_conversation_evaluation(self, conversation_id: str, evaluation_id: str, **kwargs) -> 'EvaluationResponse':
         """
         Get an evaluation
         
@@ -835,7 +871,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_conversation_surveys(self, conversation_id, **kwargs):
+    def get_quality_conversation_surveys(self, conversation_id: str, **kwargs) -> List['Survey']:
         """
         Get the surveys for a conversation
         
@@ -913,7 +949,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_conversations_audits_query_transaction_id(self, transaction_id, **kwargs):
+    def get_quality_conversations_audits_query_transaction_id(self, transaction_id: str, **kwargs) -> 'QualityAuditQueryExecutionStatusResponse':
         """
         Get status of audit query execution
         
@@ -991,7 +1027,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_conversations_audits_query_transaction_id_results(self, transaction_id, **kwargs):
+    def get_quality_conversations_audits_query_transaction_id_results(self, transaction_id: str, **kwargs) -> 'QualityAuditQueryExecutionResultsResponse':
         """
         Get results of audit query
         
@@ -1078,7 +1114,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_evaluations_query(self, **kwargs):
+    def get_quality_evaluations_query(self, **kwargs) -> 'EvaluationEntityListing':
         """
         Queries Evaluations and returns a paged list
         Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
@@ -1207,7 +1243,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_evaluators_activity(self, **kwargs):
+    def get_quality_evaluators_activity(self, **kwargs) -> 'EvaluatorActivityEntityListing':
         """
         Get an evaluator activity
         
@@ -1312,7 +1348,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_form(self, form_id, **kwargs):
+    def get_quality_form(self, form_id: str, **kwargs) -> 'EvaluationForm':
         """
         Get an evaluation form
         
@@ -1390,7 +1426,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_form_versions(self, form_id, **kwargs):
+    def get_quality_form_versions(self, form_id: str, **kwargs) -> 'EvaluationFormEntityListing':
         """
         Gets all the revisions for a specific evaluation.
         
@@ -1474,7 +1510,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms(self, **kwargs):
+    def get_quality_forms(self, **kwargs) -> 'EvaluationFormEntityListing':
         """
         Get the list of evaluation forms
         
@@ -1570,7 +1606,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_evaluation(self, form_id, **kwargs):
+    def get_quality_forms_evaluation(self, form_id: str, **kwargs) -> 'EvaluationForm':
         """
         Get an evaluation form
         
@@ -1648,7 +1684,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_evaluation_versions(self, form_id, **kwargs):
+    def get_quality_forms_evaluation_versions(self, form_id: str, **kwargs) -> 'EvaluationFormEntityListing':
         """
         Gets all the revisions for a specific evaluation.
         
@@ -1735,7 +1771,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_evaluations(self, **kwargs):
+    def get_quality_forms_evaluations(self, **kwargs) -> 'EvaluationFormEntityListing':
         """
         Get the list of evaluation forms
         
@@ -1831,7 +1867,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_evaluations_bulk_contexts(self, context_id, **kwargs):
+    def get_quality_forms_evaluations_bulk_contexts(self, context_id: List['str'], **kwargs) -> List['EvaluationForm']:
         """
         Retrieve a list of the latest published evaluation form versions by context ids
         
@@ -1909,7 +1945,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_survey(self, form_id, **kwargs):
+    def get_quality_forms_survey(self, form_id: str, **kwargs) -> 'SurveyForm':
         """
         Get a survey form
         
@@ -1987,7 +2023,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_survey_versions(self, form_id, **kwargs):
+    def get_quality_forms_survey_versions(self, form_id: str, **kwargs) -> 'SurveyFormEntityListing':
         """
         Gets all the revisions for a specific survey.
         
@@ -2071,7 +2107,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_surveys(self, **kwargs):
+    def get_quality_forms_surveys(self, **kwargs) -> 'SurveyFormEntityListing':
         """
         Get the list of survey forms
         
@@ -2167,7 +2203,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_surveys_bulk(self, id, **kwargs):
+    def get_quality_forms_surveys_bulk(self, id: List['str'], **kwargs) -> 'SurveyFormEntityListing':
         """
         Retrieve a list of survey forms by their ids
         
@@ -2245,7 +2281,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_surveys_bulk_contexts(self, context_id, **kwargs):
+    def get_quality_forms_surveys_bulk_contexts(self, context_id: List['str'], **kwargs) -> List['SurveyForm']:
         """
         Retrieve a list of the latest form versions by context ids
         
@@ -2326,7 +2362,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_publishedform(self, form_id, **kwargs):
+    def get_quality_publishedform(self, form_id: str, **kwargs) -> 'EvaluationForm':
         """
         Get the published evaluation forms.
         
@@ -2404,7 +2440,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_publishedforms(self, **kwargs):
+    def get_quality_publishedforms(self, **kwargs) -> 'EvaluationFormEntityListing':
         """
         Get the published evaluation forms.
         
@@ -2488,7 +2524,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_publishedforms_evaluation(self, form_id, **kwargs):
+    def get_quality_publishedforms_evaluation(self, form_id: str, **kwargs) -> 'EvaluationForm':
         """
         Get the most recent published version of an evaluation form.
         
@@ -2566,7 +2602,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_publishedforms_evaluations(self, **kwargs):
+    def get_quality_publishedforms_evaluations(self, **kwargs) -> 'EvaluationFormEntityListing':
         """
         Get the published evaluation forms.
         
@@ -2650,7 +2686,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_publishedforms_survey(self, form_id, **kwargs):
+    def get_quality_publishedforms_survey(self, form_id: str, **kwargs) -> 'SurveyForm':
         """
         Get the most recent published version of a survey form.
         
@@ -2728,7 +2764,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_publishedforms_surveys(self, **kwargs):
+    def get_quality_publishedforms_surveys(self, **kwargs) -> 'SurveyFormEntityListing':
         """
         Get the published survey forms.
         
@@ -2812,7 +2848,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_survey(self, survey_id, **kwargs):
+    def get_quality_survey(self, survey_id: str, **kwargs) -> 'Survey':
         """
         Get a survey for a conversation
         
@@ -2890,7 +2926,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_surveys_scorable(self, customer_survey_url, **kwargs):
+    def get_quality_surveys_scorable(self, customer_survey_url: str, **kwargs) -> 'ScorableSurvey':
         """
         Get a survey as an end-customer, for the purposes of scoring it.
         
@@ -2968,7 +3004,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_quality_forms_survey(self, form_id, body, **kwargs):
+    def patch_quality_forms_survey(self, form_id: str, body: 'SurveyForm', **kwargs) -> 'SurveyForm':
         """
         Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
         
@@ -3052,7 +3088,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_evaluations_aggregates_query(self, body, **kwargs):
+    def post_analytics_evaluations_aggregates_query(self, body: 'EvaluationAggregationQuery', **kwargs) -> 'EvaluationAggregateQueryResponse':
         """
         Query for evaluation aggregates
         
@@ -3130,7 +3166,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_surveys_aggregates_query(self, body, **kwargs):
+    def post_analytics_surveys_aggregates_query(self, body: 'SurveyAggregationQuery', **kwargs) -> 'SurveyAggregateQueryResponse':
         """
         Query for survey aggregates
         
@@ -3208,7 +3244,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_calibrations(self, body, **kwargs):
+    def post_quality_calibrations(self, body: 'CalibrationCreate', **kwargs) -> 'Calibration':
         """
         Create a calibration
         
@@ -3289,7 +3325,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_conversation_evaluations(self, conversation_id, body, **kwargs):
+    def post_quality_conversation_evaluations(self, conversation_id: str, body: 'Evaluation', **kwargs) -> 'Evaluation':
         """
         Create an evaluation
         
@@ -3376,7 +3412,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_conversations_audits_query(self, body, **kwargs):
+    def post_quality_conversations_audits_query(self, body: 'QMAuditQueryRequest', **kwargs) -> 'QualityAuditQueryExecutionStatusResponse':
         """
         Create audit query execution
         
@@ -3454,7 +3490,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_evaluations_aggregates_query_me(self, body, **kwargs):
+    def post_quality_evaluations_aggregates_query_me(self, body: 'EvaluationAggregationQueryMe', **kwargs) -> 'EvaluationAggregateQueryResponse':
         """
         Query for evaluation aggregates for the current user
         
@@ -3532,7 +3568,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_evaluations_scoring(self, body, **kwargs):
+    def post_quality_evaluations_scoring(self, body: 'EvaluationFormAndScoringSet', **kwargs) -> 'EvaluationScoringSet':
         """
         Score evaluation
         
@@ -3610,7 +3646,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_forms(self, body, **kwargs):
+    def post_quality_forms(self, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
         """
         Create an evaluation form.
         
@@ -3688,7 +3724,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_forms_evaluations(self, body, **kwargs):
+    def post_quality_forms_evaluations(self, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
         """
         Create an evaluation form.
         
@@ -3766,7 +3802,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_forms_surveys(self, body, **kwargs):
+    def post_quality_forms_surveys(self, body: 'SurveyForm', **kwargs) -> 'SurveyForm':
         """
         Create a survey form.
         
@@ -3844,7 +3880,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_publishedforms(self, body, **kwargs):
+    def post_quality_publishedforms(self, body: 'PublishForm', **kwargs) -> 'EvaluationForm':
         """
         Publish an evaluation form.
         
@@ -3922,7 +3958,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_publishedforms_evaluations(self, body, **kwargs):
+    def post_quality_publishedforms_evaluations(self, body: 'PublishForm', **kwargs) -> 'EvaluationForm':
         """
         Publish an evaluation form.
         
@@ -4000,7 +4036,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_publishedforms_surveys(self, body, **kwargs):
+    def post_quality_publishedforms_surveys(self, body: 'PublishForm', **kwargs) -> 'SurveyForm':
         """
         Publish a survey form.
         
@@ -4078,7 +4114,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_surveys_scoring(self, body, **kwargs):
+    def post_quality_surveys_scoring(self, body: 'SurveyFormAndScoringSet', **kwargs) -> 'SurveyScoringSet':
         """
         Score survey
         
@@ -4156,7 +4192,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_calibration(self, calibration_id, body, **kwargs):
+    def put_quality_calibration(self, calibration_id: str, body: 'Calibration', **kwargs) -> 'Calibration':
         """
         Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
         
@@ -4240,7 +4276,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_conversation_evaluation(self, conversation_id, evaluation_id, body, **kwargs):
+    def put_quality_conversation_evaluation(self, conversation_id: str, evaluation_id: str, body: 'Evaluation', **kwargs) -> 'EvaluationResponse':
         """
         Update an evaluation
         The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
@@ -4333,7 +4369,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_form(self, form_id, body, **kwargs):
+    def put_quality_form(self, form_id: str, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
         """
         Update an evaluation form.
         
@@ -4417,7 +4453,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_forms_evaluation(self, form_id, body, **kwargs):
+    def put_quality_forms_evaluation(self, form_id: str, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
         """
         Update an evaluation form.
         
@@ -4501,7 +4537,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_forms_survey(self, form_id, body, **kwargs):
+    def put_quality_forms_survey(self, form_id: str, body: 'SurveyForm', **kwargs) -> 'SurveyForm':
         """
         Update a survey form.
         
@@ -4585,7 +4621,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_surveys_scorable(self, customer_survey_url, body, **kwargs):
+    def put_quality_surveys_scorable(self, customer_survey_url: str, body: 'ScorableSurvey', **kwargs) -> 'ScorableSurvey':
         """
         Update a survey as an end-customer, for the purposes of scoring it.
         

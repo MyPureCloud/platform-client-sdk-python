@@ -5046,7 +5046,7 @@ except ApiException as e:
 
 <a name="post_outbound_campaign_agentownedmappingpreview"></a>
 
-## Empty** post_outbound_campaign_agentownedmappingpreview(campaign_id)
+## object** post_outbound_campaign_agentownedmappingpreview(campaign_id)
 
 
 
@@ -5095,7 +5095,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="post_outbound_campaign_callback_schedule"></a>
 

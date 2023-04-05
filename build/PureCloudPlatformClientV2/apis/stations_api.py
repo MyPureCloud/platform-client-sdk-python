@@ -23,12 +23,24 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import Station
+from ..models import StationEntityListing
+from ..models import StationSettings
 
 class StationsApi(object):
     """
@@ -46,7 +58,7 @@ class StationsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_station_associateduser(self, station_id, **kwargs):
+    def delete_station_associateduser(self, station_id: str, **kwargs) -> None:
         """
         Unassigns the user assigned to this station
         
@@ -124,7 +136,7 @@ class StationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_station(self, station_id, **kwargs):
+    def get_station(self, station_id: str, **kwargs) -> 'Station':
         """
         Get station.
         
@@ -202,7 +214,7 @@ class StationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_stations(self, **kwargs):
+    def get_stations(self, **kwargs) -> 'StationEntityListing':
         """
         Get the list of available stations.
         
@@ -298,7 +310,7 @@ class StationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_stations_settings(self, **kwargs):
+    def get_stations_settings(self, **kwargs) -> 'StationSettings':
         """
         Get an organization's StationSettings
         This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
@@ -370,7 +382,7 @@ class StationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_stations_settings(self, body, **kwargs):
+    def patch_stations_settings(self, body: 'StationSettings', **kwargs) -> 'StationSettings':
         """
         Patch an organization's StationSettings
         This route is deprecated as the FreeSeatingConfiguration feature it references has been removed

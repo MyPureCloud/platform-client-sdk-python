@@ -76,7 +76,7 @@ void (empty response body)
 
 <a name="delete_group_members"></a>
 
-## Empty** delete_group_members(group_id, ids)
+## object** delete_group_members(group_id, ids)
 
 
 
@@ -124,7 +124,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="get_fieldconfig"></a>
 
@@ -560,7 +560,7 @@ except ApiException as e:
 
 <a name="post_group_members"></a>
 
-## Empty** post_group_members(group_id, body)
+## object** post_group_members(group_id, body)
 
 
 
@@ -608,7 +608,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="post_groups"></a>
 

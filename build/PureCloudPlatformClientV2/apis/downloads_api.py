@@ -23,12 +23,22 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import UrlResponse
 
 class DownloadsApi(object):
     """
@@ -46,7 +56,7 @@ class DownloadsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_download(self, download_id, **kwargs):
+    def get_download(self, download_id: str, **kwargs) -> 'UrlResponse':
         """
         Issues a redirect to a signed secure download URL for specified download
         this method will issue a redirect to the url to the content

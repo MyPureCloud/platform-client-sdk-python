@@ -23,12 +23,26 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import AvailableTopicEntityListing
+from ..models import Channel
+from ..models import ChannelEntityListing
+from ..models import ChannelTopic
+from ..models import ChannelTopicEntityListing
+from ..models import ErrorBody
 
 class NotificationsApi(object):
     """
@@ -46,7 +60,7 @@ class NotificationsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_notifications_channel_subscriptions(self, channel_id, **kwargs):
+    def delete_notifications_channel_subscriptions(self, channel_id: str, **kwargs) -> None:
         """
         Remove all subscriptions
         
@@ -124,7 +138,7 @@ class NotificationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_notifications_availabletopics(self, **kwargs):
+    def get_notifications_availabletopics(self, **kwargs) -> 'AvailableTopicEntityListing':
         """
         Get available notification topics.
         
@@ -202,7 +216,7 @@ class NotificationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_notifications_channel_subscriptions(self, channel_id, **kwargs):
+    def get_notifications_channel_subscriptions(self, channel_id: str, **kwargs) -> 'ChannelTopicEntityListing':
         """
         The list of all subscriptions for this channel
         
@@ -280,7 +294,7 @@ class NotificationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_notifications_channels(self, **kwargs):
+    def get_notifications_channels(self, **kwargs) -> 'ChannelEntityListing':
         """
         The list of existing channels
         
@@ -355,7 +369,7 @@ class NotificationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def head_notifications_channel(self, channel_id, **kwargs):
+    def head_notifications_channel(self, channel_id: str, **kwargs) -> None:
         """
         Verify a channel still exists and is valid
         Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
@@ -433,7 +447,7 @@ class NotificationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_notifications_channel_subscriptions(self, channel_id, body, **kwargs):
+    def post_notifications_channel_subscriptions(self, channel_id: str, body: List['ChannelTopic'], **kwargs) -> 'ChannelTopicEntityListing':
         """
         Add a list of subscriptions to the existing list of subscriptions
         
@@ -520,7 +534,7 @@ class NotificationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_notifications_channels(self, **kwargs):
+    def post_notifications_channels(self, **kwargs) -> 'Channel':
         """
         Create a new channel
         There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
@@ -592,7 +606,7 @@ class NotificationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_notifications_channel_subscriptions(self, channel_id, body, **kwargs):
+    def put_notifications_channel_subscriptions(self, channel_id: str, body: List['ChannelTopic'], **kwargs) -> 'ChannelTopicEntityListing':
         """
         Replace the current list of subscriptions with a new list.
         

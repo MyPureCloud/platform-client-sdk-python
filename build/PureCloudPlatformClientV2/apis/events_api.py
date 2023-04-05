@@ -23,12 +23,25 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import BatchConversationEventRequest
+from ..models import BatchEventResponse
+from ..models import BatchUserPresenceEventRequest
+from ..models import BatchUserRoutingStatusEventRequest
+from ..models import ErrorBody
 
 class EventsApi(object):
     """
@@ -46,7 +59,7 @@ class EventsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def post_events_conversations(self, body, **kwargs):
+    def post_events_conversations(self, body: 'BatchConversationEventRequest', **kwargs) -> 'BatchEventResponse':
         """
         Publish Conversation Batch Events
         
@@ -124,7 +137,7 @@ class EventsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_events_users_presence(self, body, **kwargs):
+    def post_events_users_presence(self, body: 'BatchUserPresenceEventRequest', **kwargs) -> 'BatchEventResponse':
         """
         Publish User Presence Status Batch Events
         
@@ -202,7 +215,7 @@ class EventsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_events_users_routingstatus(self, body, **kwargs):
+    def post_events_users_routingstatus(self, body: 'BatchUserRoutingStatusEventRequest', **kwargs) -> 'BatchEventResponse':
         """
         Publish Agent Routing Status Batch Events
         

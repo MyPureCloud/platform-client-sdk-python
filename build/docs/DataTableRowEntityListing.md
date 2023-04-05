@@ -7,7 +7,7 @@ title: DataTableRowEntityListing
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[dict(str, object)]**](dict.html) |  | [optional] |
+| **entities** | **list[dict(str, object)]** |  | [optional] |
 | **page_size** | **int** |  | [optional] |
 | **page_number** | **int** |  | [optional] |
 | **total** | **int** |  | [optional] |

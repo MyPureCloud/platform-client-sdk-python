@@ -23,12 +23,32 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import EmbeddedIntegration
+from ..models import ErrorBody
+from ..models import FeatureState
+from ..models import FieldConfig
+from ..models import IpAddressAuthentication
+from ..models import LimitChangeRequestDetails
+from ..models import LimitChangeRequestsEntityListing
+from ..models import LimitsEntityListing
+from ..models import OrgWhitelistSettings
+from ..models import Organization
+from ..models import OrganizationFeatures
+from ..models import UrlResponse
 
 class OrganizationApi(object):
     """
@@ -46,7 +66,7 @@ class OrganizationApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_fieldconfig(self, type, **kwargs):
+    def get_fieldconfig(self, type: str, **kwargs) -> 'FieldConfig':
         """
         Fetch field config for an entity type
         
@@ -124,7 +144,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_embeddedintegration(self, **kwargs):
+    def get_organizations_embeddedintegration(self, **kwargs) -> 'EmbeddedIntegration':
         """
         Get the list of domains that will be allowed to embed PureCloud applications
         
@@ -196,7 +216,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_ipaddressauthentication(self, **kwargs):
+    def get_organizations_ipaddressauthentication(self, **kwargs) -> 'IpAddressAuthentication':
         """
         Get organization IP address whitelist settings
         
@@ -268,7 +288,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_limits_changerequest(self, request_id, **kwargs):
+    def get_organizations_limits_changerequest(self, request_id: str, **kwargs) -> 'LimitChangeRequestDetails':
         """
         Get a limit change request
         
@@ -346,7 +366,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_limits_changerequests(self, **kwargs):
+    def get_organizations_limits_changerequests(self, **kwargs) -> 'LimitChangeRequestsEntityListing':
         """
         Get the available limit change requests
         Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
@@ -433,7 +453,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_limits_docs(self, **kwargs):
+    def get_organizations_limits_docs(self, **kwargs) -> 'UrlResponse':
         """
         Get a link to the limit documentation
         
@@ -505,7 +525,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_limits_namespace(self, namespace_name, **kwargs):
+    def get_organizations_limits_namespace(self, namespace_name: str, **kwargs) -> 'LimitsEntityListing':
         """
         Get the effective limits in a namespace for an organization
         
@@ -583,7 +603,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_limits_namespace_defaults(self, namespace_name, **kwargs):
+    def get_organizations_limits_namespace_defaults(self, namespace_name: str, **kwargs) -> 'LimitsEntityListing':
         """
         Get the default limits in a namespace for an organization
         
@@ -661,7 +681,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_limits_namespaces(self, **kwargs):
+    def get_organizations_limits_namespaces(self, **kwargs) -> object:
         """
         Get the available limit namespaces
         
@@ -739,7 +759,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_me(self, **kwargs):
+    def get_organizations_me(self, **kwargs) -> 'Organization':
         """
         Get organization.
         
@@ -811,7 +831,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_whitelist(self, **kwargs):
+    def get_organizations_whitelist(self, **kwargs) -> 'OrgWhitelistSettings':
         """
         Use PUT /api/v2/organizations/embeddedintegration instead
         
@@ -883,7 +903,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_organizations_feature(self, feature_name, enabled, **kwargs):
+    def patch_organizations_feature(self, feature_name: str, enabled: 'FeatureState', **kwargs) -> 'OrganizationFeatures':
         """
         Update organization
         
@@ -967,7 +987,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_organizations_embeddedintegration(self, body, **kwargs):
+    def put_organizations_embeddedintegration(self, body: 'EmbeddedIntegration', **kwargs) -> 'EmbeddedIntegration':
         """
         Update the list of domains that will be allowed to embed PureCloud applications
         
@@ -1045,7 +1065,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_organizations_ipaddressauthentication(self, body, **kwargs):
+    def put_organizations_ipaddressauthentication(self, body: 'IpAddressAuthentication', **kwargs) -> 'IpAddressAuthentication':
         """
         Update organization IP address whitelist settings
         
@@ -1123,7 +1143,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_organizations_me(self, **kwargs):
+    def put_organizations_me(self, **kwargs) -> 'Organization':
         """
         Update organization.
         
@@ -1198,7 +1218,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_organizations_whitelist(self, body, **kwargs):
+    def put_organizations_whitelist(self, body: 'OrgWhitelistSettings', **kwargs) -> 'OrgWhitelistSettings':
         """
         Use PUT /api/v2/organizations/embeddedintegration instead
         

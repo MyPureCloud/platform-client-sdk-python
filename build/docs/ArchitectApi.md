@@ -790,7 +790,7 @@ void (empty response body)
 
 <a name="delete_flows_milestone"></a>
 
-## Empty** delete_flows_milestone(milestone_id)
+## object** delete_flows_milestone(milestone_id)
 
 
 
@@ -837,7 +837,7 @@ except ApiException as e:
 
 ### Return type
 
-**Empty**
+**object**
 
 <a name="get_architect_dependencytracking"></a>
 

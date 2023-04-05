@@ -23,12 +23,28 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import Team
+from ..models import TeamEntityListing
+from ..models import TeamMemberAddListingResponse
+from ..models import TeamMemberEntityListing
+from ..models import TeamMembers
+from ..models import TeamSearchRequest
+from ..models import TeamsSearchResponse
 
 class TeamsApi(object):
     """
@@ -46,7 +62,7 @@ class TeamsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_team(self, team_id, **kwargs):
+    def delete_team(self, team_id: str, **kwargs) -> None:
         """
         Delete team
         
@@ -124,7 +140,7 @@ class TeamsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_team_members(self, team_id, id, **kwargs):
+    def delete_team_members(self, team_id: str, id: str, **kwargs) -> None:
         """
         Delete team members
         
@@ -208,7 +224,7 @@ class TeamsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_team(self, team_id, **kwargs):
+    def get_team(self, team_id: str, **kwargs) -> 'Team':
         """
         Get team
         
@@ -286,7 +302,7 @@ class TeamsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_team_members(self, team_id, **kwargs):
+    def get_team_members(self, team_id: str, **kwargs) -> 'TeamMemberEntityListing':
         """
         Get team membership
         
@@ -376,7 +392,7 @@ class TeamsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_teams(self, **kwargs):
+    def get_teams(self, **kwargs) -> 'TeamEntityListing':
         """
         Get Team listing
         
@@ -463,7 +479,7 @@ class TeamsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_team(self, team_id, body, **kwargs):
+    def patch_team(self, team_id: str, body: 'Team', **kwargs) -> 'Team':
         """
         Update team
         
@@ -547,7 +563,7 @@ class TeamsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_team_members(self, team_id, body, **kwargs):
+    def post_team_members(self, team_id: str, body: 'TeamMembers', **kwargs) -> 'TeamMemberAddListingResponse':
         """
         Add team members
         
@@ -631,7 +647,7 @@ class TeamsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_teams(self, body, **kwargs):
+    def post_teams(self, body: 'Team', **kwargs) -> 'Team':
         """
         Create a team
         
@@ -709,7 +725,7 @@ class TeamsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_teams_search(self, body, **kwargs):
+    def post_teams_search(self, body: 'TeamSearchRequest', **kwargs) -> 'TeamsSearchResponse':
         """
         Search resources.
         

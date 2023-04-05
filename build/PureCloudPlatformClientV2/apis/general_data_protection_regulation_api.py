@@ -23,12 +23,24 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import GDPRRequest
+from ..models import GDPRRequestEntityListing
+from ..models import GDPRSubjectEntityListing
 
 class GeneralDataProtectionRegulationApi(object):
     """
@@ -46,7 +58,7 @@ class GeneralDataProtectionRegulationApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_gdpr_request(self, request_id, **kwargs):
+    def get_gdpr_request(self, request_id: str, **kwargs) -> 'GDPRRequest':
         """
         Get an existing GDPR request
         
@@ -124,7 +136,7 @@ class GeneralDataProtectionRegulationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_gdpr_requests(self, **kwargs):
+    def get_gdpr_requests(self, **kwargs) -> 'GDPRRequestEntityListing':
         """
         Get all GDPR requests
         
@@ -202,7 +214,7 @@ class GeneralDataProtectionRegulationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_gdpr_subjects(self, search_type, search_value, **kwargs):
+    def get_gdpr_subjects(self, search_type: str, search_value: str, **kwargs) -> 'GDPRSubjectEntityListing':
         """
         Get GDPR subjects
         
@@ -286,7 +298,7 @@ class GeneralDataProtectionRegulationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_gdpr_requests(self, body, **kwargs):
+    def post_gdpr_requests(self, body: 'GDPRRequest', **kwargs) -> 'GDPRRequest':
         """
         Submit a new GDPR request
         

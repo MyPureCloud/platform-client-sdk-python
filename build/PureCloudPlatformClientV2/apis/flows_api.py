@@ -23,12 +23,25 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import FlowAggregateQueryResponse
+from ..models import FlowAggregationQuery
+from ..models import FlowObservationQuery
+from ..models import FlowObservationQueryResponse
 
 class FlowsApi(object):
     """
@@ -46,7 +59,7 @@ class FlowsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def post_analytics_flows_aggregates_query(self, body, **kwargs):
+    def post_analytics_flows_aggregates_query(self, body: 'FlowAggregationQuery', **kwargs) -> 'FlowAggregateQueryResponse':
         """
         Query for flow aggregates
         
@@ -124,7 +137,7 @@ class FlowsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_flows_observations_query(self, body, **kwargs):
+    def post_analytics_flows_observations_query(self, body: 'FlowObservationQuery', **kwargs) -> 'FlowObservationQueryResponse':
         """
         Query for flow observations
         

@@ -23,12 +23,96 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import AgentMaxUtilization
+from ..models import AssessmentJobListing
+from ..models import AssessmentListing
+from ..models import AvailableMediaTypeEntityListing
+from ..models import BenefitAssessment
+from ..models import BenefitAssessmentJob
+from ..models import ComparisonPeriod
+from ..models import ComparisonPeriodListing
+from ..models import ContactCenterSettings
+from ..models import CreateBenefitAssessmentJobRequest
+from ..models import CreateBenefitAssessmentRequest
+from ..models import CreatePredictorRequest
+from ..models import CreateQueueRequest
+from ..models import EmailOutboundDomainResult
+from ..models import EmailSetup
+from ..models import ErrorBody
+from ..models import EstimatedWaitTimePredictions
+from ..models import InboundDomain
+from ..models import InboundDomainEntityListing
+from ..models import InboundDomainPatchRequest
+from ..models import InboundRoute
+from ..models import InboundRouteEntityListing
+from ..models import KeyPerformanceIndicator
+from ..models import Language
+from ..models import LanguageEntityListing
+from ..models import OutboundDomain
+from ..models import OutboundDomainEntityListing
+from ..models import PatchPredictorRequest
+from ..models import Predictor
+from ..models import PredictorListing
+from ..models import PredictorModelFeatureListing
+from ..models import PredictorModels
+from ..models import Queue
+from ..models import QueueEntityListing
+from ..models import QueueMember
+from ..models import QueueMemberEntityListing
+from ..models import QueueMemberEntityListingV1
+from ..models import QueueObservationQuery
+from ..models import QueueObservationQueryResponse
+from ..models import QueueRequest
+from ..models import Recipient
+from ..models import RecipientListing
+from ..models import RoutingConversationAttributesRequest
+from ..models import RoutingConversationAttributesResponse
+from ..models import RoutingSettings
+from ..models import RoutingSkill
+from ..models import SMSAvailablePhoneNumberEntityListing
+from ..models import SkillEntityListing
+from ..models import SkillGroup
+from ..models import SkillGroupEntityListing
+from ..models import SkillGroupMemberDivisionList
+from ..models import SkillGroupMemberDivisions
+from ..models import SkillGroupMemberEntityListing
+from ..models import SmsAddress
+from ..models import SmsAddressEntityListing
+from ..models import SmsAddressProvision
+from ..models import SmsPhoneNumber
+from ..models import SmsPhoneNumberEntityListing
+from ..models import SmsPhoneNumberProvision
+from ..models import TestMessage
+from ..models import TranscriptionSettings
+from ..models import UserLanguageEntityListing
+from ..models import UserQueue
+from ..models import UserQueueEntityListing
+from ..models import UserRoutingLanguage
+from ..models import UserRoutingLanguagePost
+from ..models import UserRoutingSkill
+from ..models import UserRoutingSkillPost
+from ..models import UserSkillEntityListing
+from ..models import UserSkillGroupEntityListing
+from ..models import Utilization
+from ..models import WrapUpCodeReference
+from ..models import WrapupCode
+from ..models import WrapupCodeEntityListing
+from ..models import WrapupCodeRequest
+from ..models import WritableEntity
 
 class RoutingApi(object):
     """
@@ -46,7 +130,7 @@ class RoutingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_routing_assessment(self, assessment_id, **kwargs):
+    def delete_routing_assessment(self, assessment_id: str, **kwargs) -> None:
         """
         Delete single benefit assessment.
         
@@ -124,7 +208,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_email_domain(self, domain_id, **kwargs):
+    def delete_routing_email_domain(self, domain_id: str, **kwargs) -> None:
         """
         Delete a domain
         
@@ -202,7 +286,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_email_domain_route(self, domain_name, route_id, **kwargs):
+    def delete_routing_email_domain_route(self, domain_name: str, route_id: str, **kwargs) -> None:
         """
         Delete a route
         
@@ -286,7 +370,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_email_outbound_domain(self, domain_id, **kwargs):
+    def delete_routing_email_outbound_domain(self, domain_id: str, **kwargs) -> None:
         """
         Delete an outbound domain
         
@@ -364,7 +448,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_language(self, language_id, **kwargs):
+    def delete_routing_language(self, language_id: str, **kwargs) -> None:
         """
         Delete a routing language
         
@@ -442,7 +526,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_predictor(self, predictor_id, **kwargs):
+    def delete_routing_predictor(self, predictor_id: str, **kwargs) -> None:
         """
         Delete single predictor.
         
@@ -520,7 +604,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_queue(self, queue_id, **kwargs):
+    def delete_routing_queue(self, queue_id: str, **kwargs) -> None:
         """
         Delete a queue
         
@@ -601,7 +685,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_queue_member(self, queue_id, member_id, **kwargs):
+    def delete_routing_queue_member(self, queue_id: str, member_id: str, **kwargs) -> None:
         """
         Delete a queue member.
         
@@ -685,7 +769,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_queue_user(self, queue_id, member_id, **kwargs):
+    def delete_routing_queue_user(self, queue_id: str, member_id: str, **kwargs) -> None:
         """
         DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
         
@@ -769,7 +853,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_queue_wrapupcode(self, queue_id, code_id, **kwargs):
+    def delete_routing_queue_wrapupcode(self, queue_id: str, code_id: str, **kwargs) -> None:
         """
         Delete a wrap-up code from a queue
         
@@ -853,7 +937,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_settings(self, **kwargs):
+    def delete_routing_settings(self, **kwargs) -> None:
         """
         Delete an organization's routing settings
         
@@ -925,7 +1009,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_skill(self, skill_id, **kwargs):
+    def delete_routing_skill(self, skill_id: str, **kwargs) -> None:
         """
         Delete Routing Skill
         
@@ -1003,7 +1087,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_skillgroup(self, skill_group_id, **kwargs):
+    def delete_routing_skillgroup(self, skill_group_id: str, **kwargs) -> None:
         """
         Remove skill group definition
         
@@ -1081,7 +1165,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_sms_address(self, address_id, **kwargs):
+    def delete_routing_sms_address(self, address_id: str, **kwargs) -> None:
         """
         Delete an Address by Id for SMS
         
@@ -1159,7 +1243,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_sms_phonenumber(self, address_id, **kwargs):
+    def delete_routing_sms_phonenumber(self, address_id: str, **kwargs) -> None:
         """
         Delete a phone number provisioned for SMS.
         
@@ -1237,7 +1321,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_user_utilization(self, user_id, **kwargs):
+    def delete_routing_user_utilization(self, user_id: str, **kwargs) -> None:
         """
         Delete the user's max utilization settings and revert to the organization-wide default.
         
@@ -1315,7 +1399,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_utilization(self, **kwargs):
+    def delete_routing_utilization(self, **kwargs) -> None:
         """
         Delete the organization-wide max utilization settings and revert to the system default.
         
@@ -1387,7 +1471,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_wrapupcode(self, code_id, **kwargs):
+    def delete_routing_wrapupcode(self, code_id: str, **kwargs) -> None:
         """
         Delete wrap-up code
         
@@ -1465,7 +1549,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_user_routinglanguage(self, user_id, language_id, **kwargs):
+    def delete_user_routinglanguage(self, user_id: str, language_id: str, **kwargs) -> None:
         """
         Remove routing language from user
         
@@ -1549,7 +1633,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_user_routingskill(self, user_id, skill_id, **kwargs):
+    def delete_user_routingskill(self, user_id: str, skill_id: str, **kwargs) -> None:
         """
         Remove routing skill from user
         
@@ -1633,7 +1717,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_assessment(self, assessment_id, **kwargs):
+    def get_routing_assessment(self, assessment_id: str, **kwargs) -> 'BenefitAssessment':
         """
         Retrieve a single benefit assessment.
         
@@ -1711,7 +1795,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_assessments(self, **kwargs):
+    def get_routing_assessments(self, **kwargs) -> 'AssessmentListing':
         """
         Retrieve all benefit assessments.
         
@@ -1798,7 +1882,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_assessments_job(self, job_id, **kwargs):
+    def get_routing_assessments_job(self, job_id: str, **kwargs) -> 'BenefitAssessmentJob':
         """
         Retrieve a single benefit assessments job.
         
@@ -1876,7 +1960,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_assessments_jobs(self, **kwargs):
+    def get_routing_assessments_jobs(self, **kwargs) -> 'AssessmentJobListing':
         """
         Retrieve all benefit assessment jobs.
         
@@ -1951,7 +2035,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_availablemediatypes(self, **kwargs):
+    def get_routing_availablemediatypes(self, **kwargs) -> 'AvailableMediaTypeEntityListing':
         """
         Get available media types
         
@@ -2023,7 +2107,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_email_domain(self, domain_id, **kwargs):
+    def get_routing_email_domain(self, domain_id: str, **kwargs) -> 'InboundDomain':
         """
         Get domain
         
@@ -2101,7 +2185,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_email_domain_route(self, domain_name, route_id, **kwargs):
+    def get_routing_email_domain_route(self, domain_name: str, route_id: str, **kwargs) -> 'InboundRoute':
         """
         Get a route
         
@@ -2185,7 +2269,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_email_domain_routes(self, domain_name, **kwargs):
+    def get_routing_email_domain_routes(self, domain_name: str, **kwargs) -> 'InboundRouteEntityListing':
         """
         Get routes
         
@@ -2272,7 +2356,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_email_domains(self, **kwargs):
+    def get_routing_email_domains(self, **kwargs) -> 'InboundDomainEntityListing':
         """
         Get domains
         
@@ -2356,7 +2440,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_email_outbound_domain(self, domain_id, **kwargs):
+    def get_routing_email_outbound_domain(self, domain_id: str, **kwargs) -> 'OutboundDomain':
         """
         Get domain
         
@@ -2434,7 +2518,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_email_outbound_domain_activation(self, domain_id, **kwargs):
+    def get_routing_email_outbound_domain_activation(self, domain_id: str, **kwargs) -> 'EmailOutboundDomainResult':
         """
         Get activation status (cname + dkim) of an outbound domain
         
@@ -2512,7 +2596,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_email_outbound_domain_search(self, domain_id, **kwargs):
+    def get_routing_email_outbound_domain_search(self, domain_id: str, **kwargs) -> 'OutboundDomain':
         """
         Search a domain across organizations
         
@@ -2590,7 +2674,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_email_outbound_domains(self, **kwargs):
+    def get_routing_email_outbound_domains(self, **kwargs) -> 'OutboundDomainEntityListing':
         """
         Get outbound domains
         
@@ -2665,7 +2749,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_email_setup(self, **kwargs):
+    def get_routing_email_setup(self, **kwargs) -> 'EmailSetup':
         """
         Get email setup
         
@@ -2737,7 +2821,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_language(self, language_id, **kwargs):
+    def get_routing_language(self, language_id: str, **kwargs) -> 'Language':
         """
         Get a routing language
         
@@ -2815,7 +2899,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_languages(self, **kwargs):
+    def get_routing_languages(self, **kwargs) -> 'LanguageEntityListing':
         """
         Get the list of supported languages.
         
@@ -2902,7 +2986,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_message_recipient(self, recipient_id, **kwargs):
+    def get_routing_message_recipient(self, recipient_id: str, **kwargs) -> 'Recipient':
         """
         Get a recipient
         
@@ -2980,7 +3064,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_message_recipients(self, **kwargs):
+    def get_routing_message_recipients(self, **kwargs) -> 'RecipientListing':
         """
         Get recipients
         
@@ -3061,7 +3145,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_predictor(self, predictor_id, **kwargs):
+    def get_routing_predictor(self, predictor_id: str, **kwargs) -> 'Predictor':
         """
         Retrieve a single predictor.
         
@@ -3139,7 +3223,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_predictor_model_features(self, predictor_id, model_id, **kwargs):
+    def get_routing_predictor_model_features(self, predictor_id: str, model_id: str, **kwargs) -> 'PredictorModelFeatureListing':
         """
         Retrieve Predictor Model Features.
         
@@ -3223,7 +3307,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_predictor_models(self, predictor_id, **kwargs):
+    def get_routing_predictor_models(self, predictor_id: str, **kwargs) -> 'PredictorModels':
         """
         Retrieve Predictor Models and Top Features.
         
@@ -3301,7 +3385,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_predictors(self, **kwargs):
+    def get_routing_predictors(self, **kwargs) -> 'PredictorListing':
         """
         Retrieve all predictors.
         
@@ -3388,7 +3472,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_predictors_keyperformanceindicators(self, **kwargs):
+    def get_routing_predictors_keyperformanceindicators(self, **kwargs) -> List['KeyPerformanceIndicator']:
         """
         Get a list of Key Performance Indicators
         
@@ -3463,7 +3547,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queue(self, queue_id, **kwargs):
+    def get_routing_queue(self, queue_id: str, **kwargs) -> 'Queue':
         """
         Get details about this queue.
         
@@ -3541,7 +3625,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queue_comparisonperiod(self, queue_id, comparison_period_id, **kwargs):
+    def get_routing_queue_comparisonperiod(self, queue_id: str, comparison_period_id: str, **kwargs) -> 'ComparisonPeriod':
         """
         Get a Comparison Period.
         
@@ -3625,7 +3709,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queue_comparisonperiods(self, queue_id, **kwargs):
+    def get_routing_queue_comparisonperiods(self, queue_id: str, **kwargs) -> 'ComparisonPeriodListing':
         """
         Get list of comparison periods
         
@@ -3703,7 +3787,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queue_estimatedwaittime(self, queue_id, **kwargs):
+    def get_routing_queue_estimatedwaittime(self, queue_id: str, **kwargs) -> 'EstimatedWaitTimePredictions':
         """
         Get Estimated Wait Time
         
@@ -3784,7 +3868,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queue_mediatype_estimatedwaittime(self, queue_id, media_type, **kwargs):
+    def get_routing_queue_mediatype_estimatedwaittime(self, queue_id: str, media_type: str, **kwargs) -> 'EstimatedWaitTimePredictions':
         """
         Get Estimated Wait Time
         
@@ -3868,7 +3952,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queue_members(self, queue_id, **kwargs):
+    def get_routing_queue_members(self, queue_id: str, **kwargs) -> 'QueueMemberEntityListing':
         """
         Get the members of this queue.
         
@@ -3982,7 +4066,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queue_users(self, queue_id, **kwargs):
+    def get_routing_queue_users(self, queue_id: str, **kwargs) -> 'QueueMemberEntityListingV1':
         """
         DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
         
@@ -4093,7 +4177,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queue_wrapupcodes(self, queue_id, **kwargs):
+    def get_routing_queue_wrapupcodes(self, queue_id: str, **kwargs) -> 'WrapupCodeEntityListing':
         """
         Get the wrap-up codes for a queue
         
@@ -4177,7 +4261,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queues(self, **kwargs):
+    def get_routing_queues(self, **kwargs) -> 'QueueEntityListing':
         """
         Get list of queues.
         
@@ -4273,7 +4357,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queues_divisionviews(self, **kwargs):
+    def get_routing_queues_divisionviews(self, **kwargs) -> 'QueueEntityListing':
         """
         Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
         
@@ -4366,7 +4450,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queues_divisionviews_all(self, **kwargs):
+    def get_routing_queues_divisionviews_all(self, **kwargs) -> 'QueueEntityListing':
         """
         Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
         
@@ -4447,7 +4531,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queues_me(self, **kwargs):
+    def get_routing_queues_me(self, **kwargs) -> 'UserQueueEntityListing':
         """
         Get a paged listing of queues the user is a member of.
         
@@ -4531,7 +4615,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_settings(self, **kwargs):
+    def get_routing_settings(self, **kwargs) -> 'RoutingSettings':
         """
         Get an organization's routing settings
         
@@ -4603,7 +4687,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_settings_contactcenter(self, **kwargs):
+    def get_routing_settings_contactcenter(self, **kwargs) -> 'ContactCenterSettings':
         """
         Get Contact Center Settings
         
@@ -4675,7 +4759,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_settings_transcription(self, **kwargs):
+    def get_routing_settings_transcription(self, **kwargs) -> 'TranscriptionSettings':
         """
         Get Transcription Settings
         
@@ -4747,7 +4831,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_skill(self, skill_id, **kwargs):
+    def get_routing_skill(self, skill_id: str, **kwargs) -> 'RoutingSkill':
         """
         Get Routing Skill
         
@@ -4825,7 +4909,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_skillgroup(self, skill_group_id, **kwargs):
+    def get_routing_skillgroup(self, skill_group_id: str, **kwargs) -> 'SkillGroup':
         """
         Get skill group
         
@@ -4903,7 +4987,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_skillgroup_members(self, skill_group_id, **kwargs):
+    def get_routing_skillgroup_members(self, skill_group_id: str, **kwargs) -> 'SkillGroupMemberEntityListing':
         """
         Get skill group members
         
@@ -4993,7 +5077,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_skillgroup_members_divisions(self, skill_group_id, **kwargs):
+    def get_routing_skillgroup_members_divisions(self, skill_group_id: str, **kwargs) -> 'SkillGroupMemberDivisionList':
         """
         Get list of member divisions for this skill group.
         
@@ -5074,7 +5158,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_skillgroups(self, **kwargs):
+    def get_routing_skillgroups(self, **kwargs) -> 'SkillGroupEntityListing':
         """
         Get skill group listing
         
@@ -5158,7 +5242,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_skills(self, **kwargs):
+    def get_routing_skills(self, **kwargs) -> 'SkillEntityListing':
         """
         Get the list of routing skills.
         
@@ -5242,7 +5326,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_sms_address(self, address_id, **kwargs):
+    def get_routing_sms_address(self, address_id: str, **kwargs) -> 'SmsAddress':
         """
         Get an Address by Id for SMS
         
@@ -5320,7 +5404,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_sms_addresses(self, **kwargs):
+    def get_routing_sms_addresses(self, **kwargs) -> 'SmsAddressEntityListing':
         """
         Get a list of Addresses for SMS
         
@@ -5398,7 +5482,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_sms_availablephonenumbers(self, country_code, phone_number_type, **kwargs):
+    def get_routing_sms_availablephonenumbers(self, country_code: str, phone_number_type: str, **kwargs) -> 'SMSAvailablePhoneNumberEntityListing':
         """
         Get a list of available phone numbers for SMS provisioning.
         This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
@@ -5497,7 +5581,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_sms_phonenumber(self, address_id, **kwargs):
+    def get_routing_sms_phonenumber(self, address_id: str, **kwargs) -> 'SmsPhoneNumber':
         """
         Get a phone number provisioned for SMS.
         
@@ -5578,7 +5662,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_sms_phonenumbers(self, **kwargs):
+    def get_routing_sms_phonenumbers(self, **kwargs) -> 'SmsPhoneNumberEntityListing':
         """
         Get a list of provisioned phone numbers.
         
@@ -5677,7 +5761,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_user_utilization(self, user_id, **kwargs):
+    def get_routing_user_utilization(self, user_id: str, **kwargs) -> 'AgentMaxUtilization':
         """
         Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
         
@@ -5755,7 +5839,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_utilization(self, **kwargs):
+    def get_routing_utilization(self, **kwargs) -> 'Utilization':
         """
         Get the organization-wide max utilization settings.
         
@@ -5827,7 +5911,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_wrapupcode(self, code_id, **kwargs):
+    def get_routing_wrapupcode(self, code_id: str, **kwargs) -> 'WrapupCode':
         """
         Get details about this wrap-up code.
         
@@ -5905,7 +5989,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_wrapupcodes(self, **kwargs):
+    def get_routing_wrapupcodes(self, **kwargs) -> 'WrapupCodeEntityListing':
         """
         Get list of wrapup codes.
         
@@ -5995,7 +6079,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_user_queues(self, user_id, **kwargs):
+    def get_user_queues(self, user_id: str, **kwargs) -> 'UserQueueEntityListing':
         """
         Get queues for user
         
@@ -6085,7 +6169,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_user_routinglanguages(self, user_id, **kwargs):
+    def get_user_routinglanguages(self, user_id: str, **kwargs) -> 'UserLanguageEntityListing':
         """
         List routing language for user
         
@@ -6172,7 +6256,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_user_routingskills(self, user_id, **kwargs):
+    def get_user_routingskills(self, user_id: str, **kwargs) -> 'UserSkillEntityListing':
         """
         List routing skills for user
         
@@ -6259,7 +6343,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_user_skillgroups(self, user_id, **kwargs):
+    def get_user_skillgroups(self, user_id: str, **kwargs) -> 'UserSkillGroupEntityListing':
         """
         Get skill groups for a user
         
@@ -6346,7 +6430,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_conversation(self, conversation_id, body, **kwargs):
+    def patch_routing_conversation(self, conversation_id: str, body: 'RoutingConversationAttributesRequest', **kwargs) -> 'RoutingConversationAttributesResponse':
         """
         Update attributes of an in-queue conversation
         Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
@@ -6430,7 +6514,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_email_domain(self, domain_id, body, **kwargs):
+    def patch_routing_email_domain(self, domain_id: str, body: 'InboundDomainPatchRequest', **kwargs) -> 'InboundDomain':
         """
         Update domain settings
         
@@ -6514,7 +6598,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_email_domain_validate(self, domain_id, body, **kwargs):
+    def patch_routing_email_domain_validate(self, domain_id: str, body: 'InboundDomainPatchRequest', **kwargs) -> 'InboundDomain':
         """
         Validate domain settings
         
@@ -6598,7 +6682,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_predictor(self, predictor_id, **kwargs):
+    def patch_routing_predictor(self, predictor_id: str, **kwargs) -> 'Predictor':
         """
         Update single predictor.
         
@@ -6679,7 +6763,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_queue_member(self, queue_id, member_id, body, **kwargs):
+    def patch_routing_queue_member(self, queue_id: str, member_id: str, body: 'QueueMember', **kwargs) -> None:
         """
         Update the ring number OR joined status for a queue member.
         
@@ -6769,7 +6853,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_queue_members(self, queue_id, body, **kwargs):
+    def patch_routing_queue_members(self, queue_id: str, body: List['QueueMember'], **kwargs) -> 'QueueMemberEntityListing':
         """
         Join or unjoin a set of users for a queue
         
@@ -6853,7 +6937,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_queue_user(self, queue_id, member_id, body, **kwargs):
+    def patch_routing_queue_user(self, queue_id: str, member_id: str, body: 'QueueMember', **kwargs) -> None:
         """
         DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
         
@@ -6943,7 +7027,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_queue_users(self, queue_id, body, **kwargs):
+    def patch_routing_queue_users(self, queue_id: str, body: List['QueueMember'], **kwargs) -> 'QueueMemberEntityListingV1':
         """
         DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
         
@@ -7027,7 +7111,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_settings_contactcenter(self, body, **kwargs):
+    def patch_routing_settings_contactcenter(self, body: 'ContactCenterSettings', **kwargs) -> None:
         """
         Update Contact Center Settings
         
@@ -7105,7 +7189,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_routing_skillgroup(self, skill_group_id, body, **kwargs):
+    def patch_routing_skillgroup(self, skill_group_id: str, body: 'SkillGroup', **kwargs) -> 'SkillGroup':
         """
         Update skill group definition
         
@@ -7189,7 +7273,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_user_queue(self, queue_id, user_id, body, **kwargs):
+    def patch_user_queue(self, queue_id: str, user_id: str, body: 'UserQueue', **kwargs) -> 'UserQueue':
         """
         Join or unjoin a queue for a user
         
@@ -7279,7 +7363,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_user_queues(self, user_id, body, **kwargs):
+    def patch_user_queues(self, user_id: str, body: List['UserQueue'], **kwargs) -> 'UserQueueEntityListing':
         """
         Join or unjoin a set of queues for a user
         
@@ -7366,7 +7450,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_user_routinglanguage(self, user_id, language_id, body, **kwargs):
+    def patch_user_routinglanguage(self, user_id: str, language_id: str, body: 'UserRoutingLanguage', **kwargs) -> 'UserRoutingLanguage':
         """
         Update routing language proficiency or state.
         
@@ -7456,7 +7540,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_user_routinglanguages_bulk(self, user_id, body, **kwargs):
+    def patch_user_routinglanguages_bulk(self, user_id: str, body: List['UserRoutingLanguagePost'], **kwargs) -> 'UserLanguageEntityListing':
         """
         Add bulk routing language to user. Max limit 50 languages
         
@@ -7540,7 +7624,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_user_routingskills_bulk(self, user_id, body, **kwargs):
+    def patch_user_routingskills_bulk(self, user_id: str, body: List['UserRoutingSkillPost'], **kwargs) -> 'UserSkillEntityListing':
         """
         Bulk add routing skills to user
         
@@ -7624,7 +7708,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_analytics_queues_observations_query(self, body, **kwargs):
+    def post_analytics_queues_observations_query(self, body: 'QueueObservationQuery', **kwargs) -> 'QueueObservationQueryResponse':
         """
         Query for queue observations
         
@@ -7702,7 +7786,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_assessments(self, **kwargs):
+    def post_routing_assessments(self, **kwargs) -> 'BenefitAssessment':
         """
         Create a benefit assessment.
         
@@ -7777,7 +7861,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_assessments_jobs(self, **kwargs):
+    def post_routing_assessments_jobs(self, **kwargs) -> 'BenefitAssessmentJob':
         """
         Create a benefit assessment job.
         
@@ -7852,7 +7936,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_domain_routes(self, domain_name, body, **kwargs):
+    def post_routing_email_domain_routes(self, domain_name: str, body: 'InboundRoute', **kwargs) -> 'InboundRoute':
         """
         Create a route
         
@@ -7936,7 +8020,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_domain_testconnection(self, domain_id, **kwargs):
+    def post_routing_email_domain_testconnection(self, domain_id: str, **kwargs) -> 'TestMessage':
         """
         Tests the custom SMTP server integration connection set on this domain
         The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
@@ -8017,7 +8101,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_domains(self, body, **kwargs):
+    def post_routing_email_domains(self, body: 'InboundDomain', **kwargs) -> 'InboundDomain':
         """
         Create a domain
         
@@ -8095,7 +8179,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_outbound_domains(self, body, **kwargs):
+    def post_routing_email_outbound_domains(self, body: 'OutboundDomain', **kwargs) -> 'EmailOutboundDomainResult':
         """
         Create a domain
         
@@ -8173,7 +8257,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_outbound_domains_simulated(self, body, **kwargs):
+    def post_routing_email_outbound_domains_simulated(self, body: 'OutboundDomain', **kwargs) -> 'EmailOutboundDomainResult':
         """
         Create a simulated domain
         
@@ -8251,7 +8335,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_languages(self, body, **kwargs):
+    def post_routing_languages(self, body: 'Language', **kwargs) -> 'Language':
         """
         Create Language
         
@@ -8329,7 +8413,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_predictors(self, **kwargs):
+    def post_routing_predictors(self, **kwargs) -> 'Predictor':
         """
         Create a predictor.
         
@@ -8404,7 +8488,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_queue_members(self, queue_id, body, **kwargs):
+    def post_routing_queue_members(self, queue_id: str, body: List['WritableEntity'], **kwargs) -> None:
         """
         Bulk add or delete up to 100 queue members
         
@@ -8491,7 +8575,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_queue_users(self, queue_id, body, **kwargs):
+    def post_routing_queue_users(self, queue_id: str, body: List['WritableEntity'], **kwargs) -> None:
         """
         DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
         
@@ -8578,7 +8662,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_queue_wrapupcodes(self, queue_id, body, **kwargs):
+    def post_routing_queue_wrapupcodes(self, queue_id: str, body: List['WrapUpCodeReference'], **kwargs) -> List['WrapupCode']:
         """
         Add up to 100 wrap-up codes to a queue
         
@@ -8662,7 +8746,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_queues(self, body, **kwargs):
+    def post_routing_queues(self, body: 'CreateQueueRequest', **kwargs) -> 'Queue':
         """
         Create a queue
         
@@ -8740,7 +8824,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_skillgroup_members_divisions(self, skill_group_id, **kwargs):
+    def post_routing_skillgroup_members_divisions(self, skill_group_id: str, **kwargs) -> None:
         """
         Add or remove member divisions for this skill group.
         
@@ -8821,7 +8905,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_skillgroups(self, body, **kwargs):
+    def post_routing_skillgroups(self, body: 'SkillGroup', **kwargs) -> 'SkillGroup':
         """
         Create a skill group
         
@@ -8899,7 +8983,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_skills(self, body, **kwargs):
+    def post_routing_skills(self, body: 'RoutingSkill', **kwargs) -> 'RoutingSkill':
         """
         Create Skill
         
@@ -8977,7 +9061,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_sms_addresses(self, body, **kwargs):
+    def post_routing_sms_addresses(self, body: 'SmsAddressProvision', **kwargs) -> 'SmsAddress':
         """
         Provision an Address for SMS
         
@@ -9055,7 +9139,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_sms_phonenumbers(self, body, **kwargs):
+    def post_routing_sms_phonenumbers(self, body: 'SmsPhoneNumberProvision', **kwargs) -> 'SmsPhoneNumber':
         """
         Provision a phone number for SMS
         
@@ -9133,7 +9217,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_wrapupcodes(self, body, **kwargs):
+    def post_routing_wrapupcodes(self, body: 'WrapupCodeRequest', **kwargs) -> 'WrapupCode':
         """
         Create a wrap-up code
         
@@ -9211,7 +9295,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_user_routinglanguages(self, user_id, body, **kwargs):
+    def post_user_routinglanguages(self, user_id: str, body: 'UserRoutingLanguagePost', **kwargs) -> 'UserRoutingLanguage':
         """
         Add routing language to user
         
@@ -9295,7 +9379,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_user_routingskills(self, user_id, body, **kwargs):
+    def post_user_routingskills(self, user_id: str, body: 'UserRoutingSkillPost', **kwargs) -> 'UserRoutingSkill':
         """
         Add routing skill to user
         
@@ -9379,7 +9463,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_email_domain_route(self, domain_name, route_id, body, **kwargs):
+    def put_routing_email_domain_route(self, domain_name: str, route_id: str, body: 'InboundRoute', **kwargs) -> 'InboundRoute':
         """
         Update a route
         
@@ -9469,7 +9553,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_email_outbound_domain_activation(self, domain_id, **kwargs):
+    def put_routing_email_outbound_domain_activation(self, domain_id: str, **kwargs) -> 'EmailOutboundDomainResult':
         """
         Request an activation status (cname + dkim) update of an outbound domain
         
@@ -9547,7 +9631,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_message_recipient(self, recipient_id, body, **kwargs):
+    def put_routing_message_recipient(self, recipient_id: str, body: 'Recipient', **kwargs) -> 'Recipient':
         """
         Update a recipient
         
@@ -9631,7 +9715,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_queue(self, queue_id, body, **kwargs):
+    def put_routing_queue(self, queue_id: str, body: 'QueueRequest', **kwargs) -> 'Queue':
         """
         Update a queue
         
@@ -9715,7 +9799,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_settings(self, body, **kwargs):
+    def put_routing_settings(self, body: 'RoutingSettings', **kwargs) -> 'RoutingSettings':
         """
         Update an organization's routing settings
         
@@ -9793,7 +9877,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_settings_transcription(self, body, **kwargs):
+    def put_routing_settings_transcription(self, body: 'TranscriptionSettings', **kwargs) -> 'TranscriptionSettings':
         """
         Update Transcription Settings
         
@@ -9871,7 +9955,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_sms_phonenumber(self, address_id, body, **kwargs):
+    def put_routing_sms_phonenumber(self, address_id: str, body: 'SmsPhoneNumber', **kwargs) -> 'SmsPhoneNumber':
         """
         Update a phone number provisioned for SMS.
         
@@ -9955,7 +10039,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_user_utilization(self, user_id, body, **kwargs):
+    def put_routing_user_utilization(self, user_id: str, body: 'Utilization', **kwargs) -> 'AgentMaxUtilization':
         """
         Update the user's max utilization settings.  Include only those media types requiring custom configuration.
         
@@ -10039,7 +10123,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_utilization(self, body, **kwargs):
+    def put_routing_utilization(self, body: 'Utilization', **kwargs) -> 'Utilization':
         """
         Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
         
@@ -10117,7 +10201,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_wrapupcode(self, code_id, body, **kwargs):
+    def put_routing_wrapupcode(self, code_id: str, body: 'WrapupCodeRequest', **kwargs) -> 'WrapupCode':
         """
         Update wrap-up code
         
@@ -10201,7 +10285,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_user_routingskill(self, user_id, skill_id, body, **kwargs):
+    def put_user_routingskill(self, user_id: str, skill_id: str, body: 'UserRoutingSkill', **kwargs) -> 'UserRoutingSkill':
         """
         Update routing skill proficiency or state.
         
@@ -10291,7 +10375,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_user_routingskills_bulk(self, user_id, body, **kwargs):
+    def put_user_routingskills_bulk(self, user_id: str, body: List['UserRoutingSkillPost'], **kwargs) -> 'UserSkillEntityListing':
         """
         Replace all routing skills assigned to a user
         

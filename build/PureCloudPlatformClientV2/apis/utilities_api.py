@@ -23,12 +23,26 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import Certificate
+from ..models import ErrorBody
+from ..models import IpAddressRangeListing
+from ..models import ParsedCertificate
+from ..models import ServerDate
+from ..models import TimeZoneEntityListing
 
 class UtilitiesApi(object):
     """
@@ -46,7 +60,7 @@ class UtilitiesApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_date(self, **kwargs):
+    def get_date(self, **kwargs) -> 'ServerDate':
         """
         Get the current system date/time
         
@@ -118,7 +132,7 @@ class UtilitiesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_ipranges(self, **kwargs):
+    def get_ipranges(self, **kwargs) -> 'IpAddressRangeListing':
         """
         Get public ip address ranges for Genesys Cloud
         
@@ -190,7 +204,7 @@ class UtilitiesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_timezones(self, **kwargs):
+    def get_timezones(self, **kwargs) -> 'TimeZoneEntityListing':
         """
         Get time zones list
         
@@ -268,7 +282,7 @@ class UtilitiesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_certificate_details(self, body, **kwargs):
+    def post_certificate_details(self, body: 'Certificate', **kwargs) -> 'ParsedCertificate':
         """
         Returns the information about an X509 PEM encoded certificate or certificate chain.
         

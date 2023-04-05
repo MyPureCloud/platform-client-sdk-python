@@ -23,12 +23,69 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ArchitectJobStateResponse
+from ..models import ConsumedResourcesEntityListing
+from ..models import ConsumingResourcesEntityListing
+from ..models import DataTable
+from ..models import DataTableExportJob
+from ..models import DataTableImportEntityListing
+from ..models import DataTableImportJob
+from ..models import DataTableRowEntityListing
+from ..models import DataTablesDomainEntityListing
+from ..models import DependencyObject
+from ..models import DependencyObjectEntityListing
+from ..models import DependencyStatus
+from ..models import DependencyType
+from ..models import DependencyTypeEntityListing
+from ..models import EmergencyGroup
+from ..models import EmergencyGroupListing
+from ..models import ErrorBody
+from ..models import Flow
+from ..models import FlowDivisionViewEntityListing
+from ..models import FlowEntityListing
+from ..models import FlowExecutionLaunchRequest
+from ..models import FlowExecutionLaunchResponse
+from ..models import FlowMilestone
+from ..models import FlowMilestoneDivisionViewEntityListing
+from ..models import FlowMilestoneListing
+from ..models import FlowOutcome
+from ..models import FlowOutcomeDivisionViewEntityListing
+from ..models import FlowOutcomeListing
+from ..models import FlowRuntimeExecution
+from ..models import FlowVersion
+from ..models import FlowVersionEntityListing
+from ..models import HistoryListing
+from ..models import IVR
+from ..models import IVREntityListing
+from ..models import Operation
+from ..models import Prompt
+from ..models import PromptAsset
+from ..models import PromptAssetCreate
+from ..models import PromptAssetEntityListing
+from ..models import PromptEntityListing
+from ..models import RegisterArchitectJobResponse
+from ..models import Schedule
+from ..models import ScheduleEntityListing
+from ..models import ScheduleGroup
+from ..models import ScheduleGroupEntityListing
+from ..models import SystemPrompt
+from ..models import SystemPromptAsset
+from ..models import SystemPromptAssetEntityListing
+from ..models import SystemPromptEntityListing
 
 class ArchitectApi(object):
     """
@@ -46,7 +103,7 @@ class ArchitectApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_architect_emergencygroup(self, emergency_group_id, **kwargs):
+    def delete_architect_emergencygroup(self, emergency_group_id: str, **kwargs) -> None:
         """
         Deletes a emergency group by ID
         
@@ -124,7 +181,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_architect_ivr(self, ivr_id, **kwargs):
+    def delete_architect_ivr(self, ivr_id: str, **kwargs) -> None:
         """
         Delete an IVR Config.
         
@@ -202,7 +259,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_architect_prompt(self, prompt_id, **kwargs):
+    def delete_architect_prompt(self, prompt_id: str, **kwargs) -> None:
         """
         Delete specified user prompt
         
@@ -283,7 +340,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_architect_prompt_resource(self, prompt_id, language_code, **kwargs):
+    def delete_architect_prompt_resource(self, prompt_id: str, language_code: str, **kwargs) -> None:
         """
         Delete specified user prompt resource
         
@@ -367,7 +424,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_architect_prompt_resource_audio(self, prompt_id, language_code, **kwargs):
+    def delete_architect_prompt_resource_audio(self, prompt_id: str, language_code: str, **kwargs) -> None:
         """
         Delete specified user prompt resource audio
         
@@ -451,7 +508,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_architect_prompts(self, id, **kwargs):
+    def delete_architect_prompts(self, id: List['str'], **kwargs) -> 'Operation':
         """
         Batch-delete a list of prompts
         Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
@@ -529,7 +586,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_architect_schedule(self, schedule_id, **kwargs):
+    def delete_architect_schedule(self, schedule_id: str, **kwargs) -> None:
         """
         Delete a schedule by id
         
@@ -607,7 +664,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_architect_schedulegroup(self, schedule_group_id, **kwargs):
+    def delete_architect_schedulegroup(self, schedule_group_id: str, **kwargs) -> None:
         """
         Deletes a schedule group by ID
         
@@ -685,7 +742,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_architect_systemprompt_resource(self, prompt_id, language_code, **kwargs):
+    def delete_architect_systemprompt_resource(self, prompt_id: str, language_code: str, **kwargs) -> None:
         """
         Delete a system prompt resource override.
         
@@ -769,7 +826,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_flow(self, flow_id, **kwargs):
+    def delete_flow(self, flow_id: str, **kwargs) -> None:
         """
         Delete flow
         
@@ -847,7 +904,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_flows(self, id, **kwargs):
+    def delete_flows(self, id: List['str'], **kwargs) -> 'Operation':
         """
         Batch-delete a list of flows
         Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -925,7 +982,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_flows_datatable(self, datatable_id, **kwargs):
+    def delete_flows_datatable(self, datatable_id: str, **kwargs) -> None:
         """
         deletes a specific datatable by id
         Deletes an entire datatable (including the schema and data) with a given datatableId
@@ -1006,7 +1063,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_flows_datatable_row(self, datatable_id, row_id, **kwargs):
+    def delete_flows_datatable_row(self, datatable_id: str, row_id: str, **kwargs) -> None:
         """
         Delete a row entry
         Deletes a row with a given rowId (the value of the key field).
@@ -1090,7 +1147,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_flows_milestone(self, milestone_id, **kwargs):
+    def delete_flows_milestone(self, milestone_id: str, **kwargs) -> object:
         """
         Delete a flow milestone.
         
@@ -1106,7 +1163,7 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str milestone_id: flow milestone ID (required)
-        :return: Empty
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1163,12 +1220,12 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Empty',
+                                            response_type='object',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_dependencytracking(self, name, **kwargs):
+    def get_architect_dependencytracking(self, name: str, **kwargs) -> 'DependencyObjectEntityListing':
         """
         Get Dependency Tracking objects that have a given display name
         
@@ -1267,7 +1324,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_dependencytracking_build(self, **kwargs):
+    def get_architect_dependencytracking_build(self, **kwargs) -> 'DependencyStatus':
         """
         Get Dependency Tracking build status for an organization
         
@@ -1339,7 +1396,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_dependencytracking_consumedresources(self, id, version, object_type, **kwargs):
+    def get_architect_dependencytracking_consumedresources(self, id: str, version: str, object_type: str, **kwargs) -> 'ConsumedResourcesEntityListing':
         """
         Get resources that are consumed by a given Dependency Tracking object
         
@@ -1438,7 +1495,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_dependencytracking_consumingresources(self, id, object_type, **kwargs):
+    def get_architect_dependencytracking_consumingresources(self, id: str, object_type: str, **kwargs) -> 'ConsumingResourcesEntityListing':
         """
         Get resources that consume a given Dependency Tracking object
         
@@ -1537,7 +1594,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_dependencytracking_deletedresourceconsumers(self, **kwargs):
+    def get_architect_dependencytracking_deletedresourceconsumers(self, **kwargs) -> 'DependencyObjectEntityListing':
         """
         Get Dependency Tracking objects that consume deleted resources
         
@@ -1630,7 +1687,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_dependencytracking_object(self, id, **kwargs):
+    def get_architect_dependencytracking_object(self, id: str, **kwargs) -> 'DependencyObject':
         """
         Get a Dependency Tracking object
         
@@ -1729,7 +1786,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_dependencytracking_type(self, type_id, **kwargs):
+    def get_architect_dependencytracking_type(self, type_id: str, **kwargs) -> 'DependencyType':
         """
         Get a Dependency Tracking type.
         
@@ -1807,7 +1864,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_dependencytracking_types(self, **kwargs):
+    def get_architect_dependencytracking_types(self, **kwargs) -> 'DependencyTypeEntityListing':
         """
         Get Dependency Tracking types.
         
@@ -1885,7 +1942,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_dependencytracking_updatedresourceconsumers(self, **kwargs):
+    def get_architect_dependencytracking_updatedresourceconsumers(self, **kwargs) -> 'DependencyObjectEntityListing':
         """
         Get Dependency Tracking objects that depend on updated resources
         
@@ -1975,7 +2032,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_emergencygroup(self, emergency_group_id, **kwargs):
+    def get_architect_emergencygroup(self, emergency_group_id: str, **kwargs) -> 'EmergencyGroup':
         """
         Gets a emergency group by ID
         
@@ -2053,7 +2110,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_emergencygroups(self, **kwargs):
+    def get_architect_emergencygroups(self, **kwargs) -> 'EmergencyGroupListing':
         """
         Get a list of emergency groups.
         
@@ -2140,7 +2197,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_ivr(self, ivr_id, **kwargs):
+    def get_architect_ivr(self, ivr_id: str, **kwargs) -> 'IVR':
         """
         Get an IVR config.
         
@@ -2218,7 +2275,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_ivrs(self, **kwargs):
+    def get_architect_ivrs(self, **kwargs) -> 'IVREntityListing':
         """
         Get IVR configs.
         
@@ -2311,7 +2368,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_prompt(self, prompt_id, **kwargs):
+    def get_architect_prompt(self, prompt_id: str, **kwargs) -> 'Prompt':
         """
         Get specified user prompt
         
@@ -2389,7 +2446,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_prompt_history_history_id(self, prompt_id, history_id, **kwargs):
+    def get_architect_prompt_history_history_id(self, prompt_id: str, history_id: str, **kwargs) -> 'HistoryListing':
         """
         Get generated prompt history
         
@@ -2488,7 +2545,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_prompt_resource(self, prompt_id, language_code, **kwargs):
+    def get_architect_prompt_resource(self, prompt_id: str, language_code: str, **kwargs) -> 'PromptAsset':
         """
         Get specified user prompt resource
         
@@ -2572,7 +2629,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_prompt_resources(self, prompt_id, **kwargs):
+    def get_architect_prompt_resources(self, prompt_id: str, **kwargs) -> 'PromptAssetEntityListing':
         """
         Get a pageable list of user prompt resources
         The returned list is pageable, and query parameters can be used for filtering.
@@ -2656,7 +2713,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_prompts(self, **kwargs):
+    def get_architect_prompts(self, **kwargs) -> 'PromptEntityListing':
         """
         Get a pageable list of user prompts
         The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
@@ -2749,7 +2806,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_schedule(self, schedule_id, **kwargs):
+    def get_architect_schedule(self, schedule_id: str, **kwargs) -> 'Schedule':
         """
         Get a schedule by ID
         
@@ -2827,7 +2884,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_schedulegroup(self, schedule_group_id, **kwargs):
+    def get_architect_schedulegroup(self, schedule_group_id: str, **kwargs) -> 'ScheduleGroup':
         """
         Gets a schedule group by ID
         
@@ -2905,7 +2962,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_schedulegroups(self, **kwargs):
+    def get_architect_schedulegroups(self, **kwargs) -> 'ScheduleGroupEntityListing':
         """
         Get a list of schedule groups.
         
@@ -2998,7 +3055,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_schedules(self, **kwargs):
+    def get_architect_schedules(self, **kwargs) -> 'ScheduleEntityListing':
         """
         Get a list of schedules.
         
@@ -3088,7 +3145,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_systemprompt(self, prompt_id, **kwargs):
+    def get_architect_systemprompt(self, prompt_id: str, **kwargs) -> 'SystemPrompt':
         """
         Get a system prompt
         
@@ -3166,7 +3223,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_systemprompt_history_history_id(self, prompt_id, history_id, **kwargs):
+    def get_architect_systemprompt_history_history_id(self, prompt_id: str, history_id: str, **kwargs) -> 'HistoryListing':
         """
         Get generated prompt history
         
@@ -3265,7 +3322,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_systemprompt_resource(self, prompt_id, language_code, **kwargs):
+    def get_architect_systemprompt_resource(self, prompt_id: str, language_code: str, **kwargs) -> 'SystemPromptAsset':
         """
         Get a system prompt resource.
         
@@ -3349,7 +3406,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_systemprompt_resources(self, prompt_id, **kwargs):
+    def get_architect_systemprompt_resources(self, prompt_id: str, **kwargs) -> 'SystemPromptAssetEntityListing':
         """
         Get system prompt resources.
         
@@ -3439,7 +3496,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_systemprompts(self, **kwargs):
+    def get_architect_systemprompts(self, **kwargs) -> 'SystemPromptEntityListing':
         """
         Get System Prompts
         
@@ -3532,7 +3589,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flow(self, flow_id, **kwargs):
+    def get_flow(self, flow_id: str, **kwargs) -> 'Flow':
         """
         Get flow
         
@@ -3613,7 +3670,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flow_history_history_id(self, flow_id, history_id, **kwargs):
+    def get_flow_history_history_id(self, flow_id: str, history_id: str, **kwargs) -> 'HistoryListing':
         """
         Get generated flow history
         
@@ -3712,7 +3769,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flow_latestconfiguration(self, flow_id, **kwargs):
+    def get_flow_latestconfiguration(self, flow_id: str, **kwargs) -> object:
         """
         Get the latest configuration for flow
         
@@ -3793,7 +3850,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flow_version(self, flow_id, version_id, **kwargs):
+    def get_flow_version(self, flow_id: str, version_id: str, **kwargs) -> 'FlowVersion':
         """
         Get flow version
         
@@ -3880,7 +3937,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flow_version_configuration(self, flow_id, version_id, **kwargs):
+    def get_flow_version_configuration(self, flow_id: str, version_id: str, **kwargs) -> object:
         """
         Create flow version configuration
         
@@ -3967,7 +4024,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flow_versions(self, flow_id, **kwargs):
+    def get_flow_versions(self, flow_id: str, **kwargs) -> 'FlowVersionEntityListing':
         """
         Get flow version list
         
@@ -4054,7 +4111,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows(self, **kwargs):
+    def get_flows(self, **kwargs) -> 'FlowEntityListing':
         """
         Get a pageable list of flows, filtered by query parameters
         If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -4183,7 +4240,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_datatable(self, datatable_id, **kwargs):
+    def get_flows_datatable(self, datatable_id: str, **kwargs) -> 'DataTable':
         """
         Returns a specific datatable by id
         Given a datatableId returns the datatable object and schema associated with it.
@@ -4264,7 +4321,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_datatable_export_job(self, datatable_id, export_job_id, **kwargs):
+    def get_flows_datatable_export_job(self, datatable_id: str, export_job_id: str, **kwargs) -> 'DataTableExportJob':
         """
         Returns the state information about an export job
         Returns the state information about an export job.
@@ -4348,7 +4405,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_datatable_import_job(self, datatable_id, import_job_id, **kwargs):
+    def get_flows_datatable_import_job(self, datatable_id: str, import_job_id: str, **kwargs) -> 'DataTableImportJob':
         """
         Returns the state information about an import job
         Returns the state information about an import job.
@@ -4432,7 +4489,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_datatable_import_jobs(self, datatable_id, **kwargs):
+    def get_flows_datatable_import_jobs(self, datatable_id: str, **kwargs) -> 'DataTableImportEntityListing':
         """
         Get all recent import jobs
         Get all recent import jobs
@@ -4516,7 +4573,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_datatable_row(self, datatable_id, row_id, **kwargs):
+    def get_flows_datatable_row(self, datatable_id: str, row_id: str, **kwargs) -> Dict[str, object]:
         """
         Returns a specific row for the datatable
         Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
@@ -4603,7 +4660,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_datatable_rows(self, datatable_id, **kwargs):
+    def get_flows_datatable_rows(self, datatable_id: str, **kwargs) -> 'DataTableRowEntityListing':
         """
         Returns the rows for the datatable with the given id
         Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
@@ -4693,7 +4750,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_datatables(self, **kwargs):
+    def get_flows_datatables(self, **kwargs) -> 'DataTablesDomainEntityListing':
         """
         Retrieve a list of datatables for the org
         Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
@@ -4786,7 +4843,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_datatables_divisionview(self, datatable_id, **kwargs):
+    def get_flows_datatables_divisionview(self, datatable_id: str, **kwargs) -> 'DataTable':
         """
         Returns a specific datatable by id
         Given a datatableId returns the datatable object and schema associated with it.
@@ -4867,7 +4924,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_datatables_divisionviews(self, **kwargs):
+    def get_flows_datatables_divisionviews(self, **kwargs) -> 'DataTablesDomainEntityListing':
         """
         Retrieve a list of datatables for the org
         Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
@@ -4960,7 +5017,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_divisionviews(self, **kwargs):
+    def get_flows_divisionviews(self, **kwargs) -> 'FlowDivisionViewEntityListing':
         """
         Get a pageable list of basic flow information objects filterable by query parameters.
         This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -5068,7 +5125,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_execution(self, flow_execution_id, **kwargs):
+    def get_flows_execution(self, flow_execution_id: str, **kwargs) -> 'FlowRuntimeExecution':
         """
         Get a flow execution's details. Flow execution details are available for several days after the flow is started.
         
@@ -5146,7 +5203,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_job(self, job_id, **kwargs):
+    def get_flows_job(self, job_id: str, **kwargs) -> 'ArchitectJobStateResponse':
         """
         Fetch Architect Job Status
         
@@ -5227,7 +5284,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_milestone(self, milestone_id, **kwargs):
+    def get_flows_milestone(self, milestone_id: str, **kwargs) -> 'FlowMilestone':
         """
         Get a flow milestone
         Returns a specified flow milestone
@@ -5305,7 +5362,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_milestones(self, **kwargs):
+    def get_flows_milestones(self, **kwargs) -> 'FlowMilestoneListing':
         """
         Get a pageable list of flow milestones, filtered by query parameters
         Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
@@ -5404,7 +5461,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_milestones_divisionviews(self, **kwargs):
+    def get_flows_milestones_divisionviews(self, **kwargs) -> 'FlowMilestoneDivisionViewEntityListing':
         """
         Get a pageable list of basic flow milestone information objects filterable by query parameters.
         This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -5497,7 +5554,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_outcome(self, flow_outcome_id, **kwargs):
+    def get_flows_outcome(self, flow_outcome_id: str, **kwargs) -> 'FlowOutcome':
         """
         Get a flow outcome
         Returns a specified flow outcome
@@ -5575,7 +5632,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_outcomes(self, **kwargs):
+    def get_flows_outcomes(self, **kwargs) -> 'FlowOutcomeListing':
         """
         Get a pageable list of flow outcomes, filtered by query parameters
         Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
@@ -5674,7 +5731,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_outcomes_divisionviews(self, **kwargs):
+    def get_flows_outcomes_divisionviews(self, **kwargs) -> 'FlowOutcomeDivisionViewEntityListing':
         """
         Get a pageable list of basic flow outcome information objects filterable by query parameters.
         This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -5767,7 +5824,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_dependencytracking_build(self, **kwargs):
+    def post_architect_dependencytracking_build(self, **kwargs) -> None:
         """
         Rebuild Dependency Tracking data for an organization
         Asynchronous.  Notification topic: v2.architect.dependencytracking.build
@@ -5839,7 +5896,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_emergencygroups(self, body, **kwargs):
+    def post_architect_emergencygroups(self, body: 'EmergencyGroup', **kwargs) -> 'EmergencyGroup':
         """
         Creates a new emergency group
         
@@ -5917,7 +5974,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_ivrs(self, body, **kwargs):
+    def post_architect_ivrs(self, body: 'IVR', **kwargs) -> 'IVR':
         """
         Create IVR config.
         
@@ -5995,7 +6052,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_prompt_history(self, prompt_id, **kwargs):
+    def post_architect_prompt_history(self, prompt_id: str, **kwargs) -> 'Operation':
         """
         Generate prompt history
         Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
@@ -6073,7 +6130,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_prompt_resources(self, prompt_id, body, **kwargs):
+    def post_architect_prompt_resources(self, prompt_id: str, body: 'PromptAssetCreate', **kwargs) -> 'PromptAsset':
         """
         Create a new user prompt resource
         
@@ -6157,7 +6214,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_prompts(self, body, **kwargs):
+    def post_architect_prompts(self, body: 'Prompt', **kwargs) -> 'Prompt':
         """
         Create a new user prompt
         
@@ -6235,7 +6292,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_schedulegroups(self, body, **kwargs):
+    def post_architect_schedulegroups(self, body: 'ScheduleGroup', **kwargs) -> 'ScheduleGroup':
         """
         Creates a new schedule group
         
@@ -6313,7 +6370,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_schedules(self, body, **kwargs):
+    def post_architect_schedules(self, body: 'Schedule', **kwargs) -> 'Schedule':
         """
         Create a new schedule.
         
@@ -6391,7 +6448,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_systemprompt_history(self, prompt_id, **kwargs):
+    def post_architect_systemprompt_history(self, prompt_id: str, **kwargs) -> 'Operation':
         """
         Generate system prompt history
         Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
@@ -6469,7 +6526,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_systemprompt_resources(self, prompt_id, body, **kwargs):
+    def post_architect_systemprompt_resources(self, prompt_id: str, body: 'SystemPromptAsset', **kwargs) -> 'SystemPromptAsset':
         """
         Create system prompt resource override.
         
@@ -6553,7 +6610,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flow_history(self, flow_id, **kwargs):
+    def post_flow_history(self, flow_id: str, **kwargs) -> 'Operation':
         """
         Generate flow history
         Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -6631,7 +6688,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flow_versions(self, flow_id, body, **kwargs):
+    def post_flow_versions(self, flow_id: str, body: object, **kwargs) -> 'FlowVersion':
         """
         Create flow version
         
@@ -6715,7 +6772,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows(self, body, **kwargs):
+    def post_flows(self, body: 'Flow', **kwargs) -> 'Flow':
         """
         Create flow
         
@@ -6796,7 +6853,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_actions_checkin(self, flow, **kwargs):
+    def post_flows_actions_checkin(self, flow: str, **kwargs) -> 'Operation':
         """
         Check-in flow
         Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -6874,7 +6931,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_actions_checkout(self, flow, **kwargs):
+    def post_flows_actions_checkout(self, flow: str, **kwargs) -> 'Flow':
         """
         Check-out flow
         
@@ -6952,7 +7009,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_actions_deactivate(self, flow, **kwargs):
+    def post_flows_actions_deactivate(self, flow: str, **kwargs) -> 'Flow':
         """
         Deactivate flow
         
@@ -7030,7 +7087,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_actions_publish(self, flow, **kwargs):
+    def post_flows_actions_publish(self, flow: str, **kwargs) -> 'Operation':
         """
         Publish flow
         Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -7111,7 +7168,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_actions_revert(self, flow, **kwargs):
+    def post_flows_actions_revert(self, flow: str, **kwargs) -> 'Flow':
         """
         Revert flow
         
@@ -7189,7 +7246,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_actions_unlock(self, flow, **kwargs):
+    def post_flows_actions_unlock(self, flow: str, **kwargs) -> 'Flow':
         """
         Unlock flow
         Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
@@ -7267,7 +7324,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_datatable_export_jobs(self, datatable_id, **kwargs):
+    def post_flows_datatable_export_jobs(self, datatable_id: str, **kwargs) -> 'DataTableExportJob':
         """
         Begin an export process for exporting all rows from a datatable
         Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
@@ -7345,7 +7402,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_datatable_import_jobs(self, datatable_id, body, **kwargs):
+    def post_flows_datatable_import_jobs(self, datatable_id: str, body: 'DataTableImportJob', **kwargs) -> 'DataTableImportJob':
         """
         Begin an import process for importing rows into a datatable
         Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
@@ -7429,7 +7486,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_datatable_rows(self, datatable_id, data_table_row, **kwargs):
+    def post_flows_datatable_rows(self, datatable_id: str, data_table_row: object, **kwargs) -> Dict[str, object]:
         """
         Create a new row entry for the datatable.
         Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
@@ -7513,7 +7570,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_datatables(self, body, **kwargs):
+    def post_flows_datatables(self, body: 'DataTable', **kwargs) -> 'DataTable':
         """
         Create a new datatable with the specified json-schema definition
         This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
@@ -7591,7 +7648,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_executions(self, flow_launch_request, **kwargs):
+    def post_flows_executions(self, flow_launch_request: 'FlowExecutionLaunchRequest', **kwargs) -> 'FlowExecutionLaunchResponse':
         """
         Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
         The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
@@ -7669,7 +7726,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_jobs(self, **kwargs):
+    def post_flows_jobs(self, **kwargs) -> 'RegisterArchitectJobResponse':
         """
         Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
         
@@ -7741,7 +7798,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_milestones(self, **kwargs):
+    def post_flows_milestones(self, **kwargs) -> 'FlowMilestone':
         """
         Create a flow milestone
         
@@ -7816,7 +7873,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows_outcomes(self, **kwargs):
+    def post_flows_outcomes(self, **kwargs) -> 'FlowOutcome':
         """
         Create a flow outcome
         Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
@@ -7891,7 +7948,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_emergencygroup(self, emergency_group_id, body, **kwargs):
+    def put_architect_emergencygroup(self, emergency_group_id: str, body: 'EmergencyGroup', **kwargs) -> 'EmergencyGroup':
         """
         Updates a emergency group by ID
         
@@ -7975,7 +8032,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_ivr(self, ivr_id, body, **kwargs):
+    def put_architect_ivr(self, ivr_id: str, body: 'IVR', **kwargs) -> 'IVR':
         """
         Update an IVR Config.
         
@@ -8059,7 +8116,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_prompt(self, prompt_id, body, **kwargs):
+    def put_architect_prompt(self, prompt_id: str, body: 'Prompt', **kwargs) -> 'Prompt':
         """
         Update specified user prompt
         
@@ -8143,7 +8200,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_prompt_resource(self, prompt_id, language_code, body, **kwargs):
+    def put_architect_prompt_resource(self, prompt_id: str, language_code: str, body: 'PromptAsset', **kwargs) -> 'PromptAsset':
         """
         Update specified user prompt resource
         
@@ -8233,7 +8290,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_schedule(self, schedule_id, body, **kwargs):
+    def put_architect_schedule(self, schedule_id: str, body: 'Schedule', **kwargs) -> 'Schedule':
         """
         Update schedule by ID
         
@@ -8317,7 +8374,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_schedulegroup(self, schedule_group_id, body, **kwargs):
+    def put_architect_schedulegroup(self, schedule_group_id: str, body: 'ScheduleGroup', **kwargs) -> 'ScheduleGroup':
         """
         Updates a schedule group by ID
         
@@ -8401,7 +8458,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_systemprompt_resource(self, prompt_id, language_code, body, **kwargs):
+    def put_architect_systemprompt_resource(self, prompt_id: str, language_code: str, body: 'SystemPromptAsset', **kwargs) -> 'SystemPromptAsset':
         """
         Updates a system prompt resource override.
         
@@ -8491,7 +8548,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_flow(self, flow_id, body, **kwargs):
+    def put_flow(self, flow_id: str, body: 'Flow', **kwargs) -> 'Flow':
         """
         Update flow
         
@@ -8575,7 +8632,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_flows_datatable(self, datatable_id, body, **kwargs):
+    def put_flows_datatable(self, datatable_id: str, body: 'DataTable', **kwargs) -> 'DataTable':
         """
         Updates a specific datatable by id
         Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
@@ -8662,7 +8719,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_flows_datatable_row(self, datatable_id, row_id, **kwargs):
+    def put_flows_datatable_row(self, datatable_id: str, row_id: str, **kwargs) -> Dict[str, object]:
         """
         Update a row entry
         Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
@@ -8749,7 +8806,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_flows_milestone(self, milestone_id, **kwargs):
+    def put_flows_milestone(self, milestone_id: str, **kwargs) -> 'FlowMilestone':
         """
         Updates a flow milestone
         
@@ -8830,7 +8887,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_flows_outcome(self, flow_outcome_id, **kwargs):
+    def put_flows_outcome(self, flow_outcome_id: str, **kwargs) -> 'Operation':
         """
         Updates a flow outcome
         Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}

@@ -23,12 +23,31 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ApiUsageQuery
+from ..models import ApiUsageQueryResult
+from ..models import ErrorBody
+from ..models import OAuthAuthorization
+from ..models import OAuthAuthorizationListing
+from ..models import OAuthClient
+from ..models import OAuthClientEntityListing
+from ..models import OAuthClientRequest
+from ..models import OAuthScope
+from ..models import OAuthScopeListing
+from ..models import UsageExecutionResult
 
 class OAuthApi(object):
     """
@@ -46,7 +65,7 @@ class OAuthApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_oauth_client(self, client_id, **kwargs):
+    def delete_oauth_client(self, client_id: str, **kwargs) -> None:
         """
         Delete OAuth Client
         
@@ -124,7 +143,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_oauth_authorization(self, client_id, **kwargs):
+    def get_oauth_authorization(self, client_id: str, **kwargs) -> 'OAuthAuthorization':
         """
         Get a client that is authorized by the resource owner
         
@@ -205,7 +224,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_oauth_authorizations(self, **kwargs):
+    def get_oauth_authorizations(self, **kwargs) -> 'OAuthAuthorizationListing':
         """
         List clients that have been authorized, requested, or revoked by the resource owner
         
@@ -280,7 +299,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_oauth_client(self, client_id, **kwargs):
+    def get_oauth_client(self, client_id: str, **kwargs) -> 'OAuthClient':
         """
         Get OAuth Client
         
@@ -358,7 +377,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_oauth_client_usage_query_result(self, execution_id, client_id, **kwargs):
+    def get_oauth_client_usage_query_result(self, execution_id: str, client_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
         
@@ -442,7 +461,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_oauth_client_usage_summary(self, client_id, **kwargs):
+    def get_oauth_client_usage_summary(self, client_id: str, **kwargs) -> 'UsageExecutionResult':
         """
         Get a summary of OAuth client API usage
         After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -523,7 +542,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_oauth_clients(self, **kwargs):
+    def get_oauth_clients(self, **kwargs) -> 'OAuthClientEntityListing':
         """
         The list of OAuth clients
         
@@ -595,7 +614,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_oauth_scope(self, scope_id, **kwargs):
+    def get_oauth_scope(self, scope_id: str, **kwargs) -> 'OAuthScope':
         """
         An OAuth scope
         
@@ -676,7 +695,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_oauth_scopes(self, **kwargs):
+    def get_oauth_scopes(self, **kwargs) -> 'OAuthScopeListing':
         """
         The list of OAuth scopes
         
@@ -751,7 +770,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_oauth_client_secret(self, client_id, **kwargs):
+    def post_oauth_client_secret(self, client_id: str, **kwargs) -> 'OAuthClient':
         """
         Regenerate Client Secret
         This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
@@ -829,7 +848,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_oauth_client_usage_query(self, client_id, body, **kwargs):
+    def post_oauth_client_usage_query(self, client_id: str, body: 'ApiUsageQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query for OAuth client API usage
         After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -913,7 +932,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_oauth_clients(self, body, **kwargs):
+    def post_oauth_clients(self, body: 'OAuthClientRequest', **kwargs) -> 'OAuthClient':
         """
         Create OAuth client
         The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
@@ -991,7 +1010,7 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_oauth_client(self, client_id, body, **kwargs):
+    def put_oauth_client(self, client_id: str, body: 'OAuthClientRequest', **kwargs) -> 'OAuthClient':
         """
         Update OAuth Client
         

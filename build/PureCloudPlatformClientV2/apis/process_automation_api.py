@@ -23,12 +23,28 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import CreateTriggerRequest
+from ..models import ErrorBody
+from ..models import TestModeEventResults
+from ..models import TestModeResults
+from ..models import TopicCursorEntityListing
+from ..models import Trigger
+from ..models import TriggerEntityListing
+from ..models import UpdateTriggerRequest
 
 class ProcessAutomationApi(object):
     """
@@ -46,7 +62,7 @@ class ProcessAutomationApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_processautomation_trigger(self, trigger_id, **kwargs):
+    def delete_processautomation_trigger(self, trigger_id: str, **kwargs) -> None:
         """
         Delete a Trigger
         
@@ -124,7 +140,7 @@ class ProcessAutomationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_processautomation_trigger(self, trigger_id, **kwargs):
+    def get_processautomation_trigger(self, trigger_id: str, **kwargs) -> 'Trigger':
         """
         Retrieve a single Trigger matching id
         
@@ -202,7 +218,7 @@ class ProcessAutomationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_processautomation_triggers(self, **kwargs):
+    def get_processautomation_triggers(self, **kwargs) -> 'TriggerEntityListing':
         """
         Retrieves all triggers, optionally filtered by query parameters.
         
@@ -292,7 +308,7 @@ class ProcessAutomationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_processautomation_triggers_topics(self, **kwargs):
+    def get_processautomation_triggers_topics(self, **kwargs) -> 'TopicCursorEntityListing':
         """
         Get topics available for organization
         
@@ -373,7 +389,7 @@ class ProcessAutomationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_processautomation_trigger_test(self, trigger_id, **kwargs):
+    def post_processautomation_trigger_test(self, trigger_id: str, **kwargs) -> 'TestModeResults':
         """
         Test the matching of a Trigger based on provided event body
         
@@ -454,7 +470,7 @@ class ProcessAutomationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_processautomation_triggers(self, body, **kwargs):
+    def post_processautomation_triggers(self, body: 'CreateTriggerRequest', **kwargs) -> 'Trigger':
         """
         Create a Trigger
         
@@ -532,7 +548,7 @@ class ProcessAutomationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_processautomation_triggers_topic_test(self, topic_name, **kwargs):
+    def post_processautomation_triggers_topic_test(self, topic_name: str, **kwargs) -> 'TestModeEventResults':
         """
         Test the matching of all organization Triggers on given topic using provided event body
         
@@ -613,7 +629,7 @@ class ProcessAutomationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_processautomation_trigger(self, trigger_id, body, **kwargs):
+    def put_processautomation_trigger(self, trigger_id: str, body: 'UpdateTriggerRequest', **kwargs) -> 'Trigger':
         """
         Update a Trigger
         

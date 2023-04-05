@@ -23,12 +23,28 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ActiveAlertCount
+from ..models import ErrorBody
+from ..models import InteractionStatsAlert
+from ..models import InteractionStatsAlertContainer
+from ..models import InteractionStatsRule
+from ..models import InteractionStatsRuleContainer
+from ..models import UnreadMetric
+from ..models import UnreadStatus
 
 class AlertingApi(object):
     """
@@ -46,7 +62,7 @@ class AlertingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_alerting_interactionstats_alert(self, alert_id, **kwargs):
+    def delete_alerting_interactionstats_alert(self, alert_id: str, **kwargs) -> None:
         """
         Delete an interaction stats alert
         
@@ -124,7 +140,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_alerting_interactionstats_rule(self, rule_id, **kwargs):
+    def delete_alerting_interactionstats_rule(self, rule_id: str, **kwargs) -> None:
         """
         Delete an interaction stats rule.
         
@@ -202,7 +218,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_alerting_alerts_active(self, **kwargs):
+    def get_alerting_alerts_active(self, **kwargs) -> 'ActiveAlertCount':
         """
         Gets active alert count for a user.
         
@@ -274,7 +290,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_alerting_interactionstats_alert(self, alert_id, **kwargs):
+    def get_alerting_interactionstats_alert(self, alert_id: str, **kwargs) -> 'InteractionStatsAlert':
         """
         Get an interaction stats alert
         
@@ -355,7 +371,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_alerting_interactionstats_alerts(self, **kwargs):
+    def get_alerting_interactionstats_alerts(self, **kwargs) -> 'InteractionStatsAlertContainer':
         """
         Get interaction stats alert list.
         
@@ -430,7 +446,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_alerting_interactionstats_alerts_unread(self, **kwargs):
+    def get_alerting_interactionstats_alerts_unread(self, **kwargs) -> 'UnreadMetric':
         """
         Gets user unread count of interaction stats alerts.
         
@@ -502,7 +518,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_alerting_interactionstats_rule(self, rule_id, **kwargs):
+    def get_alerting_interactionstats_rule(self, rule_id: str, **kwargs) -> 'InteractionStatsRule':
         """
         Get an interaction stats rule.
         
@@ -583,7 +599,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_alerting_interactionstats_rules(self, **kwargs):
+    def get_alerting_interactionstats_rules(self, **kwargs) -> 'InteractionStatsRuleContainer':
         """
         Get an interaction stats rule list.
         
@@ -658,7 +674,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_alerting_interactionstats_rules(self, body, **kwargs):
+    def post_alerting_interactionstats_rules(self, body: 'InteractionStatsRule', **kwargs) -> 'InteractionStatsRule':
         """
         Create an interaction stats rule.
         
@@ -739,7 +755,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_alerting_interactionstats_alert(self, alert_id, body, **kwargs):
+    def put_alerting_interactionstats_alert(self, alert_id: str, body: 'UnreadStatus', **kwargs) -> 'UnreadStatus':
         """
         Update an interaction stats alert read status
         
@@ -826,7 +842,7 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_alerting_interactionstats_rule(self, rule_id, body, **kwargs):
+    def put_alerting_interactionstats_rule(self, rule_id: str, body: 'InteractionStatsRule', **kwargs) -> 'InteractionStatsRule':
         """
         Update an interaction stats rule
         

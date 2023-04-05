@@ -23,12 +23,23 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import SupportedContent
+from ..models import SupportedContentListing
 
 class MessagingApi(object):
     """
@@ -46,7 +57,7 @@ class MessagingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_messaging_supportedcontent_supported_content_id(self, supported_content_id, **kwargs):
+    def delete_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> None:
         """
         Delete a supported content profile
         
@@ -124,7 +135,7 @@ class MessagingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_messaging_supportedcontent(self, **kwargs):
+    def get_messaging_supportedcontent(self, **kwargs) -> 'SupportedContentListing':
         """
         Get a list of Supported Content profiles
         
@@ -202,7 +213,7 @@ class MessagingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_messaging_supportedcontent_supported_content_id(self, supported_content_id, **kwargs):
+    def get_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> 'SupportedContent':
         """
         Get a supported content profile
         
@@ -280,7 +291,7 @@ class MessagingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_messaging_supportedcontent_supported_content_id(self, supported_content_id, body, **kwargs):
+    def patch_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
         Update a supported content profile
         
@@ -364,7 +375,7 @@ class MessagingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_messaging_supportedcontent(self, body, **kwargs):
+    def post_messaging_supportedcontent(self, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
         Create a Supported Content profile
         

@@ -23,12 +23,34 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import CreateResponseAssetRequest
+from ..models import CreateResponseAssetResponse
+from ..models import ErrorBody
+from ..models import Library
+from ..models import LibraryEntityListing
+from ..models import Response
+from ..models import ResponseAsset
+from ..models import ResponseAssetRequest
+from ..models import ResponseAssetSearchRequest
+from ..models import ResponseAssetSearchResults
+from ..models import ResponseAssetStatus
+from ..models import ResponseEntityListing
+from ..models import ResponseQueryRequest
+from ..models import ResponseQueryResults
 
 class ResponseManagementApi(object):
     """
@@ -46,7 +68,7 @@ class ResponseManagementApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_responsemanagement_library(self, library_id, **kwargs):
+    def delete_responsemanagement_library(self, library_id: str, **kwargs) -> None:
         """
         Delete an existing response library.
         This will remove any responses associated with the library.
@@ -124,7 +146,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_responsemanagement_response(self, response_id, **kwargs):
+    def delete_responsemanagement_response(self, response_id: str, **kwargs) -> None:
         """
         Delete an existing response.
         This will remove the response from any libraries associated with it.
@@ -202,7 +224,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_responsemanagement_responseasset(self, response_asset_id, **kwargs):
+    def delete_responsemanagement_responseasset(self, response_asset_id: str, **kwargs) -> None:
         """
         Delete response asset
         
@@ -280,7 +302,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_responsemanagement_libraries(self, **kwargs):
+    def get_responsemanagement_libraries(self, **kwargs) -> 'LibraryEntityListing':
         """
         Gets a list of existing response libraries.
         
@@ -361,7 +383,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_responsemanagement_library(self, library_id, **kwargs):
+    def get_responsemanagement_library(self, library_id: str, **kwargs) -> 'Library':
         """
         Get details about an existing response library.
         
@@ -439,7 +461,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_responsemanagement_response(self, response_id, **kwargs):
+    def get_responsemanagement_response(self, response_id: str, **kwargs) -> 'Response':
         """
         Get details about an existing response.
         
@@ -520,7 +542,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_responsemanagement_responseasset(self, response_asset_id, **kwargs):
+    def get_responsemanagement_responseasset(self, response_asset_id: str, **kwargs) -> 'ResponseAsset':
         """
         Get response asset information
         
@@ -598,7 +620,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_responsemanagement_responseassets_status_status_id(self, status_id, **kwargs):
+    def get_responsemanagement_responseassets_status_status_id(self, status_id: str, **kwargs) -> 'ResponseAssetStatus':
         """
         Get response asset upload status
         
@@ -676,7 +698,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_responsemanagement_responses(self, library_id, **kwargs):
+    def get_responsemanagement_responses(self, library_id: str, **kwargs) -> 'ResponseEntityListing':
         """
         Gets a list of existing responses.
         
@@ -763,7 +785,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_responsemanagement_libraries(self, body, **kwargs):
+    def post_responsemanagement_libraries(self, body: 'Library', **kwargs) -> 'Library':
         """
         Create a response library.
         
@@ -841,7 +863,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_responsemanagement_responseassets_search(self, body, **kwargs):
+    def post_responsemanagement_responseassets_search(self, body: 'ResponseAssetSearchRequest', **kwargs) -> 'ResponseAssetSearchResults':
         """
         Search response assets
         
@@ -922,7 +944,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_responsemanagement_responseassets_uploads(self, body, **kwargs):
+    def post_responsemanagement_responseassets_uploads(self, body: 'CreateResponseAssetRequest', **kwargs) -> 'CreateResponseAssetResponse':
         """
         Creates pre-signed url for uploading response asset
         
@@ -1000,7 +1022,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_responsemanagement_responses(self, body, **kwargs):
+    def post_responsemanagement_responses(self, body: 'Response', **kwargs) -> 'Response':
         """
         Create a response.
         
@@ -1081,7 +1103,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_responsemanagement_responses_query(self, body, **kwargs):
+    def post_responsemanagement_responses_query(self, body: 'ResponseQueryRequest', **kwargs) -> 'ResponseQueryResults':
         """
         Query responses
         
@@ -1159,7 +1181,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_responsemanagement_library(self, library_id, body, **kwargs):
+    def put_responsemanagement_library(self, library_id: str, body: 'Library', **kwargs) -> 'Library':
         """
         Update an existing response library.
         Fields that can be updated: name. The most recent version is required for updates.
@@ -1243,7 +1265,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_responsemanagement_response(self, response_id, body, **kwargs):
+    def put_responsemanagement_response(self, response_id: str, body: 'Response', **kwargs) -> 'Response':
         """
         Update an existing response.
         Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
@@ -1330,7 +1352,7 @@ class ResponseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_responsemanagement_responseasset(self, response_asset_id, body, **kwargs):
+    def put_responsemanagement_responseasset(self, response_asset_id: str, body: 'ResponseAssetRequest', **kwargs) -> 'ResponseAsset':
         """
         Update response asset
         

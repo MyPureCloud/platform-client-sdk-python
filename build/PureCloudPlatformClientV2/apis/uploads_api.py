@@ -23,12 +23,24 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import LearningCoverArtUploadUrlRequest
+from ..models import UploadUrlRequest
+from ..models import UploadUrlResponse
 
 class UploadsApi(object):
     """
@@ -46,7 +58,7 @@ class UploadsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def post_knowledge_documentuploads(self, body, **kwargs):
+    def post_knowledge_documentuploads(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates a presigned URL for uploading a knowledge import file with a set of documents
         
@@ -124,7 +136,7 @@ class UploadsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_languageunderstanding_miner_uploads(self, miner_id, body, **kwargs):
+    def post_languageunderstanding_miner_uploads(self, miner_id: str, body: 'Empty', **kwargs) -> 'UploadUrlResponse':
         """
         Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
         
@@ -208,7 +220,7 @@ class UploadsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_uploads_learning_coverart(self, body, **kwargs):
+    def post_uploads_learning_coverart(self, body: 'LearningCoverArtUploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Generates pre-signed URL to upload cover art for learning modules
         
@@ -286,7 +298,7 @@ class UploadsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_uploads_publicassets_images(self, body, **kwargs):
+    def post_uploads_publicassets_images(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates presigned url for uploading a public asset image
         
@@ -364,7 +376,7 @@ class UploadsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_uploads_recordings(self, body, **kwargs):
+    def post_uploads_recordings(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates presigned url for uploading a recording file
         
@@ -442,7 +454,7 @@ class UploadsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_uploads_workforcemanagement_historicaldata_csv(self, body, **kwargs):
+    def post_uploads_workforcemanagement_historicaldata_csv(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates presigned url for uploading WFM historical data file. Requires data in csv format.
         

@@ -23,12 +23,22 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ChatSettings
+from ..models import ErrorBody
 
 class ChatApi(object):
     """
@@ -46,7 +56,7 @@ class ChatApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_chat_settings(self, **kwargs):
+    def get_chat_settings(self, **kwargs) -> 'ChatSettings':
         """
         Get Chat Settings.
         This route is deprecated, please use /chats/settings instead
@@ -118,7 +128,7 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_chats_settings(self, **kwargs):
+    def get_chats_settings(self, **kwargs) -> 'ChatSettings':
         """
         Get Chat Settings.
         
@@ -190,7 +200,7 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_chat_settings(self, body, **kwargs):
+    def patch_chat_settings(self, body: 'ChatSettings', **kwargs) -> 'ChatSettings':
         """
         Patch Chat Settings.
         This route is deprecated, please use /chats/settings instead
@@ -268,7 +278,7 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_chats_settings(self, body, **kwargs):
+    def patch_chats_settings(self, body: 'ChatSettings', **kwargs) -> 'ChatSettings':
         """
         Patch Chat Settings.
         
@@ -346,7 +356,7 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_chat_settings(self, body, **kwargs):
+    def put_chat_settings(self, body: 'ChatSettings', **kwargs) -> 'ChatSettings':
         """
         Update Chat Settings.
         This route is deprecated, please use /chats/settings instead
@@ -424,7 +434,7 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_chats_settings(self, body, **kwargs):
+    def put_chats_settings(self, body: 'ChatSettings', **kwargs) -> 'ChatSettings':
         """
         Update Chat Settings.
         

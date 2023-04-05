@@ -23,12 +23,23 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import AcceleratorInput
+from ..models import ErrorBody
+from ..models import InfrastructureascodeJob
 
 class InfrastructureAsCodeApi(object):
     """
@@ -46,7 +57,7 @@ class InfrastructureAsCodeApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_infrastructureascode_job(self, job_id, **kwargs):
+    def get_infrastructureascode_job(self, job_id: str, **kwargs) -> 'InfrastructureascodeJob':
         """
         Get job status and results
         Get the execution status of a submitted job, optionally including results and error details.
@@ -127,7 +138,7 @@ class InfrastructureAsCodeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_infrastructureascode_jobs(self, **kwargs):
+    def get_infrastructureascode_jobs(self, **kwargs) -> 'InfrastructureascodeJob':
         """
         Get job history
         Get a history of submitted jobs, optionally including error messages.
@@ -211,7 +222,7 @@ class InfrastructureAsCodeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_infrastructureascode_jobs(self, body, **kwargs):
+    def post_infrastructureascode_jobs(self, body: 'AcceleratorInput', **kwargs) -> 'InfrastructureascodeJob':
         """
         Create a Job
         Create and submit a job for remote execution or see job planning results.

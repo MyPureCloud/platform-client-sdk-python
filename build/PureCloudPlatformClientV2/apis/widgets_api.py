@@ -23,12 +23,23 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import ErrorBody
+from ..models import WidgetDeployment
+from ..models import WidgetDeploymentEntityListing
 
 class WidgetsApi(object):
     """
@@ -46,7 +57,7 @@ class WidgetsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_widgets_deployment(self, deployment_id, **kwargs):
+    def delete_widgets_deployment(self, deployment_id: str, **kwargs) -> None:
         """
         Delete a Widget deployment
         
@@ -124,7 +135,7 @@ class WidgetsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_widgets_deployment(self, deployment_id, **kwargs):
+    def get_widgets_deployment(self, deployment_id: str, **kwargs) -> 'WidgetDeployment':
         """
         Get a Widget deployment
         
@@ -202,7 +213,7 @@ class WidgetsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_widgets_deployments(self, **kwargs):
+    def get_widgets_deployments(self, **kwargs) -> 'WidgetDeploymentEntityListing':
         """
         List Widget deployments
         
@@ -274,7 +285,7 @@ class WidgetsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_widgets_deployments(self, body, **kwargs):
+    def post_widgets_deployments(self, body: 'WidgetDeployment', **kwargs) -> 'WidgetDeployment':
         """
         Create Widget deployment
         
@@ -352,7 +363,7 @@ class WidgetsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_widgets_deployment(self, deployment_id, body, **kwargs):
+    def put_widgets_deployment(self, deployment_id: str, body: 'WidgetDeployment', **kwargs) -> 'WidgetDeployment':
         """
         Update a Widget deployment
         

@@ -23,12 +23,58 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import AcknowledgeScreenRecordingRequest
+from ..models import AddressableEntityRef
+from ..models import Annotation
+from ..models import BatchDownloadJobStatusResult
+from ..models import BatchDownloadJobSubmission
+from ..models import BatchDownloadJobSubmissionResult
+from ..models import ConversationDeletionProtectionQuery
+from ..models import CrossPlatformPolicy
+from ..models import CrossPlatformPolicyCreate
+from ..models import CrossPlatformPolicyUpdate
+from ..models import EncryptionKey
+from ..models import EncryptionKeyEntityListing
+from ..models import ErrorBody
+from ..models import ExecuteRecordingJobsQuery
+from ..models import FailedRecordingEntityListing
+from ..models import KeyRotationSchedule
+from ..models import LocalEncryptionKeyRequest
+from ..models import OrphanRecording
+from ..models import OrphanRecordingListing
+from ..models import OrphanUpdateRequest
+from ..models import Policy
+from ..models import PolicyCreate
+from ..models import PolicyEntityListing
+from ..models import PolicyUpdate
+from ..models import Recording
+from ..models import RecordingEncryptionConfiguration
+from ..models import RecordingEncryptionConfigurationListing
+from ..models import RecordingJob
+from ..models import RecordingJobEntityListing
+from ..models import RecordingJobsQuery
+from ..models import RecordingMetadata
+from ..models import RecordingRetentionCursorEntityListing
+from ..models import RecordingSettings
+from ..models import RecordingUploadReport
+from ..models import RecordingUploadReportRequest
+from ..models import ScreenRecordingMetaDataRequest
+from ..models import ScreenRecordingSessionListing
+from ..models import ScreenRecordingSessionRequest
 
 class RecordingApi(object):
     """
@@ -46,7 +92,7 @@ class RecordingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_conversation_recording_annotation(self, conversation_id, recording_id, annotation_id, **kwargs):
+    def delete_conversation_recording_annotation(self, conversation_id: str, recording_id: str, annotation_id: str, **kwargs) -> None:
         """
         Delete annotation
         
@@ -136,7 +182,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_orphanrecording(self, orphan_id, **kwargs):
+    def delete_orphanrecording(self, orphan_id: str, **kwargs) -> 'OrphanRecording':
         """
         Deletes a single orphan recording
         
@@ -214,7 +260,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_recording_crossplatform_mediaretentionpolicies(self, ids, **kwargs):
+    def delete_recording_crossplatform_mediaretentionpolicies(self, ids: str, **kwargs) -> None:
         """
         Delete media retention policies
         Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
@@ -292,7 +338,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_recording_crossplatform_mediaretentionpolicy(self, policy_id, **kwargs):
+    def delete_recording_crossplatform_mediaretentionpolicy(self, policy_id: str, **kwargs) -> None:
         """
         Delete a media retention policy
         
@@ -370,7 +416,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_recording_job(self, job_id, **kwargs):
+    def delete_recording_job(self, job_id: str, **kwargs) -> None:
         """
         Delete the recording bulk job
         
@@ -448,7 +494,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_recording_mediaretentionpolicies(self, ids, **kwargs):
+    def delete_recording_mediaretentionpolicies(self, ids: str, **kwargs) -> None:
         """
         Delete media retention policies
         Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
@@ -526,7 +572,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_recording_mediaretentionpolicy(self, policy_id, **kwargs):
+    def delete_recording_mediaretentionpolicy(self, policy_id: str, **kwargs) -> None:
         """
         Delete a media retention policy
         
@@ -604,7 +650,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversation_recording(self, conversation_id, recording_id, **kwargs):
+    def get_conversation_recording(self, conversation_id: str, recording_id: str, **kwargs) -> 'Recording':
         """
         Gets a specific recording.
         
@@ -712,7 +758,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversation_recording_annotation(self, conversation_id, recording_id, annotation_id, **kwargs):
+    def get_conversation_recording_annotation(self, conversation_id: str, recording_id: str, annotation_id: str, **kwargs) -> 'Annotation':
         """
         Get annotation
         
@@ -802,7 +848,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversation_recording_annotations(self, conversation_id, recording_id, **kwargs):
+    def get_conversation_recording_annotations(self, conversation_id: str, recording_id: str, **kwargs) -> List['Annotation']:
         """
         Get annotations for recording
         
@@ -886,7 +932,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversation_recordingmetadata(self, conversation_id, **kwargs):
+    def get_conversation_recordingmetadata(self, conversation_id: str, **kwargs) -> List['RecordingMetadata']:
         """
         Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
         
@@ -964,7 +1010,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversation_recordingmetadata_recording_id(self, conversation_id, recording_id, **kwargs):
+    def get_conversation_recordingmetadata_recording_id(self, conversation_id: str, recording_id: str, **kwargs) -> 'RecordingMetadata':
         """
         Get metadata for a specific recording. Does not return playable media.
         
@@ -1048,7 +1094,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversation_recordings(self, conversation_id, **kwargs):
+    def get_conversation_recordings(self, conversation_id: str, **kwargs) -> List['Recording']:
         """
         Get all of a Conversation's Recordings.
         
@@ -1135,7 +1181,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_orphanrecording(self, orphan_id, **kwargs):
+    def get_orphanrecording(self, orphan_id: str, **kwargs) -> 'OrphanRecording':
         """
         Gets a single orphan recording
         
@@ -1213,7 +1259,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_orphanrecording_media(self, orphan_id, **kwargs):
+    def get_orphanrecording_media(self, orphan_id: str, **kwargs) -> 'Recording':
         """
         Gets the media of a single orphan recording
         A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
@@ -1315,7 +1361,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_orphanrecordings(self, **kwargs):
+    def get_orphanrecordings(self, **kwargs) -> 'OrphanRecordingListing':
         """
         Gets all orphan recordings
         
@@ -1411,7 +1457,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_batchrequest(self, job_id, **kwargs):
+    def get_recording_batchrequest(self, job_id: str, **kwargs) -> 'BatchDownloadJobStatusResult':
         """
         Get the status and results for a batch request job, only the user that submitted the job may retrieve results
         
@@ -1489,7 +1535,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_crossplatform_mediaretentionpolicies(self, **kwargs):
+    def get_recording_crossplatform_mediaretentionpolicies(self, **kwargs) -> 'PolicyEntityListing':
         """
         Gets media retention policy list with query options to filter on name and enabled.
         for a less verbose response, add summary=true to this endpoint
@@ -1594,7 +1640,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_crossplatform_mediaretentionpolicy(self, policy_id, **kwargs):
+    def get_recording_crossplatform_mediaretentionpolicy(self, policy_id: str, **kwargs) -> 'CrossPlatformPolicy':
         """
         Get a media retention policy
         
@@ -1672,7 +1718,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_job(self, job_id, **kwargs):
+    def get_recording_job(self, job_id: str, **kwargs) -> 'RecordingJob':
         """
         Get the status of the job associated with the job id.
         
@@ -1750,7 +1796,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_job_failedrecordings(self, job_id, **kwargs):
+    def get_recording_job_failedrecordings(self, job_id: str, **kwargs) -> 'FailedRecordingEntityListing':
         """
         Get IDs of recordings that the bulk job failed for
         
@@ -1840,7 +1886,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_jobs(self, **kwargs):
+    def get_recording_jobs(self, **kwargs) -> 'RecordingJobEntityListing':
         """
         Get the status of all jobs within the user's organization
         
@@ -1936,7 +1982,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_keyconfiguration(self, key_configuration_id, **kwargs):
+    def get_recording_keyconfiguration(self, key_configuration_id: str, **kwargs) -> 'RecordingEncryptionConfiguration':
         """
         Get the encryption key configurations
         
@@ -2014,7 +2060,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_keyconfigurations(self, **kwargs):
+    def get_recording_keyconfigurations(self, **kwargs) -> 'RecordingEncryptionConfigurationListing':
         """
         Get a list of key configurations data
         
@@ -2086,7 +2132,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_mediaretentionpolicies(self, **kwargs):
+    def get_recording_mediaretentionpolicies(self, **kwargs) -> 'PolicyEntityListing':
         """
         Gets media retention policy list with query options to filter on name and enabled.
         for a less verbose response, add summary=true to this endpoint
@@ -2191,7 +2237,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_mediaretentionpolicy(self, policy_id, **kwargs):
+    def get_recording_mediaretentionpolicy(self, policy_id: str, **kwargs) -> 'Policy':
         """
         Get a media retention policy
         
@@ -2269,7 +2315,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_recordingkeys(self, **kwargs):
+    def get_recording_recordingkeys(self, **kwargs) -> 'EncryptionKeyEntityListing':
         """
         Get encryption key list
         
@@ -2347,7 +2393,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_recordingkeys_rotationschedule(self, **kwargs):
+    def get_recording_recordingkeys_rotationschedule(self, **kwargs) -> 'KeyRotationSchedule':
         """
         Get key rotation schedule
         
@@ -2419,7 +2465,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_settings(self, **kwargs):
+    def get_recording_settings(self, **kwargs) -> 'RecordingSettings':
         """
         Get the Recording Settings for the Organization
         
@@ -2494,7 +2540,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recording_uploads_report(self, report_id, **kwargs):
+    def get_recording_uploads_report(self, report_id: str, **kwargs) -> 'RecordingUploadReport':
         """
         Get the status of a recording upload status report
         
@@ -2572,7 +2618,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recordings_retention_query(self, retention_threshold_days, **kwargs):
+    def get_recordings_retention_query(self, retention_threshold_days: int, **kwargs) -> 'RecordingRetentionCursorEntityListing':
         """
         Query for recording retention data
         
@@ -2656,7 +2702,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_recordings_screensessions(self, **kwargs):
+    def get_recordings_screensessions(self, **kwargs) -> 'ScreenRecordingSessionListing':
         """
         Retrieves a paged listing of screen recording sessions
         
@@ -2734,7 +2780,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_recording_crossplatform_mediaretentionpolicy(self, policy_id, body, **kwargs):
+    def patch_recording_crossplatform_mediaretentionpolicy(self, policy_id: str, body: 'CrossPlatformPolicyUpdate', **kwargs) -> 'CrossPlatformPolicy':
         """
         Patch a media retention policy
         
@@ -2818,7 +2864,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_recording_mediaretentionpolicy(self, policy_id, body, **kwargs):
+    def patch_recording_mediaretentionpolicy(self, policy_id: str, body: 'PolicyUpdate', **kwargs) -> 'Policy':
         """
         Patch a media retention policy
         
@@ -2902,7 +2948,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_recordings_screensession(self, recording_session_id, **kwargs):
+    def patch_recordings_screensession(self, recording_session_id: str, **kwargs) -> None:
         """
         Update a screen recording session
         
@@ -2983,7 +3029,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversation_recording_annotations(self, conversation_id, recording_id, body, **kwargs):
+    def post_conversation_recording_annotations(self, conversation_id: str, recording_id: str, body: 'Annotation', **kwargs) -> 'Annotation':
         """
         Create annotation
         
@@ -3073,7 +3119,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recording_batchrequests(self, body, **kwargs):
+    def post_recording_batchrequests(self, body: 'BatchDownloadJobSubmission', **kwargs) -> 'BatchDownloadJobSubmissionResult':
         """
         Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
         
@@ -3151,7 +3197,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recording_crossplatform_mediaretentionpolicies(self, body, **kwargs):
+    def post_recording_crossplatform_mediaretentionpolicies(self, body: 'CrossPlatformPolicyCreate', **kwargs) -> 'CrossPlatformPolicy':
         """
         Create media retention policy
         Policy does not work retroactively
@@ -3229,7 +3275,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recording_jobs(self, body, **kwargs):
+    def post_recording_jobs(self, body: 'RecordingJobsQuery', **kwargs) -> 'RecordingJob':
         """
         Create a recording bulk job.
         Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
@@ -3307,7 +3353,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recording_keyconfigurations(self, body, **kwargs):
+    def post_recording_keyconfigurations(self, body: 'RecordingEncryptionConfiguration', **kwargs) -> 'RecordingEncryptionConfiguration':
         """
         Setup configurations for encryption key creation
         
@@ -3385,7 +3431,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recording_keyconfigurations_validate(self, body, **kwargs):
+    def post_recording_keyconfigurations_validate(self, body: 'RecordingEncryptionConfiguration', **kwargs) -> 'RecordingEncryptionConfiguration':
         """
         Validate encryption key configurations without saving it
         
@@ -3463,7 +3509,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recording_localkeys(self, body, **kwargs):
+    def post_recording_localkeys(self, body: 'LocalEncryptionKeyRequest', **kwargs) -> 'EncryptionKey':
         """
         create a local key management recording key
         
@@ -3541,7 +3587,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recording_mediaretentionpolicies(self, body, **kwargs):
+    def post_recording_mediaretentionpolicies(self, body: 'PolicyCreate', **kwargs) -> 'Policy':
         """
         Create media retention policy
         Policy does not work retroactively
@@ -3619,7 +3665,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recording_recordingkeys(self, **kwargs):
+    def post_recording_recordingkeys(self, **kwargs) -> 'EncryptionKey':
         """
         Create encryption key
         
@@ -3691,7 +3737,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recording_uploads_reports(self, body, **kwargs):
+    def post_recording_uploads_reports(self, body: 'RecordingUploadReportRequest', **kwargs) -> 'RecordingUploadReport':
         """
         Creates a recording upload status report
         
@@ -3769,7 +3815,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recordings_deletionprotection(self, body, **kwargs):
+    def post_recordings_deletionprotection(self, body: 'ConversationDeletionProtectionQuery', **kwargs) -> List['AddressableEntityRef']:
         """
         Get a list of conversations with protected recordings
         
@@ -3847,7 +3893,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recordings_screensessions_acknowledge(self, body, **kwargs):
+    def post_recordings_screensessions_acknowledge(self, body: 'AcknowledgeScreenRecordingRequest', **kwargs) -> None:
         """
         Acknowledge a screen recording.
         
@@ -3925,7 +3971,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_recordings_screensessions_metadata(self, body, **kwargs):
+    def post_recordings_screensessions_metadata(self, body: 'ScreenRecordingMetaDataRequest', **kwargs) -> None:
         """
         Provide meta-data a screen recording.
         
@@ -4003,7 +4049,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_conversation_recording(self, conversation_id, recording_id, body, **kwargs):
+    def put_conversation_recording(self, conversation_id: str, recording_id: str, body: 'Recording', **kwargs) -> 'Recording':
         """
         Updates the retention records on a recording.
         Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
@@ -4096,7 +4142,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_conversation_recording_annotation(self, conversation_id, recording_id, annotation_id, body, **kwargs):
+    def put_conversation_recording_annotation(self, conversation_id: str, recording_id: str, annotation_id: str, body: 'Annotation', **kwargs) -> 'Annotation':
         """
         Update annotation
         
@@ -4192,7 +4238,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_orphanrecording(self, orphan_id, **kwargs):
+    def put_orphanrecording(self, orphan_id: str, **kwargs) -> 'Recording':
         """
         Updates an orphan recording to a regular recording with retention values
         If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
@@ -4273,7 +4319,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_recording_crossplatform_mediaretentionpolicy(self, policy_id, body, **kwargs):
+    def put_recording_crossplatform_mediaretentionpolicy(self, policy_id: str, body: 'CrossPlatformPolicy', **kwargs) -> 'CrossPlatformPolicy':
         """
         Update a media retention policy
         Policy does not work retroactively
@@ -4357,7 +4403,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_recording_job(self, job_id, body, **kwargs):
+    def put_recording_job(self, job_id: str, body: 'ExecuteRecordingJobsQuery', **kwargs) -> 'RecordingJob':
         """
         Execute the recording bulk job.
         A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
@@ -4441,7 +4487,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_recording_keyconfiguration(self, key_configuration_id, body, **kwargs):
+    def put_recording_keyconfiguration(self, key_configuration_id: str, body: 'RecordingEncryptionConfiguration', **kwargs) -> 'RecordingEncryptionConfiguration':
         """
         Update the encryption key configurations
         
@@ -4525,7 +4571,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_recording_mediaretentionpolicy(self, policy_id, body, **kwargs):
+    def put_recording_mediaretentionpolicy(self, policy_id: str, body: 'Policy', **kwargs) -> 'Policy':
         """
         Update a media retention policy
         Policy does not work retroactively
@@ -4609,7 +4655,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_recording_recordingkeys_rotationschedule(self, body, **kwargs):
+    def put_recording_recordingkeys_rotationschedule(self, body: 'KeyRotationSchedule', **kwargs) -> 'KeyRotationSchedule':
         """
         Update key rotation schedule
         
@@ -4687,7 +4733,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_recording_settings(self, body, **kwargs):
+    def put_recording_settings(self, body: 'RecordingSettings', **kwargs) -> 'RecordingSettings':
         """
         Update the Recording Settings for the Organization
         
@@ -4765,7 +4811,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_recordings_deletionprotection(self, **kwargs):
+    def put_recordings_deletionprotection(self, **kwargs) -> None:
         """
         Apply or revoke recording protection for conversations
         

@@ -23,12 +23,28 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import BotSearchResponseEntityListing
+from ..models import ErrorBody
+from ..models import PostTextRequest
+from ..models import PostTextResponse
+from ..models import TextBotFlowLaunchRequest
+from ..models import TextBotFlowLaunchResponse
+from ..models import TextBotFlowTurnRequest
+from ..models import TextBotFlowTurnResponse
 
 class TextbotsApi(object):
     """
@@ -46,7 +62,7 @@ class TextbotsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_textbots_bots_search(self, **kwargs):
+    def get_textbots_bots_search(self, **kwargs) -> 'BotSearchResponseEntityListing':
         """
         Find bots using the currently configured friendly name or ID.
         The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
@@ -130,7 +146,7 @@ class TextbotsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_textbots_botflows_session_turns(self, session_id, turn_request, **kwargs):
+    def post_textbots_botflows_session_turns(self, session_id: str, turn_request: 'TextBotFlowTurnRequest', **kwargs) -> 'TextBotFlowTurnResponse':
         """
         Issue a bot flow turn event
         Send a turn event to an executing bot flow and produce the next action to take.
@@ -214,7 +230,7 @@ class TextbotsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_textbots_botflows_sessions(self, launch_request, **kwargs):
+    def post_textbots_botflows_sessions(self, launch_request: 'TextBotFlowLaunchRequest', **kwargs) -> 'TextBotFlowLaunchResponse':
         """
         Create an execution instance of a bot flow definition.
         The launch is asynchronous; use the returned instance ID to post turns to it using 'POST /api/v2/textbots/botflows/sessions/{sessionId}/turns'.
@@ -292,7 +308,7 @@ class TextbotsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_textbots_bots_execute(self, post_text_request, **kwargs):
+    def post_textbots_bots_execute(self, post_text_request: 'PostTextRequest', **kwargs) -> 'PostTextResponse':
         """
         Send an intent to a bot to start a dialog/interact with it via text
         This will either start a bot with the given id or relay a communication to an existing bot session.

@@ -23,12 +23,23 @@ import sys
 import os
 import re
 
+from datetime import datetime
+from datetime import date
+
 # python 2 and python 3 compatibility library
 from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
 
+from typing import List
+from typing import Dict
+from typing import Any
+
+from ..models import Empty
+from ..models import DirectoryUserDevicesListing
+from ..models import ErrorBody
+from ..models import UserDevice
 
 class MobileDevicesApi(object):
     """
@@ -46,7 +57,7 @@ class MobileDevicesApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_mobiledevice(self, device_id, **kwargs):
+    def delete_mobiledevice(self, device_id: str, **kwargs) -> None:
         """
         Delete device
         
@@ -124,7 +135,7 @@ class MobileDevicesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_mobiledevice(self, device_id, **kwargs):
+    def get_mobiledevice(self, device_id: str, **kwargs) -> 'UserDevice':
         """
         Get device
         
@@ -202,7 +213,7 @@ class MobileDevicesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_mobiledevices(self, **kwargs):
+    def get_mobiledevices(self, **kwargs) -> 'DirectoryUserDevicesListing':
         """
         Get a list of all devices.
         
@@ -283,7 +294,7 @@ class MobileDevicesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_mobiledevices(self, body, **kwargs):
+    def post_mobiledevices(self, body: 'UserDevice', **kwargs) -> 'UserDevice':
         """
         Create User device
         
@@ -361,7 +372,7 @@ class MobileDevicesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_mobiledevice(self, device_id, **kwargs):
+    def put_mobiledevice(self, device_id: str, **kwargs) -> 'UserDevice':
         """
         Update device
         
