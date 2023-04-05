@@ -164,6 +164,8 @@ class MinerExecuteRequest(object):
         :param media_type: The media_type of this MinerExecuteRequest.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["Chat", "Call", "Message"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -191,6 +193,8 @@ class MinerExecuteRequest(object):
         :param participant_type: The participant_type of this MinerExecuteRequest.
         :type: str
         """
+        if isinstance(participant_type, int):
+            participant_type = str(participant_type)
         allowed_values = ["Customer", "Agent", "Both"]
         if participant_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for participant_type -> " + participant_type)

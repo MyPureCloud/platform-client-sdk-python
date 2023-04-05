@@ -104,6 +104,8 @@ class UpdateContactColumnActionSettings(object):
         :param update_option: The update_option of this UpdateContactColumnActionSettings.
         :type: str
         """
+        if isinstance(update_option, int):
+            update_option = str(update_option)
         allowed_values = ["Set", "Increment", "Decrement", "CurrentTime"]
         if update_option.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for update_option -> " + update_option)

@@ -104,6 +104,8 @@ class SupportCenterCustomMessage(object):
         :param type: The type of this SupportCenterCustomMessage.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Welcome", "Fallback"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

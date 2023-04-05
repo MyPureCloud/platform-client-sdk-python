@@ -148,6 +148,8 @@ class TopicRequest(object):
         :param strictness: The strictness of this TopicRequest.
         :type: str
         """
+        if isinstance(strictness, int):
+            strictness = str(strictness)
         allowed_values = ["1", "55", "65", "72", "85", "90"]
         if strictness.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for strictness -> " + strictness)
@@ -247,6 +249,8 @@ class TopicRequest(object):
         :param participants: The participants of this TopicRequest.
         :type: str
         """
+        if isinstance(participants, int):
+            participants = str(participants)
         allowed_values = ["External", "Internal", "All"]
         if participants.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for participants -> " + participants)

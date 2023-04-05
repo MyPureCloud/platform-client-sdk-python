@@ -83,6 +83,8 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse(
         :param type: The type of this V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Offering", "OfferingExpired", "OfferingAccepted", "OfferingRejected"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

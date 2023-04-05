@@ -443,6 +443,8 @@ class EmailMessage(object):
         :param state: The state of this EmailMessage.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Created", "Ready", "Edited"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -470,6 +472,8 @@ class EmailMessage(object):
         :param draft_type: The draft_type of this EmailMessage.
         :type: str
         """
+        if isinstance(draft_type, int):
+            draft_type = str(draft_type)
         allowed_values = ["Reply", "ReplyAll", "Forward"]
         if draft_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for draft_type -> " + draft_type)

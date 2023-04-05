@@ -83,6 +83,8 @@ class ScimV2PatchOperation(object):
         :param op: The op of this ScimV2PatchOperation.
         :type: str
         """
+        if isinstance(op, int):
+            op = str(op)
         allowed_values = ["add", "replace", "remove"]
         if op.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for op -> " + op)

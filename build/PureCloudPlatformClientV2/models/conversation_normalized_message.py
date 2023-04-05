@@ -163,6 +163,8 @@ class ConversationNormalizedMessage(object):
         :param type: The type of this ConversationNormalizedMessage.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Text", "Structured", "Receipt", "Event", "Message", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -262,6 +264,8 @@ class ConversationNormalizedMessage(object):
         :param status: The status of this ConversationNormalizedMessage.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Sent", "Delivered", "Read", "Failed", "Published", "Removed"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -313,6 +317,8 @@ class ConversationNormalizedMessage(object):
         :param originating_entity: The originating_entity of this ConversationNormalizedMessage.
         :type: str
         """
+        if isinstance(originating_entity, int):
+            originating_entity = str(originating_entity)
         allowed_values = ["Human", "Bot"]
         if originating_entity.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for originating_entity -> " + originating_entity)
@@ -364,6 +370,8 @@ class ConversationNormalizedMessage(object):
         :param direction: The direction of this ConversationNormalizedMessage.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["Inbound", "Outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)

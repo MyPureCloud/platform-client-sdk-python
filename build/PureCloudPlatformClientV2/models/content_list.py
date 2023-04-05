@@ -122,6 +122,8 @@ class ContentList(object):
         :param list_type: The list_type of this ContentList.
         :type: str
         """
+        if isinstance(list_type, int):
+            list_type = str(list_type)
         allowed_values = ["Selection", "Vertical"]
         if list_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for list_type -> " + list_type)

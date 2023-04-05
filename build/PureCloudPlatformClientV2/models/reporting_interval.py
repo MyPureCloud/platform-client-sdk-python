@@ -80,6 +80,8 @@ class ReportingInterval(object):
         :param interval_type: The interval_type of this ReportingInterval.
         :type: str
         """
+        if isinstance(interval_type, int):
+            interval_type = str(interval_type)
         allowed_values = ["Day", "Week", "Month"]
         if interval_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for interval_type -> " + interval_type)

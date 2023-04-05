@@ -133,6 +133,8 @@ class CampaignRuleCondition(object):
         :param condition_type: The condition_type of this CampaignRuleCondition.
         :type: str
         """
+        if isinstance(condition_type, int):
+            condition_type = str(condition_type)
         allowed_values = ["campaignProgress", "campaignAgents"]
         if condition_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for condition_type -> " + condition_type)

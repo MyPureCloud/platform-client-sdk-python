@@ -104,6 +104,8 @@ class ConversationEventTopicVoicemail(object):
         :param upload_status: The upload_status of this ConversationEventTopicVoicemail.
         :type: str
         """
+        if isinstance(upload_status, int):
+            upload_status = str(upload_status)
         allowed_values = ["pending", "complete", "failed", "timeout", "none"]
         if upload_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for upload_status -> " + upload_status)

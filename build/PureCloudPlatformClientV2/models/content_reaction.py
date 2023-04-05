@@ -80,6 +80,8 @@ class ContentReaction(object):
         :param reaction_type: The reaction_type of this ContentReaction.
         :type: str
         """
+        if isinstance(reaction_type, int):
+            reaction_type = str(reaction_type)
         allowed_values = ["Like", "Love", "Wow", "Haha", "Sad", "Angry", "Thankful", "Pride", "Care"]
         if reaction_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reaction_type -> " + reaction_type)

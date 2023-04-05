@@ -317,6 +317,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param metric: The metric of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["nBlindTransferred", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nTransferred", "oExternalMediaCount", "oMediaCount", "oMessageTurn", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tBarging", "tCallback", "tCallbackComplete", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tDialing", "tFirstConnect", "tFirstDial", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -656,6 +658,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param conversation_initiator: The conversation_initiator of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(conversation_initiator, int):
+            conversation_initiator = str(conversation_initiator)
         allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
         if conversation_initiator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for conversation_initiator -> " + conversation_initiator)
@@ -755,6 +759,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param delivery_status: The delivery_status of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(delivery_status, int):
+            delivery_status = str(delivery_status)
         allowed_values = ["DeliveryFailed", "DeliverySuccess", "Failed", "Queued", "Read", "Received", "Sent"]
         if delivery_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for delivery_status -> " + delivery_status)
@@ -806,6 +812,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param direction: The direction of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -833,6 +841,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param disconnect_type: The disconnect_type of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["client", "conferenceTransfer", "consultTransfer", "endpoint", "error", "forwardTransfer", "noAnswerTransfer", "notAvailableTransfer", "other", "peer", "spam", "system", "timeout", "transfer", "transportFailure", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
@@ -1124,6 +1134,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param flagged_reason: The flagged_reason of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(flagged_reason, int):
+            flagged_reason = str(flagged_reason)
         allowed_values = ["general"]
         if flagged_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flagged_reason -> " + flagged_reason)
@@ -1463,6 +1475,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param media_type: The media_type of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["callback", "chat", "cobrowse", "email", "message", "screenshare", "unknown", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -1514,6 +1528,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param originating_direction: The originating_direction of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(originating_direction, int):
+            originating_direction = str(originating_direction)
         allowed_values = ["inbound", "outbound"]
         if originating_direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for originating_direction -> " + originating_direction)
@@ -1685,6 +1701,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param purpose: The purpose of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(purpose, int):
+            purpose = str(purpose)
         allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
         if purpose.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for purpose -> " + purpose)
@@ -2120,6 +2138,8 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         :param used_routing: The used_routing of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
         """
+        if isinstance(used_routing, int):
+            used_routing = str(used_routing)
         allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)

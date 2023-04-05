@@ -86,6 +86,8 @@ class WorkitemsEventsNotificationDelta(object):
         :param op: The op of this WorkitemsEventsNotificationDelta.
         :type: str
         """
+        if isinstance(op, int):
+            op = str(op)
         allowed_values = ["add", "remove", "replace", "unknown"]
         if op.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for op -> " + op)

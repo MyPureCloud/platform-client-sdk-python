@@ -86,6 +86,8 @@ class TranscriptionSettings(object):
         :param transcription: The transcription of this TranscriptionSettings.
         :type: str
         """
+        if isinstance(transcription, int):
+            transcription = str(transcription)
         allowed_values = ["Disabled", "EnabledGlobally", "EnabledQueueFlow"]
         if transcription.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for transcription -> " + transcription)

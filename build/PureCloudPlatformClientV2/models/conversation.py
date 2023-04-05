@@ -336,6 +336,8 @@ class Conversation(object):
         :param recording_state: The recording_state of this Conversation.
         :type: str
         """
+        if isinstance(recording_state, int):
+            recording_state = str(recording_state)
         allowed_values = ["ACTIVE", "PAUSED", "NONE"]
         if recording_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for recording_state -> " + recording_state)
@@ -363,6 +365,8 @@ class Conversation(object):
         :param state: The state of this Conversation.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

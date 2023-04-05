@@ -828,6 +828,8 @@ class ConversationEventTopicParticipant(object):
         :param screen_recording_state: The screen_recording_state of this ConversationEventTopicParticipant.
         :type: str
         """
+        if isinstance(screen_recording_state, int):
+            screen_recording_state = str(screen_recording_state)
         allowed_values = ["requested", "active", "paused", "stopped", "error", "timeout"]
         if screen_recording_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for screen_recording_state -> " + screen_recording_state)

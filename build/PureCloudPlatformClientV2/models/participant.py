@@ -756,6 +756,8 @@ class Participant(object):
         :param wrapup_prompt: The wrapup_prompt of this Participant.
         :type: str
         """
+        if isinstance(wrapup_prompt, int):
+            wrapup_prompt = str(wrapup_prompt)
         allowed_values = ["mandatory", "optional", "agentRequested", "timeout", "forcedTimeout"]
         if wrapup_prompt.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for wrapup_prompt -> " + wrapup_prompt)
@@ -1239,6 +1241,8 @@ class Participant(object):
         :param screen_recording_state: The screen_recording_state of this Participant.
         :type: str
         """
+        if isinstance(screen_recording_state, int):
+            screen_recording_state = str(screen_recording_state)
         allowed_values = ["requested", "active", "paused", "stopped", "error", "timeout"]
         if screen_recording_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for screen_recording_state -> " + screen_recording_state)
@@ -1266,6 +1270,8 @@ class Participant(object):
         :param flagged_reason: The flagged_reason of this Participant.
         :type: str
         """
+        if isinstance(flagged_reason, int):
+            flagged_reason = str(flagged_reason)
         allowed_values = ["general"]
         if flagged_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flagged_reason -> " + flagged_reason)

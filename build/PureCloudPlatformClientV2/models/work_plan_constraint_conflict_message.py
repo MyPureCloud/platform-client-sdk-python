@@ -82,6 +82,8 @@ class WorkPlanConstraintConflictMessage(object):
         :param type: The type of this WorkPlanConstraintConflictMessage.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["UnknownFix", "WithPotentialFixes"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

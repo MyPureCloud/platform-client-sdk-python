@@ -80,6 +80,8 @@ class QualityAuditQueryFilter(object):
         :param pcProperty: The pcProperty of this QualityAuditQueryFilter.
         :type: str
         """
+        if isinstance(pcProperty, int):
+            pcProperty = str(pcProperty)
         allowed_values = ["UserId", "TrusteeOrganizationId", "TrusteeOnlyAudits", "ClientId", "Action", "EntityType", "EntityId", "ConversationId", "ServiceName"]
         if pcProperty.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for pcProperty -> " + pcProperty)

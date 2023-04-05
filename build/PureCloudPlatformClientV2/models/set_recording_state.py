@@ -77,6 +77,8 @@ class SetRecordingState(object):
         :param recording_state: The recording_state of this SetRecordingState.
         :type: str
         """
+        if isinstance(recording_state, int):
+            recording_state = str(recording_state)
         allowed_values = ["ACTIVE", "PAUSED", "NONE"]
         if recording_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for recording_state -> " + recording_state)

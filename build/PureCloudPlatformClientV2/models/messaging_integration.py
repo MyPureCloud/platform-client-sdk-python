@@ -213,6 +213,8 @@ class MessagingIntegration(object):
         :param status: The status of this MessagingIntegration.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Active", "Inactive", "Error", "Starting", "Incomplete", "Deleting", "DeletionFailed"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -240,6 +242,8 @@ class MessagingIntegration(object):
         :param messenger_type: The messenger_type of this MessagingIntegration.
         :type: str
         """
+        if isinstance(messenger_type, int):
+            messenger_type = str(messenger_type)
         allowed_values = ["sms", "facebook", "twitter", "line", "whatsapp", "webmessaging", "instagram", "open"]
         if messenger_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for messenger_type -> " + messenger_type)

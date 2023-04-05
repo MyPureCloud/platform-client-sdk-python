@@ -341,6 +341,8 @@ class EdgeTrunkBase(object):
         :param state: The state of this EdgeTrunkBase.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -464,6 +466,8 @@ class EdgeTrunkBase(object):
         :param trunk_type: The trunk_type of this EdgeTrunkBase.
         :type: str
         """
+        if isinstance(trunk_type, int):
+            trunk_type = str(trunk_type)
         allowed_values = ["EXTERNAL", "PHONE", "EDGE"]
         if trunk_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for trunk_type -> " + trunk_type)

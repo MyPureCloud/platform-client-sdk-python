@@ -4099,6 +4099,8 @@ class ViewFilter(object):
         :param available_dashboard: The available_dashboard of this ViewFilter.
         :type: str
         """
+        if isinstance(available_dashboard, int):
+            available_dashboard = str(available_dashboard)
         allowed_values = ["Public", "Private"]
         if available_dashboard.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for available_dashboard -> " + available_dashboard)

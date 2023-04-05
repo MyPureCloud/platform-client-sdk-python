@@ -110,6 +110,8 @@ class Parameter(object):
         :param parameter_type: The parameter_type of this Parameter.
         :type: str
         """
+        if isinstance(parameter_type, int):
+            parameter_type = str(parameter_type)
         allowed_values = ["UUID", "STRING", "UUIDLIST", "STRINGLIST"]
         if parameter_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for parameter_type -> " + parameter_type)
@@ -137,6 +139,8 @@ class Parameter(object):
         :param domain: The domain of this Parameter.
         :type: str
         """
+        if isinstance(domain, int):
+            domain = str(domain)
         allowed_values = ["USERID", "QUEUEID", "MEDIATYPE", "DIALERCAMPAIGNID", "QMEVALFORMID", "UNKNOWN"]
         if domain.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for domain -> " + domain)

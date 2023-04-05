@@ -106,6 +106,8 @@ class RecordingJobsQuery(object):
         :param action: The action of this RecordingJobsQuery.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["DELETE", "EXPORT"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

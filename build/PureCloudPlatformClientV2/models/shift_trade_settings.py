@@ -211,6 +211,8 @@ class ShiftTradeSettings(object):
         :param unequal_paid: The unequal_paid of this ShiftTradeSettings.
         :type: str
         """
+        if isinstance(unequal_paid, int):
+            unequal_paid = str(unequal_paid)
         allowed_values = ["Allow", "Disallow", "AdminReview"]
         if unequal_paid.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for unequal_paid -> " + unequal_paid)
@@ -238,6 +240,8 @@ class ShiftTradeSettings(object):
         :param one_sided: The one_sided of this ShiftTradeSettings.
         :type: str
         """
+        if isinstance(one_sided, int):
+            one_sided = str(one_sided)
         allowed_values = ["Allow", "Disallow", "AdminReview"]
         if one_sided.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for one_sided -> " + one_sided)
@@ -265,6 +269,8 @@ class ShiftTradeSettings(object):
         :param weekly_min_paid_violations: The weekly_min_paid_violations of this ShiftTradeSettings.
         :type: str
         """
+        if isinstance(weekly_min_paid_violations, int):
+            weekly_min_paid_violations = str(weekly_min_paid_violations)
         allowed_values = ["Allow", "Disallow", "AdminReview"]
         if weekly_min_paid_violations.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for weekly_min_paid_violations -> " + weekly_min_paid_violations)
@@ -292,6 +298,8 @@ class ShiftTradeSettings(object):
         :param weekly_max_paid_violations: The weekly_max_paid_violations of this ShiftTradeSettings.
         :type: str
         """
+        if isinstance(weekly_max_paid_violations, int):
+            weekly_max_paid_violations = str(weekly_max_paid_violations)
         allowed_values = ["Allow", "Disallow", "AdminReview"]
         if weekly_max_paid_violations.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for weekly_max_paid_violations -> " + weekly_max_paid_violations)

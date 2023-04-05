@@ -200,6 +200,8 @@ class WhatsAppIntegrationUpdateRequest(object):
         :param action: The action of this WhatsAppIntegrationUpdateRequest.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["Activate", "Confirm"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
@@ -227,6 +229,8 @@ class WhatsAppIntegrationUpdateRequest(object):
         :param authentication_method: The authentication_method of this WhatsAppIntegrationUpdateRequest.
         :type: str
         """
+        if isinstance(authentication_method, int):
+            authentication_method = str(authentication_method)
         allowed_values = ["Sms", "Voice"]
         if authentication_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for authentication_method -> " + authentication_method)

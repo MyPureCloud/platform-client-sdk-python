@@ -239,6 +239,8 @@ class GroupCreate(object):
         :param state: The state of this GroupCreate.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -290,6 +292,8 @@ class GroupCreate(object):
         :param type: The type of this GroupCreate.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["official", "social"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -389,6 +393,8 @@ class GroupCreate(object):
         :param visibility: The visibility of this GroupCreate.
         :type: str
         """
+        if isinstance(visibility, int):
+            visibility = str(visibility)
         allowed_values = ["public", "owners", "members"]
         if visibility.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for visibility -> " + visibility)

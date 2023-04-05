@@ -281,6 +281,8 @@ class TimeOffRequestResponse(object):
         :param status: The status of this TimeOffRequestResponse.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["PENDING", "APPROVED", "DENIED", "CANCELED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -308,6 +310,8 @@ class TimeOffRequestResponse(object):
         :param substatus: The substatus of this TimeOffRequestResponse.
         :type: str
         """
+        if isinstance(substatus, int):
+            substatus = str(substatus)
         allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "InsufficientBalance", "InvalidDailyDuration", "OutsideShift", "RemovedFromWaitlist", "Waitlisted"]
         if substatus.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for substatus -> " + substatus)

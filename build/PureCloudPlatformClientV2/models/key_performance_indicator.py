@@ -164,6 +164,8 @@ class KeyPerformanceIndicator(object):
         :param optimization_type: The optimization_type of this KeyPerformanceIndicator.
         :type: str
         """
+        if isinstance(optimization_type, int):
+            optimization_type = str(optimization_type)
         allowed_values = ["Maximization", "Minimization"]
         if optimization_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for optimization_type -> " + optimization_type)
@@ -263,6 +265,8 @@ class KeyPerformanceIndicator(object):
         :param kpi_type: The kpi_type of this KeyPerformanceIndicator.
         :type: str
         """
+        if isinstance(kpi_type, int):
+            kpi_type = str(kpi_type)
         allowed_values = ["SalesConversion", "Churn", "Retention", "SalesValue", "HandleTime", "NumberOfTransfers"]
         if kpi_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for kpi_type -> " + kpi_type)
@@ -290,6 +294,8 @@ class KeyPerformanceIndicator(object):
         :param source: The source of this KeyPerformanceIndicator.
         :type: str
         """
+        if isinstance(source, int):
+            source = str(source)
         allowed_values = ["WrapUpCode", "Outcome", "None"]
         if source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for source -> " + source)
@@ -365,6 +371,8 @@ class KeyPerformanceIndicator(object):
         :param status: The status of this KeyPerformanceIndicator.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Enabled", "Disabled"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -392,6 +400,8 @@ class KeyPerformanceIndicator(object):
         :param kpi_group: The kpi_group of this KeyPerformanceIndicator.
         :type: str
         """
+        if isinstance(kpi_group, int):
+            kpi_group = str(kpi_group)
         allowed_values = ["Standard", "Custom"]
         if kpi_group.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for kpi_group -> " + kpi_group)

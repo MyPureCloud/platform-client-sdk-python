@@ -167,6 +167,8 @@ class DialerRule(object):
         :param category: The category of this DialerRule.
         :type: str
         """
+        if isinstance(category, int):
+            category = str(category)
         allowed_values = ["DIALER_PRECALL", "DIALER_WRAPUP"]
         if category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for category -> " + category)

@@ -121,6 +121,8 @@ class MediaParticipantRequest(object):
         :param state: The state of this MediaParticipantRequest.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

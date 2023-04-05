@@ -296,6 +296,8 @@ class Response(object):
         :param interaction_type: The interaction_type of this Response.
         :type: str
         """
+        if isinstance(interaction_type, int):
+            interaction_type = str(interaction_type)
         allowed_values = ["chat", "email", "twitter"]
         if interaction_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for interaction_type -> " + interaction_type)
@@ -371,6 +373,8 @@ class Response(object):
         :param response_type: The response_type of this Response.
         :type: str
         """
+        if isinstance(response_type, int):
+            response_type = str(response_type)
         allowed_values = ["MessagingTemplate", "CampaignSmsTemplate", "CampaignEmailTemplate", "Footer"]
         if response_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for response_type -> " + response_type)

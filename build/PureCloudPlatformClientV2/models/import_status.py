@@ -89,6 +89,8 @@ class ImportStatus(object):
         :param state: The state of this ImportStatus.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["IN_PROGRESS", "FAILED"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

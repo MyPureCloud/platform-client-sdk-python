@@ -193,6 +193,8 @@ class RecordingEncryptionConfiguration(object):
         :param key_configuration_type: The key_configuration_type of this RecordingEncryptionConfiguration.
         :type: str
         """
+        if isinstance(key_configuration_type, int):
+            key_configuration_type = str(key_configuration_type)
         allowed_values = ["KmsSymmetric", "LocalKeyManager", "Native", "None"]
         if key_configuration_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for key_configuration_type -> " + key_configuration_type)

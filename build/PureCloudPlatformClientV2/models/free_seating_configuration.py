@@ -80,6 +80,8 @@ class FreeSeatingConfiguration(object):
         :param free_seating_state: The free_seating_state of this FreeSeatingConfiguration.
         :type: str
         """
+        if isinstance(free_seating_state, int):
+            free_seating_state = str(free_seating_state)
         allowed_values = ["ON", "OFF", "PARTIAL"]
         if free_seating_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for free_seating_state -> " + free_seating_state)

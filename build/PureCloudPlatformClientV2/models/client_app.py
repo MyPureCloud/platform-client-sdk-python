@@ -201,6 +201,8 @@ class ClientApp(object):
         :param intended_state: The intended_state of this ClientApp.
         :type: str
         """
+        if isinstance(intended_state, int):
+            intended_state = str(intended_state)
         allowed_values = ["ENABLED", "DISABLED", "DELETED"]
         if intended_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for intended_state -> " + intended_state)

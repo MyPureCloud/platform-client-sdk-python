@@ -119,6 +119,8 @@ class TransferResponse(object):
         :param state: The state of this TransferResponse.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Pending", "Active", "Complete", "Canceled", "Failed", "Timeout", "Unknown"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -218,6 +220,8 @@ class TransferResponse(object):
         :param transfer_type: The transfer_type of this TransferResponse.
         :type: str
         """
+        if isinstance(transfer_type, int):
+            transfer_type = str(transfer_type)
         allowed_values = ["Attended", "Unattended"]
         if transfer_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for transfer_type -> " + transfer_type)

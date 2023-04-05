@@ -363,6 +363,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param metric: The metric of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["nFlow", "nFlowMilestone", "nFlowOutcome", "nFlowOutcomeFailed", "oFlowMilestone", "tFlow", "tFlowDisconnect", "tFlowExit", "tFlowOutcome"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -702,6 +704,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param conversation_initiator: The conversation_initiator of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(conversation_initiator, int):
+            conversation_initiator = str(conversation_initiator)
         allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
         if conversation_initiator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for conversation_initiator -> " + conversation_initiator)
@@ -801,6 +805,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param delivery_status: The delivery_status of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(delivery_status, int):
+            delivery_status = str(delivery_status)
         allowed_values = ["DeliveryFailed", "DeliverySuccess", "Failed", "Queued", "Read", "Received", "Sent"]
         if delivery_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for delivery_status -> " + delivery_status)
@@ -852,6 +858,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param direction: The direction of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -879,6 +887,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param disconnect_type: The disconnect_type of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["client", "conferenceTransfer", "consultTransfer", "endpoint", "error", "forwardTransfer", "noAnswerTransfer", "notAvailableTransfer", "other", "peer", "spam", "system", "timeout", "transfer", "transportFailure", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
@@ -1050,6 +1060,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param entry_type: The entry_type of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(entry_type, int):
+            entry_type = str(entry_type)
         allowed_values = ["agent", "direct", "dnis", "flow", "outbound"]
         if entry_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entry_type -> " + entry_type)
@@ -1269,6 +1281,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param flagged_reason: The flagged_reason of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(flagged_reason, int):
+            flagged_reason = str(flagged_reason)
         allowed_values = ["general"]
         if flagged_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flagged_reason -> " + flagged_reason)
@@ -1416,6 +1430,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param flow_type: The flow_type of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(flow_type, int):
+            flow_type = str(flow_type)
         allowed_values = ["bot", "commonmodule", "digitalbot", "inboundcall", "inboundchat", "inboundemail", "inboundshortmessage", "inqueuecall", "inqueueemail", "inqueueshortmessage", "outboundcall", "securecall", "speech", "surveyinvite", "voice", "voicemail", "workflow", "workitem"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flow_type -> " + flow_type)
@@ -1731,6 +1747,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param media_type: The media_type of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["callback", "chat", "cobrowse", "email", "message", "screenshare", "unknown", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -1782,6 +1800,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param originating_direction: The originating_direction of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(originating_direction, int):
+            originating_direction = str(originating_direction)
         allowed_values = ["inbound", "outbound"]
         if originating_direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for originating_direction -> " + originating_direction)
@@ -1953,6 +1973,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param purpose: The purpose of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(purpose, int):
+            purpose = str(purpose)
         allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
         if purpose.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for purpose -> " + purpose)
@@ -2508,6 +2530,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         :param used_routing: The used_routing of this FlowMetricsTopicFlowMetricRecord.
         :type: str
         """
+        if isinstance(used_routing, int):
+            used_routing = str(used_routing)
         allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)

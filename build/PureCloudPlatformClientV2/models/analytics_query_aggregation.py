@@ -91,6 +91,8 @@ class AnalyticsQueryAggregation(object):
         :param type: The type of this AnalyticsQueryAggregation.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["termFrequency", "numericRange"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

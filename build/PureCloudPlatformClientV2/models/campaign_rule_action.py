@@ -137,6 +137,8 @@ class CampaignRuleAction(object):
         :param action_type: The action_type of this CampaignRuleAction.
         :type: str
         """
+        if isinstance(action_type, int):
+            action_type = str(action_type)
         allowed_values = ["turnOnCampaign", "turnOffCampaign", "turnOnSequence", "turnOffSequence", "setCampaignPriority", "recycleCampaign", "setCampaignDialingMode"]
         if action_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_type -> " + action_type)

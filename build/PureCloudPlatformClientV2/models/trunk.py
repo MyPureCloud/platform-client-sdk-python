@@ -384,6 +384,8 @@ class Trunk(object):
         :param state: The state of this Trunk.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -459,6 +461,8 @@ class Trunk(object):
         :param trunk_type: The trunk_type of this Trunk.
         :type: str
         """
+        if isinstance(trunk_type, int):
+            trunk_type = str(trunk_type)
         allowed_values = ["EXTERNAL", "PHONE", "EDGE"]
         if trunk_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for trunk_type -> " + trunk_type)
@@ -750,6 +754,8 @@ class Trunk(object):
         :param options_enabled_status: The options_enabled_status of this Trunk.
         :type: str
         """
+        if isinstance(options_enabled_status, int):
+            options_enabled_status = str(options_enabled_status)
         allowed_values = ["ENABLED", "DISABLED", "NOT_SUPPORTED"]
         if options_enabled_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for options_enabled_status -> " + options_enabled_status)
@@ -777,6 +783,8 @@ class Trunk(object):
         :param registers_enabled_status: The registers_enabled_status of this Trunk.
         :type: str
         """
+        if isinstance(registers_enabled_status, int):
+            registers_enabled_status = str(registers_enabled_status)
         allowed_values = ["ENABLED", "DISABLED", "NOT_SUPPORTED"]
         if registers_enabled_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for registers_enabled_status -> " + registers_enabled_status)

@@ -194,6 +194,8 @@ class Miner(object):
         :param language: The language of this Miner.
         :type: str
         """
+        if isinstance(language, int):
+            language = str(language)
         allowed_values = ["en-us", "en-gb", "en-au", "en-in", "en-za", "es-us", "es-es", "fr-fr", "fr-ca", "de-de"]
         if language.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for language -> " + language)
@@ -221,6 +223,8 @@ class Miner(object):
         :param miner_type: The miner_type of this Miner.
         :type: str
         """
+        if isinstance(miner_type, int):
+            miner_type = str(miner_type)
         allowed_values = ["Intent", "Topic"]
         if miner_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for miner_type -> " + miner_type)
@@ -272,6 +276,8 @@ class Miner(object):
         :param status: The status of this Miner.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["NotStarted", "FetchingConversationIds", "ConversationIdsFetched", "ConversationIdsFetchError", "FetchingConversations", "ConversationsFetched", "ConversationsFetchError", "Queued", "QueuingError", "MiningStarted", "MaskingUtterances", "MaskingError", "ComputingAnalytics", "ComputingAnalyticsError", "MiningCompleted", "MiningError", "ModelValidationError", "Deleted"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -467,6 +473,8 @@ class Miner(object):
         :param media_type: The media_type of this Miner.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["Chat", "Call", "Message"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -494,6 +502,8 @@ class Miner(object):
         :param participant_type: The participant_type of this Miner.
         :type: str
         """
+        if isinstance(participant_type, int):
+            participant_type = str(participant_type)
         allowed_values = ["Customer", "Agent", "Both"]
         if participant_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for participant_type -> " + participant_type)

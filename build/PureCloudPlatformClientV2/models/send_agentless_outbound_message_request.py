@@ -142,6 +142,8 @@ class SendAgentlessOutboundMessageRequest(object):
         :param to_address_messenger_type: The to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
         :type: str
         """
+        if isinstance(to_address_messenger_type, int):
+            to_address_messenger_type = str(to_address_messenger_type)
         allowed_values = ["sms", "whatsapp", "open"]
         if to_address_messenger_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for to_address_messenger_type -> " + to_address_messenger_type)

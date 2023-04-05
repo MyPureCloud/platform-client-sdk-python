@@ -175,6 +175,8 @@ class AnalyticsConversation(object):
         :param conversation_initiator: The conversation_initiator of this AnalyticsConversation.
         :type: str
         """
+        if isinstance(conversation_initiator, int):
+            conversation_initiator = str(conversation_initiator)
         allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
         if conversation_initiator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for conversation_initiator -> " + conversation_initiator)
@@ -370,6 +372,8 @@ class AnalyticsConversation(object):
         :param originating_direction: The originating_direction of this AnalyticsConversation.
         :type: str
         """
+        if isinstance(originating_direction, int):
+            originating_direction = str(originating_direction)
         allowed_values = ["inbound", "outbound"]
         if originating_direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for originating_direction -> " + originating_direction)

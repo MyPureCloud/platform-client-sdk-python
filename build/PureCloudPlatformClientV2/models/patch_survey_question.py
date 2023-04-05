@@ -89,6 +89,8 @@ class PatchSurveyQuestion(object):
         :param type: The type of this PatchSurveyQuestion.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["text", "hidden", "select", "checkbox", "textarea"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -140,6 +142,8 @@ class PatchSurveyQuestion(object):
         :param customer_property: The customer_property of this PatchSurveyQuestion.
         :type: str
         """
+        if isinstance(customer_property, int):
+            customer_property = str(customer_property)
         allowed_values = ["givenName", "familyName", "email", "phone", "gender", "companyName"]
         if customer_property.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for customer_property -> " + customer_property)

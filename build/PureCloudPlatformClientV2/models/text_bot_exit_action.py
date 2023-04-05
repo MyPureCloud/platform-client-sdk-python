@@ -96,6 +96,8 @@ class TextBotExitAction(object):
         :param reason: The reason of this TextBotExitAction.
         :type: str
         """
+        if isinstance(reason, int):
+            reason = str(reason)
         allowed_values = ["TriggeredByUser", "AgentRequestedByUser", "TriggeredByFlow", "Error", "RecognitionFailure"]
         if reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reason -> " + reason)

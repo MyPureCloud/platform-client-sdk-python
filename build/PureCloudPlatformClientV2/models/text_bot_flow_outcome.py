@@ -115,6 +115,8 @@ class TextBotFlowOutcome(object):
         :param outcome_value: The outcome_value of this TextBotFlowOutcome.
         :type: str
         """
+        if isinstance(outcome_value, int):
+            outcome_value = str(outcome_value)
         allowed_values = ["SUCCESS", "FAILURE"]
         if outcome_value.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for outcome_value -> " + outcome_value)

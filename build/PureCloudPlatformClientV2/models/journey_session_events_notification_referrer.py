@@ -293,6 +293,8 @@ class JourneySessionEventsNotificationReferrer(object):
         :param medium: The medium of this JourneySessionEventsNotificationReferrer.
         :type: str
         """
+        if isinstance(medium, int):
+            medium = str(medium)
         allowed_values = ["internal", "search", "social", "email", "unknown", "paid"]
         if medium.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for medium -> " + medium)

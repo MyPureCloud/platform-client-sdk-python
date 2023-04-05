@@ -248,6 +248,8 @@ class AnalyticsConversationSegment(object):
         :param disconnect_type: The disconnect_type of this AnalyticsConversationSegment.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["client", "conferenceTransfer", "consultTransfer", "endpoint", "error", "forwardTransfer", "noAnswerTransfer", "notAvailableTransfer", "other", "peer", "spam", "system", "timeout", "transfer", "transportFailure", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
@@ -491,6 +493,8 @@ class AnalyticsConversationSegment(object):
         :param segment_type: The segment_type of this AnalyticsConversationSegment.
         :type: str
         """
+        if isinstance(segment_type, int):
+            segment_type = str(segment_type)
         allowed_values = ["alert", "barging", "callback", "coaching", "contacting", "converting", "delay", "dialing", "hold", "interact", "ivr", "monitoring", "scheduled", "sharing", "system", "transmitting", "unknown", "uploading", "voicemail", "wrapup"]
         if segment_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for segment_type -> " + segment_type)

@@ -196,6 +196,8 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :param dimension: The dimension of this KlaxonInteractionStatsAlertsTopicInteractionStatAlert.
         :type: str
         """
+        if isinstance(dimension, int):
+            dimension = str(dimension)
         allowed_values = ["queueId", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
@@ -271,6 +273,8 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :param metric: The metric of this KlaxonInteractionStatsAlertsTopicInteractionStatAlert.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["tAbandon", "tAnswered", "tTalk", "nOffered", "tHandle", "nTransferred", "oServiceLevel", "tWait", "tHeld", "tAcw"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -298,6 +302,8 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :param media_type: The media_type of this KlaxonInteractionStatsAlertsTopicInteractionStatAlert.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["voice", "chat", "email", "callback", "message"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -325,6 +331,8 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :param numeric_range: The numeric_range of this KlaxonInteractionStatsAlertsTopicInteractionStatAlert.
         :type: str
         """
+        if isinstance(numeric_range, int):
+            numeric_range = str(numeric_range)
         allowed_values = ["gt", "gte", "lt", "lte", "eq", "ne"]
         if numeric_range.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for numeric_range -> " + numeric_range)
@@ -352,6 +360,8 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         :param statistic: The statistic of this KlaxonInteractionStatsAlertsTopicInteractionStatAlert.
         :type: str
         """
+        if isinstance(statistic, int):
+            statistic = str(statistic)
         allowed_values = ["count", "min", "ratio", "max"]
         if statistic.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for statistic -> " + statistic)

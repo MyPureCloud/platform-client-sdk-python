@@ -302,6 +302,8 @@ class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate(object
         :param routing_status: The routing_status of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
         :type: str
         """
+        if isinstance(routing_status, int):
+            routing_status = str(routing_status)
         allowed_values = ["__EMPTY__", "OFF_QUEUE", "IDLE", "INTERACTING", "NOT_RESPONDING", "COMMUNICATING", "OFFLINE"]
         if routing_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for routing_status -> " + routing_status)
@@ -377,6 +379,8 @@ class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate(object
         :param adherence_state: The adherence_state of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
         :type: str
         """
+        if isinstance(adherence_state, int):
+            adherence_state = str(adherence_state)
         allowed_values = ["InAdherence", "OutOfAdherence", "Unscheduled", "Unknown", "Ignored", "Explained"]
         if adherence_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for adherence_state -> " + adherence_state)

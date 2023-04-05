@@ -212,6 +212,8 @@ class ResponseAssetFilter(object):
         :param type: The type of this ResponseAssetFilter.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["TERM", "TERMS", "STARTS_WITH", "RANGE", "GREATER_THAN_EQUAL_TO", "LESS_THAN_EQUAL_TO", "DATE_RANGE"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

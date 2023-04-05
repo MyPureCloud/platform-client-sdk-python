@@ -86,6 +86,8 @@ class V2MobiusAlertsTopicEntityProperties(object):
         :param entity_type: The entity_type of this V2MobiusAlertsTopicEntityProperties.
         :type: str
         """
+        if isinstance(entity_type, int):
+            entity_type = str(entity_type)
         allowed_values = ["Organization", "User", "Queue", "Group", "Edge"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entity_type -> " + entity_type)

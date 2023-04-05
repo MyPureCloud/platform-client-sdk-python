@@ -185,6 +185,8 @@ class UploadUrlRequest(object):
         :param server_side_encryption: The server_side_encryption of this UploadUrlRequest.
         :type: str
         """
+        if isinstance(server_side_encryption, int):
+            server_side_encryption = str(server_side_encryption)
         allowed_values = ["AES256"]
         if server_side_encryption.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for server_side_encryption -> " + server_side_encryption)

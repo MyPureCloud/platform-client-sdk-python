@@ -154,6 +154,8 @@ class TranscriptionTopicTranscriptResult(object):
         :param channel: The channel of this TranscriptionTopicTranscriptResult.
         :type: str
         """
+        if isinstance(channel, int):
+            channel = str(channel)
         allowed_values = ["UNKNOWN", "INTERNAL", "EXTERNAL", "BOTH"]
         if channel.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for channel -> " + channel)

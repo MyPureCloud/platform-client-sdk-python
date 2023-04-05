@@ -80,6 +80,8 @@ class UserRoutingStatusRoutingStatus(object):
         :param status: The status of this UserRoutingStatusRoutingStatus.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["OFF_QUEUE", "IDLE", "INTERACTING", "NOT_RESPONDING", "COMMUNICATING"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

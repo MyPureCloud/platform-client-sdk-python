@@ -106,6 +106,8 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent
         :param content_type: The content_type of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.
         :type: str
         """
+        if isinstance(content_type, int):
+            content_type = str(content_type)
         allowed_values = ["Attachment", "Location", "Story", "QuickReply", "Notification", "ButtonResponse", "GenericTemplate"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)

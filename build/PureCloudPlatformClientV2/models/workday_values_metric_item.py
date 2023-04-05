@@ -165,6 +165,8 @@ class WorkdayValuesMetricItem(object):
         :param unit_type: The unit_type of this WorkdayValuesMetricItem.
         :type: str
         """
+        if isinstance(unit_type, int):
+            unit_type = str(unit_type)
         allowed_values = ["None", "Percent", "Currency", "Seconds", "Number", "AttendanceStatus", "Unit"]
         if unit_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for unit_type -> " + unit_type)

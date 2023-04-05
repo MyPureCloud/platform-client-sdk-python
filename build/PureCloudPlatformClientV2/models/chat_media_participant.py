@@ -380,6 +380,8 @@ class ChatMediaParticipant(object):
         :param state: The state of this ChatMediaParticipant.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -407,6 +409,8 @@ class ChatMediaParticipant(object):
         :param direction: The direction of this ChatMediaParticipant.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -434,6 +438,8 @@ class ChatMediaParticipant(object):
         :param disconnect_type: The disconnect_type of this ChatMediaParticipant.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["endpoint", "client", "system", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
@@ -893,6 +899,8 @@ class ChatMediaParticipant(object):
         :param flagged_reason: The flagged_reason of this ChatMediaParticipant.
         :type: str
         """
+        if isinstance(flagged_reason, int):
+            flagged_reason = str(flagged_reason)
         allowed_values = ["general"]
         if flagged_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flagged_reason -> " + flagged_reason)

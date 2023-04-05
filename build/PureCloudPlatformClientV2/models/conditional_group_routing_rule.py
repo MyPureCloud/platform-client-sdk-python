@@ -119,6 +119,8 @@ class ConditionalGroupRoutingRule(object):
         :param metric: The metric of this ConditionalGroupRoutingRule.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["EstimatedWaitTime"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -146,6 +148,8 @@ class ConditionalGroupRoutingRule(object):
         :param operator: The operator of this ConditionalGroupRoutingRule.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["GreaterThan", "GreaterThanOrEqualTo", "LessThan", "LessThanOrEqualTo"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

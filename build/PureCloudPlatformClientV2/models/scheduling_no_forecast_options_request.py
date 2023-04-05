@@ -80,6 +80,8 @@ class SchedulingNoForecastOptionsRequest(object):
         :param shift_length: The shift_length of this SchedulingNoForecastOptionsRequest.
         :type: str
         """
+        if isinstance(shift_length, int):
+            shift_length = str(shift_length)
         allowed_values = ["Shortest", "Median", "Longest", "Random"]
         if shift_length.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for shift_length -> " + shift_length)
@@ -107,6 +109,8 @@ class SchedulingNoForecastOptionsRequest(object):
         :param shift_start: The shift_start of this SchedulingNoForecastOptionsRequest.
         :type: str
         """
+        if isinstance(shift_start, int):
+            shift_start = str(shift_start)
         allowed_values = ["Earliest", "Median", "Latest", "Random"]
         if shift_start.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for shift_start -> " + shift_start)

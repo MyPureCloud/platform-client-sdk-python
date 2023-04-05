@@ -466,6 +466,8 @@ class InboundRoute(object):
         :param history_inclusion: The history_inclusion of this InboundRoute.
         :type: str
         """
+        if isinstance(history_inclusion, int):
+            history_inclusion = str(history_inclusion)
         allowed_values = ["Include", "Exclude", "Optional"]
         if history_inclusion.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for history_inclusion -> " + history_inclusion)

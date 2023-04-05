@@ -80,6 +80,8 @@ class ExternalDataSource(object):
         :param platform: The platform of this ExternalDataSource.
         :type: str
         """
+        if isinstance(platform, int):
+            platform = str(platform)
         allowed_values = ["SALESFORCE"]
         if platform.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for platform -> " + platform)

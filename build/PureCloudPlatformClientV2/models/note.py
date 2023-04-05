@@ -152,6 +152,8 @@ class Note(object):
         :param entity_type: The entity_type of this Note.
         :type: str
         """
+        if isinstance(entity_type, int):
+            entity_type = str(entity_type)
         allowed_values = ["contact", "organization"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entity_type -> " + entity_type)

@@ -113,6 +113,8 @@ class ColumnDataTypeSpecification(object):
         :param column_data_type: The column_data_type of this ColumnDataTypeSpecification.
         :type: str
         """
+        if isinstance(column_data_type, int):
+            column_data_type = str(column_data_type)
         allowed_values = ["NUMERIC", "TEXT", "TIMESTAMP"]
         if column_data_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for column_data_type -> " + column_data_type)

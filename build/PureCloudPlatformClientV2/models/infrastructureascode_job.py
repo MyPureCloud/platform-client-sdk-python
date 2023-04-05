@@ -197,6 +197,8 @@ class InfrastructureascodeJob(object):
         :param status: The status of this InfrastructureascodeJob.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Created", "Queued", "Running", "Complete", "Failed", "Incomplete"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

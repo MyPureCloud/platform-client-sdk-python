@@ -170,6 +170,8 @@ class UpdateTimeOffPlanRequest(object):
         :param auto_approval_rule: The auto_approval_rule of this UpdateTimeOffPlanRequest.
         :type: str
         """
+        if isinstance(auto_approval_rule, int):
+            auto_approval_rule = str(auto_approval_rule)
         allowed_values = ["Never", "Always", "CheckLimits"]
         if auto_approval_rule.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for auto_approval_rule -> " + auto_approval_rule)

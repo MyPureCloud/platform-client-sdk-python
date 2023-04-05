@@ -166,6 +166,8 @@ class PatchActionTemplate(object):
         :param media_type: The media_type of this PatchActionTemplate.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["webchat", "webMessagingOffer", "contentOffer", "integrationAction", "architectFlow", "openAction"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -193,6 +195,8 @@ class PatchActionTemplate(object):
         :param state: The state of this PatchActionTemplate.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Active", "Inactive", "Deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

@@ -119,6 +119,8 @@ class QualityAuditQueryExecutionStatusResponse(object):
         :param state: The state of this QualityAuditQueryExecutionStatusResponse.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Queued", "Running", "Succeeded", "Failed", "Cancelled"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

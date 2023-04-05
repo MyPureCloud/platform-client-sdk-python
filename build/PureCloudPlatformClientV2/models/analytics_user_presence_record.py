@@ -134,6 +134,8 @@ class AnalyticsUserPresenceRecord(object):
         :param system_presence: The system_presence of this AnalyticsUserPresenceRecord.
         :type: str
         """
+        if isinstance(system_presence, int):
+            system_presence = str(system_presence)
         allowed_values = ["AVAILABLE", "AWAY", "BUSY", "OFFLINE", "IDLE", "ON_QUEUE", "MEAL", "TRAINING", "MEETING", "BREAK"]
         if system_presence.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for system_presence -> " + system_presence)

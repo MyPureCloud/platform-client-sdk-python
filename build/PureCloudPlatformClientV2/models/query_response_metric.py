@@ -82,6 +82,8 @@ class QueryResponseMetric(object):
         :param metric: The metric of this QueryResponseMetric.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["nActivities", "nPlannedActivities", "nInProgressActivities", "nCompleteActivities", "nOverdueActivities", "nInvalidScheduleActivities"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)

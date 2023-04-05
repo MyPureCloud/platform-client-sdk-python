@@ -161,6 +161,8 @@ class LearningCoverArtUploadUrlRequest(object):
         :param content_type: The content_type of this LearningCoverArtUploadUrlRequest.
         :type: str
         """
+        if isinstance(content_type, int):
+            content_type = str(content_type)
         allowed_values = ["image/bmp", "image/gif", "image/jpeg", "image/jpg", "image/png"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
@@ -188,6 +190,8 @@ class LearningCoverArtUploadUrlRequest(object):
         :param server_side_encryption: The server_side_encryption of this LearningCoverArtUploadUrlRequest.
         :type: str
         """
+        if isinstance(server_side_encryption, int):
+            server_side_encryption = str(server_side_encryption)
         allowed_values = ["AES256"]
         if server_side_encryption.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for server_side_encryption -> " + server_side_encryption)

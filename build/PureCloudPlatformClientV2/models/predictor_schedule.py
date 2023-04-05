@@ -80,6 +80,8 @@ class PredictorSchedule(object):
         :param schedule_type: The schedule_type of this PredictorSchedule.
         :type: str
         """
+        if isinstance(schedule_type, int):
+            schedule_type = str(schedule_type)
         allowed_values = ["HourOnHourOff", "OngoingValueMonitoring"]
         if schedule_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for schedule_type -> " + schedule_type)

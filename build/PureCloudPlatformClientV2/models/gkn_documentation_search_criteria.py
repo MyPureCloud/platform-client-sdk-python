@@ -197,6 +197,8 @@ class GKNDocumentationSearchCriteria(object):
         :param operator: The operator of this GKNDocumentationSearchCriteria.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["AND", "OR", "NOT"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
@@ -272,6 +274,8 @@ class GKNDocumentationSearchCriteria(object):
         :param type: The type of this GKNDocumentationSearchCriteria.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["SIMPLE"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

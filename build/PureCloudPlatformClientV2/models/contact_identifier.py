@@ -83,6 +83,8 @@ class ContactIdentifier(object):
         :param type: The type of this ContactIdentifier.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["SocialLine", "SocialFacebook", "SocialTwitter", "SocialWhatsapp", "Email", "Phone", "Cookie"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

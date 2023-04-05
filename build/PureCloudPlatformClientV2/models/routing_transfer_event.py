@@ -179,6 +179,8 @@ class RoutingTransferEvent(object):
         :param transfer_type: The transfer_type of this RoutingTransferEvent.
         :type: str
         """
+        if isinstance(transfer_type, int):
+            transfer_type = str(transfer_type)
         allowed_values = ["Attended", "Unattended"]
         if transfer_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for transfer_type -> " + transfer_type)

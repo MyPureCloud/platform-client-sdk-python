@@ -89,6 +89,8 @@ class ForecastSourceDayPointer(object):
         :param day_of_week: The day_of_week of this ForecastSourceDayPointer.
         :type: str
         """
+        if isinstance(day_of_week, int):
+            day_of_week = str(day_of_week)
         allowed_values = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "EighthDay"]
         if day_of_week.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for day_of_week -> " + day_of_week)

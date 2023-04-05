@@ -214,6 +214,8 @@ class ReplaceResponse(object):
         :param upload_method: The upload_method of this ReplaceResponse.
         :type: str
         """
+        if isinstance(upload_method, int):
+            upload_method = str(upload_method)
         allowed_values = ["SINGLE_PUT", "MULTIPART_POST"]
         if upload_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for upload_method -> " + upload_method)

@@ -230,6 +230,8 @@ class AsyncConversationQuery(object):
         :param order: The order of this AsyncConversationQuery.
         :type: str
         """
+        if isinstance(order, int):
+            order = str(order)
         allowed_values = ["asc", "desc", "unordered"]
         if order.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for order -> " + order)
@@ -257,6 +259,8 @@ class AsyncConversationQuery(object):
         :param order_by: The order_by of this AsyncConversationQuery.
         :type: str
         """
+        if isinstance(order_by, int):
+            order_by = str(order_by)
         allowed_values = ["conversationStart", "conversationEnd", "segmentStart", "segmentEnd"]
         if order_by.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for order_by -> " + order_by)

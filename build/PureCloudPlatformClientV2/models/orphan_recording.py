@@ -215,6 +215,8 @@ class OrphanRecording(object):
         :param provider_type: The provider_type of this OrphanRecording.
         :type: str
         """
+        if isinstance(provider_type, int):
+            provider_type = str(provider_type)
         allowed_values = ["EDGE", "CHAT", "EMAIL", "SCREEN_RECORDING", "PUREENGAGE", "PURECONNECT"]
         if provider_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for provider_type -> " + provider_type)
@@ -266,6 +268,8 @@ class OrphanRecording(object):
         :param media_type: The media_type of this OrphanRecording.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["CALL", "CHAT", "EMAIL", "SCREEN"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -293,6 +297,8 @@ class OrphanRecording(object):
         :param file_state: The file_state of this OrphanRecording.
         :type: str
         """
+        if isinstance(file_state, int):
+            file_state = str(file_state)
         allowed_values = ["ARCHIVED", "AVAILABLE", "DELETED", "RESTORED", "RESTORING", "UPLOADING"]
         if file_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for file_state -> " + file_state)
@@ -368,6 +374,8 @@ class OrphanRecording(object):
         :param orphan_status: The orphan_status of this OrphanRecording.
         :type: str
         """
+        if isinstance(orphan_status, int):
+            orphan_status = str(orphan_status)
         allowed_values = ["NO_CONVERSATION", "UNKNOWN_CONVERSATION", "CONVERSATION_NOT_COMPLETE", "CONVERSATION_NOT_EVALUATED", "EVALUATED"]
         if orphan_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for orphan_status -> " + orphan_status)
@@ -419,6 +427,8 @@ class OrphanRecording(object):
         :param region: The region of this OrphanRecording.
         :type: str
         """
+        if isinstance(region, int):
+            region = str(region)
         allowed_values = ["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-south-1", "ap-southeast-2", "ap-southeast-3", "ca-central-1", "eu-central-1", "eu-west-1", "eu-west-2", "eu-west-3", "sa-east-1", "us-east-1", "us-west-2"]
         if region.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for region -> " + region)

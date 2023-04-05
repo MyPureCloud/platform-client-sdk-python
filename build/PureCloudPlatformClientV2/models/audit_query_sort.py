@@ -80,6 +80,8 @@ class AuditQuerySort(object):
         :param name: The name of this AuditQuerySort.
         :type: str
         """
+        if isinstance(name, int):
+            name = str(name)
         allowed_values = ["Timestamp"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)
@@ -107,6 +109,8 @@ class AuditQuerySort(object):
         :param sort_order: The sort_order of this AuditQuerySort.
         :type: str
         """
+        if isinstance(sort_order, int):
+            sort_order = str(sort_order)
         allowed_values = ["ascending", "descending"]
         if sort_order.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sort_order -> " + sort_order)

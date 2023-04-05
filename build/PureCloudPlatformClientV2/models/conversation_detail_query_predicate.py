@@ -94,6 +94,8 @@ class ConversationDetailQueryPredicate(object):
         :param type: The type of this ConversationDetailQueryPredicate.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -121,6 +123,8 @@ class ConversationDetailQueryPredicate(object):
         :param dimension: The dimension of this ConversationDetailQueryPredicate.
         :type: str
         """
+        if isinstance(dimension, int):
+            dimension = str(dimension)
         allowed_values = ["conversationEnd", "conversationId", "conversationInitiator", "conversationStart", "customerParticipation", "divisionId", "externalTag", "mediaStatsMinConversationMos", "originatingDirection"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
@@ -148,6 +152,8 @@ class ConversationDetailQueryPredicate(object):
         :param metric: The metric of this ConversationDetailQueryPredicate.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["nBlindTransferred", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nError", "nFlow", "nFlowMilestone", "nFlowOutcome", "nFlowOutcomeFailed", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nStateTransitionError", "nTransferred", "oExternalMediaCount", "oFlowMilestone", "oMediaCount", "oMessageTurn", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tBarging", "tCallback", "tCallbackComplete", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tConversationDuration", "tDialing", "tFirstConnect", "tFirstDial", "tFlow", "tFlowDisconnect", "tFlowExit", "tFlowOut", "tFlowOutcome", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tShortAbandon", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -175,6 +181,8 @@ class ConversationDetailQueryPredicate(object):
         :param operator: The operator of this ConversationDetailQueryPredicate.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

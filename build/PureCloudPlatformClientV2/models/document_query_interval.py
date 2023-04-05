@@ -80,6 +80,8 @@ class DocumentQueryInterval(object):
         :param field: The field of this DocumentQueryInterval.
         :type: str
         """
+        if isinstance(field, int):
+            field = str(field)
         allowed_values = ["dateCreated", "dateModified", "datePublished"]
         if field.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for field -> " + field)

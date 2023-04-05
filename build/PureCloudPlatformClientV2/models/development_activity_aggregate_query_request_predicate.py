@@ -80,6 +80,8 @@ class DevelopmentActivityAggregateQueryRequestPredicate(object):
         :param dimension: The dimension of this DevelopmentActivityAggregateQueryRequestPredicate.
         :type: str
         """
+        if isinstance(dimension, int):
+            dimension = str(dimension)
         allowed_values = ["attendeeId", "type", "moduleId", "isPassed"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)

@@ -86,6 +86,8 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessageEvent(objec
         :param event_type: The event_type of this V2ConversationMessageTypingEventForUserTopicConversationMessageEvent.
         :type: str
         """
+        if isinstance(event_type, int):
+            event_type = str(event_type)
         allowed_values = ["CoBrowse", "Typing"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)

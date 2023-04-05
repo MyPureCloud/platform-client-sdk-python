@@ -441,6 +441,8 @@ class Recording(object):
         :param file_state: The file_state of this Recording.
         :type: str
         """
+        if isinstance(file_state, int):
+            file_state = str(file_state)
         allowed_values = ["ARCHIVED", "AVAILABLE", "DELETED", "RESTORED", "RESTORING", "UPLOADING", "ERROR"]
         if file_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for file_state -> " + file_state)
@@ -588,6 +590,8 @@ class Recording(object):
         :param archive_medium: The archive_medium of this Recording.
         :type: str
         """
+        if isinstance(archive_medium, int):
+            archive_medium = str(archive_medium)
         allowed_values = ["CLOUDARCHIVE"]
         if archive_medium.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for archive_medium -> " + archive_medium)
@@ -831,6 +835,8 @@ class Recording(object):
         :param recording_file_role: The recording_file_role of this Recording.
         :type: str
         """
+        if isinstance(recording_file_role, int):
+            recording_file_role = str(recording_file_role)
         allowed_values = ["CUSTOMER_EXPERIENCE", "ADHOC"]
         if recording_file_role.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for recording_file_role -> " + recording_file_role)
@@ -858,6 +864,8 @@ class Recording(object):
         :param recording_error_status: The recording_error_status of this Recording.
         :type: str
         """
+        if isinstance(recording_error_status, int):
+            recording_error_status = str(recording_error_status)
         allowed_values = ["EMAIL_TRANSCRIPT_TOO_LARGE"]
         if recording_error_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for recording_error_status -> " + recording_error_status)

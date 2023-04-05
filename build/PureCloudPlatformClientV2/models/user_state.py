@@ -86,6 +86,8 @@ class UserState(object):
         :param state: The state of this UserState.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -137,6 +139,8 @@ class UserState(object):
         :param state_change_reason: The state_change_reason of this UserState.
         :type: str
         """
+        if isinstance(state_change_reason, int):
+            state_change_reason = str(state_change_reason)
         allowed_values = ["Voluntary", "Seasonal", "Leave", "Performance", "Conduct", "Unknown"]
         if state_change_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state_change_reason -> " + state_change_reason)

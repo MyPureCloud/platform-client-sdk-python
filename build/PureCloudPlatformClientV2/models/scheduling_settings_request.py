@@ -188,6 +188,8 @@ class SchedulingSettingsRequest(object):
         :param start_day_of_weekend: The start_day_of_weekend of this SchedulingSettingsRequest.
         :type: str
         """
+        if isinstance(start_day_of_weekend, int):
+            start_day_of_weekend = str(start_day_of_weekend)
         allowed_values = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
         if start_day_of_weekend.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for start_day_of_weekend -> " + start_day_of_weekend)

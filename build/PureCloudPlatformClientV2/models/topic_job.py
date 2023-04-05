@@ -122,6 +122,8 @@ class TopicJob(object):
         :param state: The state of this TopicJob.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Running", "Completed", "Failed"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

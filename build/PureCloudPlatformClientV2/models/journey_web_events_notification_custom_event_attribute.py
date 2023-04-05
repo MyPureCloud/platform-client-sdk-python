@@ -104,6 +104,8 @@ class JourneyWebEventsNotificationCustomEventAttribute(object):
         :param data_type: The data_type of this JourneyWebEventsNotificationCustomEventAttribute.
         :type: str
         """
+        if isinstance(data_type, int):
+            data_type = str(data_type)
         allowed_values = ["STRING", "BOOLEAN", "NUMBER"]
         if data_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for data_type -> " + data_type)

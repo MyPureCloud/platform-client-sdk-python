@@ -343,6 +343,8 @@ class DIDPool(object):
         :param state: The state of this DIDPool.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -490,6 +492,8 @@ class DIDPool(object):
         :param provider: The provider of this DIDPool.
         :type: str
         """
+        if isinstance(provider, int):
+            provider = str(provider)
         allowed_values = ["PURE_CLOUD", "PURE_CLOUD_VOICE"]
         if provider.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for provider -> " + provider)

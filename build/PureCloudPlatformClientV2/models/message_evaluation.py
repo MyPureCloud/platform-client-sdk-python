@@ -137,6 +137,8 @@ class MessageEvaluation(object):
         :param message_type: The message_type of this MessageEvaluation.
         :type: str
         """
+        if isinstance(message_type, int):
+            message_type = str(message_type)
         allowed_values = ["Sms", "Email"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)

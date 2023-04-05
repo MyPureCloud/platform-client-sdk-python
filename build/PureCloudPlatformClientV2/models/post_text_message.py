@@ -85,6 +85,8 @@ class PostTextMessage(object):
         :param type: The type of this PostTextMessage.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Text", "Structured", "Receipt", "Event", "Message", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

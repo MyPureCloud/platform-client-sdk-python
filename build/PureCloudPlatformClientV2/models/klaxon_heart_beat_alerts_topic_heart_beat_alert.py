@@ -322,6 +322,8 @@ class KlaxonHeartBeatAlertsTopicHeartBeatAlert(object):
         :param rule_type: The rule_type of this KlaxonHeartBeatAlertsTopicHeartBeatAlert.
         :type: str
         """
+        if isinstance(rule_type, int):
+            rule_type = str(rule_type)
         allowed_values = ["EDGE"]
         if rule_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for rule_type -> " + rule_type)

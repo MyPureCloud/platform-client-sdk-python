@@ -161,6 +161,8 @@ class PatchCtaButtonStyleProperties(object):
         :param text_align: The text_align of this PatchCtaButtonStyleProperties.
         :type: str
         """
+        if isinstance(text_align, int):
+            text_align = str(text_align)
         allowed_values = ["Left", "Right", "Center"]
         if text_align.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for text_align -> " + text_align)

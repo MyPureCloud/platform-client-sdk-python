@@ -167,6 +167,8 @@ class WebChatGuestMediaRequest(object):
         :param state: The state of this WebChatGuestMediaRequest.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["PENDING", "ACCEPTED", "DECLINED", "TIMEDOUT", "CANCELLED", "ERRORED"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

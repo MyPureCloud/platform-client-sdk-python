@@ -459,6 +459,8 @@ class V2MobiusAlertsTopicAlert(object):
         :param action: The action of this V2MobiusAlertsTopicAlert.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["UNKNOWN", "CREATE", "UPDATE", "DELETE", "CLOSE"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

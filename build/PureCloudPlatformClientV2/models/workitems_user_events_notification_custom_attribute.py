@@ -80,6 +80,8 @@ class WorkitemsUserEventsNotificationCustomAttribute(object):
         :param data_type: The data_type of this WorkitemsUserEventsNotificationCustomAttribute.
         :type: str
         """
+        if isinstance(data_type, int):
+            data_type = str(data_type)
         allowed_values = ["unknown", "string", "number", "boolean$", "integer"]
         if data_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for data_type -> " + data_type)

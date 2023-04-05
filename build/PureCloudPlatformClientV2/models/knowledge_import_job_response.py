@@ -156,6 +156,8 @@ class KnowledgeImportJobResponse(object):
         :param file_type: The file_type of this KnowledgeImportJobResponse.
         :type: str
         """
+        if isinstance(file_type, int):
+            file_type = str(file_type)
         allowed_values = ["Json", "Csv", "Xlsx"]
         if file_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for file_type -> " + file_type)
@@ -207,6 +209,8 @@ class KnowledgeImportJobResponse(object):
         :param status: The status of this KnowledgeImportJobResponse.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Created", "ValidationInProgress", "ValidationCompleted", "ValidationFailed", "Started", "InProgress", "Completed", "PartialCompleted", "Failed", "AbortRequested", "Aborted"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

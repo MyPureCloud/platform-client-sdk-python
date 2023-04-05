@@ -106,6 +106,8 @@ class KnowledgeExportJobFilter(object):
         :param version_filter: The version_filter of this KnowledgeExportJobFilter.
         :type: str
         """
+        if isinstance(version_filter, int):
+            version_filter = str(version_filter)
         allowed_values = ["All", "Latest"]
         if version_filter.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for version_filter -> " + version_filter)

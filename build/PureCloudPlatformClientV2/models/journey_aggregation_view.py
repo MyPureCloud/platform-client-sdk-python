@@ -88,6 +88,8 @@ class JourneyAggregationView(object):
         :param target: The target of this JourneyAggregationView.
         :type: str
         """
+        if isinstance(target, int):
+            target = str(target)
         allowed_values = ["nDistinctJourneyActions", "nDistinctJourneySessions", "nJourneyActionsBlocked", "nJourneyOutcomesAchieved", "nJourneyOutcomesAttributed", "nJourneySegmentsAssigned", "nJourneySessions", "nWebActionsAbandoned", "nWebActionsAccepted", "nWebActionsEngaged", "nWebActionsErrored", "nWebActionsFrequencyCapReached", "nWebActionsIgnored", "nWebActionsOffered", "nWebActionsOfferedOutsideSchedule", "nWebActionsQualified", "nWebActionsQualifiedOutsideSchedule", "nWebActionsRejected", "nWebActionsStarted", "nWebActionsTimedout", "oJourneyOutcomeTouchpointValue", "oJourneyOutcomeValue"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
@@ -139,6 +141,8 @@ class JourneyAggregationView(object):
         :param function: The function of this JourneyAggregationView.
         :type: str
         """
+        if isinstance(function, int):
+            function = str(function)
         allowed_values = ["rangeBound"]
         if function.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for function -> " + function)

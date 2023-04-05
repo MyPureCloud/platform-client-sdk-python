@@ -107,6 +107,8 @@ class MediaTranscription(object):
         :param transcription_provider: The transcription_provider of this MediaTranscription.
         :type: str
         """
+        if isinstance(transcription_provider, int):
+            transcription_provider = str(transcription_provider)
         allowed_values = ["VOCI", "CALLJOURNEY"]
         if transcription_provider.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for transcription_provider -> " + transcription_provider)

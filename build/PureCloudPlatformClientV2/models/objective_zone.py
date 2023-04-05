@@ -119,6 +119,8 @@ class ObjectiveZone(object):
         :param direction_type: The direction_type of this ObjectiveZone.
         :type: str
         """
+        if isinstance(direction_type, int):
+            direction_type = str(direction_type)
         allowed_values = ["Up", "Down", "Flat"]
         if direction_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction_type -> " + direction_type)
@@ -146,6 +148,8 @@ class ObjectiveZone(object):
         :param zone_type: The zone_type of this ObjectiveZone.
         :type: str
         """
+        if isinstance(zone_type, int):
+            zone_type = str(zone_type)
         allowed_values = ["Good", "Target", "Great", "Out"]
         if zone_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for zone_type -> " + zone_type)

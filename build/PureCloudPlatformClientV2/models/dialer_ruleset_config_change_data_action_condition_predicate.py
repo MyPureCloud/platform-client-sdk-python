@@ -116,6 +116,8 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         :param output_operator: The output_operator of this DialerRulesetConfigChangeDataActionConditionPredicate.
         :type: str
         """
+        if isinstance(output_operator, int):
+            output_operator = str(output_operator)
         allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER"]
         if output_operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for output_operator -> " + output_operator)

@@ -245,6 +245,8 @@ class EmailMediaPolicyConditions(object):
         :param customer_participation: The customer_participation of this EmailMediaPolicyConditions.
         :type: str
         """
+        if isinstance(customer_participation, int):
+            customer_participation = str(customer_participation)
         allowed_values = ["YES", "NO"]
         if customer_participation.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for customer_participation -> " + customer_participation)

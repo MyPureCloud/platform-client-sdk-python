@@ -304,6 +304,8 @@ class ChatMessage(object):
         :param body_type: The body_type of this ChatMessage.
         :type: str
         """
+        if isinstance(body_type, int):
+            body_type = str(body_type)
         allowed_values = ["STANDARD", "ACTIVITY", "TYPING", "NOTICE", "MEMBERJOIN", "MEMBERLEAVE", "MEDIAREQUEST"]
         if body_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for body_type -> " + body_type)

@@ -134,6 +134,8 @@ class ScimV2SchemaAttribute(object):
         :param type: The type of this ScimV2SchemaAttribute.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["string", "boolean", "decimal", "integer", "dateTime", "reference", "complex"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -305,6 +307,8 @@ class ScimV2SchemaAttribute(object):
         :param mutability: The mutability of this ScimV2SchemaAttribute.
         :type: str
         """
+        if isinstance(mutability, int):
+            mutability = str(mutability)
         allowed_values = ["readWrite", "readOnly", "immutable", "writeOnly"]
         if mutability.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for mutability -> " + mutability)
@@ -332,6 +336,8 @@ class ScimV2SchemaAttribute(object):
         :param returned: The returned of this ScimV2SchemaAttribute.
         :type: str
         """
+        if isinstance(returned, int):
+            returned = str(returned)
         allowed_values = ["always", "never", "default", "request"]
         if returned.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for returned -> " + returned)
@@ -359,6 +365,8 @@ class ScimV2SchemaAttribute(object):
         :param uniqueness: The uniqueness of this ScimV2SchemaAttribute.
         :type: str
         """
+        if isinstance(uniqueness, int):
+            uniqueness = str(uniqueness)
         allowed_values = ["none", "server", "global"]
         if uniqueness.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for uniqueness -> " + uniqueness)

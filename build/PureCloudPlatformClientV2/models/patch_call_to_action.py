@@ -131,6 +131,8 @@ class PatchCallToAction(object):
         :param target: The target of this PatchCallToAction.
         :type: str
         """
+        if isinstance(target, int):
+            target = str(target)
         allowed_values = ["Blank", "Self"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)

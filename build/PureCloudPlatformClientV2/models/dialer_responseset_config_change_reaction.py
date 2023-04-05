@@ -134,6 +134,8 @@ class DialerResponsesetConfigChangeReaction(object):
         :param reaction_type: The reaction_type of this DialerResponsesetConfigChangeReaction.
         :type: str
         """
+        if isinstance(reaction_type, int):
+            reaction_type = str(reaction_type)
         allowed_values = ["hangup", "transfer", "transfer_flow", "play_file"]
         if reaction_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reaction_type -> " + reaction_type)

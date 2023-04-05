@@ -80,6 +80,8 @@ class GeneralProgramJobRequest(object):
         :param dialect: The dialect of this GeneralProgramJobRequest.
         :type: str
         """
+        if isinstance(dialect, int):
+            dialect = str(dialect)
         allowed_values = ["en-US", "es-US", "en-AU", "en-GB", "en-ZA", "es-ES", "en-IN", "fr-FR", "fr-CA", "it-IT", "de-DE", "pt-BR", "pl-PL", "pt-PT", "nl-NL", "ko-KR", "ja-JP"]
         if dialect.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dialect -> " + dialect)
@@ -107,6 +109,8 @@ class GeneralProgramJobRequest(object):
         :param mode: The mode of this GeneralProgramJobRequest.
         :type: str
         """
+        if isinstance(mode, int):
+            mode = str(mode)
         allowed_values = ["Skip", "Merge"]
         if mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for mode -> " + mode)

@@ -94,6 +94,8 @@ class SurveyDetailQueryPredicate(object):
         :param type: The type of this SurveyDetailQueryPredicate.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -121,6 +123,8 @@ class SurveyDetailQueryPredicate(object):
         :param dimension: The dimension of this SurveyDetailQueryPredicate.
         :type: str
         """
+        if isinstance(dimension, int):
+            dimension = str(dimension)
         allowed_values = ["eventTime", "queueId", "surveyCompletedDate", "surveyFormContextId", "surveyFormId", "surveyId", "surveyPromoterScore", "surveyStatus", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
@@ -148,6 +152,8 @@ class SurveyDetailQueryPredicate(object):
         :param metric: The metric of this SurveyDetailQueryPredicate.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["oSurveyTotalScore"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -175,6 +181,8 @@ class SurveyDetailQueryPredicate(object):
         :param operator: The operator of this SurveyDetailQueryPredicate.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

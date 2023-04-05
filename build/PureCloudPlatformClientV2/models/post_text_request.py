@@ -338,6 +338,8 @@ class PostTextRequest(object):
         :param messaging_platform_type: The messaging_platform_type of this PostTextRequest.
         :type: str
         """
+        if isinstance(messaging_platform_type, int):
+            messaging_platform_type = str(messaging_platform_type)
         allowed_values = ["Phone", "SMS", "GenesysWebWidget", "FacebookMessenger", "WeChat", "Whatsapp", "AppleBusinessChat", "Telegram", "Slack", "Signal", "Line", "Discord", "TwitterDirectMessage", "Other", "Unknown"]
         if messaging_platform_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for messaging_platform_type -> " + messaging_platform_type)

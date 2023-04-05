@@ -163,6 +163,8 @@ class KnowledgeDocument(object):
         :param language_code: The language_code of this KnowledgeDocument.
         :type: str
         """
+        if isinstance(language_code, int):
+            language_code = str(language_code)
         allowed_values = ["en-US", "en-UK", "en-AU", "en-CA", "en-HK", "en-IN", "en-IE", "en-NZ", "en-PH", "en-SG", "en-ZA", "de-DE", "de-AT", "de-CH", "es-AR", "es-CO", "es-MX", "es-US", "es-ES", "fr-FR", "fr-BE", "fr-CA", "fr-CH", "pt-BR", "pt-PT", "nl-NL", "nl-BE", "it-IT"]
         if language_code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for language_code -> " + language_code)
@@ -190,6 +192,8 @@ class KnowledgeDocument(object):
         :param type: The type of this KnowledgeDocument.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Faq", "Article"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

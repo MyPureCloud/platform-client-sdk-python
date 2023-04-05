@@ -107,6 +107,8 @@ class AnalyticsProperty(object):
         :param property_type: The property_type of this AnalyticsProperty.
         :type: str
         """
+        if isinstance(property_type, int):
+            property_type = str(property_type)
         allowed_values = ["bool", "integer", "real", "date", "string", "uuid"]
         if property_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for property_type -> " + property_type)

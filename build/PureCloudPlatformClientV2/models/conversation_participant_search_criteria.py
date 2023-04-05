@@ -197,6 +197,8 @@ class ConversationParticipantSearchCriteria(object):
         :param operator: The operator of this ConversationParticipantSearchCriteria.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["AND", "OR", "NOT"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
@@ -272,6 +274,8 @@ class ConversationParticipantSearchCriteria(object):
         :param type: The type of this ConversationParticipantSearchCriteria.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["EXACT", "DATE_RANGE"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

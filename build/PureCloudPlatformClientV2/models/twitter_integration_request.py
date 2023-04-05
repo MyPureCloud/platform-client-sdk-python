@@ -302,6 +302,8 @@ class TwitterIntegrationRequest(object):
         :param tier: The tier of this TwitterIntegrationRequest.
         :type: str
         """
+        if isinstance(tier, int):
+            tier = str(tier)
         allowed_values = ["premium", "enterprise"]
         if tier.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for tier -> " + tier)

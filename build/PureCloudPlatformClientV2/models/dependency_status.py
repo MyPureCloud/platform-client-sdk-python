@@ -276,6 +276,8 @@ class DependencyStatus(object):
         :param status: The status of this DependencyStatus.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["BUILDINITIALIZING", "BUILDINPROGRESS", "NOTBUILT", "OPERATIONAL", "OPERATIONALNEEDSREBUILD"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

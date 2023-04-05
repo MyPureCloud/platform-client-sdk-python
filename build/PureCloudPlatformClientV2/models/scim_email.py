@@ -107,6 +107,8 @@ class ScimEmail(object):
         :param type: The type of this ScimEmail.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["work", "other"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

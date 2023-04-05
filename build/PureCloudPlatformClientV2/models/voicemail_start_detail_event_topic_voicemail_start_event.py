@@ -206,6 +206,8 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
         :param media_type: The media_type of this VoicemailStartDetailEventTopicVoicemailStartEvent.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["UNKNOWN", "VOICE", "CHAT", "EMAIL", "CALLBACK", "COBROWSE", "VIDEO", "SCREENSHARE", "MESSAGE"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -257,6 +259,8 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
         :param direction: The direction of this VoicemailStartDetailEventTopicVoicemailStartEvent.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["UNKNOWN", "INBOUND", "OUTBOUND"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)

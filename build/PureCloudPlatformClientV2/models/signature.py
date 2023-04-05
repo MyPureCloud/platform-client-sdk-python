@@ -158,6 +158,8 @@ class Signature(object):
         :param inclusion_type: The inclusion_type of this Signature.
         :type: str
         """
+        if isinstance(inclusion_type, int):
+            inclusion_type = str(inclusion_type)
         allowed_values = ["Draft", "Send", "SendOnce"]
         if inclusion_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for inclusion_type -> " + inclusion_type)

@@ -104,6 +104,8 @@ class WemCoachingAppointmentTopicCoachingAppointmentDocument(object):
         :param action: The action of this WemCoachingAppointmentTopicCoachingAppointmentDocument.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["Add", "Remove", "None"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

@@ -82,6 +82,8 @@ class IdentifierClaimRequest(object):
         :param operation: The operation of this IdentifierClaimRequest.
         :type: str
         """
+        if isinstance(operation, int):
+            operation = str(operation)
         allowed_values = ["Claim", "Release"]
         if operation.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operation -> " + operation)

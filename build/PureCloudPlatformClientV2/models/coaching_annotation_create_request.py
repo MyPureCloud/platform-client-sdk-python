@@ -104,6 +104,8 @@ class CoachingAnnotationCreateRequest(object):
         :param access_type: The access_type of this CoachingAnnotationCreateRequest.
         :type: str
         """
+        if isinstance(access_type, int):
+            access_type = str(access_type)
         allowed_values = ["Public", "Private"]
         if access_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for access_type -> " + access_type)

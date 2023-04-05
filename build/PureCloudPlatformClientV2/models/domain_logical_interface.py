@@ -423,6 +423,8 @@ class DomainLogicalInterface(object):
         :param state: The state of this DomainLogicalInterface.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -666,6 +668,8 @@ class DomainLogicalInterface(object):
         :param interface_type: The interface_type of this DomainLogicalInterface.
         :type: str
         """
+        if isinstance(interface_type, int):
+            interface_type = str(interface_type)
         allowed_values = ["DIAGNOSTIC", "SYSTEM"]
         if interface_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for interface_type -> " + interface_type)
@@ -837,6 +841,8 @@ class DomainLogicalInterface(object):
         :param current_state: The current_state of this DomainLogicalInterface.
         :type: str
         """
+        if isinstance(current_state, int):
+            current_state = str(current_state)
         allowed_values = ["INIT", "CREATING", "UPDATING", "OK", "EXCEPTION", "DELETING"]
         if current_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for current_state -> " + current_state)

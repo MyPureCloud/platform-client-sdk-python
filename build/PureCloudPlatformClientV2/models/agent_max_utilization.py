@@ -106,6 +106,8 @@ class AgentMaxUtilization(object):
         :param level: The level of this AgentMaxUtilization.
         :type: str
         """
+        if isinstance(level, int):
+            level = str(level)
         allowed_values = ["Agent", "Organization"]
         if level.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for level -> " + level)

@@ -80,6 +80,8 @@ class ModelingProcessingError(object):
         :param internal_error_code: The internal_error_code of this ModelingProcessingError.
         :type: str
         """
+        if isinstance(internal_error_code, int):
+            internal_error_code = str(internal_error_code)
         allowed_values = ["ModelInputMissing", "ModelInputInvalid", "ModelFailed"]
         if internal_error_code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for internal_error_code -> " + internal_error_code)

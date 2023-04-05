@@ -161,6 +161,8 @@ class Greeting(object):
         :param type: The type of this Greeting.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["STATION", "VOICEMAIL", "NAME"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -188,6 +190,8 @@ class Greeting(object):
         :param owner_type: The owner_type of this Greeting.
         :type: str
         """
+        if isinstance(owner_type, int):
+            owner_type = str(owner_type)
         allowed_values = ["USER", "ORGANIZATION", "GROUP"]
         if owner_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for owner_type -> " + owner_type)

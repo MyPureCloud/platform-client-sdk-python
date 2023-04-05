@@ -80,6 +80,8 @@ class WidgetClientConfigV1(object):
         :param web_chat_skin: The web_chat_skin of this WidgetClientConfigV1.
         :type: str
         """
+        if isinstance(web_chat_skin, int):
+            web_chat_skin = str(web_chat_skin)
         allowed_values = ["basic", "modern-caret-skin"]
         if web_chat_skin.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for web_chat_skin -> " + web_chat_skin)

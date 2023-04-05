@@ -131,6 +131,8 @@ class DocumentQueryPredicate(object):
         :param type: The type of this DocumentQueryPredicate.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Equals", "NotEquals", "Contains", "MatchAll", "MatchAny"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

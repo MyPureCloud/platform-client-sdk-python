@@ -88,6 +88,8 @@ class SurveyAggregationView(object):
         :param target: The target of this SurveyAggregationView.
         :type: str
         """
+        if isinstance(target, int):
+            target = str(target)
         allowed_values = ["nSurveyErrors", "nSurveyNpsDetractors", "nSurveyNpsPromoters", "nSurveyNpsResponses", "nSurveyQuestionGroupResponses", "nSurveyQuestionResponses", "nSurveyResponses", "nSurveysAbandoned", "nSurveysDeleted", "nSurveysExpired", "nSurveysSent", "nSurveysStarted", "oSurveyQuestionGroupScore", "oSurveyQuestionScore", "oSurveyTotalScore"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
@@ -139,6 +141,8 @@ class SurveyAggregationView(object):
         :param function: The function of this SurveyAggregationView.
         :type: str
         """
+        if isinstance(function, int):
+            function = str(function)
         allowed_values = ["rangeBound"]
         if function.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for function -> " + function)

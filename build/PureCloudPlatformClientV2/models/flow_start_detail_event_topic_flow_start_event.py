@@ -221,6 +221,8 @@ class FlowStartDetailEventTopicFlowStartEvent(object):
         :param media_type: The media_type of this FlowStartDetailEventTopicFlowStartEvent.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["UNKNOWN", "VOICE", "CHAT", "EMAIL", "CALLBACK", "COBROWSE", "VIDEO", "SCREENSHARE", "MESSAGE"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -272,6 +274,8 @@ class FlowStartDetailEventTopicFlowStartEvent(object):
         :param direction: The direction of this FlowStartDetailEventTopicFlowStartEvent.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["UNKNOWN", "INBOUND", "OUTBOUND"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -419,6 +423,8 @@ class FlowStartDetailEventTopicFlowStartEvent(object):
         :param message_type: The message_type of this FlowStartDetailEventTopicFlowStartEvent.
         :type: str
         """
+        if isinstance(message_type, int):
+            message_type = str(message_type)
         allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)
@@ -446,6 +452,8 @@ class FlowStartDetailEventTopicFlowStartEvent(object):
         :param flow_type: The flow_type of this FlowStartDetailEventTopicFlowStartEvent.
         :type: str
         """
+        if isinstance(flow_type, int):
+            flow_type = str(flow_type)
         allowed_values = ["UNKNOWN", "INBOUNDCALL", "OUTBOUNDCALL", "INQUEUECALL", "SECURECALL", "INBOUNDEMAIL", "SURVEYINVITE", "INBOUNDSHORTMESSAGE", "INBOUNDCHAT", "WORKFLOW", "BOT", "DIGITALBOT", "COMMONMODULE", "INQUEUEEMAIL", "INQUEUESHORTMESSAGE", "VOICE", "VOICEMAIL", "WORKITEM"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flow_type -> " + flow_type)

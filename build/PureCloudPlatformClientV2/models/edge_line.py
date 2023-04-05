@@ -359,6 +359,8 @@ class EdgeLine(object):
         :param state: The state of this EdgeLine.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -530,6 +532,8 @@ class EdgeLine(object):
         :param line_type: The line_type of this EdgeLine.
         :type: str
         """
+        if isinstance(line_type, int):
+            line_type = str(line_type)
         allowed_values = ["TIE", "NETWORK", "TRUNK", "STATION"]
         if line_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for line_type -> " + line_type)

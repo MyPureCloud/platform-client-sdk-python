@@ -269,6 +269,8 @@ class DefaultObjective(object):
         :param topic_ids_filter_type: The topic_ids_filter_type of this DefaultObjective.
         :type: str
         """
+        if isinstance(topic_ids_filter_type, int):
+            topic_ids_filter_type = str(topic_ids_filter_type)
         allowed_values = ["and", "or"]
         if topic_ids_filter_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for topic_ids_filter_type -> " + topic_ids_filter_type)

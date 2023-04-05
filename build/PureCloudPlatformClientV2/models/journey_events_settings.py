@@ -205,6 +205,8 @@ class JourneyEventsSettings(object):
         :param pageview_config: The pageview_config of this JourneyEventsSettings.
         :type: str
         """
+        if isinstance(pageview_config, int):
+            pageview_config = str(pageview_config)
         allowed_values = ["Auto", "Once", "Off"]
         if pageview_config.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for pageview_config -> " + pageview_config)

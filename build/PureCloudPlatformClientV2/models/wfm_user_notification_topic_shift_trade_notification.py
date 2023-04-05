@@ -172,6 +172,8 @@ class WfmUserNotificationTopicShiftTradeNotification(object):
         :param new_state: The new_state of this WfmUserNotificationTopicShiftTradeNotification.
         :type: str
         """
+        if isinstance(new_state, int):
+            new_state = str(new_state)
         allowed_values = ["Unmatched", "Matched", "Approved", "Denied", "Expired", "Canceled"]
         if new_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for new_state -> " + new_state)

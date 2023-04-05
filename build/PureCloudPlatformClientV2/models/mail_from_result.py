@@ -85,6 +85,8 @@ class MailFromResult(object):
         :param status: The status of this MailFromResult.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["FAILED", "PENDING", "VERIFIED", "UNKNOWN"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

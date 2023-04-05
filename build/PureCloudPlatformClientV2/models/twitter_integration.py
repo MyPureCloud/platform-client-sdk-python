@@ -355,6 +355,8 @@ class TwitterIntegration(object):
         :param tier: The tier of this TwitterIntegration.
         :type: str
         """
+        if isinstance(tier, int):
+            tier = str(tier)
         allowed_values = ["premium", "enterprise"]
         if tier.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for tier -> " + tier)
@@ -550,6 +552,8 @@ class TwitterIntegration(object):
         :param create_status: The create_status of this TwitterIntegration.
         :type: str
         """
+        if isinstance(create_status, int):
+            create_status = str(create_status)
         allowed_values = ["Initiated", "Completed", "Error"]
         if create_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for create_status -> " + create_status)

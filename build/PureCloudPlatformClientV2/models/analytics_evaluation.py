@@ -215,6 +215,8 @@ class AnalyticsEvaluation(object):
         :param evaluation_status: The evaluation_status of this AnalyticsEvaluation.
         :type: str
         """
+        if isinstance(evaluation_status, int):
+            evaluation_status = str(evaluation_status)
         allowed_values = ["Finished", "InProgress", "InReview", "Pending", "Retracted"]
         if evaluation_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for evaluation_status -> " + evaluation_status)

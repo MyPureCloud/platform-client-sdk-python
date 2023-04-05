@@ -137,6 +137,8 @@ class BotSearchResponse(object):
         :param bot_type: The bot_type of this BotSearchResponse.
         :type: str
         """
+        if isinstance(bot_type, int):
+            bot_type = str(bot_type)
         allowed_values = ["GenesysBotConnector", "GenesysDialogEngine", "AmazonLex", "GoogleDialogFlowES", "GoogleDialogFlowCX", "NuanceDlg", "GenesysBotFlow"]
         if bot_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for bot_type -> " + bot_type)

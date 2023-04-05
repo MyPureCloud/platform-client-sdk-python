@@ -143,6 +143,8 @@ class SmsPhoneNumberProvision(object):
         :param phone_number_type: The phone_number_type of this SmsPhoneNumberProvision.
         :type: str
         """
+        if isinstance(phone_number_type, int):
+            phone_number_type = str(phone_number_type)
         allowed_values = ["local", "mobile", "tollfree", "shortcode"]
         if phone_number_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for phone_number_type -> " + phone_number_type)

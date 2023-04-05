@@ -89,6 +89,8 @@ class WebChatRoutingTarget(object):
         :param target_type: The target_type of this WebChatRoutingTarget.
         :type: str
         """
+        if isinstance(target_type, int):
+            target_type = str(target_type)
         allowed_values = ["QUEUE"]
         if target_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target_type -> " + target_type)

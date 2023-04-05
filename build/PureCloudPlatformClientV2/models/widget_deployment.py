@@ -275,6 +275,8 @@ class WidgetDeployment(object):
         :param client_type: The client_type of this WidgetDeployment.
         :type: str
         """
+        if isinstance(client_type, int):
+            client_type = str(client_type)
         allowed_values = ["v1", "v2", "v1-http", "third-party"]
         if client_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for client_type -> " + client_type)

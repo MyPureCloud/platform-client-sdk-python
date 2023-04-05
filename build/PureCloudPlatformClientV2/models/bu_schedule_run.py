@@ -205,6 +205,8 @@ class BuScheduleRun(object):
         :param state: The state of this BuScheduleRun.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["None", "Queued", "Scheduling", "Canceled", "Failed", "Complete"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

@@ -129,6 +129,8 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChann
         :param platform: The platform of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
         :type: str
         """
+        if isinstance(platform, int):
+            platform = str(platform)
         allowed_values = ["Twitter", "Facebook", "Instagram", "Line", "Whatsapp", "WebMessaging", "Open", "Sms"]
         if platform.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for platform -> " + platform)

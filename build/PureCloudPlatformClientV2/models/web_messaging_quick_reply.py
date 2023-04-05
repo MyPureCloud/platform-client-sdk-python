@@ -158,6 +158,8 @@ class WebMessagingQuickReply(object):
         :param action: The action of this WebMessagingQuickReply.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["Message"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

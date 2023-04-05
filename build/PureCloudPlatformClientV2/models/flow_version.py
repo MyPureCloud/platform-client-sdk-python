@@ -239,6 +239,8 @@ class FlowVersion(object):
         :param type: The type of this FlowVersion.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["PUBLISH", "CHECKIN", "SAVE"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

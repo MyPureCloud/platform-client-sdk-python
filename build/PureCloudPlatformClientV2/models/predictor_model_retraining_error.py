@@ -107,6 +107,8 @@ class PredictorModelRetrainingError(object):
         :param error_code: The error_code of this PredictorModelRetrainingError.
         :type: str
         """
+        if isinstance(error_code, int):
+            error_code = str(error_code)
         allowed_values = ["NotEnoughData", "ServiceError", "UnknownError"]
         if error_code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for error_code -> " + error_code)

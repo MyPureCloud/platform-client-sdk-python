@@ -80,6 +80,8 @@ class LocalizedLabels(object):
         :param key: The key of this LocalizedLabels.
         :type: str
         """
+        if isinstance(key, int):
+            key = str(key)
         allowed_values = ["MessengerHomeHeaderTitle", "MessengerHomeHeaderSubTitle"]
         if key.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for key -> " + key)

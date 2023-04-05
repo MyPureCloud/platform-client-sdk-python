@@ -94,6 +94,8 @@ class EvaluationDetailQueryPredicate(object):
         :param type: The type of this EvaluationDetailQueryPredicate.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -121,6 +123,8 @@ class EvaluationDetailQueryPredicate(object):
         :param dimension: The dimension of this EvaluationDetailQueryPredicate.
         :type: str
         """
+        if isinstance(dimension, int):
+            dimension = str(dimension)
         allowed_values = ["calibrationId", "contextId", "deleted", "evaluationId", "evaluatorId", "eventTime", "formId", "formName", "queueId", "released", "rescored", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
@@ -148,6 +152,8 @@ class EvaluationDetailQueryPredicate(object):
         :param metric: The metric of this EvaluationDetailQueryPredicate.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["oTotalCriticalScore", "oTotalScore"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -175,6 +181,8 @@ class EvaluationDetailQueryPredicate(object):
         :param operator: The operator of this EvaluationDetailQueryPredicate.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

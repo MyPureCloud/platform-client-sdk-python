@@ -334,6 +334,8 @@ class Evaluation(object):
         :param status: The status of this Evaluation.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["PENDING", "INPROGRESS", "FINISHED", "INREVIEW", "RETRACTED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -673,6 +675,8 @@ class Evaluation(object):
         :param resource_type: The resource_type of this Evaluation.
         :type: str
         """
+        if isinstance(resource_type, int):
+            resource_type = str(resource_type)
         allowed_values = ["EMAIL"]
         if resource_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for resource_type -> " + resource_type)

@@ -480,6 +480,8 @@ class WorkitemsEventsNotificationWorkitem(object):
         :param status_category: The status_category of this WorkitemsEventsNotificationWorkitem.
         :type: str
         """
+        if isinstance(status_category, int):
+            status_category = str(status_category)
         allowed_values = ["Unknown", "Open", "InProgress", "Waiting", "Closed"]
         if status_category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status_category -> " + status_category)
@@ -699,6 +701,8 @@ class WorkitemsEventsNotificationWorkitem(object):
         :param operation: The operation of this WorkitemsEventsNotificationWorkitem.
         :type: str
         """
+        if isinstance(operation, int):
+            operation = str(operation)
         allowed_values = ["unknown", "add", "edit", "delete", "view", "upload", "download", "activate", "deactivate", "purge", "processed", "published", "assigned", "unassigned", "reset", "reassigned", "reassign", "archive", "unarchive", "reschedule"]
         if operation.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operation -> " + operation)
@@ -750,6 +754,8 @@ class WorkitemsEventsNotificationWorkitem(object):
         :param assignment_state: The assignment_state of this WorkitemsEventsNotificationWorkitem.
         :type: str
         """
+        if isinstance(assignment_state, int):
+            assignment_state = str(assignment_state)
         allowed_values = ["Unknown", "Idle", "AcdStarted", "Alerting", "AlertTimeout", "Declined", "Connected", "Disconnected", "Parked", "Held", "AcdCancelled", "Terminated", "AcdExpired"]
         if assignment_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for assignment_state -> " + assignment_state)

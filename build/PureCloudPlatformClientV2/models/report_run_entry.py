@@ -203,6 +203,8 @@ class ReportRunEntry(object):
         :param run_status: The run_status of this ReportRunEntry.
         :type: str
         """
+        if isinstance(run_status, int):
+            run_status = str(run_status)
         allowed_values = ["RUNNING", "COMPLETED", "COMPLETED_WITH_ERRORS", "FAILED", "FAILED_TIMEOUT", "FAILED_DATALIMIT", "UNABLE_TO_COMPLETE"]
         if run_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for run_status -> " + run_status)

@@ -80,6 +80,8 @@ class V2ConversationMessageTypingEventForUserTopicConversationReason(object):
         :param code: The code of this V2ConversationMessageTypingEventForUserTopicConversationReason.
         :type: str
         """
+        if isinstance(code, int):
+            code = str(code)
         allowed_values = ["MessageExpired", "RateLimited", "MessageNotAllowed", "GeneralError", "UnsupportedMessage", "UnknownMessage", "InvalidMessageStructure", "InvalidDestination", "ServerError", "MediaTypeNotAllowed", "InvalidMediaContentLength", "RecipientOptedOut"]
         if code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for code -> " + code)

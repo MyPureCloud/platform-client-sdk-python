@@ -331,6 +331,8 @@ class HistoryListing(object):
         :param action_name: The action_name of this HistoryListing.
         :type: str
         """
+        if isinstance(action_name, int):
+            action_name = str(action_name)
         allowed_values = ["CREATE", "CHECKIN", "CHECKOUT", "DEBUG", "DELETE", "HISTORY", "PUBLISH", "REVERT", "SAVE", "STATE_CHANGE", "UPDATE", "VALIDATE"]
         if action_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_name -> " + action_name)
@@ -358,6 +360,8 @@ class HistoryListing(object):
         :param action_status: The action_status of this HistoryListing.
         :type: str
         """
+        if isinstance(action_status, int):
+            action_status = str(action_status)
         allowed_values = ["LOCKED", "UNLOCKED", "STARTED", "PENDING_GENERATION", "PENDING_BACKEND_NOTIFICATION", "SUCCESS", "FAILURE"]
         if action_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_status -> " + action_status)

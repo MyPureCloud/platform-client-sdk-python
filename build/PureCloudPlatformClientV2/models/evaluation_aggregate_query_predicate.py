@@ -91,6 +91,8 @@ class EvaluationAggregateQueryPredicate(object):
         :param type: The type of this EvaluationAggregateQueryPredicate.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -118,6 +120,8 @@ class EvaluationAggregateQueryPredicate(object):
         :param dimension: The dimension of this EvaluationAggregateQueryPredicate.
         :type: str
         """
+        if isinstance(dimension, int):
+            dimension = str(dimension)
         allowed_values = ["calibrationId", "contextId", "conversationId", "conversationStart", "divisionId", "evaluationCreatedDate", "evaluationId", "evaluationReleaseDate", "evaluatorId", "formId", "queueId", "released", "rescored", "teamId", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
@@ -145,6 +149,8 @@ class EvaluationAggregateQueryPredicate(object):
         :param operator: The operator of this EvaluationAggregateQueryPredicate.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

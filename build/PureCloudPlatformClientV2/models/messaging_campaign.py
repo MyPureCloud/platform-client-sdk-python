@@ -285,6 +285,8 @@ class MessagingCampaign(object):
         :param campaign_status: The campaign_status of this MessagingCampaign.
         :type: str
         """
+        if isinstance(campaign_status, int):
+            campaign_status = str(campaign_status)
         allowed_values = ["on", "stopping", "off", "complete", "invalid"]
         if campaign_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for campaign_status -> " + campaign_status)

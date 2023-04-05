@@ -109,6 +109,8 @@ class BuForecastModification(object):
         :param type: The type of this BuForecastModification.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["MinimumPerInterval", "MaximumPerInterval", "SetValuePerInterval", "ChangeValuePerInterval", "ChangePercentPerInterval", "SetValueOverRange", "ChangeValueOverRange", "SetValuesForIntervalSet"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -184,6 +186,8 @@ class BuForecastModification(object):
         :param metric: The metric of this BuForecastModification.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["Offered", "AverageHandleTimeSeconds"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -211,6 +215,8 @@ class BuForecastModification(object):
         :param legacy_metric: The legacy_metric of this BuForecastModification.
         :type: str
         """
+        if isinstance(legacy_metric, int):
+            legacy_metric = str(legacy_metric)
         allowed_values = ["AverageAfterCallWorkTimeSeconds", "AverageHandleTimeSeconds", "AverageTalkTimeSeconds", "Offered"]
         if legacy_metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for legacy_metric -> " + legacy_metric)

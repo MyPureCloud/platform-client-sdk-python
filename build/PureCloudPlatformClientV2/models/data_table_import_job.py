@@ -188,6 +188,8 @@ class DataTableImportJob(object):
         :param status: The status of this DataTableImportJob.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["WaitingForUpload", "Processing", "Failed", "Succeeded"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -287,6 +289,8 @@ class DataTableImportJob(object):
         :param import_mode: The import_mode of this DataTableImportJob.
         :type: str
         """
+        if isinstance(import_mode, int):
+            import_mode = str(import_mode)
         allowed_values = ["ReplaceAll", "Append"]
         if import_mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for import_mode -> " + import_mode)

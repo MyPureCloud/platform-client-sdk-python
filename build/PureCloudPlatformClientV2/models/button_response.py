@@ -86,6 +86,8 @@ class ButtonResponse(object):
         :param type: The type of this ButtonResponse.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Button", "QuickReply"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -161,6 +163,8 @@ class ButtonResponse(object):
         :param message_type: The message_type of this ButtonResponse.
         :type: str
         """
+        if isinstance(message_type, int):
+            message_type = str(message_type)
         allowed_values = ["QuickReply", "Card", "Carousel"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)

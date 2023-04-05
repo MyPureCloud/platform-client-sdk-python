@@ -143,6 +143,8 @@ class Contact(object):
         :param media_type: The media_type of this Contact.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["PHONE", "EMAIL", "SMS"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -170,6 +172,8 @@ class Contact(object):
         :param type: The type of this Contact.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["PRIMARY", "WORK", "WORK2", "WORK3", "WORK4", "HOME", "MOBILE", "MAIN", "OTHER"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

@@ -91,6 +91,8 @@ class BotAggregateQueryPredicate(object):
         :param type: The type of this BotAggregateQueryPredicate.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -118,6 +120,8 @@ class BotAggregateQueryPredicate(object):
         :param dimension: The dimension of this BotAggregateQueryPredicate.
         :type: str
         """
+        if isinstance(dimension, int):
+            dimension = str(dimension)
         allowed_values = ["askActionId", "askActionResult", "botFinalIntent", "botId", "botIntent", "botProduct", "botProvider", "botRecognitionFailureReason", "botResult", "botSessionId", "botSlot", "botVersion", "conversationId", "externalContactId", "knowledgeBaseId", "lastActionId", "lastInputActionId", "mediaType", "messageType", "selfServed"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
@@ -145,6 +149,8 @@ class BotAggregateQueryPredicate(object):
         :param operator: The operator of this BotAggregateQueryPredicate.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

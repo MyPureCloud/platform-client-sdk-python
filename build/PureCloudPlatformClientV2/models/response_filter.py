@@ -107,6 +107,8 @@ class ResponseFilter(object):
         :param operator: The operator of this ResponseFilter.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["IN", "EQUALS", "NOTEQUALS"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

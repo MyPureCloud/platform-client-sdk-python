@@ -131,6 +131,8 @@ class WorkitemsEventsNotificationWrapup(object):
         :param op: The op of this WorkitemsEventsNotificationWrapup.
         :type: str
         """
+        if isinstance(op, int):
+            op = str(op)
         allowed_values = ["Unknown", "Add", "Remove"]
         if op.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for op -> " + op)

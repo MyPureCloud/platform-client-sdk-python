@@ -173,6 +173,8 @@ class TextBotFlowTurnResponse(object):
         :param next_action_type: The next_action_type of this TextBotFlowTurnResponse.
         :type: str
         """
+        if isinstance(next_action_type, int):
+            next_action_type = str(next_action_type)
         allowed_values = ["NoOp", "Disconnect", "WaitForInput", "Exit"]
         if next_action_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for next_action_type -> " + next_action_type)

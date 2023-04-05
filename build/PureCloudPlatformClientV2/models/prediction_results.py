@@ -83,6 +83,8 @@ class PredictionResults(object):
         :param intent: The intent of this PredictionResults.
         :type: str
         """
+        if isinstance(intent, int):
+            intent = str(intent)
         allowed_values = ["ALL", "CALL", "CALLBACK", "CHAT", "EMAIL", "SOCIALEXPRESSION", "VIDEOCOMM", "MESSAGE"]
         if intent.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for intent -> " + intent)
@@ -110,6 +112,8 @@ class PredictionResults(object):
         :param formula: The formula of this PredictionResults.
         :type: str
         """
+        if isinstance(formula, int):
+            formula = str(formula)
         allowed_values = ["BEST", "SIMPLE", "ABANDON", "PATIENCE_ABANDON"]
         if formula.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for formula -> " + formula)

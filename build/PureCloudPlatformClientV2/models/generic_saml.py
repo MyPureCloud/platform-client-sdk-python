@@ -404,6 +404,8 @@ class GenericSAML(object):
         :param name_identifier_format: The name_identifier_format of this GenericSAML.
         :type: str
         """
+        if isinstance(name_identifier_format, int):
+            name_identifier_format = str(name_identifier_format)
         allowed_values = ["urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified", "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress", "urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName", "urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName", "urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos", "urn:oasis:names:tc:SAML:2.0:nameid-format:entity", "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent", "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"]
         if name_identifier_format.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name_identifier_format -> " + name_identifier_format)

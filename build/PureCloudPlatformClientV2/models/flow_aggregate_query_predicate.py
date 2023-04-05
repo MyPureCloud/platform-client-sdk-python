@@ -91,6 +91,8 @@ class FlowAggregateQueryPredicate(object):
         :param type: The type of this FlowAggregateQueryPredicate.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -118,6 +120,8 @@ class FlowAggregateQueryPredicate(object):
         :param dimension: The dimension of this FlowAggregateQueryPredicate.
         :type: str
         """
+        if isinstance(dimension, int):
+            dimension = str(dimension)
         allowed_values = ["activeSkillId", "addressFrom", "addressTo", "agentAssistantId", "agentBullseyeRing", "agentOwned", "agentRank", "agentScore", "ani", "assignerId", "authenticated", "conversationId", "conversationInitiator", "convertedFrom", "convertedTo", "customerParticipation", "deliveryStatus", "destinationAddress", "direction", "disconnectType", "divisionId", "dnis", "edgeId", "eligibleAgentCount", "endingLanguage", "entryReason", "entryType", "errorCode", "exitReason", "extendedDeliveryStatus", "externalContactId", "externalMediaCount", "externalOrganizationId", "externalTag", "firstQueue", "flaggedReason", "flowId", "flowInType", "flowMilestoneId", "flowName", "flowOutType", "flowOutcome", "flowOutcomeId", "flowOutcomeValue", "flowType", "flowVersion", "groupId", "interactionType", "journeyActionId", "journeyActionMapId", "journeyActionMapVersion", "journeyCustomerId", "journeyCustomerIdType", "journeyCustomerSessionId", "journeyCustomerSessionIdType", "knowledgeBaseId", "mediaCount", "mediaType", "messageType", "originatingDirection", "outboundCampaignId", "outboundContactId", "outboundContactListId", "participantName", "peerId", "proposedAgentId", "provider", "purpose", "queueId", "recognitionFailureReason", "remote", "removedSkillId", "reoffered", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "roomId", "routingPriority", "routingRing", "scoredAgentId", "selectedAgentId", "selectedAgentRank", "selfServed", "sessionDnis", "sessionId", "startingLanguage", "stationId", "teamId", "transferTargetAddress", "transferTargetName", "transferType", "usedRouting", "userId", "waitingInteractionCount", "wrapUpCode"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
@@ -145,6 +149,8 @@ class FlowAggregateQueryPredicate(object):
         :param operator: The operator of this FlowAggregateQueryPredicate.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

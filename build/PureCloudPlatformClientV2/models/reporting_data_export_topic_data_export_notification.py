@@ -194,6 +194,8 @@ class ReportingDataExportTopicDataExportNotification(object):
         :param status: The status of this ReportingDataExportTopicDataExportNotification.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["SUBMITTED", "RUNNING", "CANCELLING", "CANCELLED", "COMPLETED", "COMPLETED_WITH_PARTIAL_RESULTS", "FAILED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -221,6 +223,8 @@ class ReportingDataExportTopicDataExportNotification(object):
         :param export_format: The export_format of this ReportingDataExportTopicDataExportNotification.
         :type: str
         """
+        if isinstance(export_format, int):
+            export_format = str(export_format)
         allowed_values = ["CSV", "PDF"]
         if export_format.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for export_format -> " + export_format)
@@ -272,6 +276,8 @@ class ReportingDataExportTopicDataExportNotification(object):
         :param view_type: The view_type of this ReportingDataExportTopicDataExportNotification.
         :type: str
         """
+        if isinstance(view_type, int):
+            view_type = str(view_type)
         allowed_values = ["QUEUE_PERFORMANCE_SUMMARY_VIEW", "QUEUE_PERFORMANCE_DETAIL_VIEW", "INTERACTION_SEARCH_VIEW", "AGENT_PERFORMANCE_SUMMARY_VIEW", "AGENT_PERFORMANCE_DETAIL_VIEW", "AGENT_STATUS_SUMMARY_VIEW", "AGENT_STATUS_DETAIL_VIEW", "AGENT_EVALUATION_SUMMARY_VIEW", "AGENT_EVALUATION_DETAIL_VIEW", "AGENT_QUEUE_DETAIL_VIEW", "AGENT_INTERACTION_DETAIL_VIEW", "ABANDON_INSIGHTS_VIEW", "SKILLS_PERFORMANCE_VIEW", "SURVEY_FORM_PERFORMANCE_SUMMARY_VIEW", "SURVEY_FORM_PERFORMANCE_DETAIL_VIEW", "DNIS_PERFORMANCE_SUMMARY_VIEW", "DNIS_PERFORMANCE_DETAIL_VIEW", "WRAP_UP_PERFORMANCE_SUMMARY_VIEW", "AGENT_WRAP_UP_PERFORMANCE_DETAIL_VIEW", "QUEUE_ACTIVITY_SUMMARY_VIEW", "QUEUE_ACTIVITY_DETAIL_VIEW", "AGENT_QUEUE_ACTIVITY_SUMMARY_VIEW", "QUEUE_AGENT_DETAIL_VIEW", "QUEUE_INTERACTION_DETAIL_VIEW", "AGENT_SCHEDULE_DETAIL_VIEW", "IVR_PERFORMANCE_SUMMARY_VIEW", "IVR_PERFORMANCE_DETAIL_VIEW", "ANSWER_INSIGHTS_VIEW", "HANDLE_INSIGHTS_VIEW", "TALK_INSIGHTS_VIEW", "HOLD_INSIGHTS_VIEW", "ACW_INSIGHTS_VIEW", "WAIT_INSIGHTS_VIEW", "AGENT_WRAP_UP_PERFORMANCE_INTERVAL_DETAIL_VIEW", "FLOW_OUTCOME_SUMMARY_VIEW", "FLOW_OUTCOME_PERFORMANCE_DETAIL_VIEW", "FLOW_OUTCOME_PERFORMANCE_INTERVAL_DETAIL_VIEW", "FLOW_DESTINATION_SUMMARY_VIEW", "FLOW_DESTINATION_DETAIL_VIEW", "SCHEDULED_CALLBACKS_VIEW", "CONTENT_SEARCH_VIEW", "JOURNEY_ACTION_MAP_SUMMARY_VIEW", "JOURNEY_OUTCOME_SUMMARY_VIEW", "JOURNEY_SEGMENT_SUMMARY_VIEW", "AGENT_DEVELOPMENT_DETAIL_VIEW", "AGENT_DEVELOPMENT_DETAIL_ME_VIEW", "AGENT_DEVELOPMENT_SUMMARY_VIEW", "AGENT_SCORECARD_VIEW", "AGENT_SCORECARD_ME_VIEW", "AGENT_GAMIFICATION_LEADERSHIP_VIEW", "AGENT_SCHEDULE_ME_VIEW", "BOT_PERFORMANCE_SUMMARY_VIEW", "BOT_PERFORMANCE_DETAIL_VIEW", "TOPIC_TREND_SUMMARY_VIEW", "TOPIC_TREND_DETAIL_VIEW", "ACTION_MAP_BLOCKED_CONSTRAINTS_DETAIL_VIEW", "ACTION_MAP_BLOCKED_CONSTRAINTS_INTERVAL_DETAIL_VIEW", "FLOW_MILESTONE_PERFORMANCE_DETAIL_VIEW", "FLOW_MILESTONE_PERFORMANCE_INTERVAL_DETAIL_VIEW", "AGENT_TOPIC_SUMMARY_VIEW", "AGENT_TOPIC_DETAIL_VIEW", "QUEUE_TOPIC_SUMMARY_VIEW", "QUEUE_TOPIC_DETAIL_VIEW", "FLOW_TOPIC_SUMMARY_VIEW", "FLOW_TOPIC_DETAIL_VIEW", "AGENT_INTERACTIONS_ME_VIEW", "DATA_ACTIONS_PERFORMANCE_SUMMARY_VIEW", "DATA_ACTIONS_PERFORMANCE_DETAIL_VIEW", "AGENT_TIMELINE_SUMMARY_VIEW", "AGENT_TIMELINE_DETAIL_VIEW", "AGENT_LOGIN_LOGOUT_SUMMARY_VIEW", "AGENT_LOGIN_LOGOUT_DETAIL_VIEW", "CAMPAIGN_PERFORMANCE_SUMMARY_VIEW", "CAMPAIGN_PERFORMANCE_DETAIL_VIEW", "QUEUE_WRAPUP_DETAIL_VIEW"]
         if view_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for view_type -> " + view_type)
@@ -299,6 +305,8 @@ class ReportingDataExportTopicDataExportNotification(object):
         :param export_error_messages_type: The export_error_messages_type of this ReportingDataExportTopicDataExportNotification.
         :type: str
         """
+        if isinstance(export_error_messages_type, int):
+            export_error_messages_type = str(export_error_messages_type)
         allowed_values = ["FAILED_CONVERTING_EXPORT_JOB", "FAILED_NO_DATA_EXPORT_JOB_FOUND", "FAILED_GETTING_DATA_FROM_SERVICE", "FAILED_GENERATING_TEMP_FILE", "FAILED_SAVING_FILE_TO_S3", "FAILED_NOTIFYING_SKYWALKER_OF_DOWNLOAD", "FAILED_BUILDING_DOWNLOAD_URL_FROM_SKYWALKER_RESPONSE", "EXPORT_TYPE_NOT_IMPLEMENTED", "REACHED_MAXIMUM_ATTEMPT_OF_RETRY", "FAILED_LONG_RUNNING_EXPORT", "TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION", "NOT_AUTHORIZED_TO_VIEW_EXPORT"]
         if export_error_messages_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for export_error_messages_type -> " + export_error_messages_type)

@@ -148,6 +148,8 @@ class ConversationAppSettings(object):
         :param auto_start_type: The auto_start_type of this ConversationAppSettings.
         :type: str
         """
+        if isinstance(auto_start_type, int):
+            auto_start_type = str(auto_start_type)
         allowed_values = ["Standard", "Automatic"]
         if auto_start_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for auto_start_type -> " + auto_start_type)

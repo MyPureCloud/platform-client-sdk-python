@@ -158,6 +158,8 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickRe
         :param action: The action of this V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["Message"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

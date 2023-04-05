@@ -163,6 +163,8 @@ class AvailableTime(object):
         :param activity_category: The activity_category of this AvailableTime.
         :type: str
         """
+        if isinstance(activity_category, int):
+            activity_category = str(activity_category)
         allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable"]
         if activity_category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for activity_category -> " + activity_category)

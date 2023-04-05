@@ -167,6 +167,8 @@ class DialerDnclistConfigChangeDncList(object):
         :param dnc_source_type: The dnc_source_type of this DialerDnclistConfigChangeDncList.
         :type: str
         """
+        if isinstance(dnc_source_type, int):
+            dnc_source_type = str(dnc_source_type)
         allowed_values = ["rds", "dnc.com", "gryphon"]
         if dnc_source_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dnc_source_type -> " + dnc_source_type)
@@ -266,6 +268,8 @@ class DialerDnclistConfigChangeDncList(object):
         :param contact_method: The contact_method of this DialerDnclistConfigChangeDncList.
         :type: str
         """
+        if isinstance(contact_method, int):
+            contact_method = str(contact_method)
         allowed_values = ["EMAIL", "PHONE"]
         if contact_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for contact_method -> " + contact_method)

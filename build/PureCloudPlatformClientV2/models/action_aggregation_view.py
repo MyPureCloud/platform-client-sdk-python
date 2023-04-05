@@ -88,6 +88,8 @@ class ActionAggregationView(object):
         :param target: The target of this ActionAggregationView.
         :type: str
         """
+        if isinstance(target, int):
+            target = str(target)
         allowed_values = ["tTotalExecution"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
@@ -139,6 +141,8 @@ class ActionAggregationView(object):
         :param function: The function of this ActionAggregationView.
         :type: str
         """
+        if isinstance(function, int):
+            function = str(function)
         allowed_values = ["rangeBound"]
         if function.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for function -> " + function)

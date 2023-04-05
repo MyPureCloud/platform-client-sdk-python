@@ -344,6 +344,8 @@ class Extension(object):
         :param state: The state of this Extension.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -491,6 +493,8 @@ class Extension(object):
         :param owner_type: The owner_type of this Extension.
         :type: str
         """
+        if isinstance(owner_type, int):
+            owner_type = str(owner_type)
         allowed_values = ["USER", "PHONE", "IVR_CONFIG", "GROUP"]
         if owner_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for owner_type -> " + owner_type)

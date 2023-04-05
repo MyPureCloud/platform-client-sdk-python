@@ -393,6 +393,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         :param state: The state of this QueueConversationMessageEventTopicMessageMediaParticipant.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "scheduled", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -420,6 +422,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         :param initial_state: The initial_state of this QueueConversationMessageEventTopicMessageMediaParticipant.
         :type: str
         """
+        if isinstance(initial_state, int):
+            initial_state = str(initial_state)
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "scheduled", "none"]
         if initial_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for initial_state -> " + initial_state)
@@ -447,6 +451,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         :param direction: The direction of this QueueConversationMessageEventTopicMessageMediaParticipant.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -474,6 +480,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         :param disconnect_type: The disconnect_type of this QueueConversationMessageEventTopicMessageMediaParticipant.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["endpoint", "client", "system", "transfer", "timeout", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
@@ -957,6 +965,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         :param flagged_reason: The flagged_reason of this QueueConversationMessageEventTopicMessageMediaParticipant.
         :type: str
         """
+        if isinstance(flagged_reason, int):
+            flagged_reason = str(flagged_reason)
         allowed_values = ["general"]
         if flagged_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flagged_reason -> " + flagged_reason)
@@ -1104,6 +1114,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         :param type: The type of this QueueConversationMessageEventTopicMessageMediaParticipant.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["unknown", "sms", "twitter", "facebook", "line", "viber", "wechat", "whatsapp", "telegram", "kakao", "webmessaging", "open", "instagram"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

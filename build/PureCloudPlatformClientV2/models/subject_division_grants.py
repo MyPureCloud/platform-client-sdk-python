@@ -163,6 +163,8 @@ class SubjectDivisionGrants(object):
         :param type: The type of this SubjectDivisionGrants.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["PC_USER", "PC_GROUP", "PC_OAUTH_CLIENT", "PC_TRUSTEE_USER", "PC_TRUSTEE_GROUP", "UNKNOWN"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

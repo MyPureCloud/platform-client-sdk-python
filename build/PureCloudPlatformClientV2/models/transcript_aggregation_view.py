@@ -88,6 +88,8 @@ class TranscriptAggregationView(object):
         :param target: The target of this TranscriptAggregationView.
         :type: str
         """
+        if isinstance(target, int):
+            target = str(target)
         allowed_values = ["nTopicCommunications", "oCustomerSentiment", "oSentimentScore"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
@@ -139,6 +141,8 @@ class TranscriptAggregationView(object):
         :param function: The function of this TranscriptAggregationView.
         :type: str
         """
+        if isinstance(function, int):
+            function = str(function)
         allowed_values = ["rangeBound"]
         if function.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for function -> " + function)

@@ -254,6 +254,8 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :param disconnect_type: The disconnect_type of this AcdEndDetailEventTopicAcdEndEvent.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["UNKNOWN", "ENDPOINT", "CLIENT", "SYSTEM", "TRANSFER", "ERROR", "PEER", "OTHER", "SPAM", "TIMEOUT", "TRANSPORT_FAILURE", "CONFERENCE_TRANSFER", "CONSULT_TRANSFER", "FORWARD_TRANSFER", "NO_ANSWER_TRANSFER", "NOT_AVAILABLE_TRANSFER", "UNCALLABLE"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
@@ -281,6 +283,8 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :param media_type: The media_type of this AcdEndDetailEventTopicAcdEndEvent.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["UNKNOWN", "VOICE", "CHAT", "EMAIL", "CALLBACK", "COBROWSE", "VIDEO", "SCREENSHARE", "MESSAGE"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -332,6 +336,8 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :param direction: The direction of this AcdEndDetailEventTopicAcdEndEvent.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["UNKNOWN", "INBOUND", "OUTBOUND"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -551,6 +557,8 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :param message_type: The message_type of this AcdEndDetailEventTopicAcdEndEvent.
         :type: str
         """
+        if isinstance(message_type, int):
+            message_type = str(message_type)
         allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)
@@ -626,6 +634,8 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :param acd_outcome: The acd_outcome of this AcdEndDetailEventTopicAcdEndEvent.
         :type: str
         """
+        if isinstance(acd_outcome, int):
+            acd_outcome = str(acd_outcome)
         allowed_values = ["UNKNOWN", "ABANDON", "ANSWERED", "FLOW_OUT"]
         if acd_outcome.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for acd_outcome -> " + acd_outcome)
@@ -701,6 +711,8 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         :param used_routing: The used_routing of this AcdEndDetailEventTopicAcdEndEvent.
         :type: str
         """
+        if isinstance(used_routing, int):
+            used_routing = str(used_routing)
         allowed_values = ["UNKNOWN", "MANUAL", "PREDICTIVE", "PREFERRED", "LAST", "BULLSEYE", "STANDARD", "OTHER", "CONDITIONAL", "VIP"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)

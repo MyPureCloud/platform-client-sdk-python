@@ -80,6 +80,8 @@ class VisibilityCondition(object):
         :param combining_operation: The combining_operation of this VisibilityCondition.
         :type: str
         """
+        if isinstance(combining_operation, int):
+            combining_operation = str(combining_operation)
         allowed_values = ["AND", "OR"]
         if combining_operation.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for combining_operation -> " + combining_operation)

@@ -176,6 +176,8 @@ class SupportCenterSettings(object):
         :param router_type: The router_type of this SupportCenterSettings.
         :type: str
         """
+        if isinstance(router_type, int):
+            router_type = str(router_type)
         allowed_values = ["Hash", "Browser"]
         if router_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for router_type -> " + router_type)

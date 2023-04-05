@@ -274,6 +274,8 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :param status: The status of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["PENDING", "APPROVED", "DENIED", "CANCELED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -301,6 +303,8 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         :param substatus: The substatus of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
         :type: str
         """
+        if isinstance(substatus, int):
+            substatus = str(substatus)
         allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "InvalidDailyDuration", "OutsideShift", "RemovedFromWaitlist", "Waitlisted"]
         if substatus.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for substatus -> " + substatus)

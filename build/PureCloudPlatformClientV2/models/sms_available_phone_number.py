@@ -272,6 +272,8 @@ class SmsAvailablePhoneNumber(object):
         :param phone_number_type: The phone_number_type of this SmsAvailablePhoneNumber.
         :type: str
         """
+        if isinstance(phone_number_type, int):
+            phone_number_type = str(phone_number_type)
         allowed_values = ["local", "mobile", "tollfree", "shortcode"]
         if phone_number_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for phone_number_type -> " + phone_number_type)
@@ -299,6 +301,8 @@ class SmsAvailablePhoneNumber(object):
         :param address_requirement: The address_requirement of this SmsAvailablePhoneNumber.
         :type: str
         """
+        if isinstance(address_requirement, int):
+            address_requirement = str(address_requirement)
         allowed_values = ["none", "any", "local", "foreign"]
         if address_requirement.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for address_requirement -> " + address_requirement)

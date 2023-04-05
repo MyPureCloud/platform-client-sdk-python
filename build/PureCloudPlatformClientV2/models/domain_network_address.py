@@ -86,6 +86,8 @@ class DomainNetworkAddress(object):
         :param type: The type of this DomainNetworkAddress.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["ip", "dns", "gateway", "tdm"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -161,6 +163,8 @@ class DomainNetworkAddress(object):
         :param family: The family of this DomainNetworkAddress.
         :type: int
         """
+        if isinstance(family, int):
+            family = str(family)
         allowed_values = ["2", "23"]
         if family.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for family -> " + family)

@@ -80,6 +80,8 @@ class ConversationMessageMetadataEvent(object):
         :param event_type: The event_type of this ConversationMessageMetadataEvent.
         :type: str
         """
+        if isinstance(event_type, int):
+            event_type = str(event_type)
         allowed_values = ["CoBrowse", "Typing", "Presence", "Unknown"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
@@ -107,6 +109,8 @@ class ConversationMessageMetadataEvent(object):
         :param sub_type: The sub_type of this ConversationMessageMetadataEvent.
         :type: str
         """
+        if isinstance(sub_type, int):
+            sub_type = str(sub_type)
         allowed_values = ["On", "Join", "Offering", "OfferingExpired", "OfferingAccepted", "OfferingRejected", "Disconnect", "Unknown"]
         if sub_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sub_type -> " + sub_type)

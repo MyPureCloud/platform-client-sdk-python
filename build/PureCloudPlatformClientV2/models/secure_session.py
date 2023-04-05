@@ -169,6 +169,8 @@ class SecureSession(object):
         :param state: The state of this SecureSession.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["PENDING", "COMPLETED", "FAILED"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

@@ -109,6 +109,8 @@ class KeyPerformanceIndicatorAssessment(object):
         :param assessment_result: The assessment_result of this KeyPerformanceIndicatorAssessment.
         :type: str
         """
+        if isinstance(assessment_result, int):
+            assessment_result = str(assessment_result)
         allowed_values = ["Unknown", "NotSupported", "High", "Low", "Error"]
         if assessment_result.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for assessment_result -> " + assessment_result)

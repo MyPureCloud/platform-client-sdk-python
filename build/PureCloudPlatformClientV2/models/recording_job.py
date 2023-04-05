@@ -143,6 +143,8 @@ class RecordingJob(object):
         :param state: The state of this RecordingJob.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["FULFILLED", "PENDING", "READY", "PROCESSING", "CANCELLED", "FAILED"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

@@ -83,6 +83,8 @@ class QueueConversationSocialExpressionEventTopicAfterCallWork(object):
         :param state: The state of this QueueConversationSocialExpressionEventTopicAfterCallWork.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["unknown", "skipped", "pending", "complete", "notApplicable"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

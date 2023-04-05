@@ -196,6 +196,8 @@ class CommandStatus(object):
         :param status_code: The status_code of this CommandStatus.
         :type: str
         """
+        if isinstance(status_code, int):
+            status_code = str(status_code)
         allowed_values = ["INPROGRESS", "COMPLETE", "ERROR", "CANCELING", "CANCELED"]
         if status_code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status_code -> " + status_code)
@@ -223,6 +225,8 @@ class CommandStatus(object):
         :param command_type: The command_type of this CommandStatus.
         :type: str
         """
+        if isinstance(command_type, int):
+            command_type = str(command_type)
         allowed_values = ["UPLOAD", "COPYDOCUMENT", "MOVEDOCUMENT", "DELETEWORKSPACE", "DELETEDOCUMENT", "DELETETAG", "UPDATETAG", "REINDEX", "CLEANUP", "REPLACEDOCUMENT"]
         if command_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for command_type -> " + command_type)

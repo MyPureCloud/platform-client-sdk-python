@@ -80,6 +80,8 @@ class TranscriptionEngines(object):
         :param engine: The engine of this TranscriptionEngines.
         :type: str
         """
+        if isinstance(engine, int):
+            engine = str(engine)
         allowed_values = ["Genesys", "GenesysExtended"]
         if engine.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for engine -> " + engine)

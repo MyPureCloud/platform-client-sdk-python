@@ -100,6 +100,8 @@ class SegmentDetailQueryPredicate(object):
         :param type: The type of this SegmentDetailQueryPredicate.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -127,6 +129,8 @@ class SegmentDetailQueryPredicate(object):
         :param dimension: The dimension of this SegmentDetailQueryPredicate.
         :type: str
         """
+        if isinstance(dimension, int):
+            dimension = str(dimension)
         allowed_values = ["addressFrom", "addressTo", "agentAssistantId", "agentOwned", "ani", "authenticated", "bargedParticipantId", "callbackNumber", "callbackScheduledTime", "coachedParticipantId", "conference", "deliveryStatus", "destinationAddress", "destinationConversationId", "direction", "disconnectType", "dnis", "edgeId", "errorCode", "exitReason", "extendedDeliveryStatus", "externalContactId", "externalOrganizationId", "flaggedReason", "flowId", "flowName", "flowOutType", "flowOutcome", "flowOutcomeId", "flowOutcomeValue", "flowVersion", "groupId", "journeyActionId", "journeyActionMapId", "journeyCustomerId", "journeyCustomerIdType", "journeyCustomerSessionId", "mediaCount", "mediaType", "messageType", "monitoredParticipantId", "outboundCampaignId", "outboundContactId", "outboundContactListId", "participantName", "protocolCallId", "provider", "purpose", "queueId", "recording", "remote", "remoteNameDisplayable", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "scoredAgentId", "scriptId", "segmentEnd", "segmentType", "sessionDnis", "sipResponseCode", "subject", "teamId", "transferTargetAddress", "transferTargetName", "transferType", "usedRouting", "userId", "wrapUpCode", "wrapUpNote"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
@@ -154,6 +158,8 @@ class SegmentDetailQueryPredicate(object):
         :param property_type: The property_type of this SegmentDetailQueryPredicate.
         :type: str
         """
+        if isinstance(property_type, int):
+            property_type = str(property_type)
         allowed_values = ["bool", "integer", "real", "date", "string", "uuid"]
         if property_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for property_type -> " + property_type)
@@ -205,6 +211,8 @@ class SegmentDetailQueryPredicate(object):
         :param metric: The metric of this SegmentDetailQueryPredicate.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["tSegmentDuration"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -232,6 +240,8 @@ class SegmentDetailQueryPredicate(object):
         :param operator: The operator of this SegmentDetailQueryPredicate.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

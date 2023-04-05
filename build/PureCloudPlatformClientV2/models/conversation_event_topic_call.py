@@ -189,6 +189,8 @@ class ConversationEventTopicCall(object):
         :param state: The state of this ConversationEventTopicCall.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "uploading", "converting", "transmitting", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -216,6 +218,8 @@ class ConversationEventTopicCall(object):
         :param initial_state: The initial_state of this ConversationEventTopicCall.
         :type: str
         """
+        if isinstance(initial_state, int):
+            initial_state = str(initial_state)
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "uploading", "converting", "transmitting", "none"]
         if initial_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for initial_state -> " + initial_state)
@@ -267,6 +271,8 @@ class ConversationEventTopicCall(object):
         :param recording_state: The recording_state of this ConversationEventTopicCall.
         :type: str
         """
+        if isinstance(recording_state, int):
+            recording_state = str(recording_state)
         allowed_values = ["none", "active", "paused"]
         if recording_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for recording_state -> " + recording_state)
@@ -390,6 +396,8 @@ class ConversationEventTopicCall(object):
         :param disconnect_type: The disconnect_type of this ConversationEventTopicCall.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
@@ -441,6 +449,8 @@ class ConversationEventTopicCall(object):
         :param direction: The direction of this ConversationEventTopicCall.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["outbound", "inbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)

@@ -94,6 +94,8 @@ class DocumentBodyBlock(object):
         :param type: The type of this DocumentBodyBlock.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Paragraph", "Image", "Video", "OrderedList", "UnorderedList"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

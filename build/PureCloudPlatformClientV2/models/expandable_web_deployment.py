@@ -357,6 +357,8 @@ class ExpandableWebDeployment(object):
         :param status: The status of this ExpandableWebDeployment.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Pending", "Active", "Inactive", "Error", "Deleting"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

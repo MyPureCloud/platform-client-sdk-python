@@ -170,6 +170,8 @@ class BenefitAssessment(object):
         :param state: The state of this BenefitAssessment.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Created", "Finished", "Failed"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

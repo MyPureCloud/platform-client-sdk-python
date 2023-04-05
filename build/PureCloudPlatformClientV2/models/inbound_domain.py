@@ -146,6 +146,8 @@ class InboundDomain(object):
         :param mx_record_status: The mx_record_status of this InboundDomain.
         :type: str
         """
+        if isinstance(mx_record_status, int):
+            mx_record_status = str(mx_record_status)
         allowed_values = ["VALID", "INVALID", "NOT_AVAILABLE"]
         if mx_record_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for mx_record_status -> " + mx_record_status)

@@ -286,6 +286,8 @@ class AvailableTopic(object):
         :param visibility: The visibility of this AvailableTopic.
         :type: str
         """
+        if isinstance(visibility, int):
+            visibility = str(visibility)
         allowed_values = ["Public", "Preview"]
         if visibility.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for visibility -> " + visibility)

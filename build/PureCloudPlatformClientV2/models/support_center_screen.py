@@ -82,6 +82,8 @@ class SupportCenterScreen(object):
         :param type: The type of this SupportCenterScreen.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Home", "Category", "SearchResults", "Article"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

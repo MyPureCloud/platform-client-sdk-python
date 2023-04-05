@@ -452,6 +452,8 @@ class CampaignInteraction(object):
         :param disposition: The disposition of this CampaignInteraction.
         :type: str
         """
+        if isinstance(disposition, int):
+            disposition = str(disposition)
         allowed_values = ["DISCONNECT", "LIVE_VOICE", "BUSY", "MACHINE", "NO_ANSWER", "SIT_CALLABLE", "SIT_UNCALLABLE", "FAX"]
         if disposition.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disposition -> " + disposition)

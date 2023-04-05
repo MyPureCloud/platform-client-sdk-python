@@ -80,6 +80,8 @@ class CallbackIdentifier(object):
         :param type: The type of this CallbackIdentifier.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["ACD", "EXTERNAL"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

@@ -113,6 +113,8 @@ class DigitalDataActionConditionPredicate(object):
         :param output_operator: The output_operator of this DigitalDataActionConditionPredicate.
         :type: str
         """
+        if isinstance(output_operator, int):
+            output_operator = str(output_operator)
         allowed_values = ["Equals", "LessThan", "LessThanEquals", "GreaterThan", "GreaterThanEquals", "Contains", "BeginsWith", "EndsWith", "Before", "After"]
         if output_operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for output_operator -> " + output_operator)

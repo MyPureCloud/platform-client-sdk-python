@@ -110,6 +110,8 @@ class ContactColumnConditionSettings(object):
         :param operator: The operator of this ContactColumnConditionSettings.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["Equals", "LessThan", "LessThanEquals", "GreaterThan", "GreaterThanEquals", "Contains", "BeginsWith", "EndsWith", "Before", "After"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
@@ -161,6 +163,8 @@ class ContactColumnConditionSettings(object):
         :param value_type: The value_type of this ContactColumnConditionSettings.
         :type: str
         """
+        if isinstance(value_type, int):
+            value_type = str(value_type)
         allowed_values = ["DateTime", "Numeric", "Period", "String"]
         if value_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for value_type -> " + value_type)

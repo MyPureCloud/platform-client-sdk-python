@@ -421,6 +421,8 @@ class LearningAssignment(object):
         :param state: The state of this LearningAssignment.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Assigned", "InProgress", "Completed", "Deleted", "NotCompleted", "InvalidSchedule"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

@@ -104,6 +104,8 @@ class JourneyWebActionEventsNotificationActionMapPageUrlCondition(object):
         :param operator: The operator of this JourneyWebActionEventsNotificationActionMapPageUrlCondition.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["unknown", "equal", "notEqual", "like", "notLike", "greaterThan", "greaterThanOrEqual", "lessThan", "lessThanOrEqual", "startsWith", "endsWith", "containsAny", "notContainsAny", "containsAll", "notContainsAl"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

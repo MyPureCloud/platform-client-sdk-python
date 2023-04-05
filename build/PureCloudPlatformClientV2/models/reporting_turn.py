@@ -278,6 +278,8 @@ class ReportingTurn(object):
         :param ask_action_result: The ask_action_result of this ReportingTurn.
         :type: str
         """
+        if isinstance(ask_action_result, int):
+            ask_action_result = str(ask_action_result)
         allowed_values = ["SuccessCollection", "SuccessConfirmationYes", "SuccessConfirmationNo", "NoMatchCollection", "NoMatchConfirmation", "AgentRequestedByUser", "ConfirmationRequired", "Error", "ExpressionError", "NoInputCollection", "NoInputConfirmation", "DisambiguationRequired", "SuccessDisambiguation", "SuccessDisambiguationNone", "NoMatchDisambiguation", "NoInputDisambiguation"]
         if ask_action_result.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for ask_action_result -> " + ask_action_result)

@@ -158,6 +158,8 @@ class LearningSlot(object):
         :param difference_rating: The difference_rating of this LearningSlot.
         :type: str
         """
+        if isinstance(difference_rating, int):
+            difference_rating = str(difference_rating)
         allowed_values = ["Poor", "Neutral", "Good"]
         if difference_rating.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for difference_rating -> " + difference_rating)

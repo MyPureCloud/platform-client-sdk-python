@@ -739,6 +739,8 @@ class CreateWorkPlan(object):
         :param shift_start_variance_type: The shift_start_variance_type of this CreateWorkPlan.
         :type: str
         """
+        if isinstance(shift_start_variance_type, int):
+            shift_start_variance_type = str(shift_start_variance_type)
         allowed_values = ["ShiftStart", "ShiftStartAndPaidDuration"]
         if shift_start_variance_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for shift_start_variance_type -> " + shift_start_variance_type)

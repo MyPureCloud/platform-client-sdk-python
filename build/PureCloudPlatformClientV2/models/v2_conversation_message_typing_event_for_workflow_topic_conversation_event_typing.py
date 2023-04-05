@@ -80,6 +80,8 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping(ob
         :param type: The type of this V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["On"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

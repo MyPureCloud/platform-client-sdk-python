@@ -819,6 +819,8 @@ class AnalyticsSession(object):
         :param delivery_status: The delivery_status of this AnalyticsSession.
         :type: str
         """
+        if isinstance(delivery_status, int):
+            delivery_status = str(delivery_status)
         allowed_values = ["DeliveryFailed", "DeliverySuccess", "Failed", "Queued", "Read", "Received", "Sent"]
         if delivery_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for delivery_status -> " + delivery_status)
@@ -894,6 +896,8 @@ class AnalyticsSession(object):
         :param direction: The direction of this AnalyticsSession.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -1329,6 +1333,8 @@ class AnalyticsSession(object):
         :param media_type: The media_type of this AnalyticsSession.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["callback", "chat", "cobrowse", "email", "message", "screenshare", "unknown", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -1956,6 +1962,8 @@ class AnalyticsSession(object):
         :param used_routing: The used_routing of this AnalyticsSession.
         :type: str
         """
+        if isinstance(used_routing, int):
+            used_routing = str(used_routing)
         allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)

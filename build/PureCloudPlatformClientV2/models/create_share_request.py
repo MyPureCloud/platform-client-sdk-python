@@ -92,6 +92,8 @@ class CreateShareRequest(object):
         :param shared_entity_type: The shared_entity_type of this CreateShareRequest.
         :type: str
         """
+        if isinstance(shared_entity_type, int):
+            shared_entity_type = str(shared_entity_type)
         allowed_values = ["DOCUMENT"]
         if shared_entity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for shared_entity_type -> " + shared_entity_type)
@@ -143,6 +145,8 @@ class CreateShareRequest(object):
         :param member_type: The member_type of this CreateShareRequest.
         :type: str
         """
+        if isinstance(member_type, int):
+            member_type = str(member_type)
         allowed_values = ["USER", "GROUP", "PUBLIC"]
         if member_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for member_type -> " + member_type)

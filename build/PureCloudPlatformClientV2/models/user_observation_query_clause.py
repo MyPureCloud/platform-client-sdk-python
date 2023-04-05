@@ -82,6 +82,8 @@ class UserObservationQueryClause(object):
         :param type: The type of this UserObservationQueryClause.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["and", "or"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

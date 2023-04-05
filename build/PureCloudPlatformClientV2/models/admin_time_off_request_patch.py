@@ -97,6 +97,8 @@ class AdminTimeOffRequestPatch(object):
         :param status: The status of this AdminTimeOffRequestPatch.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["PENDING", "APPROVED", "DENIED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

@@ -255,6 +255,8 @@ class HistoricalAdherenceQueryResult(object):
         :param impact: The impact of this HistoricalAdherenceQueryResult.
         :type: str
         """
+        if isinstance(impact, int):
+            impact = str(impact)
         allowed_values = ["Positive", "Negative", "Neutral", "Unknown"]
         if impact.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for impact -> " + impact)

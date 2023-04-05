@@ -110,6 +110,8 @@ class RequestMapping(object):
         :param attribute_type: The attribute_type of this RequestMapping.
         :type: str
         """
+        if isinstance(attribute_type, int):
+            attribute_type = str(attribute_type)
         allowed_values = ["String", "Number", "Integer", "Boolean"]
         if attribute_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for attribute_type -> " + attribute_type)
@@ -137,6 +139,8 @@ class RequestMapping(object):
         :param mapping_type: The mapping_type of this RequestMapping.
         :type: str
         """
+        if isinstance(mapping_type, int):
+            mapping_type = str(mapping_type)
         allowed_values = ["Lookup", "HardCoded"]
         if mapping_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for mapping_type -> " + mapping_type)

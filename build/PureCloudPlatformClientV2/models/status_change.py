@@ -116,6 +116,8 @@ class StatusChange(object):
         :param status: The status of this StatusChange.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Approved", "Rejected", "Rollback", "Pending", "Open", "SecondaryApprovalNamespacesAdded", "ReviewerApproved", "ReviewerRejected", "ReviewerRollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -143,6 +145,8 @@ class StatusChange(object):
         :param previous_status: The previous_status of this StatusChange.
         :type: str
         """
+        if isinstance(previous_status, int):
+            previous_status = str(previous_status)
         allowed_values = ["Approved", "Rejected", "Rollback", "Pending", "Open", "SecondaryApprovalNamespacesAdded", "ReviewerApproved", "ReviewerRejected", "ReviewerRollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented"]
         if previous_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for previous_status -> " + previous_status)
@@ -170,6 +174,8 @@ class StatusChange(object):
         :param namespace: The namespace of this StatusChange.
         :type: str
         """
+        if isinstance(namespace, int):
+            namespace = str(namespace)
         allowed_values = ["agent.assistant", "analytics.alerting", "analytics", "analytics.realtime", "analytics.reporting.settings", "architect", "audiohook", "audit", "auth.api", "authorization", "automation.testing", "bots", "bots.voice", "callback", "cobrowse", "content.management", "conversation", "dataactions", "datatables", "directory", "email", "event.orchestration", "external.contacts", "gcv", "gdpr", "groups", "historical.adherence", "infrastructureascode", "integrations", "intent.miner", "journey", "knowledge", "language.understanding", "limit.registry", "marketplace", "messaging", "notifications", "onboarding", "outbound", "platform.api", "predictive.routing", "presence", "quality", "recording", "response.management", "routing", "scim", "search", "secondary.automation.testing", "skills", "speech.and.text.analytics", "speech.integration", "supportability", "task.management", "telephony.configuration", "users", "web.deployments", "web.messaging", "webchat", "webhooks", "workforce.management"]
         if namespace.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for namespace -> " + namespace)
@@ -221,6 +227,8 @@ class StatusChange(object):
         :param reject_reason: The reject_reason of this StatusChange.
         :type: str
         """
+        if isinstance(reject_reason, int):
+            reject_reason = str(reject_reason)
         allowed_values = ["AlternativeExists", "IncreaseNotRequired", "PlatformMisuse", "PlatformStability", "OtherReason"]
         if reject_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reject_reason -> " + reject_reason)

@@ -83,6 +83,8 @@ class BuForecastTimeSeriesResult(object):
         :param metric: The metric of this BuForecastTimeSeriesResult.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["Offered", "AverageHandleTimeSeconds"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
@@ -110,6 +112,8 @@ class BuForecastTimeSeriesResult(object):
         :param forecasting_method: The forecasting_method of this BuForecastTimeSeriesResult.
         :type: str
         """
+        if isinstance(forecasting_method, int):
+            forecasting_method = str(forecasting_method)
         allowed_values = ["AutoRegressiveIntegratedMovingAverage", "MovingAverage", "SingleExponentialSmoothing", "RandomWalk", "DecompositionUsingAdditiveSeasonality", "DecompositionUsingMultiplicativeSeasonality", "HoltWintersAdditiveSeasonality", "HoltWintersAdditiveSeasonalityWithDampedTrend", "HoltWintersMultiplicativeSeasonality", "HoltWintersMultiplicativeSeasonalityWithDampedTrend", "DampedLinearExponentialSmoothing", "DoubleExponentialSmoothing", "DoubleMovingAverage", "LinearExponentialSmoothing", "LinearWeightedMovingAverage", "PointEstimateUsingDampedLinearExponentialSmoothing", "PointEstimateUsingDoubleExponentialSmoothing", "PointEstimateUsingLatestWeek", "PointEstimateUsingLinearExponentialSmoothing", "PointEstimateUsingWeightedAverage", "CurveFit", "MultiLinearRegression", "DynamicHarmonicRegression", "Theta", "Ensemble", "Other"]
         if forecasting_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for forecasting_method -> " + forecasting_method)
@@ -137,6 +141,8 @@ class BuForecastTimeSeriesResult(object):
         :param forecast_type: The forecast_type of this BuForecastTimeSeriesResult.
         :type: str
         """
+        if isinstance(forecast_type, int):
+            forecast_type = str(forecast_type)
         allowed_values = ["LongTerm", "ShortTerm"]
         if forecast_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for forecast_type -> " + forecast_type)

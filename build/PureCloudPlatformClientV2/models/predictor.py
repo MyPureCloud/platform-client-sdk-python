@@ -235,6 +235,8 @@ class Predictor(object):
         :param state: The state of this Predictor.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Created", "Error", "Active"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

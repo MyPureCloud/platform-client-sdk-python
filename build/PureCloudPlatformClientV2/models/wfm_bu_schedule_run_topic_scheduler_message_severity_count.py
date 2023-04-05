@@ -80,6 +80,8 @@ class WfmBuScheduleRunTopicSchedulerMessageSeverityCount(object):
         :param severity: The severity of this WfmBuScheduleRunTopicSchedulerMessageSeverityCount.
         :type: str
         """
+        if isinstance(severity, int):
+            severity = str(severity)
         allowed_values = ["Ignore", "Information", "Warning", "Error"]
         if severity.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for severity -> " + severity)

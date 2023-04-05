@@ -178,6 +178,8 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         :param compliance_abandon_rate_denominator: The compliance_abandon_rate_denominator of this DialerOutboundSettingsConfigChangeOutboundSettings.
         :type: str
         """
+        if isinstance(compliance_abandon_rate_denominator, int):
+            compliance_abandon_rate_denominator = str(compliance_abandon_rate_denominator)
         allowed_values = ["ALL_CALLS", "CALLS_THAT_REACHED_QUEUE"]
         if compliance_abandon_rate_denominator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for compliance_abandon_rate_denominator -> " + compliance_abandon_rate_denominator)

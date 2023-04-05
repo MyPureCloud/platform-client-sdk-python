@@ -80,6 +80,8 @@ class ConversationContentText(object):
         :param type: The type of this ConversationContentText.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Text"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

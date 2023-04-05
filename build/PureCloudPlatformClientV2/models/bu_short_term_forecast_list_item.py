@@ -175,6 +175,8 @@ class BuShortTermForecastListItem(object):
         :param creation_method: The creation_method of this BuShortTermForecastListItem.
         :type: str
         """
+        if isinstance(creation_method, int):
+            creation_method = str(creation_method)
         allowed_values = ["Import", "ImportedHistoricalWeightedAverage", "HistoricalWeightedAverage", "Advanced"]
         if creation_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for creation_method -> " + creation_method)

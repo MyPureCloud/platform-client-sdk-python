@@ -278,6 +278,8 @@ class WhatsAppIntegration(object):
         :param status: The status of this WhatsAppIntegration.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Active", "Inactive", "Error", "Starting", "Incomplete", "Deleting", "DeletionFailed"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -449,6 +451,8 @@ class WhatsAppIntegration(object):
         :param activation_status_code: The activation_status_code of this WhatsAppIntegration.
         :type: str
         """
+        if isinstance(activation_status_code, int):
+            activation_status_code = str(activation_status_code)
         allowed_values = ["CodeSent", "WaitRequired", "ActivationFailed", "CodeConfirmed", "ConfirmationFailed", "ResendCode"]
         if activation_status_code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for activation_status_code -> " + activation_status_code)
@@ -500,6 +504,8 @@ class WhatsAppIntegration(object):
         :param create_status: The create_status of this WhatsAppIntegration.
         :type: str
         """
+        if isinstance(create_status, int):
+            create_status = str(create_status)
         allowed_values = ["Initiated", "Completed", "Error"]
         if create_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for create_status -> " + create_status)

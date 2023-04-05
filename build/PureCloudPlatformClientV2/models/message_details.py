@@ -154,6 +154,8 @@ class MessageDetails(object):
         :param message_status: The message_status of this MessageDetails.
         :type: str
         """
+        if isinstance(message_status, int):
+            message_status = str(message_status)
         allowed_values = ["queued", "sent", "failed", "received", "delivery-success", "delivery-failed", "read", "removed"]
         if message_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_status -> " + message_status)

@@ -277,6 +277,8 @@ class JourneyWebActionEventsNotificationWebActionEventsNotification(object):
         :param event_type: The event_type of this JourneyWebActionEventsNotificationWebActionEventsNotification.
         :type: str
         """
+        if isinstance(event_type, int):
+            event_type = str(event_type)
         allowed_values = ["WebActionEvent", "BlockedWebActionOfferEvent"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)

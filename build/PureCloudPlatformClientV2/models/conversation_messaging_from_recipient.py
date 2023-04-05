@@ -148,6 +148,8 @@ class ConversationMessagingFromRecipient(object):
         :param id_type: The id_type of this ConversationMessagingFromRecipient.
         :type: str
         """
+        if isinstance(id_type, int):
+            id_type = str(id_type)
         allowed_values = ["Email", "Phone", "Opaque"]
         if id_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for id_type -> " + id_type)

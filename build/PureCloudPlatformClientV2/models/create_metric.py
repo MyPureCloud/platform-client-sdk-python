@@ -241,6 +241,8 @@ class CreateMetric(object):
         :param time_display_unit: The time_display_unit of this CreateMetric.
         :type: str
         """
+        if isinstance(time_display_unit, int):
+            time_display_unit = str(time_display_unit)
         allowed_values = ["None", "Seconds", "Minutes", "Hours"]
         if time_display_unit.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for time_display_unit -> " + time_display_unit)

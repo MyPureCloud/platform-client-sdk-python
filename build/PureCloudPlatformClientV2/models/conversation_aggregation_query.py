@@ -296,6 +296,8 @@ class ConversationAggregationQuery(object):
         :param alternate_time_dimension: The alternate_time_dimension of this ConversationAggregationQuery.
         :type: str
         """
+        if isinstance(alternate_time_dimension, int):
+            alternate_time_dimension = str(alternate_time_dimension)
         allowed_values = ["eventTime"]
         if alternate_time_dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for alternate_time_dimension -> " + alternate_time_dimension)

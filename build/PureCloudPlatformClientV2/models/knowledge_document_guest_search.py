@@ -253,6 +253,8 @@ class KnowledgeDocumentGuestSearch(object):
         :param query_type: The query_type of this KnowledgeDocumentGuestSearch.
         :type: str
         """
+        if isinstance(query_type, int):
+            query_type = str(query_type)
         allowed_values = ["AutoSearch", "ManualSearch", "Suggestion"]
         if query_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for query_type -> " + query_type)

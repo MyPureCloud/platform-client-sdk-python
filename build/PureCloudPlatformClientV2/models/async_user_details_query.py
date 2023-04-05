@@ -192,6 +192,8 @@ class AsyncUserDetailsQuery(object):
         :param order: The order of this AsyncUserDetailsQuery.
         :type: str
         """
+        if isinstance(order, int):
+            order = str(order)
         allowed_values = ["asc", "desc", "unordered"]
         if order.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for order -> " + order)

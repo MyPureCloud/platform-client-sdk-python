@@ -176,6 +176,8 @@ class V2MobiusRulesTopicRule(object):
         :param type: The type of this V2MobiusRulesTopicRule.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["ConversationMetrics", "UserPresence", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -299,6 +301,8 @@ class V2MobiusRulesTopicRule(object):
         :param action: The action of this V2MobiusRulesTopicRule.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["UNKNOWN", "CREATE", "UPDATE", "DELETE"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

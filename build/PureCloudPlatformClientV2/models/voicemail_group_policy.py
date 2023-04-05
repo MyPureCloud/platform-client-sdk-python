@@ -355,6 +355,8 @@ class VoicemailGroupPolicy(object):
         :param group_alert_type: The group_alert_type of this VoicemailGroupPolicy.
         :type: str
         """
+        if isinstance(group_alert_type, int):
+            group_alert_type = str(group_alert_type)
         allowed_values = ["RANDOM", "ROUND_ROBIN", "SEQUENTIAL"]
         if group_alert_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for group_alert_type -> " + group_alert_type)

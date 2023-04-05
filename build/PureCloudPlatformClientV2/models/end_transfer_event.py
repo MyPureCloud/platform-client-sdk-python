@@ -188,6 +188,8 @@ class EndTransferEvent(object):
         :param final_state: The final_state of this EndTransferEvent.
         :type: str
         """
+        if isinstance(final_state, int):
+            final_state = str(final_state)
         allowed_values = ["Completed", "Canceled", "Failed"]
         if final_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for final_state -> " + final_state)

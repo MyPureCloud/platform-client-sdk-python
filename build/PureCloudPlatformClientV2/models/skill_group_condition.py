@@ -134,6 +134,8 @@ class SkillGroupCondition(object):
         :param operation: The operation of this SkillGroupCondition.
         :type: str
         """
+        if isinstance(operation, int):
+            operation = str(operation)
         allowed_values = ["And", "Not", "Or"]
         if operation.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operation -> " + operation)

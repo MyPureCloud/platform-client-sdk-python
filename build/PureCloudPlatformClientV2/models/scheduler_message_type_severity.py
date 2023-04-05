@@ -80,6 +80,8 @@ class SchedulerMessageTypeSeverity(object):
         :param type: The type of this SchedulerMessageTypeSeverity.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["AgentNotFound", "AgentNotInSelectedManagementUnit", "AgentNotLicensed", "AgentWithoutWorkPlan", "WorkPlanNotEnabled", "WorkPlanNotFound", "AgentWithoutCapability", "NoNeedDays", "UnableToProduceAgentSchedule", "UnableToScheduleMaxConsecutiveWorkingDaysFromAgentHistory", "UnableToScheduleMaxConsecutiveWorkingWeekendsFromAgentHistory", "UnableToScheduleMaxWeeklyPaidTimeFromTimeOff", "UnableToScheduleMaxWorkDayPaidTimeFromTimeOff", "UnableToScheduleMinIntershiftTimeFromAgentHistory", "UnableToScheduleMinIntershiftTimeFromDst", "UnableToScheduleMinShiftStartDistanceFromAgentHistory", "UnableToScheduleMinShiftStartDistanceFromDst", "UnableToScheduleMinWeeklyPaidTimeFromTimeOff", "UnableToScheduleMinWeeklyWorkDaysFromTimeOff", "UnableToScheduleMinWorkDayPaidTimeFromTimeOff", "UnableToSchedulePlanningPeriodMaxDaysOffFromAgentHistory", "UnableToSchedulePlanningPeriodMaxDaysOffFromTimeOff", "UnableToSchedulePlanningPeriodMaxPaidTimeFromAgentHistory", "UnableToSchedulePlanningPeriodMaxPaidTimeFromTimeOff", "UnableToSchedulePlanningPeriodMinDaysOffFromAgentHistory", "UnableToSchedulePlanningPeriodMinPaidTimeFromAgentHistory", "UnableToSchedulePlanningPeriodMinPaidTimeFromTimeOff", "UnableToScheduleWorkDayFromTimeOff", "UnableToScheduleMaxConsecutiveWorkingDays", "UnableToScheduleMaxConsecutiveWorkingWeekends", "UnableToScheduleMaxWeeklyPaidTime", "UnableToScheduleMaxWeeklyWorkDays", "UnableToScheduleMaxWorkDayPaidTime", "UnableToScheduleMinConsecutiveNonWorkingTimePerWeek", "UnableToScheduleMinIntershiftTime", "UnableToScheduleMinShiftStartDistance", "UnableToScheduleMinWeeklyPaidTime", "UnableToScheduleMinWeeklyWorkDays", "UnableToScheduleMinWorkDayPaidTime", "UnableToSchedulePlanningPeriodMaxDaysOff", "UnableToSchedulePlanningPeriodMaxPaidTime", "UnableToSchedulePlanningPeriodMinDaysOff", "UnableToSchedulePlanningPeriodMinPaidTime", "UnableToScheduleShiftVariance", "UnableToScheduleWorkDay"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -107,6 +109,8 @@ class SchedulerMessageTypeSeverity(object):
         :param severity: The severity of this SchedulerMessageTypeSeverity.
         :type: str
         """
+        if isinstance(severity, int):
+            severity = str(severity)
         allowed_values = ["Ignore", "Information", "Warning", "Error"]
         if severity.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for severity -> " + severity)

@@ -632,6 +632,8 @@ class WorkPlanShift(object):
         :param day_off_rule: The day_off_rule of this WorkPlanShift.
         :type: str
         """
+        if isinstance(day_off_rule, int):
+            day_off_rule = str(day_off_rule)
         allowed_values = ["NextDayOff", "PreviousDayOff"]
         if day_off_rule.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for day_off_rule -> " + day_off_rule)

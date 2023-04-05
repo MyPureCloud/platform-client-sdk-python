@@ -223,6 +223,8 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :param status: The status of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Scheduled", "InProgress", "Completed", "InvalidSchedule"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -442,6 +444,8 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :param change_type: The change_type of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
         :type: str
         """
+        if isinstance(change_type, int):
+            change_type = str(change_type)
         allowed_values = ["Create", "Update", "Delete", "Invalidate"]
         if change_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for change_type -> " + change_type)

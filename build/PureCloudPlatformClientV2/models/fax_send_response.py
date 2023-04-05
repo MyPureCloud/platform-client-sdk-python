@@ -164,6 +164,8 @@ class FaxSendResponse(object):
         :param upload_method_type: The upload_method_type of this FaxSendResponse.
         :type: str
         """
+        if isinstance(upload_method_type, int):
+            upload_method_type = str(upload_method_type)
         allowed_values = ["SINGLE_PUT", "MULTIPART_POST"]
         if upload_method_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for upload_method_type -> " + upload_method_type)

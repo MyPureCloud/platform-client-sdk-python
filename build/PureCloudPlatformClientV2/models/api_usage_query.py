@@ -110,6 +110,8 @@ class ApiUsageQuery(object):
         :param granularity: The granularity of this ApiUsageQuery.
         :type: str
         """
+        if isinstance(granularity, int):
+            granularity = str(granularity)
         allowed_values = ["Day", "Week", "Month"]
         if granularity.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for granularity -> " + granularity)

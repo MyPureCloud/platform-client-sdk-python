@@ -207,6 +207,8 @@ class FlowRuntimeExecution(object):
         :param status: The status of this FlowRuntimeExecution.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["UNKNOWN", "RUNNING", "ERROR", "TERMINATED", "COMPLETED", "FAILED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

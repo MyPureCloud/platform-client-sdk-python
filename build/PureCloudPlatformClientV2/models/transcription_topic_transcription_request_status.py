@@ -104,6 +104,8 @@ class TranscriptionTopicTranscriptionRequestStatus(object):
         :param status: The status of this TranscriptionTopicTranscriptionRequestStatus.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["UNKNOWN", "SESSION_ONGOING", "SESSION_ENDED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

@@ -221,6 +221,8 @@ class DncListDivisionView(object):
         :param dnc_source_type: The dnc_source_type of this DncListDivisionView.
         :type: str
         """
+        if isinstance(dnc_source_type, int):
+            dnc_source_type = str(dnc_source_type)
         allowed_values = ["rds", "rds_custom", "dnc.com", "gryphon"]
         if dnc_source_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dnc_source_type -> " + dnc_source_type)
@@ -248,6 +250,8 @@ class DncListDivisionView(object):
         :param contact_method: The contact_method of this DncListDivisionView.
         :type: str
         """
+        if isinstance(contact_method, int):
+            contact_method = str(contact_method)
         allowed_values = ["Email", "Phone", "Any"]
         if contact_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for contact_method -> " + contact_method)

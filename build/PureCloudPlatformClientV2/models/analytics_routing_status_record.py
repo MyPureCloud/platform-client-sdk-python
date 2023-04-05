@@ -131,6 +131,8 @@ class AnalyticsRoutingStatusRecord(object):
         :param routing_status: The routing_status of this AnalyticsRoutingStatusRecord.
         :type: str
         """
+        if isinstance(routing_status, int):
+            routing_status = str(routing_status)
         allowed_values = ["OFF_QUEUE", "IDLE", "INTERACTING", "NOT_RESPONDING", "COMMUNICATING"]
         if routing_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for routing_status -> " + routing_status)

@@ -183,6 +183,8 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :param blocking_reason: The blocking_reason of this JourneyWebActionEventsNotificationBlockedWebActionOfferMessage.
         :type: str
         """
+        if isinstance(blocking_reason, int):
+            blocking_reason = str(blocking_reason)
         allowed_values = ["Unknown", "PageUrlConditionsNotMatching", "ServiceLevelThrottling", "AlreadyExistingOffer", "TriggerDateInFuture", "MultipleSimultaneousOffers", "NoAvailableAgents", "FrequencyCapping", "OfferedOutsideSchedule"]
         if blocking_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for blocking_reason -> " + blocking_reason)
@@ -258,6 +260,8 @@ class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(object):
         :param blocking_frequency_cap_behaviour: The blocking_frequency_cap_behaviour of this JourneyWebActionEventsNotificationBlockedWebActionOfferMessage.
         :type: str
         """
+        if isinstance(blocking_frequency_cap_behaviour, int):
+            blocking_frequency_cap_behaviour = str(blocking_frequency_cap_behaviour)
         allowed_values = ["Unknown", "CapOnceFinalized", "CapOnceRejected", "CapForPeriod"]
         if blocking_frequency_cap_behaviour.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for blocking_frequency_cap_behaviour -> " + blocking_frequency_cap_behaviour)

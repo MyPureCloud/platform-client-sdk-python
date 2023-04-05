@@ -112,6 +112,8 @@ class SkillGroupLanguageCondition(object):
         :param comparator: The comparator of this SkillGroupLanguageCondition.
         :type: str
         """
+        if isinstance(comparator, int):
+            comparator = str(comparator)
         allowed_values = ["EqualTo", "NotEqualTo", "LessThan", "GreaterThan", "GreaterThanOrEqualTo", "LessThanOrEqualTo"]
         if comparator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for comparator -> " + comparator)

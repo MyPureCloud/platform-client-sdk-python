@@ -271,6 +271,8 @@ class QualityAuditLogMessage(object):
         :param service_name: The service_name of this QualityAuditLogMessage.
         :type: str
         """
+        if isinstance(service_name, int):
+            service_name = str(service_name)
         allowed_values = ["RecordingService", "RecordingPlaybackService", "QualityService"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)
@@ -298,6 +300,8 @@ class QualityAuditLogMessage(object):
         :param level: The level of this QualityAuditLogMessage.
         :type: str
         """
+        if isinstance(level, int):
+            level = str(level)
         allowed_values = ["User", "System"]
         if level.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for level -> " + level)
@@ -325,6 +329,8 @@ class QualityAuditLogMessage(object):
         :param status: The status of this QualityAuditLogMessage.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Success", "Failure", "Warning"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -400,6 +406,8 @@ class QualityAuditLogMessage(object):
         :param action: The action of this QualityAuditLogMessage.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["Read", "Create", "Update", "Delete", "Abandon", "Archive", "Export", "RestoreRequest", "RestoreComplete", "ApplyProtection", "RevokeProtection", "UpdateRetention"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
@@ -451,6 +459,8 @@ class QualityAuditLogMessage(object):
         :param entity_type: The entity_type of this QualityAuditLogMessage.
         :type: str
         """
+        if isinstance(entity_type, int):
+            entity_type = str(entity_type)
         allowed_values = ["Recording", "Evaluation", "Calibration", "Annotation", "ScreenRecording", "Survey"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entity_type -> " + entity_type)

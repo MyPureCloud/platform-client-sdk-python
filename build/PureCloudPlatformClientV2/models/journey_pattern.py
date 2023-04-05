@@ -139,6 +139,8 @@ class JourneyPattern(object):
         :param stream_type: The stream_type of this JourneyPattern.
         :type: str
         """
+        if isinstance(stream_type, int):
+            stream_type = str(stream_type)
         allowed_values = ["Web", "Custom", "Conversation", "App"]
         if stream_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for stream_type -> " + stream_type)

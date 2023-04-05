@@ -392,6 +392,8 @@ class Site(object):
         :param state: The state of this Site.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -731,6 +733,8 @@ class Site(object):
         :param media_model: The media_model of this Site.
         :type: str
         """
+        if isinstance(media_model, int):
+            media_model = str(media_model)
         allowed_values = ["Premises", "Cloud"]
         if media_model.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_model -> " + media_model)

@@ -161,6 +161,8 @@ class AuditEntityReference(object):
         :param type: The type of this AuditEntityReference.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["ATTRIBUTE", "ATTRIBUTE_GROUP_INSTANCE", "DOCUMENT", "DOWNLOAD", "FAX", "GROUP", "RECORDING", "TAG", "WORKSPACE", "USER", "PUBLIC"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

@@ -173,6 +173,8 @@ class HistoricalImportStatus(object):
         :param status: The status of this HistoricalImportStatus.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Initiated", "InProgress", "Pending", "Success", "Failed", "Cancelled", "Purged", "PurgePending"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -296,6 +298,8 @@ class HistoricalImportStatus(object):
         :param type: The type of this HistoricalImportStatus.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Csv", "Json"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

@@ -104,6 +104,8 @@ class AnalyticsAgentGroup(object):
         :param agent_group_type: The agent_group_type of this AnalyticsAgentGroup.
         :type: str
         """
+        if isinstance(agent_group_type, int):
+            agent_group_type = str(agent_group_type)
         allowed_values = ["Group", "SkillGroup", "Team"]
         if agent_group_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for agent_group_type -> " + agent_group_type)

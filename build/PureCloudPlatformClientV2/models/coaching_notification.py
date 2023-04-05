@@ -182,6 +182,8 @@ class CoachingNotification(object):
         :param action_type: The action_type of this CoachingNotification.
         :type: str
         """
+        if isinstance(action_type, int):
+            action_type = str(action_type)
         allowed_values = ["Create", "Update", "Delete", "StatusChange"]
         if action_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_type -> " + action_type)
@@ -209,6 +211,8 @@ class CoachingNotification(object):
         :param relationship: The relationship of this CoachingNotification.
         :type: str
         """
+        if isinstance(relationship, int):
+            relationship = str(relationship)
         allowed_values = ["Attendee", "Creator", "Facilitator"]
         if relationship.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for relationship -> " + relationship)
@@ -284,6 +288,8 @@ class CoachingNotification(object):
         :param status: The status of this CoachingNotification.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Scheduled", "InProgress", "Completed", "InvalidSchedule"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

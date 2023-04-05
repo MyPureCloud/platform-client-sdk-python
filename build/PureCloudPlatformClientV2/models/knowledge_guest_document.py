@@ -224,6 +224,8 @@ class KnowledgeGuestDocument(object):
         :param state: The state of this KnowledgeGuestDocument.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Draft", "Published", "Archived"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

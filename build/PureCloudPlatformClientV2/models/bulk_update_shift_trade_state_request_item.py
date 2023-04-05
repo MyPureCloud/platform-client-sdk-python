@@ -109,6 +109,8 @@ class BulkUpdateShiftTradeStateRequestItem(object):
         :param state: The state of this BulkUpdateShiftTradeStateRequestItem.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Unmatched", "Matched", "Approved", "Denied", "Expired", "Canceled"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

@@ -89,6 +89,8 @@ class TextBotDisconnectAction(object):
         :param reason: The reason of this TextBotDisconnectAction.
         :type: str
         """
+        if isinstance(reason, int):
+            reason = str(reason)
         allowed_values = ["TriggeredByUser", "TriggeredByFlow", "SessionExpired", "Error", "RecognitionFailure"]
         if reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reason -> " + reason)

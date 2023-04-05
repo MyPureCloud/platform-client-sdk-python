@@ -169,6 +169,8 @@ class AnalyticsFlow(object):
         :param entry_type: The entry_type of this AnalyticsFlow.
         :type: str
         """
+        if isinstance(entry_type, int):
+            entry_type = str(entry_type)
         allowed_values = ["agent", "direct", "dnis", "flow", "outbound"]
         if entry_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entry_type -> " + entry_type)
@@ -268,6 +270,8 @@ class AnalyticsFlow(object):
         :param flow_type: The flow_type of this AnalyticsFlow.
         :type: str
         """
+        if isinstance(flow_type, int):
+            flow_type = str(flow_type)
         allowed_values = ["BOT", "COMMONMODULE", "DIGITALBOT", "INBOUNDCALL", "INBOUNDCHAT", "INBOUNDEMAIL", "INBOUNDSHORTMESSAGE", "INQUEUECALL", "INQUEUEEMAIL", "INQUEUESHORTMESSAGE", "OUTBOUNDCALL", "SECURECALL", "SPEECH", "SURVEYINVITE", "VOICE", "VOICEMAIL", "WORKFLOW", "WORKITEM"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flow_type -> " + flow_type)

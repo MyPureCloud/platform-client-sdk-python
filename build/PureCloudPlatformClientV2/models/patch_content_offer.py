@@ -125,6 +125,8 @@ class PatchContentOffer(object):
         :param display_mode: The display_mode of this PatchContentOffer.
         :type: str
         """
+        if isinstance(display_mode, int):
+            display_mode = str(display_mode)
         allowed_values = ["Modal", "Overlay", "Toast"]
         if display_mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for display_mode -> " + display_mode)
@@ -152,6 +154,8 @@ class PatchContentOffer(object):
         :param layout_mode: The layout_mode of this PatchContentOffer.
         :type: str
         """
+        if isinstance(layout_mode, int):
+            layout_mode = str(layout_mode)
         allowed_values = ["TextOnly", "ImageOnly", "LeftText", "RightText", "TopText", "BottomText"]
         if layout_mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for layout_mode -> " + layout_mode)

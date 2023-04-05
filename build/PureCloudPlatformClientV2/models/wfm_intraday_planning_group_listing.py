@@ -106,6 +106,8 @@ class WfmIntradayPlanningGroupListing(object):
         :param no_data_reason: The no_data_reason of this WfmIntradayPlanningGroupListing.
         :type: str
         """
+        if isinstance(no_data_reason, int):
+            no_data_reason = str(no_data_reason)
         allowed_values = ["NoPublishedSchedule", "NoSourceForecast"]
         if no_data_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for no_data_reason -> " + no_data_reason)

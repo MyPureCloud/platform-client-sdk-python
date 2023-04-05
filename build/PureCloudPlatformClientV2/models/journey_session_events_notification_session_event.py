@@ -873,6 +873,8 @@ class JourneySessionEventsNotificationSessionEvent(object):
         :param originating_direction: The originating_direction of this JourneySessionEventsNotificationSessionEvent.
         :type: str
         """
+        if isinstance(originating_direction, int):
+            originating_direction = str(originating_direction)
         allowed_values = ["Unknown", "Inbound", "Outbound"]
         if originating_direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for originating_direction -> " + originating_direction)
@@ -1020,6 +1022,8 @@ class JourneySessionEventsNotificationSessionEvent(object):
         :param last_user_disconnect_type: The last_user_disconnect_type of this JourneySessionEventsNotificationSessionEvent.
         :type: str
         """
+        if isinstance(last_user_disconnect_type, int):
+            last_user_disconnect_type = str(last_user_disconnect_type)
         allowed_values = ["Unknown", "Endpoint", "Client", "System", "Transfer", "Error", "Peer", "Other", "Spam", "Timeout", "TransportFailure", "ConferenceTransfer", "ConsultTransfer", "ForwardTransfer", "NoAnswerTransfer", "NotAvailableTransfer", "Uncallable"]
         if last_user_disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for last_user_disconnect_type -> " + last_user_disconnect_type)
@@ -1047,6 +1051,8 @@ class JourneySessionEventsNotificationSessionEvent(object):
         :param last_acd_outcome: The last_acd_outcome of this JourneySessionEventsNotificationSessionEvent.
         :type: str
         """
+        if isinstance(last_acd_outcome, int):
+            last_acd_outcome = str(last_acd_outcome)
         allowed_values = ["Unknown", "Abandon", "Answered", "FlowOut"]
         if last_acd_outcome.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for last_acd_outcome -> " + last_acd_outcome)

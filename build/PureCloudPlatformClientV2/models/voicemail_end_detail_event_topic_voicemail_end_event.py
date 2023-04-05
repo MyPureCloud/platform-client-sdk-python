@@ -212,6 +212,8 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :param disconnect_type: The disconnect_type of this VoicemailEndDetailEventTopicVoicemailEndEvent.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["UNKNOWN", "ENDPOINT", "CLIENT", "SYSTEM", "TRANSFER", "ERROR", "PEER", "OTHER", "SPAM", "TIMEOUT", "TRANSPORT_FAILURE", "CONFERENCE_TRANSFER", "CONSULT_TRANSFER", "FORWARD_TRANSFER", "NO_ANSWER_TRANSFER", "NOT_AVAILABLE_TRANSFER", "UNCALLABLE"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
@@ -239,6 +241,8 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :param media_type: The media_type of this VoicemailEndDetailEventTopicVoicemailEndEvent.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["UNKNOWN", "VOICE", "CHAT", "EMAIL", "CALLBACK", "COBROWSE", "VIDEO", "SCREENSHARE", "MESSAGE"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -290,6 +294,8 @@ class VoicemailEndDetailEventTopicVoicemailEndEvent(object):
         :param direction: The direction of this VoicemailEndDetailEventTopicVoicemailEndEvent.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["UNKNOWN", "INBOUND", "OUTBOUND"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)

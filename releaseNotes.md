@@ -1,7 +1,7 @@
 Platform API version: 6778
 
 
-Python type hinting support.
+Bug fix.
 
 # Major Changes (0 changes)
 

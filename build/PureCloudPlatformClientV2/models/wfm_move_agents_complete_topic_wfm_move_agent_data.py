@@ -106,6 +106,8 @@ class WfmMoveAgentsCompleteTopicWfmMoveAgentData(object):
         :param result: The result of this WfmMoveAgentsCompleteTopicWfmMoveAgentData.
         :type: str
         """
+        if isinstance(result, int):
+            result = str(result)
         allowed_values = ["AlreadyMoved", "DestinationBusinessUnitAgentLimitExceeded", "DestinationManagementUnitAgentLimitExceeded", "DestinationManagementUnitDoesNotExist", "MoveSuccessful", "MovingToDifferentManagementUnit", "NothingToDo", "SourceManagementUnitNotAuthorized"]
         if result.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for result -> " + result)

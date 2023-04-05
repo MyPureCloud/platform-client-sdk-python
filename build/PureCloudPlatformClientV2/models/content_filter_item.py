@@ -110,6 +110,8 @@ class ContentFilterItem(object):
         :param type: The type of this ContentFilterItem.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["NUMBER", "STRING", "DATE", "BOOLEAN", "LIST"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -137,6 +139,8 @@ class ContentFilterItem(object):
         :param operator: The operator of this ContentFilterItem.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["IN", "RANGE", "EQUALS", "NOTEQUALS", "LESSTHAN", "LESSTHANEQUALS", "GREATERTHAN", "GREATERTHANEQUALS", "CONTAINS"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

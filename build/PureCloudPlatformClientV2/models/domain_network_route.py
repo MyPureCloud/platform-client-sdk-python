@@ -185,6 +185,8 @@ class DomainNetworkRoute(object):
         :param family: The family of this DomainNetworkRoute.
         :type: int
         """
+        if isinstance(family, int):
+            family = str(family)
         allowed_values = ["2", "23"]
         if family.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for family -> " + family)

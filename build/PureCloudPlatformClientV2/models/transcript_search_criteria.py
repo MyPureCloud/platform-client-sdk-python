@@ -197,6 +197,8 @@ class TranscriptSearchCriteria(object):
         :param operator: The operator of this TranscriptSearchCriteria.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["AND", "OR", "NOT"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
@@ -272,6 +274,8 @@ class TranscriptSearchCriteria(object):
         :param type: The type of this TranscriptSearchCriteria.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["EXACT", "EXACT_PHRASE", "PHRASE", "DATE_RANGE", "RANGE", "GREATER_THAN", "LESS_THAN"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

@@ -82,6 +82,8 @@ class ContactListFilterClause(object):
         :param filter_type: The filter_type of this ContactListFilterClause.
         :type: str
         """
+        if isinstance(filter_type, int):
+            filter_type = str(filter_type)
         allowed_values = ["AND", "OR"]
         if filter_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for filter_type -> " + filter_type)

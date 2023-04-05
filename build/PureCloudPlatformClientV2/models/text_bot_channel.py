@@ -88,6 +88,8 @@ class TextBotChannel(object):
         :param name: The name of this TextBotChannel.
         :type: str
         """
+        if isinstance(name, int):
+            name = str(name)
         allowed_values = ["Chat", "Call", "Messaging"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)

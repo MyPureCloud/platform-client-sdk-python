@@ -344,6 +344,8 @@ class OutboundRouteBase(object):
         :param state: The state of this OutboundRouteBase.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -467,6 +469,8 @@ class OutboundRouteBase(object):
         :param distribution: The distribution of this OutboundRouteBase.
         :type: str
         """
+        if isinstance(distribution, int):
+            distribution = str(distribution)
         allowed_values = ["SEQUENTIAL", "RANDOM"]
         if distribution.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for distribution -> " + distribution)

@@ -88,6 +88,8 @@ class PredictorModelBrief(object):
         :param media_type: The media_type of this PredictorModelBrief.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["voice", "email", "message"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -163,6 +165,8 @@ class PredictorModelBrief(object):
         :param state: The state of this PredictorModelBrief.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Trained", "Error", "InvalidDataset", "Inactive"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

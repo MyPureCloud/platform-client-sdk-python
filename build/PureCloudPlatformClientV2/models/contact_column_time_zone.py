@@ -104,6 +104,8 @@ class ContactColumnTimeZone(object):
         :param column_type: The column_type of this ContactColumnTimeZone.
         :type: str
         """
+        if isinstance(column_type, int):
+            column_type = str(column_type)
         allowed_values = ["PHONE", "ZIP"]
         if column_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for column_type -> " + column_type)

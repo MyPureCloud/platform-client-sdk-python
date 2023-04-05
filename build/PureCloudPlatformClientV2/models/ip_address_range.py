@@ -107,6 +107,8 @@ class IpAddressRange(object):
         :param service: The service of this IpAddressRange.
         :type: str
         """
+        if isinstance(service, int):
+            service = str(service)
         allowed_values = ["data-actions", "smtp", "audiohook", "api"]
         if service.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service -> " + service)

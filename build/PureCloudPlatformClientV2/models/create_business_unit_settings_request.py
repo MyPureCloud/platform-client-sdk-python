@@ -89,6 +89,8 @@ class CreateBusinessUnitSettingsRequest(object):
         :param start_day_of_week: The start_day_of_week of this CreateBusinessUnitSettingsRequest.
         :type: str
         """
+        if isinstance(start_day_of_week, int):
+            start_day_of_week = str(start_day_of_week)
         allowed_values = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
         if start_day_of_week.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for start_day_of_week -> " + start_day_of_week)

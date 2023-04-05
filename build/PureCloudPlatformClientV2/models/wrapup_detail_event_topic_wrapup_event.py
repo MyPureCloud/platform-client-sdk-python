@@ -230,6 +230,8 @@ class WrapupDetailEventTopicWrapupEvent(object):
         :param media_type: The media_type of this WrapupDetailEventTopicWrapupEvent.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["UNKNOWN", "VOICE", "CHAT", "EMAIL", "CALLBACK", "COBROWSE", "VIDEO", "SCREENSHARE", "MESSAGE"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -281,6 +283,8 @@ class WrapupDetailEventTopicWrapupEvent(object):
         :param direction: The direction of this WrapupDetailEventTopicWrapupEvent.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["UNKNOWN", "INBOUND", "OUTBOUND"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -500,6 +504,8 @@ class WrapupDetailEventTopicWrapupEvent(object):
         :param message_type: The message_type of this WrapupDetailEventTopicWrapupEvent.
         :type: str
         """
+        if isinstance(message_type, int):
+            message_type = str(message_type)
         allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)

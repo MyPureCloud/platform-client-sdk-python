@@ -246,6 +246,8 @@ class FacetEntry(object):
         :param term_type: The term_type of this FacetEntry.
         :type: str
         """
+        if isinstance(term_type, int):
+            term_type = str(term_type)
         allowed_values = ["TERM", "NUMBERRANGE", "NUMBERHISTOGRAM", "DATERANGE", "DATEHISTOGRAM", "ID"]
         if term_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for term_type -> " + term_type)

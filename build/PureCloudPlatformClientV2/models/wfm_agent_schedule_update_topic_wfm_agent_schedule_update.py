@@ -80,6 +80,8 @@ class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate(object):
         :param update_type: The update_type of this WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate.
         :type: str
         """
+        if isinstance(update_type, int):
+            update_type = str(update_type)
         allowed_values = ["Added", "Edited", "Deleted"]
         if update_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for update_type -> " + update_type)

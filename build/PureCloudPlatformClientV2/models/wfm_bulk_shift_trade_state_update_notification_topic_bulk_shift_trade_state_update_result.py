@@ -119,6 +119,8 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResu
         :param state: The state of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Unmatched", "Matched", "Approved", "Denied", "Expired", "Canceled"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -194,6 +196,8 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResu
         :param failure_reason: The failure_reason of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.
         :type: str
         """
+        if isinstance(failure_reason, int):
+            failure_reason = str(failure_reason)
         allowed_values = ["InitiatingAgentScheduleNotFound", "InitiatingAgentShiftNotFound", "ReceivingAgentNotFound", "ReceivingAgentScheduleNotFound", "ReceivingAgentShiftNotFound", "ScheduleNotPublished", "TransitionNotAllowed"]
         if failure_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for failure_reason -> " + failure_reason)

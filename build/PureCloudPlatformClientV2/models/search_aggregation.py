@@ -140,6 +140,8 @@ class SearchAggregation(object):
         :param type: The type of this SearchAggregation.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["COUNT", "SUM", "AVERAGE", "TERM", "CONTAINS", "STARTS_WITH", "ENDS_WITH"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

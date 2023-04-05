@@ -121,6 +121,8 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
         :param column_type: The column_type of this DialerContactlistfilterConfigChangeFilterPredicate.
         :type: str
         """
+        if isinstance(column_type, int):
+            column_type = str(column_type)
         allowed_values = ["numeric", "alphabetic"]
         if column_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for column_type -> " + column_type)
@@ -148,6 +150,8 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
         :param operator: The operator of this DialerContactlistfilterConfigChangeFilterPredicate.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER", "BETWEEN", "IN"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

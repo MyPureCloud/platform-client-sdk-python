@@ -104,6 +104,8 @@ class EdgeChangeTopicEdge(object):
         :param online_status: The online_status of this EdgeChangeTopicEdge.
         :type: str
         """
+        if isinstance(online_status, int):
+            online_status = str(online_status)
         allowed_values = ["ONLINE", "OFFLINE"]
         if online_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for online_status -> " + online_status)

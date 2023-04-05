@@ -271,6 +271,8 @@ class KnowledgeDocumentSearchRequest(object):
         :param query_type: The query_type of this KnowledgeDocumentSearchRequest.
         :type: str
         """
+        if isinstance(query_type, int):
+            query_type = str(query_type)
         allowed_values = ["AutoSearch", "ManualSearch", "Suggestion"]
         if query_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for query_type -> " + query_type)
@@ -370,6 +372,8 @@ class KnowledgeDocumentSearchRequest(object):
         :param sort_order: The sort_order of this KnowledgeDocumentSearchRequest.
         :type: str
         """
+        if isinstance(sort_order, int):
+            sort_order = str(sort_order)
         allowed_values = ["Asc", "Desc"]
         if sort_order.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sort_order -> " + sort_order)
@@ -397,6 +401,8 @@ class KnowledgeDocumentSearchRequest(object):
         :param sort_by: The sort_by of this KnowledgeDocumentSearchRequest.
         :type: str
         """
+        if isinstance(sort_by, int):
+            sort_by = str(sort_by)
         allowed_values = ["ConfidenceScore", "DateCreated", "DateModified", "CategoryName", "LabelName"]
         if sort_by.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sort_by -> " + sort_by)

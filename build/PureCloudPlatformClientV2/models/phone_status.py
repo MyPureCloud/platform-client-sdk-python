@@ -156,6 +156,8 @@ class PhoneStatus(object):
         :param operational_status: The operational_status of this PhoneStatus.
         :type: str
         """
+        if isinstance(operational_status, int):
+            operational_status = str(operational_status)
         allowed_values = ["OPERATIONAL", "DEGRADED", "OFFLINE", "UNKNOWN"]
         if operational_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operational_status -> " + operational_status)
@@ -183,6 +185,8 @@ class PhoneStatus(object):
         :param edges_status: The edges_status of this PhoneStatus.
         :type: str
         """
+        if isinstance(edges_status, int):
+            edges_status = str(edges_status)
         allowed_values = ["IN_SERVICE", "MIXED_SERVICE", "OUT_OF_SERVICE", "NO_EDGES"]
         if edges_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for edges_status -> " + edges_status)
@@ -282,6 +286,8 @@ class PhoneStatus(object):
         :param phone_assignment_to_edge_type: The phone_assignment_to_edge_type of this PhoneStatus.
         :type: str
         """
+        if isinstance(phone_assignment_to_edge_type, int):
+            phone_assignment_to_edge_type = str(phone_assignment_to_edge_type)
         allowed_values = ["PRIMARY", "SECONDARY"]
         if phone_assignment_to_edge_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for phone_assignment_to_edge_type -> " + phone_assignment_to_edge_type)

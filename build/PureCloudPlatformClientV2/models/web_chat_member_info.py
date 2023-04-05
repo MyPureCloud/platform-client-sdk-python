@@ -281,6 +281,8 @@ class WebChatMemberInfo(object):
         :param role: The role of this WebChatMemberInfo.
         :type: str
         """
+        if isinstance(role, int):
+            role = str(role)
         allowed_values = ["AGENT", "CUSTOMER", "WORKFLOW", "ACD"]
         if role.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for role -> " + role)
@@ -404,6 +406,8 @@ class WebChatMemberInfo(object):
         :param state: The state of this WebChatMemberInfo.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["CONNECTED", "DISCONNECTED", "ALERTING"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

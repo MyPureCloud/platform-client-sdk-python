@@ -227,6 +227,8 @@ class EventLog(object):
         :param level: The level of this EventLog.
         :type: str
         """
+        if isinstance(level, int):
+            level = str(level)
         allowed_values = ["INFO", "WARNING", "ERROR"]
         if level.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for level -> " + level)
@@ -254,6 +256,8 @@ class EventLog(object):
         :param category: The category of this EventLog.
         :type: str
         """
+        if isinstance(category, int):
+            category = str(category)
         allowed_values = ["CALLBACK", "CALL_RESTRICTION", "CALL_RULE", "CAMPAIGN", "CAMPAIGN_RULE", "CONTACT", "CONTACT_LIST_FILTER", "DIGITAL_RULE", "DNC_LIST", "ENTITY_LIMIT", "IMPORT_ERROR", "MESSAGE_RESTRICTION", "MESSAGING_CAMPAIGN", "ORGANIZATION_CONFIGURATION", "SCHEDULE", "MESSAGING_CAMPAIGN_SCHEDULE", "EMAIL_CAMPAIGN_SCHEDULE"]
         if category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for category -> " + category)

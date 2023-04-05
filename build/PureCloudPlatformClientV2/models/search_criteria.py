@@ -197,6 +197,8 @@ class SearchCriteria(object):
         :param operator: The operator of this SearchCriteria.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["AND", "OR", "NOT"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
@@ -272,6 +274,8 @@ class SearchCriteria(object):
         :param type: The type of this SearchCriteria.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["EXACT", "CONTAINS", "STARTS_WITH", "REQUIRED_FIELDS", "RANGE", "DATE_RANGE", "LESS_THAN", "LESS_THAN_EQUAL_TO", "GREATER_THAN", "GREATER_THAN_EQUAL_TO", "SIMPLE", "TERM", "TERMS", "QUERY_STRING", "MATCH_ALL", "REGEX"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

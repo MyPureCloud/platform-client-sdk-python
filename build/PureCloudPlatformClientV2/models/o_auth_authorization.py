@@ -326,6 +326,8 @@ class OAuthAuthorization(object):
         :param state: The state of this OAuthAuthorization.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Unauthorized", "Requested", "Authorized", "Revoked"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

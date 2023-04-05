@@ -131,6 +131,8 @@ class WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculat
         :param state: The state of this WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Unknown", "Complete", "Error", "Processing"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

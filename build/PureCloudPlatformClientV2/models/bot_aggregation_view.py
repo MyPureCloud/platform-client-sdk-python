@@ -88,6 +88,8 @@ class BotAggregationView(object):
         :param target: The target of this BotAggregationView.
         :type: str
         """
+        if isinstance(target, int):
+            target = str(target)
         allowed_values = ["nBotSessionTurns", "nBotSessions", "oBotIntent", "oBotSessionQuery", "oBotSessionQuerySelfServed", "oBotSessionTurn", "oBotSlot", "tBotDisconnect", "tBotExit", "tBotRecognitionFailure", "tBotSession"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
@@ -139,6 +141,8 @@ class BotAggregationView(object):
         :param function: The function of this BotAggregationView.
         :type: str
         """
+        if isinstance(function, int):
+            function = str(function)
         allowed_values = ["rangeBound"]
         if function.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for function -> " + function)

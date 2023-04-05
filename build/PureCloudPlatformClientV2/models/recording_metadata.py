@@ -325,6 +325,8 @@ class RecordingMetadata(object):
         :param file_state: The file_state of this RecordingMetadata.
         :type: str
         """
+        if isinstance(file_state, int):
+            file_state = str(file_state)
         allowed_values = ["ARCHIVED", "AVAILABLE", "DELETED", "RESTORED", "RESTORING", "UPLOADING", "ERROR"]
         if file_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for file_state -> " + file_state)
@@ -400,6 +402,8 @@ class RecordingMetadata(object):
         :param archive_medium: The archive_medium of this RecordingMetadata.
         :type: str
         """
+        if isinstance(archive_medium, int):
+            archive_medium = str(archive_medium)
         allowed_values = ["CLOUDARCHIVE"]
         if archive_medium.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for archive_medium -> " + archive_medium)

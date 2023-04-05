@@ -134,6 +134,8 @@ class ScimError(object):
         :param scim_type: The scim_type of this ScimError.
         :type: str
         """
+        if isinstance(scim_type, int):
+            scim_type = str(scim_type)
         allowed_values = ["invalidFilter", "tooMany", "uniqueness", "mutability", "invalidSyntax", "invalidPath", "noTarget", "invalidValue", "invalidVers", "sensitive"]
         if scim_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for scim_type -> " + scim_type)

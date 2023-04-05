@@ -83,6 +83,8 @@ class DncPatchEmailsRequest(object):
         :param action: The action of this DncPatchEmailsRequest.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["Add", "Remove"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

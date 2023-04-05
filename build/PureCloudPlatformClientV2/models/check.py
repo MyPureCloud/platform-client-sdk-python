@@ -80,6 +80,8 @@ class Check(object):
         :param result: The result of this Check.
         :type: str
         """
+        if isinstance(result, int):
+            result = str(result)
         allowed_values = ["Passed", "Failed", "Unknown", "Skipped", "Error"]
         if result.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for result -> " + result)
@@ -107,6 +109,8 @@ class Check(object):
         :param type: The type of this Check.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["HandleTimeValue", "TransferRateValue", "SalesConversionRateValue", "SalesAmountValue", "RetentionRateValue", "ChurnRateValue", "InteractionVolume", "UserVariance", "DataCoverage", "ModelQuality"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

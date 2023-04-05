@@ -104,6 +104,8 @@ class CreateWebChatMessageRequest(object):
         :param body_type: The body_type of this CreateWebChatMessageRequest.
         :type: str
         """
+        if isinstance(body_type, int):
+            body_type = str(body_type)
         allowed_values = ["standard", "notice", "member-join", "member-leave", "media-request"]
         if body_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for body_type -> " + body_type)

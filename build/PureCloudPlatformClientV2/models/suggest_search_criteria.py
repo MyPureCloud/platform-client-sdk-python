@@ -194,6 +194,8 @@ class SuggestSearchCriteria(object):
         :param operator: The operator of this SuggestSearchCriteria.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["AND", "OR", "NOT"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

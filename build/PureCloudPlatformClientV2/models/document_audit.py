@@ -318,6 +318,8 @@ class DocumentAudit(object):
         :param level: The level of this DocumentAudit.
         :type: str
         """
+        if isinstance(level, int):
+            level = str(level)
         allowed_values = ["USER", "SYSTEM"]
         if level.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for level -> " + level)
@@ -369,6 +371,8 @@ class DocumentAudit(object):
         :param status: The status of this DocumentAudit.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["SUCCESS", "FAILURE", "WARNING"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -396,6 +400,8 @@ class DocumentAudit(object):
         :param action_context: The action_context of this DocumentAudit.
         :type: str
         """
+        if isinstance(action_context, int):
+            action_context = str(action_context)
         allowed_values = ["CREATE", "READ", "UPDATE", "DELETE", "DOWNLOAD", "VIEW", "UPLOAD", "SAVE", "MOVE", "COPY", "ADD", "REMOVE", "RECEIVE", "CONVERT", "FAX", "CREATE_COVERPAGE", "USER_ADD", "USER_REMOVE", "MEMBER_ADD", "MEMBER_REMOVE", "MEMBER_UPDATE", "TAG_ADD", "TAG_REMOVE", "TAG_UPDATE", "ATTRIBUTE_ADD", "ATTRIBUTE_REMOVE", "ATTRIBUTE_UPDATE", "ATTRIBUTE_GROUP_INSTANCE_ADD", "ATTRIBUTE_GROUP_INSTANCE_REMOVE", "ATTRIBUTE_GROUP_INSTANCE_UPDATE", "INDEX_SAVE", "INDEX_DELETE", "INDEX_CREATE", "FILE_SAVE", "FILE_DELETE", "FILE_READ", "THUMBNAIL_CREATE", "TEXT_EXTRACT", "SHARE_ADD", "SHARE_REMOVE", "VERSION_CREATE"]
         if action_context.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_context -> " + action_context)
@@ -423,6 +429,8 @@ class DocumentAudit(object):
         :param action: The action of this DocumentAudit.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["CREATE", "READ", "UPDATE", "DELETE", "DOWNLOAD", "VIEW", "UPLOAD", "SAVE", "MOVE", "COPY", "ADD", "REMOVE", "RECEIVE", "CONVERT", "FAX", "CREATE_COVERPAGE", "USER_ADD", "USER_REMOVE", "MEMBER_ADD", "MEMBER_REMOVE", "MEMBER_UPDATE", "TAG_ADD", "TAG_REMOVE", "TAG_UPDATE", "ATTRIBUTE_ADD", "ATTRIBUTE_REMOVE", "ATTRIBUTE_UPDATE", "ATTRIBUTE_GROUP_INSTANCE_ADD", "ATTRIBUTE_GROUP_INSTANCE_REMOVE", "ATTRIBUTE_GROUP_INSTANCE_UPDATE", "INDEX_SAVE", "INDEX_DELETE", "INDEX_CREATE", "FILE_SAVE", "FILE_DELETE", "FILE_READ", "THUMBNAIL_CREATE", "TEXT_EXTRACT", "SHARE_ADD", "SHARE_REMOVE", "VERSION_CREATE"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

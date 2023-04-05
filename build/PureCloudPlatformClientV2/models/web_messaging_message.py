@@ -153,6 +153,8 @@ class WebMessagingMessage(object):
         :param type: The type of this WebMessagingMessage.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Text", "Structured", "Receipt", "Event"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -252,6 +254,8 @@ class WebMessagingMessage(object):
         :param direction: The direction of this WebMessagingMessage.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["Inbound", "Outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -279,6 +283,8 @@ class WebMessagingMessage(object):
         :param originating_entity: The originating_entity of this WebMessagingMessage.
         :type: str
         """
+        if isinstance(originating_entity, int):
+            originating_entity = str(originating_entity)
         allowed_values = ["Human", "Bot"]
         if originating_entity.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for originating_entity -> " + originating_entity)

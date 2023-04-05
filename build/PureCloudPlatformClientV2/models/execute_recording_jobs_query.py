@@ -77,6 +77,8 @@ class ExecuteRecordingJobsQuery(object):
         :param state: The state of this ExecuteRecordingJobsQuery.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["PROCESSING"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

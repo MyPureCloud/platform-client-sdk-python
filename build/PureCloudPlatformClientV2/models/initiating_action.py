@@ -104,6 +104,8 @@ class InitiatingAction(object):
         :param action_context: The action_context of this InitiatingAction.
         :type: str
         """
+        if isinstance(action_context, int):
+            action_context = str(action_context)
         allowed_values = ["Create", "View", "Update", "Move", "Copy", "Delete", "DeleteAll", "Fax", "VersionCreate", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "ShareAdd", "ShareRemove", "TagAdd", "TagRemove", "TagUpdate", "Read", "ReadAll", "Execute", "ApplyProtection", "RevokeProtection", "UpdateRetention", "Abandon", "Archive", "RestoreRequest", "RestoreComplete", "Promote", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword", "Revoke", "Export", "Append", "Recycle", "Open", "Approved", "Rejected", "Rollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented", "Write", "Purge", "Processed", "Remove", "Replace", "UpdateInService", "UpdateOutOfService", "Cycle", "Scale", "IpAllowlistClear", "AddPairingRole", "Add", "Verify", "Assign", "Unassign", "Reassign", "Reschedule", "Cancel", "SoftDelete", "HardDelete", "Reset", "Rotate", "Restore", "RestoreAll", "RestoreDeleted", "Unarchive", "EnableCapture", "DownloadCapture"]
         if action_context.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_context -> " + action_context)

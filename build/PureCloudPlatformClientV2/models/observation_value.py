@@ -325,6 +325,8 @@ class ObservationValue(object):
         :param direction: The direction of this ObservationValue.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -544,6 +546,8 @@ class ObservationValue(object):
         :param used_routing: The used_routing of this ObservationValue.
         :type: str
         """
+        if isinstance(used_routing, int):
+            used_routing = str(used_routing)
         allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)

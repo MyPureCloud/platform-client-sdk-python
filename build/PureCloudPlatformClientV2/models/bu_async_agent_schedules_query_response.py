@@ -91,6 +91,8 @@ class BuAsyncAgentSchedulesQueryResponse(object):
         :param status: The status of this BuAsyncAgentSchedulesQueryResponse.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Processing", "Complete", "Canceled", "Error"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

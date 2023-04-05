@@ -82,6 +82,8 @@ class LearningAssignmentAggregateQueryResponseMetric(object):
         :param metric: The metric of this LearningAssignmentAggregateQueryResponseMetric.
         :type: str
         """
+        if isinstance(metric, int):
+            metric = str(metric)
         allowed_values = ["nActivities", "nPlannedActivities", "nInProgressActivities", "nCompleteActivities", "nOverdueActivities", "nInvalidScheduleActivities", "nPassedActivities", "nFailedActivities", "oActivityScore", "nNotCompletedActivities"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)

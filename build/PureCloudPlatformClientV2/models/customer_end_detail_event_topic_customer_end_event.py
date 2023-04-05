@@ -230,6 +230,8 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :param disconnect_type: The disconnect_type of this CustomerEndDetailEventTopicCustomerEndEvent.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["UNKNOWN", "ENDPOINT", "CLIENT", "SYSTEM", "TRANSFER", "ERROR", "PEER", "OTHER", "SPAM", "TIMEOUT", "TRANSPORT_FAILURE", "CONFERENCE_TRANSFER", "CONSULT_TRANSFER", "FORWARD_TRANSFER", "NO_ANSWER_TRANSFER", "NOT_AVAILABLE_TRANSFER", "UNCALLABLE"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
@@ -257,6 +259,8 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :param media_type: The media_type of this CustomerEndDetailEventTopicCustomerEndEvent.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["UNKNOWN", "VOICE", "CHAT", "EMAIL", "CALLBACK", "COBROWSE", "VIDEO", "SCREENSHARE", "MESSAGE"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
@@ -356,6 +360,8 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :param direction: The direction of this CustomerEndDetailEventTopicCustomerEndEvent.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["UNKNOWN", "INBOUND", "OUTBOUND"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)
@@ -575,6 +581,8 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         :param message_type: The message_type of this CustomerEndDetailEventTopicCustomerEndEvent.
         :type: str
         """
+        if isinstance(message_type, int):
+            message_type = str(message_type)
         allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)

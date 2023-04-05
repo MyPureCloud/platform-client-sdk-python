@@ -267,6 +267,8 @@ class JourneySegment(object):
         :param scope: The scope of this JourneySegment.
         :type: str
         """
+        if isinstance(scope, int):
+            scope = str(scope)
         allowed_values = ["Session", "Customer"]
         if scope.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for scope -> " + scope)

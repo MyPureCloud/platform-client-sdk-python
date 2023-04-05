@@ -334,6 +334,8 @@ class Metabase(object):
         :param state: The state of this Metabase.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -409,6 +411,8 @@ class Metabase(object):
         :param type: The type of this Metabase.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["EXTERNAL", "EXTERNAL_PCV", "EXTERNAL_PCV_AWS", "EXTERNAL_BYOC_CARRIER", "EXTERNAL_BYOC_PBX", "STATION_CDM", "STATION_CDM_WEBRTC", "STATION", "TIE", "TIE_DIRECT", "TIE_INDIRECT", "TIE_CLOUD_PROXY"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

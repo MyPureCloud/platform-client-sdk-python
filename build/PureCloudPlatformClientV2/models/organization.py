@@ -311,6 +311,8 @@ class Organization(object):
         :param state: The state of this Organization.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -410,6 +412,8 @@ class Organization(object):
         :param product_platform: The product_platform of this Organization.
         :type: str
         """
+        if isinstance(product_platform, int):
+            product_platform = str(product_platform)
         allowed_values = ["GenesysCloud", "PureCloud", "PureEngage", "PureEngageCloud", "PureConnect", "PureConnectCloud", "Unknown"]
         if product_platform.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for product_platform -> " + product_platform)

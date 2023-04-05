@@ -95,6 +95,8 @@ class TeamSearchRequest(object):
         :param sort_order: The sort_order of this TeamSearchRequest.
         :type: str
         """
+        if isinstance(sort_order, int):
+            sort_order = str(sort_order)
         allowed_values = ["ASC", "DESC", "SCORE"]
         if sort_order.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sort_order -> " + sort_order)

@@ -392,6 +392,8 @@ class OAuthClient(object):
         :param authorized_grant_type: The authorized_grant_type of this OAuthClient.
         :type: str
         """
+        if isinstance(authorized_grant_type, int):
+            authorized_grant_type = str(authorized_grant_type)
         allowed_values = ["CODE", "TOKEN", "SAML2-BEARER", "PASSWORD", "CLIENT-CREDENTIALS"]
         if authorized_grant_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for authorized_grant_type -> " + authorized_grant_type)
@@ -467,6 +469,8 @@ class OAuthClient(object):
         :param state: The state of this OAuthClient.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "disabled", "inactive"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

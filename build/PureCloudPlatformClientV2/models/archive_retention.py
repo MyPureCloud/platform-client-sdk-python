@@ -104,6 +104,8 @@ class ArchiveRetention(object):
         :param storage_medium: The storage_medium of this ArchiveRetention.
         :type: str
         """
+        if isinstance(storage_medium, int):
+            storage_medium = str(storage_medium)
         allowed_values = ["CLOUDARCHIVE"]
         if storage_medium.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for storage_medium -> " + storage_medium)

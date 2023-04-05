@@ -83,6 +83,8 @@ class RoutingRule(object):
         :param operator: The operator of this RoutingRule.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["MEETS_THRESHOLD", "ANY"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

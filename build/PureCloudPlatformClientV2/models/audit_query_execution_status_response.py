@@ -122,6 +122,8 @@ class AuditQueryExecutionStatusResponse(object):
         :param state: The state of this AuditQueryExecutionStatusResponse.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Queued", "Running", "Succeeded", "Failed", "Cancelled"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -197,6 +199,8 @@ class AuditQueryExecutionStatusResponse(object):
         :param service_name: The service_name of this AuditQueryExecutionStatusResponse.
         :type: str
         """
+        if isinstance(service_name, int):
+            service_name = str(service_name)
         allowed_values = ["AgentConfig", "AnalyticsReporting", "Architect", "Callback", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Directory", "DynamicSchema", "Emails", "EmployeePerformance", "ExternalContacts", "Gamification", "GDPR", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Learning", "Limits", "LogCapture", "Marketplace", "Messaging", "NumberPurchasing", "Outbound", "PeoplePermissions", "PredictiveEngagement", "Presence", "ProcessAutomation", "Quality", "ResponseManagement", "Routing", "SCIM", "Scripter", "SpeechAndTextAnalytics", "Supportability", "Telephony", "Triggers", "Voicemail", "WebDeployments", "Webhooks", "WorkforceManagement", "Workitems"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)

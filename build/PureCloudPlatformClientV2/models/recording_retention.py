@@ -170,6 +170,8 @@ class RecordingRetention(object):
         :param archive_medium: The archive_medium of this RecordingRetention.
         :type: str
         """
+        if isinstance(archive_medium, int):
+            archive_medium = str(archive_medium)
         allowed_values = ["CLOUDARCHIVE"]
         if archive_medium.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for archive_medium -> " + archive_medium)

@@ -88,6 +88,8 @@ class IntegrationStatusInfo(object):
         :param code: The code of this IntegrationStatusInfo.
         :type: str
         """
+        if isinstance(code, int):
+            code = str(code)
         allowed_values = ["ACTIVE", "ACTIVATING", "INACTIVE", "DEACTIVATING", "ERROR"]
         if code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for code -> " + code)

@@ -161,6 +161,8 @@ class GroupContact(object):
         :param type: The type of this GroupContact.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["GROUPRING", "GROUPPHONE"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -188,6 +190,8 @@ class GroupContact(object):
         :param media_type: The media_type of this GroupContact.
         :type: str
         """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
         allowed_values = ["PHONE"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)

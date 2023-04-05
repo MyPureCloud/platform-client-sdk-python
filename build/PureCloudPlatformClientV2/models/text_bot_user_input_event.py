@@ -82,6 +82,8 @@ class TextBotUserInputEvent(object):
         :param mode: The mode of this TextBotUserInputEvent.
         :type: str
         """
+        if isinstance(mode, int):
+            mode = str(mode)
         allowed_values = ["Text"]
         if mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for mode -> " + mode)

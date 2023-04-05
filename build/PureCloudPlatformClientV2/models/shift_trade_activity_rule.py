@@ -83,6 +83,8 @@ class ShiftTradeActivityRule(object):
         :param activity_category: The activity_category of this ShiftTradeActivityRule.
         :type: str
         """
+        if isinstance(activity_category, int):
+            activity_category = str(activity_category)
         allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if activity_category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for activity_category -> " + activity_category)
@@ -110,6 +112,8 @@ class ShiftTradeActivityRule(object):
         :param action: The action of this ShiftTradeActivityRule.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["Replace", "DoNotAllowTrade", "KeepWithSchedule"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

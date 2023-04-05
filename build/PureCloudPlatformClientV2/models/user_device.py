@@ -272,6 +272,8 @@ class UserDevice(object):
         :param type: The type of this UserDevice.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["android", "ios"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

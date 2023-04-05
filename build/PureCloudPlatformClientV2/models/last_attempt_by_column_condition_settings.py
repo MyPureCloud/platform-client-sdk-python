@@ -134,6 +134,8 @@ class LastAttemptByColumnConditionSettings(object):
         :param operator: The operator of this LastAttemptByColumnConditionSettings.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["Before", "After"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

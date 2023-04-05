@@ -107,6 +107,8 @@ class TimeOffLimitRange(object):
         :param granularity: The granularity of this TimeOffLimitRange.
         :type: str
         """
+        if isinstance(granularity, int):
+            granularity = str(granularity)
         allowed_values = ["Daily"]
         if granularity.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for granularity -> " + granularity)

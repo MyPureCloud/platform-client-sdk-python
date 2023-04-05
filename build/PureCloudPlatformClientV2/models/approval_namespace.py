@@ -83,6 +83,8 @@ class ApprovalNamespace(object):
         :param namespace: The namespace of this ApprovalNamespace.
         :type: str
         """
+        if isinstance(namespace, int):
+            namespace = str(namespace)
         allowed_values = ["agent.assistant", "analytics.alerting", "analytics", "analytics.realtime", "analytics.reporting.settings", "architect", "audiohook", "audit", "auth.api", "authorization", "automation.testing", "bots", "bots.voice", "callback", "cobrowse", "content.management", "conversation", "dataactions", "datatables", "directory", "email", "event.orchestration", "external.contacts", "gcv", "gdpr", "groups", "historical.adherence", "infrastructureascode", "integrations", "intent.miner", "journey", "knowledge", "language.understanding", "limit.registry", "marketplace", "messaging", "notifications", "onboarding", "outbound", "platform.api", "predictive.routing", "presence", "quality", "recording", "response.management", "routing", "scim", "search", "secondary.automation.testing", "skills", "speech.and.text.analytics", "speech.integration", "supportability", "task.management", "telephony.configuration", "users", "web.deployments", "web.messaging", "webchat", "webhooks", "workforce.management"]
         if namespace.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for namespace -> " + namespace)
@@ -110,6 +112,8 @@ class ApprovalNamespace(object):
         :param status: The status of this ApprovalNamespace.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Approved", "Rejected", "Rollback", "Pending", "Open", "SecondaryApprovalNamespacesAdded", "ReviewerApproved", "ReviewerRejected", "ReviewerRollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -137,6 +141,8 @@ class ApprovalNamespace(object):
         :param type: The type of this ApprovalNamespace.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Primary", "Secondary"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

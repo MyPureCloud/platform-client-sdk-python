@@ -102,6 +102,8 @@ class WebMessagingContent(object):
         :param content_type: The content_type of this WebMessagingContent.
         :type: str
         """
+        if isinstance(content_type, int):
+            content_type = str(content_type)
         allowed_values = ["Attachment", "QuickReply", "ButtonResponse", "GenericTemplate", "Card", "Carousel"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)

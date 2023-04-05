@@ -292,6 +292,8 @@ class UserScheduleAdherence(object):
         :param scheduled_activity_category: The scheduled_activity_category of this UserScheduleAdherence.
         :type: str
         """
+        if isinstance(scheduled_activity_category, int):
+            scheduled_activity_category = str(scheduled_activity_category)
         allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if scheduled_activity_category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for scheduled_activity_category -> " + scheduled_activity_category)
@@ -343,6 +345,8 @@ class UserScheduleAdherence(object):
         :param system_presence: The system_presence of this UserScheduleAdherence.
         :type: str
         """
+        if isinstance(system_presence, int):
+            system_presence = str(system_presence)
         allowed_values = ["Available", "Away", "Busy", "Offline", "Idle", "OnQueue", "Meal", "Training", "Meeting", "Break"]
         if system_presence.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for system_presence -> " + system_presence)
@@ -394,6 +398,8 @@ class UserScheduleAdherence(object):
         :param routing_status: The routing_status of this UserScheduleAdherence.
         :type: str
         """
+        if isinstance(routing_status, int):
+            routing_status = str(routing_status)
         allowed_values = ["OFF_QUEUE", "IDLE", "INTERACTING", "NOT_RESPONDING", "COMMUNICATING"]
         if routing_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for routing_status -> " + routing_status)
@@ -421,6 +427,8 @@ class UserScheduleAdherence(object):
         :param actual_activity_category: The actual_activity_category of this UserScheduleAdherence.
         :type: str
         """
+        if isinstance(actual_activity_category, int):
+            actual_activity_category = str(actual_activity_category)
         allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if actual_activity_category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for actual_activity_category -> " + actual_activity_category)
@@ -472,6 +480,8 @@ class UserScheduleAdherence(object):
         :param adherence_state: The adherence_state of this UserScheduleAdherence.
         :type: str
         """
+        if isinstance(adherence_state, int):
+            adherence_state = str(adherence_state)
         allowed_values = ["InAdherence", "OutOfAdherence", "Unscheduled", "Unknown", "Ignored", "Explained"]
         if adherence_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for adherence_state -> " + adherence_state)
@@ -499,6 +509,8 @@ class UserScheduleAdherence(object):
         :param impact: The impact of this UserScheduleAdherence.
         :type: str
         """
+        if isinstance(impact, int):
+            impact = str(impact)
         allowed_values = ["Positive", "Negative", "Neutral", "Unknown"]
         if impact.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for impact -> " + impact)

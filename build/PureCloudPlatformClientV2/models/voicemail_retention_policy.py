@@ -80,6 +80,8 @@ class VoicemailRetentionPolicy(object):
         :param voicemail_retention_policy_type: The voicemail_retention_policy_type of this VoicemailRetentionPolicy.
         :type: str
         """
+        if isinstance(voicemail_retention_policy_type, int):
+            voicemail_retention_policy_type = str(voicemail_retention_policy_type)
         allowed_values = ["RETAIN_INDEFINITELY", "RETAIN_WITH_TTL", "IMMEDIATE_DELETE"]
         if voicemail_retention_policy_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for voicemail_retention_policy_type -> " + voicemail_retention_policy_type)

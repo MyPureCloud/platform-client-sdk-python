@@ -107,6 +107,8 @@ class ContentAttributeFilterItem(object):
         :param operator: The operator of this ContentAttributeFilterItem.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["IN", "RANGE", "EQUALS", "NOTEQUALS", "LESSTHAN", "LESSTHANEQUALS", "GREATERTHAN", "GREATERTHANEQUALS", "CONTAINS"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

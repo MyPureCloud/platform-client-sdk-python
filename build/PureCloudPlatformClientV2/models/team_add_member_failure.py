@@ -104,6 +104,8 @@ class TeamAddMemberFailure(object):
         :param reason: The reason of this TeamAddMemberFailure.
         :type: str
         """
+        if isinstance(reason, int):
+            reason = str(reason)
         allowed_values = ["UserNotFound", "UserGroupLimitExceeded", "UserGroupDivisionMismatch"]
         if reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reason -> " + reason)

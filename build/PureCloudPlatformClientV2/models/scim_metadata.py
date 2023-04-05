@@ -86,6 +86,8 @@ class ScimMetadata(object):
         :param resource_type: The resource_type of this ScimMetadata.
         :type: str
         """
+        if isinstance(resource_type, int):
+            resource_type = str(resource_type)
         allowed_values = ["User", "Group", "ServiceProviderConfig", "ResourceType", "Schema"]
         if resource_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for resource_type -> " + resource_type)

@@ -164,6 +164,8 @@ class ConversationMetrics(object):
         :param sentiment_trend_class: The sentiment_trend_class of this ConversationMetrics.
         :type: str
         """
+        if isinstance(sentiment_trend_class, int):
+            sentiment_trend_class = str(sentiment_trend_class)
         allowed_values = ["NotCalculated", "Declining", "SlightlyDeclining", "NoChange", "SlightlyImproving", "Improving"]
         if sentiment_trend_class.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sentiment_trend_class -> " + sentiment_trend_class)

@@ -86,6 +86,8 @@ class ContentCardAction(object):
         :param type: The type of this ContentCardAction.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Link", "Postback"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

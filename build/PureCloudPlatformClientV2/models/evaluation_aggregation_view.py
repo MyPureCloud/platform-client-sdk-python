@@ -88,6 +88,8 @@ class EvaluationAggregationView(object):
         :param target: The target of this EvaluationAggregationView.
         :type: str
         """
+        if isinstance(target, int):
+            target = str(target)
         allowed_values = ["nEvaluations", "nEvaluationsDeleted", "nEvaluationsRescored", "oTotalCriticalScore", "oTotalScore"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
@@ -139,6 +141,8 @@ class EvaluationAggregationView(object):
         :param function: The function of this EvaluationAggregationView.
         :type: str
         """
+        if isinstance(function, int):
+            function = str(function)
         allowed_values = ["rangeBound"]
         if function.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for function -> " + function)

@@ -552,6 +552,8 @@ class CreateQueueRequest(object):
         :param skill_evaluation_method: The skill_evaluation_method of this CreateQueueRequest.
         :type: str
         """
+        if isinstance(skill_evaluation_method, int):
+            skill_evaluation_method = str(skill_evaluation_method)
         allowed_values = ["NONE", "BEST", "ALL"]
         if skill_evaluation_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for skill_evaluation_method -> " + skill_evaluation_method)

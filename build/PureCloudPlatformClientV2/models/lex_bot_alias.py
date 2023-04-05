@@ -200,6 +200,8 @@ class LexBotAlias(object):
         :param status: The status of this LexBotAlias.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["BUILDING", "READY", "FAILED", "NOT_BUILT"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -251,6 +253,8 @@ class LexBotAlias(object):
         :param language: The language of this LexBotAlias.
         :type: str
         """
+        if isinstance(language, int):
+            language = str(language)
         allowed_values = ["en-US"]
         if language.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for language -> " + language)

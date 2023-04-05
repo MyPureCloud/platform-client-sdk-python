@@ -106,6 +106,8 @@ class PostTextResponse(object):
         :param bot_state: The bot_state of this PostTextResponse.
         :type: str
         """
+        if isinstance(bot_state, int):
+            bot_state = str(bot_state)
         allowed_values = ["Complete", "Failed", "MoreData"]
         if bot_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for bot_state -> " + bot_state)

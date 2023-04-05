@@ -110,6 +110,8 @@ class OutboundMessagingMessagingCampaignConfigChangeContactSort(object):
         :param direction: The direction of this OutboundMessagingMessagingCampaignConfigChangeContactSort.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["ASC", "DESC"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)

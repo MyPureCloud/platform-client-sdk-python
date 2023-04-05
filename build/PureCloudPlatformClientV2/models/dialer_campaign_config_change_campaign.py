@@ -229,6 +229,8 @@ class DialerCampaignConfigChangeCampaign(object):
         :param dialing_mode: The dialing_mode of this DialerCampaignConfigChangeCampaign.
         :type: str
         """
+        if isinstance(dialing_mode, int):
+            dialing_mode = str(dialing_mode)
         allowed_values = ["agentless", "external", "preview", "power", "predictive", "progressive"]
         if dialing_mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dialing_mode -> " + dialing_mode)
@@ -328,6 +330,8 @@ class DialerCampaignConfigChangeCampaign(object):
         :param campaign_status: The campaign_status of this DialerCampaignConfigChangeCampaign.
         :type: str
         """
+        if isinstance(campaign_status, int):
+            campaign_status = str(campaign_status)
         allowed_values = ["on", "off", "complete", "stopping", "invalid"]
         if campaign_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for campaign_status -> " + campaign_status)

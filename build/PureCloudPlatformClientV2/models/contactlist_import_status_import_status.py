@@ -92,6 +92,8 @@ class ContactlistImportStatusImportStatus(object):
         :param import_state: The import_state of this ContactlistImportStatusImportStatus.
         :type: str
         """
+        if isinstance(import_state, int):
+            import_state = str(import_state)
         allowed_values = ["IN_PROGRESS", "FAILED"]
         if import_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for import_state -> " + import_state)

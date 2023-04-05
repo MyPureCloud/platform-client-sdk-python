@@ -86,6 +86,8 @@ class DurationCondition(object):
         :param duration_target: The duration_target of this DurationCondition.
         :type: str
         """
+        if isinstance(duration_target, int):
+            duration_target = str(duration_target)
         allowed_values = ["DURATION", "DURATION_RANGE"]
         if duration_target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for duration_target -> " + duration_target)
@@ -161,6 +163,8 @@ class DurationCondition(object):
         :param duration_mode: The duration_mode of this DurationCondition.
         :type: str
         """
+        if isinstance(duration_mode, int):
+            duration_mode = str(duration_mode)
         allowed_values = ["Between", "Over", "Under"]
         if duration_mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for duration_mode -> " + duration_mode)

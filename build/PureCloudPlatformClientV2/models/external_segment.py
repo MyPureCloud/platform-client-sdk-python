@@ -131,6 +131,8 @@ class ExternalSegment(object):
         :param source: The source of this ExternalSegment.
         :type: str
         """
+        if isinstance(source, int):
+            source = str(source)
         allowed_values = ["AdobeExperiencePlatform", "Custom"]
         if source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for source -> " + source)

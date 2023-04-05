@@ -88,6 +88,8 @@ class SmsProvisioningStatus(object):
         :param action: The action of this SmsProvisioningStatus.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["Unknown", "Create", "Update", "Delete"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
@@ -115,6 +117,8 @@ class SmsProvisioningStatus(object):
         :param state: The state of this SmsProvisioningStatus.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["Running", "Completed", "Failed"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

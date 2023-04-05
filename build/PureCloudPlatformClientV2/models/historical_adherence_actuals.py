@@ -86,6 +86,8 @@ class HistoricalAdherenceActuals(object):
         :param actual_activity_category: The actual_activity_category of this HistoricalAdherenceActuals.
         :type: str
         """
+        if isinstance(actual_activity_category, int):
+            actual_activity_category = str(actual_activity_category)
         allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if actual_activity_category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for actual_activity_category -> " + actual_activity_category)

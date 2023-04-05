@@ -155,6 +155,8 @@ class ExternalMetricDefinition(object):
         :param unit: The unit of this ExternalMetricDefinition.
         :type: str
         """
+        if isinstance(unit, int):
+            unit = str(unit)
         allowed_values = ["Seconds", "Percent", "Number", "Currency"]
         if unit.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for unit -> " + unit)
@@ -230,6 +232,8 @@ class ExternalMetricDefinition(object):
         :param default_objective_type: The default_objective_type of this ExternalMetricDefinition.
         :type: str
         """
+        if isinstance(default_objective_type, int):
+            default_objective_type = str(default_objective_type)
         allowed_values = ["HigherIsBetter", "LowerIsBetter", "TargetArea"]
         if default_objective_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for default_objective_type -> " + default_objective_type)

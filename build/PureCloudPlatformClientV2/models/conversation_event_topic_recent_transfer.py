@@ -119,6 +119,8 @@ class ConversationEventTopicRecentTransfer(object):
         :param state: The state of this ConversationEventTopicRecentTransfer.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["pending", "active", "complete", "canceled", "failed", "timeout", "unknown"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -218,6 +220,8 @@ class ConversationEventTopicRecentTransfer(object):
         :param transfer_type: The transfer_type of this ConversationEventTopicRecentTransfer.
         :type: str
         """
+        if isinstance(transfer_type, int):
+            transfer_type = str(transfer_type)
         allowed_values = ["attended", "unattended"]
         if transfer_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for transfer_type -> " + transfer_type)

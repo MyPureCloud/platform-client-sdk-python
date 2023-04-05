@@ -233,6 +233,8 @@ class SmsPhoneNumber(object):
         :param phone_number_type: The phone_number_type of this SmsPhoneNumber.
         :type: str
         """
+        if isinstance(phone_number_type, int):
+            phone_number_type = str(phone_number_type)
         allowed_values = ["local", "mobile", "tollfree", "shortcode"]
         if phone_number_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for phone_number_type -> " + phone_number_type)
@@ -284,6 +286,8 @@ class SmsPhoneNumber(object):
         :param phone_number_status: The phone_number_status of this SmsPhoneNumber.
         :type: str
         """
+        if isinstance(phone_number_status, int):
+            phone_number_status = str(phone_number_status)
         allowed_values = ["INVALID", "ACTIVE", "PORTING", "PENDING", "PENDING_CANCELLATION", "INITIATED"]
         if phone_number_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for phone_number_status -> " + phone_number_status)
@@ -551,6 +555,8 @@ class SmsPhoneNumber(object):
         :param auto_renewable: The auto_renewable of this SmsPhoneNumber.
         :type: str
         """
+        if isinstance(auto_renewable, int):
+            auto_renewable = str(auto_renewable)
         allowed_values = ["Quarterly"]
         if auto_renewable.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for auto_renewable -> " + auto_renewable)
@@ -602,6 +608,8 @@ class SmsPhoneNumber(object):
         :param short_code_billing_type: The short_code_billing_type of this SmsPhoneNumber.
         :type: str
         """
+        if isinstance(short_code_billing_type, int):
+            short_code_billing_type = str(short_code_billing_type)
         allowed_values = ["Basic", "Vanity"]
         if short_code_billing_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for short_code_billing_type -> " + short_code_billing_type)

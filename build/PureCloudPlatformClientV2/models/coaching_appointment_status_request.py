@@ -77,6 +77,8 @@ class CoachingAppointmentStatusRequest(object):
         :param status: The status of this CoachingAppointmentStatusRequest.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Scheduled", "InProgress", "Completed"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

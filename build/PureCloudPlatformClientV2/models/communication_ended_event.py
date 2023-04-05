@@ -188,6 +188,8 @@ class CommunicationEndedEvent(object):
         :param disconnect_type: The disconnect_type of this CommunicationEndedEvent.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["Error", "Peer", "Self", "System", "Transfer", "TransferACD", "TransferConference", "TransferConsult", "TransferUser"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)

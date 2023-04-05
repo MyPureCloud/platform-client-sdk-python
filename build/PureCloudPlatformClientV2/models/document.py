@@ -485,6 +485,8 @@ class Document(object):
         :param system_type: The system_type of this Document.
         :type: str
         """
+        if isinstance(system_type, int):
+            system_type = str(system_type)
         allowed_values = ["DOCUMENT", "FAX", "RECORDING"]
         if system_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for system_type -> " + system_type)
@@ -776,6 +778,8 @@ class Document(object):
         :param upload_method: The upload_method of this Document.
         :type: str
         """
+        if isinstance(upload_method, int):
+            upload_method = str(upload_method)
         allowed_values = ["SINGLE_PUT", "MULTIPART_POST"]
         if upload_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for upload_method -> " + upload_method)
@@ -851,6 +855,8 @@ class Document(object):
         :param sharing_status: The sharing_status of this Document.
         :type: str
         """
+        if isinstance(sharing_status, int):
+            sharing_status = str(sharing_status)
         allowed_values = ["NONE", "LIMITED", "PUBLIC"]
         if sharing_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sharing_status -> " + sharing_status)

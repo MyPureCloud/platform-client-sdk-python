@@ -332,6 +332,8 @@ class SystemPromptAsset(object):
         :param upload_status: The upload_status of this SystemPromptAsset.
         :type: str
         """
+        if isinstance(upload_status, int):
+            upload_status = str(upload_status)
         allowed_values = ["created", "uploaded", "transcoded", "transcodeFailed"]
         if upload_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for upload_status -> " + upload_status)

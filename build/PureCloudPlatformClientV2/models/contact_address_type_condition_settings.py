@@ -80,6 +80,8 @@ class ContactAddressTypeConditionSettings(object):
         :param operator: The operator of this ContactAddressTypeConditionSettings.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["Equals", "Contains", "BeginsWith", "EndsWith"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

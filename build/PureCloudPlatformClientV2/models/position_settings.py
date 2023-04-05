@@ -83,6 +83,8 @@ class PositionSettings(object):
         :param alignment: The alignment of this PositionSettings.
         :type: str
         """
+        if isinstance(alignment, int):
+            alignment = str(alignment)
         allowed_values = ["Auto", "Left", "Right"]
         if alignment.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for alignment -> " + alignment)

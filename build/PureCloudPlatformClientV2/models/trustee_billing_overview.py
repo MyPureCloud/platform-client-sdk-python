@@ -248,6 +248,8 @@ class TrusteeBillingOverview(object):
         :param subscription_type: The subscription_type of this TrusteeBillingOverview.
         :type: str
         """
+        if isinstance(subscription_type, int):
+            subscription_type = str(subscription_type)
         allowed_values = ["ININ", "MONTH_TO_MONTH", "FREE_TRIAL_MONTH_TO_MONTH", "PREPAY_MONTHLY_COMMITMENT", "PREPAY", "DEV_ORG_MONTH_TO_MONTH", "DEV_ORG_PREPAY_MONTHLY_COMMITMENT", "DEV_ORG_PREPAY"]
         if subscription_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for subscription_type -> " + subscription_type)

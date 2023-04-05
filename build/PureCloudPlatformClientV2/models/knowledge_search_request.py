@@ -164,6 +164,8 @@ class KnowledgeSearchRequest(object):
         :param document_type: The document_type of this KnowledgeSearchRequest.
         :type: str
         """
+        if isinstance(document_type, int):
+            document_type = str(document_type)
         allowed_values = ["Faq", "Article"]
         if document_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for document_type -> " + document_type)

@@ -248,6 +248,8 @@ class CallForwarding(object):
         :param voicemail: The voicemail of this CallForwarding.
         :type: str
         """
+        if isinstance(voicemail, int):
+            voicemail = str(voicemail)
         allowed_values = ["PURECLOUD", "LASTCALL", "NONE"]
         if voicemail.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for voicemail -> " + voicemail)

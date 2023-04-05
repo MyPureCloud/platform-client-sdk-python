@@ -80,6 +80,8 @@ class WorkPlanValidationMessageArgument(object):
         :param type: The type of this WorkPlanValidationMessageArgument.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["ActivityId", "ActivityId2", "ActivityPaidTimeMinutes", "ActivityStartTimeMinutes", "ActivityValidationId", "ActivityValidationId2", "ApplicableDays", "Count", "DailyPaidTimeMinutes", "MaximumDays", "MaxShiftCount", "Minutes", "PaidTimeGranularityMinutes", "RequiredDays", "ShiftId", "ShiftPaidTimeMinutes", "ShiftStartTimeMinutes", "ShiftStopTimeMinutes", "ShiftValidationId", "WeeklyPaidTimeMinutes", "Weeks", "WorkTimeMinutes"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

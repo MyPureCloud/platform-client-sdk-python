@@ -106,6 +106,8 @@ class ApiUsageQueryResult(object):
         :param query_status: The query_status of this ApiUsageQueryResult.
         :type: str
         """
+        if isinstance(query_status, int):
+            query_status = str(query_status)
         allowed_values = ["Complete", "Failed", "Running"]
         if query_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for query_status -> " + query_status)

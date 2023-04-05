@@ -106,6 +106,8 @@ class KnowledgeExportJobRequest(object):
         :param file_type: The file_type of this KnowledgeExportJobRequest.
         :type: str
         """
+        if isinstance(file_type, int):
+            file_type = str(file_type)
         allowed_values = ["Json", "Csv", "Xlsx"]
         if file_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for file_type -> " + file_type)

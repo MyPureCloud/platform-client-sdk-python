@@ -340,6 +340,8 @@ class NluDomainVersion(object):
         :param training_status: The training_status of this NluDomainVersion.
         :type: str
         """
+        if isinstance(training_status, int):
+            training_status = str(training_status)
         allowed_values = ["Untrained", "Training", "Trained", "Error", "Unknown"]
         if training_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for training_status -> " + training_status)
@@ -367,6 +369,8 @@ class NluDomainVersion(object):
         :param evaluation_status: The evaluation_status of this NluDomainVersion.
         :type: str
         """
+        if isinstance(evaluation_status, int):
+            evaluation_status = str(evaluation_status)
         allowed_values = ["Unevaluated", "Evaluating", "Evaluated", "Error"]
         if evaluation_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for evaluation_status -> " + evaluation_status)

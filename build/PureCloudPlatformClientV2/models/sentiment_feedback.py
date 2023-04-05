@@ -166,6 +166,8 @@ class SentimentFeedback(object):
         :param feedback_value: The feedback_value of this SentimentFeedback.
         :type: str
         """
+        if isinstance(feedback_value, int):
+            feedback_value = str(feedback_value)
         allowed_values = ["Neutral", "Positive", "Negative"]
         if feedback_value.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for feedback_value -> " + feedback_value)

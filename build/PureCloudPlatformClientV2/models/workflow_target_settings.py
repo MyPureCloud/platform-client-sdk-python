@@ -77,6 +77,8 @@ class WorkflowTargetSettings(object):
         :param data_format: The data_format of this WorkflowTargetSettings.
         :type: str
         """
+        if isinstance(data_format, int):
+            data_format = str(data_format)
         allowed_values = ["Json", "TopLevelPrimitives"]
         if data_format.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for data_format -> " + data_format)

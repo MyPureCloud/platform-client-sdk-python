@@ -80,6 +80,8 @@ class WfmIntradayDataUpdateTopicIntradayMetric(object):
         :param category: The category of this WfmIntradayDataUpdateTopicIntradayMetric.
         :type: str
         """
+        if isinstance(category, int):
+            category = str(category)
         allowed_values = ["HistoricalQueueData", "HistoricalAgentData", "ForecastData", "ScheduleData", "PerformancePredictionAgentData", "PerformancePredictionQueueData"]
         if category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for category -> " + category)

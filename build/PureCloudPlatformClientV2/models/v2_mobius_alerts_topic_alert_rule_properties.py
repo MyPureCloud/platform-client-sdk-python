@@ -131,6 +131,8 @@ class V2MobiusAlertsTopicAlertRuleProperties(object):
         :param type: The type of this V2MobiusAlertsTopicAlertRuleProperties.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["ConversationMetrics", "UserPresence", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

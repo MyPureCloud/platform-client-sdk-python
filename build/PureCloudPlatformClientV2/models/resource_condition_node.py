@@ -115,6 +115,8 @@ class ResourceConditionNode(object):
         :param conjunction: The conjunction of this ResourceConditionNode.
         :type: str
         """
+        if isinstance(conjunction, int):
+            conjunction = str(conjunction)
         allowed_values = ["AND", "OR"]
         if conjunction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for conjunction -> " + conjunction)
@@ -142,6 +144,8 @@ class ResourceConditionNode(object):
         :param operator: The operator of this ResourceConditionNode.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["EQ", "IN", "GE", "GT", "LE", "LT"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

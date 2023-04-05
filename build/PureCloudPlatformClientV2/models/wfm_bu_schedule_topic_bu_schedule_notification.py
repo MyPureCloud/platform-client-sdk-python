@@ -88,6 +88,8 @@ class WfmBuScheduleTopicBuScheduleNotification(object):
         :param status: The status of this WfmBuScheduleTopicBuScheduleNotification.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Processing", "Complete", "Canceled", "Error"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -139,6 +141,8 @@ class WfmBuScheduleTopicBuScheduleNotification(object):
         :param event_type: The event_type of this WfmBuScheduleTopicBuScheduleNotification.
         :type: str
         """
+        if isinstance(event_type, int):
+            event_type = str(event_type)
         allowed_values = ["Update", "Import", "Copy", "Delete"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)

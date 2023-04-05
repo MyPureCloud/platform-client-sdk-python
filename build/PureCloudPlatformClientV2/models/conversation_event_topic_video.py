@@ -135,6 +135,8 @@ class ConversationEventTopicVideo(object):
         :param state: The state of this ConversationEventTopicVideo.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -162,6 +164,8 @@ class ConversationEventTopicVideo(object):
         :param initial_state: The initial_state of this ConversationEventTopicVideo.
         :type: str
         """
+        if isinstance(initial_state, int):
+            initial_state = str(initial_state)
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
         if initial_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for initial_state -> " + initial_state)
@@ -429,6 +433,8 @@ class ConversationEventTopicVideo(object):
         :param disconnect_type: The disconnect_type of this ConversationEventTopicVideo.
         :type: str
         """
+        if isinstance(disconnect_type, int):
+            disconnect_type = str(disconnect_type)
         allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)

@@ -266,6 +266,8 @@ class BuAgentScheduleActivity(object):
         :param external_activity_type: The external_activity_type of this BuAgentScheduleActivity.
         :type: str
         """
+        if isinstance(external_activity_type, int):
+            external_activity_type = str(external_activity_type)
         allowed_values = ["Coaching", "Learning"]
         if external_activity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for external_activity_type -> " + external_activity_type)

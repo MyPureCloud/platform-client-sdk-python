@@ -131,6 +131,8 @@ class DnsRecordEntry(object):
         :param verification_status: The verification_status of this DnsRecordEntry.
         :type: str
         """
+        if isinstance(verification_status, int):
+            verification_status = str(verification_status)
         allowed_values = ["Pending", "Verified", "Failed", "Unknown"]
         if verification_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for verification_status -> " + verification_status)

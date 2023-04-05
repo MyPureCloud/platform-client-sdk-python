@@ -83,6 +83,8 @@ class ConversationChannel(object):
         :param type: The type of this ConversationChannel.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Unknown", "Call", "Callback", "Email", "GenericObject", "Messaging", "Social", "Webchat", "Voice", "Chat", "Cobrowse", "Video", "Screenshare", "Message"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -110,6 +112,8 @@ class ConversationChannel(object):
         :param message_type: The message_type of this ConversationChannel.
         :type: str
         """
+        if isinstance(message_type, int):
+            message_type = str(message_type)
         allowed_values = ["Unknown", "Sms", "Twitter", "Facebook", "Line", "WhatsApp", "WebMessaging", "Open", "Instagram"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)

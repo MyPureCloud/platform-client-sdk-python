@@ -77,6 +77,8 @@ class ConsultTransferUpdate(object):
         :param speak_to: The speak_to of this ConsultTransferUpdate.
         :type: str
         """
+        if isinstance(speak_to, int):
+            speak_to = str(speak_to)
         allowed_values = ["DESTINATION", "OBJECT", "BOTH"]
         if speak_to.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for speak_to -> " + speak_to)

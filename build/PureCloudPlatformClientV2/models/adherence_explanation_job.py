@@ -130,6 +130,8 @@ class AdherenceExplanationJob(object):
         :param type: The type of this AdherenceExplanationJob.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["AddExplanation", "UpdateExplanation", "QueryAgentExplanations", "QueryBuExplanations"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -157,6 +159,8 @@ class AdherenceExplanationJob(object):
         :param status: The status of this AdherenceExplanationJob.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Processing", "Complete", "Error"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

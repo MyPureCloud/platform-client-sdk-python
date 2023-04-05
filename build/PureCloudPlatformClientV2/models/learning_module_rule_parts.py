@@ -86,6 +86,8 @@ class LearningModuleRuleParts(object):
         :param operation: The operation of this LearningModuleRuleParts.
         :type: str
         """
+        if isinstance(operation, int):
+            operation = str(operation)
         allowed_values = ["Include", "Exclude"]
         if operation.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operation -> " + operation)
@@ -113,6 +115,8 @@ class LearningModuleRuleParts(object):
         :param selector: The selector of this LearningModuleRuleParts.
         :type: str
         """
+        if isinstance(selector, int):
+            selector = str(selector)
         allowed_values = ["AcdSkills", "AgentName", "Division", "Group", "Location", "Queue", "Role", "Team"]
         if selector.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for selector -> " + selector)

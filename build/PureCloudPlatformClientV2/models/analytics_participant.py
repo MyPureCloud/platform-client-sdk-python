@@ -154,6 +154,8 @@ class AnalyticsParticipant(object):
         :param flagged_reason: The flagged_reason of this AnalyticsParticipant.
         :type: str
         """
+        if isinstance(flagged_reason, int):
+            flagged_reason = str(flagged_reason)
         allowed_values = ["general"]
         if flagged_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flagged_reason -> " + flagged_reason)
@@ -229,6 +231,8 @@ class AnalyticsParticipant(object):
         :param purpose: The purpose of this AnalyticsParticipant.
         :type: str
         """
+        if isinstance(purpose, int):
+            purpose = str(purpose)
         allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
         if purpose.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for purpose -> " + purpose)

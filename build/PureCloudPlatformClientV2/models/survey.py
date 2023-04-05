@@ -234,6 +234,8 @@ class Survey(object):
         :param status: The status of this Survey.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Pending", "Sent", "InProgress", "Finished", "OptOut", "Error", "Expired"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

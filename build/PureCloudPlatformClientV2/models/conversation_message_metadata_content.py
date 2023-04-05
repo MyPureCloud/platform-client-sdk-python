@@ -80,6 +80,8 @@ class ConversationMessageMetadataContent(object):
         :param content_type: The content_type of this ConversationMessageMetadataContent.
         :type: str
         """
+        if isinstance(content_type, int):
+            content_type = str(content_type)
         allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Text", "QuickReplyV2", "Unknown"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
@@ -107,6 +109,8 @@ class ConversationMessageMetadataContent(object):
         :param sub_type: The sub_type of this ConversationMessageMetadataContent.
         :type: str
         """
+        if isinstance(sub_type, int):
+            sub_type = str(sub_type)
         allowed_values = ["Image", "Video", "Audio", "File", "Link", "Mention", "Reply", "Button", "QuickReply", "Postback", "Unknown"]
         if sub_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sub_type -> " + sub_type)

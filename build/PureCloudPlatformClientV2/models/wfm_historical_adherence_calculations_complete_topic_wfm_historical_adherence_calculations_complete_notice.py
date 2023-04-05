@@ -158,6 +158,8 @@ class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalcu
         :param query_state: The query_state of this WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.
         :type: str
         """
+        if isinstance(query_state, int):
+            query_state = str(query_state)
         allowed_values = ["Processing", "Complete", "Canceled", "Error"]
         if query_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for query_state -> " + query_state)

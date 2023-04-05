@@ -349,6 +349,8 @@ class EdgeLogsJobFile(object):
         :param state: The state of this EdgeLogsJobFile.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -496,6 +498,8 @@ class EdgeLogsJobFile(object):
         :param upload_status: The upload_status of this EdgeLogsJobFile.
         :type: str
         """
+        if isinstance(upload_status, int):
+            upload_status = str(upload_status)
         allowed_values = ["UPLOADING", "NOT_UPLOADED", "UPLOADED", "ERROR_ON_UPLOAD"]
         if upload_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for upload_status -> " + upload_status)

@@ -77,6 +77,8 @@ class InboundOnlySetting(object):
         :param inbound: The inbound of this InboundOnlySetting.
         :type: str
         """
+        if isinstance(inbound, int):
+            inbound = str(inbound)
         allowed_values = ["Enabled", "Disabled"]
         if inbound.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for inbound -> " + inbound)

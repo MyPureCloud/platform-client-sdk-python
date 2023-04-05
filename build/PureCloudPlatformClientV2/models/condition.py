@@ -126,6 +126,8 @@ class Condition(object):
         :param type: The type of this Condition.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["wrapupCondition", "systemDispositionCondition", "contactAttributeCondition", "phoneNumberCondition", "phoneNumberTypeCondition", "callAnalysisCondition", "contactPropertyCondition", "dataActionCondition"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -225,6 +227,8 @@ class Condition(object):
         :param value_type: The value_type of this Condition.
         :type: str
         """
+        if isinstance(value_type, int):
+            value_type = str(value_type)
         allowed_values = ["STRING", "NUMERIC", "DATETIME", "PERIOD"]
         if value_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for value_type -> " + value_type)
@@ -252,6 +256,8 @@ class Condition(object):
         :param operator: The operator of this Condition.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER", "IN"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
@@ -327,6 +333,8 @@ class Condition(object):
         :param property_type: The property_type of this Condition.
         :type: str
         """
+        if isinstance(property_type, int):
+            property_type = str(property_type)
         allowed_values = ["LAST_ATTEMPT_BY_COLUMN", "LAST_ATTEMPT_OVERALL", "LAST_WRAPUP_BY_COLUMN", "LAST_WRAPUP_OVERALL"]
         if property_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for property_type -> " + property_type)

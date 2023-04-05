@@ -151,6 +151,8 @@ class AgentlessEmailSendResponseDto(object):
         :param sender_type: The sender_type of this AgentlessEmailSendResponseDto.
         :type: str
         """
+        if isinstance(sender_type, int):
+            sender_type = str(sender_type)
         allowed_values = ["Outbound", "Inbound", "Integration"]
         if sender_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sender_type -> " + sender_type)

@@ -168,6 +168,8 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         :param type: The type of this ExternalContactsUnresolvedContactChangedTopicContact.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Ephemeral", "Identified", "Curated"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

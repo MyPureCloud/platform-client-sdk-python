@@ -184,6 +184,8 @@ class DialerAttemptLimitsConfigChangeAttemptLimits(object):
         :param reset_period: The reset_period of this DialerAttemptLimitsConfigChangeAttemptLimits.
         :type: str
         """
+        if isinstance(reset_period, int):
+            reset_period = str(reset_period)
         allowed_values = ["NEVER", "TODAY"]
         if reset_period.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reset_period -> " + reset_period)

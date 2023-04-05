@@ -104,6 +104,8 @@ class UserSearchRequest(object):
         :param sort_order: The sort_order of this UserSearchRequest.
         :type: str
         """
+        if isinstance(sort_order, int):
+            sort_order = str(sort_order)
         allowed_values = ["ASC", "DESC", "SCORE"]
         if sort_order.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sort_order -> " + sort_order)
@@ -275,6 +277,8 @@ class UserSearchRequest(object):
         :param integration_presence_source: The integration_presence_source of this UserSearchRequest.
         :type: str
         """
+        if isinstance(integration_presence_source, int):
+            integration_presence_source = str(integration_presence_source)
         allowed_values = ["MicrosoftTeams", "ZoomPhone", "EightByEight"]
         if integration_presence_source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for integration_presence_source -> " + integration_presence_source)

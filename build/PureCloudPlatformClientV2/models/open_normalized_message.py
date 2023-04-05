@@ -156,6 +156,8 @@ class OpenNormalizedMessage(object):
         :param type: The type of this OpenNormalizedMessage.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Text", "Receipt"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -231,6 +233,8 @@ class OpenNormalizedMessage(object):
         :param status: The status of this OpenNormalizedMessage.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Sent", "Delivered", "Read", "Failed", "Published", "Removed"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -306,6 +310,8 @@ class OpenNormalizedMessage(object):
         :param direction: The direction of this OpenNormalizedMessage.
         :type: str
         """
+        if isinstance(direction, int):
+            direction = str(direction)
         allowed_values = ["Inbound", "Outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for direction -> " + direction)

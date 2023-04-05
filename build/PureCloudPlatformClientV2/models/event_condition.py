@@ -140,6 +140,8 @@ class EventCondition(object):
         :param operator: The operator of this EventCondition.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["containsAll", "containsAny", "notContainsAll", "notContainsAny", "equal", "notEqual", "greaterThan", "greaterThanOrEqual", "lessThan", "lessThanOrEqual", "startsWith", "endsWith"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
@@ -167,6 +169,8 @@ class EventCondition(object):
         :param stream_type: The stream_type of this EventCondition.
         :type: str
         """
+        if isinstance(stream_type, int):
+            stream_type = str(stream_type)
         allowed_values = ["Web", "Custom", "Conversation", "App"]
         if stream_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for stream_type -> " + stream_type)

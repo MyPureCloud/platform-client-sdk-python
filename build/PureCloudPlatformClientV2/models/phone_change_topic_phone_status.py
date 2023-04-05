@@ -120,6 +120,8 @@ class PhoneChangeTopicPhoneStatus(object):
         :param operational_status: The operational_status of this PhoneChangeTopicPhoneStatus.
         :type: str
         """
+        if isinstance(operational_status, int):
+            operational_status = str(operational_status)
         allowed_values = ["OPERATIONAL", "DEGRADED", "OFFLINE"]
         if operational_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operational_status -> " + operational_status)

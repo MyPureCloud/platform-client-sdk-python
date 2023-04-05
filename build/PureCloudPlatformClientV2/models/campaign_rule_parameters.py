@@ -86,6 +86,8 @@ class CampaignRuleParameters(object):
         :param operator: The operator of this CampaignRuleParameters.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["equals", "greaterThan", "greaterThanEqualTo", "lessThan", "lessThanEqualTo"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
@@ -137,6 +139,8 @@ class CampaignRuleParameters(object):
         :param priority: The priority of this CampaignRuleParameters.
         :type: str
         """
+        if isinstance(priority, int):
+            priority = str(priority)
         allowed_values = ["1", "2", "3", "4", "5"]
         if priority.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for priority -> " + priority)
@@ -164,6 +168,8 @@ class CampaignRuleParameters(object):
         :param dialing_mode: The dialing_mode of this CampaignRuleParameters.
         :type: str
         """
+        if isinstance(dialing_mode, int):
+            dialing_mode = str(dialing_mode)
         allowed_values = ["agentless", "preview", "power", "predictive", "progressive", "external"]
         if dialing_mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dialing_mode -> " + dialing_mode)

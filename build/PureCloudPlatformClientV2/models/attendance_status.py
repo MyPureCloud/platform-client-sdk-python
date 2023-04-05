@@ -104,6 +104,8 @@ class AttendanceStatus(object):
         :param attendance_status_type: The attendance_status_type of this AttendanceStatus.
         :type: str
         """
+        if isinstance(attendance_status_type, int):
+            attendance_status_type = str(attendance_status_type)
         allowed_values = ["HasData", "Scheduled", "Absent", "Present", "NoSchedule"]
         if attendance_status_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for attendance_status_type -> " + attendance_status_type)

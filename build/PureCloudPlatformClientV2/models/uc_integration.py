@@ -182,6 +182,8 @@ class UCIntegration(object):
         :param integration_presence_source: The integration_presence_source of this UCIntegration.
         :type: str
         """
+        if isinstance(integration_presence_source, int):
+            integration_presence_source = str(integration_presence_source)
         allowed_values = ["MicrosoftTeams", "ZoomPhone", "EightByEight"]
         if integration_presence_source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for integration_presence_source -> " + integration_presence_source)

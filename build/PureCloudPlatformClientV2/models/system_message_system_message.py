@@ -125,6 +125,8 @@ class SystemMessageSystemMessage(object):
         :param system_topic_type: The system_topic_type of this SystemMessageSystemMessage.
         :type: str
         """
+        if isinstance(system_topic_type, int):
+            system_topic_type = str(system_topic_type)
         allowed_values = ["no_longer_subscribed", "subscription_changed", "token_revoked"]
         if system_topic_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for system_topic_type -> " + system_topic_type)
@@ -248,6 +250,8 @@ class SystemMessageSystemMessage(object):
         :param reason: The reason of this SystemMessageSystemMessage.
         :type: str
         """
+        if isinstance(reason, int):
+            reason = str(reason)
         allowed_values = ["another_channel_subscribed", "user_tokens_revoked"]
         if reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reason -> " + reason)

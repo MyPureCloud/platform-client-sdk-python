@@ -178,6 +178,8 @@ class KnowledgeTraining(object):
         :param status: The status of this KnowledgeTraining.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Queued", "InProgress", "Succeeded", "Failed"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
@@ -277,6 +279,8 @@ class KnowledgeTraining(object):
         :param knowledge_documents_state: The knowledge_documents_state of this KnowledgeTraining.
         :type: str
         """
+        if isinstance(knowledge_documents_state, int):
+            knowledge_documents_state = str(knowledge_documents_state)
         allowed_values = ["Draft", "Active", "Discarded", "Archived"]
         if knowledge_documents_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for knowledge_documents_state -> " + knowledge_documents_state)

@@ -131,6 +131,8 @@ class AfterCallWork(object):
         :param state: The state of this AfterCallWork.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["unknown", "notApplicable", "skipped", "pending", "complete"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)

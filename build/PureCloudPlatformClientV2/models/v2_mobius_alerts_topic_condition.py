@@ -133,6 +133,8 @@ class V2MobiusAlertsTopicCondition(object):
         :param type: The type of this V2MobiusAlertsTopicCondition.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["And", "Or", "Not", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

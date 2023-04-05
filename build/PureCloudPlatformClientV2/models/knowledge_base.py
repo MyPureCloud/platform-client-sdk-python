@@ -179,6 +179,8 @@ class KnowledgeBase(object):
         :param core_language: The core_language of this KnowledgeBase.
         :type: str
         """
+        if isinstance(core_language, int):
+            core_language = str(core_language)
         allowed_values = ["en-US", "en-UK", "en-AU", "en-CA", "en-HK", "en-IN", "en-IE", "en-NZ", "en-PH", "en-SG", "en-ZA", "de-DE", "de-AT", "de-CH", "es-AR", "es-CO", "es-MX", "es-US", "es-ES", "fr-FR", "fr-BE", "fr-CA", "fr-CH", "pt-BR", "pt-PT", "nl-NL", "nl-BE", "it-IT"]
         if core_language.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for core_language -> " + core_language)

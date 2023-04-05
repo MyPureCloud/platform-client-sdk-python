@@ -422,6 +422,8 @@ class Edge(object):
         :param state: The state of this Edge.
         :type: str
         """
+        if isinstance(state, int):
+            state = str(state)
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
@@ -857,6 +859,8 @@ class Edge(object):
         :param status_code: The status_code of this Edge.
         :type: str
         """
+        if isinstance(status_code, int):
+            status_code = str(status_code)
         allowed_values = ["NEW", "AWAITING_CONNECTION", "AWAITING_FINGERPRINT", "AWAITING_FINGERPRINT_VERIFICATION", "FINGERPRINT_VERIFIED", "AWAITING_BOOTSTRAP", "ACTIVE", "INACTIVE", "RMA", "UNPAIRING", "UNPAIRED", "INITIALIZING"]
         if status_code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status_code -> " + status_code)
@@ -956,6 +960,8 @@ class Edge(object):
         :param online_status: The online_status of this Edge.
         :type: str
         """
+        if isinstance(online_status, int):
+            online_status = str(online_status)
         allowed_values = ["ONLINE", "OFFLINE"]
         if online_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for online_status -> " + online_status)
@@ -1055,6 +1061,8 @@ class Edge(object):
         :param edge_deployment_type: The edge_deployment_type of this Edge.
         :type: str
         """
+        if isinstance(edge_deployment_type, int):
+            edge_deployment_type = str(edge_deployment_type)
         allowed_values = ["HARDWARE", "LDM", "CDM", "CHS", "INVALID"]
         if edge_deployment_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for edge_deployment_type -> " + edge_deployment_type)
@@ -1082,6 +1090,8 @@ class Edge(object):
         :param call_draining_state: The call_draining_state of this Edge.
         :type: str
         """
+        if isinstance(call_draining_state, int):
+            call_draining_state = str(call_draining_state)
         allowed_values = ["NONE", "WAIT", "WAIT_TIMEOUT", "TERMINATE", "COMPLETE"]
         if call_draining_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for call_draining_state -> " + call_draining_state)

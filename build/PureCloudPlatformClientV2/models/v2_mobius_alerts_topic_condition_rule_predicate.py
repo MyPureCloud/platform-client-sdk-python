@@ -142,6 +142,8 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
         :param metric_type: The metric_type of this V2MobiusAlertsTopicConditionRulePredicate.
         :type: str
         """
+        if isinstance(metric_type, int):
+            metric_type = str(metric_type)
         allowed_values = ["Interval", "Instance", "Unknown"]
         if metric_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric_type -> " + metric_type)
@@ -169,6 +171,8 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
         :param metric_value_type: The metric_value_type of this V2MobiusAlertsTopicConditionRulePredicate.
         :type: str
         """
+        if isinstance(metric_value_type, int):
+            metric_value_type = str(metric_value_type)
         allowed_values = ["Count", "Percentage", "Average", "Timer", "Observation", "Min", "Max", "Unknown"]
         if metric_value_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric_value_type -> " + metric_value_type)
@@ -220,6 +224,8 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
         :param comparison_operator: The comparison_operator of this V2MobiusAlertsTopicConditionRulePredicate.
         :type: str
         """
+        if isinstance(comparison_operator, int):
+            comparison_operator = str(comparison_operator)
         allowed_values = ["Gt", "Gte", "Lt", "Lte", "Eq", "Ne", "Unknown"]
         if comparison_operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for comparison_operator -> " + comparison_operator)

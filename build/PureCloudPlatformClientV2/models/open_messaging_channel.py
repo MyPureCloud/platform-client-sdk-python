@@ -125,6 +125,8 @@ class OpenMessagingChannel(object):
         :param platform: The platform of this OpenMessagingChannel.
         :type: str
         """
+        if isinstance(platform, int):
+            platform = str(platform)
         allowed_values = ["Open"]
         if platform.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for platform -> " + platform)
@@ -152,6 +154,8 @@ class OpenMessagingChannel(object):
         :param type: The type of this OpenMessagingChannel.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Private"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)

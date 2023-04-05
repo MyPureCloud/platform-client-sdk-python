@@ -158,6 +158,8 @@ class WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation(object)
         :param status: The status of this WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.
         :type: str
         """
+        if isinstance(status, int):
+            status = str(status)
         allowed_values = ["Pending", "Approved", "Denied"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)

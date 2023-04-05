@@ -160,6 +160,8 @@ class LockInfo(object):
         :param action: The action of this LockInfo.
         :type: str
         """
+        if isinstance(action, int):
+            action = str(action)
         allowed_values = ["UPDATE", "DELETE", "COPY", "MOVE", "REPLACE", "THUMBNAIL", "TEXT_EXTRACTION"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)

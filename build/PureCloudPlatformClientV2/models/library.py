@@ -217,6 +217,8 @@ class Library(object):
         :param response_type: The response_type of this Library.
         :type: str
         """
+        if isinstance(response_type, int):
+            response_type = str(response_type)
         allowed_values = ["MessagingTemplate", "CampaignSmsTemplate", "CampaignEmailTemplate", "Footer"]
         if response_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for response_type -> " + response_type)

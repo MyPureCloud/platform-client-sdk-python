@@ -80,6 +80,8 @@ class SettingDirection(object):
         :param inbound: The inbound of this SettingDirection.
         :type: str
         """
+        if isinstance(inbound, int):
+            inbound = str(inbound)
         allowed_values = ["Enabled", "Disabled"]
         if inbound.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for inbound -> " + inbound)
@@ -107,6 +109,8 @@ class SettingDirection(object):
         :param outbound: The outbound of this SettingDirection.
         :type: str
         """
+        if isinstance(outbound, int):
+            outbound = str(outbound)
         allowed_values = ["Enabled", "Disabled"]
         if outbound.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for outbound -> " + outbound)

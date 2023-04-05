@@ -340,6 +340,8 @@ class AssignedLearningModule(object):
         :param source: The source of this AssignedLearningModule.
         :type: str
         """
+        if isinstance(source, int):
+            source = str(source)
         allowed_values = ["UserCreated", "GenesysBeyond"]
         if source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for source -> " + source)
@@ -535,6 +537,8 @@ class AssignedLearningModule(object):
         :param type: The type of this AssignedLearningModule.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Informational", "AssessedContent", "Assessment", "External"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -658,6 +662,8 @@ class AssignedLearningModule(object):
         :param archival_mode: The archival_mode of this AssignedLearningModule.
         :type: str
         """
+        if isinstance(archival_mode, int):
+            archival_mode = str(archival_mode)
         allowed_values = ["Graceful", "Immediate"]
         if archival_mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for archival_mode -> " + archival_mode)

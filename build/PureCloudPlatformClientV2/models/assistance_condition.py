@@ -80,6 +80,8 @@ class AssistanceCondition(object):
         :param operator: The operator of this AssistanceCondition.
         :type: str
         """
+        if isinstance(operator, int):
+            operator = str(operator)
         allowed_values = ["EXISTS", "NOTEXISTS"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)

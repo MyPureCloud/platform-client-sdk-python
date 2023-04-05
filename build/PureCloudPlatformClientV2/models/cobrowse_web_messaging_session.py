@@ -215,6 +215,8 @@ class CobrowseWebMessagingSession(object):
         :param communication_type: The communication_type of this CobrowseWebMessagingSession.
         :type: str
         """
+        if isinstance(communication_type, int):
+            communication_type = str(communication_type)
         allowed_values = ["Call", "Message"]
         if communication_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for communication_type -> " + communication_type)

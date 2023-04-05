@@ -85,6 +85,8 @@ class WorkPlanConfigurationViolationMessage(object):
         :param type: The type of this WorkPlanConfigurationViolationMessage.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["ActivitiesOverlap", "ActivityEndGreaterThanShiftStop", "ActivityPaidTimeGreaterThanShiftPaidTime", "ActivityStartBeforeShiftStart", "ActivityStartGreaterThanEqualToShiftStop", "ActivityStartIncrementMinutesNotDivisibleByScheduleIntervalMinutes", "DailyExactPaidMinutes", "DailyMaxTotalLessThanWeeklyMin", "DailyMaxTotalLessThanWeeklyMinWithOptional", "DailyMaxTotalLessThanWeeklyMinWithoutOptional", "DailyMinTotalGreaterThanWeeklyMax", "DailyMinTotalGreaterThanWeeklyMaxWithOptional", "DailyMinTotalGreaterThanWeeklyMaxWithoutOptional", "DailyRequiredDaysGreaterThanWeeklyMaxDays", "DailyShiftHasNoDaysSelected", "DailyShiftMaxPossibilitiesViolated", "EarliestShiftStopIsTooLate", "ExactPaidTimeNotDivisibleByGranularity", "MaxConsecutiveWorkingDaysNoMoreThanDoubleMaxWorkingDaysPerWeek", "MaxDaysOffPerPlanningPeriodNotCorrect", "MaxPaidTimeIsMoreThanShiftLength", "MaxPaidTimeNotDivisibleByGranularity", "MaxPaidTimePerPlanningPeriod", "MaxShifts", "MinPaidTimeNotDivisibleByGranularity", "MinPaidTimePerPlanningPeriod", "NoShifts", "PaidTimeGreaterThanMaxWorkTime", "PaidTimeLessThanMinWorkTime", "PaidTimeNotMetByShiftStartStop", "ShiftDaysSelectMoreThanMinWorkingDays", "ShiftStopEarlierThanStart", "ShiftVarianceCannotBeMet", "WeeklyExactPaidMinutes"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -136,6 +138,8 @@ class WorkPlanConfigurationViolationMessage(object):
         :param severity: The severity of this WorkPlanConfigurationViolationMessage.
         :type: str
         """
+        if isinstance(severity, int):
+            severity = str(severity)
         allowed_values = ["Information", "Warning", "Error"]
         if severity.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for severity -> " + severity)

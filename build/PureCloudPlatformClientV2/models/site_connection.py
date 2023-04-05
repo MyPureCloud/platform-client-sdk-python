@@ -206,6 +206,8 @@ class SiteConnection(object):
         :param type: The type of this SiteConnection.
         :type: str
         """
+        if isinstance(type, int):
+            type = str(type)
         allowed_values = ["Direct", "Indirect", "CloudProxy"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
@@ -257,6 +259,8 @@ class SiteConnection(object):
         :param media_model: The media_model of this SiteConnection.
         :type: str
         """
+        if isinstance(media_model, int):
+            media_model = str(media_model)
         allowed_values = ["Premises", "Cloud"]
         if media_model.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_model -> " + media_model)

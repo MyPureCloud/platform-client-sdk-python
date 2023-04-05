@@ -134,6 +134,8 @@ class KeyRotationSchedule(object):
         :param period: The period of this KeyRotationSchedule.
         :type: str
         """
+        if isinstance(period, int):
+            period = str(period)
         allowed_values = ["DISABLED", "DAILY", "WEEKLY", "MONTHLY", "YEARLY"]
         if period.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for period -> " + period)
