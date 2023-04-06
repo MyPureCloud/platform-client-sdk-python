@@ -98,6 +98,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversation_secureattributes**](ConversationsApi.html#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
+|[**patch_conversations_aftercallwork_conversation_id_participant_communication**](ConversationsApi.html#patch_conversations_aftercallwork_conversation_id_participant_communication) | Update after-call work for this conversation communication.|
 |[**patch_conversations_call**](ConversationsApi.html#patch_conversations_call) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
 |[**patch_conversations_call_participant**](ConversationsApi.html#patch_conversations_call_participant) | Update conversation participant|
 |[**patch_conversations_call_participant_attributes**](ConversationsApi.html#patch_conversations_call_participant_attributes) | Update the attributes on a conversation participant.|
@@ -4929,6 +4930,63 @@ except ApiException as e:
 
 **str**
 
+<a name="patch_conversations_aftercallwork_conversation_id_participant_communication"></a>
+
+## [**AfterCallWorkUpdate**](AfterCallWorkUpdate.html) patch_conversations_aftercallwork_conversation_id_participant_communication(conversation_id, participant_id, communication_id, body)
+
+
+
+Update after-call work for this conversation communication.
+
+
+
+Wraps PATCH /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} 
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.AfterCallWorkUpdate() # AfterCallWorkUpdate | AfterCallWorkUpdate
+
+try:
+    # Update after-call work for this conversation communication.
+    api_response = api_instance.patch_conversations_aftercallwork_conversation_id_participant_communication(conversation_id, participant_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_aftercallwork_conversation_id_participant_communication: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**AfterCallWorkUpdate**](AfterCallWorkUpdate.html)| AfterCallWorkUpdate |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AfterCallWorkUpdate**](AfterCallWorkUpdate.html)
+
 <a name="patch_conversations_call"></a>
 
 ## [**Conversation**](Conversation.html) patch_conversations_call(conversation_id, body)
@@ -7372,7 +7430,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+body = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)
 
 try:
     # Apply wrap-up for this conversation communication
@@ -7389,7 +7447,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7639,7 +7697,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+body = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)
 
 try:
     # Apply wrap-up for this conversation communication
@@ -7656,7 +7714,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -8057,7 +8115,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+body = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)
 
 try:
     # Apply wrap-up for this conversation communication
@@ -8074,7 +8132,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -8217,7 +8275,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+body = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)
 
 try:
     # Apply wrap-up for this conversation communication
@@ -8234,7 +8292,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -8482,7 +8540,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+body = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)
 
 try:
     # Apply wrap-up for this conversation communication
@@ -8499,7 +8557,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -9079,7 +9137,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+body = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)
 
 try:
     # Apply wrap-up for this conversation communication
@@ -9096,7 +9154,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -9708,7 +9766,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+body = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)
 
 try:
     # Apply wrap-up for this conversation communication
@@ -9725,7 +9783,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -9764,7 +9822,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+body = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)
 
 try:
     # Apply wrap-up for this conversation communication
@@ -9781,7 +9839,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -9820,7 +9878,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-body = PureCloudPlatformClientV2.ExtendedWrapup() # ExtendedWrapup | Wrap-up (optional)
+body = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)
 
 try:
     # Apply wrap-up for this conversation communication
@@ -9837,7 +9895,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

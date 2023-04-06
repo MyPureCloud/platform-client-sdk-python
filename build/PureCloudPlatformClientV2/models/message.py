@@ -83,7 +83,8 @@ class Message(object):
             'wrapup': 'Wrapup',
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
-            'agent_assistant_id': 'str'
+            'agent_assistant_id': 'str',
+            'byo_sms_integration_id': 'str'
         }
 
         self.attribute_map = {
@@ -114,7 +115,8 @@ class Message(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'agent_assistant_id': 'agentAssistantId'
+            'agent_assistant_id': 'agentAssistantId',
+            'byo_sms_integration_id': 'byoSmsIntegrationId'
         }
 
         self._state = None
@@ -145,6 +147,7 @@ class Message(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
+        self._byo_sms_integration_id = None
 
     @property
     def state(self) -> str:
@@ -842,6 +845,30 @@ class Message(object):
         
 
         self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def byo_sms_integration_id(self) -> str:
+        """
+        Gets the byo_sms_integration_id of this Message.
+        The internal id representing the customer supplied sms integration message.
+
+        :return: The byo_sms_integration_id of this Message.
+        :rtype: str
+        """
+        return self._byo_sms_integration_id
+
+    @byo_sms_integration_id.setter
+    def byo_sms_integration_id(self, byo_sms_integration_id: str) -> None:
+        """
+        Sets the byo_sms_integration_id of this Message.
+        The internal id representing the customer supplied sms integration message.
+
+        :param byo_sms_integration_id: The byo_sms_integration_id of this Message.
+        :type: str
+        """
+        
+
+        self._byo_sms_integration_id = byo_sms_integration_id
 
     def to_dict(self):
         """

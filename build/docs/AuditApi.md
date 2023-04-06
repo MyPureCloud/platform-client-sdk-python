@@ -192,7 +192,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuditApi()
 transaction_id = 'transaction_id_example' # str | Transaction ID
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (optional) (default to 25)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
@@ -210,7 +210,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **transaction_id** | **str**| Transaction ID |  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. | [optional] [default to 25] |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
 {: class="table table-striped"}
 

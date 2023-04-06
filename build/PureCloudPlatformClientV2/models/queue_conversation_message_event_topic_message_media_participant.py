@@ -94,7 +94,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
             'messages': 'list[QueueConversationMessageEventTopicMessageDetails]',
             'type': 'str',
             'recipient_country': 'str',
-            'recipient_type': 'str'
+            'recipient_type': 'str',
+            'byo_sms_integration_id': 'str'
         }
 
         self.attribute_map = {
@@ -137,7 +138,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
             'messages': 'messages',
             'type': 'type',
             'recipient_country': 'recipientCountry',
-            'recipient_type': 'recipientType'
+            'recipient_type': 'recipientType',
+            'byo_sms_integration_id': 'byoSmsIntegrationId'
         }
 
         self._id = None
@@ -180,6 +182,7 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         self._type = None
         self._recipient_country = None
         self._recipient_type = None
+        self._byo_sms_integration_id = None
 
     @property
     def id(self) -> str:
@@ -1170,6 +1173,30 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         
 
         self._recipient_type = recipient_type
+
+    @property
+    def byo_sms_integration_id(self) -> str:
+        """
+        Gets the byo_sms_integration_id of this QueueConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :return: The byo_sms_integration_id of this QueueConversationMessageEventTopicMessageMediaParticipant.
+        :rtype: str
+        """
+        return self._byo_sms_integration_id
+
+    @byo_sms_integration_id.setter
+    def byo_sms_integration_id(self, byo_sms_integration_id: str) -> None:
+        """
+        Sets the byo_sms_integration_id of this QueueConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :param byo_sms_integration_id: The byo_sms_integration_id of this QueueConversationMessageEventTopicMessageMediaParticipant.
+        :type: str
+        """
+        
+
+        self._byo_sms_integration_id = byo_sms_integration_id
 
     def to_dict(self):
         """

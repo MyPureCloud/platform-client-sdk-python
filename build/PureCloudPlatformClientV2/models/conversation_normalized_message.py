@@ -64,7 +64,8 @@ class ConversationNormalizedMessage(object):
             'originating_entity': 'str',
             'is_final_receipt': 'bool',
             'direction': 'str',
-            'metadata': 'dict(str, str)'
+            'metadata': 'dict(str, str)',
+            'byo_sms_integration_id': 'str'
         }
 
         self.attribute_map = {
@@ -79,7 +80,8 @@ class ConversationNormalizedMessage(object):
             'originating_entity': 'originatingEntity',
             'is_final_receipt': 'isFinalReceipt',
             'direction': 'direction',
-            'metadata': 'metadata'
+            'metadata': 'metadata',
+            'byo_sms_integration_id': 'byoSmsIntegrationId'
         }
 
         self._id = None
@@ -94,6 +96,7 @@ class ConversationNormalizedMessage(object):
         self._is_final_receipt = None
         self._direction = None
         self._metadata = None
+        self._byo_sms_integration_id = None
 
     @property
     def id(self) -> str:
@@ -402,6 +405,30 @@ class ConversationNormalizedMessage(object):
         
 
         self._metadata = metadata
+
+    @property
+    def byo_sms_integration_id(self) -> str:
+        """
+        Gets the byo_sms_integration_id of this ConversationNormalizedMessage.
+        The internal id representing the customer supplied sms integration message.
+
+        :return: The byo_sms_integration_id of this ConversationNormalizedMessage.
+        :rtype: str
+        """
+        return self._byo_sms_integration_id
+
+    @byo_sms_integration_id.setter
+    def byo_sms_integration_id(self, byo_sms_integration_id: str) -> None:
+        """
+        Sets the byo_sms_integration_id of this ConversationNormalizedMessage.
+        The internal id representing the customer supplied sms integration message.
+
+        :param byo_sms_integration_id: The byo_sms_integration_id of this ConversationNormalizedMessage.
+        :type: str
+        """
+        
+
+        self._byo_sms_integration_id = byo_sms_integration_id
 
     def to_dict(self):
         """

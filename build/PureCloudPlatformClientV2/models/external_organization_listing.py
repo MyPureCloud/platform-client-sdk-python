@@ -55,10 +55,10 @@ class ExternalOrganizationListing(object):
             'page_number': 'int',
             'total': 'int',
             'partial_results': 'bool',
-            'first_uri': 'str',
             'next_uri': 'str',
             'previous_uri': 'str',
             'last_uri': 'str',
+            'first_uri': 'str',
             'self_uri': 'str',
             'page_count': 'int'
         }
@@ -69,10 +69,10 @@ class ExternalOrganizationListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'partial_results': 'partialResults',
-            'first_uri': 'firstUri',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
+            'first_uri': 'firstUri',
             'self_uri': 'selfUri',
             'page_count': 'pageCount'
         }
@@ -82,10 +82,10 @@ class ExternalOrganizationListing(object):
         self._page_number = None
         self._total = None
         self._partial_results = None
-        self._first_uri = None
         self._next_uri = None
         self._previous_uri = None
         self._last_uri = None
+        self._first_uri = None
         self._self_uri = None
         self._page_count = None
 
@@ -210,30 +210,6 @@ class ExternalOrganizationListing(object):
         self._partial_results = partial_results
 
     @property
-    def first_uri(self) -> str:
-        """
-        Gets the first_uri of this ExternalOrganizationListing.
-
-
-        :return: The first_uri of this ExternalOrganizationListing.
-        :rtype: str
-        """
-        return self._first_uri
-
-    @first_uri.setter
-    def first_uri(self, first_uri: str) -> None:
-        """
-        Sets the first_uri of this ExternalOrganizationListing.
-
-
-        :param first_uri: The first_uri of this ExternalOrganizationListing.
-        :type: str
-        """
-        
-
-        self._first_uri = first_uri
-
-    @property
     def next_uri(self) -> str:
         """
         Gets the next_uri of this ExternalOrganizationListing.
@@ -304,6 +280,30 @@ class ExternalOrganizationListing(object):
         
 
         self._last_uri = last_uri
+
+    @property
+    def first_uri(self) -> str:
+        """
+        Gets the first_uri of this ExternalOrganizationListing.
+
+
+        :return: The first_uri of this ExternalOrganizationListing.
+        :rtype: str
+        """
+        return self._first_uri
+
+    @first_uri.setter
+    def first_uri(self, first_uri: str) -> None:
+        """
+        Sets the first_uri of this ExternalOrganizationListing.
+
+
+        :param first_uri: The first_uri of this ExternalOrganizationListing.
+        :type: str
+        """
+        
+
+        self._first_uri = first_uri
 
     @property
     def self_uri(self) -> str:

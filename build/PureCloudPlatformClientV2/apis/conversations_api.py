@@ -38,6 +38,7 @@ from typing import Any
 
 from ..models import Empty
 from ..models import AdditionalMessage
+from ..models import AfterCallWorkUpdate
 from ..models import AgentlessEmailSendRequestDto
 from ..models import AgentlessEmailSendResponseDto
 from ..models import AnalyticsConversationAsyncQueryResponse
@@ -97,7 +98,6 @@ from ..models import EmailMessageListing
 from ..models import EmailMessageReply
 from ..models import EmailsSettings
 from ..models import ErrorBody
-from ..models import ExtendedWrapup
 from ..models import FacebookAppCredentials
 from ..models import FacebookIntegration
 from ..models import FacebookIntegrationEntityListing
@@ -151,6 +151,7 @@ from ..models import WhatsAppIntegrationEntityListing
 from ..models import WhatsAppIntegrationRequest
 from ..models import WhatsAppIntegrationUpdateRequest
 from ..models import WrapupCode
+from ..models import WrapupInput
 
 class ConversationsApi(object):
     """
@@ -7557,6 +7558,102 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_conversations_aftercallwork_conversation_id_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'AfterCallWorkUpdate', **kwargs) -> 'AfterCallWorkUpdate':
+        """
+        Update after-call work for this conversation communication.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversations_aftercallwork_conversation_id_participant_communication(conversation_id, participant_id, communication_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversationId (required)
+        :param str participant_id: participantId (required)
+        :param str communication_id: communicationId (required)
+        :param AfterCallWorkUpdate body: AfterCallWorkUpdate (required)
+        :return: AfterCallWorkUpdate
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'participant_id', 'communication_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversations_aftercallwork_conversation_id_participant_communication" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_aftercallwork_conversation_id_participant_communication`")
+        # verify the required parameter 'participant_id' is set
+        if ('participant_id' not in params) or (params['participant_id'] is None):
+            raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_aftercallwork_conversation_id_participant_communication`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `patch_conversations_aftercallwork_conversation_id_participant_communication`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_conversations_aftercallwork_conversation_id_participant_communication`")
+
+
+        resource_path = '/api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'participant_id' in params:
+            path_params['participantId'] = params['participant_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AfterCallWorkUpdate',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_conversations_call(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -11466,7 +11563,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
-        :param ExtendedWrapup body: Wrap-up
+        :param WrapupInput body: Wrap-up
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11907,7 +12004,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
-        :param ExtendedWrapup body: Wrap-up
+        :param WrapupInput body: Wrap-up
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12576,7 +12673,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
-        :param ExtendedWrapup body: Wrap-up
+        :param WrapupInput body: Wrap-up
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12837,7 +12934,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
-        :param ExtendedWrapup body: Wrap-up
+        :param WrapupInput body: Wrap-up
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13269,7 +13366,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
-        :param ExtendedWrapup body: Wrap-up
+        :param WrapupInput body: Wrap-up
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14193,7 +14290,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
-        :param ExtendedWrapup body: Wrap-up
+        :param WrapupInput body: Wrap-up
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15156,7 +15253,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
-        :param ExtendedWrapup body: Wrap-up
+        :param WrapupInput body: Wrap-up
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15249,7 +15346,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
-        :param ExtendedWrapup body: Wrap-up
+        :param WrapupInput body: Wrap-up
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15342,7 +15439,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
-        :param ExtendedWrapup body: Wrap-up
+        :param WrapupInput body: Wrap-up
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

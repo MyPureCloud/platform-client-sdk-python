@@ -58,6 +58,171 @@ class UsageApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def get_oauth_client_usage_query_result(self, execution_id: str, client_id: str, **kwargs) -> 'ApiUsageQueryResult':
+        """
+        Get the results of a usage query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_oauth_client_usage_query_result(execution_id, client_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str execution_id: ID of the query execution (required)
+        :param str client_id: Client ID (required)
+        :return: ApiUsageQueryResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['execution_id', 'client_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_oauth_client_usage_query_result" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'execution_id' is set
+        if ('execution_id' not in params) or (params['execution_id'] is None):
+            raise ValueError("Missing the required parameter `execution_id` when calling `get_oauth_client_usage_query_result`")
+        # verify the required parameter 'client_id' is set
+        if ('client_id' not in params) or (params['client_id'] is None):
+            raise ValueError("Missing the required parameter `client_id` when calling `get_oauth_client_usage_query_result`")
+
+
+        resource_path = '/api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'execution_id' in params:
+            path_params['executionId'] = params['execution_id']
+        if 'client_id' in params:
+            path_params['clientId'] = params['client_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ApiUsageQueryResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_oauth_client_usage_summary(self, client_id: str, **kwargs) -> 'UsageExecutionResult':
+        """
+        Get a summary of OAuth client API usage
+        After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_oauth_client_usage_summary(client_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str client_id: Client ID (required)
+        :param str days: Previous number of days to query
+        :return: UsageExecutionResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['client_id', 'days']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_oauth_client_usage_summary" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'client_id' is set
+        if ('client_id' not in params) or (params['client_id'] is None):
+            raise ValueError("Missing the required parameter `client_id` when calling `get_oauth_client_usage_summary`")
+
+
+        resource_path = '/api/v2/oauth/clients/{clientId}/usage/summary'.replace('{format}', 'json')
+        path_params = {}
+        if 'client_id' in params:
+            path_params['clientId'] = params['client_id']
+
+        query_params = {}
+        if 'days' in params:
+            query_params['days'] = params['days']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UsageExecutionResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_usage_query_execution_id_results(self, execution_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
@@ -132,6 +297,90 @@ class UsageApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ApiUsageQueryResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_oauth_client_usage_query(self, client_id: str, body: 'ApiUsageQuery', **kwargs) -> 'UsageExecutionResult':
+        """
+        Query for OAuth client API usage
+        After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_oauth_client_usage_query(client_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str client_id: Client ID (required)
+        :param ApiUsageQuery body: Query (required)
+        :return: UsageExecutionResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['client_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_oauth_client_usage_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'client_id' is set
+        if ('client_id' not in params) or (params['client_id'] is None):
+            raise ValueError("Missing the required parameter `client_id` when calling `post_oauth_client_usage_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_oauth_client_usage_query`")
+
+
+        resource_path = '/api/v2/oauth/clients/{clientId}/usage/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'client_id' in params:
+            path_params['clientId'] = params['client_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UsageExecutionResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

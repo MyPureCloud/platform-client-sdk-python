@@ -243,6 +243,7 @@ Wraps GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
 Requires ANY permissions: 
 
 * oauth:client:view
+* usage:client:view
 
 ### Example
 
@@ -298,6 +299,7 @@ Wraps GET /api/v2/oauth/clients/{clientId}/usage/summary
 Requires ANY permissions: 
 
 * oauth:client:view
+* usage:client:view
 
 ### Example
 
@@ -555,6 +557,7 @@ Wraps POST /api/v2/oauth/clients/{clientId}/usage/query
 Requires ANY permissions: 
 
 * oauth:client:view
+* usage:client:view
 
 ### Example
 

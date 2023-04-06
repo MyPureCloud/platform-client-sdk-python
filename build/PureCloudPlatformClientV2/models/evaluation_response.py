@@ -76,6 +76,7 @@ class EvaluationResponse(object):
             'conversation_date': 'datetime',
             'conversation_end_date': 'datetime',
             'never_release': 'bool',
+            'assigned': 'bool',
             'resource_id': 'str',
             'resource_type': 'str',
             'redacted': 'bool',
@@ -107,6 +108,7 @@ class EvaluationResponse(object):
             'conversation_date': 'conversationDate',
             'conversation_end_date': 'conversationEndDate',
             'never_release': 'neverRelease',
+            'assigned': 'assigned',
             'resource_id': 'resourceId',
             'resource_type': 'resourceType',
             'redacted': 'redacted',
@@ -137,6 +139,7 @@ class EvaluationResponse(object):
         self._conversation_date = None
         self._conversation_end_date = None
         self._never_release = None
+        self._assigned = None
         self._resource_id = None
         self._resource_type = None
         self._redacted = None
@@ -630,6 +633,30 @@ class EvaluationResponse(object):
         
 
         self._never_release = never_release
+
+    @property
+    def assigned(self) -> bool:
+        """
+        Gets the assigned of this EvaluationResponse.
+        Set to false to unassign the evaluation. This cannot be set to false when assignee is also set.
+
+        :return: The assigned of this EvaluationResponse.
+        :rtype: bool
+        """
+        return self._assigned
+
+    @assigned.setter
+    def assigned(self, assigned: bool) -> None:
+        """
+        Sets the assigned of this EvaluationResponse.
+        Set to false to unassign the evaluation. This cannot be set to false when assignee is also set.
+
+        :param assigned: The assigned of this EvaluationResponse.
+        :type: bool
+        """
+        
+
+        self._assigned = assigned
 
     @property
     def resource_id(self) -> str:

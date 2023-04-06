@@ -54,9 +54,9 @@ class TextMessageListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'first_uri': 'str',
             'page_count': 'int',
             'last_uri': 'str',
+            'first_uri': 'str',
             'self_uri': 'str',
             'next_uri': 'str',
             'previous_uri': 'str'
@@ -67,9 +67,9 @@ class TextMessageListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'first_uri': 'firstUri',
             'page_count': 'pageCount',
             'last_uri': 'lastUri',
+            'first_uri': 'firstUri',
             'self_uri': 'selfUri',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri'
@@ -79,9 +79,9 @@ class TextMessageListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._first_uri = None
         self._page_count = None
         self._last_uri = None
+        self._first_uri = None
         self._self_uri = None
         self._next_uri = None
         self._previous_uri = None
@@ -183,30 +183,6 @@ class TextMessageListing(object):
         self._total = total
 
     @property
-    def first_uri(self) -> str:
-        """
-        Gets the first_uri of this TextMessageListing.
-
-
-        :return: The first_uri of this TextMessageListing.
-        :rtype: str
-        """
-        return self._first_uri
-
-    @first_uri.setter
-    def first_uri(self, first_uri: str) -> None:
-        """
-        Sets the first_uri of this TextMessageListing.
-
-
-        :param first_uri: The first_uri of this TextMessageListing.
-        :type: str
-        """
-        
-
-        self._first_uri = first_uri
-
-    @property
     def page_count(self) -> int:
         """
         Gets the page_count of this TextMessageListing.
@@ -253,6 +229,30 @@ class TextMessageListing(object):
         
 
         self._last_uri = last_uri
+
+    @property
+    def first_uri(self) -> str:
+        """
+        Gets the first_uri of this TextMessageListing.
+
+
+        :return: The first_uri of this TextMessageListing.
+        :rtype: str
+        """
+        return self._first_uri
+
+    @first_uri.setter
+    def first_uri(self, first_uri: str) -> None:
+        """
+        Sets the first_uri of this TextMessageListing.
+
+
+        :param first_uri: The first_uri of this TextMessageListing.
+        :type: str
+        """
+        
+
+        self._first_uri = first_uri
 
     @property
     def self_uri(self) -> str:

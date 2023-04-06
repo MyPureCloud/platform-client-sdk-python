@@ -1,7 +1,7 @@
 ---
-title: ExtendedWrapup
+title: WrapupInput
 ---
-## ExtendedWrapup
+## WrapupInput
 
 ## Properties
 

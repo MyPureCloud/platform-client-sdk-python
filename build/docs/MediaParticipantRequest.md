@@ -7,7 +7,7 @@ title: MediaParticipantRequest
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **wrapup** | [**ExtendedWrapup**](ExtendedWrapup.html) | Wrap-up to assign to this participant. | [optional] |
+| **wrapup** | [**WrapupInput**](WrapupInput.html) | Wrap-up to assign to this participant. | [optional] |
 | **state** | **str** | The state to update to set for this participant&#39;s communications.  Possible values are: &#39;connected&#39; and &#39;disconnected&#39;. | [optional] |
 | **recording** | **bool** | True to enable recording of this participant, otherwise false to disable recording. | [optional] |
 | **muted** | **bool** | True to mute this conversation participant. | [optional] |

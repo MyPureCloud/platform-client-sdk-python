@@ -63,7 +63,8 @@ class ReportingDataExportTopicDataExportNotification(object):
             'email_statuses': 'dict(str, str)',
             'email_error_description': 'str',
             'schedule_expression': 'str',
-            'schedule_static_link_url': 'str'
+            'schedule_static_link_url': 'str',
+            'export_allowed_to_rerun': 'bool'
         }
 
         self.attribute_map = {
@@ -82,7 +83,8 @@ class ReportingDataExportTopicDataExportNotification(object):
             'email_statuses': 'emailStatuses',
             'email_error_description': 'emailErrorDescription',
             'schedule_expression': 'scheduleExpression',
-            'schedule_static_link_url': 'scheduleStaticLinkUrl'
+            'schedule_static_link_url': 'scheduleStaticLinkUrl',
+            'export_allowed_to_rerun': 'exportAllowedToRerun'
         }
 
         self._id = None
@@ -101,6 +103,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         self._email_error_description = None
         self._schedule_expression = None
         self._schedule_static_link_url = None
+        self._export_allowed_to_rerun = None
 
     @property
     def id(self) -> str:
@@ -505,6 +508,30 @@ class ReportingDataExportTopicDataExportNotification(object):
         
 
         self._schedule_static_link_url = schedule_static_link_url
+
+    @property
+    def export_allowed_to_rerun(self) -> bool:
+        """
+        Gets the export_allowed_to_rerun of this ReportingDataExportTopicDataExportNotification.
+
+
+        :return: The export_allowed_to_rerun of this ReportingDataExportTopicDataExportNotification.
+        :rtype: bool
+        """
+        return self._export_allowed_to_rerun
+
+    @export_allowed_to_rerun.setter
+    def export_allowed_to_rerun(self, export_allowed_to_rerun: bool) -> None:
+        """
+        Sets the export_allowed_to_rerun of this ReportingDataExportTopicDataExportNotification.
+
+
+        :param export_allowed_to_rerun: The export_allowed_to_rerun of this ReportingDataExportTopicDataExportNotification.
+        :type: bool
+        """
+        
+
+        self._export_allowed_to_rerun = export_allowed_to_rerun
 
     def to_dict(self):
         """

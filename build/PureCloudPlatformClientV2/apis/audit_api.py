@@ -300,7 +300,7 @@ class AuditApi(object):
             for asynchronous request. (optional)
         :param str transaction_id: Transaction ID (required)
         :param str cursor: Indicates where to resume query results (not required for first page)
-        :param int page_size: Page size
+        :param int page_size: Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.
         :param list[str] expand: Which fields, if any, to expand
         :return: AuditQueryExecutionResultsResponse
                  If the method is called asynchronously,

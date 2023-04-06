@@ -50,6 +50,7 @@ if TYPE_CHECKING:
     from . import OAuthLastTokenIssued
     from . import Organization
     from . import OrganizationPresence
+    from . import OrganizationPresenceDefinition
     from . import OutOfOffice
     from . import RoutingSkill
     from . import RoutingStatus
@@ -120,6 +121,7 @@ class UserMe(object):
             'geolocation_settings': 'GeolocationSettings',
             'organization': 'Organization',
             'presence_definitions': 'list[OrganizationPresence]',
+            'divisioned_presence_definitions': 'list[OrganizationPresenceDefinition]',
             'location_definitions': 'list[LocationDefinition]',
             'org_authorization': 'list[DomainOrganizationRole]',
             'favorites': 'list[User]',
@@ -174,6 +176,7 @@ class UserMe(object):
             'geolocation_settings': 'geolocationSettings',
             'organization': 'organization',
             'presence_definitions': 'presenceDefinitions',
+            'divisioned_presence_definitions': 'divisionedPresenceDefinitions',
             'location_definitions': 'locationDefinitions',
             'org_authorization': 'orgAuthorization',
             'favorites': 'favorites',
@@ -227,6 +230,7 @@ class UserMe(object):
         self._geolocation_settings = None
         self._organization = None
         self._presence_definitions = None
+        self._divisioned_presence_definitions = None
         self._location_definitions = None
         self._org_authorization = None
         self._favorites = None
@@ -1161,7 +1165,7 @@ class UserMe(object):
     def presence_definitions(self) -> List['OrganizationPresence']:
         """
         Gets the presence_definitions of this UserMe.
-        The first 100 presence definitions for user's organization.
+        The first 100 non-divisioned presence definitions for user's organization.
 
         :return: The presence_definitions of this UserMe.
         :rtype: list[OrganizationPresence]
@@ -1172,7 +1176,7 @@ class UserMe(object):
     def presence_definitions(self, presence_definitions: List['OrganizationPresence']) -> None:
         """
         Sets the presence_definitions of this UserMe.
-        The first 100 presence definitions for user's organization.
+        The first 100 non-divisioned presence definitions for user's organization.
 
         :param presence_definitions: The presence_definitions of this UserMe.
         :type: list[OrganizationPresence]
@@ -1180,6 +1184,30 @@ class UserMe(object):
         
 
         self._presence_definitions = presence_definitions
+
+    @property
+    def divisioned_presence_definitions(self) -> List['OrganizationPresenceDefinition']:
+        """
+        Gets the divisioned_presence_definitions of this UserMe.
+        The presence definitions that the user has access to
+
+        :return: The divisioned_presence_definitions of this UserMe.
+        :rtype: list[OrganizationPresenceDefinition]
+        """
+        return self._divisioned_presence_definitions
+
+    @divisioned_presence_definitions.setter
+    def divisioned_presence_definitions(self, divisioned_presence_definitions: List['OrganizationPresenceDefinition']) -> None:
+        """
+        Sets the divisioned_presence_definitions of this UserMe.
+        The presence definitions that the user has access to
+
+        :param divisioned_presence_definitions: The divisioned_presence_definitions of this UserMe.
+        :type: list[OrganizationPresenceDefinition]
+        """
+        
+
+        self._divisioned_presence_definitions = divisioned_presence_definitions
 
     @property
     def location_definitions(self) -> List['LocationDefinition']:

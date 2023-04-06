@@ -75,6 +75,7 @@ from .models.adhoc_recording_topic_workspace_data import AdhocRecordingTopicWork
 from .models.adjacents import Adjacents
 from .models.admin_time_off_request_patch import AdminTimeOffRequestPatch
 from .models.after_call_work import AfterCallWork
+from .models.after_call_work_update import AfterCallWorkUpdate
 from .models.agent import Agent
 from .models.agent_activity import AgentActivity
 from .models.agent_activity_changed_topic_agent_activity import AgentActivityChangedTopicAgentActivity
@@ -1279,6 +1280,7 @@ from .models.evaluation_question import EvaluationQuestion
 from .models.evaluation_question_group import EvaluationQuestionGroup
 from .models.evaluation_question_group_score import EvaluationQuestionGroupScore
 from .models.evaluation_question_score import EvaluationQuestionScore
+from .models.evaluation_reference import EvaluationReference
 from .models.evaluation_response import EvaluationResponse
 from .models.evaluation_scoring_set import EvaluationScoringSet
 from .models.evaluation_settings import EvaluationSettings
@@ -1303,7 +1305,6 @@ from .models.expired_edge_listing import ExpiredEdgeListing
 from .models.export_script_request import ExportScriptRequest
 from .models.export_script_response import ExportScriptResponse
 from .models.export_uri import ExportUri
-from .models.extended_wrapup import ExtendedWrapup
 from .models.extension import Extension
 from .models.extension_entity_listing import ExtensionEntityListing
 from .models.extension_pool import ExtensionPool
@@ -2022,6 +2023,7 @@ from .models.org_whitelist_settings import OrgWhitelistSettings
 from .models.organization import Organization
 from .models.organization_features import OrganizationFeatures
 from .models.organization_presence import OrganizationPresence
+from .models.organization_presence_definition import OrganizationPresenceDefinition
 from .models.organization_presence_entity_listing import OrganizationPresenceEntityListing
 from .models.organization_product_entity_listing import OrganizationProductEntityListing
 from .models.organization_role_entity_listing import OrganizationRoleEntityListing
@@ -2816,6 +2818,7 @@ from .models.support_center_settings import SupportCenterSettings
 from .models.support_center_style_setting import SupportCenterStyleSetting
 from .models.supported_content import SupportedContent
 from .models.supported_content_listing import SupportedContentListing
+from .models.supported_content_profile import SupportedContentProfile
 from .models.supported_content_reference import SupportedContentReference
 from .models.supported_dialects_entity_listing import SupportedDialectsEntityListing
 from .models.supported_language import SupportedLanguage
@@ -3524,6 +3527,7 @@ from .models.wrapup_code import WrapupCode
 from .models.wrapup_code_entity_listing import WrapupCodeEntityListing
 from .models.wrapup_code_request import WrapupCodeRequest
 from .models.wrapup_detail_event_topic_wrapup_event import WrapupDetailEventTopicWrapupEvent
+from .models.wrapup_input import WrapupInput
 from .models.writable_dialer_contact import WritableDialerContact
 from .models.writable_division import WritableDivision
 from .models.writable_entity import WritableEntity

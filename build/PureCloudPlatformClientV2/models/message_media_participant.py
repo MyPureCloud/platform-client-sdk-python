@@ -96,7 +96,8 @@ class MessageMediaParticipant(object):
             'type': 'str',
             'recipient_country': 'str',
             'recipient_type': 'str',
-            'authenticated': 'bool'
+            'authenticated': 'bool',
+            'monitored_participant_id': 'str'
         }
 
         self.attribute_map = {
@@ -140,7 +141,8 @@ class MessageMediaParticipant(object):
             'type': 'type',
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
-            'authenticated': 'authenticated'
+            'authenticated': 'authenticated',
+            'monitored_participant_id': 'monitoredParticipantId'
         }
 
         self._id = None
@@ -184,6 +186,7 @@ class MessageMediaParticipant(object):
         self._recipient_country = None
         self._recipient_type = None
         self._authenticated = None
+        self._monitored_participant_id = None
 
     @property
     def id(self) -> str:
@@ -1193,6 +1196,30 @@ class MessageMediaParticipant(object):
         
 
         self._authenticated = authenticated
+
+    @property
+    def monitored_participant_id(self) -> str:
+        """
+        Gets the monitored_participant_id of this MessageMediaParticipant.
+        The ID of the participant being monitored when performing a message monitor.
+
+        :return: The monitored_participant_id of this MessageMediaParticipant.
+        :rtype: str
+        """
+        return self._monitored_participant_id
+
+    @monitored_participant_id.setter
+    def monitored_participant_id(self, monitored_participant_id: str) -> None:
+        """
+        Sets the monitored_participant_id of this MessageMediaParticipant.
+        The ID of the participant being monitored when performing a message monitor.
+
+        :param monitored_participant_id: The monitored_participant_id of this MessageMediaParticipant.
+        :type: str
+        """
+        
+
+        self._monitored_participant_id = monitored_participant_id
 
     def to_dict(self):
         """

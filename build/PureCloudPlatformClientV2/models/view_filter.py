@@ -208,7 +208,11 @@ class ViewFilter(object):
             'canonical_contact_ids': 'list[str]',
             'alert_rule_ids': 'list[str]',
             'evaluation_form_context_ids': 'list[str]',
-            'evaluation_statuses': 'list[str]'
+            'evaluation_statuses': 'list[str]',
+            'is_analyzed_for_sensitive_data': 'bool',
+            'has_sensitive_data': 'bool',
+            'sub_path': 'str',
+            'user_state': 'str'
         }
 
         self.attribute_map = {
@@ -367,7 +371,11 @@ class ViewFilter(object):
             'canonical_contact_ids': 'canonicalContactIds',
             'alert_rule_ids': 'alertRuleIds',
             'evaluation_form_context_ids': 'evaluationFormContextIds',
-            'evaluation_statuses': 'evaluationStatuses'
+            'evaluation_statuses': 'evaluationStatuses',
+            'is_analyzed_for_sensitive_data': 'isAnalyzedForSensitiveData',
+            'has_sensitive_data': 'hasSensitiveData',
+            'sub_path': 'subPath',
+            'user_state': 'userState'
         }
 
         self._media_types = None
@@ -526,6 +534,10 @@ class ViewFilter(object):
         self._alert_rule_ids = None
         self._evaluation_form_context_ids = None
         self._evaluation_statuses = None
+        self._is_analyzed_for_sensitive_data = None
+        self._has_sensitive_data = None
+        self._sub_path = None
+        self._user_state = None
 
     @property
     def media_types(self) -> List[str]:
@@ -4275,6 +4287,107 @@ class ViewFilter(object):
         
 
         self._evaluation_statuses = evaluation_statuses
+
+    @property
+    def is_analyzed_for_sensitive_data(self) -> bool:
+        """
+        Gets the is_analyzed_for_sensitive_data of this ViewFilter.
+        Filter to indicate the transcript has been analyzed for sensitive data.
+
+        :return: The is_analyzed_for_sensitive_data of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_analyzed_for_sensitive_data
+
+    @is_analyzed_for_sensitive_data.setter
+    def is_analyzed_for_sensitive_data(self, is_analyzed_for_sensitive_data: bool) -> None:
+        """
+        Sets the is_analyzed_for_sensitive_data of this ViewFilter.
+        Filter to indicate the transcript has been analyzed for sensitive data.
+
+        :param is_analyzed_for_sensitive_data: The is_analyzed_for_sensitive_data of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._is_analyzed_for_sensitive_data = is_analyzed_for_sensitive_data
+
+    @property
+    def has_sensitive_data(self) -> bool:
+        """
+        Gets the has_sensitive_data of this ViewFilter.
+        Filter to indicate the transcript contains sensitive data.
+
+        :return: The has_sensitive_data of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_sensitive_data
+
+    @has_sensitive_data.setter
+    def has_sensitive_data(self, has_sensitive_data: bool) -> None:
+        """
+        Sets the has_sensitive_data of this ViewFilter.
+        Filter to indicate the transcript contains sensitive data.
+
+        :param has_sensitive_data: The has_sensitive_data of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._has_sensitive_data = has_sensitive_data
+
+    @property
+    def sub_path(self) -> str:
+        """
+        Gets the sub_path of this ViewFilter.
+        Filter for Sub Path
+
+        :return: The sub_path of this ViewFilter.
+        :rtype: str
+        """
+        return self._sub_path
+
+    @sub_path.setter
+    def sub_path(self, sub_path: str) -> None:
+        """
+        Sets the sub_path of this ViewFilter.
+        Filter for Sub Path
+
+        :param sub_path: The sub_path of this ViewFilter.
+        :type: str
+        """
+        
+
+        self._sub_path = sub_path
+
+    @property
+    def user_state(self) -> str:
+        """
+        Gets the user_state of this ViewFilter.
+        The user supplied state value in the view
+
+        :return: The user_state of this ViewFilter.
+        :rtype: str
+        """
+        return self._user_state
+
+    @user_state.setter
+    def user_state(self, user_state: str) -> None:
+        """
+        Sets the user_state of this ViewFilter.
+        The user supplied state value in the view
+
+        :param user_state: The user_state of this ViewFilter.
+        :type: str
+        """
+        if isinstance(user_state, int):
+            user_state = str(user_state)
+        allowed_values = ["ActiveAndInactive", "Active", "Inactive", "Deleted"]
+        if user_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for user_state -> " + user_state)
+            self._user_state = "outdated_sdk_version"
+        else:
+            self._user_state = user_state
 
     def to_dict(self):
         """

@@ -75,6 +75,7 @@ from .adhoc_recording_topic_workspace_data import AdhocRecordingTopicWorkspaceDa
 from .adjacents import Adjacents
 from .admin_time_off_request_patch import AdminTimeOffRequestPatch
 from .after_call_work import AfterCallWork
+from .after_call_work_update import AfterCallWorkUpdate
 from .agent import Agent
 from .agent_activity import AgentActivity
 from .agent_activity_changed_topic_agent_activity import AgentActivityChangedTopicAgentActivity
@@ -1279,6 +1280,7 @@ from .evaluation_question import EvaluationQuestion
 from .evaluation_question_group import EvaluationQuestionGroup
 from .evaluation_question_group_score import EvaluationQuestionGroupScore
 from .evaluation_question_score import EvaluationQuestionScore
+from .evaluation_reference import EvaluationReference
 from .evaluation_response import EvaluationResponse
 from .evaluation_scoring_set import EvaluationScoringSet
 from .evaluation_settings import EvaluationSettings
@@ -1303,7 +1305,6 @@ from .expired_edge_listing import ExpiredEdgeListing
 from .export_script_request import ExportScriptRequest
 from .export_script_response import ExportScriptResponse
 from .export_uri import ExportUri
-from .extended_wrapup import ExtendedWrapup
 from .extension import Extension
 from .extension_entity_listing import ExtensionEntityListing
 from .extension_pool import ExtensionPool
@@ -2022,6 +2023,7 @@ from .org_whitelist_settings import OrgWhitelistSettings
 from .organization import Organization
 from .organization_features import OrganizationFeatures
 from .organization_presence import OrganizationPresence
+from .organization_presence_definition import OrganizationPresenceDefinition
 from .organization_presence_entity_listing import OrganizationPresenceEntityListing
 from .organization_product_entity_listing import OrganizationProductEntityListing
 from .organization_role_entity_listing import OrganizationRoleEntityListing
@@ -2816,6 +2818,7 @@ from .support_center_settings import SupportCenterSettings
 from .support_center_style_setting import SupportCenterStyleSetting
 from .supported_content import SupportedContent
 from .supported_content_listing import SupportedContentListing
+from .supported_content_profile import SupportedContentProfile
 from .supported_content_reference import SupportedContentReference
 from .supported_dialects_entity_listing import SupportedDialectsEntityListing
 from .supported_language import SupportedLanguage
@@ -3524,6 +3527,7 @@ from .wrapup_code import WrapupCode
 from .wrapup_code_entity_listing import WrapupCodeEntityListing
 from .wrapup_code_request import WrapupCodeRequest
 from .wrapup_detail_event_topic_wrapup_event import WrapupDetailEventTopicWrapupEvent
+from .wrapup_input import WrapupInput
 from .writable_dialer_contact import WritableDialerContact
 from .writable_division import WritableDivision
 from .writable_entity import WritableEntity

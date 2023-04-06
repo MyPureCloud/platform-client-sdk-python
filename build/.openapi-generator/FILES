@@ -147,6 +147,7 @@ PureCloudPlatformClientV2/models/adhoc_recording_topic_workspace_data.py
 PureCloudPlatformClientV2/models/adjacents.py
 PureCloudPlatformClientV2/models/admin_time_off_request_patch.py
 PureCloudPlatformClientV2/models/after_call_work.py
+PureCloudPlatformClientV2/models/after_call_work_update.py
 PureCloudPlatformClientV2/models/agent.py
 PureCloudPlatformClientV2/models/agent_activity.py
 PureCloudPlatformClientV2/models/agent_activity_changed_topic_agent_activity.py
@@ -1351,6 +1352,7 @@ PureCloudPlatformClientV2/models/evaluation_question.py
 PureCloudPlatformClientV2/models/evaluation_question_group.py
 PureCloudPlatformClientV2/models/evaluation_question_group_score.py
 PureCloudPlatformClientV2/models/evaluation_question_score.py
+PureCloudPlatformClientV2/models/evaluation_reference.py
 PureCloudPlatformClientV2/models/evaluation_response.py
 PureCloudPlatformClientV2/models/evaluation_scoring_set.py
 PureCloudPlatformClientV2/models/evaluation_settings.py
@@ -1375,7 +1377,6 @@ PureCloudPlatformClientV2/models/expired_edge_listing.py
 PureCloudPlatformClientV2/models/export_script_request.py
 PureCloudPlatformClientV2/models/export_script_response.py
 PureCloudPlatformClientV2/models/export_uri.py
-PureCloudPlatformClientV2/models/extended_wrapup.py
 PureCloudPlatformClientV2/models/extension.py
 PureCloudPlatformClientV2/models/extension_entity_listing.py
 PureCloudPlatformClientV2/models/extension_pool.py
@@ -2094,6 +2095,7 @@ PureCloudPlatformClientV2/models/org_whitelist_settings.py
 PureCloudPlatformClientV2/models/organization.py
 PureCloudPlatformClientV2/models/organization_features.py
 PureCloudPlatformClientV2/models/organization_presence.py
+PureCloudPlatformClientV2/models/organization_presence_definition.py
 PureCloudPlatformClientV2/models/organization_presence_entity_listing.py
 PureCloudPlatformClientV2/models/organization_product_entity_listing.py
 PureCloudPlatformClientV2/models/organization_role_entity_listing.py
@@ -2888,6 +2890,7 @@ PureCloudPlatformClientV2/models/support_center_settings.py
 PureCloudPlatformClientV2/models/support_center_style_setting.py
 PureCloudPlatformClientV2/models/supported_content.py
 PureCloudPlatformClientV2/models/supported_content_listing.py
+PureCloudPlatformClientV2/models/supported_content_profile.py
 PureCloudPlatformClientV2/models/supported_content_reference.py
 PureCloudPlatformClientV2/models/supported_dialects_entity_listing.py
 PureCloudPlatformClientV2/models/supported_language.py
@@ -3596,6 +3599,7 @@ PureCloudPlatformClientV2/models/wrapup_code.py
 PureCloudPlatformClientV2/models/wrapup_code_entity_listing.py
 PureCloudPlatformClientV2/models/wrapup_code_request.py
 PureCloudPlatformClientV2/models/wrapup_detail_event_topic_wrapup_event.py
+PureCloudPlatformClientV2/models/wrapup_input.py
 PureCloudPlatformClientV2/models/writable_dialer_contact.py
 PureCloudPlatformClientV2/models/writable_division.py
 PureCloudPlatformClientV2/models/writable_entity.py
@@ -3676,6 +3680,7 @@ docs/AdhocRecordingTopicWorkspaceData.md
 docs/Adjacents.md
 docs/AdminTimeOffRequestPatch.md
 docs/AfterCallWork.md
+docs/AfterCallWorkUpdate.md
 docs/Agent.md
 docs/AgentActivity.md
 docs/AgentActivityChangedTopicAgentActivity.md
@@ -4904,6 +4909,7 @@ docs/EvaluationQuestion.md
 docs/EvaluationQuestionGroup.md
 docs/EvaluationQuestionGroupScore.md
 docs/EvaluationQuestionScore.md
+docs/EvaluationReference.md
 docs/EvaluationResponse.md
 docs/EvaluationScoringSet.md
 docs/EvaluationSettings.md
@@ -4930,7 +4936,6 @@ docs/ExpiredEdgeListing.md
 docs/ExportScriptRequest.md
 docs/ExportScriptResponse.md
 docs/ExportUri.md
-docs/ExtendedWrapup.md
 docs/Extension.md
 docs/ExtensionEntityListing.md
 docs/ExtensionPool.md
@@ -5699,6 +5704,7 @@ docs/OrganizationAuthorizationApi.json
 docs/OrganizationAuthorizationApi.md
 docs/OrganizationFeatures.md
 docs/OrganizationPresence.md
+docs/OrganizationPresenceDefinition.md
 docs/OrganizationPresenceEntityListing.md
 docs/OrganizationProductEntityListing.md
 docs/OrganizationRoleEntityListing.md
@@ -6519,6 +6525,7 @@ docs/SupportCenterSettings.md
 docs/SupportCenterStyleSetting.md
 docs/SupportedContent.md
 docs/SupportedContentListing.md
+docs/SupportedContentProfile.md
 docs/SupportedContentReference.md
 docs/SupportedDialectsEntityListing.md
 docs/SupportedLanguage.md
@@ -7259,6 +7266,7 @@ docs/WrapupCode.md
 docs/WrapupCodeEntityListing.md
 docs/WrapupCodeRequest.md
 docs/WrapupDetailEventTopicWrapupEvent.md
+docs/WrapupInput.md
 docs/WritableDialerContact.md
 docs/WritableDivision.md
 docs/WritableEntity.md
@@ -7968,6 +7976,8 @@ docs/get_oauth_authorization-example.txt
 docs/get_oauth_authorizations-example.txt
 docs/get_oauth_client-example.txt
 docs/get_oauth_client_usage_query_result-example.txt
+docs/get_oauth_client_usage_query_result-example.txt
+docs/get_oauth_client_usage_summary-example.txt
 docs/get_oauth_client_usage_summary-example.txt
 docs/get_oauth_clients-example.txt
 docs/get_oauth_scope-example.txt
@@ -8472,6 +8482,7 @@ docs/patch_coaching_notification-example.txt
 docs/patch_conversation_participant-example.txt
 docs/patch_conversation_participant_attributes-example.txt
 docs/patch_conversation_secureattributes-example.txt
+docs/patch_conversations_aftercallwork_conversation_id_participant_communication-example.txt
 docs/patch_conversations_call-example.txt
 docs/patch_conversations_call_participant-example.txt
 docs/patch_conversations_call_participant_attributes-example.txt
@@ -8874,6 +8885,7 @@ docs/post_mobiledevices-example.txt
 docs/post_notifications_channel_subscriptions-example.txt
 docs/post_notifications_channels-example.txt
 docs/post_oauth_client_secret-example.txt
+docs/post_oauth_client_usage_query-example.txt
 docs/post_oauth_client_usage_query-example.txt
 docs/post_oauth_clients-example.txt
 docs/post_orgauthorization_pairings-example.txt

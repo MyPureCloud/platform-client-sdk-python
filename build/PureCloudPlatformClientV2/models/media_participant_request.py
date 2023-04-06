@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import ExtendedWrapup
+    from . import WrapupInput
 
 class MediaParticipantRequest(object):
     """
@@ -50,7 +50,7 @@ class MediaParticipantRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'wrapup': 'ExtendedWrapup',
+            'wrapup': 'WrapupInput',
             'state': 'str',
             'recording': 'bool',
             'muted': 'bool',
@@ -78,24 +78,24 @@ class MediaParticipantRequest(object):
         self._wrapup_skipped = None
 
     @property
-    def wrapup(self) -> 'ExtendedWrapup':
+    def wrapup(self) -> 'WrapupInput':
         """
         Gets the wrapup of this MediaParticipantRequest.
         Wrap-up to assign to this participant.
 
         :return: The wrapup of this MediaParticipantRequest.
-        :rtype: ExtendedWrapup
+        :rtype: WrapupInput
         """
         return self._wrapup
 
     @wrapup.setter
-    def wrapup(self, wrapup: 'ExtendedWrapup') -> None:
+    def wrapup(self, wrapup: 'WrapupInput') -> None:
         """
         Sets the wrapup of this MediaParticipantRequest.
         Wrap-up to assign to this participant.
 
         :param wrapup: The wrapup of this MediaParticipantRequest.
-        :type: ExtendedWrapup
+        :type: WrapupInput
         """
         
 

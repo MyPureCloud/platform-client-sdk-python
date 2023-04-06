@@ -48,6 +48,7 @@ class AnalyticsEvaluation(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'assignee_id': 'str',
             'calibration_id': 'str',
             'context_id': 'str',
             'deleted': 'bool',
@@ -66,6 +67,7 @@ class AnalyticsEvaluation(object):
         }
 
         self.attribute_map = {
+            'assignee_id': 'assigneeId',
             'calibration_id': 'calibrationId',
             'context_id': 'contextId',
             'deleted': 'deleted',
@@ -83,6 +85,7 @@ class AnalyticsEvaluation(object):
             'o_total_score': 'oTotalScore'
         }
 
+        self._assignee_id = None
         self._calibration_id = None
         self._context_id = None
         self._deleted = None
@@ -98,6 +101,30 @@ class AnalyticsEvaluation(object):
         self._user_id = None
         self._o_total_critical_score = None
         self._o_total_score = None
+
+    @property
+    def assignee_id(self) -> str:
+        """
+        Gets the assignee_id of this AnalyticsEvaluation.
+        UserId of the assignee
+
+        :return: The assignee_id of this AnalyticsEvaluation.
+        :rtype: str
+        """
+        return self._assignee_id
+
+    @assignee_id.setter
+    def assignee_id(self, assignee_id: str) -> None:
+        """
+        Sets the assignee_id of this AnalyticsEvaluation.
+        UserId of the assignee
+
+        :param assignee_id: The assignee_id of this AnalyticsEvaluation.
+        :type: str
+        """
+        
+
+        self._assignee_id = assignee_id
 
     @property
     def calibration_id(self) -> str:

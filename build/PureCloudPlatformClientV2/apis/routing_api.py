@@ -6008,6 +6008,7 @@ class RoutingApi(object):
         :param int page_number: Page number
         :param str sort_by: Sort by
         :param str sort_order: Sort order
+        :param list[str] id: Filter by wrapup code ID(s)
         :param str name: Wrapup code's name ('Sort by' param is ignored unless this field is provided)
         :param list[str] division_id: Filter by division ID(s)
         :return: WrapupCodeEntityListing
@@ -6015,7 +6016,7 @@ class RoutingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'division_id']
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'id', 'name', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -6042,6 +6043,8 @@ class RoutingApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'id' in params:
+            query_params['id'] = params['id']
         if 'name' in params:
             query_params['name'] = params['name']
         if 'division_id' in params:

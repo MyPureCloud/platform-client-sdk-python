@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ContactAddressConditionSettings
     from . import ContactAddressTypeConditionSettings
     from . import ContactColumnConditionSettings
+    from . import DataActionConditionSettings
     from . import LastAttemptByColumnConditionSettings
     from . import LastAttemptOverallConditionSettings
     from . import LastResultByColumnConditionSettings
@@ -63,7 +64,8 @@ class DigitalCondition(object):
             'last_attempt_by_column_condition_settings': 'LastAttemptByColumnConditionSettings',
             'last_attempt_overall_condition_settings': 'LastAttemptOverallConditionSettings',
             'last_result_by_column_condition_settings': 'LastResultByColumnConditionSettings',
-            'last_result_overall_condition_settings': 'LastResultOverallConditionSettings'
+            'last_result_overall_condition_settings': 'LastResultOverallConditionSettings',
+            'data_action_condition_settings': 'DataActionConditionSettings'
         }
 
         self.attribute_map = {
@@ -74,7 +76,8 @@ class DigitalCondition(object):
             'last_attempt_by_column_condition_settings': 'lastAttemptByColumnConditionSettings',
             'last_attempt_overall_condition_settings': 'lastAttemptOverallConditionSettings',
             'last_result_by_column_condition_settings': 'lastResultByColumnConditionSettings',
-            'last_result_overall_condition_settings': 'lastResultOverallConditionSettings'
+            'last_result_overall_condition_settings': 'lastResultOverallConditionSettings',
+            'data_action_condition_settings': 'dataActionConditionSettings'
         }
 
         self._inverted = None
@@ -85,6 +88,7 @@ class DigitalCondition(object):
         self._last_attempt_overall_condition_settings = None
         self._last_result_by_column_condition_settings = None
         self._last_result_overall_condition_settings = None
+        self._data_action_condition_settings = None
 
     @property
     def inverted(self) -> bool:
@@ -277,6 +281,30 @@ class DigitalCondition(object):
         
 
         self._last_result_overall_condition_settings = last_result_overall_condition_settings
+
+    @property
+    def data_action_condition_settings(self) -> 'DataActionConditionSettings':
+        """
+        Gets the data_action_condition_settings of this DigitalCondition.
+        The settings for a 'data action' condition.
+
+        :return: The data_action_condition_settings of this DigitalCondition.
+        :rtype: DataActionConditionSettings
+        """
+        return self._data_action_condition_settings
+
+    @data_action_condition_settings.setter
+    def data_action_condition_settings(self, data_action_condition_settings: 'DataActionConditionSettings') -> None:
+        """
+        Sets the data_action_condition_settings of this DigitalCondition.
+        The settings for a 'data action' condition.
+
+        :param data_action_condition_settings: The data_action_condition_settings of this DigitalCondition.
+        :type: DataActionConditionSettings
+        """
+        
+
+        self._data_action_condition_settings = data_action_condition_settings
 
     def to_dict(self):
         """
