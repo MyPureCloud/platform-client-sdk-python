@@ -53,8 +53,6 @@ from ..models import Edge
 from ..models import EdgeEntityListing
 from ..models import EdgeGroup
 from ..models import EdgeGroupEntityListing
-from ..models import EdgeLine
-from ..models import EdgeLineEntityListing
 from ..models import EdgeLogsJob
 from ..models import EdgeLogsJobRequest
 from ..models import EdgeLogsJobResponse
@@ -1985,174 +1983,6 @@ class TelephonyProvidersEdgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='EdgeNetworkDiagnosticResponse',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_telephony_providers_edge_line(self, edge_id: str, line_id: str, **kwargs) -> 'EdgeLine':
-        """
-        Get line
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_telephony_providers_edge_line(edge_id, line_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str edge_id: Edge ID (required)
-        :param str line_id: Line ID (required)
-        :return: EdgeLine
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['edge_id', 'line_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_telephony_providers_edge_line" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'edge_id' is set
-        if ('edge_id' not in params) or (params['edge_id'] is None):
-            raise ValueError("Missing the required parameter `edge_id` when calling `get_telephony_providers_edge_line`")
-        # verify the required parameter 'line_id' is set
-        if ('line_id' not in params) or (params['line_id'] is None):
-            raise ValueError("Missing the required parameter `line_id` when calling `get_telephony_providers_edge_line`")
-
-
-        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'edge_id' in params:
-            path_params['edgeId'] = params['edge_id']
-        if 'line_id' in params:
-            path_params['lineId'] = params['line_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='EdgeLine',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_telephony_providers_edge_lines(self, edge_id: str, **kwargs) -> 'EdgeLineEntityListing':
-        """
-        Get the list of lines.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_telephony_providers_edge_lines(edge_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str edge_id: Edge ID (required)
-        :param int page_size: Page size
-        :param int page_number: Page number
-        :return: EdgeLineEntityListing
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['edge_id', 'page_size', 'page_number']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_telephony_providers_edge_lines" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'edge_id' is set
-        if ('edge_id' not in params) or (params['edge_id'] is None):
-            raise ValueError("Missing the required parameter `edge_id` when calling `get_telephony_providers_edge_lines`")
-
-
-        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/lines'.replace('{format}', 'json')
-        path_params = {}
-        if 'edge_id' in params:
-            path_params['edgeId'] = params['edge_id']
-
-        query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='EdgeLineEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4711,7 +4541,7 @@ class TelephonyProvidersEdgeApi(object):
         :param int page_number: Page number
         :param str name: Name
         :param str sort_by: Value by which to sort
-        :param list[str] expand: Fields to expand in the response, comma-separated
+        :param list[str] expand: Fields to expand in the response, comma-separated. The edgeGroup value is deprecated.
         :return: LineEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9371,96 +9201,6 @@ class TelephonyProvidersEdgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Edge',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def put_telephony_providers_edge_line(self, edge_id: str, line_id: str, body: 'EdgeLine', **kwargs) -> 'EdgeLine':
-        """
-        Update a line.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.put_telephony_providers_edge_line(edge_id, line_id, body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str edge_id: Edge ID (required)
-        :param str line_id: Line ID (required)
-        :param EdgeLine body: Line (required)
-        :return: EdgeLine
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['edge_id', 'line_id', 'body']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method put_telephony_providers_edge_line" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'edge_id' is set
-        if ('edge_id' not in params) or (params['edge_id'] is None):
-            raise ValueError("Missing the required parameter `edge_id` when calling `put_telephony_providers_edge_line`")
-        # verify the required parameter 'line_id' is set
-        if ('line_id' not in params) or (params['line_id'] is None):
-            raise ValueError("Missing the required parameter `line_id` when calling `put_telephony_providers_edge_line`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `put_telephony_providers_edge_line`")
-
-
-        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'edge_id' in params:
-            path_params['edgeId'] = params['edge_id']
-        if 'line_id' in params:
-            path_params['lineId'] = params['line_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='EdgeLine',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

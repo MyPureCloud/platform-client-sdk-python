@@ -1181,8 +1181,6 @@ from .models.edge_entity_listing import EdgeEntityListing
 from .models.edge_group import EdgeGroup
 from .models.edge_group_entity_listing import EdgeGroupEntityListing
 from .models.edge_interface import EdgeInterface
-from .models.edge_line import EdgeLine
-from .models.edge_line_entity_listing import EdgeLineEntityListing
 from .models.edge_logical_interfaces_change_topic_domain_logical_interface_change import EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange
 from .models.edge_logical_interfaces_change_topic_error_info import EdgeLogicalInterfacesChangeTopicErrorInfo
 from .models.edge_logs_job import EdgeLogsJob

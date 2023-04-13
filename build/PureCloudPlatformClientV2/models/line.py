@@ -445,7 +445,7 @@ class Line(object):
     def edge_group(self) -> 'DomainEntityRef':
         """
         Gets the edge_group of this Line.
-
+        The edge group associated with the line. (Deprecated)
 
         :return: The edge_group of this Line.
         :rtype: DomainEntityRef
@@ -456,7 +456,7 @@ class Line(object):
     def edge_group(self, edge_group: 'DomainEntityRef') -> None:
         """
         Sets the edge_group of this Line.
-
+        The edge group associated with the line. (Deprecated)
 
         :param edge_group: The edge_group of this Line.
         :type: DomainEntityRef

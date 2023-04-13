@@ -3329,6 +3329,7 @@ class UsersApi(object):
         :param str interval: Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str completion_interval: Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str overdue: Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned
+        :param str pcPass: Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") activities are returned. If pass is \"Any\" or if the pass parameter is not supplied, all activities are returned
         :param int page_size: Page size
         :param int page_number: Page number
         :param str sort_order: Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
@@ -3340,7 +3341,7 @@ class UsersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'module_id', 'interval', 'completion_interval', 'overdue', 'page_size', 'page_number', 'sort_order', 'types', 'statuses', 'relationship']
+        all_params = ['user_id', 'module_id', 'interval', 'completion_interval', 'overdue', 'pcPass', 'page_size', 'page_number', 'sort_order', 'types', 'statuses', 'relationship']
         all_params.append('callback')
 
         params = locals()
@@ -3369,6 +3370,8 @@ class UsersApi(object):
             query_params['completionInterval'] = params['completion_interval']
         if 'overdue' in params:
             query_params['overdue'] = params['overdue']
+        if 'pcPass' in params:
+            query_params['pass'] = params['pcPass']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
@@ -3433,6 +3436,7 @@ class UsersApi(object):
         :param str interval: Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str completion_interval: Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str overdue: Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned
+        :param str pcPass: Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") activities are returned. If pass is \"Any\" or if the pass parameter is not supplied, all activities are returned
         :param int page_size: Page size
         :param int page_number: Page number
         :param str sort_order: Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
@@ -3444,7 +3448,7 @@ class UsersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['module_id', 'interval', 'completion_interval', 'overdue', 'page_size', 'page_number', 'sort_order', 'types', 'statuses', 'relationship']
+        all_params = ['module_id', 'interval', 'completion_interval', 'overdue', 'pcPass', 'page_size', 'page_number', 'sort_order', 'types', 'statuses', 'relationship']
         all_params.append('callback')
 
         params = locals()
@@ -3471,6 +3475,8 @@ class UsersApi(object):
             query_params['completionInterval'] = params['completion_interval']
         if 'overdue' in params:
             query_params['overdue'] = params['overdue']
+        if 'pcPass' in params:
+            query_params['pass'] = params['pcPass']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:

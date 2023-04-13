@@ -31,8 +31,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edge_diagnostic_ping**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_diagnostic_ping) | Get networking-related information from an Edge for a target IP or host.|
 |[**get_telephony_providers_edge_diagnostic_route**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_diagnostic_route) | Get networking-related information from an Edge for a target IP or host.|
 |[**get_telephony_providers_edge_diagnostic_tracepath**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_diagnostic_tracepath) | Get networking-related information from an Edge for a target IP or host.|
-|[**get_telephony_providers_edge_line**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_line) | Get line|
-|[**get_telephony_providers_edge_lines**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_lines) | Get the list of lines.|
 |[**get_telephony_providers_edge_logicalinterface**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logicalinterface) | Get an edge logical interface|
 |[**get_telephony_providers_edge_logicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logicalinterfaces) | Get edge logical interfaces.|
 |[**get_telephony_providers_edge_logs_job**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logs_job) | Get an Edge logs job.|
@@ -121,7 +119,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edges_sites**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_sites) | Create a Site.|
 |[**post_telephony_providers_edges_trunkbasesettings**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_trunkbasesettings) | Create a Trunk Base Settings object|
 |[**put_telephony_providers_edge**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edge) | Update a edge.|
-|[**put_telephony_providers_edge_line**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edge_line) | Update a line.|
 |[**put_telephony_providers_edge_logicalinterface**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edge_logicalinterface) | Update an edge logical interface.|
 |[**put_telephony_providers_edges_certificateauthority**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_certificateauthority) | Update a certificate authority.|
 |[**put_telephony_providers_edges_did**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_did) | Update a DID by ID.|
@@ -1326,114 +1323,6 @@ except ApiException as e:
 ### Return type
 
 [**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html)
-
-<a name="get_telephony_providers_edge_line"></a>
-
-## [**EdgeLine**](EdgeLine.html) get_telephony_providers_edge_line(edge_id, line_id)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get line
-
-
-
-Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId} 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-edge_id = 'edge_id_example' # str | Edge ID
-line_id = 'line_id_example' # str | Line ID
-
-try:
-    # Get line
-    api_response = api_instance.get_telephony_providers_edge_line(edge_id, line_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_line: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID |  |
-| **line_id** | **str**| Line ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**EdgeLine**](EdgeLine.html)
-
-<a name="get_telephony_providers_edge_lines"></a>
-
-## [**EdgeLineEntityListing**](EdgeLineEntityListing.html) get_telephony_providers_edge_lines(edge_id, page_size=page_size, page_number=page_number)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get the list of lines.
-
-
-
-Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-edge_id = 'edge_id_example' # str | Edge ID
-page_size = 25 # int | Page size (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-
-try:
-    # Get the list of lines.
-    api_response = api_instance.get_telephony_providers_edge_lines(edge_id, page_size=page_size, page_number=page_number)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_lines: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID |  |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
-
-### Return type
-
-[**EdgeLineEntityListing**](EdgeLineEntityListing.html)
 
 <a name="get_telephony_providers_edge_logicalinterface"></a>
 
@@ -3138,7 +3027,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
 sort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')
-expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
+expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated. The edgeGroup value is deprecated. (optional)
 
 try:
     # Get a list of Lines
@@ -3157,7 +3046,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Value by which to sort | [optional] [default to &#39;name&#39;] |
-| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated. The edgeGroup value is deprecated. | [optional] <br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -6176,61 +6065,6 @@ except ApiException as e:
 ### Return type
 
 [**Edge**](Edge.html)
-
-<a name="put_telephony_providers_edge_line"></a>
-
-## [**EdgeLine**](EdgeLine.html) put_telephony_providers_edge_line(edge_id, line_id, body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Update a line.
-
-
-
-Wraps PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId} 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-edge_id = 'edge_id_example' # str | Edge ID
-line_id = 'line_id_example' # str | Line ID
-body = PureCloudPlatformClientV2.EdgeLine() # EdgeLine | Line
-
-try:
-    # Update a line.
-    api_response = api_instance.put_telephony_providers_edge_line(edge_id, line_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_line: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID |  |
-| **line_id** | **str**| Line ID |  |
-| **body** | [**EdgeLine**](EdgeLine.html)| Line |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**EdgeLine**](EdgeLine.html)
 
 <a name="put_telephony_providers_edge_logicalinterface"></a>
 

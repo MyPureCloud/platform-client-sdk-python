@@ -1253,8 +1253,6 @@ PureCloudPlatformClientV2/models/edge_entity_listing.py
 PureCloudPlatformClientV2/models/edge_group.py
 PureCloudPlatformClientV2/models/edge_group_entity_listing.py
 PureCloudPlatformClientV2/models/edge_interface.py
-PureCloudPlatformClientV2/models/edge_line.py
-PureCloudPlatformClientV2/models/edge_line_entity_listing.py
 PureCloudPlatformClientV2/models/edge_logical_interfaces_change_topic_domain_logical_interface_change.py
 PureCloudPlatformClientV2/models/edge_logical_interfaces_change_topic_error_info.py
 PureCloudPlatformClientV2/models/edge_logs_job.py
@@ -4810,8 +4808,6 @@ docs/EdgeEntityListing.md
 docs/EdgeGroup.md
 docs/EdgeGroupEntityListing.md
 docs/EdgeInterface.md
-docs/EdgeLine.md
-docs/EdgeLineEntityListing.md
 docs/EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange.md
 docs/EdgeLogicalInterfacesChangeTopicErrorInfo.md
 docs/EdgeLogsJob.md
@@ -8254,8 +8250,6 @@ docs/get_telephony_providers_edge_diagnostic_nslookup-example.txt
 docs/get_telephony_providers_edge_diagnostic_ping-example.txt
 docs/get_telephony_providers_edge_diagnostic_route-example.txt
 docs/get_telephony_providers_edge_diagnostic_tracepath-example.txt
-docs/get_telephony_providers_edge_line-example.txt
-docs/get_telephony_providers_edge_lines-example.txt
 docs/get_telephony_providers_edge_logicalinterface-example.txt
 docs/get_telephony_providers_edge_logicalinterfaces-example.txt
 docs/get_telephony_providers_edge_logs_job-example.txt
@@ -9272,7 +9266,6 @@ docs/put_speechandtextanalytics_program_transcriptionengines-example.txt
 docs/put_speechandtextanalytics_settings-example.txt
 docs/put_speechandtextanalytics_topic-example.txt
 docs/put_telephony_providers_edge-example.txt
-docs/put_telephony_providers_edge_line-example.txt
 docs/put_telephony_providers_edge_logicalinterface-example.txt
 docs/put_telephony_providers_edges_certificateauthority-example.txt
 docs/put_telephony_providers_edges_did-example.txt

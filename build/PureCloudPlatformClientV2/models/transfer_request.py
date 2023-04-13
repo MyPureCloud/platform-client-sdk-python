@@ -100,7 +100,7 @@ class TransferRequest(object):
     def address(self) -> str:
         """
         Gets the address of this TransferRequest.
-        The address of the transfer target which can be user ID, queue ID or queue name
+        The user ID or queue ID of the transfer target. Address like a phone number can not be used for callbacks, but they can be used for other forms of communication.
 
         :return: The address of this TransferRequest.
         :rtype: str
@@ -111,7 +111,7 @@ class TransferRequest(object):
     def address(self, address: str) -> None:
         """
         Sets the address of this TransferRequest.
-        The address of the transfer target which can be user ID, queue ID or queue name
+        The user ID or queue ID of the transfer target. Address like a phone number can not be used for callbacks, but they can be used for other forms of communication.
 
         :param address: The address of this TransferRequest.
         :type: str

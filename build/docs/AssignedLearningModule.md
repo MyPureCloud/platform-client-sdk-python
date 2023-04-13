@@ -27,6 +27,7 @@ title: AssignedLearningModule
 | **inform_steps** | [**list[LearningModuleInformStep]**](LearningModuleInformStep.html) | The list of inform steps in a learning module | [optional] |
 | **assessment_form** | [**AssessmentForm**](AssessmentForm.html) | The assessment form for learning module | [optional] |
 | **summary_data** | [**LearningModuleSummary**](LearningModuleSummary.html) | The learning module summary data | [optional] |
+| **reassign_summary_data** | [**LearningModuleReassignSummary**](LearningModuleReassignSummary.html) | The learning module reassign summary data | [optional] |
 | **cover_art** | [**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html) | The cover art for the learning module | [optional] |
 | **archival_mode** | **str** | The mode of archival for learning module | [optional] |
 {: class="table table-striped"}

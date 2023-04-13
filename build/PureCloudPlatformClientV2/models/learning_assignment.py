@@ -64,6 +64,7 @@ class LearningAssignment(object):
             'is_rule': 'bool',
             'is_manual': 'bool',
             'is_passed': 'bool',
+            'is_latest': 'bool',
             'self_uri': 'str',
             'state': 'str',
             'date_recommended_for_completion': 'datetime',
@@ -85,6 +86,7 @@ class LearningAssignment(object):
             'is_rule': 'isRule',
             'is_manual': 'isManual',
             'is_passed': 'isPassed',
+            'is_latest': 'isLatest',
             'self_uri': 'selfUri',
             'state': 'state',
             'date_recommended_for_completion': 'dateRecommendedForCompletion',
@@ -105,6 +107,7 @@ class LearningAssignment(object):
         self._is_rule = None
         self._is_manual = None
         self._is_passed = None
+        self._is_latest = None
         self._self_uri = None
         self._state = None
         self._date_recommended_for_completion = None
@@ -376,6 +379,30 @@ class LearningAssignment(object):
         
 
         self._is_passed = is_passed
+
+    @property
+    def is_latest(self) -> bool:
+        """
+        Gets the is_latest of this LearningAssignment.
+        True if the assignment is based on latest module
+
+        :return: The is_latest of this LearningAssignment.
+        :rtype: bool
+        """
+        return self._is_latest
+
+    @is_latest.setter
+    def is_latest(self, is_latest: bool) -> None:
+        """
+        Sets the is_latest of this LearningAssignment.
+        True if the assignment is based on latest module
+
+        :param is_latest: The is_latest of this LearningAssignment.
+        :type: bool
+        """
+        
+
+        self._is_latest = is_latest
 
     @property
     def self_uri(self) -> str:

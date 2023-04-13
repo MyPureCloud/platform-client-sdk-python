@@ -14,6 +14,8 @@ title: DevelopmentActivity
 | **percentage_score** | **float** | The user&#39;s percentage score for this activity | [optional] |
 | **is_passed** | **bool** | True if the activity was passed | [optional] |
 | **is_latest** | **bool** | True if this is the latest version of assignment assigned to the user | [optional] |
+| **is_module_archived** | **bool** | True if the associated module is archived | [optional] |
+| **archival_mode** | **str** | Module archive type | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 | **name** | **str** | The name of the activity | [optional] |
 | **type** | **str** | The type of activity | [optional] |

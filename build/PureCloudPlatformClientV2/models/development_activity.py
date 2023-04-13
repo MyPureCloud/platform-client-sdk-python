@@ -57,6 +57,8 @@ class DevelopmentActivity(object):
             'percentage_score': 'float',
             'is_passed': 'bool',
             'is_latest': 'bool',
+            'is_module_archived': 'bool',
+            'archival_mode': 'str',
             'self_uri': 'str',
             'name': 'str',
             'type': 'str',
@@ -75,6 +77,8 @@ class DevelopmentActivity(object):
             'percentage_score': 'percentageScore',
             'is_passed': 'isPassed',
             'is_latest': 'isLatest',
+            'is_module_archived': 'isModuleArchived',
+            'archival_mode': 'archivalMode',
             'self_uri': 'selfUri',
             'name': 'name',
             'type': 'type',
@@ -92,6 +96,8 @@ class DevelopmentActivity(object):
         self._percentage_score = None
         self._is_passed = None
         self._is_latest = None
+        self._is_module_archived = None
+        self._archival_mode = None
         self._self_uri = None
         self._name = None
         self._type = None
@@ -268,6 +274,59 @@ class DevelopmentActivity(object):
         
 
         self._is_latest = is_latest
+
+    @property
+    def is_module_archived(self) -> bool:
+        """
+        Gets the is_module_archived of this DevelopmentActivity.
+        True if the associated module is archived
+
+        :return: The is_module_archived of this DevelopmentActivity.
+        :rtype: bool
+        """
+        return self._is_module_archived
+
+    @is_module_archived.setter
+    def is_module_archived(self, is_module_archived: bool) -> None:
+        """
+        Sets the is_module_archived of this DevelopmentActivity.
+        True if the associated module is archived
+
+        :param is_module_archived: The is_module_archived of this DevelopmentActivity.
+        :type: bool
+        """
+        
+
+        self._is_module_archived = is_module_archived
+
+    @property
+    def archival_mode(self) -> str:
+        """
+        Gets the archival_mode of this DevelopmentActivity.
+        Module archive type
+
+        :return: The archival_mode of this DevelopmentActivity.
+        :rtype: str
+        """
+        return self._archival_mode
+
+    @archival_mode.setter
+    def archival_mode(self, archival_mode: str) -> None:
+        """
+        Sets the archival_mode of this DevelopmentActivity.
+        Module archive type
+
+        :param archival_mode: The archival_mode of this DevelopmentActivity.
+        :type: str
+        """
+        if isinstance(archival_mode, int):
+            archival_mode = str(archival_mode)
+        allowed_values = ["Graceful", "Immediate"]
+        if archival_mode.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for archival_mode -> " + archival_mode)
+            self._archival_mode = "outdated_sdk_version"
+        else:
+            self._archival_mode = archival_mode
 
     @property
     def self_uri(self) -> str:

@@ -31246,49 +31246,6 @@
     "return": "EdgeNetworkDiagnosticResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nedge_id = 'edge_id_example' # str | Edge Id\n\ntry:\n    # Get networking-related information from an Edge for a target IP or host.\n    api_response = api_instance.get_telephony_providers_edge_diagnostic_tracepath(edge_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_tracepath: %s\\n\" % e)"
   },
-  "get_telephony_providers_edge_line": {
-    "operationId": "get_telephony_providers_edge_line",
-    "functionName": "get_telephony_providers_edge_line",
-    "signature": "get_telephony_providers_edge_line(edge_id, line_id)",
-    "parameters": [
-      {
-        "name": "edge_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "line_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "return": "EdgeLine",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nedge_id = 'edge_id_example' # str | Edge ID\nline_id = 'line_id_example' # str | Line ID\n\ntry:\n    # Get line\n    api_response = api_instance.get_telephony_providers_edge_line(edge_id, line_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_line: %s\\n\" % e)"
-  },
-  "get_telephony_providers_edge_lines": {
-    "operationId": "get_telephony_providers_edge_lines",
-    "functionName": "get_telephony_providers_edge_lines",
-    "signature": "get_telephony_providers_edge_lines(edge_id, page_size, page_number)",
-    "parameters": [
-      {
-        "name": "edge_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "page_size",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "page_number",
-        "type": "int",
-        "required": "false"
-      }
-    ],
-    "return": "EdgeLineEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nedge_id = 'edge_id_example' # str | Edge ID\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # Get the list of lines.\n    api_response = api_instance.get_telephony_providers_edge_lines(edge_id, page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_lines: %s\\n\" % e)"
-  },
   "get_telephony_providers_edge_logicalinterface": {
     "operationId": "get_telephony_providers_edge_logicalinterface",
     "functionName": "get_telephony_providers_edge_logicalinterface",
@@ -31977,7 +31934,7 @@
       }
     ],
     "return": "LineEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nname = 'name_example' # str | Name (optional)\nsort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')\nexpand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)\n\ntry:\n    # Get a list of Lines\n    api_response = api_instance.get_telephony_providers_edges_lines(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nname = 'name_example' # str | Name (optional)\nsort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')\nexpand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated. The edgeGroup value is deprecated. (optional)\n\ntry:\n    # Get a list of Lines\n    api_response = api_instance.get_telephony_providers_edges_lines(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines: %s\\n\" % e)"
   },
   "get_telephony_providers_edges_lines_template": {
     "operationId": "get_telephony_providers_edges_lines_template",
@@ -33125,30 +33082,6 @@
     "return": "Edge",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nedge_id = 'edge_id_example' # str | Edge ID\nbody = PureCloudPlatformClientV2.Edge() # Edge | Edge\n\ntry:\n    # Update a edge.\n    api_response = api_instance.put_telephony_providers_edge(edge_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge: %s\\n\" % e)"
   },
-  "put_telephony_providers_edge_line": {
-    "operationId": "put_telephony_providers_edge_line",
-    "functionName": "put_telephony_providers_edge_line",
-    "signature": "put_telephony_providers_edge_line(edge_id, line_id, body)",
-    "parameters": [
-      {
-        "name": "edge_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "line_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "EdgeLine",
-        "required": "true"
-      }
-    ],
-    "return": "EdgeLine",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nedge_id = 'edge_id_example' # str | Edge ID\nline_id = 'line_id_example' # str | Line ID\nbody = PureCloudPlatformClientV2.EdgeLine() # EdgeLine | Line\n\ntry:\n    # Update a line.\n    api_response = api_instance.put_telephony_providers_edge_line(edge_id, line_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_line: %s\\n\" % e)"
-  },
   "put_telephony_providers_edge_logicalinterface": {
     "operationId": "put_telephony_providers_edge_logicalinterface",
     "functionName": "put_telephony_providers_edge_logicalinterface",
@@ -34159,7 +34092,7 @@
   "get_users_development_activities": {
     "operationId": "get_users_development_activities",
     "functionName": "get_users_development_activities",
-    "signature": "get_users_development_activities(user_id, module_id, interval, completion_interval, overdue, page_size, page_number, sort_order, types, statuses, relationship)",
+    "signature": "get_users_development_activities(user_id, module_id, interval, completion_interval, overdue, pcPass, page_size, page_number, sort_order, types, statuses, relationship)",
     "parameters": [
       {
         "name": "user_id",
@@ -34187,6 +34120,11 @@
         "required": "false"
       },
       {
+        "name": "pcPass",
+        "type": "str",
+        "required": "false"
+      },
+      {
         "name": "page_size",
         "type": "int",
         "required": "false"
@@ -34218,12 +34156,12 @@
       }
     ],
     "return": "DevelopmentActivityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nuser_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId. (optional)\nmodule_id = 'module_id_example' # str | Specifies the ID of the learning module. (optional)\ninterval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\ncompletion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\noverdue = ''Any'' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to 'Any')\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_order = ''Desc'' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')\ntypes = ['types_example'] # list[str] | Specifies the activity types. (optional)\nstatuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)\nrelationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)\n\ntry:\n    # Get list of Development Activities\n    api_response = api_instance.get_users_development_activities(user_id=user_id, module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_users_development_activities: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nuser_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId. (optional)\nmodule_id = 'module_id_example' # str | Specifies the ID of the learning module. (optional)\ninterval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\ncompletion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\noverdue = ''Any'' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to 'Any')\npcPass = ''Any'' # str | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") activities are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all activities are returned (optional) (default to 'Any')\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_order = ''Desc'' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')\ntypes = ['types_example'] # list[str] | Specifies the activity types. (optional)\nstatuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)\nrelationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)\n\ntry:\n    # Get list of Development Activities\n    api_response = api_instance.get_users_development_activities(user_id=user_id, module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, pcPass=pcPass, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_users_development_activities: %s\\n\" % e)"
   },
   "get_users_development_activities_me": {
     "operationId": "get_users_development_activities_me",
     "functionName": "get_users_development_activities_me",
-    "signature": "get_users_development_activities_me(module_id, interval, completion_interval, overdue, page_size, page_number, sort_order, types, statuses, relationship)",
+    "signature": "get_users_development_activities_me(module_id, interval, completion_interval, overdue, pcPass, page_size, page_number, sort_order, types, statuses, relationship)",
     "parameters": [
       {
         "name": "module_id",
@@ -34246,6 +34184,11 @@
         "required": "false"
       },
       {
+        "name": "pcPass",
+        "type": "str",
+        "required": "false"
+      },
+      {
         "name": "page_size",
         "type": "int",
         "required": "false"
@@ -34277,7 +34220,7 @@
       }
     ],
     "return": "DevelopmentActivityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nmodule_id = 'module_id_example' # str | Specifies the ID of the learning module. (optional)\ninterval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\ncompletion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\noverdue = ''Any'' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to 'Any')\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_order = ''Desc'' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')\ntypes = ['types_example'] # list[str] | Specifies the activity types. (optional)\nstatuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)\nrelationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)\n\ntry:\n    # Get list of Development Activities for current user\n    api_response = api_instance.get_users_development_activities_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_users_development_activities_me: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nmodule_id = 'module_id_example' # str | Specifies the ID of the learning module. (optional)\ninterval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\ncompletion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\noverdue = ''Any'' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to 'Any')\npcPass = ''Any'' # str | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") activities are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all activities are returned (optional) (default to 'Any')\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_order = ''Desc'' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')\ntypes = ['types_example'] # list[str] | Specifies the activity types. (optional)\nstatuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)\nrelationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)\n\ntry:\n    # Get list of Development Activities for current user\n    api_response = api_instance.get_users_development_activities_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, pcPass=pcPass, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_users_development_activities_me: %s\\n\" % e)"
   },
   "get_users_development_activity": {
     "operationId": "get_users_development_activity",

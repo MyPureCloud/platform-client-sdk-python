@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import LearningAssignment
     from . import LearningModuleCoverArtResponse
     from . import LearningModuleInformStep
+    from . import LearningModuleReassignSummary
     from . import LearningModuleRule
     from . import LearningModuleSummary
     from . import UserReference
@@ -76,6 +77,7 @@ class AssignedLearningModule(object):
             'inform_steps': 'list[LearningModuleInformStep]',
             'assessment_form': 'AssessmentForm',
             'summary_data': 'LearningModuleSummary',
+            'reassign_summary_data': 'LearningModuleReassignSummary',
             'cover_art': 'LearningModuleCoverArtResponse',
             'archival_mode': 'str'
         }
@@ -101,6 +103,7 @@ class AssignedLearningModule(object):
             'inform_steps': 'informSteps',
             'assessment_form': 'assessmentForm',
             'summary_data': 'summaryData',
+            'reassign_summary_data': 'reassignSummaryData',
             'cover_art': 'coverArt',
             'archival_mode': 'archivalMode'
         }
@@ -125,6 +128,7 @@ class AssignedLearningModule(object):
         self._inform_steps = None
         self._assessment_form = None
         self._summary_data = None
+        self._reassign_summary_data = None
         self._cover_art = None
         self._archival_mode = None
 
@@ -617,6 +621,30 @@ class AssignedLearningModule(object):
         
 
         self._summary_data = summary_data
+
+    @property
+    def reassign_summary_data(self) -> 'LearningModuleReassignSummary':
+        """
+        Gets the reassign_summary_data of this AssignedLearningModule.
+        The learning module reassign summary data
+
+        :return: The reassign_summary_data of this AssignedLearningModule.
+        :rtype: LearningModuleReassignSummary
+        """
+        return self._reassign_summary_data
+
+    @reassign_summary_data.setter
+    def reassign_summary_data(self, reassign_summary_data: 'LearningModuleReassignSummary') -> None:
+        """
+        Sets the reassign_summary_data of this AssignedLearningModule.
+        The learning module reassign summary data
+
+        :param reassign_summary_data: The reassign_summary_data of this AssignedLearningModule.
+        :type: LearningModuleReassignSummary
+        """
+        
+
+        self._reassign_summary_data = reassign_summary_data
 
     @property
     def cover_art(self) -> 'LearningModuleCoverArtResponse':
