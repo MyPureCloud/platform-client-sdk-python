@@ -1162,7 +1162,6 @@ from .domain_physical_interface import DomainPhysicalInterface
 from .domain_resource_condition_node import DomainResourceConditionNode
 from .domain_resource_condition_value import DomainResourceConditionValue
 from .domain_role import DomainRole
-from .domain_schema_reference import DomainSchemaReference
 from .download_response import DownloadResponse
 from .draft import Draft
 from .draft_intents import DraftIntents
@@ -2567,6 +2566,7 @@ from .restore_presence_settings import RestorePresenceSettings
 from .result_counters import ResultCounters
 from .retention_duration import RetentionDuration
 from .reverse_whitepages_lookup_result import ReverseWhitepagesLookupResult
+from .review_assessment_results import ReviewAssessmentResults
 from .ring import Ring
 from .role_division import RoleDivision
 from .role_division_grants import RoleDivisionGrants
@@ -2615,10 +2615,7 @@ from .scheduling_settings_response import SchedulingSettingsResponse
 from .scheduling_status_response import SchedulingStatusResponse
 from .scheduling_testing_options_request import SchedulingTestingOptionsRequest
 from .schema import Schema
-from .schema_category import SchemaCategory
-from .schema_category_entity_listing import SchemaCategoryEntityListing
 from .schema_quantity_limits import SchemaQuantityLimits
-from .schema_reference_entity_listing import SchemaReferenceEntityListing
 from .scim_config_resource_type import ScimConfigResourceType
 from .scim_config_resource_type_schema_extension import ScimConfigResourceTypeSchemaExtension
 from .scim_config_resource_types_list_response import ScimConfigResourceTypesListResponse

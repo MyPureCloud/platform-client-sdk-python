@@ -548,7 +548,7 @@ class ObservationValue(object):
         """
         if isinstance(used_routing, int):
             used_routing = str(used_routing)
-        allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
+        allowed_values = ["Bullseye", "Conditional", "Direct", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"

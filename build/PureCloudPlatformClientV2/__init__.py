@@ -1162,7 +1162,6 @@ from .models.domain_physical_interface import DomainPhysicalInterface
 from .models.domain_resource_condition_node import DomainResourceConditionNode
 from .models.domain_resource_condition_value import DomainResourceConditionValue
 from .models.domain_role import DomainRole
-from .models.domain_schema_reference import DomainSchemaReference
 from .models.download_response import DownloadResponse
 from .models.draft import Draft
 from .models.draft_intents import DraftIntents
@@ -2567,6 +2566,7 @@ from .models.restore_presence_settings import RestorePresenceSettings
 from .models.result_counters import ResultCounters
 from .models.retention_duration import RetentionDuration
 from .models.reverse_whitepages_lookup_result import ReverseWhitepagesLookupResult
+from .models.review_assessment_results import ReviewAssessmentResults
 from .models.ring import Ring
 from .models.role_division import RoleDivision
 from .models.role_division_grants import RoleDivisionGrants
@@ -2615,10 +2615,7 @@ from .models.scheduling_settings_response import SchedulingSettingsResponse
 from .models.scheduling_status_response import SchedulingStatusResponse
 from .models.scheduling_testing_options_request import SchedulingTestingOptionsRequest
 from .models.schema import Schema
-from .models.schema_category import SchemaCategory
-from .models.schema_category_entity_listing import SchemaCategoryEntityListing
 from .models.schema_quantity_limits import SchemaQuantityLimits
-from .models.schema_reference_entity_listing import SchemaReferenceEntityListing
 from .models.scim_config_resource_type import ScimConfigResourceType
 from .models.scim_config_resource_type_schema_extension import ScimConfigResourceTypeSchemaExtension
 from .models.scim_config_resource_types_list_response import ScimConfigResourceTypesListResponse

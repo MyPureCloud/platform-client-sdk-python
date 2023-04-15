@@ -73,6 +73,7 @@ class AnalyticsSession(object):
             'callback_scheduled_time': 'datetime',
             'callback_user_name': 'str',
             'cc': 'list[str]',
+            'cleared': 'bool',
             'coached_participant_id': 'str',
             'cobrowse_role': 'str',
             'cobrowse_room_id': 'str',
@@ -127,8 +128,8 @@ class AnalyticsSession(object):
             'video_address_self': 'str',
             'video_room_id': 'str',
             'waiting_interaction_counts': 'list[int]',
-            'agent_groups': 'list[AnalyticsAgentGroup]',
             'proposed_agents': 'list[AnalyticsProposedAgent]',
+            'agent_groups': 'list[AnalyticsAgentGroup]',
             'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
             'flow': 'AnalyticsFlow',
             'metrics': 'list[AnalyticsSessionMetric]',
@@ -154,6 +155,7 @@ class AnalyticsSession(object):
             'callback_scheduled_time': 'callbackScheduledTime',
             'callback_user_name': 'callbackUserName',
             'cc': 'cc',
+            'cleared': 'cleared',
             'coached_participant_id': 'coachedParticipantId',
             'cobrowse_role': 'cobrowseRole',
             'cobrowse_room_id': 'cobrowseRoomId',
@@ -208,8 +210,8 @@ class AnalyticsSession(object):
             'video_address_self': 'videoAddressSelf',
             'video_room_id': 'videoRoomId',
             'waiting_interaction_counts': 'waitingInteractionCounts',
-            'agent_groups': 'agentGroups',
             'proposed_agents': 'proposedAgents',
+            'agent_groups': 'agentGroups',
             'media_endpoint_stats': 'mediaEndpointStats',
             'flow': 'flow',
             'metrics': 'metrics',
@@ -234,6 +236,7 @@ class AnalyticsSession(object):
         self._callback_scheduled_time = None
         self._callback_user_name = None
         self._cc = None
+        self._cleared = None
         self._coached_participant_id = None
         self._cobrowse_role = None
         self._cobrowse_room_id = None
@@ -288,8 +291,8 @@ class AnalyticsSession(object):
         self._video_address_self = None
         self._video_room_id = None
         self._waiting_interaction_counts = None
-        self._agent_groups = None
         self._proposed_agents = None
+        self._agent_groups = None
         self._media_endpoint_stats = None
         self._flow = None
         self._metrics = None
@@ -726,6 +729,30 @@ class AnalyticsSession(object):
         
 
         self._cc = cc
+
+    @property
+    def cleared(self) -> bool:
+        """
+        Gets the cleared of this AnalyticsSession.
+        Flag that indicates that the conversation has been cleared by the customer
+
+        :return: The cleared of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._cleared
+
+    @cleared.setter
+    def cleared(self, cleared: bool) -> None:
+        """
+        Sets the cleared of this AnalyticsSession.
+        Flag that indicates that the conversation has been cleared by the customer
+
+        :param cleared: The cleared of this AnalyticsSession.
+        :type: bool
+        """
+        
+
+        self._cleared = cleared
 
     @property
     def coached_participant_id(self) -> str:
@@ -1964,7 +1991,7 @@ class AnalyticsSession(object):
         """
         if isinstance(used_routing, int):
             used_routing = str(used_routing)
-        allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
+        allowed_values = ["Bullseye", "Conditional", "Direct", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"
@@ -2044,30 +2071,6 @@ class AnalyticsSession(object):
         self._waiting_interaction_counts = waiting_interaction_counts
 
     @property
-    def agent_groups(self) -> List['AnalyticsAgentGroup']:
-        """
-        Gets the agent_groups of this AnalyticsSession.
-        Conditional group routing agent groups
-
-        :return: The agent_groups of this AnalyticsSession.
-        :rtype: list[AnalyticsAgentGroup]
-        """
-        return self._agent_groups
-
-    @agent_groups.setter
-    def agent_groups(self, agent_groups: List['AnalyticsAgentGroup']) -> None:
-        """
-        Sets the agent_groups of this AnalyticsSession.
-        Conditional group routing agent groups
-
-        :param agent_groups: The agent_groups of this AnalyticsSession.
-        :type: list[AnalyticsAgentGroup]
-        """
-        
-
-        self._agent_groups = agent_groups
-
-    @property
     def proposed_agents(self) -> List['AnalyticsProposedAgent']:
         """
         Gets the proposed_agents of this AnalyticsSession.
@@ -2090,6 +2093,30 @@ class AnalyticsSession(object):
         
 
         self._proposed_agents = proposed_agents
+
+    @property
+    def agent_groups(self) -> List['AnalyticsAgentGroup']:
+        """
+        Gets the agent_groups of this AnalyticsSession.
+        Conditional group routing agent groups
+
+        :return: The agent_groups of this AnalyticsSession.
+        :rtype: list[AnalyticsAgentGroup]
+        """
+        return self._agent_groups
+
+    @agent_groups.setter
+    def agent_groups(self, agent_groups: List['AnalyticsAgentGroup']) -> None:
+        """
+        Sets the agent_groups of this AnalyticsSession.
+        Conditional group routing agent groups
+
+        :param agent_groups: The agent_groups of this AnalyticsSession.
+        :type: list[AnalyticsAgentGroup]
+        """
+        
+
+        self._agent_groups = agent_groups
 
     @property
     def media_endpoint_stats(self) -> List['AnalyticsMediaEndpointStat']:

@@ -3752,7 +3752,7 @@ except ApiException as e:
 
 <a name="get_routing_sms_phonenumbers"></a>
 
-## [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html) get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language)
+## [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html) get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id)
 
 
 
@@ -3788,10 +3788,11 @@ page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'sort_by_example' # str | Optional field to sort results (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
 language = ''en-US'' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional) (default to 'en-US')
+integration_id = 'integration_id_example' # str | Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)
 
 try:
     # Get a list of provisioned phone numbers.
-    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language)
+    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_sms_phonenumbers: %s\n" % e)
@@ -3811,6 +3812,7 @@ except ApiException as e:
 | **sort_by** | **str**| Optional field to sort results | [optional] <br />**Values**: phoneNumber, countryCode, country, dateCreated, dateModified, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice |
 | **sort_order** | **str**| Sort order | [optional] <br />**Values**: ascending, descending |
 | **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &#39;en-US&#39;] |
+| **integration_id** | **str**| Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

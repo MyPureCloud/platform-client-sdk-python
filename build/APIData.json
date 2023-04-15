@@ -15381,7 +15381,7 @@
       }
     ],
     "return": "KnowledgeGuestDocumentResponseListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi();\nsession_id = 'session_id_example' # str | Knowledge guest session ID.\ncategory_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)\npage_size = 10 # int | Number of entities to return. Maximum of 200. (optional) (default to 10)\n\ntry:\n    # Get documents.\n    api_response = api_instance.get_knowledge_guest_session_documents(session_id, category_id=category_id, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling KnowledgeApi->get_knowledge_guest_session_documents: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi();\nsession_id = 'session_id_example' # str | Knowledge guest session ID.\ncategory_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)\npage_size = 56 # int | Number of entities to return. Maximum of 200. (optional)\n\ntry:\n    # Get documents.\n    api_response = api_instance.get_knowledge_guest_session_documents(session_id, category_id=category_id, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling KnowledgeApi->get_knowledge_guest_session_documents: %s\\n\" % e)"
   },
   "get_knowledge_knowledgebase": {
     "operationId": "get_knowledge_knowledgebase",
@@ -27580,7 +27580,7 @@
   "get_routing_sms_phonenumbers": {
     "operationId": "get_routing_sms_phonenumbers",
     "functionName": "get_routing_sms_phonenumbers",
-    "signature": "get_routing_sms_phonenumbers(phone_number, phone_number_type, phone_number_status, country_code, page_size, page_number, sort_by, sort_order, language)",
+    "signature": "get_routing_sms_phonenumbers(phone_number, phone_number_type, phone_number_status, country_code, page_size, page_number, sort_by, sort_order, language, integration_id)",
     "parameters": [
       {
         "name": "phone_number",
@@ -27626,10 +27626,15 @@
         "name": "language",
         "type": "str",
         "required": "false"
+      },
+      {
+        "name": "integration_id",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "SmsPhoneNumberEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi();\nphone_number = 'phone_number_example' # str | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. (optional)\nphone_number_type = ['phone_number_type_example'] # list[str] | Filter on phone number type (optional)\nphone_number_status = ['phone_number_status_example'] # list[str] | Filter on phone number status (optional)\ncountry_code = ['country_code_example'] # list[str] | Filter on country code (optional)\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_by = 'sort_by_example' # str | Optional field to sort results (optional)\nsort_order = 'sort_order_example' # str | Sort order (optional)\nlanguage = ''en-US'' # str | A language tag (which is sometimes referred to as a \\\"locale identifier\\\") to use to localize country field and sort operations (optional) (default to 'en-US')\n\ntry:\n    # Get a list of provisioned phone numbers.\n    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RoutingApi->get_routing_sms_phonenumbers: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi();\nphone_number = 'phone_number_example' # str | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. (optional)\nphone_number_type = ['phone_number_type_example'] # list[str] | Filter on phone number type (optional)\nphone_number_status = ['phone_number_status_example'] # list[str] | Filter on phone number status (optional)\ncountry_code = ['country_code_example'] # list[str] | Filter on country code (optional)\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_by = 'sort_by_example' # str | Optional field to sort results (optional)\nsort_order = 'sort_order_example' # str | Sort order (optional)\nlanguage = ''en-US'' # str | A language tag (which is sometimes referred to as a \\\"locale identifier\\\") to use to localize country field and sort operations (optional) (default to 'en-US')\nintegration_id = 'integration_id_example' # str | Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)\n\ntry:\n    # Get a list of provisioned phone numbers.\n    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RoutingApi->get_routing_sms_phonenumbers: %s\\n\" % e)"
   },
   "get_routing_user_utilization": {
     "operationId": "get_routing_user_utilization",
@@ -31036,141 +31041,6 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\ntrunk_base_settings_id = 'trunk_base_settings_id_example' # str | Trunk Base ID\n\ntry:\n    # Delete a Trunk Base Settings object by ID\n    api_instance.delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_trunkbasesetting: %s\\n\" % e)"
   },
-  "get_configuration_schemas_edges_vnext": {
-    "operationId": "get_configuration_schemas_edges_vnext",
-    "functionName": "get_configuration_schemas_edges_vnext",
-    "signature": "get_configuration_schemas_edges_vnext(page_size, page_number)",
-    "parameters": [
-      {
-        "name": "page_size",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "page_number",
-        "type": "int",
-        "required": "false"
-      }
-    ],
-    "return": "SchemaCategoryEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # Lists available schema categories (Deprecated)\n    api_response = api_instance.get_configuration_schemas_edges_vnext(page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext: %s\\n\" % e)"
-  },
-  "get_configuration_schemas_edges_vnext_schema_category": {
-    "operationId": "get_configuration_schemas_edges_vnext_schema_category",
-    "functionName": "get_configuration_schemas_edges_vnext_schema_category",
-    "signature": "get_configuration_schemas_edges_vnext_schema_category(schema_category, page_size, page_number)",
-    "parameters": [
-      {
-        "name": "schema_category",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "page_size",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "page_number",
-        "type": "int",
-        "required": "false"
-      }
-    ],
-    "return": "SchemaReferenceEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nschema_category = 'schema_category_example' # str | Schema category\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # List schemas of a specific category (Deprecated)\n    api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category(schema_category, page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category: %s\\n\" % e)"
-  },
-  "get_configuration_schemas_edges_vnext_schema_category_schema_type": {
-    "operationId": "get_configuration_schemas_edges_vnext_schema_category_schema_type",
-    "functionName": "get_configuration_schemas_edges_vnext_schema_category_schema_type",
-    "signature": "get_configuration_schemas_edges_vnext_schema_category_schema_type(schema_category, schema_type, page_size, page_number)",
-    "parameters": [
-      {
-        "name": "schema_category",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "schema_type",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "page_size",
-        "type": "int",
-        "required": "false"
-      },
-      {
-        "name": "page_number",
-        "type": "int",
-        "required": "false"
-      }
-    ],
-    "return": "SchemaReferenceEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nschema_category = 'schema_category_example' # str | Schema category\nschema_type = 'schema_type_example' # str | Schema type\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # List schemas of a specific category (Deprecated)\n    api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category_schema_type(schema_category, schema_type, page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type: %s\\n\" % e)"
-  },
-  "get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id": {
-    "operationId": "get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id",
-    "functionName": "get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id",
-    "signature": "get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id(schema_category, schema_type, schema_id)",
-    "parameters": [
-      {
-        "name": "schema_category",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "schema_type",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "schema_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "return": "Organization",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nschema_category = 'schema_category_example' # str | Schema category\nschema_type = 'schema_type_example' # str | Schema type\nschema_id = 'schema_id_example' # str | Schema ID\n\ntry:\n    # Get a json schema (Deprecated)\n    api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id(schema_category, schema_type, schema_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id: %s\\n\" % e)"
-  },
-  "get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id": {
-    "operationId": "get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id",
-    "functionName": "get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id",
-    "signature": "get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id(schema_category, schema_type, schema_id, extension_type, metadata_id, type)",
-    "parameters": [
-      {
-        "name": "schema_category",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "schema_type",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "schema_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "extension_type",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "metadata_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "type",
-        "type": "str",
-        "required": "false"
-      }
-    ],
-    "return": "Organization",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nschema_category = 'schema_category_example' # str | Schema category\nschema_type = 'schema_type_example' # str | Schema type\nschema_id = 'schema_id_example' # str | Schema ID\nextension_type = 'extension_type_example' # str | extension\nmetadata_id = 'metadata_id_example' # str | Metadata ID\ntype = 'type_example' # str | Type (optional)\n\ntry:\n    # Get metadata for a schema (Deprecated)\n    api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id(schema_category, schema_type, schema_id, extension_type, metadata_id, type=type)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id: %s\\n\" % e)"
-  },
   "get_telephony_providers_edge": {
     "operationId": "get_telephony_providers_edge",
     "functionName": "get_telephony_providers_edge",
@@ -33125,25 +32995,6 @@
     "return": "DomainCertificateAuthority",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\ncertificate_id = 'certificate_id_example' # str | Certificate ID\nbody = PureCloudPlatformClientV2.DomainCertificateAuthority() # DomainCertificateAuthority | Certificate authority\n\ntry:\n    # Update a certificate authority.\n    api_response = api_instance.put_telephony_providers_edges_certificateauthority(certificate_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_certificateauthority: %s\\n\" % e)"
   },
-  "put_telephony_providers_edges_did": {
-    "operationId": "put_telephony_providers_edges_did",
-    "functionName": "put_telephony_providers_edges_did",
-    "signature": "put_telephony_providers_edges_did(did_id, body)",
-    "parameters": [
-      {
-        "name": "did_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "DID",
-        "required": "true"
-      }
-    ],
-    "return": "DID",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\ndid_id = 'did_id_example' # str | DID ID\nbody = PureCloudPlatformClientV2.DID() # DID | DID\n\ntry:\n    # Update a DID by ID.\n    api_response = api_instance.put_telephony_providers_edges_did(did_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_did: %s\\n\" % e)"
-  },
   "put_telephony_providers_edges_didpool": {
     "operationId": "put_telephony_providers_edges_didpool",
     "functionName": "put_telephony_providers_edges_didpool",
@@ -33205,25 +33056,6 @@
     ],
     "return": "EdgeTrunkBase",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nedgegroup_id = 'edgegroup_id_example' # str | Edge Group ID\nedgetrunkbase_id = 'edgetrunkbase_id_example' # str | Edge Trunk Base ID\nbody = PureCloudPlatformClientV2.EdgeTrunkBase() # EdgeTrunkBase | EdgeTrunkBase\n\ntry:\n    # Update the edge trunk base associated with the edge group\n    api_response = api_instance.put_telephony_providers_edges_edgegroup_edgetrunkbase(edgegroup_id, edgetrunkbase_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup_edgetrunkbase: %s\\n\" % e)"
-  },
-  "put_telephony_providers_edges_extension": {
-    "operationId": "put_telephony_providers_edges_extension",
-    "functionName": "put_telephony_providers_edges_extension",
-    "signature": "put_telephony_providers_edges_extension(extension_id, body)",
-    "parameters": [
-      {
-        "name": "extension_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Extension",
-        "required": "true"
-      }
-    ],
-    "return": "Extension",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nextension_id = 'extension_id_example' # str | Extension ID\nbody = PureCloudPlatformClientV2.Extension() # Extension | Extension\n\ntry:\n    # Update an extension by ID.\n    api_response = api_instance.put_telephony_providers_edges_extension(extension_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extension: %s\\n\" % e)"
   },
   "put_telephony_providers_edges_extensionpool": {
     "operationId": "put_telephony_providers_edges_extensionpool",

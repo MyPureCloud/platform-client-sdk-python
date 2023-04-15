@@ -755,7 +755,7 @@ from pprint import pprint
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 session_id = 'session_id_example' # str | Knowledge guest session ID.
 category_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
-page_size = 10 # int | Number of entities to return. Maximum of 200. (optional) (default to 10)
+page_size = 56 # int | Number of entities to return. Maximum of 200. (optional)
 
 try:
     # Get documents.
@@ -772,7 +772,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
 | **category_id** | [**list[str]**](str.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
-| **page_size** | **int**| Number of entities to return. Maximum of 200. | [optional] [default to 10] |
+| **page_size** | **int**| Number of entities to return. Maximum of 200. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -25,6 +25,7 @@ title: AnalyticsSession
 | **callback_scheduled_time** | **datetime** | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **callback_user_name** | **str** | The name of the user requesting a call back | [optional] |
 | **cc** | **list[str]** | Carbon copy email address(es) | [optional] |
+| **cleared** | **bool** | Flag that indicates that the conversation has been cleared by the customer | [optional] |
 | **coached_participant_id** | **str** | The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation) | [optional] |
 | **cobrowse_role** | **str** | Describes side of the cobrowse (sharer or viewer) | [optional] |
 | **cobrowse_room_id** | **str** | A unique identifier for a PureCloud cobrowse room | [optional] |
@@ -79,8 +80,8 @@ title: AnalyticsSession
 | **video_address_self** | **str** | Direct Video address | [optional] |
 | **video_room_id** | **str** | A unique identifier for a PureCloud video room | [optional] |
 | **waiting_interaction_counts** | **list[int]** | Number of waiting interactions for each predictive routing attempt | [optional] |
-| **agent_groups** | [**list[AnalyticsAgentGroup]**](AnalyticsAgentGroup.html) | Conditional group routing agent groups | [optional] |
 | **proposed_agents** | [**list[AnalyticsProposedAgent]**](AnalyticsProposedAgent.html) | Proposed agents | [optional] |
+| **agent_groups** | [**list[AnalyticsAgentGroup]**](AnalyticsAgentGroup.html) | Conditional group routing agent groups | [optional] |
 | **media_endpoint_stats** | [**list[AnalyticsMediaEndpointStat]**](AnalyticsMediaEndpointStat.html) | MediaEndpointStats associated with this session | [optional] |
 | **flow** | [**AnalyticsFlow**](AnalyticsFlow.html) | IVR flow execution associated with this session | [optional] |
 | **metrics** | [**list[AnalyticsSessionMetric]**](AnalyticsSessionMetric.html) | List of metrics for this session | [optional] |

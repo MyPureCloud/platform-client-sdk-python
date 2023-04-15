@@ -1234,7 +1234,6 @@ PureCloudPlatformClientV2/models/domain_physical_interface.py
 PureCloudPlatformClientV2/models/domain_resource_condition_node.py
 PureCloudPlatformClientV2/models/domain_resource_condition_value.py
 PureCloudPlatformClientV2/models/domain_role.py
-PureCloudPlatformClientV2/models/domain_schema_reference.py
 PureCloudPlatformClientV2/models/download_response.py
 PureCloudPlatformClientV2/models/draft.py
 PureCloudPlatformClientV2/models/draft_intents.py
@@ -2639,6 +2638,7 @@ PureCloudPlatformClientV2/models/restore_presence_settings.py
 PureCloudPlatformClientV2/models/result_counters.py
 PureCloudPlatformClientV2/models/retention_duration.py
 PureCloudPlatformClientV2/models/reverse_whitepages_lookup_result.py
+PureCloudPlatformClientV2/models/review_assessment_results.py
 PureCloudPlatformClientV2/models/ring.py
 PureCloudPlatformClientV2/models/role_division.py
 PureCloudPlatformClientV2/models/role_division_grants.py
@@ -2685,10 +2685,7 @@ PureCloudPlatformClientV2/models/scheduling_settings_response.py
 PureCloudPlatformClientV2/models/scheduling_status_response.py
 PureCloudPlatformClientV2/models/scheduling_testing_options_request.py
 PureCloudPlatformClientV2/models/schema.py
-PureCloudPlatformClientV2/models/schema_category.py
-PureCloudPlatformClientV2/models/schema_category_entity_listing.py
 PureCloudPlatformClientV2/models/schema_quantity_limits.py
-PureCloudPlatformClientV2/models/schema_reference_entity_listing.py
 PureCloudPlatformClientV2/models/scim_config_resource_type.py
 PureCloudPlatformClientV2/models/scim_config_resource_type_schema_extension.py
 PureCloudPlatformClientV2/models/scim_config_resource_types_list_response.py
@@ -4787,7 +4784,6 @@ docs/DomainPhysicalInterface.md
 docs/DomainResourceConditionNode.md
 docs/DomainResourceConditionValue.md
 docs/DomainRole.md
-docs/DomainSchemaReference.md
 docs/DownloadResponse.md
 docs/DownloadsApi.json
 docs/DownloadsApi.md
@@ -6258,6 +6254,7 @@ docs/RestorePresenceSettings.md
 docs/ResultCounters.md
 docs/RetentionDuration.md
 docs/ReverseWhitepagesLookupResult.md
+docs/ReviewAssessmentResults.md
 docs/Ring.md
 docs/RoleDivision.md
 docs/RoleDivisionGrants.md
@@ -6310,10 +6307,7 @@ docs/SchedulingSettingsResponse.md
 docs/SchedulingStatusResponse.md
 docs/SchedulingTestingOptionsRequest.md
 docs/Schema.md
-docs/SchemaCategory.md
-docs/SchemaCategoryEntityListing.md
 docs/SchemaQuantityLimits.md
-docs/SchemaReferenceEntityListing.md
 docs/ScimConfigResourceType.md
 docs/ScimConfigResourceTypeSchemaExtension.md
 docs/ScimConfigResourceTypesListResponse.md
@@ -7599,11 +7593,6 @@ docs/get_coaching_appointments-example.txt
 docs/get_coaching_appointments_me-example.txt
 docs/get_coaching_notification-example.txt
 docs/get_coaching_notifications-example.txt
-docs/get_configuration_schemas_edges_vnext-example.txt
-docs/get_configuration_schemas_edges_vnext_schema_category-example.txt
-docs/get_configuration_schemas_edges_vnext_schema_category_schema_type-example.txt
-docs/get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id-example.txt
-docs/get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id-example.txt
 docs/get_contentmanagement_document-example.txt
 docs/get_contentmanagement_document_audits-example.txt
 docs/get_contentmanagement_document_content-example.txt
@@ -9268,11 +9257,9 @@ docs/put_speechandtextanalytics_topic-example.txt
 docs/put_telephony_providers_edge-example.txt
 docs/put_telephony_providers_edge_logicalinterface-example.txt
 docs/put_telephony_providers_edges_certificateauthority-example.txt
-docs/put_telephony_providers_edges_did-example.txt
 docs/put_telephony_providers_edges_didpool-example.txt
 docs/put_telephony_providers_edges_edgegroup-example.txt
 docs/put_telephony_providers_edges_edgegroup_edgetrunkbase-example.txt
-docs/put_telephony_providers_edges_extension-example.txt
 docs/put_telephony_providers_edges_extensionpool-example.txt
 docs/put_telephony_providers_edges_outboundroute-example.txt
 docs/put_telephony_providers_edges_phone-example.txt
